@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="16.0">
+    <meta>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="transcr.xpr">
+        <file name="test/test.xml"/>
+        <file name="text-emend.xsl"/>
+        <file name="textTranscr_fuer_Drucke.xsl"/>
+    </projectTree>
+</project>
