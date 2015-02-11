@@ -36,7 +36,12 @@
                         <ptr target="#hierher"/>
                         <ptr target="#anchor_hierher"/>
                     </ge:transpose>
-
+                    <ge:transpose>
+                        <ptr target="#bla"/>
+                        <ptr target="#fasel #blubb #blubber "/>
+                        <ptr target="#quux"/>
+                    </ge:transpose>
+                    
                 </ge:transposeGrp>
             </creation>
             <handNotes>

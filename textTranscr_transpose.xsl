@@ -7,7 +7,8 @@
 	<!-- delivers the tei:ptr in a not-undone ge:transpose element that points to the given @xml:id string -->
 	<xsl:key 
 		name="transpose" 
-		match="ge:transpose/ptr[not(..[@xml:id and concat('#', @xml:id) = //ge:undo/@target])]" use="substring(@target, 2)"/>
+		match="ge:transpose/ptr[not(..[@xml:id and concat('#', @xml:id) = //ge:undo/@target])]" 
+		use="substring(@target, 2)"/>
 		
 	<!-- 
 		go on with the element that has been transposed with the matching element instead

@@ -3,10 +3,12 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.tei-c.org/ns/1.0"
     xmlns:f="http://www.faustedition.net/ns" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs f" version="2.0" xmlns:ge="http://www.tei-c.org/ns/geneticEditions">
+    
+    
     <xsl:template match="@*|node()">
         <xsl:choose>
             <xsl:when test="name()='status'"/>
-            <xsl:when test="name()='xml:space'"/>
+            <xsl:when test="name()='xml:space'"/>   <!-- wieso? -->
             <xsl:when test="name()='f:revType'"/>
             <xsl:when test="name()='ge:stage'"/>
             <xsl:otherwise>
@@ -16,6 +18,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
     <xsl:template match="abbr[parent::choice]"/>
     <xsl:template match="add">
         <xsl:apply-templates/>
@@ -23,10 +26,10 @@
     <xsl:template match="add[@f:rejectedBy]"/>
     <xsl:template match="am[parent::choice]"/>
     <xsl:template match="app">
-        <xsl:apply-templates></xsl:apply-templates>
+        <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="lem">
-        <xsl:apply-templates></xsl:apply-templates>
+        <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="rdg"/>
     <xsl:template match="choice/text()"/>
@@ -50,7 +53,7 @@
     <!--    <xsl:template match="ex"/>
     <xsl:template match="expan"/>
     -->
-    <xsl:template match="fileDesc">
+    <xsl:template match="fileDesc"> <!-- wieso? gibt's das jenseits des headers? -->
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="g[matches(@ref, '#parenthesis_left')]">
@@ -60,21 +63,25 @@
         <xsl:text>)</xsl:text>
     </xsl:template>
     <xsl:template match="note[@type='editorial']"/>
-    <xsl:template match="pb">
+    <xsl:template match="pb">   <!-- wieso? -->
         <xsl:text> </xsl:text>
     </xsl:template>
+    <!-- wieso headerelemente rauswerfen? -->
     <xsl:template match="profileDesc"/>
     <xsl:template match="publicationStmt"/>
     <xsl:template match="restore">
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="revisionDesc"/>
+    
+    
     <xsl:template match="s">
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="seg">
         <xsl:apply-templates/>
     </xsl:template>
+    
     <xsl:template match="sourceDesc"/>
     <!--<xsl:template match="supplied"/>-->
     <xsl:template match="supplied[matches(@evidence, 'internal')]">
