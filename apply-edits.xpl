@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
-  version="1.0" name="apply-edits">
+<p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:f="http://www.faustedition.net/ns"
+  version="1.0" type="f:apply-edits">
   <p:input port="source" primary="true"/>
   <p:output port="result" primary="true"/>
 

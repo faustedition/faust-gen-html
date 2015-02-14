@@ -7,6 +7,9 @@
 
   <xsl:param name="href" select="document-uri(/)"/>
   <xsl:param name="base"/>
+  <xsl:param name="documentURI"/>
+  <xsl:param name="sigil"/>
+  
   
   <xsl:output indent="yes"/>
 
@@ -15,31 +18,28 @@
     <xsl:value-of select="replace($n, '\D*(\d+).*', '$1')"/>
   </xsl:function>
 
-  <xsl:template match="@*|node()">
+  <xsl:template match="@*|text()|comment()|processing-instruction()">
     <xsl:copy>
       <xsl:apply-templates select="@*|node()"/>
     </xsl:copy>
-  </xsl:template>
+  </xsl:template>  
 
-  <xsl:template match="l|speaker|stage|head">
+  <xsl:template match='*[@n]'>
     <xsl:copy>
-      <xsl:apply-templates select="@* except @n"/>
-      <xsl:variable name="n" select="f:normalize-n(@n)"/>
-      <xsl:attribute name="n" select="$n"/>
-      <xsl:if test="$n != @n">
-        <xsl:attribute name="f:n" select="@n"/>
-      </xsl:if>
-      <xsl:attribute name="f:src" select="$href"/>
+      <xsl:apply-templates select="@*"/>      
+      <xsl:attribute name="f:doc" select="$documentURI"/>
+      <xsl:attribute name="f:sigil" select="$sigil"/>
       <xsl:apply-templates select="node()"/>
     </xsl:copy>
   </xsl:template>
   
   <xsl:template match="/">
+    <xsl:message select="concat('Processing ', $href, ' (', $documentURI, ')')"/>
     <f:lines>
       <xsl:if test="$base">
         <xsl:attribute name="xml:base" select="$base"/>
       </xsl:if>
-      <xsl:apply-templates select="//(l|speaker|stage|head)[@n]"/>
+      <xsl:apply-templates select='//*[@n and not(self::pb or self::div or self::milestone[@unit="paralipomenon"] or @n[contains(.,"todo")] or @n[contains(.,"p")])]'/>
     </f:lines>
   </xsl:template>
 
