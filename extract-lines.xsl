@@ -18,7 +18,7 @@
     <xsl:value-of select="replace($n, '\D*(\d+).*', '$1')"/>
   </xsl:function>
 
-  <xsl:template match="@*|text()|comment()|processing-instruction()">
+  <xsl:template match="@*|node()">
     <xsl:copy>
       <xsl:apply-templates select="@*|node()"/>
     </xsl:copy>

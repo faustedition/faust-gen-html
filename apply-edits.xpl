@@ -42,6 +42,15 @@
       <p:empty/>
     </p:input>
   </p:xslt>
+  
+  <p:xslt>
+    <p:input port="stylesheet">
+      <p:document href="prose-to-lines.xsl"/>
+    </p:input>
+    <p:input port="parameters">
+      <p:empty/>
+    </p:input>
+  </p:xslt>
 
 
 </p:declare-step>

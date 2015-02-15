@@ -120,6 +120,14 @@
       <p:empty/>
     </p:input>
   </p:xslt>
+  
+  <p:xslt>
+    <p:input port="stylesheet">
+      <p:document href="variant-fragments.xsl"/>
+    </p:input>
+    <p:with-param name="output" select="'variants/'"></p:with-param>
+    <p:with-param name="docbase" select="'https://faustedition.uni-wuerzburg.de/new'"/>
+  </p:xslt>
 
 
 </p:declare-step>
