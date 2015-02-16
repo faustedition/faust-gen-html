@@ -5,6 +5,18 @@
   exclude-result-prefixes="xs"
   version="2.0">
   
+  <xsl:function name="f:output-group">
+    <xsl:param name="n"/>
+    <xsl:variable name="resolved-n" select="number(replace($n, '\D*(\d+).*', '$1'))"/>
+    <xsl:choose>
+      <xsl:when test="matches(string($resolved-n), '\d+')">
+        <xsl:value-of select="$resolved-n idiv 10"/>				
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>other</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:function>  
   
   <xsl:function name="f:relativize" as="xs:anyURI">
     <xsl:param name="source" as="xs:string" />

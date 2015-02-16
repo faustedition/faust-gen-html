@@ -6,7 +6,9 @@
     <p:empty/>
   </p:input>
   <p:option name="root" select="'/home/vitt/Faust/'"/>
-  <p:output port="result" primary="true"/>
+  <p:output port="result" primary="true">
+    <p:pipe port="result" step="sort-lines"/>
+  </p:output>
   <p:serialization port="result" indent="true"/>
 
   <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
@@ -78,7 +80,7 @@
 
   <p:wrap-sequence wrapper="f:doc"/>
   
-  <p:xslt>
+  <p:xslt name="sort-lines">
     <p:input port="stylesheet">
       <p:inline>
         <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
@@ -121,16 +123,24 @@
     </p:input>
   </p:xslt>
 
-  <!-- 
-    doesn't work yet. needs to process separately. :-(
-  <p:xslt>
+  <p:xslt name="variant-fragments">
     <p:input port="stylesheet">
       <p:document href="variant-fragments.xsl"/>
     </p:input>    
-    <p:with-param name="output" select="'/tmp/variants/'"></p:with-param>
-    <p:with-param name="docbase" select="'https://faustedition.uni-wuerzburg.de/new'"/>
-        
+    <p:with-param name="output" select="'variants/'"></p:with-param>
+    <p:with-param name="docbase" select="'https://faustedition.uni-wuerzburg.de/new'"/>        
   </p:xslt>
- -->
-
+    
+  
+  <p:for-each>
+    <p:iteration-source>
+      <p:pipe port="result" step="variant-fragments"/>
+      <p:pipe port="secondary" step="variant-fragments"/>
+    </p:iteration-source>
+    <p:store>
+      <p:with-option name="href" select="p:base-uri()"/>
+    </p:store>
+  </p:for-each>
+  
+   
 </p:declare-step>
