@@ -68,7 +68,7 @@
                 <xsl:variable name="href" select="if (ends-with($file, '.xml')) then $file else concat($file, '.xml')"/>
                 <xsl:attribute name="href" select="$href"/>
                 <xsl:if test="not(doc-available($href))">
-                  <xsl:message select="concat('WARNING: Referenced transcript is missing: ', $href, ' (referred to from ', document-uri()))"/>
+                  <xsl:message select="concat('WARNING: Referenced transcript is missing: ', $href, ' (referred to from ', document-uri(/), ')')"/>
                 </xsl:if>
                 <xsl:attribute name="f:sigil">
                   <xsl:choose>

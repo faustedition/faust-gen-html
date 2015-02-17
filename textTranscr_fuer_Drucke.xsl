@@ -3,13 +3,10 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.tei-c.org/ns/1.0"
     xmlns:f="http://www.faustedition.net/ns" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs f" version="2.0" xmlns:ge="http://www.tei-c.org/ns/geneticEditions">
-      
-
-    
     <xsl:template match="@*|node()">
         <xsl:choose>
             <xsl:when test="name()='status'"/>
-            <xsl:when test="name()='xml:space'"/>   <!-- wieso? -->
+            <xsl:when test="name()='xml:space'"/>
             <xsl:when test="name()='f:revType'"/>
             <xsl:when test="name()='ge:stage'"/>
             <xsl:otherwise>
@@ -21,6 +18,9 @@
     </xsl:template>
     
     <xsl:template match="abbr[parent::choice]"/>
+    <xsl:template match="expan[parent::choice]">
+        <xsl:apply-templates></xsl:apply-templates>
+    </xsl:template>
     <xsl:template match="add">
         <xsl:apply-templates/>
     </xsl:template>
@@ -33,7 +33,6 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="rdg"/>
-    <xsl:template match="choice/text()"/>
     <xsl:template match="choice">
         <xsl:apply-templates/>
     </xsl:template>
@@ -64,7 +63,11 @@
         <xsl:text>)</xsl:text>
     </xsl:template>
     <xsl:template match="note[@type='editorial']"/>
-    <xsl:template match="pb">   <!-- wieso? -->
+    <xsl:template match="note[@resp='#hwg']"></xsl:template>
+    <xsl:template match="lb">
+        <xsl:text> </xsl:text>
+    </xsl:template>
+    <xsl:template match="pb">
         <xsl:text> </xsl:text>
     </xsl:template>
     <!-- wieso headerelemente rauswerfen? -->
@@ -90,7 +93,6 @@
             <xsl:apply-templates select="@*|node()"/>
         </xsl:copy>
     </xsl:template>
-    <xsl:template match="subst/text()"/>
     <xsl:template match="subst">
         <xsl:apply-templates/>
     </xsl:template>
@@ -109,7 +111,7 @@
         <xsl:apply-templates/>
     </xsl:template>
     <!-- Zeichen -->
-    <xsl:template match="text()" priority="1">
+    <xsl:template match="text()">
         <xsl:variable name="tmp1" select=" replace(.,'ā','aa')"/>
         <xsl:variable name="tmp2" select=" replace($tmp1,'ē','ee')"/>
         <xsl:variable name="tmp3" select=" replace($tmp2,'m̄','mm')"/>
@@ -118,7 +120,7 @@
         <xsl:variable name="tmp6" select=" replace($tmp5,'ſ','s')"/>
         <xsl:value-of select="$tmp6"/>
     </xsl:template>
-    <xsl:strip-space elements="app"/>
+    <xsl:strip-space elements="app choice subst"/>
 
     <!--    <xsl:template match="orig/text()">
         <xsl:value-of select=" replace(., 'a','ä')"></xsl:value-of>
