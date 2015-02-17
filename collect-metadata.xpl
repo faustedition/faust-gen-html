@@ -65,7 +65,11 @@
                 <xsl:attribute name="uri" select="$uri"/>
                 <xsl:attribute name="document" select="f:relativize($root, document-uri(/))"/>
                 <xsl:variable name="file" select="replace($uri, '^faust://xml/', $root)"/>
-                <xsl:attribute name="href" select="if (ends-with($file, '.xml')) then $file else concat($file, '.xml')"/>
+                <xsl:variable name="href" select="if (ends-with($file, '.xml')) then $file else concat($file, '.xml')"/>
+                <xsl:attribute name="href" select="$href"/>
+                <xsl:if test="not(doc-available($href))">
+                  <xsl:message select="concat('WARNING: Referenced transcript is missing: ', $href, ' (referred to from ', document-uri()))"/>
+                </xsl:if>
                 <xsl:attribute name="f:sigil">
                   <xsl:choose>
                     <xsl:when test="../f:idno[@type='wa_faust'] and ../f:idno[@type='wa_faust'] != 'none'">

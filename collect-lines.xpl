@@ -21,6 +21,9 @@
     <p:with-option name="href" select="'faust-transcripts.xml'"/>
   </p:load>
 
+  <cx:message>
+    <p:with-option name="message" select="'Reading transcript files ...'"/>
+  </cx:message>
 
   <p:for-each>
     <p:iteration-source select="//f:textTranscript"/>
@@ -29,9 +32,9 @@
     <p:variable name="documentURI" select="/f:textTranscript/@document"/>
     <p:variable name="sigil" select="/f:textTranscript/@f:sigil"/>
 
-    <cx:message>
+    <!--cx:message>
       <p:with-option name="message" select="concat('Reading ', $transcriptFile)"/>
-    </cx:message>
+    </cx:message-->
 
     <p:try>
 
@@ -52,8 +55,9 @@
         </p:xslt>
 
       </p:group>
-      <p:catch>        
-        <p:identity>          
+      <p:catch>
+        <p:log port="error"/>
+        <p:identity>
           <p:input port="source">
             <p:empty/>
           </p:input>
