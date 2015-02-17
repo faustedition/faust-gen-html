@@ -1234,6 +1234,8 @@
         <file name="apply-edits.xpl"/>
         <file name="collect-lines.xpl"/>
         <file name="collect-metadata.xpl"/>
+        <file name="extract-lines.xsl"/>
+        <file name="print2html.xpl"/>
         <file name="print2html.xsl"/>
         <file name="prose-to-lines.xsl"/>
         <file name="sorted-lines.xml"/>

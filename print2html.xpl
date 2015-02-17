@@ -5,7 +5,7 @@
 	<p:input port="source" primary="true"/>
 	<p:output port="result" primary="true"/>
 	
-	<p:serialization port="result" method="html"/>
+	<p:serialization port="result" method="xhtml" indent="true" omit-xml-declaration="false" include-content-type="true"/>
 	
 	<p:import href="apply-edits.xpl"/>
 	

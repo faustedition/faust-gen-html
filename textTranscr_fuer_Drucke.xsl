@@ -3,7 +3,8 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.tei-c.org/ns/1.0"
     xmlns:f="http://www.faustedition.net/ns" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs f" version="2.0" xmlns:ge="http://www.tei-c.org/ns/geneticEditions">
-    
+      
+
     
     <xsl:template match="@*|node()">
         <xsl:choose>
@@ -108,13 +109,14 @@
         <xsl:apply-templates/>
     </xsl:template>
     <!-- Zeichen -->
-    <xsl:template match="text()">
+    <xsl:template match="text()" priority="1">
         <xsl:variable name="tmp1" select=" replace(.,'ā','aa')"/>
         <xsl:variable name="tmp2" select=" replace($tmp1,'ē','ee')"/>
         <xsl:variable name="tmp3" select=" replace($tmp2,'m̄','mm')"/>
         <xsl:variable name="tmp4" select=" replace($tmp3,'n̄','nn')"/>
         <xsl:variable name="tmp5" select=" replace($tmp4,'r̄','rr')"/>
-        <xsl:value-of select="$tmp5"/>
+        <xsl:variable name="tmp6" select=" replace($tmp5,'ſ','s')"/>
+        <xsl:value-of select="$tmp6"/>
     </xsl:template>
     <xsl:strip-space elements="app"/>
 

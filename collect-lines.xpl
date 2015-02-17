@@ -13,29 +13,14 @@
 
   <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
 
-  <cx:message>
-    <p:with-option name="message" select="'Achtung, importe folgen:'"/>
-  </cx:message>
-
   <!--  <p:import href="collect-metadata.xpl"/>
 -->
   <p:import href="apply-edits.xpl"/>
-
-  <cx:message>
-    <p:with-option name="message" select="'Transkriptelisten folgt:'"/>
-  </cx:message>
 
   <p:load>
     <p:with-option name="href" select="'faust-transcripts.xml'"/>
   </p:load>
 
-  <!--  <f:list-transcripts>
-    <p:with-option name="root" select="$root"/>    
-  </f:list-transcripts>
--->
-  <cx:message>
-    <p:with-option name="message" select="'So, jetzt die for-each-Schleife.'"/>
-  </cx:message>
 
   <p:for-each>
     <p:iteration-source select="//f:textTranscript"/>
@@ -67,8 +52,8 @@
         </p:xslt>
 
       </p:group>
-      <p:catch>
-        <p:identity>
+      <p:catch>        
+        <p:identity>          
           <p:input port="source">
             <p:empty/>
           </p:input>

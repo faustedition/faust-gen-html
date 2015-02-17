@@ -39,7 +39,7 @@
       <xsl:if test="$base">
         <xsl:attribute name="xml:base" select="$base"/>
       </xsl:if>
-      <xsl:apply-templates select='//*[@n and not(self::pb or self::div or self::milestone[@unit="paralipomenon"] or @n[contains(.,"todo")] or @n[contains(.,"p")])]'/>
+      <xsl:apply-templates select='//*[@n and not(self::pb or self::div or self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or @n[contains(.,"todo")] or @n[contains(.,"p")])]'/>
     </f:lines>
   </xsl:template>
 

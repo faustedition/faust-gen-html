@@ -6,7 +6,6 @@
 
   <p:documentation> Applies the edits to one single document </p:documentation>
 
-
   <p:xslt>
     <p:input port="stylesheet">
       <p:document href="textTranscr_pre_transpose.xsl"/>
