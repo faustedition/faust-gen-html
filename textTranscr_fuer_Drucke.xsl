@@ -37,17 +37,17 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="corr"/>
+
     <xsl:template match="del">
-        <xsl:apply-templates/>
+        <xsl:apply-templates mode="del"/>
     </xsl:template>
-    <xsl:template match="text()[parent::del]"/>
-    <xsl:template match="*[parent::del]"/>
-    <xsl:template match="*[parent::del and self::restore]">
-        <xsl:apply-templates></xsl:apply-templates>
+    <xsl:template mode="del" match="restore">
+        <xsl:apply-templates mode="#default"/>
     </xsl:template>
-    <xsl:template match="del[parent::restore]">
-        <xsl:apply-templates/>
+    <xsl:template mode="del" match="node()">
+        <xsl:apply-templates select="node()" mode="#current"/>
     </xsl:template>
+
     <xsl:template match="encodingDesc"/>
     <xsl:template match="facsimile"/>
     <!--    <xsl:template match="ex"/>
@@ -111,7 +111,7 @@
         <xsl:apply-templates/>
     </xsl:template>
     <!-- Zeichen -->
-    <xsl:template match="text()">
+    <xsl:template match="text()" priority="1">
         <xsl:variable name="tmp1" select=" replace(.,'ā','aa')"/>
         <xsl:variable name="tmp2" select=" replace($tmp1,'ē','ee')"/>
         <xsl:variable name="tmp3" select=" replace($tmp2,'m̄','mm')"/>

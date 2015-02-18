@@ -1235,6 +1235,7 @@
         <file name="collect-lines.xpl"/>
         <file name="collect-metadata.xpl"/>
         <file name="extract-lines.xsl"/>
+        <file name="lesetext.css"/>
         <file name="print2html.xpl"/>
         <file name="print2html.xsl"/>
         <file name="prose-to-lines.xsl"/>
@@ -1243,6 +1244,7 @@
         <file name="text-emend.xsl"/>
         <file name="textTranscr_fuer_Drucke.xsl"/>
         <file name="textTranscr_pre_transpose.xsl"/>
+        <file name="utils.xsl"/>
         <file name="variant-fragments.xsl"/>
     </projectTree>
 </project>
