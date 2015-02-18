@@ -30,6 +30,7 @@
     <p:variable name="transcriptFile" select="/f:textTranscript/@href"/>
     <p:variable name="transcriptURI" select="/f:textTranscript/@uri"/>
     <p:variable name="documentURI" select="/f:textTranscript/@document"/>
+    <p:variable name="type" select="/f:textTranscript/@type"/>
     <p:variable name="sigil" select="/f:textTranscript/@f:sigil"/>
 
     <!--cx:message>
@@ -97,7 +98,7 @@
               xmlns:f="http://www.faustedition.net/ns"
               >
             <xsl:apply-templates select="f:lines/*[@n]">
-              <xsl:sort select="f:extract-number(@n)" data-type="number"/>              
+              <!--xsl:sort select="f:extract-number(@n)" data-type="number"/-->              
             </xsl:apply-templates>
               <xsl:comment>Jetzt der Kram ohne @n</xsl:comment>
             <xsl:apply-templates select="f:lines/*[not(@n)]"/>

@@ -64,6 +64,7 @@
                 <xsl:variable name="uri" select="resolve-uri(@uri, (ancestor-or-self::*/@xml:base)[1])"></xsl:variable>
                 <xsl:attribute name="uri" select="$uri"/>
                 <xsl:attribute name="document" select="f:relativize($root, document-uri(/))"/>
+                <xsl:attribute name="type" select="local-name(/*)"/>
                 <xsl:variable name="file" select="replace($uri, '^faust://xml/', $root)"/>
                 <xsl:variable name="href" select="if (ends-with($file, '.xml')) then $file else concat($file, '.xml')"/>
                 <xsl:attribute name="href" select="$href"/>
