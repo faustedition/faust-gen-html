@@ -48,6 +48,10 @@
         <xsl:apply-templates select="node()" mode="#current"/>
     </xsl:template>
 
+    <xsl:template match="restore/subst">
+      <xsl:apply-templates select="del/node()"/>
+    </xsl:template>  
+
     <xsl:template match="encodingDesc"/>
     <xsl:template match="facsimile"/>
     <!--    <xsl:template match="ex"/>

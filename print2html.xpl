@@ -3,7 +3,9 @@
 	xmlns:f="http://www.faustedition.net/ns"
 	xmlns:c="http://www.w3.org/ns/xproc-step" version="1.0">
 	<p:input port="source" primary="true"/>
-	<p:output port="result" primary="true"/>
+	<p:output port="result" primary="true">
+	  <p:pipe step="html" port="result"/>
+	</p:output>
 	
 	<p:serialization port="result" method="xhtml" indent="true" omit-xml-declaration="false" include-content-type="true"/>
 	
@@ -11,13 +13,23 @@
 	
 	<f:apply-edits/>
 	
-	<p:xslt>
+	<p:xslt name="html">
 		<p:input port="stylesheet">
 			<p:document href="print2html.xsl"/>
-		</p:input>
+		</p:input>	  
 		<p:input port="parameters">
 			<p:empty/>
 		</p:input>
 	</p:xslt>
+  
+  <p:for-each>
+    <p:iteration-source>      
+      <p:pipe step="html" port="secondary"/>
+    </p:iteration-source>
+                
+    <p:store method="xhtml" indent="true" include-content-type="true">
+      <p:with-option name="href" select="p:base-uri()"/>
+    </p:store>
+  </p:for-each>
 	
 </p:declare-step>
