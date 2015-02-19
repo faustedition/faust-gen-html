@@ -16,7 +16,19 @@
         <xsl:text>other</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:function>  
+  </xsl:function>
+
+  <xsl:function name="f:lineno-for-display">
+    <xsl:param name="n"/>
+    <xsl:choose>
+      <xsl:when test="matches($n, '^\d+$')">
+        <xsl:value-of select="number($n)"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="0"/>
+      </xsl:otherwise>
+    </xsl:choose>    
+  </xsl:function>
   
   <xsl:function name="f:relativize" as="xs:anyURI">
     <xsl:param name="source" as="xs:string" />

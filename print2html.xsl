@@ -91,6 +91,19 @@
             select="concat('n-', @n, ' hasvars ', 'varcount-', $varcount)"/>
         </xsl:if>
       </xsl:attribute>
+      <xsl:variable name="display-line" select="f:lineno-for-display(@n)"/>
+      <xsl:if test="number($display-line) gt 0">
+        <xsl:attribute name="id" select="concat('l', @n)"/>
+        <a href="#l{@n}">
+          <xsl:attribute name="class">
+            <xsl:text>lineno</xsl:text>
+            <xsl:if test="$display-line mod 5 != 0">
+              <xsl:text> invisible</xsl:text>
+            </xsl:if>
+          </xsl:attribute>
+          <xsl:value-of select="$display-line"/>
+        </a>
+      </xsl:if>
       <xsl:apply-templates mode="#current"/>
     </xsl:element>
   </xsl:template>
