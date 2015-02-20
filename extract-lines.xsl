@@ -9,6 +9,7 @@
   <xsl:param name="base"/>
   <xsl:param name="documentURI"/>
   <xsl:param name="sigil"/>
+  <xsl:param name="sigil-type"/>
   
   
   <xsl:output indent="yes"/>
@@ -29,6 +30,7 @@
       <xsl:apply-templates select="@*"/>      
       <xsl:attribute name="f:doc" select="$documentURI"/>
       <xsl:attribute name="f:sigil" select="$sigil"/>
+      <xsl:attribute name="f:sigil-type" select="$sigil-type"></xsl:attribute>
       <xsl:apply-templates select="node()"/>
     </xsl:copy>
   </xsl:template>

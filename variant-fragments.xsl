@@ -39,8 +39,8 @@
 			data-n="{@n}" data-source="{@f:doc}">
 			<xsl:apply-templates/>
 			<xsl:text> </xsl:text>
-			<a class="sigil" href="{$docbase}/{@f:doc}" title="{idno[1]/@type}">
-				<xsl:value-of select="idno[1]"/>
+			<a class="sigil" href="{$docbase}/{@f:doc}" title="{@f:sigil-type}">
+				<xsl:value-of select="@f:sigil"/>
 			</a>
 		</div>
 	</xsl:template>	

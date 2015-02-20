@@ -32,6 +32,8 @@
     <p:variable name="documentURI" select="/f:textTranscript/@document"/>
     <p:variable name="type" select="/f:textTranscript/@type"/>
     <p:variable name="sigil" select="/f:textTranscript/@f:sigil"/>
+    <p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
+    
 
     <!--cx:message>
       <p:with-option name="message" select="concat('Reading ', $transcriptFile)"/>
@@ -53,6 +55,7 @@
           </p:input>
           <p:with-param name="documentURI" select="$documentURI"/>
           <p:with-param name="sigil" select="$sigil"/>
+          <p:with-param name="sigil-type" select="$sigil-type"/>
         </p:xslt>
 
       </p:group>
@@ -120,14 +123,18 @@
     <p:with-param name="output" select="'variants/'"></p:with-param>
     <p:with-param name="docbase" select="'https://faustedition.uni-wuerzburg.de/new'"/>        
   </p:xslt>
-    
+  
+  <p:sink>
+    <p:input port="source">
+      <p:pipe port="result" step="variant-fragments"/>
+    </p:input>
+  </p:sink>
   
   <p:for-each>
-    <p:iteration-source>
-      <p:pipe port="result" step="variant-fragments"/>
+    <p:iteration-source>      
       <p:pipe port="secondary" step="variant-fragments"/>
     </p:iteration-source>
-    <p:store>
+    <p:store method="xhtml" omit-xml-declaration="false" indent="false">
       <p:with-option name="href" select="p:base-uri()"/>
     </p:store>
   </p:for-each>
