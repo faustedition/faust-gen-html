@@ -224,9 +224,10 @@
     <nav>
 
       <!-- Breadcrumbs als Liste: Zuoberst Titel, dann die übergeordneten Heads, schließlich der aktuelle Head -->
-      <ul class="breadcrumbs">
+      <ul class="breadcrumbs icons-ul">
         <!-- Der Titel kann hereingegeben werden oder aus dem TEI-titleStmt kommen -->
         <li>
+          <i class="icon-li icon-caret-up"/>
           <a href="{$output-base}.html">
             <xsl:value-of select="$title"/>
           </a>
@@ -234,23 +235,28 @@
 
         <xsl:for-each select="ancestor-or-self::div">
           <li>
-            <xsl:if test=". is $current-div">
-              <xsl:attribute name="class">current</xsl:attribute>
-            </xsl:if>
+            <xsl:choose>              
+              <xsl:when test=". is $current-div">
+                <xsl:attribute name="class">current</xsl:attribute>
+                <i class="icon-li icon-caret-left"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <i class="icon-li icon-caret-up"/>
+              </xsl:otherwise>
+            </xsl:choose>
             <xsl:call-template name="section-link"/>
           </li>
         </xsl:for-each>
       </ul>
 
       <!-- ggf. Links zum vorherigen/nächsten div. -->
-      <ul class="prevnext">
+      <ul class="prevnext icons-ul">
         <xsl:if test="preceding::div[count(ancestor::div) lt $depth]">
           <li class="prev">
             <xsl:for-each
               select="preceding::div[count(ancestor::div) lt $depth][1]">
-              <xsl:call-template name="section-link">
-                <xsl:with-param name="prefix" select="'« '"/>
-              </xsl:call-template>
+              <i class="icon-li icon-backward"/>
+              <xsl:call-template name="section-link"/>              
             </xsl:for-each>
           </li>
         </xsl:if>
@@ -258,20 +264,24 @@
           <li class="next">
             <xsl:for-each
               select="following::div[count(ancestor::div) lt $depth][1]">
-              <xsl:call-template name="section-link">
-                <xsl:with-param name="suffix" select="' »'"/>
-              </xsl:call-template>
+              <i class="icon-li icon-forward"/>
+              <xsl:call-template name="section-link"/>
             </xsl:for-each>
           </li>
         </xsl:if>
+      </ul>
+      
 
+      <ul class="icons-ul">
         <!-- Link zum  alles-auf-einer-Seite-Dokument. -->
         <li class="all">
           <xsl:choose>
             <xsl:when test="$single">
+              <i class="icon-li icon-copy"/>
               <a href="{$output-base}.html">nach Szenen zerlegt</a>
             </xsl:when>
             <xsl:otherwise>
+              <i class="icon-li icon-file-alt"/>
               <a href="{$output-base}.all.html">auf einer Seite</a>
             </xsl:otherwise>
           </xsl:choose>
