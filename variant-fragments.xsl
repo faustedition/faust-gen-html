@@ -4,7 +4,7 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 	xmlns:f="http://www.faustedition.net/ns"
-	exclude-result-prefixes="xs"
+	exclude-result-prefixes="xs f"
 	version="2.0">
 	
 	<xsl:import href="utils.xsl"/>
@@ -35,7 +35,7 @@
 	</xsl:template>
 	
 	<xsl:template match="*[@n]">
-		<div class="variant {local-name()} linenum-{@n} {@rend}" 
+		<div class="{string-join(f:generic-classes(.), ' ')}" 
 			data-n="{@n}" data-source="{@f:doc}">
 			<xsl:apply-templates/>
 			<xsl:text> </xsl:text>
@@ -46,7 +46,10 @@
 	</xsl:template>	
 	
 	<xsl:template match="*">
-		<span class="ann-{local-name()} {@rend}"><xsl:apply-templates/></span>
+		<xsl:element name="{f:html-tag-name(.)}">
+			<xsl:attribute name="class" select="string-join(f:generic-classes(.), ' ')"/>
+			<xsl:apply-templates/>
+		</xsl:element>		
 	</xsl:template>
 	
 	<xsl:template match="lb">
