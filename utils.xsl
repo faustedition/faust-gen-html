@@ -30,6 +30,46 @@
     </xsl:choose>    
   </xsl:function>
   
+  <!-- Returns true of the given TEI element should probably be rendered inline -->
+  <xsl:function name="f:isInline">
+    <xsl:param name="element"/>    
+    <xsl:choose>
+      <xsl:when test="$element[self::div or self::l or self::lg or self::p or self::sp or (@n and not(self::milestone))]">
+        <xsl:sequence select="false()"/>
+      </xsl:when>
+      <xsl:when test="$element[self::hi or self::seg or self::w]">
+        <xsl:sequence select="true()"/>
+      </xsl:when>
+      <xsl:when test="some $descendant in $element//* satisfies not(f:isInline($descendant))">
+        <xsl:sequence select="false()"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:sequence select="true()"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:function>
+  
+  <!-- Returns the local name of the appropriate HTML element for the given tei element -->
+  <xsl:function name="f:html-tag-name">
+    <xsl:param name="element"/>
+    <xsl:choose>
+      <xsl:when test="$element[self::p]">p</xsl:when>
+      <xsl:when test="f:isInline($element)">span</xsl:when>
+      <xsl:otherwise>div</xsl:otherwise>
+    </xsl:choose>
+  </xsl:function>
+  
+  <!-- Returns a sequence of classes for the HTML equivalant to a TEI element. -->
+  <xsl:function name="f:generic-classes">
+    <xsl:param name="element"/>     
+    <xsl:sequence select="local-name($element)"/>
+    <xsl:sequence select="for $rend in tokenize($element/@rend, ' ') return concat('rend-', $rend)"/>
+    <xsl:if test="$element/@n">
+      <xsl:sequence select="concat('n-', $element/@n)"/>
+    </xsl:if>      
+  </xsl:function>
+  
+  
   <xsl:function name="f:relativize" as="xs:anyURI">
     <xsl:param name="source" as="xs:string" />
     <xsl:param name="target" as="xs:string" />
@@ -99,6 +139,8 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:function>
+
+
   
   
 </xsl:stylesheet>
