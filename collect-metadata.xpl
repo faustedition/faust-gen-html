@@ -51,7 +51,26 @@
             
             <xsl:import href="utils.xsl"/>
             
-            <xsl:param name="root"/>            
+            <xsl:param name="root"/>
+
+            <xsl:variable name="archivalSigs" select="( 'wa_faust', 'bohnenkamp', 'fischer_lamberg', 
+              'landeck', 'fa', 'ma', 'aa_ls_helenaank', 'aa_wilhelmmeister', 'aa_duw', 'aa_ls_chines', 
+              'aa_ls_aristpoet', 'aa_ls_kuaschemata', 'aa_ls_stoffgeh', 'aa_ls_wesentrag', 'wa_helenaank', 
+              'wa_gedichte', 'wa_div', 'wa_naus', 'wa_tasso', 'wa_chines', 'wa_aristpoet', 'wa_wesentrag', 
+              'wa_mur', 'wa_prologberltheat', 'wa_rueckkgrossh', 'wa_schlusspalneot', 'wa_zuwallenstlag', 
+              'gsa_2', 'fdh_frankfurt', 'dla_marbach', 'sb_berlin', 'ub_leipzig', 'ub_bonn', 'veste_coburg', 
+              'gm_duesseldorf', 'sa_hannover', 'thlma_weimar', 'bb_cologny', 'ub_basel', 'bj_krakow', 
+              'agad_warszawa', 'bb_vicenza', 'bl_oxford', 'bl_london', 'ul_edinburgh', 'ul_yale', 
+              'tml_new_york', 'ul_pennstate', 'mlm_paris', 'gsa_1')"/>
+            <xsl:variable name="printSigs" select="( 'hagen', 'wa_faust', 'wa_gedichte', 
+              'wa_I_53', 'hagen_nr', 'dla_marbach')"/>
+            <xsl:variable name="sigil-set" 
+              select="if (/f:archivalDocument) then $archivalSigs else $printSigs"/>
+            <xsl:function name="f:sigil-priority">
+              <xsl:param name="type"/>
+              <xsl:value-of select="if ($type = $sigil-set) then index-of($sigil-set, $type) else 9999"/>
+            </xsl:function>
+            
             
             <xsl:template match="/">
               <f:transcript>
@@ -60,7 +79,16 @@
             </xsl:template>
             
             <xsl:template match="f:textTranscript[@uri]">
-              <xsl:copy>
+              <xsl:variable name="idnos">
+                <xsl:apply-templates select="../f:idno[@type]">
+                  <xsl:sort select="f:sigil-priority(@type)" data-type="number"/>
+                </xsl:apply-templates>
+              </xsl:variable>
+              <xsl:variable name="preferred-idno">
+                <xsl:sequence select="$idnos/f:idno[1]"/>
+              </xsl:variable>
+              
+              <xsl:copy>                
                 <xsl:variable name="uri" select="resolve-uri(@uri, (ancestor-or-self::*/@xml:base)[1])"></xsl:variable>
                 <xsl:attribute name="uri" select="$uri"/>
                 <xsl:attribute name="document" select="f:relativize($root, document-uri(/))"/>
@@ -71,23 +99,22 @@
                 <xsl:if test="not(doc-available($href))">
                   <xsl:message select="concat('WARNING: Referenced transcript is missing: ', $href, ' (referred to from ', document-uri(/), ')')"/>
                 </xsl:if>
-                <xsl:attribute name="f:sigil">
-                  <xsl:choose>
-                    <xsl:when test="../f:idno[@type='wa_faust'] and ../f:idno[@type='wa_faust'] != 'none'">
-                      <xsl:value-of select="../f:idno[@type='wa_faust']"/>
-                    </xsl:when>
-                    <xsl:when test="../f:idno[@type='bohnenkamp']">
-                      <xsl:value-of select="../f:idno[@type='bohnenkamp']"/>
-                    </xsl:when>
-                    <xsl:when test="../f:idno">
-                      <xsl:value-of select="../f:idno[1]"/>
-                    </xsl:when>
-                    <xsl:otherwise>???</xsl:otherwise>
-                  </xsl:choose>
+                <xsl:attribute name="f:sigil" select="$preferred-idno">
                 </xsl:attribute>
-                <xsl:copy-of select="../f:idno"/>
+                <xsl:copy-of select="$idnos"/>
               </xsl:copy>
-            </xsl:template>                  
+            </xsl:template>
+            
+            <xsl:template match="f:idno">
+              <xsl:if test="normalize-space(.) != 'none'">
+                <xsl:copy>
+                  <xsl:copy-of select="@*"/>
+                  <xsl:attribute name="uri" select="concat('faust://document/', @type, '/', replace(normalize-space(.), '\s+', '_'))"/>
+                  <xsl:attribute name="priority" select="f:sigil-priority(@type)"/>
+                  <xsl:value-of select="normalize-space(.)"/>
+                </xsl:copy>
+              </xsl:if>
+            </xsl:template>
             
           </xsl:stylesheet>
         </p:inline>
