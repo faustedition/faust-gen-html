@@ -13,8 +13,7 @@
 
   <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
 
-  <!--  <p:import href="collect-metadata.xpl"/>
--->
+  <p:import href="collect-metadata.xpl"/>
   <p:import href="apply-edits.xpl"/>
 
   <p:load>

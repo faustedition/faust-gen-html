@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c:param-set xmlns:c="http://www.w3.org/ns/xproc-step">
+
+	<!--URL to the root folder of the Faust Edition's XML files-->
+	<c:param name="source" value="file:/home/vitt/Faust/"/>
+
+	<!-- Path to the target folder for the "root" HTML files-->
+	<c:param name="html" value="target/lesetext_demo/"/>
+
+	<!-- Path to the target folder for the variant fragments -->
+	<c:param name="variants" value="target/lesetext_demo/variants/"/>
+
+</c:param-set>
