@@ -9,5 +9,8 @@
 
 	<!-- Path to the target folder for the variant fragments -->
 	<c:param name="variants" value="target/lesetext_demo/variants/"/>
+	
+	<!-- URL prefix to be used for links into the webapp -->
+	<c:param name="docbase" value="https://faustedition.uni-wuerzburg.de/new"/>
 
 </c:param-set>

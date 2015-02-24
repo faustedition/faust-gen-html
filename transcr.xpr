@@ -1232,7 +1232,7 @@
         <folder path="../../Faust/"/>
         <file name="../../Faust/print/A8_IIIB18.xml"/>
         <file name="apply-edits.xpl"/>
-        <file name="collect-lines.xpl"/>
+        <file name="collate-variants.xpl"/>
         <file name="collect-metadata.xpl"/>
         <file name="extract-lines.xsl"/>
         <file name="lesetext.css"/>

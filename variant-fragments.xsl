@@ -9,17 +9,16 @@
 	
 	<xsl:import href="utils.xsl"/>
 	
-	<xsl:param name="output">variants/</xsl:param>
+	<xsl:param name="variants">variants/</xsl:param>
 	<xsl:param name="docbase">https://faustedition.uni-wuerzburg.de/new</xsl:param>
 		
 	
 	<xsl:output method="xhtml"/>
 	
-	<xsl:template match="f:sorted-lines">
+	<xsl:template match="/*">		
 		<xsl:for-each-group select="*" group-by="f:output-group(@n)">
-			<xsl:variable name="output-file" select="concat($output, current-grouping-key(), '.html')"/>
-			<xsl:message select="concat('Writing fragment file ', $output-file)"/>
-			<xsl:result-document href="{$output-file}">				
+			<xsl:variable name="output-file" select="concat($variants, current-grouping-key(), '.html')"/>			
+			<xsl:result-document href="{$output-file}">
 				<div class="groups" data-group="{current-grouping-key()}">
 					<xsl:for-each-group select="current-group()" group-by="@n">
 						<div class="variants" data-n="{current-grouping-key()}" 
