@@ -13,13 +13,16 @@
   -->
 
   <xsl:import href="utils.xsl"/>
+  
+  <!-- Der Ausgabeordner für die HTML-Dateien. -->
+  <xsl:param name="html">html/</xsl:param>
 
   <!-- Pfad zu den zuvor generierten Varianten. Die HTML-Files dort müssen existieren. -->
-  <xsl:param name="variants">variants/</xsl:param>
-  
+  <xsl:param name="variants" select="resolve-uri('variants/', $html)"/>
+      
   <!-- Dateiname/URI für die Ausgabedatei(en) ohne Endung. -->
   <xsl:param name="output-base"
-    select="replace(base-uri(), '^.*/(.*)\.xml$', '$1')"/>
+    select="resolve-uri(replace(base-uri(), '^.*/(.*)\.xml$', '$1'), $html)"/>
   
   <!-- 
     Bis zu welcher Ebene sollen die Dateien aufgesplittet werden? $depth ist die
@@ -158,10 +161,12 @@
     <xsl:param name="class"/>
     <xsl:param name="prefix"/>
     <xsl:param name="suffix"/>
+    <xsl:variable name="filename">
+      <xsl:call-template name="filename"/>
+    </xsl:variable>
     <a>
-      <xsl:attribute name="href">
-        <xsl:call-template name="filename"/>
-      </xsl:attribute>
+      <xsl:attribute name="href" select="f:relativize($output-base, $filename)"/>        
+      
       <xsl:if test="$class">
         <xsl:attribute name="class" select="string-join($class, ' ')"/>
       </xsl:if>
@@ -228,7 +233,7 @@
         <!-- Der Titel kann hereingegeben werden oder aus dem TEI-titleStmt kommen -->
         <li>
           <i class="icon-li icon-caret-up"/>
-          <a href="{$output-base}.html">
+          <a href="{f:relativize($output-base, concat($output-base, '.html'))}">
             <xsl:value-of select="$title"/>
           </a>
         </li>
@@ -278,11 +283,11 @@
           <xsl:choose>
             <xsl:when test="$single">
               <i class="icon-li icon-copy"/>
-              <a href="{$output-base}.html">nach Szenen zerlegt</a>
+              <a href="{f:relativize($output-base, concat($output-base, '.html'))}">nach Szenen zerlegt</a>
             </xsl:when>
             <xsl:otherwise>
               <i class="icon-li icon-file-alt"/>
-              <a href="{$output-base}.all.html">auf einer Seite</a>
+              <a href="{f:relativize($output-base, concat($output-base, '.all.html'))}">auf einer Seite</a>
             </xsl:otherwise>
           </xsl:choose>
         </li>
@@ -368,7 +373,7 @@
         var n = lineNumberForLine(line),
         variants = parseInt(line.getAttribute('data-varcount')),
         group = line.getAttribute('data-vargroup'),
-        varfile = 'variants/' + group + '.html',
+        varfile = '<xsl:value-of select="f:relativize($output-base, $variants)"/>' + group + '.html',
         c = 255 - (Math.min(variants - 1, 10) * 5);
         line.setStyle('backgroundColor', 'rgb(' + c + ',' + c + ',' + c + ')');
         line.on('mouseenter', function(e) {
