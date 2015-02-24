@@ -141,6 +141,16 @@
   </xsl:function>
 
 
+  <xsl:template name="generate-style">
+    <xsl:if test="@n and @part">
+      <xsl:variable name="n" select="@n"/>
+      <xsl:variable name="before"
+        select="normalize-space(string-join(preceding::*[@n=$n and @part], ' '))"/>
+      <xsl:attribute name="style"
+        select="concat('text-indent:', 0.4*string-length($before), 'em;')"/>
+    </xsl:if>
+  </xsl:template>
+  
   
   
 </xsl:stylesheet>

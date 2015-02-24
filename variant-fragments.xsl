@@ -36,6 +36,7 @@
 	<xsl:template match="*[@n]">
 		<div class="{string-join(f:generic-classes(.), ' ')}" 
 			data-n="{@n}" data-source="{@f:doc}">
+			<xsl:call-template name="generate-style"/>
 			<xsl:apply-templates/>
 			<xsl:text> </xsl:text>
 			<a class="sigil" href="{$docbase}/{@f:doc}" title="{@f:sigil-type}">
@@ -46,7 +47,7 @@
 	
 	<xsl:template match="*">
 		<xsl:element name="{f:html-tag-name(.)}">
-			<xsl:attribute name="class" select="string-join(f:generic-classes(.), ' ')"/>
+			<xsl:attribute name="class" select="string-join(f:generic-classes(.), ' ')"/>			
 			<xsl:apply-templates/>
 		</xsl:element>		
 	</xsl:template>

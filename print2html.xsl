@@ -97,10 +97,12 @@
         <xsl:attribute name="data-n" select="@n"/>
         <xsl:attribute name="data-varcount" select="$varcount"/>
         <xsl:attribute name="data-vargroup" select="f:output-group(@n)"/>
+        <xsl:call-template name="generate-style"/>
       </xsl:if>
       
       <xsl:attribute name="class" select="string-join((f:generic-classes(.),
-        if (@n) then ('hasvars', concat('varcount-', $varcount)) else ()), ' ')"/>
+        if (@n) then ('hasvars', concat('varcount-', $varcount)) else (),
+        if (@n and @part) then ('antilabe', concat('part-', @part)) else ()), ' ')"/>
 
       <xsl:call-template name="generate-lineno"/>
       <xsl:apply-templates mode="#current"/>
