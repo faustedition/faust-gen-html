@@ -2,6 +2,7 @@
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:f="http://www.faustedition.net/ns"
 	xmlns:c="http://www.w3.org/ns/xproc-step" 
 	xmlns:pxp="http://exproc.org/proposed/steps"
+	type="f:print2html"
 	name="main" version="1.0">
 	<p:input port="source" primary="true"/>
 	<p:input port="parameters" kind="parameter"/>
