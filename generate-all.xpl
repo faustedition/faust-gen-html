@@ -51,8 +51,33 @@
 		</p:load>
 		<f:print2html basename="faust2"/>
 		
-		<!-- jetzt könnte man die ganzen drucke machen. und ein inhaltsverzeichnis. -->
-		<!-- TODO -->
+		<!-- jetzt könnte man die ganzen drucke machen. und ein inhaltsverzeichnis. -->		
+		<p:for-each>
+			<p:iteration-source select="//f:transcript[@type='print']">
+				<p:pipe port="result" step="transcripts"/>
+			</p:iteration-source>
+			<p:variable name="transcript" select="/f:transcript/@href"/>
+			
+			<p:load>
+				<p:with-option name="href" select="$transcript"/>
+			</p:load>
+			<f:print2html/>	<!-- basename will be detected from the source -->
+
+		</p:for-each>
+		
+		<!-- Das ist mehr so'n hack mit dem Inhaltsverzeichnis. -->
+		<p:xslt name="index">
+			<p:input port="source">
+				<p:pipe port="result" step="transcripts"/>
+			</p:input>
+			<p:input port="source">
+				<p:document href="index.xsl"/>
+			</p:input>
+		</p:xslt>		
+		
+		<p:store method="xhtml" include-content-type="true">
+			<p:with-option name="href" select="concat($html, 'index.html')"/>		
+		</p:store>
 		
 		<!-- Assets kopieren -->
 		<pxf:copy href="lesetext.css">

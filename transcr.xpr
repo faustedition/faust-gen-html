@@ -1235,6 +1235,7 @@
         <file name="collate-variants.xpl"/>
         <file name="collect-metadata.xpl"/>
         <file name="extract-lines.xsl"/>
+        <file name="generate-all.xpl"/>
         <file name="lesetext.css"/>
         <file name="print2html.xpl"/>
         <file name="print2html.xsl"/>
