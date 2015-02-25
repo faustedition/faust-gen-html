@@ -170,7 +170,9 @@
     </p:for-each>
 
     <!-- Nun noch zusammenkleben und ein wenig XML aufräumen -->
-    <p:wrap-sequence wrapper="f:doc"/>    
+    <p:wrap-sequence wrapper="doc" wrapper-namespace="http://www.faustedition.net/ns"/>
+    <p:namespace-rename from="http://www.tei-c.org/ns/1.0"/>
+    <p:namespace-rename from="http://www.w3.org/2001/XMLSchema-instance"/>    
     <p:unwrap match="f:transcript" name="cleanup"/>
     
   </p:group>
