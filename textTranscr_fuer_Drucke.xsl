@@ -71,6 +71,7 @@
     <xsl:template match="lb">
         <xsl:text> </xsl:text>
     </xsl:template>
+    <xsl:template match="lb[@break='no']"/>
     <xsl:template match="pb">
         <xsl:text> </xsl:text>
     </xsl:template>
