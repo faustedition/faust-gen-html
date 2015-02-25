@@ -150,7 +150,7 @@
         select="normalize-space(string-join(preceding::*[@part and @n=$n and 
           (if (@f:sigil) then @f:sigil=$sigil else true())], ' '))"/>
       <xsl:attribute name="style"
-        select="concat('text-indent:', 0.4*string-length($before), 'em;')"/>
+        select="concat('text-indent:', 0.5*string-length($before), 'em;')"/>
     </xsl:if>
   </xsl:template>
   
