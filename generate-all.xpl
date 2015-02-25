@@ -51,10 +51,10 @@
 		
 		<!-- jetzt könnte man die ganzen drucke machen. und ein inhaltsverzeichnis. -->		
 		<p:for-each>
-			<p:iteration-source select="//f:transcript[@type='print']">
+			<p:iteration-source select="//f:textTranscript[@type='print']">
 				<p:pipe port="result" step="transcripts"/>
 			</p:iteration-source>
-			<p:variable name="transcript" select="/f:transcript/@href"/>
+			<p:variable name="transcript" select="/f:textTranscript/@href"/>
 			
 			<p:load>
 				<p:with-option name="href" select="$transcript"/>
@@ -79,7 +79,7 @@
 		
 		<!-- Assets kopieren -->
 		<pxf:copy href="lesetext.css">
-			<p:with-option name="target" select="$html"/>
+			<p:with-option name="target" select="concat($html, lesetext.css"/>
 		</pxf:copy>
 
 	</p:group>
