@@ -79,7 +79,7 @@
 		
 		<!-- Assets kopieren -->
 		<pxf:copy href="lesetext.css">
-			<p:with-option name="target" select="concat($html, lesetext.css"/>
+			<p:with-option name="target" select="concat($html, 'lesetext.css')"/>
 		</pxf:copy>
 
 	</p:group>
