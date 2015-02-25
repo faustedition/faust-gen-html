@@ -144,9 +144,10 @@
   <xsl:template name="generate-style">
     <xsl:if test="@n and @part">
       <xsl:variable name="n" select="@n"/>
-      <xsl:variable name="sigil" select="f:sigil"/>
+      <xsl:variable name="sigil" select="@f:sigil"/>
       <xsl:variable name="before"
-        select="normalize-space(string-join(preceding::*[@part and @n=$n and @f:sigil=$sigil], ' '))"/>
+        select="normalize-space(string-join(preceding::*[@part and @n=$n and 
+          (if (@f:sigil) then @f:sigil=$sigil else true())], ' '))"/>
       <xsl:attribute name="style"
         select="concat('text-indent:', 0.4*string-length($before), 'em;')"/>
     </xsl:if>
