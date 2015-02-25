@@ -15,7 +15,7 @@
   <xsl:import href="utils.xsl"/>
   
   <!-- Der Ausgabeordner für die HTML-Dateien. -->
-  <xsl:param name="html">html/</xsl:param>
+  <xsl:param name="html" select="resolve-uri('target/html')"/>
 
   <!-- Pfad zu den zuvor generierten Varianten. Die HTML-Files dort müssen existieren. -->
   <xsl:param name="variants" select="resolve-uri('variants/', $html)"/>
@@ -43,7 +43,7 @@
   
   -->
 
-  <xsl:output method="html" doctype-public="html"/>
+  <xsl:output method="xhtml" include-content-type="yes"/>
 
   <xsl:template match="/">
     <xsl:for-each select="/TEI/text">
@@ -77,8 +77,9 @@
   </xsl:template>
 
   
-
+  <!-- Die Behandlung von den meisten Elementen ist relativ gleich: -->
   <xsl:template match="*" mode="#default single">
+    <!-- # Varianten aus dem variants-Folder auslesen: -->
     <xsl:variable name="varcount">
       <xsl:choose>
         <xsl:when test="@n">
@@ -90,31 +91,52 @@
         <xsl:otherwise>0</xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-    <!-- FIXME improve span/div detection -->
+    
+    <!-- Dann ein Element erzeugen: div oder span oder p, siehe utils.xsl -->
     <xsl:element
       name="{f:html-tag-name(.)}">
       <xsl:if test="@n">
+        
+        <!-- Ein paar (für's JS interessante) Daten speichern wir in data-Attributen: -->
         <xsl:attribute name="data-n" select="@n"/>
         <xsl:attribute name="data-varcount" select="$varcount"/>
         <xsl:attribute name="data-vargroup" select="f:output-group(@n)"/>
+        
+        <!-- 
+          Individuelles Styling via @style-Attribut. Der bevorzugte Weg ist über die Klassen, 
+          style wird im Moment nur für den (berechneten) Einzug der Antilaben verwendet.
+        -->
         <xsl:call-template name="generate-style"/>
       </xsl:if>
       
+      <!--
+          Die meisten interessanten Informationen werden im @class-Attribut festgehalten und können so über CSS gestylt
+          oder via JS selektiert werden:
+          • (lokaler) Name des TEI-Elements
+          • Werte aus @rend, jeweils mit 'rend-' präfigiert, also z.B. rend-small
+          • hasvars und varcount-n (mit n = Zahl) für Zeilen mit Varianten
+          • antilabe und part-X für Antilaben
+      -->
       <xsl:attribute name="class" select="string-join((f:generic-classes(.),
         if (@n) then ('hasvars', concat('varcount-', $varcount)) else (),
         if (@n and @part) then ('antilabe', concat('part-', @part)) else ()), ' ')"/>
 
+      <!-- Zeilennummer als link, wird dann in lesetext.css weggestylt -->
       <xsl:call-template name="generate-lineno"/>
       <xsl:apply-templates mode="#current"/>
     </xsl:element>
   </xsl:template>
+  
+  <!-- Erzeugt die Zeilennummer vor der Zeile -->
   <xsl:template name="generate-lineno">
     <xsl:variable name="display-line" select="f:lineno-for-display(@n)"/>
     <xsl:if test="number($display-line) gt 0">
+      <!-- Klick auf Zeilennummer führt zu einem Link, der wiederum auf die Zeilennummer verweist -->
       <xsl:attribute name="id" select="concat('l', @n)"/>
       <a href="#l{@n}">
         <xsl:attribute name="class">
           <xsl:text>lineno</xsl:text>
+          <!-- Jede 5. ist immer sichtbar, alle anderen nur wenn über die Zeile gehovert wird -->
           <xsl:if test="$display-line mod 5 != 0">
             <xsl:text> invisible</xsl:text>
           </xsl:if>
@@ -124,28 +146,33 @@
     </xsl:if>
   </xsl:template>
 
+  <!-- divs, die bis zu $depth tief verschachtelt sind, werden im Standardmodus zerlegt: -->
   <xsl:template match="div[count(ancestor::div) lt $depth]" mode="#default">
     <xsl:variable name="filename">
       <xsl:call-template name="filename"/>
     </xsl:variable>
     <xsl:variable name="divhead" select="normalize-space(head[1])"/>
 
+    <!-- Dazu fügen wir an der entsprechenden Stelle ein Inhaltsverzeichnis aller untergeordneter Dateien ein: -->
     <ul class="toc">
       <xsl:apply-templates select="." mode="toc"/>
     </ul>
 
+    <!-- … während für den eigentlichen Inhalt ein neues Dokument erzeugt wird. -->
     <xsl:result-document href="{$filename}">
       <xsl:call-template name="generate-html-frame"/>
     </xsl:result-document>
   </xsl:template>
 
+  <!-- Berechnet den Dateinamen für das aktuelle div. -->
   <xsl:template name="filename">
     <xsl:variable name="divno">
-      <xsl:number level="multiple" format="A-1"/>
+      <xsl:number count="div" level="any" format="1"/>
     </xsl:variable>
     <xsl:value-of select="concat($output-base, '.', $divno, '.html')"/>
   </xsl:template>
 
+  
   <xsl:template mode="toc" match="div[count(ancestor::div) lt $depth]">
     <li>
       <xsl:call-template name="section-link"/>
