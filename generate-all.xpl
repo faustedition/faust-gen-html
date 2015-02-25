@@ -7,8 +7,6 @@
 	
 	<p:input port="source"><p:empty/></p:input>
 	<p:input port="parameters" kind="parameter"/>
-	<p:output port="result" primary="true" sequence="false"/>
-	<p:serialization port="result" indent="true"/>		
 
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
 	<p:import href="collect-metadata.xpl"/>
@@ -70,7 +68,7 @@
 			<p:input port="source">
 				<p:pipe port="result" step="transcripts"/>
 			</p:input>
-			<p:input port="source">
+			<p:input port="stylesheet">
 				<p:document href="index.xsl"/>
 			</p:input>
 		</p:xslt>		
