@@ -51,7 +51,7 @@
 		
 		<!-- jetzt könnte man die ganzen drucke machen. und ein inhaltsverzeichnis. -->		
 		<p:for-each>
-			<p:iteration-source select="//f:textTranscript[@type='print']">
+			<p:iteration-source select="//f:textTranscript">
 				<p:pipe port="result" step="transcripts"/>
 			</p:iteration-source>
 			<p:variable name="transcript" select="/f:textTranscript/@href"/>
