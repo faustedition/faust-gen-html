@@ -125,6 +125,8 @@
   </xsl:template>
   
   
+  
+  <xsl:key name="alt" match="alt" use="for $ref in tokenize(@target, '\s+') return substring($ref, 2)"/>
   <!-- Die Behandlung von den meisten Elementen ist relativ gleich: -->
   <xsl:template match="*" mode="#default single">
     <!-- # Varianten aus dem variants-Folder auslesen: -->
@@ -167,6 +169,7 @@
       -->
       <xsl:attribute name="class" select="string-join((f:generic-classes(.),
         if (@n) then ('hasvars', concat('varcount-', $varcount)) else (),
+        if (@xml:id and key('alt', @xml:id)) then 'alt' else (),
         if (@n and @part) then ('antilabe', concat('part-', @part)) else ()), ' ')"/>
 
       <!-- Zeilennummer als link, wird dann in lesetext.css weggestylt -->
