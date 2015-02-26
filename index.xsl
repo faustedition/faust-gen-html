@@ -37,6 +37,7 @@
 							<nav>
 							<ul>
 								<xsl:for-each select="//f:textTranscript[@type='print']">
+								  <xsl:sort select="f:idno[1]"/>
 									<xsl:variable name="filename" select="replace(@href, '^.*/([^/]+)', '$1')"/>
 									<xsl:variable name="htmlname" select="replace($filename, '\.xml$', '')"/>
 									<li><a href="{$htmlname}.html" title="{f:idno[1]/@type}">
@@ -47,12 +48,12 @@
 							</nav>
 						  
 						  <h2>Handschriften</h2>
-						  
-						  <h2>Drucke</h2>
+						  						  
 						  
 						  <nav>
 						    <ul>
 						      <xsl:for-each select="//f:textTranscript[@type='archivalDocument']">
+						        <xsl:sort select="f:idno[1]"/>
 						        <xsl:variable name="filename" select="replace(@href, '^.*/([^/]+)', '$1')"/>
 						        <xsl:variable name="htmlname" select="replace($filename, '\.xml$', '')"/>
 						        <li><a href="{$htmlname}.html" title="{f:idno[1]/@type}">
