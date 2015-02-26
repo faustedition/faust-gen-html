@@ -30,6 +30,9 @@
   -->
   <xsl:param name="depth" select="2"/>
   
+  <!-- Soll überhaupt gesplittet werden? Wir machen das nur bei vier oder mehr dingens. -->
+  <xsl:param name="split" select="count(//div) gt 4"/>
+  
   <!-- Gesamttitel für die Datei. -->
   <xsl:param name="title" select="//title[1]"/>
   
@@ -49,11 +52,13 @@
     <xsl:for-each select="/TEI/text">
       <!-- Focus -->
       <xsl:call-template name="generate-html-frame"/>
-      <xsl:result-document href="{$output-base}.all.html">
-        <xsl:call-template name="generate-html-frame">
-          <xsl:with-param name="single" select="true()"/>
-        </xsl:call-template>
-      </xsl:result-document>
+      <xsl:if test="$split">
+        <xsl:result-document href="{$output-base}.all.html">
+          <xsl:call-template name="generate-html-frame">
+            <xsl:with-param name="single" select="true()"/>
+          </xsl:call-template>        
+        </xsl:result-document>
+      </xsl:if>
     </xsl:for-each>
   </xsl:template>
   
@@ -198,7 +203,7 @@
   </xsl:template>
 
   <!-- divs, die bis zu $depth tief verschachtelt sind, werden im Standardmodus zerlegt: -->
-  <xsl:template match="div[count(ancestor::div) lt $depth]" mode="#default">
+  <xsl:template match="div[$split and count(ancestor::div) lt $depth]" mode="#default">
     <xsl:variable name="filename">
       <xsl:call-template name="filename"/>
     </xsl:variable>
@@ -357,21 +362,23 @@
       </ul>
       
 
-      <ul class="icons-ul">
-        <!-- Link zum  alles-auf-einer-Seite-Dokument. -->
-        <li class="all">
-          <xsl:choose>
-            <xsl:when test="$single">
-              <i class="icon-li icon-copy"/>
-              <a href="{f:relativize($output-base, concat($output-base, '.html'))}">nach Szenen zerlegt</a>
-            </xsl:when>
-            <xsl:otherwise>
-              <i class="icon-li icon-file-alt"/>
-              <a href="{f:relativize($output-base, concat($output-base, '.all.html'))}">auf einer Seite</a>
-            </xsl:otherwise>
-          </xsl:choose>
-        </li>
-      </ul>
+      <xsl:if test="$split">
+        <ul class="icons-ul">
+          <!-- Link zum  alles-auf-einer-Seite-Dokument. -->
+          <li class="all">
+            <xsl:choose>
+              <xsl:when test="$single">
+                <i class="icon-li icon-copy"/>
+                <a href="{f:relativize($output-base, concat($output-base, '.html'))}">nach Szenen zerlegt</a>
+              </xsl:when>
+              <xsl:otherwise>
+                <i class="icon-li icon-file-alt"/>
+                <a href="{f:relativize($output-base, concat($output-base, '.all.html'))}">auf einer Seite</a>
+              </xsl:otherwise>
+            </xsl:choose>
+          </li>
+        </ul>
+      </xsl:if>
     </nav>
   </xsl:template>
 
