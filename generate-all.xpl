@@ -56,10 +56,19 @@
 			</p:iteration-source>
 			<p:variable name="transcript" select="/f:textTranscript/@href"/>
 			
-			<p:load>
-				<p:with-option name="href" select="$transcript"/>
-			</p:load>
-			<f:print2html/>	<!-- basename will be detected from the source -->
+			<p:try>
+			  <p:group>
+    			<p:load>
+    				<p:with-option name="href" select="$transcript"/>
+    			</p:load>
+    			<f:print2html/>	<!-- basename will be detected from the source -->
+			  </p:group>
+			  <p:catch>
+			    <cx:message log="warn">
+			      <p:with-option name="message" select="concat('Failed to transform ', $transcript, 'to HTML.')"/>
+			    </cx:message>
+			  </p:catch>
+			</p:try>
 
 		</p:for-each>
 		
