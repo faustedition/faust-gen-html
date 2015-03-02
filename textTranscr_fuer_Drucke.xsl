@@ -137,7 +137,7 @@
   <xsl:key name="antilabe" match="join[@type='antilabe']" use="for $ref in tokenize(@target, '\s+') return substring($ref, 2)"/>  
   <xsl:template match="*[@xml:id and key('antilabe', @xml:id)]">
     <xsl:variable name="join" select="key('antilabe', @xml:id)"/>
-    <xsl:variable name="ids" select="for $ref in tokenize($join/@target, '\s+') return substring($ref, 2)"/>
+    <xsl:variable name="ids" select="for $ref in tokenize(string-join($join/@target, ' '), '\s+') return substring($ref, 2)"/>
     <xsl:variable name="pos" select="index-of($ids, string(@xml:id))"/>
     <xsl:variable name="part">
       <xsl:choose>
