@@ -6,8 +6,8 @@
 	xmlns:f="http://www.faustedition.net/ns"
 	exclude-result-prefixes="xs f"
 	version="2.0">
-	
-	<xsl:import href="utils.xsl"/>
+		
+	<xsl:import href="html-common.xsl"/>
 	
 	<xsl:param name="variants">variants/</xsl:param>
 	<xsl:param name="docbase">https://faustedition.uni-wuerzburg.de/new</xsl:param>

@@ -12,7 +12,7 @@
     und Variantenapparat. 
   -->
 
-  <xsl:import href="utils.xsl"/>
+  <xsl:import href="html-common.xsl"/>
   
   <!-- Der Ausgabeordner für die HTML-Dateien. -->
   <xsl:param name="html" select="resolve-uri('target/html')"/>
@@ -72,67 +72,8 @@
     
    -->
 
-
-  <xsl:template match="figure" mode="#default single">
-    <br class="figure {@type}"/>
-  </xsl:template>
-  
-  <xsl:template match="lb" mode="#default single">
-    <br class="lb"/>
-  </xsl:template>
-  
-  <xsl:template match="gap[@unit='chars']" mode="#default single">
-    <span class="{string-join(f:generic-classes(.), ' ')} gap-unit-chars generated-text" data-gap-length="{@quantity}">
-      <xsl:value-of select="string-join(for $n in 1 to @quantity return '×', '')"/>
-    </span>
-  </xsl:template>
-  
-  <xsl:template match="gap[@unit='words']" mode="#default single">
-    <span class="{string-join(f:generic-classes(.), ' ')} gap-unit-words generated-text" data-gap-length="{@quantity}">
-      <xsl:value-of select="string-join(for $n in 1 to @quantity return '×···×', ' ')"/>
-    </span>
-  </xsl:template>  
-
-  <xsl:template match="space" mode="#default single">
-    <span class="{string-join(f:generic-classes(.), ' ')} generated-text">***</span>
-  </xsl:template>
-  
-  <!-- Render sth as enclosed with generated text. -->
-  <xsl:template name="enclose">
-    <xsl:param name="with" required="yes"/>
-    <span class="{string-join(f:generic-classes(.), ' ')}">
-      <span class="generated-text">
-        <xsl:value-of select="$with[1]"/>
-      </span>
-      <xsl:apply-templates select="node()" mode="#current"/>
-      <span class="generated-text">
-        <xsl:value-of select="if ($with[2]) then $with[2] else $with"/>
-      </span>
-    </span>
-  </xsl:template>
-  
-  <xsl:template match="supplied" mode="#default single">
-    <xsl:call-template name="enclose">
-      <xsl:with-param name="with" select="'[',']'"/>
-    </xsl:call-template>
-  </xsl:template>
-  
-  <xsl:template match="unclear[@cert='high']" mode="#default single">
-    <xsl:call-template name="enclose">
-      <xsl:with-param name="with" select="'{','}'"/>
-    </xsl:call-template>
-  </xsl:template>
-  
-  <xsl:template match="unclear[@cert='low']" mode="#default single">
-    <xsl:call-template name="enclose">
-      <xsl:with-param name="with" select="'{{','}}'"/>
-    </xsl:call-template>
-  </xsl:template>
-  
-  
-  
   <xsl:key name="alt" match="alt" use="for $ref in tokenize(@target, '\s+') return substring($ref, 2)"/>
-  <!-- Die Behandlung von den meisten Elementen ist relativ gleich: -->
+<!-- Die Behandlung von den meisten Elementen ist relativ gleich: -->
   <xsl:template match="*" mode="#default single">
     <!-- # Varianten aus dem variants-Folder auslesen: -->
     <xsl:variable name="varcount">
