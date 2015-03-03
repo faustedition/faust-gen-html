@@ -14,11 +14,7 @@
 	<xsl:template match="figure" mode="#default single">
 		<br class="figure {@type}"/>
 	</xsl:template>
-	
-	<xsl:template match="lb" mode="#default single">
-		<br class="lb"/>
-	</xsl:template>
-	
+		
 	<xsl:template match="gap[@unit='chars']" mode="#default single">
 		<span class="{string-join(f:generic-classes(.), ' ')} gap-unit-chars generated-text" data-gap-length="{@quantity}">
 			<xsl:value-of select="string-join(for $n in 1 to @quantity return '×', '')"/>
@@ -70,7 +66,9 @@
 	<xsl:template match="lb" mode="#default single">
 		<xsl:text> </xsl:text>
 	</xsl:template>
+	
 	<xsl:template match="lb[@break='no']" mode="#default single"/>
+	
 	<xsl:template match="pb" mode="#default single">
 		<xsl:text> </xsl:text>
 	</xsl:template>
