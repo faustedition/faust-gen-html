@@ -74,6 +74,7 @@
           <p:with-param name="documentURI" select="$documentURI"/>
           <p:with-param name="sigil" select="$sigil"/>
           <p:with-param name="sigil-type" select="$sigil-type"/>
+          <p:with-param name="type" select="$type"/>
         </p:xslt>
       </p:group>
       

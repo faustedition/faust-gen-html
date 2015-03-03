@@ -68,16 +68,9 @@
     </xsl:template>
     <xsl:template match="note[@type='editorial']"/>
     <xsl:template match="note[@resp='#hwg']"></xsl:template>
-    <xsl:template match="lb">
-        <xsl:text> </xsl:text>
-    </xsl:template>
-    <xsl:template match="lb[@break='no']"/>
-    <xsl:template match="pb">
-        <xsl:text> </xsl:text>
-    </xsl:template>
-    <!-- wieso headerelemente rauswerfen? -->
+    <!-- wieso headerelemente rauswerfen? 
     <xsl:template match="profileDesc"/>
-    <xsl:template match="publicationStmt"/>
+    <xsl:template match="publicationStmt"/> -->
     <xsl:template match="restore">
         <xsl:apply-templates/>
     </xsl:template>
@@ -91,7 +84,7 @@
         <xsl:apply-templates/>
     </xsl:template>
     
-    <xsl:template match="sourceDesc"/>
+<!--    <xsl:template match="sourceDesc"/>-->
     <!--<xsl:template match="supplied"/>-->
     <xsl:template match="supplied[matches(@evidence, 'internal')]">
         <xsl:copy>
@@ -111,12 +104,12 @@
         <!-\- return $del if its end anchor appears after the argument node -\->
         <xsl:sequence select="$del[id(@spanTo) >> $n]"/>
     </xsl:function>-->
-    <xsl:template match="teiHeader">
+<!--    <xsl:template match="teiHeader">
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="titleStmt">
         <xsl:apply-templates/>
-    </xsl:template>
+    </xsl:template>-->
     <!-- Zeichen -->
     <xsl:template match="text()" priority="1">
         <xsl:variable name="tmp1" select=" replace(.,'ā','aa')"/>

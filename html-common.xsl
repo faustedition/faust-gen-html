@@ -67,6 +67,13 @@
 		</xsl:call-template>
 	</xsl:template>
 	
+	<xsl:template match="lb" mode="#default single">
+		<xsl:text> </xsl:text>
+	</xsl:template>
+	<xsl:template match="lb[@break='no']" mode="#default single"/>
+	<xsl:template match="pb" mode="#default single">
+		<xsl:text> </xsl:text>
+	</xsl:template>
 	
 	
 	

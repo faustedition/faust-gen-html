@@ -39,6 +39,19 @@
 			<xsl:call-template name="generate-style"/>
 			<xsl:apply-templates/>
 			<xsl:text> </xsl:text>
+			<xsl:variable name="target">
+				<xsl:choose>
+					<xsl:when test="@f:type='archivalDocument'">
+						<xsl:value-of select="concat($docbase, '/', @f:doc)"/>
+						<xsl:if test="@f:page">
+							<xsl:value-of select="concat('#/', @f:page)"/>
+						</xsl:if>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="concat(replace(@f:href, '^.*/(.*)\.xml$', '$1.all.html#l'), @n)"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
 			<a class="sigil" href="{$docbase}/{@f:doc}" title="{@f:sigil-type}">
 				<xsl:value-of select="@f:sigil"/>
 			</a>
