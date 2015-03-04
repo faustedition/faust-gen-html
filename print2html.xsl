@@ -12,7 +12,7 @@
     und Variantenapparat. 
   -->
 
-  <xsl:import href="html-common.xsl"/>
+  <xsl:include href="html-common.xsl"/>
   
   <!-- Der Ausgabeordner für die HTML-Dateien. -->
   <xsl:param name="html" select="resolve-uri('target/html')"/>

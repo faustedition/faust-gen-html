@@ -7,7 +7,7 @@
 	exclude-result-prefixes="xs f"
 	version="2.0">
 		
-	<xsl:import href="html-common.xsl"/>
+	<xsl:include href="html-common.xsl"/>
 	
 	<xsl:param name="variants">variants/</xsl:param>
 	<xsl:param name="docbase">https://faustedition.uni-wuerzburg.de/new</xsl:param>
