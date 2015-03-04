@@ -33,7 +33,7 @@
       <xsl:attribute name="f:href" select="$href"/>
       <xsl:attribute name="f:sigil" select="$sigil"/>
       <xsl:attribute name="f:sigil-type" select="$sigil-type"/>
-      <xsl:attribute name="f:page" select="( preceding::pb | descendant::pb)[1]/@n"/>
+      <xsl:attribute name="f:page" select="reverse(preceding::pb | descendant::pb)[1]/@n"/>
       <xsl:attribute name="f:type" select="$type"/>
       <xsl:apply-templates select="node()"/>
     </xsl:copy>
