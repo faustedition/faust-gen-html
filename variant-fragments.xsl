@@ -65,7 +65,4 @@
 		</xsl:element>		
 	</xsl:template>
 	
-	<xsl:template match="lb">
-		<br/>
-	</xsl:template>
 </xsl:stylesheet>
