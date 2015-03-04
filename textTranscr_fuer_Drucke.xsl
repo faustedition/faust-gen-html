@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.tei-c.org/ns/1.0"    
     xmlns:f="http://www.faustedition.net/ns" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs f" version="2.0" xmlns:ge="http://www.tei-c.org/ns/geneticEditions">
     <xsl:template match="@*|node()">
@@ -52,14 +52,20 @@
       <xsl:apply-templates select="del/node()"/>
     </xsl:template>  
 
+    <xsl:template match="subst/del/restore[../../add/del]" mode="del">
+        <xsl:message select="concat('INFO: Experimental suppression of del that will appear in add. del: ', normalize-space(.), ' in ', document-uri(/))"/>
+    </xsl:template>
+    <xsl:template match="subst/add/del[../../del/restore]" priority="1">
+        <xsl:apply-templates select="../../del/restore"/>
+        <xsl:message select="concat('INFO: Experimental add/del-restore-substitution. add: ', normalize-space(..), 
+            ' del: ', ., ' @', position(), ' in ', document-uri(/))"/>
+    </xsl:template>
+
     <xsl:template match="encodingDesc"/>
     <xsl:template match="facsimile"/>
     <!--    <xsl:template match="ex"/>
     <xsl:template match="expan"/>
     -->
-    <xsl:template match="fileDesc"> <!-- wieso? gibt's das jenseits des headers? -->
-        <xsl:apply-templates/>
-    </xsl:template>
     <xsl:template match="g[matches(@ref, '#parenthesis_left')]">
         <xsl:text>(</xsl:text>
     </xsl:template>
