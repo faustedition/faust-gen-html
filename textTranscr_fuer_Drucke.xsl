@@ -53,12 +53,12 @@
     </xsl:template>  
 
     <xsl:template match="subst/del/restore[../../add/del]" mode="del">
-        <xsl:message select="concat('INFO: Experimental suppression of del that will appear in add. del: ', normalize-space(.), ' in ', document-uri(/))"/>
+        <xsl:message select="concat('Experimental suppression of del that will appear in add. del: ', normalize-space(.), ' in ', document-uri(/))"/>
     </xsl:template>
     <xsl:template match="subst/add/del[../../del/restore]" priority="1">
         <xsl:apply-templates select="../../del/restore"/>
-        <xsl:message select="concat('INFO: Experimental add/del-restore-substitution. add: ', normalize-space(..), 
-            ' del: ', ., ' @', position(), ' in ', document-uri(/))"/>
+        <xsl:message select="concat('Experimental add/del-restore-substitution. add: ', normalize-space(..), 
+            ' del: ', normalize-space(.), ' @', position(), ' in ', document-uri(/))"/>
     </xsl:template>
 
     <xsl:template match="encodingDesc"/>

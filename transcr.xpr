@@ -1731,7 +1731,6 @@
         <file name="print2html.xpl"/>
         <file name="print2html.xsl"/>
         <file name="prose-to-lines.xsl"/>
-        <file name="sorted-lines.xml"/>
         <file name="test/test.xml"/>
         <file name="text-emend.xsl"/>
         <file name="textTranscr_fuer_Drucke.xsl"/>

@@ -27,7 +27,7 @@
   
   <p:identity><p:input port="source"><p:pipe port="source" step="main"/></p:input></p:identity>
   
-  <cx:message>
+  <cx:message log="info">
     <p:with-option name="message" select="'Reading transcript files ...'"/>
   </cx:message>
 
@@ -99,6 +99,8 @@
   -->
   <p:wrap-sequence wrapper="f:variants"/>
   <p:unwrap match="f:lines" name="collect-lines"/>
+  
+  <cx:message log="info" message="Collating the lines and writing variant HTMLs"/>
   
   <!-- hier werden nun tatsächlich die Varianten-HTML-Dateien erzeugt: -->
   <p:xslt name="variant-fragments">
