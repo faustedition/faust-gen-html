@@ -76,7 +76,7 @@
               
               <!-- Dito für die Drucke -->
               <xsl:variable name="printSigs"
-                select="( 'hagen', 'wa_faust', 'wa_gedichte', 
+                select="('faustedition', 'hagen', 'wa_faust', 'wa_gedichte', 
               'wa_I_53', 'hagen_nr', 'dla_marbach')"/>
               
               <!-- Auswahl anhand des aktuellen Dokuments ... -->
