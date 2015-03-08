@@ -47,13 +47,13 @@
 		<p:load>
 			<p:with-option name="href" select="concat($source, 'print/A8_IIIB18.xml')"/>
 		</p:load>
-		<f:print2html basename="faust1"/>
+		<f:print2html basename="faust1" cx:depends-on="variants"/>
 		
 		<!-- Faust 2 -->
 		<p:load>
 			<p:with-option name="href" select="concat($source, 'transcript/gsa/391098/391098.xml')"/>
 		</p:load>
-		<f:print2html basename="faust2"/>
+		<f:print2html basename="faust2" cx:depends-on="variants"/>
 		
 		<!-- jetzt könnte man die ganzen drucke machen. und ein inhaltsverzeichnis. -->		
 		<p:for-each>
@@ -67,7 +67,7 @@
     			<p:load>
     				<p:with-option name="href" select="$transcript"/>
     			</p:load>
-    			<f:print2html/>	<!-- basename will be detected from the source -->
+			  	<f:print2html cx:depends-on="variants"/>	<!-- basename will be detected from the source -->
 			  </p:group>
 			  <p:catch>
 			    <cx:message log="warn">

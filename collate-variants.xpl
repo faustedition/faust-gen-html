@@ -71,6 +71,9 @@
           <p:input port="stylesheet">
             <p:document href="extract-lines.xsl"/>
           </p:input>
+          <p:input port="parameters">
+            <p:pipe port="result" step="config"/>
+          </p:input>
           <p:with-param name="documentURI" select="$documentURI"/>
           <p:with-param name="sigil" select="$sigil"/>
           <p:with-param name="sigil-type" select="$sigil-type"/>
