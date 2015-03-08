@@ -12,6 +12,23 @@
   <xsl:param name="sigil-type"/>
   <xsl:param name="type"/>
   
+  <xsl:variable name="metadata" select="document(resolve-uri($documentURI, $base))"/>
+  <xsl:function name="f:getPageNo">
+    <xsl:param name="refs"/>
+    <xsl:for-each select="tokenize($refs, '\s+')">
+      <xsl:variable name="n" select="."/>
+      <xsl:variable name="pattern" select="concat('0*(', $n, ')(\.xml)?')"/>
+      <xsl:variable name="pageElem" select="$metadata//f:docTranscript[matches(@uri, $pattern)]/ancestor::f:page[1]"/>
+      <xsl:variable name="pageNo">
+        <xsl:for-each select="$pageElem[1]">
+          <xsl:number format="1" level="any" from="f:archivalDocument|f:print"/>
+        </xsl:for-each>
+      </xsl:variable>
+      <xsl:message select="concat($documentURI, ': for ', $n, ' in ', string-join($refs, ' '), ' found ', string-join(for $i in $pageNo return string($i), ' '))"/>
+      <xsl:value-of select="$pageNo"/>
+    </xsl:for-each>
+  </xsl:function>
+  
   
   <xsl:output indent="yes"/>
 
