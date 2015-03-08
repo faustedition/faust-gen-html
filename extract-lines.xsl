@@ -12,6 +12,23 @@
   <xsl:param name="sigil-type"/>
   <xsl:param name="type"/>
   
+  <xsl:variable name="metadata" select="document(resolve-uri($documentURI, $base))"/>
+  <xsl:function name="f:getPageNo">
+    <xsl:param name="refs"/>
+    <xsl:for-each select="tokenize($refs, '\s+')">
+      <xsl:variable name="n" select="."/>
+      <xsl:variable name="pattern" select="concat('0*(', $n, ')(\.xml)?')"/>
+      <xsl:variable name="pageElem" select="$metadata//f:docTranscript[matches(@uri, $pattern)]/ancestor::f:page[1]"/>
+      <xsl:variable name="pageNo">
+        <xsl:for-each select="$pageElem[1]">
+          <xsl:number format="1" level="any" from="f:archivalDocument|f:print"/>
+        </xsl:for-each>
+      </xsl:variable>
+      <xsl:message select="concat($documentURI, ': for ', $n, ' in ', string-join($refs, ' '), ' found ', string-join(for $i in $pageNo return string($i), ' '))"/>
+      <xsl:value-of select="$pageNo"/>
+    </xsl:for-each>
+  </xsl:function>
+  
   
   <xsl:output indent="yes"/>
 
@@ -33,7 +50,10 @@
       <xsl:attribute name="f:href" select="$href"/>
       <xsl:attribute name="f:sigil" select="$sigil"/>
       <xsl:attribute name="f:sigil-type" select="$sigil-type"/>
-      <xsl:attribute name="f:page" select="(preceding::pb[1] | descendant::pb[1])[1]/@n"/>
+      <xsl:variable name="pageDesc" select="(preceding::pb[1] | descendant::pb[1])[1]/@n"/>
+      <xsl:variable name="pageNos" select="f:getPageNo($pageDesc)"/>
+      <xsl:attribute name="f:pageDesc" select="$pageDesc"/>
+      <xsl:attribute name="f:page" select="string-join($pageNos, ' ')"/>
       <xsl:attribute name="f:type" select="$type"/>
       <xsl:apply-templates select="node()"/>
     </xsl:copy>

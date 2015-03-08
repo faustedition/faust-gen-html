@@ -11,6 +11,8 @@
 	
 	<xsl:param name="variants">variants/</xsl:param>
 	<xsl:param name="docbase">https://faustedition.uni-wuerzburg.de/new</xsl:param>
+	<xsl:param name="source"/>
+	<xsl:param name="documentPath"/>
 		
 	
 	<xsl:output method="xhtml"/>
@@ -23,7 +25,7 @@
 					<xsl:for-each-group select="current-group()" group-by="@n">
 						<div class="variants" data-n="{current-grouping-key()}" 
 							data-size="{count(current-group())}" xml:id="v{current-grouping-key()}" id="v{current-grouping-key()}">
-							<xsl:apply-templates select="current-group()">
+							<xsl:apply-templates select="current-group()">								
 								<xsl:sort select="@f:sigil"/>
 							</xsl:apply-templates>
 						</div>
