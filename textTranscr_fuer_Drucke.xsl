@@ -117,6 +117,7 @@
         <xsl:apply-templates/>
     </xsl:template>-->
     <!-- Zeichen -->
+    <!-- XXX string-replace im xproc direkt? -->
     <xsl:template match="text()" priority="1">
         <xsl:variable name="tmp1" select=" replace(.,'ā','aa')"/>
         <xsl:variable name="tmp2" select=" replace($tmp1,'ē','ee')"/>
@@ -124,7 +125,8 @@
         <xsl:variable name="tmp4" select=" replace($tmp3,'n̄','nn')"/>
         <xsl:variable name="tmp5" select=" replace($tmp4,'r̄','rr')"/>
         <xsl:variable name="tmp6" select=" replace($tmp5,'ſ','s')"/>
-        <xsl:value-of select="$tmp6"/>
+        <xsl:variable name="tmp7" select=" replace($tmp6,'—','–')"/>
+        <xsl:value-of select="$tmp7"/>
     </xsl:template>
     <xsl:strip-space elements="app choice subst"/>
   
