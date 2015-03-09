@@ -6,13 +6,13 @@
   exclude-result-prefixes="xs" version="2.0">
 
   <xsl:param name="href" select="document-uri(/)"/>
-  <xsl:param name="base"/>
+  <xsl:param name="source"/>
   <xsl:param name="documentURI"/>
   <xsl:param name="sigil"/>
   <xsl:param name="sigil-type"/>
   <xsl:param name="type"/>
   
-  <xsl:variable name="metadata" select="document(resolve-uri($documentURI, $base))"/>
+  <xsl:variable name="metadata" select="document(resolve-uri($documentURI, $source))"/>
   <xsl:function name="f:getPageNo">
     <xsl:param name="refs"/>
     <xsl:for-each select="tokenize($refs, '\s+')">
@@ -50,7 +50,11 @@
       <xsl:attribute name="f:href" select="$href"/>
       <xsl:attribute name="f:sigil" select="$sigil"/>
       <xsl:attribute name="f:sigil-type" select="$sigil-type"/>
-      <xsl:attribute name="f:page" select="(preceding::pb[1] | descendant::pb[1])[1]/@n"/>
+      <xsl:variable name="pb" select="(preceding::pb[1] | descendant::pb[1])[1]"/>
+      <xsl:if test="$pb">
+        <xsl:attribute name="f:page-n" select="$pb/@n"/>
+        <xsl:attribute name="f:page" select="$pb/@f:docTranscriptNo"/>
+      </xsl:if>      
       <xsl:attribute name="f:type" select="$type"/>
       <xsl:apply-templates select="node()"/>
     </xsl:copy>
@@ -58,8 +62,8 @@
   
   <xsl:template match="/">
     <f:lines>
-      <xsl:if test="$base">
-        <xsl:attribute name="xml:base" select="$base"/>
+      <xsl:if test="$source">
+        <xsl:attribute name="xml:base" select="$source"/>
       </xsl:if>
       <xsl:apply-templates select='//*[@n and not(self::pb or self::div or self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or @n[contains(.,"todo")] or @n[contains(.,"p")])]'/>
     </f:lines>

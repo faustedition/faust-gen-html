@@ -49,16 +49,30 @@
       <p:with-option name="message" select="concat('Reading ', $transcriptFile)"/>
     </cx:message-->
 
-    <p:try>
+<!--    <p:try>
       <p:group>
-        
+-->        
         <!-- Das Transkript wird geladen ... -->
         <p:load>
           <p:with-option name="href" select="$transcriptFile"/>
         </p:load>
+        
+        <!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
+        <p:xslt>
+          <p:input port="stylesheet">
+            <p:document href="resolve-pb.xsl"/>
+          </p:input>
+          <p:input port="parameters">
+            <p:pipe port="result" step="config"/>            
+          </p:input>
+          <p:with-param name="type" select="$type"/>
+          <p:with-param name="documentURI" select="$documentURI"/>
+        </p:xslt>
+        
 
         <!-- die Normalisierungen durchgeführt, z.B. <del> anwenden: -->
         <f:apply-edits/>
+
 
         <!-- 
           nun extrahieren wir die Elemente ("lines"), die für den Variantenapparat
@@ -79,9 +93,12 @@
           <p:with-param name="sigil-type" select="$sigil-type"/>
           <p:with-param name="type" select="$type"/>
         </p:xslt>
-      </p:group>
+        
+        
+        
+<!--      </p:group>
       
-      <!-- Fehlende Dokumente ignorieren ... FIXME raus damit? -->
+      <!-\- Fehlende Dokumente ignorieren ... FIXME raus damit? -\->
       <p:catch>
         <p:log port="error"/>
         <p:identity>
@@ -92,7 +109,7 @@
       </p:catch>
 
     </p:try>
-  </p:for-each>
+-->  </p:for-each>
 
   <!-- 
     die aus den Transkripten generierten "Zeilenlisten"-Dokumente kleben wir nun
