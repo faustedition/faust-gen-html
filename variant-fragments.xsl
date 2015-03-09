@@ -11,6 +11,7 @@
 	
 	<xsl:param name="variants">variants/</xsl:param>
 	<xsl:param name="docbase">https://faustedition.uni-wuerzburg.de/new</xsl:param>
+  <xsl:param name="type"/>
 		
 	
 	<xsl:output method="xhtml"/>

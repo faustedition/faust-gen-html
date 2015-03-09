@@ -36,6 +36,9 @@
   <!-- Gesamttitel für die Datei. -->
   <xsl:param name="title" select="//title[1]"/>
   
+  <!-- print oder archivalDocument? -->
+  <xsl:param name="type"/>
+  
   
   <!-- 
   

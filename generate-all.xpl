@@ -47,27 +47,42 @@
 		<p:load>
 			<p:with-option name="href" select="concat($source, 'print/A8_IIIB18.xml')"/>
 		</p:load>
-		<f:print2html basename="faust1" cx:depends-on="variants"/>
+		<f:print2html basename="faust1" cx:depends-on="variants">
+		  <p:with-param name="type" select="'print'"/>
+		  <p:with-param name="title" select="'Faust I'"/>		  
+		</f:print2html>
 		
 		<!-- Faust 2 -->
 		<p:load>
 			<p:with-option name="href" select="concat($source, 'transcript/gsa/391098/391098.xml')"/>
 		</p:load>
-		<f:print2html basename="faust2" cx:depends-on="variants"/>
+		<f:print2html basename="faust2" cx:depends-on="variants">
+		  <p:with-param name="type" select="'print'"/>
+		  <p:with-param name="title" select="'Faust II'"/>		  
+		</f:print2html>
 		
 		<!-- jetzt könnte man die ganzen drucke machen. und ein inhaltsverzeichnis. -->		
 		<p:for-each>
 			<p:iteration-source select="//f:textTranscript">
 				<p:pipe port="result" step="transcripts"/>
 			</p:iteration-source>
-			<p:variable name="transcript" select="/f:textTranscript/@href"/>
+			<p:variable name="transcript" select="/f:textTranscript/@href"/>		  		  
+		  <p:variable name="documentURI" select="/f:textTranscript/@document"/>
+		  <p:variable name="type" select="/f:textTranscript/@type"/>
+		  <p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
+		  <p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
+	  
 			
 			<p:try>
 			  <p:group>
     			<p:load>
     				<p:with-option name="href" select="$transcript"/>
     			</p:load>
-			  	<f:print2html cx:depends-on="variants"/>	<!-- basename will be detected from the source -->
+			  	<f:print2html cx:depends-on="variants">
+			  	  <p:with-param name="documentURI" select="$documentURI"/>
+			  	  <p:with-param name="type" select="$type"/>
+			  	  <p:with-param name="title" select="$sigil"/>
+			  	</f:print2html>	<!-- basename will be detected from the source -->
 			  </p:group>
 			  <p:catch>
 			    <cx:message log="warn">

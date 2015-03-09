@@ -1719,6 +1719,9 @@
         </options>
     </meta>
     <projectTree name="transcr.xpr">
+        <folder masterFiles="true" name="Master Files">
+            <file name="print2html.xsl"/>
+        </folder>
         <folder path="../../Faust/"/>
         <file name="../../Faust/print/A8_IIIB18.xml"/>
         <file name="apply-edits.xpl"/>
