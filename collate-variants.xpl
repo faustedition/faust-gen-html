@@ -49,9 +49,9 @@
       <p:with-option name="message" select="concat('Reading ', $transcriptFile)"/>
     </cx:message-->
 
-<!--    <p:try>
+    <p:try>
       <p:group>
--->        
+        
         <!-- Das Transkript wird geladen ... -->
         <p:load>
           <p:with-option name="href" select="$transcriptFile"/>
@@ -96,11 +96,14 @@
         
         
         
-<!--      </p:group>
+      </p:group>
       
-      <!-\- Fehlende Dokumente ignorieren ... FIXME raus damit? -\->
+      <!-- Fehlende Dokumente ignorieren ... FIXME raus damit? -->
       <p:catch>
         <p:log port="error"/>
+        <cx:message log="error">
+          <p:with-option name="message" select="concat('Collation: Failed to read ', $transcriptFile)"/>
+        </cx:message>
         <p:identity>
           <p:input port="source">
             <p:empty/>
@@ -109,7 +112,7 @@
       </p:catch>
 
     </p:try>
--->  </p:for-each>
+  </p:for-each>
 
   <!-- 
     die aus den Transkripten generierten "Zeilenlisten"-Dokumente kleben wir nun
