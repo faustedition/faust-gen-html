@@ -72,7 +72,42 @@
 	<xsl:template match="pb" mode="#default single">
 		<xsl:text> </xsl:text>
 	</xsl:template>
+  
+  <xsl:template name="generate-pageno">
+    <xsl:choose>
+      <xsl:when test="@n">
+        <xsl:value-of select="replace(@n, '^0+', '')"/>
+      </xsl:when>
+      <xsl:when test="@facs">
+        <xsl:value-of select="replace(@facs, '^0*(.*)\.(tiff|jpg|jpeg|xml)$', '$1')"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <i class="icon-file-alt" />
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="pb[@f:docTranscriptNo]" priority="1"  mode="#default single">
+    <xsl:text> </xsl:text>
+    <a 
+      class="{string-join((f:generic-classes(.), 'generated-text', 'pageno', 'doclink'), ' ')}"
+      id="dt{@f:docTranscriptNo}"
+      href="TODO">      
+      [<xsl:call-template name="generate-pageno"/>]
+    </a>
+  </xsl:template>
+  
+  <xsl:template match="pb[@n]"  mode="#default single">
+    <xsl:text> </xsl:text>
+    <a
+      class="{string-join((f:generic-classes(.), 'generated-text', 'pageno'), ' ')}"
+      id="pb{@n}"
+      href="#{@n}">
+      [<xsl:call-template name="generate-pageno"/>]
+    </a>
+  </xsl:template>
 	
+  <xsl:template match="fw"  mode="#default single"/>
 	
 	
 </xsl:stylesheet>
