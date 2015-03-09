@@ -27,8 +27,15 @@
 		</span>
 	</xsl:template>  
 	
-	<xsl:template match="space" mode="#default single">
-		<span class="{string-join(f:generic-classes(.), ' ')} generated-text">***</span>
+	<xsl:template match="space" mode="#default single" priority="2">
+	  <xsl:choose>
+	    <xsl:when test="$type = 'print'">
+	      <xsl:next-match/>
+	    </xsl:when>
+	    <xsl:otherwise>
+    	  <span class="{string-join(f:generic-classes(.), ' ')} generated-text">[***]</span>	      
+	    </xsl:otherwise>
+	  </xsl:choose>
 	</xsl:template>
 	
 	<!-- Render sth as enclosed with generated text. -->
@@ -92,7 +99,7 @@
     <a 
       class="{string-join((f:generic-classes(.), 'generated-text', 'pageno', 'doclink'), ' ')}"
       id="dt{@f:docTranscriptNo}"
-      href="TODO">      
+      href="#dt{@f:docTranscriptNo}"> <!-- TODO insert link to do document view here -->      
       [<xsl:call-template name="generate-pageno"/>]
     </a>
   </xsl:template>
@@ -102,7 +109,7 @@
     <a
       class="{string-join((f:generic-classes(.), 'generated-text', 'pageno'), ' ')}"
       id="pb{@n}"
-      href="#{@n}">
+      href="#pb{@n}">
       [<xsl:call-template name="generate-pageno"/>]
     </a>
   </xsl:template>
