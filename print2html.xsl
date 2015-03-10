@@ -30,8 +30,10 @@
   -->
   <xsl:param name="depth" select="2"/>
   
+  <xsl:param name="splitcond" select="4"/>
+  
   <!-- Soll überhaupt gesplittet werden? Wir machen das nur bei vier oder mehr dingens. -->
-  <xsl:param name="split" select="count(//div) gt 4"/>
+  <xsl:param name="split" select="count(//div) gt $splitcond"/>
   
   <!-- Gesamttitel für die Datei. -->
   <xsl:param name="title" select="//title[1]"/>

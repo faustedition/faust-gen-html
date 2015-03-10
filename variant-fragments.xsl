@@ -11,7 +11,9 @@
 	
 	<xsl:param name="variants">variants/</xsl:param>
 	<xsl:param name="docbase">https://faustedition.uni-wuerzburg.de/new</xsl:param>
-  <xsl:param name="type"/>
+  	<xsl:param name="type"/>
+	<xsl:param name="depth">2</xsl:param>
+	<xsl:param name="splitcond">4</xsl:param>
 		
 	
 	<xsl:output method="xhtml"/>
@@ -49,7 +51,7 @@
 						</xsl:if>
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:value-of select="concat(replace(@f:href, '^.*/(.*)\.xml$', '$1.all.html#l'), @n)"/>
+						<xsl:value-of select="f:printlink(@f:href, @n)"/>
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
@@ -57,7 +59,32 @@
 				<xsl:value-of select="@f:sigil"/>
 			</a>
 		</div>
-	</xsl:template>	
+	</xsl:template>
+
+	<xsl:function name="f:printlink">
+		<xsl:param name="transcript"/>
+		<xsl:param name="n"/>
+		
+		<xsl:variable name="split" select="count(document($transcript)//div) gt number($splitcond)"/>
+		<xsl:variable name="targetpart">
+			<xsl:choose>
+				<xsl:when test="$split">
+					<xsl:variable name="div" select="document($transcript)//*[@n = $n]/ancestor::div"/>
+					<xsl:if test="$div">
+						<xsl:text>.</xsl:text>
+						<xsl:number 
+							select="document($transcript)//*[@n = $n][1]"
+							level="any"
+							from="TEI"						
+						/>
+					</xsl:if>
+				</xsl:when>
+				<xsl:otherwise>.</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:value-of select="concat(
+			replace($transcript, '^.*/(.*)\.xml$', '$1'), $targetpart, '.html#l', $n)"/>
+	</xsl:function>
 	
 	<xsl:template match="*">
 		<xsl:element name="{f:html-tag-name(.)}">
