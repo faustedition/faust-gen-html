@@ -28,12 +28,13 @@
     Bis zu welcher Ebene sollen die Dateien aufgesplittet werden? $depth ist die
     max. Anzahl von divs auf der ancestor-or-self-Achse für einen Split, also 2 = Szenen.    
   -->
-  <xsl:param name="depth" select="2"/>
+  <xsl:param name="depth">2</xsl:param>
+  <xsl:variable name="depth_n" select="number($depth)"/>
   
   <xsl:param name="splitcond" select="4"/>
   
   <!-- Soll überhaupt gesplittet werden? Wir machen das nur bei vier oder mehr dingens. -->
-  <xsl:param name="split" select="count(//div) gt $splitcond"/>
+  <xsl:param name="split" select="count(//div) gt number($splitcond)"/>
   
   <!-- Gesamttitel für die Datei. -->
   <xsl:param name="title" select="//title[1]"/>
@@ -149,7 +150,7 @@
   </xsl:template>
 
   <!-- divs, die bis zu $depth tief verschachtelt sind, werden im Standardmodus zerlegt: -->
-  <xsl:template match="div[$split and count(ancestor::div) lt $depth]" mode="#default">
+  <xsl:template match="div[$split and count(ancestor::div) lt number($depth_n)]" mode="#default">
     <xsl:variable name="filename">
       <xsl:call-template name="filename"/>
     </xsl:variable>
@@ -175,10 +176,10 @@
   </xsl:template>
 
   
-  <xsl:template mode="toc" match="div[count(ancestor::div) lt $depth]">
+  <xsl:template mode="toc" match="div[count(ancestor::div) lt $depth_n]">
     <li>
       <xsl:call-template name="section-link"/>
-      <xsl:if test=".//div[count(ancestor::div) lt $depth]">
+      <xsl:if test=".//div[count(ancestor::div) lt $depth_n]">
         <ul class="toc">
           <xsl:apply-templates mode="#current"/>
         </ul>
@@ -287,19 +288,19 @@
 
       <!-- ggf. Links zum vorherigen/nächsten div. -->
       <ul class="prevnext icons-ul">
-        <xsl:if test="preceding::div[count(ancestor::div) lt $depth]">
+        <xsl:if test="preceding::div[count(ancestor::div) lt $depth_n]">
           <li class="prev">
             <xsl:for-each
-              select="preceding::div[count(ancestor::div) lt $depth][1]">
+              select="preceding::div[count(ancestor::div) lt $depth_n][1]">
               <i class="icon-li icon-backward"/>
               <xsl:call-template name="section-link"/>              
             </xsl:for-each>
           </li>
         </xsl:if>
-        <xsl:if test="following::div[count(ancestor::div) lt $depth]">
+        <xsl:if test="following::div[count(ancestor::div) lt $depth_n]">
           <li class="next">
             <xsl:for-each
-              select="following::div[count(ancestor::div) lt $depth][1]">
+              select="following::div[count(ancestor::div) lt $depth_n][1]">
               <i class="icon-li icon-forward"/>
               <xsl:call-template name="section-link"/>
             </xsl:for-each>

@@ -14,6 +14,8 @@
   <xsl:param name="sigil-type"/>
   <xsl:param name="type"/>
   
+  
+  
   <xsl:variable name="metadata" select="document(resolve-uri($documentURI, $source))"/>
   <xsl:function name="f:getPageNo">
     <xsl:param name="refs"/>
