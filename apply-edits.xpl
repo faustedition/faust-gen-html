@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step" xmlns:f="http://www.faustedition.net/ns"
+<p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+  xmlns:f="http://www.faustedition.net/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" 
   version="1.0" type="f:apply-edits">
   <p:input port="source" primary="true"/>
   <p:output port="result" primary="true"/>
@@ -33,15 +34,23 @@
     </p:input>
   </p:xslt>
 
-  <p:xslt>
-    <p:input port="stylesheet">
-      <p:document href="text-emend.xsl"/>
-    </p:input>
-    <p:input port="parameters">
-      <p:empty/>
-    </p:input>
-  </p:xslt>
-  
+  <p:choose>
+    <p:when test="//tei:addSpan | //tei:delSpan | //tei:modSpan">
+      <p:xslt>
+        <p:input port="stylesheet">
+          <p:document href="text-emend.xsl"/>
+        </p:input>
+        <p:input port="parameters">
+          <p:empty/>
+        </p:input>
+      </p:xslt>
+    </p:when>
+    <p:otherwise>
+      <p:identity/>
+    </p:otherwise>
+  </p:choose>
+
+
   <p:xslt>
     <p:input port="stylesheet">
       <p:document href="prose-to-lines.xsl"/>
