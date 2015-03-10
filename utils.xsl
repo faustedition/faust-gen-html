@@ -44,7 +44,8 @@
   <xsl:function name="f:isInline">
     <xsl:param name="element"/>    
     <xsl:choose>
-      <xsl:when test="$element[self::div or self::l or self::lg or self::p or self::sp or (@n and not(self::milestone))]">
+      <xsl:when test="$element[self::div or self::l or self::lg or self::p or self::sp
+        or self::head or (@n and not(self::milestone))]">
         <xsl:sequence select="false()"/>
       </xsl:when>
       <xsl:when test="$element[self::hi or self::seg or self::w]">
