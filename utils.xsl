@@ -31,15 +31,6 @@
     </xsl:choose>    
   </xsl:function>
   
-  <!-- Returns true if the given element should be considered a line -->
-  <xsl:function name="f:isLine">
-    <xsl:param name="element"/>
-    <xsl:value-of select="boolean(
-      $element[@n and not(self::pb or self::div or self::milestone[@unit='paralipomenon']
-      or self::milestone[@unit='cols'] or @n[contains(.,'todo')] 
-      or @n[contains(.,'p')])])"/>
-  </xsl:function>
-  
   <!-- Returns true of the given TEI element should probably be rendered inline -->
   <xsl:function name="f:isInline">
     <xsl:param name="element"/>    

@@ -4,8 +4,6 @@
   xmlns:ge="http://www.tei-c.org/ns/geneticEditions" xmlns:svg="http://www.w3.org/2000/svg"
   xmlns="http://www.tei-c.org/ns/1.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
   exclude-result-prefixes="xs" version="2.0">
-  
-  <xsl:import href="utils.xsl"/>
 
   <xsl:param name="href" select="document-uri(/)"/>
   <xsl:param name="source"/>
@@ -69,7 +67,7 @@
       <xsl:if test="$source">
         <xsl:attribute name="xml:base" select="$source"/>
       </xsl:if>
-      <xsl:apply-templates select='//*[f:isLine(.)]'/>
+      <xsl:apply-templates select='//*[@n and not(self::pb or self::div or self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or @n[contains(.,"todo")] or @n[contains(.,"p")])]'/>
     </f:lines>
   </xsl:template>
 

@@ -36,7 +36,7 @@
 		</xsl:for-each-group>
 	</xsl:template>
 	
-	<xsl:template match="*[f:isLine(.)]">
+	<xsl:template match="*[@n]">
 		<div class="{string-join(f:generic-classes(.), ' ')}" 
 			data-n="{@n}" data-source="{@f:doc}">
 			<xsl:call-template name="generate-style"/>
@@ -69,10 +69,14 @@
 		<xsl:variable name="targetpart">
 			<xsl:choose>
 				<xsl:when test="$split">
-					<xsl:variable name="div" select="(document($transcript)//*[@n = $n and f:isLine(.)])[1]/ancestor::div"/>
+					<xsl:variable name="div" select="document($transcript)//*[@n = $n]/ancestor::div"/>
 					<xsl:if test="$div">
 						<xsl:text>.</xsl:text>
-						<xsl:number select="$div" level="any" from="TEI"/>
+						<xsl:number 
+							select="document($transcript)//*[@n = $n][1]"
+							level="any"
+							from="TEI"						
+						/>
 					</xsl:if>
 				</xsl:when>
 				<xsl:otherwise>.</xsl:otherwise>
