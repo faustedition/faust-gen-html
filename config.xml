@@ -2,7 +2,7 @@
 <c:param-set xmlns:c="http://www.w3.org/ns/xproc-step">
 
 	<!--URL to the root folder of the Faust Edition's XML files-->
-	<c:param name="source" value="file:/home/vitt/Faust/"/>
+  <c:param name="source" value="file:/mnt/data/htdocs/xml/"/>
 
 	<!-- Path to the target folder for the "root" HTML files-->
 	<c:param name="html" value="target/lesetext_demo/"/>
@@ -11,7 +11,7 @@
 	<c:param name="variants" value="target/lesetext_demo/variants/"/>
 	
 	<!-- URL prefix to be used for links into the webapp -->
-	<c:param name="docbase" value="https://faustedition.uni-wuerzburg.de/new"/>
+  <c:param name="docbase" value="../documentViewer.php?faustUri=faust://xml"/>
 		
 	<!-- Parameters for splitting the text visualisation: -->
 	<!-- max. div nesting depth to split. 2 = Acts + Scenes -->
