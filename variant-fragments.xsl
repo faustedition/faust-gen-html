@@ -47,7 +47,7 @@
 					<xsl:when test="@f:type='archivalDocument'">
 						<xsl:value-of select="concat($docbase, '/', @f:doc)"/>
 						<xsl:if test="@f:page">
-							<xsl:value-of select="concat('#/', @f:page)"/>
+							<xsl:value-of select="concat('&amp;page=', @f:page)"/>
 						</xsl:if>
 					</xsl:when>
 					<xsl:otherwise>
