@@ -66,6 +66,8 @@
     <xsl:param name="element"/>     
     <xsl:sequence select="local-name($element)"/>
     <xsl:sequence select="for $rend in tokenize($element/@rend, ' ') return concat('rend-', $rend)"/>
+    <xsl:sequence select="for $type in tokenize($element/@type, ' ') return concat('type-', $type)"/>
+    <xsl:sequence select="for $subtype in tokenize($element/@subtype, ' ') return concat('subtype-', $type)"/>
     <xsl:if test="$element/@n">
       <xsl:sequence select="concat('n-', $element/@n)"/>
     </xsl:if>      
