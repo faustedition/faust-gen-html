@@ -203,15 +203,17 @@
         <xsl:attribute name="class" select="string-join($class, ' ')"/>
       </xsl:if>
       <xsl:copy-of select="$prefix"/>
-      <xsl:choose>
-        <xsl:when test="head">
-          <xsl:value-of select="normalize-space(head[1])"/>
-        </xsl:when>
-        <xsl:otherwise> [<xsl:value-of select="normalize-space(*[text()][1])"/>]
-        </xsl:otherwise>
-      </xsl:choose>
+      
+      <xsl:variable name="title">
+        <xsl:apply-templates mode="title" select="if (head) then head[1] else *[text()][1]"/>
+      </xsl:variable>
+      <xsl:value-of select="if (head) then $title else concat('[', $title, ']')"/>
       <xsl:copy-of select="$suffix"/>
     </a>
+  </xsl:template>
+  
+  <xsl:template match="lb[not(@break='no')]" mode="title">
+    <xsl:text> </xsl:text>    
   </xsl:template>
   
   
