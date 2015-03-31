@@ -1,0 +1,14 @@
+default namespace = "http://www.faustedition.net/ns"
+
+start =
+  element sigil-labels {
+
+    ## Content is the label to be used for the sigil type identified by the type attribute
+    element label {
+
+      ## Label type, as used in <idno type='...'/>
+      attribute type { xsd:NCName },
+
+      text
+    }+
+  }

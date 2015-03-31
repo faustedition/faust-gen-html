@@ -55,7 +55,7 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
-			<a class="sigil" href="{$target}" title="{@f:sigil-type}">
+			<a class="sigil" href="{$target}" title="{f:sigil-label(@f:sigil-type)}">
 				<xsl:value-of select="@f:sigil"/>
 			</a>
 		</div>

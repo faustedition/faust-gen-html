@@ -155,6 +155,11 @@
     </xsl:if>
   </xsl:template>
   
+  <xsl:function name="f:sigil-label">
+    <xsl:param name="type"/>
+    <xsl:variable name="label" select="doc('sigil-labels.xml')//f:label[@type=$type]"/>
+    <xsl:value-of select="if ($label) then $label else $type"/>
+  </xsl:function>
   
   
 </xsl:stylesheet>

@@ -9,6 +9,8 @@
 	<xsl:variable name="transcripts" select="collection()[2]"/>
 	<xsl:param name="title">Lesetexte</xsl:param>
 	<xsl:output method="xhtml"/>
+
+        <xsl:include href="utils.xsl"/>
 	
 	
 	<xsl:template match="/">
@@ -42,7 +44,7 @@
                       <xsl:sort select="f:idno[1]"/>
                       <xsl:variable name="filename" select="replace(@href, '^.*/([^/]+)', '$1')"/>
                       <xsl:variable name="htmlname" select="replace($filename, '\.xml$', '')"/>
-                      <li><a href="{$htmlname}.html" title="{f:idno[1]/@type}">
+                      <li><a href="{$htmlname}.html" title="{f:sigil-label(f:idno[1]/@type)}">
                         <xsl:value-of select="f:idno[1]"/>
                       </a></li>
                     </xsl:for-each>

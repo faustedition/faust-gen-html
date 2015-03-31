@@ -109,6 +109,7 @@ Steps:
 * `lesetext.css` is a stylesheet that is included in all generated HTML documents.
 * `utils.xsl` contains a number of functions used by the other stylesheets, e.g., to calculate the variant groups
 * `config.xml` contains the parameters for all steps
+* sigil-labels.xml contains labels for the sigil types
 
 ## Experimental stuff
 

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+     This document contains the sigil labels.
+
+-->
+<sigil-labels xmlns="http://www.faustedition.net/ns">
+	<label type="wa_faust">WA, Faust</label>
+	<label type="bohnenkamp">Bohnenkamp</label>
+	<label type="fischer_lamberg">Fischer-Lamberg</label>
+	<label type="landeck">Landeck</label>
+	<label type="fa">FA</label>
+	<label type="ma">MA</label>
+	<label type="wa_gedichte">WA, Gedichte</label>
+	<label type="wa_div">WA, Divan</label>
+	<label type="gsa_1">GSA</label>
+	<label type="gsa_2">GSA</label>
+	<label type="fdh_frankfurt">FRA</label>
+	<label type="dla_marbach">MAR</label>
+	<label type="sb_berlin">BER</label>
+	<label type="ub_leipzig">LEI</label>
+	<label type="ub_bonn">BON</label>
+	<label type="veste_coburg">COB</label>
+	<label type="gm_duesseldorf">DUE</label>
+	<label type="sa_hannover">HAN</label>
+	<label type="thlma_weimar">WEI</label>
+	<label type="bb_cologny">COL</label>
+	<label type="ub_basel">BAS</label>
+	<label type="bj_krakow">KRA</label>
+	<label type="agad_warszawa">WAR</label>
+	<label type="bb_vicenza">VIC</label>
+	<label type="bl_oxford">OXF</label>
+	<label type="bl_london">LON</label>
+	<label type="ul_edinburgh">EDI</label>
+	<label type="ul_yale">YAL</label>
+	<label type="tml_new_york">NY</label>
+	<label type="ul_pennstate">PEN</label>
+	<label type="hagen">Hagen</label>
+	<label type="wa_I_53">WA I 53</label>
+	<label type="hagen_nr">Hagen-Nr.</label>
+	<label type="aa_ls_helenaank">AA Ls, Helena-Ankündigung</label>
+	<label type="wa_helenaank">WA, Helena-Ankündigung</label>
+	<label type="aa_wilhelmmeister">AA, Wilhelm Meister</label>
+	<label type="faustedition">Faustedition</label>
+	<label type="wa_mur">WA, Maximen und Reflexionen</label>
+</sigil-labels>
