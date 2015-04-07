@@ -328,7 +328,7 @@
           </li>
           <li class="xml">
             <i class="icon-li icon-download-alt"></i>
-            <a href="{f:relativize($output-base, concat($output-base, '-emended.xml'))}" download="download">TEI-Download</a>
+            <a href="{f:relativize($output-base, concat($output-base, '-emended.xml'))}">TEI-Version</a>
           </li>
         </ul>
       </xsl:if>
