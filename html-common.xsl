@@ -103,6 +103,10 @@
       [<xsl:call-template name="generate-pageno"/>]
     </a>
   </xsl:template>
+	
+  <xsl:template match="pb[@n][following::*[self::pb]]" mode="#default single">
+  	<xsl:comment>Supressed page break <xsl:value-of select="@n"/></xsl:comment>
+  </xsl:template>
   
   <xsl:template match="pb[@n]"  mode="#default single">
     <xsl:text> </xsl:text>
