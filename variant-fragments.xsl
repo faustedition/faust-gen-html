@@ -17,6 +17,13 @@
 	
 	<xsl:output method="xhtml"/>
 	
+	<xsl:function name="f:varcount">
+		<xsl:param name="group"/>
+		<xsl:variable name="part" select="$group[1]/@part"/>
+		<xsl:variable name="name" select="name($group[1])"/>
+		<xsl:value-of select="if ($part) then count($group[@part=$part and name()=$name]) else count($group[name()=$name])"/>
+	</xsl:function>
+	
 	<xsl:template match="/*">		
 		<xsl:for-each-group select="*" group-by="f:output-group(@n)">
 			<xsl:variable name="output-file" select="concat($variants, current-grouping-key(), '.html')"/>			
@@ -24,7 +31,7 @@
 				<div class="groups" data-group="{current-grouping-key()}">
 					<xsl:for-each-group select="current-group()" group-by="@n">
 						<div class="variants" data-n="{current-grouping-key()}" 
-							data-size="{count(current-group())}" xml:id="v{current-grouping-key()}" id="v{current-grouping-key()}">
+							data-size="{f:varcount(current-group())}" xml:id="v{current-grouping-key()}" id="v{current-grouping-key()}">
 							<xsl:apply-templates select="current-group()">
 								<xsl:sort select="@f:sigil"/>
 							</xsl:apply-templates>
