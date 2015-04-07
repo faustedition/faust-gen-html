@@ -326,6 +326,10 @@
               </xsl:otherwise>
             </xsl:choose>
           </li>
+          <li class="xml">
+            <i class="icon-li icon-download-alt"></i>
+            <a href="{f:relativize($output-base, concat($output-base, '-emended.xml'))}" download="download">TEI-Download</a>
+          </li>
         </ul>
       </xsl:if>
     </nav>
@@ -345,6 +349,7 @@
       <link rel="stylesheet" href="../css/document-transcript-interaction.css"/>
       <link rel="stylesheet" href="../css/pure-custom.css"/>
       <link rel="stylesheet" href="../css/basic_layout.css"/>
+      <link rel="stylesheet" href="lesetext.css"/>
     </head>
 
   </xsl:template>
