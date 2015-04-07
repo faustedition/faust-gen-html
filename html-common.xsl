@@ -104,7 +104,7 @@
     </a>
   </xsl:template>
 	
-  <xsl:template match="pb[@n][following::*[self::pb]]" mode="#default single">
+  <xsl:template match="pb[@n][following::*[1][self::pb]]" mode="#default single" priority="2">
   	<xsl:comment>Supressed page break <xsl:value-of select="@n"/></xsl:comment>
   </xsl:template>
   
