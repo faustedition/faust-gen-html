@@ -4,6 +4,9 @@
   version="1.0" type="f:apply-edits">
   <p:input port="source" primary="true"/>
   <p:output port="result" primary="true"/>
+  <p:output port="emended-version">
+    <p:pipe port="result" step="emended-version"/>
+  </p:output>
 
   <p:documentation> Applies the edits to one single document </p:documentation>
 
@@ -50,8 +53,12 @@
     </p:otherwise>
   </p:choose>
 
-
+  <p:identity name="emended-version"/>
+  
   <p:xslt>
+    <p:input port="source">
+      <p:pipe port="result" step="emended-version"/>
+    </p:input>
     <p:input port="stylesheet">
       <p:document href="prose-to-lines.xsl"/>
     </p:input>
