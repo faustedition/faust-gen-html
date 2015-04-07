@@ -13,7 +13,6 @@
 	<xsl:param name="docbase">https://faustedition.uni-wuerzburg.de/new</xsl:param>
   	<xsl:param name="type"/>
 	<xsl:param name="depth">2</xsl:param>
-	<xsl:param name="splitcond">4</xsl:param>
 		
 	
 	<xsl:output method="xhtml"/>
@@ -65,7 +64,7 @@
 		<xsl:param name="transcript"/>
 		<xsl:param name="n"/>
 		
-		<xsl:variable name="split" select="count(document($transcript)//div) gt number($splitcond)"/>
+		<xsl:variable name="split" select="f:is-splitable-doc(document($transcript))"/>
 		<xsl:variable name="targetpart">
 			<xsl:choose>
 				<xsl:when test="$split">

@@ -6,6 +6,15 @@
   exclude-result-prefixes="xs"
   version="2.0">
   
+  <!-- should we split inside the current document or not? -->
+  <xsl:param name="splitchars" select="5000"/>
+  <xsl:param name="splitdivs" select="5"/>
+  
+  <xsl:function name="f:is-splitable-doc">
+    <xsl:param name="document"/>
+    <xsl:value-of select="count(root($document)//div) ge number($splitdivs) and string-length(normalize-space(string-join(root($document)//text, ' '))) ge number($splitchars)"/>
+  </xsl:function>
+  
   <xsl:function name="f:output-group">
     <xsl:param name="n"/>
     <xsl:variable name="resolved-n" select="number(replace($n, '\D*(\d+).*', '$1'))"/>

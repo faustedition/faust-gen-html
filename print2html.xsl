@@ -30,12 +30,7 @@
   -->
   <xsl:param name="depth">2</xsl:param>
   <xsl:variable name="depth_n" select="number($depth)"/>
-  
-  <xsl:param name="splitcond" select="4"/>
-  
-  <!-- Soll überhaupt gesplittet werden? Wir machen das nur bei vier oder mehr dingens. -->
-  <xsl:param name="split" select="count(//div) gt number($splitcond)"/>
-  
+    
   <!-- Gesamttitel für die Datei. -->
   <xsl:param name="title" select="//title[1]"/>
   
@@ -58,7 +53,7 @@
     <xsl:for-each select="/TEI/text">
       <!-- Focus -->
       <xsl:call-template name="generate-html-frame"/>
-      <xsl:if test="$split">
+      <xsl:if test="f:is-splitable-doc(.)">
         <xsl:result-document href="{$output-base}.all.html">
           <xsl:call-template name="generate-html-frame">
             <xsl:with-param name="single" select="true()"/>
@@ -150,7 +145,7 @@
   </xsl:template>
 
   <!-- divs, die bis zu $depth tief verschachtelt sind, werden im Standardmodus zerlegt: -->
-  <xsl:template match="div[$split and count(ancestor::div) lt number($depth_n)]" mode="#default">
+  <xsl:template match="div[f:is-splitable-doc(.) and count(ancestor::div) lt number($depth_n)]" mode="#default">
     <xsl:variable name="filename">
       <xsl:call-template name="filename"/>
     </xsl:variable>
@@ -316,7 +311,7 @@
       </ul>
       
 
-      <xsl:if test="$split">
+      <xsl:if test="f:is-splitable-doc(.)">
         <ul class="icons-ul">
           <!-- Link zum  alles-auf-einer-Seite-Dokument. -->
           <li class="all">

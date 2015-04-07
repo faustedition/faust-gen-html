@@ -17,6 +17,7 @@
 	<!-- max. div nesting depth to split. 2 = Acts + Scenes -->
 	<c:param name="depth" value="2"/>	
 	<!-- split only if the source XML contains more then this many <div>s in total -->
-	<c:param name="splitcond" value="4"/>
+	<c:param name="splitdivs" value="5"/>
+	<c:param name="splitchars" value="5000"/>
 
 </c:param-set>
