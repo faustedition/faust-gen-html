@@ -155,14 +155,16 @@
 
 
   <xsl:template name="generate-style">
-    <xsl:if test="@n and @part">
+    <xsl:if test="@n and @part and @part != 'I'">
       <xsl:variable name="n" select="@n"/>
+      <xsl:variable name="start" select="preceding::*[@part='I'][1]"/>
       <xsl:variable name="sigil" select="@f:sigil"/>
       <xsl:variable name="before"
-        select="normalize-space(string-join(preceding::*[@part and @n=$n and 
-          (if (@f:sigil) then @f:sigil=$sigil else true())], ' '))"/>
+        select="normalize-space(string-join(($start, preceding::*[@part and . >> $start and 
+          (if (@f:sigil) then @f:sigil=$sigil else true())]), ' '))"/>
       <xsl:attribute name="style"
         select="concat('text-indent:', 0.5*string-length($before), 'em;')"/>
+<!--      <xsl:message select="concat('n=', $n, '; part=', @part, '; .=', normalize-space(.) , '; start=', normalize-space($start), '; before=', normalize-space($before))"/>-->
     </xsl:if>
   </xsl:template>
   
