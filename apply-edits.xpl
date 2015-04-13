@@ -38,7 +38,7 @@
   </p:xslt>
 
   <p:choose>
-    <p:when test="//tei:addSpan | //tei:delSpan | //tei:modSpan">
+    <p:when test="//tei:delSpan | //tei:modSpan">
       <p:xslt>
         <p:input port="stylesheet">
           <p:document href="text-emend.xsl"/>
