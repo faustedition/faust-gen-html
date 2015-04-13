@@ -8,7 +8,7 @@
 	
 	<!--<xsl:variable name="transcripts" select="collection()[2]"/>-->
 	<xsl:param name="title">Lesetexte</xsl:param>
-  <xsl:param name="type">text print</xsl:param>  <!-- might be text, print, docTranscript -->
+  <xsl:param name="type">text print</xsl:param>  <!-- might be text, print, archivalDocument, sep. by space -->
 	<xsl:output method="xhtml"/>
 
         <xsl:include href="utils.xsl"/>
@@ -71,6 +71,21 @@
                     </ul>
                     </nav>
                     
+                  </xsl:if>
+
+                  <xsl:if test="$type = 'archivalDocument'">
+                  <nav>
+                    <h2>Handschriften</h2>                    
+                    <ul>
+                      <xsl:for-each select="//f:textTranscript[@type='archivalDocument']">
+                        <xsl:variable name="filename" select="replace(@href, '^.*/([^/]+)', '$1')"/>
+                        <xsl:variable name="htmlname" select="replace($filename, '\.xml$', '')"/>
+                        <li><a href="{$htmlname}.html" title="{f:sigil-label(f:idno[1]/@type)}">
+                          <xsl:value-of select="f:idno[1]"/>
+                        </a></li>                        
+                      </xsl:for-each>
+                    </ul>
+                  </nav>
                   </xsl:if>
                 </div>
               </div>
