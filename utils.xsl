@@ -66,6 +66,10 @@
     <xsl:choose>
       <xsl:when test="$element[self::p]">p</xsl:when>
       <xsl:when test="f:isInline($element)">span</xsl:when>
+      <xsl:when test="$element/self::head/parent::div[@type='subscene']">h5</xsl:when>
+      <xsl:when test="$element/self::head[parent::div[@type='scene']/parent::div
+                                        or parent::body]">h4</xsl:when>
+      <xsl:when test="$element/self::head/parent::div/parent::body">h3</xsl:when>
       <xsl:otherwise>div</xsl:otherwise>
     </xsl:choose>
   </xsl:function>
