@@ -71,6 +71,9 @@
 				<a class="sigil" href="{$target}" title="{f:sigil-label(@f:sigil-type)}">
 					<xsl:value-of select="@f:sigil"/>
 				</a>
+				<xsl:if test="position() lt count($group)">
+					<xsl:text>, </xsl:text>
+				</xsl:if>
 			</xsl:for-each>
 		</div>
 	</xsl:template>
