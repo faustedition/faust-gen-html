@@ -145,7 +145,7 @@
       <p:with-option name="message" select="concat('Writing fragment ', p:base-uri())"/>
     </cx:message>
     
-    <p:store method="xhtml" omit-xml-declaration="false" indent="false">
+    <p:store method="xhtml" omit-xml-declaration="false" indent="true">
       <p:with-option name="href" select="p:base-uri()"/>      
     </p:store>
   </p:for-each>

@@ -35,8 +35,8 @@
 		<f:collate-variants name="variants">
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 		</f:collate-variants>
-		<p:store href="target/variants.xml"/>
-		<p:store href="target/faust-transcripts.xml">
+		<p:store href="target/variants.xml" indent="true"/>	
+		<p:store href="target/faust-transcripts.xml" indent="true">
 			<p:input port="source">
 				<p:pipe port="result" step="transcripts"/>
 			</p:input>
