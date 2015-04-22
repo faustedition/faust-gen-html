@@ -32,9 +32,14 @@
 					<xsl:for-each-group select="current-group()" group-by="@n">
 						<div class="variants" data-n="{current-grouping-key()}" 
 							data-size="{f:varcount(current-group())}" xml:id="v{current-grouping-key()}" id="v{current-grouping-key()}">
-							<xsl:apply-templates select="current-group()">
-								<xsl:sort select="@f:sigil"/>
-							</xsl:apply-templates>
+							<xsl:for-each-group select="current-group()" group-by="normalize-space(.)">
+								
+									<xsl:apply-templates select="current-group()[1]">
+										<xsl:sort select="@f:sigil"/>
+										<xsl:with-param name="group" select="current-group()"/>
+									</xsl:apply-templates>
+								
+							</xsl:for-each-group>
 						</div>
 					</xsl:for-each-group>
 				</div>
@@ -43,27 +48,30 @@
 	</xsl:template>
 	
 	<xsl:template match="*[@n]">
+		<xsl:param name="group" as="node()*"/>
 		<div class="{string-join(f:generic-classes(.), ' ')}" 
 			data-n="{@n}" data-source="{@f:doc}">
 			<xsl:call-template name="generate-style"/>
 			<xsl:apply-templates/>
-			<xsl:text> </xsl:text>
-			<xsl:variable name="target">
-				<xsl:choose>
-					<xsl:when test="@f:type='archivalDocument'">
-						<xsl:value-of select="concat($docbase, '/', @f:doc)"/>
-						<xsl:if test="@f:page">
-							<xsl:value-of select="concat('&amp;page=', @f:page)"/>
-						</xsl:if>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:value-of select="f:printlink(@f:href, @n)"/>
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:variable>
-			<a class="sigil" href="{$target}" title="{f:sigil-label(@f:sigil-type)}">
-				<xsl:value-of select="@f:sigil"/>
-			</a>
+			<xsl:for-each select="$group">
+				<xsl:text> </xsl:text>
+				<xsl:variable name="target">
+					<xsl:choose>
+						<xsl:when test="@f:type='archivalDocument'">
+							<xsl:value-of select="concat($docbase, '/', @f:doc)"/>
+							<xsl:if test="@f:page">
+								<xsl:value-of select="concat('&amp;page=', @f:page)"/>
+							</xsl:if>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="f:printlink(@f:href, @n)"/>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
+				<a class="sigil" href="{$target}" title="{f:sigil-label(@f:sigil-type)}">
+					<xsl:value-of select="@f:sigil"/>
+				</a>
+			</xsl:for-each>
 		</div>
 	</xsl:template>
 
