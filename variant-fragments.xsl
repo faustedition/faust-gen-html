@@ -47,34 +47,45 @@
 		</xsl:for-each-group>
 	</xsl:template>
 	
+	<!-- 
+		Will format the lines inside the variant group. The context node is the first
+		entry of a group of lines with identical text, the $group parameter contains 
+		the whole group. 
+	-->
 	<xsl:template match="*[@n]">
 		<xsl:param name="group" as="node()*"/>
 		<div class="{string-join(f:generic-classes(.), ' ')}" 
 			data-n="{@n}" data-source="{@f:doc}">
 			<xsl:call-template name="generate-style"/>
+			
+			<!-- first format the line's content ... -->
 			<xsl:apply-templates/>
-			<xsl:for-each select="$group">
-				<xsl:text> </xsl:text>
-				<xsl:variable name="target">
-					<xsl:choose>
-						<xsl:when test="@f:type='archivalDocument'">
-							<xsl:value-of select="concat($docbase, '/', @f:doc)"/>
-							<xsl:if test="@f:page">
-								<xsl:value-of select="concat('&amp;page=', @f:page)"/>
-							</xsl:if>
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:value-of select="f:printlink(@f:href, @n)"/>
-						</xsl:otherwise>
-					</xsl:choose>
-				</xsl:variable>
-				<a class="sigil" href="{$target}" title="{f:sigil-label(@f:sigil-type)}">
-					<xsl:value-of select="@f:sigil"/>
-				</a>
-				<xsl:if test="position() lt count($group)">
-					<xsl:text>, </xsl:text>
-				</xsl:if>
-			</xsl:for-each>
+			
+			<!-- now there's the list of sigils where this line is featured. -->
+			<xsl:text> </xsl:text>
+			<span class="sigils"> <!-- will float right -->
+				<xsl:for-each select="$group">
+					<xsl:variable name="target">						
+						<xsl:choose>
+							<xsl:when test="@f:type='archivalDocument'">
+								<xsl:value-of select="concat($docbase, '/', @f:doc)"/>
+								<xsl:if test="@f:page">
+									<xsl:value-of select="concat('&amp;page=', @f:page)"/>
+								</xsl:if>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="f:printlink(@f:href, @n)"/>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:variable>
+					<a class="sigil" href="{$target}" title="{f:sigil-label(@f:sigil-type)}">
+						<xsl:value-of select="@f:sigil"/>
+					</a>
+					<xsl:if test="position() lt count($group)">
+						<xsl:text>, </xsl:text>
+					</xsl:if>
+				</xsl:for-each>
+			</span>
 		</div>
 	</xsl:template>
 
