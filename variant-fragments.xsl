@@ -98,11 +98,13 @@
 			<xsl:choose>
 				<xsl:when test="$split">
 					<xsl:variable name="div" select='document($transcript)//*[@n = $n 
-						and not(self::pb or self::div or self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or @n[contains(.,"todo")] or @n[contains(.,"p")])]/ancestor::div'/>
+						and not(self::pb or self::div or 
+								self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or 
+								@n[contains(.,"todo")] or @n[contains(.,"p")])]/ancestor::div[1]'/>
 					<xsl:if test="$div">
 						<xsl:text>.</xsl:text>
 						<xsl:number 
-							select="$div[1]"
+							select="$div"
 							level="any"
 							from="TEI"						
 						/>
