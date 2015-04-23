@@ -6,8 +6,9 @@
 	exclude-result-prefixes="xs"
 	version="2.0">
 	
-	<xsl:variable name="transcripts" select="collection()[2]"/>
+	<!--<xsl:variable name="transcripts" select="collection()[2]"/>-->
 	<xsl:param name="title">Lesetexte</xsl:param>
+  <xsl:param name="type">text print</xsl:param>  <!-- might be text, print, docTranscript -->
 	<xsl:output method="xhtml"/>
 
         <xsl:include href="utils.xsl"/>
@@ -28,28 +29,49 @@
                 <div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
                 <div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
 
-                  <h2>Lesetexte</h2>
-                  <nav>
-                  <ul>
-                    <li><a href="faust1.html">Faust I</a></li>
-                    <li><a href="faust2.html">Faust II</a></li>
-                  </ul>
-                  </nav>
+
+                  <xsl:if test="tokenize($type, ' ') = 'text'">
+                    <h2>Lesetexte</h2>
+                    <nav>
+                      <ul>
+                        <li><a href="faust1.html">Faust I</a></li>
+                        <li><a href="faust2.html">Faust II</a></li>
+                      </ul>
+                      </nav>
+                  </xsl:if>
                   
+                  <xsl:if test="tokenize($type, ' ') = 'print'">              
                   <h2>Drucke</h2>
                   
-                  <nav>
-                  <ul>
-                    <xsl:for-each select="//f:textTranscript[@type='print']">
-                      <xsl:sort select="f:idno[1]"/>
-                      <xsl:variable name="filename" select="replace(@href, '^.*/([^/]+)', '$1')"/>
-                      <xsl:variable name="htmlname" select="replace($filename, '\.xml$', '')"/>
-                      <li><a href="{$htmlname}.html" title="{f:sigil-label(f:idno[1]/@type)}">
-                        <xsl:value-of select="f:idno[1]"/>
-                      </a></li>
-                    </xsl:for-each>
-                  </ul>
-                  </nav>
+                    <nav>
+                    <ul>
+                      
+                      <xsl:variable name="mdlist" select="/"/>
+                      
+                      <xsl:for-each select="document('print-labels.xml')//f:item">
+                        
+                        <xsl:variable name="uri" select="@uri"/>
+                        <xsl:variable name="md" select="$mdlist//f:textTranscript[@uri=$uri]"/>
+                        <xsl:variable name="filename" select="replace($md/@href, '^.*/([^/]+)', '$1')"/>
+                        <xsl:variable name="htmlname" select="replace($filename, '\.xml$', '')"/>
+                        <xsl:variable name="sigil" select="$md/f:idno[1]"/>
+                        <xsl:variable name="sigil-label" select="f:sigil-label($sigil/@type)"/>
+                        <xsl:variable name="description" select="."/>
+                        
+                        <li>
+                          <a href="{$htmlname}.html">
+                            <xsl:value-of select="$description"/>
+                            <xsl:text> </xsl:text>
+                            <abbr title="{$sigil-label}">(<xsl:value-of select="$sigil"/>)</abbr>
+                          </a>
+                        </li>
+                        
+                      </xsl:for-each>
+                      
+                    </ul>
+                    </nav>
+                    
+                  </xsl:if>
                 </div>
               </div>
             </div>
