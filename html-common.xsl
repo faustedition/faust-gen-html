@@ -96,26 +96,27 @@
   
   <xsl:template match="pb[@f:docTranscriptNo]" priority="1"  mode="#default single">
     <xsl:text> </xsl:text>
-    <a 
+    <span 
       class="{string-join((f:generic-classes(.), 'generated-text', 'pageno', 'doclink'), ' ')}"
       id="dt{@f:docTranscriptNo}"
-      href="#dt{@f:docTranscriptNo}"> <!-- TODO insert link to do document view here -->      
+      > <!-- TODO insert link to do document view here -->      
       [<xsl:call-template name="generate-pageno"/>]
-    </a>
+    </span>
   </xsl:template>
 	
   <xsl:template match="pb[@n][following::*[1][self::pb]]" mode="#default single" priority="2">
-  	<xsl:comment>Supressed page break <xsl:value-of select="@n"/></xsl:comment>
+  	<span id="pb{@n}" class="pb-supressed">
+  		<xsl:comment>Supressed page break <xsl:value-of select="@n"/></xsl:comment>
+  	</span>
   </xsl:template>
   
   <xsl:template match="pb[@n]"  mode="#default single">
     <xsl:text> </xsl:text>
-    <a
+    <span
       class="{string-join((f:generic-classes(.), 'generated-text', 'pageno'), ' ')}"
-      id="pb{@n}"
-      href="#pb{@n}">
+      id="pb{@n}">
       [<xsl:call-template name="generate-pageno"/>]
-    </a>
+    </span>
   </xsl:template>
 	
   <xsl:template match="fw"  mode="#default single"/>
