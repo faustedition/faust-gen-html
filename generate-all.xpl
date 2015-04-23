@@ -12,6 +12,7 @@
 	<p:import href="collect-metadata.xpl"/>
 	<p:import href="collate-variants.xpl"/>
 	<p:import href="print2html.xpl"/>
+	<p:import href="generate-indexes.xpl"/>
 		
 	
 	<!-- Parameter laden -->
@@ -93,19 +94,15 @@
 
 		</p:for-each>
 		
+		<p:wrap-sequence wrapper="foo"/>
+		
 		<!-- Das ist mehr so'n hack mit dem Inhaltsverzeichnis. -->
-		<p:xslt name="index">
+		<f:generate-indexes>
 			<p:input port="source">
 				<p:pipe port="result" step="transcripts"/>
 			</p:input>
-			<p:input port="stylesheet">
-				<p:document href="index.xsl"/>
-			</p:input>
-		</p:xslt>		
-		
-		<p:store method="xhtml" include-content-type="true">
-			<p:with-option name="href" select="concat($html, 'index.html')"/>		
-		</p:store>
+			<p:with-option name="html" select="$html"/>
+		</f:generate-indexes>		
 		
 		<!-- Assets kopieren -->
 		<pxf:copy href="lesetext.css">

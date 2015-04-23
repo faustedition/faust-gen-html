@@ -8,7 +8,7 @@
 	
 	<!--<xsl:variable name="transcripts" select="collection()[2]"/>-->
 	<xsl:param name="title">Lesetexte</xsl:param>
-  <xsl:param name="type">text print</xsl:param>  <!-- might be text, print, archivalDocument, sep. by space -->
+  <xsl:param name="type">text print</xsl:param>  <!-- might be text, print, archivalDocument, overview, sep. by space -->
 	<xsl:output method="xhtml"/>
 
         <xsl:include href="utils.xsl"/>
@@ -28,6 +28,16 @@
               <div id="main" class="print">
                 <div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
                 <div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
+                  
+                  <xsl:if test="$type = 'overview'">
+                    <nav>
+                      <ul>
+                        <li><a href="text.html">Lesetext</a></li>
+                        <li><a href="prints.html">Drucke</a></li>
+                        <li><a href="archivalDocuments.html">Handschriften</a></li>
+                      </ul>
+                    </nav>                    
+                  </xsl:if>
 
 
                   <xsl:if test="tokenize($type, ' ') = 'text'">
@@ -62,7 +72,7 @@
                           <a href="{$htmlname}.html">
                             <xsl:value-of select="$description"/>
                             <xsl:text> </xsl:text>
-                            <abbr title="{$sigil-label}">(<xsl:value-of select="$sigil"/>)</abbr>
+                            <abbr title="{$sigil-label}"><xsl:value-of select="$sigil"/></abbr>
                           </a>
                         </li>
                         
