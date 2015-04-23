@@ -23,7 +23,9 @@
 			</xsl:for-each-group>
 		</lg>
 	</xsl:template>	
-	<xsl:template mode="in-artificial-lg" match="lb|milestone[@unit='refline']"/>
+	<xsl:template mode="in-artificial-lg" match="milestone[@unit='refline']"/>
+	<xsl:template mode="in-artificial-lg" match="lb"><xsl:text> </xsl:text></xsl:template>
+	<xsl:template mode="in-artificial-lg" match="lb[@break='no']"/>
 		
 		
 	<xsl:template match="node()|@*" mode="#all">

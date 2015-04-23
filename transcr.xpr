@@ -1723,6 +1723,7 @@
             <file name="print2html.xsl"/>
         </folder>
         <folder path="../../Faust/"/>
+        <folder path="../../Faust/image-text-links/"/>
         <file name="../../Faust/print/A8_IIIB18.xml"/>
         <file name="apply-edits.xpl"/>
         <file name="collate-variants.xpl"/>
