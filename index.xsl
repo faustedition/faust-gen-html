@@ -54,7 +54,7 @@
                   <h2>Drucke</h2>
                   
                     <nav>
-                    <ul>
+                    <dl>
                       
                       <xsl:variable name="mdlist" select="/"/>
                       
@@ -68,17 +68,18 @@
                         <xsl:variable name="sigil-label" select="f:sigil-label($sigil/@type)"/>
                         <xsl:variable name="description" select="."/>
                         
-                        <li>
-                          <a href="{$htmlname}.html">
-                            <xsl:value-of select="$description"/>
-                            <xsl:text> </xsl:text>
-                            <abbr title="{$sigil-label}"><xsl:value-of select="$sigil"/></abbr>
-                          </a>
-                        </li>
                         
+                          <dt title="{$sigil-label}">
+                            <a href="{$htmlname}.html">
+                              <xsl:value-of select="$sigil"/>
+                            </a>
+                          </dt>
+                          <dd>
+                            <xsl:value-of select="$description"/>
+                          </dd>
                       </xsl:for-each>
                       
-                    </ul>
+                    </dl>
                     </nav>
                     
                   </xsl:if>
