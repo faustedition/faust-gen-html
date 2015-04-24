@@ -124,6 +124,7 @@
       <link rel="stylesheet" href="../css/document-transcript-interaction.css"/>
       <link rel="stylesheet" href="../css/pure-custom.css"/>
       <link rel="stylesheet" href="../css/basic_layout.css"/>
+      <link rel="stylesheet" href="lesetext.css"/>
     </head>
 	</xsl:template>
 

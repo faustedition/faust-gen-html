@@ -101,7 +101,6 @@
 			<p:input port="source">
 				<p:pipe port="result" step="transcripts"/>
 			</p:input>
-			<p:with-option name="html" select="$html"/>
 		</f:generate-indexes>		
 		
 		<!-- Assets kopieren -->
