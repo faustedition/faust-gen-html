@@ -9,6 +9,7 @@
   <!-- should we split inside the current document or not? -->
   <xsl:param name="splitchars" select="5000"/>
   <xsl:param name="splitdivs" select="5"/>
+  <xsl:param name="docbase"/>
   
   <xsl:function name="f:is-splitable-doc">
     <xsl:param name="document"/>
@@ -183,6 +184,45 @@
     <xsl:variable name="label" select="doc('sigil-labels.xml')//f:label[@type=$type]"/>
     <xsl:value-of select="if ($label) then $label else $type"/>
   </xsl:function>
+  
+  
+  <xsl:function name="f:doclink">
+    <xsl:param name="document"/>
+    <xsl:param name="page"/>
+    <xsl:value-of select="concat($docbase, '/', $document)"/>
+    <xsl:if test="$page">
+      <xsl:value-of select="concat('&amp;page=', $page)"/>
+    </xsl:if>
+  </xsl:function>
+  
+  <xsl:function name="f:printlink">
+    <xsl:param name="transcript"/>
+    <xsl:param name="n"/>
+    
+    <xsl:variable name="split" select="f:is-splitable-doc(document($transcript))"/>
+    <xsl:variable name="targetpart">
+      <xsl:choose>
+        <xsl:when test="$split">
+          <xsl:variable name="div" select='document($transcript)//*[@n = $n 
+            and not(self::pb or self::div or 
+            self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or 
+            @n[contains(.,"todo")] or @n[contains(.,"p")])]/ancestor::div[1]'/>
+          <xsl:if test="$div">
+            <xsl:text>.</xsl:text>
+            <xsl:number 
+              select="$div"
+              level="any"
+              from="TEI"						
+            />
+          </xsl:if>
+        </xsl:when>
+        <xsl:otherwise>.</xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <xsl:value-of select="concat(
+      replace($transcript, '^.*/(.*)\.xml$', '$1'), $targetpart, '.html#l', $n)"/>
+  </xsl:function>
+  
   
   
 </xsl:stylesheet>
