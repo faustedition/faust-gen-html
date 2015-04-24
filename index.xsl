@@ -8,6 +8,7 @@
 	
 	<!--<xsl:variable name="transcripts" select="collection()[2]"/>-->
 	<xsl:param name="title">Lesetexte</xsl:param>
+        <xsl:param name="source">https://faustedition.uni-wuerzburg.de/xml</xsl:param>
   <xsl:param name="type">text print</xsl:param>  <!-- might be text, print, archivalDocument, overview, sep. by space -->
 	<xsl:output method="xhtml"/>
 
@@ -58,7 +59,7 @@
                       
                       <xsl:variable name="mdlist" select="/"/>
                       
-                      <xsl:for-each select="document('print-labels.xml')//f:item">
+                      <xsl:for-each select="document(concat($source, '/print-labels.xml'))//f:item">
                         
                         <xsl:variable name="uri" select="@uri"/>
                         <xsl:variable name="md" select="$mdlist//f:textTranscript[@uri=$uri]"/>
