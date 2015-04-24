@@ -65,19 +65,11 @@
 			<xsl:text> </xsl:text>
 			<span class="sigils"> <!-- will float right -->
 				<xsl:for-each select="$group">
-					<xsl:variable name="target">						
-						<xsl:choose>
-							<xsl:when test="@f:type='archivalDocument'">
-								<xsl:value-of select="concat($docbase, '/', @f:doc)"/>
-								<xsl:if test="@f:page">
-									<xsl:value-of select="concat('&amp;page=', @f:page)"/>
-								</xsl:if>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:value-of select="f:printlink(@f:href, @n)"/>
-							</xsl:otherwise>
-						</xsl:choose>
-					</xsl:variable>
+					<xsl:variable 
+						name="target" 
+						select="if (@f:type='archivalDocument') 
+									then f:doclink(@f:doc, @f:page) 
+									else f:printlink(@f:href, @n)"/>						
 					<a class="sigil" href="{$target}" title="{f:sigil-label(@f:sigil-type)}">
 						<xsl:value-of select="@f:sigil"/>
 					</a>
@@ -88,6 +80,15 @@
 			</span>
 		</div>
 	</xsl:template>
+	
+	<xsl:function name="f:doclink">
+		<xsl:param name="document"/>
+		<xsl:param name="page"/>
+		<xsl:value-of select="concat($docbase, '/', $document)"/>
+		<xsl:if test="$page">
+			<xsl:value-of select="concat('&amp;page=', $page)"/>
+		</xsl:if>
+	</xsl:function>
 
 	<xsl:function name="f:printlink">
 		<xsl:param name="transcript"/>
