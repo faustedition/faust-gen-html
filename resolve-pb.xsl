@@ -6,7 +6,7 @@
 
 	<xsl:param name="type"/>
 	<xsl:param name="source" required="yes"/>
-	<xsl:param name="documentURI" required="yes"/>
+	<xsl:param name="documentURI"/>
 	<xsl:variable name="metadata" select="document(resolve-uri($documentURI, $source))"/>
 
 
@@ -16,7 +16,7 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="pb[@n]">
+	<xsl:template match="pb[@n and $documentURI]">
 		<xsl:variable name="docTranscriptNos">
 			<xsl:for-each select="tokenize(@n, '\s+')">
 				<xsl:variable name="n" select="replace(., '^0+', '')"/>

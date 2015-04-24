@@ -61,6 +61,17 @@
 				<p:pipe port="source" step="main"/>
 			</p:input>
 		</f:apply-edits>
+		
+		<!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
+		<p:xslt>
+			<p:input port="stylesheet">
+				<p:document href="resolve-pb.xsl"/>
+			</p:input>
+			<p:input port="parameters">
+				<p:pipe port="result" step="config"/>            
+			</p:input>
+		</p:xslt>
+		
 
 		<!-- Nun die eigentliche Transformation nach HTML. -->
 		<p:xslt name="html">

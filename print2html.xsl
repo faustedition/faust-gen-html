@@ -37,6 +37,8 @@
   <!-- print oder archivalDocument? -->
   <xsl:param name="type"/>
   
+  <xsl:param name="documentURI"/>
+  
   
   <!-- 
   
