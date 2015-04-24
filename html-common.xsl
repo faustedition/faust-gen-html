@@ -96,12 +96,12 @@
   
   <xsl:template match="pb[@f:docTranscriptNo]" priority="1"  mode="#default single">
     <xsl:text> </xsl:text>
-    <span 
+    <a  
       class="{string-join((f:generic-classes(.), 'generated-text', 'pageno', 'doclink'), ' ')}"
       id="dt{@f:docTranscriptNo}"
-      > <!-- TODO insert link to do document view here -->      
+      href="{f:doclink($documentURI, @f:docTranscriptNo)}"> 
       [<xsl:call-template name="generate-pageno"/>]
-    </span>
+    </a>
   </xsl:template>
 	
   <xsl:template match="pb[@n][following::*[1][self::pb]]" mode="#default single" priority="2">

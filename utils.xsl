@@ -10,6 +10,7 @@
   <xsl:param name="splitchars" select="5000"/>
   <xsl:param name="splitdivs" select="5"/>
   <xsl:param name="docbase"/>
+  <xsl:param name="documentURI"/>
   
   <xsl:function name="f:is-splitable-doc">
     <xsl:param name="document"/>
