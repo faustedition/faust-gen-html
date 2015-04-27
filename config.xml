@@ -5,10 +5,10 @@
   <c:param name="source" value="file:/mnt/data/htdocs/xml/"/>
 
 	<!-- Path to the target folder for the "root" HTML files-->
-	<c:param name="html" value="target/lesetext_demo/"/>
+	<c:param name="html" value="target/print/"/>
 
 	<!-- Path to the target folder for the variant fragments -->
-	<c:param name="variants" value="target/lesetext_demo/variants/"/>
+	<c:param name="variants" value="target/print/variants/"/>
 	
 	<!-- URL prefix to be used for links into the webapp -->
   <c:param name="docbase" value="../documentViewer.php?faustUri=faust://xml"/>
