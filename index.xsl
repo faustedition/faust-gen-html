@@ -141,9 +141,7 @@
           <xsl:text> </xsl:text>
           <a href="../chessboard_overview.php">Genese</a>
           <xsl:text> </xsl:text>
-          <a href="../lesetext_demo/index.html">Text</a>
-          <xsl:text> </xsl:text>
-          <input autocomplete="off" id="quick-search" placeholder="Search" type="text"/>
+          <a href="../print/index.html">Text</a>
         </nav>
       </div>
     </header>
