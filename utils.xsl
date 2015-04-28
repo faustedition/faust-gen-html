@@ -12,7 +12,7 @@
   <xsl:param name="docbase"/>
   <xsl:param name="documentURI"/>
   
-  <xsl:function name="f:is-splitable-doc">
+  <xsl:function name="f:is-splitable-doc" as="xs:boolean">
     <xsl:param name="document"/>
     <xsl:value-of select="count(root($document)//div) ge number($splitdivs) and string-length(normalize-space(string-join(root($document)//text, ' '))) ge number($splitchars)"/>
   </xsl:function>

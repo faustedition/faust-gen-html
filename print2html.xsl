@@ -55,7 +55,7 @@
     <xsl:for-each select="/TEI/text">
       <!-- Focus -->
       <xsl:call-template name="generate-html-frame"/>
-      <xsl:if test="f:is-splitable-doc(.)">
+      <xsl:if test="f:is-splitable-doc(.)">      
         <xsl:result-document href="{$output-base}.all.html">
           <xsl:call-template name="generate-html-frame">
             <xsl:with-param name="single" select="true()"/>
@@ -260,7 +260,7 @@
 
   <!-- Erzeugt eine lokale Navigation für das aktuelle (Fokus) div, d.h. Breadcrumbs, Prev/Next -->
   <xsl:template name="local-nav">
-    <xsl:param name="single" select="false()"/>
+    <xsl:param name="single" select="f:is-splitable-doc(.)"/>
     <xsl:variable name="current-div" select="."/>
     <nav class="print-navigation">
 
