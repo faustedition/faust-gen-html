@@ -13,6 +13,8 @@
 	<xsl:param name="docbase">https://faustedition.uni-wuerzburg.de/new</xsl:param>
   	<xsl:param name="type"/>
 	<xsl:param name="depth">2</xsl:param>
+	<xsl:param name="canonical">document/print/A8.xml document/faust/2/gsa_391098.xml</xsl:param>
+	<xsl:variable name="canonicalDocs" select="tokenize($canonical, ' ')"/>
 		
 	
 	<xsl:output method="xhtml"/>
@@ -30,8 +32,15 @@
 			<xsl:result-document href="{$output-file}">
 				<div class="groups" data-group="{current-grouping-key()}">
 					<xsl:for-each-group select="current-group()" group-by="@n">
-						<div class="variants" data-n="{current-grouping-key()}" 
-							data-size="{f:varcount(current-group())}" xml:id="v{current-grouping-key()}" id="v{current-grouping-key()}">
+						<xsl:variable name="cline" select="current-group()[@f:doc = $canonicalDocs]"/>
+						<xsl:variable name="ctext" select="if ($cline) then normalize-space($cline[1]) else ''"/>
+						<div class="variants" 
+							data-n="{current-grouping-key()}" 
+							data-witnesses="{f:varcount(current-group())}"
+							data-variants="{count(distinct-values(for $line in current-group() return normalize-space($line)))}"
+							data-ctext="{$ctext}"
+							xml:id="v{current-grouping-key()}" 
+							id="v{current-grouping-key()}">
 							<xsl:for-each-group select="current-group()" group-by="normalize-space(.)">
 								
 									<xsl:apply-templates select="current-group()[1]">

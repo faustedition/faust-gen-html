@@ -79,17 +79,18 @@
 <!-- Die Behandlung von den meisten Elementen ist relativ gleich: -->
   <xsl:template match="*" mode="#default single">
     <!-- # Varianten aus dem variants-Folder auslesen: -->
-    <xsl:variable name="varcount">
+    <xsl:variable name="varinfo" as="node()*">
       <xsl:choose>
         <xsl:when test="@n">
           <xsl:variable name="n" select="@n"/>
-          <xsl:value-of
-            select="document(concat($variants, f:output-group($n), '.html'))/xh:div/xh:div[@data-n = $n]/@data-size"
+          <xsl:sequence
+            select="document(concat($variants, f:output-group($n), '.html'))/xh:div/xh:div[@data-n = $n]"
           />
         </xsl:when>
-        <xsl:otherwise>0</xsl:otherwise>
+        <xsl:otherwise/>
       </xsl:choose>
     </xsl:variable>
+    <xsl:variable name="varcount" select="if ($varinfo) then $varinfo/@data-witnesses else 0"/>
     
     <!-- Dann ein Element erzeugen: div oder span oder p, siehe utils.xsl -->
     <xsl:element
@@ -99,6 +100,7 @@
         <!-- Ein paar (für's JS interessante) Daten speichern wir in data-Attributen: -->
         <xsl:attribute name="data-n" select="@n"/>
         <xsl:attribute name="data-varcount" select="$varcount"/>
+        <xsl:attribute name="data-variants" select="if ($varinfo) then $varinfo/@data-variants else 0"/>
         <xsl:attribute name="data-vargroup" select="f:output-group(@n)"/>
         
         <!-- 
@@ -117,7 +119,12 @@
           • antilabe und part-X für Antilaben
       -->
       <xsl:attribute name="class" select="string-join((f:generic-classes(.),
-        if (@n) then ('hasvars', concat('varcount-', $varcount)) else (),
+        if (@n) then (
+          'hasvars', 
+          concat('varcount-', $varcount),
+          concat('variants-', if ($varinfo) then $varinfo/@data-variants else 0),
+          if ($varinfo/@ctext != normalize-space(.)) then 'real-variant' else () 
+        ) else (),
         if (@xml:id and key('alt', @xml:id)) then 'alt' else (),
         if (@n and @part) then ('antilabe', concat('part-', @part)) else ()), ' ')"/>
 
