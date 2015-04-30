@@ -153,13 +153,13 @@
         <b>Digitale Faust-Edition</b> • Copyright (c) 2009-2015 • Freies Deutsches Hochstift Frankfurt • Klassik Stiftung Weimar • Universität Würzburg
       </div>
       <div id="footer-navigation" class="footer-navigation">
-        <a href="../K_Hilfe.php">Hilfe</a>
+        <a href="../help.php">Hilfe</a>
         <xsl:text> </xsl:text>
-        <a href="../K_Kontakt.php">Kontakt</a>
+        <a href="../contact.php">Kontakt</a>
         <xsl:text> </xsl:text>
-        <a href="../K_Impressum.php">Impressum</a>
+        <a href="../imprint.php">Impressum</a>
         <xsl:text> </xsl:text>
-        <a href="../Startseite.php">Projekt</a>
+        <a href="../project.php">Projekt</a>
       </div>
     </footer>
   </xsl:template>
