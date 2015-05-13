@@ -217,7 +217,6 @@
             />
           </xsl:if>
         </xsl:when>
-        <xsl:otherwise>.</xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
     <xsl:value-of select="concat(
