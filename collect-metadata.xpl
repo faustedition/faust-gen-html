@@ -174,6 +174,47 @@
     <p:wrap-sequence wrapper="doc" wrapper-namespace="http://www.faustedition.net/ns"/>
     <p:namespace-rename from="http://www.tei-c.org/ns/1.0"/>
     <p:namespace-rename from="http://www.w3.org/2001/XMLSchema-instance"/>    
+    
+    <p:insert match="/*" position="last-child">
+      <p:input port="insertion">
+        <p:inline>
+          <transcript xmlns="http://www.faustedition.net/ns">
+          <!-- Lesetext Faust I: -->
+          <textTranscript xmlns:f="http://www.faustedition.net/ns"
+            uri="faust://xml/print/A8_IIIB18.xml"
+            href="file:/home/tv/Faust/print/A8_IIIB18.xml"
+            document="document/print/A8.xml"
+            type="lesetext"
+            f:sigil="Lesetext">
+            <idno type="faustedition">Lesetext</idno>
+            <idno type="hagen" uri="faust://document/hagen/A_8" rank="2">A 8</idno>
+            <idno type="wa_faust" uri="faust://document/wa_faust/A" rank="3">A</idno>
+            <idno type="hagen_nr" uri="faust://document/hagen_nr/16" rank="6">16</idno>
+          </textTranscript>
+          
+          <!-- Lesetext Faust II: -->
+          <textTranscript xmlns:f="http://www.faustedition.net/ns"
+            uri="faust://xml/transcript/gsa/391098/391098.xml"
+            href="file:/home/tv/Faust/transcript/gsa/391098/391098.xml"
+            document="document/faust/2/gsa_391098.xml"
+            type="lesetext"
+            f:sigil="Lesetext">
+            <idno type="faustedition">Lesetext</idno>
+            <idno type="wa_faust" uri="faust://document/wa_faust/2_H" rank="1">2 H</idno>
+            <idno type="fischer_lamberg"
+              uri="faust://document/fischer_lamberg/2_R"
+              rank="3">2 R</idno>
+            <idno type="gsa_2" uri="faust://document/gsa_2/GSA_25/W_1804" rank="28">GSA 25/W 1804</idno>
+            <idno type="gsa_1" uri="faust://document/gsa_1/GSA_25/XIX,3" rank="50">GSA 25/XIX,3</idno>
+            <idno type="kraeuter"
+              uri="faust://document/kraeuter/Eigen_Poetisches_38.epsilon"
+              rank="9999">Eigen Poetisches 38.epsilon</idno>
+          </textTranscript>
+          </transcript>
+        </p:inline>
+      </p:input>
+    </p:insert>
+    
     <p:unwrap match="f:transcript" name="cleanup"/>
     
   </p:group>
