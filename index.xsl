@@ -7,7 +7,7 @@
 	version="2.0">
 	
 	<!--<xsl:variable name="transcripts" select="collection()[2]"/>-->
-	<xsl:param name="title">Lesetexte</xsl:param>
+	<xsl:param name="title">Lesetext</xsl:param>
         <xsl:param name="source">https://faustedition.uni-wuerzburg.de/xml</xsl:param>
   <xsl:param name="type">text print</xsl:param>  <!-- might be text, print, archivalDocument, overview, sep. by space -->
 	<xsl:output method="xhtml"/>
@@ -42,7 +42,7 @@
 
 
                   <xsl:if test="tokenize($type, ' ') = 'text'">
-                    <h2>Lesetexte</h2>
+                    <h2>Lesetext</h2>
                     <nav>
                       <ul>
                         <li><a href="faust1.html">Faust I</a></li>
