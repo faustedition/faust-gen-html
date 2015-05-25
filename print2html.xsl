@@ -320,8 +320,8 @@
       </ul>
       
 
-      <xsl:if test="f:is-splitable-doc(.)">
-        <ul class="icons-ul">
+      <ul class="icons-ul">
+        <xsl:if test="f:is-splitable-doc(.)">
           <!-- Link zum  alles-auf-einer-Seite-Dokument. -->
           <li class="all">
             <xsl:choose>
@@ -335,12 +335,12 @@
               </xsl:otherwise>
             </xsl:choose>
           </li>
-          <li class="xml">
-            <i class="icon-li icon-download-alt"></i>
-            <a download="{replace($output-base, '^.*/', '')}-emended.xml" href="{f:relativize($output-base, concat($output-base, '-emended.xml'))}">TEI-Version</a>
-          </li>
-        </ul>
-      </xsl:if>
+        </xsl:if>
+        <li class="xml">
+          <i class="icon-li icon-download-alt"></i>
+          <a download="{replace($output-base, '^.*/', '')}-emended.xml" href="{f:relativize($output-base, concat($output-base, '-emended.xml'))}">TEI-Version</a>
+        </li>
+      </ul>
     </nav>
   </xsl:template>
 
