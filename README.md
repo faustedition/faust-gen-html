@@ -83,26 +83,37 @@ This step performs three substeps that are controlled by additional files:
 
 * input is one TEI document (transcript)
 * output is one TEI document (transcript) that has been normalized.
+* additionally, there is an “emended” version of the XML version at a secondary output port (called _emended-version_) that contains the result of steps 1–5.
 
-Basically the document is just passed through the following steps:
+This removes the genetic markup from the textual transcripts by applying the edits indicated by the markup. Thus, the result represents the last state of the text in the input document.
+
+The document is passed through the following steps:
 
 1. `textTranscr_pre_transpose.xsl` normalizes references inside `ge:transpose` 
 2. `textTranscr_transpose.xsl` applies transpositions
 3. `text-emend.xsl` applies genetic markup that is using `spanTo` etc.
 4. `textTranscr_fuer_Drucke.xsl` applies genetic markup (`del`, `corr` etc.), performs character normalizations and a set of other normalizations
-5. `prose-to-lines.xsl` transforms the `<p>`-based markup in _Trüber Tag. Feld._ to a `<lg>/<l>` based markup as in the verse parts to ease collation.
+5. `clean-up.xsl` removes TEI containers that are empty after the steps above.
+6. `prose-to-lines.xsl` transforms the `<p>`-based markup in _Trüber Tag. Feld._ to a `<lg>/<l>` based markup as in the verse parts to ease collation.
 
 # Generate the master HTML files: `print2html.xpl`
 
 * input: a transcript. Additionally, the variants must already exist.
 * option: `basename` is the name used for the HTML files, relative to the output directory given by the `html` parameter
 * side effect: sectioned HTML files and a _basename_`.all.html` file for the all-in-one document are generated inside the folder specified using the `html` parameter
-* output: List of generated HTML files
+* output: XML page map (see below)
 
 Steps:
 
 1. `apply-edits.xpl`, TEI normalization, see above 
+2. `resolve-pbs.xsl`, augments `<pb>` elements with a normalized page number used 
 2. `print2html.xsl`, the actual transformation to html
+
+## The page map
+
+When generating HTML from longer documents, these are split into multiple HTML files along TEI `<div>` elements. This can be configured from the [configuration file](config.xml). 
+
+To find out which page is where, we generate an index that maps faust:// URIs and pages to HTML file names. This is a two-step process, the `print2html.xpl` pipeline generates an XML summary outlining files and pages of a single document (see [pagemap.xsl](pagemap.xsl) for details), [pagelist2json.xsl](pagelist2json.xsl) converts the information from all these documents to a single JSON file. You can then generate links in the form _filename_`#pb`_pagenumber_ to link to the individual files.
 
 # Additional source files
 
