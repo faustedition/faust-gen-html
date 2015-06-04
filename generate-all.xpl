@@ -94,14 +94,27 @@
 
 		</p:for-each>
 		
-		<p:wrap-sequence wrapper="foo"/>
+		<!-- 
+			Das Ergebnis des print2html-Schritts ist jeweils eine XML-Pagemap. Die kleben wir
+			jetzt alle zusammen und machen ein einzelnes großes JSON draus.
+		-->
+		<p:wrap-sequence wrapper="pagemaps"/>		
+		<p:xslt name="pagemap2json">
+			<p:input port="stylesheet">
+				<p:document href="pagelist2json.xsl"/>
+			</p:input>
+		</p:xslt>
+		<p:store method="text" media-type="application/json">
+			<p:with-option name="href" select="concat($html, '/pages.json')"/>
+		</p:store>
+		
 		
 		<!-- Das ist mehr so'n hack mit dem Inhaltsverzeichnis. -->
 		<f:generate-indexes>
 			<p:input port="source">
 				<p:pipe port="result" step="transcripts"/>
 			</p:input>
-		</f:generate-indexes>		
+		</f:generate-indexes>
 		
 		<!-- Assets kopieren -->
 		<pxf:copy href="lesetext.css">

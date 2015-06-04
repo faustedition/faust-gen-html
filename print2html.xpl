@@ -6,7 +6,9 @@
 	name="main" version="1.0">
 	<p:input port="source" primary="true"/>
 	<p:input port="parameters" kind="parameter"/>
-	<p:output port="result" primary="true"/>
+	<p:output port="result" primary="true">
+		<p:pipe port="result" step="body"/>
+	</p:output>
 	
 	<p:option name="basename" select="''">
 		<p:documentation>Basis for the filename of the result documents. Must be relative
@@ -28,6 +30,9 @@
 	
 	<!-- wir müssen ein paar der Parameter auswerten: -->
 	<p:group name="body">
+		<p:output port="result">
+			<p:pipe port="result" step="pagemap-xslt"/>
+		</p:output>
 		
 		<!-- $html -> das Verzeichnis für die Ausgabedateien -->
 		<p:variable name="html" select="//c:param[@name='html']/@value">
@@ -63,7 +68,7 @@
 		</f:apply-edits>
 		
 		<!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
-		<p:xslt>
+		<p:xslt name="pbs">
 			<p:input port="stylesheet">
 				<p:document href="resolve-pb.xsl"/>
 			</p:input>
@@ -139,6 +144,19 @@
 				<p:pipe step="save-emended" port="result"/>
 			</p:input>
 		</p:wrap-sequence>
+		
+		<p:xslt name="pagemap-xslt">
+			<p:input port="source">
+				<p:pipe port="result" step="pbs"/>
+			</p:input>
+			<p:input port="stylesheet">
+				<p:document href="pagemap.xsl"/>
+			</p:input>
+			<p:input port="parameters">
+				<p:pipe port="result" step="config"/>
+			</p:input>
+			<p:with-param name="output-base" select="$output-base"/>
+		</p:xslt>
 		
 	</p:group>
 
