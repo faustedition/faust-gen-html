@@ -33,9 +33,11 @@
 	<xsl:strip-space elements="*"/>
 	
 	<xsl:template match="/">
-		<xsl:text>[</xsl:text>
-		<xsl:apply-templates/>
-		<xsl:text>]</xsl:text>
+		<json>
+			<xsl:text>[</xsl:text>
+			<xsl:apply-templates/>
+			<xsl:text>]</xsl:text>
+		</json>
 	</xsl:template>
 	
 	<xsl:template match="document">
@@ -50,7 +52,7 @@
 	<xsl:template match="file">
 		<xsl:text>{"name":"</xsl:text>
 		<xsl:value-of select="@name"/>
-		<xsl:text>","pages": [</xsl:text>
+		<xsl:text>","pages":[</xsl:text>
 	  	<xsl:value-of select="string-join(child::page/text(), ',')"/>
 		<xsl:text>]}</xsl:text>
 		<xsl:if test="some $file in ancestor::document//file satisfies $file >> .">,</xsl:if>		
