@@ -37,8 +37,18 @@
 	<xsl:strip-space elements="*"/>
 	<xsl:template match="comment()|text()|processing-instruction()"/>
 	<xsl:template match="/">
-		<document uri="faust://xml/{$documentURI}" split="{f:is-splitable-doc(.)}">
-			<xsl:apply-templates mode="divs"/>
+		<xsl:variable name="splittable" select="f:is-splitable-doc(.)"/>
+		<document uri="faust://xml/{$documentURI}" split="{$splittable}">
+		<xsl:choose>
+			<xsl:when test="$splittable">
+				<xsl:apply-templates mode="divs"/>				
+			</xsl:when>
+			<xsl:otherwise>
+				<file name="{replace($output-base, '^.*/', '')}.html">
+					<xsl:apply-templates select=".//pb" mode="divs"/>
+				</file>
+			</xsl:otherwise>
+		</xsl:choose>
 		</document>
 	</xsl:template>
 

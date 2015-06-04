@@ -1732,6 +1732,8 @@
         <file name="generate-all.xpl"/>
         <file name="html-common.xsl"/>
         <file name="lesetext.css"/>
+        <file name="pagelist2json.xsl"/>
+        <file name="pagemap.xsl"/>
         <file name="print2html.xpl"/>
         <file name="print2html.xsl"/>
         <file name="prose-to-lines.xsl"/>
