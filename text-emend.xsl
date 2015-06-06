@@ -25,6 +25,13 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="/">
+        <xsl:for-each select="//delSpan[not(replace(@spanTo, '^#', '') = //*/@xml:id)]">
+            <xsl:message select="concat('WARNING: ', document-uri(/),': delSpan/@spanTo=&quot;', @spanTo, '&quot; without corresponding target: YOU LOOSE TEXT!')"/>
+        </xsl:for-each>
+        <xsl:next-match/>
+    </xsl:template>
+    
     <xsl:template match="add | mod">
         <xsl:apply-templates/>
     </xsl:template>
