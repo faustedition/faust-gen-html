@@ -19,6 +19,7 @@
 	
 	<xsl:output method="xhtml"/>
 	
+	<!-- DEPRECATED -->
 	<xsl:function name="f:varcount">
 		<xsl:param name="group"/>
 		<xsl:variable name="part" select="$group[1]/@part"/>
@@ -26,7 +27,7 @@
 		<xsl:value-of select="if ($part) then count($group[@part=$part and name()=$name]) else count($group[name()=$name])"/>
 	</xsl:function>
 	
-	<xsl:template match="/*">		
+	<xsl:template match="/f:variants">		
 		<xsl:for-each-group select="*" group-by="f:output-group(@n)">
 			<xsl:variable name="output-file" select="concat($variants, current-grouping-key(), '.html')"/>			
 			<xsl:result-document href="{$output-file}">
@@ -34,16 +35,24 @@
 					<xsl:for-each-group select="current-group()" group-by="@n">
 						<xsl:variable name="cline" select="current-group()[@f:doc = $canonicalDocs]"/>
 						<xsl:variable name="ctext" select="if ($cline) then normalize-space($cline[1]) else ''"/>
+						<xsl:variable name="evidence">
+							<xsl:for-each-group select="current-group()" group-by="@f:doc">
+								<f:evidence>
+									<xsl:copy-of select="current-group()[1]/@*"/>
+									<xsl:copy-of select="current-group()"/>
+								</f:evidence>
+							</xsl:for-each-group>
+						</xsl:variable>
 						<div class="variants" 
 							data-n="{current-grouping-key()}" 
-							data-witnesses="{f:varcount(current-group())}"
-							data-variants="{count(distinct-values(for $line in current-group() return normalize-space($line)))}"
+							data-witnesses="{count($evidence/*)}"
+							data-variants="{count(distinct-values(for $ev in $evidence/* return normalize-space($ev)))}"
 							data-ctext="{$ctext}"
 							xml:id="v{current-grouping-key()}" 
 							id="v{current-grouping-key()}">
-							<xsl:for-each-group select="current-group()" group-by="normalize-space(.)">
+							<xsl:for-each-group select="$evidence/*" group-by="normalize-space(.)">
 								
-									<xsl:apply-templates select="current-group()[1]">
+									<xsl:apply-templates select="current-group()[1]/*">
 										<xsl:sort select="@f:sigil"/>
 										<xsl:with-param name="group" select="current-group()"/>
 									</xsl:apply-templates>
@@ -54,6 +63,13 @@
 				</div>
 			</xsl:result-document>
 		</xsl:for-each-group>
+	</xsl:template>
+	
+	<xsl:template match="f:evidence">
+		<xsl:param name="group"/>
+		<xsl:apply-templates>
+			<xsl:with-param name="group" select="$group"/>
+		</xsl:apply-templates>
 	</xsl:template>
 	
 	<!-- 
