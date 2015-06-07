@@ -126,7 +126,8 @@
         <xsl:variable name="tmp5" select=" replace($tmp4,'r̄','rr')"/>
         <xsl:variable name="tmp6" select=" replace($tmp5,'ſ','s')"/>
         <xsl:variable name="tmp7" select=" replace($tmp6,'—','–')"/>
-        <xsl:value-of select="$tmp7"/>
+        <xsl:variable name="tmp8" select=" replace($tmp7,'&#x00AD;','')"/>  <!-- Soft Hyphen -->
+        <xsl:value-of select="$tmp8"/>
     </xsl:template>
     <xsl:strip-space elements="app choice subst"/>
   
