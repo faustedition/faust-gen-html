@@ -41,9 +41,9 @@ Basically, we need to perform three steps, in order:
 2. Generate the HTML fragments that form the apparatus
 3. For each text to render, generate the HTML representation (in split and unsplit form).
 
-All steps read `config.xml`, and all XSLT stylesheets have the parameters defined there available. All parameters from `config.xml` can also be passed by the usual means of passing parameters to pipelines (like calabash's `-p` option).
+All steps read [config.xml](config.xml), and all XSLT stylesheets have the parameters defined there available. All parameters from [config.xml](config.xml) can also be passed by the usual means of passing parameters to pipelines (like calabash's `-p` option).
 
-# List Witnesses: `collect-metadata.xpl`
+# List Witnesses: [collect-metadata.xpl](collect-metadata.xpl)
 
 * no input
 * output is a list of transcripts
@@ -67,19 +67,19 @@ The output is a list of `<textTranscript>` elements, here is an example:
 
 `href` is the local path to the actual transcript, `document` is the relative URL to the metadata document. `type` is either `archivalDocument` or `print`. The `<idno>` elements are ordered by an order of preference defined in the pipeline (depending on type) and recorded in the respective `rank` attribute.
 
-# Generate Apparatus: `collate-variants.xpl`
+# Generate Apparatus: [collate-variants.xpl](collate-variants.xpl)
 
-* input is the list of witnesses from the `collect-metadata.xpl` step
+* input is the list of witnesses from the [collect-metadata.xpl](collect-metadata.xpl) step
 * output is a large XML document containing all variants of all lines (only useful for debugging purposes)
-* additionally, the variants HTML fragments are written to the `variants` directory configured in `config.xml`
+* additionally, the variants HTML fragments are written to the `variants` directory configured in [config.xml](config.xml)
 
 This step performs three substeps that are controlled by additional files:
 
-1. `apply-edits.xpl` (for each transcript) – TEI preprocessing, see separate section
-2. `extract-lines.xsl` (for each transcript) – filters only those TEI elements that represent lines used for the apparatus (including descendant nodes), augmenting them with provenance attributes
-3. `variant-fragments.xsl` – sorts and groups the lines, and transforms them to HTML.
+1. [apply-edits.xpl](apply-edits.xpl) (for each transcript) – TEI preprocessing, see separate section
+2. [extract-lines.xsl](extract-lines.xsl) (for each transcript) – filters only those TEI elements that represent lines used for the apparatus (including descendant nodes), augmenting them with provenance attributes
+3. [variant-fragments.xsl](variant-fragments.xsl) – sorts and groups the lines, and transforms them to HTML.
 
-## Preprocessing the TEI files: `apply-edits.xpl`
+## Preprocessing the TEI files: [apply-edits.xpl](apply-edits.xpl)
 
 * input is one TEI document (transcript)
 * output is one TEI document (transcript) that has been normalized.
@@ -89,14 +89,14 @@ This removes the genetic markup from the textual transcripts by applying the edi
 
 The document is passed through the following steps:
 
-1. `textTranscr_pre_transpose.xsl` normalizes references inside `ge:transpose` 
-2. `textTranscr_transpose.xsl` applies transpositions
-3. `text-emend.xsl` applies genetic markup that is using `spanTo` etc.
-4. `textTranscr_fuer_Drucke.xsl` applies genetic markup (`del`, `corr` etc.), performs character normalizations and a set of other normalizations
-5. `clean-up.xsl` removes TEI containers that are empty after the steps above.
-6. `prose-to-lines.xsl` transforms the `<p>`-based markup in _Trüber Tag. Feld._ to a `<lg>/<l>` based markup as in the verse parts to ease collation.
+1. [textTranscr_pre_transpose.xsl](textTranscr_pre_transpose.xsl) normalizes references inside `ge:transpose` 
+2. [textTranscr_transpose.xsl](textTranscr_transpose.xsl) applies transpositions
+3. [text-emend.xsl](text-emend.xsl) applies genetic markup that is using `spanTo` etc.
+4. [textTranscr_fuer_Drucke.xsl](textTranscr_fuer_Drucke.xsl) applies genetic markup (`del`, `corr` etc.), performs character normalizations and a set of other normalizations
+5. [clean-up.xsl](clean-up.xsl) removes TEI containers that are empty after the steps above.
+6. [prose-to-lines.xsl](prose-to-lines.xsl) transforms the `<p>`-based markup in _Trüber Tag. Feld._ to a `<lg>/<l>` based markup as in the verse parts to ease collation.
 
-# Generate the master HTML files: `print2html.xpl`
+# Generate the master HTML files: [print2html.xpl](print2html.xpl)
 
 * input: a transcript. Additionally, the variants must already exist.
 * option: `basename` is the name used for the HTML files, relative to the output directory given by the `html` parameter
@@ -105,26 +105,26 @@ The document is passed through the following steps:
 
 Steps:
 
-1. `apply-edits.xpl`, TEI normalization, see above 
-2. `resolve-pbs.xsl`, augments `<pb>` elements with a normalized page number used 
-2. `print2html.xsl`, the actual transformation to html
+1. [apply-edits.xpl](apply-edits.xpl), TEI normalization, see above 
+2. [resolve-pbs.xsl](resolve-pbs.xsl), augments `<pb>` elements with a normalized page number used 
+2. [print2html.xsl](print2html.xsl), the actual transformation to html
 
 ## The page map
 
 When generating HTML from longer documents, these are split into multiple HTML files along TEI `<div>` elements. This can be configured from the [configuration file](config.xml). 
 
-To find out which page is where, we generate an index that maps faust:// URIs and pages to HTML file names. This is a two-step process, the `print2html.xpl` pipeline generates an XML summary outlining files and pages of a single document (see [pagemap.xsl](pagemap.xsl) for details), [pagelist2json.xsl](pagelist2json.xsl) converts the information from all these documents to a single JSON file. You can then generate links in the form _filename_`#pb`_pagenumber_ to link to the individual files.
+To find out which page is where, we generate an index that maps faust:// URIs and pages to HTML file names. This is a two-step process, the [print2html.xpl](print2html.xpl) pipeline generates an XML summary outlining files and pages of a single document (see [pagemap.xsl](pagemap.xsl) for details), [pagelist2json.xsl](pagelist2json.xsl) converts the information from all these documents to a single JSON file. You can then generate links in the form _filename_`#pb`_pagenumber_ to link to the individual files.
 
 # Additional source files
 
-* `lesetext.css` is a stylesheet that is included in all generated HTML documents.
-* `utils.xsl` contains a number of functions used by the other stylesheets, e.g., to calculate the variant groups
-* `config.xml` contains the parameters for all steps
+* [lesetext.css](lesetext.css) is a stylesheet that is included in all generated HTML documents.
+* [utils.xsl](utils.xsl) contains a number of functions used by the other stylesheets, e.g., to calculate the variant groups
+* [config.xml](config.xml) contains the parameters for all steps
 * sigil-labels.xml contains labels for the sigil types
 
 ## Experimental stuff
 
-* `transcr.xpr` - oxygen project
-* `broken-macrogen-links.xpl` lists links in macrogenesis that cannot be automatically resolved to uris from the metadata
-* `config-test.xpl`
-* `faust_nurtext_textko.xsl`
+* [transcr.xpr](transcr.xpr) - oxygen project
+* [broken-macrogen-links.xpl](broken-macrogen-links.xpl) lists links in macrogenesis that cannot be automatically resolved to uris from the metadata
+* [config-test.xpl](config-test.xpl)
+* [faust_nurtext_textko.xsl](faust_nurtext_textko.xsl)
