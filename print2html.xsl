@@ -137,20 +137,25 @@
   <!-- Erzeugt die Zeilennummer vor der Zeile -->
   <xsl:template name="generate-lineno">
     <xsl:variable name="display-line" select="f:lineno-for-display(@n)"/>
-    <xsl:if test="number($display-line) gt 0">
-      <!-- Klick auf Zeilennummer führt zu einem Link, der wiederum auf die Zeilennummer verweist -->
-      <xsl:attribute name="id" select="concat('l', @n)"/>
-      <a href="#l{@n}">
-        <xsl:attribute name="class">
-          <xsl:text>lineno</xsl:text>
-          <!-- Jede 5. ist immer sichtbar, alle anderen nur wenn über die Zeile gehovert wird -->
-          <xsl:if test="$display-line mod 5 != 0">
-            <xsl:text> invisible</xsl:text>
-          </xsl:if>
-        </xsl:attribute>
-        <xsl:value-of select="$display-line"/>
-      </a>
-    </xsl:if>
+    <xsl:choose>
+      <xsl:when test="number($display-line) gt 0">
+        <!-- Klick auf Zeilennummer führt zu einem Link, der wiederum auf die Zeilennummer verweist -->
+        <xsl:attribute name="id" select="concat('l', @n)"/>
+        <a href="#l{@n}">
+          <xsl:attribute name="class">
+            <xsl:text>lineno</xsl:text>
+            <!-- Jede 5. ist immer sichtbar, alle anderen nur wenn über die Zeile gehovert wird -->
+            <xsl:if test="$display-line mod 5 != 0">
+              <xsl:text> invisible</xsl:text>
+            </xsl:if>
+          </xsl:attribute>
+          <xsl:value-of select="$display-line"/>
+        </a>
+      </xsl:when>
+      <xsl:otherwise>
+        <a class="lineno invisible">&#160;</a>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!-- divs, die bis zu $depth tief verschachtelt sind, werden im Standardmodus zerlegt: -->
