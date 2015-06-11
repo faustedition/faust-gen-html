@@ -10,9 +10,8 @@
 	eine JSON-Repräsentation. Beispiel, analog zum Beispiel in pagemap.xsl:
 	
 	
-	[ { 
-    "document" : "faust://xml/document/faust/2/gsa_391098.xml",
-    "files" : [ 
+	{ 
+      "faust://xml/document/faust/2/gsa_391098.xml" : [
         { 
           "name" : "391098.1.html",
           "pages" : [ 11 ]
@@ -22,7 +21,7 @@
           "pages" : [ 7, 8, 9, 10 ]
         }
       ]
-	} ]
+	}
 	
 	nur halt kompakt.
 	
@@ -34,18 +33,18 @@
 	
 	<xsl:template match="/">
 		<json>
-			<xsl:text>[</xsl:text>
+			<xsl:text>{</xsl:text>
 			<xsl:apply-templates/>
-			<xsl:text>]</xsl:text>
+			<xsl:text>}</xsl:text>
 		</json>
 	</xsl:template>
 	
 	<xsl:template match="document">
-		<xsl:text>{"document":"</xsl:text>
+		<xsl:text>"</xsl:text>
 		<xsl:value-of select="@uri"/>
-		<xsl:text>","files":[</xsl:text>
+		<xsl:text>":[</xsl:text>
 		<xsl:apply-templates select="descendant::file"/>
-		<xsl:text>]}</xsl:text>		
+		<xsl:text>]</xsl:text>		
 		<xsl:if test="following-sibling::document">,</xsl:if>
 	</xsl:template>
 	
