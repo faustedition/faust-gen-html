@@ -39,16 +39,16 @@
 	<xsl:template match="/">
 		<xsl:variable name="splittable" select="f:is-splitable-doc(.)"/>
 		<document uri="faust://xml/{$documentURI}" split="{$splittable}">
-		<xsl:choose>
-			<xsl:when test="$splittable">
-				<xsl:apply-templates mode="divs"/>				
-			</xsl:when>
-			<xsl:otherwise>
-				<file name="{replace($output-base, '^.*/', '')}.html">
-					<xsl:apply-templates select=".//pb" mode="divs"/>
-				</file>
-			</xsl:otherwise>
-		</xsl:choose>
+			<file name="{replace($output-base, '^.*/', '')}.html">
+				<xsl:choose>
+					<xsl:when test="$splittable">
+						<xsl:apply-templates mode="divs"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:apply-templates select=".//pb" mode="divs"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</file>
 		</document>
 	</xsl:template>
 
