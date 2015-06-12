@@ -11,16 +11,11 @@
 	
 	
 	{ 
-      "faust://xml/document/faust/2/gsa_391098.xml" : [
+      "faust://xml/document/faust/2/gsa_391098.xml" : 
         { 
-          "name" : "391098.1.html",
-          "pages" : [ 11 ]
+          "1" : "391098.1.html",
+          "2" : "391098.1.html",
         },
-        { 
-          "name" : "391098.2.html",
-          "pages" : [ 7, 8, 9, 10 ]
-        }
-      ]
 	}
 	
 	nur halt kompakt.
@@ -42,18 +37,13 @@
 	<xsl:template match="document">
 		<xsl:text>"</xsl:text>
 		<xsl:value-of select="@uri"/>
-		<xsl:text>":[</xsl:text>
-		<xsl:apply-templates select="descendant::file"/>
-		<xsl:text>]</xsl:text>		
+		<xsl:text>":{</xsl:text>
+		<xsl:value-of select="string-join((
+			for $page in .//page[normalize-space(.)]
+			return concat('&quot;', $page/text(), '&quot;:&quot;', $page/parent::file/@name, '&quot;')), 
+			',')"/>
+		<xsl:text>}</xsl:text>		
 		<xsl:if test="following-sibling::document">,</xsl:if>
 	</xsl:template>
 	
-	<xsl:template match="file">
-		<xsl:text>{"name":"</xsl:text>
-		<xsl:value-of select="@name"/>
-		<xsl:text>","pages":[</xsl:text>
-	  	<xsl:value-of select="string-join(child::page/text(), ',')"/>
-		<xsl:text>]}</xsl:text>
-		<xsl:if test="some $file in ancestor::document//file satisfies $file >> .">,</xsl:if>		
-	</xsl:template>		
 </xsl:stylesheet>
