@@ -9,6 +9,7 @@
 	<p:input port="parameters" kind="parameter"/>
 
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
+<!--	<p:import href="http://xproc.org/library/store.xpl"/>-->
 	<p:import href="collect-metadata.xpl"/>
 	<p:import href="collate-variants.xpl"/>
 	<p:import href="print2html.xpl"/>
@@ -98,7 +99,10 @@
 			Das Ergebnis des print2html-Schritts ist jeweils eine XML-Pagemap. Die kleben wir
 			jetzt alle zusammen und machen ein einzelnes großes JSON draus.
 		-->
-		<p:wrap-sequence wrapper="pagemaps"/>		
+		<p:wrap-sequence wrapper="pagemaps"/>
+
+<!--		<l:store href="file:/tmp/pagemaps.xml"/>-->
+
 		<p:xslt name="pagemap2json">
 			<p:input port="stylesheet">
 				<p:document href="pagelist2json.xsl"/>
