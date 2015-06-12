@@ -38,7 +38,7 @@
     </l:recursive-directory-list>
 
     <p:for-each>
-      <p:iteration-source select="//c:file"/>
+      <p:iteration-source select="//c:file[not(ends-with(@name, 'test.xml'))]"/>
       <p:variable name="filename" select="p:resolve-uri(/c:file/@name)"/>
       
       <cx:message log="debug">        
