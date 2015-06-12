@@ -52,7 +52,7 @@
 		</document>
 	</xsl:template>
 
-	<xsl:template match="pb" mode="divs">
+	<xsl:template match="pb[@f:docTranscriptNo][not(preceding::pb[@f:docTranscriptNo=current()/@f:docTranscriptNo])]" mode="divs">
 		<page>
 			<xsl:value-of select="@f:docTranscriptNo"/>
 		</page>
