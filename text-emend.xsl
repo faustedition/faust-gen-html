@@ -5,6 +5,13 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs"
     version="2.0">
+
+    <!--
+         by Wendel Piez, cf.
+         https://github.com/wendellpiez/MITH_XSLT/blob/master/xslt/text-emend.xsl
+
+         with additions by Thorsten Vitt
+     -->
     
     <!--
         add: passes through without copying
@@ -27,7 +34,9 @@
     
     <xsl:template match="/">
         <xsl:for-each select="//delSpan[not(replace(@spanTo, '^#', '') = //*/@xml:id)]">
-            <xsl:message select="concat('WARNING: ', document-uri(/),': delSpan/@spanTo=&quot;', @spanTo, '&quot; without corresponding target: YOU LOOSE TEXT!')"/>
+            <xsl:message select="concat('WARNING: ', document-uri(/),
+                ': delSpan/@spanTo=&quot;', @spanTo, 
+                '&quot; without corresponding target: YOU LOOSE TEXT!')"/>
         </xsl:for-each>
         <xsl:next-match/>
     </xsl:template>
