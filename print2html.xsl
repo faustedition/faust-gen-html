@@ -12,6 +12,7 @@
     und Variantenapparat. 
   -->
 
+  <xsl:import href="html-frame.xsl"/>
   <xsl:include href="html-common.xsl"/>
   
   <!-- Der Ausgabeordner für die HTML-Dateien. -->
