@@ -43,11 +43,11 @@
 		<xsl:param name="with" required="yes"/>
 		<span class="{string-join(f:generic-classes(.), ' ')}">
 			<span class="generated-text">
-				<xsl:value-of select="$with[1]"/>
+				<xsl:copy-of select="$with[1]"/>
 			</span>
 			<xsl:apply-templates select="node()" mode="#current"/>
 			<span class="generated-text">
-				<xsl:value-of select="if ($with[2]) then $with[2] else $with"/>
+				<xsl:copy-of select="if ($with[2]) then $with[2] else $with"/>
 			</span>
 		</span>
 	</xsl:template>
@@ -121,5 +121,28 @@
 	
   <xsl:template match="fw"  mode="#default single"/>
 	
+	<!-- Erzeugt die Zeilennummer vor der Zeile -->
+	<xsl:template name="generate-lineno">
+		<xsl:variable name="display-line" select="f:lineno-for-display(@n)"/>
+		<xsl:choose>
+			<xsl:when test="number($display-line) gt 0">
+				<!-- Klick auf Zeilennummer führt zu einem Link, der wiederum auf die Zeilennummer verweist -->
+				<xsl:attribute name="id" select="concat('l', @n)"/>
+				<a href="#l{@n}">
+					<xsl:attribute name="class">
+						<xsl:text>lineno</xsl:text>
+						<!-- Jede 5. ist immer sichtbar, alle anderen nur wenn über die Zeile gehovert wird -->
+						<xsl:if test="$display-line mod 5 != 0">
+							<xsl:text> invisible</xsl:text>
+						</xsl:if>
+					</xsl:attribute>
+					<xsl:value-of select="$display-line"/>
+				</a>
+			</xsl:when>
+			<xsl:otherwise>
+				<a class="lineno invisible">&#160;</a>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
 	
 </xsl:stylesheet>
