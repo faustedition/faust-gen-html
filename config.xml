@@ -7,6 +7,9 @@
 	<!-- Path to the target folder for the "root" HTML files-->
 	<c:param name="html" value="target/print/"/>
 
+	<!-- Path to the target folder for the "apparatus" HTML files-->
+	<c:param name="apphtml" value="target/app/"/>
+
 	<!-- Path to the target folder for the variant fragments -->
 	<c:param name="variants" value="target/print/variants/"/>
 	
