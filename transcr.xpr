@@ -1943,12 +1943,15 @@
         <folder path="../../Faust/"/>
         <folder path="../../Faust/image-text-links/"/>
         <file name="../../Faust/print/A8_IIIB18.xml"/>
+        <file name="apparatus.xpl"/>
         <file name="apparatus.xsl"/>
         <file name="apply-edits.xpl"/>
         <file name="collate-variants.xpl"/>
         <file name="collect-metadata.xpl"/>
         <file name="extract-lines.xsl"/>
         <file name="generate-all.xpl"/>
+        <file name="generate-app.xpl"/>
+        <file name="generate-indexes.xpl"/>
         <file name="html-common.xsl"/>
         <file name="lesetext.css"/>
         <file name="pagelist2json.xsl"/>

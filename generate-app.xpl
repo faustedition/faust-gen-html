@@ -2,9 +2,7 @@
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
 	xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:f="http://www.faustedition.net/ns"
 	xmlns:l="http://xproc.org/library" version="1.0" name="main" type="f:collate-variants">
-	<p:input port="source">
-		<p:empty/>
-	</p:input>
+	<p:input port="source"/>	
 	<p:input port="parameters" kind="parameter"/>
 	
 	<!-- Am Output-Port legen wir zu Debuggingzwecken ein XML-Dokument mit allen Varianten an -->
@@ -25,6 +23,9 @@
 	</p:parameters>
 	
 	<p:identity><p:input port="source"><p:pipe port="source" step="main"/></p:input></p:identity>
+	
+	<p:group>
+		<p:variable name="apphtml" select="//c:param[@name='apphtml']/@value"><p:pipe port="result" step="config"></p:pipe></p:variable>
 	
 	<cx:message log="info">
 		<p:with-option name="message" select="'Reading transcript files ...'"/>
@@ -57,8 +58,30 @@
 		<f:apparatus name="apparatus"/>
 
 	</p:for-each>
+	
+	<p:wrap-sequence wrapper="doc"/>
+	
+	<p:xslt name="index-ad">
+		<p:input port="source">
+			<p:pipe port="source" step="main"/>
+		</p:input>		
+		<p:input port="stylesheet">
+			<p:document href="index.xsl"/>
+		</p:input>
+		<p:input port="parameters">
+			<p:pipe port="result" step="config"/>
+		</p:input>
+		<p:with-param name="type" select="'archivalDocument'"/>
+	</p:xslt>
+	<cx:message log="info">
+		<p:with-option name="message" select="concat('Saving index: ', $apphtml, 'index.html')"/>
+	</cx:message>
+	<p:store method="xhtml" include-content-type="true" indent="true">
+		<p:with-option name="href" select="concat($apphtml, 'index.html')"/>		
+	</p:store>
+	
+	</p:group>
 
-	<p:sink/>
 	
 	<!-- das Stylesheet erzeugt keinen relevanten Output auf dem Haupt-Ausgabeport. -->
 <!--	<p:sink>
