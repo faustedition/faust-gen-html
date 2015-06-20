@@ -93,6 +93,7 @@
                     <h2>Handschriften</h2>                    
                     <ul>
                       <xsl:for-each select="//f:textTranscript[@type='archivalDocument']">
+                        <xsl:sort select="f:idno[1]"/>
                         <xsl:variable name="filename" select="replace(@href, '^.*/([^/]+)', '$1')"/>
                         <xsl:variable name="htmlname" select="replace($filename, '\.xml$', '')"/>
                         <li><a href="{$htmlname}.html" title="{f:sigil-label(f:idno[1]/@type)}">
