@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:f="http://www.faustedition.net/ns"
-	xmlns:c="http://www.w3.org/ns/xproc-step" 
+	xmlns:c="http://www.w3.org/ns/xproc-step"
+	xmlns:cx="http://xmlcalabash.com/ns/extensions"
 	xmlns:pxp="http://exproc.org/proposed/steps"
 	type="f:apparatus"
 	name="main" version="1.0">
@@ -105,18 +106,16 @@
 				<p:pipe step="output" port="result"/>
 				<p:pipe step="html" port="secondary"/>
 			</p:iteration-source>
-			
+
+			<cx:message>
+				<p:with-option name="message" select="concat('Saving ', p:base-uri())"/>
+			</cx:message>
 
 			<p:store name="store" method="xhtml" indent="true" include-content-type="true">
 				<p:with-option name="href" select="p:base-uri()"/>
 			</p:store>
 		</p:for-each>
 		
-		<p:identity>
-			<p:input port="source">
-				<p:pipe port="result" step="html"/>
-			</p:input>
-		</p:identity>
 	</p:group>
 
 </p:declare-step>
