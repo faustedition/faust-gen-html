@@ -9,7 +9,7 @@
 	version="2.0">
 	
 	<xsl:import href="html-frame.xsl"/>
-	<xsl:import href="html-common.xsl"/>
+	<xsl:include href="html-common.xsl"/>
 	<xsl:param name="type">archivalDocument</xsl:param>
 	
 	<xsl:output method="xhtml" indent="yes"/>
