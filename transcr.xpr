@@ -1953,6 +1953,7 @@
         <file name="generate-app.xpl"/>
         <file name="generate-indexes.xpl"/>
         <file name="html-common.xsl"/>
+        <file name="html-frame.xsl"/>
         <file name="lesetext.css"/>
         <file name="pagelist2json.xsl"/>
         <file name="pagemap.xsl"/>

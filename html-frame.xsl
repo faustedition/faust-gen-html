@@ -8,6 +8,7 @@
 	<xsl:param name="title">Digitale Faustedition</xsl:param>
 	<xsl:param name="edition">..</xsl:param>
 	<xsl:param name="assets" select="$edition"/>
+	<xsl:param name="debug" select="false()"/>
 	
 	<xsl:template name="html-head">
 		<xsl:param name="title" select="$title"/>
@@ -49,14 +50,12 @@
 		<footer>
 			<div id='footer-content' class='footer-content'>
 				<b>Digitale Faust-Edition</b>
-			</div>
-			<div id="footer-navigation" class="footer-navigation">
-				<a href="help.php">Hilfe</a>
-			</div>
-		</footer>
-		<footer>
-			<div id='footer-content' class='footer-content'>
-				<b>Digitale Faust-Edition</b>
+				<xsl:if test="$debug">
+					<xsl:text> • </xsl:text>
+					<a href="./index.html" style="background:#ff0;text-decoration:none;">
+						Generiert: <xsl:value-of select="current-dateTime()"/>
+					</a>
+				</xsl:if>				
 			</div>
 			<div id="footer-navigation" class="footer-navigation">
 				<a href="{$edition}/help.php">Hilfe</a>
