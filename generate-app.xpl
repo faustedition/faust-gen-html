@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
 	xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:f="http://www.faustedition.net/ns"
+	xmlns:pxf="http://exproc.org/proposed/steps/file"
 	xmlns:l="http://xproc.org/library" version="1.0" name="main" type="f:collate-variants">
 	<p:input port="source"/>	
 	<p:input port="parameters" kind="parameter"/>
@@ -79,6 +80,12 @@
 	<p:store method="xhtml" include-content-type="true" indent="true">
 		<p:with-option name="href" select="concat($apphtml, 'index.html')"/>		
 	</p:store>
+		
+	<!-- Assets kopieren -->
+	<pxf:copy href="lesetext.css">
+		<p:with-option name="target" select="concat($apphtml, 'lesetext.css')"/>
+	</pxf:copy>
+		
 	
 	</p:group>
 
