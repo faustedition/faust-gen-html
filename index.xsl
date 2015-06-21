@@ -95,9 +95,9 @@
                       <xsl:for-each select="//f:textTranscript[@type='archivalDocument']">
                         <xsl:sort select="f:idno[1]"/>
                         <xsl:variable name="filename" select="replace(@href, '^.*/([^/]+)', '$1')"/>
-                        <xsl:variable name="htmlname" select="replace($filename, '\.xml$', '')"/>
+                        <xsl:variable name="htmlname" select="replace($filename, '\.xml$', '')"/>                        
                         <li><a href="{$htmlname}.html" title="{f:sigil-label(f:idno[1]/@type)}">
-                          <xsl:value-of select="f:idno[1]"/>
+                          <xsl:value-of select="if (f:idno[1]) then f:idno[1] else concat('!! keine Sigle – faust://xml/', @document)"/>
                         </a></li>                        
                       </xsl:for-each>
                     </ul>
