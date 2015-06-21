@@ -38,16 +38,36 @@
 	  </xsl:choose>
 	</xsl:template>
 	
-	<!-- Render sth as enclosed with generated text. -->
+	<!-- 
+		Render sth as enclosed with generated text.
+		
+		The template will render an all-enclosing span, the supplied prefix, the normal content at that position and the supplied suffix.
+		Prefix and suffix will be styled with the class 'generated-text'. 
+		
+		Parameters:
+		
+		pre	    - Prefix   (may be nodes)
+		post    - Postfix  (may be nodes)
+		with    - alternative way to specify $pre and $post as a 2-tuple
+		classes - sequence of strings to be used as classes for the enclosing element, f:generic-classes(.) by default
+		title   - optional title (tooltip) for the enclosing element
+	-->
 	<xsl:template name="enclose">
-		<xsl:param name="with" required="yes"/>
-		<span class="{string-join(f:generic-classes(.), ' ')}">
+		<xsl:param name="with" select="('', '')"/>
+		<xsl:param name="pre" select="$with[1]"/>
+		<xsl:param name="post" select="if ($with[2]) then $with[2] else $with"/>
+		<xsl:param name="classes" select="f:generic-classes(.)"/>
+		<xsl:param name="title"/>
+		<span class="{string-join($classes, ' ')}">
+			<xsl:if test="$title">
+				<xsl:attribute name="title" select="$title"/>
+			</xsl:if>
 			<span class="generated-text">
-				<xsl:copy-of select="$with[1]"/>
+				<xsl:copy-of select="$pre"/>
 			</span>
 			<xsl:apply-templates select="node()" mode="#current"/>
 			<span class="generated-text">
-				<xsl:copy-of select="if ($with[2]) then $with[2] else $with"/>
+				<xsl:copy-of select="$post"/>
 			</span>
 		</span>
 	</xsl:template>
