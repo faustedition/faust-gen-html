@@ -3,6 +3,9 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.tei-c.org/ns/1.0"    
     xmlns:f="http://www.faustedition.net/ns" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs f" version="2.0" xmlns:ge="http://www.tei-c.org/ns/geneticEditions">
+    
+    <xsl:import href="harmonize-antilabes.xsl"/>
+    
     <xsl:template match="@*|node()">
         <xsl:choose>
             <xsl:when test="name()='status'"/>
@@ -131,7 +134,7 @@
     </xsl:template>
     <xsl:strip-space elements="app choice subst"/>
   
-    <xsl:include href="harmonize-antilabes.xsl"/>  
+      
 
     <!--    <xsl:template match="orig/text()">
         <xsl:value-of select=" replace(., 'a','ä')"></xsl:value-of>
