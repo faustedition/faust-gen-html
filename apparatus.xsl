@@ -16,36 +16,43 @@
 
 
 
-	<xsl:template match="add[not(parent::subst)]">
-		<xsl:variable name="erg"> <abbr title="ergänzt" class="app"> erg</abbr> ⟩</xsl:variable>
+	<xsl:template match="add[not(parent::subst)]">		
 		<xsl:call-template name="enclose">
-			<xsl:with-param name="with" select="('⟨ ',  $erg)"/>
+			<xsl:with-param name="pre" select="'⟨ '"/>
+			<xsl:with-param name="post"> <span class="app"> erg</span> ⟩</xsl:with-param>
+			<xsl:with-param name="title" select="concat('»', ., '« ergänzt')"/>
 		</xsl:call-template>
 	</xsl:template>
 	
 	<xsl:template match="del[not(parent::subst)]">
-		<span class="deleted"><xsl:apply-templates/></span>
-		<xsl:variable name="tilgt"><abbr title="getilgt" class="app"> tilgt</abbr> ⟩</xsl:variable>	
-		<xsl:call-template name="enclose">
-			<xsl:with-param name="with" select="('⟨ ', $tilgt)"/>
-		</xsl:call-template>
+		<span class="appnote" title="{concat('»', ., '« getilgt')}">
+			<span class="deleted"><xsl:apply-templates/></span>
+			<xsl:variable name="tilgt"></xsl:variable>	
+			<xsl:call-template name="enclose">
+				<xsl:with-param name="pre" select="'⟨ '"/>
+				<xsl:with-param name="post"><span class="app"> tilgt</span> ⟩</xsl:with-param>
+			</xsl:call-template>
+		</span>
 	</xsl:template>
 	
 	<xsl:template match="del[@f:revType='instant']" priority="1">
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="with" select="('⟨ ', ' &gt;⟩')"/>
+			<xsl:with-param name="title" select="concat('»', ., '« sofort getilgt')"/>
 		</xsl:call-template>
 	</xsl:template>
 	
 	<xsl:template match="subst">
-		<span class="deleted replaced">
-			<xsl:apply-templates select="del"/>
+		<span class="appnote" title="{concat('»', normalize-space(string-join(del, '')), '« durch »', normalize-space(string-join(add, '')), '« ersetzt')}">
+			<span class="deleted replaced">
+				<xsl:apply-templates select="del"/>
+			</span>
+			<xsl:for-each select="add">
+				<xsl:call-template name="enclose">
+					<xsl:with-param name="with" select="('⟨: ', ' ⟩')"/>
+				</xsl:call-template>
+			</xsl:for-each>
 		</span>
-		<xsl:for-each select="add">
-			<xsl:call-template name="enclose">
-				<xsl:with-param name="with" select="('⟨: ', ' ⟩')"/>
-			</xsl:call-template>
-		</xsl:for-each>
 	</xsl:template>
 	
 
