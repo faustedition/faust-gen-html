@@ -33,7 +33,7 @@
 	
 	<xsl:template match="del[@f:revType='instant']" priority="1">
 		<xsl:call-template name="enclose">
-			<xsl:with-param name="with" select="('⟨', '&gt;⟩')"/>
+			<xsl:with-param name="with" select="('⟨', ' &gt;⟩')"/>
 			<xsl:with-param name="title" select="concat('»', ., '« sofort getilgt')"/>
 		</xsl:call-template>
 	</xsl:template>
@@ -45,7 +45,7 @@
 			</span>			
 			<xsl:for-each select="add">
 				<xsl:call-template name="enclose">
-					<xsl:with-param name="with" select="(' ⟨:', '⟩')"/>
+					<xsl:with-param name="with" select="(' ⟨: ', '⟩')"/>
 				</xsl:call-template>
 			</xsl:for-each>
 		</span>
