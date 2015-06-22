@@ -18,8 +18,8 @@
 
 	<xsl:template match="add[not(parent::subst)]">		
 		<xsl:call-template name="enclose">
-			<xsl:with-param name="pre" select="'⟨ '"/>
-			<xsl:with-param name="post"> <span class="app"> erg</span> ⟩</xsl:with-param>
+			<xsl:with-param name="pre" select="'⟨'"/>
+			<xsl:with-param name="post"> <span class="app"> erg</span>⟩</xsl:with-param>
 			<xsl:with-param name="title" select="concat('»', ., '« ergänzt')"/>
 		</xsl:call-template>
 	</xsl:template>
@@ -33,7 +33,7 @@
 	
 	<xsl:template match="del[@f:revType='instant']" priority="1">
 		<xsl:call-template name="enclose">
-			<xsl:with-param name="with" select="('⟨ ', ' &gt;⟩')"/>
+			<xsl:with-param name="with" select="('⟨', '&gt;⟩')"/>
 			<xsl:with-param name="title" select="concat('»', ., '« sofort getilgt')"/>
 		</xsl:call-template>
 	</xsl:template>
@@ -42,10 +42,10 @@
 		<span class="appnote" title="{concat('»', normalize-space(string-join(del, '')), '« durch »', normalize-space(string-join(add, '')), '« ersetzt')}">
 			<span class="deleted replaced">
 				<xsl:apply-templates select="del"/>
-			</span>
+			</span>			
 			<xsl:for-each select="add">
 				<xsl:call-template name="enclose">
-					<xsl:with-param name="with" select="('⟨: ', ' ⟩')"/>
+					<xsl:with-param name="with" select="(' ⟨:', '⟩')"/>
 				</xsl:call-template>
 			</xsl:for-each>
 		</span>
