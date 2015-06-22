@@ -50,7 +50,40 @@
 			</xsl:for-each>
 		</span>
 	</xsl:template>
-	
+
+	<!-- 
+		Double Replacement
+		
+		The following construct:
+		
+		Eine <subst>
+				<del><subst>
+             	 	   <del>simple</del>
+             			<add>einfache</add>
+          			</subst>
+          		</del>
+     			<add>zweifache</add>
+  			  </subst> Ersetzung.
+  		
+  		should be contracted to »Eine simple ⟨: einfache : zweifache ⟩ Ersetzung«. 
+  		
+  		However, this is only applicable if the inner <subst> is the only non-whitespace child of the outer del. 
+
+	-->
+	<xsl:template match="subst[del/subst][count(del/child::node()) = 1 and not(normalize-space(string-join(del/child::text(), '')))]">
+		<span class="appnote" title="{concat('»', normalize-space(string-join(del/subst/del, '')), 
+			'« zunächst durch »', normalize-space(string-join(del/subst/add, '')), 
+			'«, dann durch »', normalize-space(string-join(add, '')), '« ersetzt')}">
+			<span class="deleted replaced">
+				<xsl:apply-templates select="del/subst/del"/>
+			</span>
+			<span class="generated-text">⟨: </span>
+			<xsl:apply-templates select="del/subst/add"/>
+			<span class="generated-text"> : </span>
+			<xsl:apply-templates select="add"/>
+			<span class="generated-text"> ⟩</span>
+		</span>
+	</xsl:template>
 
 
 
