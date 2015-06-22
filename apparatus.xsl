@@ -26,12 +26,8 @@
 	
 	<xsl:template match="del[not(parent::subst)]">
 		<span class="appnote" title="{concat('»', ., '« getilgt')}">
-			<span class="deleted"><xsl:apply-templates/></span>
-			<xsl:variable name="tilgt"></xsl:variable>	
-			<xsl:call-template name="enclose">
-				<xsl:with-param name="pre" select="'⟨ '"/>
-				<xsl:with-param name="post"><span class="app"> tilgt</span> ⟩</xsl:with-param>
-			</xsl:call-template>
+			<span class="deleted"><xsl:apply-templates/> </span>
+			<span class="generated-text">⟨<span class="app">tilgt</span>⟩</span>			
 		</span>
 	</xsl:template>
 	
