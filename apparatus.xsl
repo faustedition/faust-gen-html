@@ -81,7 +81,7 @@
 			<xsl:apply-templates select="del/subst/add"/>
 			<span class="generated-text"> : </span>
 			<xsl:apply-templates select="add"/>
-			<span class="generated-text"> ⟩</span>
+			<span class="generated-text">⟩</span>
 		</span>
 	</xsl:template>
 
