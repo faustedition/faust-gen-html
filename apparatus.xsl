@@ -45,7 +45,7 @@
 			</span>			
 			<xsl:for-each select="add">
 				<xsl:call-template name="enclose">
-					<xsl:with-param name="with" select="(' ⟨: ', '⟩')"/>
+					<xsl:with-param name="with" select="('⟨: ', '⟩')"/>
 				</xsl:call-template>
 			</xsl:for-each>
 		</span>
@@ -84,11 +84,8 @@
 			<span class="generated-text">⟩</span>
 		</span>
 	</xsl:template>
-
-
-
-
-
+	<xsl:strip-space elements="subst"/>
+	<!-- Versuch, den Whitespace vor der schließenden Klammer bei doppelter Ersetzung wegzukriegen. -->
 	<xsl:template match="/">
 		<xsl:for-each select="/TEI/text">
 			<xsl:call-template name="generate-html-frame"/>
@@ -131,6 +128,4 @@
 			</body>
 		</html>
 	</xsl:template>
-	
-	
 </xsl:stylesheet>
