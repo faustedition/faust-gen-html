@@ -50,7 +50,7 @@
 			</span>			
 			<xsl:for-each select="add">
 				<xsl:call-template name="enclose">
-					<xsl:with-param name="with" select="(' ⟨: ', '⟩')"/>
+					<xsl:with-param name="with" select="('⟨: ', '⟩')"/>
 				</xsl:call-template>
 			</xsl:for-each>
 		</span>
