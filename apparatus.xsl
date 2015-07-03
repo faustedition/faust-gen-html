@@ -85,8 +85,50 @@
 		</span>
 	</xsl:template>
 
+	<xsl:function name="f:normalized-text" as="xs:string">
+		<xsl:param name="seq" as="node()*"/>
+		<xsl:message select="$seq"/>
+		<xsl:value-of select="normalize-space(string-join($seq, ''))"/>
+	</xsl:function>
 
+	<xsl:function name="f:same-text-content" as="xs:boolean">
+		<xsl:param name="a"/>
+		<xsl:param name="b"/>
+		<xsl:value-of select="f:normalized-text($a) = f:normalized-text($b)"/>
+	</xsl:function>
+	
+	<xsl:function name="f:only-child" as="xs:boolean">
+		<xsl:param name="parent"/>
+		<xsl:param name="child"/>
+		<xsl:choose>
+			<xsl:when test="count($parent/child::*) != 1">
+				<xsl:value-of select="false()"/>
+			</xsl:when>
+			<xsl:when test="not($parent/child::* is $child)">
+				<xsl:value-of select="false()"/>
+			</xsl:when>
+			<xsl:when test="f:normalized-text(($child/preceding-sibling::text(), $child/following-sibling::text()))">
+				<xsl:value-of select="false()"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:sequence select="true()"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
 
+	<xsl:template match="del[f:only-child(., restore)]|restore[f:only-child(., del)]" priority="1">
+		<span class="appnote">
+			<xsl:attribute name="title">
+				<xsl:text>»</xsl:text>
+				<xsl:value-of select="f:normalized-text(child::*)"/>
+				<xsl:text>« zunächst getilgt, dann wiederhergestellt</xsl:text>
+			</xsl:attribute>
+			<span class="deleted restored">
+				<xsl:apply-templates select="child::*/node()"/>
+			</span>
+			<span class="generated-text">⟨tilgt wdhgst⟩</span>
+		</span>
+	</xsl:template>
 
 
 	<xsl:template match="/">
