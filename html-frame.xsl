@@ -9,6 +9,7 @@
 	<xsl:param name="edition">..</xsl:param>
 	<xsl:param name="assets" select="$edition"/>
 	<xsl:param name="debug" select="false()"/>
+	<xsl:param name="headerAdditions"/>
 	
 	<xsl:template name="html-head">
 		<xsl:param name="title" select="$title"/>
@@ -16,7 +17,7 @@
 			<meta charset='utf-8'/>
 			
 			<script type="text/javascript" src="{$assets}/js/faust_common.js"/>
-			<script src="{$assets}/js/faust_print_view.js"/>
+			<script src="{$assets}/js/faust_print_view.js"/>			
 			<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
 			<link rel="stylesheet" href="{$assets}/css/document-text.css"/>
 			<link rel="stylesheet" href="{$assets}/css/document-transcript.css"/>
@@ -25,6 +26,8 @@
 			<link rel="stylesheet" href="{$assets}/css/pure-custom.css"/>
 			<link rel="stylesheet" href="{$assets}/css/basic_layout.css"/>
 			<link rel="stylesheet" href="lesetext.css"/>
+			
+			<xsl:copy-of select="$headerAdditions"/>
 		</head>
 		
 	</xsl:template>

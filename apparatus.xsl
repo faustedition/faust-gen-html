@@ -12,6 +12,10 @@
 	<xsl:include href="html-common.xsl"/>
 	<xsl:param name="type">archivalDocument</xsl:param>
 	
+	<xsl:param name="headerAdditions">
+		<script type="text/javascript" src="faust_app_tmp.js"/>
+	</xsl:param>
+	
 	<xsl:output method="xhtml" indent="yes"/>
 
 
@@ -70,7 +74,7 @@
   		However, this is only applicable if the inner <subst> is the only non-whitespace child of the outer del. 
 
 	-->
-	<xsl:template match="subst[del/subst][count(del/child::node()) = 1 and not(normalize-space(string-join(del/child::text(), '')))]">
+	<xsl:template match="subst[del/subst][f:only-child(del, del/subst)]">
 		<span class="appnote" title="{concat('»', normalize-space(string-join(del/subst/del, '')), 
 			'« zunächst durch »', normalize-space(string-join(del/subst/add, '')), 
 			'«, dann durch »', normalize-space(string-join(add, '')), '« ersetzt')}">
