@@ -24,6 +24,7 @@
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="pre" select="'⟨'"/>
 			<xsl:with-param name="post"> <span class="app"> erg</span>⟩</xsl:with-param>
+			<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"/>
 			<xsl:with-param name="title" select="concat('»', ., '« ergänzt')"/>
 		</xsl:call-template>
 	</xsl:template>
@@ -39,6 +40,7 @@
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="with" select="('⟨', ' &gt;⟩')"/>
 			<xsl:with-param name="title" select="concat('»', ., '« sofort getilgt')"/>
+			<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"></xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
 	
