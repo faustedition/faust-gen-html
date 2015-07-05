@@ -16,13 +16,13 @@
 	</xsl:template>
 		
 	<xsl:template match="gap[@unit='chars']" mode="#default single">
-		<span class="{string-join(f:generic-classes(.), ' ')} gap-unit-chars generated-text" data-gap-length="{@quantity}">
+		<span class="{string-join(f:generic-classes(.), ' ')} gap-unit-chars generated-text appnote" data-gap-length="{@quantity}" title="{@quantity} unlesbare Buchstaben">
 			<xsl:value-of select="string-join(for $n in 1 to @quantity return '×', '')"/>
 		</span>
 	</xsl:template>
 	
 	<xsl:template match="gap[@unit='words']" mode="#default single">
-		<span class="{string-join(f:generic-classes(.), ' ')} gap-unit-words generated-text" data-gap-length="{@quantity}">
+		<span class="{string-join(f:generic-classes(.), ' ')} gap-unit-words generated-text appnote" data-gap-length="{@quantity}" title="{@quantity} unlesbare Wörter">
 			<xsl:value-of select="string-join(for $n in 1 to @quantity return '×···×', ' ')"/>
 		</span>
 	</xsl:template>  
@@ -33,7 +33,7 @@
 	      <xsl:next-match/>
 	    </xsl:when>
 	    <xsl:otherwise>
-    	  <span class="{string-join(f:generic-classes(.), ' ')} generated-text">[***]</span>	      
+    	  <span class="{string-join(f:generic-classes(.), ' ')} generated-text appnote" title="Lücke">[***]</span>	      
 	    </xsl:otherwise>
 	  </xsl:choose>
 	</xsl:template>
@@ -75,18 +75,24 @@
 	<xsl:template match="supplied" mode="#default single">
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="with" select="'[',']'"/>
+			<xsl:with-param name="title">editorisch ergänzt</xsl:with-param>
+			<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"></xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
 	
 	<xsl:template match="unclear[@cert='high']" mode="#default single">
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="with" select="'{','}'"/>
+			<xsl:with-param name="title">wahrscheinliche Lesung</xsl:with-param>
+			<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"></xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
 	
 	<xsl:template match="unclear[@cert='low']" mode="#default single">
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="with" select="'{{','}}'"/>
+			<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"/>
+			<xsl:with-param name="title">sehr unsichere Lesung</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
 	
