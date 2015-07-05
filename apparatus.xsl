@@ -120,6 +120,22 @@
 		</xsl:choose>
 	</xsl:function>
 
+	<!-- Normale Wiederherstellung (d.h. kleinerer Teil eines Del -->
+	<xsl:template match="restore">
+		<span class="appnote">
+			<xsl:attribute name="title">
+				<xsl:text>»</xsl:text>
+				<xsl:value-of select="f:normalized-text(.)"/>
+				<xsl:text>« wiederhergestellt</xsl:text>
+				<span class="restored">
+					<xsl:apply-templates select="child::node()"/>
+				</span>
+				<span class="generated-text">⟨wdhst⟩</span>
+			</xsl:attribute>
+		</span>
+	</xsl:template>
+	
+	<!-- Vollständige Wiederherstellung einer Löschung -->
 	<xsl:template match="del[f:only-child(., restore)]|restore[f:only-child(., del)]" priority="1">
 		<span class="appnote">
 			<xsl:attribute name="title">
@@ -130,7 +146,7 @@
 			<span class="deleted restored">
 				<xsl:apply-templates select="child::*/node()"/>
 			</span>
-			<span class="generated-text">⟨tilgt wdhgst⟩</span>
+			<span class="generated-text">⟨tilgt wdhst⟩</span>
 		</span>
 	</xsl:template>
 
