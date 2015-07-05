@@ -149,9 +149,100 @@
 			<span class="generated-text">⟨tilgt wdhst⟩</span>
 		</span>
 	</xsl:template>
+	
+	<!-- Vollständig rückgängig gemachte ersetzung. Leider mindestens drei mögliche Codierungen :-( sollte vielleicht vereinheitlicht werden? 
+	
+	(1) TEI-konforme nesting Order nach Gerrit
+	<subst>
+		<del><restore>Originaltext</restore></del>
+		<add><del>doch nicht vorgenommene Ersetzung</del></add>
+	</subst>
+	
+	(2) Verbreitete Nesting Order:
+	<subst>
+		<restore><del>Originltext</del></restore>
+		<del><add>doch nicht ersetz</add></del>
+	</subst>
+	
+	(3) restore außen
+	<restore>
+		<subst>
+			<del>Originaltext</del>
+			<add>ungültig</add>
+		</subst>
+	</restore>
+	
+	Ich frage mich, ob es da noch Mischformen gibt? also z.B.
+	(1a) = (1) ohne del im add
+	(2a) = (2) ohne add im del
+	-->
+	<!-- Wir ignorieren im match erstmal das add. Das del sollte reichen um herauszufinden
+		 ob dies wirklich eine rückgängig gemachte ersetzung ist.
+	-->
+	<xsl:template match="subst[
+			del[f:only-child(., restore)]  (: 1 TEI-Konforme nesting order :)
+		or	restore[f:only-child(., del)]] (: 2 häufigere nesting order    :)
+		|   restore[f:only-child(., subst)](: 3 dritter Fall: Restore ganz außen :) 
+		">
+		<!-- Bei den ganzen Fällen sortieren wir uns erstmal -->
+		<!-- $original = die originalen nodes, ohne irgendein Element drumherum -->
+		<xsl:variable name="original">
+			<xsl:sequence select="
+				  (:1:)	self::subst/del/restore/node()
+				| (:2:) self::subst/restore/del/node()
+				| (:3:) self::restore/subst/del/node()"/>			
+		</xsl:variable>
+		<!-- Für das Replacement haben wir noch keinen only-child-Test. Suchen wir erstmal das add-Element : -->
+		<!-- $add = das add oder del element, in dem das $unused-replacement und eventuell noch ein umschließendes del/add drin ist -->
+		<xsl:variable name="add" select="
+				   if (self::subst/del/restore) then add					  			 (:1, 1a -> add mit ggf. del drin  :)
+			  else if (self::subst/restore/del and self::subst/del) then self::subst/del (:2, 2a -> del mit ggf. add drin  :)
+			  else restore/subst/add                                                     (:3     -> add mit hoffentlich nix drin :)
+			"/>
+		<!-- $unused-replacement = die dann doch nicht verwendete Ersetzung, ohne irgendwelche tags drumherum -->
+		<xsl:variable name="unused-replacement">
+			<xsl:choose>
+				<xsl:when test="self::restore">	<!-- (3) -->
+					<xsl:sequence select="subst/del/node()"/>
+				</xsl:when>
+				<xsl:when test="$add[self::add]"> <!-- 1, 1a -->
+					<xsl:sequence select="if (f:only-child($add, $add/del)) then $add/del/node() else $add/node()"/>
+				</xsl:when>
+				<xsl:when test="$add[self::del]"> <!-- 2, 2a -->
+					<xsl:sequence select="if (f:only-child($add, $add/add)) then $add/add/node() else $add/node()"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:message>ERROR: Unrecognized restored subst encoding variant:
+						<xsl:copy-of select="."/>						
+					</xsl:message>
+				</xsl:otherwise>
+			</xsl:choose>		
+		</xsl:variable>
+		
+		
+		<!-- So. Der Rest ist einfach :-) -->
+		<span class="{f:generic-classes(.)} appnote">
+			<xsl:attribute name="title">
+				<xsl:text>Ersetzung von »</xsl:text>
+				<xsl:value-of select="f:normalized-text($original)"/>
+				<xsl:text>« durch »</xsl:text>
+				<xsl:value-of select="f:normalized-text($unused-replacement)"/>
+				<xsl:text>« rückgängig gemacht.</xsl:text>
+			</xsl:attribute>
+			<span class="restored">
+				<xsl:apply-templates select="$original"/>
+			</span>
+			<span class="generated-text">⟨<span class="app">: </span></span>
+			<xsl:apply-templates select="$unused-replacement"/>
+			<span class="generated-text"><span class="app"> : </span></span>
+			<xsl:apply-templates select="$original"/>
+			<span class="generated-text"><span class="app"> wdhst</span>⟩</span>
+		</span>		
+	</xsl:template>
+	
 
 
-	<xsl:template match="/">
+	<xsl:template match="/TEI">
 		<xsl:for-each select="/TEI/text">
 			<xsl:call-template name="generate-html-frame"/>
 		</xsl:for-each>
