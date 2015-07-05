@@ -19,7 +19,6 @@
 	<xsl:output method="xhtml" indent="yes"/>
 
 
-
 	<xsl:template match="add[not(parent::subst)]">		
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="pre" select="'⟨'"/>
@@ -93,7 +92,6 @@
 
 	<xsl:function name="f:normalized-text" as="xs:string">
 		<xsl:param name="seq" as="node()*"/>
-		<xsl:message select="$seq"/>
 		<xsl:value-of select="normalize-space(string-join($seq, ''))"/>
 	</xsl:function>
 
