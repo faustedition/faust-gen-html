@@ -30,7 +30,7 @@
 	
 	<xsl:template match="del[not(parent::subst)]">
 		<span class="appnote" title="{concat('»', ., '« getilgt')}">
-			<span class="deleted"><xsl:apply-templates/> </span>
+			<span class="affected deleted"><xsl:apply-templates/> </span>
 			<span class="generated-text">⟨<span class="app">tilgt</span>⟩</span>			
 		</span>
 	</xsl:template>
@@ -45,7 +45,7 @@
 	
 	<xsl:template match="subst">
 		<span class="appnote" title="{concat('»', normalize-space(string-join(del, '')), '« durch »', normalize-space(string-join(add, '')), '« ersetzt')}">
-			<span class="deleted replaced">
+			<span class="affected deleted">
 				<xsl:apply-templates select="del"/>
 			</span>			
 			<xsl:for-each select="add">
@@ -79,12 +79,12 @@
 		<span class="appnote" title="{concat('»', normalize-space(string-join(del/subst/del, '')), 
 			'« zunächst durch »', normalize-space(string-join(del/subst/add, '')), 
 			'«, dann durch »', normalize-space(string-join(add, '')), '« ersetzt')}">
-			<span class="deleted replaced">
+			<span class="affected deleted">
 				<xsl:apply-templates select="del/subst/del"/>
 			</span>
-			<span class="generated-text">⟨: </span>
+			<span class="generated-text">⟨<span class="app">:</span> </span>
 			<xsl:apply-templates select="del/subst/add"/>
-			<span class="generated-text"> : </span>
+			<span class="generated-text app"> : </span>
 			<xsl:apply-templates select="add"/>
 			<span class="generated-text">⟩</span>
 		</span>
@@ -143,10 +143,10 @@
 				<xsl:value-of select="f:normalized-text(child::*)"/>
 				<xsl:text>« zunächst getilgt, dann wiederhergestellt</xsl:text>
 			</xsl:attribute>
-			<span class="deleted restored">
+			<span class="affected restored">
 				<xsl:apply-templates select="child::*/node()"/>
 			</span>
-			<span class="generated-text">⟨tilgt wdhst⟩</span>
+			<span class="generated-text">⟨<span class="app">tilgt wdhst</span>⟩</span>
 		</span>
 	</xsl:template>
 	
@@ -229,7 +229,7 @@
 				<xsl:value-of select="f:normalized-text($unused-replacement)"/>
 				<xsl:text>« rückgängig gemacht</xsl:text>
 			</xsl:attribute>
-			<span class="restored">
+			<span class="affected restored">
 				<xsl:apply-templates select="$original"/>
 			</span>
 			<span class="generated-text">⟨<span class="app">: </span></span>
