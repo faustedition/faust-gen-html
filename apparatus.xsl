@@ -227,7 +227,7 @@
 				<xsl:value-of select="f:normalized-text($original)"/>
 				<xsl:text>« durch »</xsl:text>
 				<xsl:value-of select="f:normalized-text($unused-replacement)"/>
-				<xsl:text>« rückgängig gemacht.</xsl:text>
+				<xsl:text>« rückgängig gemacht</xsl:text>
 			</xsl:attribute>
 			<span class="restored">
 				<xsl:apply-templates select="$original"/>
