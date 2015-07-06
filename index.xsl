@@ -118,7 +118,7 @@
       <meta charset='utf-8'/>
 
       <script type="text/javascript" src="../js/faust_common.js"/>
-      <script src="../js/faust_print_view.js"/>
+      <script src="../js/faust_print_interaction.js"/>
       <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
       <link rel="stylesheet" href="../css/document-text.css"/>
       <link rel="stylesheet" href="../css/document-transcript.css"/>
