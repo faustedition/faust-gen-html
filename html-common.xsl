@@ -16,7 +16,9 @@
 	</xsl:template>
 		
 	<xsl:template match="gap[@unit='chars']" mode="#default single">
-		<span class="{string-join(f:generic-classes(.), ' ')} gap-unit-chars generated-text appnote" data-gap-length="{@quantity}" title="{@quantity} unlesbare Buchstaben">
+		<span class="{string-join(f:generic-classes(.), ' ')} gap-unit-chars generated-text appnote" 
+			data-gap-length="{@quantity}" 
+			title="{if (@cert='medium') then 'ungefähr ' else ''}{@quantity} unlesbare Zeichen">
 			<xsl:value-of select="string-join(for $n in 1 to @quantity return '×', '')"/>
 		</span>
 	</xsl:template>
