@@ -4,7 +4,7 @@
 	xmlns="http://www.w3.org/1999/xhtml" xmlns:xh="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://www.faustedition.net/ns"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-	exclude-result-prefixes="xs f" 	
+	exclude-result-prefixes="xs f xh" 	
 	version="2.0">
 	
 	<!-- common code for print2html and variant generation. not to be used standalone -->
