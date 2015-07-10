@@ -46,10 +46,10 @@
 		<p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
 
 
-		<cx:message>
+<!--		<cx:message>
 			<p:with-option name="message" select="concat('Reading ', $transcriptFile)"/>
 		</cx:message>
-
+-->
 
 		<!-- Das Transkript wird geladen ... -->
 		<p:load>

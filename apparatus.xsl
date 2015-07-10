@@ -213,7 +213,8 @@
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:message>ERROR: Unrecognized restored subst encoding variant:
-						<xsl:copy-of select="."/>						
+<xsl:copy-of select="."/>
+in <xsl:value-of select="document-uri(/)"/>						
 					</xsl:message>
 				</xsl:otherwise>
 			</xsl:choose>		
