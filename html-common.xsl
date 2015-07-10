@@ -98,6 +98,56 @@
 		</xsl:call-template>
 	</xsl:template>
 	
+	
+	<!-- choice: richtige Alternative wählen -->
+	
+	<xsl:template match="choice[sic and corr]">
+			<xsl:apply-templates select="sic/node()"/>	<!-- komplett ignorieren -->
+	</xsl:template>
+	
+	<xsl:template match="choice[abbr and expan]">
+		<abbr class="{string-join((f:generic-classes(abbr), 'appnote'), ' ')}"			
+			title="{expan}">
+			<xsl:apply-templates select="abbr/node()"/>
+		</abbr>
+	</xsl:template>
+	
+	<xsl:template match="choice[orig and reg]">
+		<span class="{string-join((f:generic-classes(orig), 'appnote'), ' ')}"
+			title="{reg}">
+			<xsl:apply-templates select="orig/node()"/>
+		</span>		
+	</xsl:template>
+	
+	<xsl:template match="app[lem and rdg]">
+		<span class="{string-join((f:generic-classes(lem), 'appnote'), ' ')}">
+			<xsl:attribute name="title">
+				<xsl:for-each select="rdg">
+					<xsl:value-of select="@resp"/>	<!-- FIXME can we resolve this? -->
+					<xsl:text> liest »</xsl:text>
+					<xsl:value-of select="."/>
+					<xsl:text>«</xsl:text>
+					<xsl:if test="following-sibling::rdg">; </xsl:if>
+				</xsl:for-each>
+			</xsl:attribute>
+			<span class="{string-join((f:generic-classes(lem), 'appnote'), ' ')}">
+				<xsl:apply-templates select="lem/node()"/>
+			</span>
+		</span>
+	</xsl:template>
+	
+	<xsl:template match="choice|app">
+		<xsl:message>WARNING: Unrecognized <xsl:value-of select="local-name(.)"/>, using COMPLETE content:
+<xsl:copy-of select="."/>
+in <xsl:value-of select="document-uri(/)"/>
+		</xsl:message>
+		<xsl:next-match/>
+	</xsl:template>
+	
+	<!-- Es gibt wohl die Elemente auch noch ohne <choice> -->
+	<xsl:template match="corr"/>
+	<!-- die anderen werden einfach durchgereicht -->
+	
 	<xsl:template match="lb" mode="#default single">
 		<xsl:text> </xsl:text>
 	</xsl:template>

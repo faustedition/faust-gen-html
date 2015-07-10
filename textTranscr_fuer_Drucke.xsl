@@ -20,26 +20,10 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="abbr[parent::choice]"/>
-    <xsl:template match="expan[parent::choice]">
-        <xsl:apply-templates></xsl:apply-templates>
-    </xsl:template>
     <xsl:template match="add">
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="add[@f:rejectedBy]"/>
-    <xsl:template match="am[parent::choice]"/>
-    <xsl:template match="app">
-        <xsl:apply-templates/>
-    </xsl:template>
-    <xsl:template match="lem">
-        <xsl:apply-templates/>
-    </xsl:template>
-    <xsl:template match="rdg"/>
-    <xsl:template match="choice">
-        <xsl:apply-templates/>
-    </xsl:template>
-    <xsl:template match="corr"/>
 
     <xsl:template match="del">
         <xsl:apply-templates mode="del"/>
