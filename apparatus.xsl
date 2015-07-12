@@ -241,6 +241,31 @@ in <xsl:value-of select="document-uri(/)"/>
 		</span>		
 	</xsl:template>
 	
+	
+	<!-- delSpan -->
+	<xsl:template match="delSpan">
+		<span class="appnote delSpan" data-same-app="{substring(@spanTo, 2)}">
+			<span class="generated-text">⌜<xsl:number from="/"/></span>
+		</span>
+	</xsl:template>
+	<xsl:key name="delSpan" match="delSpan[@spanTo]" use="substring(@spanTo, 2)"/>
+	<xsl:template match="*[@xml:id and key('delSpan', @xml:id)]">
+		<xsl:next-match/>
+		<span class="appnote" data-same-app="{@xml:id}">
+			<xsl:variable name="source" select="key('delSpan', @xml:id)"/>
+			<xsl:if test="count($source) > 1">
+				<xsl:message select="concat('WARNING: ', count($source), ' delSpans point to ', @xml:id, ' in ', document-uri(/))"/>
+			</xsl:if>
+			<span class="generated-text">
+				<xsl:variable name="idx">
+					<xsl:for-each select="key('delSpan', @xml:id)">
+						<xsl:number count="delSpan" from="/"/>
+					</xsl:for-each>
+				</xsl:variable>
+				<xsl:value-of select="$idx"/>⌟ ⟨tilgt ab ⌜<xsl:value-of select="$idx"/>⟩
+			</span>
+		</span>
+	</xsl:template>
 
 
 	<xsl:template match="/TEI">
