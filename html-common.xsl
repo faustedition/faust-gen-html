@@ -136,6 +136,17 @@
 		</span>
 	</xsl:template>
 	
+	<xsl:template match="choice[unclear[@cert='high'] and unclear[@cert='low']]">
+		<xsl:for-each select="unclear[@cert='high']">
+			<xsl:call-template name="enclose">
+				<xsl:with-param name="pre">{</xsl:with-param>
+				<xsl:with-param name="post">}</xsl:with-param>
+				<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"/>
+				<xsl:with-param name="title" select="concat('wahrscheinliche Lesung; Alternative: ', ../unclear[cert='low'])"/>
+			</xsl:call-template>
+		</xsl:for-each>
+	</xsl:template>
+	
 	<xsl:template match="choice|app">
 		<xsl:message>WARNING: Unrecognized <xsl:value-of select="local-name(.)"/>, using COMPLETE content:
 <xsl:copy-of select="."/>
