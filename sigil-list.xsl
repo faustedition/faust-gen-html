@@ -18,6 +18,7 @@
 					tr:hover { background: #ffc; }
 					tr { vertical-align: top; }
 					tr ul { list-style-type: none; }
+					.duplicate { background: #f88; }
 				</style>
 			</head>
 			<body>
@@ -65,8 +66,9 @@
 	</xsl:template>
 	
 	<xsl:template match="textTranscript">
+		<xsl:variable name="pref_dup" select="f:duplicates(idno[1])"/>
 		<tr>
-			<td><a href="{
+			<td class="{if ($pref_dup) then 'duplicate' else ''}"><a href="{
 				if (@type = 'archivalDocument')
 				then concat('http://beta.faustedition.net/documentViewer.php?view=structure&amp;faustUri=faust://xml/', @document)
 				else replace(@uri, '^.*/(.*)\.xml$', 'http://beta.faustedition.net/print/$1.html')
@@ -80,8 +82,16 @@
 		</tr>
 	</xsl:template>
 	
+	<xsl:function name="f:duplicates" as="item()*">
+		<xsl:param name="idno"/>
+		<xsl:sequence select="root($idno)//idno[@type = $idno/@type][normalize-space(.) = normalize-space($idno)] except $idno"/>
+	</xsl:function>
+	
 	<xsl:template match="idno">
-		<li><xsl:value-of select="."/> (<xsl:value-of select="@type"/>)</li>
+		<xsl:variable name="duplicate" select="f:duplicates(.)"/>
+		<li class="{if ($duplicate) then 'duplicate' else ''}">
+			<xsl:value-of select="."/> (<xsl:value-of select="@type"/>)
+		</li>
 	</xsl:template>
 	
 </xsl:stylesheet>
