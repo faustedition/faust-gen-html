@@ -244,8 +244,10 @@ in <xsl:value-of select="document-uri(/)"/>
 	
 	<!-- delSpan -->
 	<xsl:template match="delSpan">
-		<span class="appnote delSpan" data-same-app="{substring(@spanTo, 2)}">
-			<span class="generated-text">⌜<xsl:number from="/"/></span>
+		<xsl:variable name="id" select="substring(@spanTo, 2)"/>
+		<span class="appnote delSpan" data-same-app="{$id}">
+			<xsl:attribute name="title">Getilgt bis <xsl:number from="/" level="any" format="1"/>⌟</xsl:attribute>
+			<span class="generated-text">⌜<xsl:number from="/" level="any" format="1"/></span>
 		</span>
 	</xsl:template>
 	<xsl:key name="delSpan" match="delSpan[@spanTo]" use="substring(@spanTo, 2)"/>
@@ -259,14 +261,30 @@ in <xsl:value-of select="document-uri(/)"/>
 			<span class="generated-text">
 				<xsl:variable name="idx">
 					<xsl:for-each select="key('delSpan', @xml:id)">
-						<xsl:number count="delSpan" from="/"/>
+						<xsl:number count="delSpan" from="/" level="any" format="1"/>
 					</xsl:for-each>
 				</xsl:variable>
-				<xsl:value-of select="$idx"/>⌟ ⟨tilgt ab ⌜<xsl:value-of select="$idx"/>⟩
+				<xsl:value-of select="$idx"/>⌟ ⟨<i>tilgt ab ⌜<xsl:value-of select="$idx"/></i>⟩
 			</span>
 		</span>
 	</xsl:template>
-
+	
+	<!-- addSpan -->
+	<xsl:template match="addSpan">
+		<xsl:variable name="id" select="substring(@spanTo, 2)"/>
+		<span class="appnote addSpan" data-same-app="{$id}"><span class="generated-text">⟨</span></span>
+	</xsl:template>
+	<xsl:key name="addSpan" match="addSpan[@spanTo]" use="subString[@spanTo, 2]"/>
+	<xsl:template match="*[@xml:id and key('addSpan', @xml:id)]">
+		<xsl:variable name="source" select="key('addSpan', @xml:id)"/>
+		<xsl:if test="count($source) > 1">
+			<xsl:message select="concat('WARNING: ', count($source), ' addSpans point to ', @xml:id, ' in ', document-uri(/))"/>
+		</xsl:if>
+		<span class="appnote" data-same-app="{@xml:id}">
+			<span class="generated-text">⟨<i>erg</i></span>
+		</span>
+	</xsl:template>
+	
 
 	<xsl:template match="/TEI">
 		<xsl:for-each select="/TEI/text">
