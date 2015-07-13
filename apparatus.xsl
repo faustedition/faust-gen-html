@@ -4,8 +4,9 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://www.faustedition.net/ns"
+	xmlns:ge="http://www.tei-c.org/ns/geneticEditions"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-	exclude-result-prefixes="xs f"
+	exclude-result-prefixes="xs f ge"
 	version="2.0">
 	
 	<xsl:import href="html-frame.xsl"/>
@@ -285,6 +286,39 @@ in <xsl:value-of select="document-uri(/)"/>
 		</span>
 	</xsl:template>
 	
+	
+	<!-- Transpositions. Requires textTranscr_pre_transpose.xsl.   -->
+	
+	<!-- delivers the tei:ptr in a not-undone ge:transpose element that points to the given @xml:id string -->
+	<xsl:key 
+		name="transpose" 
+		match="ge:transpose/ptr[not(..[@xml:id and concat('#', @xml:id) = //ge:undo/@target])]" 
+		use="substring(@target, 2)"/>
+	
+	<!-- 
+		Template called for an element that is part of a transposition.	
+	-->
+	<xsl:template match="*[@xml:id and key('transpose', @xml:id)]">
+		<xsl:variable name="ptr" select="key('transpose', @xml:id)"/>
+		<xsl:variable name="transpose" select="$ptr/.."/>				
+		<xsl:variable name="currentPos" select="count(preceding::*[@xml:id and key('transpose', @xml:id)/.. is $transpose]) + 1"/>
+		<xsl:variable name="replacementTarget" select="$transpose/ptr[$currentPos]/@target"/>		
+		<xsl:variable name="replacement" select="id(substring($replacementTarget, 2))"/>
+		<xsl:element name="{f:html-tag-name(.)}">
+			<xsl:attribute name="class" select="string-join((f:generic-classes(.), 'appnote', 'transpose'), ' ')"/>
+			<!-- TODO same-as -->
+			<xsl:attribute name="title" select="concat('Vertauscht mit »', $replacement, '«')"/>
+			<xsl:apply-templates/>
+			<sup class="generated-text"><xsl:value-of select="count($ptr/preceding-sibling::*) + 1"/></sup>
+			<!-- Add ⟨umst⟩ after the last element in this transposition -->
+			<xsl:if test="not(following::*[@xml:id and key('transpose', @xml:id)/.. is $transpose])">
+				<span class="generated-text">⟨<i>umst</i>⟩</span>
+			</xsl:if>
+		</xsl:element>
+	</xsl:template>
+
+
+
 
 	<xsl:template match="/TEI">
 		<xsl:for-each select="/TEI/text">

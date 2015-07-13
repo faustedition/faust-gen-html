@@ -79,6 +79,16 @@
 				<p:pipe port="result" step="config"/>
 			</p:input>
 		</p:xslt>
+		
+		<!-- ge:transpose/ptr/@target="bla fasel blubb" in mehrere ptr mit je einem Target umwandeln -->
+		<p:xslt name="transpositions">
+			<p:input port="stylesheet">
+				<p:document href="textTranscr_pre_transpose.xsl"/>
+			</p:input>
+			<p:input port="parameters">
+				<p:pipe port="result" step="config"/>
+			</p:input>
+		</p:xslt>
 
 		<!-- Nun die eigentliche Transformation nach HTML. -->
 		<p:xslt name="html">
