@@ -246,16 +246,22 @@ in <xsl:value-of select="document-uri(/)"/>
 	<!-- delSpan -->
 	<xsl:template match="delSpan">
 		<xsl:variable name="id" select="substring(@spanTo, 2)"/>
-		<span class="appnote delSpan" data-same-app="{$id}">
+		<span class="appnote delSpan">
+			<xsl:call-template name="highlight-group">
+				<xsl:with-param name="others" select="id($id)"/>
+			</xsl:call-template>
 			<xsl:attribute name="title">Getilgt bis <xsl:number from="/" level="any" format="1"/>⌟</xsl:attribute>
 			<span class="generated-text">⌜<xsl:number from="/" level="any" format="1"/></span>
 		</span>
 	</xsl:template>
 	<xsl:key name="delSpan" match="delSpan[@spanTo]" use="substring(@spanTo, 2)"/>
 	<xsl:template match="*[@xml:id and key('delSpan', @xml:id)]">
+		<xsl:variable name="source" select="key('delSpan', @xml:id)"/>
 		<xsl:next-match/>
 		<span class="appnote" data-same-app="{@xml:id}">
-			<xsl:variable name="source" select="key('delSpan', @xml:id)"/>
+			<xsl:call-template name="highlight-group">
+				<xsl:with-param name="others" select="$source"/>
+			</xsl:call-template>
 			<xsl:if test="count($source) > 1">
 				<xsl:message select="concat('WARNING: ', count($source), ' delSpans point to ', @xml:id, ' in ', document-uri(/))"/>
 			</xsl:if>
@@ -273,7 +279,12 @@ in <xsl:value-of select="document-uri(/)"/>
 	<!-- addSpan -->
 	<xsl:template match="addSpan">
 		<xsl:variable name="id" select="substring(@spanTo, 2)"/>
-		<span class="appnote addSpan" data-same-app="{$id}"><span class="generated-text">⟨</span></span>
+		<span class="appnote addSpan">
+			<xsl:call-template name="highlight-group">
+				<xsl:with-param name="others" select="id($id)"/>
+			</xsl:call-template>
+			<span class="generated-text">⟨</span>
+		</span>
 	</xsl:template>
 	<xsl:key name="addSpan" match="addSpan[@spanTo]" use="subString[@spanTo, 2]"/>
 	<xsl:template match="*[@xml:id and key('addSpan', @xml:id)]">
@@ -281,8 +292,11 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:if test="count($source) > 1">
 			<xsl:message select="concat('WARNING: ', count($source), ' addSpans point to ', @xml:id, ' in ', document-uri(/))"/>
 		</xsl:if>
-		<span class="appnote" data-same-app="{@xml:id}">
-			<span class="generated-text">⟨<i>erg</i></span>
+		<span class="appnote">
+			<xsl:call-template name="highlight-group">
+				<xsl:with-param name="others" select="$source"/>
+			</xsl:call-template>
+			<span class="generated-text">⟨<i>erg</i>⟩</span>
 		</span>
 	</xsl:template>
 	
@@ -306,7 +320,10 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:variable name="replacement" select="id(substring($replacementTarget, 2))"/>
 		<xsl:element name="{f:html-tag-name(.)}">
 			<xsl:attribute name="class" select="string-join((f:generic-classes(.), 'appnote', 'transpose'), ' ')"/>
-			<!-- TODO same-as -->
+			<xsl:call-template name="highlight-group">
+				<!-- XXX geht das nicht irgendwie einfacher? über die pointer aufzählen? -->
+				<xsl:with-param name="others" select="//*[@xml:id and key('transpose', @xml:id)/.. is $transpose]"/>
+			</xsl:call-template>
 			<xsl:attribute name="title" select="concat('Vertauscht mit »', $replacement, '«')"/>
 			<xsl:apply-templates/>
 			<sup class="generated-text"><xsl:value-of select="count($ptr/preceding-sibling::*) + 1"/></sup>
@@ -317,8 +334,26 @@ in <xsl:value-of select="document-uri(/)"/>
 		</xsl:element>
 	</xsl:template>
 
-
-
+	<!-- 
+		Sometimes we need to highlight not only the currently hovered element but also some others which are, in a way,
+		connected. E.g., <addSpan/> and corresponding target, or all elements of a transposition group.
+		
+		For JS efficiency, it is probably best to give every HTML element that could be in a highlight group an id, and
+		to add an attribute listing _all_ relevant other IDs to the element.
+		
+		This should be called immediately inside an .appnote element
+	-->
+	<xsl:template name="highlight-group">
+		<xsl:param name="others" as="element()*"/>
+		<xsl:attribute name="xml:id" select="f:generate-id(.)"/>
+		<xsl:attribute name="data-also-highlight" select="string-join((for $el in $others return f:generate-id($el)), ' ')"/>
+	</xsl:template>
+	
+	<!-- Reuse IDs from the XML source (since they are manually crafted) -->
+	<xsl:function name="f:generate-id" as="xs:string">
+		<xsl:param name="element"/>
+		<xsl:value-of select="if ($element/@xml:id) then $element/@xml:id else generate-id($element)"/>
+	</xsl:function>
 
 	<xsl:template match="/TEI">
 		<xsl:for-each select="/TEI/text">
