@@ -82,6 +82,8 @@
 		</xsl:call-template>
 	</xsl:template>
 	
+	<xsl:template match="supplied[@evidence='conjecture']" mode="#default single"/>
+	
 	<xsl:template match="unclear[@cert='high']" mode="#default single">
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="with" select="'{','}'"/>

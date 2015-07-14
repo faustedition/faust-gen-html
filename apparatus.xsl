@@ -346,7 +346,7 @@ in <xsl:value-of select="document-uri(/)"/>
 	<xsl:template name="highlight-group">
 		<xsl:param name="others" as="element()*"/>
 		<xsl:attribute name="xml:id" select="f:generate-id(.)"/>
-		<xsl:attribute name="data-also-highlight" select="string-join((for $el in $others return f:generate-id($el)), ' ')"/>
+		<xsl:attribute name="data-also-highlight" select="string-join((for $el in $others except . return f:generate-id($el)), ' ')"/>
 	</xsl:template>
 	
 	<!-- Reuse IDs from the XML source (since they are manually crafted) -->
