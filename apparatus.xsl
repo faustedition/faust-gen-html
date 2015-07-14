@@ -250,15 +250,15 @@ in <xsl:value-of select="document-uri(/)"/>
 			<xsl:call-template name="highlight-group">
 				<xsl:with-param name="others" select="id($id)"/>
 			</xsl:call-template>
-			<xsl:attribute name="title">Getilgt bis <xsl:number from="/" level="any" format="1"/>⌟</xsl:attribute>
-			<span class="generated-text">⌜<xsl:number from="/" level="any" format="1"/></span>
+			<xsl:attribute name="title">Getilgt bis <!--<xsl:number from="/" level="any" format="1"/>-->⌟</xsl:attribute>
+			<span class="generated-text">⌜<!--<xsl:number from="/" level="any" format="1"/>--></span>
 		</span>
 	</xsl:template>
 	<xsl:key name="delSpan" match="delSpan[@spanTo]" use="substring(@spanTo, 2)"/>
 	<xsl:template match="*[@xml:id and key('delSpan', @xml:id)]">
 		<xsl:variable name="source" select="key('delSpan', @xml:id)"/>
 		<xsl:next-match/>
-		<span class="appnote" data-same-app="{@xml:id}">
+		<span class="appnote" data-same-app="{@xml:id}" title="von ⌜ bis ⌟ getilgt">
 			<xsl:call-template name="highlight-group">
 				<xsl:with-param name="others" select="$source"/>
 			</xsl:call-template>
@@ -266,12 +266,12 @@ in <xsl:value-of select="document-uri(/)"/>
 				<xsl:message select="concat('WARNING: ', count($source), ' delSpans point to ', @xml:id, ' in ', document-uri(/))"/>
 			</xsl:if>
 			<span class="generated-text">
-				<xsl:variable name="idx">
+<!--				<xsl:variable name="idx">
 					<xsl:for-each select="key('delSpan', @xml:id)">
 						<xsl:number count="delSpan" from="/" level="any" format="1"/>
 					</xsl:for-each>
 				</xsl:variable>
-				<xsl:value-of select="$idx"/>⌟ ⟨<i>tilgt ab ⌜<xsl:value-of select="$idx"/></i>⟩
+				<xsl:value-of select="$idx"/>-->⌟⟨<i>tilgt<!-- ab ⌜<xsl:value-of select="$idx"/>--></i>⟩
 			</span>
 		</span>
 	</xsl:template>
