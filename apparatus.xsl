@@ -31,6 +31,7 @@
 	
 	<xsl:template match="del[not(parent::subst)]">
 		<span class="appnote" title="{concat('»', ., '« getilgt')}">
+			<xsl:call-template name="highlight-group"/>
 			<span class="affected deleted"><xsl:apply-templates/> </span>
 			<span class="generated-text">⟨<span class="app">tilgt</span>⟩</span>			
 		</span>
@@ -46,6 +47,7 @@
 	
 	<xsl:template match="subst">
 		<span class="appnote" title="{concat('»', normalize-space(string-join(del, '')), '« durch »', normalize-space(string-join(add, '')), '« ersetzt')}">
+			<xsl:call-template name="highlight-group"/>
 			<span class="affected deleted">
 				<xsl:apply-templates select="del"/>
 			</span>			
@@ -80,6 +82,7 @@
 		<span class="appnote" title="{concat('»', normalize-space(string-join(del/subst/del, '')), 
 			'« zunächst durch »', normalize-space(string-join(del/subst/add, '')), 
 			'«, dann durch »', normalize-space(string-join(add, '')), '« ersetzt')}">
+			<xsl:call-template name="highlight-group"/>
 			<span class="affected deleted">
 				<xsl:apply-templates select="del/subst/del"/>
 			</span>
@@ -124,6 +127,7 @@
 	<!-- Normale Wiederherstellung (d.h. kleinerer Teil eines Del -->
 	<xsl:template match="restore">
 		<span class="appnote">
+			<xsl:call-template name="highlight-group"/>
 			<xsl:attribute name="title">
 				<xsl:text>»</xsl:text>
 				<xsl:value-of select="f:normalized-text(.)"/>
@@ -139,6 +143,7 @@
 	<!-- Vollständige Wiederherstellung einer Löschung -->
 	<xsl:template match="del[f:only-child(., restore)]|restore[f:only-child(., del)]" priority="1">
 		<span class="appnote">
+			<xsl:call-template name="highlight-group"/>
 			<xsl:attribute name="title">
 				<xsl:text>»</xsl:text>
 				<xsl:value-of select="f:normalized-text(child::*)"/>
@@ -224,6 +229,7 @@ in <xsl:value-of select="document-uri(/)"/>
 		
 		<!-- So. Der Rest ist einfach :-) -->
 		<span class="{f:generic-classes(.)} appnote">
+			<xsl:call-template name="highlight-group"/>
 			<xsl:attribute name="title">
 				<xsl:text>Ersetzung von »</xsl:text>
 				<xsl:value-of select="f:normalized-text($original)"/>
@@ -334,26 +340,6 @@ in <xsl:value-of select="document-uri(/)"/>
 		</xsl:element>
 	</xsl:template>
 
-	<!-- 
-		Sometimes we need to highlight not only the currently hovered element but also some others which are, in a way,
-		connected. E.g., <addSpan/> and corresponding target, or all elements of a transposition group.
-		
-		For JS efficiency, it is probably best to give every HTML element that could be in a highlight group an id, and
-		to add an attribute listing _all_ relevant other IDs to the element.
-		
-		This should be called immediately inside an .appnote element
-	-->
-	<xsl:template name="highlight-group">
-		<xsl:param name="others" as="element()*"/>
-		<xsl:attribute name="id" select="f:generate-id(.)"/>
-		<xsl:attribute name="data-also-highlight" select="string-join((for $el in $others except . return f:generate-id($el)), ' ')"/>
-	</xsl:template>
-	
-	<!-- Reuse IDs from the XML source (since they are manually crafted) -->
-	<xsl:function name="f:generate-id" as="xs:string">
-		<xsl:param name="element"/>
-		<xsl:value-of select="if ($element/@xml:id) then $element/@xml:id else generate-id($element)"/>
-	</xsl:function>
 
 	<xsl:template match="/TEI">
 		<xsl:for-each select="/TEI/text">
@@ -369,6 +355,9 @@ in <xsl:value-of select="document-uri(/)"/>
 			<xsl:attribute name="class" select="string-join((f:generic-classes(.),
 				if (@xml:id and key('alt', @xml:id)) then 'alt' else (),
 				if (@n and @part) then ('antilabe', concat('part-', @part)) else ()), ' ')"/>
+			<xsl:call-template name="highlight-group">
+				<xsl:with-param name="others" select="key('alt', @xml:id)"/>
+			</xsl:call-template>
 			<xsl:call-template name="generate-lineno"/>
 			<xsl:apply-templates/>
 		</xsl:element>

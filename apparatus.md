@@ -43,3 +43,15 @@ Note that this _does not_ mean that all text inside ⟨·⟩ is always gray – 
 > Eine <span style="color:grey;">⟨</span>einfache <span style="color:grey"><i>erg</i>⟩</span> Ergänzung.
 
 we have original text (although not from the base level) inside the brackets, and this is, like all original text, rendered in the normal text color.
+
+### Highlighting current change
+
+On a _hover_ event, we highlight everything that is affected by the current change. To do so, we add the `current` class to the closest `.appnote` element reachable when moving from the hovered element outward. 
+
+Additionally, we would like to highlight all ‘related’ `.appnote` elements. This includes:
+
+* for transpositions, all parts affected by the transposition
+* for `addSpan`/`delSpan`, start and end marker
+* for related changes marked with `@ge:stage`, everything with the same value of `@ge:stage`
+
+This is implemented by adding an id and a proprietary `data-also-highlight` attribute to each `.appnote` involved in a common highlighting. The `data-also-highlight` attribute contains the space-separated list of ids of all _other_ elements that need to be highlighted synchronous to the current element.

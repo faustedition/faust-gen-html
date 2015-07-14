@@ -3,8 +3,9 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns="http://www.w3.org/1999/xhtml" xmlns:xh="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://www.faustedition.net/ns"
+	xmlns:ge="http://www.tei-c.org/ns/geneticEditions"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-	exclude-result-prefixes="xs f xh" 	
+	exclude-result-prefixes="xs f xh ge" 	
 	version="2.0">
 	
 	<!-- common code for print2html and variant generation. not to be used standalone -->
@@ -40,6 +41,34 @@
 	  </xsl:choose>
 	</xsl:template>
 	
+	
+	<!-- 
+		Sometimes we need to highlight not only the currently hovered element but also some others which are, in a way,
+		connected. E.g., <addSpan/> and corresponding target, or all elements of a transposition group.
+		
+		For JS efficiency, it is probably best to give every HTML element that could be in a highlight group an id, and
+		to add an attribute listing _all_ relevant other IDs to the element.
+		
+		This should be called immediately inside an .appnote element
+	-->
+	<xsl:key name="samestage" match="*[@ge:stage]" use="string(@ge:stage)"/>
+	<xsl:template name="highlight-group">
+		<xsl:param name="others" as="element()*"/>
+		<xsl:variable name="samestage" select="if (@ge:stage) then key('samestage', @ge:stage) else ()"/>
+		<xsl:variable name="others" select="for $el in ($others, $samestage) except . return f:generate-id($el)"/>
+		<xsl:if test="count($others) > 0">
+			<xsl:attribute name="id" select="f:generate-id(.)"/>
+			<xsl:attribute name="data-also-highlight" select="string-join($others, ' ')"/>
+		</xsl:if>	
+	</xsl:template>
+	
+	<!-- Reuse IDs from the XML source (since they are manually crafted) -->
+	<xsl:function name="f:generate-id" as="xs:string">
+		<xsl:param name="element"/>
+		<xsl:value-of select="if ($element/@xml:id) then $element/@xml:id else generate-id($element)"/>
+	</xsl:function>
+	
+	
 	<!-- 
 		Render sth as enclosed with generated text.
 		
@@ -61,6 +90,7 @@
 		<xsl:param name="classes" select="f:generic-classes(.)"/>
 		<xsl:param name="title"/>
 		<span class="{string-join($classes, ' ')}">
+			<xsl:call-template name="highlight-group"/>
 			<xsl:if test="$title">
 				<xsl:attribute name="title" select="$title"/>
 			</xsl:if>
