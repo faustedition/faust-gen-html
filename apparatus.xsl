@@ -204,7 +204,7 @@
 		<xsl:variable name="unused-replacement">
 			<xsl:choose>
 				<xsl:when test="self::restore">	<!-- (3) -->
-					<xsl:sequence select="subst/del/node()"/>
+					<xsl:sequence select="subst/add/node()"/>
 				</xsl:when>
 				<xsl:when test="$add[self::add]"> <!-- 1, 1a -->
 					<xsl:sequence select="if (f:only-child($add, $add/del)) then $add/del/node() else $add/node()"/>
