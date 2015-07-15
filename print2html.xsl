@@ -55,11 +55,13 @@
   <xsl:template match="/">
     <xsl:for-each select="/TEI/text">
       <!-- Focus -->
-      <xsl:call-template name="generate-html-frame"/>
+      <xsl:call-template name="generate-html-frame">
+        <xsl:with-param name="single" tunnel="yes" select="false()"/>
+      </xsl:call-template>
       <xsl:if test="f:is-splitable-doc(.)">      
         <xsl:result-document href="{$output-base}.all.html">
           <xsl:call-template name="generate-html-frame">
-            <xsl:with-param name="single" select="true()"/>
+            <xsl:with-param name="single" tunnel="yes" select="true()"/>
           </xsl:call-template>        
         </xsl:result-document>
       </xsl:if>
@@ -78,7 +80,7 @@
 
   <xsl:key name="alt" match="alt" use="for $ref in tokenize(@target, '\s+') return substring($ref, 2)"/>
 <!-- Die Behandlung von den meisten Elementen ist relativ gleich: -->
-  <xsl:template match="*" mode="#default single">
+  <xsl:template match="*">
     <!-- # Varianten aus dem variants-Folder auslesen: -->
     <xsl:variable name="varinfo" as="node()*">
       <xsl:choose>
@@ -137,21 +139,30 @@
   
 
   <!-- divs, die bis zu $depth tief verschachtelt sind, werden im Standardmodus zerlegt: -->
-  <xsl:template match="div[f:is-splitable-doc(.) and count(ancestor::div) lt number($depth_n)]" mode="#default">
-    <xsl:variable name="filename">
-      <xsl:call-template name="filename"/>
-    </xsl:variable>
-    <xsl:variable name="divhead" select="normalize-space(head[1])"/>
-
-    <!-- Dazu fügen wir an der entsprechenden Stelle ein Inhaltsverzeichnis aller untergeordneter Dateien ein: -->
-    <ul class="toc">
-      <xsl:apply-templates select="." mode="toc"/>
-    </ul>
-
-    <!-- … während für den eigentlichen Inhalt ein neues Dokument erzeugt wird. -->
-    <xsl:result-document href="{$filename}">
-      <xsl:call-template name="generate-html-frame"/>
-    </xsl:result-document>
+  <xsl:template match="div[f:is-splitable-doc(.) and count(ancestor::div) lt number($depth_n)]">
+    <xsl:param name="single" tunnel="yes" select="true()"/>
+    <xsl:choose>
+      <xsl:when test="$single">
+        <xsl:next-match/>
+      </xsl:when>
+      
+      <xsl:otherwise>            
+        <xsl:variable name="filename">
+          <xsl:call-template name="filename"/>
+        </xsl:variable>
+        <xsl:variable name="divhead" select="normalize-space(head[1])"/>
+    
+        <!-- Dazu fügen wir an der entsprechenden Stelle ein Inhaltsverzeichnis aller untergeordneter Dateien ein: -->
+        <ul class="toc">
+          <xsl:apply-templates select="." mode="toc"/>
+        </ul>
+    
+        <!-- … während für den eigentlichen Inhalt ein neues Dokument erzeugt wird. -->
+        <xsl:result-document href="{$filename}">
+          <xsl:call-template name="generate-html-frame"/>
+        </xsl:result-document>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!-- Berechnet den Dateinamen für das aktuelle div. -->
@@ -211,7 +222,7 @@
   -->
   <xsl:template name="generate-html-frame">
     <!-- Single = true => alles auf einer Seite -->
-    <xsl:param name="single" select="false()"/>
+    <xsl:param name="single" select="false()" tunnel="yes"/>
     <html>
       <xsl:call-template name="html-head"/>
       <body>
@@ -225,7 +236,7 @@
                 <div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
                   <xsl:choose>
                     <xsl:when test="$single">
-                      <xsl:apply-templates mode="single"/>
+                      <xsl:apply-templates/>
                     </xsl:when>
                     <xsl:otherwise>
                       <xsl:apply-templates/>
@@ -233,9 +244,7 @@
                   </xsl:choose>
                 </div>
                 <div class="print-side-column">  <!-- 3. Spalte (1/5) für die lokale Navigation  -->
-                  <xsl:call-template name="local-nav">
-                    <xsl:with-param name="single" select="$single"/>
-                  </xsl:call-template>
+                  <xsl:call-template name="local-nav"/>
                 </div>
               </div>
             </div>
@@ -250,7 +259,7 @@
 
   <!-- Erzeugt eine lokale Navigation für das aktuelle (Fokus) div, d.h. Breadcrumbs, Prev/Next -->
   <xsl:template name="local-nav">
-    <xsl:param name="single" select="f:is-splitable-doc(.)"/>
+    <xsl:param name="single" tunnel="yes" select="f:is-splitable-doc(.)"/>
     <xsl:variable name="current-div" select="."/>
     <nav class="print-navigation">
 

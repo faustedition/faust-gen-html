@@ -12,11 +12,11 @@
 	<xsl:import href="utils.xsl"/>
 	
 	
-	<xsl:template match="figure" mode="#default single">
+	<xsl:template match="figure">
 		<br class="figure {@type}"/>
 	</xsl:template>
 		
-	<xsl:template match="gap[@unit='chars']" mode="#default single">
+	<xsl:template match="gap[@unit='chars']">
 		<span class="{string-join(f:generic-classes(.), ' ')} gap-unit-chars generated-text appnote" 
 			data-gap-length="{@quantity}" 
 			title="{if (@cert='medium') then 'ungefähr ' else ''}{@quantity} unlesbare Zeichen">
@@ -24,13 +24,13 @@
 		</span>
 	</xsl:template>
 	
-	<xsl:template match="gap[@unit='words']" mode="#default single">
+	<xsl:template match="gap[@unit='words']">
 		<span class="{string-join(f:generic-classes(.), ' ')} gap-unit-words generated-text appnote" data-gap-length="{@quantity}" title="{@quantity} unlesbare Wörter">
 			<xsl:value-of select="string-join(for $n in 1 to @quantity return '×···×', ' ')"/>
 		</span>
 	</xsl:template>  
 	
-	<xsl:template match="space" mode="#default single" priority="2">
+	<xsl:template match="space" priority="2">
 	  <xsl:choose>
 	    <xsl:when test="$type = 'print'">
 	      <xsl:next-match/>
@@ -104,7 +104,7 @@
 		</span>
 	</xsl:template>
 	
-	<xsl:template match="supplied" mode="#default single">
+	<xsl:template match="supplied">
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="with" select="'[',']'"/>
 			<xsl:with-param name="title">editorisch ergänzt</xsl:with-param>
@@ -112,9 +112,9 @@
 		</xsl:call-template>
 	</xsl:template>
 	
-	<xsl:template match="supplied[@evidence='conjecture']" mode="#default single"/>
+	<xsl:template match="supplied[@evidence='conjecture']"/>
 	
-	<xsl:template match="unclear[@cert='high']" mode="#default single">
+	<xsl:template match="unclear[@cert='high']">
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="with" select="'{','}'"/>
 			<xsl:with-param name="title">wahrscheinliche Lesung</xsl:with-param>
@@ -122,7 +122,7 @@
 		</xsl:call-template>
 	</xsl:template>
 	
-	<xsl:template match="unclear[@cert='low']" mode="#default single">
+	<xsl:template match="unclear[@cert='low']">
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="with" select="'{{','}}'"/>
 			<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"/>
@@ -191,13 +191,13 @@ in <xsl:value-of select="document-uri(/)"/>
 	<xsl:template match="corr"/>
 	<!-- die anderen werden einfach durchgereicht -->
 	
-	<xsl:template match="lb" mode="#default single">
+	<xsl:template match="lb">
 		<xsl:text> </xsl:text>
 	</xsl:template>
 	
-	<xsl:template match="lb[@break='no']" mode="#default single"/>
+	<xsl:template match="lb[@break='no']"/>
 	
-	<xsl:template match="pb" mode="#default single">
+	<xsl:template match="pb">
 		<xsl:text> </xsl:text>
 	</xsl:template>
   
@@ -215,7 +215,7 @@ in <xsl:value-of select="document-uri(/)"/>
     </xsl:choose>
   </xsl:template>
   
-  <xsl:template match="pb[@f:docTranscriptNo]" priority="1"  mode="#default single">
+  <xsl:template match="pb[@f:docTranscriptNo]" priority="1">
     <xsl:text> </xsl:text>
     <a  
       class="{string-join((f:generic-classes(.), 'generated-text', 'pageno', 'doclink'), ' ')}"
@@ -225,13 +225,13 @@ in <xsl:value-of select="document-uri(/)"/>
     </a>
   </xsl:template>
 	
-  <xsl:template match="pb[@n][following::*[1][self::pb]]" mode="#default single" priority="2">
+  <xsl:template match="pb[@n][following::*[1][self::pb]]" priority="2">
   	<span id="pb{@n}" class="pb-supressed">
   		<xsl:comment>Supressed page break <xsl:value-of select="@n"/></xsl:comment>
   	</span>
   </xsl:template>
   
-  <xsl:template match="pb[@n]"  mode="#default single">
+  <xsl:template match="pb[@n]">
     <xsl:text> </xsl:text>
     <span
       class="{string-join((f:generic-classes(.), 'generated-text', 'pageno'), ' ')}"
@@ -240,7 +240,7 @@ in <xsl:value-of select="document-uri(/)"/>
     </span>
   </xsl:template>
 	
-  <xsl:template match="fw"  mode="#default single"/>
+  <xsl:template match="fw"/>
 	
 	<!-- Erzeugt die Zeilennummer vor der Zeile -->
 	<xsl:template name="generate-lineno">
