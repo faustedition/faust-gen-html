@@ -7,11 +7,28 @@
 	<!-- Path to the target folder for the "root" HTML files-->
 	<c:param name="html" value="target/print/"/>
 
+	<!-- Path to the target folder for the "apparatus" HTML files-->
+	<c:param name="apphtml" value="target/app/"/>
+
 	<!-- Path to the target folder for the variant fragments -->
 	<c:param name="variants" value="target/print/variants/"/>
 	
 	<!-- URL prefix to be used for links into the webapp -->
   <c:param name="docbase" value="../documentViewer.php?faustUri=faust://xml"/>
+
+	<!-- Optional settings for producing documents that are not integrated
+	     with the rest. Can be left commented out. 
+
+	<!-\- Base link to the edition. Used in html-frame. Defaults to .. -\->
+	<c:param name="edition" value="http://beta.faustedition.net"/>
+
+	<!-\- Base link to the js, css, img subfolders. Defaults to $edition. -\->
+	<c:param name="assets" value="assets"/>
+
+	<!-\- If given, include a timestamp and the Testhandschrift. -\->
+	<c:param name="debug" value="true"/>
+
+	-->
 		
 	<!-- Parameters for splitting the text visualisation: -->
 	<!-- max. div nesting depth to split. 2 = Acts + Scenes -->

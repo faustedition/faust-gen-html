@@ -27,6 +27,7 @@
 
   <p:group>
     <p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
+    <p:variable name="debug" select="//c:param[@name='debug']/@value"><p:pipe port="result" step="config"/></p:variable>
     <cx:message log="info">  
       <p:input port="source"><p:pipe port="source" step="main"></p:pipe></p:input>      
       <p:with-option name="message" select="concat('Collecting metadata from ', $source)"/>
@@ -38,7 +39,7 @@
     </l:recursive-directory-list>
 
     <p:for-each>
-      <p:iteration-source select="//c:file[not(ends-with(@name, 'test.xml'))]"/>
+      <p:iteration-source select="//c:file[$debug or not(ends-with(@name, 'test.xml'))]"/>
       <p:variable name="filename" select="p:resolve-uri(/c:file/@name)"/>
       
       <cx:message log="debug">        

@@ -12,6 +12,7 @@
     und Variantenapparat. 
   -->
 
+  <xsl:import href="html-frame.xsl"/>
   <xsl:include href="html-common.xsl"/>
   
   <!-- Der Ausgabeordner für die HTML-Dateien. -->
@@ -54,11 +55,13 @@
   <xsl:template match="/">
     <xsl:for-each select="/TEI/text">
       <!-- Focus -->
-      <xsl:call-template name="generate-html-frame"/>
+      <xsl:call-template name="generate-html-frame">
+        <xsl:with-param name="single" tunnel="yes" select="false()"/>
+      </xsl:call-template>
       <xsl:if test="f:is-splitable-doc(.)">      
         <xsl:result-document href="{$output-base}.all.html">
           <xsl:call-template name="generate-html-frame">
-            <xsl:with-param name="single" select="true()"/>
+            <xsl:with-param name="single" tunnel="yes" select="true()"/>
           </xsl:call-template>        
         </xsl:result-document>
       </xsl:if>
@@ -77,7 +80,7 @@
 
   <xsl:key name="alt" match="alt" use="for $ref in tokenize(@target, '\s+') return substring($ref, 2)"/>
 <!-- Die Behandlung von den meisten Elementen ist relativ gleich: -->
-  <xsl:template match="*" mode="#default single">
+  <xsl:template match="*">
     <!-- # Varianten aus dem variants-Folder auslesen: -->
     <xsl:variable name="varinfo" as="node()*">
       <xsl:choose>
@@ -134,46 +137,32 @@
     </xsl:element>
   </xsl:template>
   
-  <!-- Erzeugt die Zeilennummer vor der Zeile -->
-  <xsl:template name="generate-lineno">
-    <xsl:variable name="display-line" select="f:lineno-for-display(@n)"/>
-    <xsl:choose>
-      <xsl:when test="number($display-line) gt 0">
-        <!-- Klick auf Zeilennummer führt zu einem Link, der wiederum auf die Zeilennummer verweist -->
-        <xsl:attribute name="id" select="concat('l', @n)"/>
-        <a href="#l{@n}">
-          <xsl:attribute name="class">
-            <xsl:text>lineno</xsl:text>
-            <!-- Jede 5. ist immer sichtbar, alle anderen nur wenn über die Zeile gehovert wird -->
-            <xsl:if test="$display-line mod 5 != 0">
-              <xsl:text> invisible</xsl:text>
-            </xsl:if>
-          </xsl:attribute>
-          <xsl:value-of select="$display-line"/>
-        </a>
-      </xsl:when>
-      <xsl:otherwise>
-        <a class="lineno invisible">&#160;</a>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
 
   <!-- divs, die bis zu $depth tief verschachtelt sind, werden im Standardmodus zerlegt: -->
-  <xsl:template match="div[f:is-splitable-doc(.) and count(ancestor::div) lt number($depth_n)]" mode="#default">
-    <xsl:variable name="filename">
-      <xsl:call-template name="filename"/>
-    </xsl:variable>
-    <xsl:variable name="divhead" select="normalize-space(head[1])"/>
-
-    <!-- Dazu fügen wir an der entsprechenden Stelle ein Inhaltsverzeichnis aller untergeordneter Dateien ein: -->
-    <ul class="toc">
-      <xsl:apply-templates select="." mode="toc"/>
-    </ul>
-
-    <!-- … während für den eigentlichen Inhalt ein neues Dokument erzeugt wird. -->
-    <xsl:result-document href="{$filename}">
-      <xsl:call-template name="generate-html-frame"/>
-    </xsl:result-document>
+  <xsl:template match="div[f:is-splitable-doc(.) and count(ancestor::div) lt number($depth_n)]">
+    <xsl:param name="single" tunnel="yes" select="true()"/>
+    <xsl:choose>
+      <xsl:when test="$single">
+        <xsl:next-match/>
+      </xsl:when>
+      
+      <xsl:otherwise>            
+        <xsl:variable name="filename">
+          <xsl:call-template name="filename"/>
+        </xsl:variable>
+        <xsl:variable name="divhead" select="normalize-space(head[1])"/>
+    
+        <!-- Dazu fügen wir an der entsprechenden Stelle ein Inhaltsverzeichnis aller untergeordneter Dateien ein: -->
+        <ul class="toc">
+          <xsl:apply-templates select="." mode="toc"/>
+        </ul>
+    
+        <!-- … während für den eigentlichen Inhalt ein neues Dokument erzeugt wird. -->
+        <xsl:result-document href="{$filename}">
+          <xsl:call-template name="generate-html-frame"/>
+        </xsl:result-document>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!-- Berechnet den Dateinamen für das aktuelle div. -->
@@ -233,7 +222,7 @@
   -->
   <xsl:template name="generate-html-frame">
     <!-- Single = true => alles auf einer Seite -->
-    <xsl:param name="single" select="false()"/>
+    <xsl:param name="single" select="false()" tunnel="yes"/>
     <html>
       <xsl:call-template name="html-head"/>
       <body>
@@ -247,7 +236,7 @@
                 <div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
                   <xsl:choose>
                     <xsl:when test="$single">
-                      <xsl:apply-templates mode="single"/>
+                      <xsl:apply-templates/>
                     </xsl:when>
                     <xsl:otherwise>
                       <xsl:apply-templates/>
@@ -255,9 +244,7 @@
                   </xsl:choose>
                 </div>
                 <div class="print-side-column">  <!-- 3. Spalte (1/5) für die lokale Navigation  -->
-                  <xsl:call-template name="local-nav">
-                    <xsl:with-param name="single" select="$single"/>
-                  </xsl:call-template>
+                  <xsl:call-template name="local-nav"/>
                 </div>
               </div>
             </div>
@@ -272,7 +259,7 @@
 
   <!-- Erzeugt eine lokale Navigation für das aktuelle (Fokus) div, d.h. Breadcrumbs, Prev/Next -->
   <xsl:template name="local-nav">
-    <xsl:param name="single" select="f:is-splitable-doc(.)"/>
+    <xsl:param name="single" tunnel="yes" select="f:is-splitable-doc(.)"/>
     <xsl:variable name="current-div" select="."/>
     <nav class="print-navigation">
 
@@ -349,66 +336,6 @@
     </nav>
   </xsl:template>
 
-  <xsl:template name="html-head">
-    <xsl:param name="title" select="$title"/>
-    <head>
-      <meta charset='utf-8'/>
-
-      <script type="text/javascript" src="../js/faust_common.js"/>
-      <script src="../js/faust_print_interaction.js"/>
-      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
-      <link rel="stylesheet" href="../css/document-text.css"/>
-      <link rel="stylesheet" href="../css/document-transcript.css"/>
-      <link rel="stylesheet" href="../css/document-transcript-highlight-hands.css"/>
-      <link rel="stylesheet" href="../css/document-transcript-interaction.css"/>
-      <link rel="stylesheet" href="../css/pure-custom.css"/>
-      <link rel="stylesheet" href="../css/basic_layout.css"/>
-      <link rel="stylesheet" href="lesetext.css"/>
       <script><xsl:text>window.addEventListener("DOMContentLoaded", function(){addPrintInteraction("../");});</xsl:text></script>
-    </head>
-
-  </xsl:template>
-
-  <xsl:template name="header">
-    <header>
-      <div class="header-content">
-        <a class="faustedition-logo" title="Faustedition" href="../index.php">
-          <img class="faustedition-logo-svg" src="../img/faustlogo.svg" alt="Faustedition logo"/>
-        </a>
-        <nav class="header-navigation pure-menu">
-          <a href="../archives.php">Archiv</a>
-          <xsl:text> </xsl:text>
-          <a href="../chessboard_overview.php">Genese</a>
-          <xsl:text> </xsl:text>
-          <a href="../print/index.html">Text</a>
-        </nav>
-      </div>
-    </header>
-  </xsl:template>
-
-  <xsl:template name="footer">
-    <footer>
-      <div id='footer-content' class='footer-content'>
-          <b>Digitale Faust-Edition</b>
-      </div>
-      <div id="footer-navigation" class="footer-navigation">
-        <a href="help.php">Hilfe</a>
-      </div>
-    </footer>
-    <footer>
-      <div id='footer-content' class='footer-content'>
-        <b>Digitale Faust-Edition</b>
-      </div>
-      <div id="footer-navigation" class="footer-navigation">
-        <a href="../help.php">Hilfe</a>
-        <xsl:text> </xsl:text>
-        <a href="../contact.php">Kontakt</a>
-        <xsl:text> </xsl:text>
-        <a href="../imprint.php">Impressum</a>
-        <xsl:text> </xsl:text>
-        <a href="../project.php">Projekt</a>
-      </div>
-    </footer>
-  </xsl:template>
 
 </xsl:stylesheet>
