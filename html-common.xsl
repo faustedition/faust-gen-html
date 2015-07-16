@@ -200,6 +200,10 @@ in <xsl:value-of select="document-uri(/)"/>
 	<xsl:template match="pb">
 		<xsl:text> </xsl:text>
 	</xsl:template>
+	
+	<xsl:template match="pb[$type = 'lesetext']" priority="5">
+		<xsl:text> </xsl:text>
+	</xsl:template>
   
   <xsl:template name="generate-pageno">
     <xsl:choose>
