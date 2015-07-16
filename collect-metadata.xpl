@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
   xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:f="http://www.faustedition.net/ns"
+  xmlns:pxf="http://exproc.org/proposed/steps/file"  
   xmlns:l="http://xproc.org/library" type="f:list-transcripts" name="main" version="1.0">
 
   <p:input port="source"><p:empty/></p:input>
@@ -33,6 +34,17 @@
       <p:with-option name="message" select="concat('Collecting metadata from ', $source)"/>
     </cx:message>
     
+    <pxf:copy>
+      <p:with-option name="href" select="concat($source, '/print/A8_IIIB18.xml')"/>
+      <p:with-option name="target" select="'target/lesetext/faust1.xml'"/>
+    </pxf:copy>
+
+    <pxf:copy>
+      <p:with-option name="href" select="concat($source, '/transcript/gsa/391098/391098.xml')"/>
+      <p:with-option name="target" select="'target/lesetext/faust2.xml'"/>
+    </pxf:copy>
+    
+
 
     <l:recursive-directory-list>
       <p:with-option name="path" select="concat($source, '/document')"/>
@@ -173,7 +185,8 @@
     <!-- Nun noch zusammenkleben und ein wenig XML aufräumen -->
     <p:wrap-sequence wrapper="doc" wrapper-namespace="http://www.faustedition.net/ns"/>
     <p:namespace-rename from="http://www.tei-c.org/ns/1.0"/>
-    <p:namespace-rename from="http://www.w3.org/2001/XMLSchema-instance"/>    
+    <p:namespace-rename from="http://www.w3.org/2001/XMLSchema-instance"/>
+    
     
     <p:insert match="/*" position="last-child">
       <p:input port="insertion">
@@ -181,34 +194,24 @@
           <transcript xmlns="http://www.faustedition.net/ns">
           <!-- Lesetext Faust I: -->
           <textTranscript xmlns:f="http://www.faustedition.net/ns"
-            uri="faust://xml/print/A8_IIIB18.xml"
-            href="file:/home/tv/Faust/print/A8_IIIB18.xml"
-            document="document/print/A8.xml"
+            uri="faust://lesetext/faust1.xml"            
+            href="file:/home/tv/git/faust-xslt/target/lesetext/faust1.xml"
+            document="lesetext/faust1.xml"
             type="lesetext"
             f:sigil="Lesetext">
+            <!-- FIXME absoluter Pfad raus -->
             <idno type="faustedition">Lesetext</idno>
-            <idno type="hagen" uri="faust://document/hagen/A_8" rank="2">A 8</idno>
-            <idno type="wa_faust" uri="faust://document/wa_faust/A" rank="3">A</idno>
-            <idno type="hagen_nr" uri="faust://document/hagen_nr/16" rank="6">16</idno>
           </textTranscript>
           
           <!-- Lesetext Faust II: -->
           <textTranscript xmlns:f="http://www.faustedition.net/ns"
-            uri="faust://xml/transcript/gsa/391098/391098.xml"
-            href="file:/home/tv/Faust/transcript/gsa/391098/391098.xml"
-            document="document/faust/2/gsa_391098.xml"
+            uri="faust://lesetext/faust2.xml"
+            href="file:/home/tv/git/faust-xslt/target/lesetext/faust2.xml"
+            document="lesetext/faust2.xml"
             type="lesetext"
             f:sigil="Lesetext">
+            <!-- FIXME absoluter Pfad raus -->
             <idno type="faustedition">Lesetext</idno>
-            <idno type="wa_faust" uri="faust://document/wa_faust/2_H" rank="1">2 H</idno>
-            <idno type="fischer_lamberg"
-              uri="faust://document/fischer_lamberg/2_R"
-              rank="3">2 R</idno>
-            <idno type="gsa_2" uri="faust://document/gsa_2/GSA_25/W_1804" rank="28">GSA 25/W 1804</idno>
-            <idno type="gsa_1" uri="faust://document/gsa_1/GSA_25/XIX,3" rank="50">GSA 25/XIX,3</idno>
-            <idno type="kraeuter"
-              uri="faust://document/kraeuter/Eigen_Poetisches_38.epsilon"
-              rank="9999">Eigen Poetisches 38.epsilon</idno>
           </textTranscript>
           </transcript>
         </p:inline>

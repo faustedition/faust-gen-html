@@ -208,10 +208,13 @@
             and not(self::pb or self::div or 
             self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or 
             @n[contains(.,"todo")] or @n[contains(.,"p")])]/ancestor::div[1]'/>
+          <xsl:if test="count($div) > 1">
+            <xsl:message select="concat('ERROR: f:printlink(', $transcript, ', ', $n, '): more than one div.')"/>
+          </xsl:if>
           <xsl:if test="$div">
             <xsl:text>.</xsl:text>
             <xsl:number 
-              select="$div"
+              select="$div[1]"
               level="any"
               from="TEI"						
             />

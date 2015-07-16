@@ -65,7 +65,7 @@
                       <xsl:for-each select="document(concat($source, '/print-labels.xml'))//f:item">
                         
                         <xsl:variable name="uri" select="@uri"/>
-                        <xsl:variable name="md" select="$mdlist//f:textTranscript[@uri=$uri]"/>
+                        <xsl:variable name="md" select="$mdlist//f:textTranscript[@uri=$uri][1]"/>
                         <xsl:variable name="filename" select="replace($md/@href, '^.*/([^/]+)', '$1')"/>
                         <xsl:variable name="htmlname" select="replace($filename, '\.xml$', '')"/>
                         <xsl:variable name="sigil" select="$md/f:idno[1]"/>
