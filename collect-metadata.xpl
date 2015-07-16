@@ -187,36 +187,50 @@
     <p:namespace-rename from="http://www.tei-c.org/ns/1.0"/>
     <p:namespace-rename from="http://www.w3.org/2001/XMLSchema-instance"/>
     
-    
-    <p:insert match="/*" position="last-child">
-      <p:input port="insertion">
+    <p:xslt>
+      <p:input port="stylesheet">
         <p:inline>
-          <transcript xmlns="http://www.faustedition.net/ns">
-          <!-- Lesetext Faust I: -->
-          <textTranscript xmlns:f="http://www.faustedition.net/ns"
-            uri="faust://lesetext/faust1.xml"            
-            href="file:/home/tv/git/faust-xslt/target/lesetext/faust1.xml"
-            document="lesetext/faust1.xml"
-            type="lesetext"
-            f:sigil="Lesetext">
-            <!-- FIXME absoluter Pfad raus -->
-            <idno type="faustedition">Lesetext</idno>
-          </textTranscript>
-          
-          <!-- Lesetext Faust II: -->
-          <textTranscript xmlns:f="http://www.faustedition.net/ns"
-            uri="faust://lesetext/faust2.xml"
-            href="file:/home/tv/git/faust-xslt/target/lesetext/faust2.xml"
-            document="lesetext/faust2.xml"
-            type="lesetext"
-            f:sigil="Lesetext">
-            <!-- FIXME absoluter Pfad raus -->
-            <idno type="faustedition">Lesetext</idno>
-          </textTranscript>
-          </transcript>
+          <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" 
+            xmlns="http://www.faustedition.net/ns" xmlns:f="http://www.faustedition.net/ns">
+            <xsl:param name="html"/>
+            
+            <xsl:template match="node()|@*">
+              <xsl:copy>
+                <xsl:apply-templates select="@*|node()"/>
+              </xsl:copy>
+            </xsl:template>
+            <xsl:template match="/*">
+              <xsl:copy>                
+                  <!-- Lesetext Faust I: -->
+                  <textTranscript xmlns:f="http://www.faustedition.net/ns"
+                    uri="faust://lesetext/faust1.xml"            
+                    href="{resolve-uri(concat($html, '../lesetext/faust1.xml'))}"
+                    document="lesetext/faust1.xml"
+                    type="lesetext"
+                    f:sigil="Lesetext">                    
+                    <idno type="faustedition">Lesetext</idno>
+                  </textTranscript>
+                  
+                  <!-- Lesetext Faust II: -->
+                  <textTranscript xmlns:f="http://www.faustedition.net/ns"
+                    uri="faust://lesetext/faust2.xml"
+                    href="{resolve-uri(concat($html, '../lesetext/faust2.xml'))}"
+                    document="lesetext/faust2.xml"
+                    type="lesetext"
+                    f:sigil="Lesetext">                    
+                    <idno type="faustedition">Lesetext</idno>
+                  </textTranscript>
+
+                  <xsl:apply-templates/>
+              </xsl:copy>              
+            </xsl:template>
+          </xsl:stylesheet>
         </p:inline>
       </p:input>
-    </p:insert>
+      <p:input port="parameters">
+        <p:pipe port="result" step="config"/>
+      </p:input>
+    </p:xslt>
     
     <p:unwrap match="f:transcript" name="cleanup"/>
     
