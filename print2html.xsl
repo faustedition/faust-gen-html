@@ -334,8 +334,6 @@
         </li>
       </ul>
     </nav>
-  </xsl:template>
-
-      <script><xsl:text>window.addEventListener("DOMContentLoaded", function(){addPrintInteraction("../");});</xsl:text></script>
+  </xsl:template>      
 
 </xsl:stylesheet>
