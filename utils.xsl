@@ -191,9 +191,13 @@
   <xsl:function name="f:doclink">
     <xsl:param name="document"/>
     <xsl:param name="page"/>
-    <xsl:value-of select="concat($docbase, '/', $document)"/>
+    <xsl:param name="n"/>
+    <xsl:value-of select="concat($docbase, '/', $document, '&amp;view=text')"/>
     <xsl:if test="$page">
       <xsl:value-of select="concat('&amp;page=', $page)"/>
+    </xsl:if>
+    <xsl:if test="$n">
+      <xsl:value-of select="concat('#l', $n)"/>
     </xsl:if>
   </xsl:function>
   
