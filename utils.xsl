@@ -226,6 +226,17 @@
       replace($transcript, '^.*/(.*)\.xml$', '$1'), $targetpart, '.html#l', $n)"/>
   </xsl:function>
   
-  
+  <!-- Returns true() iff $element is one of those TEI elements for which a variant apparatus should be generated. -->
+  <xsl:function name="f:hasvars" as="xs:boolean">
+    <xsl:param name="element"/>
+    <xsl:value-of select='$element[@n 
+      and not(
+      self::pb 
+      or self::div 
+      or self::milestone[@unit="paralipomenon"] 
+      or self::milestone[@unit="cols"] 
+      or @n[contains(.,"todo")] 
+      or @n[contains(.,"p")])]'/>
+  </xsl:function>
   
 </xsl:stylesheet>

@@ -98,7 +98,7 @@
     <!-- Dann ein Element erzeugen: div oder span oder p, siehe utils.xsl -->
     <xsl:element
       name="{f:html-tag-name(.)}">
-      <xsl:if test="@n">
+      <xsl:if test="f:hasvars(.)">
         
         <!-- Ein paar (für's JS interessante) Daten speichern wir in data-Attributen: -->
         <xsl:attribute name="data-n" select="@n"/>
@@ -122,7 +122,7 @@
           • antilabe und part-X für Antilaben
       -->
       <xsl:attribute name="class" select="string-join((f:generic-classes(.),
-        if (@n) then (
+        if (f:hasvars(.)) then (
           'hasvars', 
           concat('varcount-', $varcount),
           concat('variants-', if ($varinfo) then $varinfo/@data-variants else 0),
