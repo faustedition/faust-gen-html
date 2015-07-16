@@ -13,8 +13,11 @@
 	<!-- Path to the target folder for the variant fragments -->
 	<c:param name="variants" value="target/print/variants/"/>
 	
-	<!-- URL prefix to be used for links into the webapp -->
+	<!-- URL prefix to be used for links into the document viewer (transcripts etc.) -->
   <c:param name="docbase" value="../documentViewer.php?faustUri=faust://xml"/>
+	
+	<!-- URL prefix to be used for links into the print and lesetext folder -->
+	<c:param name="printbase" value=""/>
 
 	<!-- Optional settings for producing documents that are not integrated
 	     with the rest. Can be left commented out. 

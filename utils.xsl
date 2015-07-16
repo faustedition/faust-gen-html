@@ -10,6 +10,7 @@
   <xsl:param name="splitchars" select="5000"/>
   <xsl:param name="splitdivs" select="5"/>
   <xsl:param name="docbase"/>
+  <xsl:param name="printbase"/>
   <xsl:param name="documentURI"/>
   
   <xsl:function name="f:is-splitable-doc" as="xs:boolean">
@@ -222,7 +223,7 @@
         </xsl:when>
       </xsl:choose>
     </xsl:variable>
-    <xsl:value-of select="concat(
+    <xsl:value-of select="concat($printbase,
       replace($transcript, '^.*/(.*)\.xml$', '$1'), $targetpart, '.html#l', $n)"/>
   </xsl:function>
   
