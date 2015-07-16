@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
   xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:f="http://www.faustedition.net/ns"
+  xmlns:pxf="http://exproc.org/proposed/steps/file"  
   xmlns:l="http://xproc.org/library" type="f:list-transcripts" name="main" version="1.0">
 
   <p:input port="source"><p:empty/></p:input>
@@ -33,6 +34,17 @@
       <p:with-option name="message" select="concat('Collecting metadata from ', $source)"/>
     </cx:message>
     
+    <pxf:copy>
+      <p:with-option name="href" select="concat($source, '/print/A8_IIIB18.xml')"/>
+      <p:with-option name="target" select="'target/lesetext/faust1.xml'"/>
+    </pxf:copy>
+
+    <pxf:copy>
+      <p:with-option name="href" select="concat($source, '/transcript/gsa/391098/391098.xml')"/>
+      <p:with-option name="target" select="'target/lesetext/faust2.xml'"/>
+    </pxf:copy>
+    
+
 
     <l:recursive-directory-list>
       <p:with-option name="path" select="concat($source, '/document')"/>
@@ -173,7 +185,53 @@
     <!-- Nun noch zusammenkleben und ein wenig XML aufräumen -->
     <p:wrap-sequence wrapper="doc" wrapper-namespace="http://www.faustedition.net/ns"/>
     <p:namespace-rename from="http://www.tei-c.org/ns/1.0"/>
-    <p:namespace-rename from="http://www.w3.org/2001/XMLSchema-instance"/>    
+    <p:namespace-rename from="http://www.w3.org/2001/XMLSchema-instance"/>
+    
+    <p:xslt>
+      <p:input port="stylesheet">
+        <p:inline>
+          <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" 
+            xmlns="http://www.faustedition.net/ns" xmlns:f="http://www.faustedition.net/ns">
+            <xsl:param name="html"/>
+            
+            <xsl:template match="node()|@*">
+              <xsl:copy>
+                <xsl:apply-templates select="@*|node()"/>
+              </xsl:copy>
+            </xsl:template>
+            <xsl:template match="/*">
+              <xsl:copy>                
+                  <!-- Lesetext Faust I: -->
+                  <textTranscript xmlns:f="http://www.faustedition.net/ns"
+                    uri="faust://lesetext/faust1.xml"            
+                    href="{resolve-uri(concat($html, '../lesetext/faust1.xml'))}"
+                    document="lesetext/faust1.xml"
+                    type="lesetext"
+                    f:sigil="Lesetext">                    
+                    <idno type="faustedition">Lesetext</idno>
+                  </textTranscript>
+                  
+                  <!-- Lesetext Faust II: -->
+                  <textTranscript xmlns:f="http://www.faustedition.net/ns"
+                    uri="faust://lesetext/faust2.xml"
+                    href="{resolve-uri(concat($html, '../lesetext/faust2.xml'))}"
+                    document="lesetext/faust2.xml"
+                    type="lesetext"
+                    f:sigil="Lesetext">                    
+                    <idno type="faustedition">Lesetext</idno>
+                  </textTranscript>
+
+                  <xsl:apply-templates/>
+              </xsl:copy>              
+            </xsl:template>
+          </xsl:stylesheet>
+        </p:inline>
+      </p:input>
+      <p:input port="parameters">
+        <p:pipe port="result" step="config"/>
+      </p:input>
+    </p:xslt>
+    
     <p:unwrap match="f:transcript" name="cleanup"/>
     
   </p:group>

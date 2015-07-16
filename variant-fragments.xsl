@@ -18,17 +18,10 @@
 		
 	
 	<xsl:output method="xhtml"/>
-	
-	<!-- DEPRECATED -->
-	<xsl:function name="f:varcount">
-		<xsl:param name="group"/>
-		<xsl:variable name="part" select="$group[1]/@part"/>
-		<xsl:variable name="name" select="name($group[1])"/>
-		<xsl:value-of select="if ($part) then count($group[@part=$part and name()=$name]) else count($group[name()=$name])"/>
-	</xsl:function>
-	
-	<xsl:template match="/f:variants">		
+		
+	<xsl:template match="/f:variants">
 		<xsl:for-each-group select="*" group-by="f:output-group(@n)">
+			<!-- eine Ausgabedatei für ca. 10 kanonische Zeilen -->		
 			<xsl:variable name="output-file" select="concat($variants, current-grouping-key(), '.html')"/>			
 			<xsl:result-document href="{$output-file}">
 				<div class="groups" data-group="{current-grouping-key()}">
