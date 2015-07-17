@@ -14,6 +14,7 @@
 	<p:import href="collate-variants.xpl"/>
 	<p:import href="print2html.xpl"/>
 	<p:import href="generate-indexes.xpl"/>
+	<p:import href="generate-app.xpl"/>
 		
 	
 	<!-- Parameter laden -->
@@ -124,6 +125,13 @@
 		<pxf:copy href="lesetext.css">
 			<p:with-option name="target" select="concat($html, 'lesetext.css')"/>
 		</pxf:copy>
+		
+		<!-- Nun noch der Apparat -->
+		<f:generate-app>
+			<p:input port="source">
+				<p:pipe port="result" step="transcripts"/>
+			</p:input>
+		</f:generate-app>
 
 	</p:group>
 </p:declare-step>
