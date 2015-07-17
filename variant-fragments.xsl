@@ -38,8 +38,8 @@
 						</xsl:variable>
 						<div class="variants" 
 							data-n="{current-grouping-key()}" 
-							data-witnesses="{count($evidence/*)}"
-							data-variants="{count(distinct-values(for $ev in $evidence/* return normalize-space($ev)))}"
+							data-witnesses="{count($evidence/* except $evidence/*[@type='lesetext'])}"
+							data-variants="{count(distinct-values(for $ev in $evidence/* return normalize-space($ev)))-1}"
 							data-ctext="{$ctext}"
 							xml:id="v{current-grouping-key()}" 
 							id="v{current-grouping-key()}">
