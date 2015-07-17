@@ -11,7 +11,7 @@
 	
 	<xsl:import href="html-frame.xsl"/>
 	<xsl:include href="html-common.xsl"/>
-	<xsl:param name="type">archivalDocument</xsl:param>
+	<xsl:include href="split.xsl"/>
 	
 	<xsl:param name="headerAdditions">
 		<script type="text/javascript" src="faust_app_tmp.js"/>
@@ -344,11 +344,6 @@ in <xsl:value-of select="document-uri(/)"/>
 	</xsl:template>
 
 
-	<xsl:template match="/TEI">
-		<xsl:for-each select="/TEI/text">
-			<xsl:call-template name="generate-html-frame"/>
-		</xsl:for-each>
-	</xsl:template>
 	
 	<xsl:key name="alt" match="alt" use="for $ref in tokenize(@target, '\s+') return substring($ref, 2)"/>
 	<!-- Einfacher als in print2html da kein Variantenapparat -->
@@ -366,29 +361,6 @@ in <xsl:value-of select="document-uri(/)"/>
 		</xsl:element>
 	</xsl:template>
 	
-	<!-- TODO Vereinigen mit print2html -> html-frame.xsl -->
-	<xsl:template name="generate-html-frame">
-		<html>
-			<xsl:call-template name="html-head"/>
-			<body>
-				<xsl:call-template name="header"/>
-				
-				<main>
-					<div class="main-content-container">
-						<div id="main-content" class="main-content">
-							<div id="main" class="print">
-								<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
-								<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
-									<xsl:apply-templates/>
-								</div>
-							</div>
-						</div>
-					</div>
-				</main>
-				<xsl:call-template name="footer"/>
-			</body>
-		</html>
-	</xsl:template>
 	
 	
 </xsl:stylesheet>

@@ -1938,6 +1938,7 @@
     </meta>
     <projectTree name="transcr.xpr">
         <folder masterFiles="true" name="Master Files">
+            <file name="apparatus.xsl"/>
             <file name="print2html.xsl"/>
         </folder>
         <folder path="../../Faust/"/>

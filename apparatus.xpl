@@ -7,7 +7,7 @@
 	name="main" version="1.0">
 	<p:input port="source" primary="true"/>
 	<p:input port="parameters" kind="parameter"/>
-	<p:output port="result" primary="true">
+	<p:output port="result" primary="true" sequence="true">
 		<p:pipe port="result" step="body"/>
 	</p:output>
 	
@@ -30,7 +30,7 @@
 	
 	<!-- wir müssen ein paar der Parameter auswerten: -->
 	<p:group name="body">
-		<p:output port="result"/>
+		<p:output port="result" sequence="true"/>
 		
 		
 		<!-- $html -> das Verzeichnis für die Ausgabedateien -->
