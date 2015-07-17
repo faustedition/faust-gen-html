@@ -302,7 +302,7 @@ in <xsl:value-of select="document-uri(/)"/>
 			<xsl:call-template name="highlight-group">
 				<xsl:with-param name="others" select="$source"/>
 			</xsl:call-template>
-			<span class="generated-text">⟨<i>erg</i>⟩</span>
+			<span class="generated-text"><i>erg</i>⟩</span>
 		</span>
 		<xsl:if test="key('delSpan', @xml:id)">
 			<xsl:next-match/>
