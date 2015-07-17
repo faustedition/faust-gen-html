@@ -293,7 +293,7 @@ in <xsl:value-of select="document-uri(/)"/>
 		</span>
 	</xsl:template>
 	<xsl:key name="addSpan" match="addSpan[@spanTo]" use="substring(@spanTo, 2)"/>
-	<xsl:template match="*[@xml:id and key('addSpan', @xml:id)]">
+	<xsl:template match="*[@xml:id and key('addSpan', @xml:id)]" priority="1">
 		<xsl:variable name="source" select="key('addSpan', @xml:id)"/>
 		<xsl:if test="count($source) > 1">
 			<xsl:message select="concat('WARNING: ', count($source), ' addSpans point to ', @xml:id, ' in ', document-uri(/))"/>
@@ -304,6 +304,9 @@ in <xsl:value-of select="document-uri(/)"/>
 			</xsl:call-template>
 			<span class="generated-text">⟨<i>erg</i>⟩</span>
 		</span>
+		<xsl:if test="key('delSpan', @xml:id)">
+			<xsl:next-match/>
+		</xsl:if>
 	</xsl:template>
 	
 	
