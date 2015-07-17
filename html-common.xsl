@@ -117,7 +117,7 @@
 	<xsl:template match="unclear[@cert='high']">
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="with" select="'{','}'"/>
-			<xsl:with-param name="title">wahrscheinliche Lesung</xsl:with-param>
+			<xsl:with-param name="title">unsichere Lesung – wahrscheinlich</xsl:with-param>
 			<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"></xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
