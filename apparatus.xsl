@@ -292,7 +292,7 @@ in <xsl:value-of select="document-uri(/)"/>
 			<span class="generated-text">⟨</span>
 		</span>
 	</xsl:template>
-	<xsl:key name="addSpan" match="addSpan[@spanTo]" use="subString[@spanTo, 2]"/>
+	<xsl:key name="addSpan" match="addSpan[@spanTo]" use="substring(@spanTo, 2)"/>
 	<xsl:template match="*[@xml:id and key('addSpan', @xml:id)]">
 		<xsl:variable name="source" select="key('addSpan', @xml:id)"/>
 		<xsl:if test="count($source) > 1">
