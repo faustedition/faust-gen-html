@@ -32,7 +32,7 @@
 	<xsl:template match="del[not(parent::subst)]">
 		<span class="appnote" title="{concat('»', ., '« getilgt')}">
 			<xsl:call-template name="highlight-group"/>
-			<span class="affected deleted"><xsl:apply-templates/> </span>
+			<span class="affected deleted"><xsl:apply-templates select="node()"/> </span>
 			<span class="generated-text">⟨<span class="app">tilgt</span>⟩</span>			
 		</span>
 	</xsl:template>
@@ -130,18 +130,18 @@
 	</xsl:function>
 
 	<!-- Normale Wiederherstellung (d.h. kleinerer Teil eines Del -->
-	<xsl:template match="restore">
+	<xsl:template match="restore">	
 		<span class="appnote">
 			<xsl:call-template name="highlight-group"/>
 			<xsl:attribute name="title">
 				<xsl:text>»</xsl:text>
 				<xsl:value-of select="f:normalized-text(.)"/>
 				<xsl:text>« wiederhergestellt</xsl:text>
-				<span class="restored">
-					<xsl:apply-templates select="child::node()"/>
-				</span>
-				<span class="generated-text">⟨wdhst⟩</span>
 			</xsl:attribute>
+			<span class="restored">
+				<xsl:apply-templates select="child::node()"/>
+			</span>
+			<span class="generated-text">⟨wdhst⟩</span>
 		</span>
 	</xsl:template>
 	
