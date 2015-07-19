@@ -45,6 +45,11 @@
 		</xsl:call-template>
 	</xsl:template>
 	
+	<xsl:template match="subst[del[@f:revType='instant']]" priority="1">
+		<xsl:apply-templates select="del"/>
+		<xsl:apply-templates select="add/node()"/>
+	</xsl:template>
+	
 	<xsl:template match="subst">
 		<span class="appnote" title="{concat('»', normalize-space(string-join(del, '')), '« durch »', normalize-space(string-join(add, '')), '« ersetzt')}">
 			<xsl:call-template name="highlight-group"/>
