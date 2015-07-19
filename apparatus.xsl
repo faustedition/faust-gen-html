@@ -91,7 +91,7 @@
 			<span class="affected deleted">
 				<xsl:apply-templates select="del/subst/del"/>
 			</span>
-			<span class="generated-text">⟨<span class="app">:</span> </span>
+			<span class="generated-text">⟨ <span class="app">:</span> </span>
 			<xsl:apply-templates select="del/subst/add"/>
 			<span class="generated-text app"> : </span>
 			<xsl:apply-templates select="add"/>
