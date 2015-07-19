@@ -320,7 +320,7 @@ in <xsl:value-of select="document-uri(/)"/>
 	<!-- delivers the tei:ptr in a not-undone ge:transpose element that points to the given @xml:id string -->
 	<xsl:key 
 		name="transpose" 
-		match="ge:transpose/ptr[not(..[@xml:id and concat('#', @xml:id) = //ge:undo/@target])]" 
+		match="ge:transpose/ptr" 
 		use="substring(@target, 2)"/>
 	
 	<!-- 
@@ -328,7 +328,8 @@ in <xsl:value-of select="document-uri(/)"/>
 	-->
 	<xsl:template match="*[@xml:id and key('transpose', @xml:id)]">
 		<xsl:variable name="ptr" select="key('transpose', @xml:id)"/>
-		<xsl:variable name="transpose" select="$ptr/.."/>				
+		<xsl:variable name="transpose" select="$ptr/.."/>
+		<xsl:variable name="undone" select="boolean($transpose[@xml:id and concat('#', @xml:id) = //ge:undo/@target])"/>
 		<xsl:variable name="currentPos" select="count(preceding::*[@xml:id and key('transpose', @xml:id)/.. is $transpose]) + 1"/>
 		<xsl:variable name="replacementTarget" select="$transpose/ptr[$currentPos]/@target"/>		
 		<xsl:variable name="replacement" select="id(substring($replacementTarget, 2))"/>
@@ -338,12 +339,12 @@ in <xsl:value-of select="document-uri(/)"/>
 				<!-- XXX geht das nicht irgendwie einfacher? über die pointer aufzählen? -->
 				<xsl:with-param name="others" select="//*[@xml:id and key('transpose', @xml:id)/.. is $transpose]"/>
 			</xsl:call-template>
-			<xsl:attribute name="title" select="concat('Vertauscht mit »', $replacement, '«')"/>
+			<xsl:attribute name="title" select="concat('Vertauscht mit »', $replacement, '«', if ($undone) then ' (rückgängig gemacht)' else ())"/>
 			<xsl:apply-templates/>
 			<sup class="generated-text"><xsl:value-of select="count($ptr/preceding-sibling::*) + 1"/></sup>
 			<!-- Add ⟨umst⟩ after the last element in this transposition -->
 			<xsl:if test="not(following::*[@xml:id and key('transpose', @xml:id)/.. is $transpose])">
-				<span class="generated-text">⟨<i>umst</i>⟩</span>
+				<span class="generated-text">⟨<i>umst<xsl:if test="$undone"> rückg</xsl:if></i>⟩</span>
 			</xsl:if>
 		</xsl:element>
 	</xsl:template>
