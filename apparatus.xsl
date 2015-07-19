@@ -368,5 +368,64 @@ in <xsl:value-of select="document-uri(/)"/>
 	</xsl:template>
 	
 	
+	<xsl:variable name="agents">
+		<f:agent xml:id="g" shorthand="G">Goethe</f:agent>
+		<f:agent xml:id="g_bl_lat" shorthand="G">Goethe</f:agent>
+		<f:agent xml:id="g" shorthand="G od Ri">Goethe oder Riemer</f:agent>
+		<f:agent xml:id="go" shorthand="Gö">Göttling</f:agent>
+		<f:agent xml:id="go_bl" shorthand="Gö">Göttling</f:agent>
+		<f:agent xml:id="ri" shorthand="Ri">Riemer</f:agent>
+		<f:agent xml:id="sc" shorthand="zS">zeitgenöss Schreiber</f:agent> 		
+	</xsl:variable>
+	<xsl:function name="f:agent">
+		<xsl:param name="ref"/>
+		<xsl:sequence select="$agents/f:agent[@xml:id = (if (starts-with($ref, '#')) then substring($ref, 2) else $ref)]"/>
+	</xsl:function>
+	
+	<xsl:template name="app">
+		<xsl:param name="affected"/>
+		<xsl:param name="affected-class"/>
+		<xsl:param name="pre"/>
+		<xsl:param name="app"/>
+		<xsl:param name="label"/>
+		<xsl:param name="title"/>
+		<xsl:param name="also-highlight"/>
+		
+		<span class="appnote {f:generic-classes(.)}" title="{$title}">
+			<xsl:call-template name="highlight-group">
+				<xsl:with-param name="others" select="$also-highlight"/>
+			</xsl:call-template>
+			<xsl:if test="$affected">
+				<span class="affected {$affected-class}">
+					<xsl:apply-templates select="$affected"/>
+				</span>
+			</xsl:if>
+			<span class="generated-text">
+				<xsl:text>⟨</xsl:text>
+				<xsl:if test="$pre">
+					<i class="app"><xsl:value-of select="$pre"/></i>
+				</xsl:if>
+			</span>
+			<xsl:if test="$app">
+				<xsl:apply-templates select="$app"/>
+			</xsl:if>
+			<span class="generated-text">
+				<xsl:if test="$label">
+					<i class="app"><xsl:value-of select="$app"/></i>
+				</xsl:if>
+				<xsl:if test="@f:proposedBy">
+					<i class="app">	vorschl <xsl:value-of select="f:agent(@f:proposedBy)/@shorthand"/></i>
+					<xsl:if test="@f:acceptedBy">
+						<i class="app"> bill <xsl:value-of select="f:agent(@f:acceptedBy)/@shorthand"/></i>
+					</xsl:if>
+					<xsl:if test="@f:rejectedBy">
+						<i class="app"> verw <xsl:value-of select="f:agent(@f:rejectedBy)/@shorthand"/></i>
+					</xsl:if>
+				</xsl:if>
+				<xsl:text>⟩</xsl:text>
+			</span>
+		</span>
+	</xsl:template>
+	
 	
 </xsl:stylesheet>
