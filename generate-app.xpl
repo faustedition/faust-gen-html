@@ -56,7 +56,10 @@
 			<p:with-option name="href" select="$transcriptFile"/>
 		</p:load>
 
-		<f:apparatus name="apparatus"/>
+		<f:apparatus name="apparatus">
+			<p:with-param name="documentURI" select="$documentURI"/>
+			<p:with-param name="type" select="$type"/>
+		</f:apparatus>
 
 	</p:for-each>
 	

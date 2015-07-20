@@ -3,6 +3,7 @@
 	xmlns:c="http://www.w3.org/ns/xproc-step"
 	xmlns:cx="http://xmlcalabash.com/ns/extensions"
 	xmlns:pxp="http://exproc.org/proposed/steps"
+	xmlns:l="http://xproc.org/library"
 	type="f:apparatus"
 	name="main" version="1.0">
 	<p:input port="source" primary="true"/>
@@ -18,7 +19,8 @@
 	<p:serialization port="result" method="xhtml" indent="true" omit-xml-declaration="false"
 		include-content-type="true"/>
 	
-	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>	
+	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
+	<p:import href="http://xproc.org/library/store.xpl"/>	
 
 	<!-- Parameter laden -->
 	<p:parameters name="config">
@@ -89,6 +91,12 @@
 				<p:pipe port="result" step="config"/>
 			</p:input>
 		</p:xslt>
+		
+		
+<!--		<l:store>
+			<p:with-option name="href" select="concat('file:/tmp/', $output-base, '.preprocessed.xml')"/>
+		</l:store>	
+-->		
 
 		<!-- Nun die eigentliche Transformation nach HTML. -->
 		<p:xslt name="html">

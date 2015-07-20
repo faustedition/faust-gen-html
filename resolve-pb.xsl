@@ -7,8 +7,25 @@
 	<xsl:param name="type"/>
 	<xsl:param name="source" required="yes"/>
 	<xsl:param name="documentURI"/>
-	<xsl:variable name="metadata" select="document(resolve-uri($documentURI, $source))"/>
+	<xsl:variable name="metafile" select="resolve-uri($documentURI, $source)"/>
+	<xsl:variable name="metadata" select="document($metafile)"/>
 
+
+	<xsl:template match="/">
+		<xsl:choose>
+			<xsl:when test="not($documentURI)">
+				<xsl:message select="concat('WARNING: No documentURI given for ', document-uri(/), '. Canonical page numbers will not work.')"/>
+				<xsl:copy-of select="/"/>
+			</xsl:when>
+			<xsl:when test="not(doc-available($metafile))">
+				<xsl:message select="concat('WARNING: Metadata file ', $metafile, ' is not available. Canonical page numbers will not work.')"/>
+				<xsl:copy-of select="/"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:next-match/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
 
 	<xsl:template match="node()|@*">
 		<xsl:copy>
