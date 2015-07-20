@@ -126,7 +126,7 @@
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="with" select="'{{','}}'"/>
 			<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"/>
-			<xsl:with-param name="title">sehr unsichere Lesung</xsl:with-param>
+			<xsl:with-param name="title">unsichere Lesung – möglich</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
 	
