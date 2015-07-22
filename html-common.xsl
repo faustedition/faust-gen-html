@@ -32,11 +32,11 @@
 	
 	<xsl:template match="space" priority="2">
 	  <xsl:choose>
-	    <xsl:when test="$type = 'print'">
-	      <xsl:next-match/>
+	    <xsl:when test="$type = 'archivalDocument'">
+    	  <span class="{string-join(f:generic-classes(.), ' ')} generated-text appnote" title="Lücke">[***]</span>	      
 	    </xsl:when>
 	    <xsl:otherwise>
-    	  <span class="{string-join(f:generic-classes(.), ' ')} generated-text appnote" title="Lücke">[***]</span>	      
+	      <xsl:next-match/>
 	    </xsl:otherwise>
 	  </xsl:choose>
 	</xsl:template>
