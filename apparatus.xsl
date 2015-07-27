@@ -3,10 +3,12 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:xh="http://www.w3.org/1999/xhtml"
+	
 	xmlns:f="http://www.faustedition.net/ns"
 	xmlns:ge="http://www.tei-c.org/ns/geneticEditions"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-	exclude-result-prefixes="xs f ge"
+	exclude-result-prefixes="xs f ge xh"
 	version="2.0">
 	
 	<xsl:import href="html-frame.xsl"/>
@@ -20,28 +22,27 @@
 	<xsl:output method="xhtml" indent="yes"/>
 
 
-	<xsl:template match="add[not(parent::subst)]">		
-		<xsl:call-template name="enclose">
-			<xsl:with-param name="pre" select="'⟨'"/>
-			<xsl:with-param name="post"> <span class="app"> erg</span>⟩</xsl:with-param>
-			<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"/>
-			<xsl:with-param name="title" select="concat('»', ., '« ergänzt')"/>
-		</xsl:call-template>
+	<xsl:template match="add[not(parent::subst)]">
+		<xsl:call-template name="app">
+			<xsl:with-param name="label">erg</xsl:with-param>
+			<xsl:with-param name="title" select="concat('»', normalize-space(.), '« ergänzt')"/>
+		</xsl:call-template>		
 	</xsl:template>
 	
 	<xsl:template match="del[not(parent::subst)]">
-		<span class="appnote" title="{concat('»', ., '« getilgt')}">
-			<xsl:call-template name="highlight-group"/>
-			<span class="affected deleted"><xsl:apply-templates select="node()"/> </span>
-			<span class="generated-text">⟨<span class="app">tilgt</span>⟩</span>			
-		</span>
+		<xsl:call-template name="app">
+			<xsl:with-param name="affected" select="node()"/>
+			<xsl:with-param name="affected-class">deleted</xsl:with-param>
+			<xsl:with-param name="label">tilgt</xsl:with-param>
+			<xsl:with-param name="title" select="concat('»', normalize-space(.), '« getilgt')"/>
+		</xsl:call-template>
 	</xsl:template>
 	
 	<xsl:template match="del[@f:revType='instant']" priority="1">
-		<xsl:call-template name="enclose">
-			<xsl:with-param name="with" select="('⟨', ' &gt;⟩')"/>
+		<xsl:call-template name="app">
+			<xsl:with-param name="app" select="node()"/>
+			<xsl:with-param name="label">&gt;</xsl:with-param>
 			<xsl:with-param name="title" select="concat('»', ., '« sofort getilgt')"/>
-			<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"></xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
 	
@@ -51,17 +52,13 @@
 	</xsl:template>
 	
 	<xsl:template match="subst">
-		<span class="appnote" title="{concat('»', normalize-space(string-join(del, '')), '« durch »', normalize-space(string-join(add, '')), '« ersetzt')}">
-			<xsl:call-template name="highlight-group"/>
-			<span class="affected deleted">
-				<xsl:apply-templates select="del"/>
-			</span>			
-			<xsl:for-each select="add">
-				<xsl:call-template name="enclose">
-					<xsl:with-param name="with" select="('⟨: ', '⟩')"/>
-				</xsl:call-template>
-			</xsl:for-each>
-		</span>
+		<xsl:call-template name="app">
+			<xsl:with-param name="affected" select="del"/>
+			<xsl:with-param name="affected-class">deleted</xsl:with-param>
+			<xsl:with-param name="pre">:</xsl:with-param>
+			<xsl:with-param name="app" select="app"/>
+			<xsl:with-param name="title" select="concat('»', normalize-space(string-join(del, '')), '« durch »', normalize-space(string-join(add, '')), '« ersetzt')"/>
+		</xsl:call-template>
 	</xsl:template>
 
 	<!-- 
@@ -84,19 +81,19 @@
 
 	-->
 	<xsl:template match="subst[del/subst][f:only-child(del, del/subst)]">
-		<span class="appnote" title="{concat('»', normalize-space(string-join(del/subst/del, '')), 
-			'« zunächst durch »', normalize-space(string-join(del/subst/add, '')), 
-			'«, dann durch »', normalize-space(string-join(add, '')), '« ersetzt')}">
-			<xsl:call-template name="highlight-group"/>
-			<span class="affected deleted">
-				<xsl:apply-templates select="del/subst/del"/>
-			</span>
-			<span class="generated-text">⟨ <span class="app">:</span> </span>
-			<xsl:apply-templates select="del/subst/add"/>
-			<span class="generated-text app"> : </span>
-			<xsl:apply-templates select="add"/>
-			<span class="generated-text">⟩</span>
-		</span>
+		<xsl:call-template name="app">
+			<xsl:with-param name="title" select="concat('»', normalize-space(string-join(del/subst/del, '')), 
+				'« zunächst durch »', normalize-space(string-join(del/subst/add, '')), 
+				'«, dann durch »', normalize-space(string-join(add, '')), '« ersetzt')"/>
+			<xsl:with-param name="affected" select="del/subst/del"/>
+			<xsl:with-param name="affected-class">deleted</xsl:with-param>
+			<xsl:with-param name="pre">:</xsl:with-param>
+			<xsl:with-param name="app">
+				<xsl:sequence select="del/subst/add"/>
+				<span class="generated-text app"> : </span>
+				<xsl:sequence select="add"/>
+			</xsl:with-param>			
+		</xsl:call-template>
 	</xsl:template>
 
 	<xsl:function name="f:normalized-text" as="xs:string">
@@ -130,35 +127,31 @@
 	</xsl:function>
 
 	<!-- Normale Wiederherstellung (d.h. kleinerer Teil eines Del -->
-	<xsl:template match="restore">	
-		<span class="appnote">
-			<xsl:call-template name="highlight-group"/>
-			<xsl:attribute name="title">
+	<xsl:template match="restore">
+		<xsl:call-template name="app">
+			<xsl:with-param name="title">
 				<xsl:text>»</xsl:text>
 				<xsl:value-of select="f:normalized-text(.)"/>
-				<xsl:text>« wiederhergestellt</xsl:text>
-			</xsl:attribute>
-			<span class="restored">
-				<xsl:apply-templates select="child::node()"/>
-			</span>
-			<span class="generated-text">⟨wdhst⟩</span>
-		</span>
+				<xsl:text>« wiederhergestellt</xsl:text>				
+			</xsl:with-param>
+			<xsl:with-param name="affected" select="child::node()"/>
+			<xsl:with-param name="affected-class">restored</xsl:with-param>
+			<xsl:with-param name="label">wdhst</xsl:with-param>
+		</xsl:call-template>
 	</xsl:template>
 	
 	<!-- Vollständige Wiederherstellung einer Löschung -->
 	<xsl:template match="del[f:only-child(., restore)]|restore[f:only-child(., del)]" priority="1">
-		<span class="appnote">
-			<xsl:call-template name="highlight-group"/>
-			<xsl:attribute name="title">
+		<xsl:call-template name="app">
+			<xsl:with-param name="title">
 				<xsl:text>»</xsl:text>
 				<xsl:value-of select="f:normalized-text(child::*)"/>
-				<xsl:text>« zunächst getilgt, dann wiederhergestellt</xsl:text>
-			</xsl:attribute>
-			<span class="affected restored">
-				<xsl:apply-templates select="child::*/node()"/>
-			</span>
-			<span class="generated-text">⟨<span class="app">tilgt wdhst</span>⟩</span>
-		</span>
+				<xsl:text>« zunächst getilgt, dann wiederhergestellt</xsl:text>				
+			</xsl:with-param>
+			<xsl:with-param name="affected" select="child::*/node()"/>
+			<xsl:with-param name="affected-class">restored</xsl:with-param>
+			<xsl:with-param name="label">tilgt wdhst</xsl:with-param>
+		</xsl:call-template>
 	</xsl:template>
 	
 	<!-- Vollständig rückgängig gemachte ersetzung. Leider mindestens drei mögliche Codierungen :-( sollte vielleicht vereinheitlicht werden? 
@@ -233,24 +226,23 @@ in <xsl:value-of select="document-uri(/)"/>
 		
 		
 		<!-- So. Der Rest ist einfach :-) -->
-		<span class="{f:generic-classes(.)} appnote">
-			<xsl:call-template name="highlight-group"/>
-			<xsl:attribute name="title">
+		<xsl:call-template name="app">
+			<xsl:with-param name="title">
 				<xsl:text>Ersetzung von »</xsl:text>
 				<xsl:value-of select="f:normalized-text($original)"/>
 				<xsl:text>« durch »</xsl:text>
 				<xsl:value-of select="f:normalized-text($unused-replacement)"/>
-				<xsl:text>« rückgängig gemacht</xsl:text>
-			</xsl:attribute>
-			<span class="affected restored">
-				<xsl:apply-templates select="$original"/>
-			</span>
-			<span class="generated-text">⟨<span class="app">: </span></span>
-			<xsl:apply-templates select="$unused-replacement"/>
-			<span class="generated-text"><span class="app"> : </span></span>
-			<xsl:apply-templates select="$original"/>
-			<span class="generated-text"><span class="app"> wdhst</span>⟩</span>
-		</span>		
+				<xsl:text>« rückgängig gemacht</xsl:text>				
+			</xsl:with-param>
+			<xsl:with-param name="affected" select="$original"/>
+			<xsl:with-param name="pre">:</xsl:with-param>
+			<xsl:with-param name="app">
+				<xsl:sequence select="$unused-replacement"/>
+				<span class="generated-text"><span class="app"> : </span></span>
+				<xsl:sequence select="$original"/>				
+			</xsl:with-param>
+			<xsl:with-param name="label">wdhst</xsl:with-param>
+		</xsl:call-template>
 	</xsl:template>
 	
 	
@@ -426,6 +418,10 @@ in <xsl:value-of select="document-uri(/)"/>
 			</span>
 		</span>
 	</xsl:template>
-	
+
+	<!-- Pre-rendered XHTML will simply be copied -->
+	<xsl:template match="xh:*">
+		<xsl:copy-of select="."/>
+	</xsl:template>
 	
 </xsl:stylesheet>
