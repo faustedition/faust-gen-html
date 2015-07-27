@@ -24,6 +24,7 @@
 
 	<xsl:template match="add[not(parent::subst)]">
 		<xsl:call-template name="app">
+			<xsl:with-param name="app" select="node()"/>
 			<xsl:with-param name="label">erg</xsl:with-param>
 			<xsl:with-param name="title" select="concat('»', normalize-space(.), '« ergänzt')"/>
 		</xsl:call-template>		
@@ -56,7 +57,7 @@
 			<xsl:with-param name="affected" select="del"/>
 			<xsl:with-param name="affected-class">deleted</xsl:with-param>
 			<xsl:with-param name="pre">:</xsl:with-param>
-			<xsl:with-param name="app" select="app"/>
+			<xsl:with-param name="app" select="add"/>
 			<xsl:with-param name="title" select="concat('»', normalize-space(string-join(del, '')), '« durch »', normalize-space(string-join(add, '')), '« ersetzt')"/>
 		</xsl:call-template>
 	</xsl:template>
@@ -381,7 +382,7 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:param name="app"/>
 		<xsl:param name="label"/>
 		<xsl:param name="title"/>
-		<xsl:param name="also-highlight"/>
+		<xsl:param name="also-highlight" as="element()*"/>
 		
 		<span class="appnote {f:generic-classes(.)}" title="{$title}">
 			<xsl:call-template name="highlight-group">
@@ -396,14 +397,16 @@ in <xsl:value-of select="document-uri(/)"/>
 				<xsl:text>⟨</xsl:text>
 				<xsl:if test="$pre">
 					<i class="app"><xsl:value-of select="$pre"/></i>
+					<xsl:text> </xsl:text>
 				</xsl:if>
 			</span>
 			<xsl:if test="$app">
 				<xsl:apply-templates select="$app"/>
+				<xsl:text> </xsl:text>
 			</xsl:if>
 			<span class="generated-text">
-				<xsl:if test="$label">
-					<i class="app"><xsl:value-of select="$app"/></i>
+				<xsl:if test="string-length($label) > 0">
+					<i class="app"><xsl:value-of select="$label"/></i>
 				</xsl:if>
 				<xsl:if test="@f:proposedBy">
 					<i class="app">	vorschl <xsl:value-of select="f:agent(@f:proposedBy)/@shorthand"/></i>
