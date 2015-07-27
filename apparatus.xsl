@@ -90,9 +90,9 @@
 			<xsl:with-param name="affected-class">deleted</xsl:with-param>
 			<xsl:with-param name="pre">:</xsl:with-param>
 			<xsl:with-param name="app">
-				<xsl:sequence select="del/subst/add"/>
+				<xsl:sequence select="del/subst/add/node()"/>
 				<span class="generated-text app"> : </span>
-				<xsl:sequence select="add"/>
+				<xsl:sequence select="add/node()"/>
 			</xsl:with-param>			
 		</xsl:call-template>
 	</xsl:template>
