@@ -375,13 +375,30 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:sequence select="$agents/f:agent[@xml:id = (if (starts-with($ref, '#')) then substring($ref, 2) else $ref)]"/>
 	</xsl:function>
 	
+	<!-- 
+		
+		Creates and formats everything belonging to an apparatus. All parameters may be left out. The template automatically
+		adds info that is the same for all templates, e.g., proposed change info and same-stage indexing.
+		
+		Parameters that receive original content may also be interspersed with XHTML content which will be copied verbatim
+		to the output.
+	
+	-->
 	<xsl:template name="app">
+		<!-- The content from the base layer that is affected by the, e.g., deletion. Will be underlined in some form. Original markup (possibly mixed with HTML) -->
 		<xsl:param name="affected"/>
+		<!-- Class additional to affected for the content from $affected. Token(s) -->
 		<xsl:param name="affected-class"/>
+		<!--Apparatus text to be inserted after the ⟨, before the $app -->
 		<xsl:param name="pre"/>
+		<!-- Content that appears inside the ⟨⟩. original TEI, possibly mixed with XHTML -->
 		<xsl:param name="app"/>
+		<!-- Apparatus label, like 'tilgt'. This will be augmented with information on proposed, accepted content etc. -->
 		<xsl:param name="label"/>
+		<!-- The tooltip in its raw form. Text content. Will be augmented with information on proposed, accepted content etc. -->
 		<xsl:param name="title"/>
+		<!-- Original TEI elements that are synchronous to the current apparatus. The apparatus for these elements, together with
+		     stuff found automatically via ge:stage, will be highlighted together with this apparatus element. -->
 		<xsl:param name="also-highlight" as="element()*"/>
 		
 		<xsl:variable name="real-title">
