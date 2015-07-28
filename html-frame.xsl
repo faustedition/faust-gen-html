@@ -44,7 +44,7 @@
 					<xsl:text> </xsl:text>
 					<a href="{$edition}/chessboard_overview.php">Genese</a>
 					<xsl:text> </xsl:text>
-					<a href="{$edition}/print/index.html">Text</a>
+					<a href="{$edition}/print/text.html">Text</a>
 				</nav>
 			</div>
 		</header>
