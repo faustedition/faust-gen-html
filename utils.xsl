@@ -192,7 +192,7 @@
     <xsl:param name="document"/>
     <xsl:param name="page"/>
     <xsl:param name="n"/>
-    <xsl:value-of select="concat($docbase, '/', $document, '&amp;view=text')"/>
+    <xsl:value-of select="concat($docbase, '/', $document, '&amp;view=print')"/>
     <xsl:if test="$page">
       <xsl:value-of select="concat('&amp;page=', $page)"/>
     </xsl:if>
