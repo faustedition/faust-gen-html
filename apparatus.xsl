@@ -384,7 +384,20 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:param name="title"/>
 		<xsl:param name="also-highlight" as="element()*"/>
 		
-		<span class="appnote {f:generic-classes(.)}" title="{$title}">
+		<xsl:variable name="real-title">
+			<xsl:value-of select="$title"/>
+			<xsl:if test="@f:proposedBy">
+				<xsl:text>:	vorgeschlagen von </xsl:text><xsl:value-of select="f:agent(@f:proposedBy)"/>
+				<xsl:if test="@f:acceptedBy">
+					<xsl:text>, gebilligt von </xsl:text><xsl:value-of select="f:agent(@f:acceptedBy)"/>
+				</xsl:if>
+				<xsl:if test="@f:rejectedBy">
+					<xsl:text>, verworfen von </xsl:text><xsl:value-of select="f:agent(@f:rejectedBy)"/>
+				</xsl:if>
+			</xsl:if>			
+		</xsl:variable>
+		
+		<span class="appnote {f:generic-classes(.)}" title="{$real-title}">
 			<xsl:call-template name="highlight-group">
 				<xsl:with-param name="others" select="$also-highlight"/>
 			</xsl:call-template>
