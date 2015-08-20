@@ -83,12 +83,6 @@
 	<p:store method="xhtml" include-content-type="true" indent="true">
 		<p:with-option name="href" select="concat($apphtml, 'index.html')"/>		
 	</p:store>
-		
-	<!-- Assets kopieren -->
-	<pxf:copy href="lesetext.css">
-		<p:with-option name="target" select="concat($apphtml, 'lesetext.css')"/>
-	</pxf:copy>
-		
 	
 	</p:group>
 

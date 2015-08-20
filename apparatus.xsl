@@ -14,7 +14,7 @@
 	<xsl:include href="split.xsl"/>
 	
 	<xsl:param name="headerAdditions">
-		<script type="text/javascript" src="faust_app_tmp.js"/>
+		<script type="text/javascript" src="{$assets}/js/faust_app.js"/>
 	</xsl:param>
 	
 	<xsl:output method="xhtml" indent="yes"/>

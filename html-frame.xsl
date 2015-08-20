@@ -25,7 +25,7 @@
 			<link rel="stylesheet" href="{$assets}/css/document-transcript-interaction.css"/>
 			<link rel="stylesheet" href="{$assets}/css/pure-custom.css"/>
 			<link rel="stylesheet" href="{$assets}/css/basic_layout.css"/>
-			<link rel="stylesheet" href="lesetext.css"/>
+			<link rel="stylesheet" href="{$assets}/css/textual-transcript.css"/>
 			<script><xsl:text>window.addEventListener("DOMContentLoaded", function(){addPrintInteraction("../");});</xsl:text></script> 
 			
 			<xsl:copy-of select="$headerAdditions"/>

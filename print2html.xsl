@@ -83,7 +83,7 @@
         if (@xml:id and key('alt', @xml:id)) then 'alt' else (),
         if (@n and @part) then ('antilabe', concat('part-', @part)) else ()), ' ')"/>
 
-      <!-- Zeilennummer als link, wird dann in lesetext.css weggestylt -->
+      <!-- Zeilennummer als link, wird dann in textual-transcript.css weggestylt -->
       <xsl:call-template name="generate-lineno"/>
       <xsl:apply-templates mode="#current"/>
     </xsl:element>

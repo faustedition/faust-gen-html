@@ -120,12 +120,7 @@
 				<p:pipe port="result" step="transcripts"/>
 			</p:input>
 		</f:generate-indexes>
-		
-		<!-- Assets kopieren -->
-		<pxf:copy href="lesetext.css">
-			<p:with-option name="target" select="concat($html, 'lesetext.css')"/>
-		</pxf:copy>
-		
+				
 		<!-- Nun noch der Apparat -->
 		<f:generate-app>
 			<p:input port="source">
