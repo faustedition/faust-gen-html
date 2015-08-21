@@ -30,6 +30,14 @@
 		</xsl:call-template>		
 	</xsl:template>
 	
+	<xsl:template match="add[@place='inspace']" priority="1">
+		<xsl:call-template name="app">
+			<xsl:with-param name="app" select="node()"/>
+			<xsl:with-param name="label">in Lücke erg</xsl:with-param>
+			<xsl:with-param name="title" select="concat('»', normalize-space(.), '« in Lücke ergänzt')"/>
+		</xsl:call-template>
+	</xsl:template>
+	
 	<xsl:template match="del[not(parent::subst)]">
 		<xsl:call-template name="app">
 			<xsl:with-param name="affected" select="node()"/>
