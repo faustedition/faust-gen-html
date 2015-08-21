@@ -262,22 +262,16 @@ in <xsl:value-of select="document-uri(/)"/>
 	<xsl:template match="*[@xml:id and key('delSpan', @xml:id)]">
 		<xsl:variable name="source" select="key('delSpan', @xml:id)"/>
 		<xsl:next-match/>
-		<span class="appnote" data-same-app="{@xml:id}" title="von ⌜ bis ⌟ getilgt">
-			<xsl:call-template name="highlight-group">
-				<xsl:with-param name="others" select="$source"/>
-			</xsl:call-template>
-			<xsl:if test="count($source) > 1">
-				<xsl:message select="concat('WARNING: ', count($source), ' delSpans point to ', @xml:id, ' in ', document-uri(/))"/>
-			</xsl:if>
-			<span class="generated-text">
-<!--				<xsl:variable name="idx">
-					<xsl:for-each select="key('delSpan', @xml:id)">
-						<xsl:number count="delSpan" from="/" level="any" format="1"/>
-					</xsl:for-each>
-				</xsl:variable>
-				<xsl:value-of select="$idx"/>-->⌟⟨<i>tilgt<!-- ab ⌜<xsl:value-of select="$idx"/>--></i>⟩
-			</span>
-		</span>
+		<xsl:call-template name="app">
+			<xsl:with-param name="context" select="$source"/>
+			<xsl:with-param name="pre">⌟</xsl:with-param>
+			<xsl:with-param name="label">tilgt</xsl:with-param>
+			<xsl:with-param name="title">von ⌜ bis ⌟ getilgt</xsl:with-param>
+			<xsl:with-param name="also-highlight" select="$source"/>
+		</xsl:call-template>
+		<xsl:if test="count($source) > 1">
+			<xsl:message select="concat('WARNING: ', count($source), ' delSpans point to ', @xml:id, ' in ', document-uri(/))"/>
+		</xsl:if>
 	</xsl:template>
 	
 	<!-- addSpan -->
@@ -296,12 +290,12 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:if test="count($source) > 1">
 			<xsl:message select="concat('WARNING: ', count($source), ' addSpans point to ', @xml:id, ' in ', document-uri(/))"/>
 		</xsl:if>
-		<span class="appnote">
-			<xsl:call-template name="highlight-group">
-				<xsl:with-param name="others" select="$source"/>
-			</xsl:call-template>
-			<span class="generated-text"><i>erg</i>⟩</span>
-		</span>
+		<xsl:call-template name="app">
+			<xsl:with-param name="also-highlight" select="$source"/>
+			<xsl:with-param name="context" select="$source"/>
+			<xsl:with-param name="braces" select="('', '⟩')"/>
+			<xsl:with-param name="label">erg</xsl:with-param>
+		</xsl:call-template>
 		<xsl:if test="key('delSpan', @xml:id)">
 			<xsl:next-match/>
 		</xsl:if>
@@ -317,7 +311,9 @@ in <xsl:value-of select="document-uri(/)"/>
 		use="substring(@target, 2)"/>
 	
 	<!-- 
-		Template called for an element that is part of a transposition.	
+		Template called for an element that is part of a transposition.
+		
+		TODO convert to generate-app? We need the f:proposedBy stuff
 	-->
 	<xsl:template match="*[@xml:id and key('transpose', @xml:id)]">
 		<xsl:variable name="ptr" select="key('transpose', @xml:id)"/>
@@ -393,6 +389,8 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:param name="pre"/>
 		<!-- Content that appears inside the ⟨⟩. original TEI, possibly mixed with XHTML -->
 		<xsl:param name="app"/>
+		<!-- This is the element from which we get f:proposed etc. -->
+		<xsl:param name="context" select="."/>
 		<!-- Apparatus label, like 'tilgt'. This will be augmented with information on proposed, accepted content etc. -->
 		<xsl:param name="label"/>
 		<!-- The tooltip in its raw form. Text content. Will be augmented with information on proposed, accepted content etc. -->
@@ -400,8 +398,11 @@ in <xsl:value-of select="document-uri(/)"/>
 		<!-- Original TEI elements that are synchronous to the current apparatus. The apparatus for these elements, together with
 		     stuff found automatically via ge:stage, will be highlighted together with this apparatus element. -->
 		<xsl:param name="also-highlight" as="element()*"/>
+		<!-- opening and closing apparatus brace. Customization only for special cases … -->
+		<xsl:param name="braces" select="('⟨', '⟩')"/>
 		
 		<xsl:variable name="real-title">
+			<xsl:for-each select="$context">
 			<xsl:value-of select="$title"/>
 			<xsl:if test="@f:proposedBy">
 				<xsl:text>:	vorgeschlagen von </xsl:text><xsl:value-of select="f:agent(@f:proposedBy)"/>
@@ -411,7 +412,8 @@ in <xsl:value-of select="document-uri(/)"/>
 				<xsl:if test="@f:rejectedBy">
 					<xsl:text>, verworfen von </xsl:text><xsl:value-of select="f:agent(@f:rejectedBy)"/>
 				</xsl:if>
-			</xsl:if>			
+			</xsl:if>
+			</xsl:for-each>
 		</xsl:variable>
 		
 		<span class="appnote {f:generic-classes(.)}" title="{$real-title}">
@@ -424,7 +426,7 @@ in <xsl:value-of select="document-uri(/)"/>
 				</span>
 			</xsl:if>
 			<span class="generated-text">
-				<xsl:text>⟨</xsl:text>
+				<xsl:value-of select="$braces[1]"/>
 				<xsl:if test="$pre">
 					<i class="app"><xsl:value-of select="$pre"/></i>
 					<xsl:text> </xsl:text>
@@ -438,6 +440,7 @@ in <xsl:value-of select="document-uri(/)"/>
 				<xsl:if test="string-length($label) > 0">
 					<i class="app"><xsl:value-of select="$label"/></i>
 				</xsl:if>
+				<xsl:for-each select="$context">
 				<xsl:if test="@f:proposedBy">
 					<i class="app">	vorschl <xsl:value-of select="f:agent(@f:proposedBy)/@shorthand"/></i>
 					<xsl:if test="@f:acceptedBy">
@@ -447,7 +450,8 @@ in <xsl:value-of select="document-uri(/)"/>
 						<i class="app"> verw <xsl:value-of select="f:agent(@f:rejectedBy)/@shorthand"/></i>
 					</xsl:if>
 				</xsl:if>
-				<xsl:text>⟩</xsl:text>
+				</xsl:for-each>
+				<xsl:value-of select="$braces[2]"/>
 			</span>
 		</span>
 	</xsl:template>
