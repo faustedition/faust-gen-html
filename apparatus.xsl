@@ -3,10 +3,12 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:xh="http://www.w3.org/1999/xhtml"
+	
 	xmlns:f="http://www.faustedition.net/ns"
 	xmlns:ge="http://www.tei-c.org/ns/geneticEditions"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-	exclude-result-prefixes="xs f ge"
+	exclude-result-prefixes="xs f ge xh"
 	version="2.0">
 	
 	<xsl:import href="html-frame.xsl"/>
@@ -20,28 +22,43 @@
 	<xsl:output method="xhtml" indent="yes"/>
 
 
-	<xsl:template match="add[not(parent::subst)]">		
-		<xsl:call-template name="enclose">
-			<xsl:with-param name="pre" select="'⟨'"/>
-			<xsl:with-param name="post"> <span class="app"> erg</span>⟩</xsl:with-param>
-			<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"/>
-			<xsl:with-param name="title" select="concat('»', ., '« ergänzt')"/>
+	<xsl:template match="add[not(parent::subst)]">
+		<xsl:call-template name="app">
+			<xsl:with-param name="app" select="node()"/>
+			<xsl:with-param name="label">erg</xsl:with-param>
+			<xsl:with-param name="title" select="concat('»', normalize-space(.), '« ergänzt')"/>
+		</xsl:call-template>		
+	</xsl:template>
+	
+	<xsl:template match="add[@place='inspace']" priority="1">
+		<xsl:call-template name="app">
+			<xsl:with-param name="app" select="node()"/>
+			<xsl:with-param name="label">in Lücke erg</xsl:with-param>
+			<xsl:with-param name="title" select="concat('»', normalize-space(.), '« in Lücke ergänzt')"/>
+		</xsl:call-template>
+	</xsl:template>
+	
+	<xsl:template match="seg[@f:questionedBy]">
+		<xsl:call-template name="app">
+			<xsl:with-param name="affected" select="node()"/>
+			<xsl:with-param name="affected-class">questioned</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
 	
 	<xsl:template match="del[not(parent::subst)]">
-		<span class="appnote" title="{concat('»', ., '« getilgt')}">
-			<xsl:call-template name="highlight-group"/>
-			<span class="affected deleted"><xsl:apply-templates select="node()"/> </span>
-			<span class="generated-text">⟨<span class="app">tilgt</span>⟩</span>			
-		</span>
+		<xsl:call-template name="app">
+			<xsl:with-param name="affected" select="node()"/>
+			<xsl:with-param name="affected-class">deleted</xsl:with-param>
+			<xsl:with-param name="label">tilgt</xsl:with-param>
+			<xsl:with-param name="title" select="concat('»', normalize-space(.), '« getilgt')"/>
+		</xsl:call-template>
 	</xsl:template>
 	
 	<xsl:template match="del[@f:revType='instant']" priority="1">
-		<xsl:call-template name="enclose">
-			<xsl:with-param name="with" select="('⟨', ' &gt;⟩')"/>
+		<xsl:call-template name="app">
+			<xsl:with-param name="app" select="node()"/>
+			<xsl:with-param name="label">&gt;</xsl:with-param>
 			<xsl:with-param name="title" select="concat('»', ., '« sofort getilgt')"/>
-			<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"></xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
 	
@@ -51,17 +68,13 @@
 	</xsl:template>
 	
 	<xsl:template match="subst">
-		<span class="appnote" title="{concat('»', normalize-space(string-join(del, '')), '« durch »', normalize-space(string-join(add, '')), '« ersetzt')}">
-			<xsl:call-template name="highlight-group"/>
-			<span class="affected deleted">
-				<xsl:apply-templates select="del"/>
-			</span>			
-			<xsl:for-each select="add">
-				<xsl:call-template name="enclose">
-					<xsl:with-param name="with" select="('⟨: ', '⟩')"/>
-				</xsl:call-template>
-			</xsl:for-each>
-		</span>
+		<xsl:call-template name="app">
+			<xsl:with-param name="affected" select="del"/>
+			<xsl:with-param name="affected-class">deleted</xsl:with-param>
+			<xsl:with-param name="pre">:</xsl:with-param>
+			<xsl:with-param name="app" select="add"/>
+			<xsl:with-param name="title" select="concat('»', normalize-space(string-join(del, '')), '« durch »', normalize-space(string-join(add, '')), '« ersetzt')"/>
+		</xsl:call-template>
 	</xsl:template>
 
 	<!-- 
@@ -84,19 +97,19 @@
 
 	-->
 	<xsl:template match="subst[del/subst][f:only-child(del, del/subst)]">
-		<span class="appnote" title="{concat('»', normalize-space(string-join(del/subst/del, '')), 
-			'« zunächst durch »', normalize-space(string-join(del/subst/add, '')), 
-			'«, dann durch »', normalize-space(string-join(add, '')), '« ersetzt')}">
-			<xsl:call-template name="highlight-group"/>
-			<span class="affected deleted">
-				<xsl:apply-templates select="del/subst/del"/>
-			</span>
-			<span class="generated-text">⟨ <span class="app">:</span> </span>
-			<xsl:apply-templates select="del/subst/add"/>
-			<span class="generated-text app"> : </span>
-			<xsl:apply-templates select="add"/>
-			<span class="generated-text">⟩</span>
-		</span>
+		<xsl:call-template name="app">
+			<xsl:with-param name="title" select="concat('»', normalize-space(string-join(del/subst/del, '')), 
+				'« zunächst durch »', normalize-space(string-join(del/subst/add, '')), 
+				'«, dann durch »', normalize-space(string-join(add, '')), '« ersetzt')"/>
+			<xsl:with-param name="affected" select="del/subst/del"/>
+			<xsl:with-param name="affected-class">deleted</xsl:with-param>
+			<xsl:with-param name="pre">:</xsl:with-param>
+			<xsl:with-param name="app">
+				<xsl:sequence select="del/subst/add/node()"/>
+				<span class="generated-text app"> : </span>
+				<xsl:sequence select="add/node()"/>
+			</xsl:with-param>			
+		</xsl:call-template>
 	</xsl:template>
 
 	<xsl:function name="f:normalized-text" as="xs:string">
@@ -130,35 +143,31 @@
 	</xsl:function>
 
 	<!-- Normale Wiederherstellung (d.h. kleinerer Teil eines Del -->
-	<xsl:template match="restore">	
-		<span class="appnote">
-			<xsl:call-template name="highlight-group"/>
-			<xsl:attribute name="title">
+	<xsl:template match="restore">
+		<xsl:call-template name="app">
+			<xsl:with-param name="title">
 				<xsl:text>»</xsl:text>
 				<xsl:value-of select="f:normalized-text(.)"/>
-				<xsl:text>« wiederhergestellt</xsl:text>
-			</xsl:attribute>
-			<span class="restored">
-				<xsl:apply-templates select="child::node()"/>
-			</span>
-			<span class="generated-text">⟨wdhst⟩</span>
-		</span>
+				<xsl:text>« wiederhergestellt</xsl:text>				
+			</xsl:with-param>
+			<xsl:with-param name="affected" select="child::node()"/>
+			<xsl:with-param name="affected-class">restored</xsl:with-param>
+			<xsl:with-param name="label">wdhst</xsl:with-param>
+		</xsl:call-template>
 	</xsl:template>
 	
 	<!-- Vollständige Wiederherstellung einer Löschung -->
 	<xsl:template match="del[f:only-child(., restore)]|restore[f:only-child(., del)]" priority="1">
-		<span class="appnote">
-			<xsl:call-template name="highlight-group"/>
-			<xsl:attribute name="title">
+		<xsl:call-template name="app">
+			<xsl:with-param name="title">
 				<xsl:text>»</xsl:text>
 				<xsl:value-of select="f:normalized-text(child::*)"/>
-				<xsl:text>« zunächst getilgt, dann wiederhergestellt</xsl:text>
-			</xsl:attribute>
-			<span class="affected restored">
-				<xsl:apply-templates select="child::*/node()"/>
-			</span>
-			<span class="generated-text">⟨<span class="app">tilgt wdhst</span>⟩</span>
-		</span>
+				<xsl:text>« zunächst getilgt, dann wiederhergestellt</xsl:text>				
+			</xsl:with-param>
+			<xsl:with-param name="affected" select="child::*/node()"/>
+			<xsl:with-param name="affected-class">restored</xsl:with-param>
+			<xsl:with-param name="label">tilgt wdhst</xsl:with-param>
+		</xsl:call-template>
 	</xsl:template>
 	
 	<!-- Vollständig rückgängig gemachte ersetzung. Leider mindestens drei mögliche Codierungen :-( sollte vielleicht vereinheitlicht werden? 
@@ -233,24 +242,23 @@ in <xsl:value-of select="document-uri(/)"/>
 		
 		
 		<!-- So. Der Rest ist einfach :-) -->
-		<span class="{f:generic-classes(.)} appnote">
-			<xsl:call-template name="highlight-group"/>
-			<xsl:attribute name="title">
+		<xsl:call-template name="app">
+			<xsl:with-param name="title">
 				<xsl:text>Ersetzung von »</xsl:text>
 				<xsl:value-of select="f:normalized-text($original)"/>
 				<xsl:text>« durch »</xsl:text>
 				<xsl:value-of select="f:normalized-text($unused-replacement)"/>
-				<xsl:text>« rückgängig gemacht</xsl:text>
-			</xsl:attribute>
-			<span class="affected restored">
-				<xsl:apply-templates select="$original"/>
-			</span>
-			<span class="generated-text">⟨<span class="app">: </span></span>
-			<xsl:apply-templates select="$unused-replacement"/>
-			<span class="generated-text"><span class="app"> : </span></span>
-			<xsl:apply-templates select="$original"/>
-			<span class="generated-text"><span class="app"> wdhst</span>⟩</span>
-		</span>		
+				<xsl:text>« rückgängig gemacht</xsl:text>				
+			</xsl:with-param>
+			<xsl:with-param name="affected" select="$original"/>
+			<xsl:with-param name="pre">:</xsl:with-param>
+			<xsl:with-param name="app">
+				<xsl:sequence select="$unused-replacement"/>
+				<span class="generated-text"><span class="app"> : </span></span>
+				<xsl:sequence select="$original"/>				
+			</xsl:with-param>
+			<xsl:with-param name="label">wdhst</xsl:with-param>
+		</xsl:call-template>
 	</xsl:template>
 	
 	
@@ -269,22 +277,16 @@ in <xsl:value-of select="document-uri(/)"/>
 	<xsl:template match="*[@xml:id and key('delSpan', @xml:id)]">
 		<xsl:variable name="source" select="key('delSpan', @xml:id)"/>
 		<xsl:next-match/>
-		<span class="appnote" data-same-app="{@xml:id}" title="von ⌜ bis ⌟ getilgt">
-			<xsl:call-template name="highlight-group">
-				<xsl:with-param name="others" select="$source"/>
-			</xsl:call-template>
-			<xsl:if test="count($source) > 1">
-				<xsl:message select="concat('WARNING: ', count($source), ' delSpans point to ', @xml:id, ' in ', document-uri(/))"/>
-			</xsl:if>
-			<span class="generated-text">
-<!--				<xsl:variable name="idx">
-					<xsl:for-each select="key('delSpan', @xml:id)">
-						<xsl:number count="delSpan" from="/" level="any" format="1"/>
-					</xsl:for-each>
-				</xsl:variable>
-				<xsl:value-of select="$idx"/>-->⌟⟨<i>tilgt<!-- ab ⌜<xsl:value-of select="$idx"/>--></i>⟩
-			</span>
-		</span>
+		<xsl:call-template name="app">
+			<xsl:with-param name="context" select="$source"/>
+			<xsl:with-param name="prebracket">⌟</xsl:with-param>
+			<xsl:with-param name="label">tilgt</xsl:with-param>
+			<xsl:with-param name="title">von ⌜ bis ⌟ getilgt</xsl:with-param>
+			<xsl:with-param name="also-highlight" select="$source"/>
+		</xsl:call-template>
+		<xsl:if test="count($source) > 1">
+			<xsl:message select="concat('WARNING: ', count($source), ' delSpans point to ', @xml:id, ' in ', document-uri(/))"/>
+		</xsl:if>
 	</xsl:template>
 	
 	<!-- addSpan -->
@@ -303,12 +305,12 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:if test="count($source) > 1">
 			<xsl:message select="concat('WARNING: ', count($source), ' addSpans point to ', @xml:id, ' in ', document-uri(/))"/>
 		</xsl:if>
-		<span class="appnote">
-			<xsl:call-template name="highlight-group">
-				<xsl:with-param name="others" select="$source"/>
-			</xsl:call-template>
-			<span class="generated-text"><i>erg</i>⟩</span>
-		</span>
+		<xsl:call-template name="app">
+			<xsl:with-param name="also-highlight" select="$source"/>
+			<xsl:with-param name="context" select="$source"/>
+			<xsl:with-param name="braces" select="('', '⟩')"/>
+			<xsl:with-param name="label">erg</xsl:with-param>
+		</xsl:call-template>
 		<xsl:if test="key('delSpan', @xml:id)">
 			<xsl:next-match/>
 		</xsl:if>
@@ -324,29 +326,32 @@ in <xsl:value-of select="document-uri(/)"/>
 		use="substring(@target, 2)"/>
 	
 	<!-- 
-		Template called for an element that is part of a transposition.	
+		Template called for an element that is part of a transposition.
 	-->
 	<xsl:template match="*[@xml:id and key('transpose', @xml:id)]">
 		<xsl:variable name="ptr" select="key('transpose', @xml:id)"/>
 		<xsl:variable name="transpose" select="$ptr/.."/>
 		<xsl:variable name="undone" select="boolean($transpose[@xml:id and concat('#', @xml:id) = //ge:undo/@target])"/>
 		<xsl:variable name="currentPos" select="count(preceding::*[@xml:id and key('transpose', @xml:id)/.. is $transpose]) + 1"/>
+		<xsl:variable name="swappedPos" select="count($ptr/preceding-sibling::*) + 1"/>
 		<xsl:variable name="replacementTarget" select="$transpose/ptr[$currentPos]/@target"/>		
 		<xsl:variable name="replacement" select="id(substring($replacementTarget, 2))"/>
-		<xsl:element name="{f:html-tag-name(.)}">
-			<xsl:attribute name="class" select="string-join((f:generic-classes(.), 'appnote', 'transpose'), ' ')"/>
-			<xsl:call-template name="highlight-group">
-				<!-- XXX geht das nicht irgendwie einfacher? über die pointer aufzählen? -->
-				<xsl:with-param name="others" select="//*[@xml:id and key('transpose', @xml:id)/.. is $transpose]"/>
-			</xsl:call-template>
-			<xsl:attribute name="title" select="concat('Vertauscht mit »', $replacement, '«', if ($undone) then ' (rückgängig gemacht)' else ())"/>
-			<xsl:apply-templates/>
-			<sup class="generated-text"><xsl:value-of select="count($ptr/preceding-sibling::*) + 1"/></sup>
-			<!-- Add ⟨umst⟩ after the last element in this transposition -->
-			<xsl:if test="not(following::*[@xml:id and key('transpose', @xml:id)/.. is $transpose])">
-				<span class="generated-text">⟨<i>umst<xsl:if test="$undone"> rückg</xsl:if></i>⟩</span>
-			</xsl:if>
-		</xsl:element>
+		<xsl:variable name="last" select="not(following::*[@xml:id and key('transpose', @xml:id)/.. is $transpose])"/>
+	
+		<xsl:call-template name="app">
+			<xsl:with-param name="affected" select="node()"/>
+			<xsl:with-param name="prebracket">
+				<sup><xsl:value-of select="if ($undone) then concat('(', $swappedPos, ')') else $swappedPos"/></sup>
+			</xsl:with-param>
+			<xsl:with-param name="label" select="
+				if ($last)
+				then concat('umst', if ($undone) then ' rückg' else '')
+				else ''"/>
+			<xsl:with-param name="context" select="if ($last) then $transpose else ()"/>
+			<xsl:with-param name="braces" select="if ($last) then ('⟨', '⟩') else ('','')"/>
+			<xsl:with-param name="title" select="concat('Vertauscht mit »', $replacement, '«', if ($undone) then ' (rückgängig gemacht)' else ())"/>
+			<xsl:with-param name="also-highlight" select="//*[@xml:id and key('transpose', @xml:id)/.. is $transpose]"/>
+		</xsl:call-template>		
 	</xsl:template>
 
 
@@ -368,5 +373,121 @@ in <xsl:value-of select="document-uri(/)"/>
 	</xsl:template>
 	
 	
+	<xsl:variable name="agents">
+		<f:agent xml:id="g" shorthand="G">Goethe</f:agent>
+		<f:agent xml:id="g_bl_lat" shorthand="G">Goethe</f:agent>
+		<f:agent xml:id="g" shorthand="G od Ri">Goethe oder Riemer</f:agent>
+		<f:agent xml:id="go" shorthand="Gö">Göttling</f:agent>
+		<f:agent xml:id="go_bl" shorthand="Gö">Göttling</f:agent>
+		<f:agent xml:id="ri" shorthand="Ri">Riemer</f:agent>
+		<f:agent xml:id="sc" shorthand="zS">zeitgenöss Schreiber</f:agent> 		
+	</xsl:variable>
+	<xsl:function name="f:agent">
+		<xsl:param name="ref"/>
+		<xsl:sequence select="$agents/f:agent[@xml:id = (if (starts-with($ref, '#')) then substring($ref, 2) else $ref)]"/>
+	</xsl:function>
+	
+	<!-- 
+		
+		Creates and formats everything belonging to an apparatus. All parameters may be left out. The template automatically
+		adds info that is the same for all templates, e.g., proposed change info and same-stage indexing.
+		
+		Parameters that receive original content may also be interspersed with XHTML content which will be copied verbatim
+		to the output.
+	
+	-->
+	<xsl:template name="app">
+		<!-- The content from the base layer that is affected by the, e.g., deletion. Will be underlined in some form. Original markup (possibly mixed with HTML) -->
+		<xsl:param name="affected"/>
+		<!-- Class additional to affected for the content from $affected. Token(s) -->
+		<xsl:param name="affected-class"/>
+		<!-- Text that appears  immediately before the ⟨, in generated-text style -->
+		<xsl:param name="prebracket"/>
+		<!-- Apparatus text to be inserted after the ⟨, before the $app -->
+		<xsl:param name="pre"/>
+		<!-- Content that appears inside the ⟨⟩. original TEI, possibly mixed with XHTML -->
+		<xsl:param name="app"/>
+		<!-- This is the element from which we get f:proposed etc. -->
+		<xsl:param name="context" select="."/>
+		<!-- Apparatus label, like 'tilgt'. This will be augmented with information on proposed, accepted content etc. -->
+		<xsl:param name="label"/>
+		<!-- The tooltip in its raw form. Text content. Will be augmented with information on proposed, accepted content etc. -->
+		<xsl:param name="title"/>
+		<!-- Original TEI elements that are synchronous to the current apparatus. The apparatus for these elements, together with
+		     stuff found automatically via ge:stage, will be highlighted together with this apparatus element. -->
+		<xsl:param name="also-highlight" as="element()*"/>
+		<!-- opening and closing apparatus brace. Customization only for special cases … -->
+		<xsl:param name="braces" select="('⟨', '⟩')"/>
+		
+		<xsl:variable name="real-title">
+			<xsl:value-of select="$title"/>
+			<xsl:for-each select="$context">
+				<xsl:if test="@f:questionedBy">
+					<xsl:text>moniert von </xsl:text>
+					<xsl:value-of select="f:agent(@f:questionedBy)"/>
+				</xsl:if>
+				<xsl:if test="@f:proposedBy">
+					<xsl:text>:	vorgeschlagen von </xsl:text><xsl:value-of select="f:agent(@f:proposedBy)"/>
+					<xsl:if test="@f:acceptedBy">
+						<xsl:text>, gebilligt von </xsl:text><xsl:value-of select="f:agent(@f:acceptedBy)"/>
+					</xsl:if>
+					<xsl:if test="@f:rejectedBy">
+						<xsl:text>, verworfen von </xsl:text><xsl:value-of select="f:agent(@f:rejectedBy)"/>
+					</xsl:if>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:variable>
+		
+		<xsl:element name="{f:html-tag-name(.)}">
+			<xsl:attribute name="class" select="string-join((f:generic-classes(.), 'appnote'), ' ')"/>
+			<xsl:attribute name="title" select="$real-title"/>
+		
+			<xsl:call-template name="highlight-group">
+				<xsl:with-param name="others" select="$also-highlight"/>
+			</xsl:call-template>
+			<xsl:if test="$affected">
+				<span class="affected {$affected-class}">
+					<xsl:apply-templates select="$affected"/>
+				</span>
+			</xsl:if>
+			<span class="generated-text">
+				<xsl:copy-of select="$prebracket"/>
+				<xsl:value-of select="$braces[1]"/>
+				<xsl:if test="$pre">
+					<i class="app"><xsl:value-of select="$pre"/></i>
+					<xsl:text> </xsl:text>
+				</xsl:if>
+			</span>
+			<xsl:if test="$app">
+				<xsl:apply-templates select="$app"/>
+				<xsl:text> </xsl:text>
+			</xsl:if>
+			<span class="generated-text">
+				<xsl:if test="string-length($label) > 0">
+					<i class="app"><xsl:value-of select="$label"/></i>
+				</xsl:if>
+				<xsl:for-each select="$context">
+				<xsl:if test="@f:questionedBy">
+					<i class="app">mon <xsl:value-of select="f:agent(@f:questionedBy)/@shorthand"/></i>
+				</xsl:if>					
+				<xsl:if test="@f:proposedBy">
+					<i class="app">	vorschl <xsl:value-of select="f:agent(@f:proposedBy)/@shorthand"/></i>
+					<xsl:if test="@f:acceptedBy">
+						<i class="app"> bill <xsl:value-of select="f:agent(@f:acceptedBy)/@shorthand"/></i>
+					</xsl:if>
+					<xsl:if test="@f:rejectedBy">
+						<i class="app"> verw <xsl:value-of select="f:agent(@f:rejectedBy)/@shorthand"/></i>
+					</xsl:if>
+				</xsl:if>
+				</xsl:for-each>
+				<xsl:value-of select="$braces[2]"/>
+			</span>
+		</xsl:element>		
+	</xsl:template>
+
+	<!-- Pre-rendered XHTML will simply be copied -->
+	<xsl:template match="xh:*">
+		<xsl:copy-of select="."/>
+	</xsl:template>
 	
 </xsl:stylesheet>
