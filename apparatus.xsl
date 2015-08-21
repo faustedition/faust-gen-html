@@ -320,30 +320,31 @@ in <xsl:value-of select="document-uri(/)"/>
 	
 	<!-- 
 		Template called for an element that is part of a transposition.
-		
-		TODO convert to generate-app? We need the f:proposedBy stuff
 	-->
 	<xsl:template match="*[@xml:id and key('transpose', @xml:id)]">
 		<xsl:variable name="ptr" select="key('transpose', @xml:id)"/>
 		<xsl:variable name="transpose" select="$ptr/.."/>
 		<xsl:variable name="undone" select="boolean($transpose[@xml:id and concat('#', @xml:id) = //ge:undo/@target])"/>
 		<xsl:variable name="currentPos" select="count(preceding::*[@xml:id and key('transpose', @xml:id)/.. is $transpose]) + 1"/>
+		<xsl:variable name="swappedPos" select="count($ptr/preceding-sibling::*) + 1"/>
 		<xsl:variable name="replacementTarget" select="$transpose/ptr[$currentPos]/@target"/>		
 		<xsl:variable name="replacement" select="id(substring($replacementTarget, 2))"/>
-		<xsl:element name="{f:html-tag-name(.)}">
-			<xsl:attribute name="class" select="string-join((f:generic-classes(.), 'appnote', 'transpose'), ' ')"/>
-			<xsl:call-template name="highlight-group">
-				<!-- XXX geht das nicht irgendwie einfacher? über die pointer aufzählen? -->
-				<xsl:with-param name="others" select="//*[@xml:id and key('transpose', @xml:id)/.. is $transpose]"/>
-			</xsl:call-template>
-			<xsl:attribute name="title" select="concat('Vertauscht mit »', $replacement, '«', if ($undone) then ' (rückgängig gemacht)' else ())"/>
-			<xsl:apply-templates/>
-			<sup class="generated-text"><xsl:value-of select="count($ptr/preceding-sibling::*) + 1"/></sup>
-			<!-- Add ⟨umst⟩ after the last element in this transposition -->
-			<xsl:if test="not(following::*[@xml:id and key('transpose', @xml:id)/.. is $transpose])">
-				<span class="generated-text">⟨<i>umst<xsl:if test="$undone"> rückg</xsl:if></i>⟩</span>
-			</xsl:if>
-		</xsl:element>
+		<xsl:variable name="last" select="not(following::*[@xml:id and key('transpose', @xml:id)/.. is $transpose])"/>
+	
+		<xsl:call-template name="app">
+			<xsl:with-param name="affected" select="node()"/>
+			<xsl:with-param name="prebracket">
+				<sup><xsl:value-of select="if ($undone) then concat('(', $swappedPos, ')') else $swappedPos"/></sup>
+			</xsl:with-param>
+			<xsl:with-param name="label" select="
+				if ($last)
+				then concat('umst', if ($undone) then ' rückg' else '')
+				else ''"/>
+			<xsl:with-param name="context" select="if ($last) then $transpose else ()"/>
+			<xsl:with-param name="braces" select="if ($last) then ('⟨', '⟩') else ('','')"/>
+			<xsl:with-param name="title" select="concat('Vertauscht mit »', $replacement, '«', if ($undone) then ' (rückgängig gemacht)' else ())"/>
+			<xsl:with-param name="also-highlight" select="//*[@xml:id and key('transpose', @xml:id)/.. is $transpose]"/>
+		</xsl:call-template>		
 	</xsl:template>
 
 
@@ -412,21 +413,24 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:param name="braces" select="('⟨', '⟩')"/>
 		
 		<xsl:variable name="real-title">
-			<xsl:for-each select="$context">
 			<xsl:value-of select="$title"/>
-			<xsl:if test="@f:proposedBy">
-				<xsl:text>:	vorgeschlagen von </xsl:text><xsl:value-of select="f:agent(@f:proposedBy)"/>
-				<xsl:if test="@f:acceptedBy">
-					<xsl:text>, gebilligt von </xsl:text><xsl:value-of select="f:agent(@f:acceptedBy)"/>
+			<xsl:for-each select="$context">
+				<xsl:if test="@f:proposedBy">
+					<xsl:text>:	vorgeschlagen von </xsl:text><xsl:value-of select="f:agent(@f:proposedBy)"/>
+					<xsl:if test="@f:acceptedBy">
+						<xsl:text>, gebilligt von </xsl:text><xsl:value-of select="f:agent(@f:acceptedBy)"/>
+					</xsl:if>
+					<xsl:if test="@f:rejectedBy">
+						<xsl:text>, verworfen von </xsl:text><xsl:value-of select="f:agent(@f:rejectedBy)"/>
+					</xsl:if>
 				</xsl:if>
-				<xsl:if test="@f:rejectedBy">
-					<xsl:text>, verworfen von </xsl:text><xsl:value-of select="f:agent(@f:rejectedBy)"/>
-				</xsl:if>
-			</xsl:if>
 			</xsl:for-each>
 		</xsl:variable>
 		
-		<span class="appnote {f:generic-classes(.)}" title="{$real-title}">
+		<xsl:element name="{f:html-tag-name(.)}">
+			<xsl:attribute name="class" select="string-join((f:generic-classes(.), 'appnote'), ' ')"/>
+			<xsl:attribute name="title" select="$real-title"/>
+		
 			<xsl:call-template name="highlight-group">
 				<xsl:with-param name="others" select="$also-highlight"/>
 			</xsl:call-template>
@@ -436,7 +440,7 @@ in <xsl:value-of select="document-uri(/)"/>
 				</span>
 			</xsl:if>
 			<span class="generated-text">
-				<xsl:value-of select="$prebracket"/>
+				<xsl:copy-of select="$prebracket"/>
 				<xsl:value-of select="$braces[1]"/>
 				<xsl:if test="$pre">
 					<i class="app"><xsl:value-of select="$pre"/></i>
@@ -464,7 +468,7 @@ in <xsl:value-of select="document-uri(/)"/>
 				</xsl:for-each>
 				<xsl:value-of select="$braces[2]"/>
 			</span>
-		</span>
+		</xsl:element>		
 	</xsl:template>
 
 	<!-- Pre-rendered XHTML will simply be copied -->
