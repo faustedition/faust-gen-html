@@ -272,7 +272,7 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:next-match/>
 		<xsl:call-template name="app">
 			<xsl:with-param name="context" select="$source"/>
-			<xsl:with-param name="pre">⌟</xsl:with-param>
+			<xsl:with-param name="prebracket">⌟</xsl:with-param>
 			<xsl:with-param name="label">tilgt</xsl:with-param>
 			<xsl:with-param name="title">von ⌜ bis ⌟ getilgt</xsl:with-param>
 			<xsl:with-param name="also-highlight" select="$source"/>
@@ -393,7 +393,9 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:param name="affected"/>
 		<!-- Class additional to affected for the content from $affected. Token(s) -->
 		<xsl:param name="affected-class"/>
-		<!--Apparatus text to be inserted after the ⟨, before the $app -->
+		<!-- Text that appears  immediately before the ⟨, in generated-text style -->
+		<xsl:param name="prebracket"/>
+		<!-- Apparatus text to be inserted after the ⟨, before the $app -->
 		<xsl:param name="pre"/>
 		<!-- Content that appears inside the ⟨⟩. original TEI, possibly mixed with XHTML -->
 		<xsl:param name="app"/>
@@ -434,6 +436,7 @@ in <xsl:value-of select="document-uri(/)"/>
 				</span>
 			</xsl:if>
 			<span class="generated-text">
+				<xsl:value-of select="$prebracket"/>
 				<xsl:value-of select="$braces[1]"/>
 				<xsl:if test="$pre">
 					<i class="app"><xsl:value-of select="$pre"/></i>
