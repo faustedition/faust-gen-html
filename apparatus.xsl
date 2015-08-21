@@ -38,6 +38,13 @@
 		</xsl:call-template>
 	</xsl:template>
 	
+	<xsl:template match="seg[@f:questionedBy]">
+		<xsl:call-template name="app">
+			<xsl:with-param name="affected" select="node()"/>
+			<xsl:with-param name="affected-class">questioned</xsl:with-param>
+		</xsl:call-template>
+	</xsl:template>
+	
 	<xsl:template match="del[not(parent::subst)]">
 		<xsl:call-template name="app">
 			<xsl:with-param name="affected" select="node()"/>
@@ -415,6 +422,10 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:variable name="real-title">
 			<xsl:value-of select="$title"/>
 			<xsl:for-each select="$context">
+				<xsl:if test="@f:questionedBy">
+					<xsl:text>moniert von </xsl:text>
+					<xsl:value-of select="f:agent(@f:questionedBy)"/>
+				</xsl:if>
 				<xsl:if test="@f:proposedBy">
 					<xsl:text>:	vorgeschlagen von </xsl:text><xsl:value-of select="f:agent(@f:proposedBy)"/>
 					<xsl:if test="@f:acceptedBy">
@@ -456,6 +467,9 @@ in <xsl:value-of select="document-uri(/)"/>
 					<i class="app"><xsl:value-of select="$label"/></i>
 				</xsl:if>
 				<xsl:for-each select="$context">
+				<xsl:if test="@f:questionedBy">
+					<i class="app">mon <xsl:value-of select="f:agent(@f:questionedBy)/@shorthand"/></i>
+				</xsl:if>					
 				<xsl:if test="@f:proposedBy">
 					<i class="app">	vorschl <xsl:value-of select="f:agent(@f:proposedBy)/@shorthand"/></i>
 					<xsl:if test="@f:acceptedBy">
