@@ -56,11 +56,28 @@
 	
 	<xsl:template match="del[@f:revType='instant']" priority="1">
 		<xsl:call-template name="app">
-			<xsl:with-param name="app" select="node()"/>
 			<xsl:with-param name="label">&gt;</xsl:with-param>
+			<xsl:with-param name="app">
+				<xsl:call-template name="del-instant-body"/>
+			</xsl:with-param>
 			<xsl:with-param name="title" select="concat('»', ., '« sofort getilgt')"/>
 		</xsl:call-template>
 	</xsl:template>
+	
+	<!-- Recursively add all immediately following instant revisions -->	
+	<xsl:template name="del-instant-body">
+		<xsl:apply-templates select="node()"/>
+		<xsl:for-each select="following-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::del[@f:revType='instant']]">
+			<span class="generated-text app"> > </span>
+			<xsl:call-template name="del-instant-body"/>
+		</xsl:for-each>
+	</xsl:template>
+	
+	<!-- since this already handled immediately following instant revisions: -->
+	<xsl:template 
+		match="del[@f:revType='instant'][preceding-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::del[@f:revType='instant']]]"
+		priority="2"
+	/>
 	
 	<xsl:template match="subst[del[@f:revType='instant']]" priority="1">
 		<xsl:apply-templates select="del"/>
