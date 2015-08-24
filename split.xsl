@@ -117,8 +117,15 @@
 		<xsl:variable name="filename">
 			<xsl:call-template name="filename"/>
 		</xsl:variable>
+		<xsl:variable name="page" select="preceding::pb[@f:docTranscriptNo][1]/@f:docTranscriptNo"/>
+		<xsl:variable name="basename" select="replace($filename, '^.*/', '')"/>
+		<xsl:variable name="href" select="
+			if ($type = 'archivalDocument') 
+			then concat($docbase, $documentURI, '&amp;section=', $basename,
+				if ($page) then concat('&amp;page=', $page) else '')
+			else f:relativize($output-base, $filename)"/>
 		<a>
-			<xsl:attribute name="href" select="f:relativize($output-base, $filename)"/>        
+			<xsl:attribute name="href" select="$href"/>        
 			
 			<xsl:if test="$class">
 				<xsl:attribute name="class" select="string-join($class, ' ')"/>
