@@ -109,6 +109,27 @@
 	</xsl:template>
 	<xsl:template mode="toc" match="node()"/>
 	
+	<!-- 
+		Erzeugt einen Link zur angegebenen HTML-Datei (und optional: Seite). 
+		Relativierung und ggf. einsetzen in das documentViewer-Template 
+		erfolgen automatisch. 
+	-->
+	<xsl:function name="f:html-link">
+		<xsl:param name="filename"/>
+		<xsl:value-of select="f:html-link($filename, ())"/>
+	</xsl:function>
+	<xsl:function name="f:html-link">
+		<xsl:param name="filename"/>
+		<xsl:param name="page"/>
+		<xsl:variable name="basename" select="f:relativize($output-base, $filename)"/>
+		<xsl:value-of select="
+			if ($type = 'archivalDocument') 
+			then concat($docbase, '/', $documentURI, '&amp;section=', $basename,
+			if ($page) then concat('&amp;page=', $page) else '',
+			'&amp;view=', $view)
+			else $basename"/>		
+	</xsl:function>
+	
 	<!-- Erzeugt einen Link zum aktuellen (Fokus) div. -->
 	<xsl:template name="section-link">
 		<xsl:param name="class"/>
@@ -118,13 +139,8 @@
 			<xsl:call-template name="filename"/>
 		</xsl:variable>
 		<xsl:variable name="page" select="preceding::pb[@f:docTranscriptNo][1]/@f:docTranscriptNo"/>
-		<xsl:variable name="basename" select="replace($filename, '^.*/', '')"/>
-		<xsl:variable name="href" select="
-			if ($type = 'archivalDocument') 
-			then concat($docbase, '/', $documentURI, '&amp;section=', $basename,
-				if ($page) then concat('&amp;page=', $page) else '',
-				'&amp;view=', $view)
-			else f:relativize($output-base, $filename)"/>
+		<xsl:variable name="basename" select="f:relativize($output-base, $filename)"/>
+		<xsl:variable name="href" select="f:html-link($filename, $page)"/>
 		<a>
 			<xsl:attribute name="href" select="$href"/>        
 			
@@ -199,7 +215,7 @@
 				<!-- Der Titel kann hereingegeben werden oder aus dem TEI-titleStmt kommen -->
 				<li>
 					<i class="icon-li icon-caret-up"/>
-					<a href="{f:relativize($output-base, concat($output-base, '.html'))}">
+					<a href="{f:html-link(concat($output-base, '.html'))}">
 						<xsl:value-of select="$title"/>
 					</a>
 				</li>
@@ -250,19 +266,19 @@
 						<xsl:choose>
 							<xsl:when test="$single">
 								<i class="icon-li icon-copy"/>
-								<a href="{f:relativize($output-base, concat($output-base, '.html'))}">nach Szenen zerlegt</a>
+								<a href="{f:html-link(concat($output-base, '.html'))}">nach Szenen zerlegt</a>
 							</xsl:when>
 							<xsl:otherwise>
 								<i class="icon-li icon-file-alt"/>
-								<a href="{f:relativize($output-base, concat($output-base, '.all.html'))}">auf einer Seite</a>
+								<a href="{f:html-link(concat($output-base, '.all.html'))}">auf einer Seite</a>
 							</xsl:otherwise>
 						</xsl:choose>
 					</li>
 				</xsl:if>
-				<li class="xml">
+				<!--li class="xml">
 					<i class="icon-li icon-download-alt"></i>
 					<a download="{replace($output-base, '^.*/', '')}-emended.xml" href="{f:relativize($output-base, concat($output-base, '-emended.xml'))}">TEI-Version</a>
-				</li>
+				</li-->
 			</ul>
 		</nav>
 	</xsl:template>      
