@@ -29,7 +29,7 @@
 	<!-- Gesamttitel für die Datei. -->
 	<xsl:param name="title" select="//title[1]"/>
 	
-	<!-- print oder archivalDocument? -->
+	<!-- print oder archivalDocument oder lesetext? -->
 	<xsl:param name="type"/>
 	
 	<xsl:param name="documentURI"/>

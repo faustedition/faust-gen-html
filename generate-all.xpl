@@ -51,7 +51,7 @@
 			<p:with-option name="href" select="concat($source, 'print/A8_IIIB18.xml')"/>
 		</p:load>
 		<f:print2html basename="faust1" cx:depends-on="variants">
-		  <p:with-param name="type" select="'print'"/>
+		  <p:with-param name="type" select="'lesetext'"/>
 		  <p:with-param name="title" select="'Faust I'"/>		  
 		</f:print2html>
 		
@@ -60,7 +60,7 @@
 			<p:with-option name="href" select="concat($source, 'transcript/gsa/391098/391098.xml')"/>
 		</p:load>
 		<f:print2html basename="faust2" cx:depends-on="variants">
-		  <p:with-param name="type" select="'archivalDocument'"/>
+		  <p:with-param name="type" select="'lesetext'"/>
 		  <p:with-param name="title" select="'Faust II'"/>		  
 		</f:print2html>
 		
