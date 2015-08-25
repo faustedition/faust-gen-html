@@ -16,6 +16,8 @@
   <xsl:include href="html-common.xsl"/>
   <xsl:include href="split.xsl"/>
   
+  <xsl:param name="view">print</xsl:param>
+  
   
   <xsl:output method="xhtml" include-content-type="yes"/>
 

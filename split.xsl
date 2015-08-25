@@ -121,8 +121,9 @@
 		<xsl:variable name="basename" select="replace($filename, '^.*/', '')"/>
 		<xsl:variable name="href" select="
 			if ($type = 'archivalDocument') 
-			then concat($docbase, $documentURI, '&amp;section=', $basename,
-				if ($page) then concat('&amp;page=', $page) else '')
+			then concat($docbase, '/', $documentURI, '&amp;section=', $basename,
+				if ($page) then concat('&amp;page=', $page) else '',
+				'&amp;view=', $view)
 			else f:relativize($output-base, $filename)"/>
 		<a>
 			<xsl:attribute name="href" select="$href"/>        

@@ -19,6 +19,8 @@
 		<script type="text/javascript" src="{$assets}/js/faust_app.js"/>
 	</xsl:param>
 	
+	<xsl:param name="view">text</xsl:param>
+	
 	<xsl:output method="xhtml" indent="yes"/>
 
 
