@@ -18,9 +18,15 @@
     <xsl:value-of select="count(root($document)//div) ge number($splitdivs) and string-length(normalize-space(string-join(root($document)//text, ' '))) ge number($splitchars)"/>
   </xsl:function>
   
+  
+  <xsl:function name="f:numerical-lineno">
+    <xsl:param name="n"/>
+    <xsl:value-of select="number(replace($n, '\D*(\d+).*', '$1'))"/>
+  </xsl:function>
+  
   <xsl:function name="f:output-group">
     <xsl:param name="n"/>
-    <xsl:variable name="resolved-n" select="number(replace($n, '\D*(\d+).*', '$1'))"/>
+    <xsl:variable name="resolved-n" select="f:numerical-lineno($n)"/>
     <xsl:choose>
       <xsl:when test="matches(string($resolved-n), '\d+')">
         <xsl:value-of select="$resolved-n idiv 10"/>				

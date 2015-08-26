@@ -2,7 +2,8 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns="http://www.w3.org/1999/xhtml"
-	exclude-result-prefixes="xs"
+	xmlns:f="http://www.faustedition.net/ns"
+	exclude-result-prefixes="xs f"
 	version="2.0">
 	
 	<xsl:param name="title">Digitale Faustedition</xsl:param>
@@ -34,11 +35,15 @@
 	</xsl:template>
 	
 	<xsl:template name="header">
+		<xsl:param name="breadcrumbs" tunnel="yes"/>
 		<header>
 			<div class="header-content">
 				<a class="faustedition-logo" title="Faustedition" href="{$assets}/index.php">
 					<img class="faustedition-logo-svg" src="{$assets}/img/faustlogo.svg" alt="Faustedition logo"/>
 				</a>
+				<div id="breadcrumbs" class="breadcrumbs">
+					<xsl:copy-of select="$breadcrumbs"/>
+				</div>
 				<nav class="header-navigation pure-menu">
 					<a href="{$edition}/archives.php">Archiv</a>
 					<xsl:text> </xsl:text>
@@ -72,6 +77,7 @@
 			</div>
 		</footer>
 	</xsl:template>
+	
 		
 	
 </xsl:stylesheet>

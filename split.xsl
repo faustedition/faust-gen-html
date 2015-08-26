@@ -33,6 +33,7 @@
 	<xsl:param name="type"/>
 	
 	<xsl:param name="documentURI"/>
+
 	
 
 	<!-- 
@@ -48,11 +49,17 @@
 			<!-- Focus -->
 			<xsl:call-template name="generate-html-frame">
 				<xsl:with-param name="single" tunnel="yes" select="false()"/>
+				<xsl:with-param name="breadcrumbs" tunnel="yes">
+					<xsl:call-template name="breadcrumbs"/>
+				</xsl:with-param>				
 			</xsl:call-template>
 			<xsl:if test="f:is-splitable-doc(.)">      
 				<xsl:result-document href="{$output-base}.all.html">
 					<xsl:call-template name="generate-html-frame">
 						<xsl:with-param name="single" tunnel="yes" select="true()"/>
+						<xsl:with-param name="breadcrumbs" tunnel="yes">
+							<xsl:call-template name="breadcrumbs"/>
+						</xsl:with-param>
 					</xsl:call-template>        
 				</xsl:result-document>
 			</xsl:if>
@@ -82,7 +89,11 @@
 				
 				<!-- … während für den eigentlichen Inhalt ein neues Dokument erzeugt wird. -->
 				<xsl:result-document href="{$filename}">
-					<xsl:call-template name="generate-html-frame"/>
+					<xsl:call-template name="generate-html-frame">
+						<xsl:with-param name="breadcrumbs" tunnel="yes">
+							<xsl:call-template name="breadcrumbs"/>
+						</xsl:with-param>						
+					</xsl:call-template>
 				</xsl:result-document>
 			</xsl:otherwise>
 		</xsl:choose>
@@ -282,6 +293,66 @@
 			</ul>
 		</nav>
 	</xsl:template>      
+	
+	<xsl:template name="breadcrumbs">		
+		<xsl:choose>
+			
+			<!-- Lesetext -->
+			<xsl:when test="$type = 'lesetext'">
+				<a href="text.html">Text</a>
+				>
+				<xsl:choose>
+					<xsl:when test="starts-with($output-base, 'faust1')">
+						<a href="faust1.html">Faust I</a>
+					</xsl:when>
+					<xsl:otherwise>
+						<a href="faust2.html">Faust II</a>
+					</xsl:otherwise>
+				</xsl:choose>
+				<xsl:call-template name="div-breadcrumbs"/>				
+			</xsl:when>
+			
+			
+			<!-- Druck -->
+			<xsl:when test="$type = 'print'">
+				<xsl:variable name="lineno" select="f:numerical-lineno((.//*[f:hasvars(.)])[1]/@n)"/>
+				<xsl:variable name="scene" select="reverse(document('scenes.xml')//f:scene[number(f:rangeStart) le number($lineno)])[1]"/>
+				<a href="chessboard_overview.php">Genese</a>
+				>
+				<xsl:choose>
+					<xsl:when test="starts-with($scene/f:id, '1')">
+						<a href="{$edition}/chessboard_faust_i.php">Faust I</a>
+					</xsl:when>
+					<xsl:otherwise>
+						<a href="{$edition}/chessboard_faust_ii.php">Faust II</a>
+					</xsl:otherwise>
+				</xsl:choose>
+				>
+				<a href="{$edition}/geneticBarGraph.php?rangeStart={$scene/f:rangeStart}&amp;rangeEnd={$scene/f:rangeEnd}">
+					<xsl:value-of select="$scene/f:title"/>
+				</a>
+				<br/>
+				<a href="{$edition}/archives.php">Archiv</a>
+				>
+				<a href="{$edition}/archives.php?view=print-concordance">Drucke</a>
+				>
+				<a href="{f:html-link(concat($output-base, '.html'))}"><xsl:value-of select="$title"/></a>
+				<xsl:call-template name="div-breadcrumbs"/>
+			</xsl:when>
+			
+			<xsl:otherwise>
+				<xsl:comment>
+					Keine Brotkrumen weil type = <xsl:value-of select="$type"/>
+				</xsl:comment>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<xsl:template name="div-breadcrumbs">
+		<xsl:for-each select="ancestor-or-self::div">
+			> 
+			<xsl:call-template name="section-link"/>
+		</xsl:for-each>
+	</xsl:template>
 	
 	
 	
