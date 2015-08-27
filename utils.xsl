@@ -54,7 +54,7 @@
     <xsl:param name="element"/>    
     <xsl:choose>
       <xsl:when test="$element[self::div or self::l or self::lg or self::p or self::sp
-        or self::head or (@n and not(self::milestone))]">
+        or self::head or self::closer or (@n and not(self::milestone))]">
         <xsl:sequence select="false()"/>
       </xsl:when>
       <xsl:when test="$element[self::hi or self::seg or self::w]">
@@ -74,6 +74,7 @@
     <xsl:param name="element"/>
     <xsl:choose>
       <xsl:when test="$element[self::p]">p</xsl:when>
+      <xsl:when test="$element/@rend = 'sup'">sup</xsl:when>
       <xsl:when test="f:isInline($element)">span</xsl:when>
       <xsl:when test="$element/self::head/parent::div[@type='subscene']">h5</xsl:when>
       <xsl:when test="$element/self::head[parent::div[@type='scene']/parent::div
