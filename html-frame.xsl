@@ -24,6 +24,7 @@
 			<link rel="stylesheet" href="{$assets}/css/document-transcript.css"/>
 			<link rel="stylesheet" href="{$assets}/css/document-transcript-highlight-hands.css"/>
 			<link rel="stylesheet" href="{$assets}/css/document-transcript-interaction.css"/>
+			<link rel="stylesheet" href="{$assets}/css/pure-min.css"/>
 			<link rel="stylesheet" href="{$assets}/css/pure-custom.css"/>
 			<link rel="stylesheet" href="{$assets}/css/basic_layout.css"/>
 			<link rel="stylesheet" href="{$assets}/css/textual-transcript.css"/>
@@ -36,44 +37,50 @@
 	
 	<xsl:template name="header">
 		<xsl:param name="breadcrumbs" tunnel="yes"/>
-		<header>
-			<div class="header-content">
-				<a class="faustedition-logo" title="Faustedition" href="{$assets}/index.php">
-					<img class="faustedition-logo-svg" src="{$assets}/img/faustlogo.svg" alt="Faustedition logo"/>
-				</a>
-				<div id="breadcrumbs" class="breadcrumbs">
-					<xsl:copy-of select="$breadcrumbs"/>
-				</div>
-				<nav class="header-navigation pure-menu">
-					<a href="{$edition}/archives.php">Archiv</a>
-					<xsl:text> </xsl:text>
-					<a href="{$edition}/chessboard_overview.php">Genese</a>
-					<xsl:text> </xsl:text>
-					<a href="{$edition}/print/text.html">Text</a>
+    <header>
+      <div class="pure-g-r">
+        <div class="logo pure-u-1-3">
+          <a href="{$edition}/" title="Faustedition"><img src="{$assets}/img/faustlogo.svg" alt="Faustedition"/></a>
+        </div>
+        <div class="breadcrumbs pure-u-1-3 pure-center pure-fade-50">
+					<small id="breadcrumbs">
+						<xsl:copy-of select="$breadcrumbs"/>
+					</small>
+        </div>
+        <div class="pure-u-1-3">
+        <nav class="pure-menu pure-menu-open pure-menu-horizontal pure-right">
+					<ul>
+						<li><a href="{$edition}/archives.php">Archiv</a></li>
+						<li><a href="{$edition}/chessboard_overview.php">Genese</a></li>
+						<li><a href="{$edition}/print/text.html">Text</a></li>
+					</ul>                                                        
 				</nav>
+				</div>
 			</div>
 		</header>
 	</xsl:template>
 	
 	<xsl:template name="footer">
 		<footer>
-			<div id='footer-content' class='footer-content'>
-				<b>Digitale Faust-Edition</b>
-				<xsl:if test="$debug">
-					<xsl:text> • </xsl:text>
-					<a href="./index.html" style="background:#ff0;text-decoration:none;">
-						Generiert: <xsl:value-of select="current-dateTime()"/>
-					</a>
-				</xsl:if>				
-			</div>
-			<div id="footer-navigation" class="footer-navigation">
-				<a href="{$edition}/help.php">Hilfe</a>
-				<xsl:text> </xsl:text>
-				<a href="{$edition}/contact.php">Kontakt</a>
-				<xsl:text> </xsl:text>
-				<a href="{$edition}/imprint.php">Impressum</a>
-				<xsl:text> </xsl:text>
-				<a href="{$edition}/project.php">Projekt</a>
+			<div class='pure-g-r'>
+				<div class="pure-u-1-2 pure-fade-50">
+					<b>Digitale Faust-Edition</b>
+					<xsl:if test="$debug">
+						<xsl:text> • </xsl:text>
+						<mark><a href="./index.html">
+							Generiert: <xsl:value-of select="current-dateTime()"/>
+						</a></mark>
+					</xsl:if>
+				</div>
+				<div class="pure-u-1-2 pure-right pure-fade-50">
+					<a href="{$edition}/help.php">Hilfe</a>
+					<xsl:text> </xsl:text>
+					<a href="{$edition}/contact.php">Kontakt</a>
+					<xsl:text> </xsl:text>
+					<a href="{$edition}/imprint.php">Impressum</a>
+					<xsl:text> </xsl:text>
+					<a href="{$edition}/project.php">Projekt</a>
+				</div>
 			</div>
 		</footer>
 	</xsl:template>
