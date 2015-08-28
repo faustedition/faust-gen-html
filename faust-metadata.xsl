@@ -4,8 +4,12 @@
 	xpath-default-namespace="http://www.faustedition.net/ns"
 	xmlns:f="http://www.faustedition.net/ns"
 	xmlns="http://www.w3.org/1999/xhtml"
-	exclude-result-prefixes="xs"
+	exclude-result-prefixes="xs f"
 	version="2.0">
+	
+	<xsl:include href="html-frame.xsl"/>
+	
+	<xsl:param name="standalone"/>	
 	
 	
 	<xsl:variable name="labels" xmlns="http://www.faustedition.net/ns">
@@ -254,16 +258,29 @@
 	
 	<!-- Grundstruktur der Seite. Fliegt raus für produktiv -->
 	<xsl:template match="/*">
-		<html>
-			<head>
-				<title>Metadaten</title>
-			</head>
-		</html>
-		<body>
-			<dl>
-				<xsl:apply-templates select="metadata"></xsl:apply-templates>
-			</dl>
-		</body>
+		<xsl:choose>
+			<xsl:when test="$standalone">
+				<html>
+					<xsl:call-template name="html-head"/>
+				</html>
+				<body>					
+					<xsl:call-template name="header"/>
+					<main>
+						<div class="pure-g-r center">				
+							<div class="metadata pure-u-1">
+								<xsl:apply-templates/>
+							</div>
+						</div>
+					</main>
+					<xsl:call-template name="footer"/>
+				</body>				
+			</xsl:when>
+			<xsl:otherwise>
+				<div class="metadata">
+					<xsl:apply-templates/>
+				</div>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 	
 </xsl:stylesheet>
