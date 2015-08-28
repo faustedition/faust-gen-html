@@ -302,6 +302,8 @@
 		</dd>
 	</xsl:template>
 	
+	<xsl:template match="metadataImport"/>
+	
 	<!-- Sofern kein besonderes Feld: -->
 	<xsl:template match="*">
 		<xsl:call-template name="element"/>
