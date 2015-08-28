@@ -102,7 +102,9 @@
 		</xsl:call-template>
 	</xsl:template>
 	<xsl:template match="idno[. = 'none' or . = '']"/>
-	
+
+	<xsl:template match="textTranscript"/>	
+	<xsl:template match="docTranscript"/>	
 	
 	<!-- Bibliographische Verweise. Stehen z.T. einfach als URIs im Text in den anderen Feldern. -->	
 	<xsl:variable name="bibliography" select="document('bibliography.xml')"/>
@@ -168,6 +170,31 @@
 			<xsl:apply-templates/>
 		</dd>
 	</xsl:template>	
+	
+	
+	<xsl:template match="metadata">
+		<dl>
+			<xsl:apply-templates/>
+		</dl>
+	</xsl:template>
+	
+	<xsl:template match="revisionDesc"/>
+	
+	<xsl:template match="page[metadata[* except docTranscript]]">
+		<xsl:variable name="pageno">
+			<xsl:number count="page"/>
+		</xsl:variable>
+		<div class="md-page">
+			<h3>Seite <xsl:value-of select="$pageno"/></h3>
+			<xsl:apply-templates/>
+		</div>
+	</xsl:template>
+	
+	<xsl:template match="sheet|disjunctLeaf|page">
+		<div class="md-{local-name()}">
+			<xsl:apply-templates/>
+		</div>
+	</xsl:template>
 	
 	
 	<!-- 
