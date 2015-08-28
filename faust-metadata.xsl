@@ -270,18 +270,18 @@
 			<xsl:when test="$standalone">
 				<html>
 					<xsl:call-template name="html-head"/>
-				</html>
-				<body>					
-					<xsl:call-template name="header"/>
-					<main>
-						<div class="pure-g-r center">				
-							<div class="metadata pure-u-1">
-								<xsl:apply-templates/>
+					<body>					
+						<xsl:call-template name="header"/>
+						<main>
+							<div class="pure-g-r center">				
+								<div class="metadata pure-u-1">
+									<xsl:apply-templates/>
+								</div>
 							</div>
-						</div>
-					</main>
-					<xsl:call-template name="footer"/>
-				</body>				
+						</main>
+						<xsl:call-template name="footer"/>
+					</body>				
+				</html>
 			</xsl:when>
 			<xsl:otherwise>
 				<div class="metadata">
