@@ -13,7 +13,7 @@
 	
 	
 	<xsl:variable name="labels" xmlns="http://www.faustedition.net/ns">
-		<elem name="headNote">Umfang – Inhalt</elem>
+		<elem name="headNote">Umfang – Inhalt</elem>
 		<elem name="note">Anmerkung</elem>
 		<elem name="repository">Aufbewahrungsort</elem>
 		<elem name="subRepository">Abteilung</elem>
@@ -72,6 +72,14 @@
 	</xsl:template>
 	<xsl:template match="numbering">
 		<li><xsl:apply-templates/></li>
+	</xsl:template>
+	
+	<xsl:template match="dimensions">
+		<xsl:call-template name="element">
+			<xsl:with-param name="content">
+				Breite: <xsl:value-of select="width"/> mm × Höhe: <xsl:value-of select="height"/> mm
+			</xsl:with-param>
+		</xsl:call-template>
 	</xsl:template>
 	
 	<xsl:variable name="edges">
