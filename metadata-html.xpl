@@ -38,8 +38,8 @@
     <p:for-each>
       <p:iteration-source select="//c:file[$debug or not(ends-with(@name, 'test.xml'))]"/>
       <p:variable name="filename" select="p:resolve-uri(/c:file/@name)"/>
-      <p:variable name="basename" select="replace($filename, '.*/', '')"/>
-      <p:variable name="outfile" select="concat($metahtml, $basename)"/>
+      <p:variable name="basename" select="replace(replace($filename, '.*/', ''), '.xml$', '')"/>
+      <p:variable name="outfile" select="concat($metahtml, $basename, '.html')"/>
       
       <cx:message log="info">        
         <p:with-option name="message" select="concat('Converting ', $filename, ' to ', $outfile)"/>
