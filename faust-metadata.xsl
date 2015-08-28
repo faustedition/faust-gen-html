@@ -9,7 +9,8 @@
 	
 	<xsl:include href="html-frame.xsl"/>
 	
-	<xsl:param name="standalone"/>	
+	<xsl:param name="standalone"/>
+	<xsl:param name="source">file:/home/tv/Faust/</xsl:param>	
 	
 	
 	<xsl:variable name="labels" xmlns="http://www.faustedition.net/ns">
@@ -102,6 +103,20 @@
 			<xsl:with-param name="content" select="f:lookup($patchType, ., 'patchType')"/>
 		</xsl:call-template>
 	</xsl:template>
+	
+	<xsl:variable name="repositories" select="document(resolve-uri('archives.xml', $source))"/>
+	<xsl:template match="repository">
+		<xsl:variable name="id" select="."/>
+		<xsl:call-template name="element">
+			<xsl:with-param name="content">
+				<a href="{$edition}/archiveDetail.php?archiveId={$id}">
+					<xsl:value-of select="$repositories//archive[@id=$id]/displayName"/>
+				</a>				
+			</xsl:with-param>
+		</xsl:call-template>
+	</xsl:template>
+		
+	
 	
 	<xsl:variable name="idnos">
 		<xsl:for-each select="document('sigil-labels.xml')//label">
