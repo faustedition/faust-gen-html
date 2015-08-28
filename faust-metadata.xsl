@@ -57,6 +57,13 @@
 		<elem name="patchCountermarkID">Gegenzeichen-Kürzel (Zettel)</elem>
 		<elem name="references">Bibliographischer Nachweis</elem>
 		<elem name="patchReferences">Bibliographischer Nachweis (Zettel)</elem>
+		
+		
+		<!-- Die folgenden Begriffe hat sich der ahnungslose Thorsten ausgedacht: -->
+		<elem name="page">Seite(?)</elem>
+		<elem name="leaf">Blatt(?)</elem>
+		<elem name="disjunctLeaf">separates Blatt(?)</elem>
+		<elem name="sheet">Bogen(?)</elem>
 	</xsl:variable>
 	
 	
@@ -128,7 +135,12 @@
 			<xsl:with-param name="extralabel" select="concat(' (', f:lookup($idnos, @type, 'idnos'), ')')"/>		
 		</xsl:call-template>
 	</xsl:template>
-	<xsl:template match="*[. = 'none' or . = '' or . = 'n.s.']"/>
+	<xsl:template match="*[f:isEmpty(.)]"/>
+	
+	<xsl:function name="f:isEmpty" as="xs:boolean">
+		<xsl:param name="element"/>		
+		<xsl:value-of select="$element = 'none' or $element = '' or $element = 'n.s.'"/>
+	</xsl:function>
 
 	<xsl:template match="textTranscript"/>	
 	<xsl:template match="docTranscript"/>	
@@ -217,11 +229,29 @@
 		</div>
 	</xsl:template>
 	
-	<xsl:template match="sheet|disjunctLeaf|page">
-		<div class="md-{local-name()}">
+	<!-- 
+	
+	Wir erzeugen Abschnitte für strukturelle Elemente, aber nur wenn irgendwo darunter ein nicht-leeres Metadatenfeld ist.
+	
+	-->
+	<xsl:template match="sheet|leaf|disjunctLeaf|page[descendant::metadata[* except (docTranscript | *[f:isEmpty(.)])]]" priority="1">
+		<div class="md-{local-name()} md-level">
+			<h3>
+				<xsl:number format="1."/>
+				<xsl:text> </xsl:text>
+				<xsl:value-of select="f:lookup($labels, local-name(), 'elements')"/>
+			</h3>
 			<xsl:apply-templates/>
 		</div>
 	</xsl:template>
+	<xsl:template match="sheet|leaf|disjunctLeaf|page">
+		<xsl:comment>
+			<xsl:number format="1."/>
+			<xsl:text> </xsl:text>
+			<xsl:value-of select="f:lookup($labels, local-name(), 'elements')"/>			
+		</xsl:comment>
+	</xsl:template>
+	
 	
 	
 	<!-- 
@@ -277,9 +307,7 @@
 		<xsl:call-template name="element"/>
 	</xsl:template>
 	
-	
-	
-	<!-- Grundstruktur der Seite. Fliegt raus für produktiv -->
+		
 	<xsl:template match="/*">
 		<xsl:choose>
 			<xsl:when test="$standalone">
