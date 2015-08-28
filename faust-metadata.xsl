@@ -128,7 +128,7 @@
 			<xsl:with-param name="extralabel" select="concat(' (', f:lookup($idnos, @type, 'idnos'), ')')"/>		
 		</xsl:call-template>
 	</xsl:template>
-	<xsl:template match="idno[. = 'none' or . = '']"/>
+	<xsl:template match="*[. = 'none' or . = '' or . = 'n.s.']"/>
 
 	<xsl:template match="textTranscript"/>	
 	<xsl:template match="docTranscript"/>	
