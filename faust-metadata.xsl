@@ -54,48 +54,7 @@
 		<elem name="patchReferences">Bibliographischer Nachweis (Zettel)</elem>
 	</xsl:variable>
 	
-	<xsl:variable name="edges">
-		<elem name="cut">beschnitten</elem>
-		<elem name="uncut">unbeschnitten</elem>
-	</xsl:variable>
 	
-	<xsl:function name="f:lookup" as="node()*">
-		<xsl:param name="labels"/>
-		<xsl:param name="key"/>
-		<xsl:param name="type"/>
-		<xsl:variable name="label" select="$labels//*[@name=$key]"/>
-		<xsl:choose>
-			<xsl:when test="$label">
-				<xsl:sequence select="$label/node()"/>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:value-of select="$key"/>
-				<xsl:message select="concat('WARNING: Did not find ', $key, ' in ', $type, ' labels')"/>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:function>
-	
-	
-	<!-- Grundstruktur "normales" Element. Also Name: Inhalt -->
-	<xsl:template name="element">
-		<xsl:param name="content">
-			<xsl:apply-templates/>
-		</xsl:param>
-		<xsl:param name="extralabel"/>
-		<xsl:param name="label" select="f:lookup($labels, local-name(), 'elements')"/>
-		<dt class="md-{local-name()}">
-			<xsl:copy-of select="$label"/>
-			<xsl:value-of select="$extralabel"/>
-		</dt>
-		<dd class="md-{local-name()}">
-			<xsl:sequence select="$content"/>
-		</dd>
-	</xsl:template>
-	
-	<!-- Sofern kein besonderes Feld: -->
-	<xsl:template match="*">
-		<xsl:call-template name="element"/>
-	</xsl:template>
 	
 	<!-- <elem name="numbering">1., 2. usw. wäre das möglich, die einfach so durchzunummerieren? </elem> -->
 	<xsl:template match="numberingList">
@@ -111,15 +70,15 @@
 		<li><xsl:apply-templates/></li>
 	</xsl:template>
 	
-	<!--     "edges>cut</edges> - beschnitten" -->
-	<!--     "edges>uncut</edges> - unbeschnitten " -->
+	<xsl:variable name="edges">
+		<elem name="cut">beschnitten</elem>
+		<elem name="uncut">unbeschnitten</elem>
+	</xsl:variable>
 	<xsl:template match="edges">
 		<xsl:call-template name="element">
 			<xsl:with-param name="content" select="f:lookup($edges, ., 'edges')"/>
 		</xsl:call-template>
-	</xsl:template>
-	
-	
+	</xsl:template>		
 	
 	<xsl:variable name="patchType">
 		<elem name="glue">geklebt</elem>
@@ -142,6 +101,7 @@
 			<xsl:with-param name="extralabel" select="concat(' (', f:lookup($idnos, @type, 'idnos'), ')')"/>		
 		</xsl:call-template>
 	</xsl:template>
+	<xsl:template match="idno[. = 'none' or . = '']"/>
 	
 	
 	<!-- Bibliographische Verweise. Stehen z.T. einfach als URIs im Text in den anderen Feldern. -->	
@@ -210,6 +170,58 @@
 	</xsl:template>	
 	
 	
+	<!-- 
+		Nachschlagen eines Labels für die Endnutzer. Parameter:
+		
+		- labels: Variable, in der nachgeschlagen wird, siehe z.B. $elements oben
+		- key: Schlüssel, nach dem gesucht wird (= @name), z.B. Elementname
+		- type: Beschreibung für die Fehlermeldung, falls nix gefunden
+		
+		Gibt entweder den Wert von $labels//*[@name=$key] zurück oder $key selbst + Warn-Message
+	-->
+	<xsl:function name="f:lookup" as="node()*">
+		<xsl:param name="labels"/>
+		<xsl:param name="key"/>
+		<xsl:param name="type"/>
+		<xsl:variable name="label" select="$labels//*[@name=$key]"/>
+		<xsl:choose>
+			<xsl:when test="$label">
+				<xsl:sequence select="$label/node()"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$key"/>
+				<xsl:message select="concat('WARNING: Did not find &quot;', $key, '&quot; in ', $type)"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
+	
+	<!-- 
+		Grundstruktur "normales" Element. Also Name: Inhalt. Parameter, alle optional:
+		
+		- content 	 Inhalt des Felds in der Darstellung
+		- label      Bezeichnung des Felds
+		- extralabel zusätzliche Bezeichnung, ergänzung zu $label		
+	-->
+	<xsl:template name="element">
+		<xsl:param name="content">
+			<xsl:apply-templates/>
+		</xsl:param>
+		<xsl:param name="extralabel"/>
+		<xsl:param name="label" select="f:lookup($labels, local-name(), 'elements')"/>
+		<dt class="md-{local-name()}">
+			<xsl:copy-of select="$label"/>
+			<xsl:value-of select="$extralabel"/>
+		</dt>
+		<dd class="md-{local-name()}">
+			<xsl:sequence select="$content"/>
+		</dd>
+	</xsl:template>
+	
+	<!-- Sofern kein besonderes Feld: -->
+	<xsl:template match="*">
+		<xsl:call-template name="element"/>
+	</xsl:template>
 	
 	
 	
