@@ -144,6 +144,74 @@
 	</xsl:template>
 	
 	
+	<!-- Bibliographische Verweise. Stehen z.T. einfach als URIs im Text in den anderen Feldern. -->	
+	<xsl:variable name="bibliography" select="document('bibliography.xml')"/>
+
+	<!-- 
+		Liefert <cite>-Element mit Zitation.
+		
+		- uri: faust://bibliography-URI
+		- full: wenn true() dann volle Referenz, sonst nur Autor/Jahr
+	-->
+	<xsl:function name="f:cite" as="element()">
+		<xsl:param name="uri" as="xs:string"/>
+		<xsl:param name="full" as="xs:boolean"/>
+		<xsl:variable name="bib" select="$bibliography//bib[@uri=$uri]"/>
+		<xsl:choose>
+			<xsl:when test="$bib and $full">
+				<cite class="bib-full" data-uri="{$uri}" data-citation="$bib/citation">
+					<xsl:copy-of select="$bib/reference/node()"/>
+				</cite>
+			</xsl:when>
+			<xsl:when test="$bib">
+				<cite class="bib-short" title="{$bib/reference}" data-uri="{$uri}"><xsl:value-of select="$bib/citation"/></cite>
+			</xsl:when>
+			<xsl:otherwise>
+				<cite class="bib-notfound"><xsl:value-of select="$uri"/></cite>
+				<xsl:message select="concat('WARNING: Citation not found: ', $uri)"/>
+			</xsl:otherwise>
+		</xsl:choose>		
+	</xsl:function>
+		
+	<xsl:template match="text()">
+		<xsl:analyze-string select="." regex="faust://bibliography/[a-zA-Z0-9/_-]+">
+			<xsl:matching-substring>
+				<xsl:copy-of select="f:cite(., false())"/>
+			</xsl:matching-substring>
+			<xsl:non-matching-substring>
+				<xsl:value-of select="."/>
+			</xsl:non-matching-substring>
+		</xsl:analyze-string>
+	</xsl:template>
+	
+	<xsl:template match="references">
+		<xsl:call-template name="element">
+			<xsl:with-param name="content">
+				<dl class="bib-list">
+					<xsl:apply-templates/>
+				</dl>
+			</xsl:with-param>
+		</xsl:call-template>
+	</xsl:template>
+	
+	<xsl:variable name="reference-types">
+		<elem name="description">Beschreibung</elem>
+		<elem name="text">Text</elem>
+		<elem name="facsimile">Faksimile</elem>
+		<elem name="essay">Aufsatz</elem>
+	</xsl:variable>
+	<xsl:template match="reference">
+		<dt><xsl:value-of select="f:lookup($reference-types, @type, 'reference-types')"/></dt>
+		<dd>
+			<xsl:copy-of select="f:cite(@uri, true())"/>
+			<xsl:text> </xsl:text>
+			<xsl:apply-templates/>
+		</dd>
+	</xsl:template>	
+	
+	
+	
+	
 	
 	<!-- Grundstruktur der Seite. Fliegt raus für produktiv -->
 	<xsl:template match="/*">
