@@ -329,7 +329,7 @@
 				</html>
 			</xsl:when>
 			<xsl:otherwise>
-				<div class="metadata">
+				<div id="metadataContainer" class="metadata-container">
 					<xsl:apply-templates/>
 				</div>
 			</xsl:otherwise>
