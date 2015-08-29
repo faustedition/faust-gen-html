@@ -127,14 +127,28 @@
 		
 	
 	
-	<xsl:variable name="idnos">
-		<xsl:for-each select="document('sigil-labels.xml')//label">
-			<elem name="{@type}"><xsl:value-of select="."/></elem>
-		</xsl:for-each>
-	</xsl:variable>
+	<xsl:variable name="sigils" select="document('sigil-labels.xml')"/>
 	<xsl:template match="idno">
 		<xsl:call-template name="element">
-			<xsl:with-param name="extralabel" select="concat(' (', f:lookup($idnos, @type, 'idnos'), ')')"/>		
+			<xsl:with-param name="label">
+				<xsl:variable name="sigil" select="$sigils//label[@type=current()/@type]"/>
+				<xsl:choose>
+					<xsl:when test="$sigil/@kind = 'signature'">Signatur</xsl:when>
+					<xsl:when test="$sigil">Sigle <xsl:value-of select="$sigil"/></xsl:when>
+					<xsl:otherwise>
+						Sigle <xsl:value-of select="@type"/>
+						<xsl:message select="concat('WARNING: idno label &quot;', @type, '&quot; not found.')"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:with-param>
+			<xsl:with-param name="content">
+				<xsl:apply-templates/>
+				<xsl:if test="following-sibling::*[1][self::note]">
+					<p class="md-idno-note">
+						<xsl:apply-templates/>
+					</p>
+				</xsl:if>
+			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
 	<xsl:template match="*[f:isEmpty(.)]"/>
