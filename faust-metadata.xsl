@@ -153,6 +153,8 @@
 	</xsl:template>
 	<xsl:template match="*[f:isEmpty(.)]"/>
 	
+	<xsl:template match="note[preceding-sibling::*[1][self::idno]]"/>
+	
 	<xsl:function name="f:isEmpty" as="xs:boolean">
 		<xsl:param name="element"/>		
 		<xsl:value-of select="$element = 'none' or $element = '' or $element = 'n.s.'"/>
@@ -220,7 +222,7 @@
 	<xsl:template match="reference">
 		<dt><xsl:value-of select="f:lookup($reference-types, @type, 'reference-types')"/></dt>
 		<dd>
-			<xsl:copy-of select="f:cite(@uri, true())"/>
+			<xsl:copy-of select="f:cite(@uri, false())"/>
 			<xsl:text> </xsl:text>
 			<xsl:apply-templates/>
 		</dd>
@@ -230,6 +232,19 @@
 	<xsl:template match="metadata">
 		<dl>
 			<xsl:apply-templates/>
+		</dl>
+	</xsl:template>
+	<xsl:template match="/*/metadata">
+		<h2><xsl:value-of select="idno[@type=('faustedition', 'wa_faust')][1]"/></h2>
+		<h3 class="md-headNote">
+			<xsl:value-of select="headNote"/>
+		</h3>
+		<p class="md-note wip">
+			<xsl:value-of select="headNote/following-sibling::note[1]"/>
+		</p>
+		<dl>
+			<xsl:apply-templates select="* 
+				except (idno[@type=('faustedition', 'wa_faust')][1] | headNote | headNote/following-sibling::note[1])"/>
 		</dl>
 	</xsl:template>
 	
