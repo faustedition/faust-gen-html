@@ -28,7 +28,7 @@
 		<elem name="binding">Einband</elem>
 		<elem name="numberingList">Foliierung/Paginierung</elem>
 		<elem name="condition">Erhaltungszustand</elem>
-		<elem name="dimensions">Blattmaße</elem>
+		<elem name="dimensions">Maße</elem>
 		<elem name="width">Breite in mm</elem>
 		<elem name="height">Höhe in mm </elem>
 		<elem name="format">Format</elem>
@@ -55,15 +55,15 @@
 		<elem name="patchPaperMill">Papiermühle (Zettel)</elem>
 		<elem name="patchWatermarkID">Wasserzeichen-Kürzel (Zettel)</elem>
 		<elem name="patchCountermarkID">Gegenzeichen-Kürzel (Zettel)</elem>
-		<elem name="references">Bibliographischer Nachweis</elem>
-		<elem name="patchReferences">Bibliographischer Nachweis (Zettel)</elem>
+		<elem name="references">Bibliographische Nachweise</elem>
+		<elem name="patchReferences">Bibliographische Nachweise (Zettel)</elem>
 		
 		
 		<!-- Die folgenden Begriffe hat sich der ahnungslose Thorsten ausgedacht: -->
-		<elem name="page">Seite(?)</elem>
-		<elem name="leaf">Blatt(?)</elem>
-		<elem name="disjunctLeaf">separates Blatt(?)</elem>
-		<elem name="sheet">Bogen(?)</elem>
+		<elem name="page">Seite</elem>
+		<elem name="leaf">Blatt</elem>
+		<elem name="disjunctLeaf">Zettel</elem>
+		<elem name="sheet">Doppelblatt</elem>
 	</xsl:variable>
 	
 	
@@ -81,11 +81,13 @@
 	<xsl:template match="numbering">
 		<li><xsl:apply-templates/></li>
 	</xsl:template>
+	-->
+	<xsl:template match="numbering"/>
 	
 	<xsl:template match="dimensions">
 		<xsl:call-template name="element">
 			<xsl:with-param name="content">
-				Breite: <xsl:value-of select="width"/> mm × Höhe: <xsl:value-of select="height"/> mm
+				<xsl:value-of select="width"/> mm × <xsl:value-of select="height"/> mm
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
@@ -235,11 +237,14 @@
 	
 	-->
 	<xsl:template match="sheet|leaf|disjunctLeaf|page[descendant::metadata[* except (docTranscript | *[f:isEmpty(.)])]]" priority="1">
+		<xsl:variable name="label"
+			select="if (self::disjunctLeaf[not(@format=('none', 'n.s.'))])
+					then 'Einzelblatt' else f:lookup($labels, local-name(), 'elements')"/>
 		<div class="md-{local-name()} md-level">
 			<h3>
 				<xsl:number format="1."/>
 				<xsl:text> </xsl:text>
-				<xsl:value-of select="f:lookup($labels, local-name(), 'elements')"/>
+				<xsl:value-of select="$label"/>
 			</h3>
 			<xsl:apply-templates/>
 		</div>
