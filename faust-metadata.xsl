@@ -68,7 +68,7 @@
 	
 	
 	
-	<!-- <elem name="numbering">1., 2. usw. wäre das möglich, die einfach so durchzunummerieren? </elem> 
+	<!-- <elem name="numbering">1., 2. usw. wäre das möglich, die einfach so durchzunummerieren? </elem> -->
 	<xsl:template match="numberingList">
 		<xsl:call-template name="element">
 			<xsl:with-param name="content">
@@ -81,8 +81,6 @@
 	<xsl:template match="numbering">
 		<li><xsl:apply-templates/></li>
 	</xsl:template>
-	-->
-	<xsl:template match="numbering"/>
 	
 	<xsl:template match="dimensions">
 		<xsl:call-template name="element">
