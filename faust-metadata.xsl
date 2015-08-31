@@ -151,7 +151,18 @@
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
-	<xsl:template match="idno[@type='gsa_1'][//repository != 'gsa']"/>
+	<xsl:template match="idno[@type='gsa_2'][//repository='gsa']" priority="1">
+		<xsl:call-template name="element">
+			<xsl:with-param name="label">Signatur</xsl:with-param>
+			<xsl:with-param name="content">
+				<xsl:value-of select="."/>
+				<xsl:if test="../idno[@type='gsa_1']">
+					<span class="md-sigil-gsa_1">  (alt: <xsl:value-of select="../idno[@type='gsa_1']"/>)</span>
+				</xsl:if>
+			</xsl:with-param>
+		</xsl:call-template>
+	</xsl:template>
+	<xsl:template match="idno[@type='gsa_1']"/>
 	<xsl:template match="*[f:isEmpty(.)]"/>
 	
 	<xsl:template match="note[preceding-sibling::*[1][self::idno]]"/>
