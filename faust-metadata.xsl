@@ -262,31 +262,54 @@
 	
 	<!-- 
 	
-	Wir erzeugen Abschnitte für strukturelle Elemente, aber nur wenn irgendwo darunter ein nicht-leeres Metadatenfeld ist.
-	
+	Wir erzeugen Abschnitte für strukturelle Elemente, aber nur wenn irgendwo darunter ein nicht-leeres Metadatenfeld ist.	
 	-->
-	<xsl:template match="sheet|leaf|disjunctLeaf|page[descendant::metadata[* except (docTranscript | *[f:isEmpty(.)])]]" priority="1">
-		<xsl:variable name="label"
-			select="if (self::disjunctLeaf[not(@format=('none', 'n.s.'))])
-					then 'Einzelblatt' else f:lookup($labels, local-name(), 'elements')"/>
+	
+	<!-- Alle sheets kriegen eine Überschrift -->
+	<xsl:template match="sheet">
 		<div class="md-{local-name()} md-level">
-			<h3>
-				<xsl:number format="1."/>
-				<xsl:text> </xsl:text>
-				<xsl:value-of select="$label"/>
-			</h3>
+			<h3><xsl:value-of select="f:lookup($labels, local-name(), 'elements')"/></h3>
 			<xsl:apply-templates/>
 		</div>
 	</xsl:template>
-	<xsl:template match="sheet|leaf|disjunctLeaf|page">
-		<xsl:comment>
-			<xsl:number format="1."/>
-			<xsl:text> </xsl:text>
-			<xsl:value-of select="f:lookup($labels, local-name(), 'elements')"/>			
-		</xsl:comment>
+	
+	<xsl:template match="leaf|disjunctLeaf|page" priority="1">
+		<xsl:variable name="label"
+			select="if (self::disjunctLeaf[not(@format=('none', 'n.s.'))])
+					then 'Einzelblatt' else f:lookup($labels, local-name(), 'elements')"/>
+		<xsl:variable name="number">							
+			<xsl:choose>
+				<xsl:when test="self::page">
+					<xsl:number format="1." level="any"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:number format="1." level="any" count="leaf|disjunctLeaf"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:variable name="heading" select="concat($number, ' ', $label)"/> 
+		<xsl:choose>
+			<xsl:when test="descendant::metadata[* except (docTranscript | *[f:isEmpty(.)])]">				
+				<div class="md-{local-name()} md-level">
+					<h3>
+						<xsl:value-of select="$heading"/>
+					</h3>
+					<xsl:apply-templates/>
+				</div>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:comment>
+					<xsl:value-of select="$heading"/>
+				</xsl:comment>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 	
+	<xsl:template match="leaf|disjunctLeaf|page"/>
 	
+	
+	
+	<!-- ##################################################################################################### -->
 	
 	<!-- 
 		Nachschlagen eines Labels für die Endnutzer. Parameter:
