@@ -276,37 +276,43 @@
 	Wir erzeugen Abschnitte für strukturelle Elemente, aber nur wenn irgendwo darunter ein nicht-leeres Metadatenfeld ist.	
 	-->
 	
-	<!-- Alle sheets kriegen eine Überschrift -->
+	<xsl:template name="pagenos">
+		<xsl:for-each select="self::page|page|leaf/page">
+			<a class="md-pageref"><xsl:number format="1" level="any"/></a>
+			<xsl:if test="position() != last()">, </xsl:if>
+		</xsl:for-each>
+	</xsl:template>
+	
+	<!-- Alle sheets kriegen eine Überschrift 
 	<xsl:template match="sheet">
 		<div class="md-{local-name()} md-level">
 			<h3><xsl:value-of select="f:lookup($labels, local-name(), 'elements')"/></h3>
 			<xsl:apply-templates/>
 		</div>
-	</xsl:template>
+	</xsl:template> -->
 	
-	<xsl:template match="leaf|disjunctLeaf|page" priority="1">
+	<xsl:template match="sheet|leaf|disjunctLeaf|page" priority="1">
 		<xsl:variable name="label"
 			select="if (self::disjunctLeaf[not(@format=('none', 'n.s.'))])
 					then 'Einzelblatt' else f:lookup($labels, local-name(), 'elements')"/>
-		<xsl:variable name="number">							
-			<xsl:choose>
-				<xsl:when test="self::page">
-					<xsl:number format="1" level="any"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:number format="1" level="any" count="leaf|disjunctLeaf"/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
-		<xsl:variable name="heading" select="concat($label, ' ', $number)"/>
+		<xsl:variable name="heading" select="$label"/>
 		<xsl:variable name="content">
 			<xsl:apply-templates/>
 		</xsl:variable>
 		<xsl:choose>
 			<xsl:when test="normalize-space(string($content)) != ''">				
-				<div class="md-{local-name()} md-level" id="md-{local-name()}-{$number}">
+				<div class="md-{local-name()} md-level">
 					<h3>
-						<xsl:value-of select="$heading"/>
+						<xsl:choose>
+							<xsl:when test="self::page">
+								<xsl:value-of select="$heading"/>
+								<xsl:text> </xsl:text>
+								<xsl:call-template name="pagenos"/>		
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="$heading"/> (Seiten <xsl:call-template name="pagenos"/>)								
+							</xsl:otherwise>
+						</xsl:choose>
 					</h3>
 					<xsl:copy-of select="$content"/>
 				</div>
