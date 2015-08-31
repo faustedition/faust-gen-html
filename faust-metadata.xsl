@@ -281,20 +281,20 @@
 		<xsl:variable name="number">							
 			<xsl:choose>
 				<xsl:when test="self::page">
-					<xsl:number format="1." level="any"/>
+					<xsl:number format="1" level="any"/>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:number format="1." level="any" count="leaf|disjunctLeaf"/>
+					<xsl:number format="1" level="any" count="leaf|disjunctLeaf"/>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
-		<xsl:variable name="heading" select="concat($number, ' ', $label)"/>
+		<xsl:variable name="heading" select="concat($label, ' ', $number)"/>
 		<xsl:variable name="content">
 			<xsl:apply-templates/>
 		</xsl:variable>
 		<xsl:choose>
 			<xsl:when test="normalize-space(string($content)) != ''">				
-				<div class="md-{local-name()} md-level">
+				<div class="md-{local-name()} md-level" id="md-{local-name()}-{$number}">
 					<h3>
 						<xsl:value-of select="$heading"/>
 					</h3>
