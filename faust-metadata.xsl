@@ -163,6 +163,7 @@
 		</xsl:call-template>
 	</xsl:template>
 	<xsl:template match="idno[@type='gsa_1']"/>
+	<xsl:template match="idno[@type='kraeuter']"/>
 	<xsl:template match="*[f:isEmpty(.)]"/>
 	
 	<xsl:template match="note[preceding-sibling::*[1][self::idno]]"/>
