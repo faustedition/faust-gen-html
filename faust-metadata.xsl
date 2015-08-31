@@ -287,14 +287,17 @@
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
-		<xsl:variable name="heading" select="concat($number, ' ', $label)"/> 
+		<xsl:variable name="heading" select="concat($number, ' ', $label)"/>
+		<xsl:variable name="content">
+			<xsl:apply-templates/>
+		</xsl:variable>
 		<xsl:choose>
-			<xsl:when test="descendant::metadata[* except (docTranscript | *[f:isEmpty(.)])]">				
+			<xsl:when test="normalize-space(string($content)) != ''">				
 				<div class="md-{local-name()} md-level">
 					<h3>
 						<xsl:value-of select="$heading"/>
 					</h3>
-					<xsl:apply-templates/>
+					<xsl:copy-of select="$content"/>
 				</div>
 			</xsl:when>
 			<xsl:otherwise>
