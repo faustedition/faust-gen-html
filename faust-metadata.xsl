@@ -123,7 +123,20 @@
 		</xsl:call-template>
 	</xsl:template>
 		
-	
+	<xsl:variable name="format">
+		<elem name="2">Folio</elem>
+		<elem name="4">Quart</elem>
+		<elem name="8">Oktav</elem>
+		<elem name="12">Duodez</elem>
+		<elem name="16">Sedez</elem>
+		<elem name="none">—</elem>
+		<elem name="n.s.">—</elem>		
+	</xsl:variable>
+	<xsl:template match="format">
+		<xsl:call-template name="element">
+			<xsl:with-param name="content" select="f:lookup($format, ., 'format')"></xsl:with-param>
+		</xsl:call-template>
+	</xsl:template>
 	
 	<xsl:variable name="sigils" select="document('sigil-labels.xml')"/>
 	<xsl:template match="idno">
