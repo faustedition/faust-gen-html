@@ -105,15 +105,14 @@
 
               <xsl:template match="/">
                 <f:transcript><!-- es muss ein XML-Dokument zurückgeliefert werden ... -->
-                  <xsl:apply-templates select="//f:textTranscript"/>
+                  <xsl:apply-templates select="//f:textTranscript | /*[not(descendant::f:textTranscript[@uri])]"/>
                 </f:transcript>
               </xsl:template>
 
-              <xsl:template match="f:textTranscript[@uri]">
-                
+              <xsl:template match="f:textTranscript[@uri] | /*[not(descendant::f:textTranscript[@uri])]">                
                 <!-- Wir sammeln alle <idno>s zum aktuellen Dokument ein, sortiert nach der Rangfolge, dann nach der document order.  -->
                 <xsl:variable name="idnos">
-                  <xsl:apply-templates select="../f:idno[@type]">
+                  <xsl:apply-templates select="//f:idno[@type]">
                     <xsl:sort select="f:sigil-rank(@type)" data-type="number" stable="yes"/>
                   </xsl:apply-templates>
                 </xsl:variable>
