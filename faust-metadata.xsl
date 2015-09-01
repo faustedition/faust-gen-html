@@ -64,6 +64,12 @@
 		<elem name="leaf">Blatt</elem>
 		<elem name="disjunctLeaf">Einzelblatt</elem>
 		<elem name="sheet">Doppelblatt</elem>
+		<elem name="copies">Exemplare</elem>
+		<elem name="furtherCopy">Weitere herangezogene Exemplare</elem>
+		<elem name="loose">lose</elem>
+		<elem name="patch">Aufklebung</elem>
+		<elem name="referenceCopy">Digitalisiertes Exemplar</elem>
+		<elem name="watermarkRubbing">Wasserzeichen-Pause</elem>
 	</xsl:variable>
 	
 	
@@ -103,7 +109,7 @@
 	<xsl:variable name="patchType">
 		<elem name="glue">geklebt</elem>
 		<elem name="pin">geheftet</elem>
-		<elem name="lose">lose</elem>
+		<elem name="loose">lose</elem>
 	</xsl:variable>
 	<xsl:template match="patchType">
 		<xsl:call-template name="element">
