@@ -151,6 +151,9 @@
                   
                   <!-- Nun die nach Rangfolge sortierten <idno>s. Siehe unten. -->
                   <xsl:copy-of select="$idnos"/>
+                  
+                  <f:idno type="faust-doc-uri" rank="10000" uri="faust://xml/{$document}"><xsl:value-of select="concat('faust://xml/', $document)"/></f:idno>
+                  <xsl:copy-of select="..//f:headNote"></xsl:copy-of>
                 </xsl:copy>
               </xsl:template>
 
