@@ -62,7 +62,7 @@
 		<elem name="patchReferences">Bibliographische Nachweise (Zettel)</elem>
 		<elem name="page">Seite</elem>
 		<elem name="leaf">Blatt</elem>
-		<elem name="disjunctLeaf">Zettel</elem>
+		<elem name="disjunctLeaf">Einzelblatt</elem>
 		<elem name="sheet">Doppelblatt</elem>
 	</xsl:variable>
 	
@@ -318,8 +318,8 @@
 	
 	<xsl:template match="sheet|leaf|disjunctLeaf|page" priority="1">
 		<xsl:variable name="label"
-			select="if (self::disjunctLeaf[not(@format=('none', 'n.s.'))])
-					then 'Einzelblatt' else f:lookup($labels, local-name(), 'elements')"/>
+			select="if (self::disjunctLeaf[(metadata/format | /archivalDocument/metadata/format) = ('none', 'n.s.')])
+					then 'Zettel' else f:lookup($labels, local-name(), 'elements')"/>
 		<xsl:variable name="heading" select="$label"/>
 		<xsl:variable name="content">
 			<xsl:apply-templates/>
