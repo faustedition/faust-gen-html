@@ -10,7 +10,10 @@
 	<xsl:include href="html-frame.xsl"/>
 	
 	<xsl:param name="standalone"/>
-	<xsl:param name="source">file:/home/tv/Faust/</xsl:param>	
+	<xsl:param name="source">file:/home/tv/Faust/</xsl:param>
+	<xsl:param name="transcript-list">target/faust-transcripts.xml</xsl:param>
+	<xsl:param name="docbase">http://beta.faustedition.net/documentViewer.php?faustUri=faust://xml</xsl:param>
+	<xsl:variable name="idmap" select="document($transcript-list)"/>	
 	
 	
 	<xsl:variable name="labels" xmlns="http://www.faustedition.net/ns">
@@ -57,9 +60,6 @@
 		<elem name="patchCountermarkID">Gegenzeichen-Kürzel (Zettel)</elem>
 		<elem name="references">Bibliographische Nachweise</elem>
 		<elem name="patchReferences">Bibliographische Nachweise (Zettel)</elem>
-		
-		
-		<!-- Die folgenden Begriffe hat sich der ahnungslose Thorsten ausgedacht: -->
 		<elem name="page">Seite</elem>
 		<elem name="leaf">Blatt</elem>
 		<elem name="disjunctLeaf">Zettel</elem>
@@ -143,7 +143,7 @@
 				<xsl:apply-templates/>
 				<xsl:if test="following-sibling::*[1][self::note]">
 					<p class="md-idno-note">
-						<xsl:apply-templates/>
+						<xsl:apply-templates select="following-sibling::*[1][self::note]"/>
 					</p>
 				</xsl:if>
 			</xsl:with-param>
@@ -202,11 +202,36 @@
 			</xsl:otherwise>
 		</xsl:choose>		
 	</xsl:function>
+	
+	<xsl:function name="f:resolve-faust-doc">
+		<xsl:param name="uri"/>
+		<xsl:for-each select="$idmap//idno[@uri=$uri]/..">
+			<xsl:variable name="docinfo" select="."/>		
+			<a class="md-document-ref" href="{$docbase}/{$docinfo/@document}" title="{$docinfo/headNote}">
+				<xsl:value-of select="$docinfo/@f:sigil"/>
+			</a>			
+		</xsl:for-each>		
+	</xsl:function>
 		
 	<xsl:template match="text()">
-		<xsl:analyze-string select="." regex="faust://bibliography/[a-zA-Z0-9/_-]+">
+		<xsl:analyze-string select="." regex="faust://[a-zA-Z0-9/_.-]*[a-zA-Z0-9/_-]+">
 			<xsl:matching-substring>
-				<xsl:copy-of select="f:cite(., false())"/>
+				<xsl:variable name="uri" select="."/>
+				<xsl:choose>
+					<xsl:when test="starts-with($uri, 'faust://bibliography')">
+						<xsl:copy-of select="f:cite($uri, false())"/>						
+					</xsl:when>
+					<xsl:when test="$idmap//idno[@uri=$uri]">
+						<xsl:sequence select="f:resolve-faust-doc($uri)"/>
+					</xsl:when>
+					<xsl:when test="$idmap//idno[@uri=replace($uri, '^faust://', 'faust://xml/')]">
+						<xsl:sequence select="f:resolve-faust-doc(replace($uri, '^faust://', 'faust://xml/'))"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<mark class="md-unresolved-uri"><xsl:copy/></mark>
+						<xsl:message select="concat('WARNING: Unresolved URI reference in text: ', .)"/>
+					</xsl:otherwise>
+				</xsl:choose>
 			</xsl:matching-substring>
 			<xsl:non-matching-substring>
 				<xsl:value-of select="."/>
@@ -251,7 +276,7 @@
 			<xsl:value-of select="headNote"/>
 		</h3>
 		<p class="md-note wip">
-			<xsl:value-of select="headNote/following-sibling::note[1]"/>
+			<xsl:apply-templates select="headNote/following-sibling::note[1]"/>
 		</p>
 		<dl>
 			<xsl:apply-templates select="* 
