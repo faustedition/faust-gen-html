@@ -69,7 +69,6 @@
 		<elem name="loose">lose</elem>
 		<elem name="patch">Aufklebung</elem>
 		<elem name="referenceCopy">Digitalisiertes Exemplar</elem>
-		<elem name="watermarkRubbing">Wasserzeichen-Pause</elem>
 	</xsl:variable>
 	
 	
@@ -273,6 +272,7 @@
 		<elem name="text">Text</elem>
 		<elem name="facsimile">Faksimile</elem>
 		<elem name="essay">Aufsatz</elem>
+		<elem name="watermarkRubbing">Wasserzeichen-Pause</elem>
 	</xsl:variable>
 	<xsl:template match="reference">
 		<dt><xsl:value-of select="f:lookup($reference-types, @type, 'reference-types')"/></dt>
