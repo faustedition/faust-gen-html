@@ -17,6 +17,11 @@
         <f:reference>[N. N.]: Erste Beilage zur Vossischen Zeitung, 12. März 1908, Nr. 121.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/artemis1968">
+        <f:citation>Goethe’s Schriften (S) – Faksimile</f:citation>
+        <f:reference>Goethe’s Schriften, Leipzig, Göschen, 1787–1790, Faks.-Ausg., Zürich u.a.: Artemis, 1968.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/becher1834">
         <f:citation>Becher 1834</f:citation>
         <f:reference>Proteus ambulans [d.i. Alfred Julius Becher], 101 Versehen und Vergehen, gerügt von Proteus ambulans. In: Zeitung für die elegante Welt, Nr. 219, 8. November 1834, S. 873f. u. Nr. 220, 10. November 1834, S. 878f.</f:reference>
@@ -807,6 +812,11 @@
         <f:reference>Schmidt, Erich: Handschriftliches zum zweiten Theile des „Faust“, I. In: Neue Freie Presse. Morgenblatt, Nr. 8535 vom 30. Mai 1888.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/schmidt1888c">
+        <f:citation>Schmidt 1888c</f:citation>
+        <f:reference>Schmidt, Erich: Handschriftliches zum zweiten Theile des „Faust“, II. In: Neue Freie Presse. Morgenblatt, Nr. 8541 vom 5. Juni 1888.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/schmidt1894b">
         <f:citation>Schmidt 1894b</f:citation>
         <f:reference>Schmidt, Erich: [Rez.] faust://bibliography/strehlke1891; Wörterbuch zu Goethes Faust von Fr. Strehlke, Stuttgart u.a. 1891. In: Anzeiger für deutsches Altertum und deutsche Literatur, Jg. 20, 3. Juli 1894, S. 285–310.</f:reference>
@@ -899,7 +909,7 @@
 
     <f:bib uri="faust://bibliography/wahl1929">
         <f:citation>Wahl 1929</f:citation>
-        <f:reference>Faust. Der Tragödie letzter Akt. Fünfundzwanzig Blätter aus Goethes eigenhändigen Niederschriften ausgewählt und in Faksimile-Nachbildung hrgs. von Hans Wahl, Weimar 1929 (= Schriften der Goethe-Gesellschaft, Bd. 42).</f:reference>
+        <f:reference>Faust. Der Tragödie letzter Akt. Fünfundzwanzig Blätter aus Goethes eigenhändigen Niederschriften ausgewählt und in Faksimile-Nachbildung hrsg. von Hans Wahl, Weimar 1929 (= Schriften der Goethe-Gesellschaft, Bd. 42).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wahl1932">
@@ -950,6 +960,256 @@
     <f:bib uri="faust://bibliography/witkowski1930">
         <f:citation>Witkowski 1930</f:citation>
         <f:reference>Witkowski, Georg: Notwendige Faust-Emendationen. In: Jahrbuch der Sammlung Kippenberg, Bd. 8 (1930), S. 304–308.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_14">
+        <f:citation>WA I 14</f:citation>
+        <f:reference>WA, Abt. I, Bd. 14, Weimar 1887.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_39">
+        <f:citation>WA I 39</f:citation>
+        <f:reference>WA, Abt. I, Bd. 39, Weimar 1897.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_53">
+        <f:citation>WA I 53</f:citation>
+        <f:reference>WA, Abt. I, Bd. 53, Weimar 1914.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_1">
+        <f:citation>WA I 1</f:citation>
+        <f:reference>WA, Abt. I, Bd. 1, Weimar 1887.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_2">
+        <f:citation>WA I 2</f:citation>
+        <f:reference>WA, Abt. I, Bd. 2, Weimar 1888.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_3">
+        <f:citation>WA I 3</f:citation>
+        <f:reference>WA, Abt. I, Bd. 3, Weimar 1890.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_4">
+        <f:citation>WA I 4</f:citation>
+        <f:reference>WA, Abt. I, Bd. 4, Weimar 1891.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_5_1">
+        <f:citation>WA I 5,1</f:citation>
+        <f:reference>WA, Abt. I, Bd. 5,1, Weimar 1893.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_5_2">
+        <f:citation>WA I 5,2</f:citation>
+        <f:reference>WA, Abt. I, Bd. 5,2, Weimar 1910.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_6">
+        <f:citation>WA I 6</f:citation>
+        <f:reference>WA, Abt. I, Bd. 6, Weimar 1888.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_10">
+        <f:citation>WA I 10</f:citation>
+        <f:reference>WA, Abt. I, Bd. 10, Weimar 1889.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_13_2">
+        <f:citation>WA I 13</f:citation>
+        <f:reference>WA, Abt. I, Bd. 13,2, Weimar 1901.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_14">
+        <f:citation>WA I 14</f:citation>
+        <f:reference>WA, Abt. I, Bd. 14, Weimar 1887.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_15_1">
+        <f:citation>WA I 15,1</f:citation>
+        <f:reference>WA, Abt. I, Bd. 15,1, Weimar 1888.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_15_2">
+        <f:citation>WA I 15,2</f:citation>
+        <f:reference>WA, Abt. I, Bd. 15,2, Weimar 1888.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_21">
+        <f:citation>WA I 21</f:citation>
+        <f:reference>WA, Abt. I, Bd. 21, Weimar 1898.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_32">
+        <f:citation>WA I 32</f:citation>
+        <f:reference>WA, Abt. I, Bd. 32, Weimar 1906.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_34_2">
+        <f:citation>WA I 34,2</f:citation>
+        <f:reference>WA, Abt. I, Bd. 34,2, Weimar 1904.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_36">
+        <f:citation>WA I 36</f:citation>
+        <f:reference>WA, Abt. I, Bd. 36, Weimar 1893.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_39">
+        <f:citation>WA I 39</f:citation>
+        <f:reference>WA, Abt. I, Bd. 39, Weimar 1897.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_41_2">
+        <f:citation>WA I 41,2</f:citation>
+        <f:reference>WA, Abt. I, Bd. 41,2, Weimar 1903.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_42_1">
+        <f:citation>WA I 42,1</f:citation>
+        <f:reference>WA, Abt. I, Bd. 42,1, Weimar 1904.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_42_2">
+        <f:citation>WA I 42,2</f:citation>
+        <f:reference>WA, Abt. I, Bd. 42,2, Weimar 1907.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_II_5_1">
+        <f:citation>WA II 5,1</f:citation>
+        <f:reference>WA, Abt. II, Bd. 5,1, Weimar 1897.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_II_5_2">
+        <f:citation>WA II 5,2</f:citation>
+        <f:reference>WA, Abt. II, Bd. 5,2, Weimar 1906.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_II_7">
+        <f:citation>WA II 7</f:citation>
+        <f:reference>WA, Abt. II, Bd. 7, Weimar 1892.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_II_11">
+        <f:citation>WA II 11</f:citation>
+        <f:reference>WA, Abt. II, Bd. 11, Weimar 1893.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_II_12">
+        <f:citation>WA II 12</f:citation>
+        <f:reference>WA, Abt. II, Bd. 12, Weimar 1896.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_II_13">
+        <f:citation>WA II 13</f:citation>
+        <f:reference>WA, Abt. II, Bd. 13, Weimar 1904.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_4">
+        <f:citation>WA III 4</f:citation>
+        <f:reference>WA, Abt. III, Bd. 4, Weimar 1891.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_10">
+        <f:citation>WA III 10</f:citation>
+        <f:reference>WA, Abt. III, Bd. 10, Weimar 1899.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_11">
+        <f:citation>WA III 11</f:citation>
+        <f:reference>WA, Abt. III, Bd. 11, Weimar 1900.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_12">
+        <f:citation>WA III 12</f:citation>
+        <f:reference>WA, Abt. III, Bd. 12, Weimar 1901.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_15">
+        <f:citation>WA IV 15</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 15, Weimar 1894.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_17">
+        <f:citation>WA IV 17</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 17, Weimar 1895.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_39">
+        <f:citation>WA IV 39</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 39, Weimar 1907.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_41">
+        <f:citation>WA I 41</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 41, Weimar 1907.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_42">
+        <f:citation>WA IV 42</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 42, Weimar 1907.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_43">
+        <f:citation>WA IV 43</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 43, Weimar 1908.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_46">
+        <f:citation>WA IV 46</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 46, Weimar 1908.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_47">
+        <f:citation>WA IV 47</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 47, Weimar 1909.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_48">
+        <f:citation>WA IV 48</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 48, Weimar 1909.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_51">
+        <f:citation>WA IV 51</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 51, München 1990.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1922">
+        <f:citation>Gräf 1922</f:citation>
+        <f:reference>Goethes Faust. Textrevision von Hans Gerhard Gräf, Leipzig, Erscheinungsjahr ermittelt [ca. 1922].</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/keller1985">
+        <f:citation>Keller 1985</f:citation>
+        <f:reference>Johann Wolfgang von Goethe, Urfaust - Faust. Ein Fragment - Faust. Eine Tragödie. Paralleldruck der drei Fassungen, hrsg. von Werner Keller. 2 Bde. 5. Aufl, Frankfurt am Main 1985 (= Insel Taschenbuch 625). &lt;small>NB: es gibt zwar zwei Bände, aber mit durchlaufender Seitenzählung, daher ist eine Differenzierung der URI nicht nötig.&lt;/small></f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/schmidt1887">
+        <f:citation>Schmidt 1887</f:citation>
+        <f:reference>Goethes Faust in ursprünglicher Gestalt nach der Göchhausenschen Abschrift hrsg. von Erich Schmidt, Weimar 1887.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/schroeer1881">
+        <f:citation>Schröer 1881</f:citation>
+        <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer (1. Aufl.), 2 Bde., Heilbronn 1881&lt;!-- 	Stadtbibliothek Mainz, Sign. 55/55 l, 1-->.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/seuffert1882">
+        <f:citation>Seuffert 1882</f:citation>
+        <f:reference>Faust. Ein Fragment von Goethe, hrsg. von Bernhard Seuffert, Heilbronn 1882 (= Deutsche Litteraturdenkmale des 18. Jahrhunderts in Neudrucken 5).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/witkowski1936">
+        <f:citation>Witkowski 1936</f:citation>
+        <f:reference>Goethes Faust, hrsg. von Georg Witkowski, 9. Aufl., Bd. 1, Leiden 1936.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/dembowski1889">
+        <f:citation>Dembowski 1889</f:citation>
+        <f:reference>Mitteilungen über Goethe und seinen Freundeskreis. Aus bisher unveröffentlichten Aufzeichnungen des gräflich Egloffstein'schen Familien-Archivs zu Arklitten, hrsg. von Johannes Dembowski, Lyck 1889.</f:reference>
     </f:bib>
 
 </f:bibliography>
