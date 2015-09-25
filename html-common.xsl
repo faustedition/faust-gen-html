@@ -270,4 +270,23 @@ in <xsl:value-of select="document-uri(/)"/>
 		</xsl:choose>
 	</xsl:template>
 	
+	
+	<!-- Tabellen -->
+	<xsl:template match="table">
+		<table class="{string-join((f:generic-classes(.)), ' ')}" xml:id="{f:generate-id(.)}">			
+			<xsl:apply-templates mode="#current"/>
+		</table>
+	</xsl:template>
+	<xsl:template match="row">
+		<tr class="{string-join(f:generic-classes(.), ' ')}">
+			<xsl:apply-templates/>
+		</tr>
+	</xsl:template>
+	<xsl:template match="cell">
+		<td class="{string-join(f:generic-classes(.), ' ')}">
+			<xsl:apply-templates/>
+		</td>
+	</xsl:template>
+	
+	
 </xsl:stylesheet>
