@@ -39,6 +39,7 @@
 		<xsl:value-of select="@uri"/>
 		<xsl:text>":{</xsl:text>
 		<xsl:value-of select="string-join((
+			concat('&quot;0&quot;: &quot;', file[1]/@name, '&quot;'), (: faust_viewer.js uses 0 as fallback if no page info is present :)
 			for $page in .//page[normalize-space(.)]
 			return concat('&quot;', $page/text(), '&quot;:&quot;', $page/parent::file/@name, '&quot;')), 
 			',')"/>
