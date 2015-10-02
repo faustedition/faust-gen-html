@@ -479,7 +479,9 @@ in <xsl:value-of select="document-uri(/)"/>
 			</span>
 			<xsl:if test="$app">
 				<xsl:apply-templates select="$app"/>
-				<xsl:text> </xsl:text>
+			</xsl:if>
+			<xsl:if test="$app and string-length($label) > 0">
+				<xsl:text> </xsl:text>				
 			</xsl:if>
 			<span class="generated-text">
 				<xsl:if test="string-length($label) > 0">
@@ -487,7 +489,7 @@ in <xsl:value-of select="document-uri(/)"/>
 				</xsl:if>
 				<xsl:for-each select="$context">
 				<xsl:if test="@f:questionedBy">
-					<i class="app">mon <xsl:value-of select="f:agent(@f:questionedBy)/@shorthand"/></i>
+					<i class="app"> mon <xsl:value-of select="f:agent(@f:questionedBy)/@shorthand"/></i>
 				</xsl:if>					
 				<xsl:if test="@f:proposedBy">
 					<i class="app">	vorschl <xsl:value-of select="f:agent(@f:proposedBy)/@shorthand"/></i>
