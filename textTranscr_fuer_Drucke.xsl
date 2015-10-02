@@ -4,8 +4,6 @@
     xmlns:f="http://www.faustedition.net/ns" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs f" version="2.0" xmlns:ge="http://www.tei-c.org/ns/geneticEditions">
     
-    <xsl:import href="harmonize-antilabes.xsl"/>
-    
     <xsl:template match="@*|node()">
         <xsl:choose>
             <xsl:when test="name()='status'"/>
