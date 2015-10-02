@@ -58,7 +58,7 @@
 	
 	<xsl:template match="del[@f:revType='instant']" priority="1">
 		<xsl:call-template name="app">
-			<xsl:with-param name="label">&gt;</xsl:with-param>
+			<xsl:with-param name="braces" select="('⟨', ' &gt;⟩')"/>
 			<xsl:with-param name="app">
 				<xsl:call-template name="del-instant-body"/>
 			</xsl:with-param>
@@ -70,7 +70,7 @@
 	<xsl:template name="del-instant-body">
 		<xsl:apply-templates select="node()"/>
 		<xsl:for-each select="following-sibling::node()[not(self::text() and normalize-space(.) = '')][1][self::del[@f:revType='instant']]">
-			<span class="generated-text app"> > </span>
+			<span class="generated-text"> > </span>
 			<xsl:call-template name="del-instant-body"/>
 		</xsl:for-each>
 	</xsl:template>
