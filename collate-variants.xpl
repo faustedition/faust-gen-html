@@ -70,9 +70,27 @@
         </p:xslt>
         
 
-        <!-- die Normalisierungen durchgeführt, z.B. <del> anwenden: -->
-        <f:apply-edits/>
-
+        
+        <!-- Antilaben in die Form mit part=I,M,F -->
+        <p:xslt name="antilabes">
+          <p:input port="stylesheet">
+            <p:document href="harmonize-antilabes.xsl"/>
+          </p:input>
+          <p:input port="parameters">
+            <p:pipe port="result" step="config"/>
+          </p:input>
+        </p:xslt>
+        
+        <!-- ge:transpose/ptr/@target="bla fasel blubb" in mehrere ptr mit je einem Target umwandeln -->
+        <p:xslt name="transpositions">
+          <p:input port="stylesheet">
+            <p:document href="textTranscr_pre_transpose.xsl"/>
+          </p:input>
+          <p:input port="parameters">
+            <p:pipe port="result" step="config"/>
+          </p:input>
+        </p:xslt>
+        
 
         <!-- 
           nun extrahieren wir die Elemente ("lines"), die für den Variantenapparat

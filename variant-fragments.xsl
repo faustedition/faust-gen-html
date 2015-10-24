@@ -7,13 +7,13 @@
 	exclude-result-prefixes="xs f"
 	version="2.0">
 		
-	<xsl:include href="html-common.xsl"/>
+	<xsl:include href="apparatus.xsl"/>
 	
-	<xsl:param name="variants">variants/</xsl:param>
+<!--	<xsl:param name="variants">variants/</xsl:param>
 	<xsl:param name="docbase">https://faustedition.uni-wuerzburg.de/new</xsl:param>
   	<xsl:param name="type"/>
 	<xsl:param name="depth">2</xsl:param>
-	<xsl:param name="canonical">document/print/A8.xml document/faust/2/gsa_391098.xml</xsl:param>
+-->	<xsl:param name="canonical">document/print/A8.xml document/faust/2/gsa_391098.xml</xsl:param>
 	<xsl:variable name="canonicalDocs" select="tokenize($canonical, ' ')"/>
 		
 	
@@ -100,7 +100,7 @@
 	</xsl:template>
 	
 	
-	<xsl:template match="*">
+	<xsl:template match="*" priority="-1">
 		<xsl:element name="{f:html-tag-name(.)}">
 			<xsl:attribute name="class" select="string-join(f:generic-classes(.), ' ')"/>			
 			<xsl:apply-templates/>
