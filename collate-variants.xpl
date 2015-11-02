@@ -49,7 +49,7 @@
       <p:with-option name="message" select="concat('Reading ', $transcriptFile)"/>
     </cx:message-->
 
-    <p:try>
+    <!--<p:try>-->
       <p:group>
         
         <!-- Das Transkript wird geladen ... -->
@@ -116,7 +116,7 @@
         
       </p:group>
       
-      <!-- Fehlende Dokumente ignorieren ... FIXME raus damit? -->
+      <!-- Fehlende Dokumente ignorieren ... FIXME raus damit? 
       <p:catch>
         <p:log port="error"/>
         <cx:message log="error">
@@ -129,8 +129,8 @@
         </p:identity>
       </p:catch>
 
-    </p:try>
-  </p:for-each>
+    </p:try> -->
+  </p:for-each> 
 
   <!-- 
     die aus den Transkripten generierten "Zeilenlisten"-Dokumente kleben wir nun

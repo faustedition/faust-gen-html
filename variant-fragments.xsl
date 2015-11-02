@@ -4,7 +4,8 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 	xmlns:f="http://www.faustedition.net/ns"
-	exclude-result-prefixes="xs f"
+	xmlns:ge="http://www.tei-c.org/ns/geneticEditions"	
+	exclude-result-prefixes="xs f ge"
 	version="2.0">
 		
 	<xsl:include href="apparatus.xsl"/>
@@ -15,7 +16,22 @@
 	<xsl:param name="depth">2</xsl:param>
 -->	<xsl:param name="canonical">document/print/A8.xml document/faust/2/gsa_391098.xml</xsl:param>
 	<xsl:variable name="canonicalDocs" select="tokenize($canonical, ' ')"/>
+	
+	<xsl:variable name="standoff" select="()"/> 
+	<!-- 
+		This captures standoff stuff from the header like ge:transposeGrp to be 
+		included with each <f:evidence>.  It should really read:
 		
+		<xsl:variable name="standoff" select="//ge:transposeGrp"/> 
+	
+	
+		However, when we do that, we get disambiguities in the transposition handling
+		stuff since both references and ids are only unique within the original document,
+		not across the whole faust corpus.
+		
+		So we need to either disambiguate this in some way (collect lines?), or move the transposition
+		resolution away from the HTML step up before we throw togther lines from multiple documents.
+	-->		
 	
 	<xsl:output method="xhtml"/>
 		
@@ -29,6 +45,7 @@
 						<xsl:variable name="cline" select="current-group()[@f:doc = $canonicalDocs]"/>
 						<xsl:variable name="ctext" select="if ($cline) then normalize-space($cline[1]) else ''"/>
 						<xsl:variable name="evidence">
+							<xsl:copy-of select="$standoff"/>
 							<xsl:for-each-group select="current-group()" group-by="@f:doc">
 								<f:evidence>
 									<xsl:copy-of select="current-group()[1]/@*"/>

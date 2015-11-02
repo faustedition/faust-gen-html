@@ -13,7 +13,6 @@
   <xsl:param name="type"/>
   
   
-  
   <xsl:variable name="metadata" select="document(resolve-uri($documentURI, $source))"/>
   <xsl:function name="f:getPageNo">
     <xsl:param name="refs"/>
@@ -67,6 +66,7 @@
       <xsl:if test="$source">
         <xsl:attribute name="xml:base" select="$source"/>
       </xsl:if>
+      <xsl:copy-of select=".//ge:transposeGrp"/>
       <xsl:apply-templates select='//*[@n and not(self::pb or self::div or self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or @n[contains(.,"todo")] or @n[contains(.,"p")])]'>
         <xsl:sort select="f:normalize-n(@n)"/>
       </xsl:apply-templates>
