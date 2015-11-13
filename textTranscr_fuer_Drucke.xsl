@@ -109,12 +109,15 @@
         <xsl:variable name="tmp3" select=" replace($tmp2,'m̄','mm')"/>
         <xsl:variable name="tmp4" select=" replace($tmp3,'n̄','nn')"/>
         <xsl:variable name="tmp5" select=" replace($tmp4,'r̄','rr')"/>
+        <xsl:variable name="tmp5a" select=" replace($tmp5,'ſs','ß')"/>
         <xsl:variable name="tmp6" select=" replace($tmp5,'ſ','s')"/>
         <xsl:variable name="tmp7" select=" replace($tmp6,'—','–')"/>
         <xsl:variable name="tmp8" select=" replace($tmp7,'&#x00AD;','')"/>  <!-- Soft Hyphen -->
         <xsl:value-of select="$tmp8"/>
     </xsl:template>
     <xsl:strip-space elements="app choice subst"/>
+
+    <xsl:template match="orig/text()[. = 'sſ']">ß</xsl:template>
   
       
 
