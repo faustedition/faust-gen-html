@@ -289,4 +289,38 @@ in <xsl:value-of select="document-uri(/)"/>
 	</xsl:template>
 	
 	
+	<!-- Sonderzeichen -->
+	<xsl:template match="g[@ref]">
+		<xsl:variable name="map">
+			<f:g ref="#g_break">[</f:g>
+			<f:g ref="#g_transp_1">⊢</f:g>
+			<f:g ref="#g_transp_2">⊨</f:g>
+			<f:g ref="#g_transp_2a">⫢</f:g>
+			<f:g ref="#g_transp_3">⫢</f:g>
+			<f:g ref="#g_transp_3S">⎱</f:g>
+			<f:g ref="#g_transp_4">+</f:g>
+			<f:g ref="#g_transp_5">✓</f:g>
+			<f:g ref="#g_transp_6">#</f:g>
+			<f:g ref="#g_transp_7">◶</f:g>
+			<f:g ref="#g_transp_8">⊣</f:g>
+			<f:g ref="#parenthesis_left">(</f:g>
+			<f:g ref="#parenthesis_right">)</f:g>
+			<f:g ref="#truncation">.</f:g>			
+		</xsl:variable>
+		<span class="g g-{substring(@ref, 2)}">
+			<xsl:choose>
+				<xsl:when test="$map/f:g[@ref=current()/@ref]">
+					<xsl:value-of select="$map/f:g[@ref=current()/@ref]"/>					
+				</xsl:when>				
+				<xsl:when test="document(@ref)//mapping">
+					<xsl:value-of select="document(@ref)//mapping"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>�</xsl:text>
+					<xsl:message select="concat(document-uri(.), ': Unresolved glyph: ', @ref)"/>
+				</xsl:otherwise>
+			</xsl:choose>			
+		</span>
+	</xsl:template>
+	
 </xsl:stylesheet>
