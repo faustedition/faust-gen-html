@@ -77,7 +77,7 @@
 
               <!-- Rangfolge, in der die Signaturen berücksichtigt werden sollen. Werte von idno/@type  -->
               <xsl:variable name="archivalSigs"
-                select="( 'wa_faust', 'bohnenkamp', 'fischer_lamberg', 
+                select="('faustedition', 'wa_faust', 'bohnenkamp', 'fischer_lamberg', 
               'landeck', 'fa', 'ma', 'aa_ls_helenaank', 'aa_wilhelmmeister', 'aa_duw', 'aa_ls_chines', 
               'aa_ls_aristpoet', 'aa_ls_kuaschemata', 'aa_ls_stoffgeh', 'aa_ls_wesentrag', 'wa_helenaank', 
               'wa_gedichte', 'wa_div', 'wa_naus', 'wa_tasso', 'wa_chines', 'wa_aristpoet', 'wa_wesentrag', 
