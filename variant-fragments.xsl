@@ -46,7 +46,8 @@
 							<xsl:for-each-group select="$evidence/*" group-by="normalize-space(.)">
 								
 									<xsl:apply-templates select="current-group()[1]/*">
-										<xsl:sort select="@f:sigil"/>
+										<!--<xsl:sort select="@f:sigil"/>-->
+										<!-- Sorting is done in collect-metadata.xpl, we just keep the document order from there -->
 										<xsl:with-param name="group" select="current-group()"/>
 									</xsl:apply-templates>
 								
