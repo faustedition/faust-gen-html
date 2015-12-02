@@ -334,7 +334,7 @@
 				<br/>
 				<a href="{$edition}/archives.php">Archiv</a>
 				>
-				<a href="{$edition}/archives.php?view=print-concordance">Drucke</a>
+				<a href="{$edition}/archives_print.php">Drucke</a>
 				>
 				<a href="{f:html-link(concat($output-base, '.html'))}"><xsl:value-of select="$title"/></a>
 				<xsl:call-template name="div-breadcrumbs"/>
