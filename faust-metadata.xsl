@@ -268,10 +268,10 @@
 	</xsl:template>
 	
 	<xsl:variable name="reference-types">
-		<elem name="description">Beschreibung</elem>
+		<elem name="description">Nachweis</elem>
 		<elem name="text">Text</elem>
 		<elem name="facsimile">Faksimile</elem>
-		<elem name="essay">Aufsatz</elem>
+		<elem name="essay">Literatur</elem>
 		<elem name="watermarkRubbing">Wasserzeichen-Pause</elem>
 	</xsl:variable>
 	<xsl:template match="reference">
