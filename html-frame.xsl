@@ -37,26 +37,24 @@
 	
 	<xsl:template name="header">
 		<xsl:param name="breadcrumbs" tunnel="yes"/>
-    <header>
-      <div class="pure-g-r">
-        <div class="logo pure-u-1-3">
-          <a href="{$edition}/" title="Faustedition"><img src="{$assets}/img/faustlogo.svg" alt="Faustedition"/></a>
-        </div>
-        <div class="breadcrumbs pure-u-1-3 pure-center pure-fade-50">
-					<small id="breadcrumbs">
-						<xsl:copy-of select="$breadcrumbs"/>
-					</small>
-        </div>
-        <div class="pure-u-1-3">
-        <nav class="pure-menu pure-menu-open pure-menu-horizontal pure-right">
-					<ul>
-						<li><a href="{$edition}/archives.php">Archiv</a></li>
-						<li><a href="{$edition}/chessboard_overview.php">Genese</a></li>
-						<li><a href="{$edition}/print/text.html">Text</a></li>
-					</ul>                                                        
-				</nav>
-				</div>
+		<header>
+			<div class="logo">
+				<a href="{$edition}/" title="Faustedition"><img src="{$assets}/img/faustlogo.svg" alt="Faustedition"/></a>
 			</div>
+			
+			<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
+				<small id="breadcrumbs"><xsl:copy-of select="$breadcrumbs"/></small>
+			</div>
+			
+			<div id="current" class="pure-nowrap"></div>
+			
+			<nav class="pure-menu pure-menu-open pure-menu-horizontal pure-right pure-nowrap pure-noprint">
+				<ul>
+					<li><a href="{$edition}/archives.php">Archiv</a></li>
+					<li><a href="{$edition}/genesis_overview.php">Genese</a></li>
+					<li><a href="{$edition}/print/text.html">Text</a></li>
+				</ul>
+			</nav>
 		</header>
 	</xsl:template>
 	
