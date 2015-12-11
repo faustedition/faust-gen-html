@@ -317,7 +317,7 @@
 			<xsl:when test="$type = 'print'">
 				<xsl:variable name="lineno" select="f:numerical-lineno((.//*[f:hasvars(.)])[1]/@n)"/>
 				<xsl:variable name="scene" select="reverse(document('scenes.xml')//f:scene[number(f:rangeStart) le number($lineno)])[1]"/>
-				<a href="chessboard_overview.php">Genese</a>
+				<a href="genesis.php">Genese</a>
 				>
 				<xsl:choose>
 					<xsl:when test="starts-with($scene/f:id, '1')">
