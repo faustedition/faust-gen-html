@@ -273,7 +273,8 @@ in <xsl:value-of select="document-uri(/)"/>
 	
 	<!-- Tabellen -->
 	<xsl:template match="table">
-		<table class="{string-join((f:generic-classes(.)), ' ')}" xml:id="{f:generate-id(.)}">			
+	  <table class="{string-join((f:generic-classes(.)), ' ')}">
+	      <xsl:attribute name="xml:id" select="f:generate-id(.)"/>
 			<xsl:apply-templates mode="#current"/>
 		</table>
 	</xsl:template>

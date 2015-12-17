@@ -41,8 +41,8 @@
 							data-witnesses="{count($evidence/* except $evidence/*[@type='lesetext'])}"
 							data-variants="{count(distinct-values(for $ev in $evidence/* return normalize-space($ev)))-1}"
 							data-ctext="{$ctext}"
-							xml:id="v{current-grouping-key()}" 
 							id="v{current-grouping-key()}">
+							<xsl:attribute name="xml:id" select="concat('v', current-grouping-key())"/>
 							<xsl:for-each-group select="$evidence/*" group-by="normalize-space(.)">
 								
 									<xsl:apply-templates select="current-group()[1]/*">
