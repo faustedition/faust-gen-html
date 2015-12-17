@@ -38,8 +38,8 @@
 	<xsl:template match="titleStmt">
 			<xsl:copy>
 				<xsl:apply-templates select="@*"/>
-				<title type="headNote">
-					<xsl:copy-of select="$metadata//f:headNote"/>
+				<title type="headNote" xml:id="headNote">
+					<xsl:value-of select="$metadata//f:headNote"/>
 				</title>
 			<xsl:apply-templates/>
 		</xsl:copy>
@@ -48,12 +48,26 @@
 	<xsl:template match="fileDesc">
 		<xsl:copy>
 			<xsl:apply-templates select="@*"/>
-			<idno type="fausturi"><xsl:value-of select="$faustURI"/></idno>
-			<idno type="fausttranscript"><xsl:value-of select="$transcriptBase"/></idno>
+			<xsl:apply-templates select="node()"/>
 			
-			<xsl:for-each select="$metadata//f:idno[. != 'none'][. != 'n.s.']">
-				<idno type="{@type}"><xsl:value-of select="."/></idno>
+			<idno type="faustedition" xml:id="sigil">
+				<xsl:choose>
+					<xsl:when test="$type = 'lesetext'">Lesetext</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="$metadata//f:idno[@type='faustedition']"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</idno>
+			
+			<idno type="fausturi" xml:id="fausturi"><xsl:value-of select="$faustURI"/></idno>
+			<idno type="fausttranscript" xml:id="fausttranscript"><xsl:value-of select="$transcriptBase"/></idno>
+			
+			<xsl:for-each select="$metadata//f:idno[. != 'none'][. != 'n.s.'][@type != 'faustedition']">
+				<idno type="{@type}">
+↓					<xsl:value-of select="."/>
+				</idno>
 			</xsl:for-each>
+			
 		</xsl:copy>
 	</xsl:template>
 
@@ -74,6 +88,7 @@
 	
 	<xsl:template match="TEI">
 		<xsl:copy>
+			<xsl:namespace name="f">http://www.faustedition.net/ns</xsl:namespace>
 			<xsl:attribute name="type" select="$type"/>
 			<xsl:apply-templates select="@* except @type"/>
 			<xsl:apply-templates select="node()"/>
