@@ -508,7 +508,10 @@ in <xsl:value-of select="document-uri(/)"/>
 
 	<!-- Pre-rendered XHTML will simply be copied -->
 	<xsl:template match="xh:*">
-		<xsl:copy-of select="."/>
+		<xsl:copy>
+			<xsl:copy-of select="@*"/>
+			<xsl:apply-templates/>
+		</xsl:copy>
 	</xsl:template>
 	
 </xsl:stylesheet>
