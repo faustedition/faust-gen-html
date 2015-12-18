@@ -59,7 +59,7 @@
 	<xsl:template name="generate-lineno">	
 		<!-- Klick auf Zeilennummer führt zu einem Link, der wiederum auf die Zeilennummer verweist -->
 		<xsl:attribute name="id" select="concat('l', @n)"/>
-		<a href="{concat(ancestor::f:hit/@href, '#l', @n)}" class="lineno">
+		<a href="{concat($edition, ancestor::f:hit/@href, '#l', @n)}" class="lineno">
 			<xsl:value-of select="f:display-line(@n)"/>
 		</a>		
 	</xsl:template>
