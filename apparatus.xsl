@@ -8,7 +8,10 @@
 	xmlns:f="http://www.faustedition.net/ns"
 	xmlns:ge="http://www.tei-c.org/ns/geneticEditions"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-	exclude-result-prefixes="xs f ge xh"
+	
+	xmlns:exist="http://exist.sourceforge.net/NS/exist"
+	
+	exclude-result-prefixes="xs f ge xh exist"
 	version="2.0">
 	
 	<xsl:import href="html-frame.xsl"/>
@@ -512,6 +515,15 @@ in <xsl:value-of select="document-uri(/)"/>
 			<xsl:copy-of select="@*"/>
 			<xsl:apply-templates/>
 		</xsl:copy>
+	</xsl:template>
+	
+	<xsl:template match="exist:match">
+		<mark class="match">
+			<xsl:for-each select="@*">
+				<xsl:attribute name="data-{local-name(.)}" select="."/>
+			</xsl:for-each>
+			<xsl:apply-templates/>
+		</mark>
 	</xsl:template>
 	
 </xsl:stylesheet>
