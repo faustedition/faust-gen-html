@@ -5,6 +5,7 @@ declare namespace tei = "http://www.tei-c.org/ns/1.0";
 declare namespace f = "http://www.faustedition.net/ns";
 
 declare variable $query := request:get-parameter("q", "Pudel");
+declare variable $edition := 'http://beta.faustedition.net/';
 
 declare function f:makeURL(
 	$type as xs:string,
@@ -15,11 +16,12 @@ declare function f:makeURL(
 	{
 		let $html := $transcript || (if ($sec) then '.'|| $sec else ()) || '.html'
 		let $path := switch ($type)
-			case 'archivalDocument' return concat('/documentViewer.php?faustUri=', $uri, "&amp;view=text&amp;page=", $page, "&amp;sec=", $html)
+			case 'archivalDocument' return concat('documentViewer.php?faustUri=', $uri, "&amp;view=text&amp;page=", $page, "&amp;sec=", $html)
 			default return 'print/' || $html
-		return $path		
+		return $edition || $path		
 	};
-
+	
+transform:transform(
 <f:results query="{$query}" xmlns:f="http://www.faustedition.net/ns"
 							xmlns:exist="http://exist.sourceforge.net/NS/exist"
 							xmlns="http://www.tei-c.org/ns/1.0">{
@@ -44,4 +46,4 @@ return
 		n="{$n}"
 		href="{f:makeURL($type, $uri, $transcript, $sec, $page)}"
 		>{util:expand($line)}</f:hit>	
-}</f:results>
+}</f:results>, doc('search-results.xsl'), <parameters><param name="edition" value="{$edition}"/></parameters>)
