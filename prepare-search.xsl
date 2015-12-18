@@ -9,6 +9,11 @@
 	
 	<!-- 
 		This stylesheet prepares textual transcripts for being searched.
+		
+		It currently makes two kinds of transformations:
+		
+		1. It enriches the document with available metadata information. This most notably includes the TEI header.
+		2. It normalizes text nodes.
 	-->
 	
 	<xsl:import href="utils.xsl"/>
@@ -35,6 +40,7 @@
 	<xsl:output method="xml" indent="yes"/>
 
 	
+	<!-- The first title in the titleStmt will be taken from the headNote, with #headNote -->
 	<xsl:template match="titleStmt">
 			<xsl:copy>
 				<xsl:apply-templates select="@*"/>
@@ -45,6 +51,16 @@
 		</xsl:copy>
 	</xsl:template>
 	
+	<!-- 
+		We add some idnos:
+		
+		#sigil – the faustedition sigil
+		#fausturi – the faust:// uri to the document
+		#fausttranscript – the base name of the textual transcript file
+		
+		also all idnos from the metadata with appropriate @type.
+	
+	-->
 	<xsl:template match="fileDesc">
 		<xsl:copy>
 			<xsl:apply-templates select="@*"/>
@@ -86,6 +102,7 @@
 	<xsl:strip-space elements="app choice subst"/>	
 	<xsl:template match="orig/text()[. = 'sſ']">ß</xsl:template>
 	
+	<!-- //TEI/@type will be print, archivalDocument, or lesetext -->
 	<xsl:template match="TEI">
 		<xsl:copy>
 			<xsl:namespace name="f">http://www.faustedition.net/ns</xsl:namespace>
