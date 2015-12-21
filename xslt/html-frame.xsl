@@ -11,6 +11,7 @@
 	<xsl:param name="assets" select="$edition"/>
 	<xsl:param name="debug" select="false()"/>
 	<xsl:param name="headerAdditions"/>
+	<xsl:param name="query"/>
 	
 	<xsl:template name="html-head">
 		<xsl:param name="title" select="$title"/>
@@ -50,9 +51,12 @@
 			
 			<nav class="pure-menu pure-menu-open pure-menu-horizontal pure-right pure-nowrap pure-noprint">
 				<ul>
-					<li><a href="{$edition}/archives.php">Archiv</a></li>
-					<li><a href="{$edition}/genesis_overview.php">Genese</a></li>
-					<li><a href="{$edition}/print/text.html">Text</a></li>
+          <li><a href="{$edition}/archives.php">Archiv</a></li>
+          <li><a href="{$edition}/genesis.php">Genese</a></li>
+          <li><a href="{$edition}/print/text.html">Text</a></li>
+					<li><form class="pure-form" action="{$edition}/search" method="GET"><input id="quick-search" name="q" placeholder="Suche" type="text" value="{$query}"/></form></li> 
+          <li><a href="{$edition}/imprint.php"><small class="pure-fade-50">Impressum</small></a></li>
+          <li><a href="{$edition}/help.php"><i class="fa fa-question-circle fa-lg"></i></a></li>
 				</ul>
 			</nav>
 		</header>
