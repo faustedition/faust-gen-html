@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="16.0">
+<project version="17.1">
     <meta>
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="16.0" xml:space="preserve">
+            <serialized version="17.1" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>enable.project.master.files.support</String>
@@ -305,6 +305,9 @@
                                 <field name="outputFile">
                                     <null/>
                                 </field>
+                                <field name="outputResource">
+                                    <null/>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -387,6 +390,9 @@
                                 </field>
                                 <field name="outputFile">
                                     <File>${pd}/target/app/test.html</File>
+                                </field>
+                                <field name="outputResource">
+                                    <String>${pd}/target/app/test.html</String>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
@@ -493,6 +499,9 @@
                                 <field name="outputFile">
                                     <null/>
                                 </field>
+                                <field name="outputResource">
+                                    <null/>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -574,6 +583,9 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="outputResource">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
@@ -659,6 +671,9 @@
                                 <field name="outputFile">
                                     <File>{pd}/target/cotta-numbered.xml</File>
                                 </field>
+                                <field name="outputResource">
+                                    <String>{pd}/target/cotta-numbered.xml</String>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -742,6 +757,9 @@
                                 <field name="outputFile">
                                     <File>${pd}/target/pagelists.json</File>
                                 </field>
+                                <field name="outputResource">
+                                    <String>${pd}/target/pagelists.json</String>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -823,6 +841,9 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="outputResource">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
@@ -908,6 +929,9 @@
                                 <field name="outputFile">
                                     <File>${pd}/target/cotta/cotta.html</File>
                                 </field>
+                                <field name="outputResource">
+                                    <String>${pd}/target/cotta/cotta.html</String>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -989,6 +1013,9 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="outputResource">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
@@ -1074,6 +1101,9 @@
                                 <field name="outputFile">
                                     <File>${pd}/target/test.xml</File>
                                 </field>
+                                <field name="outputResource">
+                                    <String>${pd}/target/test.xml</String>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -1157,6 +1187,9 @@
                                 <field name="outputFile">
                                     <File>${pd}/target/testfall.transposition-undo.390903.xml</File>
                                 </field>
+                                <field name="outputResource">
+                                    <String>${pd}/target/testfall.transposition-undo.390903.xml</String>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -1239,6 +1272,9 @@
                                 </field>
                                 <field name="outputFile">
                                     <File>${pd}/target/variant-fragments.xml</File>
+                                </field>
+                                <field name="outputResource">
+                                    <String>${pd}/target/variant-fragments.xml</String>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
@@ -1389,6 +1425,9 @@
                                 <field name="outputFile">
                                     <null/>
                                 </field>
+                                <field name="outputResource">
+                                    <null/>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -1524,6 +1563,9 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="outputResource">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
@@ -1663,6 +1705,9 @@
                                 <field name="outputFile">
                                     <null/>
                                 </field>
+                                <field name="outputResource">
+                                    <null/>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -1786,6 +1831,9 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="outputResource">
                                     <null/>
                                 </field>
                                 <field name="openOtherLocationInBrowser">
@@ -1915,6 +1963,9 @@
                                 <field name="outputFile">
                                     <null/>
                                 </field>
+                                <field name="outputResource">
+                                    <null/>
+                                </field>
                                 <field name="openOtherLocationInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
@@ -1965,30 +2016,6 @@
         </folder>
         <folder path="../../Faust/"/>
         <folder path="../../Faust/image-text-links/"/>
-        <file name="../../Faust/print/A8_IIIB18.xml"/>
-        <file name="apparatus.xpl"/>
-        <file name="apparatus.xsl"/>
-        <file name="apply-edits.xpl"/>
-        <file name="collate-variants.xpl"/>
-        <file name="collect-metadata.xpl"/>
-        <file name="extract-lines.xsl"/>
-        <file name="generate-all.xpl"/>
-        <file name="generate-app.xpl"/>
-        <file name="generate-indexes.xpl"/>
-        <file name="html-common.xsl"/>
-        <file name="html-frame.xsl"/>
-        <file name="lesetext.css"/>
-        <file name="pagelist2json.xsl"/>
-        <file name="pagemap.xsl"/>
-        <file name="print2html.xpl"/>
-        <file name="print2html.xsl"/>
-        <file name="prose-to-lines.xsl"/>
-        <file name="resolve-pb.xsl"/>
-        <file name="test/test.xml"/>
-        <file name="text-emend.xsl"/>
-        <file name="textTranscr_fuer_Drucke.xsl"/>
-        <file name="textTranscr_pre_transpose.xsl"/>
-        <file name="utils.xsl"/>
-        <file name="variant-fragments.xsl"/>
+        <folder path="xslt/"/>
     </projectTree>
 </project>
