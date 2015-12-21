@@ -37,7 +37,7 @@
 	
 	<xsl:param name="headerAdditions">
 		<style type="text/css">
-			.hit .headNote { font-weight: lighter; margin-left: 1em;}
+			.hit .headnote { font-weight: lighter; margin-left: 1em;}
 			.hit h3 { margin-bottom: 3pt; }			
 		</style>
 	</xsl:param>
@@ -57,9 +57,7 @@
 	
 	<!-- Line numbers need href from f:hit and should be shown for every line -->
 	<xsl:template name="generate-lineno">	
-		<!-- Klick auf Zeilennummer führt zu einem Link, der wiederum auf die Zeilennummer verweist -->
-		<xsl:attribute name="id" select="concat('l', @n)"/>
-		<a href="{concat($edition, ancestor::f:hit/@href, '#l', @n)}" class="lineno">
+		<a href="{ancestor::f:hit/@href}#l{@n}" class="lineno">
 			<xsl:value-of select="f:display-line(@n)"/>
 		</a>		
 	</xsl:template>
@@ -112,11 +110,15 @@
 								<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
 								<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
 									<xsl:apply-templates/>
+									<xsl:if test="not(.//f:hit)">
+										<p>Keine Ergebnisse für <q><xsl:value-of select="$query"/></q>.</p>
+									</xsl:if>
 								</div>
 							</div>
 						</div>
 					</div>
-				</main>				
+				</main>
+				<xsl:call-template name="footer"/>
 			</body>
 		</html>
 	</xsl:template>
