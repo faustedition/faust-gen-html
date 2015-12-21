@@ -12,7 +12,7 @@
 
   <p:xslt>
     <p:input port="stylesheet">
-      <p:document href="textTranscr_pre_transpose.xsl"/>
+      <p:document href="xslt/textTranscr_pre_transpose.xsl"/>
     </p:input>
     <p:input port="parameters">
       <p:empty/>
@@ -21,7 +21,7 @@
 
   <p:xslt>
     <p:input port="stylesheet">
-      <p:document href="textTranscr_transpose.xsl"/>
+      <p:document href="xslt/textTranscr_transpose.xsl"/>
     </p:input>
     <p:input port="parameters">
       <p:empty/>
@@ -30,7 +30,7 @@
 
   <p:xslt>
     <p:input port="stylesheet">
-      <p:document href="textTranscr_fuer_Drucke.xsl"/>
+      <p:document href="xslt/textTranscr_fuer_Drucke.xsl"/>
     </p:input>
     <p:input port="parameters">
       <p:empty/>
@@ -41,7 +41,7 @@
     <p:when test="//tei:delSpan | //tei:modSpan">
       <p:xslt>
         <p:input port="stylesheet">
-          <p:document href="text-emend.xsl"/>
+          <p:document href="xslt/text-emend.xsl"/>
         </p:input>
         <p:input port="parameters">
           <p:empty/>
@@ -55,7 +55,7 @@
   
   <p:xslt>
     <p:input port="stylesheet">
-      <p:document href="clean-up.xsl"/>
+      <p:document href="xslt/clean-up.xsl"/>
     </p:input>
     <p:input port="parameters">
       <p:empty/>
@@ -69,7 +69,7 @@
       <p:pipe port="result" step="emended-version"/>
     </p:input>
     <p:input port="stylesheet">
-      <p:document href="prose-to-lines.xsl"/>
+      <p:document href="xslt/prose-to-lines.xsl"/>
     </p:input>
     <p:input port="parameters">
       <p:empty/>
@@ -78,7 +78,7 @@
 
   <p:xslt>
     <p:input port="stylesheet">
-      <p:document href="harmonize-antilabes.xsl"/>      
+      <p:document href="xslt/harmonize-antilabes.xsl"/>      
     </p:input>
     <p:input port="parameters">
       <p:empty/>

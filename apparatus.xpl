@@ -65,7 +65,7 @@
 				<p:pipe port="source" step="main"/>
 			</p:input>			
 			<p:input port="stylesheet">
-				<p:document href="resolve-pb.xsl"/>
+				<p:document href="xslt/resolve-pb.xsl"/>
 			</p:input>
 			<p:input port="parameters">
 				<p:pipe port="result" step="config"/>            
@@ -75,7 +75,7 @@
 		<!-- Antilaben in die Form mit part=I,M,F -->
 		<p:xslt name="antilabes">
 			<p:input port="stylesheet">
-				<p:document href="harmonize-antilabes.xsl"/>
+				<p:document href="xslt/harmonize-antilabes.xsl"/>
 			</p:input>
 			<p:input port="parameters">
 				<p:pipe port="result" step="config"/>
@@ -85,7 +85,7 @@
 		<!-- ge:transpose/ptr/@target="bla fasel blubb" in mehrere ptr mit je einem Target umwandeln -->
 		<p:xslt name="transpositions">
 			<p:input port="stylesheet">
-				<p:document href="textTranscr_pre_transpose.xsl"/>
+				<p:document href="xslt/textTranscr_pre_transpose.xsl"/>
 			</p:input>
 			<p:input port="parameters">
 				<p:pipe port="result" step="config"/>
@@ -101,7 +101,7 @@
 		<!-- Nun die eigentliche Transformation nach HTML. -->
 		<p:xslt name="html">
 			<p:input port="stylesheet">
-				<p:document href="apparatus.xsl"/>
+				<p:document href="xslt/apparatus.xsl"/>
 			</p:input>
 			<p:input port="parameters">
 				<p:pipe port="result" step="config"/>

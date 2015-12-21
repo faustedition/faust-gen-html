@@ -70,7 +70,7 @@
 			<p:pipe port="source" step="main"/>
 		</p:input>		
 		<p:input port="stylesheet">
-			<p:document href="index.xsl"/>
+			<p:document href="xslt/index.xsl"/>
 		</p:input>
 		<p:input port="parameters">
 			<p:pipe port="result" step="config"/>

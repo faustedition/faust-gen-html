@@ -70,7 +70,7 @@
 		<!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
 		<p:xslt name="pbs">
 			<p:input port="stylesheet">
-				<p:document href="resolve-pb.xsl"/>
+				<p:document href="xslt/resolve-pb.xsl"/>
 			</p:input>
 			<p:input port="parameters">
 				<p:pipe port="result" step="config"/>            
@@ -81,7 +81,7 @@
 		<!-- Nun die eigentliche Transformation nach HTML. -->
 		<p:xslt name="html">
 			<p:input port="stylesheet">
-				<p:document href="print2html.xsl"/>
+				<p:document href="xslt/print2html.xsl"/>
 			</p:input>
 			<p:input port="parameters">
 				<p:pipe port="result" step="config"/>
@@ -150,7 +150,7 @@
 				<p:pipe port="result" step="pbs"/>
 			</p:input>
 			<p:input port="stylesheet">
-				<p:document href="pagemap.xsl"/>
+				<p:document href="xslt/pagemap.xsl"/>
 			</p:input>
 			<p:input port="parameters">
 				<p:pipe port="result" step="config"/>

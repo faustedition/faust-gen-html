@@ -71,7 +71,7 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.w3.org/ns/xproc-step"
               exclude-result-prefixes="c tei xsi l">
 
-              <xsl:import href="utils.xsl"/>
+              <xsl:import href="xslt/utils.xsl"/>
 
               <xsl:param name="source"/>  <!-- Der Wurzelordner der Faust-XML-Daten -->
 

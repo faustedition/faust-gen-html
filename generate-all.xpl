@@ -106,7 +106,7 @@
 
 		<p:xslt name="pagemap2json">
 			<p:input port="stylesheet">
-				<p:document href="pagelist2json.xsl"/>
+				<p:document href="xslt/pagelist2json.xsl"/>
 			</p:input>
 		</p:xslt>
 		<p:store method="text" media-type="application/json">

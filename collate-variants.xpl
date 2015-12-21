@@ -60,7 +60,7 @@
         <!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
         <p:xslt>
           <p:input port="stylesheet">
-            <p:document href="resolve-pb.xsl"/>
+            <p:document href="xslt/resolve-pb.xsl"/>
           </p:input>
           <p:input port="parameters">
             <p:pipe port="result" step="config"/>            
@@ -83,7 +83,7 @@
         -->
         <p:xslt>
           <p:input port="stylesheet">
-            <p:document href="extract-lines.xsl"/>
+            <p:document href="xslt/extract-lines.xsl"/>
           </p:input>
           <p:input port="parameters">
             <p:pipe port="result" step="config"/>
@@ -128,7 +128,7 @@
   <!-- hier werden nun tatsächlich die Varianten-HTML-Dateien erzeugt: -->
   <p:xslt name="variant-fragments">
     <p:input port="stylesheet">
-      <p:document href="variant-fragments.xsl"/>
+      <p:document href="xslt/variant-fragments.xsl"/>
     </p:input>
     <p:input port="parameters">
       <p:pipe port="result" step="config"/>

@@ -50,7 +50,7 @@
       </p:load>
 
       <p:xslt>
-        <p:input port="stylesheet"><p:document href="faust-metadata.xsl"/></p:input>
+        <p:input port="stylesheet"><p:document href="xslt/faust-metadata.xsl"/></p:input>
         <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
       </p:xslt>
       

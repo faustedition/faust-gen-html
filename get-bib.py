@@ -92,5 +92,5 @@ def fetch_bib():
     return text.split('\n')
 
 if __name__ == "__main__":
-    with open("bibliography.xml", "w", encoding="UTF-8") as outfile:
+    with open("xslt/bibliography.xml", "w", encoding="UTF-8") as outfile:
         wiki_to_xml(fetch_bib(), outfile)

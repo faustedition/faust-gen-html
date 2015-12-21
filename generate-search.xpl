@@ -58,7 +58,7 @@
 		<!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
 		<p:xslt name="pbs">
 			<p:input port="stylesheet">
-				<p:document href="resolve-pb.xsl"/>
+				<p:document href="xslt/resolve-pb.xsl"/>
 			</p:input>
 			<p:with-param name="documentURI" select="$documentURI"></p:with-param>			
 			<p:input port="parameters">
@@ -70,7 +70,7 @@
 
 		<p:xslt name="gs">
 			<p:input port="stylesheet">
-				<p:document href="prepare-search.xsl"/>
+				<p:document href="xslt/prepare-search.xsl"/>
 			</p:input>
 			<p:with-param name="documentURI" select="$documentURI"/>
 			<p:with-param name="type" select="$type"/>

@@ -11,7 +11,7 @@
 	
 	<xsl:param name="standalone"/>
 	<xsl:param name="source">file:/home/tv/Faust/</xsl:param>
-	<xsl:param name="transcript-list">target/faust-transcripts.xml</xsl:param>
+	<xsl:param name="transcript-list">../target/faust-transcripts.xml</xsl:param>
 	<xsl:param name="docbase">http://beta.faustedition.net/documentViewer.php?faustUri=faust://xml</xsl:param>
 	<xsl:variable name="idmap" select="document($transcript-list)"/>	
 	
