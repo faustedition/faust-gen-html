@@ -6,6 +6,7 @@ declare namespace f = "http://www.faustedition.net/ns";
 
 declare variable $query := request:get-parameter("q", "Pudel");
 declare variable $edition := 'http://beta.faustedition.net/';
+declare variable $data := collection('/db/apps/faust/data');
 
 declare function f:makeURL(
 	$type as xs:string,
@@ -25,11 +26,11 @@ transform:transform(
 <f:results query="{$query}" xmlns:f="http://www.faustedition.net/ns"
 							xmlns:exist="http://exist.sourceforge.net/NS/exist"
 							xmlns="http://www.tei-c.org/ns/1.0">{
-for $line in collection('/db/faust')//tei:l[ft:query(., $query)]
-			| collection('/db/faust')//tei:p[ft:query(., $query)]
-			| collection('/db/faust')//tei:stage[ft:query(., $query)]
-			| collection('/db/faust')//tei:speaker[ft:query(., $query)]
-			| collection('/db/faust')//tei:head[ft:query(., $query)]
+for $line in $data//tei:l[ft:query(., $query)]
+			| $data//tei:p[ft:query(., $query)]
+			| $data//tei:stage[ft:query(., $query)]
+			| $data//tei:speaker[ft:query(., $query)]
+			| $data//tei:head[ft:query(., $query)]
 let $sigil := string(id('sigil', $line)),
 	$headnote := string(id('headNote', $line)),
 	$n := data($line/@n),
@@ -46,4 +47,4 @@ return
 		n="{$n}"
 		href="{f:makeURL($type, $uri, $transcript, $sec, $page)}"
 		>{util:expand($line)}</f:hit>	
-}</f:results>, doc('search-results.xsl'), <parameters><param name="edition" value="{$edition}"/></parameters>)
+}</f:results>, doc('xslt/search-results.xsl'), <parameters><param name="edition" value="{$edition}"/></parameters>)
