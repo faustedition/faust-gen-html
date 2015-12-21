@@ -5,7 +5,7 @@ declare namespace tei = "http://www.tei-c.org/ns/1.0";
 declare namespace f = "http://www.faustedition.net/ns";
 
 declare variable $query := request:get-parameter("q", "Pudel");
-declare variable $edition := 'http://beta.faustedition.net/';
+declare variable $edition := '';
 declare variable $data := collection('/db/apps/faust/data');
 
 declare function f:makeURL(
@@ -17,8 +17,8 @@ declare function f:makeURL(
 	{
 		let $html := $transcript || (if ($sec) then '.'|| $sec else ()) || '.html'
 		let $path := switch ($type)
-			case 'archivalDocument' return concat('documentViewer.php?faustUri=', $uri, "&amp;view=text&amp;page=", $page, "&amp;sec=", $html)
-			default return 'print/' || $html
+			case 'archivalDocument' return concat('/documentViewer.php?faustUri=', $uri, "&amp;view=text&amp;page=", $page, "&amp;sec=", $html)
+			default return '/print/' || $html
 		return $edition || $path		
 	};
 	
@@ -35,7 +35,7 @@ let $sigil := string(id('sigil', $line)),
 	$headnote := string(id('headNote', $line)),
 	$n := data($line/@n),
 	$type := data($line/ancestor::tei:TEI/@type),
-	$sec := data(($line/ancestor::tei:div)[1]/@n),
+	$sec := data($line/ancestor::tei:div[1]/@n),
 	$uri := id('fausturi', $line),
 	$page := ($line//tei:pb/@f:docTranscriptNo, $line/preceding::tei:pb[1]/@f:docTranscriptNo)[1],
 	$transcript := id('fausttranscript', $line)
