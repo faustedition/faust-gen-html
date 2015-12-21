@@ -111,7 +111,7 @@
 								<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
 									<xsl:apply-templates/>
 									<xsl:if test="not(.//f:hit)">
-										<p>Keine Ergebnisse für <q><xsl:value-of select="$query"/></q>.</p>
+										<div class="pure-alert pure-alert-warning">Keine Treffer für <em><xsl:value-of select="$query"/></em>.</div>
 									</xsl:if>
 								</div>
 							</div>
@@ -119,6 +119,31 @@
 					</div>
 				</main>
 				<xsl:call-template name="footer"/>
+			</body>
+		</html>
+	</xsl:template>
+	
+	<xsl:template match="exception" xpath-default-namespace="">
+		<html>			
+			<xsl:call-template name="html-head"/>					
+			<body>
+				<xsl:call-template name="header">
+					<xsl:with-param name="breadcrumbs" tunnel="yes">						
+						<div id="current">Fehler.</div>
+					</xsl:with-param>
+				</xsl:call-template>
+				<div class="main-content-container">
+					<div id="main-content" class="main-content">
+						<div id="main" class="print">
+							<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
+							<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
+								<pre class="pure-alert pure-alert-danger">									
+									<xsl:value-of select="message"/>
+								</pre>
+							</div>
+						</div>
+					</div>
+				</div>
 			</body>
 		</html>
 	</xsl:template>
