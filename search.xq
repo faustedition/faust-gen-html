@@ -8,6 +8,8 @@ declare variable $query := request:get-parameter("q", "Pudel");
 declare variable $edition := '';
 declare variable $data := collection('/db/apps/faust/data');
 
+declare variable $raw as xs:boolean := boolean(request:get-parameter("raw", false()));
+
 declare function f:makeURL(
 	$type as xs:string,
 	$uri as xs:string,
@@ -22,8 +24,9 @@ declare function f:makeURL(
 		return $edition || $path		
 	};
 	
-transform:transform(
-<f:results query="{$query}" xmlns:f="http://www.faustedition.net/ns"
+
+	
+let $results := <f:results query="{$query}" xmlns:f="http://www.faustedition.net/ns"
 							xmlns:exist="http://exist.sourceforge.net/NS/exist"
 							xmlns="http://www.tei-c.org/ns/1.0">{
 for $line in $data//tei:l[ft:query(., $query)]
@@ -47,4 +50,13 @@ return
 		n="{$n}"
 		href="{f:makeURL($type, $uri, $transcript, $sec, $page)}"
 		>{util:expand($line)}</f:hit>	
-}</f:results>, doc('xslt/search-results.xsl'), <parameters><param name="edition" value="{$edition}"/></parameters>)
+}</f:results>
+return 
+	if ($raw) 
+		then $results 
+		else transform:transform($results, 
+								 doc('xslt/search-results.xsl'), 
+								 <parameters>
+								 	<param name="edition" value="{$edition}"/>
+								 	<param name="query" value="{$query}"/>
+								 </parameters>)
