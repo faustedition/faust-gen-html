@@ -222,10 +222,10 @@
 		<nav class="print-navigation">
 			
 			<!-- Breadcrumbs als Liste: Zuoberst Titel, dann die übergeordneten Heads, schließlich der aktuelle Head -->
-			<ul class="breadcrumbs icons-ul">
+			<ul class="breadcrumbs fa-ul">
 				<!-- Der Titel kann hereingegeben werden oder aus dem TEI-titleStmt kommen -->
 				<li>
-					<i class="icon-li icon-caret-up"/>
+					<span class="fa-li fa-caret-up"/>
 					<a href="{f:html-link(concat($output-base, '.html'))}">
 						<xsl:value-of select="$title"/>
 					</a>
@@ -236,10 +236,10 @@
 						<xsl:choose>              
 							<xsl:when test=". is $current-div">
 								<xsl:attribute name="class">current</xsl:attribute>
-								<i class="icon-li icon-caret-left"/>
+								<span class="fa-li fa-caret-left"/>
 							</xsl:when>
 							<xsl:otherwise>
-								<i class="icon-li icon-caret-up"/>
+								<span class="fa-li fa-caret-up"/>
 							</xsl:otherwise>
 						</xsl:choose>
 						<xsl:call-template name="section-link"/>
@@ -248,12 +248,12 @@
 			</ul>
 			
 			<!-- ggf. Links zum vorherigen/nächsten div. -->
-			<ul class="prevnext icons-ul">
+			<ul class="prevnext fa-ul">
 				<xsl:if test="preceding::div[count(ancestor::div) lt $depth_n]">
 					<li class="prev">
 						<xsl:for-each
 							select="preceding::div[count(ancestor::div) lt $depth_n][1]">
-							<i class="icon-li icon-backward"/>
+							<span class="fa-li fa-backward"/>
 							<xsl:call-template name="section-link"/>              
 						</xsl:for-each>
 					</li>
@@ -262,7 +262,7 @@
 					<li class="next">
 						<xsl:for-each
 							select="following::div[count(ancestor::div) lt $depth_n][1]">
-							<i class="icon-li icon-forward"/>
+							<span class="fa-li fa-forward"/>
 							<xsl:call-template name="section-link"/>
 						</xsl:for-each>
 					</li>
@@ -270,26 +270,22 @@
 			</ul>
 			
 			
-			<ul class="icons-ul">
+			<ul class="fa-ul">
 				<xsl:if test="f:is-splitable-doc(.)">
 					<!-- Link zum  alles-auf-einer-Seite-Dokument. -->
 					<li class="all">
 						<xsl:choose>
 							<xsl:when test="$single">
-								<i class="icon-li icon-copy"/>
+								<span class="fa-li fa-files-o"/>
 								<a href="{f:html-link(concat($output-base, '.html'))}">nach Szenen zerlegt</a>
 							</xsl:when>
 							<xsl:otherwise>
-								<i class="icon-li icon-file-alt"/>
+								<span class="fa-li fa-file-o"/>
 								<a href="{f:html-link(concat($output-base, '.all.html'))}">auf einer Seite</a>
 							</xsl:otherwise>
 						</xsl:choose>
 					</li>
 				</xsl:if>
-				<!--li class="xml">
-					<i class="icon-li icon-download-alt"></i>
-					<a download="{replace($output-base, '^.*/', '')}-emended.xml" href="{f:relativize($output-base, concat($output-base, '-emended.xml'))}">TEI-Version</a>
-				</li-->
 			</ul>
 		</nav>
 	</xsl:template>      

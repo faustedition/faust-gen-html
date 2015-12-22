@@ -19,17 +19,22 @@
 			<meta charset='utf-8'/>
 			
 			<script type="text/javascript" src="{$assets}/js/faust_common.js"/>
-			<script src="{$assets}/js/faust_print_interaction.js"/>			
-			<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
+			<script src="{$assets}/js/faust_print_interaction.js"/>	
+			
 			<link rel="stylesheet" href="{$assets}/css/document-text.css"/>
 			<link rel="stylesheet" href="{$assets}/css/document-transcript.css"/>
 			<link rel="stylesheet" href="{$assets}/css/document-transcript-highlight-hands.css"/>
 			<link rel="stylesheet" href="{$assets}/css/document-transcript-interaction.css"/>
+			<link rel="stylesheet" href="{$assets}/css/webfonts.css"/>
+			<link rel="stylesheet" href="{$assets}/css/fontawesome-min.css"/>
 			<link rel="stylesheet" href="{$assets}/css/pure-min.css"/>
 			<link rel="stylesheet" href="{$assets}/css/pure-custom.css"/>
 			<link rel="stylesheet" href="{$assets}/css/basic_layout.css"/>
 			<link rel="stylesheet" href="{$assets}/css/textual-transcript.css"/>
 			<script><xsl:text>window.addEventListener("DOMContentLoaded", function(){addPrintInteraction("../");});</xsl:text></script> 
+			
+			<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"/>
+			<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"/>
 			
 			<xsl:copy-of select="$headerAdditions"/>
 		</head>
@@ -42,13 +47,10 @@
 			<div class="logo">
 				<a href="{$edition}/" title="Faustedition"><img src="{$assets}/img/faustlogo.svg" alt="Faustedition"/></a>
 			</div>
-			
 			<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
 				<small id="breadcrumbs"><xsl:copy-of select="$breadcrumbs"/></small>
 			</div>
-			
-			<div id="current" class="pure-nowrap"></div>
-			
+			<div id="current" class="pure-nowrap"></div>			
 			<nav class="pure-menu pure-menu-open pure-menu-horizontal pure-right pure-nowrap pure-noprint">
 				<ul>
           <li><a href="{$edition}/archives.php">Archiv</a></li>
