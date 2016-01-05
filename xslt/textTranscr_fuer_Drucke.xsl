@@ -22,7 +22,7 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="add[@f:rejectedBy]"/>
-
+    
     <xsl:template match="del">
         <xsl:apply-templates mode="del"/>
     </xsl:template>
@@ -31,6 +31,9 @@
     </xsl:template>
     <xsl:template mode="del" match="node()">
         <xsl:apply-templates select="node()" mode="#current"/>
+    </xsl:template>
+    <xsl:template match="restore/del">
+        <xsl:apply-templates/>
     </xsl:template>
 
     <xsl:template match="restore/subst">
