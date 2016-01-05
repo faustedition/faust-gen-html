@@ -11,6 +11,28 @@
 	<!-- common code for print2html and variant generation. not to be used standalone -->
 	<xsl:import href="utils.xsl"/>
 	
+	<xsl:variable name="scenes" select="doc('scenes.xml')"/>
+	
+	<xsl:function name="f:scene-for">
+		<xsl:param name="element"/>
+		<xsl:variable name="n" select="$element/@n"/>
+		<xsl:sequence select="$scenes//scene[id = $n] | $scenes//scene[number(rangeStart) le number($n) and  number(rangeEnd) ge number($n)]"/>		
+	</xsl:function>
+	
+	<xsl:template name="scene-data">
+		<xsl:choose>
+			<xsl:when test="f:hasvars(.) and matches(@n, '\d+')">
+				<xsl:sequence select="f:scene-for(.)"/>
+			</xsl:when>
+			<xsl:when test="ancestor-or-self::div[@n]">
+				<xsl:sequence select="f:scene-for(ancestor-or-self::div[@n][1])"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:sequence select="f:scene-for((preceding-sibling::*[f:hasvars(.) and f:scene-for(.)][1], following-sibling::*[f:hasvars(.) and f:scene-for(.)])[1])"></xsl:sequence>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
 	
 	<xsl:template match="figure">
 		<br class="figure {@type}"/>
