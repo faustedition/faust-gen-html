@@ -25,7 +25,7 @@
 			<xsl:variable name="output-file" select="concat($variants, current-grouping-key(), '.html')"/>			
 			<xsl:result-document href="{$output-file}">
 				<div class="groups" data-group="{current-grouping-key()}">
-					<xsl:for-each-group select="current-group()" group-by="@n">
+					<xsl:for-each-group select="current-group()" group-by="tokenize(@n, '[ ,;\t\n]+')">
 						<xsl:variable name="cline" select="current-group()[@f:doc = $canonicalDocs]"/>
 						<xsl:variable name="ctext" select="if ($cline) then normalize-space($cline[1]) else ''"/>
 						<xsl:variable name="evidence">
