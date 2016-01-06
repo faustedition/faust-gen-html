@@ -18,12 +18,25 @@
 	
 	<xsl:import href="utils.xsl"/>
 	
-	<xsl:param name="documentURI"/>
-	<xsl:param name="transcriptURI"/>
-	<xsl:param name="transcriptBase" select="replace(replace($transcriptURI, '^.*/', ''), '\.(html|xml)$', '')"/>
+	<!-- The root directory of the Faust XML data, corresponds to faust://xml/, needs to resolve -->
 	<xsl:param name="source"/>
-	<xsl:variable name="faustURI" select="concat('faust://xml/', $documentURI)"/>	
-	<xsl:param name="type"/>
+	
+	<!-- The path to the metadata document, relative to $source -->
+	<xsl:param name="documentURI"/>
+	
+	<!-- archivalDocument, print, or lesetext -->
+	<xsl:param name="type" select="local-name($metadata/*[1])"/>
+		
+	<!-- Resolved faust:// URI of the textual transcript -->
+	<xsl:param name="transcriptURI" select="resolve-uri($metadata//f:textTranscript/@uri, base-uri($metadata//f:textTranscript))"/>
+		
+	<!-- Base name of the textual transcript, used for naming generated files -->	
+	<xsl:param name="transcriptBase" select="replace(replace($transcriptURI, '^.*/', ''), '\.(html|xml)$', '')"/>
+	
+	<!-- Canonical URI for the document. Defaults to faust://xml/$documentURI -->
+	<xsl:variable name="faustURI" select="concat('faust://xml/', $documentURI)"/>
+
+
 	<xsl:variable name="metadata">
 		<xsl:variable name="path" select="resolve-uri($documentURI, $source)"/>
 		<xsl:choose>
