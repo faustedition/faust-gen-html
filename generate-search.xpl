@@ -12,7 +12,8 @@
 	</p:output>
 	<p:serialization port="result" indent="true"/>
 -->	
-	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>    
+	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
+	<p:import href="apply-edits.xpl"/>
 	
 	<!-- Parameter laden -->
 	<p:parameters name="config">
@@ -54,23 +55,10 @@
 		<p:load>
 			<p:with-option name="href" select="$transcriptFile"/>
 		</p:load>
-
-		<!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
-		<p:xslt name="pbs">
-			<p:input port="stylesheet">
-				<p:document href="xslt/resolve-pb.xsl"/>
-			</p:input>
-			<p:with-param name="documentURI" select="$documentURI"></p:with-param>			
-			<p:input port="parameters">
-				<p:pipe port="result" step="config"/>            
-			</p:input>
-		</p:xslt>
 		
-		
-
 		<p:xslt name="gs">
 			<p:input port="stylesheet">
-				<p:document href="xslt/prepare-search.xsl"/>
+				<p:document href="xslt/add-metadata.xsl"/>
 			</p:input>
 			<p:with-param name="documentURI" select="$documentURI"/>
 			<p:with-param name="type" select="$type"/>
@@ -79,6 +67,42 @@
 				<p:pipe port="result" step="config"/>            
 			</p:input>
 		</p:xslt>
+		
+		
+		<p:choose>
+			
+			<!-- Für den Lesetext die Endstufe herstellen -->
+			<p:when test="$type = 'lesetext'">
+				<f:apply-edits/>
+			</p:when>
+			
+			<p:otherwise>
+				
+				<!-- Ansonsten nur Zeichen normalisieren -->
+				<p:xslt name="char">
+					<p:input port="stylesheet">
+						<p:document href="xslt/normalize-characters.xsl"/>
+					</p:input>
+					<p:input port="parameters">
+						<p:pipe port="result" step="config"/>            
+					</p:input>
+				</p:xslt>
+				
+				<!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
+				<p:xslt name="pbs">
+					<p:input port="stylesheet">
+						<p:document href="xslt/resolve-pb.xsl"/>
+					</p:input>
+					<p:with-param name="documentURI" select="$documentURI"></p:with-param>			
+					<p:input port="parameters">
+						<p:pipe port="result" step="config"/>            
+					</p:input>
+				</p:xslt>
+				
+				
+			</p:otherwise>
+		</p:choose>
+		
 		
 		<p:store>
 			<p:with-option name="href" select="concat('target/search/textTranscript/', $documentURI)"/>

@@ -7,13 +7,10 @@
 	xmlns:f="http://www.faustedition.net/ns" 
 	version="2.0">
 	
-	<!-- 
-		This stylesheet prepares textual transcripts for being searched.
-		
-		It currently makes two kinds of transformations:
-		
-		1. It enriches the document with available metadata information. This most notably includes the TEI header.
-		2. It normalizes text nodes.
+	<!--
+		This stylesheet adds additional metadata provided by parameters and extracted from
+		document/**/*.xml to the transcript document. Metadata is copied mainly to the TEI 
+		header. Rest of the document is passed through as is.
 	-->
 	
 	<xsl:import href="utils.xsl"/>
@@ -34,7 +31,7 @@
 	<xsl:param name="transcriptBase" select="replace(replace($transcriptURI, '^.*/', ''), '\.(html|xml)$', '')"/>
 	
 	<!-- Canonical URI for the document. Defaults to faust://xml/$documentURI -->
-	<xsl:variable name="faustURI" select="concat('faust://xml/', $documentURI)"/>
+	<xsl:param name="faustURI" select="concat('faust://xml/', $documentURI)"/>
 
 
 	<xsl:variable name="metadata">
@@ -100,20 +97,6 @@
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="text()" priority="1">
-		<xsl:variable name="tmp1" select=" replace(.,'ā','aa')"/>
-		<xsl:variable name="tmp2" select=" replace($tmp1,'ē','ee')"/>
-		<xsl:variable name="tmp3" select=" replace($tmp2,'m̄','mm')"/>
-		<xsl:variable name="tmp4" select=" replace($tmp3,'n̄','nn')"/>
-		<xsl:variable name="tmp5" select=" replace($tmp4,'r̄','rr')"/>
-		<xsl:variable name="tmp5a" select=" replace($tmp5,'ſs','ß')"/>
-		<xsl:variable name="tmp6" select=" replace($tmp5a,'ſ','s')"/>
-		<xsl:variable name="tmp7" select=" replace($tmp6,'—','–')"/>
-		<xsl:variable name="tmp8" select=" replace($tmp7,'&#x00AD;','')"/>  <!-- Soft Hyphen -->
-		<xsl:value-of select="normalize-unicode($tmp8)"/>
-	</xsl:template>
-	<xsl:strip-space elements="app choice subst"/>	
-	<xsl:template match="orig/text()[. = 'sſ']">ß</xsl:template>
 	
 	<!-- //TEI/@type will be print, archivalDocument, or lesetext -->
 	<xsl:template match="TEI">

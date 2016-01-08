@@ -54,12 +54,6 @@
     <!--    <xsl:template match="ex"/>
     <xsl:template match="expan"/>
     -->
-    <xsl:template match="g[matches(@ref, '#parenthesis_left')]">
-        <xsl:text>(</xsl:text>
-    </xsl:template>
-    <xsl:template match="g[matches(@ref, '#parenthesis_right')]">
-        <xsl:text>)</xsl:text>
-    </xsl:template>
     <xsl:template match="note[@type='editorial']"/>
     <xsl:template match="note[@resp='#hwg']"></xsl:template>
     <!-- wieso headerelemente rauswerfen? 

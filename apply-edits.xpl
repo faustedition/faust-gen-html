@@ -12,6 +12,15 @@
 
   <p:xslt>
     <p:input port="stylesheet">
+      <p:document href="xslt/normalize-characters.xsl"/>
+    </p:input>
+    <p:input port="parameters">
+      <p:empty/>
+    </p:input>
+  </p:xslt>
+
+  <p:xslt>
+    <p:input port="stylesheet">
       <p:document href="xslt/textTranscr_pre_transpose.xsl"/>
     </p:input>
     <p:input port="parameters">
