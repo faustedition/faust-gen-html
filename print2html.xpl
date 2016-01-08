@@ -59,13 +59,22 @@
 			        else $output-filename, $html)"/>
 	
 		<p:variable name="emended-xml" select="concat($output-base, '.xml')"/>
-
-		<!-- Vorverarbeitung der TEI-Datei: Anwendung von <del> etc. -->
-		<f:apply-edits name="apply-edits">
+		
+		<p:xslt name="metadata">
 			<p:input port="source">
 				<p:pipe port="source" step="main"/>
 			</p:input>
-		</f:apply-edits>
+			<p:input port="stylesheet">
+				<p:document href="xslt/add-metadata.xsl"/>
+			</p:input>
+			<p:input port="parameters">
+				<p:pipe port="result" step="config"></p:pipe>
+			</p:input>			
+		</p:xslt>
+
+		<!-- Vorverarbeitung der TEI-Datei: Anwendung von <del> etc. -->
+		<f:apply-edits name="apply-edits"/>
+		
 		
 		<!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
 		<p:xslt name="pbs">
