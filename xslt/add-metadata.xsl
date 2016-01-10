@@ -45,6 +45,9 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:variable>
+	
+	<xsl:variable name="archives" select="doc(resolve-uri('archives.xml', $source))"/>
+	
 	<xsl:variable name="splittable" select="f:is-splitable-doc(/)"/>
 	
 	<xsl:output method="xml" indent="yes"/>
@@ -107,6 +110,9 @@
 		<xsl:copy>
 			<xsl:namespace name="f">http://www.faustedition.net/ns</xsl:namespace>
 			<xsl:attribute name="type" select="$type"/>
+			<xsl:variable name="repository" select="normalize-space(($metadata//f:repository)[1])"/>
+			<xsl:attribute name="f:repository" select="$repository"/> <!-- FIXME -->
+			<xsl:attribute name="f:repository-label" select="$archives//f:archive[@id=$repository]/f:name"/> <!-- FIXME -->
 			<xsl:apply-templates select="@* except @type"/>
 			<xsl:apply-templates select="node()"/>
 		</xsl:copy>

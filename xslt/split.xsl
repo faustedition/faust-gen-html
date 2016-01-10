@@ -290,7 +290,7 @@
 		</nav>
 	</xsl:template>      
 	
-	<xsl:template name="breadcrumbs">		
+	<xsl:template name="breadcrumbs-old">		
 		<xsl:choose>
 			
 			<!-- Lesetext -->

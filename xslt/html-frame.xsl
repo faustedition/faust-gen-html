@@ -47,10 +47,9 @@
 			<div class="logo">
 				<a href="{$edition}/" title="Faustedition"><img src="{$assets}/img/faustlogo.svg" alt="Faustedition"/></a>
 			</div>
-			<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
-				<small id="breadcrumbs"><xsl:copy-of select="$breadcrumbs"/></small>
-			</div>
-			<div id="current" class="pure-nowrap"></div>			
+			
+			<xsl:copy-of select="$breadcrumbs"/>
+			
 			<nav class="pure-menu pure-menu-open pure-menu-horizontal pure-right pure-nowrap pure-noprint">
 				<ul>
           <li><a href="{$edition}/archives.php">Archiv</a></li>

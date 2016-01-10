@@ -13,24 +13,79 @@
 	
 	<xsl:variable name="scenes" select="doc('scenes.xml')"/>
 	
-	<xsl:function name="f:scene-for">
+	<xsl:function name="f:scene-for" as="element()?">
 		<xsl:param name="element"/>
 		<xsl:variable name="n" select="$element/@n"/>
-		<xsl:sequence select="$scenes//scene[id = $n] | $scenes//scene[number(rangeStart) le number($n) and  number(rangeEnd) ge number($n)]"/>		
+		<xsl:sequence select="$scenes//f:scene[f:id = $n] | $scenes//f:scene[number(f:rangeStart) le number($n) and  number(f:rangeEnd) ge number($n)][1]"/>
 	</xsl:function>
 	
-	<xsl:template name="scene-data">
+	<xsl:function name="f:is-schroer" as="xs:boolean">
+		<xsl:param name="element"/>
+		<xsl:value-of select="f:hasvars($element) and matches($element/@n, '^\d+')"/>
+	</xsl:function>
+	
+	<xsl:template name="scene-data" as="element()?">
 		<xsl:choose>
 			<xsl:when test="f:hasvars(.) and matches(@n, '\d+')">
 				<xsl:sequence select="f:scene-for(.)"/>
 			</xsl:when>
+<!--		FIXME I still don't get scene numbers. 1.1.23 !?	
 			<xsl:when test="ancestor-or-self::div[@n]">
 				<xsl:sequence select="f:scene-for(ancestor-or-self::div[@n][1])"/>
 			</xsl:when>
-			<xsl:otherwise>
-				<xsl:sequence select="f:scene-for((preceding-sibling::*[f:hasvars(.) and f:scene-for(.)][1], following-sibling::*[f:hasvars(.) and f:scene-for(.)])[1])"></xsl:sequence>
+-->			<xsl:otherwise>
+				<xsl:sequence select="f:scene-for((descendant::*[f:is-schroer(.)][1], preceding-sibling::*[f:is-schroer(.)][1], following-sibling::*[f:is-schroer(.)])[1])"/>
 			</xsl:otherwise>
 		</xsl:choose>
+	</xsl:template>
+		
+	<xsl:template name="breadcrumbs">
+		<xsl:param name="scene-data" as="element()?">
+			<xsl:call-template name="scene-data"/>
+		</xsl:param>
+		<xsl:param name="separator">
+			<i class="fa fa-angle-right"/>			
+		</xsl:param>
+		<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
+			<small id="breadcrumbs">
+				<span>
+					<a href="${edition}archives.php">Archiv</a>
+					<xsl:copy-of select="$separator"/>
+					<a href="${edition}archives_locations_detail.php?id={/TEI/@f:repository}"><xsl:value-of select="/TEI/@f:repository-label"/></a>
+				</span>
+				<br/>
+				<span>
+					<a href="genesis.php">Genese</a>
+					<xsl:copy-of select="$separator"/>
+					<xsl:choose>
+						<xsl:when test="not($scene-data)">
+							[keine Zuordnung gefunden]
+						</xsl:when>
+						<xsl:when test="starts-with($scene-data/f:id, '1')">
+							<a href="${edition}genesis_faust_i.php">Faust I</a>							
+						</xsl:when>
+						<xsl:otherwise>
+							<a href="${edition}genesis_faust_ii.php">Faust II</a>
+						</xsl:otherwise>
+					</xsl:choose>
+					<xsl:copy-of select="$separator"/>
+					<a href="${edition}genesis_bargraph.php?rangeStart={$scene-data/f:rangeStart}&amp;rangeEnd={$scene-data/f:rangeEnd}">
+						<xsl:value-of select="$scene-data/f:title"/>	
+					</a>
+				</span>
+			</small>
+		</div>
+		<div id="current" class="pure-nowrap">
+			<span title="{//idno[@type='faustedition'][1]}">
+				<xsl:value-of select="//idno[@type='faustedition'][1]"/>
+			</span>
+		</div>
+	</xsl:template>
+	
+	<xsl:template mode="debugxml" match="*">
+		<xsl:value-of select="concat('&lt;', name(), ' ', string-join((for $attr in @* return concat(name($attr), '=&quot;', $attr, '&quot;')), ' '), '>')"/>
+			<xsl:apply-templates select="node()" mode="#current"/>
+		<xsl:value-of select="concat('&lt;/', name(), '>')"/>
 	</xsl:template>
 	
 	
