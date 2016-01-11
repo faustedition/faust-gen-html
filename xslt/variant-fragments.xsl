@@ -10,8 +10,7 @@
 	<xsl:include href="html-common.xsl"/>
 	
 	<xsl:param name="variants">variants/</xsl:param>
-	<xsl:param name="docbase">https://faustedition.uni-wuerzburg.de/new</xsl:param>
-  	<xsl:param name="type"/>
+	<xsl:param name="docbase">https://faustedition.uni-wuerzburg.de/new</xsl:param>  	
 	<xsl:param name="depth">2</xsl:param>
 	<xsl:param name="canonical">document/print/A8.xml document/faust/2/gsa_391098.xml</xsl:param>
 	<xsl:variable name="canonicalDocs" select="tokenize($canonical, ' ')"/>

@@ -50,31 +50,40 @@
 		</xsl:param>
 		<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
 			<small id="breadcrumbs">
-				<span>
-					<a href="../archives.php">Archiv</a>
-					<xsl:copy-of select="$separator"/>
-					<a href="../archives_locations_detail.php?id={/TEI/@f:repository}"><xsl:value-of select="/TEI/@f:repository-label"/></a>
-				</span>
-				<br/>
-				<span>
-					<a href="genesis.php">Genese</a>
-					<xsl:copy-of select="$separator"/>
-					<xsl:choose>
-						<xsl:when test="not($scene-data)">
-							[keine Zuordnung gefunden]
-						</xsl:when>
-						<xsl:when test="starts-with($scene-data/f:id, '1')">
-							<a href="../genesis_faust_i.php">Faust I</a>							
-						</xsl:when>
-						<xsl:otherwise>
-							<a href="../genesis_faust_ii.php">Faust II</a>
-						</xsl:otherwise>
-					</xsl:choose>
-					<xsl:copy-of select="$separator"/>
-					<a href="../genesis_bargraph.php?rangeStart={$scene-data/f:rangeStart}&amp;rangeEnd={$scene-data/f:rangeEnd}">
-						<xsl:value-of select="$scene-data/f:title"/>	
-					</a>
-				</span>
+				<xsl:choose>
+					<xsl:when test="$type='lesetext'">
+						<span>
+							<a href="../print/text.html">Text</a>
+							<xsl:copy-of select="$separator"/>
+							<xsl:choose>								
+								<xsl:when test="starts-with($scene-data/f:id, '1')">
+									<a href="faust1.1.html">Faust I</a>
+								</xsl:when>
+								<xsl:otherwise>
+									<a href="faust2.1.html">Faust II</a>
+								</xsl:otherwise>
+							</xsl:choose>
+							<xsl:copy-of select="$separator"/>
+							<a>
+								<xsl:value-of select="$scene-data/f:title"/>
+							</a>
+						</span>
+					</xsl:when>
+					<xsl:otherwise>
+						<span>
+							<xsl:call-template name="breadcrumbs-archive">
+								<xsl:with-param name="separator" select="$separator"/>						
+							</xsl:call-template>
+						</span>
+						<br/>
+						<span>
+							<xsl:call-template name="breadcrumbs-genesis">
+								<xsl:with-param name="separator" select="$separator"/>
+								<xsl:with-param name="scene-data" select="$scene-data"/>
+							</xsl:call-template>
+						</span>						
+					</xsl:otherwise>
+				</xsl:choose>
 			</small>
 		</div>
 		<div id="current" class="pure-nowrap">
@@ -82,6 +91,42 @@
 				<xsl:value-of select="//idno[@type='faustedition'][1]"/>
 			</span>
 		</div>
+	</xsl:template>
+	<xsl:template name="breadcrumbs-genesis">
+		<xsl:param name="separator"/>
+		<xsl:param name="scene-data"/>
+		<a href="genesis.php">Genese</a>
+		<xsl:copy-of select="$separator"/>
+		<xsl:choose>
+			<xsl:when test="not($scene-data)"> [keine Zuordnung gefunden] </xsl:when>
+			<xsl:when test="starts-with($scene-data/f:id, '1')">
+				<a href="../genesis_faust_i.php">Faust I</a>
+			</xsl:when>
+			<xsl:otherwise>
+				<a href="../genesis_faust_ii.php">Faust II</a>
+			</xsl:otherwise>
+		</xsl:choose>
+		<xsl:copy-of select="$separator"/>
+		<a
+			href="../genesis_bargraph.php?rangeStart={$scene-data/f:rangeStart}&amp;rangeEnd={$scene-data/f:rangeEnd}">
+			<xsl:value-of select="$scene-data/f:title"/>
+		</a>
+	</xsl:template>
+	
+	<xsl:template name="breadcrumbs-archive">
+		<xsl:param name="separator"/>		
+		<a href="../archives.php">Archiv</a>
+		<xsl:copy-of select="$separator"/>
+		<xsl:choose>
+			<xsl:when test="$type = 'print'">
+				<a href="../archives_print.php">Drucke</a>
+			</xsl:when>
+			<xsl:otherwise>
+				<a href="../archives_locations_detail.php?id={/TEI/@f:repository}">
+					<xsl:value-of select="/TEI/@f:repository-label"/>
+				</a>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 	
 	<xsl:template mode="debugxml" match="*">

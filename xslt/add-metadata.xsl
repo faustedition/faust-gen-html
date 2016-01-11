@@ -120,12 +120,12 @@
 	
 	<xsl:template match="div">
 		<xsl:copy>
-			<xsl:attribute name="n">
+			<xsl:attribute name="f:n">
 				<xsl:if test="$splittable">
 					<xsl:number count="div" level="any" format="1"/>
 				</xsl:if>
 			</xsl:attribute>
-			<xsl:apply-templates select="@* except @n"/>
+			<xsl:apply-templates select="@*"/>
 			<xsl:apply-templates select="node()"/>
 		</xsl:copy>
 	</xsl:template>

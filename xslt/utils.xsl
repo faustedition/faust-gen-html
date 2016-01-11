@@ -12,6 +12,7 @@
   <xsl:param name="docbase"/>
   <xsl:param name="printbase"/>
   <xsl:param name="documentURI"/>
+  <xsl:param name="type" select="data(/TEI/type)"/>
   
   <xsl:function name="f:is-splitable-doc" as="xs:boolean">
     <xsl:param name="document"/>

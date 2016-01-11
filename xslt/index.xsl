@@ -11,7 +11,7 @@
 	<!--<xsl:variable name="transcripts" select="collection()[2]"/>-->
 	<xsl:param name="title">Lesetext</xsl:param>
         <xsl:param name="source">https://faustedition.uni-wuerzburg.de/xml</xsl:param>
-  <xsl:param name="type">text print</xsl:param>  <!-- might be text, print, archivalDocument, overview, sep. by space -->
+  
 	<xsl:output method="xhtml"/>
 
 
