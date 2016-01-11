@@ -11,6 +11,8 @@
 	<!-- common code for print2html and variant generation. not to be used standalone -->
 	<xsl:import href="utils.xsl"/>
 	
+	<xsl:param name="edition">../</xsl:param>
+	
 	<xsl:variable name="scenes" select="doc('scenes.xml')"/>
 	
 	<xsl:function name="f:scene-for" as="element()?">
@@ -49,9 +51,9 @@
 		<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
 			<small id="breadcrumbs">
 				<span>
-					<a href="${edition}archives.php">Archiv</a>
+					<a href="../archives.php">Archiv</a>
 					<xsl:copy-of select="$separator"/>
-					<a href="${edition}archives_locations_detail.php?id={/TEI/@f:repository}"><xsl:value-of select="/TEI/@f:repository-label"/></a>
+					<a href="../archives_locations_detail.php?id={/TEI/@f:repository}"><xsl:value-of select="/TEI/@f:repository-label"/></a>
 				</span>
 				<br/>
 				<span>
@@ -62,14 +64,14 @@
 							[keine Zuordnung gefunden]
 						</xsl:when>
 						<xsl:when test="starts-with($scene-data/f:id, '1')">
-							<a href="${edition}genesis_faust_i.php">Faust I</a>							
+							<a href="../genesis_faust_i.php">Faust I</a>							
 						</xsl:when>
 						<xsl:otherwise>
-							<a href="${edition}genesis_faust_ii.php">Faust II</a>
+							<a href="../genesis_faust_ii.php">Faust II</a>
 						</xsl:otherwise>
 					</xsl:choose>
 					<xsl:copy-of select="$separator"/>
-					<a href="${edition}genesis_bargraph.php?rangeStart={$scene-data/f:rangeStart}&amp;rangeEnd={$scene-data/f:rangeEnd}">
+					<a href="../genesis_bargraph.php?rangeStart={$scene-data/f:rangeStart}&amp;rangeEnd={$scene-data/f:rangeEnd}">
 						<xsl:value-of select="$scene-data/f:title"/>	
 					</a>
 				</span>
