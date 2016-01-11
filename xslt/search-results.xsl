@@ -35,6 +35,7 @@
 	
 	<xsl:import href="apparatus.xsl"/>
 	
+	
 	<xsl:param name="headerAdditions">
 		<style type="text/css">
 			.hit .headnote { font-weight: lighter; margin-left: 1em;}
@@ -76,6 +77,9 @@
 		<section class="hit">
 			<!-- this will become a proper breadcrumb some time -->
 			<h3>
+				<small class="breadcrumbs">
+					<xsl:call-template name="breadcrumbs-genesis"/>
+				</small>
 				<a href="{@href}">
 					<span class="sigil">
 						<xsl:value-of select="@sigil"/>						
@@ -97,9 +101,11 @@
 			<body>
 				<xsl:call-template name="header">
 					<xsl:with-param name="breadcrumbs" tunnel="yes">						
-						<div id="current">
-							Suchergebnisse
-						</div>						
+						<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
+							<div id="#current">
+								Suchergebnisse
+							</div>
+						</div>
 					</xsl:with-param>
 				</xsl:call-template>
 				

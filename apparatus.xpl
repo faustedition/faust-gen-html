@@ -58,12 +58,21 @@
 					if   (ends-with($output-filename, '.xml') or ends-with($output-filename, '.html'))
 			        then replace($output-filename, '\.[^.]+$', '')
 			        else $output-filename, $apphtml)"/>
+		
+		<p:xslt name="metadata">
+			<p:input port="source">
+				<p:pipe port="source" step="main"/>
+			</p:input>
+			<p:input port="stylesheet">
+				<p:document href="xslt/add-metadata.xsl"/>
+			</p:input>
+			<p:input port="parameters">
+				<p:pipe port="result" step="config"/>
+			</p:input>
+		</p:xslt>
 			
 		<!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
 		<p:xslt name="pbs">
-			<p:input port="source">
-				<p:pipe port="source" step="main"/>
-			</p:input>			
 			<p:input port="stylesheet">
 				<p:document href="xslt/resolve-pb.xsl"/>
 			</p:input>

@@ -2119,5 +2119,30 @@
         <folder path="../../Faust/"/>
         <folder path="../../Faust/image-text-links/"/>
         <folder path="xslt/"/>
+        <file name="apparatus.md"/>
+        <file name="apparatus.xpl"/>
+        <file name="apply-edits.xpl"/>
+        <file name="collate-variants.xpl"/>
+        <file name="collect-metadata.xpl"/>
+        <file name="collection.xconf"/>
+        <file name="config.xml"/>
+        <file name="exist.rc"/>
+        <file name="FAUST-TODOs.md"/>
+        <file name="find-ns.xpl"/>
+        <file name="generate-all.xpl"/>
+        <file name="generate-app.xpl"/>
+        <file name="generate-indexes.xpl"/>
+        <file name="generate-search.xpl"/>
+        <file name="get-bib.py"/>
+        <file name="metadata-html.xpl"/>
+        <file name="prepare-exist.sh"/>
+        <file name="print2html.xpl"/>
+        <file name="README.md"/>
+        <file name="scl2xml.js"/>
+        <file name="SEARCH.md"/>
+        <file name="search.xq"/>
+        <file name="sigil-labels.rnc"/>
+        <file name="transcr.xpr"/>
+        <file name="XSLT-INDEX.md"/>
     </projectTree>
 </project>
