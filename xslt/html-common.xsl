@@ -93,8 +93,12 @@
 		</div>
 	</xsl:template>
 	<xsl:template name="breadcrumbs-genesis">
-		<xsl:param name="separator"/>
-		<xsl:param name="scene-data"/>
+		<xsl:param name="scene-data" as="element()?">
+			<xsl:call-template name="scene-data"/>
+		</xsl:param>
+		<xsl:param name="separator">
+			<i class="fa fa-angle-right"/>			
+		</xsl:param>
 		<a href="genesis.php">Genese</a>
 		<xsl:copy-of select="$separator"/>
 		<xsl:choose>
