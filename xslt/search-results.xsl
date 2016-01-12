@@ -39,7 +39,11 @@
 	<xsl:param name="headerAdditions">
 		<style type="text/css">
 			.hit .headnote { font-weight: lighter; margin-left: 1em;}
-			.hit h3 { margin-bottom: 3pt; }			
+			.hit h3 { margin-bottom: 3pt; vertical-align: middle; }
+			.hit h3 a { font-weight: normal; }
+			.hit .sigil { padding-right: 5px; border-right: 1px solid gray; }
+			.hit .breadcrumbs { color: gray; vertical-align: middle; }
+			.hit .breadcrumbs span { margin: 0 5px; }
 		</style>
 	</xsl:param>
 	
@@ -54,7 +58,7 @@
 		if (matches($n, '^\d+$')) 
 			then $n 
 			else replace($n, '^\D*(\d+).*$', '~ $1')"/>
-	</xsl:function> 
+	</xsl:function>
 	
 	<!-- Line numbers need href from f:hit and should be shown for every line -->
 	<xsl:template name="generate-lineno">	
@@ -65,29 +69,40 @@
 	
 	<!-- Matches are marked up & made to links. Maybe include match term in URI some time -->
 	<xsl:template match="exist:match">
-		<mark class="match">
-			<a class="match" href="{ancestor::f:hit/@href}#l{ancestor::*[@n][1]/@n}">
-				<xsl:apply-templates/>
-			</a>
-		</mark>
+		<mark class="match"><a class="match" href="{ancestor::f:hit/@href}#l{ancestor::*[@n][1]/@n}"><xsl:apply-templates/></a></mark>
 	</xsl:template>
 	
 	<!-- Each hit is represented by a heading and the actual content -->
 	<xsl:template match="f:hit">
-		<section class="hit">
-			<!-- this will become a proper breadcrumb some time -->
+		<xsl:variable name="scene-data" as="element()*">
+			<xsl:call-template name="scene-data"/>
+		</xsl:variable>
+		<xsl:variable name="separator">
+			<i class="fa fa-angle-right"/>			
+		</xsl:variable>
+		
+		<section class="hit">			
 			<h3>
-				<small class="breadcrumbs">
-					<xsl:call-template name="breadcrumbs-genesis"/>
-				</small>
 				<a href="{@href}">
-					<span class="sigil">
+					<span class="sigil" title="{@headnote}">
 						<xsl:value-of select="@sigil"/>						
 					</span>
-					<xsl:text> </xsl:text>
-					<span class="headnote">
-						<xsl:value-of select="@headnote"/>
-					</span>				
+					<xsl:if test="$scene-data">
+						<small class="breadcrumbs">
+							<xsl:choose>
+								<xsl:when test="(starts-with($scene-data/f:id, '2')) ">
+									<span>Faust II</span>
+									<xsl:copy-of select="$separator"/>
+									<span><xsl:value-of select="substring($scene-data/f:id, 3, 1)"/>. Akt</span>
+								</xsl:when>
+								<xsl:otherwise>
+									<span>Faust I</span>
+								</xsl:otherwise>
+							</xsl:choose>
+							<xsl:copy-of select="$separator"/>									
+							<span><xsl:value-of select="$scene-data/f:title"/></span>							
+						</small>						
+					</xsl:if>
 				</a>
 			</h3>
 			<xsl:apply-templates/>
@@ -102,9 +117,10 @@
 				<xsl:call-template name="header">
 					<xsl:with-param name="breadcrumbs" tunnel="yes">						
 						<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
-							<div id="#current">
-								Suchergebnisse
-							</div>
+							<small id="breadcrumbs">Suchergebnisse</small>
+						</div>
+						<div id="current" class="pure-nowrap" title="{@query}">
+							<xsl:value-of select="@query"/>
 						</div>
 					</xsl:with-param>
 				</xsl:call-template>
