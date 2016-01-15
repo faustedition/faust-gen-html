@@ -328,9 +328,9 @@
 					<xsl:value-of select="$scene/f:title"/>
 				</a>
 				<br/>
-				<a href="{$edition}/archives.php">Archiv</a>
+				<a href="{$edition}/archive.php">Archiv</a>
 				>
-				<a href="{$edition}/archives_print.php">Drucke</a>
+				<a href="{$edition}/archive_prints.php">Drucke</a>
 				>
 				<a href="{f:html-link(concat($output-base, '.html'))}"><xsl:value-of select="$title"/></a>
 				<xsl:call-template name="div-breadcrumbs"/>

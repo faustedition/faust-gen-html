@@ -119,14 +119,14 @@
 	
 	<xsl:template name="breadcrumbs-archive">
 		<xsl:param name="separator"/>		
-		<a href="../archives.php">Archiv</a>
+		<a href="../archive.php">Archiv</a>
 		<xsl:copy-of select="$separator"/>
 		<xsl:choose>
 			<xsl:when test="$type = 'print'">
-				<a href="../archives_print.php">Drucke</a>
+				<a href="../archive_prints.php">Drucke</a>
 			</xsl:when>
 			<xsl:otherwise>
-				<a href="../archives_locations_detail.php?id={/TEI/@f:repository}">
+				<a href="../archive_locations_detail.php?id={/TEI/@f:repository}">
 					<xsl:value-of select="/TEI/@f:repository-label"/>
 				</a>
 			</xsl:otherwise>

@@ -121,7 +121,7 @@
 		<xsl:variable name="id" select="."/>
 		<xsl:call-template name="element">
 			<xsl:with-param name="content">
-				<a href="{$edition}/archiveDetail.php?archiveId={$id}">
+				<a href="{$edition}/archive_locations_detail.php?archiveId={$id}">
 					<xsl:value-of select="$repositories//archive[@id=$id]/displayName"/>
 				</a>				
 			</xsl:with-param>

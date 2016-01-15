@@ -52,7 +52,7 @@
 			
 			<nav class="pure-menu pure-menu-open pure-menu-horizontal pure-right pure-nowrap pure-noprint">
 				<ul>
-          <li><a href="{$edition}/archives.php">Archiv</a></li>
+          <li><a href="{$edition}/archive.php">Archiv</a></li>
           <li><a href="{$edition}/genesis.php">Genese</a></li>
           <li><a href="{$edition}/print/text.html">Text</a></li>
  		  <li><form class="pure-form" action="/search" method="GET"><input id="quick-search" name="q" type="text" onblur="this.value=''" /><button type="submit" class="pure-fade-30"><i class="fa fa-search fa-lg"></i></button></form></li> 
