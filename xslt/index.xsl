@@ -34,9 +34,9 @@
                   
                   <xsl:if test="$type = 'overview'">                    
                     <p class="pure-tiles">
-                     <a href="text.html" title="Lesetext" class="pure-button pure-button-tile">Lese&#xAD;text</a>
-                     <a href="prints.html" title="Drucke" class="pure-button pure-button-tile">Drucke</a>
-                     <a href="archivalDocuments.html" title="Handschriften" class="pure-button pure-button-tile">Hand&#xAD;schriften</a>
+                     <a href="text.html" class="pure-button pure-button-tile">Lese&#xAD;text</a>
+                     <a href="prints.html" class="pure-button pure-button-tile">Drucke</a>
+                     <a href="archivalDocuments.html" class="pure-button pure-button-tile">Hand&#xAD;schriften</a>
                     </p>
                   </xsl:if>
 
