@@ -225,7 +225,7 @@
 			<ul class="breadcrumbs fa-ul">
 				<!-- Der Titel kann hereingegeben werden oder aus dem TEI-titleStmt kommen -->
 				<li>
-					<span class="fa-li fa-caret-up"/>
+					<span class="fa-li fa fa-up-dir"/>
 					<a href="{f:html-link(concat($output-base, '.html'))}">
 						<xsl:value-of select="$title"/>
 					</a>
@@ -236,10 +236,10 @@
 						<xsl:choose>              
 							<xsl:when test=". is $current-div">
 								<xsl:attribute name="class">current</xsl:attribute>
-								<span class="fa-li fa-caret-left"/>
+								<span class="fa-li fa fa-left-dir"/>
 							</xsl:when>
 							<xsl:otherwise>
-								<span class="fa-li fa-caret-up"/>
+								<span class="fa-li fa fa-up-dir"/>
 							</xsl:otherwise>
 						</xsl:choose>
 						<xsl:call-template name="section-link"/>
@@ -253,7 +253,7 @@
 					<li class="prev">
 						<xsl:for-each
 							select="preceding::div[count(ancestor::div) lt $depth_n][1]">
-							<span class="fa-li fa-backward"/>
+							<span class="fa-li fa fa-fast-bw"/>
 							<xsl:call-template name="section-link"/>              
 						</xsl:for-each>
 					</li>
@@ -262,7 +262,7 @@
 					<li class="next">
 						<xsl:for-each
 							select="following::div[count(ancestor::div) lt $depth_n][1]">
-							<span class="fa-li fa-forward"/>
+							<span class="fa-li fa fa-fast-fw"/>
 							<xsl:call-template name="section-link"/>
 						</xsl:for-each>
 					</li>
@@ -276,11 +276,11 @@
 					<li class="all">
 						<xsl:choose>
 							<xsl:when test="$single">
-								<span class="fa-li fa-files-o"/>
+								<span class="fa-li fa fa-docs"/>
 								<a href="{f:html-link(concat($output-base, '.html'))}">nach Szenen zerlegt</a>
 							</xsl:when>
 							<xsl:otherwise>
-								<span class="fa-li fa-file-o"/>
+								<span class="fa-li fa fa-doc"/>
 								<a href="{f:html-link(concat($output-base, '.all.html'))}">auf einer Seite</a>
 							</xsl:otherwise>
 						</xsl:choose>
