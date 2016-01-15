@@ -55,7 +55,7 @@
           <li><a href="{$edition}/archives.php">Archiv</a></li>
           <li><a href="{$edition}/genesis.php">Genese</a></li>
           <li><a href="{$edition}/print/text.html">Text</a></li>
-					<li><form class="pure-form" action="{$edition}/search" method="get"><input id="quick-search" name="q" placeholder="Suche" type="text" value="{$query}"/></form></li> 
+ 		  <li><form class="pure-form" action="/search" method="GET"><input id="quick-search" name="q" type="text" onblur="this.value=''" /><button type="submit" class="pure-fade-30"><i class="fa fa-search fa-lg"></i></button></form></li> 
           <li><a href="{$edition}/imprint.php"><small class="pure-fade-50">Impressum</small></a></li>
           <li><a href="{$edition}/help.php"><i class="fa fa-help-circled fa-lg"></i></a></li>
 				</ul>
