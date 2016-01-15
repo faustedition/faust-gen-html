@@ -43,8 +43,8 @@
 
                   <xsl:if test="tokenize($type, ' ') = 'text'">                    
                     <p class="pure-tiles">
-                     <a href="faust1.html" title="Faust I" class="pure-button pure-button-tile">Faust I</a>
-                     <a href="faust2.html" title="Faust II" class="pure-button pure-button-tile">Faust II</a>
+                     <a href="faust1.html" class="pure-button pure-button-tile">Faust I</a>
+                     <a href="faust2.html" class="pure-button pure-button-tile">Faust II</a>
                     </p>
                   </xsl:if>
                   
