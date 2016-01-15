@@ -32,8 +32,7 @@
 
             <article class="pure-u-3-5 pure-center">
                   
-                  <xsl:if test="$type = 'overview'">
-                    <h1>Text</h1>
+                  <xsl:if test="$type = 'overview'">                    
                     <p class="pure-tiles">
                      <a href="text.html" title="Lesetext" class="pure-button pure-button-tile">Lese&#xAD;text</a>
                      <a href="prints.html" title="Drucke" class="pure-button pure-button-tile">Drucke</a>
@@ -42,8 +41,7 @@
                   </xsl:if>
 
 
-                  <xsl:if test="tokenize($type, ' ') = 'text'">
-                    <h1>Lesetext</h1>
+                  <xsl:if test="tokenize($type, ' ') = 'text'">                    
                     <p class="pure-tiles">
                      <a href="faust1.html" title="Faust I" class="pure-button pure-button-tile">Faust I</a>
                      <a href="faust2.html" title="Faust II" class="pure-button pure-button-tile">Faust II</a>
@@ -51,8 +49,7 @@
                   </xsl:if>
                   
 
-                  <xsl:if test="tokenize($type, ' ') = 'print'">              
-                    <h1>Drucke</h1>
+                  <xsl:if test="tokenize($type, ' ') = 'print'">                                  
                     <dl>
                       <xsl:variable name="mdlist" select="/"/>
                       
@@ -77,8 +74,7 @@
                     </dl>
                   </xsl:if>
 
-                  <xsl:if test="$type = 'archivalDocument'">
-                    <h1>Handschriften</h1>                    
+                  <xsl:if test="$type = 'archivalDocument'">                    
                     <ul>
                       <xsl:for-each select="//f:textTranscript[@type='archivalDocument']">
                         <xsl:sort select="f:idno[1]"/>
@@ -99,6 +95,10 @@
           </section>
 
 				<xsl:call-template name="footer"/>
+			  <script type="text/javascript">
+			    // set breadcrumbs
+			    document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "<xsl:value-of select="$title"/>"}]));
+			  </script>
 			</body>
 		</html>
 		
