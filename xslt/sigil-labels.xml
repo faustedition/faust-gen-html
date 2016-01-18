@@ -5,6 +5,7 @@
 
 -->
 <sigil-labels xmlns="http://www.faustedition.net/ns">
+	<label type="faustedition">Faustedition</label>
 	<label type="wa_faust">WA, Faust</label>
 	<label type="bohnenkamp">Bohnenkamp</label>
 	<label type="fischer_lamberg">Fischer-Lamberg</label>
@@ -13,6 +14,13 @@
 	<label type="ma">MA</label>
 	<label type="wa_gedichte">WA, Gedichte</label>
 	<label type="wa_div">WA, Divan</label>
+	<label type="hagen">Hagen</label>
+	<label type="wa_I_53">WA I 53</label>
+	<label type="hagen_nr">Hagen-Nr.</label>
+	<label type="aa_ls_helenaank">AA Ls, Helena-Ankündigung</label>
+	<label type="wa_helenaank">WA, Helena-Ankündigung</label>
+	<label type="aa_wilhelmmeister">AA, Wilhelm Meister</label>
+	<label type="wa_mur">WA, Maximen und Reflexionen</label>
 	<label type="gsa_1" kind="signature">GSA</label>
 	<label type="gsa_2" kind="signature" >GSA</label>
 	<label type="fdh_frankfurt" kind="signature">FRA</label>
@@ -35,12 +43,4 @@
 	<label type="ul_yale" kind="signature">YAL</label>
 	<label type="tml_new_york" kind="signature">NY</label>
 	<label type="ul_pennstate" kind="signature">PEN</label>
-	<label type="hagen">Hagen</label>
-	<label type="wa_I_53">WA I 53</label>
-	<label type="hagen_nr">Hagen-Nr.</label>
-	<label type="aa_ls_helenaank">AA Ls, Helena-Ankündigung</label>
-	<label type="wa_helenaank">WA, Helena-Ankündigung</label>
-	<label type="aa_wilhelmmeister">AA, Wilhelm Meister</label>
-	<label type="faustedition">Faustedition</label>
-	<label type="wa_mur">WA, Maximen und Reflexionen</label>
 </sigil-labels>
