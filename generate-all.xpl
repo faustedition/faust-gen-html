@@ -3,6 +3,7 @@
 	xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:pxp="http://exproc.org/proposed/steps"
 	xmlns:pxf="http://exproc.org/proposed/steps/file"
 	xmlns:f="http://www.faustedition.net/ns"
+	xmlns:tei="http://www.tei-c.org/ns/1.0"
 	xmlns:l="http://xproc.org/library" name="main" version="1.0">
 	
 	<p:input port="source"><p:empty/></p:input>
@@ -59,6 +60,9 @@
 		<p:load>
 			<p:with-option name="href" select="concat($source, 'transcript/gsa/391098/391098.xml')"/>
 		</p:load>
+		
+		<p:delete match="tei:div[@type='stueck']"/>
+		
 		<f:print2html basename="faust2" cx:depends-on="variants">
 		  <p:with-param name="type" select="'lesetext'"/>
 		  <p:with-param name="title" select="'Faust II'"/>		  
