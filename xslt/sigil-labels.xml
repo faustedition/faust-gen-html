@@ -17,8 +17,14 @@
 	<label type="hagen">Hagen</label>
 	<label type="wa_I_53">WA I 53</label>
 	<label type="hagen_nr">Hagen-Nr.</label>
+	<label type="wa_aristpoet">WA, Nachlese zu Aristoteles’ Poetik</label>
+	<label type="wa_chines">WA, Chinesisches</label>
 	<label type="wa_helenaank">WA, Helena-Ankündigung</label>
+	<label type="wa_kua">WA, Kunst und Alterthum</label>
 	<label type="wa_mur">WA, Maximen und Reflexionen</label>
+	<label type="wa_tasso">WA, Torquato Tasso</label>
+	<label type="wa_wesentrag">WA, Das Wesen der antiken Tragödie von Hinrichs</label>
+	<label type="la_II_2_winderz">LA II 2, Versuch einer Witterungslehre 1825, Winderzeugung</label>
 	<label type="aa_wilhelmmeister">AA, Wilhelm Meisters theatralische Sendung</label>
 	<label type="aa_duw">AA Dichtung und Wahrheit</label>
 	<label type="aa_ls_aristpoet">AA, Nachlese zu Aristoteles’ Poetik</label>
@@ -27,6 +33,8 @@
 	<label type="aa_ls_kuaschemata">AA Ls, Über Kunst und Altertum. Schemata</label>
 	<label type="aa_ls_stoffgeh">AA Ls, Stoff und Gehalt</label>
 	<label type="aa_ls_wesentrag">AA Ls, Das Wesen der antiken Tragödie</label>
+	<label type="seuffert">Seuffert</label>
+	<label type="gsa_findbuch">Findbuch des GSA</label>
 	<label type="gsa_1" kind="signature">GSA</label>
 	<label type="gsa_2" kind="signature" >GSA</label>
 	<label type="fdh_frankfurt" kind="signature">FRA</label>
@@ -38,6 +46,8 @@
 	<label type="gm_duesseldorf" kind="signature">DUE</label>
 	<label type="sa_hannover" kind="signature">HAN</label>
 	<label type="thlma_weimar" kind="signature">WEI</label>
+	<label type="haab_weimar">WEI</label>
+	<label type="bsb_muenchen" kind="signature">MUE</label>
 	<label type="bb_cologny" kind="signature">COL</label>
 	<label type="ub_basel" kind="signature">BAS</label>
 	<label type="bj_krakow" kind="signature">KRA</label>
@@ -49,4 +59,5 @@
 	<label type="ul_yale" kind="signature">YAL</label>
 	<label type="tml_new_york" kind="signature">NY</label>
 	<label type="ul_pennstate" kind="signature">PEN</label>
+	<label type="mlm_paris">PAR</label>
 </sigil-labels>
