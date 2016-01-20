@@ -20,7 +20,13 @@
 	<label type="aa_ls_helenaank">AA Ls, Helena-Ankündigung</label>
 	<label type="wa_helenaank">WA, Helena-Ankündigung</label>
 	<label type="wa_mur">WA, Maximen und Reflexionen</label>
-	<label type="aa_wilhelmmeister">AA, Wilhelm Meister</label>
+	<label type="aa_wilhelmmeister">AA, Wilhelm Meisters theatralische Sendung</label>
+	<label type="aa_duw">AA Dichtung und Wahrheit</label>
+	<label type="aa_ls_aristpoet">AA, Nachlese zu Aristoteles’ Poetik</label>
+	<label type="aa_ls_chines">AA Ls, Chinesisches</label>
+	<label type="aa_ls_kuaschemata">AA Ls, Über Kunst und Altertum. Schemata</label>
+	<label type="aa_ls_stoffgeh">AA Ls, Stoff und Gehalt</label>
+	<label type="aa_ls_wesentrag">AA Ls, Das Wesen der antiken Tragödie</label>
 	<label type="gsa_1" kind="signature">GSA</label>
 	<label type="gsa_2" kind="signature" >GSA</label>
 	<label type="fdh_frankfurt" kind="signature">FRA</label>
