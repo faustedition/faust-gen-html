@@ -14,9 +14,7 @@
 	<label type="ma">MA</label>
 	<label type="wa_gedichte">WA, Gedichte</label>
 	<label type="wa_div">WA, Divan</label>
-	<label type="hagen">Hagen</label>
 	<label type="wa_I_53">WA I 53</label>
-	<label type="hagen_nr">Hagen-Nr.</label>
 	<label type="wa_aristpoet">WA, Nachlese zu Aristoteles’ Poetik</label>
 	<label type="wa_chines">WA, Chinesisches</label>
 	<label type="wa_helenaank">WA, Helena-Ankündigung</label>
@@ -34,6 +32,8 @@
 	<label type="aa_ls_stoffgeh">AA Ls, Stoff und Gehalt</label>
 	<label type="aa_ls_wesentrag">AA Ls, Das Wesen der antiken Tragödie</label>
 	<label type="seuffert">Seuffert</label>
+	<label type="hagen">Hagen</label>
+	<label type="hagen_nr">Hagen-Nr.</label>
 	<label type="gsa_findbuch">Findbuch des GSA</label>
 	<label type="gsa_1" kind="signature">GSA</label>
 	<label type="gsa_2" kind="signature" >GSA</label>
