@@ -13,6 +13,8 @@
 	<xsl:param name="headerAdditions"/>
 	<xsl:param name="query"/>
 	
+	<xsl:output method="xhtml" indent="yes" include-content-type="no" omit-xml-declaration="yes"></xsl:output>
+	
 	<xsl:template name="html-head">
 		<xsl:param name="title" select="$title"/>
 		<head>

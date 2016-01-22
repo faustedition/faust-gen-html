@@ -181,7 +181,11 @@
 	<xsl:template match="idno[@type='kraeuter']"/>
 	<xsl:template match="*[f:isEmpty(.)]"/>
 	
-	<xsl:template match="note[preceding-sibling::*[1][self::idno]]"/>
+	<xsl:template match="note[preceding-sibling::*[1][self::idno]]">
+		<xsl:comment>
+			Not displaying note: <xsl:value-of select="."/>
+		</xsl:comment>
+	</xsl:template>
 	
 	<xsl:function name="f:isEmpty" as="xs:boolean">
 		<xsl:param name="element"/>		
@@ -294,11 +298,11 @@
 			<xsl:value-of select="headNote"/>
 		</h3>
 		<p class="md-note wip">
-			<xsl:apply-templates select="headNote/following-sibling::note[1]"/>
+			<xsl:apply-templates select="headNote/following-sibling::note[1]/*"/>
 		</p>
 		<dl>
 			<xsl:apply-templates select="* 
-				except (idno[@type=('faustedition', 'wa_faust')][1] | headNote | headNote/following-sibling::note[1])"/>
+				except (idno[@type=('faustedition', 'wa_faust')][1] | headNote | headNote/following-sibling::*[1][self::note])"/>
 		</dl>
 	</xsl:template>
 	
