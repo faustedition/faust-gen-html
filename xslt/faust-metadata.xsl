@@ -24,8 +24,7 @@
 		<elem name="collection">Sammlung</elem>
 		<elem name="idno">Sigle</elem>
 		<elem name="subidno">Teilsigle</elem>
-		<!-- "textTranscript"": "entfällt als Angabe, wird direkt in Konvolutstruktur übersetzt und als Bild angezeigt -->
-		<elem name="classification">Handschriftentyp</elem>
+		<elem name="classification">Klassifikation</elem>
 		<elem name="history">Überlieferung</elem>
 		<elem name="container">Aufbewahrungsform</elem>
 		<elem name="binding">Einband</elem>
