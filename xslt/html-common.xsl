@@ -139,6 +139,45 @@
 		<xsl:value-of select="concat('&lt;/', name(), '>')"/>
 	</xsl:template>
 	
+	<!-- Returns the local name of the appropriate HTML element for the given tei element -->
+	<xsl:function name="f:html-tag-name">
+		<xsl:param name="element"/>
+		<xsl:choose>
+			<xsl:when test="$element[self::p]">p</xsl:when>
+			<xsl:when test="$element/@rend = 'sup'">sup</xsl:when>
+			<xsl:when test="f:isInline($element)">span</xsl:when>
+			<xsl:when test="$element/self::head/parent::div[@type='subscene']">h5</xsl:when>
+			<xsl:when test="$element/self::head[parent::div[@type='scene']/parent::div
+				or parent::body]">h4</xsl:when>
+			<xsl:when test="$element/self::head/parent::div/parent::body">h3</xsl:when>
+			<xsl:otherwise>div</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
+	<!-- Returns a sequence of classes for the HTML equivalant to a TEI element. -->
+	<xsl:function name="f:generic-classes">
+		<xsl:param name="element"/>
+		<xsl:for-each select="$element">
+			<xsl:sequence select="local-name($element)"/>
+			<xsl:sequence select="for $rend in tokenize($element/@rend, ' ') return concat('rend-', $rend)"/>
+			<!-- 
+	      @rend values will be included as rend-<value> in the class attribute. However, there is an exception:
+	      hi elements having _only_ 'big' or 'small' as rend value should not be highlighted. We deal with this
+	      by adding a nohighlight class to them.    
+	    -->
+			<xsl:sequence select="if ($element/@rend=('big','small')) then ('nohighlight') else ()"/>
+			<xsl:sequence select="for $type in tokenize($element/@type, ' ') return concat('type-', $type)"/>
+			<xsl:sequence select="for $subtype in tokenize($element/@subtype, ' ') return concat('subtype-', $subtype)"/>
+			<xsl:if test="key('alt', @xml:id)">
+				<xsl:sequence select="('alt', 'appnote', 'affected')"/>
+			</xsl:if>
+			<xsl:if test="$element/@n">
+				<xsl:sequence select="concat('n-', $element/@n)"/>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:function>
+	
+	
 	
 	<xsl:template match="figure">
 		<br class="figure {@type}"/>

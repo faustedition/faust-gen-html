@@ -85,24 +85,7 @@
     </xsl:choose>
   </xsl:function>
   
-  <!-- Returns a sequence of classes for the HTML equivalant to a TEI element. -->
-  <xsl:function name="f:generic-classes">
-    <xsl:param name="element"/>     
-    <xsl:sequence select="local-name($element)"/>
-    <xsl:sequence select="for $rend in tokenize($element/@rend, ' ') return concat('rend-', $rend)"/>
-    <!-- 
-      @rend values will be included as rend-<value> in the class attribute. However, there is an exception:
-      hi elements having _only_ 'big' or 'small' as rend value should not be highlighted. We deal with this
-      by adding a nohighlight class to them.    
-    -->
-    <xsl:sequence select="if ($element/@rend=('big','small')) then ('nohighlight') else ()"/>
-    <xsl:sequence select="for $type in tokenize($element/@type, ' ') return concat('type-', $type)"/>
-    <xsl:sequence select="for $subtype in tokenize($element/@subtype, ' ') return concat('subtype-', $subtype)"/>
-    <xsl:if test="$element/@n">
-      <xsl:sequence select="concat('n-', $element/@n)"/>
-    </xsl:if>      
-  </xsl:function>
-  
+    
   
   <xsl:function name="f:relativize" as="xs:anyURI">
     <xsl:param name="source" as="xs:string" />
