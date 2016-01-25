@@ -378,42 +378,17 @@ in <xsl:value-of select="document-uri(/)"/>
 
 
 	
-	<xsl:key name="alt" match="alt" use="for $ref in tokenize(@target, '\s+') return substring($ref, 2)"/>
-	<xsl:function name="f:resolve-target" as="element()*">
-		<xsl:param name="elem" as="element()*"/>		
-		<xsl:sequence select="
-			for $el in $elem return
-				for $target in tokenize($el, '\s+') return 
-					id(substring-after($target, '#'), $elem[1])"/>
-	</xsl:function>
-	<xsl:template match="*[@xml:id and key('alt', @xml:id)]" priority="2">
-		<xsl:element name="{f:html-tag-name(.)}">
-			<xsl:attribute name="class">alt appnote</xsl:attribute>
-			<xsl:attribute name="titel">zur Auswahl</xsl:attribute>
-			<xsl:call-template name="highlight-group">
-				<xsl:with-param name="others" select="f:resolve-target(key('alt', @xml:id))"/>
-				<xsl:with-param name="prefix">alt_</xsl:with-param>				
-			</xsl:call-template>
-			<xsl:choose>
-				<xsl:when test="self::seg">
-					<xsl:apply-templates/>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:next-match/>					
-				</xsl:otherwise>
-			</xsl:choose>			
-		</xsl:element>
-	</xsl:template>
-	
 	<!-- Einfacher als in print2html da kein Variantenapparat -->
 	<xsl:template match="*">
 		<xsl:element name="{f:html-tag-name(.)}">
 			<xsl:call-template name="generate-style"/>
-			<xsl:attribute name="class" select="string-join((f:generic-classes(.),
-				if (@xml:id and key('alt', @xml:id)) then 'alt' else (),
+			<xsl:attribute name="class" select="string-join((f:generic-classes(.),				
 				if (@n and @part) then ('antilabe', concat('part-', @part)) else ()), ' ')"/>
+			<xsl:if test="key('alt', @xml:id)">
+				<xsl:attribute name="title">zur Auswahl</xsl:attribute>
+			</xsl:if>
 			<xsl:call-template name="highlight-group">
-				<xsl:with-param name="others" select="key('alt', @xml:id)"/>
+				<xsl:with-param name="others" select="f:resolve-target(key('alt', @xml:id))"/>
 			</xsl:call-template>
 			<xsl:call-template name="generate-lineno"/>
 			<xsl:apply-templates/>
@@ -484,6 +459,9 @@ in <xsl:value-of select="document-uri(/)"/>
 					</xsl:if>
 				</xsl:if>
 			</xsl:for-each>
+			<xsl:if test="key('alt', $context/@xml:id)">
+				<xsl:text> / zur Auswahl</xsl:text>
+			</xsl:if>
 		</xsl:variable>
 		
 		<xsl:element name="{f:html-tag-name(.)}">

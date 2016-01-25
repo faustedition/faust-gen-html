@@ -70,18 +70,24 @@
     </xsl:choose>
   </xsl:function>
   
-  <!-- Returns the local name of the appropriate HTML element for the given tei element -->
-  <xsl:function name="f:html-tag-name">
-    <xsl:param name="element"/>
+  
+  <!-- Resolves @target references within the current document. 
+    
+       I.e. f:resolve-target(<alt target="#foo #bar #baz"/>) returns a
+       sequence of the three elements with the ids foo, bar, and baz.  
+  -->  
+  <xsl:function name="f:resolve-target" as="element()*">
+    <xsl:param name="elem" as="element()*"/>   
+    <xsl:variable name="targets" select="tokenize(string-join($elem/@target, ' '), '\s+')"/>
     <xsl:choose>
-      <xsl:when test="$element[self::p]">p</xsl:when>
-      <xsl:when test="$element/@rend = 'sup'">sup</xsl:when>
-      <xsl:when test="f:isInline($element)">span</xsl:when>
-      <xsl:when test="$element/self::head/parent::div[@type='subscene']">h5</xsl:when>
-      <xsl:when test="$element/self::head[parent::div[@type='scene']/parent::div
-                                        or parent::body]">h4</xsl:when>
-      <xsl:when test="$element/self::head/parent::div/parent::body">h3</xsl:when>
-      <xsl:otherwise>div</xsl:otherwise>
+      <xsl:when test="count($targets) > 0">
+        <xsl:variable name="ids" select="for $target in $targets return substring-after($target, '#')"/>
+        <xsl:variable name="resolved" select="for $id in $ids return id($id, $elem[1])"/>
+        <xsl:sequence select="$resolved"/>        
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:sequence select="()"/>
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:function>
   

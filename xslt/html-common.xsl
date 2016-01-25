@@ -13,6 +13,8 @@
 	
 	<xsl:param name="edition">../</xsl:param>
 	
+	<xsl:key name="alt" match="alt" use="for $ref in tokenize(@target, '\s+') return substring($ref, 2)"/>		
+	
 	<xsl:variable name="scenes" select="doc('scenes.xml')"/>
 	
 	<xsl:function name="f:scene-for" as="element()?">
@@ -223,7 +225,13 @@
 		<xsl:param name="others" as="element()*"/>
 		<xsl:param name="prefix" as="xs:string" select="''"/>
 		<xsl:variable name="samestage" select="if (@ge:stage) then key('samestage', @ge:stage) else ()"/>
-		<xsl:variable name="others" select="for $el in ($others, $samestage) except . return concat($prefix, f:generate-id($el))"/>
+		<xsl:variable name="alt" select="
+			if (@xml:id and key('alt', @xml:id)) 
+				then f:resolve-target(key('alt', @xml:id))						
+				else ()"/>
+		<xsl:variable name="others" select="
+			for $el in ($others, $samestage, $alt) except . 
+				return concat($prefix, f:generate-id($el))"/>
 		<xsl:if test="count($others) > 0">
 			<xsl:attribute name="id" select="concat($prefix, f:generate-id(.))"/>
 			<xsl:attribute name="data-also-highlight" select="string-join($others, ' ')"/>
