@@ -182,10 +182,11 @@
 	<xsl:key name="samestage" match="*[@ge:stage]" use="string(@ge:stage)"/>
 	<xsl:template name="highlight-group">
 		<xsl:param name="others" as="element()*"/>
+		<xsl:param name="prefix" as="xs:string" select="''"/>
 		<xsl:variable name="samestage" select="if (@ge:stage) then key('samestage', @ge:stage) else ()"/>
-		<xsl:variable name="others" select="for $el in ($others, $samestage) except . return f:generate-id($el)"/>
+		<xsl:variable name="others" select="for $el in ($others, $samestage) except . return concat($prefix, f:generate-id($el))"/>
 		<xsl:if test="count($others) > 0">
-			<xsl:attribute name="id" select="f:generate-id(.)"/>
+			<xsl:attribute name="id" select="concat($prefix, f:generate-id(.))"/>
 			<xsl:attribute name="data-also-highlight" select="string-join($others, ' ')"/>
 		</xsl:if>	
 	</xsl:template>
