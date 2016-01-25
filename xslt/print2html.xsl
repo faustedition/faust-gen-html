@@ -31,8 +31,7 @@
     TODO was hiervon gemeinsam mit der Variantenerzeugung?
     
    -->
-
-  <xsl:key name="alt" match="alt" use="for $ref in tokenize(@target, '\s+') return substring($ref, 2)"/>
+  
 <!-- Die Behandlung von den meisten Elementen ist relativ gleich: -->
   <xsl:template match="*">
     <!-- # Varianten aus dem variants-Folder auslesen: -->
@@ -82,8 +81,12 @@
           concat('variants-', if ($varinfo) then $varinfo/@data-variants else 0),
           if ($varinfo/@ctext != normalize-space(.)) then 'real-variant' else () 
         ) else (),
-        if (@xml:id and key('alt', @xml:id)) then 'alt' else (),
         if (@n and @part) then ('antilabe', concat('part-', @part)) else ()), ' ')"/>
+      
+      <xsl:if test="@xml:id and key('alt', @xml:id)">
+        <xsl:call-template name="highlight-group"/>
+        <xsl:attribute name="title">zur Auswahl</xsl:attribute>
+      </xsl:if>
 
       <!-- Zeilennummer als link, wird dann in textual-transcript.css weggestylt -->
       <xsl:call-template name="generate-lineno"/>
