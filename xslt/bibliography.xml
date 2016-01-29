@@ -368,7 +368,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/hartung_und_hartung_112">
-        <f:citation>Hartung und Hartung 112 '''@DP Kurztitel so in Ordnung oder besser mit Jahresangabe 112 (2005)?'''</f:citation>
+        <f:citation>Hartung und Hartung 112</f:citation>
         <f:reference>Hartung &amp; Hartung, München: [Katalog] Auktion 112, 8.–10. November 2005, o.O. 2005 (http://www.hartung-hartung.de/ unter Auktionen, Nr. 112). &lt;small>war vorher faust://bibliography/hartung_und_hartung2005&lt;/small></f:reference>
     </f:bib>
 
@@ -432,14 +432,14 @@
         <f:reference>[Katalog] Der handschriftliche Nachlass Johann Gottfried Herders, im Auftr. u. mit Unterstützung d. Akademie der Wissenschaften in Göttingen bearb. von Hans Dietrich Irmscher und Emil Adler, Wiesbaden 1979 (= Kataloge der Handschriftenabteilung / Staatsbibliothek Preussischer Kulturbesitz, R. 2: Nachlässe, Bd. 1).</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/inventare2000">
+    <f:bib uri="faust://bibliography/inventare_2_1">
         <f:citation>Inventare 2,1</f:citation>
-        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 1: Gedichte, hrsg. von der Stiftung Weimarer Klassik, Goethe- und Schiller-Archiv. Weimar 2000.&lt;br>Ändern in '''faust://bibliography/inventare_2_1'''.</f:reference>
+        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 1: Gedichte, hrsg. von der Stiftung Weimarer Klassik, Goethe- und Schiller-Archiv. Weimar 2000.&lt;br>&lt;small>ehemals faust://bibliography/inventare2000.&lt;/small></f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/inventare2011">
+    <f:bib uri="faust://bibliography/inventare_2_2">
         <f:citation>Inventare 2,2</f:citation>
-        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 2: Dramen, Romane und Erzählungen, hrsg. von der Klassik Stiftung Weimar, Goethe- und Schiller-Archiv. Weimar 2011.&lt;br>Ändern in '''faust://bibliography/inventare_2_2'''.</f:reference>
+        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 2: Dramen, Romane und Erzählungen, hrsg. von der Klassik Stiftung Weimar, Goethe- und Schiller-Archiv. Weimar 2011.&lt;br>&lt;small> ehemals faust://bibliography/inventare2011.&lt;/small></f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/jensen1968">
@@ -847,6 +847,11 @@
         <f:reference>Schröter, Axel: [Katalog] Der historische Notenbestand des Deutschen Nationaltheaters Weimar, Sinzig 2010 (= Musik und Theater 6).</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/schwarz_11">
+        <f:citation>Schwarz 11</f:citation>
+        <f:reference>Dr. Ignaz Schwarz, Buch- und Kunstantiquariates: [Katalog] Versteigerung XI am 9. April 1924, Wien 1924.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/shelley1966">
         <f:citation>Shelley 1966</f:citation>
         <f:reference>Shelley, Philip Allison: Another Holograph Fragment of Faust II, Act V, Scene I. In: Modern Language Notes 81 (1966), S. 493-498.</f:reference>
@@ -862,19 +867,19 @@
         <f:reference>Solms, Wilhelm: Goethes Vorarbeiten zum Divan, München 1977 (= Münchener germanistische Beiträge 12).</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/stargardt1985">
+    <f:bib uri="faust://bibliography/stargardt_634">
         <f:citation>Stargardt 634</f:citation>
-        <f:reference>J. A. Stargardt: Katalog 634. Autographen aus allen Gebieten, Marburg 1985. '''todo Ändern in''' faust://bibliography/stargardt_634</f:reference>
+        <f:reference>J. A. Stargardt: Katalog 634. Autographen aus allen Gebieten, Marburg 1985. &lt;small>ehemals faust://bibliography/stargardt1985&lt;/small></f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/stargardt1996">
+    <f:bib uri="faust://bibliography/stargardt_663">
         <f:citation>Stargardt 663</f:citation>
-        <f:reference>J. A. Stargardt: Katalog 663. Autographen aus allen Gebieten, Auktion am 21. und 22. März 1996, Berlin 1996. '''todo Ändern in''' faust://bibliography/stargardt_663</f:reference>
+        <f:reference>J. A. Stargardt: Katalog 663. Autographen aus allen Gebieten, Auktion am 21. und 22. März 1996, Berlin 1996. &lt;small>ehemals faust://bibliography/stargardt1996&lt;/small></f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/stargardt2012">
+    <f:bib uri="faust://bibliography/stargardt_698">
         <f:citation>Stargardt 698</f:citation>
-        <f:reference>J. A.Stargardt: Katalog 698. Autographen aus allen Gebieten, Auktion am 5. und 6. Juni 2012, Berlin 2012. '''todo Ändern in''' faust://bibliography/stargardt_698</f:reference>
+        <f:reference>J. A.Stargardt: Katalog 698. Autographen aus allen Gebieten, Auktion am 5. und 6. Juni 2012, Berlin 2012. &lt;small>ehemals faust://bibliography/stargardt2012&lt;/small></f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/steiniger2005">
@@ -1177,6 +1182,86 @@
         <f:reference>WA, Abt. IV, Bd. 51, München 1990.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gjb_11">
+        <f:citation>GJB 11</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Elfter Band, Frankfurt am Main 1890.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/alt_14">
+        <f:citation>Alt 14</f:citation>
+        <f:reference>Goethes Werke. Vollständige Ausgabe in vierzig Teilen. Auf Grund der Hempelschen Ausgabe neu herausgegeben, mit Einleitungen und Anmerkungen sowie einem Gesamtregister versehen von Karl Alt. 14. Teil: Dramen in ursprünglicher Gestalt, hrsg. von Robert Riemann und Karl Alt, Berlin u.a. o.J. [1909-1926].</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/aa_epen_2">
+        <f:citation>AA Epen 2</f:citation>
+        <f:reference>Werke Goethes, hrsg. vom Institut für deutsche Sprache und Literatur der deutschen Akademie der Wissenschaften zu Berlin, Epen, Bd. 2: Überlieferung, Varianten und Paralipomena, bearb. von Siegfried Scheibe, Berlin 1963.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/aa_wilhelmmeister_5">
+        <f:citation>AA Wilhelm Meister 5</f:citation>
+        <f:reference>Werke Goethes, hrsg. von der deutschen Akademie der Wissenschaften zu Berlin, Wilhelm Meister, Bd. 5: Überlieferung und Lesarten. Lief. 1: Wilhelm Meisters theatralische Sendung, bearb. von Renate Fischer-Lamberg, Berlin 1960.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/aa_duw_2">
+        <f:citation>AA DuW 2</f:citation>
+        <f:reference>Goethe, Aus meinem Leben. Dichtung und Wahrheit. Historisch-kritische Ausgabe, hrsg. von der Akademie der Wissenschaften der DDR, Bd. 2: Überlieferung, Variantenverzeichnis und Paralipomena, bearb. v. Siegfried Scheibe, Berlin 1974.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/aa_ls_1">
+        <f:citation>AA LS 1</f:citation>
+        <f:reference>Goethe: Schriften zur Literatur. Historisch-kritische Ausgabe, hrsg. von der Akademie der Wissenschaften der DDR, Bd. 1: Text, bearb. von Edith Nahler, Berlin 1970.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/aa_ls_3">
+        <f:citation>AA LS 3</f:citation>
+        <f:reference>Goethe: Schriften zur Literatur. Historisch-kritische Ausgabe, hrsg. von der Akademie der Wissenschaften der DDR, Bd. 3: Text, bearb. von Horst Nahler, Berlin 1973.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/aa_ls_4">
+        <f:citation>AA LS 4</f:citation>
+        <f:reference>Goethe: Schriften zur Literatur. Historisch-kritische Ausgabe, hrsg. von der Akademie der Wissenschaften der DDR, Bd. 4: Überlieferung, Varianten und Paralipomena zu Bd. 1, bearb. von Edith Nahler, Berlin 1976.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/aa_ls_6">
+        <f:citation>AA LS 6</f:citation>
+        <f:reference>Goethe: Schriften zur Literatur. Historisch-kritische Ausgabe, hrsg. von der Akademie der Wissenschaften der DDR, Bd. 6: Überlieferung, Varianten und Paralipomena zu Bd. 3, bearb. von Horst Nahler, Berlin 1978.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/la_II_2">
+        <f:citation>LA II 2</f:citation>
+        <f:reference>Goethe, Johann Wolfgang von: Die Schriften zur Naturwissenschaft. Vollständige mit Erläuterungen versehene Ausgabe im Auftrage der Deutschen Akademie der Naturforscher Leopoldina, hrsg. von D. Kuhn, W. von Engelhardt u. I. Müller, 2. Abt., Bd. 2: Zur Meteorologie und Astronomie. Ergänzungen und Erläuterungen, bearb. von Gisela Nickel, Weimar 2005.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/djg3_5">
+        <f:citation>'''DJG 3,5 so?'''</f:citation>
+        <f:reference>Der junge Goethe. Neu bearbeitete Ausgabe in fünf Bänden, hrsg. von Hanna Fischer-Lamberg, Bd. 5, Berlin und New York 1973.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gt_4_1">
+        <f:citation>GT 4,1</f:citation>
+        <f:reference>Goethe, Johann Wolfgang: Tagebücher. Historisch-kritische Ausgabe, Bd. 4,1: 1809–1812: Text und Register, hrsg. von Edith Zehm, Sebastian Mangold und Ariane Ludwig, Stuttgart und Weimar 2008.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gt_4_2">
+        <f:citation>GT 4,2</f:citation>
+        <f:reference>Goethe, Johann Wolfgang: Tagebücher. Historische-kritische Ausgabe, Bd. 4,2: Kommentar, hrsg. von Edith Zehm, Sebastian Mangold und Ariane Ludwig, Stuttgart und Weimar 2008.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/ma_18_1">
+        <f:citation>MA 18,1</f:citation>
+        <f:reference>Goethe, Johann Wolfgang: Sämtliche Werke nach Epochen seines Schaffens. Münchner Ausgabe, Bd. 18,1: Letzte Jahre. 1827–1832, Tl. 1, hrsg. von Gisela Henckmann u. Dorothea Hölscher-Lohmeyer, München 1997. &lt;small>ehemals faust://bibliography/henckmann1997.&lt;/small></f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/schoene2005">
+        <f:citation>Schöne 2005</f:citation>
+        <f:reference>Goethe, Johann Wolfgang: Faust, hrsg. von Albrecht Schöne, 2 Bde., Frankfurt am Main 2005. &lt;small>Bandangabe erfolgt im Freitextfeld.&lt;/small></f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/q_1_2">
+        <f:citation>Q 1_2</f:citation>
+        <f:reference>Goethe’s poetische und prosaische Werke in Zwei Bänden, Bd. 1, Abt. 2, Stuttgart und Tübingen 1837.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/graef1922">
         <f:citation>Gräf 1922</f:citation>
         <f:reference>Goethes Faust. Textrevision von Hans Gerhard Gräf, Leipzig, Erscheinungsjahr ermittelt [ca. 1922].</f:reference>
@@ -1195,6 +1280,11 @@
     <f:bib uri="faust://bibliography/schroeer1881">
         <f:citation>Schröer 1881</f:citation>
         <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer (1. Aufl.), 2 Bde., Heilbronn 1881&lt;!-- 	Stadtbibliothek Mainz, Sign. 55/55 l, 1-->.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/schroeer1914">
+        <f:citation>Schröer 1914</f:citation>
+        <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer  (5. Aufl.), 2 Bde., Leipzig 1881.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/seuffert1882">
