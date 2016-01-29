@@ -49,31 +49,14 @@
             ' del: ', normalize-space(.), ' @', position(), ' in ', document-uri(/))"/>
 -->    </xsl:template>
 
-    <xsl:template match="encodingDesc"/>
-    <xsl:template match="facsimile"/>
-    <!--    <xsl:template match="ex"/>
-    <xsl:template match="expan"/>
-    -->
     <xsl:template match="note[@type='editorial']"/>
     <xsl:template match="note[@resp='#hwg']"></xsl:template>
-    <!-- wieso headerelemente rauswerfen? 
-    <xsl:template match="profileDesc"/>
-    <xsl:template match="publicationStmt"/> -->
     <xsl:template match="restore">
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="revisionDesc"/>
     
     
-    <xsl:template match="s">
-        <xsl:apply-templates/>
-    </xsl:template>
-    <xsl:template match="seg">
-        <xsl:apply-templates/>
-    </xsl:template>
-    
-<!--    <xsl:template match="sourceDesc"/>-->
-    <!--<xsl:template match="supplied"/>-->
     <xsl:template match="supplied[matches(@evidence, 'internal')]">
         <xsl:copy>
             <xsl:apply-templates select="@*|node()"/>
@@ -84,20 +67,7 @@
     <xsl:template match="subst">
         <xsl:apply-templates/>
     </xsl:template>
-    <!--<xsl:function name="v:fetch-delSpan" as="element(delSpan)?">
-        <xsl:param name="n" as="node()"/>
-        <!-\- del will be the most recent delSpan milestone -\->
-        <xsl:variable name="del" select="$n/preceding::delSpan[1]"/>
-        <!-\- $del/id(@spanTo) will be its end anchor -\->
-        <!-\- return $del if its end anchor appears after the argument node -\->
-        <xsl:sequence select="$del[id(@spanTo) >> $n]"/>
-    </xsl:function>-->
-<!--    <xsl:template match="teiHeader">
-        <xsl:apply-templates/>
-    </xsl:template>
-    <xsl:template match="titleStmt">
-        <xsl:apply-templates/>
-    </xsl:template>-->
+
     <!-- Zeichen -->
     <!-- XXX string-replace im xproc direkt? -->
     <xsl:template match="text()" priority="1">
@@ -118,30 +88,4 @@
   
       
 
-    <!--    <xsl:template match="orig/text()">
-        <xsl:value-of select=" replace(., 'a','ä')"></xsl:value-of>
-        </xsl:template>
-    -->
-    <!--<xsl:template match="orig/text()">
-        <xsl:value-of select=" replace(., 'o','ö')"></xsl:value-of>
-        </xsl:template>
-        <xsl:template match="orig/text()">
-        <xsl:value-of select=" replace(., 'u','ü')"></xsl:value-of>
-        </xsl:template>-->
-    <!--    <xsl:template match="text()[parent::orig]">
-        <xsl:value-of select="replace('a', 'a','ä')"></xsl:value-of>
-        </xsl:template>
-        <xsl:template match="text()[parent::orig]">
-        <xsl:value-of select=" replace('o', 'o','ö')"></xsl:value-of>
-        </xsl:template>
-        <xsl:template match="text()[parent::orig]">
-        <xsl:value-of select=" replace('u', 'u','ü')"></xsl:value-of>
-        </xsl:template>
-    -->
-    <!--<xsl:template match="text()"><xsl:value-of select="replace(., '','’')"/></xsl:template>-->
-
-    <!-- <xsl:template match="text()"><xsl:value-of select="translate($desc,''',' ')"/></xsl:template> -->
-
-    <!--  <xsl:variable name="apos">'</xsl:variable>
-        <xsl:template match="text()"><xsl:value-of select="translate($desc, $apos,'’')"></xsl:value-of></xsl:template> -->
 </xsl:stylesheet>
