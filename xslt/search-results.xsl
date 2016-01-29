@@ -117,7 +117,7 @@
 				<xsl:call-template name="header">
 					<xsl:with-param name="breadcrumbs" tunnel="yes">						
 						<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
-							<small id="breadcrumbs">Suchergebnisse</small>
+							<small id="breadcrumbs"><a>Suchergebnisse</a></small>
 						</div>
 						<div id="current" class="pure-nowrap" title="{@query}">
 							<xsl:value-of select="@query"/>
