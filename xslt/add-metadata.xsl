@@ -41,7 +41,7 @@
 				<xsl:sequence select="doc($path)"/>
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:message select="concat('WARNING: No metadata for ', $type, ' ', $faustURI, ' at ', $path)"/>
+				<xsl:message select="concat('WARNING: No metadata for ', (: $type, ' ',:) $faustURI, ' at ', $path)"/>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:variable>

@@ -45,17 +45,23 @@
     <p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
     
 
-    <!--cx:message>
+    <cx:message>
       <p:with-option name="message" select="concat('Reading ', $transcriptFile)"/>
-    </cx:message-->
+    </cx:message>
 
-    <p:try>
-      <p:group>
+<!--    <p:try>
+-->      <p:group>
         
         <!-- Das Transkript wird geladen ... -->
         <p:load>
           <p:with-option name="href" select="$transcriptFile"/>
         </p:load>
+      
+        <p:xslt>
+          <p:input port="stylesheet"><p:document href="xslt/add-metadata.xsl"></p:document></p:input>
+          <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+          <p:with-param name="documentURI" select="$documentURI"></p:with-param>
+        </p:xslt>
         
         <!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
         <p:xslt>
@@ -68,11 +74,9 @@
           <p:with-param name="type" select="$type"/>
           <p:with-param name="documentURI" select="$documentURI"/>
         </p:xslt>
-        
 
         <!-- die Normalisierungen durchgeführt, z.B. <del> anwenden: -->
         <f:apply-edits/>
-
 
         <!-- 
           nun extrahieren wir die Elemente ("lines"), die für den Variantenapparat
@@ -99,7 +103,7 @@
       </p:group>
       
       <!-- Fehlende Dokumente ignorieren ... FIXME raus damit? -->
-      <p:catch>
+<!--      <p:catch>
         <p:log port="error"/>
         <cx:message log="error">
           <p:with-option name="message" select="concat('Collation: Failed to read ', $transcriptFile)"/>
@@ -112,7 +116,7 @@
       </p:catch>
 
     </p:try>
-  </p:for-each>
+-->  </p:for-each>
 
   <!-- 
     die aus den Transkripten generierten "Zeilenlisten"-Dokumente kleben wir nun

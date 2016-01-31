@@ -15,6 +15,9 @@
   
   
   <xsl:variable name="metadata" select="document(resolve-uri($documentURI, $source))"/>
+  
+  <xsl:variable name="document-id" select="//teiHeader//idno[@type='fausttranscript']" as="xs:string"/>
+  
   <xsl:function name="f:getPageNo">
     <xsl:param name="refs"/>
     <xsl:for-each select="tokenize($refs, '\s+')">
@@ -33,6 +36,7 @@
   
   
   <xsl:output indent="yes"/>
+ 
 
   <xsl:function name="f:normalize-n">
     <xsl:param name="n"/>
@@ -67,10 +71,24 @@
       <xsl:if test="$source">
         <xsl:attribute name="xml:base" select="$source"/>
       </xsl:if>
+      <xsl:apply-templates select="//alt|//ge:transposeGrp|//join"/>
       <xsl:apply-templates select='//*[@n and not(self::pb or self::div or self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or @n[contains(.,"todo")] or @n[contains(.,"p")])]'>
         <xsl:sort select="f:normalize-n(@n)"/>
       </xsl:apply-templates>
     </f:lines>
+  </xsl:template>
+  
+  <xsl:template match="@xml:id">
+    <xsl:attribute name="xml:id" select="concat(., '.', $document-id)"/>
+  </xsl:template>
+  <xsl:template match="@target|@targets|@href">
+    <xsl:attribute name="{name(.)}" select="
+      string-join(
+      for $target in tokenize(., '\s+') 
+        return if (starts-with(., '#')) 
+          then concat($target, '.', $document-id) 
+          else .,
+       ' ')"/>
   </xsl:template>
 
 </xsl:stylesheet>
