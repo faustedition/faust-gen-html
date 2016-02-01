@@ -500,4 +500,26 @@ in <xsl:value-of select="document-uri(/)"/>
 		</span>
 	</xsl:template>
 	
+	
+	<!-- Einfacher als in print2html da kein Variantenapparat -->
+	<xsl:template match="*">
+		<xsl:element name="{f:html-tag-name(.)}">
+			<xsl:call-template name="generate-style"/>
+			<xsl:attribute name="class" select="string-join((f:generic-classes(.),				
+				if (@n and @part) then ('antilabe', concat('part-', @part)) else ()), ' ')"/>
+			<xsl:if test="key('alt', @xml:id)">
+				<xsl:attribute name="title">zur Auswahl</xsl:attribute>
+				<xsl:message select="concat('alt: ', @xml:id)"/>
+			</xsl:if>
+			<xsl:call-template name="highlight-group">
+				<xsl:with-param name="others" select="f:resolve-target(key('alt', @xml:id))"/>
+			</xsl:call-template>
+			<xsl:if test="@n">
+				<xsl:call-template name="generate-lineno"/>
+			</xsl:if>
+			<xsl:apply-templates/>
+		</xsl:element>
+	</xsl:template>
+	
+	
 </xsl:stylesheet>

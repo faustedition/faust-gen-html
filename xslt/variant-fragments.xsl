@@ -99,12 +99,5 @@
 		</div>
 	</xsl:template>
 	
-	
-	<xsl:template match="*">
-		<xsl:element name="{f:html-tag-name(.)}">
-			<xsl:attribute name="class" select="string-join(f:generic-classes(.), ' ')"/>			
-			<xsl:apply-templates/>
-		</xsl:element>		
-	</xsl:template>
-	
+		
 </xsl:stylesheet>
