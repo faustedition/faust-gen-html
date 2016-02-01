@@ -125,7 +125,36 @@
     Dieses Dokument wird zu Debuggingzwecken auch am result-Port dargeboten.
   -->
   <p:wrap-sequence wrapper="f:variants"/>
-  <p:unwrap match="f:lines" name="collect-lines"/>
+  <!-- 
+      Das Stylesheet entfernt die überflüssigen f:lines-Statements und bewegt die Namespace-
+      Deklarationen zum Wurzelelement: Dadurch wird v.a. das Debugging-Dokument übersichtlicher.:q
+   -->
+  <p:xslt>
+    <p:input port="stylesheet">
+      <p:inline>
+        <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
+          <xsl:template match="f:variants">
+            <xsl:copy>
+              <xsl:namespace name="">http://www.tei-c.org/ns/1.0</xsl:namespace>
+              <xsl:namespace name="ge">http://www.tei-c.org/ns/geneticEditions</xsl:namespace>
+              <xsl:namespace name="svg">http://www.w3.org/2000/svg</xsl:namespace>
+              <xsl:apply-templates select="@*|node()"></xsl:apply-templates>
+            </xsl:copy>            
+          </xsl:template>
+          <xsl:template match="node()|@*">
+            <xsl:copy>
+              <xsl:apply-templates select="@*|node()"/>
+            </xsl:copy>        
+          </xsl:template>
+          <xsl:template match="f:lines">
+            <xsl:apply-templates select="node()"/>
+          </xsl:template>
+        </xsl:stylesheet>
+      </p:inline>
+    </p:input>
+  </p:xslt>
+  <p:identity name="collect-lines"/>
+  
   
   <cx:message log="info" message="Collating the lines and writing variant HTMLs"/>
   
