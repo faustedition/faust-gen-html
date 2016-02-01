@@ -56,7 +56,7 @@
 				<ul>
           <li><a href="{$edition}/archive">Archiv</a></li>
           <li><a href="{$edition}/genesis">Genese</a></li>
-          <li><a href="{$edition}/print/text.html">Text</a></li>
+          <li><a href="{$edition}/print/text">Text</a></li>
  		  <li><form class="pure-form" action="/search" method="GET"><input id="quick-search" name="q" type="text" onblur="this.value=''" /><button type="submit" class="pure-fade-30"><i class="fa fa-search fa-lg"></i></button></form></li> 
           <li><a href="{$edition}/imprint"><small class="pure-fade-50">Impressum</small></a></li>
           <li><a href="{$edition}/help"><i class="fa fa-help-circled fa-lg"></i></a></li>
@@ -72,7 +72,7 @@
 					<b>Digitale Faust-Edition</b>
 					<xsl:if test="$debug">
 						<xsl:text> • </xsl:text>
-						<mark><a href="./index.html">
+						<mark><a href="./">
 							Generiert: <xsl:value-of select="current-dateTime()"/>
 						</a></mark>
 					</xsl:if>

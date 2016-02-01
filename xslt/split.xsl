@@ -54,7 +54,7 @@
 				</xsl:with-param>				
 			</xsl:call-template>
 			<xsl:if test="f:is-splitable-doc(.)">      
-				<xsl:result-document href="{$output-base}.all.html">
+				<xsl:result-document href="{$output-base}.all">
 					<xsl:call-template name="generate-html-frame">
 						<xsl:with-param name="single" tunnel="yes" select="true()"/>
 						<xsl:with-param name="breadcrumbs" tunnel="yes">
@@ -104,7 +104,7 @@
 		<xsl:variable name="divno">
 			<xsl:number count="div" level="any" format="1"/>
 		</xsl:variable>
-		<xsl:value-of select="concat($output-base, '.', $divno, '.html')"/>
+		<xsl:value-of select="concat($output-base, '.', $divno)"/>
 	</xsl:template>
 	
 	
@@ -228,7 +228,7 @@
 				<!-- Der Titel kann hereingegeben werden oder aus dem TEI-titleStmt kommen -->
 				<li>
 					<span class="fa-li fa fa-up-dir"/>
-					<a href="{f:html-link(concat($output-base, '.html'))}">
+					<a href="{f:html-link($output-base)}">
 						<xsl:value-of select="$title"/>
 					</a>
 				</li>
@@ -279,11 +279,11 @@
 						<xsl:choose>
 							<xsl:when test="$single">
 								<span class="fa-li fa fa-docs"/>
-								<a href="{f:html-link(concat($output-base, '.html'))}">nach Szenen zerlegt</a>
+								<a href="{f:html-link($output-base)}">nach Szenen zerlegt</a>
 							</xsl:when>
 							<xsl:otherwise>
 								<span class="fa-li fa fa-doc"/>
-								<a href="{f:html-link(concat($output-base, '.all.html'))}">auf einer Seite</a>
+								<a href="{f:html-link(concat($output-base, '.all'))}">auf einer Seite</a>
 							</xsl:otherwise>
 						</xsl:choose>
 					</li>
@@ -297,14 +297,14 @@
 			
 			<!-- Lesetext -->
 			<xsl:when test="$type = 'lesetext'">
-				<a href="text.html">Text</a>
+				<a href="text">Text</a>
 				>
 				<xsl:choose>
 					<xsl:when test="starts-with($output-base, 'faust1')">
-						<a href="faust1.html">Faust I</a>
+						<a href="faust1">Faust I</a>
 					</xsl:when>
 					<xsl:otherwise>
-						<a href="faust2.html">Faust II</a>
+						<a href="faust2">Faust II</a>
 					</xsl:otherwise>
 				</xsl:choose>
 				<xsl:call-template name="div-breadcrumbs"/>				
@@ -334,7 +334,7 @@
 				>
 				<a href="{$edition}/archive_prints">Drucke</a>
 				>
-				<a href="{f:html-link(concat($output-base, '.html'))}"><xsl:value-of select="$title"/></a>
+				<a href="{f:html-link($output-base)}"><xsl:value-of select="$title"/></a>
 				<xsl:call-template name="div-breadcrumbs"/>
 			</xsl:when>
 			

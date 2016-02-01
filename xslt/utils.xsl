@@ -225,7 +225,7 @@
       </xsl:choose>
     </xsl:variable>
     <xsl:value-of select="concat($printbase,
-      replace($transcript, '^.*/(.*)\.xml$', '$1'), $targetpart, '.html#l', $n)"/>
+      replace($transcript, '^.*/(.*)\.xml$', '$1'), $targetpart, '#l', $n)"/>
   </xsl:function>
   
   <!-- Returns true() iff $element is one of those TEI elements for which a variant apparatus should be generated. -->

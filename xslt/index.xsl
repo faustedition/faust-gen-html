@@ -34,17 +34,17 @@
                   
                   <xsl:if test="$type = 'overview'">                    
                     <p class="pure-tiles">
-                     <a href="text.html" class="pure-button pure-button-tile">Lese&#xAD;text</a>
-                     <a href="prints.html" class="pure-button pure-button-tile">Drucke</a>
-                     <a href="archivalDocuments.html" class="pure-button pure-button-tile">Hand&#xAD;schriften</a>
+                     <a href="text" class="pure-button pure-button-tile">Lese&#xAD;text</a>
+                     <a href="prints" class="pure-button pure-button-tile">Drucke</a>
+                     <a href="archivalDocuments" class="pure-button pure-button-tile">Hand&#xAD;schriften</a>
                     </p>
                   </xsl:if>
 
 
                   <xsl:if test="tokenize($type, ' ') = 'text'">                    
                     <p class="pure-tiles">
-                     <a href="faust1.html" class="pure-button pure-button-tile">Faust I</a>
-                     <a href="faust2.html" class="pure-button pure-button-tile">Faust II</a>
+                     <a href="faust1" class="pure-button pure-button-tile">Faust I</a>
+                     <a href="faust2" class="pure-button pure-button-tile">Faust II</a>
                     </p>
                   </xsl:if>
                   
@@ -63,7 +63,7 @@
                         <xsl:variable name="description" select="."/>
                         
                         <dt title="{$sigil-label}">
-                          <a href="{$htmlname}.html">
+                          <a href="{$htmlname}">
                             <xsl:value-of select="$sigil"/>
                           </a>
                         </dt>
@@ -80,7 +80,7 @@
                         <xsl:sort select="f:idno[1]"/>
                         <xsl:variable name="filename" select="replace(@href, '^.*/([^/]+)', '$1')"/>
                         <xsl:variable name="htmlname" select="replace($filename, '\.xml$', '')"/>                        
-                        <li><a href="{$htmlname}.html" title="{f:sigil-label(f:idno[1]/@type)}">
+                        <li><a href="{$htmlname}" title="{f:sigil-label(f:idno[1]/@type)}">
                           <xsl:value-of select="if (f:idno[1]) then f:idno[1] else concat('!! keine Sigle – faust://xml/', @document)"/>
                         </a></li>                        
                       </xsl:for-each>
