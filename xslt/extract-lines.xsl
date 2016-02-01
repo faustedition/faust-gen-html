@@ -81,14 +81,14 @@
   </xsl:template>
   
   <xsl:template match="@xml:id">
-    <xsl:attribute name="xml:id" select="concat(., '.', $document-id)"/>
+    <xsl:attribute name="xml:id" select="concat(., '__', $document-id)"/>
   </xsl:template>
   <xsl:template match="@target|@targets|@href">
     <xsl:attribute name="{name(.)}" select="
       string-join(
       for $target in tokenize(., '\s+') 
         return if (starts-with(., '#')) 
-          then concat($target, '.', $document-id) 
+          then concat($target, '__', $document-id) 
           else .,
        ' ')"/>
   </xsl:template>
