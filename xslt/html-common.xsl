@@ -522,7 +522,7 @@ in <xsl:value-of select="document-uri(/)"/>
 	</xsl:template>
 	
 	<!-- Just strip those standoff indicators -->
-	<xsl:template match="alt|ge:transposeGrp|join"/>
+	<xsl:template match="alt|ge:transposeGrp|ge:transpose|join" priority="1"/>
 	
 	
 </xsl:stylesheet>
