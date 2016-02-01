@@ -19,7 +19,7 @@ declare function f:makeURL(
 	{
 		let $html := $transcript || (if ($sec) then '.'|| $sec else ()) || '.html'
 		let $path := switch ($type)
-			case 'archivalDocument' return concat('/documentViewer.php?faustUri=', $uri, "&amp;view=text&amp;page=", $page, "&amp;sec=", $html)
+			case 'archivalDocument' return concat('/documentViewer?faustUri=', $uri, "&amp;view=text&amp;page=", $page, "&amp;sec=", $html)
 			default return '/print/' || $html
 		return $edition || $path		
 	};

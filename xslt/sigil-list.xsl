@@ -70,7 +70,7 @@
 		<tr>
 			<td class="{if ($pref_dup) then 'duplicate' else ''}"><a href="{
 				if (@type = 'archivalDocument')
-				then concat('http://beta.faustedition.net/documentViewer.php?view=structure&amp;faustUri=faust://xml/', @document)
+				then concat('http://beta.faustedition.net/documentViewer?view=structure&amp;faustUri=faust://xml/', @document)
 				else replace(@uri, '^.*/(.*)\.xml$', 'http://beta.faustedition.net/print/$1.html')
 				}"><xsl:value-of select="idno[1]"/></a></td>
 			<td><xsl:value-of select="idno[1]/@type"/></td>

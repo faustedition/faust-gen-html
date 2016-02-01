@@ -315,24 +315,24 @@
 			<xsl:when test="$type = 'print'">
 				<xsl:variable name="lineno" select="f:numerical-lineno((.//*[f:hasvars(.)])[1]/@n)"/>
 				<xsl:variable name="scene" select="reverse(document('scenes.xml')//f:scene[number(f:rangeStart) le number($lineno)])[1]"/>
-				<a href="genesis.php">Genese</a>
+				<a href="genesis">Genese</a>
 				>
 				<xsl:choose>
 					<xsl:when test="starts-with($scene/f:id, '1')">
-						<a href="{$edition}/chessboard_faust_i.php">Faust I</a>
+						<a href="{$edition}/chessboard_faust_i">Faust I</a>
 					</xsl:when>
 					<xsl:otherwise>
-						<a href="{$edition}/chessboard_faust_ii.php">Faust II</a>
+						<a href="{$edition}/chessboard_faust_ii">Faust II</a>
 					</xsl:otherwise>
 				</xsl:choose>
 				>
-				<a href="{$edition}/geneticBarGraph.php?rangeStart={$scene/f:rangeStart}&amp;rangeEnd={$scene/f:rangeEnd}">
+				<a href="{$edition}/geneticBarGraph?rangeStart={$scene/f:rangeStart}&amp;rangeEnd={$scene/f:rangeEnd}">
 					<xsl:value-of select="$scene/f:title"/>
 				</a>
 				<br/>
-				<a href="{$edition}/archive.php">Archiv</a>
+				<a href="{$edition}/archive">Archiv</a>
 				>
-				<a href="{$edition}/archive_prints.php">Drucke</a>
+				<a href="{$edition}/archive_prints">Drucke</a>
 				>
 				<a href="{f:html-link(concat($output-base, '.html'))}"><xsl:value-of select="$title"/></a>
 				<xsl:call-template name="div-breadcrumbs"/>

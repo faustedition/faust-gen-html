@@ -54,12 +54,12 @@
 			
 			<nav class="pure-menu pure-menu-open pure-menu-horizontal pure-right pure-nowrap pure-noprint">
 				<ul>
-          <li><a href="{$edition}/archive.php">Archiv</a></li>
-          <li><a href="{$edition}/genesis.php">Genese</a></li>
+          <li><a href="{$edition}/archive">Archiv</a></li>
+          <li><a href="{$edition}/genesis">Genese</a></li>
           <li><a href="{$edition}/print/text.html">Text</a></li>
  		  <li><form class="pure-form" action="/search" method="GET"><input id="quick-search" name="q" type="text" onblur="this.value=''" /><button type="submit" class="pure-fade-30"><i class="fa fa-search fa-lg"></i></button></form></li> 
-          <li><a href="{$edition}/imprint.php"><small class="pure-fade-50">Impressum</small></a></li>
-          <li><a href="{$edition}/help.php"><i class="fa fa-help-circled fa-lg"></i></a></li>
+          <li><a href="{$edition}/imprint"><small class="pure-fade-50">Impressum</small></a></li>
+          <li><a href="{$edition}/help"><i class="fa fa-help-circled fa-lg"></i></a></li>
 				</ul>
 			</nav>
 		</header>
@@ -78,13 +78,13 @@
 					</xsl:if>
 				</div>
 				<div class="pure-u-1-2 pure-right pure-fade-50">
-					<a href="{$edition}/help.php">Hilfe</a>
+					<a href="{$edition}/help">Hilfe</a>
 					<xsl:text> </xsl:text>
-					<a href="{$edition}/contact.php">Kontakt</a>
+					<a href="{$edition}/contact">Kontakt</a>
 					<xsl:text> </xsl:text>
-					<a href="{$edition}/imprint.php">Impressum</a>
+					<a href="{$edition}/imprint">Impressum</a>
 					<xsl:text> </xsl:text>
-					<a href="{$edition}/project.php">Projekt</a>
+					<a href="{$edition}/project">Projekt</a>
 				</div>
 			</div>
 		</footer>

@@ -101,34 +101,34 @@
 		<xsl:param name="separator">
 			<i class="fa fa-angle-right"/>			
 		</xsl:param>
-		<a href="genesis.php">Genese</a>
+		<a href="genesis">Genese</a>
 		<xsl:copy-of select="$separator"/>
 		<xsl:choose>
 			<xsl:when test="not($scene-data)"> [keine Zuordnung gefunden] </xsl:when>
 			<xsl:when test="starts-with($scene-data/f:id, '1')">
-				<a href="../genesis_faust_i.php">Faust I</a>
+				<a href="../genesis_faust_i">Faust I</a>
 			</xsl:when>
 			<xsl:otherwise>
-				<a href="../genesis_faust_ii.php">Faust II</a>
+				<a href="../genesis_faust_ii">Faust II</a>
 			</xsl:otherwise>
 		</xsl:choose>
 		<xsl:copy-of select="$separator"/>
 		<a
-			href="../genesis_bargraph.php?rangeStart={$scene-data/f:rangeStart}&amp;rangeEnd={$scene-data/f:rangeEnd}">
+			href="../genesis_bargraph?rangeStart={$scene-data/f:rangeStart}&amp;rangeEnd={$scene-data/f:rangeEnd}">
 			<xsl:value-of select="$scene-data/f:title"/>
 		</a>
 	</xsl:template>
 	
 	<xsl:template name="breadcrumbs-archive">
 		<xsl:param name="separator"/>		
-		<a href="../archive.php">Archiv</a>
+		<a href="../archive">Archiv</a>
 		<xsl:copy-of select="$separator"/>
 		<xsl:choose>
 			<xsl:when test="$type = 'print'">
-				<a href="../archive_prints.php">Drucke</a>
+				<a href="../archive_prints">Drucke</a>
 			</xsl:when>
 			<xsl:otherwise>
-				<a href="../archive_locations_detail.php?id={/TEI/@f:repository}">
+				<a href="../archive_locations_detail?id={/TEI/@f:repository}">
 					<xsl:value-of select="/TEI/@f:repository-label"/>
 				</a>
 			</xsl:otherwise>

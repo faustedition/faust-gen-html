@@ -1,22 +1,22 @@
 <f:results xmlns="http://www.tei-c.org/ns/1.0" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:f="http://www.faustedition.net/ns" query="triebe~.8">
-    <f:hit sigil="T 5 H.1" headnote="Heft, 9 Blätter. – Text für die Bühne." type="archivalDocument" n="437" href="/documentViewer.php?faustUri=faust://xml/document/faust/1/gsa_390583.xml&amp;view=text&amp;page=6&amp;sec=390583.html">
+    <f:hit sigil="T 5 H.1" headnote="Heft, 9 Blätter. – Text für die Bühne." type="archivalDocument" n="437" href="/documentViewer?faustUri=faust://xml/document/faust/1/gsa_390583.xml&amp;view=text&amp;page=6&amp;sec=390583.html">
         <l n="437">Und mit geheimnißvolle<subst f:revType="instant">
                 <del>n</del>
                 <add>m</add>
             </subst> <exist:match>Trieb</exist:match>,</l>
     </f:hit>
-    <f:hit sigil="T 5 H.1" headnote="Heft, 9 Blätter. – Text für die Bühne." type="archivalDocument" n="776" href="/documentViewer.php?faustUri=faust://xml/document/faust/1/gsa_390583.xml&amp;view=text&amp;page=15&amp;sec=390583.html">
+    <f:hit sigil="T 5 H.1" headnote="Heft, 9 Blätter. – Text für die Bühne." type="archivalDocument" n="776" href="/documentViewer?faustUri=faust://xml/document/faust/1/gsa_390583.xml&amp;view=text&amp;page=15&amp;sec=390583.html">
         <l n="776">
             <exist:match>Trieb</exist:match> mich durch <subst f:revType="soon">
                 <del>Wiese</del>
                 <add>Wies’</add>
             </subst> und Wälder hinzugehn</l>
     </f:hit>
-    <f:hit sigil="2 H" headnote="Gebundenes Konvolut, 188 Blätter nebst Einband. – ‚Faust II‘." type="archivalDocument" n="7535" href="/documentViewer.php?faustUri=faust://xml/document/faust/2/gsa_391098.xml&amp;view=text&amp;page=164&amp;sec=391098.16.html">
+    <f:hit sigil="2 H" headnote="Gebundenes Konvolut, 188 Blätter nebst Einband. – ‚Faust II‘." type="archivalDocument" n="7535" href="/documentViewer?faustUri=faust://xml/document/faust/2/gsa_391098.xml&amp;view=text&amp;page=164&amp;sec=391098.16.html">
         <l n="7535">Aus der Wog<add f:revType="soon-or-late">’</add> empor sie
                                  <exist:match>trieb</exist:match>.</l>
     </f:hit>
-    <f:hit sigil="2 H" headnote="Gebundenes Konvolut, 188 Blätter nebst Einband. – ‚Faust II‘." type="archivalDocument" n="8099" href="/documentViewer.php?faustUri=faust://xml/document/faust/2/gsa_391098.xml&amp;view=text&amp;page=190&amp;sec=391098.17.html">
+    <f:hit sigil="2 H" headnote="Gebundenes Konvolut, 188 Blätter nebst Einband. – ‚Faust II‘." type="archivalDocument" n="8099" href="/documentViewer?faustUri=faust://xml/document/faust/2/gsa_391098.xml&amp;view=text&amp;page=190&amp;sec=391098.17.html">
         <l n="8099">Doch <exist:match>trieb</exist:match> mich<add f:revType="late">’</add>s an den Besten
                                  wohlzuthun<subst f:revType="late">
                 <del>,</del>
@@ -24,33 +24,33 @@
             </subst>
         </l>
     </f:hit>
-    <f:hit sigil="2 H" headnote="Gebundenes Konvolut, 188 Blätter nebst Einband. – ‚Faust II‘." type="archivalDocument" n="9740" href="/documentViewer.php?faustUri=faust://xml/document/faust/2/gsa_391098.xml&amp;view=text&amp;page=277&amp;sec=391098.21.html">
+    <f:hit sigil="2 H" headnote="Gebundenes Konvolut, 188 Blätter nebst Einband. – ‚Faust II‘." type="archivalDocument" n="9740" href="/documentViewer?faustUri=faust://xml/document/faust/2/gsa_391098.xml&amp;view=text&amp;page=277&amp;sec=391098.21.html">
         <l n="9740">Heftige <exist:match>Triebe</exist:match>!</l>
     </f:hit>
-    <f:hit sigil="2 H" headnote="Gebundenes Konvolut, 188 Blätter nebst Einband. – ‚Faust II‘." type="archivalDocument" n="10432" href="/documentViewer.php?faustUri=faust://xml/document/faust/2/gsa_391098.xml&amp;view=text&amp;page=313&amp;sec=391098.24.html">
+    <f:hit sigil="2 H" headnote="Gebundenes Konvolut, 188 Blätter nebst Einband. – ‚Faust II‘." type="archivalDocument" n="10432" href="/documentViewer?faustUri=faust://xml/document/faust/2/gsa_391098.xml&amp;view=text&amp;page=313&amp;sec=391098.24.html">
         <l n="10432">Ihr einziger <exist:match>Trieb</exist:match> ist Neues zu erfinden.</l>
     </f:hit>
-    <f:hit sigil="2 H" headnote="Gebundenes Konvolut, 188 Blätter nebst Einband. – ‚Faust II‘." type="archivalDocument" n="11870" href="/documentViewer.php?faustUri=faust://xml/document/faust/2/gsa_391098.xml&amp;view=text&amp;page=376&amp;sec=391098.33.html">
+    <f:hit sigil="2 H" headnote="Gebundenes Konvolut, 188 Blätter nebst Einband. – ‚Faust II‘." type="archivalDocument" n="11870" href="/documentViewer?faustUri=faust://xml/document/faust/2/gsa_391098.xml&amp;view=text&amp;page=376&amp;sec=391098.33.html">
         <l n="11870">Wie strack, mit eignem kräftigen <exist:match>Triebe</exist:match>,</l>
     </f:hit>
-    <f:hit sigil="H P98" headnote="Einzelblatt. – Zum Schluss des ‚Faust‘." type="archivalDocument" n="todo" href="/documentViewer.php?faustUri=faust://xml/document/faust/2/gsa_390705.xml&amp;view=text&amp;page=1&amp;sec=390705.html">
+    <f:hit sigil="H P98" headnote="Einzelblatt. – Zum Schluss des ‚Faust‘." type="archivalDocument" n="todo" href="/documentViewer?faustUri=faust://xml/document/faust/2/gsa_390705.xml&amp;view=text&amp;page=1&amp;sec=390705.html">
         <l n="todo">Dem neuen <exist:match>Triebe</exist:match>, diesem neuen Streben</l>
     </f:hit>
-    <f:hit sigil="2 III H.2:2" headnote="Heft, 17 Blätter und abgelöste Aufklebung nebst Umschlag. – Zu ‚Faust II‘, Akt 3." type="archivalDocument" n="9740" href="/documentViewer.php?faustUri=faust://xml/document/faust/2.3/gsa_390825.xml&amp;view=text&amp;page=16&amp;sec=390825.html">
+    <f:hit sigil="2 III H.2:2" headnote="Heft, 17 Blätter und abgelöste Aufklebung nebst Umschlag. – Zu ‚Faust II‘, Akt 3." type="archivalDocument" n="9740" href="/documentViewer?faustUri=faust://xml/document/faust/2.3/gsa_390825.xml&amp;view=text&amp;page=16&amp;sec=390825.html">
         <l n="9740">Heftige <exist:match>Triebe</exist:match>!</l>
     </f:hit>
-    <f:hit sigil="1 H.5" headnote="Gebundenes Konvolut, 47 Blätter. – ‚Urfaust‘." type="archivalDocument" n="437" href="/documentViewer.php?faustUri=faust://xml/document/faust/0/gsa_390028.xml&amp;view=text&amp;page=4&amp;sec=390028.1.html">
+    <f:hit sigil="1 H.5" headnote="Gebundenes Konvolut, 47 Blätter. – ‚Urfaust‘." type="archivalDocument" n="437" href="/documentViewer?faustUri=faust://xml/document/faust/0/gsa_390028.xml&amp;view=text&amp;page=4&amp;sec=390028.1.html">
         <l n="437" f:nx="u_84">Und mit geheimnissvollen <exist:match>Trieb</exist:match>
         </l>
     </f:hit>
-    <f:hit sigil="1 H.5" headnote="Gebundenes Konvolut, 47 Blätter. – ‚Urfaust‘." type="archivalDocument" n="3057" href="/documentViewer.php?faustUri=faust://xml/document/faust/0/gsa_390028.xml&amp;view=text&amp;page=58&amp;sec=390028.9.html">
+    <f:hit sigil="1 H.5" headnote="Gebundenes Konvolut, 47 Blätter. – ‚Urfaust‘." type="archivalDocument" n="3057" href="/documentViewer?faustUri=faust://xml/document/faust/0/gsa_390028.xml&amp;view=text&amp;page=58&amp;sec=390028.9.html">
         <l n="3057" f:nx="u_909">Von einzig überallmächtgen <exist:match>Triebe</exist:match> –</l>
     </f:hit>
-    <f:hit sigil="1 H.5" headnote="Gebundenes Konvolut, 47 Blätter. – ‚Urfaust‘." type="archivalDocument" n="3585" href="/documentViewer.php?faustUri=faust://xml/document/faust/0/gsa_390028.xml&amp;view=text&amp;page=78&amp;sec=390028.14.html">
+    <f:hit sigil="1 H.5" headnote="Gebundenes Konvolut, 47 Blätter. – ‚Urfaust‘." type="archivalDocument" n="3585" href="/documentViewer?faustUri=faust://xml/document/faust/0/gsa_390028.xml&amp;view=text&amp;page=78&amp;sec=390028.14.html">
         <l n="3585" f:nx="u_1276">Doch – alles was mich dazu <exist:match>trieb</exist:match>
         </l>
     </f:hit>
-    <f:hit sigil="2 III H.3a:2" headnote="Heft, 24 Blätter nebst Umschlag. – Zu ‚Faust II‘, Akt 3." type="archivalDocument" n="9740" href="/documentViewer.php?faustUri=faust://xml/document/faust/2.3/gsa_391087.xml&amp;view=text&amp;page=33&amp;sec=391087.html">
+    <f:hit sigil="2 III H.3a:2" headnote="Heft, 24 Blätter nebst Umschlag. – Zu ‚Faust II‘, Akt 3." type="archivalDocument" n="9740" href="/documentViewer?faustUri=faust://xml/document/faust/2.3/gsa_391087.xml&amp;view=text&amp;page=33&amp;sec=391087.html">
         <l n="9740">Heftige <exist:match>Triebe</exist:match>!</l>
     </f:hit>
     <f:hit sigil="1 H.1" headnote="Korrekturexemplar der zweiten Gesamtausgabe bei Cotta, 1817, bearbeitet von Göttling, Goethe und Reichel" type="print" n="194" href="/print/Cotta_Ms_Goethe_AlH_C-1-12_Faust_I.3.html">
@@ -130,39 +130,39 @@
     <f:hit sigil="Lesetext" headnote="" type="lesetext" n="3585" href="/print/faust1.21.html">
         <l n="3585">Doch – alles was dazu mich <exist:match>trieb</exist:match>,</l>
     </f:hit>
-    <f:hit sigil="2 II H.56" headnote="Einzelblatt. – Zu Faust II, Akt 2." type="archivalDocument" n="8099" href="/documentViewer.php?faustUri=faust://xml/document/faust/2.2/gsa_390196.xml&amp;view=text&amp;page=1&amp;sec=390196.html">
+    <f:hit sigil="2 II H.56" headnote="Einzelblatt. – Zu Faust II, Akt 2." type="archivalDocument" n="8099" href="/documentViewer?faustUri=faust://xml/document/faust/2.2/gsa_390196.xml&amp;view=text&amp;page=1&amp;sec=390196.html">
         <l n="8099">Doch <exist:match>trieb</exist:match> michs an den Besten wohlzuthun</l>
     </f:hit>
-    <f:hit sigil="2 II H.57" headnote="Zettel. – Zu ‚Faust II‘, Akt 2." type="archivalDocument" n="8099" href="/documentViewer.php?faustUri=faust://xml/document/faust/2.2/gsa_391402.xml&amp;view=text&amp;page=1&amp;sec=391402.html">
+    <f:hit sigil="2 II H.57" headnote="Zettel. – Zu ‚Faust II‘, Akt 2." type="archivalDocument" n="8099" href="/documentViewer?faustUri=faust://xml/document/faust/2.2/gsa_391402.xml&amp;view=text&amp;page=1&amp;sec=391402.html">
         <l n="8099">Doch <exist:match>trieb</exist:match> michs an den Besten wohlzu thun</l>
     </f:hit>
-    <f:hit sigil="2 II H.74" headnote="Heft, 32 Blätter nebst Umschlag. – Zu ‚Faust II‘, Akt 2." type="archivalDocument" n="7535" href="/documentViewer.php?faustUri=faust://xml/document/faust/2.2/gsa_391247.xml&amp;view=text&amp;page=28&amp;sec=391247.19.html">
+    <f:hit sigil="2 II H.74" headnote="Heft, 32 Blätter nebst Umschlag. – Zu ‚Faust II‘, Akt 2." type="archivalDocument" n="7535" href="/documentViewer?faustUri=faust://xml/document/faust/2.2/gsa_391247.xml&amp;view=text&amp;page=28&amp;sec=391247.19.html">
         <l n="7535">Aus der Wog’ empor sie <exist:match>trieb</exist:match>
             <add f:revType="soon-or-late">.</add>
         </l>
     </f:hit>
-    <f:hit sigil="2 II H.74" headnote="Heft, 32 Blätter nebst Umschlag. – Zu ‚Faust II‘, Akt 2." type="archivalDocument" n="8099" href="/documentViewer.php?faustUri=faust://xml/document/faust/2.2/gsa_391247.xml&amp;view=text&amp;page=52&amp;sec=391247.20.html">
+    <f:hit sigil="2 II H.74" headnote="Heft, 32 Blätter nebst Umschlag. – Zu ‚Faust II‘, Akt 2." type="archivalDocument" n="8099" href="/documentViewer?faustUri=faust://xml/document/faust/2.2/gsa_391247.xml&amp;view=text&amp;page=52&amp;sec=391247.20.html">
         <l n="8099">Doch <exist:match>trieb</exist:match> michs an den <subst f:revType="soon">
                 <del>b</del>
                 <add>B</add>
             </subst>esten wohlzuthun</l>
     </f:hit>
-    <f:hit sigil="2 IV H.11" headnote="Zettel. – Zu ‚Faust II‘, Akt 4." type="archivalDocument" n="10432" href="/documentViewer.php?faustUri=faust://xml/document/faust/2.4/gsa_389814.xml&amp;view=text&amp;page=2&amp;sec=389814.html">
+    <f:hit sigil="2 IV H.11" headnote="Zettel. – Zu ‚Faust II‘, Akt 4." type="archivalDocument" n="10432" href="/documentViewer?faustUri=faust://xml/document/faust/2.4/gsa_389814.xml&amp;view=text&amp;page=2&amp;sec=389814.html">
         <l n="10432">Ihr <subst f:revType="soon">
                 <del>ewiger</del>
                 <add>einziger</add>
             </subst> <exist:match>Trieb</exist:match> ist neues zu erfinden</l>
     </f:hit>
-    <f:hit sigil="2 IV H.15" headnote="Zettel. – Zu ‚Faust II‘, Akt 4." type="archivalDocument" n="10432" href="/documentViewer.php?faustUri=faust://xml/document/faust/2.4/gsa_390690.xml&amp;view=text&amp;page=1&amp;sec=390690.html">
+    <f:hit sigil="2 IV H.15" headnote="Zettel. – Zu ‚Faust II‘, Akt 4." type="archivalDocument" n="10432" href="/documentViewer?faustUri=faust://xml/document/faust/2.4/gsa_390690.xml&amp;view=text&amp;page=1&amp;sec=390690.html">
         <l n="10432">Ihr <subst xmlns:ge="http://www.tei-c.org/ns/geneticEditions" f:revType="soon" ge:stage="#stage4_Tinte_Vorderseite">
                 <del>ewiger</del>
                 <add>einziger</add>
             </subst> <exist:match>Trieb</exist:match> ist Neues zu erfinden.</l>
     </f:hit>
-    <f:hit sigil="2 V H.33" headnote="Heft, 4 Blätter. – Zu ‚Faust II‘, Akt  5." type="archivalDocument" n="11870" href="/documentViewer.php?faustUri=faust://xml/document/faust/2.5/gsa_391511.xml&amp;view=text&amp;page=3&amp;sec=391511.html">
+    <f:hit sigil="2 V H.33" headnote="Heft, 4 Blätter. – Zu ‚Faust II‘, Akt  5." type="archivalDocument" n="11870" href="/documentViewer?faustUri=faust://xml/document/faust/2.5/gsa_391511.xml&amp;view=text&amp;page=3&amp;sec=391511.html">
         <l n="11870">Wie strack, mit eignem kr<orig>a</orig>ftigen <exist:match>Triebe</exist:match>,</l>
     </f:hit>
-    <f:hit sigil="2 V H.35" headnote="Einzelblatt. – Zu Faust II, Akt 5." type="archivalDocument" n="11870" href="/documentViewer.php?faustUri=faust://xml/document/faust/2.5/gsa_389817.xml&amp;view=text&amp;page=1&amp;sec=389817.html">
+    <f:hit sigil="2 V H.35" headnote="Einzelblatt. – Zu Faust II, Akt 5." type="archivalDocument" n="11870" href="/documentViewer?faustUri=faust://xml/document/faust/2.5/gsa_389817.xml&amp;view=text&amp;page=1&amp;sec=389817.html">
         <l n="11870">Wie strack mit eignem kr<orig>a</orig>f<unclear cert="high">ftigen</unclear> <exist:match>Triebe</exist:match>
         </l>
     </f:hit>
