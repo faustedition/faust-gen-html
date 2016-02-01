@@ -16,7 +16,9 @@
 	<xsl:variable name="canonicalDocs" select="tokenize($canonical, ' ')"/>
 	
 	<xsl:variable name="standoff" as="element()*">
-		<xsl:sequence select="//f:standoff/*"/>
+		<f:standoff>
+			<xsl:sequence select="//f:standoff/*"/>
+		</f:standoff>
 	</xsl:variable>
 		
 	
@@ -42,8 +44,8 @@
 						</xsl:variable>
 						<div class="variants" 
 							data-n="{current-grouping-key()}" 
-							data-witnesses="{count($evidence/* except $evidence/*[@f:type='lesetext'])}"
-							data-variants="{count(distinct-values(for $ev in $evidence/* return normalize-space($ev)))-1}"
+							data-witnesses="{count($evidence/* except $evidence/*[@f:type='lesetext'] except $evidence/f:standoff)}"
+							data-variants="{count(distinct-values(for $ev in $evidence/* except $evidence/f:standoff return normalize-space($ev)))-1}"
 							data-ctext="{$ctext}"
 							id="v{current-grouping-key()}">
 							<xsl:attribute name="xml:id" select="concat('v', current-grouping-key())"/>
