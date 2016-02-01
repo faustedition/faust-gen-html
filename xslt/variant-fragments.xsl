@@ -14,6 +14,10 @@
 	<xsl:param name="depth">2</xsl:param>
 	<xsl:param name="canonical">document/print/A8.xml document/faust/2/gsa_391098.xml</xsl:param>
 	<xsl:variable name="canonicalDocs" select="tokenize($canonical, ' ')"/>
+	
+	<xsl:variable name="standoff" as="element()*">
+		<xsl:sequence select="//f:standoff/*"/>
+	</xsl:variable>
 		
 	
 	<xsl:output method="xhtml"/>
@@ -28,6 +32,7 @@
 						<xsl:variable name="cline" select="current-group()[@f:doc = $canonicalDocs]"/>
 						<xsl:variable name="ctext" select="if ($cline) then normalize-space($cline[1]) else ''"/>
 						<xsl:variable name="evidence">
+							<xsl:sequence select="$standoff"/>							
 							<xsl:for-each-group select="current-group()" group-by="@f:doc">
 								<f:evidence>
 									<xsl:copy-of select="current-group()[1]/@*"/>

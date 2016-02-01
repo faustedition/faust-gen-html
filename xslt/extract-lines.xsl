@@ -71,7 +71,9 @@
       <xsl:if test="$source">
         <xsl:attribute name="xml:base" select="$source"/>
       </xsl:if>
-      <xsl:apply-templates select="//alt|//ge:transposeGrp|//join"/>
+      <f:standoff>
+        <xsl:apply-templates select="//alt|//ge:transposeGrp|//join"/>
+      </f:standoff>
       <xsl:apply-templates select='//*[@n and not(self::pb or self::div or self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or @n[contains(.,"todo")] or @n[contains(.,"p")])]'>
         <xsl:sort select="f:normalize-n(@n)"/>
       </xsl:apply-templates>
