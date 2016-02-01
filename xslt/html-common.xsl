@@ -508,8 +508,7 @@ in <xsl:value-of select="document-uri(/)"/>
 			<xsl:attribute name="class" select="string-join((f:generic-classes(.),				
 				if (@n and @part) then ('antilabe', concat('part-', @part)) else ()), ' ')"/>
 			<xsl:if test="key('alt', @xml:id)">
-				<xsl:attribute name="title">zur Auswahl</xsl:attribute>
-				<xsl:message select="concat('alt: ', @xml:id)"/>
+				<xsl:attribute name="title">zur Auswahl</xsl:attribute>				
 			</xsl:if>
 			<xsl:call-template name="highlight-group">
 				<xsl:with-param name="others" select="f:resolve-target(key('alt', @xml:id))"/>
