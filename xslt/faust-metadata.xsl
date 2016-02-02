@@ -43,8 +43,8 @@
 		<elem name="paperColour">Papierfarbe</elem>
 		<elem name="chainLines">Steglinienabstand in mm</elem>
 		<elem name="paperMill">Papiermühle</elem>
-		<elem name="watermarkID">Wasserzeichen-Kürzel</elem>
-		<elem name="countermarkID">Gegenzeichen-Kürzel</elem>
+		<elem name="watermarkID">Wasserzeichen</elem>
+		<elem name="countermarkID">Gegenzeichen</elem>
 		<!--     "references /> / <reference": "Bibliographischer Nachweis" -->
 		<elem name="patchDimensions">Zettelmaße</elem>
 		<elem name="patchType">Art der Anbringung</elem>
@@ -55,8 +55,8 @@
 		<elem name="patchPaperColour">Papierfarbe (Zettel)</elem>
 		<elem name="patchChainLines">Steglinienabstand in mm (Zettel)</elem>
 		<elem name="patchPaperMill">Papiermühle (Zettel)</elem>
-		<elem name="patchWatermarkID">Wasserzeichen-Kürzel (Zettel)</elem>
-		<elem name="patchCountermarkID">Gegenzeichen-Kürzel (Zettel)</elem>
+		<elem name="patchWatermarkID">Wasserzeichen (Zettel)</elem>
+		<elem name="patchCountermarkID">Gegenzeichen (Zettel)</elem>
 		<elem name="references">Bibliographische Nachweise</elem>
 		<elem name="patchReferences">Bibliographische Nachweise (Zettel)</elem>
 		<elem name="page">Seite</elem>
