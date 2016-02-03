@@ -9,6 +9,8 @@
             <text qname="tei:speaker" boost="0.5"/>
             <text qname="tei:note" boost="0.9"/>
             <text qname="tei:trailer"/>
+            <text qname="tei:label"/>
+            <text qname="tei:item"/>
             <text qname="title" boost="2"/>
             <text qname="idno" boost="2"/>
         </lucene>
