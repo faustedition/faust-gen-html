@@ -70,6 +70,7 @@
 			<div class='pure-g-r'>
 				<div class="pure-u-1-2 pure-fade-50">
 					<b>Digitale Faust-Edition</b>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" align="middle"></a>
 					<xsl:if test="$debug">
 						<xsl:text> • </xsl:text>
 						<mark><a href="./">
@@ -82,9 +83,9 @@
 					<xsl:text> </xsl:text>
 					<a href="{$edition}/contact">Kontakt</a>
 					<xsl:text> </xsl:text>
-					<a href="{$edition}/imprint">Impressum</a>
-					<xsl:text> </xsl:text>
 					<a href="{$edition}/project">Projekt</a>
+					<xsl:text> </xsl:text>
+					<a href="{$edition}/intro">Ausgabe</a>
 				</div>
 			</div>
 		</footer>
