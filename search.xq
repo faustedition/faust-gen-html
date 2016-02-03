@@ -36,6 +36,9 @@ for $line in $data//tei:l[ft:query(., $query)]
 			| $data//tei:head[ft:query(., $query)]
 			| $data//tei:note[ft:query(., $query)]
 			| $data//tei:trailer[ft:query(., $query)]
+			| $data//tei:label[ft:query(., $query)]
+			| $data//tei:item[ft:query(., $query)]
+
 let $sigil := string(id('sigil', $line)),
 	$headnote := string(id('headNote', $line)),
 	$n := data($line/@n),
