@@ -70,8 +70,8 @@
 			<div class='pure-g-r'>
 				<div class="pure-u-1-2 pure-fade-50">
 					<b>Digitale Faust-Edition</b>
-					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" align="middle"></a>
-					<xsl:if test="$debug">
+					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" align="middle"/></a>
+					<xsl:if test="$debug and not($debug = ('no', 'false', 'off'))">
 						<xsl:text> • </xsl:text>
 						<mark><a href="./">
 							Generiert: <xsl:value-of select="current-dateTime()"/>

@@ -32,7 +32,7 @@
 	<c:param name="assets" value="assets"/>
 
 	<!-\- If given, include a timestamp and the Testhandschrift. -->
-	<c:param name="debug" value="true"/>
+	<c:param name="debug" value="false"/>
 
 		
 	<!-- Parameters for splitting the text visualisation: -->
