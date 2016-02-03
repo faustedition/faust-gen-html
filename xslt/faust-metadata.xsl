@@ -115,6 +115,10 @@
 		</xsl:call-template>
 	</xsl:template>
 	
+	<xsl:template match="patchSurface">
+		<xsl:comment>Skipping patchSurface</xsl:comment>
+	</xsl:template>
+	
 	<xsl:variable name="repositories" select="document(resolve-uri('archives.xml', $source))"/>
 	<xsl:template match="repository">
 		<xsl:variable name="id" select="."/>
