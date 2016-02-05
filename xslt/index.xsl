@@ -34,17 +34,17 @@
                   
                   <xsl:if test="$type = 'overview'">                    
                     <p class="pure-tiles">
-                     <a href="text" class="pure-button pure-button-tile">Lese&#xAD;text</a>
-                     <a href="prints" class="pure-button pure-button-tile">Drucke</a>
-                     <a href="archivalDocuments" class="pure-button pure-button-tile">Hand&#xAD;schriften</a>
+                     <a href="text" class="pure-button">Lese&#xAD;text</a>
+                     <a href="prints" class="pure-button">Drucke</a>
+                     <a href="archivalDocuments" class="pure-button">Hand&#xAD;schriften</a>
                     </p>
                   </xsl:if>
 
 
                   <xsl:if test="tokenize($type, ' ') = 'text'">                    
                     <p class="pure-tiles">
-                     <a href="faust1" class="pure-button pure-button-tile">Faust I</a>
-                     <a href="faust2" class="pure-button pure-button-tile">Faust II</a>
+                     <a href="faust1" class="pure-button ">Faust I</a>
+                     <a href="faust2" class="pure-button ">Faust II</a>
                     </p>
                   </xsl:if>
                   
