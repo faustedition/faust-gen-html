@@ -29,13 +29,15 @@ START = """<?xml version="1.0" encoding="utf-8"?>
 STOP = """
 </f:bibliography>
 """
-URL = re.compile(r"\[(https?://\S+)\s+([^]]+)\]")
-UNSMALL = re.compile(r"<small>.*?</small>")
 
 
 def cleanup(lines):
+    URL = re.compile(r"\[(https?://\S+)\s+([^]]+)\]")
+    UNSMALL = re.compile(r"<small>.*?</small>")
+    UNCOMMENT = re.compile(r"<!--.*?-->")
     for line in lines:
         line = UNSMALL.sub('', line)
+        line = UNCOMMENT.sub('', line)
         line = line.replace('&nbsp;', ' ')
         line = line.replace('&', '&amp;')
         line = line.replace('<', '&lt;')
