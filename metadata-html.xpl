@@ -67,7 +67,9 @@
               <xsl:template match="/">
                 <f:citations>
                   <xsl:for-each select="//*/@data-bib-uri">
-                    <f:citation><xsl:value-of select="."/></f:citation>
+                    <xsl:for-each select="tokenize(., '\s+')">
+                      <f:citation><xsl:value-of select="."/></f:citation>                      
+                    </xsl:for-each>
                   </xsl:for-each>
                 </f:citations>
               </xsl:template>              

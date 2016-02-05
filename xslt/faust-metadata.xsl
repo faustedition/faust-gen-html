@@ -213,19 +213,22 @@
 		<xsl:param name="full" as="item()"/>
 		<xsl:variable name="bib" select="$bibliography//bib[@uri=$uri]"/>
 		<xsl:variable name="id" select="replace($uri, 'faust://bibliography/', '')"/>
+		<xsl:variable name="parsed-ref">
+			<xsl:for-each select="$bib/reference/node()">
+				<xsl:call-template name="parse-for-bib"/>
+			</xsl:for-each>
+		</xsl:variable>
 		<xsl:choose>
 			<xsl:when test="$bib and $full">
 				<xsl:element name="{$full}">
 					<xsl:attribute name="class">bib-full</xsl:attribute>
 					<xsl:attribute name="data-bib-uri" select="$uri"/>
 					<xsl:attribute name="data-citation" select="$bib/citation"/>					
-					<xsl:for-each select="$bib/reference/node()">
-						<xsl:call-template name="parse-for-bib"/>
-					</xsl:for-each>
+					<xsl:sequence select="$parsed-ref"/>
 				</xsl:element>
 			</xsl:when>
 			<xsl:when test="$bib">
-				<cite class="bib-short" title="{$bib/reference}" data-bib-uri="{$uri}">
+				<cite class="bib-short" title="{$parsed-ref}" data-bib-uri="{string-join(($uri, $parsed-ref//*/@data-bib-uri), ' ')}">
 					<a href="{$edition}/bibliography#{$id}"><xsl:value-of select="$bib/citation"/></a>
 				</cite>
 			</xsl:when>
@@ -271,6 +274,15 @@
 			</xsl:non-matching-substring>
 		</xsl:analyze-string>
 	</xsl:template>
+	
+	<xsl:function name="f:find-bib-refs" as="item()*">
+		<xsl:param name="text"/>
+		<xsl:analyze-string select="$text" regex="faust://bibliography/[a-zA-Z0-9/_.-]*[a-zA-Z0-9/_-]+">
+			<xsl:matching-substring>
+				<xsl:sequence select="."/>
+			</xsl:matching-substring>
+		</xsl:analyze-string>
+	</xsl:function>
 	
 	<xsl:template match="references">
 		<xsl:call-template name="element">

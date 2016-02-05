@@ -804,7 +804,7 @@
 
     <f:bib uri="faust://bibliography/schmidt1888a">
         <f:citation>Schmidt 1888a</f:citation>
-        <f:reference>Epilog zum Faust, mitgetheilt von Erich Schmidt. In: faust://bibliography/gjb_9, S. 5f. '''TODO bisherige Verwendung von faust://bibliography/schmidt1888 ändern in faust://bibliography/schmidt1888a'''</f:reference>
+        <f:reference>Epilog zum Faust, mitgetheilt von Erich Schmidt. In: faust://bibliography/gjb_9, S. 5f. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schmidt1888b">
