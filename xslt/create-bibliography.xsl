@@ -8,7 +8,7 @@
 	
 	<xsl:import href="faust-metadata.xsl"/>
 	
-<!--	<xsl:param name="headerAdditions">
+	<xsl:param name="headerAdditions">
 		<style type="text/css">
 			.bibliography dt .hover-link {
 				color: gray;
@@ -21,43 +21,53 @@
 			}
 		</style>
 	</xsl:param>
--->	
+	
 	<xsl:template match="/">
 		<html>
 			<xsl:call-template name="html-head">
-				<xsl:with-param name="title">Bibliographie</xsl:with-param>				
+				<xsl:with-param name="title">Bibliographie</xsl:with-param>
 			</xsl:call-template>
 			<xsl:call-template name="header"/>
-			
+
 			<xsl:variable name="entries" as="element()*">
 				<xsl:for-each-group select="//f:citation" group-by=".">
 					<xsl:sequence select="f:cite(current-grouping-key(), 'dd')"/>
 				</xsl:for-each-group>
 			</xsl:variable>
-			
+
 			<main>
-				<section class="center pure-g-r">
-					<article class="pure-u-1">
-						<h1>Bibliographie</h1>
-			
-			
-			<dl class="bibliography">
-			<xsl:for-each select="$entries">
-				<xsl:sort select="@data-citation"/>
-				<xsl:variable name="id" select="replace(@data-bib-uri, '^faust://bibliography/', '')"/>
-				<dt id="{$id}">
-					<xsl:value-of select="@data-citation"/><!-- <a href="#{$id}" class="hover-link">¶</a>-->
-				</dt>				
-				<xsl:sequence select="."/>				
-			</xsl:for-each>
-			</dl>
-	
-					</article>
-				</section>
+				<div class="main-content-container" style="margin-bottom:2em;">
+					<div id="main-content" class="main-content">
+						<div style="display: block;" class="archive-content view-content"
+							id="archive-content">
+
+							<section class="center pure-g-r">
+								<article class="pure-u-1">
+									<h1>Bibliographie</h1>
+
+
+									<dl class="bibliography">
+										<xsl:for-each select="$entries">
+											<xsl:sort select="@data-citation"/>
+											<xsl:variable name="id"
+												select="replace(@data-bib-uri, '^faust://bibliography/', '')"/>
+											<dt id="{$id}">
+												<xsl:value-of select="@data-citation"/>
+												<a href="#{$id}" class="hover-link">¶</a>
+											</dt>
+											<xsl:sequence select="."/>
+										</xsl:for-each>
+									</dl>
+
+								</article>
+							</section>
+						</div>
+					</div>
+				</div>
 			</main>
-			
-			
-			<xsl:call-template name="footer"/>			
+
+
+			<xsl:call-template name="footer"/>
 		</html>		
 	</xsl:template>
 	
