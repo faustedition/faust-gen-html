@@ -216,7 +216,9 @@
 		<xsl:choose>
 			<xsl:when test="$bib and $full">
 				<cite class="bib-full" data-bib-uri="{$uri}" data-citation="{$bib/citation}">
-					<xsl:copy-of select="$bib/reference/node()"/>
+					<xsl:for-each select="$bib/reference/node()">
+						<xsl:call-template name="parse-for-bib"/>
+					</xsl:for-each>
 				</cite>
 			</xsl:when>
 			<xsl:when test="$bib">
@@ -241,7 +243,7 @@
 		</xsl:for-each>		
 	</xsl:function>
 		
-	<xsl:template match="text()">
+	<xsl:template match="text()" name="parse-for-bib">
 		<xsl:analyze-string select="." regex="faust://[a-zA-Z0-9/_.-]*[a-zA-Z0-9/_-]+">
 			<xsl:matching-substring>
 				<xsl:variable name="uri" select="."/>
