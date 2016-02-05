@@ -35,7 +35,7 @@
       <p:with-option name="path" select="concat($source, '/document')"/>
     </l:recursive-directory-list>
 
-    <p:for-each>
+    <p:for-each name="convert-metadata">
       <p:iteration-source select="//c:file[$debug or not(ends-with(@name, 'test.xml'))]"/>
       <p:variable name="filename" select="p:resolve-uri(/c:file/@name)"/>
       <p:variable name="basename" select="replace(replace($filename, '.*/', ''), '.xml$', '')"/>
@@ -49,7 +49,7 @@
         <p:with-option name="href" select="$filename"/>
       </p:load>
 
-      <p:xslt>
+      <p:xslt name="generate-html">
         <p:input port="stylesheet"><p:document href="xslt/faust-metadata.xsl"/></p:input>
         <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
       </p:xslt>
@@ -58,7 +58,40 @@
         <p:with-option name="href" select="$outfile"/>
       </p:store>
       
-    </p:for-each>    
+      <p:xslt>
+        <p:input port="source"><p:pipe port="result" step="generate-html"/></p:input>
+        <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+        <p:input port="stylesheet">
+          <p:inline>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xpath-default-namespace="http://www.w3.org/1999/xhtml">
+              <xsl:template match="/">
+                <f:citations>
+                  <xsl:for-each select="//*/@data-bib-uri">
+                    <f:citation><xsl:value-of select="."/></f:citation>
+                  </xsl:for-each>
+                </f:citations>
+              </xsl:template>              
+            </xsl:stylesheet>
+          </p:inline>
+        </p:input>
+      </p:xslt>      
+    </p:for-each>
+    
+    <p:identity name="metadata-citations"/>
+  
+    <p:wrap-sequence wrapper="f:citations">
+      <p:input port="source">
+        <p:pipe port="result" step="metadata-citations"/>
+        <p:document href="additional-citations.xml"/>
+      </p:input>
+    </p:wrap-sequence>
+    
+    <p:xslt>
+      <p:input port="stylesheet"><p:document href="xslt/create-bibliography.xsl"/></p:input>
+      <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+    </p:xslt>
+    
+    <p:store href="target/metadata/bibliography.html" method="xhtml" include-content-type="false" indent="true"/>
   </p:group>
 
 </p:declare-step>

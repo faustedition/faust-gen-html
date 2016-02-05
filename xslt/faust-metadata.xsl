@@ -212,14 +212,17 @@
 		<xsl:param name="uri" as="xs:string"/>
 		<xsl:param name="full" as="xs:boolean"/>
 		<xsl:variable name="bib" select="$bibliography//bib[@uri=$uri]"/>
+		<xsl:variable name="id" select="replace($uri, 'faust://bibliography/', '')"/>
 		<xsl:choose>
 			<xsl:when test="$bib and $full">
-				<cite class="bib-full" data-uri="{$uri}" data-citation="$bib/citation">
+				<cite class="bib-full" data-bib-uri="{$uri}" data-citation="{$bib/citation}">
 					<xsl:copy-of select="$bib/reference/node()"/>
 				</cite>
 			</xsl:when>
 			<xsl:when test="$bib">
-				<cite class="bib-short" title="{$bib/reference}" data-uri="{$uri}"><xsl:value-of select="$bib/citation"/></cite>
+				<cite class="bib-short" title="{$bib/reference}" data-bib-uri="{$uri}">
+					<a href="{$edition}/bibliography#{$id}"><xsl:value-of select="$bib/citation"/></a>
+				</cite>
 			</xsl:when>
 			<xsl:otherwise>
 				<cite class="bib-notfound"><xsl:value-of select="$uri"/></cite>
