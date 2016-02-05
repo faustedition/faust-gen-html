@@ -17,19 +17,17 @@
 			
 			<xsl:variable name="entries" as="element()*">
 				<xsl:for-each-group select="//f:citation" group-by=".">
-					<xsl:sequence select="f:cite(current-grouping-key(), true())"/>
+					<xsl:sequence select="f:cite(current-grouping-key(), 'dd')"/>
 				</xsl:for-each-group>
 			</xsl:variable>
 			
 			<dl>
 			<xsl:for-each select="$entries">
 				<xsl:sort select="@data-citation"/>
-				<dt id="replace(@data-bib-uri, '^faust://bibliography/', '')">
+				<dt id="{replace(@data-bib-uri, '^faust://bibliography/', '')}">
 					<xsl:value-of select="@data-citation"/>
-				</dt>
-				<dd>
-					<xsl:sequence select="."/>
-				</dd>
+				</dt>				
+				<xsl:sequence select="."/>				
 			</xsl:for-each>
 			</dl>
 			

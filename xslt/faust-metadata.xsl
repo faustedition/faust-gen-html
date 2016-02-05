@@ -210,16 +210,19 @@
 	-->
 	<xsl:function name="f:cite" as="element()">
 		<xsl:param name="uri" as="xs:string"/>
-		<xsl:param name="full" as="xs:boolean"/>
+		<xsl:param name="full" as="item()"/>
 		<xsl:variable name="bib" select="$bibliography//bib[@uri=$uri]"/>
 		<xsl:variable name="id" select="replace($uri, 'faust://bibliography/', '')"/>
 		<xsl:choose>
 			<xsl:when test="$bib and $full">
-				<cite class="bib-full" data-bib-uri="{$uri}" data-citation="{$bib/citation}">
+				<xsl:element name="{$full}">
+					<xsl:attribute name="class">bib-full</xsl:attribute>
+					<xsl:attribute name="data-bib-uri" select="$uri"/>
+					<xsl:attribute name="data-citation" select="$bib/citation"/>					
 					<xsl:for-each select="$bib/reference/node()">
 						<xsl:call-template name="parse-for-bib"/>
 					</xsl:for-each>
-				</cite>
+				</xsl:element>
 			</xsl:when>
 			<xsl:when test="$bib">
 				<cite class="bib-short" title="{$bib/reference}" data-bib-uri="{$uri}">
