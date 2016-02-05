@@ -30,10 +30,12 @@ STOP = """
 </f:bibliography>
 """
 URL = re.compile(r"\[(https?://\S+)\s+([^]]+)\]")
+UNSMALL = re.compile(r"<small>.*?</small>")
 
 
 def cleanup(lines):
     for line in lines:
+        line = UNSMALL.sub('', line)
         line = line.replace('&nbsp;', ' ')
         line = line.replace('&', '&amp;')
         line = line.replace('<', '&lt;')

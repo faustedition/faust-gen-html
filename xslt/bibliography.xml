@@ -29,7 +29,7 @@
 
     <f:bib uri="faust://bibliography/beck2012">
         <f:citation>Beck 2012</f:citation>
-        <f:reference>Beck, Eva: Das erste Findbuch des Archivs - Kräuters "Repertorium über die Goethesche Repositur". In: Manuskripte 5, hrsg. von der Freundesgesellschaft des Goethe- und Schiller-Archivs Weimar e.V., Weimar 2012, S. 47-62. &lt;small>URI wurde noch nicht verwendet, aber Auflistung des Aufsatzes in dieser Liste schien mir sinnvoll (KH)&lt;/small></f:reference>
+        <f:reference>Beck, Eva: Das erste Findbuch des Archivs - Kräuters "Repertorium über die Goethesche Repositur". In: Manuskripte 5, hrsg. von der Freundesgesellschaft des Goethe- und Schiller-Archivs Weimar e.V., Weimar 2012, S. 47-62. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/bell2003">
@@ -204,7 +204,7 @@
 
     <f:bib uri="faust://bibliography/ehrenzeller1995">
         <f:citation>Ehrenzeller 1995</f:citation>
-        <f:reference>Ehrenzeller, Martin: Editionsprobleme in neueren Historisch-Kritischen Ausgaben und Studienausgaben, vermutlich 1995 (masch.).&lt;br>&lt;small>Die Rubrizierung des unveröffentlichten Schriftstücks nach faust://bibliography/matussek1996, S. 388. Die dortige Jahresangabe 1992 ist jedoch falsch (diente sie dazu, den Bezug auf faust://bibliography/schoene1994 zu verdecken?). Aus dem Presseecho lässt sich schließen, dass faust://bibliography/schoene1994 im Herbst ausgeliefert wurde (faust://bibliography/michelsen2000, S. 193, Anm. 3; faust://bibliography/schoene1994b). Ehrenzeller will sofort nach Erscheinen mit der Prüfung begonnen haben (S. 1), ist aber gewiss nicht vor dem Anfang des Jahres 1995 damit zum Abschluss gekommen.&lt;/small></f:reference>
+        <f:reference>Ehrenzeller, Martin: Editionsprobleme in neueren Historisch-Kritischen Ausgaben und Studienausgaben, vermutlich 1995 (masch.).&lt;br></f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/emrich1942">
@@ -324,12 +324,12 @@
 
     <f:bib uri="faust://bibliography/grumach1953">
         <f:citation>Grumach 1953</f:citation>
-        <f:reference>Grumach, Ernst: Prolog und Epilog im Faustplan von 1797. In: faust://bibliography/gjb_69-70, S. 63-107. '''TODO ändern in faust://bibliography/gjb_69-70''' &lt;small>Fände ich nicht gut (s.o.) --GB&lt;/small></f:reference>
+        <f:reference>Grumach, Ernst: Prolog und Epilog im Faustplan von 1797. In: faust://bibliography/gjb_69-70, S. 63-107. '''TODO ändern in faust://bibliography/gjb_69-70''' </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/grumach1954">
         <f:citation>Grumach 1954</f:citation>
-        <f:reference>Grumach, Ernst: Zum Urfaust. In: faust://bibliography/gjb_71), S. 135-142. '''Dieselbe URI kommt unten nochmal vor, sie muss dort geändert werden.''' '''TODO ändern in faust://bibliography/gjb_71''' &lt;small>Fände ich nicht gut (s.o.) --GB&lt;/small></f:reference>
+        <f:reference>Grumach, Ernst: Zum Urfaust. In: faust://bibliography/gjb_71), S. 135-142. '''Dieselbe URI kommt unten nochmal vor, sie muss dort geändert werden.''' '''TODO ändern in faust://bibliography/gjb_71''' </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/grumach1958">
@@ -369,7 +369,7 @@
 
     <f:bib uri="faust://bibliography/hartung_und_hartung_112">
         <f:citation>Hartung und Hartung 112</f:citation>
-        <f:reference>Hartung &amp; Hartung, München: [Katalog] Auktion 112, 8.–10. November 2005, o.O. 2005 (http://www.hartung-hartung.de/ unter Auktionen, Nr. 112). &lt;small>war vorher faust://bibliography/hartung_und_hartung2005&lt;/small></f:reference>
+        <f:reference>Hartung &amp; Hartung, München: [Katalog] Auktion 112, 8.–10. November 2005, o.O. 2005 (http://www.hartung-hartung.de/ unter Auktionen, Nr. 112). </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hecker1907">
@@ -389,7 +389,7 @@
 
     <f:bib uri="faust://bibliography/henke2008">
         <f:citation>Henke 2008</f:citation>
-        <f:reference>Henke, Silke: Goethes kleine Gedichte für den Weimarer Frauenverein. In: Goethe-Jahrbuch 125 (2008), S. 266–272. '''TODO ändern in faust://bibliography/gjb_125''' &lt;small>Fände ich nicht gut (s.o.) --GB&lt;/small></f:reference>
+        <f:reference>Henke, Silke: Goethes kleine Gedichte für den Weimarer Frauenverein. In: Goethe-Jahrbuch 125 (2008), S. 266–272. '''TODO ändern in faust://bibliography/gjb_125''' </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hertz1924">
@@ -434,12 +434,12 @@
 
     <f:bib uri="faust://bibliography/inventare_2_1">
         <f:citation>Inventare 2,1</f:citation>
-        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 1: Gedichte, hrsg. von der Stiftung Weimarer Klassik, Goethe- und Schiller-Archiv. Weimar 2000.&lt;br>&lt;small>ehemals faust://bibliography/inventare2000.&lt;/small></f:reference>
+        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 1: Gedichte, hrsg. von der Stiftung Weimarer Klassik, Goethe- und Schiller-Archiv. Weimar 2000.&lt;br></f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/inventare_2_2">
         <f:citation>Inventare 2,2</f:citation>
-        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 2: Dramen, Romane und Erzählungen, hrsg. von der Klassik Stiftung Weimar, Goethe- und Schiller-Archiv. Weimar 2011.&lt;br>&lt;small> ehemals faust://bibliography/inventare2011.&lt;/small></f:reference>
+        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 2: Dramen, Romane und Erzählungen, hrsg. von der Klassik Stiftung Weimar, Goethe- und Schiller-Archiv. Weimar 2011.&lt;br></f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/jensen1968">
@@ -714,7 +714,7 @@
 
     <f:bib uri="faust://bibliography/ofterdinger1886">
         <f:citation>Ofterdinger 1886</f:citation>
-        <f:reference>Ofterdinger, L. F.: Goethe-Reliquien. In: faust://bibliography/gjb_7, S. 274f. &lt;small>'''TODO''' Vornamen Ofterdingers ermitteln&lt;/small></f:reference>
+        <f:reference>Ofterdinger, L. F.: Goethe-Reliquien. In: faust://bibliography/gjb_7, S. 274f. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/petsch1926">
@@ -869,17 +869,17 @@
 
     <f:bib uri="faust://bibliography/stargardt_634">
         <f:citation>Stargardt 634</f:citation>
-        <f:reference>J. A. Stargardt: Katalog 634. Autographen aus allen Gebieten, Marburg 1985. &lt;small>ehemals faust://bibliography/stargardt1985&lt;/small></f:reference>
+        <f:reference>J. A. Stargardt: Katalog 634. Autographen aus allen Gebieten, Marburg 1985. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/stargardt_663">
         <f:citation>Stargardt 663</f:citation>
-        <f:reference>J. A. Stargardt: Katalog 663. Autographen aus allen Gebieten, Auktion am 21. und 22. März 1996, Berlin 1996. &lt;small>ehemals faust://bibliography/stargardt1996&lt;/small></f:reference>
+        <f:reference>J. A. Stargardt: Katalog 663. Autographen aus allen Gebieten, Auktion am 21. und 22. März 1996, Berlin 1996. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/stargardt_698">
         <f:citation>Stargardt 698</f:citation>
-        <f:reference>J. A.Stargardt: Katalog 698. Autographen aus allen Gebieten, Auktion am 5. und 6. Juni 2012, Berlin 2012. &lt;small>ehemals faust://bibliography/stargardt2012&lt;/small></f:reference>
+        <f:reference>J. A.Stargardt: Katalog 698. Autographen aus allen Gebieten, Auktion am 5. und 6. Juni 2012, Berlin 2012. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/steiniger2005">
@@ -1233,7 +1233,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/djg3_5">
-        <f:citation>'''DJG 3,5 so?'''</f:citation>
+        <f:citation>DjG&lt;sup>3&lt;/sup> 5</f:citation>
         <f:reference>Der junge Goethe. Neu bearbeitete Ausgabe in fünf Bänden, hrsg. von Hanna Fischer-Lamberg, Bd. 5, Berlin und New York 1973.</f:reference>
     </f:bib>
 
@@ -1249,12 +1249,12 @@
 
     <f:bib uri="faust://bibliography/ma_18_1">
         <f:citation>MA 18,1</f:citation>
-        <f:reference>Goethe, Johann Wolfgang: Sämtliche Werke nach Epochen seines Schaffens. Münchner Ausgabe, Bd. 18,1: Letzte Jahre. 1827–1832, Tl. 1, hrsg. von Gisela Henckmann u. Dorothea Hölscher-Lohmeyer, München 1997. &lt;small>ehemals faust://bibliography/henckmann1997.&lt;/small></f:reference>
+        <f:reference>Goethe, Johann Wolfgang: Sämtliche Werke nach Epochen seines Schaffens. Münchner Ausgabe, Bd. 18,1: Letzte Jahre. 1827–1832, Tl. 1, hrsg. von Gisela Henckmann u. Dorothea Hölscher-Lohmeyer, München 1997. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schoene2005">
         <f:citation>Schöne 2005</f:citation>
-        <f:reference>Goethe, Johann Wolfgang: Faust, hrsg. von Albrecht Schöne, 2 Bde., Frankfurt am Main 2005. &lt;small>Bandangabe erfolgt im Freitextfeld.&lt;/small></f:reference>
+        <f:reference>Goethe, Johann Wolfgang: Faust, hrsg. von Albrecht Schöne, 2 Bde., Frankfurt am Main 2005. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/q_1_2">
@@ -1269,7 +1269,7 @@
 
     <f:bib uri="faust://bibliography/keller1985">
         <f:citation>Keller 1985</f:citation>
-        <f:reference>Johann Wolfgang von Goethe, Urfaust - Faust. Ein Fragment - Faust. Eine Tragödie. Paralleldruck der drei Fassungen, hrsg. von Werner Keller. 2 Bde. 5. Aufl, Frankfurt am Main 1985 (= Insel Taschenbuch 625). &lt;small>NB: es gibt zwar zwei Bände, aber mit durchlaufender Seitenzählung, daher ist eine Differenzierung der URI nicht nötig.&lt;/small></f:reference>
+        <f:reference>Johann Wolfgang von Goethe, Urfaust - Faust. Ein Fragment - Faust. Eine Tragödie. Paralleldruck der drei Fassungen, hrsg. von Werner Keller. 2 Bde. 5. Aufl, Frankfurt am Main 1985 (= Insel Taschenbuch 625). </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schmidt1887">
