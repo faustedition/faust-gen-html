@@ -33,7 +33,7 @@
             <article class="pure-u-3-5 pure-center">
                   
                   <xsl:if test="$type = 'overview'">                    
-                    <p class="pure-tiles">
+                    <p>
                      <a href="text" class="pure-button pure-button-tile">Lese&#xAD;text</a>
                      <a href="prints" class="pure-button pure-button-tile">Drucke</a>
                      <a href="archivalDocuments" class="pure-button pure-button-tile">Hand&#xAD;schriften</a>
@@ -42,7 +42,7 @@
 
 
                   <xsl:if test="tokenize($type, ' ') = 'text'">                    
-                    <p class="pure-tiles">
+                    <p>
                      <a href="faust1" class="pure-button pure-button-tile">Faust I</a>
                      <a href="faust2" class="pure-button pure-button-tile">Faust II</a>
                     </p>
