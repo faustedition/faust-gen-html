@@ -305,8 +305,10 @@
 		<dt><xsl:value-of select="f:lookup($reference-types, @type, 'reference-types')"/></dt>
 		<dd>
 			<xsl:copy-of select="f:cite(@uri, false())"/>
-			<xsl:text> </xsl:text>
-			<xsl:apply-templates/>
+			<xsl:if test="normalize-space(.)">
+				<xsl:text>, </xsl:text>
+				<xsl:apply-templates/>				
+			</xsl:if>
 		</dd>
 	</xsl:template>	
 	
