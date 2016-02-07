@@ -301,7 +301,7 @@
 		<elem name="essay">Literatur</elem>
 		<elem name="watermarkRubbing">Wasserzeichen-Pause</elem>
 	</xsl:variable>
-	<xsl:template match="reference">
+	<xsl:template match="reference"  priority="1">
 		<dt><xsl:value-of select="f:lookup($reference-types, @type, 'reference-types')"/></dt>
 		<dd>
 			<xsl:copy-of select="f:cite(@uri, false())"/>
