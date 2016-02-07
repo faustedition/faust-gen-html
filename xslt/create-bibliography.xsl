@@ -36,7 +36,7 @@
 			</xsl:variable>
 
 			<main>
-				<div class="main-content-container" style="margin-bottom:2em;">
+				<div class="main-content-container" style="margin-bottom:0em;">
 					<div id="main-content" class="main-content">
 						<div style="display: block;" class="archive-content view-content"
 							id="archive-content">
