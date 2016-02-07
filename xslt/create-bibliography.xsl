@@ -31,7 +31,31 @@
 
 			<xsl:variable name="entries" as="element()*">
 				<xsl:for-each-group select="//f:citation" group-by=".">
-					<xsl:sequence select="f:cite(current-grouping-key(), 'dd')"/>
+					<xsl:variable name="citation" select="f:cite(current-grouping-key(), 'dd')"/>
+					<xsl:variable name="backrefs" as="element()*">
+						<xsl:for-each select="current-group()[@from]">							
+							<xsl:sequence select="f:resolve-faust-doc(@from)"/>
+						</xsl:for-each>
+					</xsl:variable>
+					<xsl:variable name="backref-part">
+						<xsl:for-each-group select="$backrefs" group-by=".">
+							<xsl:sort/>
+							<xsl:copy-of select="current-group()[1]"/>
+							<xsl:if test="position() != last()">, </xsl:if>
+						</xsl:for-each-group>
+					</xsl:variable>
+					<xsl:for-each select="$citation">
+						<xsl:copy>
+							<xsl:copy-of select="@*"/>
+							<xsl:copy-of select="node()"/>
+							<xsl:if test="$backrefs">
+								<xsl:text> </xsl:text>								
+								<small class="bib-backrefs">
+									<xsl:copy-of select="$backref-part"/>
+								</small>
+							</xsl:if>
+						</xsl:copy>
+					</xsl:for-each>
 				</xsl:for-each-group>
 			</xsl:variable>
 
