@@ -134,7 +134,7 @@
 
     <f:bib uri="faust://bibliography/burkhardt1872">
         <f:citation>Burkhardt 1872</f:citation>
-        <f:reference>Burkhardt, C.A.H.: Zu Goethes Gedichten. In: Archiv für Litteraturgeschichte&lt;!-- FDH-Sign XII N / 9 --> 2 (1872), S. 511–519.</f:reference>
+        <f:reference>Burkhardt, C.A.H.: Zu Goethes Gedichten. In: Archiv für Litteraturgeschichte 2 (1872), S. 511–519.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/castle1911">
@@ -324,12 +324,12 @@
 
     <f:bib uri="faust://bibliography/grumach1953">
         <f:citation>Grumach 1953</f:citation>
-        <f:reference>Grumach, Ernst: Prolog und Epilog im Faustplan von 1797. In: faust://bibliography/gjb_69-70, S. 63-107. '''TODO ändern in faust://bibliography/gjb_69-70''' </f:reference>
+        <f:reference>Grumach, Ernst: Prolog und Epilog im Faustplan von 1797. In: faust://bibliography/gjb_69-70, S. 63-107. <strong>TODO ändern in faust://bibliography/gjb_69-70</strong> </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/grumach1954">
         <f:citation>Grumach 1954</f:citation>
-        <f:reference>Grumach, Ernst: Zum Urfaust. In: faust://bibliography/gjb_71), S. 135-142. '''Dieselbe URI kommt unten nochmal vor, sie muss dort geändert werden.''' '''TODO ändern in faust://bibliography/gjb_71''' </f:reference>
+        <f:reference>Grumach, Ernst: Zum Urfaust. In: faust://bibliography/gjb_71), S. 135-142. <strong>Dieselbe URI kommt unten nochmal vor, sie muss dort geändert werden.</strong> <strong>TODO ändern in faust://bibliography/gjb_71</strong> </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/grumach1958">
@@ -389,12 +389,12 @@
 
     <f:bib uri="faust://bibliography/henke2008">
         <f:citation>Henke 2008</f:citation>
-        <f:reference>Henke, Silke: Goethes kleine Gedichte für den Weimarer Frauenverein. In: Goethe-Jahrbuch 125 (2008), S. 266–272. '''TODO ändern in faust://bibliography/gjb_125''' </f:reference>
+        <f:reference>Henke, Silke: Goethes kleine Gedichte für den Weimarer Frauenverein. In: Goethe-Jahrbuch 125 (2008), S. 266–272. <strong>TODO ändern in faust://bibliography/gjb_125</strong> </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hertz1924">
         <f:citation>Hertz 1924</f:citation>
-        <f:reference>Hertz, Gottfried Wilhelm: Entstehungsgeschichte und Gehalt von '''Faust II, Akt 2'''. In: Euphorion 25 (1924),S. 389-406, 609-629.</f:reference>
+        <f:reference>Hertz, Gottfried Wilhelm: Entstehungsgeschichte und Gehalt von <strong>Faust II, Akt 2</strong>. In: Euphorion 25 (1924),S. 389-406, 609-629.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hertz1931">
@@ -404,7 +404,7 @@
 
     <f:bib uri="faust://bibliography/hertz1932">
         <f:citation>Hertz 1932</f:citation>
-        <f:reference>Hertz, Gottfried Wilhelm: Zur Entstehungsgeschichte von '''Faust II Akt 5'''. (1825. 1826. 1830.) In: Euphorion 33 (1932), S. 244-277.</f:reference>
+        <f:reference>Hertz, Gottfried Wilhelm: Zur Entstehungsgeschichte von <strong>Faust II Akt 5</strong>. (1825. 1826. 1830.) In: Euphorion 33 (1932), S. 244-277.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hirzel1874">
@@ -484,7 +484,7 @@
 
     <f:bib uri="faust://bibliography/koegel1888">
         <f:citation>Kögel 1888</f:citation>
-        <f:reference>Kögel, Rudolf: Kleinigkeiten zu Goethe. In: '''Vierteljahrschrift für Litteraturgeschichte''', Bd. 1, 1888, S. 52–64.</f:reference>
+        <f:reference>Kögel, Rudolf: Kleinigkeiten zu Goethe. In: <strong>Vierteljahrschrift für Litteraturgeschichte</strong>, Bd. 1, 1888, S. 52–64.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/koestler2008">
@@ -539,7 +539,7 @@
 
     <f:bib uri="faust://bibliography/loeper1879">
         <f:citation>Loeper 1879</f:citation>
-        <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G. von Loeper, 2. Bearbeitung, 2 Tle, Berlin 1879. '''Dieselbe URI kommt unten nochmal vor, sie muss dort geändert werden.'''</f:reference>
+        <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G. von Loeper, 2. Bearbeitung, 2 Tle, Berlin 1879. <strong>Dieselbe URI kommt unten nochmal vor, sie muss dort geändert werden.</strong></f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1883">
@@ -1279,7 +1279,7 @@
 
     <f:bib uri="faust://bibliography/schroeer1881">
         <f:citation>Schröer 1881</f:citation>
-        <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer (1. Aufl.), 2 Bde., Heilbronn 1881&lt;!-- 	Stadtbibliothek Mainz, Sign. 55/55 l, 1-->.</f:reference>
+        <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer (1. Aufl.), 2 Bde., Heilbronn 1881.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schroeer1914">
