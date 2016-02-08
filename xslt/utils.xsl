@@ -240,6 +240,26 @@
       or @n[contains(.,"todo")] 
       or @n[contains(.,"p")])])'/>
   </xsl:function>
+
+  <xsl:function name="f:splitSigil" as="item()*">
+    <xsl:param name="sigil"/>
+    <xsl:variable name="split" as="item()*">
+      <xsl:analyze-string select="$sigil" regex="^([12]?\s*[IV]{{0,3}}\s*[^0-9]+)(\d*)(.*)$">
+        <xsl:matching-substring>
+          <xsl:sequence select="(regex-group(1), regex-group(2), regex-group(3))"/>
+        </xsl:matching-substring>
+        <xsl:non-matching-substring>
+          <xsl:message select="concat('WARNING: Sigil “', $sigil, '” cannot be analyzed.')"/>
+          <xsl:sequence select="($sigil, '99999', '')"/>
+        </xsl:non-matching-substring>
+      </xsl:analyze-string>                
+    </xsl:variable>
+    <xsl:sequence select="(
+      if ($split[1] = 'H P') then '3 H P' else $split[1], 
+      if ($split[2] =  '')   then -1      else number($split[2]),
+      $split[3]
+      )"/>
+  </xsl:function>
   
   
 </xsl:stylesheet>

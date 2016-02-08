@@ -57,18 +57,21 @@
       <p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
         <p:with-option name="href" select="$outfile"/>
       </p:store>
+            
       
       <p:xslt>
         <p:input port="source"><p:pipe port="result" step="generate-html"/></p:input>
         <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+        <p:with-param name="from" select="replace($filename, concat('^', $source), 'faust://xml/')"/>
         <p:input port="stylesheet">
           <p:inline>
             <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xpath-default-namespace="http://www.w3.org/1999/xhtml">
+              <xsl:param name="from"/>  
               <xsl:template match="/">
                 <f:citations>
                   <xsl:for-each select="//*/@data-bib-uri">
                     <xsl:for-each select="tokenize(., '\s+')">
-                      <f:citation><xsl:value-of select="."/></f:citation>                      
+                      <f:citation from="{$from}"><xsl:value-of select="."/></f:citation>                      
                     </xsl:for-each>
                   </xsl:for-each>
                 </f:citations>
@@ -81,12 +84,13 @@
     
     <p:identity name="metadata-citations"/>
   
-    <p:wrap-sequence wrapper="f:citations">
+    <p:wrap-sequence wrapper="f:citations" name="wrapped-citations">
       <p:input port="source">
         <p:pipe port="result" step="metadata-citations"/>
         <p:document href="additional-citations.xml"/>
       </p:input>
     </p:wrap-sequence>
+        
     
     <p:xslt>
       <p:input port="stylesheet"><p:document href="xslt/create-bibliography.xsl"/></p:input>
@@ -94,6 +98,12 @@
     </p:xslt>
     
     <p:store href="target/metadata/bibliography.html" method="xhtml" include-content-type="false" indent="true"/>
+    <!-- For debugging: -->
+    <p:store href="target/citations.xml" method="xml" indent="true">
+      <p:input port="source">
+        <p:pipe port="result" step="wrapped-citations"/>
+      </p:input>
+    </p:store>
   </p:group>
 
 </p:declare-step>
