@@ -20,6 +20,9 @@
 			.bibliography dt:hover .hover-link {
 				visibility: visible;
 			}
+			.bib-backrefs a {
+				white-space: nowrap;
+			}
 		</style>
 	</xsl:param>
 	
