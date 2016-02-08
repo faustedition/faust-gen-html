@@ -7,6 +7,7 @@
 	version="2.0">
 	
 	<xsl:import href="faust-metadata.xsl"/>
+	<xsl:import href="utils.xsl"/>
 	
 	<xsl:param name="headerAdditions">
 		<style type="text/css">
@@ -39,7 +40,10 @@
 					</xsl:variable>
 					<xsl:variable name="backref-part">
 						<xsl:for-each-group select="$backrefs" group-by=".">
-							<xsl:sort/>
+							<xsl:sort select="f:splitSigil(.)[1]" stable="yes"/>
+							<xsl:sort select="f:splitSigil(.)[2]" data-type="number"/>
+							<xsl:sort select="f:splitSigil(.)[3]"/>								                    
+							
 							<xsl:copy-of select="current-group()[1]"/>
 							<xsl:if test="position() != last()">, </xsl:if>
 						</xsl:for-each-group>
