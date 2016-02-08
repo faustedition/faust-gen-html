@@ -264,7 +264,7 @@
 
     <f:bib uri="faust://bibliography/fritze1964">
         <f:citation>Fritze 1964</f:citation>
-        <f:reference>Fritze, Marie-Elisabeth: Untersuchungen zur vierbändigen „geringeren“ Ausgabe von Goethes Werken bei Göschen 1787--1791 (S&lt;sup>2&lt;/sup>), Berlin, Humboldt-Univ., Diss. 1964 (masch.).</f:reference>
+        <f:reference>Fritze, Marie-Elisabeth: Untersuchungen zur vierbändigen „geringeren“ Ausgabe von Goethes Werken bei Göschen 1787--1791 (S²), Berlin, Humboldt-Univ., Diss. 1964 (masch.).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gajek1966">
@@ -324,7 +324,7 @@
 
     <f:bib uri="faust://bibliography/grumach1953">
         <f:citation>Grumach 1953</f:citation>
-        <f:reference>Grumach, Ernst: Prolog und Epilog im Faustplan von 1797. In: faust://bibliography/gjb_69-70, S. 63-107. <strong>TODO ändern in faust://bibliography/gjb_69-70</strong> </f:reference>
+        <f:reference>Grumach, Ernst: Prolog und Epilog im Faustplan von 1797. In: faust://bibliography/gjb_69-70, S. 63-107.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/grumach1954">
@@ -389,7 +389,7 @@
 
     <f:bib uri="faust://bibliography/henke2008">
         <f:citation>Henke 2008</f:citation>
-        <f:reference>Henke, Silke: Goethes kleine Gedichte für den Weimarer Frauenverein. In: Goethe-Jahrbuch 125 (2008), S. 266–272. <strong>TODO ändern in faust://bibliography/gjb_125</strong> </f:reference>
+        <f:reference>Henke, Silke: Goethes kleine Gedichte für den Weimarer Frauenverein. In: Goethe-Jahrbuch 125 (2008), S. 266–272.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hertz1924">
@@ -967,21 +967,6 @@
         <f:reference>Witkowski, Georg: Notwendige Faust-Emendationen. In: Jahrbuch der Sammlung Kippenberg, Bd. 8 (1930), S. 304–308.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/wa_I_14">
-        <f:citation>WA I 14</f:citation>
-        <f:reference>WA, Abt. I, Bd. 14, Weimar 1887.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/wa_I_39">
-        <f:citation>WA I 39</f:citation>
-        <f:reference>WA, Abt. I, Bd. 39, Weimar 1897.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/wa_I_53">
-        <f:citation>WA I 53</f:citation>
-        <f:reference>WA, Abt. I, Bd. 53, Weimar 1914.</f:reference>
-    </f:bib>
-
     <f:bib uri="faust://bibliography/wa_I_1">
         <f:citation>WA I 1</f:citation>
         <f:reference>WA, Abt. I, Bd. 1, Weimar 1887.</f:reference>
@@ -1028,8 +1013,8 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_I_14">
-        <f:citation>WA I 14</f:citation>
-        <f:reference>WA, Abt. I, Bd. 14, Weimar 1887.</f:reference>
+        <f:citation>WA I 14</f:citation>
+        <f:reference>WA, Abt. I, Bd. 14, Weimar 1887.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_I_15_1">
@@ -1080,6 +1065,11 @@
     <f:bib uri="faust://bibliography/wa_I_42_2">
         <f:citation>WA I 42,2</f:citation>
         <f:reference>WA, Abt. I, Bd. 42,2, Weimar 1907.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_53">
+        <f:citation>WA I 53</f:citation>
+        <f:reference>WA, Abt. I, Bd. 53, Weimar 1914.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_II_5_1">
@@ -1182,14 +1172,84 @@
         <f:reference>WA, Abt. IV, Bd. 51, München 1990.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gjb_2">
+        <f:citation>GJB 2</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Zweiter Band, Frankfurt am Main 1881.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_4">
+        <f:citation>GJB 4</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Vierter Band, Frankfurt am Main 1883.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_7">
+        <f:citation>GJB 7</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Siebenter Band. Mit dem ersten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1886.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_9">
+        <f:citation>GJB 9</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Neunter Band. Mit dem dritten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1888.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/gjb_11">
         <f:citation>GJB 11</f:citation>
         <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Elfter Band, Frankfurt am Main 1890.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gjb_17">
+        <f:citation>GJB 17</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Siebzehnter Band. Mit dem elften Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1896.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_22">
+        <f:citation>GJB 22</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Zweiundzwanzigster Band. Mit dem sechzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1901.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_25">
+        <f:citation>GJB 25</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Fünfundzwanzigster Band. Mit dem neunzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1904.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_47">
+        <f:citation>GJB 47</f:citation>
+        <f:reference>Jahrbuch der Goethe-Gesellschaft, im Auftrage des Vorstandes hrsg. von Max Hecker Dreizehnter Band, Weimar 1927.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_69-70">
+        <f:citation>GJB 69-70</f:citation>
+        <f:reference>Goethe. Neue Folge des Jahrbuchs der Goethe-Gesellschaft, hrsg. im Auftrage des Vorstands von Andreas B. Wachsmuth, Vierzehnter/Fünfzehnter Band. 1952/1953, Weimar 1953.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_71">
+        <f:citation>GJB 71</f:citation>
+        <f:reference>Goethe. Neue Folge des Jahrbuchs der Goethe-Gesellschaft, hrsg. im Auftrage des Vorstands von Andreas B. Wachsmuth, Sechzehnter Band. 1954, Weimar 1954.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_75">
+        <f:citation>GJB 75</f:citation>
+        <f:reference>Goethe. Neue Folge des Jahrbuchs der Goethe-Gesellschaft, im Auftrage des Vorstands hrsg. von Andreas B. Wachsmuth, Zwanzigster Band. 1958, Weimar 1958.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_79">
+        <f:citation>GJB 79</f:citation>
+        <f:reference>Goethe. Neue Folge des Jahrbuchs der Goethe-Gesellschaft, im Auftrage des Vorstands hrsg. von Andreas B. Wachsmuth, Vierundzwanzigster Band. 1962, Weimar 1962.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/alt_14">
         <f:citation>Alt 14</f:citation>
         <f:reference>Goethes Werke. Vollständige Ausgabe in vierzig Teilen. Auf Grund der Hempelschen Ausgabe neu herausgegeben, mit Einleitungen und Anmerkungen sowie einem Gesamtregister versehen von Karl Alt. 14. Teil: Dramen in ursprünglicher Gestalt, hrsg. von Robert Riemann und Karl Alt, Berlin u.a. o.J. [1909-1926].</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/aa_faust_1">
+        <f:citation>AA Faust 1</f:citation>
+        <f:reference>Werke Goethes, hrsg. von der deutschen Akademie der Wissenschaften zu Berlin, Faust, Bd. 1: Urfaust – Faust. Ein Fragment, bearb. von Ernst Grumach, Berlin 1954. .</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/aa_faust_2">
+        <f:citation>AA Faust 2</f:citation>
+        <f:reference>Werke Goethes, hrsg. von der deutschen Akademie der Wissenschaften zu Berlin unter Leitung von Ernst Grumach, Faust, Bd. 2: Faust. Der Tragödie erster Theil, bearb. von Ernst Grumach und Inge Jensen, Berlin 1958.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/aa_epen_2">
@@ -1233,7 +1293,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/djg3_5">
-        <f:citation>DjG&lt;sup>3&lt;/sup> 5</f:citation>
+        <f:citation>DjG³ 5</f:citation>
         <f:reference>Der junge Goethe. Neu bearbeitete Ausgabe in fünf Bänden, hrsg. von Hanna Fischer-Lamberg, Bd. 5, Berlin und New York 1973.</f:reference>
     </f:bib>
 
@@ -1252,9 +1312,14 @@
         <f:reference>Goethe, Johann Wolfgang: Sämtliche Werke nach Epochen seines Schaffens. Münchner Ausgabe, Bd. 18,1: Letzte Jahre. 1827–1832, Tl. 1, hrsg. von Gisela Henckmann u. Dorothea Hölscher-Lohmeyer, München 1997. </f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/schoene1994">
+        <f:citation>Schöne 1994</f:citation>
+        <f:reference>Goethe, Johann Wolfgang: Sämtliche Werke. Briefe, Tagebücher und Gespräche. Vierzig Bände, hrsg. von Friedmar Apel u.a. I. Abteilung, Bde. 7/1: Faust. Texte und 7/2: Faust. Kommentare, hrsg. von Albrecht Schöne, Frankfurt am Main 1994. </f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/schoene2005">
         <f:citation>Schöne 2005</f:citation>
-        <f:reference>Goethe, Johann Wolfgang: Faust, hrsg. von Albrecht Schöne, 2 Bde., Frankfurt am Main 2005. </f:reference>
+        <f:reference>Goethe, Johann Wolfgang: Faust, hrsg. von Albrecht Schöne, 2 Bde., 6., revidierte Auflage, Frankfurt am Main 2005. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/q_1_2">
@@ -1290,6 +1355,11 @@
     <f:bib uri="faust://bibliography/seuffert1882">
         <f:citation>Seuffert 1882</f:citation>
         <f:reference>Faust. Ein Fragment von Goethe, hrsg. von Bernhard Seuffert, Heilbronn 1882 (= Deutsche Litteraturdenkmale des 18. Jahrhunderts in Neudrucken 5).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/witkowski1906">
+        <f:citation>Witkowski 1906</f:citation>
+        <f:reference>Goethes Faust, hrsg. von Georg Witkowski, Erster Band: Der Tragödie erster und zweiter Teil; Urfaust; Entwürfe und Skizzen, Leipzig 1906.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/witkowski1936">
