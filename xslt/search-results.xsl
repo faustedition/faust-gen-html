@@ -35,6 +35,8 @@
 	
 	<xsl:import href="apparatus.xsl"/>
 	
+	<xsl:output method="xhtml" indent="no"/>
+	
 	
 	<xsl:param name="headerAdditions">
 		<style type="text/css">
@@ -66,6 +68,26 @@
 			<xsl:value-of select="f:display-line(@n)"/>
 		</a>		
 	</xsl:template>
+	
+	<xsl:variable name="navbar">
+		<xsl:variable name="start" as="xs:integer" select="/f:results/@start"/>
+		<xsl:variable name="items" as="xs:integer" select="/f:results/@items"/>
+		<xsl:variable name="hits" as="xs:integer" select="/f:results/@hits"/>
+		<xsl:variable name="prev" as="xs:integer" select="max((1, $start - $hits))"/>
+		<xsl:variable name="next" as="xs:integer" select="$start + $items"/>
+		<xsl:variable name="end" as="xs:integer" select="min(($next - 1, $hits))"/>
+		<nav class="searchnav">
+			<h3 class="pure-center">
+				<xsl:if test="$start gt 1">
+					<a rel="prev" class="pure-pull-left" href="search?q={encode-for-uri($query)}&amp;start={$prev}&amp;hits={$hits}">‹ Vorige</a>
+				</xsl:if>
+				Treffer <xsl:value-of select="$start"/> bis <xsl:value-of select="$end"/> von <xsl:value-of select="$hits"/>
+				<xsl:if test="$next lt $hits">
+					<a rel="next" class="pure-pull-right" href="search?q={encode-for-uri($query)}&amp;start={$next}&amp;hits={$hits}">Nächste ›</a>
+				</xsl:if>		
+			</h3>			
+		</nav>
+	</xsl:variable>
 	
 	<!-- Matches are marked up & made to links. Maybe include match term in URI some time -->
 	<xsl:template match="exist:match">
@@ -132,10 +154,16 @@
 								<div id="main" class="print">
 									<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
 									<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
-										<xsl:apply-templates/>
-										<xsl:if test="not(.//f:hit)">
-											<div class="pure-alert pure-alert-warning">Keine Treffer für <em><xsl:value-of select="$query"/></em>.</div>
-										</xsl:if>
+										<xsl:choose>
+											<xsl:when test=".//f:hit">
+												<xsl:copy-of select="$navbar"/>
+												<xsl:apply-templates/>
+												<xsl:copy-of select="$navbar"/>												
+											</xsl:when>
+											<xsl:otherwise>
+												<div class="pure-alert pure-alert-warning">Keine Treffer für <em><xsl:value-of select="$query"/></em>.</div>												
+											</xsl:otherwise>
+										</xsl:choose>
 									</div>
 								</div>
 							</div>							
