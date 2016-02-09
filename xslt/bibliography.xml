@@ -158,7 +158,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/degering1926">
-        <f:citation>Degerin 1926</f:citation>
+        <f:citation>Degering 1926</f:citation>
         <f:reference>Degering, Hermann: Kurzes Verzeichnis der germanischen Handschriften der Preussischen Staatsbibliothek. Tl. II: Die Handschriften in Quartformat, Leipzig 1926.</f:reference>
     </f:bib>
 
@@ -453,7 +453,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/katalog_der_berliner_goethe-ausstellung1861">
-        <f:citation>Katalog der Berliner Goethe-Ausstellung 1861</f:citation>
+        <f:citation>Katalog Berlin 1861</f:citation>
         <f:reference>[Katalog] Verzeichniß von Goethe’s Handschriften, Zeichnungen und Radirungen, Drucken seiner Werke, Compositionen und Illustrationen seiner Dichtungen, Büsten, Medaillen und Gemälden, Portraits aus seinem Freundeskreise, Andenken und Erinnerungszeichen, welche im Conzertsaale des Königlichen Schauspielhauses vom 19ten Mai 1861 an ausgestellt sind. Mit zwei Schrifttafeln, Berlin 1861 (sog. Katalog der Berliner Goethe-Ausstellung). <a href="http://books.google.de/books?id=HF9KAAAAYAAJ&amp;dq=verzeichni%C3%9F+goethe's+handschriften&amp;hl=de&amp;source=gbs_navlinks_s">Google Books-Digitalisat</a>.</f:reference>
     </f:bib>
 
@@ -539,7 +539,7 @@
 
     <f:bib uri="faust://bibliography/loeper1879">
         <f:citation>Loeper 1879</f:citation>
-        <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G. von Loeper, 2. Bearbeitung, 2 Tle, Berlin 1879. <strong>Dieselbe URI kommt unten nochmal vor, sie muss dort geändert werden.</strong></f:reference>
+        <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G. von Loeper, 2. Bearbeitung, 2 Tle, Berlin 1879. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1883">
@@ -1237,6 +1237,31 @@
         <f:reference>Goethe. Neue Folge des Jahrbuchs der Goethe-Gesellschaft, im Auftrage des Vorstands hrsg. von Andreas B. Wachsmuth, Vierundzwanzigster Band. 1962, Weimar 1962.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gjb_114">
+        <f:citation>GJB 114</f:citation>
+        <f:reference>Goethe-Jahrbuch, Bd. 114, hrsg. von Karl-Heinz Hahn und Jörn Göres, Weimar 1997.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_122">
+        <f:citation>GJB 122</f:citation>
+        <f:reference>Goethe-Jahrbuch, Bd. 122, hrsg. von Jochen Golz, Werner Frick und Edith Zehm, Weimar 2005.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_123">
+        <f:citation>GJB 123</f:citation>
+        <f:reference>Goethe-Jahrbuch, Bd. 123, hrsg. von Jochen Golz, Werner Frick und Edith Zehm, Weimar 2006.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_124">
+        <f:citation>GJB 124</f:citation>
+        <f:reference>Goethe-Jahrbuch, Bd. 124, hrsg. von Werner Frick, Jochen Golz, Albert Meier und Edith Zehm, Weimar 2007.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_125">
+        <f:citation>GJB 125</f:citation>
+        <f:reference>Goethe-Jahrbuch, Bd. 125, hrsg. von Werner Frick, Jochen Golz, Albert Meier und Edith Zehm, Weimar 2008.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/alt_14">
         <f:citation>Alt 14</f:citation>
         <f:reference>Goethes Werke. Vollständige Ausgabe in vierzig Teilen. Auf Grund der Hempelschen Ausgabe neu herausgegeben, mit Einleitungen und Anmerkungen sowie einem Gesamtregister versehen von Karl Alt. 14. Teil: Dramen in ursprünglicher Gestalt, hrsg. von Robert Riemann und Karl Alt, Berlin u.a. o.J. [1909-1926].</f:reference>
@@ -1340,6 +1365,11 @@
     <f:bib uri="faust://bibliography/schmidt1887">
         <f:citation>Schmidt 1887</f:citation>
         <f:reference>Goethes Faust in ursprünglicher Gestalt nach der Göchhausenschen Abschrift hrsg. von Erich Schmidt, Weimar 1887.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/schmidt1894">
+        <f:citation>Schmidt 1894</f:citation>
+        <f:reference>Goethes Faust in ursprünglicher Gestalt nach der Göchhausenschen Abschrift hrsg. von Erich Schmidt, 3. Abdruck mit sehr erweiterter Einleitung, Weimar 1894.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schroeer1881">
