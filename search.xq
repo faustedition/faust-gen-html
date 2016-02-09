@@ -6,7 +6,7 @@ declare namespace f = "http://www.faustedition.net/ns";
 declare variable $query := request:get-parameter("q", "Pudel");
 declare variable $raw as xs:boolean := boolean(request:get-parameter("raw", false()));
 declare variable $start := request:get-parameter('start', 0);
-declare variable $items := request:get-parameter('items', 10);
+declare variable $items := request:get-parameter('items', 25);
 
 declare variable $edition := '';
 declare variable $data := collection('/db/apps/faust/data');
@@ -66,13 +66,13 @@ declare function f:get-results($query) as element()* {
 declare function f:wrap-results($results as element()*, $start as xs:integer?, $items as xs:integer?) {
     let $hits := count($results),
         $s := if ($start) then $start else 1,
-        $l := if ($items) then $start else $hits
+        $l := if ($items) then $items else $hits
     return
       <f:results query="{$query}" hits="{$hits}" start="{$s}" items="{$l}"
                 xmlns:f="http://www.faustedition.net/ns"
 		        xmlns:exist="http://exist.sourceforge.net/NS/exist"
 		        xmlns="http://www.tei-c.org/ns/1.0">
-	    {$results}
+	    {subsequence($results, $s, $l)}
 	  </f:results>
 };
 

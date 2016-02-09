@@ -73,17 +73,17 @@
 		<xsl:variable name="start" as="xs:integer" select="/f:results/@start"/>
 		<xsl:variable name="items" as="xs:integer" select="/f:results/@items"/>
 		<xsl:variable name="hits" as="xs:integer" select="/f:results/@hits"/>
-		<xsl:variable name="prev" as="xs:integer" select="max((1, $start - $hits))"/>
+		<xsl:variable name="prev" as="xs:integer" select="max((1, $start - $items))"/>
 		<xsl:variable name="next" as="xs:integer" select="$start + $items"/>
 		<xsl:variable name="end" as="xs:integer" select="min(($next - 1, $hits))"/>
 		<nav class="searchnav">
 			<h3 class="pure-center">
 				<xsl:if test="$start gt 1">
-					<a rel="prev" class="pure-pull-left" href="search?q={encode-for-uri($query)}&amp;start={$prev}&amp;hits={$hits}">‹ Vorige</a>
+					<a rel="prev" class="pure-pull-left" href="search?q={encode-for-uri($query)}&amp;start={$prev}&amp;items={$items}">‹ Vorige</a>
 				</xsl:if>
 				Treffer <xsl:value-of select="$start"/> bis <xsl:value-of select="$end"/> von <xsl:value-of select="$hits"/>
 				<xsl:if test="$next lt $hits">
-					<a rel="next" class="pure-pull-right" href="search?q={encode-for-uri($query)}&amp;start={$next}&amp;hits={$hits}">Nächste ›</a>
+					<a rel="next" class="pure-pull-right" href="search?q={encode-for-uri($query)}&amp;start={$next}&amp;items={$items}">Nächste ›</a>
 				</xsl:if>		
 			</h3>			
 		</nav>
