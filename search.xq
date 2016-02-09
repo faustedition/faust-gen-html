@@ -19,7 +19,7 @@ declare function f:makeURL(
 	$sec as xs:string?,
 	$page as xs:string?) as xs:string
 	{
-		let $html := $transcript || (if ($sec) then '.'|| $sec else ()) || '.html'
+		let $html := $transcript || (if ($sec) then '.'|| $sec else ()) 
 		let $path := switch ($type)
 			case 'archivalDocument' return concat('/documentViewer?faustUri=', $uri, "&amp;view=text&amp;page=", $page, "&amp;sec=", $html)
 			default return '/print/' || $html

@@ -54,7 +54,7 @@
 				</xsl:with-param>				
 			</xsl:call-template>
 			<xsl:if test="f:is-splitable-doc(.)">      
-				<xsl:result-document href="{$output-base}.all">
+				<xsl:result-document href="{$output-base}.all.html">
 					<xsl:call-template name="generate-html-frame">
 						<xsl:with-param name="single" tunnel="yes" select="true()"/>
 						<xsl:with-param name="breadcrumbs" tunnel="yes">
@@ -88,7 +88,7 @@
 				</ul>
 				
 				<!-- … während für den eigentlichen Inhalt ein neues Dokument erzeugt wird. -->
-				<xsl:result-document href="{$filename}">
+				<xsl:result-document href="{$filename}.html">
 					<xsl:call-template name="generate-html-frame">
 						<xsl:with-param name="breadcrumbs" tunnel="yes">
 							<xsl:call-template name="breadcrumbs"/>
