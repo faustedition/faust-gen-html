@@ -63,15 +63,23 @@ declare function f:get-results($query) as element()* {
             else f:query($query)
 };
 
+declare function f:wrap-results($results as element()*, $start as xs:integer?, $items as xs:integer?) {
+    let $hits := count($results),
+        $s := if ($start) then $start else 1,
+        $l := if ($items) then $start else $hits
+    return
+      <f:results query="{$query}" hits="{$hits}" start="{$s}" items="{$l}"
+                xmlns:f="http://www.faustedition.net/ns"
+		        xmlns:exist="http://exist.sourceforge.net/NS/exist"
+		        xmlns="http://www.tei-c.org/ns/1.0">
+	    {$results}
+	  </f:results>
+};
 
 if ($raw) 
-	then $results 
+	then f:wrap-results(f:get-results($query),(),())
 	else transform:transform(
-		     <f:results query="{$query}" xmlns:f="http://www.faustedition.net/ns"
-									    xmlns:exist="http://exist.sourceforge.net/NS/exist"
-									    xmlns="http://www.tei-c.org/ns/1.0">{
-		 	 f:get-results($query)
-		     }</f:results>,
+		 	 f:wrap-results(f:get-results($query), $start, $items),
 		     doc('xslt/search-results.xsl'), 
 		     <parameters>
 			    <param name="edition" value="{$edition}"/>
