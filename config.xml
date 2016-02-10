@@ -11,7 +11,7 @@
 	<c:param name="apphtml" value="target/app/"/>
 	
 	<!-- Path to the target folder for the metadata HTML fragments -->
-	<c:param name="metahtml" value="target/metadata/"/>
+	<c:param name="metahtml" value="target/meta/"/>
 
 	<!-- Path to the target folder for the variant fragments -->
 	<c:param name="variants" value="target/print/variants/"/>

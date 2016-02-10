@@ -97,7 +97,9 @@
       <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
     </p:xslt>
     
-    <p:store href="target/metadata/bibliography.html" method="xhtml" include-content-type="false" indent="true"/>
+    <p:store method="xhtml" include-content-type="false" indent="true">
+      <p:with-option name="href" select="concat($metahtml, 'bibliography.html')"/>
+    </p:store>
     <!-- For debugging: -->
     <p:store href="target/citations.xml" method="xml" indent="true">
       <p:input port="source">
