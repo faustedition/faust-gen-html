@@ -237,7 +237,7 @@
 					<li>
 						<xsl:choose>              
 							<xsl:when test=". is $current-div">
-								<xsl:attribute name="class">current</xsl:attribute>
+								<xsl:attribute name="class">current-section</xsl:attribute>
 								<span class="fa-li fa fa-left-dir"/>
 							</xsl:when>
 							<xsl:otherwise>
