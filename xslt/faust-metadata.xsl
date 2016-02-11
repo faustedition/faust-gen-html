@@ -154,6 +154,7 @@
 				<xsl:variable name="sigil" select="$sigils//label[@type=current()/@type]"/>
 				<xsl:choose>
 					<xsl:when test="$sigil/@kind = 'signature'">Signatur</xsl:when>
+					<xsl:when test="@type='hagen_nr'"><xsl:value-of select="$sigil"/></xsl:when>
 					<xsl:when test="$sigil">Sigle <xsl:value-of select="$sigil"/></xsl:when>
 					<xsl:otherwise>
 						Sigle <xsl:value-of select="@type"/>
