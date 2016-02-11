@@ -68,6 +68,7 @@
 		<elem name="loose">lose</elem>
 		<elem name="patch">Aufklebung</elem>
 		<elem name="referenceCopy">Digitalisiertes Exemplar</elem>
+		<elem name="bibl">Titelaufnahme</elem>
 	</xsl:variable>
 	
 	
