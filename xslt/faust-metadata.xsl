@@ -9,7 +9,7 @@
 	
 	<xsl:include href="html-frame.xsl"/>
 	
-	<xsl:param name="standalone"/>
+	<xsl:param name="standalone" select="/print"/>
 	<xsl:param name="source">file:/home/tv/Faust/</xsl:param>
 	<xsl:param name="transcript-list">../target/faust-transcripts.xml</xsl:param>
 	<xsl:param name="docbase">http://beta.faustedition.net/documentViewer?faustUri=faust://xml</xsl:param>
@@ -466,11 +466,19 @@
 				<html>
 					<xsl:call-template name="html-head"/>
 					<body>					
-						<xsl:call-template name="header"/>
+						<xsl:call-template name="header"/>						
 						<main>
-							<div class="pure-g-r center">				
-								<div class="metadata pure-u-1">
-									<xsl:apply-templates/>
+							<div class="pure-g-r center">
+								<div class="pure-u-1-5"></div>
+								<div class="pure-u-3-5">
+									<div id="metadataContainer" class="metadata-container pure-u-4-5">
+										<xsl:apply-templates/>
+									</div>									
+								</div>
+								<div class="pure-u-1-5">
+									<p>											
+										<a href="../print/{replace(//textTranscript[1]/@uri, '.xml', '')}"><i class="fa fa-variants"></i> Text</a>
+									</p>
 								</div>
 							</div>
 						</main>
