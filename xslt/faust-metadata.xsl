@@ -64,7 +64,7 @@
 		<elem name="disjunctLeaf">Einzelblatt</elem>
 		<elem name="sheet">Doppelblatt</elem>
 		<elem name="copies">Exemplare</elem>
-		<elem name="furtherCopy">Weitere herangezogene Exemplare</elem>
+		<elem name="furtherCopy">Weiteres herangezogenes Exemplar</elem>
 		<elem name="loose">lose</elem>
 		<elem name="patch">Aufklebung</elem>
 		<elem name="referenceCopy">Digitalisiertes Exemplar</elem>
@@ -293,6 +293,7 @@
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
+		
 	
 	<xsl:variable name="reference-types">
 		<elem name="description">Nachweis</elem>
@@ -312,6 +313,15 @@
 		</dd>
 	</xsl:template>	
 	
+	<xsl:template match="copies|referenceCopy|furtherCopy">
+		<xsl:call-template name="element">
+			<xsl:with-param name="content">
+				<dl>
+					<xsl:apply-templates/>
+				</dl>
+			</xsl:with-param>
+		</xsl:call-template>
+	</xsl:template>
 	
 	<xsl:template match="metadata">
 		<dl>
