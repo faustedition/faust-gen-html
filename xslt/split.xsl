@@ -289,6 +289,15 @@
 					</li>
 				</xsl:if>
 			</ul>
+			
+			<xsl:if test="/TEI/@type = 'print'">
+				<ul class="fa-ul">
+					<li>
+						<span class="fa-li fa fa-structure"/>					
+						<a href="../meta/{replace(//idno[@type='fausturi'][1], '^.*/(.*?)\.xml$', '$1')}">Metadaten</a>
+					</li>
+				</ul>
+			</xsl:if>
 		</nav>
 	</xsl:template>      
 	

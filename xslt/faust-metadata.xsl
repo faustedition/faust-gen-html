@@ -9,7 +9,7 @@
 	
 	<xsl:include href="html-frame.xsl"/>
 	
-	<xsl:param name="standalone"/>
+	<xsl:param name="standalone" select="/print"/>
 	<xsl:param name="source">file:/home/tv/Faust/</xsl:param>
 	<xsl:param name="transcript-list">../target/faust-transcripts.xml</xsl:param>
 	<xsl:param name="docbase">http://beta.faustedition.net/documentViewer?faustUri=faust://xml</xsl:param>
@@ -64,7 +64,7 @@
 		<elem name="disjunctLeaf">Einzelblatt</elem>
 		<elem name="sheet">Doppelblatt</elem>
 		<elem name="copies">Exemplare</elem>
-		<elem name="furtherCopy">Weitere herangezogene Exemplare</elem>
+		<elem name="furtherCopy">Weiteres herangezogenes Exemplar</elem>
 		<elem name="loose">lose</elem>
 		<elem name="patch">Aufklebung</elem>
 		<elem name="referenceCopy">Digitalisiertes Exemplar</elem>
@@ -242,12 +242,21 @@
 	<xsl:function name="f:resolve-faust-doc">
 		<xsl:param name="uri"/>
 		<xsl:for-each select="$idmap//idno[@uri=$uri]/..">
-			<xsl:variable name="docinfo" select="."/>		
-			<a class="md-document-ref" href="{$docbase}/{$docinfo/@document}" title="{$docinfo/headNote}">
-				<xsl:value-of select="$docinfo/@f:sigil"/>
-			</a>			
+			<xsl:variable name="docinfo" select="."/>
+			<xsl:choose>
+				<xsl:when test="$docinfo/@type='print'">
+					<a class="md-document-ref" href="../meta/{replace($docinfo/@document, '.*/(.*?)\.xml', '$1')}" title="{$docinfo/headNote}">
+						<xsl:value-of select="$docinfo/@f:sigil"/>
+					</a>				
+				</xsl:when>
+				<xsl:otherwise>
+					<a class="md-document-ref" href="{$docbase}/{$docinfo/@document}" title="{$docinfo/headNote}">
+						<xsl:value-of select="$docinfo/@f:sigil"/>
+					</a>								
+				</xsl:otherwise>
+			</xsl:choose>
 		</xsl:for-each>		
-	</xsl:function>
+	</xsl:function>		
 		
 	<xsl:template match="text()" name="parse-for-bib">
 		<xsl:analyze-string select="." regex="faust://[a-zA-Z0-9/_.-]*[a-zA-Z0-9/_-]+">
@@ -293,6 +302,7 @@
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
+		
 	
 	<xsl:variable name="reference-types">
 		<elem name="description">Nachweis</elem>
@@ -312,6 +322,15 @@
 		</dd>
 	</xsl:template>	
 	
+	<xsl:template match="copies|referenceCopy|furtherCopy">
+		<xsl:call-template name="element">
+			<xsl:with-param name="content">
+				<dl>
+					<xsl:apply-templates/>
+				</dl>
+			</xsl:with-param>
+		</xsl:call-template>
+	</xsl:template>
 	
 	<xsl:template match="metadata">
 		<dl>
@@ -466,11 +485,19 @@
 				<html>
 					<xsl:call-template name="html-head"/>
 					<body>					
-						<xsl:call-template name="header"/>
+						<xsl:call-template name="header"/>						
 						<main>
-							<div class="pure-g-r center">				
-								<div class="metadata pure-u-1">
-									<xsl:apply-templates/>
+							<div class="pure-g-r center">
+								<div class="pure-u-1-5"></div>
+								<div class="pure-u-3-5">
+									<div id="metadataContainer" class="metadata-container pure-u-4-5">
+										<xsl:apply-templates/>
+									</div>									
+								</div>
+								<div class="pure-u-1-5">
+									<p>											
+										<a href="../print/{replace(//textTranscript[1]/@uri, '.xml', '')}"><i class="fa fa-variants"></i> Text</a>
+									</p>
 								</div>
 							</div>
 						</main>
