@@ -242,12 +242,21 @@
 	<xsl:function name="f:resolve-faust-doc">
 		<xsl:param name="uri"/>
 		<xsl:for-each select="$idmap//idno[@uri=$uri]/..">
-			<xsl:variable name="docinfo" select="."/>		
-			<a class="md-document-ref" href="{$docbase}/{$docinfo/@document}" title="{$docinfo/headNote}">
-				<xsl:value-of select="$docinfo/@f:sigil"/>
-			</a>			
+			<xsl:variable name="docinfo" select="."/>
+			<xsl:choose>
+				<xsl:when test="$docinfo/@type='print'">
+					<a class="md-document-ref" href="../meta/{replace($docinfo/@document, '.*/(.*?)\.xml', '$1')}" title="{$docinfo/headNote}">
+						<xsl:value-of select="$docinfo/@f:sigil"/>
+					</a>				
+				</xsl:when>
+				<xsl:otherwise>
+					<a class="md-document-ref" href="{$docbase}/{$docinfo/@document}" title="{$docinfo/headNote}">
+						<xsl:value-of select="$docinfo/@f:sigil"/>
+					</a>								
+				</xsl:otherwise>
+			</xsl:choose>
 		</xsl:for-each>		
-	</xsl:function>
+	</xsl:function>		
 		
 	<xsl:template match="text()" name="parse-for-bib">
 		<xsl:analyze-string select="." regex="faust://[a-zA-Z0-9/_.-]*[a-zA-Z0-9/_-]+">
