@@ -41,7 +41,7 @@ declare function f:query($query) as element()* {
 	    $headnote := string(id('headNote', $line)),
 	    $n := data($line/@n),
 	    $type := data($line/ancestor::tei:TEI/@type),
-	    $sec := data($line/ancestor::tei:div[1]/@f:n),
+	    $sec := data($line/ancestor::tei:div[@f:n][1]/@f:n),
 	    $uri := id('fausturi', $line),
 	    $page := ($line//tei:pb/@f:docTranscriptNo, $line/preceding::tei:pb[1]/@f:docTranscriptNo)[1],
 	    $transcript := id('fausttranscript', $line)

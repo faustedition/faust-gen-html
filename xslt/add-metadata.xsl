@@ -33,6 +33,9 @@
 	<!-- Canonical URI for the document. Defaults to faust://xml/$documentURI -->
 	<xsl:param name="faustURI" select="concat('faust://xml/', $documentURI)"/>
 
+	<xsl:param name="depth">2</xsl:param>
+	<xsl:variable name="depth_n" select="number($depth)"/>
+	
 
 	<xsl:variable name="metadata">
 		<xsl:variable name="path" select="resolve-uri($documentURI, $source)"/>
@@ -118,7 +121,7 @@
 		</xsl:copy>
 	</xsl:template>
 	
-	<xsl:template match="div">
+	<xsl:template match="div[count(ancestor::div) lt $depth_n]">
 		<xsl:copy>
 			<xsl:attribute name="f:n">
 				<xsl:if test="$splittable">
