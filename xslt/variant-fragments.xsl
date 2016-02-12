@@ -77,7 +77,7 @@
 		entry of a group of lines with identical text, the $group parameter contains 
 		the whole group. 
 	-->
-	<xsl:template match="*[@n]">
+	<xsl:template match="*[f:hasvars(.)]" priority="1">
 		<xsl:param name="group" as="node()*"/>
 		<div class="{string-join(f:generic-classes(.), ' ')}" 
 			data-n="{@n}" data-source="{@f:doc}">
