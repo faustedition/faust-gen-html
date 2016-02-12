@@ -274,6 +274,9 @@
 					<xsl:when test="$idmap//idno[@uri=replace($uri, '^faust://', 'faust://xml/')]">
 						<xsl:sequence select="f:resolve-faust-doc(replace($uri, '^faust://', 'faust://xml/'))"/>
 					</xsl:when>
+					<xsl:when test="$idmap//idno[@uri=replace($uri, '^faust://print/', 'faust://document/faustedition/')]">
+						<xsl:sequence select="f:resolve-faust-doc(replace($uri, '^faust://print/', 'faust://document/faustedition/'))"/>
+					</xsl:when>					
 					<xsl:otherwise>
 						<mark class="md-unresolved-uri"><xsl:copy/></mark>
 						<xsl:message select="concat('WARNING: Unresolved URI reference in text: ', .)"/>
