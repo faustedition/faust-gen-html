@@ -340,7 +340,7 @@
 		</dl>
 	</xsl:template>
 	<xsl:template match="/*/metadata">
-		<h2><xsl:value-of select="idno[@type=('faustedition', 'wa_faust')][1]"/></h2>
+		<h2><xsl:value-of select="idno[@type='faustedition'][1]"/></h2>
 		<h3 class="md-headNote">
 			<xsl:value-of select="headNote"/>
 		</h3>
