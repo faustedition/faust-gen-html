@@ -161,7 +161,7 @@
 			<xsl:copy-of select="$prefix"/>
 			
 			<xsl:variable name="title">
-				<xsl:apply-templates mode="title" select="if (head) then head[1] else *[text()][1]"/>
+				<xsl:apply-templates mode="title" select="if (head) then head[1] else *[translate(normalize-space(.), ' ', '') ne ''][1]"/>
 			</xsl:variable>
 			<xsl:value-of select="if (head) then $title else concat('[', $title, ']')"/>
 			<xsl:copy-of select="$suffix"/>
