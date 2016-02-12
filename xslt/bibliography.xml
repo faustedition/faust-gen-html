@@ -162,6 +162,11 @@
         <f:reference>Degering, Hermann: Kurzes Verzeichnis der germanischen Handschriften der Preussischen Staatsbibliothek. Tl. II: Die Handschriften in Quartformat, Leipzig 1926.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/dietze1983">
+        <f:citation>Dietze 1983</f:citation>
+        <f:reference>Dietze, Walter: „Faust“, Vers 11580. Hrsg. von den Nationalen Forschungs- und Gedenkstätten der klassischen deutschen Literatur in Weimar, 3. Aufl. 1983 (= Jahresgabe der Nationalen Forschungs- und Gedenkstätten der klassischen deutschen Literatur in Weimar 1975).</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/duentzer1849">
         <f:citation>Düntzer 1849</f:citation>
         <f:reference>Düntzer, Heinrich: Eine ältere Fassung von Goethe’s Ballade: „Der König in Thule.“. In: Bll. f. lit. Unterhaltung, Nr. 230, 25. September 1849, S. 919f.</f:reference>
@@ -174,12 +179,12 @@
 
     <f:bib uri="faust://bibliography/duentzer1868">
         <f:citation>Düntzer 1868</f:citation>
-        <f:reference>Faust. Eine Tragödie von Goethe. Mit berichtigtem Texte, den verschiedenen Lesarten, erklärenden Anmerkungen und Einleitung, 2 Tle., [hrsg. v. Heinrich Düntzer], Leipzig: Dyk, [1868].</f:reference>
+        <f:reference>Faust. Eine Tragödie von Goethe. Mit berichtigtem Texte, den verschiedenen Lesarten, erklärenden Anmerkungen und Einleitung, 2 Tle., [hrsg. von Heinrich Düntzer], Leipzig: Dyk, [1868].</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1882">
         <f:citation>Düntzer 1882</f:citation>
-        <f:reference>Goethes Werke, Bd. 12: Faust, hrsg. von H[einrich] Düntzer, Stuttgart: Union, Deutsche Verlagsanstalt [zugl.: Berlin: Spemann?], o.J. [1. Lfg. 1882] (Deutsche National-Litteratur. Historisch kritische Ausgabe, hrsg. v. Joseph Kürschner, Bd. 93). FDH-Sign.: III B / 50.</f:reference>
+        <f:reference>Goethes Werke, Bd. 12: Faust, hrsg. von H[einrich] Düntzer, Stuttgart: Union, Deutsche Verlagsanstalt [zugl.: Berlin: Spemann?], o.J. [1. Lfg. 1882] (Deutsche National-Litteratur. Historisch kritische Ausgabe, hrsg. von Joseph Kürschner, Bd. 93). FDH-Sign.: III B / 50.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1891a">
@@ -204,7 +209,7 @@
 
     <f:bib uri="faust://bibliography/ehrenzeller1995">
         <f:citation>Ehrenzeller 1995</f:citation>
-        <f:reference>Ehrenzeller, Martin: Editionsprobleme in neueren Historisch-Kritischen Ausgaben und Studienausgaben, vermutlich 1995 (masch.).&lt;br></f:reference>
+        <f:reference>Ehrenzeller, Martin: Editionsprobleme in neueren Historisch-Kritischen Ausgaben und Studienausgaben, vermutlich 1995 (masch.). </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/emrich1942">
@@ -215,6 +220,11 @@
     <f:bib uri="faust://bibliography/feaux_de_lacroix1924">
         <f:citation>Féaux de Lacroix 1924</f:citation>
         <f:reference>Féaux de Lacroix, K.: Punkt oder Fragezeichen in Goethes „Faust“ I, Vers 1685? In: Zeitschr. f. Deutschkunde 38 (1924), S. 181–183..</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/femmel">
+        <f:citation>Wasserzeichenpausen-Konvolut von G. Femmel u.a.</f:citation>
+        <f:reference>Konvolut von Wasserzeichenpausen, im Jahr 1910 begonnen und von mehreren Bearbeitern, namentlich Gerhard Femmel, weiterbearbeit und ergänzt. Notiz auf der ersten Seite: „Pausenkonvolut, 114 Blätter. In der 1987 vorgefundenen Anordnung durchpaginiert.“ Hinweis in der Kopie im GSA-Benutzersaal: „Der Ursprung dieses Kataloges geht auf das Jahr 1910 zurück. Es haben mehrere Wissensch. an diesem Katalog gearbeitet. Später wurde er von Gerhard Femmel durch seine Arbeiten an Goethezeichnungen erweitert“. Am Schluss in umgekehrer Reihenfolge von David Lee angefertigte Zeichnungen sowie ein darauf bezügliches Schreiben Lees an Femmel. Nachweise beziehen sich auf eine neue Durchzählung der vorhandenen Blätter.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/fiedler1943">
@@ -277,6 +287,11 @@
         <f:reference>Gerber, Adolf: Additional remarks on the evolution of the Classical Walpurgis-Night and the scene in Hades. In: Americana Germanica 3 (1899/1900), S. 212-218.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/geigy-hagenbach1933">
+        <f:citation>Geigy-Hagenbach 1933</f:citation>
+        <f:reference>Nachtrag III zur Autographen-Sammlung von K. Geigy-Hagenbach, Basel 1933.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/gesamtinventar_der_goethe-gedichte">
         <f:citation>Gesamtinventar der Goethe-Gedichte</f:citation>
         <f:reference>Gesamtinventar der Goethe-Gedichte, hrsg. von der Klassik Stiftung Weimar, Goethe- und Schiller-Archiv, bearb. von Jürgen Gruß, Silke Henke u. Judith Steiniger, URL: http://ora-web.swkk.de/swk-db/inventar/index.html.</f:reference>
@@ -309,7 +324,7 @@
 
     <f:bib uri="faust://bibliography/goeres1991">
         <f:citation>Göres 1991</f:citation>
-        <f:reference>Göres, Jörn: Faust: Vers 11091 bis 11115. In: Im Vorfeld der Literatur. Vom Wert archivalischer Überlieferung für das Verständnis von Literatur und ihrer Geschichte, hrsg. von Karl-Heinz Hahn. Weimar 1991, S. 30-34.</f:reference>
+        <f:reference>Göres, Jörn: Faust: Vers 11091 bis 11115. In: Im Vorfeld der Literatur. Vom Wert archivalischer Überlieferung für das Verständnis von Literatur und ihrer Geschichte, hrsg. von Karl-Heinz Hahn, Weimar 1991, S. 30-34.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gilbert1971">
@@ -428,18 +443,28 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/irmscher1979">
-        <f:citation>Irmscher 1979</f:citation>
-        <f:reference>[Katalog] Der handschriftliche Nachlass Johann Gottfried Herders, im Auftr. u. mit Unterstützung d. Akademie der Wissenschaften in Göttingen bearb. von Hans Dietrich Irmscher und Emil Adler, Wiesbaden 1979 (= Kataloge der Handschriftenabteilung / Staatsbibliothek Preussischer Kulturbesitz, R. 2: Nachlässe, Bd. 1).</f:reference>
+        <f:citation>Irmscher, Adler 1979</f:citation>
+        <f:reference>Der handschriftliche Nachlass Johann Gottfried Herders, im Auftrag und mit Unterstützung der Akademie der Wissenschaften in Göttingen bearbeitet von Hans Dietrich Irmscher und Emil Adler, Wiesbaden 1979 (= Kataloge der Handschriftenabteilung / Staatsbibliothek Preussischer Kulturbesitz, R. 2: Nachlässe, Bd. 1).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/insel1980">
+        <f:citation>Insel 1980 </f:citation>
+        <f:reference>Faust. Eine Tragödie. von Goethe. Tübingen. in der J. G. Cotta’schen Buchhandlung. 1808. Faksimileausgabe des Insel-Verlags, Frankfurt am Main 1980.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/inventare_2_1">
         <f:citation>Inventare 2,1</f:citation>
-        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 1: Gedichte, hrsg. von der Stiftung Weimarer Klassik, Goethe- und Schiller-Archiv. Weimar 2000.&lt;br></f:reference>
+        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 1: Gedichte, hrsg. von der Stiftung Weimarer Klassik, Goethe- und Schiller-Archiv. Weimar 2000. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/inventare_2_2">
         <f:citation>Inventare 2,2</f:citation>
-        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 2: Dramen, Romane und Erzählungen, hrsg. von der Klassik Stiftung Weimar, Goethe- und Schiller-Archiv. Weimar 2011.&lt;br></f:reference>
+        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 2: Dramen, Romane und Erzählungen, hrsg. von der Klassik Stiftung Weimar, Goethe- und Schiller-Archiv. Weimar 2011. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/jap_47">
+        <f:citation>JAP 47</f:citation>
+        <f:reference>Jahrbuch der Auktionspreise für Bücher, Handschriften und Autographen 47 (1996).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/jensen1968">
@@ -849,7 +874,7 @@
 
     <f:bib uri="faust://bibliography/schwarz_11">
         <f:citation>Schwarz 11</f:citation>
-        <f:reference>Dr. Ignaz Schwarz, Buch- und Kunstantiquariates: [Katalog] Versteigerung XI am 9. April 1924, Wien 1924.</f:reference>
+        <f:reference>Dr. Ignaz Schwarz, Buch- und Kunstantiquariat: [Katalog] Versteigerung XI am 9. April 1924, Wien 1924.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/shelley1966">
@@ -944,7 +969,7 @@
 
     <f:bib uri="faust://bibliography/weisstein1877">
         <f:citation>Weisstein 1877</f:citation>
-        <f:reference>Allerlei von Goethe. zum 29. december 1877 für Frau Professor Steinthal hrsg. v. Gotthilf Weisstein, Stuttgart 1877.</f:reference>
+        <f:reference>Allerlei von Goethe. zum 29. december 1877 für Frau Professor Steinthal hrsg. von Gotthilf Weisstein, Stuttgart 1877.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/weisstein1878">
@@ -1214,7 +1239,7 @@
 
     <f:bib uri="faust://bibliography/gjb_47">
         <f:citation>GJB 47</f:citation>
-        <f:reference>Jahrbuch der Goethe-Gesellschaft, im Auftrage des Vorstandes hrsg. von Max Hecker Dreizehnter Band, Weimar 1927.</f:reference>
+        <f:reference>Jahrbuch der Goethe-Gesellschaft, im Auftrage des Vorstandes hrsg. von Max Hecker, Dreizehnter Band, Weimar 1927.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_69-70">
@@ -1262,6 +1287,11 @@
         <f:reference>Goethe-Jahrbuch, Bd. 125, hrsg. von Werner Frick, Jochen Golz, Albert Meier und Edith Zehm, Weimar 2008.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/graef1901-1914_II_2">
+        <f:citation>Gräf II 2</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. II: Die Dramatischen Dichtungen, Bd. 2 (Bd. 4 der Gesamtreihe), Frankfurt am Main 1904.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/alt_14">
         <f:citation>Alt 14</f:citation>
         <f:reference>Goethes Werke. Vollständige Ausgabe in vierzig Teilen. Auf Grund der Hempelschen Ausgabe neu herausgegeben, mit Einleitungen und Anmerkungen sowie einem Gesamtregister versehen von Karl Alt. 14. Teil: Dramen in ursprünglicher Gestalt, hrsg. von Robert Riemann und Karl Alt, Berlin u.a. o.J. [1909-1926].</f:reference>
@@ -1287,9 +1317,14 @@
         <f:reference>Werke Goethes, hrsg. von der deutschen Akademie der Wissenschaften zu Berlin, Wilhelm Meister, Bd. 5: Überlieferung und Lesarten. Lief. 1: Wilhelm Meisters theatralische Sendung, bearb. von Renate Fischer-Lamberg, Berlin 1960.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/aa_ergbd_3">
+        <f:citation>AA Erg.-Bd. 3</f:citation>
+        <f:reference>Goethe, Urfaust – Faust. Ein Fragment – Faust. Der Tragödie erster Theil (Paralleldruck), bearbeitet von Ernst Grumach und Inge Jensen, Berlin 1958 (AA, Erg.-Bd. 3). .</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/aa_duw_2">
         <f:citation>AA DuW 2</f:citation>
-        <f:reference>Goethe, Aus meinem Leben. Dichtung und Wahrheit. Historisch-kritische Ausgabe, hrsg. von der Akademie der Wissenschaften der DDR, Bd. 2: Überlieferung, Variantenverzeichnis und Paralipomena, bearb. v. Siegfried Scheibe, Berlin 1974.</f:reference>
+        <f:reference>Goethe, Aus meinem Leben. Dichtung und Wahrheit. Historisch-kritische Ausgabe, hrsg. von der Akademie der Wissenschaften der DDR, Bd. 2: Überlieferung, Variantenverzeichnis und Paralipomena, bearb. von Siegfried Scheibe, Berlin 1974.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/aa_ls_1">
