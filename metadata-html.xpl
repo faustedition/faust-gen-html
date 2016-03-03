@@ -24,6 +24,7 @@
     <p:variable name="metahtml" select="//c:param[@name='metahtml']/@value"><p:pipe port="result" step="config"></p:pipe></p:variable>
     <p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
     <p:variable name="debug" select="//c:param[@name='debug']/@value"><p:pipe port="result" step="config"/></p:variable>
+    <p:variable name="builddir" select="resolve-uri(//c:param[@name='target']/@value)"><p:pipe port="result" step="config"/></p:variable>
     <cx:message log="info">  
       <p:input port="source"><p:pipe port="source" step="main"></p:pipe></p:input>      
       <p:with-option name="message" select="concat('Collecting metadata from ', $source)"/>
@@ -101,7 +102,8 @@
       <p:with-option name="href" select="concat($metahtml, 'bibliography.html')"/>
     </p:store>
     <!-- For debugging: -->
-    <p:store href="target/citations.xml" method="xml" indent="true">
+    <p:store method="xml" indent="true">
+      <p:with-option name="href" select="concat($builddir, 'citations.xml')"/>
       <p:input port="source">
         <p:pipe port="result" step="wrapped-citations"/>
       </p:input>

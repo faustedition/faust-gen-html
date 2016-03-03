@@ -29,19 +29,20 @@
   <p:group>
     <p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
     <p:variable name="debug" select="//c:param[@name='debug']/@value"><p:pipe port="result" step="config"/></p:variable>
+    <p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>    
     <cx:message log="info">  
       <p:input port="source"><p:pipe port="source" step="main"></p:pipe></p:input>      
-      <p:with-option name="message" select="concat('Collecting metadata from ', $source)"/>
+      <p:with-option name="message" select="concat('Collecting metadata from ', $source, ' (builddir=', $builddir, ')')"/>
     </cx:message>
     
     <pxf:copy>
       <p:with-option name="href" select="concat($source, '/print/A8_IIIB18.xml')"/>
-      <p:with-option name="target" select="'target/lesetext/faust1.xml'"/>
+      <p:with-option name="target" select="resolve-uri('lesetext/faust1.xml', $builddir)"/>
     </pxf:copy>
 
     <pxf:copy>
       <p:with-option name="href" select="concat($source, '/transcript/gsa/391098/391098.xml')"/>
-      <p:with-option name="target" select="'target/lesetext/faust2.xml'"/>
+      <p:with-option name="target" select="resolve-uri('lesetext/faust2.xml', $builddir)"/>
     </pxf:copy>
     
 
@@ -198,6 +199,7 @@
             <xsl:import href="xslt/utils.xsl"/>
             
             <xsl:param name="html"/>
+            <xsl:param name="builddir"/>
             
                        
             
@@ -211,7 +213,7 @@
                   <!-- Lesetext Faust I: -->
                   <textTranscript xmlns:f="http://www.faustedition.net/ns"
                     uri="faust://lesetext/faust1.xml"            
-                    href="{resolve-uri(concat($html, '../lesetext/faust1.xml'))}"
+                    href="{resolve-uri('lesetext/faust1.xml', $builddir)}"
                     document="lesetext/faust1.xml"
                     type="lesetext"
                     f:sigil="Lesetext">                    
@@ -221,7 +223,7 @@
                   <!-- Lesetext Faust II: -->
                   <textTranscript xmlns:f="http://www.faustedition.net/ns"
                     uri="faust://lesetext/faust2.xml"
-                    href="{resolve-uri(concat($html, '../lesetext/faust2.xml'))}"
+                    href="{resolve-uri('lesetext/faust2.xml', $builddir)}"
                     document="lesetext/faust2.xml"
                     type="lesetext"
                     f:sigil="Lesetext">                    
@@ -234,13 +236,14 @@
                     <xsl:sort select="f:splitSigil(@f:sigil)[3]"/>								                    
                   </xsl:apply-templates>
               </xsl:copy>              
-            </xsl:template>
+            </xsl:template>           
           </xsl:stylesheet>
         </p:inline>
       </p:input>
       <p:input port="parameters">
         <p:pipe port="result" step="config"/>
       </p:input>
+      <p:with-param name="builddir" select="$builddir"/>
     </p:xslt>
     
     <p:unwrap match="f:transcript" name="cleanup"/>

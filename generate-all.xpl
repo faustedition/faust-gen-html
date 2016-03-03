@@ -29,6 +29,8 @@
 	<p:group>
 		<p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
 		<p:variable name="html" select="//c:param[@name='html']/@value"><p:pipe port="result" step="config"/></p:variable>
+		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
+		
 	
 		<!-- Metadaten -->
 		<f:list-transcripts name="transcripts">
@@ -39,8 +41,11 @@
 		<f:collate-variants name="variants">
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 		</f:collate-variants>
-		<p:store href="target/variants.xml" indent="true"/>	
-		<p:store href="target/faust-transcripts.xml" indent="true">
+		<p:store indent="true">
+			<p:with-option name="href" select="resolve-uri('variants.xml', $builddir)"/>
+		</p:store>	
+		<p:store indent="true">
+			<p:with-option name="href" select="resolve-uri('faust-transcripts.xml', $builddir)"/>
 			<p:input port="source">
 				<p:pipe port="result" step="transcripts"/>
 			</p:input>
