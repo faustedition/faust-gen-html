@@ -39,8 +39,9 @@
       <xsl:choose>
         <xsl:when test="@n">
           <xsl:variable name="n" select="@n"/>
+          <xsl:variable name="variantfile" select="resolve-uri(concat(f:output-group($n), '.html'), resolve-uri($variants))"/>          
           <xsl:sequence
-            select="document(concat('../', $variants, f:output-group($n), '.html'))/xh:div/xh:div[@data-n = $n]"
+            select="document($variantfile)/xh:div/xh:div[@data-n = $n]"
           />
         </xsl:when>
         <xsl:otherwise/>
