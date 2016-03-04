@@ -2,6 +2,7 @@
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
 	xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:f="http://www.faustedition.net/ns"
 	xmlns:pxf="http://exproc.org/proposed/steps/file"
+	xmlns:j="http://www.ibm.com/xmlns/prod/2009/jsonx"
 	xmlns:l="http://xproc.org/library" version="1.0" name="main" type="f:generate-app">
 	<p:input port="source"/>	
 	<p:input port="parameters" kind="parameter"/>
@@ -103,17 +104,45 @@
 			</p:otherwise>
 		</p:choose>
 		
+		<p:identity name="prepared-xml"/>
 		
 		<p:store>
 			<p:with-option name="href" select="concat('target/search/textTranscript/', $documentURI)"/>
 		</p:store>
+		
+		<p:identity>
+			<p:input port="source">
+				<p:pipe port="result" step="prepared-xml"/>
+			</p:input>
+		</p:identity>
+		
+		<!-- Hack: Generierung der Bargraph-Informationen -->
+		<p:choose>
+			<p:when test="$type != 'lesetext' and not(contains($documentURI, 'test.xml'))">
+				<p:xslt>
+					<p:input port="stylesheet"><p:document href="xslt/create-bargraph-info.xsl"/></p:input>
+					<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+				</p:xslt>
+			</p:when>
+			<p:otherwise>
+				<p:identity>
+					<p:input port="source">
+						<p:empty/>
+					</p:input>
+				</p:identity>
+			</p:otherwise>
+		</p:choose>
 
 	</p:for-each>
 	
-		
 	</p:group>
 
+	<p:wrap-sequence wrapper="j:array"/>
+	<p:add-attribute attribute-name="name" attribute-value="documents" match="/j:array"/>
 	
+	<p:store href="target/bargraph.json" media-type="application/json"/>
+	
+
 	<!-- das Stylesheet erzeugt keinen relevanten Output auf dem Haupt-Ausgabeport. -->
 <!--	<p:sink>
 		<p:input port="source">
