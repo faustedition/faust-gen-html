@@ -7,7 +7,7 @@
 	exclude-result-prefixes="xs f"
 	version="2.0">
 
-	<xsl:output method="xml" indent="yes"/>
+	<xsl:output method="xml"/>
 	
 	<!-- 
 		This document converts a textual transcript to a JSONx representation suited for generating the bargraph JSON.
@@ -28,27 +28,27 @@
 			</xsl:perform-sort>
 		</xsl:variable>
 		
+		<f:json>
 		<!-- First a little document metadata -->
-		<j:object name="document">
-			<j:string name="sigil"><xsl:value-of select=".//idno[@type='faustedition']"/></j:string>
-			<j:string name="source"><xsl:value-of select=".//idno[@type='fausturi']"/></j:string>			
-			<j:boolean name="print"><xsl:value-of select="if (TEI/@type = 'print') then 'true' else 'false'"/></j:boolean>
-			<j:array name="intervals">
+		<xsl:text>{"sigil":"</xsl:text><xsl:value-of select=".//idno[@type='faustedition']"/><xsl:text>",</xsl:text>
+		<xsl:text>"source":"</xsl:text><xsl:value-of select=".//idno[@type='fausturi']"/><xsl:text>",</xsl:text>			
+		<xsl:text>"print":"</xsl:text><xsl:value-of select="if (TEI/@type = 'print') then 'true' else 'false'"/><xsl:text>",</xsl:text>
+		<xsl:text>"intervals":[</xsl:text>
 				<!-- now group adjacent verse numbers. We create a new interval if either the number verses is not 
 					consecutive or a different page or type starts.  -->
 				<xsl:for-each-group select="$sortedLines" group-adjacent="string-join((
 					if (number(@n) - 1 eq number(preceding::f:line[1]/@n)) then 't' else 'f', 
 					@type, 
 					@page), '|')">
-					<j:object name="interval">
-						<j:string name="type"><xsl:value-of select="current-group()[1]/@type"/></j:string>
-						<j:number name="page"><xsl:value-of select="current-group()[1]/@page"/></j:number>
-						<j:number name="start"><xsl:value-of select="current-group()[1]/@n"/></j:number>
-						<j:number name="end"><xsl:value-of select="current-group()[last()]/@n"/></j:number>
-					</j:object>
+					
+						<xsl:text>"type":"</xsl:text><xsl:value-of select="current-group()[1]/@type"/><xsl:text>",</xsl:text>
+						<xsl:text>"page":</xsl:text><xsl:value-of select="current-group()[1]/@page"/><xsl:text>,</xsl:text>
+						<xsl:text>"start":</xsl:text><xsl:value-of select="current-group()[1]/@n"/><xsl:text>,</xsl:text>
+						<xsl:text>"end":</xsl:text><xsl:value-of select="current-group()[last()]/@n"/><xsl:text>}</xsl:text>
+					<xsl:if test="position() != last()">,</xsl:if>					
 				</xsl:for-each-group>
-			</j:array>
-		</j:object>
+		<xsl:text>]}</xsl:text>
+		</f:json>
 	</xsl:template>
 	
 	

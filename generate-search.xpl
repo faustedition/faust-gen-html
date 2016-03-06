@@ -137,10 +137,30 @@
 	
 	</p:group>
 
-	<p:wrap-sequence wrapper="j:array"/>
-	<p:add-attribute attribute-name="name" attribute-value="documents" match="/j:array"/>
+	<p:wrap-sequence wrapper="f:documents"/>
+	<p:xslt>
+		<p:input port="stylesheet">
+			<p:inline>
+				<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
+					<xsl:strip-space elements="*"/>
+					<xsl:output method="text"/>
+					<xsl:template match="/*">
+						<wrapper>
+						<xsl:text>var geneticBarGraphData = [</xsl:text>
+						<xsl:for-each select="*">
+							<xsl:value-of select="."/>
+							<xsl:if test="position() != last()">,</xsl:if>
+						</xsl:for-each>
+						<xsl:text>]</xsl:text>
+						</wrapper>
+					</xsl:template>
+				</xsl:stylesheet>
+			</p:inline>
+		</p:input>
+		<p:input port="parameters"><p:empty/></p:input>
+	</p:xslt>
 	
-	<p:store href="target/bargraph.json" media-type="application/json"/>
+	<p:store href="target/www/data/genetic_bar_graph.js" method="text"/>
 	
 
 	<!-- das Stylesheet erzeugt keinen relevanten Output auf dem Haupt-Ausgabeport. -->
