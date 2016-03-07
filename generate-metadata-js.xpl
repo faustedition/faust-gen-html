@@ -2,7 +2,7 @@
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
   xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:f="http://www.faustedition.net/ns"
   xmlns:pxf="http://exproc.org/proposed/steps/file"  
-  xmlns:l="http://xproc.org/library" type="f:list-transcripts" name="main" version="1.0">
+  xmlns:l="http://xproc.org/library" type="f:metadata-js" name="main" version="1.0">
 
   <p:input port="source"><p:empty/></p:input>
   <p:input port="parameters" kind="parameter"/>

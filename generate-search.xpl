@@ -3,7 +3,7 @@
 	xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:f="http://www.faustedition.net/ns"
 	xmlns:pxf="http://exproc.org/proposed/steps/file"
 	xmlns:j="http://www.ibm.com/xmlns/prod/2009/jsonx"
-	xmlns:l="http://xproc.org/library" version="1.0" name="main" type="f:generate-app">
+	xmlns:l="http://xproc.org/library" version="1.0" name="main" type="f:generate-search">
 	<p:input port="source"/>	
 	<p:input port="parameters" kind="parameter"/>
 	
@@ -28,6 +28,8 @@
 	
 	<p:group>
 		<p:variable name="apphtml" select="//c:param[@name='apphtml']/@value"><p:pipe port="result" step="config"></p:pipe></p:variable>
+		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
+		
 	
 	<cx:message log="info">
 		<p:with-option name="message" select="'Reading transcript files ...'"/>
@@ -107,7 +109,7 @@
 		<p:identity name="prepared-xml"/>
 		
 		<p:store>
-			<p:with-option name="href" select="concat('target/search/textTranscript/', $documentURI)"/>
+			<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"/>
 		</p:store>
 		
 		<p:identity>
@@ -135,7 +137,6 @@
 
 	</p:for-each>
 	
-	</p:group>
 
 	<p:wrap-sequence wrapper="f:documents"/>
 	<p:xslt>
@@ -160,8 +161,11 @@
 		<p:input port="parameters"><p:empty/></p:input>
 	</p:xslt>
 	
-	<p:store href="target/www/data/genetic_bar_graph.js" method="text"/>
+	<p:store method="text">
+		<p:with-option name="href" select="resolve-uri('www/data/genetic_bar_graph.js', $builddir)"/>
+	</p:store>
 	
+	</p:group>
 
 	<!-- das Stylesheet erzeugt keinen relevanten Output auf dem Haupt-Ausgabeport. -->
 <!--	<p:sink>

@@ -16,7 +16,12 @@
 	<p:import href="print2html.xpl"/>
 	<p:import href="generate-indexes.xpl"/>
 	<p:import href="generate-app.xpl"/>
-		
+	<p:import href="generate-search.xpl"/>
+	<p:import href="generate-metadata-js.xpl"/>
+	<p:import href="metadata-html.xpl"/>
+	
+	
+	
 	
 	<!-- Parameter laden -->
 	<p:parameters name="config">
@@ -30,6 +35,26 @@
 		<p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
 		<p:variable name="html" select="//c:param[@name='html']/@value"><p:pipe port="result" step="config"/></p:variable>
 		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
+		
+		
+		<!-- Archivmetadaten -->
+		<p:load><p:with-option name="href" select="resolve-uri('archives.xml', resolve-uri($source))"/></p:load>
+		<cx:message log="info">
+			<p:with-option name="message" select="'Converting archive metadata to js...'"/>
+		</cx:message>
+		<p:xslt>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/create-archives-metadata.xsl"/></p:input>
+		</p:xslt>
+		<p:store method="text">
+			<p:with-option name="href" select="resolve-uri('www/data/archives.js', $builddir)"/>
+		</p:store>
+
+		<!-- Metadaten nach HTML -->
+		<f:metadata-html/>
+		
+		<!-- Metadaten nach JSON -->
+		<f:metadata-js/>		
 		
 	
 		<!-- Metadaten -->
@@ -136,6 +161,13 @@
 				<p:pipe port="result" step="transcripts"/>
 			</p:input>
 		</f:generate-app>
-
+		
+		<!-- Quelldaten für die Suche und die Genesegraphen -->
+		<f:generate-search>
+			<p:input port="source">
+				<p:pipe port="result" step="transcripts"/>
+			</p:input>
+		</f:generate-search>
+		
 	</p:group>
 </p:declare-step>
