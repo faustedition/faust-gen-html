@@ -14,9 +14,11 @@
 	<xsl:strip-space elements="*"/>
 	
 	<xsl:template match="/archives">
-		<xsl:text>var archives={</xsl:text>
-		<xsl:apply-templates select="*"/>
-		<xsl:text>}</xsl:text>
+		<wrapper>
+			<xsl:text>var archives={</xsl:text>
+			<xsl:apply-templates select="*"/>
+			<xsl:text>}</xsl:text>
+		</wrapper>
 	</xsl:template>
 	
 	<xsl:template match="archive" priority="1">
