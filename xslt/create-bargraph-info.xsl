@@ -40,9 +40,9 @@
 					if (number(@n) - 1 eq number(preceding::f:line[1]/@n)) then 't' else 'f', 
 					@type, 
 					@page), '|')">
-					
-						<xsl:text>"type":"</xsl:text><xsl:value-of select="current-group()[1]/@type"/><xsl:text>",</xsl:text>
-						<xsl:text>"page":</xsl:text><xsl:value-of select="current-group()[1]/@page"/><xsl:text>,</xsl:text>
+					<xsl:variable name="page" select="current-group()[1]/@page"/>
+						<xsl:text>{"type":"</xsl:text><xsl:value-of select="current-group()[1]/@type"/><xsl:text>",</xsl:text>
+						<xsl:text>"page":</xsl:text><xsl:value-of select="if ($page != '') then $page else 1"/><xsl:text>,</xsl:text>
 						<xsl:text>"start":</xsl:text><xsl:value-of select="current-group()[1]/@n"/><xsl:text>,</xsl:text>
 						<xsl:text>"end":</xsl:text><xsl:value-of select="current-group()[last()]/@n"/><xsl:text>}</xsl:text>
 					<xsl:if test="position() != last()">,</xsl:if>					

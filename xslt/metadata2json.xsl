@@ -14,6 +14,11 @@
 	<xsl:variable name="imgprefix">faust://xml/facsimile/</xsl:variable>
 	<xsl:variable name="metadataprefix">document/</xsl:variable>
 	
+	<xsl:function name="f:json-string">
+		<xsl:param name="s"/>
+		<xsl:value-of select="concat('&quot;', replace(replace(normalize-space($s), '\\', '\\'), '&quot;', '\\&quot;'), '&quot;')"/>
+	</xsl:function>
+	
 	<!-- Creates a string as key-value-pair. Generates the empty string if no value. -->
 	<xsl:function name="f:s" as="xs:string">
 		<xsl:param name="key"/>
@@ -23,9 +28,8 @@
 			<xsl:if test="$value">
 				<xsl:text>"</xsl:text>
 				<xsl:value-of select="$key"/>
-				<xsl:text>":"</xsl:text>
-				<xsl:value-of select="replace(replace($value, '\\', '\\'), '&quot;', '\\&quot;')"/>
-				<xsl:text>"</xsl:text>
+				<xsl:text>":</xsl:text>
+				<xsl:value-of select="f:json-string($value)"/>
 				<xsl:if test="$comma">,</xsl:if>			
 			</xsl:if>
 			</xsl:variable>
@@ -45,9 +49,7 @@
 				</xsl:if>
 				<xsl:text>[</xsl:text>
 				<xsl:for-each select="$values">
-					<xsl:text>"</xsl:text>
-					<xsl:value-of select="replace(replace(., '\\', '\\'), '&quot;', '\\&quot;')"/>
-					<xsl:text>"</xsl:text>
+					<xsl:value-of select="f:json-string(.)"/>
 					<xsl:if test="position() != last()">,</xsl:if>
 				</xsl:for-each>
 				<xsl:text>]</xsl:text>
