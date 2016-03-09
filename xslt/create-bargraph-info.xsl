@@ -15,6 +15,8 @@
 		It extracts _verse intervals_ from the lines and milestone elements in the transcript.
 	-->
 	
+	
+	
 	<xsl:template match="/">
 		<!-- Collect the data: One <f:line> element for each referred line. See below. -->
 		<xsl:variable name="lines" as="element()*">
@@ -28,7 +30,7 @@
 			</xsl:perform-sort>
 		</xsl:variable>
 		
-		<f:json>
+		<f:document sigil="{.//idno[@type='faustedition']}">
 		<!-- First a little document metadata -->
 		<xsl:text>{"sigil":"</xsl:text><xsl:value-of select=".//idno[@type='faustedition']"/><xsl:text>",</xsl:text>
 		<xsl:text>"source":"</xsl:text><xsl:value-of select=".//idno[@type='fausturi']"/><xsl:text>",</xsl:text>			
@@ -40,6 +42,8 @@
 					if (number(@n) - 1 eq number(preceding::f:line[1]/@n)) then 't' else 'f', 
 					@type, 
 					@page), '|')">
+					<xsl:sort select="index-of(('paralipomenaUncertain', 'paralipomena', 'verseLineVariant', 'verseLineUncertain', 'verseLine'), current-group()[1]/@type)"/>					
+					
 					<xsl:variable name="page" select="current-group()[1]/@page"/>
 						<xsl:text>{"type":"</xsl:text><xsl:value-of select="current-group()[1]/@type"/><xsl:text>",</xsl:text>
 						<xsl:text>"page":</xsl:text><xsl:value-of select="if ($page != '') then $page else 1"/><xsl:text>,</xsl:text>
@@ -48,7 +52,7 @@
 					<xsl:if test="position() != last()">,</xsl:if>					
 				</xsl:for-each-group>
 		<xsl:text>]}</xsl:text>
-		</f:json>
+		</f:document>
 	</xsl:template>
 	
 	
