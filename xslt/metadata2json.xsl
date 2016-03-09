@@ -11,7 +11,7 @@
 	<xsl:param name="source"/>
 	<xsl:variable name="baseprefix">faust://xml/</xsl:variable>
 	<xsl:variable name="linkprefix">faust://xml/image-text-links/</xsl:variable>
-	<xsl:variable name="imgprefix">faust://xml/facsimile/</xsl:variable>
+	<xsl:variable name="imgprefix">faust://facsimile/</xsl:variable>
 	<xsl:variable name="metadataprefix">document/</xsl:variable>
 	
 	<xsl:function name="f:json-string">
