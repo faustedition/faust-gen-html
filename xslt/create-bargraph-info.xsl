@@ -78,7 +78,7 @@
 	</xsl:template>
 	
 	
-	<xsl:template match="l[matches(@n, '^\d+[A-Za-z]*\??$')]">
+	<xsl:template match="l[matches(@n, '^(\d+[A-Za-z]*\??\s*)+$')]">
 		<xsl:variable name="page" select="preceding::pb[1]/@f:docTranscriptNo"/>
 		<xsl:sequence select="for $n in tokenize(@n, '\s+') return f:verseLine($n, $page)"/>
 	</xsl:template>
