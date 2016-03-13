@@ -12,7 +12,7 @@
 	<xsl:param name="standalone" select="/print"/>
 	<xsl:param name="source">file:/home/tv/Faust/</xsl:param>
 	<xsl:param name="builddir">../target</xsl:param>
-	<xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', $builddir)"/>
+	<xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir))"/>
 	<xsl:param name="docbase">http://beta.faustedition.net/documentViewer?faustUri=faust://xml</xsl:param>
 	<xsl:variable name="idmap" select="document($transcript-list)"/>	
 	
