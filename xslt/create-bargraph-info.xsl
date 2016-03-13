@@ -49,7 +49,7 @@
 		<!-- First a little document metadata -->
 		<xsl:text>{"sigil":"</xsl:text><xsl:value-of select=".//idno[@type='faustedition']"/><xsl:text>",</xsl:text>
 		<xsl:text>"source":"</xsl:text><xsl:value-of select=".//idno[@type='fausturi']"/><xsl:text>",</xsl:text>			
-		<xsl:text>"print":"</xsl:text><xsl:value-of select="if (TEI/@type = 'print') then 'true' else 'false'"/><xsl:text>",</xsl:text>
+		<xsl:text>"print":</xsl:text><xsl:value-of select="if (TEI/@type = 'print') then 'true' else 'false'"/><xsl:text>,</xsl:text>
 		<xsl:text>"intervals":[</xsl:text>
 				<!-- now group adjacent verse numbers. We create a new interval if either the number verses is not 
 					consecutive or a different page or type starts.  -->
