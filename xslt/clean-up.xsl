@@ -8,7 +8,11 @@
             <xsl:apply-templates select="@*|node()"/>
         </xsl:copy>
     </xsl:template>
+    <xsl:template match="body[not(normalize-space(.))]"/>
+    <xsl:template match="closer[not(normalize-space(.))]"/>    
+    <xsl:template match="front[not(normalize-space(.))]"/>
     <xsl:template match="l[not(normalize-space(.))]"/>
     <xsl:template match="sp[not(normalize-space(.))]"/>
+    <xsl:template match="speaker[not(normalize-space(.))]"/>
     <xsl:template match="stage[not(normalize-space(.))]"/>
 </xsl:stylesheet>
