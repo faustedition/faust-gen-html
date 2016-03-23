@@ -15,4 +15,5 @@
     <xsl:template match="sp[not(normalize-space(.))]"/>
     <xsl:template match="speaker[not(normalize-space(.))]"/>
     <xsl:template match="stage[not(normalize-space(.))]"/>
+    <xsl:template match="text[not(normalize-space(.))]"/>
 </xsl:stylesheet>
