@@ -73,7 +73,7 @@
 						<xsl:text>"end":</xsl:text><xsl:value-of select="current-group()[last()]/@n"/><xsl:text>}</xsl:text>
 					<xsl:if test="position() != last()">,</xsl:if>					
 				</xsl:for-each-group>
-		<xsl:text>]}</xsl:text>
+		<xsl:text>]}&#10;</xsl:text>
 		</f:document>
 	</xsl:template>
 	

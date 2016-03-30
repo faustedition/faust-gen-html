@@ -29,7 +29,7 @@
 	<xsl:template match="/">
 		<json>
 			<xsl:text>{</xsl:text>
-			<xsl:apply-templates/>
+			<xsl:apply-templates select=".//document"/>
 			<xsl:text>}</xsl:text>
 		</json>
 	</xsl:template>
@@ -44,7 +44,9 @@
 			return concat('&quot;', $page/text(), '&quot;:&quot;', $page/parent::file/@name, '&quot;')), 
 			',')"/>
 		<xsl:text>}</xsl:text>		
-		<xsl:if test="following-sibling::document">,</xsl:if>
+		<xsl:if test="following-sibling::document">,<!--&#10;--></xsl:if>
 	</xsl:template>
+	
+	<xsl:template match="node()"/>
 	
 </xsl:stylesheet>

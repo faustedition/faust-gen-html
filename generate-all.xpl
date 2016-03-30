@@ -10,7 +10,7 @@
 	<p:input port="parameters" kind="parameter"/>
 
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
-<!--	<p:import href="http://xproc.org/library/store.xpl"/>-->
+	<p:import href="http://xproc.org/library/store.xpl"/>
 	<p:import href="collect-metadata.xpl"/>
 	<p:import href="collate-variants.xpl"/>
 	<p:import href="print2html.xpl"/>
@@ -130,13 +130,17 @@
 		-->
 		<p:wrap-sequence wrapper="pagemaps"/>
 
-<!--		<l:store href="file:/tmp/pagemaps.xml"/>-->
+		<l:store>
+			<!-- Zu Debug-Zwecken speichern wir mal die XML-Datei der Pagemaps -->
+			<p:with-option name="href" select="resolve-uri('pagemaps.xml', $builddir)"/>
+		</l:store>
 
 		<p:xslt name="pagemap2json">
 			<p:input port="stylesheet">
 				<p:document href="xslt/pagelist2json.xsl"/>
 			</p:input>
 		</p:xslt>
+		
 		<p:store method="text" media-type="application/json">
 			<p:with-option name="href" select="concat($html, '/pages.json')"/>
 		</p:store>
