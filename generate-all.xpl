@@ -49,12 +49,6 @@
 		<p:store method="text">
 			<p:with-option name="href" select="resolve-uri('www/data/archives.js', $builddir)"/>
 		</p:store>
-
-		<!-- Metadaten nach HTML -->
-		<f:metadata-html/>
-		
-		<!-- Metadaten nach JSON -->
-		<f:metadata-js/>		
 		
 	
 		<!-- Metadaten -->
@@ -69,7 +63,7 @@
 		<p:store indent="true">
 			<p:with-option name="href" select="resolve-uri('variants.xml', $builddir)"/>
 		</p:store>	
-		<p:store indent="true">
+		<p:store indent="true" name="store-transcript-list">
 			<p:with-option name="href" select="resolve-uri('faust-transcripts.xml', $builddir)"/>
 			<p:input port="source">
 				<p:pipe port="result" step="transcripts"/>
@@ -168,6 +162,13 @@
 				<p:pipe port="result" step="transcripts"/>
 			</p:input>
 		</f:generate-search>
+		
+		<!-- Metadaten nach HTML -->
+		<f:metadata-html cx:after="store-transcript-list"/>
+		
+		<!-- Metadaten nach JSON -->
+		<f:metadata-js cx:after="store-transcript-list"/>		
+		
 		
 	</p:group>
 </p:declare-step>
