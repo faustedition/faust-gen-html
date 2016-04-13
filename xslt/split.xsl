@@ -187,7 +187,7 @@
 				<xsl:call-template name="header"/>
 				
 				<main>
-					<div class="main-content-container">
+					<div class="main-content-container" style="margin-bottom:0;">
 						<div id="main-content" class="main-content">
 							<div style="display: block;" class="print-content view-content" id="print-content">
 								<div id="main" class="print">

@@ -6,7 +6,7 @@
 	exclude-result-prefixes="xs f"
 	version="2.0">
 	
-	<xsl:param name="title">Digitale Faustedition</xsl:param>
+	<xsl:param name="title">Faust-Edition [beta]</xsl:param>
 	<xsl:param name="edition">..</xsl:param>
 	<xsl:param name="assets" select="$edition"/>
 	<xsl:param name="debug" select="false()"/>
@@ -48,6 +48,7 @@
 		<header>
 			<div class="logo">
 				<a href="{$edition}/" title="Faustedition"><img src="{$assets}/img/faustlogo.svg" alt="Faustedition"/></a>
+			<sup class="pure-fade-50"><mark>beta</mark></sup>
 			</div>
 			
 			<xsl:copy-of select="$breadcrumbs"/>
@@ -65,30 +66,6 @@
 		</header>
 	</xsl:template>
 	
-	<xsl:template name="footer">
-		<footer>
-			<div class='pure-g-r'>
-				<div class="pure-u-1-2 pure-fade-50">
-					<b>Faust-Edition</b>
-					<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" align="middle"/></a>
-					<xsl:if test="$debug and not($debug = ('no', 'false', 'off'))">
-						<xsl:text> • </xsl:text>
-						<mark><a href="./">
-							Generiert: <xsl:value-of select="current-dateTime()"/>
-						</a></mark>
-					</xsl:if>
-				</div>
-				<div class="pure-u-1-2 pure-right pure-fade-50">
-					<a href="{$edition}/help">Hilfe</a>
-					<xsl:text> </xsl:text>
-					<a href="{$edition}/contact">Kontakt</a>
-					<xsl:text> </xsl:text>
-					<a href="{$edition}/project">Projekt</a>
-					<xsl:text> </xsl:text>
-					<a href="{$edition}/intro">Ausgabe</a>
-				</div>
-			</div>
-		</footer>
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
