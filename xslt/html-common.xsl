@@ -440,6 +440,9 @@ in <xsl:value-of select="document-uri(/)"/>
 					<xsl:value-of select="$display-line"/>
 				</a>
 			</xsl:when>
+			<xsl:when test="@n">
+				<a id="l{@n}" href="#l{@n}" class="lineno invisible">∞</a>
+			</xsl:when>
 			<xsl:otherwise>
 				<a class="lineno invisible">&#160;</a>
 			</xsl:otherwise>
