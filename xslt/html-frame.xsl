@@ -66,6 +66,7 @@
 		</header>
 	</xsl:template>
 	
+	<xsl:template name="footer">
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
