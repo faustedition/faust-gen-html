@@ -32,7 +32,7 @@
 				<div class="groups" data-group="{current-grouping-key()}">
 					<xsl:for-each-group select="current-group()" group-by="tokenize(@n, '[ ,;\t\n]+')">
 						<xsl:variable name="cline" select="current-group()[@f:doc = $canonicalDocs]"/>
-						<xsl:variable name="ctext" select="if ($cline) then normalize-space($cline[1]) else ''"/>
+						<xsl:variable name="ctext" select="if ($cline) then f:normalize-space($cline[1]) else ''"/>
 						<xsl:variable name="evidence">
 							<xsl:sequence select="$standoff"/>							
 							<xsl:for-each-group select="current-group()" group-by="@f:doc">
@@ -45,7 +45,7 @@
 						<div class="variants" 
 							data-n="{current-grouping-key()}" 
 							data-witnesses="{count($evidence/* except $evidence/*[@f:type='lesetext'] except $evidence/f:standoff)}"
-							data-variants="{count(distinct-values(for $ev in $evidence/* except $evidence/f:standoff return normalize-space($ev)))-1}"
+							data-variants="{count(distinct-values(for $ev in $evidence/* except $evidence/f:standoff return f:normalize-space($ev)))-1}"
 							data-ctext="{$ctext}"
 							id="v{current-grouping-key()}">
 							<xsl:attribute name="xml:id" select="concat('v', current-grouping-key())"/>

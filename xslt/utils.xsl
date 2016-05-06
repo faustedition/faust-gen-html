@@ -293,12 +293,17 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
+  
+  <xsl:template match="lb[not(@break='no')]" mode="normalize-space">
+    <xsl:text> </xsl:text>
+  </xsl:template>
+  
   <xsl:function name="f:normalize-space" as="xs:string">
     <xsl:param name="text" as="node()*"/>
     <xsl:variable name="nodes">
       <xsl:apply-templates select="$text" mode="normalize-space"/>      
     </xsl:variable>
-    <xsl:value-of select="$nodes"/>
+    <xsl:value-of select="normalize-space($nodes)"/>
   </xsl:function>
   
   
