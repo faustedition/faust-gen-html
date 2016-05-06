@@ -49,8 +49,7 @@
 							data-ctext="{$ctext}"
 							id="v{current-grouping-key()}">
 							<xsl:attribute name="xml:id" select="concat('v', current-grouping-key())"/>
-							<xsl:for-each-group select="$evidence/*" group-by="normalize-space(.)">
-								
+							<xsl:for-each-group select="$evidence/*" group-by="f:normalize-space(.)">
 									<xsl:apply-templates select="current-group()[1]/*">
 										<!--<xsl:sort select="@f:sigil"/>-->
 										<!-- Sorting is done in collect-metadata.xpl, we just keep the document order from there -->

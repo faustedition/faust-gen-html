@@ -262,4 +262,45 @@
   </xsl:function>
   
   
+  <!-- Whitespace normalization, improved. Cf. http://wiki.tei-c.org/index.php/XML_Whitespace -->
+  <xsl:template match="text()" mode="normalize-space">
+    <xsl:choose>
+      <xsl:when
+        test="ancestor::*[@xml:space][1]/@xml:space='preserve'">
+        <xsl:value-of select="."/>
+      </xsl:when>
+      <xsl:otherwise>
+        <!-- Retain one leading space if node isn't first, has
+	     non-space content, and has leading space.-->
+        <xsl:if test="position()!=1 and          matches(.,'^\s') and          normalize-space()!=''">
+          <xsl:text> </xsl:text>
+        </xsl:if>
+        <xsl:value-of select="normalize-space(.)"/>
+        <xsl:choose>
+          <!-- node is an only child, and has content but it's all space -->
+          <xsl:when test="last()=1 and string-length()!=0 and      normalize-space()=''">
+            <xsl:text> </xsl:text>
+          </xsl:when>
+          <!-- node isn't last, isn't first, and has trailing space -->
+          <xsl:when test="position()!=1 and position()!=last() and matches(.,'\s$')">
+            <xsl:text> </xsl:text>
+          </xsl:when>
+          <!-- node isn't last, is first, has trailing space, and has non-space content   -->
+          <xsl:when test="position()=1 and matches(.,'\s$') and normalize-space()!=''">
+            <xsl:text> </xsl:text>
+          </xsl:when>
+        </xsl:choose>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  <xsl:function name="f:normalize-space" as="xs:string">
+    <xsl:param name="text" as="node()*"/>
+    <xsl:variable name="nodes">
+      <xsl:apply-templates select="$text" mode="normalize-space"/>      
+    </xsl:variable>
+    <xsl:value-of select="$nodes"/>
+  </xsl:function>
+  
+  
+  
 </xsl:stylesheet>
