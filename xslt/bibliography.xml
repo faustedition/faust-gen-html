@@ -94,7 +94,7 @@
 
     <f:bib uri="faust://bibliography/bohnenkamp1994">
         <f:citation>Bohnenkamp 1994</f:citation>
-        <f:reference>Bohnenkamp, Anne: „...das Hauptgeschäft nicht außer Augen lassend“. Die Paralipomena zu Goethes ‚Faust‘, Frankfurt am Main und Leipzig 1994.</f:reference>
+        <f:reference>Bohnenkamp, Anne: „… das Hauptgeschäft nicht außer Augen lassend“. Die Paralipomena zu Goethes ‚Faust‘, Frankfurt am Main und Leipzig 1994.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/bohnenkamp1997">
@@ -1299,7 +1299,7 @@
 
     <f:bib uri="faust://bibliography/aa_faust_1">
         <f:citation>AA Faust 1</f:citation>
-        <f:reference>Werke Goethes, hrsg. von der deutschen Akademie der Wissenschaften zu Berlin, Faust, Bd. 1: Urfaust – Faust. Ein Fragment, bearbeitet von Ernst Grumach, Berlin 1954. .</f:reference>
+        <f:reference>Werke Goethes, hrsg. von der deutschen Akademie der Wissenschaften zu Berlin, Faust, Bd. 1: Urfaust – Faust. Ein Fragment, bearbeitet von Ernst Grumach, Berlin 1954. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/aa_faust_2">
@@ -1319,7 +1319,7 @@
 
     <f:bib uri="faust://bibliography/aa_ergbd_3">
         <f:citation>AA Erg.-Bd. 3</f:citation>
-        <f:reference>Goethe: Urfaust – Faust. Ein Fragment – Faust. Der Tragödie erster Theil (Paralleldruck), bearbeitet von Ernst Grumach und Inge Jensen, Berlin 1958 (AA, Erg.-Bd. 3). .</f:reference>
+        <f:reference>Werke Goethes, hrsg. von der deutschen Akademie der Wissenschaften zu Berlin, Erg.-Bd. 3: Urfaust – Faust. Ein Fragment – Faust. Der Tragödie erster Theil (Paralleldruck), bearbeitet von Ernst Grumach und Inge Jensen, Berlin 1958. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/aa_duw_2">
@@ -1430,6 +1430,11 @@
     <f:bib uri="faust://bibliography/witkowski1936">
         <f:citation>Witkowski 1936</f:citation>
         <f:reference>Goethes Faust, hrsg. von Georg Witkowski, 9. Aufl., Bd. 1, Leiden 1936.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/quz_2">
+        <f:citation>QuZ 2</f:citation>
+        <f:reference>Quellen und Zeugnisse zur Druckgeschichte von Goethes Werken, Bd. 2: Die Ausgabe letzter Hand, bearbeitet von Waltraud Hagen, Berlin 1982.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/dembowski1889">
