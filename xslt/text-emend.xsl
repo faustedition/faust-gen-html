@@ -33,10 +33,10 @@
     </xsl:template>
     
     <xsl:template match="/">
-        <xsl:for-each select="//delSpan[not(replace(@spanTo, '^#', '') = //*/@xml:id)]">
+        <xsl:for-each select="//delSpan[not(replace(@spanTo, '^#', '') = //anchor/@xml:id)]">
             <xsl:message select="concat('WARNING: ', document-uri(/),
                 ': delSpan/@spanTo=&quot;', @spanTo, 
-                '&quot; without corresponding target: YOU LOOSE TEXT!')"/>
+                '&quot; without corresponding anchor: YOU LOOSE TEXT!')"/>
         </xsl:for-each>
         <xsl:next-match/>
     </xsl:template>
