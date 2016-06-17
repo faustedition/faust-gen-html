@@ -47,7 +47,7 @@
 		<elem name="watermarkID">Wasserzeichen</elem>
 		<elem name="countermarkID">Gegenzeichen</elem>
 		<!--     "references /> / <reference": "Bibliographischer Nachweis" -->
-		<elem name="patchDimensions">Zettelmaße</elem>
+		<elem name="patchDimensions">Maße</elem>
 		<elem name="patchType">Art der Anbringung</elem>
 		<!--     "patchType>glue</patchType> - geklebt" -->
 		<!--     "patchType>pin</patchType> - geheftet" -->
@@ -88,7 +88,7 @@
 		<li><xsl:apply-templates/></li>
 	</xsl:template>
 	
-	<xsl:template match="dimensions">
+	<xsl:template match="dimensions|patchDimensions">
 		<xsl:call-template name="element">
 			<xsl:with-param name="content">
 				<xsl:value-of select="width"/> mm × <xsl:value-of select="height"/> mm
