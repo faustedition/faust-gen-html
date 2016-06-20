@@ -3,7 +3,7 @@
   xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:f="http://www.faustedition.net/ns"
   xmlns:pxf="http://exproc.org/proposed/steps/file"
   xmlns:j="http://www.ibm.com/xmlns/prod/2009/jsonx"
-  xmlns:l="http://xproc.org/library" version="1.0" name="main" type="f:generate-search">
+  xmlns:l="http://xproc.org/library" version="1.0" name="main" type="f:generate-para-table">
   <p:input port="source"/>	
   <p:input port="parameters" kind="parameter"/>
   

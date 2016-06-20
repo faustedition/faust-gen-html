@@ -19,6 +19,7 @@
 	<p:import href="generate-search.xpl"/>
 	<p:import href="generate-metadata-js.xpl"/>
 	<p:import href="metadata-html.xpl"/>
+	<p:import href="create-para-table.xpl"/>
 	
 	
 	
@@ -166,13 +167,19 @@
 				<p:pipe port="result" step="transcripts"/>
 			</p:input>
 		</f:generate-search>
+				
+		<!-- Paralipomena-Tabelle -->
+		<f:generate-para-table>
+			<p:input port="source">
+				<p:pipe port="result" step="transcripts"/>
+			</p:input>		
+		</f:generate-para-table>
 		
 		<!-- Metadaten nach HTML -->
 		<f:metadata-html cx:after="store-transcript-list"/>
 		
 		<!-- Metadaten nach JSON -->
-		<f:metadata-js cx:after="store-transcript-list"/>		
-		
+		<f:metadata-js cx:after="store-transcript-list"/>	
 		
 	</p:group>
 </p:declare-step>
