@@ -66,7 +66,7 @@
 		
 		<!-- f:json is required for XProc processing, will be removed by p:store -->
 		<f:json>
-			<xsl:text>[</xsl:text>
+			<xsl:text>var paralipomena = [&#10;</xsl:text>
 			<xsl:value-of select="string-join($items/*, ',&#10;')"/>
 			<xsl:text>]</xsl:text>
 		</f:json>
