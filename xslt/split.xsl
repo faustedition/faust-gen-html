@@ -186,27 +186,21 @@
 			<body>
 				<xsl:call-template name="header"/>
 				
-				<main>
-					<div class="main-content-container" style="margin-bottom:0;">
-						<div id="main-content" class="main-content">
-							<div style="display: block;" class="print-content view-content" id="print-content">
-								<div id="main" class="print">
-									<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
-									<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
-										<xsl:choose>
-											<xsl:when test="$single">
-												<xsl:apply-templates/>
-											</xsl:when>
-											<xsl:otherwise>
-												<xsl:apply-templates/>
-											</xsl:otherwise>
-										</xsl:choose>
-									</div>
-									<div class="print-side-column">  <!-- 3. Spalte (1/5) für die lokale Navigation  -->
-										<xsl:call-template name="local-nav"/>
-									</div>
-								</div>
-							</div>
+				<main class="nofooter">
+					<div  class="print">
+						<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
+						<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
+							<xsl:choose>
+								<xsl:when test="$single">
+									<xsl:apply-templates/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:apply-templates/>
+								</xsl:otherwise>
+							</xsl:choose>
+						</div>
+						<div class="print-side-column">  <!-- 3. Spalte (1/5) für die lokale Navigation  -->
+							<xsl:call-template name="local-nav"/>
 						</div>
 					</div>
 				</main>
