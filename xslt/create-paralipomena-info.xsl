@@ -48,7 +48,7 @@
 	<xsl:output method="xml"/>
 	
 	<!-- We don't want anything that is pointed to by a @next attribute -->
-	<xsl:key name="next" match="*/@next" use="document(.)"/>
+	<xsl:key name="next" match="*[@next]" use="substring(@next, 2)"/>
 	
 	<!-- Iterate over collection. -->	
 	<xsl:template name="collection">
@@ -83,7 +83,8 @@
 	<xsl:template match="TEI" name="document">
 		<xsl:variable name="uri" select="//idno[@type='fausturi']"/>
 		<xsl:variable name="sigil" select="//idno[@type='faustedition']"/>
-			<xsl:for-each select="//milestone[@unit='paralipomenon' and not(key('next', .))]">				
+			<xsl:for-each select="//milestone[@unit='paralipomenon' and not(@xml:id and key('next', @xml:id))]">
+				<xsl:message><xsl:copy-of select="."/></xsl:message>
 				<xsl:variable name="no" select="f:pad-para-no(replace(@n, 'p(\d+)', '$1'))"/>
 				<xsl:variable name="spanTo" select="document(current()/@spanTo)"/>
 				<xsl:variable name="rawContent"> <!-- XML nodes within the paralipomenon -->
