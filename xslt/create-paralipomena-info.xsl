@@ -83,8 +83,7 @@
 	<xsl:template match="TEI" name="document">
 		<xsl:variable name="uri" select="//idno[@type='fausturi']"/>
 		<xsl:variable name="sigil" select="//idno[@type='faustedition']"/>
-			<xsl:for-each select="//milestone[@unit='paralipomenon' and not(@xml:id and key('next', @xml:id))]">
-				<xsl:message><xsl:copy-of select="."/></xsl:message>
+			<xsl:for-each select="//milestone[@unit='paralipomenon' and not(@xml:id and key('next', @xml:id))]">			
 				<xsl:variable name="no" select="f:pad-para-no(replace(@n, 'p(\d+)', '$1'))"/>
 				<xsl:variable name="spanTo" select="document(current()/@spanTo)"/>
 				<xsl:variable name="rawContent"> <!-- XML nodes within the paralipomenon -->
@@ -103,7 +102,8 @@
 				</xsl:variable>
 				
 				<!-- extract first $incipit_words tokens -->
-				<xsl:variable name="text" select="tokenize(normalize-space(string-join($rawText, '')), ' ')[position() le $incipit_words]"/>
+				<xsl:variable name="words" select="tokenize(normalize-space(string-join($rawText, '')), ' ')"/>
+				<xsl:variable name="text" select="$words[position() le $incipit_words + count($words[position() le $incipit_words + 2][. = '/'])]"/>
 				
 				<f:item n="{$no}"> <!-- @n used for sorting -->
 					<xsl:text>{</xsl:text>
@@ -112,12 +112,12 @@
 					<xsl:text>"sigil":"</xsl:text>	
 					<xsl:value-of select="$sigil"/><xsl:text>",</xsl:text>
 					<xsl:text>"uri":"</xsl:text>     
-					<xsl:value-of select="$uri"/><xsl:text>",</xsl:text>
+					<xsl:value-of select="$uri"/><xsl:text>",</xsl:text>					
 					<xsl:text>"text":"</xsl:text>
 					<xsl:value-of select="$text"/><xsl:text>"</xsl:text>
 					<xsl:text>}</xsl:text>
-				</f:item>	
-			</xsl:for-each>		
+				</f:item>
+			</xsl:for-each>
 	</xsl:template>
 	
 	<!-- 

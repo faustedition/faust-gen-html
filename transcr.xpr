@@ -2994,8 +2994,6 @@
             <file name="xslt/apparatus.xsl"/>
             <file name="xslt/print2html.xsl"/>
         </folder>
-        <folder path="../../Faust/"/>
-        <folder path="../../Faust/image-text-links/"/>
         <folder path="xslt/"/>
         <file name="apparatus.md"/>
         <file name="apparatus.xpl"/>
