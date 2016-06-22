@@ -157,9 +157,6 @@
 		</xsl:if>
 	</xsl:template>
 	
-	<xsl:template mode="text" match="speaker|label">
-		<xsl:apply-templates mode="#current"/>
-		<xsl:text>. </xsl:text>
-	</xsl:template>
+	<xsl:template mode="text" match="speaker|label"/>
 	
 </xsl:stylesheet>
