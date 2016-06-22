@@ -238,7 +238,7 @@
       or self::milestone[@unit="paralipomenon"] 
       or self::milestone[@unit="cols"] 
       or @n[contains(.,"todo")] 
-      or @n[contains(.,"p")])])'/>
+      )])'/>
   </xsl:function>
 
   <xsl:function name="f:splitSigil" as="item()*">
