@@ -6,7 +6,7 @@
 
 	<xsl:param name="type"/>
 	<xsl:param name="source" required="yes"/>
-	<xsl:param name="documentURI"/>
+	<xsl:param name="documentURI" select="//idno[@type='fausturi'][1]"/>
 	<xsl:variable name="metafile" select="resolve-uri($documentURI, $source)"/>
 	<xsl:variable name="metadata" select="document($metafile)"/>
 

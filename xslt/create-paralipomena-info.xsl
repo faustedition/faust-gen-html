@@ -42,8 +42,12 @@
 		 Please note the n values are left-padded with spaces to become lexicographically sortable.     	     
 	
 	-->
+	
+	<xsl:import href="utils.xsl"/>
 
 	<xsl:param name="incipit_words" as="xs:integer">5</xsl:param>
+	
+	
 		
 	<xsl:output method="xml"/>
 	
@@ -112,7 +116,10 @@
 					<xsl:text>"sigil":"</xsl:text>	
 					<xsl:value-of select="$sigil"/><xsl:text>",</xsl:text>
 					<xsl:text>"uri":"</xsl:text>     
-					<xsl:value-of select="$uri"/><xsl:text>",</xsl:text>					
+					<xsl:value-of select="$uri"/><xsl:text>",</xsl:text>
+					<xsl:text>"page":"</xsl:text>
+					<xsl:value-of select="preceding::pb[1]/@f:docTranscriptNo"/><xsl:text>",</xsl:text>
+					<xsl:text>"line":"</xsl:text><xsl:value-of select="following::*[f:hasvars(.)][1]/@n"/><xsl:text>",</xsl:text>					
 					<xsl:text>"text":"</xsl:text>
 					<xsl:value-of select="$text"/><xsl:text>"</xsl:text>
 					<xsl:text>}</xsl:text>

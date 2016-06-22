@@ -53,7 +53,7 @@
         <p:with-option name="href" select="$transcriptFile"/>
       </p:load>
       
-      <p:xslt name="gs">
+      <p:xslt name="metadata">
         <p:input port="stylesheet">
           <p:document href="xslt/add-metadata.xsl"/>
         </p:input>
@@ -63,6 +63,16 @@
         <p:input port="parameters">
           <p:pipe port="result" step="config"/>            
         </p:input>
+      </p:xslt>
+      
+      <p:xslt>
+        <p:input port="stylesheet"><p:document href="xslt/resolve-pb.xsl"/></p:input>
+        <p:with-param name="documentURI" select="$documentURI"/>
+        <p:with-param name="type" select="$type"/>
+        <p:with-param name="transcriptURI" select="$transcriptURI"/>
+        <p:input port="parameters">
+          <p:pipe port="result" step="config"/>            
+        </p:input>        
       </p:xslt>
       
       
