@@ -38,7 +38,7 @@
 					<xsl:variable name="citation" select="f:cite(current-grouping-key(), 'dd')"/>
 					<xsl:variable name="backrefs" as="element()*">
 						<xsl:for-each select="current-group()[@from]">							
-							<xsl:sequence select="f:resolve-faust-doc(@from)"/>
+							<xsl:sequence select="f:resolve-faust-doc(@from, $transcript-list)"/>
 						</xsl:for-each>
 					</xsl:variable>
 					<xsl:variable name="backref-part">

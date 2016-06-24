@@ -12,9 +12,11 @@
 	<xsl:param name="standalone" select="/print"/>
 	<xsl:param name="source">file:/home/tv/Faust/</xsl:param>
 	<xsl:param name="builddir">../target</xsl:param>
-	<xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir))"/>
+	<xsl:param name="builddir-resolved" select="$builddir"/>	
+	<xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
 	<xsl:param name="docbase">http://beta.faustedition.net/documentViewer?faustUri=faust://xml</xsl:param>
-	<xsl:variable name="idmap" select="document($transcript-list)"/>	
+	<xsl:param name="idmap" select="document($transcript-list)"/>
+		
 	
 	
 	<xsl:variable name="labels" xmlns="http://www.faustedition.net/ns">
@@ -244,7 +246,9 @@
 	
 	<xsl:function name="f:resolve-faust-doc">
 		<xsl:param name="uri"/>
-		<xsl:for-each select="$idmap//idno[@uri=$uri]/..">
+		<xsl:param name="transcript-list"/>
+		<!-- Function doesn't resolve document parameters :-(, so let's pass this in -->		
+		<xsl:for-each select="document($transcript-list)//idno[@uri=$uri]/..">
 			<xsl:variable name="docinfo" select="."/>
 			<xsl:choose>
 				<xsl:when test="$docinfo/@type='print'">
@@ -270,13 +274,13 @@
 						<xsl:copy-of select="f:cite($uri, false())"/>						
 					</xsl:when>
 					<xsl:when test="$idmap//idno[@uri=$uri]">
-						<xsl:sequence select="f:resolve-faust-doc($uri)"/>
+						<xsl:sequence select="f:resolve-faust-doc($uri, $transcript-list)"/>
 					</xsl:when>
 					<xsl:when test="$idmap//idno[@uri=replace($uri, '^faust://', 'faust://xml/')]">
-						<xsl:sequence select="f:resolve-faust-doc(replace($uri, '^faust://', 'faust://xml/'))"/>
+						<xsl:sequence select="f:resolve-faust-doc(replace($uri, '^faust://', 'faust://xml/'), $transcript-list)"/>
 					</xsl:when>
 					<xsl:when test="$idmap//idno[@uri=replace($uri, '^faust://print/', 'faust://document/faustedition/')]">
-						<xsl:sequence select="f:resolve-faust-doc(replace($uri, '^faust://print/', 'faust://document/faustedition/'))"/>
+						<xsl:sequence select="f:resolve-faust-doc(replace($uri, '^faust://print/', 'faust://document/faustedition/'), $transcript-list)"/>
 					</xsl:when>					
 					<xsl:otherwise>
 						<mark class="md-unresolved-uri"><xsl:copy/></mark>
@@ -485,7 +489,7 @@
 	</xsl:template>
 	
 		
-	<xsl:template match="/*">
+	<xsl:template match="/*">		
 		<xsl:choose>
 			<xsl:when test="$standalone">
 				<html>
