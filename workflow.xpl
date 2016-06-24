@@ -46,6 +46,19 @@
 		<p:variable name="html" select="//c:param[@name='html']/@value"><p:pipe port="result" step="config"/></p:variable>
 		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
 		
+		<!--Step 1a Archivmetadaten -->
+		<p:load><p:with-option name="href" select="resolve-uri('archives.xml', resolve-uri($source))"/></p:load>
+		<cx:message log="info">
+			<p:with-option name="message" select="'Converting archive metadata to js...'"/>
+		</cx:message>
+		<p:xslt>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/create-archives-metadata.xsl"/></p:input>
+		</p:xslt>
+		<p:store method="text">
+			<p:with-option name="href" select="resolve-uri('www/data/archives.js', $builddir)"/>
+		</p:store>
+		
 		
 		<!-- ############ STEP 1: Create list of all transcripts -->			
 
