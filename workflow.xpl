@@ -147,12 +147,19 @@
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>
 		</f:metadata-html>
 		
+		<!-- ### Step 2b: Metadaten nach JSON -->
+		<f:metadata-js>
+			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>			
+		</f:metadata-js>
+		
 		<!-- ### Step 4a: Paralipomena-Tabelle -->
 		<f:generate-para-table>
 			<p:input port="source">
 				<p:pipe port="result" step="emended-version"/>
 			</p:input>		
 		</f:generate-para-table>
+		
+		
 		
 		
 	</p:group>
