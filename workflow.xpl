@@ -94,7 +94,7 @@
 			</p:store>
 		</p:for-each>
 		<!-- Pipe through list of inputs -->
-		<p:identity><p:input port="source"><p:pipe port="result" step="generate-search"/></p:input></p:identity>
+		<p:identity name="emended-version"><p:input port="source"><p:pipe port="result" step="generate-search"/></p:input></p:identity>
 		
 		<!-- ############## STEP 4: Creating the variant apparatus -->
 		<f:collate-variants name="collate-variants"/>
@@ -146,6 +146,14 @@
 		<f:metadata-html>
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>
 		</f:metadata-html>
+		
+		<!-- ### Step 4a: Paralipomena-Tabelle -->
+		<f:generate-para-table>
+			<p:input port="source">
+				<p:pipe port="result" step="emended-version"/>
+			</p:input>		
+		</f:generate-para-table>
+		
 		
 	</p:group>
 	

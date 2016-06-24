@@ -41,40 +41,18 @@
       <p:variable name="type" select="/f:textTranscript/@type"/>
       <p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
       <p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
+      <p:variable name="emended-version" select="resolve-uri($documentURI, resolve-uri('emended/', $builddir))"/>
       
       
 <!--      <cx:message>
-        <p:with-option name="message" select="concat('Reading ', $transcriptFile)"/>
+        <p:with-option name="message" select="concat('Extracting paralipomena from ', $sigil, ' (', $emended-version, ')')"/>
       </cx:message>
--->      
+-->    
       
       <!-- Das Transkript wird geladen ... -->
       <p:load>
-        <p:with-option name="href" select="$transcriptFile"/>
+        <p:with-option name="href" select="$emended-version"/>
       </p:load>
-      
-      <p:xslt name="metadata">
-        <p:input port="stylesheet">
-          <p:document href="xslt/add-metadata.xsl"/>
-        </p:input>
-        <p:with-param name="documentURI" select="$documentURI"/>
-        <p:with-param name="type" select="$type"/>
-        <p:with-param name="transcriptURI" select="$transcriptURI"/>
-        <p:input port="parameters">
-          <p:pipe port="result" step="config"/>            
-        </p:input>
-      </p:xslt>
-      
-      <p:xslt>
-        <p:input port="stylesheet"><p:document href="xslt/resolve-pb.xsl"/></p:input>
-        <p:with-param name="documentURI" select="$documentURI"/>
-        <p:with-param name="type" select="$type"/>
-        <p:with-param name="transcriptURI" select="$transcriptURI"/>
-        <p:input port="parameters">
-          <p:pipe port="result" step="config"/>            
-        </p:input>        
-      </p:xslt>
-      
       
     </p:for-each>
       
