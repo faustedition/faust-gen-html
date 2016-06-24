@@ -6,13 +6,8 @@
 	xmlns:l="http://xproc.org/library" version="1.0" name="main" type="f:generate-search">
 	<p:input port="source"/>	
 	<p:input port="parameters" kind="parameter"/>
+	<p:output port="result"/>
 	
-	<!-- Am Output-Port legen wir zu Debuggingzwecken ein XML-Dokument mit allen Varianten an -->
-<!--	<p:output port="result" primary="true">
-		<p:pipe port="result" step="collect-lines"/>
-	</p:output>
-	<p:serialization port="result" indent="true"/>
--->	
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
 	<p:import href="apply-edits.xpl"/>
 	
@@ -24,9 +19,9 @@
 		</p:input>
 	</p:parameters>
 	
-	<p:identity><p:input port="source"><p:pipe port="source" step="main"/></p:input></p:identity>
+	<p:identity name="source"><p:input port="source"><p:pipe port="source" step="main"/></p:input></p:identity>
 	
-	<p:group>
+	<p:group name="body">
 		<p:variable name="apphtml" select="//c:param[@name='apphtml']/@value"><p:pipe port="result" step="config"></p:pipe></p:variable>
 		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
 		
@@ -50,7 +45,7 @@
 
 
 		<cx:message>
-			<p:with-option name="message" select="concat('Reading ', $transcriptFile)"/>
+			<p:with-option name="message" select="concat('Adding generated encoding to ', $sigil, ' (', $transcriptFile, ')')"/>
 		</cx:message>
 
 
@@ -76,6 +71,7 @@
 			
 			<!-- Für den Lesetext die Endstufe herstellen -->
 			<p:when test="$type = 'lesetext'">
+				<cx:message><p:with-option name="message" select="concat(' - emending ', $sigil, ' (', $documentURI, ') ...')"/></cx:message>
 				<f:apply-edits/>
 			</p:when>
 			
@@ -164,13 +160,10 @@
 	<p:store method="text">
 		<p:with-option name="href" select="resolve-uri('www/data/genetic_bar_graph.js', $builddir)"/>
 	</p:store>
-	
-	</p:group>
 
-	<!-- das Stylesheet erzeugt keinen relevanten Output auf dem Haupt-Ausgabeport. -->
-<!--	<p:sink>
-		<p:input port="source">
-			<p:pipe port="result" step="variant-fragments"/>
-		</p:input>
-	</p:sink>
---></p:declare-step>
+
+	</p:group>
+	
+	<p:identity><p:input port="source"><p:pipe port="result" step="source"></p:pipe></p:input></p:identity>
+
+</p:declare-step>

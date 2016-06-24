@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
+	xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:pxp="http://exproc.org/proposed/steps"
+	xmlns:pxf="http://exproc.org/proposed/steps/file"
+	xmlns:f="http://www.faustedition.net/ns"
+	xmlns:tei="http://www.tei-c.org/ns/1.0"
+	xmlns:l="http://xproc.org/library" name="main" version="1.0">
+	
+	<p:input port="source"><p:empty/></p:input>
+	<p:input port="parameters" kind="parameter"/>
+	
+	<p:output port="result" sequence="true">
+		<p:empty/>
+	</p:output>
+	
+	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
+	<p:import href="http://xproc.org/library/store.xpl"/>
+	
+	<p:import href="collect-metadata.xpl"/>
+	<p:import href="generate-search.xpl"/>
+	<p:import href="apply-edits.xpl"/>
+	<p:import href="collate-variants.xpl"/>
+	<p:import href="print2html.xpl"/>
+	
+	<p:import href="generate-app.xpl"/>
+	<p:import href="generate-metadata-js.xpl"/>
+	<p:import href="metadata-html.xpl"/>
+	<p:import href="create-para-table.xpl"/>
+
+<!--	
+	<p:import href="generate-indexes.xpl"/>
+-->	
+	
+	
+	
+	<!-- Parameter laden -->
+	<p:parameters name="config">
+		<p:input port="parameters">
+			<p:document href="config.xml"/>
+			<p:pipe port="parameters" step="main"></p:pipe>
+		</p:input>
+	</p:parameters>
+	
+	<p:group>
+		<p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
+		<p:variable name="html" select="//c:param[@name='html']/@value"><p:pipe port="result" step="config"/></p:variable>
+		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
+		
+		
+		<!-- ############ STEP 1: Create list of all transcripts -->			
+
+		<!-- Collect all transcript's metadata in an XML document. This also copies the artificial reading texts. -->
+		<f:list-transcripts name="transcripts">
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+		</f:list-transcripts>
+		
+		<!-- We need to save it now, its referenced later. -->
+		<l:store name="save-transcripts">
+			<p:with-option name="href" select="resolve-uri('faust-transcripts.xml', $builddir)"/>
+		</l:store>	
+		
+		
+		<!-- ############ STEP 2: Enhance all transcripts with metadata -->
+		<f:generate-search name="generate-search"/>
+		<!-- TODO this by side-effect also collects the bargraph information  -->
+		
+		
+		<!-- ############ STEP 3: Create the emended version -->
+		<p:for-each name="apply-edits">
+			<p:iteration-source select="//f:textTranscript"/>
+			<p:variable name="transcriptFile" select="/f:textTranscript/@href"/>
+			<p:variable name="transcriptURI" select="/f:textTranscript/@uri"/>
+			<p:variable name="documentURI" select="/f:textTranscript/@document"/>
+			<p:variable name="type" select="/f:textTranscript/@type"/>
+			<p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
+			
+			<p:load>
+				<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"></p:with-option>
+			</p:load>
+			
+		
+			<p:choose>
+				<p:when test="$type = 'lesetext'">
+					<p:identity/>
+				</p:when>
+				<p:otherwise>
+					<cx:message><p:with-option name="message" select="concat('Emending ', $sigil, ' (', $documentURI, ') ...')"/></cx:message>
+					<f:apply-edits/>					
+				</p:otherwise>
+			</p:choose>
+			
+			<p:store>
+				<p:with-option name="href" select="resolve-uri(concat('emended/', $documentURI), $builddir)"/>
+			</p:store>
+		</p:for-each>
+		<!-- Pipe through list of inputs -->
+		<p:identity><p:input port="source"><p:pipe port="result" step="generate-search"/></p:input></p:identity>
+		
+		<!-- ############## STEP 4: Creating the variant apparatus -->
+		<f:collate-variants name="collate-variants"/>
+		
+		
+		<!-- ############## STEP 5a: Creating the print versions -->
+		<p:for-each>
+			<p:iteration-source select="//f:textTranscript">
+				<!--<p:pipe port="result" step="transcripts"/>-->
+			</p:iteration-source>
+			<p:variable name="transcript" select="/f:textTranscript/@href"/>		  		  
+			<p:variable name="documentURI" select="/f:textTranscript/@document"/>
+			<p:variable name="type" select="/f:textTranscript/@type"/>
+			<p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
+			<p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
+			
+			
+			<p:try>
+				<p:group>
+					<p:load>
+						<p:with-option name="href" select="$transcript"/>
+					</p:load>
+					<f:print2html>
+						<p:with-param name="documentURI" select="$documentURI"/>
+						<p:with-param name="type" select="$type"/>
+						<p:with-param name="title" select="$sigil"/>
+					</f:print2html>	<!-- basename will be detected from the source -->
+				</p:group>
+				<p:catch>
+					<cx:message log="warn">
+						<p:with-option name="message" select="concat('Failed to transform ', $transcript, 'to HTML.')"/>
+					</cx:message>
+				</p:catch>
+			</p:try>
+			
+		</p:for-each>
+		
+		
+		<!-- ############################################################################## -->
+		<!-- The following steps don't depend on the full workflow, but rather only on parts. -->
+		
+		
+		<!-- ### Step 3a: Apparatus -->
+		<f:generate-app>
+			<p:input port="source"><p:pipe port="result" step="generate-search"></p:pipe></p:input>
+		</f:generate-app>
+		
+		<!-- ### Step 2a: Metadata HTML -->
+		<f:metadata-html>
+			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>
+		</f:metadata-html>
+		
+	</p:group>
+	
+	<!--<p:sink/>-->
+</p:declare-step>
