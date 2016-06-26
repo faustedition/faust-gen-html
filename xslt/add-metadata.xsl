@@ -116,18 +116,22 @@
 			<xsl:variable name="repository" select="normalize-space(($metadata//f:repository)[1])"/>
 			<xsl:attribute name="f:repository" select="$repository"/> <!-- FIXME -->
 			<xsl:attribute name="f:repository-label" select="$archives//f:archive[@id=$repository]/f:name"/> <!-- FIXME -->
+			<xsl:if test="$splittable">
+				<xsl:attribute name="f:splittable">true</xsl:attribute>
+			</xsl:if>
 			<xsl:apply-templates select="@* except @type"/>
 			<xsl:apply-templates select="node()"/>
 		</xsl:copy>
 	</xsl:template>
 	
-	<xsl:template match="div[count(ancestor::div) lt $depth_n]">
+	<xsl:function name="f:section-div" as="xs:boolean">
+		<xsl:param name="div"/>
+		<xsl:value-of select="$splittable and count($div/ancestor-or-self::div) = $depth_n"/>
+	</xsl:function>
+	
+	<xsl:template match="div[f:section-div(.)]">
 		<xsl:copy>
-			<xsl:attribute name="f:n">
-				<xsl:if test="$splittable">
-					<xsl:number count="div" level="any" format="1"/>
-				</xsl:if>
-			</xsl:attribute>
+			<xsl:attribute name="f:section" select="count(preceding::div[f:section-div(.)]) + 1"/>
 			<xsl:apply-templates select="@*"/>
 			<xsl:apply-templates select="node()"/>
 		</xsl:copy>
