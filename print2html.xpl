@@ -57,35 +57,10 @@
 					if   (ends-with($output-filename, '.xml') or ends-with($output-filename, '.html'))
 			        then replace($output-filename, '\.[^.]+$', '')
 			        else $output-filename, $html)"/>
-	
-		<p:variable name="emended-xml" select="concat($output-base, '.xml')"/>
-		
-		<p:xslt name="metadata">
-			<p:input port="source">
-				<p:pipe port="source" step="main"/>
-			</p:input>
-			<p:input port="stylesheet">
-				<p:document href="xslt/add-metadata.xsl"/>
-			</p:input>
-			<p:input port="parameters">
-				<p:pipe port="result" step="config"></p:pipe>
-			</p:input>			
-		</p:xslt>
 
-		<!-- Vorverarbeitung der TEI-Datei: Anwendung von <del> etc. -->
-		<f:apply-edits name="apply-edits"/>
-		
-		
-		<!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
-		<p:xslt name="pbs">
-			<p:input port="stylesheet">
-				<p:document href="xslt/resolve-pb.xsl"/>
-			</p:input>
-			<p:input port="parameters">
-				<p:pipe port="result" step="config"/>            
-			</p:input>
-		</p:xslt>
-		
+		<p:load>
+			<p:with-option name="href" select="resolve-uri(concat('emended/', $documentURI), $builddir)"/>
+		</p:load>
 
 		<!-- Nun die eigentliche Transformation nach HTML. -->
 		<p:xslt name="html">
@@ -121,40 +96,8 @@
 		</p:for-each>
 		
 		<!-- jetzt die emended-Version speichern. Davon gibt's nur eine ... -->
-		<p:for-each name="save-emended">
-			<p:output port="result">
-				<p:pipe port="result" step="store-emended"/>
-			</p:output>
-			<p:iteration-source>
-				<p:pipe port="emended-version" step="apply-edits"/>
-			</p:iteration-source>
-
-			<p:xslt>
-				<p:input port="stylesheet">
-					<p:inline>
-						<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-							<xsl:template match="/">
-								<xsl:comment>This document has been generated from an original source and should not be edited.</xsl:comment>
-								<xsl:copy-of select="."/>
-							</xsl:template>
-						</xsl:stylesheet>
-					</p:inline>
-				</p:input>
-			</p:xslt>
-			
-			<p:store name="store-emended" method="xml" indent="true">
-				<p:with-option name="href" select="concat($output-base, '-emended.xml')"/>
-			</p:store>
-		</p:for-each>
-		
-		<p:wrap-sequence wrapper="c:results">
-			<p:input port="source">
-				<p:pipe step="save" port="result"/>
-				<p:pipe step="save-emended" port="result"/>
-			</p:input>
-		</p:wrap-sequence>
-		
-		<p:xslt name="pagemap-xslt">
+		<!-- TODO -->		
+<!--		<p:xslt name="pagemap-xslt">
 			<p:input port="source">
 				<p:pipe port="result" step="pbs"/>
 			</p:input>
@@ -166,7 +109,7 @@
 			</p:input>
 			<p:with-param name="output-base" select="$output-base"/>
 		</p:xslt>
-		
+-->		
 	</p:group>
 
 </p:declare-step>

@@ -100,7 +100,7 @@
 			
 			<xsl:for-each select="$metadata//f:idno[. != 'none'][. != 'n.s.'][@type != 'faustedition']">
 				<idno type="{@type}">
-↓					<xsl:value-of select="."/>
+					<xsl:value-of select="."/>
 				</idno>
 			</xsl:for-each>
 			

@@ -18,7 +18,7 @@
         del: dropped
         mod: passes through without copying
         add/ptr: resolved (target contents copied in)
-        addSpan, modSpan, anchor: dropped
+        addSpan, modSpan: dropped
         delSpan: dropped
         also removes all text after a delSpan up to its anchor (indicated by the delSpan/@spanTo)
         
@@ -47,7 +47,7 @@
     
     <xsl:template match="del"/>
     
-    <xsl:template match="addSpan | delSpan | modSpan | anchor"/>
+    <xsl:template match="addSpan | delSpan | modSpan"/>
     
     <xsl:key name="delSpan-for-text" match="delSpan">
         <xsl:apply-templates select="following::node()[1]" mode="collect-delSpan">
