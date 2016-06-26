@@ -14,11 +14,34 @@
   <xsl:param name="documentURI"/>
   <xsl:param name="type" select="data(/TEI/type)"/>
   
+  <!-- 
+    
+    Returns true if this document should be split into sections.
+    
+    Note that add-metadata.xsl saves this in /TEI/@f:splittable, so its easier for all later steps
+    to just check for that attribute.
+  
+  -->
   <xsl:function name="f:is-splitable-doc" as="xs:boolean">
     <xsl:param name="document"/>
     <xsl:value-of select="count(root($document)//div) ge number($splitdivs) and string-length(normalize-space(string-join(root($document)//text, ' '))) ge number($splitchars)"/>
   </xsl:function>
   
+  <!-- 
+    Calculates the section number for any element. This only works _after_ step 2 since it uses
+    the @f:section elements inserted there. Returns an empty string if this document is not to 
+    be split.
+  -->
+  <xsl:function name="f:get-section-number">
+    <xsl:param name="el"/>
+    <xsl:choose>
+      <xsl:when test="not($el//ancestor-or-self::TEI/@f:split)"/>
+      <xsl:when test="$el/ancestor-or-self::div/@f:section"><xsl:value-of select="$el/ancestor-or-self::div/@f:section"/></xsl:when>
+      <xsl:when test="$el/descendant::div/@f:section"><xsl:value-of select="($el/descendant::div/@f:section)[1]"/></xsl:when>
+      <xsl:when test="$el/following::div/@f:section"><xsl:value-of select="($el/following::div/f:section)[1]"/></xsl:when>
+      <xsl:otherwise><xsl:value-of select="$el/preceding::div[@f:section][1]/@f:section"/></xsl:otherwise>
+    </xsl:choose>
+  </xsl:function>
   
   <xsl:function name="f:numerical-lineno">
     <xsl:param name="n"/>
@@ -198,6 +221,7 @@
     </xsl:if>
   </xsl:function>
   
+  <!-- FIXME we need $transcript to point to the search version, I guess. -->
   <xsl:function name="f:printlink">
     <xsl:param name="transcript"/>
     <xsl:param name="n"/>

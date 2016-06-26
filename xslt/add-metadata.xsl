@@ -117,7 +117,7 @@
 			<xsl:attribute name="f:repository" select="$repository"/> <!-- FIXME -->
 			<xsl:attribute name="f:repository-label" select="$archives//f:archive[@id=$repository]/f:name"/> <!-- FIXME -->
 			<xsl:if test="$splittable">
-				<xsl:attribute name="f:splittable">true</xsl:attribute>
+				<xsl:attribute name="f:split">true</xsl:attribute>
 			</xsl:if>
 			<xsl:apply-templates select="@* except @type"/>
 			<xsl:apply-templates select="node()"/>

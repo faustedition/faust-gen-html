@@ -27,6 +27,7 @@
 	
 	<p:group>
 		<p:variable name="apphtml" select="//c:param[@name='apphtml']/@value"><p:pipe port="result" step="config"></p:pipe></p:variable>
+		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
 	
 	<cx:message log="info">
 		<p:with-option name="message" select="'Reading transcript files ...'"/>
@@ -37,7 +38,7 @@
     Für die Variantengenerierung berücksichtigen wir dabei jedes dort verzeichnete Transkript.
   -->
 	<p:for-each>
-		<p:iteration-source select="//f:textTranscript"/>
+		<p:iteration-source select="//f:textTranscript[@type != 'lesetext']"/>
 		<p:variable name="transcriptFile" select="/f:textTranscript/@href"/>
 		<p:variable name="transcriptURI" select="/f:textTranscript/@uri"/>
 		<p:variable name="documentURI" select="/f:textTranscript/@document"/>
@@ -47,13 +48,13 @@
 
 
 		<cx:message>
-			<p:with-option name="message" select="concat('Reading ', $transcriptFile)"/>
+			<p:with-option name="message" select="concat('Generating inline apparatus for ', $sigil, ' (',  $transcriptFile, ')')"/>
 		</cx:message>
 
 
 		<!-- Das Transkript wird geladen ... -->
 		<p:load>
-			<p:with-option name="href" select="$transcriptFile"/>
+			<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"></p:with-option>			
 		</p:load>
 
 		<f:apparatus name="apparatus">

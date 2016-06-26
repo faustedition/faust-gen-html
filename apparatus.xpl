@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:f="http://www.faustedition.net/ns"
+	xmlns:tei="http://www.tei-c.org/ns/1.0"
 	xmlns:c="http://www.w3.org/ns/xproc-step"
 	xmlns:cx="http://xmlcalabash.com/ns/extensions"
 	xmlns:pxp="http://exproc.org/proposed/steps"
@@ -29,57 +30,19 @@
 			<p:pipe port="parameters" step="main"/>
 		</p:input>
 	</p:parameters>
+	<p:identity><p:input port="source"><p:pipe port="source" step="main"/></p:input></p:identity>
 	
 	<!-- wir müssen ein paar der Parameter auswerten: -->
 	<p:group name="body">
 		<p:output port="result" sequence="true"/>
-		
+
 		
 		<!-- $html -> das Verzeichnis für die Ausgabedateien -->
-		<p:variable name="apphtml" select="//c:param[@name='apphtml']/@value">
+		<p:variable name="html" select="resolve-uri(//c:param[@name='apphtml']/@value)">
 			<p:pipe port="result" step="config"/>
 		</p:variable>
 		
-		
-		<!-- 
-			Wir berechnen jetzt den Ausgabedateinamen, falls er nicht als Opion $basename
-			mitgegeben wurde
-		-->
-		<p:variable name="output-filename" 
-			select="if ($basename != '')
-					then $basename
-					else replace(p:base-uri(), '^.*/', '')">
-			<p:pipe port="source" step="main"/>
-		</p:variable>
-		
-		<!-- nun die vollständige basis, resolved und mit extension -->
-		<p:variable name="output-base" 
-			select="p:resolve-uri(
-					if   (ends-with($output-filename, '.xml') or ends-with($output-filename, '.html'))
-			        then replace($output-filename, '\.[^.]+$', '')
-			        else $output-filename, $apphtml)"/>
-		
-		<p:xslt name="metadata">
-			<p:input port="source">
-				<p:pipe port="source" step="main"/>
-			</p:input>
-			<p:input port="stylesheet">
-				<p:document href="xslt/add-metadata.xsl"/>
-			</p:input>
-			<p:input port="parameters">
-				<p:pipe port="result" step="config"/>
-			</p:input>
-		</p:xslt>
-			
-		<!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
-		<p:xslt name="pbs">
-			<p:input port="stylesheet">
-				<p:document href="xslt/resolve-pb.xsl"/>
-			</p:input>
-			<p:input port="parameters">
-				<p:pipe port="result" step="config"/>            
-			</p:input>
-		</p:xslt>
+		<p:variable name="output-base" select="resolve-uri(//tei:idno[@type='fausttranscript'], $html)"></p:variable>		
 		
 		<!-- Antilaben in die Form mit part=I,M,F -->
 		<p:xslt name="antilabes">
@@ -102,10 +65,6 @@
 		</p:xslt>
 		
 		
-<!--		<l:store>
-			<p:with-option name="href" select="concat('file:/tmp/', $output-base, '.preprocessed.xml')"/>
-		</l:store>	
--->		
 
 		<!-- Nun die eigentliche Transformation nach HTML. -->
 		<p:xslt name="html">
