@@ -154,7 +154,9 @@
 		</xsl:variable>
 		<xsl:variable name="page" select="preceding::pb[@f:docTranscriptNo][1]/@f:docTranscriptNo"/>
 		<xsl:variable name="basename" select="f:relativize($output-base, $filename)"/>
-		<xsl:variable name="href" select="f:html-link($filename, $page)"/>
+		<xsl:variable name="href" select="if (@xml:id) 
+												then concat(f:html-link($filename, $page), '#', @xml:id)
+												else f:html-link($filename, $page)"/>
 		<a>
 			<xsl:attribute name="href" select="$href"/>        
 			
@@ -166,7 +168,15 @@
 			<xsl:variable name="title">
 				<xsl:apply-templates mode="title" select="if (head) then head[1] else *[translate(normalize-space(.), ' ', '') ne ''][1]"/>
 			</xsl:variable>
-			<xsl:value-of select="if (head) then $title else concat('[', $title, ']')"/>
+			<xsl:choose>
+				<xsl:when test="@f:scene-label or @f:act-label">
+					<xsl:value-of select="(@f:scene-label, @f:act-label)"/>
+				</xsl:when>
+				<xsl:when test="head">
+					<xsl:copy-of select="$title"/>
+				</xsl:when>				
+				<xsl:otherwise>[<xsl:copy-of select="$title"/>]</xsl:otherwise>
+			</xsl:choose>			
 			<xsl:copy-of select="$suffix"/>
 		</a>
 	</xsl:template>
