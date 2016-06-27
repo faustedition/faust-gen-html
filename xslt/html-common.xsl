@@ -15,33 +15,6 @@
 	
 	<xsl:key name="alt" match="alt" use="for $ref in tokenize(@target, '\s+') return substring($ref, 2)"/>		
 	
-	<xsl:variable name="scenes" select="doc('scenes.xml')"/>
-	
-	<xsl:function name="f:scene-for" as="element()?">
-		<xsl:param name="element"/>
-		<xsl:variable name="n" select="$element/@n"/>
-		<xsl:sequence select="$scenes//f:scene[f:id = $n] | $scenes//f:scene[number(f:rangeStart) le number($n) and  number(f:rangeEnd) ge number($n)][1]"/>
-	</xsl:function>
-	
-	<xsl:function name="f:is-schroer" as="xs:boolean">
-		<xsl:param name="element"/>
-		<xsl:value-of select="f:hasvars($element) and matches($element/@n, '^\d+')"/>
-	</xsl:function>
-	
-	<xsl:template name="scene-data" as="element()?">
-		<xsl:choose>
-			<xsl:when test="f:hasvars(.) and matches(@n, '\d+')">
-				<xsl:sequence select="f:scene-for(.)"/>
-			</xsl:when>
-<!--		FIXME I still don't get scene numbers. 1.1.23 !?	
-			<xsl:when test="ancestor-or-self::div[@n]">
-				<xsl:sequence select="f:scene-for(ancestor-or-self::div[@n][1])"/>
-			</xsl:when>
--->			<xsl:otherwise>
-				<xsl:sequence select="f:scene-for((descendant::*[f:is-schroer(.)][1], preceding-sibling::*[f:is-schroer(.)][1], following-sibling::*[f:is-schroer(.)])[1])"/>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
 		
 	<xsl:template name="breadcrumbs">
 		<xsl:param name="scene-data" as="element()?">
@@ -55,7 +28,7 @@
 				<xsl:choose>
 					<xsl:when test="$type='lesetext'">
 						<span>
-							<a href="../print/text">Text</a>
+							<a href="/text">Text</a>
 							<xsl:copy-of select="$separator"/>
 							<xsl:choose>								
 								<xsl:when test="starts-with($scene-data/f:id, '1')">

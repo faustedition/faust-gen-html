@@ -126,14 +126,72 @@
 	
 	<xsl:function name="f:section-div" as="xs:boolean">
 		<xsl:param name="div"/>
-		<xsl:value-of select="$splittable and count($div/ancestor-or-self::div) = $depth_n"/>
+		<xsl:value-of select="$splittable 
+			and count($div/ancestor-or-self::div) = $depth_n
+			or count($div/ancestor-or-self::div) lt $depth_n and not($div/descendant::div[f:section-div(.)])"/>
 	</xsl:function>
 	
-	<xsl:template match="div[f:section-div(.)]">
+	<!-- Scenes that are recognized get a f:scene and f:scene-label attribute -->
+	<xsl:template match="div[f:section-div(.)]" priority="2">
+		<xsl:variable name="scenedata">
+			<xsl:call-template name="scene-data"/>
+		</xsl:variable>		
 		<xsl:copy>
-			<xsl:attribute name="f:section" select="count(preceding::div[f:section-div(.)]) + 1"/>
+			<xsl:attribute name="f:section" select="count(preceding::div[f:section-div(.)]) + 1"/>			
+			<xsl:choose>
+				<xsl:when test="$scenedata">
+					<xsl:attribute name="f:scene" select="$scenedata//f:id"/>
+					<xsl:attribute name="f:scene-label" select="$scenedata//f:title"/>
+					<xsl:call-template name="add-xmlid"><xsl:with-param name="id" select="concat('scene_', $scenedata//f:id)"/></xsl:call-template>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:call-template name="add-xmlid"/>
+				</xsl:otherwise>
+			</xsl:choose>
 			<xsl:apply-templates select="@*"/>
 			<xsl:apply-templates select="node()"/>
+		</xsl:copy>
+	</xsl:template>
+	
+
+	<!-- Adds an XML id, but only if none is present at the context attribute. -->
+	<xsl:template name="add-xmlid">
+		<xsl:param name="id" select="generate-id()"/>
+		<xsl:if test="not(@xml:id)">
+			<xsl:attribute name="xml:id" select="$id"/>
+		</xsl:if>
+	</xsl:template>
+	
+	<xsl:template match="div" priority="1">
+		<xsl:variable name="scenes" as="element()*">
+			<xsl:for-each select=".//div[f:section-div(.)]">
+				<xsl:call-template name="scene-data"/>
+			</xsl:for-each>
+		</xsl:variable>
+		<xsl:variable name="first-scene" select="$scenes[1]"/>
+		
+		<xsl:choose>
+			<xsl:when test="$first-scene and starts-with($first-scene/f:id, '2')">
+				<xsl:copy>
+					<xsl:variable name="act" select="tokenize($first-scene/f:id, '\.')[2]"/>
+					<xsl:attribute name="f:act" select="$act"/>
+					<xsl:attribute name="f:act-label" select="concat($act, '. Akt')"/>
+					<xsl:call-template name="add-xmlid"><xsl:with-param name="id" select="concat('act_', $act)"/></xsl:call-template>					
+					<xsl:apply-templates select="@*"/>
+					<xsl:apply-templates/>
+				</xsl:copy>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:next-match/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template match="div">
+		<xsl:copy>
+			<xsl:call-template name="add-xmlid"/>
+			<xsl:apply-templates select="@*"/>
+			<xsl:apply-templates/>
 		</xsl:copy>
 	</xsl:template>
 	
