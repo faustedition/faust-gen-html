@@ -139,7 +139,7 @@
 		<xsl:copy>
 			<xsl:attribute name="f:section" select="count(preceding::div[f:section-div(.)]) + 1"/>			
 			<xsl:choose>
-				<xsl:when test="$scenedata">
+				<xsl:when test="$scenedata/*">
 					<xsl:attribute name="f:scene" select="$scenedata//f:id"/>
 					<xsl:attribute name="f:scene-label" select="$scenedata//f:title"/>
 					<xsl:call-template name="add-xmlid"><xsl:with-param name="id" select="concat('scene_', $scenedata//f:id)"/></xsl:call-template>
