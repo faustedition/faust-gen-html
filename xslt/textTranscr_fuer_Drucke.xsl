@@ -4,20 +4,12 @@
     xmlns:f="http://www.faustedition.net/ns" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs f" version="2.0" xmlns:ge="http://www.tei-c.org/ns/geneticEditions">
     
-    <xsl:template match="@*|node()">
-        <xsl:choose>
-            <xsl:when test="name()='status'"/>
-            <xsl:when test="name()='xml:space'"/>
-            <xsl:when test="name()='f:revType'"/>
-            <xsl:when test="name()='ge:stage'"/>
-            <xsl:otherwise>
-                <xsl:copy>
-                    <xsl:apply-templates select="@*|node()"/>
-                </xsl:copy>
-            </xsl:otherwise>
-        </xsl:choose>
+    <xsl:template match="node()|@*">
+        <xsl:copy>
+            <xsl:apply-templates select="node()|@*" mode="#current"/>
+        </xsl:copy>
     </xsl:template>
-    
+        
     <xsl:template match="add">
         <xsl:apply-templates/>
     </xsl:template>
@@ -49,8 +41,6 @@
             ' del: ', normalize-space(.), ' @', position(), ' in ', document-uri(/))"/>
 -->    </xsl:template>
 
-    <xsl:template match="note[@type='editorial']"/>
-    <xsl:template match="note[@resp='#hwg']"></xsl:template>
     <xsl:template match="restore">
         <xsl:apply-templates/>
     </xsl:template>

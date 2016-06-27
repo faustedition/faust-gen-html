@@ -23,7 +23,7 @@
 	
 	<!-- Dateiname/URI für die Ausgabedatei(en) ohne Endung. -->
 	<xsl:param name="output-base"
-		select="resolve-uri(replace(base-uri(), '^.*/(.*)\.xml$', '$1'), $html)"/>
+		select="resolve-uri(//idno[@type='fausttranscript'][1], $html)"/>
 	
 	
 	<!-- Gesamttitel für die Datei. -->
@@ -37,88 +37,82 @@
 	
 
 	<!-- 
-    Bis zu welcher Ebene sollen die Dateien aufgesplittet werden? $depth ist die
+    Auf welcher Ebene sollen die Dateien aufgesplittet werden? $depth ist die
     max. Anzahl von divs auf der ancestor-or-self-Achse für einen Split, also 2 = Szenen.    
   -->
 	<xsl:param name="depth">2</xsl:param>
 	<xsl:variable name="depth_n" select="number($depth)"/>
+	
+	<xsl:template match="/TEI[not(@f:split)]">
+		<xsl:call-template name="generate-html-frame">
+			<xsl:with-param name="content">
+				<xsl:apply-templates select="text"/>
+			</xsl:with-param>
+		</xsl:call-template>
+	</xsl:template>
 
 
-	<xsl:template match="/TEI">
-		<xsl:for-each select="/TEI/text">
-			<!-- Focus -->
-			<xsl:call-template name="generate-html-frame">
-				<xsl:with-param name="single" tunnel="yes" select="false()"/>
-				<xsl:with-param name="breadcrumbs" tunnel="yes">
-					<xsl:call-template name="breadcrumbs"/>
-				</xsl:with-param>				
-			</xsl:call-template>
-			<xsl:if test="f:is-splitable-doc(.)">      
-				<xsl:result-document href="{$output-base}.all.html">
-					<xsl:call-template name="generate-html-frame">
-						<xsl:with-param name="single" tunnel="yes" select="true()"/>
-						<xsl:with-param name="breadcrumbs" tunnel="yes">
-							<xsl:call-template name="breadcrumbs"/>
-						</xsl:with-param>
-					</xsl:call-template>        
-				</xsl:result-document>
-			</xsl:if>
+	<xsl:template match="/TEI[@f:split]">
+		<xsl:call-template name="generate-html-frame">
+			<xsl:with-param name="content">
+				<nav class="toc">
+					<h1>Inhaltsübersicht</h1>
+					<ul>
+						<xsl:apply-templates mode="tocpage"/>						
+					</ul>
+				</nav>				
+			</xsl:with-param>
+		</xsl:call-template>
+		<xsl:for-each select=".//div[@f:section]">
+			<xsl:result-document href="{$output-base}.{@f:section}.html">
+				<xsl:call-template name="generate-html-frame">
+					<xsl:with-param name="content">
+						<xsl:variable name="previous-section" select="preceding::div[@f:section][1]"/>
+						<xsl:comment><xsl:value-of select="concat(boolean($previous-section), '; ', name($previous-section), '; ', $previous-section/@f:section)"/></xsl:comment>
+						<xsl:variable name="start" select="if ($previous-section) then $previous-section else /TEI/teiHeader"/>						
+						<xsl:variable name="preceding-stuff" select="preceding::* intersect $start/following::*"/>
+						<xsl:if test="$preceding-stuff">
+							<div class="preceding-content">
+								<xsl:apply-templates select="$preceding-stuff"/>
+							</div>
+						</xsl:if>
+						
+						<xsl:apply-templates/>
+						
+						<xsl:if test="position() = last()">
+							<div class="following-content">
+								<xsl:apply-templates select="following::*"/>
+							</div>
+						</xsl:if>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:result-document>
 		</xsl:for-each>
 	</xsl:template>
 	
-
 	
-	<!-- divs, die bis zu $depth tief verschachtelt sind, werden im Standardmodus zerlegt: -->
-	<xsl:template match="div[f:is-splitable-doc(.) and count(ancestor::div) lt number($depth_n)]">
-		<xsl:param name="single" tunnel="yes" select="true()"/>
-		<xsl:choose>
-			<xsl:when test="$single">
-				<xsl:next-match/>
-			</xsl:when>
-			
-			<xsl:otherwise>            
-				<xsl:variable name="filename">
-					<xsl:call-template name="filename"/>
-				</xsl:variable>
-				<xsl:variable name="divhead" select="normalize-space(head[1])"/>
-				
-				<!-- Dazu fügen wir an der entsprechenden Stelle ein Inhaltsverzeichnis aller untergeordneter Dateien ein: -->
-				<ul class="toc">
-					<xsl:apply-templates select="." mode="toc"/>
-				</ul>
-				
-				<!-- … während für den eigentlichen Inhalt ein neues Dokument erzeugt wird. -->
-				<xsl:result-document href="{$filename}.html">
-					<xsl:call-template name="generate-html-frame">
-						<xsl:with-param name="breadcrumbs" tunnel="yes">
-							<xsl:call-template name="breadcrumbs"/>
-						</xsl:with-param>						
-					</xsl:call-template>
-				</xsl:result-document>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-	
-	<!-- Berechnet den Dateinamen für das aktuelle div. -->
-	<xsl:template name="filename">
-		<xsl:variable name="divno">
-			<xsl:number count="div" level="any" format="1"/>
-		</xsl:variable>
-		<xsl:value-of select="concat($output-base, '.', $divno)"/>
-	</xsl:template>
-	
-	
-	<xsl:template mode="toc" match="div[count(ancestor::div) lt $depth_n]">
+	<xsl:template mode="tocpage" match="div">
 		<li>
-			<xsl:call-template name="section-link"/>
-			<xsl:if test=".//div[count(ancestor::div) lt $depth_n]">
-				<ul class="toc">
+<!--			<a href="{f:html-link(concat($output-base, '.', f:get-section-number(.)))}">
+				<xsl:value-of select="f:normalize-space(head)"/>
+				<xsl:comment>
+					<xsl:for-each select="@*"><xsl:value-of select="concat(name(), '=', ., ' ')"/></xsl:for-each>
+				</xsl:comment>
+			</a>
+-->			<xsl:call-template name="section-link"/>
+			<xsl:if test="descendant::div[@f:section]">
+				<ul>
 					<xsl:apply-templates mode="#current"/>
 				</ul>
 			</xsl:if>
-		</li>
+		</li>	
 	</xsl:template>
-	<xsl:template mode="toc" match="node()"/>
+	<xsl:template mode="tocpage" match="*">
+		<xsl:apply-templates mode="#current"/>
+	</xsl:template>
+	<xsl:template mode="tocpage" match="node()" priority="-1"/>
+
+	
 	
 	<!-- 
 		Erzeugt einen Link zur angegebenen HTML-Datei (und optional: Seite). 
@@ -141,6 +135,15 @@
 			else $basename"/>		
 	</xsl:function>
 	
+	<xsl:template name="filename">
+		<xsl:variable name="secno" select="f:get-section-number(.)"/>
+		<xsl:value-of select="$output-base"/>
+		<xsl:if test="$secno">
+			<xsl:text>.</xsl:text>
+			<xsl:value-of select="$secno"/>
+		</xsl:if>
+	</xsl:template>
+	
 	<!-- Erzeugt einen Link zum aktuellen (Fokus) div. -->
 	<xsl:template name="section-link">
 		<xsl:param name="class"/>
@@ -151,7 +154,9 @@
 		</xsl:variable>
 		<xsl:variable name="page" select="preceding::pb[@f:docTranscriptNo][1]/@f:docTranscriptNo"/>
 		<xsl:variable name="basename" select="f:relativize($output-base, $filename)"/>
-		<xsl:variable name="href" select="f:html-link($filename, $page)"/>
+		<xsl:variable name="href" select="if (@xml:id) 
+												then concat(f:html-link($filename, $page), '#', @xml:id)
+												else f:html-link($filename, $page)"/>
 		<a>
 			<xsl:attribute name="href" select="$href"/>        
 			
@@ -163,7 +168,15 @@
 			<xsl:variable name="title">
 				<xsl:apply-templates mode="title" select="if (head) then head[1] else *[translate(normalize-space(.), ' ', '') ne ''][1]"/>
 			</xsl:variable>
-			<xsl:value-of select="if (head) then $title else concat('[', $title, ']')"/>
+			<xsl:choose>
+				<xsl:when test="@f:scene-label or @f:act-label">
+					<xsl:value-of select="(@f:scene-label, @f:act-label)"/>
+				</xsl:when>
+				<xsl:when test="head">
+					<xsl:copy-of select="$title"/>
+				</xsl:when>				
+				<xsl:otherwise>[<xsl:copy-of select="$title"/>]</xsl:otherwise>
+			</xsl:choose>			
 			<xsl:copy-of select="$suffix"/>
 		</a>
 	</xsl:template>
@@ -181,6 +194,8 @@
 	<xsl:template name="generate-html-frame">
 		<!-- Single = true => alles auf einer Seite -->
 		<xsl:param name="single" select="false()" tunnel="yes"/>
+		<xsl:param name="content"><xsl:apply-templates/></xsl:param>
+		<xsl:param name="sidebar"><xsl:call-template name="local-nav"/></xsl:param>
 		<html>
 			<xsl:call-template name="html-head"/>
 			<body>
@@ -190,17 +205,10 @@
 					<div  class="print">
 						<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
 						<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
-							<xsl:choose>
-								<xsl:when test="$single">
-									<xsl:apply-templates/>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:apply-templates/>
-								</xsl:otherwise>
-							</xsl:choose>
+							<xsl:sequence select="$content"/>
 						</div>
 						<div class="print-side-column">  <!-- 3. Spalte (1/5) für die lokale Navigation  -->
-							<xsl:call-template name="local-nav"/>
+							<xsl:sequence select="$sidebar"/>
 						</div>
 					</div>
 				</main>

@@ -2,18 +2,12 @@
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
 	xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:f="http://www.faustedition.net/ns"
 	xmlns:pxf="http://exproc.org/proposed/steps/file"
-	xmlns:l="http://xproc.org/library" version="1.0" name="main" type="f:generate-app">
+	xmlns:l="http://xproc.org/library" version="1.0" name="main" type="f:generate-print">
 	<p:input port="source"/>	
 	<p:input port="parameters" kind="parameter"/>
 	
-	<!-- Am Output-Port legen wir zu Debuggingzwecken ein XML-Dokument mit allen Varianten an -->
-<!--	<p:output port="result" primary="true">
-		<p:pipe port="result" step="collect-lines"/>
-	</p:output>
-	<p:serialization port="result" indent="true"/>
--->	
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
-    <p:import href="apparatus.xpl"/>
+    <p:import href="print2html.xpl"/>
 	
 	<!-- Parameter laden -->
 	<p:parameters name="config">
@@ -26,13 +20,9 @@
 	<p:identity><p:input port="source"><p:pipe port="source" step="main"/></p:input></p:identity>
 	
 	<p:group>
-		<p:variable name="apphtml" select="//c:param[@name='apphtml']/@value"><p:pipe port="result" step="config"></p:pipe></p:variable>
+		<p:variable name="html" select="//c:param[@name='html']/@value"><p:pipe port="result" step="config"></p:pipe></p:variable>
 		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
-	
-	<cx:message log="info">
-		<p:with-option name="message" select="'Reading transcript files ...'"/>
-	</cx:message>
-	
+		
 	<!-- 
     Wir iterieren über die Transkripteliste, die vom Skript in collect-metadata.xpl generiert wird.
     Für die Variantengenerierung berücksichtigen wir dabei jedes dort verzeichnete Transkript.
@@ -48,7 +38,7 @@
 
 
 		<cx:message>
-			<p:with-option name="message" select="concat('Generating inline apparatus for ', $sigil, ' (',  $transcriptFile, ')')"/>
+			<p:with-option name="message" select="concat('Rendering emended version for ', $sigil, ' (',  $transcriptFile, ') to HTML ...')"/>
 		</cx:message>
 
 
@@ -57,10 +47,10 @@
 			<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"></p:with-option>			
 		</p:load>
 
-		<f:apparatus name="apparatus">
+		<f:print2html name="apparatus">
 			<p:with-param name="documentURI" select="$documentURI"/>
 			<p:with-param name="type" select="$type"/>
-		</f:apparatus>
+		</f:print2html>
 
 	</p:for-each>
 	
@@ -76,13 +66,13 @@
 		<p:input port="parameters">
 			<p:pipe port="result" step="config"/>
 		</p:input>
-		<p:with-param name="type" select="'archivalDocument'"/>
+		<p:with-param name="type" select="'print'"/>
 	</p:xslt>
 	<cx:message log="info">
-		<p:with-option name="message" select="concat('Saving index: ', $apphtml, 'index.html')"/>
+		<p:with-option name="message" select="concat('Saving index: ', $html, 'index.html')"/>
 	</cx:message>
 	<p:store method="xhtml" include-content-type="true" indent="true">
-		<p:with-option name="href" select="concat($apphtml, 'index.html')"/>		
+		<p:with-option name="href" select="concat($html, 'index.html')"/>		
 	</p:store>
 	
 	</p:group>

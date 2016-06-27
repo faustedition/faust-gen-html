@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:f="http://www.faustedition.net/ns"
+	xmlns:tei="http://www.tei-c.org/ns/1.0"
 	xmlns:c="http://www.w3.org/ns/xproc-step" 
 	xmlns:pxp="http://exproc.org/proposed/steps"
 	type="f:print2html"
@@ -17,7 +18,6 @@
 	<p:serialization port="result" method="xhtml" indent="true" omit-xml-declaration="false"
 		include-content-type="true"/>
 	
-	<p:import href="apply-edits.xpl"/>
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>	
 
 	<!-- Parameter laden -->
@@ -27,51 +27,31 @@
 			<p:pipe port="parameters" step="main"/>
 		</p:input>
 	</p:parameters>
+	<p:identity><p:input port="source"><p:pipe port="source" step="main"/></p:input></p:identity>
 	
 	<!-- wir müssen ein paar der Parameter auswerten: -->
 	<p:group name="body">
-		<p:output port="result">
-			<p:pipe port="result" step="pagemap-xslt"/>
-		</p:output>
+		<p:output port="result" sequence="true"/>
+		
 		
 		<!-- $html -> das Verzeichnis für die Ausgabedateien -->
-		<p:variable name="html" select="//c:param[@name='html']/@value">
+		<p:variable name="html" select="resolve-uri(//c:param[@name='html']/@value)">
 			<p:pipe port="result" step="config"/>
 		</p:variable>
 		
+		<p:variable name="output-base" select="resolve-uri(//tei:idno[@type='fausttranscript'], $html)"></p:variable>		
 		
-		<!-- 
-			Wir berechnen jetzt den Ausgabedateinamen, falls er nicht als Opion $basename
-			mitgegeben wurde
-		-->
-		<p:variable name="output-filename" 
-			select="if ($basename != '')
-					then $basename
-					else replace(p:base-uri(), '^.*/', '')">
-			<p:pipe port="source" step="main"/>
-		</p:variable>
-		
-		<!-- nun die vollständige basis, resolved und mit extension -->
-		<p:variable name="output-base" 
-			select="p:resolve-uri(
-					if   (ends-with($output-filename, '.xml') or ends-with($output-filename, '.html'))
-			        then replace($output-filename, '\.[^.]+$', '')
-			        else $output-filename, $html)"/>
-
-		<p:load>
-			<p:with-option name="href" select="resolve-uri(concat('emended/', $documentURI), $builddir)"/>
-		</p:load>
-
 		<!-- Nun die eigentliche Transformation nach HTML. -->
 		<p:xslt name="html">
 			<p:input port="stylesheet">
 				<p:document href="xslt/print2html.xsl"/>
 			</p:input>
-			<p:input port="parameters">
+			<p:with-param name="output-base" select="$output-base"/>
+			<p:with-param name="html" select="$html"/>
+<!--			<p:input port="parameters">
 				<p:pipe port="result" step="config"/>
 			</p:input>
-			<p:with-param name="output-base" select="$output-base"/>
-		</p:xslt>
+-->		</p:xslt>
 		
 		<!-- Wir setzen jetzt noch den Dateinamen an die Hauptausgabedatei. -->
 		<pxp:set-base-uri name="output">
@@ -94,22 +74,7 @@
 				<p:with-option name="href" select="p:base-uri()"/>
 			</p:store>
 		</p:for-each>
-		
-		<!-- jetzt die emended-Version speichern. Davon gibt's nur eine ... -->
-		<!-- TODO -->		
-<!--		<p:xslt name="pagemap-xslt">
-			<p:input port="source">
-				<p:pipe port="result" step="pbs"/>
-			</p:input>
-			<p:input port="stylesheet">
-				<p:document href="xslt/pagemap.xsl"/>
-			</p:input>
-			<p:input port="parameters">
-				<p:pipe port="result" step="config"/>
-			</p:input>
-			<p:with-param name="output-base" select="$output-base"/>
-		</p:xslt>
--->		
+		<p:wrap-sequence wrapper="f:doc"/>
 	</p:group>
 
 </p:declare-step>
