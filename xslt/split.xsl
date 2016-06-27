@@ -56,7 +56,6 @@
 		<xsl:call-template name="generate-html-frame">
 			<xsl:with-param name="content">
 				<nav class="toc">
-					<h1>Inhaltsübersicht</h1>
 					<ul>
 						<xsl:apply-templates mode="tocpage"/>						
 					</ul>
