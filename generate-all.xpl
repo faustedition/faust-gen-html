@@ -77,8 +77,7 @@
 		<!-- ############ STEP 2: Enhance all transcripts with metadata -->
 		<f:generate-search name="generate-search"/>
 		<!-- TODO this by side-effect also collects the bargraph information  -->
-		
-		<cx:message><p:with-option name="message" select="'>> Emending ...'"/></cx:message>
+				
 		
 		<!-- ############ STEP 3: Create the emended version -->
 		<p:for-each name="apply-edits">
@@ -88,8 +87,6 @@
 			<p:variable name="documentURI" select="/f:textTranscript/@document"/>
 			<p:variable name="type" select="/f:textTranscript/@type"/>
 			<p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
-			
-			<cx:message><p:with-option name="message" select="concat('>> Will emend: ', $sigil, ' (', $documentURI, ') ...')"/></cx:message>
 			
 			<p:load>
 				<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"></p:with-option>
@@ -131,10 +128,12 @@
 		</f:generate-app>
 		
 		<!-- ### Step 3b: pages.json -->
+		<p:identity><p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input></p:identity>
 		<p:for-each>
-			<p:iteration-source select="//f:textTranscript"><p:pipe port="result" step="save-transcripts"></p:pipe></p:iteration-source>
+			<p:iteration-source select="//f:textTranscript"/>
+			<p:variable name="documentURI" select="/f:textTranscript/@document"/>			
 			<p:load>
-				<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', /f:textTranscript/@document), $builddir)"/>
+				<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"/>				
 			</p:load>
 		</p:for-each>
 		<p:xslt template-name="collection">
