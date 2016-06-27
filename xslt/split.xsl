@@ -232,47 +232,22 @@
 		<xsl:variable name="current-div" select="."/>
 		<nav class="print-navigation">
 			
-			<!-- Breadcrumbs als Liste: Zuoberst Titel, dann die übergeordneten Heads, schließlich der aktuelle Head -->
-			<ul class="breadcrumbs fa-ul">
-				<!-- Der Titel kann hereingegeben werden oder aus dem TEI-titleStmt kommen -->
-				<li>
-					<span class="fa-li fa fa-up-dir"/>
-					<a href="{f:html-link($output-base)}">
-						<xsl:value-of select="$title"/>
-					</a>
-				</li>
-				
-				<xsl:for-each select="ancestor-or-self::div">
-					<li>
-						<xsl:choose>              
-							<xsl:when test=". is $current-div">
-								<xsl:attribute name="class">current-section</xsl:attribute>
-								<span class="fa-li fa fa-left-dir"/>
-							</xsl:when>
-							<xsl:otherwise>
-								<span class="fa-li fa fa-up-dir"/>
-							</xsl:otherwise>
-						</xsl:choose>
-						<xsl:call-template name="section-link"/>
-					</li>
-				</xsl:for-each>
-			</ul>
 			
 			<!-- ggf. Links zum vorherigen/nächsten div. -->
 			<ul class="prevnext fa-ul">
-				<xsl:if test="preceding::div[count(ancestor::div) lt $depth_n]">
+				<xsl:if test="preceding::div[@f:section]">
 					<li class="prev">
 						<xsl:for-each
-							select="preceding::div[count(ancestor::div) lt $depth_n][1]">
+							select="preceding::div[@f:section][1]">
 							<span class="fa-li fa fa-fast-bw"/>
 							<xsl:call-template name="section-link"/>              
 						</xsl:for-each>
 					</li>
 				</xsl:if>
-				<xsl:if test="following::div[count(ancestor::div) lt $depth_n]">
+				<xsl:if test="following::div[@f:section]">
 					<li class="next">
 						<xsl:for-each
-							select="following::div[count(ancestor::div) lt $depth_n][1]">
+							select="following::div[@f:section][1]">
 							<span class="fa-li fa fa-fast-fw"/>
 							<xsl:call-template name="section-link"/>
 						</xsl:for-each>
@@ -309,67 +284,5 @@
 			</xsl:if>
 		</nav>
 	</xsl:template>      
-	
-	<xsl:template name="breadcrumbs-old">		
-		<xsl:choose>
-			
-			<!-- Lesetext -->
-			<xsl:when test="$type = 'lesetext'">
-				<a href="text">Text</a>
-				>
-				<xsl:choose>
-					<xsl:when test="starts-with($output-base, 'faust1')">
-						<a href="faust1">Faust I</a>
-					</xsl:when>
-					<xsl:otherwise>
-						<a href="faust2">Faust II</a>
-					</xsl:otherwise>
-				</xsl:choose>
-				<xsl:call-template name="div-breadcrumbs"/>				
-			</xsl:when>
-			
-			
-			<!-- Druck -->
-			<xsl:when test="$type = 'print'">
-				<xsl:variable name="lineno" select="f:numerical-lineno((.//*[f:hasvars(.)])[1]/@n)"/>
-				<xsl:variable name="scene" select="reverse(document('scenes.xml')//f:scene[number(f:rangeStart) le number($lineno)])[1]"/>
-				<a href="genesis">Genese</a>
-				>
-				<xsl:choose>
-					<xsl:when test="starts-with($scene/f:id, '1')">
-						<a href="{$edition}/chessboard_faust_i">Faust I</a>
-					</xsl:when>
-					<xsl:otherwise>
-						<a href="{$edition}/chessboard_faust_ii">Faust II</a>
-					</xsl:otherwise>
-				</xsl:choose>
-				>
-				<a href="{$edition}/geneticBarGraph?rangeStart={$scene/f:rangeStart}&amp;rangeEnd={$scene/f:rangeEnd}">
-					<xsl:value-of select="$scene/f:title"/>
-				</a>
-				<br/>
-				<a href="{$edition}/archive">Archiv</a>
-				>
-				<a href="{$edition}/archive_prints">Drucke</a>
-				>
-				<a href="{f:html-link($output-base)}"><xsl:value-of select="$title"/></a>
-				<xsl:call-template name="div-breadcrumbs"/>
-			</xsl:when>
-			
-			<xsl:otherwise>
-				<xsl:comment>
-					Keine Brotkrumen weil type = <xsl:value-of select="$type"/>
-				</xsl:comment>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-	<xsl:template name="div-breadcrumbs">
-		<xsl:for-each select="ancestor-or-self::div">
-			> 
-			<xsl:call-template name="section-link"/>
-		</xsl:for-each>
-	</xsl:template>
-	
-	
 	
 </xsl:stylesheet>
