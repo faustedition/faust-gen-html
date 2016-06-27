@@ -28,7 +28,7 @@
     Für die Variantengenerierung berücksichtigen wir dabei jedes dort verzeichnete Transkript.
   -->
 	<p:for-each>
-		<p:iteration-source select="//f:textTranscript[@type != 'lesetext']"/>
+		<p:iteration-source select="//f:textTranscript"/>
 		<p:variable name="transcriptFile" select="/f:textTranscript/@href"/>
 		<p:variable name="transcriptURI" select="/f:textTranscript/@uri"/>
 		<p:variable name="documentURI" select="/f:textTranscript/@document"/>
@@ -47,7 +47,7 @@
 			<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"></p:with-option>			
 		</p:load>
 
-		<f:print2html name="apparatus">
+		<f:print2html name="print2html">
 			<p:with-param name="documentURI" select="$documentURI"/>
 			<p:with-param name="type" select="$type"/>
 		</f:print2html>
