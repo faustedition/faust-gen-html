@@ -43,6 +43,11 @@
     </xsl:choose>
   </xsl:function>
   
+  <xsl:function name="f:get-section-label">
+    <xsl:param name="el"/>
+    <xsl:value-of select="concat(root($el)//idno[@type='fausttranscript'], '.', f:get-section-number($el))"/>
+  </xsl:function>
+  
   <xsl:function name="f:numerical-lineno">
     <xsl:param name="n"/>
     <xsl:value-of select="number(replace($n, '\D*(\d+).*', '$1'))"/>

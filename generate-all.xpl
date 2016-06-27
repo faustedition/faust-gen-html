@@ -23,6 +23,7 @@
 	<p:import href="print2html.xpl"/>
 	
 	<p:import href="generate-app.xpl"/>
+	<p:import href="generate-print.xpl"/>
 	<p:import href="generate-metadata-js.xpl"/>
 	<p:import href="metadata-html.xpl"/>
 	<p:import href="create-para-table.xpl"/>
@@ -44,7 +45,7 @@
 	<p:group>
 		<p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
 		<p:variable name="html" select="//c:param[@name='html']/@value"><p:pipe port="result" step="config"/></p:variable>
-		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
+		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>		
 		
 		<!--Step 1a Archivmetadaten -->
 		<p:load><p:with-option name="href" select="resolve-uri('archives.xml', resolve-uri($source))"/></p:load>
@@ -77,6 +78,7 @@
 		<f:generate-search name="generate-search"/>
 		<!-- TODO this by side-effect also collects the bargraph information  -->
 		
+		<cx:message><p:with-option name="message" select="'>> Emending ...'"/></cx:message>
 		
 		<!-- ############ STEP 3: Create the emended version -->
 		<p:for-each name="apply-edits">
@@ -86,6 +88,8 @@
 			<p:variable name="documentURI" select="/f:textTranscript/@document"/>
 			<p:variable name="type" select="/f:textTranscript/@type"/>
 			<p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
+			
+			<cx:message><p:with-option name="message" select="concat('>> Will emend: ', $sigil, ' (', $documentURI, ') ...')"/></cx:message>
 			
 			<p:load>
 				<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"></p:with-option>
@@ -114,36 +118,7 @@
 		
 		
 		<!-- ############## STEP 5a: Creating the print versions -->
-		<p:for-each>
-			<p:iteration-source select="//f:textTranscript">
-				<!--<p:pipe port="result" step="transcripts"/>-->
-			</p:iteration-source>
-			<p:variable name="transcript" select="/f:textTranscript/@href"/>		  		  
-			<p:variable name="documentURI" select="/f:textTranscript/@document"/>
-			<p:variable name="type" select="/f:textTranscript/@type"/>
-			<p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
-			<p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
-			
-			
-			<p:try>
-				<p:group>
-					<p:load>
-						<p:with-option name="href" select="$transcript"/>
-					</p:load>
-					<f:print2html>
-						<p:with-param name="documentURI" select="$documentURI"/>
-						<p:with-param name="type" select="$type"/>
-						<p:with-param name="title" select="$sigil"/>
-					</f:print2html>	<!-- basename will be detected from the source -->
-				</p:group>
-				<p:catch>
-					<cx:message log="warn">
-						<p:with-option name="message" select="concat('Failed to transform ', $transcript, 'to HTML.')"/>
-					</cx:message>
-				</p:catch>
-			</p:try>
-			
-		</p:for-each>
+		<f:generate-print name="generate-print"/>
 		
 		
 		<!-- ############################################################################## -->
@@ -154,6 +129,21 @@
 		<f:generate-app>
 			<p:input port="source"><p:pipe port="result" step="generate-search"></p:pipe></p:input>
 		</f:generate-app>
+		
+		<!-- ### Step 3b: pages.json -->
+		<p:for-each>
+			<p:iteration-source select="//f:textTranscript"><p:pipe port="result" step="save-transcripts"></p:pipe></p:iteration-source>
+			<p:load>
+				<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', /f:textTranscript/@document), $builddir)"/>
+			</p:load>
+		</p:for-each>
+		<p:xslt template-name="collection">
+			<p:input port="parameters"><p:pipe port="result" step="config"></p:pipe></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/pagelist.xsl"/></p:input>
+		</p:xslt>
+		<p:store method="text" media-type="application/json">
+			<p:with-option name="href" select="resolve-uri('pages.json', resolve-uri($html))"/>			
+		</p:store>
 		
 		<!-- ### Step 2a: Metadata HTML -->
 		<f:metadata-html>

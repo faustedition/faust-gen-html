@@ -6,6 +6,7 @@
     <p:empty/>
   </p:input>
   <p:input port="parameters" kind="parameter"/>
+  <p:output port="result" primary="true"/>
 
   <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
   <p:import href="apply-edits.xpl"/>
@@ -152,5 +153,11 @@
     </p:for-each>
 
   </p:group>
+  
+  <p:identity>
+    <p:input port="source">
+      <p:pipe port="result" step="source"/>
+    </p:input>
+  </p:identity>
 
 </p:declare-step>
