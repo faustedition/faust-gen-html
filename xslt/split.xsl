@@ -72,11 +72,19 @@
 						<xsl:variable name="preceding-stuff" select="preceding::* intersect $start/following::*"/>
 						<xsl:if test="$preceding-stuff">
 							<div class="preceding-content">
+								<xsl:comment>
+									<xsl:apply-templates mode="debugxml" select="$preceding-stuff"/>
+								</xsl:comment>
 								<xsl:apply-templates select="$preceding-stuff"/>
 							</div>
 						</xsl:if>
-						
-						<xsl:apply-templates/>
+												
+						<div>
+							<xsl:call-template name="generate-style"/>
+							<xsl:attribute name="id" select="f:generate-id(.)"/>
+							<xsl:attribute name="class" select="string-join(f:generic-classes(.), ' ')"/>
+							<xsl:apply-templates/>
+						</div>
 						
 						<xsl:if test="position() = last()">
 							<div class="following-content">
