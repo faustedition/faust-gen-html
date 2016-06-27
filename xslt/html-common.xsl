@@ -32,10 +32,10 @@
 							<xsl:copy-of select="$separator"/>
 							<xsl:choose>								
 								<xsl:when test="starts-with($scene-data/f:id, '1')">
-									<a href="faust1.1">Faust I</a>
+									<a href="faust1">Faust I</a>
 								</xsl:when>
 								<xsl:otherwise>
-									<a href="faust2.1">Faust II</a>
+									<a href="faust2">Faust II</a>
 								</xsl:otherwise>
 							</xsl:choose>
 							<xsl:copy-of select="$separator"/>
