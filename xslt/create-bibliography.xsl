@@ -74,8 +74,6 @@
 
 							<section class="center pure-g-r">
 								<article class="pure-u-1">
-									<h1>Bibliographie</h1>
-
 
 									<dl class="bibliography">
 										<xsl:for-each select="$entries">
@@ -97,6 +95,10 @@
 				</div>
 			</main>
 
+		      <script type="text/javascript">
+		        // set breadcrumbs
+		        document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Archiv"}]));
+		      </script>
 
 			<xsl:call-template name="footer"/>
 		</html>		

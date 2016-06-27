@@ -48,7 +48,7 @@
       </p:load>
       
       <cx:message log="info">        
-        <p:with-option name="message" select="concat('Rendering ', //f:idno[@type='faustedition'], ' (', $filename, ') to HTML ...')"/>
+        <p:with-option name="message" select="concat('Rendering metadata of ', //f:idno[@type='faustedition'], ' (', $filename, ') to HTML ...')"/>
       </cx:message>
 
       <p:xslt name="generate-html">
