@@ -193,8 +193,6 @@
 		<xsl:text> </xsl:text>    
 	</xsl:template>
 	
-	
-	
 	<!-- 
     Erzeugt das Grundgerüst einer HTML-Datei und ruft dann 
     <xsl:apply-templates/> für den Inhalt auf. 
