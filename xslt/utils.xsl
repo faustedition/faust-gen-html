@@ -45,7 +45,9 @@
   
   <xsl:function name="f:get-section-label">
     <xsl:param name="el"/>
-    <xsl:value-of select="concat(root($el)//idno[@type='fausttranscript'], '.', f:get-section-number($el))"/>
+    <xsl:variable name="secno" select="f:get-section-number($el)"/>
+    <xsl:variable name="basename" select="root($el)//idno[@type='fausttranscript']"/>
+    <xsl:value-of select="if ($secno != '') then concat($basename, '.', $secno) else $basename"/>
   </xsl:function>
   
   <xsl:function name="f:numerical-lineno">

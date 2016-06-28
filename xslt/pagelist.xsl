@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.tei-c.org/ns/1.0"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-	xmlns:f="http://www.faustedition.net/ns" exclude-result-prefixes="xs"
+	xmlns:f="http://www.faustedition.net/ns" 
+	exclude-result-prefixes="xs"
 	version="2.0">
 	
 	<xsl:import href="utils.xsl"/>
@@ -48,15 +50,20 @@
 
 	<xsl:template match="/TEI" name="document">		
 		<xsl:variable name="pages" as="item()*">
-			<xsl:for-each select="//pb[@f:docTranscriptNo]">
-				<xsl:value-of select="concat('&quot;', @f:docTranscriptNo, '&quot;:&quot;', f:get-section-label(.), '&quot;')"/>
+			<xsl:for-each select="//pb[@f:docTranscriptNo != '']">				
+				<xsl:variable name="page" select="@f:docTranscriptNo"/>
+				<xsl:if test="not(preceding::pb[@f:docTranscriptNo = $page])">					
+					<xsl:value-of select="concat('&quot;', $page, '&quot;:&quot;', f:get-section-label(.), '&quot;')"/>
+				</xsl:if>
 			</xsl:for-each>
 		</xsl:variable>
-		<xsl:text>"</xsl:text>
-		<xsl:value-of select="//idno[@type='fausturi']"/>
-		<xsl:text>":{</xsl:text>
-		<xsl:value-of select="string-join($pages, ',')"/>
-		<xsl:text>}</xsl:text>
+		<f:item>
+			<xsl:text>"</xsl:text>
+			<xsl:value-of select="//idno[@type='fausturi']"/>
+			<xsl:text>":{</xsl:text>
+			<xsl:value-of select="string-join($pages, ',')"/>
+			<xsl:text>}</xsl:text>
+		</f:item>
 	</xsl:template>
 
 </xsl:stylesheet>
