@@ -54,6 +54,7 @@
 
 	<xsl:template match="/TEI[@f:split]">
 		<xsl:call-template name="generate-html-frame">
+			<xsl:with-param name="single" select="false()" tunnel="yes"/>
 			<xsl:with-param name="content">
 				<nav class="toc">
 					<ul>
@@ -65,6 +66,7 @@
 		<xsl:for-each select=".//div[@f:section]">
 			<xsl:result-document href="{$output-base}.{@f:section}.html">
 				<xsl:call-template name="generate-html-frame">
+					<xsl:with-param name="single" select="false()" tunnel="yes"/>
 					<xsl:with-param name="content">
 						<xsl:variable name="previous-section" select="preceding::div[@f:section][1]"/>
 						<xsl:comment><xsl:value-of select="concat(boolean($previous-section), '; ', name($previous-section), '; ', $previous-section/@f:section)"/></xsl:comment>
@@ -73,17 +75,15 @@
 						<xsl:variable name="preceding-stuff" select="$raw-preceding-stuff except $raw-preceding-stuff/*"/>
 						<xsl:if test="$preceding-stuff">
 							<div class="preceding-content">
-								<xsl:comment>
-									<xsl:apply-templates mode="debugxml" select="$preceding-stuff"/>
-								</xsl:comment>
 								<xsl:apply-templates select="$preceding-stuff"/>
 							</div>
 						</xsl:if>
 												
 						<div>
 							<xsl:call-template name="generate-style"/>
-							<xsl:attribute name="id" select="f:generate-id(.)"/>
 							<xsl:attribute name="class" select="string-join(f:generic-classes(.), ' ')"/>
+							<a name="{f:generate-id(.)}" id="{f:generate-id(.)}"/>
+							<!-- Just using an id attribute causes the whole div to be highlighted via :marked - not good for this case -->
 							<xsl:apply-templates/>
 						</div>
 						
@@ -96,6 +96,14 @@
 				</xsl:call-template>
 			</xsl:result-document>
 		</xsl:for-each>
+		<xsl:result-document href="{$output-base}.all.html">
+			<xsl:call-template name="generate-html-frame">
+				<xsl:with-param name="single" select="true()" tunnel="yes"/>
+				<xsl:with-param name="content">
+					<xsl:apply-templates select="text"/>
+				</xsl:with-param>
+			</xsl:call-template>
+		</xsl:result-document>
 	</xsl:template>
 	
 	
