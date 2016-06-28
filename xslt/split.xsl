@@ -69,7 +69,8 @@
 						<xsl:variable name="previous-section" select="preceding::div[@f:section][1]"/>
 						<xsl:comment><xsl:value-of select="concat(boolean($previous-section), '; ', name($previous-section), '; ', $previous-section/@f:section)"/></xsl:comment>
 						<xsl:variable name="start" select="if ($previous-section) then $previous-section else /TEI/teiHeader"/>						
-						<xsl:variable name="preceding-stuff" select="preceding::* intersect $start/following::*"/>
+						<xsl:variable name="raw-preceding-stuff" select="preceding::* intersect $start/following::*"/>
+						<xsl:variable name="preceding-stuff" select="$raw-preceding-stuff except $raw-preceding-stuff/*"/>
 						<xsl:if test="$preceding-stuff">
 							<div class="preceding-content">
 								<xsl:comment>
