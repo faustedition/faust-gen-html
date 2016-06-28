@@ -44,7 +44,7 @@
 	</xsl:template>
 	
 	<xsl:template name="header">
-		<xsl:param name="breadcrumbs" tunnel="yes"/>
+		<xsl:param name="breadcrumbs"/>		
 		<header>
 			<div class="logo">
 				<a href="{$edition}/" title="Faustedition"><img src="{$assets}/img/faustlogo.svg" alt="Faustedition"/></a>
@@ -83,7 +83,6 @@
 <noscript><p><img src="//analytics.faustedition.net/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
 	</xsl:template>
-	
-		
+
 	
 </xsl:stylesheet>

@@ -213,7 +213,11 @@
 		<html>
 			<xsl:call-template name="html-head"/>
 			<body>
-				<xsl:call-template name="header"/>
+				<xsl:call-template name="header">
+					<xsl:with-param name="breadcrumbs">
+						<xsl:call-template name="breadcrumbs"/>
+					</xsl:with-param>
+				</xsl:call-template>
 				
 				<main class="nofooter">
 					<div  class="print">

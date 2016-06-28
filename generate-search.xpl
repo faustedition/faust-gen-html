@@ -45,7 +45,7 @@
 
 
 		<cx:message>
-			<p:with-option name="message" select="concat('Adding generated encoding to ', $sigil, ' (', $transcriptFile, ')')"/>
+			<p:with-option name="message" select="concat('Adding generated markup to ', $sigil, ' (', $transcriptFile, ')')"/>
 		</cx:message>
 
 
