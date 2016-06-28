@@ -366,6 +366,14 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
+
+  <!-- Reuse IDs from the XML source (since they are manually crafted) -->
+  <xsl:function name="f:generate-id" as="xs:string">
+    <xsl:param name="element"/>
+    <xsl:value-of select="if ($element/@xml:id) then $element/@xml:id else generate-id($element)"/>
+  </xsl:function>
+  
+  
   
   
 </xsl:stylesheet>

@@ -119,7 +119,8 @@
 					<xsl:value-of select="$uri"/><xsl:text>",</xsl:text>
 					<xsl:text>"page":"</xsl:text>
 					<xsl:value-of select="preceding::pb[1]/@f:docTranscriptNo"/><xsl:text>",</xsl:text>
-					<xsl:text>"line":"</xsl:text><xsl:value-of select="following::*[f:hasvars(.)][1]/@n"/><xsl:text>",</xsl:text>					
+					<xsl:text>"line":"</xsl:text><xsl:value-of select="following::*[f:hasvars(.)][1]/@n"/><xsl:text>",</xsl:text>
+					<xsl:text>"id":"</xsl:text><xsl:value-of select="f:generate-id(.)"/><xsl:text>",</xsl:text>					
 					<xsl:text>"text":"</xsl:text>
 					<xsl:value-of select="$text"/><xsl:text>"</xsl:text>
 					<xsl:text>}</xsl:text>
