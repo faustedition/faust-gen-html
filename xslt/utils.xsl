@@ -9,7 +9,7 @@
   <!-- should we split inside the current document or not? -->
   <xsl:param name="splitchars" select="5000"/>
   <xsl:param name="splitdivs" select="5"/>
-  <xsl:param name="docbase">/documentViewer.php?faustUri=faust://xml/</xsl:param>
+  <xsl:param name="docbase">/documentViewer.php?faustUri=faust://xml</xsl:param>
   <xsl:param name="printbase"/>
   <xsl:param name="documentURI"/>
   <xsl:param name="type" select="data(/TEI/type)"/>
