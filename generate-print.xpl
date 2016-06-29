@@ -44,7 +44,7 @@
 
 		<!-- Das Transkript wird geladen ... -->
 		<p:load>
-			<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"></p:with-option>			
+			<p:with-option name="href" select="resolve-uri(concat('emended/', $documentURI), $builddir)"></p:with-option>			
 		</p:load>
 
 		<f:print2html name="print2html">
