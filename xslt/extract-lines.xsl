@@ -6,13 +6,10 @@
   exclude-result-prefixes="xs" version="2.0">
 
   <xsl:param name="href" select="document-uri(/)"/>
-  <xsl:param name="source"/>
-  <xsl:param name="documentURI"/>
-  <xsl:param name="sigil"/>
-  <xsl:param name="sigil-type"/>
-  <xsl:param name="type"/>
+  <xsl:param name="source"/>  
+  <xsl:param name="sigil" select="//idno[@type='faustedition']"/>  
   
-  
+  <xsl:include href="utils.xsl"/>  
   
   <xsl:variable name="metadata" select="document(resolve-uri($documentURI, $source))"/>
   
@@ -54,14 +51,14 @@
       <xsl:apply-templates select="@*"/>      
       <xsl:attribute name="f:doc" select="$documentURI"/>
       <xsl:attribute name="f:href" select="$href"/>
-      <xsl:attribute name="f:sigil" select="$sigil"/>
-      <xsl:attribute name="f:sigil-type" select="$sigil-type"/>
+      <xsl:attribute name="f:sigil" select="$sigil"/>      
       <xsl:variable name="pb" select="(preceding::pb[1] | descendant::pb[1])[1]"/>
       <xsl:if test="$pb">
         <xsl:attribute name="f:page-n" select="$pb/@n"/>
         <xsl:attribute name="f:page" select="$pb/@f:docTranscriptNo"/>
       </xsl:if>      
       <xsl:attribute name="f:type" select="$type"/>
+      <xsl:attribute name="f:section" select="f:get-section-label(.)"/>
       <xsl:apply-templates select="node()"/>
     </xsl:copy>
   </xsl:template>

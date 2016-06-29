@@ -93,7 +93,7 @@
 						name="target" 
 						select="if (@f:type='archivalDocument') 
 									then f:doclink(@f:doc, @f:page, @n) 
-									else f:printlink(@f:href, @n)"/>						
+									else concat($printbase, @f:section, '#l', @n)"/>						
 					<a class="sigil" href="{$target}" title="{f:sigil-label(@f:sigil-type)}">
 						<xsl:value-of select="@f:sigil"/>
 					</a>
