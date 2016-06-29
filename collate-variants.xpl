@@ -9,6 +9,7 @@
   <p:output port="result" primary="true"/>
 
   <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
+  
   <p:import href="apply-edits.xpl"/>
   <!--  <p:import href="collect-metadata.xpl"/>-->
 
@@ -84,8 +85,7 @@
     <!-- 
     die aus den Transkripten generierten "Zeilenlisten"-Dokumente kleben wir nun
     zu einem großen XML-Dokument zusammen, auf dem dann der nächste Schritt agiert.
-    
-    Dieses Dokument wird zu Debuggingzwecken auch am result-Port dargeboten.
+        
   -->
 
     <p:wrap-sequence wrapper="f:variants"/>
@@ -96,7 +96,7 @@
       Das Stylesheet entfernt die überflüssigen f:lines-Statements und bewegt die Namespace-
       Deklarationen zum Wurzelelement: Dadurch wird v.a. das Debugging-Dokument übersichtlicher.:q
    -->
-    <p:xslt>
+    <p:xslt name="collect-lines-0">
       <p:input port="stylesheet">
         <p:inline>
           <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
@@ -120,7 +120,12 @@
         </p:inline>
       </p:input>
     </p:xslt>
-    <p:identity name="collect-lines"/>
+    
+    <p:store method="xml" indent="true">
+      <p:with-option name="href" select="resolve-uri('collected-lines.xml', $builddir)"/>
+    </p:store>
+    
+    <p:identity name="collect-lines"><p:input port="source"><p:pipe port="result" step="collect-lines-0"></p:pipe></p:input></p:identity>
 
 
     <cx:message log="info" message="Collating the lines and writing variant HTMLs"/>
