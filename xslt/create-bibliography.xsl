@@ -77,7 +77,10 @@
 
 									<dl class="bibliography">
 										<xsl:for-each select="$entries">
-											<xsl:sort select="@data-citation"/>
+											<xsl:sort select="lower-case(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$1'))"/>
+											<xsl:sort select="    number(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$2'))"/>
+											<xsl:sort select="lower-case(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$3'))"/>
+											<xsl:sort select="    number(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$4'))"/>
 											<xsl:variable name="id"
 												select="replace(@data-bib-uri, '^faust://bibliography/', '')"/>
 											<dt id="{$id}">
