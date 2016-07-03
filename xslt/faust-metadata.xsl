@@ -373,6 +373,22 @@
 		</div>
 	</xsl:template>
 	
+	<xsl:template match="watermarkID|patchWatermarkID|countermarkID|patchCountermarkID">
+		<xsl:variable name="id" select="normalize-space(.)"/>
+		<xsl:variable name="label" select="document('watermark-labels.xml')//watermark[@id=normalize-space($id)]"/>		
+		<xsl:call-template name="element">
+			<xsl:with-param name="content">
+				<xsl:choose>
+					<xsl:when test="$label"><xsl:value-of select="$label"/></xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="$id"/>
+						<xsl:message select="concat('WARNING: Watermark label not found for ', name(), ' ', $id)"/>
+					</xsl:otherwise>					
+				</xsl:choose>
+			</xsl:with-param>
+		</xsl:call-template>
+	</xsl:template>
+	
 	<!-- 
 	
 	Wir erzeugen Abschnitte für strukturelle Elemente, aber nur wenn irgendwo darunter ein nicht-leeres Metadatenfeld ist.	
