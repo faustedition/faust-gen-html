@@ -1,4 +1,11 @@
 <watermarks xmlns="http://www.faustedition.net/ns">
+  <!-- 
+
+  This table maps the content of {patch,}{water,counter}markID to labels that are actually displayed.
+
+  ATTN: The stylesheets expect all whitespace in @id to be normalized! 
+  
+  -->
   <watermark id="&quot;C T R&quot;">CTR</watermark>
   <watermark id="&quot;D O R N .&quot;">DORN.</watermark>
   <watermark id="&quot;F H F&quot; über &quot;1 8 1 6&quot;">FHF über 1816</watermark>
@@ -246,6 +253,6 @@
   <watermark id="verschlungenes &quot;JGH&quot; über &quot;N 3&quot;">JGH über N3</watermark>
   <watermark id="verschlungenes 'GJH'">Kursivmonogramm GJH</watermark>
   <watermark id="verschlungenes JGH">Kursivmonogramm JGH</watermark>
-  <watermark id="zwei gekreuzte Säbel in rechter Hälfte eines Wappens, linke Hälfte sächsuches Wappen, darüber Krone">mit Kurhut gekröntes zweigeteiltes Wappen (links gekreuzte Schwerter, rechts Rautenkranzwappen) zwischen Zweigen, mit Nelke und Rose in den Ecken</watermark>
+  <watermark id="zwei gekreuzte Säbel in rechter Hälfte eines Wappens, linke Hälfte sächsisches Wappen, darüber Krone">mit Kurhut gekröntes zweigeteiltes Wappen (links gekreuzte Schwerter, rechts Rautenkranzwappen) zwischen Zweigen, mit Nelke und Rose in den Ecken</watermark>
   <watermark id="zwölfzackiger Stern über 'N 1'">zwölfzackiger Stern über N1</watermark>
 </watermarks>
