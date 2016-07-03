@@ -243,27 +243,35 @@
 		<xsl:variable name="current-div" select="."/>
 		<nav class="print-navigation">
 			
+			<ul class="fa-ul">
+				<li class="toclink">
+					<xsl:if test="/TEI/@split and not(self::TEI)">
+						<span class="fa-li fa fa-menu"/>
+						<a href="{f:html-link(//idno[@type='fausttranscript'], ())}">Inhaltsverzeichnis</a>
+					</xsl:if>
+				</li>
+			</ul>
 			
 			<!-- ggf. Links zum vorherigen/nächsten div. -->
 			<ul class="prevnext fa-ul">
-				<xsl:if test="preceding::div[@f:section]">
-					<li class="prev">
+				<li class="prev">
+					<xsl:if test="preceding::div[@f:section]">
 						<xsl:for-each
 							select="preceding::div[@f:section][1]">
 							<span class="fa-li fa fa-fast-bw"/>
 							<xsl:call-template name="section-link"/>              
 						</xsl:for-each>
-					</li>
-				</xsl:if>
-				<xsl:if test="following::div[@f:section]">
-					<li class="next">
+					</xsl:if>		
+				</li>
+				<li class="next">
+					<xsl:if test="following::div[@f:section]">
 						<xsl:for-each
 							select="following::div[@f:section][1]">
 							<span class="fa-li fa fa-fast-fw"/>
 							<xsl:call-template name="section-link"/>
 						</xsl:for-each>
-					</li>
-				</xsl:if>
+					</xsl:if>
+				</li>
 			</ul>
 			
 			
