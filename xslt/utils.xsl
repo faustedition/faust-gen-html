@@ -38,7 +38,7 @@
       <xsl:when test="not($el//ancestor-or-self::TEI/@f:split)"/>
       <xsl:when test="$el/ancestor-or-self::div/@f:section"><xsl:value-of select="$el/ancestor-or-self::div/@f:section"/></xsl:when>
       <xsl:when test="$el/descendant::div/@f:section"><xsl:value-of select="($el/descendant::div/@f:section)[1]"/></xsl:when>
-      <xsl:when test="$el/following::div/@f:section"><xsl:value-of select="($el/following::div/f:section)[1]"/></xsl:when>
+      <xsl:when test="$el/following::div/@f:section"><xsl:value-of select="($el/following::div/@f:section)[1]"/></xsl:when>
       <xsl:otherwise><xsl:value-of select="$el/preceding::div[@f:section][1]/@f:section"/></xsl:otherwise>
     </xsl:choose>
   </xsl:function>
