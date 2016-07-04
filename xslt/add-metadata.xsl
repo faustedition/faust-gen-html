@@ -187,7 +187,7 @@
 		</xsl:choose>
 	</xsl:template>
 	
-	<xsl:template match="div">
+	<xsl:template match="div|titlePage">
 		<xsl:copy>
 			<xsl:call-template name="add-xmlid"/>
 			<xsl:apply-templates select="@*"/>

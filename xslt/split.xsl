@@ -109,13 +109,7 @@
 	
 	<xsl:template mode="tocpage" match="div">
 		<li>
-<!--			<a href="{f:html-link(concat($output-base, '.', f:get-section-number(.)))}">
-				<xsl:value-of select="f:normalize-space(head)"/>
-				<xsl:comment>
-					<xsl:for-each select="@*"><xsl:value-of select="concat(name(), '=', ., ' ')"/></xsl:for-each>
-				</xsl:comment>
-			</a>
--->			<xsl:call-template name="section-link"/>
+			<xsl:call-template name="section-link"/>
 			<xsl:if test="descendant::div[@f:section]">
 				<ul>
 					<xsl:apply-templates mode="#current"/>
@@ -123,12 +117,25 @@
 			</xsl:if>
 		</li>	
 	</xsl:template>
+	
+	<xsl:template mode="tocpage" match="titlePage[not(preceding::titlePage)]">
+		<li>
+			<xsl:call-template name="section-link">
+				<xsl:with-param name="title">Titel</xsl:with-param>
+			</xsl:call-template>
+		</li>
+	</xsl:template>
+	
 	<xsl:template mode="tocpage" match="*">
 		<xsl:apply-templates mode="#current"/>
 	</xsl:template>
-	<xsl:template mode="tocpage" match="node()" priority="-1"/>
-
 	
+	<xsl:template mode="tocpage" match="node()" priority="-1"/>
+	
+	<xsl:template match="titlePage[ancestor::TEI[@f:split]]">
+		<a name="{f:generate-id(.)}"></a>
+		<xsl:next-match/>
+	</xsl:template>
 	
 	<!-- 
 		Erzeugt einen Link zur angegebenen HTML-Datei (und optional: Seite). 
