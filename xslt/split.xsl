@@ -159,7 +159,8 @@
 	</xsl:function>
 	
 	<xsl:template name="filename">
-		<xsl:variable name="secno" select="f:get-section-number(.)"/>
+		<xsl:param name="toc" select="false()"></xsl:param>
+		<xsl:variable name="secno" select="if ($toc) then false() else f:get-section-number(.)"/>
 		<xsl:value-of select="$output-base"/>
 		<xsl:if test="$secno">
 			<xsl:text>.</xsl:text>
@@ -172,14 +173,12 @@
 		<xsl:param name="class"/>
 		<xsl:param name="prefix"/>
 		<xsl:param name="suffix"/>
-		<xsl:variable name="filename">
-			<xsl:call-template name="filename"/>
-		</xsl:variable>
-		<xsl:variable name="page" select="preceding::pb[@f:docTranscriptNo][1]/@f:docTranscriptNo"/>
-		<xsl:variable name="basename" select="f:relativize($output-base, $filename)"/>
-		<xsl:variable name="href" select="if (@xml:id) 
-												then concat(f:html-link($filename, $page), '#', @xml:id)
-												else f:html-link($filename, $page)"/>
+		<xsl:param name="title">
+			<xsl:apply-templates mode="title" select="if (head) then head[1] else *[translate(normalize-space(.), ' ', '') ne ''][1]"/>
+		</xsl:param>
+		<xsl:param name="href">			
+			<xsl:call-template name="current-href"/>
+		</xsl:param>
 		<a>
 			<xsl:attribute name="href" select="$href"/>        
 			
@@ -188,9 +187,6 @@
 			</xsl:if>
 			<xsl:copy-of select="$prefix"/>
 			
-			<xsl:variable name="title">
-				<xsl:apply-templates mode="title" select="if (head) then head[1] else *[translate(normalize-space(.), ' ', '') ne ''][1]"/>
-			</xsl:variable>
 			<xsl:choose>
 				<xsl:when test="@f:scene-label or @f:act-label">
 					<xsl:value-of select="(@f:scene-label, @f:act-label)"/>
@@ -202,6 +198,25 @@
 			</xsl:choose>			
 			<xsl:copy-of select="$suffix"/>
 		</a>
+	</xsl:template>
+	
+	<xsl:template name="current-href">
+		<xsl:param name="toc" select="false()"/>
+		<xsl:variable name="filename">
+			<xsl:call-template name="filename">
+				<xsl:with-param name="toc" select="$toc"></xsl:with-param>
+			</xsl:call-template>
+		</xsl:variable>
+		<xsl:variable name="page" select="preceding::pb[@f:docTranscriptNo][1]/@f:docTranscriptNo"/>
+		<xsl:variable name="basename" select="f:relativize($output-base, $filename)"/>
+		<xsl:value-of
+			select="
+				if (@xml:id)
+				then
+					concat(f:html-link($filename, $page), '#', @xml:id)
+				else
+					f:html-link($filename, $page)"
+		/>
 	</xsl:template>
 	
 	<xsl:template match="lb[not(@break='no')]" mode="title">
@@ -253,9 +268,17 @@
 			<ul class="fa-ul">
 				<li class="toclink">
 					<xsl:if test="/TEI/@f:split and not(self::TEI)">
-						<span class="fa-li fa fa-menu"/>
-						<a href="{f:html-link(//idno[@type='fausttranscript'], ())}">Inhaltsverzeichnis</a>
+						<a>
+							<xsl:attribute name="href">
+								<xsl:call-template name="current-href">
+									<xsl:with-param name="toc" select="true()"/>
+								</xsl:call-template>								
+							</xsl:attribute>
+							<span class="fa-li fa fa-menu"/>
+							<xsl:text>Inhaltsverzeichnis</xsl:text>
+						</a>
 					</xsl:if>
+					&#160;	<!-- spacing -->
 				</li>
 			</ul>
 			
@@ -265,19 +288,27 @@
 					<xsl:if test="preceding::div[@f:section]">
 						<xsl:for-each
 							select="preceding::div[@f:section][1]">
-							<span class="fa-li fa fa-fast-bw"/>
-							<xsl:call-template name="section-link"/>              
+							<xsl:call-template name="section-link">
+								<xsl:with-param name="prefix">
+									<span class="fa-li fa fa-fast-bw"/>									
+								</xsl:with-param>
+							</xsl:call-template>              
 						</xsl:for-each>
 					</xsl:if>
+					&#160;	<!-- spacing -->
 				</li>
 				<li class="next">
 					<xsl:if test="following::div[@f:section]">
 						<xsl:for-each
 							select="following::div[@f:section][1]">
-							<span class="fa-li fa fa-fast-fw"/>
-							<xsl:call-template name="section-link"/>
+							<xsl:call-template name="section-link">
+								<xsl:with-param name="prefix">
+									<span class="fa-li fa fa-fast-fw"/>									
+								</xsl:with-param>
+							</xsl:call-template>
 						</xsl:for-each>
 					</xsl:if>
+					&#160;	<!-- spacing -->
 				</li>
 			</ul>
 			
@@ -309,6 +340,6 @@
 				</ul>
 			</xsl:if>
 		</nav>
-	</xsl:template>      
+	</xsl:template>
 	
 </xsl:stylesheet>
