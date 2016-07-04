@@ -245,7 +245,7 @@
 			
 			<ul class="fa-ul">
 				<li class="toclink">
-					<xsl:if test="/TEI/@split and not(self::TEI)">
+					<xsl:if test="/TEI/@f:split and not(self::TEI)">
 						<span class="fa-li fa fa-menu"/>
 						<a href="{f:html-link(//idno[@type='fausttranscript'], ())}">Inhaltsverzeichnis</a>
 					</xsl:if>
@@ -261,7 +261,7 @@
 							<span class="fa-li fa fa-fast-bw"/>
 							<xsl:call-template name="section-link"/>              
 						</xsl:for-each>
-					</xsl:if>		
+					</xsl:if>
 				</li>
 				<li class="next">
 					<xsl:if test="following::div[@f:section]">
