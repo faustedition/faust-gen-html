@@ -100,7 +100,12 @@
 		<j:object>
 			<j:array name="doc">
 				<xsl:apply-templates select="descendant::docTranscript"/>				
-			</j:array>			
+			</j:array>
+			<j:bool name="empty" value="{
+				if (descendant::docTranscript[not(@uri)] and 
+				       (descendant::comment()[contains(., 'leer')] 
+					 or descendant::note[contains(., 'leer')])) 
+				then 'true' else 'false'}"/>
 		</j:object>
 	</xsl:template>
 	
