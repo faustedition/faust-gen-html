@@ -90,7 +90,7 @@
 			<xsl:for-each select="//milestone[@unit='paralipomenon' and not(@xml:id and key('next', @xml:id))]">			
 				<xsl:variable name="no" select="f:pad-para-no(replace(@n, 'p(\d+)', '$1'))"/>
 				<xsl:variable name="spanTo" select="document(current()/@spanTo)"/>
-				<xsl:variable name="rawContent"> <!-- XML nodes within the paralipomenon -->
+				<xsl:variable name="rawContent" as="node()*"> <!-- XML nodes within the paralipomenon -->
 					<xsl:choose>
 						<xsl:when test="count($spanTo) eq 1">
 							<xsl:sequence select="following::node()[$spanTo >> .]"/>
@@ -102,7 +102,7 @@
 					</xsl:choose>
 				</xsl:variable>
 				<xsl:variable name="rawText"> <!-- Plain text within the paralipomenon -->
-					<xsl:apply-templates select="$rawContent" mode="text"></xsl:apply-templates>
+					<xsl:apply-templates select="$rawContent except $rawContent/*" mode="text"/>
 				</xsl:variable>
 				
 				<!-- extract first $incipit_words tokens -->
