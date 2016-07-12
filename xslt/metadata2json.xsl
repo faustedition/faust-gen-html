@@ -8,53 +8,93 @@
 	exclude-result-prefixes="xs"
 	version="2.0">
 
-	<xsl:include href="jsonutils.xsl"/>
+	<xsl:import href="jsonutils.xsl"/>
+	<xsl:import href="utils.xsl"/>
 	
 	<xsl:param name="document"/>
 	<xsl:param name="source"/>
 	<xsl:variable name="baseprefix">faust://xml/</xsl:variable>
 	<xsl:variable name="linkprefix">faust://xml/image-text-links/</xsl:variable>
 	<xsl:variable name="imgprefix">faust://facsimile/</xsl:variable>
-	<xsl:variable name="metadataprefix">document/</xsl:variable>
+	<xsl:variable name="metadataprefix">faust://xml/document/</xsl:variable>
 	
-	
-	<xsl:template match="/f:*">		
-		<xsl:variable name="json">			
+	<!-- Iterate over collection. -->	
+	<xsl:template name="collection">
+		<xsl:variable name="documents">
+			<xsl:for-each select="collection()/*">
+				<xsl:call-template name="document"/>
+			</xsl:for-each>
+		</xsl:variable>
+		
+		<xsl:variable name="json">
 			<j:object>
-				<j:string name="document"><xsl:value-of select="replace($document, $metadataprefix, '')"/></j:string>
-				<xsl:if test="self::print">
-					<j:string name="type">print</j:string>
-				</xsl:if>					
-				<j:string name="base" value="{replace(@xml:base, $baseprefix, '')}"/>
-				<j:string name="text" value="{(//textTranscript/@uri, 'null')[1]}"/>
-				
-				<j:object name="sigils">
-					<!-- Yes, these aren't all real sigils ... -->
-					<j:string name="headNote" value="{metadata/headNote}"/>
-					
-					<xsl:if test="metadata/subrepository">
-						<j:string name="subRepository" value="{metadata/subRepository}"/>			
-					</xsl:if>
-					<xsl:for-each select="metadata/idno[. != ('none', 'n.s.', 'n.a.')]">
-						<j:string name="idno_{@type}" value="{.}"/>
-					</xsl:for-each>
-					<xsl:for-each select="metadata/subidno[. != ('none', 'n.s.', 'n.a.')]">
-						<j:string name="subidno_{@type}" value="."/>
-					</xsl:for-each>
-					<j:string name='note_gsa_1' value="{metadata/idno[@type='gsa_1']/following-sibling::*[1][self::note]}"/>
-					<j:string name='collection' value="{metadata/collection[1]}"/>
-					<j:string name='repository' value="{(metadata/repository, 'print')[1]}"/>
-				</j:object>
-				<j:array name="page">
-					<xsl:apply-templates select="//page"/>				
-				</j:array>			
+				<j:array name="metadata">
+					<xsl:perform-sort select="$documents/*">
+						<xsl:sort select="f:splitSigil(@sigil)[1]"/>
+						<xsl:sort select="f:splitSigil(@sigil)[2]"/>
+						<xsl:sort select="f:splitSigil(@sigil)[3]"/>
+					</xsl:perform-sort>
+				</j:array>
+				<j:string name="metadataPrefix" value="{$metadataprefix}"/>
+				<j:string name="linkPrefix" value="{$linkprefix}"/>
+				<j:string name="imgPrefix" value="{$imgprefix}"/>
+				<j:string name="printPrefix" value="faust://xml/print/"/>
+				<j:string name="basePrefix" value="faust://xml/"/>
 			</j:object>
 		</xsl:variable>
-		<f:document sigil="{//f:idno[@type='faustedition']}">
+		
+		<!-- f:json is required for XProc processing, will be removed by p:store -->
+		<f:json>
+			<xsl:text>var documentMetadata = &#10;</xsl:text>
+			<xsl:apply-templates select="$json/*">
+				<xsl:with-param name="sep">,&#10;</xsl:with-param>
+			</xsl:apply-templates>			
+		</f:json>
+	</xsl:template>
+	
+	
+	<!-- Only used when run directly against a document -->
+	<xsl:template match="/f:*">		
+		<xsl:variable name="json">
+			<xsl:call-template name="document"/>			
+		</xsl:variable>
+		<f:document>
 			<xsl:apply-templates select="$json/*"/>			
 		</f:document>
 	</xsl:template>
 
+
+	<xsl:template name="document">
+		<j:object sigil="{//f:idno[@type='faustedition']}">
+			<j:string name="document"><xsl:value-of select="replace(document-uri(/), concat($source, 'document/'), '')"/></j:string>
+			<xsl:if test="self::print">
+				<j:string name="type">print</j:string>
+			</xsl:if>					
+			<j:string name="base" value="{replace(@xml:base, $baseprefix, '')}"/>
+			<j:string name="text" value="{(//textTranscript/@uri, 'null')[1]}"/>
+			
+			<j:object name="sigils">
+				<!-- Yes, these aren't all real sigils ... -->
+				<j:string name="headNote" value="{metadata/headNote}"/>
+				
+				<xsl:if test="metadata/subrepository">
+					<j:string name="subRepository" value="{metadata/subRepository}"/>			
+				</xsl:if>
+				<xsl:for-each select="metadata/idno[. != ('none', 'n.s.', 'n.a.')]">
+					<j:string name="idno_{@type}" value="{.}"/>
+				</xsl:for-each>
+				<xsl:for-each select="metadata/subidno[. != ('none', 'n.s.', 'n.a.')]">
+					<j:string name="subidno_{@type}" value="."/>
+				</xsl:for-each>
+				<j:string name='note_gsa_1' value="{metadata/idno[@type='gsa_1']/following-sibling::*[1][self::note]}"/>
+				<j:string name='collection' value="{metadata/collection[1]}"/>
+				<j:string name='repository' value="{(metadata/repository, 'print')[1]}"/>
+			</j:object>
+			<j:array name="page">
+				<xsl:apply-templates select="//page"/>				
+			</j:array>			
+		</j:object>		
+	</xsl:template>
 
 	<xsl:template match="page">
 		<j:object>

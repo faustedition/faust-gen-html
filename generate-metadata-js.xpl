@@ -21,7 +21,6 @@
   </p:parameters>
 
   <p:group>
-    <p:variable name="metahtml" select="//c:param[@name='metahtml']/@value"><p:pipe port="result" step="config"></p:pipe></p:variable>
     <p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
     <p:variable name="debug" select="//c:param[@name='debug']/@value"><p:pipe port="result" step="config"/></p:variable>
     <p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
@@ -39,38 +38,15 @@
     <p:for-each name="convert-metadata">
       <p:iteration-source select="//c:file[$debug or not(ends-with(@name, 'test.xml'))]"/>
       <p:variable name="filename" select="p:resolve-uri(/c:file/@name)"/>
-      <p:variable name="basename" select="replace(replace($filename, '.*/', ''), '.xml$', '')"/>
-      <p:variable name="outfile" select="concat($metahtml, $basename, '.html')"/>
             
       <p:load>
         <p:with-option name="href" select="$filename"/>
       </p:load>
-
-      <p:xslt name="generate-html">
-        <p:input port="stylesheet"><p:document href="xslt/metadata2json.xsl"/></p:input>
-        <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
-        <p:with-param name="document" select="replace($filename, $source, '')"/>
-      </p:xslt>
     </p:for-each>
     
-    <p:wrap-sequence wrapper="f:json"/>
-    
-    <p:xslt>
+    <p:xslt template-name="collection">
       <p:input port="parameters"><p:pipe port="result" step="config"></p:pipe></p:input>
-      <p:input port="stylesheet">
-        <p:inline>
-          <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-            <xsl:template match="/f:json">
-              <f:json>
-              <xsl:text>var documentMetadata = {"metadata":[</xsl:text>
-              <xsl:value-of select="string-join(f:document/text(), ',')"/>                
-              <xsl:text>],"metadataPrefix":"faust://xml/document/","linkPrefix":"faust://xml/image-text-links/","imgPrefix":"faust://facsimile/","printPrefix":"faust://xml/print/","basePrefix":"faust://xml/"}</xsl:text>
-                      
-              </f:json>
-            </xsl:template>
-          </xsl:stylesheet>
-        </p:inline>
-      </p:input>
+      <p:input port="stylesheet"><p:document href="xslt/metadata2json.xsl"/></p:input>      
     </p:xslt>
     
     <p:store method="text">
