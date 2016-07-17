@@ -154,6 +154,16 @@
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>			
 		</f:metadata-js>
 		
+		<!-- ## Step 2c: prints index -->
+		<p:xslt>
+			<p:input port="source"><p:pipe port="result" step="save-transcripts"/></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/prints-index.xsl"/></p:input>
+		</p:xslt>
+		<p:store>
+			<p:with-option name="href" select="resolve-uri('www/archive_prints.html', $builddir)"/>
+		</p:store>
+		
 		<!-- ### Step 4a: Paralipomena-Tabelle -->
 		<f:generate-para-table>
 			<p:input port="source">
