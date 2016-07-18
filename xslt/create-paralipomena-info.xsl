@@ -105,11 +105,14 @@
 					<xsl:apply-templates select="$rawContent except $rawContent/*" mode="text"/>
 				</xsl:variable>
 				
+				
 				<!-- extract first $incipit_words tokens -->
 				<xsl:variable name="words" select="tokenize(normalize-space(string-join($rawText, '')), ' ')"/>
 				<xsl:variable name="text" select="$words[position() le $incipit_words + count($words[position() le $incipit_words + 2][. = '/'])]"/>
 				
-				<f:item n="{$no}"> <!-- @n used for sorting -->
+<!--				<xsl:message select="concat('&#10;&#10;&#10;######################## ', $no, '&#9;', $sigil, '&#9;', string-join($text, ' '), ' ######################')"/>
+				<xsl:message select="$rawContent"/>
+-->				<f:item n="{$no}"> <!-- @n used for sorting -->
 					<xsl:text>{</xsl:text>
 					<xsl:text>"n":"</xsl:text>		
 					<xsl:value-of select="$no"/><xsl:text>",</xsl:text>
