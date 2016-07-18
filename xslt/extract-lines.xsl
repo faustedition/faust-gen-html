@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:f="http://www.faustedition.net/ns"
   xmlns:ge="http://www.tei-c.org/ns/geneticEditions" xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:xh="http://www.w3.org/1999/xhtml"
   xmlns="http://www.tei-c.org/ns/1.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
   exclude-result-prefixes="xs" version="2.0">
 
@@ -46,9 +47,9 @@
     </xsl:copy>
   </xsl:template>  
 
-  <xsl:template match='*[@n]'>
+  <xsl:template match='*[@n][not(preceding-sibling::*[@n = current()/@n and not(following-sibling::*[@n != current()/@n][. &lt;&lt; current()])])]'>
     <xsl:copy>
-      <xsl:apply-templates select="@*"/>      
+      <xsl:apply-templates select="@*"/>
       <xsl:attribute name="f:doc" select="$documentURI"/>
       <xsl:attribute name="f:href" select="$href"/>
       <xsl:attribute name="f:sigil" select="$sigil"/>      
@@ -60,6 +61,10 @@
       <xsl:attribute name="f:type" select="$type"/>
       <xsl:attribute name="f:section" select="f:get-section-label(.)"/>
       <xsl:apply-templates select="node()"/>
+      <xsl:for-each select="following-sibling::*[@n = current()/@n and not(preceding-sibling::*[@n != current()/@n][. >> current()])]">
+        <xh:span rend="generated-text"> | </xh:span>
+        <xsl:apply-templates select="node()"/>        
+      </xsl:for-each>
     </xsl:copy>
   </xsl:template>
   

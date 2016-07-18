@@ -2,9 +2,12 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:xh="http://www.w3.org/1999/xhtml"
+	xmlns:ge="http://www.tei-c.org/ns/geneticEditions"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+	xmlns:tei="http://www.tei-c.org/ns/1.0"
 	xmlns:f="http://www.faustedition.net/ns"
-	exclude-result-prefixes="xs f"
+	exclude-result-prefixes="xs f tei xh ge"
 	version="2.0">
 		
 	<xsl:include href="html-common.xsl"/>

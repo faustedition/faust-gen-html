@@ -491,6 +491,14 @@ in <xsl:value-of select="document-uri(/)"/>
 		</xsl:element>
 	</xsl:template>
 	
+	<!-- Pass through existing HTML from previous steps -->
+	<xsl:template match="xh:*">
+		<xsl:copy>
+			<xsl:apply-templates select="@*"/>				
+			<xsl:apply-templates select="node()"/>
+		</xsl:copy>
+	</xsl:template>	
+	
 	<!-- Just strip those standoff indicators -->
 	<xsl:template match="alt|ge:transposeGrp|ge:transpose|join" priority="1"/>
 	
