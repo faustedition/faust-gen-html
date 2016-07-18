@@ -195,6 +195,14 @@
 		</xsl:copy>
 	</xsl:template>
 	
+	<!-- Remove suffixes like a/b/c from @n, cf. #50 -->
+	<xsl:template match="*[f:hasvars(.)]/@n">
+		<xsl:attribute name="n" select="string-join(
+			for $n in tokenize(., '\s+')
+			return replace($n, '(\d+)[a-z]$', '$1'),
+			' ')"/>
+	</xsl:template>
+	
 	
 	<xsl:template match="/">
 		<xsl:comment>
