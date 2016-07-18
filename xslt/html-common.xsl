@@ -161,13 +161,15 @@
 	<xsl:template match="gap[@unit='chars']">
 		<span class="{string-join(f:generic-classes(.), ' ')} gap-unit-chars generated-text appnote" 
 			data-gap-length="{@quantity}" 
-			title="{if (@cert='medium') then 'ungefähr ' else ''}{@quantity} unlesbare Zeichen">
+			title="{if (@precision='medium') then 'ungefähr ' else ''}{@quantity} unlesbare Zeichen">
 			<xsl:value-of select="string-join(for $n in 1 to @quantity return '×', '')"/>
 		</span>
 	</xsl:template>
 	
 	<xsl:template match="gap[@unit='words']">
-		<span class="{string-join(f:generic-classes(.), ' ')} gap-unit-words generated-text appnote" data-gap-length="{@quantity}" title="{@quantity} unlesbare Wörter">
+		<span class="{string-join(f:generic-classes(.), ' ')} gap-unit-words generated-text appnote" 
+			  data-gap-length="{@quantity}" 
+			  title="{if (@precision='medium') then 'ungefähr ' else ''}{@quantity} unlesbare Wörter">
 			<xsl:value-of select="string-join(for $n in 1 to @quantity return '×···×', ' ')"/>
 		</span>
 	</xsl:template>  
