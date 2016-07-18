@@ -62,7 +62,7 @@
       <xsl:attribute name="f:section" select="f:get-section-label(.)"/>
       <xsl:apply-templates select="node()"/>
       <xsl:for-each select="following-sibling::*[@n = current()/@n and not(preceding-sibling::*[@n != current()/@n][. >> current()])]">
-        <xh:span rend="generated-text"> | </xh:span>
+        <span xmlns="http://www.w3.org/1999/xhtml" class="generated-text"> | </span>
         <xsl:apply-templates select="node()"/>        
       </xsl:for-each>
     </xsl:copy>
