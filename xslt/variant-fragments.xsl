@@ -34,37 +34,78 @@
 			<xsl:result-document href="{$output-file}">
 				<div class="groups" data-group="{current-grouping-key()}">
 					<xsl:for-each-group select="current-group()" group-by="tokenize(@n, '[ ,;\t\n]+')">
-						<xsl:variable name="cline" select="current-group()[@f:doc = $canonicalDocs]"/>
-						<xsl:variable name="ctext" select="if ($cline) then f:normalize-space($cline[1]) else ''"/>
-						<xsl:variable name="evidence">
-							<xsl:sequence select="$standoff"/>							
-							<xsl:for-each-group select="current-group()" group-by="@f:doc">
-								<f:evidence>
-									<xsl:copy-of select="current-group()[1]/@*"/>
-									<xsl:copy-of select="current-group()"/>
-								</f:evidence>
-							</xsl:for-each-group>
-						</xsl:variable>
-						<div class="variants" 
-							data-n="{current-grouping-key()}" 
-							data-witnesses="{count($evidence/* except $evidence/*[@f:type='lesetext'] except $evidence/f:standoff)}"
-							data-variants="{count(distinct-values(for $ev in $evidence/* except $evidence/f:standoff return f:normalize-space($ev)))-1}"
-							data-ctext="{$ctext}"
-							id="v{current-grouping-key()}">
-							<xsl:attribute name="xml:id" select="concat('v', current-grouping-key())"/>
-							<xsl:for-each-group select="$evidence/*" group-by="f:normalize-space(.)">
-									<xsl:apply-templates select="current-group()[1]/*">
-										<!--<xsl:sort select="@f:sigil"/>-->
-										<!-- Sorting is done in collect-metadata.xpl, we just keep the document order from there -->
-										<xsl:with-param name="group" select="current-group()"/>
-									</xsl:apply-templates>
-								
-							</xsl:for-each-group>
-						</div>
+						<xsl:call-template name="create-single-variants">
+							<xsl:with-param name="current-lines" select="current-group()"/>
+							<xsl:with-param name="current-n" select="current-grouping-key()"/>
+						</xsl:call-template>
 					</xsl:for-each-group>
 				</div>
 			</xsl:result-document>
 		</xsl:for-each-group>
+	
+		<!-- additional apparatus for @n with multiple values (cf. #51) -->
+		<xsl:variable name="output-file" select="concat($variants, '_.html')"/>
+		<xsl:result-document href="{$output-file}">
+			<div class="groups" data-group="_">
+				<xsl:for-each-group select="//*[f:hasvars(.) and contains(@n, ' ') and not(contains(@n, 'before'))]" group-by="@n">
+					<xsl:variable name="ns" select="tokenize(current-grouping-key(), '\s+')"/>
+					<xsl:variable name="current-lines" as="element()*">
+						<xsl:sequence select="current-group()"/>
+						<xsl:call-template name="join-lines">
+							<xsl:with-param name="ns" select="$ns"/>								
+						</xsl:call-template>
+					</xsl:variable>
+					<xsl:call-template name="create-single-variants">
+						<xsl:with-param name="current-n" select="string-join($ns, '_')"/>
+						<xsl:with-param name="current-lines" select="$current-lines"/>
+					</xsl:call-template>										
+				</xsl:for-each-group>
+			</div>
+		</xsl:result-document>		
+	</xsl:template>
+
+	<!-- 
+		
+		Creates the HTML fragment for a group of lines corresponding to a specific @n.
+		
+		Parameters:
+			current-lines: Sequence of nodes with that @n
+			current-n: @n
+	
+	-->
+	<xsl:template name="create-single-variants">
+		<xsl:param name="current-lines" as="node()*" select="current-group()"/>
+		<xsl:param name="current-n" select="current-grouping-key()"/>
+		<xsl:variable name="evidence">
+			<xsl:sequence select="$standoff"/>
+			<xsl:for-each-group select="$current-lines" group-by="@f:doc">
+				<f:evidence>
+					<xsl:copy-of select="$current-lines[1]/@*"/>
+					<xsl:copy-of select="$current-lines"/>
+				</f:evidence>
+			</xsl:for-each-group>
+		</xsl:variable>
+		<xsl:variable name="cline" select="$current-lines[@f:doc = $canonicalDocs]"/>
+		<xsl:variable name="ctext"
+			select="
+			if ($cline) then
+			f:normalize-space($cline[1])
+			else
+			''"/>
+		<div class="variants" data-n="{current-grouping-key()}"
+			data-witnesses="{count($evidence/* except $evidence/*[@f:type='lesetext'] except $evidence/f:standoff)}"
+			data-variants="{count(distinct-values(for $ev in $evidence/* except $evidence/f:standoff return f:normalize-space($ev)))-1}"
+			data-ctext="{$ctext}" id="v{current-grouping-key()}">
+			<xsl:attribute name="xml:id" select="concat('v', $current-n)"/>
+			<xsl:for-each-group select="$evidence/*" group-by="f:normalize-space(.)">
+				<xsl:apply-templates select="current-group()[1]/*">
+					<!--<xsl:sort select="@f:sigil"/>-->
+					<!-- Sorting is done in collect-metadata.xpl, we just keep the document order from there -->
+					<xsl:with-param name="group" select="current-group()"/>
+				</xsl:apply-templates>
+
+			</xsl:for-each-group>
+		</div>
 	</xsl:template>
 	
 	<xsl:template match="f:evidence">
@@ -107,6 +148,27 @@
 			</span>
 		</div>
 	</xsl:template>
-	
+
+	<!-- 
+		when called with $ns=('3356', '3357'), this template creates an artificial 
+		<l n='3356 3357'>Content of 3356 | Content of 3357</l>
+		for each document that contains <l n="3356"> and <l n="3357">
+	-->
+	<xsl:template name="join-lines">
+		<xsl:param name="ns" as="xs:string*"/>
+		<xsl:for-each-group select="//*[@n = $ns]" group-by="@f:doc">			
+			<xsl:variable name="template" select="current-group()[1]" as="node()"/>
+			<xsl:variable name="rest" select="subsequence(current-group(), 2)" as="node()*"/>
+			<xsl:element name="{name($template)}">
+				<xsl:attribute name="n" select="string-join($ns, ' ')"/>
+				<xsl:copy-of select="$template/@* except $template/@n"/>
+				<xsl:copy-of select="$template/node()"/>
+				<xsl:for-each select="$rest">
+					<span xmlns="http://www.w3.org/1999/xhtml" class="generated-text"> | </span>
+					<xsl:copy-of select="."/>
+				</xsl:for-each>
+			</xsl:element>
+		</xsl:for-each-group>
+	</xsl:template>
 		
 </xsl:stylesheet>
