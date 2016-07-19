@@ -165,7 +165,7 @@
 				<xsl:copy-of select="$template/node()"/>
 				<xsl:for-each select="$rest">
 					<span xmlns="http://www.w3.org/1999/xhtml" class="generated-text"> | </span>
-					<xsl:copy-of select="."/>
+					<xsl:copy-of select="./node()"/>
 				</xsl:for-each>
 			</xsl:element>
 		</xsl:for-each-group>
