@@ -28,7 +28,7 @@
 	<xsl:output method="xhtml"/>
 		
 	<xsl:template match="/f:variants">
-		<xsl:for-each-group select="*" group-by="f:output-group(@n)">
+		<xsl:for-each-group select="*" group-by="f:raw-output-group(@n)">
 			<!-- eine Ausgabedatei für ca. 10 kanonische Zeilen -->		
 			<xsl:variable name="output-file" select="concat($variants, current-grouping-key(), '.html')"/>			
 			<xsl:result-document href="{$output-file}">

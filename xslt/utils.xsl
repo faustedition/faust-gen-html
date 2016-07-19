@@ -55,7 +55,7 @@
     <xsl:value-of select="number(replace($n, '\D*(\d+).*', '$1'))"/>
   </xsl:function>
   
-  <xsl:function name="f:output-group">
+  <xsl:function name="f:raw-output-group">
     <xsl:param name="n"/>
     <xsl:variable name="resolved-n" select="f:numerical-lineno($n)"/>
     <xsl:choose>
@@ -66,6 +66,11 @@
         <xsl:text>other</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:function>
+  
+  <xsl:function name="f:output-group">
+    <xsl:param name="n"/>
+    <xsl:value-of select="if (contains($n, ' ')) then '_' else f:raw-output-group($n)"/>
   </xsl:function>
 
   <xsl:function name="f:lineno-for-display">
