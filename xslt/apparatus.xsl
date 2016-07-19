@@ -493,14 +493,6 @@ in <xsl:value-of select="document-uri(/)"/>
 			</span>
 		</xsl:element>		
 	</xsl:template>
-
-	<!-- Pre-rendered XHTML will simply be copied -->
-	<xsl:template match="xh:*">
-		<xsl:copy>
-			<xsl:copy-of select="@*"/>
-			<xsl:apply-templates/>
-		</xsl:copy>
-	</xsl:template>
 	
 	<xsl:template match="exist:match">
 		<mark class="match">
