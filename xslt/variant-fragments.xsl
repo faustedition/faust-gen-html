@@ -95,7 +95,7 @@
 		<div class="variants" data-n="{current-grouping-key()}"
 			data-witnesses="{count($evidence/* except $evidence/*[@f:type='lesetext'] except $evidence/f:standoff)}"
 			data-variants="{count(distinct-values(for $ev in $evidence/* except $evidence/f:standoff return f:normalize-space($ev)))-1}"
-			data-ctext="{$ctext}" id="v{current-grouping-key()}">
+			data-ctext="{$ctext}" id="v{$current-n}">
 			<xsl:attribute name="xml:id" select="concat('v', $current-n)"/>
 			<xsl:for-each-group select="$evidence/*" group-by="f:normalize-space(.)">
 				<xsl:apply-templates select="current-group()[1]/*">
