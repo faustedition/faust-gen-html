@@ -160,7 +160,7 @@
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 			<p:input port="stylesheet"><p:document href="xslt/prints-index.xsl"/></p:input>
 		</p:xslt>
-		<p:store>
+		<p:store method="xhtml" indent="true">
 			<p:with-option name="href" select="resolve-uri('www/archive_prints.html', $builddir)"/>
 		</p:store>
 		

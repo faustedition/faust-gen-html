@@ -20,9 +20,9 @@
 		<head>
 			<meta charset="utf-8"/>
 
-			<script src="{$assets}/js/sortable.min.js"/>
+			<script type="text/javascript" src="{$assets}/js/sortable.min.js"/>
 			<script type="text/javascript" src="{$assets}/js/faust_common.js"/>
-			<script src="{$assets}/js/faust_print_interaction.js"/>
+			<script type="text/javascript" src="{$assets}/js/faust_print_interaction.js"/>
 			
 
 			<link rel="stylesheet" href="{$assets}/css/document-text.css"/>
