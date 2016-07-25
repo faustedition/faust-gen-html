@@ -47,7 +47,7 @@
 		<xsl:variable name="output-file" select="concat($variants, '_.html')"/>
 		<xsl:result-document href="{$output-file}">
 			<div class="groups" data-group="_">
-				<xsl:for-each-group select="//*[f:hasvars(.) and contains(@n, ' ') and not(contains(@n, 'before'))]" group-by="@n">
+				<xsl:for-each-group select="//*[f:hasvars(.) and contains(@n, ' ')]" group-by="@n">
 					<xsl:variable name="ns" select="tokenize(current-grouping-key(), '\s+')"/>
 					<xsl:variable name="current-lines" as="element()*">
 						<xsl:sequence select="current-group()"/>
