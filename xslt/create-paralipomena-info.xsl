@@ -102,7 +102,7 @@
 					</xsl:choose>
 				</xsl:variable>
 				<xsl:variable name="rawText"> <!-- Plain text within the paralipomenon -->
-					<xsl:apply-templates select="$rawContent except $rawContent/*" mode="text"/>
+					<xsl:apply-templates select="$rawContent except $rawContent/node()" mode="text"/>
 				</xsl:variable>
 				
 				
