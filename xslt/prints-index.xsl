@@ -34,7 +34,7 @@
 							<xsl:variable name="transcript" select="$transcripts//textTranscript[@uri=$uri]"/>							
 							<tr>
 								<td>
-									<a href="{replace($transcript/@uri, 'faust://xml.*/(.+?)\.xml', '$1')}">
+									<a href="print/{replace($transcript/@uri, 'faust://xml.*/(.+?)\.xml', '$1')}">
 										<xsl:value-of select="$transcript/@f:sigil"/>
 									</a>
 								</td>
