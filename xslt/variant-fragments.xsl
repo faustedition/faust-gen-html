@@ -138,7 +138,7 @@
 						select="if (@f:type='archivalDocument') 
 									then f:doclink(@f:doc, @f:page, @n) 
 									else concat($printbase, @f:section, '#l', @n)"/>						
-					<a class="sigil" href="{$target}" title="{f:sigil-label(@f:sigil-type)}">
+					<a class="sigil" href="{$target}" title="{@f:headNote}">
 						<xsl:value-of select="@f:sigil"/>
 					</a>
 					<xsl:if test="position() lt count($group)">

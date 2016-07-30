@@ -3098,7 +3098,9 @@
         <folder path="xslt/"/>
         <file name="apparatus.md"/>
         <file name="apparatus.xpl"/>
-        <file name="apply-edits.xpl"/>
+        <file name="file:/home/tv/git/faust-gen/src/main/xproc/apply-edits.xpl">
+            <file name="apparatus.xpl"/>
+        </file>
         <file name="collate-variants.xpl"/>
         <file name="collect-metadata.xpl"/>
         <file name="collection.xconf"/>

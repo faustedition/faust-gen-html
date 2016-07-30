@@ -60,6 +60,7 @@
       </xsl:if>      
       <xsl:attribute name="f:type" select="$type"/>
       <xsl:attribute name="f:section" select="f:get-section-label(.)"/>
+      <xsl:attribute name="f:headNote" select="id('headNote')"/>
       <xsl:apply-templates select="node()"/>
       <xsl:for-each select="following-sibling::*[@n = current()/@n and not(preceding-sibling::*[@n != current()/@n][. >> current()])]">
         <span xmlns="http://www.w3.org/1999/xhtml" class="generated-text"> | </span>
