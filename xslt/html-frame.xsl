@@ -6,7 +6,7 @@
 	version="2.0">
 
 	<xsl:param name="title">Faust-Edition [beta]</xsl:param>
-	<xsl:param name="edition">..</xsl:param>
+	<xsl:param name="edition"></xsl:param>
 	<xsl:param name="assets" select="$edition"/>
 	<xsl:param name="debug" select="false()"/>
 	<xsl:param name="headerAdditions"/>

@@ -11,7 +11,7 @@
 	<!-- common code for print2html and variant generation. not to be used standalone -->
 	<xsl:import href="utils.xsl"/>
 	
-	<xsl:param name="edition">../</xsl:param>
+	<xsl:param name="edition"></xsl:param>
 	
 	<xsl:key name="alt" match="alt" use="for $ref in tokenize(@target, '\s+') return substring($ref, 2)"/>		
 	
