@@ -27,8 +27,9 @@
 10. Reconstruct X.2 (`#ka`)
 11. Collate TBT and X.2 (`#ve`, `#va`)
 12. Correct TBT = generate base text (`#ka`)
-13. Transform `sic-corr` into `note`
-14. Transform TUSTEP file into XML (`#ko`)
+13. Transform `sic-corr` and posthumous revisions into `note`s (`#ko`)
+14. Add notes for occasional emendations (`#ko`)
+15. Transform TUSTEP file into XML (`#ko`)
 
 ### XSL
 * Normalize white space
