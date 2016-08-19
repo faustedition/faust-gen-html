@@ -320,11 +320,11 @@
 						<xsl:choose>
 							<xsl:when test="$single">
 								<span class="fa-li fa fa-docs"/>
-								<a href="{f:html-link($output-base)}">nach Szenen zerlegt</a>
+								<a href="{f:html-link($output-base)}">Szenenansicht</a>
 							</xsl:when>
 							<xsl:otherwise>
 								<span class="fa-li fa fa-doc"/>
-								<a href="{f:html-link(concat($output-base, '.all'))}">auf einer Seite</a>
+								<a href="{f:html-link(concat($output-base, '.all'))}">Gesamtansicht</a>
 							</xsl:otherwise>
 						</xsl:choose>
 					</li>
