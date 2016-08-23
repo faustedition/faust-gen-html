@@ -2,7 +2,10 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.tei-c.org/ns/1.0"    
     xmlns:f="http://www.faustedition.net/ns" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-    exclude-result-prefixes="xs f" version="2.0" xmlns:ge="http://www.tei-c.org/ns/geneticEditions">
+    exclude-result-prefixes="xs f" version="2.0" xmlns:ge="http://www.tei-c.org/ns/geneticEditions"
+    xmlns:fn="http://www.example.com/fn">
+    
+    <xsl:import href="utils.xsl"/>
     
     <xsl:template match="node()|@*">
         <xsl:copy>
@@ -58,21 +61,14 @@
         <xsl:apply-templates/>
     </xsl:template>
 
-    <!-- Zeichen -->
-    <!-- XXX string-replace im xproc direkt? -->
     <xsl:template match="text()" priority="1">
-        <xsl:variable name="tmp1" select=" replace(.,'ā','aa')"/>
-        <xsl:variable name="tmp2" select=" replace($tmp1,'ē','ee')"/>
-        <xsl:variable name="tmp3" select=" replace($tmp2,'m̄','mm')"/>
-        <xsl:variable name="tmp4" select=" replace($tmp3,'n̄','nn')"/>
-        <xsl:variable name="tmp5" select=" replace($tmp4,'r̄','rr')"/>
-        <xsl:variable name="tmp5a" select=" replace($tmp5,'ſs','ß')"/>
-        <xsl:variable name="tmp6" select=" replace($tmp5a,'ſ','s')"/>
-        <xsl:variable name="tmp7" select=" replace($tmp6,'—','–')"/>
-        <xsl:variable name="tmp8" select=" replace($tmp7,'&#x00AD;','')"/>  <!-- Soft Hyphen -->
-        <xsl:value-of select="$tmp8"/>
+        <xsl:value-of select="f:normalize-print-chars(.)"/>
     </xsl:template>
     <xsl:strip-space elements="app choice subst"/>
+    
+    <xsl:template match="@f:section-label">
+        <xsl:attribute name="{name()}" select="f:normalize-print-chars(.)"/>                    
+    </xsl:template>
 
     <xsl:template match="orig/text()[. = 'sſ']">ß</xsl:template>
   

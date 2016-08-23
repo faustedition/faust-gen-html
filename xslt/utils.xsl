@@ -378,6 +378,20 @@
     <xsl:value-of select="if ($element/@xml:id) then $element/@xml:id else generate-id($element)"/>
   </xsl:function>
   
+  <!-- Zeichen -->
+  <xsl:function name="f:normalize-print-chars">
+    <xsl:param name="text"/>
+    <xsl:variable name="tmp1" select=" replace(normalize-unicode($text),'ā','aa')"/>
+    <xsl:variable name="tmp2" select=" replace($tmp1,'ē','ee')"/>
+    <xsl:variable name="tmp3" select=" replace($tmp2,'m̄','mm')"/>
+    <xsl:variable name="tmp4" select=" replace($tmp3,'n̄','nn')"/>
+    <xsl:variable name="tmp5" select=" replace($tmp4,'r̄','rr')"/>
+    <xsl:variable name="tmp5a" select=" replace($tmp5,'ſs','ß')"/>
+    <xsl:variable name="tmp6" select=" replace($tmp5a,'ſ','s')"/>
+    <xsl:variable name="tmp7" select=" replace($tmp6,'—','–')"/>
+    <xsl:variable name="tmp8" select=" replace($tmp7,'&#x00AD;','')"/>  <!-- Soft Hyphen -->
+    <xsl:value-of select="$tmp8"/>
+  </xsl:function>
   
   
   

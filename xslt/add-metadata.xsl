@@ -141,13 +141,32 @@
 			<xsl:choose>
 				<xsl:when test="$scenedata/*">
 					<xsl:attribute name="f:scene" select="$scenedata//f:id"/>
-					<xsl:attribute name="f:scene-label" select="$scenedata//f:title"/>
 					<xsl:call-template name="add-xmlid"><xsl:with-param name="id" select="concat('scene_', $scenedata//f:id)"/></xsl:call-template>
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:call-template name="add-xmlid"/>
 				</xsl:otherwise>
 			</xsl:choose>
+			<xsl:attribute name="f:scene-label">
+				<xsl:variable name="stage" select="stage[1]"/>
+				<xsl:variable name="raw-label">
+					<xsl:choose>
+						<xsl:when test="$type = 'lesetext' and $scenedata/*">
+							<xsl:value-of select="$scenedata//f:title"/>
+						</xsl:when>
+						<xsl:when test="head">
+							<xsl:value-of select="head[1]"/>
+						</xsl:when>
+						<xsl:when test="string-length($stage) le 60">
+							<xsl:value-of select="$stage"/>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="replace($stage, '\..*$', '. …')"/>
+						</xsl:otherwise>
+					</xsl:choose>					
+				</xsl:variable>
+				<xsl:value-of select="f:normalize-space(f:normalize-print-chars($raw-label))"/>
+			</xsl:attribute>
 			<xsl:apply-templates select="@*"/>
 			<xsl:apply-templates select="node()"/>
 		</xsl:copy>
