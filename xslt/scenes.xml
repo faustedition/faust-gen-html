@@ -1,171 +1,175 @@
 <sceneLineMapping xmlns="http://www.faustedition.net/ns">
-    <scene n="1.1">
+    <scene n="1.0.1">
         <rangeStart>1</rangeStart>
         <rangeEnd>32</rangeEnd>
         <title>Zueignung</title>
-        <id>1.1</id>
+        <id>1.0.1</id>
     </scene>
-    <scene n="1.2">
+    <scene n="1.0.2">
         <rangeStart>33</rangeStart>
         <rangeEnd>242</rangeEnd>
         <title>Vorspiel auf dem Theater</title>
-        <id>1.2</id>
+        <id>1.0.2</id>
     </scene>
-    <scene n="1.3">
+    <scene n="1.0.3">
         <rangeStart>243</rangeStart>
         <rangeEnd>353</rangeEnd>
         <title>Prolog im Himmel</title>
-        <id>1.3</id>
+        <id>1.0.3</id>
     </scene>
-    <scene n="1.4">
+    <scene n="1.1">
+        <!-- erster Teil -->
+        <id>1.1</id>
+    </scene>
+    <scene n="1.1.1">
         <rangeStart>354</rangeStart>
         <rangeEnd>807</rangeEnd>
         <title>Nacht</title>
-        <id>1.4</id>
+        <id>1.1.1</id>
     </scene>
-    <scene n="1.5">
+    <scene n="1.1.2">
         <rangeStart>808</rangeStart>
         <rangeEnd>1177</rangeEnd>
         <title>Vor dem Tor</title>
-        <id>1.5</id>
+        <id>1.1.2</id>
     </scene>
-    <scene n="1.6">
+    <scene n="1.1.3">
         <rangeStart>1178</rangeStart>
         <rangeEnd>1529</rangeEnd>
         <title>Studierzimmer I</title>
-        <id>1.6</id>
+        <id>1.1.3.</id>
     </scene>
-    <scene n="1.7">
+    <scene n="1.1.4">
         <rangeStart>1530</rangeStart>
         <rangeEnd>2072</rangeEnd>
         <title>Studierzimmer II</title>
-        <id>1.7</id>
+        <id>1.1.4</id>
     </scene>
-    <scene n="1.8">
+    <scene n="1.1.5">
         <rangeStart>2073</rangeStart>
         <rangeEnd>2336</rangeEnd>
         <title>Auerbachs Keller</title>
-        <id>1.8</id>
+        <id>1.1.5</id>
     </scene>
-    <scene n="1.9">
+    <scene n="1.1.6">
         <rangeStart>2337</rangeStart>
         <rangeEnd>2604</rangeEnd>
         <title>Hexenküche</title>
-        <id>1.9</id>
+        <id>1.1.6</id>
     </scene>
-    <scene n="1.10">
+    <scene n="1.1.7">
         <rangeStart>2605</rangeStart>
         <rangeEnd>2677</rangeEnd>
         <title>Straße</title>
-        <id>1.10</id>
+        <id>1.1.7</id>
     </scene>
-    <scene n="1.11">
+    <scene n="1.1.8">
         <rangeStart>2678</rangeStart>
         <rangeEnd>2804</rangeEnd>
         <title>Abend</title>
-        <id>1.11</id>
+        <id>1.1.8</id>
     </scene>
-    <scene n="1.12">
+    <scene n="1.1.9">
         <rangeStart>2805</rangeStart>
         <rangeEnd>2864</rangeEnd>
         <title>Spaziergang</title>
-        <id>1.12</id>
+        <id>1.1.9</id>
     </scene>
-    <scene n="1.13">
+    <scene n="1.1.10">
         <rangeStart>2865</rangeStart>
         <rangeEnd>3024</rangeEnd>
         <title>Der Nachbarin Haus</title>
-        <id>1.13</id>
+        <id>1.1.10</id>
     </scene>
-    <scene n="1.14">
+    <scene n="1.1.11">
         <rangeStart>3025</rangeStart>
         <rangeEnd>3072</rangeEnd>
         <title>Straße</title>
-        <id>1.14</id>
+        <id>1.1.11</id>
     </scene>
-    <scene n="1.15">
+    <scene n="1.1.12">
         <rangeStart>3073</rangeStart>
         <rangeEnd>3204</rangeEnd>
         <title>Garten</title>
-        <id>1.15</id>
+        <id>1.1.12</id>
     </scene>
-    <scene n="1.16">
+    <scene n="1.1.13">
         <rangeStart>3205</rangeStart>
         <rangeEnd>3216</rangeEnd>
         <title>Ein Gartenhäuschen</title>
-        <id>1.16</id>
+        <id>1.1.13</id>
     </scene>
-    <scene n="1.17">
+    <scene n="1.1.14">
         <rangeStart>3217</rangeStart>
         <rangeEnd>3373</rangeEnd>
         <title>Wald und Höhle</title>
-        <id>1.17</id>
+        <id>1.1.14</id>
     </scene>
-    <scene n="1.18">
+    <scene n="1.1.15">
         <rangeStart>3374</rangeStart>
         <rangeEnd>3413</rangeEnd>
         <title>Gretchens Stube</title>
-        <id>1.18</id>
+        <id>1.1.15</id>
     </scene>
-    <scene n="1.19">
+    <scene n="1.1.16">
         <rangeStart>3414</rangeStart>
         <rangeEnd>3543</rangeEnd>
         <title>Marthens Garten</title>
-        <id>1.19</id>
+        <id>1.1.16</id>
     </scene>
-    <scene n="1.20">
+    <scene n="1.1.17">
         <rangeStart>3544</rangeStart>
         <rangeEnd>3586</rangeEnd>
         <title>Am Brunnen</title>
-        <id>1.20</id>
+        <id>1.1.17</id>
     </scene>
-    <scene n="1.21">
+    <scene n="1.1.18">
         <rangeStart>3587</rangeStart>
         <rangeEnd>3619</rangeEnd>
         <title>Zwinger</title>
-        <id>1.21</id>
+        <id>1.1.18</id>
     </scene>
-    <scene n="1.22">
+    <scene n="1.1.19">
         <rangeStart>3620</rangeStart>
         <rangeEnd>3775</rangeEnd>
         <title>Nacht</title>
-        <id>1.22</id>
+        <id>1.1.19</id>
     </scene>
-    <scene n="1.23">
+    <scene n="1.1.20">
         <rangeStart>3776</rangeStart>
         <rangeEnd>3834</rangeEnd>
         <title>Dom</title>
-        <id>1.23</id>
+        <id>1.1.20</id>
     </scene>
-    <scene n="1.24">
+    <scene n="1.1.21">
         <rangeStart>3835</rangeStart>
         <rangeEnd>4222</rangeEnd>
         <title>Walpurgisnacht</title>
-        <id>1.24</id>
+        <id>1.1.21</id>
     </scene>
-    <scene n="1.25">
+    <scene n="1.1.22">
         <rangeStart>4223</rangeStart>
         <rangeEnd>4398</rangeEnd>
         <title>Walpurgisnachtstraum</title>
-        <id>1.25</id>
+        <id>1.1.22</id>
     </scene>
-    <scene n="1.26">
+    <scene n="1.1.23">
         <rangeStart>4398</rangeStart>
         <rangeEnd>4399</rangeEnd>
         <title>Trüber Tag. Feld</title>
-        <id>1.26</id>
+        <id>1.1.23</id>
     </scene>
-    <scene n="1.27">
+    <scene n="1.1.24">
         <rangeStart>4399</rangeStart>
         <rangeEnd>4404</rangeEnd>
         <title>Nacht, offen Feld</title>
-        <id>1.27</id>
+        <id>1.1.24</id>
     </scene>
-    <scene n="1.28">
+    <scene n="1.1.25">
         <rangeStart>4405</rangeStart>
         <rangeEnd>4612</rangeEnd>
         <title>Kerker</title>
-        <id>1.28</id>
+        <id>1.1.25</id>
     </scene>
     <scene n="2.1.1">
         <rangeStart>4613</rangeStart>
