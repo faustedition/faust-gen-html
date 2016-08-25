@@ -176,40 +176,44 @@
         <id>2.1.1</id>
     </scene>
     <scene n="2.1.2">
+        <title>Kaiserliche Pfalz</title>
+        <id>2.1.2</id>
+    </scene>
+    <scene n="2.1.2.1">
         <rangeStart>4728</rangeStart>
         <rangeEnd>5064</rangeEnd>
         <title>Saal des Thrones</title>
-        <id>2.1.2</id>
+        <id>2.1.2.1</id>
     </scene>
-    <scene n="2.1.3">
+    <scene n="2.1.2.2">
         <rangeStart>5065</rangeStart>
         <rangeEnd>5986</rangeEnd>
         <title>Weitläufiger Saal</title>
-        <id>2.1.3</id>
+        <id>2.1.2.2</id>
     </scene>
-    <scene n="2.1.4">
+    <scene n="2.1.2.3">
         <rangeStart>5987</rangeStart>
         <rangeEnd>6172</rangeEnd>
         <title>Lustgarten</title>
-        <id>2.1.4</id>
+        <id>2.1.2.3</id>
     </scene>
-    <scene n="2.1.5">
+    <scene n="2.1.2.4">
         <rangeStart>6173</rangeStart>
         <rangeEnd>6306</rangeEnd>
         <title>Finstere Galerie</title>
-        <id>2.1.5</id>
+        <id>2.1.2.4</id>
     </scene>
-    <scene n="2.1.6">
+    <scene n="2.1.2.5">
         <rangeStart>6307</rangeStart>
         <rangeEnd>6376</rangeEnd>
         <title>Hell erleuchtete Säle</title>
-        <id>2.1.6</id>
+        <id>2.1.2.5</id>
     </scene>
-    <scene n="2.1.7">
+    <scene n="2.1.2.6">
         <rangeStart>6377</rangeStart>
         <rangeEnd>6565</rangeEnd>
         <title>Rittersaal</title>
-        <id>2.1.7</id>
+        <id>2.1.2.6</id>
     </scene>
     <scene n="2.2.1">
         <rangeStart>6566</rangeStart>
