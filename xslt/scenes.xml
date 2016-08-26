@@ -230,35 +230,35 @@
     <scene n="2.2.3">
         <title>Klassische Walpurgisnacht</title>
     </scene>
-    <scene n="2.2.3">
+    <scene n="2.2.3.1">
         <rangeStart>7005</rangeStart>
         <rangeEnd>7248</rangeEnd>
         <title>Pharsalische Felder</title>
-        <id>2.2.3</id>
+        <id>2.2.3.1</id>
     </scene>
-    <scene n="2.2.4">
+    <scene n="2.2.3.2">
         <rangeStart>7249</rangeStart>
         <rangeEnd>7494</rangeEnd>
         <title>Peneius</title>
-        <id>2.2.4</id>
+        <id>2.2.3.2</id>
     </scene>
-    <scene n="2.2.5">
+    <scene n="2.2.3.3">
         <rangeStart>7495</rangeStart>
         <rangeEnd>8033</rangeEnd>
         <title>Am obern Peneios</title>
-        <id>2.2.5</id>
+        <id>2.2.3.3</id>
     </scene>
-    <scene n="2.2.6">
+    <scene n="2.2.3.4">
         <rangeStart>8034</rangeStart>
         <rangeEnd>8274</rangeEnd>
         <title>Felsbuchten des ägäischen Meers</title>
-        <id>2.2.6</id>
+        <id>2.2.3.4</id>
     </scene>
-    <scene n="2.2.7">
+    <scene n="2.2.3.5">
         <rangeStart>8275</rangeStart>
         <rangeEnd>8487</rangeEnd>
         <title>Telchinen von Rhodus</title>
-        <id>2.2.7</id>
+        <id>2.2.3.5</id>
     </scene>
     <scene n="2.3.1">
         <rangeStart>8488</rangeStart>
