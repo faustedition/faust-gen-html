@@ -86,15 +86,17 @@
 			<xsl:apply-templates select="@*"/>
 			<xsl:apply-templates select="node()"/>
 			
-			<idno type="faustedition" xml:id="sigil">
+			<xsl:variable name="sigil">
 				<xsl:choose>
 					<xsl:when test="$type = 'lesetext'">Lesetext</xsl:when>
 					<xsl:otherwise>
 						<xsl:value-of select="$metadata//f:idno[@type='faustedition']"/>
 					</xsl:otherwise>
 				</xsl:choose>
-			</idno>
+			</xsl:variable>
 			
+			<idno type="faustedition" xml:id="sigil"><xsl:value-of select="$sigil"/></idno>
+			<idno type="sigil_n" xml:id="sigil_n"><xsl:value-of select="replace(lower-case($sigil), '[ .*]', '')"/></idno>						
 			<idno type="fausturi" xml:id="fausturi"><xsl:value-of select="$faustURI"/></idno>
 			<idno type="fausttranscript" xml:id="fausttranscript"><xsl:value-of select="$transcriptBase"/></idno>
 			
@@ -124,6 +126,7 @@
 		</xsl:copy>
 	</xsl:template>
 	
+	<!-- f:section-div == this div will govern an own output file (section) -->
 	<xsl:function name="f:section-div" as="xs:boolean">
 		<xsl:param name="div"/>
 		<xsl:value-of select="$splittable 
@@ -173,7 +176,7 @@
 	</xsl:template>
 	
 
-	<!-- Adds an XML id, but only if none is present at the context attribute. -->
+	<!-- Adds an XML id, but only if none is present at the context element. -->
 	<xsl:template name="add-xmlid">
 		<xsl:param name="id" select="generate-id()"/>
 		<xsl:if test="not(@xml:id)">
@@ -181,6 +184,7 @@
 		</xsl:if>
 	</xsl:template>
 	
+	<!-- This deals with Acts: It finds the first labeled scene and calculates the act number. -->
 	<xsl:template match="div" priority="1">
 		<xsl:variable name="scenes" as="element()*">
 			<xsl:for-each select=".//div[f:section-div(.)]">
@@ -206,6 +210,7 @@
 		</xsl:choose>
 	</xsl:template>
 	
+	<!-- Any other div is just augmented with a generated id -->
 	<xsl:template match="div|titlePage">
 		<xsl:copy>
 			<xsl:call-template name="add-xmlid"/>
