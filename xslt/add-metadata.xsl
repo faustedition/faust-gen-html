@@ -126,6 +126,16 @@
 		</xsl:copy>
 	</xsl:template>
 	
+	<!-- 
+		
+		Revamped <div> handling.
+		
+		<div>s that are to be written to a separate file get a f:section attribute.
+		<div>s that are recognized get f:scene and f:scene-label attributes
+		
+	-->
+		
+	
 	<!-- f:section-div == this div will govern an own output file (section) -->
 	<xsl:function name="f:section-div" as="xs:boolean">
 		<xsl:param name="div"/>
@@ -134,45 +144,84 @@
 			or count($div/ancestor-or-self::div) lt $depth_n and not($div/descendant::div[f:section-div(.)])"/>
 	</xsl:function>
 	
-	<!-- Scenes that are recognized get a f:scene and f:scene-label attribute -->
-	<xsl:template match="div[f:section-div(.)]" priority="2">
-		<xsl:variable name="scenedata">
-			<xsl:call-template name="scene-data"/>
-		</xsl:variable>		
-		<xsl:copy>
-			<xsl:attribute name="f:section" select="count(preceding::div[f:section-div(.)]) + 1"/>			
+	<!-- one template to rule them all -->
+	<xsl:template match="div" priority="5">
+		<xsl:variable name="explicit-scene" select="$scenes//f:scene[@n = current()/@n]"/>
+		<xsl:variable name="scene" select="($explicit-scene, f:scene-for(.))[1]"/>
+		<xsl:variable name="act"> <!-- act no, if this is an act  -->
 			<xsl:choose>
-				<xsl:when test="$scenedata/*">
-					<xsl:attribute name="f:scene" select="$scenedata//f:id"/>
-					<xsl:call-template name="add-xmlid"><xsl:with-param name="id" select="concat('scene_', $scenedata//f:id)"/></xsl:call-template>
+				<xsl:when test="matches(@n, '^2\.[1-5]$')">
+					<xsl:value-of select="replace(@n, '^2\.([1-5])', '$1')"/>
+				</xsl:when>
+				<xsl:when test="not(f:section-div(.)) and .//div[f:section-div(.)]">
+					<xsl:variable name="contained-scene-no" select="data(f:scene-for(.)/@n)"/>
+					<xsl:value-of select="if (starts-with($contained-scene-no, '2.')) then tokenize($contained-scene-no, '\.')[2] else ()"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:sequence select="()"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		
+		
+		<xsl:copy>
+			<xsl:if test="f:section-div(.)">
+				<xsl:attribute name="f:section" select="count(preceding::div[f:section-div(.)]) + 1"/>	
+			</xsl:if>
+			
+			<xsl:choose>
+				<xsl:when test="data($act) != ''">
+					<xsl:attribute name="f:act" select="$act"/>
+					<xsl:call-template name="add-xmlid"><xsl:with-param name="id" select="concat('act_', $act)"/></xsl:call-template>										
+					<xsl:attribute name="f:act-label" >
+						<xsl:choose>
+							<xsl:when test="$type = 'lesetext'"><xsl:value-of select="concat($act, '. Akt')"/></xsl:when>
+							<xsl:otherwise><xsl:call-template name="extract-scene-label"/></xsl:otherwise>
+						</xsl:choose>						
+					</xsl:attribute>
+				</xsl:when>
+				
+				<xsl:when test="$explicit-scene or f:section-div(.)">
+					<xsl:attribute name="f:scene" select="$scene/@n"/>
+					<xsl:call-template name="add-xmlid">
+						<xsl:with-param name="id" select="concat('scene_', $scene/@n)"/>
+					</xsl:call-template>
+					<xsl:attribute name="f:scene-label">
+						<xsl:choose>
+							<xsl:when test="$type = 'lesetext'"><xsl:value-of select="$scene//f:title"/></xsl:when>
+							<xsl:otherwise><xsl:call-template name="extract-scene-label"/></xsl:otherwise>
+						</xsl:choose>
+					</xsl:attribute>					
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:call-template name="add-xmlid"/>
 				</xsl:otherwise>
 			</xsl:choose>
-			<xsl:attribute name="f:scene-label">
-				<xsl:variable name="stage" select="stage[1]"/>
-				<xsl:variable name="raw-label">
-					<xsl:choose>
-						<xsl:when test="$type = 'lesetext' and $scenedata/*">
-							<xsl:value-of select="$scenedata//f:title"/>
-						</xsl:when>
-						<xsl:when test="head">
-							<xsl:value-of select="head[1]"/>
-						</xsl:when>
-						<xsl:when test="string-length($stage) le 60">
-							<xsl:value-of select="$stage"/>
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:value-of select="replace($stage, '\..*$', '. …')"/>
-						</xsl:otherwise>
-					</xsl:choose>					
-				</xsl:variable>
-				<xsl:value-of select="f:normalize-space(f:normalize-print-chars($raw-label))"/>
-			</xsl:attribute>
+			
 			<xsl:apply-templates select="@*"/>
-			<xsl:apply-templates select="node()"/>
+			<xsl:apply-templates select="node()"/>			
 		</xsl:copy>
+	</xsl:template>
+	
+	<!-- extracts the scene label from the heading -->
+	<xsl:template name="extract-scene-label">
+		<xsl:variable name="stage" select="stage[1]"/>
+		<xsl:variable name="raw-label">
+			<xsl:choose>
+				<xsl:when test="head">
+					<xsl:value-of select="head[1]"/>
+				</xsl:when>
+				<xsl:when test="string-length($stage) le 60">
+					<xsl:value-of select="$stage"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="replace($stage, '\..*$', '. …')"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:value-of
+			select="f:normalize-space(f:normalize-print-chars($raw-label))"
+		/>		
 	</xsl:template>
 	
 
@@ -184,34 +233,9 @@
 		</xsl:if>
 	</xsl:template>
 	
-	<!-- This deals with Acts: It finds the first labeled scene and calculates the act number. -->
-	<xsl:template match="div" priority="1">
-		<xsl:variable name="scenes" as="element()*">
-			<xsl:for-each select=".//div[f:section-div(.)]">
-				<xsl:call-template name="scene-data"/>
-			</xsl:for-each>
-		</xsl:variable>
-		<xsl:variable name="first-scene" select="$scenes[1]"/>
-		
-		<xsl:choose>
-			<xsl:when test="$first-scene and starts-with($first-scene/f:id, '2')">
-				<xsl:copy>
-					<xsl:variable name="act" select="tokenize($first-scene/f:id, '\.')[2]"/>
-					<xsl:attribute name="f:act" select="$act"/>
-					<xsl:attribute name="f:act-label" select="concat($act, '. Akt')"/>
-					<xsl:call-template name="add-xmlid"><xsl:with-param name="id" select="concat('act_', $act)"/></xsl:call-template>					
-					<xsl:apply-templates select="@*"/>
-					<xsl:apply-templates/>
-				</xsl:copy>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:next-match/>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
 	
 	<!-- Any other div is just augmented with a generated id -->
-	<xsl:template match="div|titlePage">
+	<xsl:template match="titlePage">
 		<xsl:copy>
 			<xsl:call-template name="add-xmlid"/>
 			<xsl:apply-templates select="@*"/>

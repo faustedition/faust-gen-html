@@ -110,7 +110,7 @@
 	<xsl:template mode="tocpage" match="div">
 		<li>
 			<xsl:call-template name="section-link"/>
-			<xsl:if test="descendant::div[@f:section]">
+			<xsl:if test="descendant::div[@f:scene]">
 				<ul>
 					<xsl:apply-templates mode="#current"/>
 				</ul>

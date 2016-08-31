@@ -349,7 +349,7 @@
   <xsl:function name="f:scene-for" as="element()?">
     <xsl:param name="element"/>
     <xsl:variable name="n" select="$element/@n"/>
-    <xsl:sequence select="$scenes//f:scene[f:id = $n] | $scenes//f:scene[number(f:rangeStart) le number($n) and  number(f:rangeEnd) ge number($n)][1]"/>
+    <xsl:sequence select="$scenes//f:scene[@n = $n] | $scenes//f:scene[number(f:rangeStart) le number($n) and  number(f:rangeEnd) ge number($n)][1]"/>
   </xsl:function>
   
   <xsl:function name="f:is-schroer" as="xs:boolean">
@@ -371,6 +371,12 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
+  <xsl:function name="f:get-scene-data" as="element()?">
+    <xsl:param name="div" as="element()?"/>
+    <xsl:for-each select="$div">
+      <xsl:call-template name="scene-data"/>
+    </xsl:for-each>
+  </xsl:function>
 
   <!-- Reuse IDs from the XML source (since they are manually crafted) -->
   <xsl:function name="f:generate-id" as="xs:string">
