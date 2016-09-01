@@ -369,7 +369,8 @@ in <xsl:value-of select="document-uri(/)"/>
       class="{string-join((f:generic-classes(.), 'generated-text', 'pageno', 'doclink'), ' ')}"
       id="dt{@f:docTranscriptNo}"
       href="{if ($type = 'archivalDocument') then f:doclink($documentURI, @f:docTranscriptNo, ()) else concat('#dt', @f:docTranscriptNo)}"> 
-      [<xsl:call-template name="generate-pageno"/>]
+      <xsl:attribute name="title"><xsl:call-template name="generate-pageno"/></xsl:attribute>
+      <xsl:value-of select="@f:docTranscriptNo"/>
     </a>
   </xsl:template>
 	
