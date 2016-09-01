@@ -106,6 +106,10 @@
 		</xsl:result-document>
 	</xsl:template>
 	
+	<xsl:template match="div[@xml:id]" priority="2">
+		<a name="{f:generate-id(.)}" id="{f:generate-id(.)}"/>
+		<xsl:next-match/>
+	</xsl:template>
 	
 	<xsl:template mode="tocpage" match="div">
 		<li>
