@@ -388,6 +388,19 @@ in <xsl:value-of select="document-uri(/)"/>
       [<xsl:call-template name="generate-pageno"/>]
     </span>
   </xsl:template>
+		
+  <xsl:key name="next" match="*[@next]" use="substring(@next, 2)"/>
+  <xsl:template match="milestone[@unit='paralipomenon' and not(@xml:id and key('next', @xml:id))]">
+  	<xsl:variable name="no" select="replace(@n, 'p(\d+)', '$1')"/>
+  	<xsl:variable name="id" select="concat('para_', $no, '_', id('sigil_n'))"/>
+  	<a  class="{string-join((f:generic-classes(.), 'generated-text', 'paralipomenon'), ' ')}"
+  		id="{$id}"
+  		title="Paralipomenon {$no}"
+  		href="/paralipomena#{$id}"
+  		name="{$id}">P <xsl:value-of select="$no"/></a>
+  </xsl:template>
+  
+  <xsl:template match="milestone"/> <!-- Oder besser ein <a name/>? -->
 	
   <xsl:template match="fw"/>
 	
