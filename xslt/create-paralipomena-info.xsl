@@ -43,7 +43,8 @@
 	
 	-->
 	
-	<xsl:import href="utils.xsl"/>
+	
+	<xsl:import href="emend-core.xsl"/>
 
 	<xsl:param name="incipit_words" as="xs:integer">5</xsl:param>
 	
@@ -101,8 +102,11 @@
 						</xsl:otherwise>
 					</xsl:choose>
 				</xsl:variable>
+				<xsl:variable name="emendedContent">
+					<xsl:apply-templates mode="emend" select="$rawContent except $rawContent/node()"/>
+				</xsl:variable>
 				<xsl:variable name="rawText"> <!-- Plain text within the paralipomenon -->
-					<xsl:apply-templates select="$rawContent except $rawContent/node()" mode="text"/>
+					<xsl:apply-templates select="$emendedContent" mode="text"/>
 				</xsl:variable>
 				
 				
