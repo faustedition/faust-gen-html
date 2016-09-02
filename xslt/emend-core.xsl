@@ -94,8 +94,8 @@
     <xsl:template match="orig/text()[. = 'sſ']" mode="#default emend">ß</xsl:template>
 
     <!-- only in emendation mode -->
-    <xsl:template match="choice" mode="emend">
-        <xsl:apply-templates select="(orig|abbr|sic)/node()" mode="#current"/>
+    <xsl:template match="choice|app" mode="emend">
+        <xsl:apply-templates select="(orig|abbr|sic|lem)/node()" mode="#current"/>
     </xsl:template>
 
 </xsl:stylesheet>
