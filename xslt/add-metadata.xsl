@@ -13,7 +13,7 @@
 		header. Rest of the document is passed through as is.
 	-->
 	
-	<xsl:import href="utils.xsl"/>
+	<xsl:import href="emend-core.xsl"/>
 	
 	<!-- The root directory of the Faust XML data, corresponds to faust://xml/, needs to resolve -->
 	<xsl:param name="source"/>
@@ -205,22 +205,16 @@
 	
 	<!-- extracts the scene label from the heading -->
 	<xsl:template name="extract-scene-label">
-		<xsl:variable name="stage" select="stage[1]"/>
-		<xsl:variable name="raw-label">
-			<xsl:choose>
-				<xsl:when test="head">
-					<xsl:value-of select="head[1]"/>
-				</xsl:when>
-				<xsl:when test="string-length($stage) le 60">
-					<xsl:value-of select="$stage"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:value-of select="replace($stage, '\..*$', '. …')"/>
-				</xsl:otherwise>
-			</xsl:choose>
+		<xsl:variable name="raw-label" select="(head, stage)[1]"/>
+		<xsl:variable name="emended-label">
+			<xsl:apply-templates mode="emend" select="$raw-label"/>
 		</xsl:variable>
+		<xsl:variable name="text-label" select="
+			if ($raw-label/head or string-length($emended-label) le 60)
+			then $emended-label
+			else replace($raw-label, '\..*$', '. …')"/>
 		<xsl:value-of
-			select="f:normalize-space(f:normalize-print-chars($raw-label))"
+			select="f:normalize-space(f:normalize-print-chars($text-label))"
 		/>		
 	</xsl:template>
 	
