@@ -39,7 +39,7 @@
 
   <p:xslt>
     <p:input port="stylesheet">
-      <p:document href="xslt/textTranscr_fuer_Drucke.xsl"/>
+      <p:document href="xslt/emend-core.xsl"/>
     </p:input>
     <p:input port="parameters">
       <p:empty/>

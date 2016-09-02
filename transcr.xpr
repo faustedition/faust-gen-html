@@ -3106,6 +3106,7 @@
         <file name="collection.xconf"/>
         <file name="config.xml"/>
         <file name="create-para-table.xpl"/>
+        <file name="xslt/emend-core.xsl"/>
         <file name="exist.rc"/>
         <file name="FAUST-TODOs.md"/>
         <file name="find-ns.xpl"/>
