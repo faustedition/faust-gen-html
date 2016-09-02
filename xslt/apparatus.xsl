@@ -15,8 +15,10 @@
 	version="2.0">
 	
 	<xsl:import href="html-frame.xsl"/>
+	<xsl:import href="emend-core.xsl"/>
 	<xsl:include href="html-common.xsl"/>
 	<xsl:include href="split.xsl"/>
+
 	
 	<xsl:param name="headerAdditions">
 		<script type="text/javascript" src="{$assets}/js/faust_app.js"/>
@@ -25,13 +27,19 @@
 	<xsl:param name="view">text</xsl:param>
 	
 	<xsl:output method="xhtml" indent="yes"/>
+	
+	<xsl:function name="f:totext">
+		<xsl:param name="content"/>
+		<xsl:variable name="emended"><xsl:apply-templates mode="emend" select="$content"/></xsl:variable>
+		<xsl:value-of select="f:normalize-space($emended)"/>
+	</xsl:function>
 
 
 	<xsl:template match="add[not(parent::subst)]">
 		<xsl:call-template name="app">
 			<xsl:with-param name="app" select="node()"/>
 			<xsl:with-param name="label">erg</xsl:with-param>
-			<xsl:with-param name="title" select="concat('»', normalize-space(.), '« ergänzt')"/>
+			<xsl:with-param name="title" select="concat('»', f:totext(.), '« ergänzt')"/>
 		</xsl:call-template>		
 	</xsl:template>
 	
@@ -39,7 +47,7 @@
 		<xsl:call-template name="app">
 			<xsl:with-param name="app" select="node()"/>
 			<xsl:with-param name="label">in Lücke erg</xsl:with-param>
-			<xsl:with-param name="title" select="concat('»', normalize-space(.), '« in Lücke ergänzt')"/>
+			<xsl:with-param name="title" select="concat('»', f:totext(.), '« in Lücke ergänzt')"/>
 		</xsl:call-template>
 	</xsl:template>
 	
@@ -55,7 +63,7 @@
 			<xsl:with-param name="affected" select="node()"/>
 			<xsl:with-param name="affected-class">deleted</xsl:with-param>
 			<xsl:with-param name="label">tilgt</xsl:with-param>
-			<xsl:with-param name="title" select="concat('»', normalize-space(.), '« getilgt')"/>
+			<xsl:with-param name="title" select="concat('»', f:totext(./node()), '« getilgt')"/>
 		</xsl:call-template>
 	</xsl:template>
 	
@@ -65,7 +73,7 @@
 			<xsl:with-param name="app">
 				<xsl:call-template name="del-instant-body"/>
 			</xsl:with-param>
-			<xsl:with-param name="title" select="concat('»', ., '« sofort getilgt')"/>
+			<xsl:with-param name="title" select="concat('»', f:totext(./node()), '« sofort getilgt')"/>
 		</xsl:call-template>
 	</xsl:template>
 	
@@ -95,7 +103,7 @@
 			<xsl:with-param name="affected-class">deleted</xsl:with-param>
 			<xsl:with-param name="pre">:</xsl:with-param>
 			<xsl:with-param name="app" select="add"/>
-			<xsl:with-param name="title" select="concat('»', normalize-space(string-join(del, '')), '« durch »', normalize-space(string-join(add, '')), '« ersetzt')"/>
+			<xsl:with-param name="title" select="concat('»', f:totext(del/node()), '« durch »', f:totext(add/node()), '« ersetzt')"/>
 		</xsl:call-template>
 	</xsl:template>
 
@@ -120,9 +128,9 @@
 	-->
 	<xsl:template match="subst[del/subst][f:only-child(del, del/subst)]">
 		<xsl:call-template name="app">
-			<xsl:with-param name="title" select="concat('»', normalize-space(string-join(del/subst/del, '')), 
-				'« zunächst durch »', normalize-space(string-join(del/subst/add, '')), 
-				'«, dann durch »', normalize-space(string-join(add, '')), '« ersetzt')"/>
+			<xsl:with-param name="title" select="concat('»', f:totext(del/subst/del/node()), 
+				'« zunächst durch »', f:totext(del/subst/add/node()), 
+				'«, dann durch »', f:totext(add/node()), '« ersetzt')"/>
 			<xsl:with-param name="affected" select="del/subst/del"/>
 			<xsl:with-param name="affected-class">deleted</xsl:with-param>
 			<xsl:with-param name="pre">:</xsl:with-param>
@@ -169,7 +177,7 @@
 		<xsl:call-template name="app">
 			<xsl:with-param name="title">
 				<xsl:text>»</xsl:text>
-				<xsl:value-of select="f:normalized-text(.)"/>
+				<xsl:value-of select="f:totext(.)"/>
 				<xsl:text>« wiederhergestellt</xsl:text>				
 			</xsl:with-param>
 			<xsl:with-param name="affected" select="child::node()"/>
@@ -183,7 +191,7 @@
 		<xsl:call-template name="app">
 			<xsl:with-param name="title">
 				<xsl:text>»</xsl:text>
-				<xsl:value-of select="f:normalized-text(child::*)"/>
+				<xsl:value-of select="f:totext(child::*)"/>
 				<xsl:text>« zunächst getilgt, dann wiederhergestellt</xsl:text>				
 			</xsl:with-param>
 			<xsl:with-param name="affected" select="child::*/node()"/>
@@ -267,9 +275,9 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:call-template name="app">
 			<xsl:with-param name="title">
 				<xsl:text>Ersetzung von »</xsl:text>
-				<xsl:value-of select="f:normalized-text($original)"/>
+				<xsl:value-of select="f:totext($original)"/>
 				<xsl:text>« durch »</xsl:text>
-				<xsl:value-of select="f:normalized-text($unused-replacement)"/>
+				<xsl:value-of select="f:totext($unused-replacement)"/>
 				<xsl:text>« rückgängig gemacht</xsl:text>				
 			</xsl:with-param>
 			<xsl:with-param name="affected" select="$original"/>
@@ -371,7 +379,7 @@ in <xsl:value-of select="document-uri(/)"/>
 				else ''"/>
 			<xsl:with-param name="context" select="if ($last) then $transpose else ()"/>
 			<xsl:with-param name="braces" select="if ($last) then ('⟨', '⟩') else ('','')"/>
-			<xsl:with-param name="title" select="concat('Vertauscht mit »', $replacement, '«', if ($undone) then ' (rückgängig gemacht)' else ())"/>
+			<xsl:with-param name="title" select="concat('Vertauscht mit »', f:totext($replacement), '«', if ($undone) then ' (rückgängig gemacht)' else ())"/>
 			<xsl:with-param name="also-highlight" select="//*[@xml:id and key('transpose', @xml:id)/.. is $transpose]"/>
 		</xsl:call-template>		
 	</xsl:template>
