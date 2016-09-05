@@ -147,7 +147,10 @@
 	<!-- one template to rule them all -->
 	<xsl:template match="div" priority="5">
 		<xsl:variable name="explicit-scene" select="$scenes//f:scene[@n = current()/@n]"/>
-		<xsl:variable name="scene" select="($explicit-scene, f:scene-for(.))[1]"/>
+		<xsl:variable name="guessed-scene" as="element()*">
+			<xsl:call-template name="scene-data"/>
+		</xsl:variable>
+		<xsl:variable name="scene" select="($explicit-scene, $guessed-scene)[1]"/>
 		<xsl:variable name="act"> <!-- act no, if this is an act  -->
 			<xsl:choose>
 				<xsl:when test="matches(@n, '^2\.[1-5]$')">
