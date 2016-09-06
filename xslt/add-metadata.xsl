@@ -169,7 +169,10 @@
 		
 		<xsl:copy>
 			<xsl:if test="f:section-div(.)">
-				<xsl:attribute name="f:section" select="count(preceding::div[f:section-div(.)]) + 1"/>	
+				<xsl:attribute name="f:section" select="count(preceding::div[f:section-div(.)]) + 1"/>
+				<xsl:if test="$scene//f:rangeStart">
+					<xsl:attribute name="f:verse-range" select="string-join(($scene//f:rangeStart, $scene//f:rangeEnd), ' ')"/>
+				</xsl:if>
 			</xsl:if>
 			
 			<xsl:choose>

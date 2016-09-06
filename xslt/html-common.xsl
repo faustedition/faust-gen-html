@@ -15,95 +15,81 @@
 	
 	<xsl:key name="alt" match="alt" use="for $ref in tokenize(@target, '\s+') return substring($ref, 2)"/>		
 	
-		
 	<xsl:template name="breadcrumbs">
-		<xsl:param name="scene-data" as="element()?">
-			<xsl:call-template name="scene-data"/>
-		</xsl:param>
 		<xsl:param name="separator">
 			<i class="fa fa-angle-right"/>			
 		</xsl:param>
-		<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
-			<small id="breadcrumbs">
-				<xsl:choose>
-					<xsl:when test="$type='lesetext'">
+		<xsl:variable name="section" select="f:get-section-number(.)"/>
+		<xsl:variable name="section-div" select="if ($section) then //*[@f:section = $section] else ()"/>		
+		<xsl:variable name="scenes" select="(if ($section) then $section-div else .)/ancestor-or-self::div[@f:scene-label]"/>
+		<xsl:variable name="scene-id" select="data(($scenes/@f:scene)[last()])"/>
+		<xsl:variable name="faust" select="if ($scene-id) then number(substring-before($scene-id, '.')) else 0"/>
+		
+		<xsl:choose>
+			<xsl:when test="$type = 'lesetext'">
+				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
+					<small id="breadcrumbs">
 						<span>
 							<a href="/text">Text</a>
-							<xsl:copy-of select="$separator"/>
-							<xsl:choose>								
-								<xsl:when test="starts-with($scene-data/f:id, '1')">
-									<a href="faust1">Faust I</a>
+							<xsl:if test="$faust">
+								<xsl:copy-of select="$separator"/>
+								<a href="faust{$faust}">Faust <xsl:number value="$faust" format="I"/></a>
+							</xsl:if>
+							<xsl:for-each select="subsequence($scenes, 1, count($scenes)-1)">
+								<xsl:copy-of select="$separator"/>
+								<a><xsl:value-of select="@f:scene-label"/></a>
+							</xsl:for-each>
+						</span>
+					</small>
+				</div>
+				<div id="current" class="pure-nowrap">
+					<span title="{$scenes[last()]/@f:scene-label}">
+						<xsl:value-of select="$scenes[last()]/@f:scene-label"/>
+					</span>
+				</div>
+			</xsl:when>
+			
+			<xsl:otherwise>
+				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
+					<small id="breadcrumbs">
+						<span>
+							<a href="../archive">Archiv</a><xsl:copy-of select="$separator"/>
+							<xsl:choose>
+								<xsl:when test="$type = 'print'">
+									<a href="../archive_prints">Drucke</a>
 								</xsl:when>
 								<xsl:otherwise>
-									<a href="faust2">Faust II</a>
+									<a href="../archive_locations_detail?id={/TEI/@f:repository}">
+										<xsl:value-of select="/TEI/@f:repository-label"/>
+									</a>
 								</xsl:otherwise>
-							</xsl:choose>
-							<xsl:copy-of select="$separator"/>
-							<a>
-								<xsl:value-of select="$scene-data/f:title"/>
-							</a>
-						</span>
-					</xsl:when>
-					<xsl:otherwise>
-						<span>
-							<xsl:call-template name="breadcrumbs-archive">
-								<xsl:with-param name="separator" select="$separator"/>						
-							</xsl:call-template>
+							</xsl:choose>							
 						</span>
 						<br/>
-						<span>
-							<xsl:call-template name="breadcrumbs-genesis">
-								<xsl:with-param name="separator" select="$separator"/>
-								<xsl:with-param name="scene-data" select="$scene-data"/>
-							</xsl:call-template>
-						</span>						
-					</xsl:otherwise>
-				</xsl:choose>
-			</small>
-		</div>
-		<div id="current" class="pure-nowrap">
-			<span title="{//idno[@type='faustedition'][1]}">
-				<xsl:value-of select="//idno[@type='faustedition'][1]"/>
-			</span>
-		</div>
-	</xsl:template>
-	<xsl:template name="breadcrumbs-genesis">
-		<xsl:param name="scene-data" as="element()?">
-			<xsl:call-template name="scene-data"/>
-		</xsl:param>
-		<xsl:param name="separator">
-			<i class="fa fa-angle-right"/>			
-		</xsl:param>
-		<a href="genesis">Genese</a>
-		<xsl:copy-of select="$separator"/>
-		<xsl:choose>
-			<xsl:when test="not($scene-data)"> [keine Zuordnung gefunden] </xsl:when>
-			<xsl:when test="starts-with($scene-data/f:id, '1')">
-				<a href="../genesis_faust_i">Faust I</a>
-			</xsl:when>
-			<xsl:otherwise>
-				<a href="../genesis_faust_ii">Faust II</a>
-			</xsl:otherwise>
-		</xsl:choose>
-		<xsl:copy-of select="$separator"/>
-		<a
-			href="../genesis_bargraph?rangeStart={$scene-data/f:rangeStart}&amp;rangeEnd={$scene-data/f:rangeEnd}">
-			<xsl:value-of select="$scene-data/f:title"/>
-		</a>
-	</xsl:template>
-	
-	<xsl:template name="breadcrumbs-archive">
-		<xsl:param name="separator"/>		
-		<a href="../archive">Archiv</a>
-		<xsl:copy-of select="$separator"/>
-		<xsl:choose>
-			<xsl:when test="$type = 'print'">
-				<a href="../archive_prints">Drucke</a>
-			</xsl:when>
-			<xsl:otherwise>
-				<a href="../archive_locations_detail?id={/TEI/@f:repository}">
-					<xsl:value-of select="/TEI/@f:repository-label"/>
-				</a>
+						<span>							
+							<a href="../genesis">Genese</a>
+							<xsl:if test="$faust">
+								<xsl:copy-of select="$separator"/>
+								<a>
+									<xsl:attribute name="href">../genesis_faust_<xsl:number value="$faust" format="i"/></xsl:attribute>
+									<xsl:text>Faust </xsl:text><xsl:number value="$faust" format="I"/>
+								</a>								
+							</xsl:if>
+							<xsl:for-each select="$scenes[@f:verse-range]">
+								<xsl:variable name="range" select="tokenize(@f:verse-range, ' ')"/>
+								<xsl:copy-of select="$separator"/>
+								<a href="../genesis_bargraph?rangeStart={$range[1]}&amp;rangeEnd={$range[2]}">
+									<xsl:value-of select="@f:scene-label"/>
+								</a>
+							</xsl:for-each>							
+						</span>
+					</small>
+				</div>
+				<div id="current" class="pure-nowrap">
+					<span title="{//idno[@type='faustedition'][1]}">
+						<xsl:value-of select="//idno[@type='faustedition'][1]"/>
+					</span>
+				</div>					
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
