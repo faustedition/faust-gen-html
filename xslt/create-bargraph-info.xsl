@@ -5,6 +5,8 @@
 	xmlns:f="http://www.faustedition.net/ns"
 	exclude-result-prefixes="xs f"
 	version="2.0">
+	
+	<xsl:import href="utils.xsl"/>
 
 	<xsl:output method="xml"/>
 	
@@ -26,7 +28,7 @@
 		<xsl:variable name="sortedLines">
 			<xsl:perform-sort>
 				<xsl:sort select="number(@n)"/>
-				<xsl:for-each-group select="$lines" group-by="string-join((@n, @type, @page), '|')">
+				<xsl:for-each-group select="$lines" group-by="string-join((@n, @type, @page, @section), '|')">
 					<xsl:sequence select="current-group()[1]"/>			
 				</xsl:for-each-group>
 			</xsl:perform-sort>
@@ -40,10 +42,17 @@
 					<xsl:attribute name="label" select="string-join((
 						if (number(@n) - 1 eq number(preceding::f:line[1]/@n)) then 't' else 'f', 
 						@type, 
-						@page), '|')"/>
+						@page,
+						@section), '|')"/>
 				</xsl:copy>
 			</xsl:for-each>
 		</xsl:variable>
+		
+		<xsl:result-document href="/tmp/lines">
+			<doc>
+				<xsl:sequence select="$labeledLines"/>
+			</doc>
+		</xsl:result-document>
 		
 		<f:document sigil="{.//idno[@type='faustedition']}">
 		<!-- First a little document metadata -->
@@ -57,6 +66,7 @@
 					group-starting-with="f:line[
 						@type != preceding-sibling::*[1]/@type
 					 or @page != preceding-sibling::*[1]/@page
+					 or @section != preceding-sibling::*[1]/@section
 					 or number(@n)-1 ne number(preceding-sibling::*[1]/@n)]"
 					>
 					<xsl:sort select="index-of(('paralipomenaUncertain', 'paralipomena', 'verseLineVariant', 'verseLineUncertain', 'verseLine'), current-group()[1]/@type)"/>					
@@ -69,6 +79,7 @@
 -->					<xsl:variable name="page" select="current-group()[1]/@page"/>
 						<xsl:text>{"type":"</xsl:text><xsl:value-of select="current-group()[1]/@type"/><xsl:text>",</xsl:text>
 						<xsl:text>"page":</xsl:text><xsl:value-of select="if ($page != '') then $page else 1"/><xsl:text>,</xsl:text>
+						<xsl:text>"section":"</xsl:text><xsl:value-of select="current-group()[1]/@section"/><xsl:text>",</xsl:text>
 						<xsl:text>"start":</xsl:text><xsl:value-of select="current-group()[1]/@n"/><xsl:text>,</xsl:text>
 						<xsl:text>"end":</xsl:text><xsl:value-of select="current-group()[last()]/@n"/><xsl:text>}</xsl:text>
 					<xsl:if test="position() != last()">,</xsl:if>					
@@ -80,19 +91,21 @@
 	
 	<xsl:template match="l[matches(@n, '^(\d+[A-Za-z]*\??\s*)+$')]">
 		<xsl:variable name="page" select="preceding::pb[1]/@f:docTranscriptNo"/>
-		<xsl:sequence select="for $n in tokenize(@n, '\s+') return f:verseLine($n, $page)"/>
+		<xsl:variable name="section" select="f:get-section-label(.)"/>
+		<xsl:sequence select="for $n in tokenize(@n, '\s+') return f:verseLine($n, $page, $section)"/>
 	</xsl:template>
 	
 	
 	<xsl:function name="f:verseLine" as="element()?">
 		<xsl:param name="n" as="xs:string"/>
 		<xsl:param name="page" as="xs:string?"/>
+		<xsl:param name="section" as="xs:string?"/>
 		<xsl:sequence select="f:line(xs:integer(replace($n, '^(\d+).*$', '$1')), $page, 		
 					if (matches($n, '\d+\?$'))
 					then 'verseLineUncertain' 
 					else if (matches($n, '^\d+[A-Za-z]+$')) 
 						 then 'verseLineVariant'
-						 else 'verseLine')"/>	
+						 else 'verseLine', $section)"/>	
 	</xsl:function>
 
 	<xsl:template match="milestone[@unit='paralipomenon' and @f:relatedLines != '']">
@@ -102,12 +115,12 @@
 			<xsl:analyze-string select="." regex="(\d+)-(\d+)">
 				<!-- Ranges -> one <line> element for each line in the range -->
 				<xsl:matching-substring>
-					<xsl:sequence select="for $n in (xs:integer(regex-group(1)) to xs:integer(regex-group(2))) return f:line($n, $page, $type)"/>
+					<xsl:sequence select="for $n in (xs:integer(regex-group(1)) to xs:integer(regex-group(2))) return f:line($n, $page, $type, ())"/>
 				</xsl:matching-substring>
 				<xsl:non-matching-substring>
 					<xsl:choose>
 						<xsl:when test="matches(., '^\d+$')">
-							<xsl:sequence select="f:line(xs:integer(.), $page, $type)"/>
+							<xsl:sequence select="f:line(xs:integer(.), $page, $type, ())"/>
 						</xsl:when>
 						<xsl:otherwise>
 							<xsl:message>WARNING: Cannot parse relatedLines: <xsl:copy-of select="."/></xsl:message>
@@ -120,10 +133,11 @@
 	
 	<xsl:function name="f:line" as="element()?">
 		<xsl:param name="n" as="xs:integer"/>
-		<xsl:param name="page" as="xs:string?"/>
-		<xsl:param name="type" as="xs:string"/>		
+		<xsl:param name="page" as="xs:string?"/>		
+		<xsl:param name="type" as="xs:string"/>	
+		<xsl:param name="section" as="xs:string?"/>
 		<xsl:variable name="result" as="element()">
-			<f:line type="{$type}" page="{$page}" n="{$n}"/>
+			<f:line type="{$type}" page="{$page}" n="{$n}" section="{$section}"/>
 		</xsl:variable>
 		<xsl:sequence select="if ($result/@n != '') then $result else ()"/>
 	</xsl:function>
