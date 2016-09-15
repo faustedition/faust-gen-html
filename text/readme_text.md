@@ -1,5 +1,5 @@
 ## Work plan
-* [ ] import DP's note from DOCX
+* [ ] import DP's notes from DOCX
 * [ ] adapt `apply-edits` to the establishment of the reading texts
    * handle `l/hi/rend=big`
    * keep `choice-sic-corr`, `strip-space` from `choice`
