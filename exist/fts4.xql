@@ -2,9 +2,10 @@ xquery version "3.0";
 
 declare namespace tei = "http://www.tei-c.org/ns/1.0";
 declare namespace f   = "http://www.faustedition.net/ns";
+declare namespace fa   = "http://www.faustedition.net/ns"; (: OXYGEN DRIVES ME MAD!!!!!  :)
 
 
-<f:results xmlns="http://www.tei-c.org/ns/1.0">{
+declare function local:query($query as xs:string) as element(f:doc)* {
 
 for $text in //tei:text[ft:query(., request:get-parameter('q', 'pudel'))]
 let $sigil := data(id('sigil', $text)),
@@ -49,4 +50,10 @@ return
         		{$line}
         	</f:subhit>
         }</f:doc>
-}</f:results>
+};
+
+let $query := request:get-parameter('q', 'pudel'),
+	$results := local:query($query)
+return <f:result docs="{count($results)}" hits="{count($results//f:subhit)}" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns="http://www.tei-c.org/ns/1.0">
+	{$results}
+</f:result>
