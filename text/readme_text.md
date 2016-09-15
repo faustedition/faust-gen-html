@@ -1,10 +1,11 @@
 ## Work plan
-* [ ] import DP's notes from DOCX
 * [ ] adapt `apply-edits` to the establishment of the reading texts
+   * exclude `creation`
    * handle `l/hi/rend=big`
    * keep `choice-sic-corr`, `strip-space` from `choice`
    * keep posthumous revisions as they are
 * [ ] define content of `<teiHeader>`
+* [ ] import DP's notes from DOCX
 
 ##  Overview of procedures
 
