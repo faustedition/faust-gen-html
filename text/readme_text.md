@@ -7,7 +7,10 @@
 * [ ] `strip-space` from `choice`
 * [ ] keep posthumous revisions as they are
 * [ ] define content of `<teiHeader>`
+
+###Notes
 * [ ] import DP's notes from DOCX
+* [ ] write and insert notes into text files
 
 ##  Overview of procedures
 
