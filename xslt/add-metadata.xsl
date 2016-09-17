@@ -32,6 +32,8 @@
 	
 	<!-- Canonical URI for the document. Defaults to faust://xml/$documentURI -->
 	<xsl:param name="faustURI" select="concat('faust://xml/', $documentURI)"/>
+	
+	<xsl:param name="number"/>
 
 	<xsl:param name="depth">2</xsl:param>
 	<xsl:variable name="depth_n" select="number($depth)"/>
@@ -121,7 +123,8 @@
 			<xsl:if test="$splittable">
 				<xsl:attribute name="f:split">true</xsl:attribute>
 			</xsl:if>
-			<xsl:apply-templates select="@* except @type"/>
+			<xsl:if test="$number"><xsl:attribute name="n" select="$number"/></xsl:if>
+			<xsl:apply-templates select="@* except (@type, @n)"/>
 			<xsl:apply-templates select="node()"/>
 		</xsl:copy>
 	</xsl:template>
