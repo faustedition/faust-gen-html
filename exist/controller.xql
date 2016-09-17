@@ -13,7 +13,7 @@ declare variable $exist:controller external;
     </ignore>
 else :) if ($exist:path = '/search') then
     <dispatch>
-        <forward url="{concat($exist:controller, '/fts3.xql')}"/>
+        <forward url="{concat($exist:controller, '/fts4.xql')}"/>
         <view>
             <forward servlet="XSLTServlet">
                 <set-attribute name="xslt.stylesheet" value="{concat($exist:root, $exist:controller, '/xslt/search-results.xsl')}"/>

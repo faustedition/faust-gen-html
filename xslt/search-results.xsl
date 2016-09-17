@@ -46,6 +46,14 @@
 			.hit .sigil { padding-right: 5px; border-right: 1px solid gray; }
 			.hit .breadcrumbs { color: gray; vertical-align: middle; }
 			.hit .breadcrumbs span { margin: 0 5px; }
+			.score {margin-left: 5px; padding-left: 5px; color: #ddd; visibility: hidden; }
+			h3:hover .score { visibility: visible; }
+			.subhit { width: 100%; display: flex;  }
+			.subhit-content { width: 75%; }
+			.subhit ul.breadcrumbs { width: 25%; padding: 0; margin: 0;  font-size: 80%; }
+			.subhit ul.breadcrumbs li { display: inline; list-style-type: none; color: gray; }
+			.subhit ul.breadcrumbs li ~ li:before { padding: 1ex 0; content: ">" }
+			.print-center-column { width: 80%; }
 		</style>
 	</xsl:param>
 	
@@ -64,12 +72,34 @@
 	
 	<!-- Line numbers need href from f:hit and should be shown for every line -->
 	<xsl:template name="generate-lineno">	
-		<a href="{ancestor::f:hit/@href}#l{@n}" class="lineno">
+		<a href="{ancestor::f:*/@href}#l{@n}" class="lineno">
 			<xsl:value-of select="f:display-line(@n)"/>
 		</a>		
 	</xsl:template>
 	
+	<xsl:template match="f:subhit">
+		<div class="subhit">
+			<div class="subhit-content">
+				<xsl:apply-templates select="* except f:breadcrumbs"/>				
+			</div>
+			<xsl:apply-templates select="f:breadcrumbs"/>
+		</div>
+	</xsl:template>
+	
+	<xsl:template match="f:breadcrumbs">
+		<xsl:if test="*">
+			<ul class="breadcrumbs">
+				<xsl:apply-templates/>
+			</ul>
+		</xsl:if>
+	</xsl:template>
+	
+	<xsl:template match="f:breadcrumb">
+		<li><xsl:value-of select="@f:scene-label"/></li>
+	</xsl:template>
+	
 	<xsl:variable name="navbar">
+		<xsl:if test="/f:results/@start">
 		<xsl:variable name="start" as="xs:integer" select="/f:results/@start"/>
 		<xsl:variable name="items" as="xs:integer" select="/f:results/@items"/>
 		<xsl:variable name="hits" as="xs:integer" select="/f:results/@hits"/>
@@ -87,11 +117,12 @@
 				</xsl:if>		
 			</h3>			
 		</nav>
+		</xsl:if>
 	</xsl:variable>
 	
 	<!-- Matches are marked up & made to links. Maybe include match term in URI some time -->
 	<xsl:template match="exist:match">
-		<mark class="match"><a class="match" href="{ancestor::f:hit/@href}#l{ancestor::*[@n][1]/@n}"><xsl:apply-templates/></a></mark>
+		<mark class="match"><a class="match" href="{ancestor::f:*/@href}#l{ancestor::*[@n][1]/@n}"><xsl:apply-templates/></a></mark>
 	</xsl:template>
 	
 	<!-- Each hit is represented by a heading and the actual content -->
@@ -131,6 +162,20 @@
 		</section>
 	</xsl:template>
 	
+	<xsl:template match="f:doc">
+		<section class="doc">
+			<h3><a href="{@href}">
+				<span class="sigil" title="{@headnote}">
+					<xsl:value-of select="@sigil"/>
+				</span>
+				</a>
+				<span class="score">
+					<xsl:value-of select="@score"/>
+				</span>
+			</h3>
+			<xsl:apply-templates/>
+		</section>
+	</xsl:template>
 	
 	<xsl:template match="/f:results">
 		<html>
@@ -155,7 +200,7 @@
 									<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
 									<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
 										<xsl:choose>
-											<xsl:when test=".//f:hit">
+											<xsl:when test=".//f:hit|.//f:doc">
 												<xsl:copy-of select="$navbar"/>
 												<xsl:apply-templates/>
 												<xsl:copy-of select="$navbar"/>												

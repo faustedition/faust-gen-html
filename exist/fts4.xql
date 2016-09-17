@@ -5,23 +5,28 @@ declare namespace f   = "http://www.faustedition.net/ns";
 declare namespace fa   = "http://www.faustedition.net/ns"; (: OXYGEN DRIVES ME MAD!!!!!  :)
 
 
-declare function local:query($query as xs:string) as element(f:doc)* {
+declare function local:query($query as xs:string, $order as xs:string) as element(f:doc)* {
 
-for $text in //tei:text[ft:query(., request:get-parameter('q', 'pudel'))]
+for $text in collection('/db/apps/faust/data')//tei:TEI[ft:query(., request:get-parameter('q', 'pudel'))]
 let $sigil := data(id('sigil', $text)),
 	$headnote := data(id('headNote', $text)),
-	$type := data($text/ancestor::tei:TEI/@type),
+	$type := data($text/ancestor-or-self::tei:TEI/@type),
 	$uri := id('fausturi', $text),
 	$transcript := id('fausttranscript', $text),
 	$ann := util:expand($text),
-	$score := ft:score($text)
-order by $score descending
+	$score := ft:score($text),
+	$number := $text/@n,
+	$sortcrit := if ($order = 'sigil')
+	             then $number
+	             else -$score
+order by $sortcrit
 return
     <f:doc
         sigil="{$sigil}"
         headnote="{$headnote}"
         type="{$type}"
         uri="{$uri}"
+        number="{$number}"
         transcript="{$transcript}"
         score="{$score}">{
         
@@ -44,16 +49,26 @@ return
         	<f:subhit
         	    page="{$page}"
         		n="{$n}">
-        		<f:breadcrumbs>
-        		{for $div in $breadcrumbs return <f:breadcrumb>{$div/@f:*}</f:breadcrumb>}
-        		</f:breadcrumbs>
-        		{$line}
+        		{if ($breadcrumbs)
+        		then
+	        		<f:breadcrumbs>
+	        		{for $div in $breadcrumbs return <f:breadcrumb>{$div/@f:*}</f:breadcrumb>}
+	        		</f:breadcrumbs>
+	        	else (),
+        		$line}
         	</f:subhit>
         }</f:doc>
 };
 
 let $query := request:get-parameter('q', 'pudel'),
-	$results := local:query($query)
-return <f:result docs="{count($results)}" hits="{count($results//f:subhit)}" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns="http://www.tei-c.org/ns/1.0">
+    $order  := request:get-parameter('order', 'score'),
+	$results := local:query($query, $order)
+return <f:results 
+            docs="{count($results)}" 
+            query="{$query}"
+            order="{$order}"
+            hits="{count($results//exist:match)}" 
+            xmlns:exist="http://exist.sourceforge.net/NS/exist" 
+            xmlns="http://www.tei-c.org/ns/1.0">
 	{$results}
-</f:result>
+</f:results>

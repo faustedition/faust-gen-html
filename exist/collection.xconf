@@ -23,7 +23,9 @@
             <text qname="tei:item"/>
             <text qname="tei:title" boost="2"/>
             <text qname="tei:idno" boost="2"/>
-            <text qname="tei:text"/>
+            <text qname="tei:TEI">
+                <ignore qname="tei:teiHeader"/>
+            </text>
         </lucene>
     </index>
 </collection>
