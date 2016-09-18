@@ -35,10 +35,11 @@
 	
 	<xsl:import href="apparatus.xsl"/>
 	
-	<xsl:output method="xhtml" indent="no"/>
+	<xsl:output method="xhtml" indent="yes"/>
 	
 	
 	<xsl:param name="headerAdditions">
+		<title>Faust-Edition | Suche: <xsl:value-of select="$query"/></title>
 		<style type="text/css">
 			.hit .headnote { font-weight: lighter; margin-left: 1em;}
 			.hit h3 { margin-bottom: 3pt; vertical-align: middle; }
@@ -178,46 +179,36 @@
 	</xsl:template>
 	
 	<xsl:template match="/f:results">
-		<html>
-			<xsl:call-template name="html-head"/>
-			<body>
-				<xsl:call-template name="header">
-					<xsl:with-param name="breadcrumbs" tunnel="yes">						
-						<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
-							<small id="breadcrumbs"><a>Suchergebnisse</a></small>
-						</div>
-						<div id="current" class="pure-nowrap" title="{@query}">
-							<xsl:value-of select="@query"/>
-						</div>
-					</xsl:with-param>
-				</xsl:call-template>
-				
-				<main>
-					<div class="main-content-container">
-						<div id="main-content" class="main-content">
-							<div style="display: block;" class="search-content view-content" id="search-content">
-								<div id="main" class="print">
-									<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
-									<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
-										<xsl:choose>
-											<xsl:when test=".//f:hit|.//f:doc">
-												<xsl:copy-of select="$navbar"/>
-												<xsl:apply-templates/>
-												<xsl:copy-of select="$navbar"/>												
-											</xsl:when>
-											<xsl:otherwise>
-												<div class="pure-alert pure-alert-warning">Keine Treffer für <em><xsl:value-of select="$query"/></em>.</div>												
-											</xsl:otherwise>
-										</xsl:choose>
-									</div>
-								</div>
-							</div>							
-						</div>
+		<xsl:call-template name="html-frame">
+			<xsl:with-param name="breadcrumbs" tunnel="yes">						
+				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
+					<small id="breadcrumbs"><a>Suchergebnisse</a></small>
+				</div>
+				<div id="current" class="pure-nowrap" title="{@query}">
+					<xsl:value-of select="@query"/>
+				</div>
+			</xsl:with-param>
+			<xsl:with-param name="title" tunnel="yes">Faust-Edition: Suche nach <xsl:value-of select="$query"/></xsl:with-param>
+			<xsl:with-param name="content">
+				<div id="main" class="print">
+					<div class="print-side-column"></div> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
+					<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
+						
+						<xsl:choose>
+							<xsl:when test=".//f:hit|.//f:doc">
+								<xsl:copy-of select="$navbar"/>
+								<h3><xsl:value-of select="@hits"/> Treffer in <xsl:value-of select="@docs"/> Dokumenten</h3>
+								<xsl:apply-templates/>
+								<xsl:copy-of select="$navbar"/>												
+							</xsl:when>
+							<xsl:otherwise>
+								<div class="pure-alert pure-alert-warning">Keine Treffer für <em><xsl:value-of select="@query"/></em>.</div>												
+							</xsl:otherwise>
+						</xsl:choose>
 					</div>
-				</main>
-				<xsl:call-template name="footer"/>
-			</body>
-		</html>
+				</div>				
+			</xsl:with-param>
+		</xsl:call-template>						
 	</xsl:template>
 	
 	<xsl:template match="exception" xpath-default-namespace="">

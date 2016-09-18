@@ -10,13 +10,13 @@
 	<xsl:param name="assets" select="$edition"/>
 	<xsl:param name="debug" select="false()"/>
 	<xsl:param name="headerAdditions"/>
-	<xsl:param name="query"/>
+	<xsl:param name="query" select="/f:results/@query"/>
 
 	<xsl:output method="xhtml" indent="yes" include-content-type="no"
 		omit-xml-declaration="yes"/>
 
 	<xsl:template name="html-head">
-		<xsl:param name="title" select="$title"/>
+		<xsl:param name="title" select="$title" tunnel="yes"/>
 		<head>
 			<meta charset="utf-8"/>
 
@@ -50,7 +50,7 @@
 	</xsl:template>
 
 	<xsl:template name="header">
-		<xsl:param name="breadcrumbs">
+		<xsl:param name="breadcrumbs" tunnel="yes">
 			<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
 				<small id="breadcrumbs"/>
 			</div>
