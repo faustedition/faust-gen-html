@@ -28,5 +28,6 @@
                 <ignore qname="tei:teiHeader"/>
             </text>
         </lucene>
+        <ngram qname="tei:idno"/>
     </index>
 </collection>

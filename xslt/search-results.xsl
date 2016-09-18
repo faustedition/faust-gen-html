@@ -236,6 +236,18 @@
 		</html>
 	</xsl:template>
 	
-	
+	<xsl:template match="f:sigils">
+		<h3>Treffer in Siglen:</h3>
+		<ul>
+			<xsl:apply-templates/>
+		</ul>
+		<h3>Treffer im Text:</h3>
+	</xsl:template>
+	<xsl:template match="f:idno-match">
+		<li><a href="{@href}">
+			<strong><xsl:value-of select="@sigil"/></strong>
+			(<xsl:value-of select="@idno-label"/>: <xsl:apply-templates/>)
+		</a></li>
+	</xsl:template>
 	
 </xsl:stylesheet>

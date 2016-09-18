@@ -3,7 +3,10 @@ xquery version "3.0";
 declare namespace tei = "http://www.tei-c.org/ns/1.0";
 declare namespace f   = "http://www.faustedition.net/ns";
 declare namespace fa   = "http://www.faustedition.net/ns"; (: OXYGEN DRIVES ME MAD!!!!!  :)
-
+declare variable $edition := '';
+declare variable $exist:controller external;
+declare variable $data := collection('/db/apps/faust-dev/data');
+declare variable $sigil-labels := doc('xslt/sigil-labels.xml');
 
 declare function local:makeURL(
 	$type as xs:string,
@@ -19,10 +22,32 @@ declare function local:makeURL(
 		return $edition || $path		
 	};
 
+declare function local:sigil($query as xs:string) as element()* {
+    for $idno in $data//tei:idno[ngram:contains(., $query)][@type = $sigil-labels//f:label/@type]
+    let $uri := id('fausturi', $idno)
+    group by $uri
+    return 
+        let $idno := $idno[1],
+        $sigil := data(id('sigil', $idno)),
+    	$headnote := data(id('headNote', $idno)),
+    	$type := data($idno/ancestor-or-self::tei:TEI/@type),
+    	$transcript := id('fausttranscript', $idno),
+    	$href := $edition || (if ($type = 'archivalDocument') then '/documentViewer?faustUri=' || $uri else '/print/' || $transcript),
+    	$idno_label := data($sigil-labels//f:label[@type = $idno/@type])
+    	
+        return <f:idno-match
+                    sigil="{$sigil}"
+                    headnote="{$headnote}"
+                    idno="{$idno}"
+                    idno-label="{$idno_label}"
+                    href="{$href}"
+                    uri="{$uri}">{
+                        util:expand($idno)
+                }</f:idno-match>
+};
 
 declare function local:query($query as xs:string, $order as xs:string) as element(f:doc)* {
-
-for $text in collection('/db/apps/faust/data')//tei:TEI[ft:query(., request:get-parameter('q', 'pudel'))]
+for $text in $data//tei:TEI[ft:query(., $query)]
 let $sigil := data(id('sigil', $text)),
 	$headnote := data(id('headNote', $text)),
 	$type := data($text/ancestor-or-self::tei:TEI/@type),
@@ -80,6 +105,7 @@ return
 
 let $query := request:get-parameter('q', 'pudel'),
     $order  := request:get-parameter('order', 'score'),
+    $sigils  := local:sigil($query),
 	$results := local:query($query, $order)
 return <f:results 
             docs="{count($results)}" 
@@ -88,5 +114,6 @@ return <f:results
             hits="{count($results//exist:match)}" 
             xmlns:exist="http://exist.sourceforge.net/NS/exist" 
             xmlns="http://www.tei-c.org/ns/1.0">
-	{$results}
+	        {if ($sigils) then <f:sigils>{$sigils}</f:sigils> else (),
+	        <f:fulltext-results>{$results}</f:fulltext-results>}
 </f:results>
