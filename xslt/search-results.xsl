@@ -73,7 +73,7 @@
 	
 	<!-- Line numbers need href from f:hit and should be shown for every line -->
 	<xsl:template name="generate-lineno">	
-		<a href="{ancestor::f:*/@href}#l{@n}" class="lineno">
+		<a href="{ancestor::f:*[1]/@href}#l{@n}" class="lineno">
 			<xsl:value-of select="f:display-line(@n)"/>
 		</a>		
 	</xsl:template>
@@ -123,7 +123,7 @@
 	
 	<!-- Matches are marked up & made to links. Maybe include match term in URI some time -->
 	<xsl:template match="exist:match">
-		<mark class="match"><a class="match" href="{ancestor::f:*/@href}#l{ancestor::*[@n][1]/@n}"><xsl:apply-templates/></a></mark>
+		<mark class="match"><a class="match" href="{ancestor::f:*[1]/@href}#l{ancestor::*[@n][1]/@n}"><xsl:apply-templates/></a></mark>
 	</xsl:template>
 	
 	<!-- Each hit is represented by a heading and the actual content -->

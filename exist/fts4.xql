@@ -5,6 +5,21 @@ declare namespace f   = "http://www.faustedition.net/ns";
 declare namespace fa   = "http://www.faustedition.net/ns"; (: OXYGEN DRIVES ME MAD!!!!!  :)
 
 
+declare function local:makeURL(
+	$type as xs:string,
+	$uri as xs:string,
+	$transcript as xs:string?,
+	$sec as xs:string?,
+	$page as xs:string?) as xs:string
+	{
+		let $html := $transcript || (if ($sec) then '.'|| $sec else ()) 
+		let $path := switch ($type)
+			case 'archivalDocument' return concat('/documentViewer?faustUri=', $uri, "&amp;view=text&amp;page=", $page, "&amp;sec=", $html)
+			default return '/print/' || $html
+		return $edition || $path		
+	};
+
+
 declare function local:query($query as xs:string, $order as xs:string) as element(f:doc)* {
 
 for $text in collection('/db/apps/faust/data')//tei:TEI[ft:query(., request:get-parameter('q', 'pudel'))]
@@ -28,6 +43,7 @@ return
         uri="{$uri}"
         number="{$number}"
         transcript="{$transcript}"
+        href="{local:makeURL($type, $uri, $transcript, (), ())}"
         score="{$score}">{
         
         for $line in $ann//exist:match/(
@@ -48,7 +64,9 @@ return
         return
         	<f:subhit
         	    page="{$page}"
-        		n="{$n}">
+        		n="{$n}"
+        		href="{local:makeURL($type, $uri, $transcript, $line/ancestor-or-self::*/@f:section, $page)}"
+        		>
         		{if ($breadcrumbs)
         		then
 	        		<f:breadcrumbs>
