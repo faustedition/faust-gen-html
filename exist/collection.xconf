@@ -24,6 +24,7 @@
             <text qname="tei:title" boost="2"/>
             <text qname="tei:idno" boost="2"/>
             <text qname="tei:TEI">
+                <inline qname="tei:orig"/>
                 <ignore qname="tei:teiHeader"/>
             </text>
         </lucene>
