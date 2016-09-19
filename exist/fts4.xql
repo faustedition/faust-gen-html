@@ -5,7 +5,7 @@ declare namespace f   = "http://www.faustedition.net/ns";
 declare namespace fa   = "http://www.faustedition.net/ns"; (: OXYGEN DRIVES ME MAD!!!!!  :)
 declare variable $edition := '';
 declare variable $exist:controller external;
-declare variable $data := collection('/db/apps/faust-dev/data');
+declare variable $data := collection('/db/apps/faust/data');
 declare variable $sigil-labels := doc('xslt/sigil-labels.xml');
 
 declare function local:makeURL(
