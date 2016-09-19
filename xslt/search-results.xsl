@@ -54,7 +54,9 @@
 			.subhit ul.breadcrumbs { width: 25%; padding: 0; margin: 0;  font-size: 80%; }
 			.subhit ul.breadcrumbs li { display: inline; list-style-type: none; color: gray; }
 			.subhit ul.breadcrumbs li ~ li:before { padding: 1ex 0; content: ">" }
+			.hit ul.breadcrumbs { display: none; }
 			.print-center-column { width: 80%; }
+			ul.sort { list-style-type: none; }
 		</style>
 	</xsl:param>
 	
@@ -178,6 +180,22 @@
 		</section>
 	</xsl:template>
 	
+	<xsl:template name="order-item">
+		<xsl:param name="type" required="yes"/>
+		<xsl:param name="label" required="yes"/>
+		<xsl:param name="active" select="$type = /f:results/@order"/>
+		<li class="order-{$type}">
+			<xsl:choose>
+				<xsl:when test="$active">
+					<strong><xsl:value-of select="$label"/></strong>
+				</xsl:when>
+				<xsl:otherwise>
+					<a href="{$edition}/search?q={escape-html-uri($query)}&amp;order={$type}"><xsl:value-of select="$label"/></a>
+				</xsl:otherwise>
+			</xsl:choose>	
+		</li>
+	</xsl:template>
+	
 	<xsl:template match="/f:results">
 		<xsl:call-template name="html-frame">
 			<xsl:with-param name="breadcrumbs" tunnel="yes">						
@@ -191,7 +209,23 @@
 			<xsl:with-param name="title" tunnel="yes">Faust-Edition: Suche nach <xsl:value-of select="$query"/></xsl:with-param>
 			<xsl:with-param name="content">
 				<div id="main" class="print">
-					<div class="print-side-column"></div> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
+					<div class="print-side-column">
+						<h4>Sortierung</h4>
+						<ul class="sort">
+							<xsl:call-template name="order-item">
+								<xsl:with-param name="type">score</xsl:with-param>
+								<xsl:with-param name="label">Relevanz</xsl:with-param>
+							</xsl:call-template>
+							<xsl:call-template name="order-item">
+								<xsl:with-param name="type">sigil</xsl:with-param>
+								<xsl:with-param name="label">Sigle</xsl:with-param>
+							</xsl:call-template>
+							<xsl:call-template name="order-item">
+								<xsl:with-param name="type">verse</xsl:with-param>
+								<xsl:with-param name="label">Vers</xsl:with-param>
+							</xsl:call-template>
+						</ul>
+					</div> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
 					<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
 						
 						<xsl:choose>
