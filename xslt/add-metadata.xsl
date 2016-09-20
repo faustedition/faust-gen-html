@@ -123,7 +123,7 @@
 			<xsl:if test="$splittable">
 				<xsl:attribute name="f:split">true</xsl:attribute>
 			</xsl:if>
-			<xsl:if test="$number"><xsl:attribute name="n" select="$number"/></xsl:if>
+			<xsl:if test="$number"><xsl:attribute name="f:number" select="$number"/></xsl:if>
 			<xsl:apply-templates select="@* except (@type, @n)"/>
 			<xsl:apply-templates select="node()"/>
 		</xsl:copy>
