@@ -115,5 +115,18 @@ return <f:results
             xmlns:exist="http://exist.sourceforge.net/NS/exist" 
             xmlns="http://www.tei-c.org/ns/1.0">
 	        {if ($sigils) then <f:sigils>{$sigils}</f:sigils> else (),
-	        <f:fulltext-results>{$results}</f:fulltext-results>}
+	        <f:fulltext-results>{
+	        
+	        if ($order = 'verse')
+	        then
+	        	for $subhit in $results//f:subhit
+	        	order by number(replace($subhit/@n, '\D*(\d+)\D*', '$1'))
+	        	return element f:hit {
+	        		$subhit/@*,
+	        		$subhit/../@* except $subhit/../@href,
+	        		$subhit/node()
+	        	}
+	        else
+	        	$results        	        
+	        }</f:fulltext-results>}
 </f:results>
