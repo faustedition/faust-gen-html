@@ -55,7 +55,7 @@ let $sigil := data(id('sigil', $text)),
 	$transcript := id('fausttranscript', $text),
 	$ann := util:expand($text),
 	$score := ft:score($text),
-	$number := $text/@n,
+	$number := $text/@f:number,
 	$sortcrit := if ($order = 'sigil')
 	             then $number
 	             else -$score
