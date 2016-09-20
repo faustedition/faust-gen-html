@@ -35,10 +35,11 @@
 	
 	<xsl:import href="apparatus.xsl"/>
 	
-	<xsl:output method="xhtml" indent="no"/>
+	<xsl:output method="xhtml" indent="yes"/>
 	
 	
 	<xsl:param name="headerAdditions">
+		<title>Faust-Edition | Suche: <xsl:value-of select="$query"/></title>
 		<style type="text/css">
 			.hit .headnote { font-weight: lighter; margin-left: 1em;}
 			.hit h3 { margin-bottom: 3pt; vertical-align: middle; }
@@ -46,6 +47,16 @@
 			.hit .sigil { padding-right: 5px; border-right: 1px solid gray; }
 			.hit .breadcrumbs { color: gray; vertical-align: middle; }
 			.hit .breadcrumbs span { margin: 0 5px; }
+			.score {margin-left: 5px; padding-left: 5px; color: #ddd; visibility: hidden; }
+			h3:hover .score { visibility: visible; }
+			.subhit { width: 100%; display: flex;  }
+			.subhit-content { width: 75%; }
+			.subhit ul.breadcrumbs { width: 25%; padding: 0; margin: 0;  font-size: 80%; }
+			.subhit ul.breadcrumbs li { display: inline; list-style-type: none; color: gray; }
+			.subhit ul.breadcrumbs li ~ li:before { padding: 1ex 0; content: ">" }
+			.hit ul.breadcrumbs { display: none; }
+			.print-center-column { width: 80%; }
+			ul.sort { list-style-type: none; }
 		</style>
 	</xsl:param>
 	
@@ -64,12 +75,34 @@
 	
 	<!-- Line numbers need href from f:hit and should be shown for every line -->
 	<xsl:template name="generate-lineno">	
-		<a href="{ancestor::f:hit/@href}#l{@n}" class="lineno">
+		<a href="{ancestor::f:*[1]/@href}#l{@n}" class="lineno">
 			<xsl:value-of select="f:display-line(@n)"/>
 		</a>		
 	</xsl:template>
 	
+	<xsl:template match="f:subhit">
+		<div class="subhit">
+			<div class="subhit-content">
+				<xsl:apply-templates select="* except f:breadcrumbs"/>				
+			</div>
+			<xsl:apply-templates select="f:breadcrumbs"/>
+		</div>
+	</xsl:template>
+	
+	<xsl:template match="f:breadcrumbs">
+		<xsl:if test="*">
+			<ul class="breadcrumbs">
+				<xsl:apply-templates/>
+			</ul>
+		</xsl:if>
+	</xsl:template>
+	
+	<xsl:template match="f:breadcrumb">
+		<li><xsl:value-of select="@f:scene-label"/></li>
+	</xsl:template>
+	
 	<xsl:variable name="navbar">
+		<xsl:if test="/f:results/@start">
 		<xsl:variable name="start" as="xs:integer" select="/f:results/@start"/>
 		<xsl:variable name="items" as="xs:integer" select="/f:results/@items"/>
 		<xsl:variable name="hits" as="xs:integer" select="/f:results/@hits"/>
@@ -87,11 +120,12 @@
 				</xsl:if>		
 			</h3>			
 		</nav>
+		</xsl:if>
 	</xsl:variable>
 	
 	<!-- Matches are marked up & made to links. Maybe include match term in URI some time -->
 	<xsl:template match="exist:match">
-		<mark class="match"><a class="match" href="{ancestor::f:hit/@href}#l{ancestor::*[@n][1]/@n}"><xsl:apply-templates/></a></mark>
+		<mark class="match"><a class="match" href="{ancestor::f:*[1]/@href}#l{ancestor::*[@n][1]/@n}"><xsl:apply-templates/></a></mark>
 	</xsl:template>
 	
 	<!-- Each hit is represented by a heading and the actual content -->
@@ -131,75 +165,115 @@
 		</section>
 	</xsl:template>
 	
+	<xsl:template match="f:doc">
+		<section class="doc">
+			<h3><a href="{@href}">
+				<span class="sigil" title="{@headnote}">
+					<xsl:value-of select="@sigil"/>
+				</span>
+				</a>
+				<span class="score">
+					<xsl:value-of select="@score"/>
+				</span>
+			</h3>
+			<xsl:apply-templates/>
+		</section>
+	</xsl:template>
+	
+	<xsl:template name="order-item">
+		<xsl:param name="type" required="yes"/>
+		<xsl:param name="label" required="yes"/>
+		<xsl:param name="active" select="$type = /f:results/@order"/>
+		<li class="order-{$type}">
+			<xsl:choose>
+				<xsl:when test="$active">
+					<strong><xsl:value-of select="$label"/></strong>
+				</xsl:when>
+				<xsl:otherwise>
+					<a href="{$edition}/search?q={escape-html-uri($query)}&amp;order={$type}"><xsl:value-of select="$label"/></a>
+				</xsl:otherwise>
+			</xsl:choose>	
+		</li>
+	</xsl:template>
 	
 	<xsl:template match="/f:results">
-		<html>
-			<xsl:call-template name="html-head"/>
-			<body>
-				<xsl:call-template name="header">
-					<xsl:with-param name="breadcrumbs" tunnel="yes">						
-						<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
-							<small id="breadcrumbs"><a>Suchergebnisse</a></small>
-						</div>
-						<div id="current" class="pure-nowrap" title="{@query}">
-							<xsl:value-of select="@query"/>
-						</div>
-					</xsl:with-param>
-				</xsl:call-template>
-				
-				<main>
-					<div class="main-content-container">
-						<div id="main-content" class="main-content">
-							<div style="display: block;" class="search-content view-content" id="search-content">
-								<div id="main" class="print">
-									<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
-									<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
-										<xsl:choose>
-											<xsl:when test=".//f:hit">
-												<xsl:copy-of select="$navbar"/>
-												<xsl:apply-templates/>
-												<xsl:copy-of select="$navbar"/>												
-											</xsl:when>
-											<xsl:otherwise>
-												<div class="pure-alert pure-alert-warning">Keine Treffer für <em><xsl:value-of select="$query"/></em>.</div>												
-											</xsl:otherwise>
-										</xsl:choose>
-									</div>
-								</div>
-							</div>							
-						</div>
-					</div>
-				</main>
-				<xsl:call-template name="footer"/>
-			</body>
-		</html>
-	</xsl:template>
-	
-	<xsl:template match="exception" xpath-default-namespace="">
-		<html>			
-			<xsl:call-template name="html-head"/>					
-			<body>
-				<xsl:call-template name="header">
-					<xsl:with-param name="breadcrumbs" tunnel="yes">						
-						<div id="current">Fehler.</div>
-					</xsl:with-param>
-				</xsl:call-template>
-				<div class="main-content-container">
-					<div id="main-content" class="main-content">
-						<div id="main" class="print">
-							<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
-							<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
-								<pre class="pure-alert pure-alert-danger">									
-									<xsl:value-of select="message"/>
-								</pre>
-							</div>
-						</div>
-					</div>
+		<xsl:call-template name="html-frame">
+			<xsl:with-param name="breadcrumbs" tunnel="yes">						
+				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
+					<small id="breadcrumbs"><a>Suchergebnisse</a></small>
 				</div>
-			</body>
-		</html>
+				<div id="current" class="pure-nowrap" title="{@query}">
+					<xsl:value-of select="@query"/>
+				</div>
+			</xsl:with-param>
+			<xsl:with-param name="title" tunnel="yes">Faust-Edition: Suche nach <xsl:value-of select="$query"/></xsl:with-param>
+			<xsl:with-param name="content">
+				<div id="main" class="print">
+					<div class="print-side-column">
+						<h4>Sortierung</h4>
+						<ul class="sort">
+							<xsl:call-template name="order-item">
+								<xsl:with-param name="type">score</xsl:with-param>
+								<xsl:with-param name="label">Relevanz</xsl:with-param>
+							</xsl:call-template>
+							<xsl:call-template name="order-item">
+								<xsl:with-param name="type">sigil</xsl:with-param>
+								<xsl:with-param name="label">Sigle</xsl:with-param>
+							</xsl:call-template>
+							<xsl:call-template name="order-item">
+								<xsl:with-param name="type">verse</xsl:with-param>
+								<xsl:with-param name="label">Vers</xsl:with-param>
+							</xsl:call-template>
+						</ul>
+					</div> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
+					<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
+						
+						<xsl:choose>
+							<xsl:when test=".//f:hit|.//f:doc">
+								<xsl:copy-of select="$navbar"/>
+								<h3><xsl:value-of select="@hits"/> Treffer in <xsl:value-of select="@docs"/> Dokumenten</h3>
+								<xsl:apply-templates/>
+								<xsl:copy-of select="$navbar"/>												
+							</xsl:when>
+							<xsl:otherwise>
+								<div class="pure-alert pure-alert-warning">Keine Treffer für <em><xsl:value-of select="@query"/></em>.</div>												
+							</xsl:otherwise>
+						</xsl:choose>
+					</div>
+				</div>				
+			</xsl:with-param>
+		</xsl:call-template>						
 	</xsl:template>
 	
+	<xsl:template match="/exist:exception">
+		<xsl:call-template name="html-frame">
+			<xsl:with-param name="breadcrumbs" tunnel="yes">
+				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
+					<small id="breadcrumbs"><a>Suchergebnisse</a></small>
+				</div>
+				<div id="current" class="pure-nowrap" title="{@query}">
+					<xsl:value-of select="@query"/>
+				</div>				
+			</xsl:with-param>
+			<xsl:with-param name="title" tunnel="yes">Faust-Edition: Suche nach <xsl:value-of select="$query"/></xsl:with-param>
+			<xsl:with-param name="content">
+				<xsl:apply-templates/>				
+			</xsl:with-param>
+		</xsl:call-template>
+	</xsl:template>
 	
+	<xsl:template match="f:sigils">
+		<h3>Treffer in Siglen:</h3>
+		<ul>
+			<xsl:apply-templates/>
+		</ul>
+		<h3>Treffer im Text:</h3>
+	</xsl:template>
+	<xsl:template match="f:idno-match">
+		<li><a href="{@href}">
+			<strong><xsl:value-of select="@sigil"/></strong>
+			(<xsl:value-of select="@idno-label"/>: <xsl:apply-templates/>)
+		</a></li>
+	</xsl:template>
 	
 </xsl:stylesheet>

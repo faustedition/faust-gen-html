@@ -208,33 +208,36 @@
                 <xsl:apply-templates select="@*|node()"/>
               </xsl:copy>
             </xsl:template>
-            <xsl:template match="/*">
+            <xsl:template match="/*">              
               <xsl:copy>                
+                <xsl:variable name="sorted-transcripts">
                   <!-- Lesetext Faust I: -->
-                  <textTranscript xmlns:f="http://www.faustedition.net/ns"
-                    uri="faust://lesetext/faust1.xml"            
-                    href="{resolve-uri('lesetext/faust1.xml', $builddir)}"
-                    document="lesetext/faust1.xml"
-                    type="lesetext"
-                    f:sigil="Lesetext">                    
+                  <textTranscript xmlns:f="http://www.faustedition.net/ns" uri="faust://lesetext/faust1.xml"
+                    href="{resolve-uri('lesetext/faust1.xml', $builddir)}" document="lesetext/faust1.xml"
+                    type="lesetext" f:sigil="Lesetext">
                     <idno type="faustedition">Lesetext</idno>
                   </textTranscript>
-                  
+
                   <!-- Lesetext Faust II: -->
-                  <textTranscript xmlns:f="http://www.faustedition.net/ns"
-                    uri="faust://lesetext/faust2.xml"
-                    href="{resolve-uri('lesetext/faust2.xml', $builddir)}"
-                    document="lesetext/faust2.xml"
-                    type="lesetext"
-                    f:sigil="Lesetext">                    
+                  <textTranscript xmlns:f="http://www.faustedition.net/ns" uri="faust://lesetext/faust2.xml"
+                    href="{resolve-uri('lesetext/faust2.xml', $builddir)}" document="lesetext/faust2.xml"
+                    type="lesetext" f:sigil="Lesetext">
                     <idno type="faustedition">Lesetext</idno>
                   </textTranscript>
 
                   <xsl:apply-templates select="descendant-or-self::f:textTranscript">
                     <xsl:sort select="f:splitSigil(@f:sigil)[1]" stable="yes"/>
                     <xsl:sort select="f:splitSigil(@f:sigil)[2]" data-type="number"/>
-                    <xsl:sort select="f:splitSigil(@f:sigil)[3]"/>								                    
+                    <xsl:sort select="f:splitSigil(@f:sigil)[3]"/>
                   </xsl:apply-templates>
+                </xsl:variable>
+                <xsl:for-each select="$sorted-transcripts/*">
+                  <xsl:copy>
+                    <xsl:attribute name="number"><xsl:number/></xsl:attribute>
+                    <xsl:copy-of select="@*"/>
+                    <xsl:copy-of select="node()"/>
+                  </xsl:copy>
+                </xsl:for-each>
               </xsl:copy>              
             </xsl:template>           
           </xsl:stylesheet>

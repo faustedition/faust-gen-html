@@ -42,6 +42,7 @@
 		<p:variable name="type" select="/f:textTranscript/@type"/>
 		<p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
 		<p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
+		<p:variable name="number" select="/f:textTranscript/@number"/>
 
 
 		<cx:message>
@@ -61,6 +62,7 @@
 			<p:with-param name="documentURI" select="$documentURI"/>
 			<p:with-param name="type" select="$type"/>
 			<p:with-param name="transcriptURI" select="$transcriptURI"/>
+			<p:with-param name="number" select="$number"/>
 			<p:input port="parameters">
 				<p:pipe port="result" step="config"/>            
 			</p:input>

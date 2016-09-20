@@ -1,0 +1,596 @@
+<f:results xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns="http://www.tei-c.org/ns/1.0" xmlns:f="http://www.faustedition.net/ns" docs="12" hits="87">
+    <f:doc sigil="H P15" headnote="Einzelblatt. – Versentwürfe zu ‚Faust I‘." type="archivalDocument" uri="faust://xml/document/paralipomena/gsa_389847.xml" internal-uri="/db/apps/faust/data/document/paralipomena/gsa_389847.xml" transcript="389847" score="1.9328384">
+        <f:subhit page="1" n="p16_1">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="2" f:scene="" f:scene-label=""/>
+            </f:breadcrumbs>
+            <l n="p16_1">Als <exist:match>Pudel</exist:match> als Gespenst und als Scholasticus</l>
+        </f:subhit>
+        <f:subhit page="1" n="p16_2">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="2" f:scene="" f:scene-label=""/>
+            </f:breadcrumbs>
+            <l n="p16_2">Ich habe dich als <exist:match>Pudel</exist:match> doch am liebsten</l>
+        </f:subhit>
+    </f:doc>
+    <f:doc sigil="T 1 H.1" headnote="Doppelblatt. – Text für die Bühne." type="archivalDocument" uri="faust://xml/document/faust/1/gsa_390352.xml" internal-uri="/db/apps/faust/data/document/faust/1/gsa_390352.xml" transcript="390352" score="0.9664192">
+        <f:subhit page="1" n="">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="2" f:scene="" f:scene-label="Act. II."/>
+            </f:breadcrumbs>
+            <stage>Faust. Wagner. <exist:match>Pudel</exist:match>.</stage>
+        </f:subhit>
+        <f:subhit page="1" n="">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="2" f:scene="" f:scene-label="Act. II."/>
+            </f:breadcrumbs>
+            <stage>Faust, <exist:match>Pudel</exist:match>, Geister vor der Thür.</stage>
+        </f:subhit>
+    </f:doc>
+    <f:doc sigil="J.2" headnote="Morgenblatt für gebildete Stände, 1808" type="print" uri="faust://xml/document/print/J_1808.xml" internal-uri="/db/apps/faust/data/document/print/J_1808.xml" transcript="J_XIIA149-1808" score="0.302006">
+        <f:subhit page="" n="1150">
+            <l n="1150">Für einen <exist:match>Pudel</exist:match>, der auf seine Weise</l>
+        </f:subhit>
+        <f:subhit page="" n="1156">
+            <l n="1156">Ich sehe nichts als einen schwarzen <exist:match>Pudel</exist:match>;</l>
+        </f:subhit>
+    </f:doc>
+    <f:doc sigil="Lesetext" headnote="Faust I" type="lesetext" uri="faust://xml/lesetext/faust1.xml" internal-uri="/db/apps/faust/data/lesetext/faust1.xml" transcript="faust1" score="0.16016288">
+        <f:subhit page="" n="1150">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="5" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Tor"/>
+            </f:breadcrumbs>
+            <l n="1150">Für einen <exist:match>Pudel</exist:match>, der auf seine Weise</l>
+        </f:subhit>
+        <f:subhit page="" n="1156">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="5" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Tor"/>
+            </f:breadcrumbs>
+            <l n="1156">Ich sehe nichts als einen schwarzen <exist:match>Pudel</exist:match>,</l>
+        </f:subhit>
+        <f:subhit page="" n="before_1178_b">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer I"/>
+            </f:breadcrumbs>
+            <stage n="before_1178_b" rend="inline small">
+                <hi rend="big">mit dem
+                                            <hi rend="letter-spaced">
+                        <exist:match>Pudel</exist:match>
+                    </hi>
+                </hi>
+                                    hereintretend.</stage>
+        </f:subhit>
+        <f:subhit page="" n="1186">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer I"/>
+            </f:breadcrumbs>
+            <l n="1186">Sey ruhig <exist:match>Pudel</exist:match>! renne nicht hin und wieder!</l>
+        </f:subhit>
+        <f:subhit page="" n="1202">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer I"/>
+            </f:breadcrumbs>
+            <l n="1202">Knurre nicht <exist:match>Pudel</exist:match>! Zu den heiligen Tönen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1239">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer I"/>
+            </f:breadcrumbs>
+            <l n="1239">
+                <exist:match>Pudel</exist:match>, so laß das Heulen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1250">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer I"/>
+            </f:breadcrumbs>
+            <l n="1250">Wie wird mein <exist:match>Pudel</exist:match> lang und breit!</l>
+        </f:subhit>
+        <f:subhit page="" n="1406">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer I"/>
+            </f:breadcrumbs>
+            <l n="1406">Der <exist:match>Pudel</exist:match> merkte nichts als er hereingesprungen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1529">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer I"/>
+            </f:breadcrumbs>
+            <l n="1529">Und daß ein <exist:match>Pudel</exist:match> mir entsprang.</l>
+        </f:subhit>
+    </f:doc>
+    <f:doc sigil="D.2" headnote="Einzeldruck bei Cotta, 1816" type="print" uri="faust://xml/document/print/D(2).xml" internal-uri="/db/apps/faust/data/document/print/D(2).xml" transcript="D(2)_IV3-6" score="0.16016288">
+        <f:subhit page="" n="1150">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="5" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1150">Für einen <exist:match>Pudel</exist:match>, der auf seine Weise</l>
+        </f:subhit>
+        <f:subhit page="" n="1156">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="5" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1156">Ich sehe nichts als einen schwarzen <exist:match>Pudel</exist:match>;</l>
+        </f:subhit>
+        <f:subhit page="" n="before_1178_b">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <stage n="before_1178_b" rend="inline small">
+                <hi rend="big">mit dem <hi rend="letter-spaced">
+                        <exist:match>Pudel</exist:match>
+                    </hi>
+                </hi>
+                            hereintretend.</stage>
+        </f:subhit>
+        <f:subhit page="" n="1186">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1186">Sey ruhig <exist:match>Pudel</exist:match>! renne nicht hin und wieder!</l>
+        </f:subhit>
+        <f:subhit page="" n="1202">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1202">Knurre nicht <exist:match>Pudel</exist:match>! Zu den heiligen Tönen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1239">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1239">
+                <exist:match>Pudel</exist:match>, so laß das Heulen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1250">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1250">Wie wird mein <exist:match>Pudel</exist:match> lang und breit!</l>
+        </f:subhit>
+        <f:subhit page="" n="1406">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1406">Der <exist:match>Pudel</exist:match> merkte nichts als er hereingesprungen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1529">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1529">Und daß ein <exist:match>Pudel</exist:match> mir entsprang.</l>
+        </f:subhit>
+    </f:doc>
+    <f:doc sigil="D.1" headnote="Einzeldruck bei Cotta, 1808" type="print" uri="faust://xml/document/print/D(1).xml" internal-uri="/db/apps/faust/data/document/print/D(1).xml" transcript="D(1)_IV3-1" score="0.16016288">
+        <f:subhit page="" n="1150">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="5" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1150">Für einen <exist:match>Pudel</exist:match>, der auf seine Weise</l>
+        </f:subhit>
+        <f:subhit page="" n="1156">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="5" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1156">Ich sehe nichts als einen schwarzen <exist:match>Pudel</exist:match>,</l>
+        </f:subhit>
+        <f:subhit page="" n="before_1178_b">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <stage n="before_1178_b" rend="inline small">
+                <hi rend="big">mit dem
+                                            <hi rend="letter-spaced">
+                        <exist:match>Pudel</exist:match>
+                    </hi>
+                </hi>
+                                    hereintretend.</stage>
+        </f:subhit>
+        <f:subhit page="" n="1186">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1186">Sey ruhig <exist:match>Pudel</exist:match>! renne nicht hin und wieder!</l>
+        </f:subhit>
+        <f:subhit page="" n="1202">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1202">Knurre nicht <exist:match>Pudel</exist:match>! Zu den heiligen Tönen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1239">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1239">
+                <exist:match>Pudel</exist:match>, so laß das Heulen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1250">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1250">Wie wird mein <exist:match>Pudel</exist:match> lang und breit!</l>
+        </f:subhit>
+        <f:subhit page="" n="1406">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1406">Der <exist:match>Pudel</exist:match> merkte nichts als er hereingesprungen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1529">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1529">Und daß ein <exist:match>Pudel</exist:match> mir entsprang.</l>
+        </f:subhit>
+    </f:doc>
+    <f:doc sigil="C.3 12" headnote="Oktavausgabe letzter Hand bei Cotta, 1829" type="print" uri="faust://xml/document/print/C(3)12.xml" internal-uri="/db/apps/faust/data/document/print/C(3)12.xml" transcript="C(3)12_IIIB27" score="0.16016288">
+        <f:subhit page="" n="1150">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1150">Für einen <exist:match>Pudel</exist:match>, der auf seine Weise</l>
+        </f:subhit>
+        <f:subhit page="" n="1156">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1156">Ich sehe nichts als einen schwarzen <exist:match>Pudel</exist:match>;</l>
+        </f:subhit>
+        <f:subhit page="" n="before_1178_b">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <stage n="before_1178_b" rend="inline small">mit dem <exist:match>Pudel</exist:match>
+                                    hereintretend.</stage>
+        </f:subhit>
+        <f:subhit page="" n="1186">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1186">Sey ruhig <exist:match>Pudel</exist:match>! renne nicht hin und wieder!</l>
+        </f:subhit>
+        <f:subhit page="" n="1202">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1202">Knurre nicht <exist:match>Pudel</exist:match>! Zu den heiligen Tönen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1239">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1239">
+                <exist:match>Pudel</exist:match>, so laß das Heulen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1250">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1250">Wie wird mein <exist:match>Pudel</exist:match> lang und breit!</l>
+        </f:subhit>
+        <f:subhit page="" n="1406">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1406">Der <exist:match>Pudel</exist:match> merkte nichts als er hereingesprungen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1529">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1529">Und daß ein <exist:match>Pudel</exist:match> mir entsprang?</l>
+        </f:subhit>
+    </f:doc>
+    <f:doc sigil="C.1 12" headnote="Taschenausgabe letzter Hand bei Cotta, 1828" type="print" uri="faust://xml/document/print/C(1)12.xml" internal-uri="/db/apps/faust/data/document/print/C(1)12.xml" transcript="C(1)12_IIIB23-1" score="0.16016288">
+        <f:subhit page="" n="1150">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1150">Für einen <exist:match>Pudel</exist:match>, der auf seine Weise</l>
+        </f:subhit>
+        <f:subhit page="" n="1156">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1156">Ich sehe nichts als einen schwarzen <exist:match>Pudel</exist:match>;</l>
+        </f:subhit>
+        <f:subhit page="" n="before_1178_b">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <stage n="before_1178_b" rend="inline small"> mit dem <hi rend="letter-spaced">
+                    <exist:match>Pudel</exist:match>
+                </hi> hereintretend. </stage>
+        </f:subhit>
+        <f:subhit page="" n="1186">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1186">Sey ruhig <exist:match>Pudel</exist:match>! renne nicht hin und wieder!</l>
+        </f:subhit>
+        <f:subhit page="" n="1202">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1202">Knurre nicht <exist:match>Pudel</exist:match>! Zu den heiligen Tönen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1239">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1239">
+                <exist:match>Pudel</exist:match>, so laß das Heulen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1250">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1250">Wie wird mein <exist:match>Pudel</exist:match> lang und breit!</l>
+        </f:subhit>
+        <f:subhit page="" n="1406">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1406">Der <exist:match>Pudel</exist:match> merkte nichts als er hereingesprungen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1529">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1529">Und daß ein <exist:match>Pudel</exist:match> mir entsprang?</l>
+        </f:subhit>
+    </f:doc>
+    <f:doc sigil="B 9" headnote="Zweite Gesamtausgabe bei Cotta, 1817" type="print" uri="faust://xml/document/print/B9.xml" internal-uri="/db/apps/faust/data/document/print/B9.xml" transcript="B9_IIIB20-2" score="0.16016288">
+        <f:subhit page="" n="1150">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="5" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1150">Für einen <exist:match>Pudel</exist:match>, der auf seine Weise</l>
+        </f:subhit>
+        <f:subhit page="" n="1156">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="5" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1156">Ich sehe nichts als einen schwarzen <exist:match>Pudel</exist:match>;</l>
+        </f:subhit>
+        <f:subhit page="" n="before_1178_b">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <stage n="before_1178_b" rend="inline small">
+                <hi rend="big">mit dem
+                                            <hi rend="letter-spaced">
+                        <exist:match>Pudel</exist:match>
+                    </hi>
+                </hi>
+                                    hereintretend.</stage>
+        </f:subhit>
+        <f:subhit page="" n="1186">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1186">Sey ruhig <exist:match>Pudel</exist:match>! renne nicht hin und wieder!</l>
+        </f:subhit>
+        <f:subhit page="" n="1202">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1202">Knurre nicht <exist:match>Pudel</exist:match>! Zu den heiligen Tönen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1239">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1239">
+                <exist:match>Pudel</exist:match>, so laß das Heulen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1250">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1250">Wie wird mein <exist:match>Pudel</exist:match> lang und breit!</l>
+        </f:subhit>
+        <f:subhit page="" n="1406">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1406">Der <exist:match>Pudel</exist:match> merkte nichts als er hereingesprungen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1529">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1529">Und daß ein <exist:match>Pudel</exist:match> mir entsprang.</l>
+        </f:subhit>
+    </f:doc>
+    <f:doc sigil="B.a" headnote="Sog. Wiener Ausgabe bei Kaulfuß und Armbruster, 1817" type="print" uri="faust://xml/document/print/B(a)9.xml" internal-uri="/db/apps/faust/data/document/print/B(a)9.xml" transcript="Ba9_A101286" score="0.16016288">
+        <f:subhit page="" n="1150">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="5" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1150">Für einen <exist:match>Pudel</exist:match>, der auf seine Weise</l>
+        </f:subhit>
+        <f:subhit page="" n="1156">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="5" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1156">Ich sehe nichts als einen schwarzen <exist:match>Pudel</exist:match>,</l>
+        </f:subhit>
+        <f:subhit page="" n="before_1178_b">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer."/>
+            </f:breadcrumbs>
+            <stage n="before_1178_b" rend="inline small">mit dem <hi rend="normal letter-spaced">
+                    <exist:match>Pudel</exist:match>
+                </hi>
+                                    hereintretend.</stage>
+        </f:subhit>
+        <f:subhit page="" n="1186">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer."/>
+            </f:breadcrumbs>
+            <l n="1186">Sey ruhig <exist:match>Pudel</exist:match>! renne nicht hin und wieder!</l>
+        </f:subhit>
+        <f:subhit page="" n="1202">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer."/>
+            </f:breadcrumbs>
+            <l n="1202">Knurre nicht <exist:match>Pudel</exist:match>! Zu den heiligen Tönen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1239">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer."/>
+            </f:breadcrumbs>
+            <l n="1239">
+                <exist:match>Pudel</exist:match>, so laß das Heulen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1250">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer."/>
+            </f:breadcrumbs>
+            <l n="1250">Wie wird mein <exist:match>Pudel</exist:match> lang und breit!</l>
+        </f:subhit>
+        <f:subhit page="" n="1406">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer."/>
+            </f:breadcrumbs>
+            <l n="1406">Der <exist:match>Pudel</exist:match> merkte nichts als er hereingesprungen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1529">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studierzimmer."/>
+            </f:breadcrumbs>
+            <l n="1529">Und daß ein <exist:match>Pudel</exist:match> mir entsprang.</l>
+        </f:subhit>
+    </f:doc>
+    <f:doc sigil="A 8" headnote="Erste Gesamtausgabe bei Cotta, 1808" type="print" uri="faust://xml/document/print/A8.xml" internal-uri="/db/apps/faust/data/document/print/A8.xml" transcript="A8_IIIB18" score="0.16016288">
+        <f:subhit page="" n="1150">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="5" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1150">Für einen <exist:match>Pudel</exist:match>, der auf seine Weise</l>
+        </f:subhit>
+        <f:subhit page="" n="1156">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="5" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1156">Ich sehe nichts als einen schwarzen <exist:match>Pudel</exist:match>,</l>
+        </f:subhit>
+        <f:subhit page="" n="before_1178_b">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <stage n="before_1178_b" rend="inline small">
+                <hi rend="big">mit dem
+                                            <hi rend="letter-spaced">
+                        <exist:match>Pudel</exist:match>
+                    </hi>
+                </hi>
+                                    hereintretend.</stage>
+        </f:subhit>
+        <f:subhit page="" n="1186">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1186">Sey ruhig <exist:match>Pudel</exist:match>! renne nicht hin und wieder!</l>
+        </f:subhit>
+        <f:subhit page="" n="1202">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1202">Knurre nicht <exist:match>Pudel</exist:match>! Zu den heiligen Tönen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1239">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1239">
+                <exist:match>Pudel</exist:match>, so laß das Heulen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1250">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1250">Wie wird mein <exist:match>Pudel</exist:match> lang und breit!</l>
+        </f:subhit>
+        <f:subhit page="" n="1406">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1406">Der <exist:match>Pudel</exist:match> merkte nichts als er hereingesprungen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1529">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1529">Und daß ein <exist:match>Pudel</exist:match> mir entsprang.</l>
+        </f:subhit>
+    </f:doc>
+    <f:doc sigil="1 H.1" headnote="Korrekturexemplar der zweiten Gesamtausgabe bei Cotta, 1817, bearbeitet von Göttling, Goethe und Reichel" type="print" uri="faust://xml/document/archival/dla_marbach/Cotta_Ms_Goethe_AlH_C-1-12_Faust_I.xml" internal-uri="/db/apps/faust/data/document/archival/dla_marbach/Cotta_Ms_Goethe_AlH_C-1-12_Faust_I.xml" transcript="Cotta_Ms_Goethe_AlH_C-1-12_Faust_I" score="0.16016288">
+        <f:subhit page="" n="1150">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1150">Für einen <exist:match>Pudel</exist:match>, der auf seine Weise</l>
+        </f:subhit>
+        <f:subhit page="" n="1156">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="6" f:verse-range="808 1177" f:scene="1.1.2" f:scene-label="Vor dem Thor."/>
+            </f:breadcrumbs>
+            <l n="1156">Ich sehe nichts als einen schwarzen <exist:match>Pudel</exist:match>;</l>
+        </f:subhit>
+        <f:subhit page="" n="before_1178_b">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <stage n="before_1178_b" rend="inline small">
+                <hi rend="big">mit dem
+                                            <hi rend="letter-spaced">
+                        <exist:match>Pudel</exist:match>
+                    </hi>
+                </hi>
+                                    hereintretend.</stage>
+        </f:subhit>
+        <f:subhit page="" n="1186">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1186">Sey ruhig <exist:match>Pudel</exist:match>! renne nicht hin und wieder!</l>
+        </f:subhit>
+        <f:subhit page="" n="1202">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1202">Knurre nicht <exist:match>Pudel</exist:match>! Zu den heiligen Tönen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1239">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1239">
+                <exist:match>Pudel</exist:match>, so laß das Heulen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1250">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1250">Wie wird mein <exist:match>Pudel</exist:match> lang und breit!</l>
+        </f:subhit>
+        <f:subhit page="" n="1406">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1406">Der <exist:match>Pudel</exist:match> merkte nichts als er hereingesprungen,</l>
+        </f:subhit>
+        <f:subhit page="" n="1529">
+            <f:breadcrumbs>
+                <f:breadcrumb f:section="7" f:verse-range="1178 1529" f:scene="1.1.3" f:scene-label="Studirzimmer."/>
+            </f:breadcrumbs>
+            <l n="1529">Und daß ein <exist:match>Pudel</exist:match> mir entsprang<subst hand="#go_bl">
+                    <del>.</del>
+                    <add>?</add>
+                </subst>
+            </l>
+        </f:subhit>
+    </f:doc>
+</f:results>

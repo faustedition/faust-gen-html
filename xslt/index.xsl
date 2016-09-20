@@ -21,7 +21,7 @@
 	<xsl:template match="/">
 		<html>
 			<xsl:call-template name="html-head">
-				<xsl:with-param name="title" select="$title"/>
+				<xsl:with-param name="title" select="$title" tunnel="yes"/>
 			</xsl:call-template>
 			<body>
 				<xsl:call-template name="header"/>
