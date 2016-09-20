@@ -103,6 +103,7 @@ return
         }</f:doc>
 };
 
+try {
 let $query := request:get-parameter('q', 'pudel'),
     $order  := request:get-parameter('order', 'score'),
     $sigils  := local:sigil($query),
@@ -130,3 +131,12 @@ return <f:results
 	        	$results        	        
 	        }</f:fulltext-results>}
 </f:results>
+} catch * {
+	<exist:exception>
+		<div xmlns="http://www.w3.org/1999/xhtml" class="pure-alert pure-alert-danger">
+			<h3>Fehler: {$err:code}</h3>
+			<pre>{$err:description}</pre>
+			<p>{$err:module}:{$err:line-number}:{$err:column-number} Value: {$err:value}, Additional: {$err:additional}</p>
+		</div>
+	</exist:exception>
+}

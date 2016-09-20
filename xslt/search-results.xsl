@@ -245,29 +245,21 @@
 		</xsl:call-template>						
 	</xsl:template>
 	
-	<xsl:template match="exception" xpath-default-namespace="">
-		<html>			
-			<xsl:call-template name="html-head"/>					
-			<body>
-				<xsl:call-template name="header">
-					<xsl:with-param name="breadcrumbs" tunnel="yes">						
-						<div id="current">Fehler.</div>
-					</xsl:with-param>
-				</xsl:call-template>
-				<div class="main-content-container">
-					<div id="main-content" class="main-content">
-						<div id="main" class="print">
-							<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
-							<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
-								<pre class="pure-alert pure-alert-danger">									
-									<xsl:value-of select="message"/>
-								</pre>
-							</div>
-						</div>
-					</div>
+	<xsl:template match="/exist:exception">
+		<xsl:call-template name="html-frame">
+			<xsl:with-param name="breadcrumbs" tunnel="yes">
+				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
+					<small id="breadcrumbs"><a>Suchergebnisse</a></small>
 				</div>
-			</body>
-		</html>
+				<div id="current" class="pure-nowrap" title="{@query}">
+					<xsl:value-of select="@query"/>
+				</div>				
+			</xsl:with-param>
+			<xsl:with-param name="title" tunnel="yes">Faust-Edition: Suche nach <xsl:value-of select="$query"/></xsl:with-param>
+			<xsl:with-param name="content">
+				<xsl:apply-templates/>				
+			</xsl:with-param>
+		</xsl:call-template>
 	</xsl:template>
 	
 	<xsl:template match="f:sigils">
