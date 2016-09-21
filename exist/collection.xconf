@@ -26,6 +26,7 @@
             <text qname="tei:TEI">
                 <inline qname="tei:orig"/>
                 <ignore qname="tei:teiHeader"/>
+                <ignore qname="tei:fw"/>
             </text>
         </lucene>
         <ngram qname="tei:idno"/>
