@@ -5,7 +5,7 @@
 	xmlns:f="http://www.faustedition.net/ns" exclude-result-prefixes="xs f"
 	version="2.0">
 
-	<xsl:param name="title">Faust-Edition [beta]</xsl:param>
+	<xsl:param name="title">Faust-Edition [beta 2]</xsl:param>
 	<xsl:param name="edition"></xsl:param>
 	<xsl:param name="assets" select="$edition"/>
 	<xsl:param name="debug" select="false()"/>
@@ -62,7 +62,7 @@
 					<img src="{$assets}/img/faustlogo.svg" alt="Faustedition"/>
 				</a>
 				<sup class="pure-fade-50">
-					<mark>beta</mark>
+					<mark>beta 2</mark>
 				</sup>
 			</div>
 
