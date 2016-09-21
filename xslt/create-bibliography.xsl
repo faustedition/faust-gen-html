@@ -62,41 +62,32 @@
 						</xsl:for-each>
 					</xsl:for-each-group>
 				</xsl:variable>
-				<main>
-					<div class="main-content-container" style="margin-bottom:0em;">
-						<div id="main-content" class="main-content">
-							<div style="display: block;" class="archive-content view-content"
-								id="archive-content">
-								
-								<section class="center pure-g-r">
-									<article class="pure-u-1">
-										
-										<dl class="bibliography">
-											<xsl:for-each select="$entries">
-												<xsl:sort select="lower-case(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$1'))"/>
-												<xsl:sort select="    number(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$2'))"/>
-												<xsl:sort select="lower-case(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$3'))"/>
-												<xsl:sort select="    number(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$4'))"/>
-												<xsl:variable name="id"
-													select="replace(@data-bib-uri, '^faust://bibliography/', '')"/>
-												<dt id="{$id}">
-													<xsl:value-of select="@data-citation"/>
-													<a href="#{$id}" class="hover-link">¶</a>
-												</dt>
-												<xsl:sequence select="."/>
-											</xsl:for-each>
-										</dl>
-										
-									</article>
-								</section>
-							</div>
-						</div>
-					</div>
-				</main>
-				
+			
+				<section class="center pure-g-r">
+					<article class="pure-u-1">
+						
+						<dl class="bibliography">
+							<xsl:for-each select="$entries">
+								<xsl:sort select="lower-case(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$1'))"/>
+								<xsl:sort select="    number(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$2'))"/>
+								<xsl:sort select="lower-case(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$3'))"/>
+								<xsl:sort select="    number(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$4'))"/>
+								<xsl:variable name="id"
+									select="replace(@data-bib-uri, '^faust://bibliography/', '')"/>
+								<dt id="{$id}">
+									<xsl:value-of select="@data-citation"/>
+									<a href="#{$id}" class="hover-link">¶</a>
+								</dt>
+								<xsl:sequence select="."/>
+							</xsl:for-each>
+						</dl>
+						
+					</article>
+				</section>
+
 				<script type="text/javascript">
 					// set breadcrumbs
-					document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Archiv"}]));
+					document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Archiv", link: "archive"}, {caption: "Bibliographie"}]));
 				</script>
 				
 			</xsl:with-param>
