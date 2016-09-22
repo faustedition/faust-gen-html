@@ -349,14 +349,20 @@ in <xsl:value-of select="document-uri(/)"/>
     </xsl:choose>
   </xsl:template>
   
-  <xsl:template match="pb[@f:docTranscriptNo]" priority="1">
+  <xsl:template match="pb[@f:docTranscriptNo|@n]" priority="1">
+  	<xsl:variable name="generated-no">
+  		<xsl:call-template name="generate-pageno"/>
+  	</xsl:variable>
+  	<xsl:variable name="docTranscriptNo" select="data(@f:docTranscriptNo)"/>
+  	<xsl:variable name="reference-pageno" select="if ($docTranscriptNo) then $docTranscriptNo else $generated-no"/>
+  	
     <xsl:text> </xsl:text>
     <a  
       class="{string-join((f:generic-classes(.), 'generated-text', 'pageno', 'doclink'), ' ')}"
-      id="dt{@f:docTranscriptNo}"
-      href="{if ($type = 'archivalDocument') then f:doclink($documentURI, @f:docTranscriptNo, ()) else concat('#dt', @f:docTranscriptNo)}"> 
-      <xsl:attribute name="title"><xsl:call-template name="generate-pageno"/></xsl:attribute>
-      <xsl:value-of select="@f:docTranscriptNo"/>
+      id="dt{$reference-pageno}"
+      href="{if ($type = 'archivalDocument') then f:doclink($documentURI, $docTranscriptNo, ()) else concat('#dt', $reference-pageno)}"> 
+      <xsl:attribute name="title" select="$generated-no"/>
+      <xsl:sequence select="$reference-pageno"/>
     </a>
   </xsl:template>
 	
@@ -365,16 +371,7 @@ in <xsl:value-of select="document-uri(/)"/>
   		<xsl:comment>Supressed page break <xsl:value-of select="@n"/></xsl:comment>
   	</span>
   </xsl:template>
-  
-  <xsl:template match="pb[@n]">
-    <xsl:text> </xsl:text>
-    <span
-      class="{string-join((f:generic-classes(.), 'generated-text', 'pageno'), ' ')}"
-      id="pb{@n}">
-      [<xsl:call-template name="generate-pageno"/>]
-    </span>
-  </xsl:template>
-		
+  		
   <xsl:key name="next" match="*[@next]" use="substring(@next, 2)"/>
   <xsl:template match="milestone[@unit='paralipomenon' and not(@xml:id and key('next', @xml:id))]">
   	<xsl:variable name="no" select="replace(@n, 'p(\d+)', '$1')"/>
