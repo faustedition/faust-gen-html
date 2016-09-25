@@ -16,6 +16,9 @@
 	<xsl:template match="p[milestone[@unit='refline']]"> <!-- Wir matchen auf alle <p>s, in denen ein <milestone unit="refline"/> ist -->
 		<lg rend="{concat('ann-p ', @rend)}"> <!-- Zunächst statt <p> ein <lg> erzeugen. Das rend-Attribut bekommt zusätzlich den wert 'ann-p'. Hätte man auch als  <lg rend="ann-p {@rend}"> schreiben könnnen -->
 			<xsl:apply-templates select="@* except @rend"/> <!-- andere Attribute kopieren -->
+			<xsl:variable name="content">
+				<xsl:apply-templates select="node()" mode="clean-p"/>
+			</xsl:variable>
 
 			<!-- 
 
@@ -29,7 +32,7 @@
 				Auf jede Gruppe wird dann der Inhalt des for-each-group angewandt
 
 			-->
-			<xsl:for-each-group select="node()" group-starting-with="milestone[@unit='refline']">
+			<xsl:for-each-group select="$content/node()" group-starting-with="milestone[@unit='refline']">
 
 				<!-- 
 					current-group() ist die aktuelle Gruppe, das erste Element dann natürlich der Milestone.
@@ -49,6 +52,13 @@
 	<xsl:template mode="in-artificial-lg" match="milestone[@unit='refline']"/>
 	<xsl:template mode="in-artificial-lg" match="lb"><xsl:text> </xsl:text></xsl:template>
 	<xsl:template mode="in-artificial-lg" match="lb[@break='no']"/>
+	
+	<!-- <s> stören und werden entfernt, cf. #87. Ggf. mal stattdessen anderes Gruppieren oben implementieren -->
+	<xsl:template match="s" mode="clean-p">
+		<xsl:comment>s</xsl:comment>
+		<xsl:apply-templates/>
+		<xsl:comment>/s</xsl:comment>
+	</xsl:template>
 
 	<!-- Identitätstransformation, für alle Modi, auch für in-artificial-lg. -->
 	<xsl:template match="node()|@*" mode="#all">
