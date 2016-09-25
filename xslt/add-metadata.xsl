@@ -255,6 +255,14 @@
 	</xsl:template>
 	
 	
+	<!-- Remove editorial notes. Cf. #88. Probably needs better solution some time, -->
+	<xsl:template match="note[@type='editorial']">
+		<xsl:comment>note type='editorial'
+			<xsl:copy-of select="."/>
+		</xsl:comment>
+	</xsl:template>
+	
+	
 	<xsl:template match="/">
 		<xsl:comment>
 			
