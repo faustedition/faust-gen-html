@@ -35,6 +35,7 @@ else :)
 			    <dispatch>
 			        <forward url="{concat($exist:controller, '/fts4.xql')}">			        	
 			        	<set-attribute name="xquery.report-errors" value="yes"/>
+			        	<set-attribute name="xmlpath" value="{$xmlpath}"/>
 			        </forward>
 			        <view>
 			            <forward servlet="XSLTServlet">
