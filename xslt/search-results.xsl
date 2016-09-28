@@ -57,6 +57,7 @@
 			.hit ul.breadcrumbs { display: none; }
 			.print-center-column { width: 80%; }
 			ul.sort { list-style-type: none; }
+			.idno mark { padding: 0; }
 		</style>
 	</xsl:param>
 	
@@ -283,10 +284,15 @@
 	</xsl:template>
 	<xsl:template match="f:idno-match">
 		<li><a href="{@href}">
-			<strong><xsl:value-of select="@sigil"/></strong>
-			<xsl:if test="not(idno/@type = 'faustedition')">
-				(<xsl:value-of select="@idno-label"/>: <xsl:apply-templates/>)
-			</xsl:if>
+			<xsl:choose>
+				<xsl:when test="idno/@type = 'faustedition'">
+					<strong><xsl:apply-templates/></strong>
+				</xsl:when>
+				<xsl:otherwise>
+					<strong><xsl:value-of select="@sigil"/></strong>
+					(<xsl:value-of select="@idno-label"/>: <xsl:apply-templates/>)					
+				</xsl:otherwise>
+			</xsl:choose>
 		</a></li>
 	</xsl:template>
 	
