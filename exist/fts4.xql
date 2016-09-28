@@ -24,10 +24,11 @@ declare function local:makeURL(
 
 declare function local:sigil($query as xs:string) as element()* {
     for $idno in $data//tei:idno[ngram:contains(., $query)][@type = $sigil-labels//f:label/@type]
-    let $uri := id('fausturi', $idno)
-    group by $uri
+    let $uri := id('fausturi', $idno)   
+    group by $uri    
     return 
         let $idno := $idno[1],
+        $uri := id('fausturi', $idno),
         $sigil := data(id('sigil', $idno)),
     	$headnote := data(id('headNote', $idno)),
     	$type := data($idno/ancestor-or-self::tei:TEI/@type),
@@ -104,21 +105,22 @@ return
         }</f:doc>
 };
 
-try {
-let $query := request:get-parameter('q', 'pudel'),
-    $order  := request:get-parameter('order', 'score'),
-    $sigils  := local:sigil($query),
-	$results := local:query($query, $order)
-return <f:results 
+declare function local:wrapped-sigil($query as xs:string) as element()* {
+  try {
+  	let $result := local:sigil($query)
+  	return if ($result) then <f:sigils hits="{count($result)}">{$result}</f:sigils> else ()
+  } catch * {
+  	<exist:exception where="sigil" code="{$err:code}" location="{string-join(($err:module, $err:line-number, $err:column-number), ':')}">{$err:description}</exist:exception> 
+  }
+};
+
+declare function local:wrapped-query($query as xs:string, $order as xs:string) as element()* {
+  try {
+  	let $results := local:query($query, $order)
+  	return if ($results) then 
+  		<f:fulltext-results
             docs="{count($results)}" 
-            query="{$query}"
-            order="{$order}"
-            hits="{count($results//exist:match)}" 
-            xmlns:exist="http://exist.sourceforge.net/NS/exist" 
-            xmlns="http://www.tei-c.org/ns/1.0">
-	        {if ($sigils) then <f:sigils>{$sigils}</f:sigils> else (),
-	        <f:fulltext-results>{
-	        
+            hits="{count($results//exist:match)}">{
 	        if ($order = 'verse')
 	        then
 	        	for $subhit in $results//f:subhit
@@ -129,10 +131,27 @@ return <f:results
 	        		$subhit/node()
 	        	}
 	        else
-	        	$results        	        
-	        }</f:fulltext-results>}
+	        	$results	     
+  	}</f:fulltext-results>
+  	else ()
+  } catch * {
+  	<exist:exception where="fulltext" code="{$err:code}" location="{string-join(($err:module, $err:line-number, $err:column-number), ':')}">{$err:description}</exist:exception> 
+  }
+};
+
+let $query := request:get-parameter('q', 'pudel'),
+    $order  := request:get-parameter('order', 'score')
+return <f:results 
+            query="{$query}"
+            order="{$order}"
+            xmlns:exist="http://exist.sourceforge.net/NS/exist" 
+            xmlns="http://www.tei-c.org/ns/1.0">
+	        {
+	       	local:wrapped-sigil($query),
+	       	local:wrapped-query($query, $order)
+	        }
 </f:results>
-} catch * {
+(:} catch * {
 	<exist:exception>
 		<div xmlns="http://www.w3.org/1999/xhtml" class="pure-alert pure-alert-danger">
 			<h3>Fehler: {$err:code}</h3>
@@ -140,4 +159,4 @@ return <f:results
 			<p>{$err:module}:{$err:line-number}:{$err:column-number} Value: {$err:value}, Additional: {$err:additional}</p>
 		</div>
 	</exist:exception>
-}
+}:)

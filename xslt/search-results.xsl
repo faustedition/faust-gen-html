@@ -39,7 +39,7 @@
 	
 	
 	<xsl:param name="headerAdditions">
-		<title>Faust-Edition | Suche: <xsl:value-of select="$query"/></title>
+		<title>Faust-Edition | Suche: <xsl:value-of select="$query"/></title>									
 		<style type="text/css">
 			.hit .headnote { font-weight: lighter; margin-left: 1em;}
 			.hit h3 { margin-bottom: 3pt; vertical-align: middle; }
@@ -242,9 +242,8 @@
 					<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
 						
 						<xsl:choose>
-							<xsl:when test=".//f:hit|.//f:doc|.//f:sigils">
+							<xsl:when test="*">
 								<xsl:copy-of select="$navbar"/>
-								<h3><xsl:value-of select="@hits"/> Treffer in <xsl:value-of select="@docs"/> Dokumenten</h3>
 								<xsl:apply-templates/>
 								<xsl:copy-of select="$navbar"/>												
 							</xsl:when>
@@ -258,29 +257,27 @@
 		</xsl:call-template>						
 	</xsl:template>
 	
-	<xsl:template match="/exist:exception">
-		<xsl:call-template name="html-frame">
-			<xsl:with-param name="breadcrumbs" tunnel="yes">
-				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
-					<small id="breadcrumbs"><a>Suchergebnisse</a></small>
-				</div>
-				<div id="current" class="pure-nowrap" title="{@query}">
-					<xsl:value-of select="@query"/>
-				</div>				
-			</xsl:with-param>
-			<xsl:with-param name="title" tunnel="yes">Faust-Edition: Suche nach <xsl:value-of select="$query"/></xsl:with-param>
-			<xsl:with-param name="content">
-				<xsl:apply-templates/>				
-			</xsl:with-param>
-		</xsl:call-template>
+	<xsl:template match="exist:exception">
+		<xsl:variable name="severe" select="not(/*/*[not(self::exist:exception)])"/>
+		<div class="pure-alert {if ($severe) then 'pure-alert-danger' else 'pure-alert-info pure-alert-dismissable'}">
+			<h3>Fehler <xsl:value-of select="if (@where = 'sigil') then 'bei der Siglensuche' else if (@where = 'fulltext') then 'bei der Volltextsuche' else ()"/></h3>
+			<p><xsl:value-of select="@code"/> | <xsl:value-of select="@location"/></p>
+			<pre>
+				<xsl:apply-templates/>
+			</pre>
+		</div>
+	</xsl:template>
+	
+	<xsl:template match="f:fulltext-results">
+		<h2><xsl:value-of select="@hits"/> Volltext-Treffer in <xsl:value-of select="@docs"/> Dokumenten</h2>
+		<xsl:apply-templates/>
 	</xsl:template>
 	
 	<xsl:template match="f:sigils">
-		<h3>Treffer in Siglen:</h3>
+		<h2><xsl:value-of select="@hits"/> Treffer in Siglen und Signaturen</h2>
 		<ul>
 			<xsl:apply-templates/>
-		</ul>
-		<h3>Treffer im Text:</h3>
+		</ul>		
 	</xsl:template>
 	<xsl:template match="f:idno-match">
 		<li><a href="{@href}">
