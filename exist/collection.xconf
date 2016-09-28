@@ -30,5 +30,6 @@
             </text>
         </lucene>
         <ngram qname="tei:idno"/>
+        <ngram qname="tei:title"/>
     </index>
 </collection>

@@ -6,6 +6,7 @@
 -->
 <sigil-labels xmlns="http://www.faustedition.net/ns">
 	<label type="faustedition">Faustedition</label>
+	<label type="headNote">Kurzbeschreibung</label>
 	<label type="wa_faust">WA, Faust</label>
 	<label type="bohnenkamp">Bohnenkamp</label>
 	<label type="fischer_lamberg">Fischer-Lamberg</label>

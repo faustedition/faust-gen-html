@@ -10,5 +10,5 @@
     <target>faust</target>
     <prepare>pre-install.xql</prepare>
     <finish/>
-    <permissions user="admin" password="geheim" group="dba" mode="rw-rw-r--"/>
+    <permissions xmlns:repo="http://exist-db.org/xquery/repo" password="geheim" user="admin" group="dba" mode="rw-rw-r--"/>
 </meta>
