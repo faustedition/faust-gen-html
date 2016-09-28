@@ -125,7 +125,19 @@
 	
 	<!-- Matches are marked up & made to links. Maybe include match term in URI some time -->
 	<xsl:template match="exist:match">
-		<mark class="match"><a class="match" href="{ancestor::f:*[1]/@href}#l{ancestor::*[@n][1]/@n}"><xsl:apply-templates/></a></mark>
+		<mark class="match">
+			<xsl:choose>
+				<xsl:when test="ancestor::f:sigils">
+					<!-- We're already inside an <a> -->
+					<xsl:apply-templates/>
+				</xsl:when>
+				<xsl:otherwise>
+					<a class="match" href="{ancestor::f:*[1]/@href}#l{ancestor::*[@n][1]/@n}">
+						<xsl:apply-templates/>
+					</a>					
+				</xsl:otherwise>
+			</xsl:choose>
+		</mark>
 	</xsl:template>
 	
 	<!-- Each hit is represented by a heading and the actual content -->
@@ -229,7 +241,7 @@
 					<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
 						
 						<xsl:choose>
-							<xsl:when test=".//f:hit|.//f:doc">
+							<xsl:when test=".//f:hit|.//f:doc|.//f:sigils">
 								<xsl:copy-of select="$navbar"/>
 								<h3><xsl:value-of select="@hits"/> Treffer in <xsl:value-of select="@docs"/> Dokumenten</h3>
 								<xsl:apply-templates/>

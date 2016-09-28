@@ -43,7 +43,7 @@ declare function local:sigil($query as xs:string) as element()* {
                     idno-label="{$idno_label}"
                     href="{$href}"
                     uri="{$uri}">{
-                        $idno    (: util:expand's highlighting is slightly off here :)
+                        util:expand($idno)
                 }</f:idno-match>
 };
 
