@@ -272,7 +272,9 @@
 	<xsl:template match="f:idno-match">
 		<li><a href="{@href}">
 			<strong><xsl:value-of select="@sigil"/></strong>
-			(<xsl:value-of select="@idno-label"/>: <xsl:apply-templates/>)
+			<xsl:if test="not(idno/@type = 'faustedition')">
+				(<xsl:value-of select="@idno-label"/>: <xsl:apply-templates/>)
+			</xsl:if>
 		</a></li>
 	</xsl:template>
 	

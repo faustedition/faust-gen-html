@@ -31,18 +31,19 @@ declare function local:sigil($query as xs:string) as element()* {
         $sigil := data(id('sigil', $idno)),
     	$headnote := data(id('headNote', $idno)),
     	$type := data($idno/ancestor-or-self::tei:TEI/@type),
+    	$number := data($idno[1]/ancestor-or-self::tei:TEI/@f:number),
     	$transcript := id('fausttranscript', $idno),
     	$href := $edition || (if ($type = 'archivalDocument') then '/documentViewer?faustUri=' || $uri else '/print/' || $transcript),
     	$idno_label := data($sigil-labels//f:label[@type = $idno/@type])
-    	
         return <f:idno-match
                     sigil="{$sigil}"
+                    number="{$number}"
                     headnote="{$headnote}"
                     idno="{$idno}"
                     idno-label="{$idno_label}"
                     href="{$href}"
                     uri="{$uri}">{
-                        util:expand($idno)
+                        $idno    (: util:expand's highlighting is slightly off here :)
                 }</f:idno-match>
 };
 
