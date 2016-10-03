@@ -479,7 +479,7 @@
 
     <f:bib uri="faust://bibliography/katalog_der_berliner_goethe-ausstellung1861">
         <f:citation>Katalog Berlin 1861</f:citation>
-        <f:reference>[Katalog] Verzeichniß von Goethe’s Handschriften, Zeichnungen und Radirungen, Drucken seiner Werke, Compositionen und Illustrationen seiner Dichtungen, Büsten, Medaillen und Gemälden, Portraits aus seinem Freundeskreise, Andenken und Erinnerungszeichen, welche im Conzertsaale des Königlichen Schauspielhauses vom 19ten Mai 1861 an ausgestellt sind. Mit zwei Schrifttafeln, Berlin 1861. </f:reference>
+        <f:reference>[Katalog] Verzeichniß von Goethe’s Handschriften, Zeichnungen und Radirungen, Drucken seiner Werke, Compositionen und Illustrationen seiner Dichtungen, Büsten, Medaillen und Gemälden, Portraits aus seinem Freundeskreise, Andenken und Erinnerungszeichen, welche im Conzertsaale des Königlichen Schauspielhauses vom 19ten Mai 1861 an ausgestellt sind. Mit zwei Schrifttafeln, Berlin 1861. (sog. Katalog der Berliner Goethe-Ausstellung) </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/kiermeier-debre1997">
@@ -1038,7 +1038,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_I_14">
-        <f:citation>WA I 14</f:citation>
+        <f:citation>WA I 14</f:citation>
         <f:reference>WA, Abt. I, Bd. 14, Weimar 1887.</f:reference>
     </f:bib>
 
@@ -1352,6 +1352,21 @@
         <f:reference>Goethe, Johann Wolfgang von: Die Schriften zur Naturwissenschaft. Vollständige mit Erläuterungen versehene Ausgabe im Auftrage der Deutschen Akademie der Naturforscher Leopoldina, hrsg. von D. Kuhn, W. von Engelhardt und I. Müller, 2. Abt., Bd. 2: Zur Meteorologie und Astronomie. Ergänzungen und Erläuterungen, bearbeitet von Gisela Nickel, Weimar 2005.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/djg2_3">
+        <f:citation>DjG2 3</f:citation>
+        <f:reference>Der junge Goethe. Neu Ausgabe in sechs Bänden besorgt von Max Morris, Bd. 3, Leipzig 1910.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/djg2_6">
+        <f:citation>DjG2 6</f:citation>
+        <f:reference>Der junge Goethe. Neu Ausgabe in sechs Bänden besorgt von Max Morris, Bd. 6, Leipzig 1912.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/djg3_3">
+        <f:citation>DjG³ 3</f:citation>
+        <f:reference>Der junge Goethe. Neu bearbeitete Ausgabe in fünf Bänden, hrsg. von Hanna Fischer-Lamberg, Bd. 3: September 1772 – Dezember 1773, Berlin 1966.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/djg3_5">
         <f:citation>DjG³ 5</f:citation>
         <f:reference>Der junge Goethe. Neu bearbeitete Ausgabe in fünf Bänden, hrsg. von Hanna Fischer-Lamberg, Bd. 5, Berlin und New York 1973.</f:reference>
@@ -1394,7 +1409,7 @@
 
     <f:bib uri="faust://bibliography/keller1985">
         <f:citation>Keller 1985</f:citation>
-        <f:reference>Johann Wolfgang von Goethe, Urfaust - Faust. Ein Fragment - Faust. Eine Tragödie. Paralleldruck der drei Fassungen, hrsg. von Werner Keller, 2 Bde., 5. Aufl., Frankfurt am Main 1985 (= Insel Taschenbuch 625). </f:reference>
+        <f:reference>Johann Wolfgang von Goethe, Urfaust – Faust. Ein Fragment – Faust. Eine Tragödie. Paralleldruck der drei Fassungen, hrsg. von Werner Keller, 2 Bde., 5. Aufl., Frankfurt am Main 1985 (= Insel Taschenbuch 625). </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schmidt1887">
@@ -1437,9 +1452,49 @@
         <f:reference>Quellen und Zeugnisse zur Druckgeschichte von Goethes Werken, Bd. 2: Die Ausgabe letzter Hand, bearbeitet von Waltraud Hagen, Berlin 1982.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/braaeuning-oktavio1911">
+        <f:citation>Bräuning-Oktavio 1911</f:citation>
+        <f:reference>* Hermann Bräuning-Oktavio: Aus Briefen der Wertherzeit. In: Die Grenzboten 70 (1911), I, S. 411–417, 463–469, 557–563, 611–620.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/creizenach1837">
+        <f:citation>Creizenach 1837</f:citation>
+        <f:reference>[Theodor Creizenach:] Zwei Episteln aus Goethe's erster Schriftstellerperiode, in: Zeitschrift für die elegante Welt 1837, Nr. 97 vom 22. Mai, S. 385-386.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/dembowski1889">
         <f:citation>Dembowski 1889</f:citation>
         <f:reference>Mitteilungen über Goethe und seinen Freundeskreis. Aus bisher unveröffentlichten Aufzeichnungen des gräflich Egloffstein’schen Familien-Archivs zu Arklitten, hrsg. von Johannes Dembowski, Lyck 1889.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/duentzer1882">
+        <f:citation>Düntzer 1882</f:citation>
+        <f:reference>Heinrich Düntzer: Erläuterungen zu den Deutschen Klassikern. 1. Abt., Bd. 12: Faust. Erster Theil. Leipzig, 1882.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/manning1896">
+        <f:citation>Manning 1896 </f:citation>
+        <f:reference>Eugene W. Manning: Zur Chronologie des ersten Paralipomenon zu Goethes Faust. In: GJ 17 (1896), S. 209-214. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/schmidt1908">
+        <f:citation>Schmidt 1908</f:citation>
+        <f:reference>[Schmidt, Erich: Bericht über einen Vortrag]. In: Deutsche Literatur-Zeitung 29 (1908), Sp. 3243.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/schoell1877">
+        <f:citation>Schöll 1877</f:citation>
+        <f:reference>Schöll, Adolf: Ein Brief des Hauptmanns Karl Ludwig von Knebel an den Geheimsecretär Friedr. Joh. Justin Bertuch in Weimar. Mit Anmerkungen. In: Deutsche Rundschau 12 (1877), S. 517-520.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/strodtmann1874_1">
+        <f:citation>Strodtmann 1874</f:citation>
+        <f:reference>Briefe von und an Gottfried August Bürger. Ein Beitrag zur Literaturgeschichte seiner Zeit. Aus dem Nachlasse Bürger's und anderen, meist handschriftlichen Quellen hrsg. von Adolf Strodtmann. Bd. 1. Berlin 1874.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/weinhold1868">
+        <f:citation>Weinhold 1868</f:citation>
+        <f:reference>Karl Weinhold: Heinrich Christian Boie. Beitrag zur Geschichte der deutschen Literatur im 18. Jahrhundert. Halle: Verlag der Buchhandlung des Waisenhauses, 1868. </f:reference>
     </f:bib>
 
 </f:bibliography>
