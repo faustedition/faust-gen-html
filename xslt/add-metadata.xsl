@@ -230,6 +230,7 @@
 		/>		
 	</xsl:template>
 	
+	<xsl:template match="lb[not(@break='no')]" mode="emend"><xsl:text> </xsl:text></xsl:template>
 
 	<!-- Adds an XML id, but only if none is present at the context element. -->
 	<xsl:template name="add-xmlid">
