@@ -26,6 +26,15 @@
 		<xsl:variable name="faust" select="if ($scene-id) then number(substring-before($scene-id, '.')) else 0"/>
 		
 		<xsl:choose>
+			<xsl:when test="self::TEI[@f:split] and $type = 'lesetext'">
+				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
+					<small id="breadcrumbs"><span><a href="/text">Text</a></span></small>
+				</div>
+				<div id="current" class="pure-nowrap">
+					<span>Faust <xsl:number value="$faust" format="I"/></span>
+				</div>				
+			</xsl:when>
+						
 			<xsl:when test="$type = 'lesetext'">
 				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
 					<small id="breadcrumbs">
@@ -47,7 +56,7 @@
 						<xsl:value-of select="$scenes[last()]/@f:scene-label"/>
 					</span>
 				</div>
-			</xsl:when>
+			</xsl:when>			
 			
 			<xsl:otherwise>
 				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
@@ -75,13 +84,15 @@
 									<xsl:text>Faust </xsl:text><xsl:number value="$faust" format="I"/>
 								</a>								
 							</xsl:if>
-							<xsl:for-each select="$scenes[@f:verse-range]">
-								<xsl:variable name="range" select="tokenize(@f:verse-range, ' ')"/>
-								<xsl:copy-of select="$separator"/>
-								<a href="../genesis_bargraph?rangeStart={$range[1]}&amp;rangeEnd={$range[2]}">
-									<xsl:value-of select="@f:scene-label"/>
-								</a>
-							</xsl:for-each>							
+							<xsl:if test="not(self::TEI[@f:split])">
+								<xsl:for-each select="$scenes[@f:verse-range]">
+									<xsl:variable name="range" select="tokenize(@f:verse-range, ' ')"/>
+									<xsl:copy-of select="$separator"/>
+									<a href="../genesis_bargraph?rangeStart={$range[1]}&amp;rangeEnd={$range[2]}">
+										<xsl:value-of select="@f:scene-label"/>
+									</a>
+								</xsl:for-each>								
+							</xsl:if>
 						</span>
 					</small>
 				</div>
