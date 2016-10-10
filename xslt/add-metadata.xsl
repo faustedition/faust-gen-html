@@ -224,7 +224,7 @@
 		<xsl:variable name="text-label" select="
 			if ($raw-label/head or string-length($emended-label) le 60)
 			then $emended-label
-			else replace($raw-label, '\..*$', '. …')"/>
+			else replace($emended-label, '\..*$', '. …')"/>
 		<xsl:value-of
 			select="f:normalize-space(f:normalize-print-chars($text-label))"
 		/>		
