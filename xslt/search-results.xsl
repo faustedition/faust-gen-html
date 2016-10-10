@@ -53,7 +53,7 @@
 			.subhit-content { width: 75%; }
 			.subhit ul.breadcrumbs { width: 25%; padding: 0; margin: 0;  font-size: 80%; }
 			.subhit ul.breadcrumbs li { display: inline; list-style-type: none; color: gray; }
-			.subhit ul.breadcrumbs li ~ li:before { padding: 1ex 0; content: ">" }
+			.subhit ul.breadcrumbs li ~ li:before { padding-right: 0.5ex; content: "›" }
 			.hit ul.breadcrumbs { display: none; }
 			.print-center-column { width: 80%; }
 			ul.sort { list-style-type: none; }
