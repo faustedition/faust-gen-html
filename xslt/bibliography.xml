@@ -1357,7 +1357,12 @@
         <f:reference>Der junge Goethe. Neu Ausgabe in sechs Bänden besorgt von Max Morris, Bd. 3, Leipzig 1910.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/djg2_6">
+    <f:bib uri="faust://bibliography/djg2_5">
+        <f:citation>DjG2 5</f:citation>
+        <f:reference>Der junge Goethe. Neu Ausgabe in sechs Bänden besorgt von Max Morris, Bd. 5, Leipzig 1911.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/djg2_5">
         <f:citation>DjG2 6</f:citation>
         <f:reference>Der junge Goethe. Neu Ausgabe in sechs Bänden besorgt von Max Morris, Bd. 6, Leipzig 1912.</f:reference>
     </f:bib>
@@ -1452,14 +1457,59 @@
         <f:reference>Quellen und Zeugnisse zur Druckgeschichte von Goethes Werken, Bd. 2: Die Ausgabe letzter Hand, bearbeitet von Waltraud Hagen, Berlin 1982.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/bodemann1878">
+        <f:citation>Bodemann 1878</f:citation>
+        <f:reference>Eduard Bodemann: Johann Georg Zimmermann, sein Leben und bisher ungedruckte Briefe an denselben, Hannover 1878.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/boettiger1838">
+        <f:citation>Böttiger 1838 <strong>Böttiger1838_1??</strong></f:citation>
+        <f:reference>Literarische Zustände und Zeitgenossen. In Schilderungen aus Karl Aug. Böttiger's handschriftlichem Nachlasse. Hg. Von Carl Wilhelm Böttiger, Leipzig: Brockhaus, 1838. <strong>NB Band 1 kennzeichnen!</strong></f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/boettiger1998">
+        <f:citation>Böttiger 1998</f:citation>
+        <f:reference>Böttiger, Karl August_ Literarische Zustände und Zeitgenossen. Begegnungen und Gespräche im klassischen Weimar. Hrsg. von Klaus Gerlach und René Sternke. Berlin 1998.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/brandl1899">
+        <f:citation>Brandl 1899</f:citation>
+        <f:reference>Brandl, A[lois]: Goethes Verhältniß zu Byron. In:  GJb. 20 (1899), S. 3-36.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/braaeuning-oktavio1911">
         <f:citation>Bräuning-Oktavio 1911</f:citation>
         <f:reference>* Hermann Bräuning-Oktavio: Aus Briefen der Wertherzeit. In: Die Grenzboten 70 (1911), I, S. 411–417, 463–469, 557–563, 611–620.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/cohn1889">
+        <f:citation>Cohn 1889</f:citation>
+        <f:reference>CXCIV Katalog des antiquarischen Lagers von Albert Cohn in Berlin. Autographen und historische Dokumente Nr. 13, Berlin 1889.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/creizenach1837">
         <f:citation>Creizenach 1837</f:citation>
-        <f:reference>[Theodor Creizenach:] Zwei Episteln aus Goethe's erster Schriftstellerperiode, in: Zeitschrift für die elegante Welt 1837, Nr. 97 vom 22. Mai, S. 385-386.</f:reference>
+        <f:reference>[Theodor Creizenach:] Zwei Episteln aus Goethe's erster Schriftstellerperiode. In: Zeitschrift für die elegante Welt 1837, Nr. 97 vom 22. Mai, S. 385-386.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/creizenach1878">
+        <f:citation>Creizenach 1878</f:citation>
+        <f:reference>Briefwechsel zwischen Goethe und Marianne von Willemer (Suleika). Hg. mit Lebensnachrichten und Erläuterungen von Theodor Creizenach. Zweite, vermehrte Auflage. Stuttgart: Cotta 1878.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/creizenach1882">
+        <f:citation>Creizenach 1882</f:citation>
+        <f:reference>Wilhelm Creizenach: Zu dem poetischen Briefwechsel zwischen Goethe und Gotter. In: GJb 3 (1882), S. 323-324.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/crueger1884">
+        <f:citation>Crueger 1884</f:citation>
+        <f:reference>Johannes Crueger: Bodmer über Goethe. 1773-82. (Aus dem ungedruckten Nachlass Bodmers auf der Zürcher Stadtbibliothek). In: GJb 5 (1884), S. 177-216.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/deetjen1928">
+        <f:citation>Deetjen 1928</f:citation>
+        <f:reference>Werner Deetjen: Zum 'Urfaust'. Ein Brief Knebels an Friedrich Hildebrand von Einsiedel, in: GJb 48 (1928), S. 80–81.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/dembowski1889">
@@ -1467,14 +1517,129 @@
         <f:reference>Mitteilungen über Goethe und seinen Freundeskreis. Aus bisher unveröffentlichten Aufzeichnungen des gräflich Egloffstein’schen Familien-Archivs zu Arklitten, hrsg. von Johannes Dembowski, Lyck 1889.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/dobbek1963-2104_4">
+        <f:citation>Dobbek 1963-2104, Bd. 4</f:citation>
+        <f:reference>Herder, Johann Gottfried: Briefe. Gesamtausgabe, Band 4: Oktober 1776 - August 1783. Hrsg. von Wilhelm Dobbek und Günter Arnold. Weimar 1977.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/duentzer1882">
         <f:citation>Düntzer 1882</f:citation>
         <f:reference>Heinrich Düntzer: Erläuterungen zu den Deutschen Klassikern. 1. Abt., Bd. 12: Faust. Erster Theil. Leipzig, 1882.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/fischer1902">
+        <f:citation>Fischer 1902</f:citation>
+        <f:reference>Kuno Fischer: Goethes Faust. 4., duchges. und verm. Aufl. Bd. 2: Entstehung, Idee und Composition des goetheschen Faust. Heidelberg [1902].</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1882">
+        <f:citation>Geiger 1882</f:citation>
+        <f:reference>Geiger, Ludwig: Aus Bertuchs Nachlaß. In: GJb 2 (1882), S. 374–414.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/goethe1794">
+        <f:citation>Goethe 1794</f:citation>
+        <f:reference>Johann Wolfgang Goethe: Wilhelm Meisters Lehrjahre. Erster Band. 1794.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/keil1875">
+        <f:citation>Keil 1875</f:citation>
+        <f:reference>Goethe's Tagebuch aus den Jahren 1776-1782. Mitgetheilt von Robert Keil, Leipzig 1875.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/keil1886-1887_I">
+        <f:citation>Keil 1886-1887,I</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [I], in: Deutsche Revue 11 (1886), Bd. 1 (Januar), S. 59-67. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/keil1886-1887_II">
+        <f:citation>Keil 1886-1887,II</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [II], in: Deutsche Revue 11 (1886), Bd. 2 (Mai), S. 162-172.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/keil1886-1887_III">
+        <f:citation>Keil 1886-1887,III</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [III], in: Deutsche Revue 11 (1886), Bd. 4 (Oktober), S. 20-38.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/keil1886-1887_IV">
+        <f:citation>Keil 1886-1887,IV</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [IV], in: Deutsche Revue 12 (1887), Bd. 1 (Januar), S. 11-20.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/keil1886-1887_V">
+        <f:citation>Keil 1886-1887,V</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [V], in: Deutsche Revue 12 (1887), Bd. 1 (Februar), S. 173-181.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/keil1886-1887_VI">
+        <f:citation>Keil 1886-1887,VI</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [VI], in: Deutsche Revue 12 (1887), Bd. 1 (März), S. 278-288.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/keil1886-1887_VII">
+        <f:citation>Keil 1886-1887,VII</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [VII], in: Deutsche Revue 12 (1887), Bd. 3 (Juli), S. 55-64.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/keil1886-1887_VIII">
+        <f:citation>Keil 1886-1887,VIII</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [VIII], in: Deutsche Revue 12 (1887), Bd. 4 (Oktober), S. 39-47.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/kippenberg1931">
+        <f:citation>Kippenberg 1931</f:citation>
+        <f:reference>[Kippenberg, Anton]: Ungedrucktes von Goethe. Aufzeichnungen von Riemers Hand. In: Jahrbuch der Sammlung Kippenberg 9 (1931), S. 295-297.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/knebel1854">
+        <f:citation>Knebel 1854</f:citation>
+        <f:reference>N. N.: Karl Ludwig von Knebel. Bericht eines ihm Verwandten. In: Berühmte Schriftsteller der Deutschen: Schilderung nach Selbstanschauung theils auch berühmter Zeitgenossen aus dem Leben von Goethe […] und Andern. Bisher in keiner Sammlung, hrsg. von Friedrich Wilhelm Gubitz, Bd. 1, Berlin 1854, S. 319–338.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/manning1896">
         <f:citation>Manning 1896 </f:citation>
         <f:reference>Eugene W. Manning: Zur Chronologie des ersten Paralipomenon zu Goethes Faust. In: GJ 17 (1896), S. 209-214. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/reichard1779_a">
+        <f:citation>Reichard 1779a</f:citation>
+        <f:reference>N.N.: Doktor Faust: ein komisches Duodrama, von Schink. Aus einem Schreiben an den Herausgeber [Heinrich August Ottokar Reichard]. In: Theater-Journal für Deutschland, 6. Stück, 1778, S. 18-43.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/reichard1779_b">
+        <f:citation>Reichard 1779b</f:citation>
+        <f:reference>Bibliothek der Romane. Erster Band, [hrsg. von Heinrich August Ottokar Reichard,] Berlin, bey Christian Friedrich Himburg, 1778.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/richter2010">
+        <f:citation>Richter 2010</f:citation>
+        <f:reference>Richter, Elke: »’s ist ein Genie, von Geist und Kraft…«. Eine Neujahrs-Matinée im Weimarer Fürstenhaus. In: Album amicarum et amicorum. Für Hans Grüters. Frankfurt am Main 2010, S. 159–175.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/riemer1841_1">
+        <f:citation>Riemer 1841, 1</f:citation>
+        <f:reference>* Riemer, Friedrich Wilhelm: Mittheilungen über Goethe aus mündlichen und schriftlichen, gedruckten und ungedruckten Quellen. 2 Bde. Berlin: Duncker und Humblot 1841, Band 1.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/riemer1841_2">
+        <f:citation>Riemer 1841, 2</f:citation>
+        <f:reference>* Riemer, Friedrich Wilhelm: Mittheilungen über Goethe aus mündlichen und schriftlichen, gedruckten und ungedruckten Quellen. 2 Bde. Berlin: Duncker und Humblot 1841, Band 2.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/riemer1846">
+        <f:citation>Riemer 1846</f:citation>
+        <f:reference>Briefe von und an Goethe. Desgleichen Aphorismen und Brocardia. Hg. von Friedrich Wilhelm Riemer. Leipzig 1846.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/schmidt1892">
+        <f:citation>Schmidt 1892</f:citation>
+        <f:reference>Schmidt, Erich: Ein verschollener Aufsatz A. W. Schlegels über Goethes 'Triumph der Empfindsamkeit'. In: Festschrift zur Begrüßung des Fünften Allgemeinen Deutschen Neuphilologentages zu Berlin Pfingsten 1892. Hg. v. Julius Zupitzka. Berlin 1892, S. 77-92.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/schmidt1901">
+        <f:citation>Schmidt 1901</f:citation>
+        <f:reference>Schmidt, Erich: Charakteristiken. Zweite Reihe. Berlin 1901.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schmidt1908">
@@ -1492,9 +1657,29 @@
         <f:reference>Briefe von und an Gottfried August Bürger. Ein Beitrag zur Literaturgeschichte seiner Zeit. Aus dem Nachlasse Bürger's und anderen, meist handschriftlichen Quellen hrsg. von Adolf Strodtmann. Bd. 1. Berlin 1874.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/tille1900">
+        <f:citation>Tille 1900</f:citation>
+        <f:reference>Tille, Alexander: Die Faustsplitter in der Literatur des 16. bis 18. Jahrhunderts nach den ältesten Quellen, Berlin 1900.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wagner1838">
+        <f:citation>Wagner 1838</f:citation>
+        <f:reference>Briefe an und von Johann Heinrich Merck. Eine selbständige Folge der im Jahr 1835 erschienenen Briefe an J. H. Merck. Aus den Handschriften hrsg. von Dr. Karl Wagner. Darmstadt 1838.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wagner1847">
+        <f:citation>Wagner 1847</f:citation>
+        <f:reference>Briefe aus dem Freundeskreise von Goethe, Herder, Höpfner und Merck. Eine selbständige Folge der beiden in den Jahren 1835 und 1838 erschienen Merckischen Briefsammlungen. Aus den Handschriften hrsg. von Dr. Karl Wagner. Darmstadt 1847.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/weinhold1868">
         <f:citation>Weinhold 1868</f:citation>
         <f:reference>Karl Weinhold: Heinrich Christian Boie. Beitrag zur Geschichte der deutschen Literatur im 18. Jahrhundert. Halle: Verlag der Buchhandlung des Waisenhauses, 1868. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wieland1776">
+        <f:citation>Wieland 1776</f:citation>
+        <f:reference>W. [Wieland, Christoph Martin:] An Psyche. In: Der Teutsche Merkur 1776, Vierteljahr 1, Januar, S. 12-18.</f:reference>
     </f:bib>
 
 </f:bibliography>
