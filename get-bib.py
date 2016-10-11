@@ -92,6 +92,10 @@ def fetch_bib():
     token = login1.json()['login']['token']
     loginparams["lgtoken"] = token
     login2 = s.post(api, params=loginparams)
+    result = login2.json()["login"]["result"]
+    if result != "Success":
+        raise PermissionError("Login failed: " + result)
+
     page = s.get(index, params=dict(
         title="Bibliographische Verweise",
         action="raw",
