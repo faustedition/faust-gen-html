@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?><listPerson xmlns="http://www.faustedition.net/ns">
+	<person xml:id="ameise_coloss">
+		<alias>ameise_coloss</alias>
+		<alias>ameise_kolossal</alias>
+	</person>
+	<person xml:id="anax">
+		<alias>anax</alias>
+		<alias>anaxagoras</alias>
+	</person>
+	<person xml:id="anderer_theil">
+		<alias>anderer_theil</alias>
+		<alias>ander_theil</alias>
+		<alias>andrer_theil</alias>
+	</person>
+	<person xml:id="bacc">
+		<alias>bacc</alias>
+		<alias>baccal</alias>
+		<alias>baccalaur</alias>
+		<alias>baccalaureus</alias>
+	</person>
+	<person xml:id="beide">
+		<alias>beide</alias>
+		<alias>beyde</alias>
+	</person>
+	<person xml:id="beide_chöre">
+		<alias>beide_chöre</alias>
+		<alias>beyde_chöre</alias>
+	</person>
+	<person xml:id="blonde">
+		<alias>blonde</alias>
+		<alias>blondine</alias>
+	</person>
+	<person xml:id="kanzler">
+		<alias>kanzler</alias>
+		<alias>canzler</alias>
+		<alias>canz</alias>
+	</person>
+	<person xml:id="chorführerin">
+		<alias>chorführerin</alias>
+		<alias>chorf</alias>
+		<alias>chorführ</alias>
+		<alias>chorführer</alias>
+		<alias>chf</alias>
+		<alias>chrf</alias>
+	</person>
+	<person xml:id="dacktyle">
+		<alias>dacktyle</alias>
+		<alias>daktylen</alias>
+	</person>
+	<person xml:id="deputationgnomen">
+		<alias>deputationgnomen</alias>
+		<alias>deputationgnomen_an_den_großen_pan</alias>
+	</person>
+	<person xml:id="drey">
+		<alias>drey</alias>
+		<alias>dreye</alias>
+	</person>
+	<person xml:id="drey_gewaltigen">
+		<alias>drey_gewaltigen</alias>
+		<alias>drey_gewaltigen_gesellen</alias>
+	</person>
+	<person xml:id="eileb">
+		<alias>eileb</alias>
+		<alias>eilebeute</alias>
+	</person>
+	<person xml:id="erz_s">
+		<alias>erz_s</alias>
+		<alias>erz_schenk</alias>
+	</person>
+	<person xml:id="erzbischof">
+		<alias>erzbischof</alias>
+		<alias>erzb</alias>
+		<alias>erzbisch</alias>
+		<alias>erzbischoff</alias>
+	</person>
+	<person xml:id="erzkanzler">
+		<alias>erzkanzler</alias>
+		<alias>erzkanzl</alias>
+	</person>
+	<person xml:id="erztruchs">
+		<alias>erztruchs</alias>
+		<alias>erztr</alias>
+	</person>
+	<person xml:id="euphorion">
+		<alias>euphorion</alias>
+		<alias>euph</alias>
+		<alias>euphor</alias>
+		<alias>euphorions</alias>
+	</person>
+	<person xml:id="faust">
+		<alias>faust</alias>
+		<alias>f</alias>
+		<alias>f_faust</alias>
+		<alias>fausts</alias>
+	</person>
+	<person xml:id="feldherr">
+		<alias>feldherr</alias>
+		<alias>feldh</alias>
+	</person>
+	<person xml:id="fünfte">
+		<alias>fünfte</alias>
+		<alias>funfte</alias>
+	</person>
+	<person xml:id="geist">
+		<alias>geist</alias>
+		<alias>geistsich_erst_bildet</alias>
+	</person>
+	<person xml:id="geisterchor">
+		<alias>geisterchor</alias>
+		<alias>geister-chor</alias>
+	</person>
+	<person xml:id="geitz">
+		<alias>geitz</alias>
+		<alias>geiz</alias>
+	</person>
+	<person xml:id="gemurmel">
+		<alias>gemurmel</alias>
+		<alias>gemurmelmenge</alias>
+	</person>
+	<person xml:id="general">
+		<alias>general</alias>
+		<alias>gen</alias>
+	</person>
+	<person xml:id="geschrei">
+		<alias>geschrei</alias>
+		<alias>geschrey</alias>
+	</person>
+	<person xml:id="greif">
+		<alias>greif</alias>
+		<alias>gr</alias>
+		<alias>greife</alias>
+	</person>
+	<person xml:id="gretchen">
+		<alias>gretchen</alias>
+		<alias>gretgen</alias>
+		<alias>grethchen</alias>
+	</person>
+	<person xml:id="habeb">
+		<alias>habeb</alias>
+		<alias>habebald</alias>
+	</person>
+	<person xml:id="halbchor">
+		<alias>halbchor</alias>
+		<alias>halb_chor</alias>
+	</person>
+	<person xml:id="hel">
+		<alias>hel</alias>
+		<alias>helena</alias>
+	</person>
+	<person xml:id="herold">
+		<alias>herold</alias>
+		<alias>her</alias>
+		<alias>herolde</alias>
+		<alias>heroldherold</alias>
+	</person>
+	<person xml:id="himmlische_heerschar">
+		<alias>himmlische_heerschar</alias>
+		<alias>himmlische_heerschaar</alias>
+	</person>
+	<person xml:id="hofmann">
+		<alias>hofmann</alias>
+		<alias>hofm</alias>
+	</person>
+	<person xml:id="homunkulus">
+		<alias>homunkulus</alias>
+		<alias>hom</alias>
+		<alias>homunk</alias>
+	</person>
+	<person xml:id="kaiser">
+		<alias>kaiser</alias>
+		<alias>kais</alias>
+		<alias>kayser</alias>
+	</person>
+	<person xml:id="knabe_lenker">
+		<alias>knabe_lenker</alias>
+		<alias>knabe_lencker</alias>
+		<alias>knabe_wagenlenker</alias>
+		<alias>lencker</alias>
+		<alias>lenker_knabe</alias>
+	</person>
+	<person xml:id="kämmrer">
+		<alias>kämmrer</alias>
+		<alias>kämerer</alias>
+	</person>
+	<person xml:id="kätzin">
+		<alias>kätzin</alias>
+		<alias>kätzinn</alias>
+	</person>
+	<person xml:id="lemur">
+		<alias>lemur</alias>
+		<alias>lemur_solo</alias>
+	</person>
+	<person xml:id="lemuren">
+		<alias>lemuren</alias>
+		<alias>lemuren_chor</alias>
+		<alias>lemuren_im_chor</alias>
+	</person>
+	<person xml:id="lieschen">
+		<alias>lieschen</alias>
+		<alias>liesgen</alias>
+	</person>
+	<person xml:id="lynceus">
+		<alias>lynceus</alias>
+		<alias>lynceusthürmer</alias>
+		<alias>lynceusthürner</alias>
+	</person>
+	<person xml:id="m">
+		<alias>m</alias>
+		<alias>m_mephistopheles</alias>
+	</person>
+	<person xml:id="margarete">
+		<alias>margarete</alias>
+		<alias>marg</alias>
+		<alias>margareth</alias>
+		<alias>margarethe</alias>
+		<alias>margr</alias>
+		<alias>margrete</alias>
+		<alias>margrethe</alias>
+	</person>
+	<person xml:id="marschall">
+		<alias>marschall</alias>
+		<alias>marschalk</alias>
+	</person>
+	<person xml:id="mephisto">
+		<alias>mephisto</alias>
+		<alias>mep</alias>
+		<alias>meph</alias>
+		<alias>meph_les</alias>
+		<alias>mephis</alias>
+		<alias>mephist</alias>
+		<alias>mephistofeles</alias>
+		<alias>mephistop</alias>
+		<alias>mephistoph</alias>
+		<alias>mephistopheles</alias>
+		<alias>mepisto</alias>
+		<alias>mepistopheles</alias>
+	</person>
+	<person xml:id="musaget">
+		<alias>musaget</alias>
+		<alias>mus</alias>
+	</person>
+	<person xml:id="nereid">
+		<alias>nereid</alias>
+		<alias>ner</alias>
+		<alias>nereiden</alias>
+	</person>
+	<person xml:id="oberfeldherr">
+		<alias>oberfeldherr</alias>
+		<alias>ober_feldh</alias>
+	</person>
+	<person xml:id="oelzweig_mit_früchten">
+		<alias>oelzweig_mit_früchten</alias>
+		<alias>olivenzweig_mit_früchten</alias>
+	</person>
+	<person xml:id="panthalis">
+		<alias>panthalis</alias>
+		<alias>panthalis_als_chorführerin</alias>
+	</person>
+	<person xml:id="phorcyaden">
+		<alias>phorcyaden</alias>
+		<alias>phor</alias>
+		<alias>phork</alias>
+		<alias>phorkias</alias>
+		<alias>phorky</alias>
+		<alias>phorkyad</alias>
+		<alias>phorkyaden</alias>
+		<alias>phorkyas</alias>
+	</person>
+	<person xml:id="prokto">
+		<alias>prokto</alias>
+		<alias>procktophantasmist</alias>
+		<alias>proktophantasmist</alias>
+	</person>
+	<person xml:id="pygmäen">
+		<alias>pygmäen</alias>
+		<alias>pygmaen</alias>
+	</person>
+	<person xml:id="pygmäen-älteste">
+		<alias>pygmäen-älteste</alias>
+		<alias>pygmaen-älteste</alias>
+	</person>
+	<person xml:id="raufebold">
+		<alias>raufebold</alias>
+		<alias>raufeboldt</alias>
+	</person>
+	<person xml:id="satiriker">
+		<alias>satiriker</alias>
+		<alias>satyriker</alias>
+	</person>
+	<person xml:id="schatzmeister">
+		<alias>schatzmeister</alias>
+		<alias>schatzmstr</alias>
+	</person>
+	<person xml:id="thurnwarter">
+		<alias>thurnwarter</alias>
+		<alias>thürmer</alias>
+		<alias>thürner</alias>
+		<alias>thurmwärter_lynceus</alias>
+	</person>
+	<person xml:id="triton">
+		<alias>triton</alias>
+		<alias>trit</alias>
+		<alias>tritone</alias>
+		<alias>tritonen</alias>
+	</person>
+	<person xml:id="trunkner">
+		<alias>trunkner</alias>
+		<alias>trunckner</alias>
+	</person>
+	<person xml:id="valentin">
+		<alias>valentin</alias>
+		<alias>val</alias>
+	</person>
+	<person xml:id="volk">
+		<alias>volk</alias>
+		<alias>volck</alias>
+	</person>
+	<person xml:id="vorigen">
+		<alias>vorigen</alias>
+		<alias>voxigen</alias>
+	</person>
+	<person xml:id="wagner">
+		<alias>wagner</alias>
+		<alias>wagn</alias>
+	</person>
+	<person xml:id="wechselgeschreimenge">
+		<alias>wechselgeschreimenge</alias>
+		<alias>wechselgeschreymenge</alias>
+	</person>
+	<person xml:id="weiber-geklatsch">
+		<alias>weiber-geklatsch</alias>
+		<alias>weiber_geklatsch</alias>
+	</person>
+	<person xml:id="wildgesang">
+		<alias>wildgesang</alias>
+		<alias>wilder_gesang_von_ferne</alias>
+	</person>
+	<person xml:id="zweyte">
+		<alias>zweyte</alias>
+		<alias>zweyten</alias>
+		<alias>zweyter</alias>
+	</person>
+</listPerson>

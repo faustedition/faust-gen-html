@@ -286,5 +286,29 @@
 		</xsl:copy>
 	</xsl:template>
 	
+
+	<xsl:variable name="speaker-map" select="document('unified-speakers.xml')"/>
+
+	<xsl:template match="speaker">
+		<xsl:variable name="raw-speaker">
+			<xsl:apply-templates mode="emend"/>
+		</xsl:variable>
+		<xsl:variable name="raw-speakers" select="tokenize(normalize-space($raw-speaker), '(\. | und | u | u\.)')" as="item()*"/>
+		<xsl:variable name="cleaned-speakers" select="for $s in $raw-speakers return
+			replace(normalize-space(replace(lower-case($s), '((^| )(der|die|das|u|und|ein|eine)($| ))|[.,>&lt;:()]', '')), ' +', '_')
+			"/>
+		<xsl:variable name="unified-speakers" select="
+			for $s in $cleaned-speakers 
+			return  concat('#', 
+					if ($speaker-map//f:alias = $s) 
+					then data($speaker-map//f:person[f:alias[. = $s]]/@xml:id) 
+					else $s)"/>
+		<xsl:copy>
+			<xsl:attribute name="who" select="string-join($unified-speakers, ' ')"/>
+			<xsl:apply-templates select="@*"/>		
+			<xsl:apply-templates select="node()"/>
+		</xsl:copy>
+	</xsl:template>
+	
 	
 </xsl:stylesheet>
