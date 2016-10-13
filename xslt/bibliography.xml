@@ -1537,6 +1537,11 @@
         <f:reference>Geiger, Ludwig: Aus Bertuchs Nachlaß. In: GJb 2 (1882), S. 374–414.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gleichen-russwurm1930">
+        <f:citation>Gleichen-Rußwurm 1930</f:citation>
+        <f:reference>Gleichen-Rußwurm, Alexander von: Das SChema im 'Faust'. In: GJb 50 (1930), S. 209-223.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/goethe1794">
         <f:citation>Goethe 1794</f:citation>
         <f:reference>Johann Wolfgang Goethe: Wilhelm Meisters Lehrjahre. Erster Band. 1794.</f:reference>
