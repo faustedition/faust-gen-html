@@ -13,8 +13,6 @@ Do this once when configuring a host:
    1. `jetty.host` to `127.0.0.1` to avoid connections from outside
    2. `jetty.port` to some port
 
-4. Edit the `client.properties` accordingly
-
 Configuring the web server
 --------------------------
 
@@ -22,12 +20,16 @@ Add proxy statements towards the eXist scripts, e.g., for port 5555:
 
 ```
 ProxyRequests off
-ProxyPass /search http://localhost:5555/exist/apps/faust/search.xq
-ProxyPassReverse /search http://localhost:5555/exist/apps/faust/search.xq
+ProxyPass /search http://localhost:5555/exist/apps/faust
+ProxyPassReverse /search http://localhost:5555/exist/apps/faust
+ProxyPassReverseCookiePath /exist /
+<Proxy *>
+   RequestHeader unset Authorization
+</Proxy>
 ```
 
 
 Uploading script and data
 -------------------------
 
-There is a ./prepare-exist.sh script for that.
+See faust-gen, the maven build builds an eXist app.
