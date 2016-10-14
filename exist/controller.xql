@@ -15,7 +15,7 @@ declare variable $xmlpath := $exist:root || $exist:controller || '/data';
         <cache-control cache="no"/>
     </ignore>
 else :) 
-	if ($exist:path = ('', '/search')) then
+	if ($exist:path = ('', '/', '/search')) then
 		let $query := request:get-parameter('q', ''),
 			$rooturl := 'http://' || request:get-header('X-Forwarded-Host'),
 			$idno := //tei:idno[@type = 'sigil_n'][. = lower-case(replace($query, '[ .*]', ''))]
