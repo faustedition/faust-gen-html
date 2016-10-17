@@ -747,6 +747,11 @@
         <f:reference>Petsch, Robert: Zur Chronologie des Faust. In: Euphorion 27 (1926), S. 207-222.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/pniower1891">
+        <f:citation>Pniower 1891</f:citation>
+        <f:reference>Pniower, Otto: Die Schülerscene im ‚Urfaust‘. In: Vjs 4 (1891), S. 317–335.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/pniower1892">
         <f:citation>Pniower 1892</f:citation>
         <f:reference>Pniower, Otto: Einige Faustparalipomena Goethes. In: Vierteljahrschrift für Litteraturgeschichte 5 (1892), S. 408-430.</f:reference>
@@ -1457,6 +1462,16 @@
         <f:reference>Quellen und Zeugnisse zur Druckgeschichte von Goethes Werken, Bd. 2: Die Ausgabe letzter Hand, bearbeitet von Waltraud Hagen, Berlin 1982.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/anonym1779">
+        <f:citation>Anonym 1779</f:citation>
+        <f:reference>Anonym: [Rez.] Über den Faust von Müller [und den zu erwartenden von Goethe]. In: Berliner Litteratur- und Theaterzeitung 2 (1779), S. 236-239, hier S. 237. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/bertuch1786">
+        <f:citation>Bertuch 1786</f:citation>
+        <f:reference>ohne Verfasser [Friedrich Justin Bertuch]: [Avertissement über die Ausgaben von Goethes Schriften]. In: Journal von und für Deutschland, hg. von Siegmund Frh. von Bibra. 3, 1786 St 6, 575-78.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/bodemann1878">
         <f:citation>Bodemann 1878</f:citation>
         <f:reference>Eduard Bodemann: Johann Georg Zimmermann, sein Leben und bisher ungedruckte Briefe an denselben, Hannover 1878.</f:reference>
@@ -1480,6 +1495,11 @@
     <f:bib uri="faust://bibliography/braaeuning-oktavio1911">
         <f:citation>Bräuning-Oktavio 1911</f:citation>
         <f:reference>* Hermann Bräuning-Oktavio: Aus Briefen der Wertherzeit. In: Die Grenzboten 70 (1911), I, S. 411–417, 463–469, 557–563, 611–620.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/bratranek1866">
+        <f:citation>Bratranek 1866</f:citation>
+        <f:reference>Briefwechsel zwischen Goethe und Kaspar, Graf von Sternberg. Hrsg. von F.T. Bratranek. Wien 1866. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/cohn1889">
@@ -1522,9 +1542,34 @@
         <f:reference>Herder, Johann Gottfried: Briefe. Gesamtausgabe, Band 4: Oktober 1776 - August 1783. Hrsg. von Wilhelm Dobbek und Günter Arnold. Weimar 1977.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/duentzer1856">
+        <f:citation>Düntzer 1856</f:citation>
+        <f:reference>Briefe von Schiller’s Gattin an einen vertrauten Freund. Hrsg. von Heinrich von Düntzer. Leipzig: F. A. Brockhaus, 1856.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/duentzer1882">
         <f:citation>Düntzer 1882</f:citation>
         <f:reference>Heinrich Düntzer: Erläuterungen zu den Deutschen Klassikern. 1. Abt., Bd. 12: Faust. Erster Theil. Leipzig, 1882.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/duentzer1883">
+        <f:citation>Düntzer 1883</f:citation>
+        <f:reference>Briefe des Herzogs Karl August von Sachsen-Weimar-Eisenach an Knebel und Herder. Hrsg. von Heinrich Düntzer. Leipzig 1883.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/fehling-schiller1925-1934_1">
+        <f:citation>Fehling-Schiller 1925-1934_1</f:citation>
+        <f:reference>Briefe an Cotta. Band 1: Das Zeitalter Goethes und Napoleons 1794-1815. Hrsg. von Maria Fehling. Stuttgart - Berlin, 1925. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/firmenich-richartz1916">
+        <f:citation>Firmenich-Richartz 1916</f:citation>
+        <f:reference>Firmenich-Richartz, Eduard: Sulpiz und Melchior Boisserée als Kunstsammler. Ein Beitrag zur Geschichte der Romantik. (Die Brüder Boisserée. Erster Band.) Jena 1916 [nur dieser Band erschienen] </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/fischer1880">
+        <f:citation>Fischer 1880</f:citation>
+        <f:reference>Briefwechsel zwischen Goethe und Göttling in den Jahren 1824-1831. Hg. und mit einem Vorwort begleitet von Kuno Fischer. München: Bassermann 1880.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/fischer1902">
@@ -1539,12 +1584,37 @@
 
     <f:bib uri="faust://bibliography/gleichen-russwurm1930">
         <f:citation>Gleichen-Rußwurm 1930</f:citation>
-        <f:reference>Gleichen-Rußwurm, Alexander von: Das SChema im 'Faust'. In: GJb 50 (1930), S. 209-223.</f:reference>
+        <f:reference>Gleichen-Rußwurm, Alexander von: Das Schema im 'Faust'. In: GJb 50 (1930), S. 209-223.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/goeschen1790">
+        <f:citation>Göschen 1790</f:citation>
+        <f:reference>[Göschen, Georg Joachim]: [Verlagsanzeige über Beendigung der Goethe-Augabe]. In: Journal des Luxus und der Moden. Hg. Von Friedrich Justin Bertuch und Georg Melchior Kraus. Bd 5.Weimar 1790. Intelligenzbl Nr 5, LX-LXII.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/goethe1794">
         <f:citation>Goethe 1794</f:citation>
         <f:reference>Johann Wolfgang Goethe: Wilhelm Meisters Lehrjahre. Erster Band. 1794.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/granville">
+        <f:citation>Granville 1828</f:citation>
+        <f:reference>Augustus Bozzi Granville, St. Petersburgh. A Journal of Travels to and from that Capital, through Flanders, Prussia, Russia, Poland, Silesia, Saxony, &amp;c. &amp;c. 2 Bde., London 1828.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/guhrauer1851_2">
+        <f:citation>Guhrauer 1851, Bd. 2</f:citation>
+        <f:reference>Briefwechsel zwischen Goethe und Knebel (1774-1832). Vorr. von G. E. Guhrauer. 2 Bde, Bd. 2. Leipzig: Brockhaus 1851.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/houben1929">
+        <f:citation>Houben 1929</f:citation>
+        <f:reference>Soret, Frédéric Jacob: Zehn Jahre bei Goethe. Erinnergen an Weimars klass. Zeit 1822-1832. Aus Sorets handschriftl. Nachlaß, seinen Tagebüchern u. seinem Briefwechsel zum erstenmal zusammengest., übers. u. erl. von Heinrich Hubert Houben, Leipzig 1929.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/houben1948">
+        <f:citation>Houben 1948</f:citation>
+        <f:reference>Eckermann, Johann Peter:  Gespräche mit Goethe in den letzten Jahren seines Lebens. 23. Originalaufage. Nach dem ersten Drucke, dem Originalsmanuskript des dritten Teils und Eckermanns handschrifdtlichem Nachlaß neu hrsg. von H. H. Houben, Leipzig 1948. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/keil1875">
@@ -1602,9 +1672,29 @@
         <f:reference>N. N.: Karl Ludwig von Knebel. Bericht eines ihm Verwandten. In: Berühmte Schriftsteller der Deutschen: Schilderung nach Selbstanschauung theils auch berühmter Zeitgenossen aus dem Leben von Goethe […] und Andern. Bisher in keiner Sammlung, hrsg. von Friedrich Wilhelm Gubitz, Bd. 1, Berlin 1854, S. 319–338.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/lengenfeld1932">
+        <f:citation>Lengenfeld 1932</f:citation>
+        <f:reference>M. Lengenfeld'sche Buchhandlung, Antiquariats-Katalog 42, 1932. <strong>vollständigen Nachweis ermitteln!</strong></f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/manning1896">
         <f:citation>Manning 1896 </f:citation>
         <f:reference>Eugene W. Manning: Zur Chronologie des ersten Paralipomenon zu Goethes Faust. In: GJ 17 (1896), S. 209-214. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/mendelssohn1861">
+        <f:citation>Mendelssohn-Barholdy 1861</f:citation>
+        <f:reference>Mendelssohn-Barholdy, Paul (Hrsg.): Reisebriefe von Felix Mendelssohn Bartholdy aus den Jahren 1830 bis 1832. Leipzig 1861.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/mueller1832">
+        <f:citation>Müller 1832</f:citation>
+        <f:reference>Müller, Friedrich von: Goethe in seiner praktischen Wirksamkeit. Ein Beitrag zu seiner Charakteristik, Weimar 1832.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/pavie1874">
+        <f:citation>Pavie 1874</f:citation>
+        <f:reference>Pavie, V[ictor]: Goëthe et David, Souvenirs d'un voyage à Weimar (II). In: Mémoires de la sociéte nationale d'agriculture. Tome XVII (1874), S. 81-145.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/reichard1779_a">
@@ -1637,6 +1727,11 @@
         <f:reference>Briefe von und an Goethe. Desgleichen Aphorismen und Brocardia. Hg. von Friedrich Wilhelm Riemer. Leipzig 1846.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/sauer1902-1903">
+        <f:citation>Sauer 1902-1903, Bd. 1; Sauer 1902-1903, Bd. 2</f:citation>
+        <f:reference>Goethe und Österreich. Bd. I. Hrsg. von August Sauer. Weimar 1902 (= Schriften der Goethe-Gesellschaft, Bd. 17).</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/schmidt1892">
         <f:citation>Schmidt 1892</f:citation>
         <f:reference>Schmidt, Erich: Ein verschollener Aufsatz A. W. Schlegels über Goethes 'Triumph der Empfindsamkeit'. In: Festschrift zur Begrüßung des Fünften Allgemeinen Deutschen Neuphilologentages zu Berlin Pfingsten 1892. Hg. v. Julius Zupitzka. Berlin 1892, S. 77-92.</f:reference>
@@ -1657,9 +1752,29 @@
         <f:reference>Schöll, Adolf: Ein Brief des Hauptmanns Karl Ludwig von Knebel an den Geheimsecretär Friedr. Joh. Justin Bertuch in Weimar. Mit Anmerkungen. In: Deutsche Rundschau 12 (1877), S. 517-520.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/schroeer1898">
+        <f:citation>Schröer 1898</f:citation>
+        <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hg. von K. J. Schröer. Theil 2, dritte, durchaus revidierte Auflage. Leipzig 1898.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/schueddekopf-walzel1898_1">
+        <f:citation>Schüddekopf/Walzel 1898, Bd. 1</f:citation>
+        <f:reference>Goethe und die Romantik. Bd. I. Hrsg. von Carl Schüddekopf und Oskar Walzel. Weimar 1898 (= Schriften der Goethe-Gesellschaft, Bd. 13).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/siebs1915">
+        <f:citation>Siebs 1915</f:citation>
+        <f:reference>Siebs, Theodor: Hermann Allmers. Sein Leben und Dichten mit Benutzung seines Nachlasses dargestellt. Berlin 1915.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/strodtmann1874_1">
         <f:citation>Strodtmann 1874</f:citation>
         <f:reference>Briefe von und an Gottfried August Bürger. Ein Beitrag zur Literaturgeschichte seiner Zeit. Aus dem Nachlasse Bürger's und anderen, meist handschriftlichen Quellen hrsg. von Adolf Strodtmann. Bd. 1. Berlin 1874.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/ticknor1876_1">
+        <f:citation>Ticknor 1876, Bd. 1</f:citation>
+        <f:reference>Life, Letters, and Journals of George Ticknor. Vol. I. Second edition. London 1876.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/tille1900">
