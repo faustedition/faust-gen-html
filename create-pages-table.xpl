@@ -41,7 +41,7 @@
       <p:variable name="type" select="/f:textTranscript/@type"/>
       <p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
       <p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
-      <p:variable name="annotated-version" select="resolve-uri($documentURI, resolve-uri('search/textTranscript/', $builddir))"/>
+      <p:variable name="annotated-version" select="resolve-uri($documentURI, resolve-uri('prepared/textTranscript/', $builddir))"/>
       
       
 <!--      <cx:message>

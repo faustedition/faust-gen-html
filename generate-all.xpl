@@ -89,7 +89,7 @@
 			<p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
 			
 			<p:load>
-				<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"></p:with-option>
+				<p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $documentURI), $builddir)"></p:with-option>
 			</p:load>
 			
 		
@@ -133,7 +133,7 @@
 			<p:iteration-source select="//f:textTranscript"/>
 			<p:variable name="documentURI" select="/f:textTranscript/@document"/>			
 			<p:load>
-				<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"/>				
+				<p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $documentURI), $builddir)"/>				
 			</p:load>
 		</p:for-each>
 		<p:xslt template-name="collection">

@@ -79,15 +79,6 @@
 			
 			<p:otherwise>
 				
-				<!-- Ansonsten nur Zeichen normalisieren -->
-				<p:xslt name="char">
-					<p:input port="stylesheet">
-						<p:document href="xslt/normalize-characters.xsl"/>
-					</p:input>
-					<p:input port="parameters">
-						<p:pipe port="result" step="config"/>            
-					</p:input>
-				</p:xslt>
 				
 				<!-- Wir suchen die Transkriptnummern aus den <pb>s heraus, bzw. versuchen das -->
 				<p:xslt name="pbs">
@@ -106,15 +97,30 @@
 		
 		<p:identity name="prepared-xml"/>
 		
+		<!-- erste Kopie: Unnormalisierte Zeichen zum Weiterarbeiten -->
 		<p:store>
-			<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"/>
+			<p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $documentURI), $builddir)"/>
 		</p:store>
 		
-		<p:identity>
-			<p:input port="source">
-				<p:pipe port="result" step="prepared-xml"/>
+		<p:identity><p:input port="source"><p:pipe port="result" step="prepared-xml"/></p:input></p:identity>
+
+		<!-- Ansonsten nur Zeichen normalisieren -->
+		<p:xslt name="char">
+			<p:input port="stylesheet">
+				<p:document href="xslt/normalize-characters.xsl"/>
 			</p:input>
-		</p:identity>
+			<p:input port="parameters">
+				<p:pipe port="result" step="config"/>            
+			</p:input>
+		</p:xslt>
+
+
+		<!-- zweite Kopie: Normalisierte Zeichen für die Suche -->
+		<p:store>
+			<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"/>
+		</p:store>		
+		
+		<p:identity><p:input port="source"><p:pipe port="result" step="prepared-xml"/></p:input></p:identity>
 		
 		<!-- Hack: Generierung der Bargraph-Informationen -->
 		<p:choose>
