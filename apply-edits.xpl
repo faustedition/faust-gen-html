@@ -37,7 +37,7 @@
     </p:input>
   </p:xslt>
 
-  <p:xslt>
+  <p:xslt initial-mode="emend">
     <p:input port="stylesheet">
       <p:document href="xslt/emend-core.xsl"/>
     </p:input>
