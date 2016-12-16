@@ -1,26 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0"
-    xmlns="http://www.tei-c.org/ns/1.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
-    <!-- xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-        xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0"
-        xmlns="http://www.tei-c.org/ns/1.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-        xmlns:ge="http://www.faustedition.net/ns"  -->
-    <!--<xsl:output method="text"></xsl:output>-->
-    <xsl:template match="@*|node()">
-        <xsl:apply-templates select="attribute::* | child::node()"/>
-    </xsl:template>
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0"
+    xmlns="http://www.tei-c.org/ns/1.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+    xmlns:f="http://faustedition.net/ns"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:math="http://www.w3.org/1998/Math/MathML"
+    xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
+    >
+    
+    <xsl:output method="xml" indent="yes"/>
+    
     <xsl:template match="/">
-        <xsl:apply-templates select="attribute::* | child::node()"/>
-    </xsl:template>
-    <xsl:template
-        match="node()[ancestor-or-self::div[@type='letter' and .//milestone[@unit='testimony']] or ancestor-or-self::pb] | @*[ancestor-or-self::div[@type='letter' and .//milestone[@unit='testimony']] or ancestor-or-self::pb] ">
-        <xsl:copy>
-            <xsl:apply-templates select="@*|node()"/>
-        </xsl:copy>
-    </xsl:template>
-    <xsl:template match="TEI">
-        <!--<?oxygen RNGSchema="https://faustedition.uni-wuerzburg.de/schema/1.3/faust-tei.rng" type="xml"?>-->
+        <xsl:processing-instruction name="oxygen">oxygen RNGSchema="https://faustedition.uni-wuerzburg.de/schema/1.3/faust-tei.rng" type="xml"</xsl:processing-instruction>
         <TEI>
             <teiHeader>
                 <fileDesc>
@@ -38,10 +30,17 @@
             <text>
                 <body>
                     
-                    <xsl:apply-templates/>
+                    <xsl:apply-templates select="descendant::div[@type='letter'][descendant::milestone[@unit='testimony']]"/>
                     
                 </body>
             </text>
         </TEI>
     </xsl:template>
+    
+    <xsl:template match="div">
+        <xsl:comment select="concat('Testimony ', string-join(descendant::milestone[@unit='testimony']/@xml:id, ', '))"/>
+        <xsl:copy-of select="preceding::pb[1]"/>
+        <xsl:copy-of select="."/>
+    </xsl:template>
+    
 </xsl:stylesheet>
