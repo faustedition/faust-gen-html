@@ -26,6 +26,9 @@
                         <p>Information about the source</p>
                     </sourceDesc>
                 </fileDesc>
+                <revisionDesc>
+                    <change></change>
+                </revisionDesc>
             </teiHeader>
             <text>
                 <body>
