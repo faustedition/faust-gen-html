@@ -10,7 +10,7 @@
     >
     
     <xsl:output method="xml" indent="yes"/>
-    
+    <!-- in einer Transformation für / das TEI-Gerüst erzeugen -->
     <xsl:template match="/">
         <xsl:processing-instruction name="oxygen">oxygen RNGSchema="https://faustedition.uni-wuerzburg.de/xml/schema/faust-tei_neu.rng" type="xml"</xsl:processing-instruction>
         <TEI>
@@ -29,14 +29,14 @@
             </teiHeader>
             <text>
                 <body>
-                    
+                    <!-- darin mittels select die zu selektierenden Briefe auswählen -->
                     <xsl:apply-templates select="descendant::div[@type='letter'][descendant::milestone[@unit='testimony']]"/>
                     
                 </body>
             </text>
         </TEI>
     </xsl:template>
-    
+    <!-- unmittelbar vorhergehenden <pb> herbeikopieren -->
     <xsl:template match="div">
         <xsl:comment select="concat('Testimony ', string-join(descendant::milestone[@unit='testimony']/@xml:id, ', '))"/>
         <xsl:copy-of select="preceding::pb[1]"/>
