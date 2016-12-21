@@ -12,7 +12,7 @@
     <xsl:output method="xml" indent="yes"/>
     
     <xsl:template match="/">
-        <xsl:processing-instruction name="oxygen">oxygen RNGSchema="https://faustedition.uni-wuerzburg.de/schema/1.3/faust-tei.rng" type="xml"</xsl:processing-instruction>
+        <xsl:processing-instruction name="oxygen">oxygen RNGSchema="https://faustedition.uni-wuerzburg.de/xml/schema/faust-tei_neu.rng" type="xml"</xsl:processing-instruction>
         <TEI>
             <teiHeader>
                 <fileDesc>
