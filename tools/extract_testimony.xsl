@@ -32,8 +32,8 @@
             </teiHeader>
             <text>
                 <body>
-                    <!-- darin mittels select die zu selektierenden Briefe auswählen -->
-                    <xsl:apply-templates select="descendant::div[@type='letter'][descendant::milestone[@unit='testimony']]"/>
+                    <!-- darin mittels select die zu selektierenden Briefe oder Tagebucheinträge auswählen -->
+                    <xsl:apply-templates select="descendant::div[@type='letter' or @type='diaryentry'][descendant::milestone[@unit='testimony']]"/>
                     
                 </body>
             </text>
