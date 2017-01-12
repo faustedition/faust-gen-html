@@ -48,7 +48,7 @@ declare function local:sigil($query as xs:string) as element()* {
                 }</f:idno-match>
 };
 
-declare function local:query($query as xs:string, $order as xs:string) as element(f:doc)* {
+declare function local:query($query as item(), $order as xs:string) as element(f:doc)* {
 for $text in $data//tei:TEI[ft:query(., $query)]
 let $sigil := data(id('sigil', $text)),
 	$headnote := data(id('headNote', $text)),
@@ -114,10 +114,8 @@ declare function local:wrapped-sigil($query as xs:string) as element()* {
   }
 };
 
-declare function local:wrapped-query($query as xs:string, $order as xs:string) as element()* {
-  try {
-  	let $results := local:query($query, $order)
-  	return if ($results) then 
+declare function local:format-results($results as item()*, $order as xs:string) as element()* {
+    if ($results) then 
   		<f:fulltext-results
             docs="{count($results)}" 
             hits="{count($results//exist:match)}">{
@@ -134,8 +132,19 @@ declare function local:wrapped-query($query as xs:string, $order as xs:string) a
 	        	$results	     
   	}</f:fulltext-results>
   	else ()
+};
+
+declare function local:wrapped-query($query as xs:string, $order as xs:string) as element()* {
+  try {
+  	let $results := local:query($query, $order)
+  	return local:format-results($results, $order)
   } catch * {
-  	<exist:exception where="fulltext" code="{$err:code}" location="{string-join(($err:module, $err:line-number, $err:column-number), ':')}">{$err:description}</exist:exception> 
+    try {
+        let $results := local:query(<query>{$query}</query>, $order)
+        return local:format-results($results, $order)
+    } catch * {
+  	    <exist:exception where="fulltext" code="{$err:code}" location="{string-join(($err:module, $err:line-number, $err:column-number), ':')}">{$err:description}</exist:exception> 
+    }
   }
 };
 
