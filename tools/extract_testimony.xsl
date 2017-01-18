@@ -17,7 +17,7 @@
             <teiHeader>
                 <fileDesc>
                     <titleStmt>
-                        <title>WA IV ###</title>
+                        <title>WA ###</title>
                     </titleStmt>
                     <publicationStmt>
                         <p>Publication Information</p>

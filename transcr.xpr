@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="18.0">
+<project version="18.1">
     <meta>
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="18.0" xml:space="preserve">
+            <serialized version="18.1" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>enable.project.master.files.support</String>
@@ -3361,36 +3361,7 @@
             <file name="xslt/apparatus.xsl"/>
             <file name="xslt/print2html.xsl"/>
         </folder>
-        <folder path="xslt/"/>
         <folder path="../../../../../../../var/www/faust-gen/data/xml/"/>
-        <file name="apparatus.md"/>
-        <file name="apparatus.xpl"/>
-        <file name="file:/home/tv/git/faust-gen/src/main/xproc/apply-edits.xpl">
-            <file name="apparatus.xpl"/>
-        </file>
-        <file name="collate-variants.xpl"/>
-        <file name="collect-metadata.xpl"/>
-        <file name="collection.xconf"/>
-        <file name="config.xml"/>
-        <file name="create-para-table.xpl"/>
-        <file name="xslt/emend-core.xsl"/>
-        <file name="exist.rc"/>
-        <file name="FAUST-TODOs.md"/>
-        <file name="find-ns.xpl"/>
-        <file name="generate-all.xpl"/>
-        <file name="generate-app.xpl"/>
-        <file name="generate-indexes.xpl"/>
-        <file name="generate-search.xpl"/>
-        <file name="get-bib.py"/>
-        <file name="metadata-html.xpl"/>
-        <file name="prepare-exist.sh"/>
-        <file name="print2html.xpl"/>
-        <file name="README.md"/>
-        <file name="scl2xml.js"/>
-        <file name="SEARCH.md"/>
-        <file name="search.xq"/>
-        <file name="sigil-labels.rnc"/>
-        <file name="transcr.xpr"/>
-        <file name="XSLT-INDEX.md"/>
+        <folder path="../../../../../../../var/www/faust-gen/src/main/xproc/"/>
     </projectTree>
 </project>

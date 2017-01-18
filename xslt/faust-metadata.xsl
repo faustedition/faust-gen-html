@@ -179,7 +179,16 @@
 		<xsl:call-template name="element">
 			<xsl:with-param name="label">Signatur</xsl:with-param>
 			<xsl:with-param name="content">
-				<xsl:value-of select="."/>
+				<xsl:choose>
+					<xsl:when test="following::idno[1][@type='gsa_ident']">
+						<a href="http://ora-web.swkk.de/archiv_online/gsa.entry?source=gsa.vollanzeige&amp;p_id={following::idno[1][@type='gsa_ident']}">
+							<xsl:value-of select="."/>
+						</a>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="."/>						
+					</xsl:otherwise>
+				</xsl:choose>
 				<xsl:if test="../idno[@type='gsa_1']">
 					<span class="md-sigil-gsa_1">  (alt: <xsl:value-of select="../idno[@type='gsa_1']"/>)</span>
 				</xsl:if>
@@ -187,6 +196,7 @@
 		</xsl:call-template>
 	</xsl:template>
 	<xsl:template match="idno[@type='gsa_1']"/>
+	<xsl:template match="idno[@type='gsa_ident']"/>
 	<xsl:template match="idno[@type='kraeuter']"/>
 	<xsl:template match="*[f:isEmpty(.)][not(self::format)]"/>
 	

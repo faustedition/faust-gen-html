@@ -34,6 +34,9 @@
 	</xsl:template>
 
 	<xsl:template match="pb[@n and $documentURI]">
+		<xsl:variable name="pbNo" as="xs:string">
+			<xsl:number format="1" level="any"/>
+		</xsl:variable>
 		<xsl:variable name="docTranscriptNos">
 			<xsl:for-each select="tokenize(@n, '\s+')">
 				<xsl:variable name="n" select="replace(., '^0+', '')"/>
@@ -47,7 +50,16 @@
 		</xsl:variable>
 		<xsl:copy>
 			<xsl:apply-templates select="@* except f:docTranscriptNo"/>
-			<xsl:attribute name="f:docTranscriptNo" select="string-join($docTranscriptNos, ' ')"/>
+			<xsl:choose>
+				<xsl:when test="string-join($docTranscriptNos, '') != ''">
+					<xsl:attribute name="f:docTranscriptNo" select="string-join($docTranscriptNos, ' ')"/>					
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:message>WARNING: No doc transcript; using fallback pageno <xsl:value-of select="$pbNo"/> in <xsl:value-of select="id('sigil')"/></xsl:message>
+					<xsl:attribute name="f:docTranscriptNo" select="$pbNo"/>
+					<xsl:attribute name="f:hasDocTranscript">no</xsl:attribute>
+				</xsl:otherwise>
+			</xsl:choose>
 			<xsl:apply-templates select="node()"/>
 		</xsl:copy>		
 	</xsl:template>
