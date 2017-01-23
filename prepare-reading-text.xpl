@@ -11,8 +11,8 @@
 	<p:input port="parameters" kind="parameter"/>	
 	
 	
-	<p:option name="user"/>
-	<p:option name="password"/>
+	<p:option name="user" required="true"/>
+	<p:option name="password" required="true"/>
 	
 	
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
