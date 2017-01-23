@@ -3,6 +3,7 @@
 	xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:pxp="http://exproc.org/proposed/steps"
 	xmlns:pxf="http://exproc.org/proposed/steps/file"
 	xmlns:f="http://www.faustedition.net/ns"
+	xmlns:ge="http://www.tei-c.org/ns/geneticEditions"
 	xmlns:tei="http://www.tei-c.org/ns/1.0"
 	xmlns:l="http://xproc.org/library" name="main" version="1.0">
 	
@@ -50,8 +51,12 @@
 			<p:variable name="path" select="/transcript/@path"/>
 			<p:variable name="filename" select="if (/transcript/@output) 
 												then /transcript/@output 
-												else replace($path, '/([^/]+)$', '$1')"/>
+												else replace($path, '.*/([^/]+)$', '$1')"/>
 			<p:variable name="output" select="resolve-uri($filename, $target)"/>
+			
+			<cx:message log="info">
+				<p:with-option name="message" select="concat('Transforming ', $path, ' to ', $filename, ' ...')"/>
+			</cx:message>
 			
 			<!-- XML-Datei aus dem Netz laden: -->
 			<p:identity name="in"/>
