@@ -42,4 +42,5 @@
         <xsl:copy-of select="preceding::pb[1]"/>
         <xsl:copy-of select="."/>
     </xsl:template>
+    <xsl:template match="date[@when='']"/>
 </xsl:stylesheet>
