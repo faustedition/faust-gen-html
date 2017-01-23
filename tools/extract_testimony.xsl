@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0"
-    xmlns="http://www.tei-c.org/ns/1.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-    xmlns:f="http://faustedition.net/ns"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:svg="http://www.w3.org/2000/svg"
-    xmlns:math="http://www.w3.org/1998/Math/MathML"
-    xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
-    >
-    
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0" xmlns="http://www.tei-c.org/ns/1.0"
+    xpath-default-namespace="http://www.tei-c.org/ns/1.0" xmlns:f="http://faustedition.net/ns"
+    xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl">
+
     <xsl:output method="xml" indent="yes"/>
     <!-- in einer Transformation für / das TEI-Gerüst erzeugen -->
     <xsl:template match="/">
@@ -27,23 +23,23 @@
                     </sourceDesc>
                 </fileDesc>
                 <revisionDesc>
-                    <change></change>
+                    <change/>
                 </revisionDesc>
             </teiHeader>
             <text>
                 <body>
                     <!-- darin mittels select die Zeugnis-Briefe oder -Tagebucheinträge auswählen -->
-                    <xsl:apply-templates select="descendant::div[@type='letter' or @type='diaryentry'][descendant::milestone[@unit='testimony']]"/>
-                    
+                    <xsl:apply-templates
+                        select="descendant::div[@type = 'letter' or @type = 'diaryentry'][descendant::milestone[@unit = 'testimony']]"/>
+
                 </body>
             </text>
         </TEI>
     </xsl:template>
     <!-- unmittelbar vorhergehenden <pb> herbeikopieren -->
     <xsl:template match="div">
-        <xsl:comment select="concat('Testimony ', string-join(descendant::milestone[@unit='testimony']/@xml:id, ', '))"/>
+        <xsl:comment select="concat('Testimony ', string-join(descendant::milestone[@unit = 'testimony']/@xml:id, ', '))"/>
         <xsl:copy-of select="preceding::pb[1]"/>
         <xsl:copy-of select="."/>
     </xsl:template>
-    
 </xsl:stylesheet>
