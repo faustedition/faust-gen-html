@@ -1,11 +1,11 @@
 ## Work plan
 ###Adapt apply-edits
-* [ ] exclude `creation`
-* [ ] exclude `fw`
-* [ ] exclude `lb`
-* [ ] handle `l/hi/rend=big`
-* [ ] `strip-space` from `choice`
-* [ ] keep posthumous revisions as they are
+* [ ] exclude `tei:fw`
+* [ ] exclude `tei:lb`, space unless '@break="no"'
+* [ ] `l/hi/@rend='big'` → `<xsl:apply-templates mode="#current"/>`
+* [x] `strip-space` from `choice`
+* [ ] emend steps: keep posthumous revisions as they are (`@ge:stage='#posthumous'`)
+* [ ] exclude `tei:creation` (header, contains transposition etc.)
 * [ ] define content of `<teiHeader>`
 
 ###Notes
