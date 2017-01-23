@@ -33,6 +33,7 @@
 					<target>file:/home/tv/git/faust-gen/target/prepare-reading-text/</target>
 					
 					<!-- Quell-Transkripte: -->
+					<transcript path="transcript/test/test.xml"/>
 					<transcript path="transcript/gsa/391098/391098.xml" output="2_H.xml"/>
 					<transcript path="transcript/gsa/389763/389763.xml" output="2_III_H_31.xml"/>
 				</config>
@@ -107,7 +108,19 @@
 			<!-- Emendationsschritte für <del> etc. -->
 			<p:xslt initial-mode="emend">
 				<p:input port="stylesheet">
-					<p:document href="xslt/emend-core.xsl"/>
+					<p:inline>
+						<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
+							
+							<xsl:include href="xslt/emend-core.xsl"/>
+							
+							<xsl:template match="*[@ge:stage='#posthumous']" priority="5.0">
+								<xsl:copy>
+									<xsl:apply-templates select="@*, node()"/>
+								</xsl:copy>
+							</xsl:template>
+							
+						</xsl:stylesheet>
+					</p:inline>
 				</p:input>
 				<p:input port="parameters">
 					<p:empty/>
