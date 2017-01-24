@@ -29,18 +29,28 @@
             <text>
                 <body>
                     <!-- darin mittels select die Zeugnis-Briefe oder -Tagebucheinträge auswählen -->
-                    <xsl:apply-templates
-                        select="descendant::div[@type = 'letter' or @type = 'diaryentry'][descendant::milestone[@unit = 'testimony']]"/>
+                    <xsl:for-each select="descendant::div[@type = 'letter' or @type = 'diaryentry'][descendant::milestone[@unit = 'testimony']]">
+                        <xsl:call-template name="testimony"/>
+                    </xsl:for-each>
 
                 </body>
             </text>
         </TEI>
     </xsl:template>
+    
     <!-- unmittelbar vorhergehenden <pb> herbeikopieren -->
-    <xsl:template match="div">
+    <xsl:template name="testimony">
         <xsl:comment select="concat('Testimony ', string-join(descendant::milestone[@unit = 'testimony']/@xml:id, ', '))"/>
         <xsl:copy-of select="preceding::pb[1]"/>
-        <xsl:copy-of select="."/>
+        <xsl:apply-templates select="."/>
     </xsl:template>
+    
     <xsl:template match="date[@when='']"/>
+    
+    <xsl:template match="@*|node()">
+        <xsl:copy>
+            <xsl:apply-templates select="@*, node()"/>
+        </xsl:copy>
+    </xsl:template>
+    
 </xsl:stylesheet>
