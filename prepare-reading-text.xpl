@@ -11,8 +11,8 @@
 	<p:input port="parameters" kind="parameter"/>	
 	
 	
-	<p:option name="user" required="true"/>
-	<p:option name="password" required="true"/>
+	<p:option name="user"/>
+	<p:option name="password"/>
 	
 	
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
@@ -26,8 +26,9 @@
 			<p:inline>
 				<config>
 					<!-- URL, von der die Quelldaten kommen sollen: -->
-					<base>https://faustedition.uni-wuerzburg.de/xml</base>
-					<!-- <base>http://dev.faustedition.net/xml</base> -->
+					<!--<base>https://faustedition.uni-wuerzburg.de/xml</base>-->
+					<base>http://dev.faustedition.net/xml</base>
+					<!--<base>file:/home/tv/git/faust-gen/data/xml</base>-->
 					
 					<!-- URL, unter der die transformierten Dateien
 					     gespeichert werden sollen:	-->
@@ -58,27 +59,37 @@
 				<p:with-option name="message" select="concat('Transforming ', $path, ' to ', $filename, ' ...')"/>
 			</cx:message>
 			
-			<!-- XML-Datei aus dem Netz laden: -->
 			<p:identity name="in"/>
-			<p:in-scope-names name="vars"/>			
-			<p:template>
-				<p:input port="source"><p:pipe port="result" step="in"/></p:input>
-				<p:input port="parameters"><p:pipe port="result" step="vars"/></p:input>
-				<p:input port="template">
-					<p:inline>
-						<c:request 
-							method="GET" 
-							href="{$base}/{$path}"
-							username="{$user}"
-							password="{$password}"
-							auth-method="Basic"
-							send-authorization="true"							
-						/>						
-					</p:inline>
-				</p:input>
-			</p:template>
-			<p:http-request/>
 			
+			<p:choose>
+				<!-- XML-Datei aus dem Netz laden: -->
+				<p:when test="starts-with($base, 'http')">
+					<p:in-scope-names name="vars"/>			
+					<p:template>
+						<p:input port="source"><p:pipe port="result" step="in"/></p:input>
+						<p:input port="parameters"><p:pipe port="result" step="vars"/></p:input>
+						<p:input port="template">
+							<p:inline>
+								<c:request 
+									method="GET" 
+									href="{$base}/{$path}"
+									username="{$user}"
+									password="{$password}"
+									auth-method="Digest"
+									send-authorization="true"							
+								/>						
+							</p:inline>
+						</p:input>
+					</p:template>
+					<p:http-request/>					
+				</p:when>
+				<p:otherwise>
+					<!-- von Platte etc. -->
+					<p:load>
+						<p:with-option name="href" select="concat($base, '/', $path)"/>
+					</p:load>
+				</p:otherwise>
+			</p:choose>
 			
 			<!-- Transformationsschritte aus apply-edits.xpl -->
 			<p:xslt>
