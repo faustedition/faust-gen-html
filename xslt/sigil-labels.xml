@@ -6,6 +6,8 @@
 -->
 <sigil-labels xmlns="http://www.faustedition.net/ns">
 	<label type="faustedition">Faustedition</label>
+	<label type="fausturi">URI</label>
+	<label type="fausttranscript">Transkriptdatei</label>
 	<label type="headNote">Kurzbeschreibung</label>
 	<label type="wa_faust">WA, Faust</label>
 	<label type="bohnenkamp">Bohnenkamp</label>
@@ -38,6 +40,7 @@
 	<label type="gsa_findbuch">Findbuch des GSA</label>
 	<label type="gsa_1" kind="signature">GSA</label>
 	<label type="gsa_2" kind="signature" >GSA</label>
+	<label type="gsa_ident" kind="signature">GSA-Ident-Nr.</label>
 	<label type="fdh_frankfurt" kind="signature">FRA</label>
 	<label type="dla_marbach" kind="signature">MAR</label>
 	<label type="sb_berlin" kind="signature">BER</label>
