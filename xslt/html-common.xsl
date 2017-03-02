@@ -361,19 +361,19 @@ in <xsl:value-of select="document-uri(/)"/>
   </xsl:template>
   
   <xsl:template match="pb[@f:docTranscriptNo|@n]" priority="1">
-  	<xsl:variable name="generated-no">
+  	<xsl:variable name="no-from-transcript">
   		<xsl:call-template name="generate-pageno"/>
   	</xsl:variable>
   	<xsl:variable name="docTranscriptNo" select="data(@f:docTranscriptNo)"/>
-  	<xsl:variable name="reference-pageno" select="if ($docTranscriptNo) then $docTranscriptNo else $generated-no"/>
+  	<xsl:variable name="reference-pageno" select="if ($docTranscriptNo) then $docTranscriptNo else $no-from-transcript"/>
   	
     <xsl:text> </xsl:text>
     <a  
       class="{string-join((f:generic-classes(.), 'generated-text', 'pageno', 'doclink'), ' ')}"
       id="dt{$reference-pageno}"
       href="{if ($type = 'archivalDocument') then f:doclink($documentURI, $docTranscriptNo, ()) else concat('#dt', $reference-pageno)}"> 
-      <xsl:attribute name="title" select="$generated-no"/>
-      <xsl:sequence select="$reference-pageno"/>
+      <xsl:attribute name="title" select="$no-from-transcript"/>
+      <xsl:sequence select="if ($type = 'print') then $no-from-transcript else $reference-pageno"/>
     </a>
   </xsl:template>
 	
