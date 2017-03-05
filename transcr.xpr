@@ -3537,8 +3537,10 @@
         <folder masterFiles="true" name="Master Files">
             <file name="xslt/apparatus.xsl"/>
             <file name="xslt/print2html.xsl"/>
+            <file name="xslt/testimony2html.xsl"/>
         </folder>
         <folder path="../../../../../../../var/www/faust-gen/data/xml/"/>
         <folder path="../../../../../../../var/www/faust-gen/src/main/xproc/"/>
+        <file name="xslt/testimony2html.xsl"/>
     </projectTree>
 </project>

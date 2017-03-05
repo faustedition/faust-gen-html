@@ -27,6 +27,8 @@
 	<p:import href="generate-metadata-js.xpl"/>
 	<p:import href="metadata-html.xpl"/>
 	<p:import href="create-para-table.xpl"/>
+	
+	<p:import href="testimony.xpl"/>
 
 <!--	
 	<p:import href="generate-indexes.xpl"/>
@@ -163,6 +165,12 @@
 		<p:store method="xhtml" indent="true">
 			<p:with-option name="href" select="resolve-uri('www/archive_prints.html', $builddir)"/>
 		</p:store>
+		
+		<!-- ## Step 2d: testimony -->
+		
+		<f:testimony>
+			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>
+		</f:testimony>
 		
 		<!-- ### Step 4a: Paralipomena-Tabelle -->
 		<f:generate-para-table>
