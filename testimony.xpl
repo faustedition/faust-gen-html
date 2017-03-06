@@ -68,10 +68,11 @@
 						<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
 							<xsl:param name="from"/>
 							<xsl:param name="outfile"/>
+							<xsl:variable name="base" select="replace($from, '.*/([^/]+)\.xml$', '$1')"/>
 							<xsl:template match="/">
 								<f:testimonies>
-									<xsl:for-each select="//milestone[@unit='testimony']">								
-										<f:testimony from="{$from}" html="{$outfile}" id="{@xml:id}"><xsl:value-of select="normalize-space((following::rs)[1])"/></f:testimony>                      										
+									<xsl:for-each select="//milestone[@unit='testimony']">
+										<f:testimony from="{$from}" base="{$base}" id="{@xml:id}"><xsl:value-of select="normalize-space((following::rs)[1])"/></f:testimony>                      										
 									</xsl:for-each>
 								</f:testimonies>
 							</xsl:template>              
