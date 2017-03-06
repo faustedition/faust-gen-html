@@ -75,11 +75,11 @@
 				</xsl:if>
 				<a id="{@xml:id}" href="#{@xml:id}" class="testimony"><xsl:value-of select="concat($taxlabel, ' ', $id_parts[2])"/></a>
 			</xsl:when>
-			<xsl:when test="count($id_parts) = 3">
-				<xsl:message select="concat('INFO:',document-uri(/),': Skipping three-part testimony id ', @xml:id)"/>				
+			<xsl:when test="count($id_parts) = 3 and string-length($id_parts[2]) > 0 and matches($id_parts[2], '.*\d.*')">
+				<!--<xsl:message select="concat('INFO:',document-uri(/),': Skipping three-part testimony id ', @xml:id)"/>-->				
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:message>WARNING:<xsl:value-of select="document-uri(/)"/>:Invalid testimony id "<xsl:value-of select="@xml:id"/>" <xsl:copy-of select="."/></xsl:message>
+				<xsl:message>WARNING:<xsl:value-of select="document-uri(/)"/>:Invalid/strange testimony id "<xsl:value-of select="@xml:id"/>" <xsl:copy-of select="."/></xsl:message>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>

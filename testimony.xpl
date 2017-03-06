@@ -31,21 +31,18 @@
 			<p:with-option name="message" select="concat('Collecting testimony from ', $source)"/>
 		</cx:message>
 				
-		<l:recursive-directory-list>
+		<l:recursive-directory-list name="ls">
 			<p:with-option name="path" select="concat($source, '/testimony')"/>
-			<p:with-option name="include-filter" select="'^\S+\.xml$'"/>
+			<p:with-option name="include-filter" select="'^\w\S+$'"/>
+			<p:with-option name="exclude-filter" select="'.*\.html$'"></p:with-option>
 		</l:recursive-directory-list>
-		
+				
 		<p:for-each name="convert-testimonies">
 			<p:iteration-source select="//c:file[$debug or not(ends-with(@name, 'test.xml'))]"/>
 			<p:variable name="filename" select="p:resolve-uri(/c:file/@name)"/>
 			<p:variable name="basename" select="replace(replace($filename, '.*/', ''), '.xml$', '')"/>
 			<p:variable name="outfile" select="p:resolve-uri(concat($basename, '.html'), $testihtml)"/>
 			
-<!--			<cx:message log="info">
-				<p:with-option name="message" select="concat('Converting ', $basename, ' to ', $outfile)"/>
-			</cx:message>
--->			
 			<p:load name="load">
 				<p:with-option name="href" select="$filename"/>
 			</p:load>
