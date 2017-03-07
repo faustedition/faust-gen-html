@@ -17,6 +17,7 @@
 
 	<xsl:template name="html-head">
 		<xsl:param name="title" select="$title" tunnel="yes"/>
+		<xsl:param name="headerAdditions" select="$headerAdditions"/>
 		<head>
 			<meta charset="utf-8"/>
 
@@ -132,8 +133,9 @@
 		<xsl:param name="content">
 			<xsl:apply-templates/>
 		</xsl:param>
+		<xsl:param name="headerAdditions" select="$headerAdditions"/>
 		<html>
-			<xsl:call-template name="html-head"/>
+			<xsl:call-template name="html-head"><xsl:with-param name="headerAdditions" select="$headerAdditions"/></xsl:call-template>
 			<body>
 				<xsl:call-template name="header"/>
 				<main class="nofooter">
