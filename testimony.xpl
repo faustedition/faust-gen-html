@@ -74,7 +74,9 @@
 							<xsl:template match="/">
 								<f:testimonies>
 									<xsl:for-each select="//milestone[@unit='testimony']">
-										<f:testimony from="{$from}" base="{$base}" id="{@xml:id}"><xsl:value-of select="normalize-space((following::rs)[1])"/></f:testimony>                      										
+										<f:testimony from="{$from}" base="{$base}" id="{replace(@xml:id, '^(\w+)_0*(.*)$', '$1_$2')}">
+											<xsl:value-of select="normalize-space((following::rs)[1])"/>
+										</f:testimony>
 									</xsl:for-each>
 								</f:testimonies>
 							</xsl:template>              
