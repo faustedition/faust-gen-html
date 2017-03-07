@@ -30,13 +30,15 @@
 			<p:input port="source"><p:pipe port="source" step="main"></p:pipe></p:input>      
 			<p:with-option name="message" select="concat('Collecting testimony from ', $source)"/>
 		</cx:message>
-				
+
+		<!-- Recursively list all files in testimony/**/*.xml -->
 		<l:recursive-directory-list name="ls">
 			<p:with-option name="path" select="concat($source, '/testimony')"/>
 			<p:with-option name="include-filter" select="'^\w\S+$'"/>
 			<p:with-option name="exclude-filter" select="'.*\.html$'"></p:with-option>
 		</l:recursive-directory-list>
 				
+		<!-- Convert each file to HTML -->
 		<p:for-each name="convert-testimonies">
 			<p:iteration-source select="//c:file[$debug or not(ends-with(@name, 'test.xml'))]"/>
 			<p:variable name="filename" select="p:resolve-uri(/c:file/@name)"/>
@@ -57,7 +59,7 @@
 				<p:with-option name="href" select="$outfile"/>
 			</p:store>
 			
-			
+			<!-- Now, the file we've just converted is read again and we collect all the <milestone unit='testimony' xml:id='two_part_id' -->
 			<p:xslt>
 				<p:input port="source"><p:pipe port="result" step="load"/></p:input>			
 				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
@@ -82,18 +84,30 @@
 			</p:xslt>      
 		</p:for-each>
 		
-		<p:identity name="testimony-index"/>
-		
+		<!-- Now we've an index doc for every testimony file, join them together -->
+		<p:identity name="testimony-index-parts"/>		
 		<p:wrap-sequence wrapper="f:testimony-index" name="wrapped-testis">
 			<p:input port="source">
-				<p:pipe port="result" step="testimony-index"/>				
+				<p:pipe port="result" step="testimony-index-parts"/>				
 			</p:input>
-		</p:wrap-sequence>
+		</p:wrap-sequence>		
+		<p:unwrap match="f:testimonies" name="testimony-index"/>
 		
-		<p:unwrap match="f:testimonies"/>
-		
+		<!-- We save this for debugging purposes, but its also the input for the next step -->
 		<p:store method="xml" include-content-type="false" indent="true">
 			<p:with-option name="href" select="resolve-uri('testimony-index.xml', $builddir)"/>
+		</p:store>
+		
+		<!-- now convert the table, using the usage index just collected ... -->
+		<p:xslt>
+			<p:input port="stylesheet"><p:document href="xslt/testimony-table.xsl"></p:document></p:input>
+			<p:input port="source"><p:pipe port="result" step="testimony-index"></p:pipe></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>			
+		</p:xslt>
+		
+		<!-- and directly store the resulting HTML file. -->
+		<p:store method="xhtml" include-content-type="false" indent="true">
+			<p:with-option name="href" select="resolve-uri('www/archive_testimonies.html', $builddir)"></p:with-option>
 		</p:store>
 			
 	
