@@ -34,7 +34,7 @@
 				</xsl:call-template>
 				
 				<main class="nofooter">
-					<div  class="print">
+					<div class="print testimony">
 						<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
 						<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
 							<xsl:sequence select="$content"/>
