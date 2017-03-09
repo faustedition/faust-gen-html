@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:f="http://www.faustedition.net/ns"
+    xpath-default-namespace="http://www.faustedition.net/ns"
     xmlns="http://www.w3.org/1999/xhtml"
     exclude-result-prefixes="xs"
     version="2.0">
@@ -9,11 +10,12 @@
     <xsl:param name="builddir">../../../target</xsl:param>
     <xsl:param name="builddir-resolved" select="$builddir"/>	
     <xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
-    <xsl:param name="idmap" select="document($transcript-list)"/>
+    <xsl:param name="idmap" select="doc($transcript-list)"/>
     <xsl:param name="docbase">http://beta.faustedition.net/documentViewer?faustUri=faust://xml</xsl:param>
     <xsl:param name="edition"></xsl:param>
+    <xsl:variable name="bibliography" select="doc('bibliography.xml')"/>
     
-    <xsl:variable name="bibliography" select="document('bibliography.xml')"/>
+    
     
     <!-- 
 		Liefert <cite>-Element mit Zitation.
@@ -30,7 +32,7 @@
             <xsl:for-each select="$bib/reference/node()">
                 <xsl:call-template name="parse-for-bib"/>
             </xsl:for-each>
-        </xsl:variable>
+        </xsl:variable>        
         <xsl:choose>
             <xsl:when test="$bib and $full">
                 <xsl:element name="{$full}">
