@@ -510,5 +510,16 @@ in <xsl:value-of select="document-uri(/)"/>
 	<!-- Just strip those standoff indicators -->
 	<xsl:template match="alt|ge:transposeGrp|ge:transpose|join" priority="1"/>
 	
+	<!-- Simple link mechanism -->
+	<xsl:template match="anchor">
+		<a id="{@xml:id}" name="{@xml:id}" class="{string-join(f:generic-classes(.), ' ')}"/>
+	</xsl:template>
+	
+	<xsl:template match="ref">
+		<a href="{@target}" class="{string-join(f:generic-classes(.), ' ')}">
+			<xsl:apply-templates/>
+		</a>
+	</xsl:template>
+	
 	
 </xsl:stylesheet>
