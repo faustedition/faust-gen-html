@@ -99,7 +99,7 @@
 				</xsl:when>
 				<xsl:when test="count($used) > 1">
 					<f:excerpt/>
-					<f:message status="error"><xsl:value-of select="concat(count($used), ' XML-Quellen')"/></f:message>
+					<f:message status="error"><xsl:value-of select="concat(count($used), ' XML-Quellen: ', string-join($used/@base, ', '))"/></f:message>
 				</xsl:when>				
 				<xsl:otherwise>
 					<f:base><xsl:value-of select="$used/@base"/></f:base>
