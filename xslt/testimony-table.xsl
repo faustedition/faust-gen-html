@@ -78,11 +78,11 @@
 		</xsl:call-template>
 	</xsl:template>
 	
-	<xsl:template match="testimony">
+	<xsl:template match="citation|testimony">
 		<xsl:variable name="lbl" select="string-join(
 			for $field in field return if ($field/text()) then concat($field/@label, ': ', $field) else (),
 			', ')"/>
-		<xsl:variable name="used" select="$usage//testimony[@id=current()/@id]"/>
+		<xsl:variable name="used" select="$usage//*[@testimony-id=current()/@id]"/>
 		
 		<!-- We're building an XML fragment that will finally serve as  info container for the current entry -->
 		<xsl:variable name="rowinfo_raw">
@@ -103,11 +103,11 @@
 				</xsl:when>				
 				<xsl:otherwise>
 					<f:base><xsl:value-of select="$used/@base"/></f:base>
-					<f:href><xsl:value-of select="concat('testimony/', $used/@base, '#', $used/@id)"/></f:href>
-					<xsl:variable name="bibref" select="concat('faust://bibliography/', $used/@base)"/>
-					<xsl:variable name="bib" select="$bibliography//bib[@uri=$bibref]"/>
+					<f:href><xsl:value-of select="concat('testimony/', $used/@base, '#', $used/@testimony-id)"/></f:href>
+					<xsl:variable name="bibref" select="normalize-space($used/text())"/>
+					<xsl:variable name="bib" select="$bibliography//bib[@uri=$bibref]"/> <!-- TODO refactor to bibliography.xsl -->
 					<xsl:copy-of select="$bib"/>
-					<xsl:variable name="excerpt" select="$used/text()"/>
+					<xsl:variable name="excerpt" select="$used/@rs"/>
 					
 					<xsl:if test="not($excerpt)">
 						<f:message status="info">kein Auszug</f:message>
@@ -121,7 +121,7 @@
 		</xsl:variable>
 		
 		<xsl:variable name="rowinfo">
-			<f:row id="{@id}" lbl="{$lbl}">
+			<f:row id="{@testimony-id}" lbl="{$lbl}">
 				<xsl:copy-of select="@*, field, $rowinfo_raw/*[local-name() != 'message']"/>
 				<f:messages>
 					<xsl:copy-of select="$rowinfo_raw/message"/>

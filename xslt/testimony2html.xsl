@@ -85,8 +85,13 @@
 		</f:taxonomies>
 	</xsl:variable>
 	
+	<xsl:function name="f:real_id" as="xs:string">
+		<xsl:param name="id"/>
+		<xsl:value-of select="replace($id, '^(\w+)_0*(.*)$', '$1_$2')"/>
+	</xsl:function>
+	
 	<xsl:template match="milestone[@unit='testimony']">
-		<xsl:variable name="id" select="replace(@xml:id, '^(\w+)_0*(.*)$', '$1_$2')"/>
+		<xsl:variable name="id" select="f:real_id(@xml:id)"/>
 		<xsl:variable name="id_parts" select="tokenize($id, '_')"/>
 		<xsl:choose>
 			<xsl:when test="count($id_parts) = 2">
@@ -103,6 +108,25 @@
 				<xsl:message>WARNING:<xsl:value-of select="document-uri(/)"/>:Invalid/strange testimony id "<xsl:value-of select="$id"/>" <xsl:copy-of select="."/></xsl:message>
 			</xsl:otherwise>
 		</xsl:choose>
+	</xsl:template>
+	
+	<!-- following template extracts f:citation elements for all  -->
+	<xsl:template name="get-citations">
+		<f:citations>
+			<xsl:for-each select="//milestone[@unit='testimony']">
+				<xsl:variable name="real-id" select="f:real_id(@xml:id)"/>
+				<xsl:variable name="id" select="tokenize($real-id, '_')"/>
+				<f:citation 
+					testimony="{$basename}#{$real-id}" 
+					base="{$basename}" 
+					taxonomy="{id($id[1], $taxonomies)}"
+					n="{$id[2]}"
+					testimony-id="{$real-id}"
+					rs="{f:normalize-space((following::rs)[1])}">
+					<xsl:value-of select="$biburl"/>
+				</f:citation>
+			</xsl:for-each>
+		</f:citations>		
 	</xsl:template>
 	
 </xsl:stylesheet>
