@@ -6,9 +6,15 @@
 	xmlns:f="http://www.faustedition.net/ns"
 	exclude-result-prefixes="xs"
 	version="2.0">
-		
+	
+	
 	<xsl:import href="html-common.xsl"/>
 	<xsl:import href="html-frame.xsl"/>
+	<xsl:import href="bibliography.xsl"/>	
+	
+	<xsl:variable name="basename" select="replace(document-uri(/), '^.*/([^/]+)\.xml', '$1')"/>
+	<xsl:variable name="biburl" select="concat('faust://bibliography/', $basename)"/>
+	
 	
 	<xsl:template match="/TEI">
 		<xsl:call-template name="html-frame">
@@ -29,13 +35,27 @@
 			<body>
 				<xsl:call-template name="header">
 					<xsl:with-param name="breadcrumbs" tunnel="yes">
-						<xsl:call-template name="breadcrumbs"/>
+						<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
+							<small id="breadcrumbs">
+								<span>
+									<a href="/archive">Archiv</a>
+									<i class="fa fa-angle-right"/>
+									<a href="/archive_testimonies">Entstehungszeugnisse</a>
+								</span>
+							</small>
+						</div>
+						<div id="current" class="pure-nowrap">
+							<span>
+								<xsl:attribute name="title" select="f:cite($biburl, true())"/>
+								<xsl:value-of select="f:cite($biburl, false())"></xsl:value-of>
+							</span>
+						</div>
 					</xsl:with-param>
 				</xsl:call-template>
 				
 				<main class="nofooter">
 					<div class="print testimony">
-						<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
+						<div class="print-side-column"/><!-- 1. Spalte (1/5) bleibt erstmal frei -->						
 						<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
 							<xsl:sequence select="$content"/>
 						</div>
