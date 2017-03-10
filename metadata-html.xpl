@@ -6,7 +6,7 @@
 
   <p:input port="source"><p:empty/></p:input>
   <p:input port="parameters" kind="parameter"/>
-  
+  <p:output port="result" sequence="true"/>
   
 
   <p:import href="http://xproc.org/library/recursive-directory-list.xpl"/>
@@ -87,30 +87,6 @@
     
     <p:identity name="metadata-citations"/>
   
-    <p:wrap-sequence wrapper="f:citations" name="wrapped-citations">
-      <p:input port="source">
-        <p:pipe port="result" step="metadata-citations"/>
-        <p:document href="additional-citations.xml"/>
-      </p:input>
-    </p:wrap-sequence>
-        
-    
-    <p:xslt>
-      <p:input port="stylesheet"><p:document href="xslt/create-bibliography.xsl"/></p:input>
-      <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
-      <p:with-param name="builddir-resolved" select="p:resolve-uri($builddir)"></p:with-param>
-    </p:xslt>
-    
-    <p:store method="xhtml" include-content-type="false" indent="true">
-      <p:with-option name="href" select="concat($metahtml, 'bibliography.html')"/>
-    </p:store>
-    <!-- For debugging: -->
-    <p:store method="xml" indent="true">
-      <p:with-option name="href" select="concat($builddir, 'citations.xml')"/>
-      <p:input port="source">
-        <p:pipe port="result" step="wrapped-citations"/>
-      </p:input>
-    </p:store>
   </p:group>
-
+  
 </p:declare-step>

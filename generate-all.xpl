@@ -26,8 +26,8 @@
 	<p:import href="generate-print.xpl"/>
 	<p:import href="generate-metadata-js.xpl"/>
 	<p:import href="metadata-html.xpl"/>
-	<p:import href="create-para-table.xpl"/>
-	
+	<p:import href="bibliography.xpl"/>
+	<p:import href="create-para-table.xpl"/>	
 	<p:import href="testimony.xpl"/>
 
 <!--	
@@ -147,7 +147,7 @@
 		</p:store>
 		
 		<!-- ### Step 2a: Metadata HTML -->
-		<f:metadata-html>
+		<f:metadata-html name="metadata-html">
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>
 		</f:metadata-html>
 		
@@ -168,9 +168,17 @@
 		
 		<!-- ## Step 2d: testimony -->
 		
-		<f:testimony>
+		<f:testimony name="testimony">
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>
 		</f:testimony>
+		
+		<!-- ## Step 3a: bibliography -->		
+		<f:bibliography>
+			<p:input port="source">
+				<p:pipe port="result" step="metadata-html"/>
+				<p:pipe port="result" step="testimony"/>
+			</p:input>
+		</f:bibliography>
 		
 		<!-- ### Step 4a: Paralipomena-Tabelle -->
 		<f:generate-para-table>

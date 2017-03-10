@@ -6,7 +6,7 @@
 	
 	<p:input port="source"><p:empty/></p:input>
 	<p:input port="parameters" kind="parameter"/>
-	
+	<p:output port="result" primary="true"/>
 
 	
 	
@@ -96,6 +96,7 @@
 			<p:with-option name="href" select="resolve-uri('www/archive_testimonies.html', $builddir)"></p:with-option>
 		</p:store>
 			
+		<p:identity><p:input port="source"><p:pipe port="result" step="testimony-index"/></p:input></p:identity>
 	
 	</p:group>
 	
