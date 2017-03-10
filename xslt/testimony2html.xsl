@@ -116,15 +116,17 @@
 			<xsl:for-each select="//milestone[@unit='testimony']">
 				<xsl:variable name="real-id" select="f:real_id(@xml:id)"/>
 				<xsl:variable name="id" select="tokenize($real-id, '_')"/>
-				<f:citation 
-					testimony="{$basename}#{$real-id}" 
-					base="{$basename}" 
-					taxonomy="{id($id[1], $taxonomies)}"
-					n="{$id[2]}"
-					testimony-id="{$real-id}"
-					rs="{f:normalize-space((following::rs)[1])}">
-					<xsl:value-of select="$biburl"/>
-				</f:citation>
+				<xsl:if test="count($id) = 2">
+					<f:citation 
+						testimony="{$basename}#{$real-id}" 
+						base="{$basename}" 
+						taxonomy="{id($id[1], $taxonomies)}"
+						n="{$id[2]}"
+						testimony-id="{$real-id}"
+						rs="{f:normalize-space((following::rs)[1])}">
+						<xsl:value-of select="$biburl"/>
+					</f:citation>					
+				</xsl:if>
 			</xsl:for-each>
 		</f:citations>		
 	</xsl:template>
