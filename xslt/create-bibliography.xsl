@@ -6,7 +6,8 @@
 	exclude-result-prefixes="xs"
 	version="2.0">
 	
-	<xsl:import href="faust-metadata.xsl"/>
+	<xsl:import href="bibliography.xsl"/>
+	<xsl:import href="html-frame.xsl"/>
 	<xsl:import href="utils.xsl"/>
 	
 	<xsl:param name="headerAdditions">
@@ -48,6 +49,22 @@
 								<xsl:if test="position() != last()">, </xsl:if>
 							</xsl:for-each-group>
 						</xsl:variable>
+						<xsl:variable name="testimonies" select="current-group()[@testimony]" as="element()*"/>
+						<xsl:variable name="testimony-part">
+							<xsl:for-each-group select="$testimonies" group-by="@base">
+								<small class="bib-testimonies">
+									Entstehungszeugnisse:
+									<xsl:for-each-group select="current-group()" group-by="@taxonomy">
+										<xsl:value-of select="current-grouping-key()"/><xsl:text> </xsl:text>
+										<xsl:for-each select="current-group()">
+											<a href="/testimony/{@testimony}"><xsl:value-of select="@n"/></a>
+											<xsl:if test="position() != last()">, </xsl:if>
+										</xsl:for-each>
+										<xsl:if test="position() != last()">; </xsl:if>
+									</xsl:for-each-group>
+								</small>
+							</xsl:for-each-group>
+						</xsl:variable>
 						<xsl:for-each select="$citation">
 							<xsl:copy>
 								<xsl:copy-of select="@*"/>
@@ -57,7 +74,11 @@
 									<small class="bib-backrefs">
 										<xsl:copy-of select="$backref-part"/>
 									</small>
+									<xsl:if test="current-group()[@testimony]">
+										<xsl:text> • </xsl:text>
+									</xsl:if>
 								</xsl:if>
+								<xsl:copy-of select="$testimony-part"/>
 							</xsl:copy>
 						</xsl:for-each>
 					</xsl:for-each-group>
