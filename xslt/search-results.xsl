@@ -162,7 +162,7 @@
 								<xsl:when test="(starts-with($scene-data/f:id, '2')) ">
 									<span>Faust II</span>
 									<xsl:copy-of select="$separator"/>
-									<span><xsl:value-of select="substring($scene-data/f:id, 3, 1)"/>. Akt</span>
+									<span><xsl:number value="substring($scene-data/f:id, 3, 1)" format="I." ordinal="true"/>. Akt</span>
 								</xsl:when>
 								<xsl:otherwise>
 									<span>Faust I</span>

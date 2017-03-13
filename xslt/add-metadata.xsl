@@ -188,7 +188,7 @@
 					<xsl:call-template name="add-xmlid"><xsl:with-param name="id" select="concat('act_', $act)"/></xsl:call-template>										
 					<xsl:attribute name="f:act-label" >
 						<xsl:choose>
-							<xsl:when test="$type = 'lesetext'"><xsl:value-of select="concat($act, '. Akt')"/></xsl:when>
+							<xsl:when test="$type = 'lesetext'"><xsl:number format="I." ordinal="true" value="$act"/> Akt</xsl:when>
 							<xsl:otherwise><xsl:call-template name="extract-scene-label"/></xsl:otherwise>
 						</xsl:choose>						
 					</xsl:attribute>
