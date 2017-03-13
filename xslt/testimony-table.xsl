@@ -168,7 +168,7 @@
 	<xsl:template match="excerpt">
 		<td>
 			<a href="{../href}">
-				<xsl:apply-templates/>
+				… <xsl:apply-templates/> …
 			</a>
 			<xsl:for-each select="../messages/message">
 				<div class="message {@status}"><xsl:value-of select="."/></div>
