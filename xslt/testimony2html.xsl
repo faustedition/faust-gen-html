@@ -131,4 +131,13 @@
 		</f:citations>		
 	</xsl:template>
 	
+	<!-- suppress pb when there's no content afterwards, before the next pb or document end -->
+	<xsl:template match="pb">
+		<xsl:variable name="next" select="(following::pb)[1]"/>
+		<xsl:variable name="inbetween" select="following::node() intersect $next/preceding::node()"/>
+		<xsl:if test="not(matches(string-join($inbetween, ''), '^\s*$'))">
+			<xsl:next-match/>
+		</xsl:if>
+	</xsl:template>
+	
 </xsl:stylesheet>
