@@ -167,9 +167,11 @@
 	
 	<xsl:template match="excerpt">
 		<td>
-			<a href="{../href}">
-				… <xsl:apply-templates/> …
-			</a>
+			<xsl:if test="normalize-space(.)">
+				<a href="{../href}">
+					… <xsl:apply-templates/> …
+				</a>				
+			</xsl:if>
 			<xsl:for-each select="../messages/message">
 				<div class="message {@status}"><xsl:value-of select="."/></div>
 			</xsl:for-each>
