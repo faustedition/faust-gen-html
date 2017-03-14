@@ -16303,10 +16303,10 @@
     <field label="Adressat">Johann Friedrich von Cotta</field>
     <field label="Druckort">QuZ III, 19</field>
   </testimony>
-  <testimony>
+  <testimony id="quz_III-2A">
     <field label="Gräf"/>
     <field label="Pniower"/>
-    <field label="QuZ"/>
+    <field label="QuZ">III-2A</field>
     <field label="Bie3"/>
     <field label="Datum">03-04-1832</field>
     <field label="Quellengattung">Brief</field>
@@ -16413,10 +16413,10 @@
     <field label="Adressat">Johann Peter Eckermann</field>
     <field label="Druckort">QuZ III, 59</field>
   </testimony>
-  <testimony>
+  <testimony id="quz_III-44A">
     <field label="Gräf"/>
     <field label="Pniower"/>
-    <field label="QuZ"/>
+    <field label="QuZ">III-44A</field>
     <field label="Bie3"/>
     <field label="Datum">20.09.1832</field>
     <field label="Quellengattung">Brief</field>
@@ -16446,10 +16446,10 @@
     <field label="Adressat">Friedrich Wilhelm Riemer</field>
     <field label="Druckort">Houben 1925-1928, Bd. 2, S. 27f</field>
   </testimony>
-  <testimony>
+  <testimony id="quz_III-48A">
     <field label="Gräf"/>
     <field label="Pniower"/>
-    <field label="QuZ"/>
+    <field label="QuZ">III-48A</field>
     <field label="Bie3"/>
     <field label="Datum">21.09.1832</field>
     <field label="Quellengattung">Tagebuch</field>

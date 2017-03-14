@@ -1697,6 +1697,41 @@
         <f:reference>Goethe, Johann Wolfgang: Wilhelm Meisters Lehrjahre. Erster Band. 1794.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/autorjahr">
+        <f:citation>Autor Jahr</f:citation>
+        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/autorjahr">
+        <f:citation>Autor Jahr</f:citation>
+        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/autorjahr">
+        <f:citation>Autor Jahr</f:citation>
+        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/autorjahr">
+        <f:citation>Autor Jahr</f:citation>
+        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/autorjahr">
+        <f:citation>Autor Jahr</f:citation>
+        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/autorjahr">
+        <f:citation>Autor Jahr</f:citation>
+        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/autorjahr">
+        <f:citation>Autor Jahr</f:citation>
+        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/n_3">
         <f:citation>N 3</f:citation>
         <f:reference>Goethe's neue Schriften. Dritter Band. Wilhelm Meisters Lehrjahre. Erster Band. Berlin. Bei Johann Friedrich Unger, 1795; <strong>wird durch WA ersetzt?</strong></f:reference>
