@@ -78,10 +78,10 @@
 	
 	<xsl:variable name="taxonomies">
 		<f:taxonomies>
-			<f:taxonomy xml:id='graef'>Gräf-Nr.</f:taxonomy>
-			<f:taxonomy xml:id='pniower'>Pniower-Nr.</f:taxonomy>
-			<f:taxonomy xml:id='quz'>QuZ</f:taxonomy>
-			<f:taxonomy xml:id='bie3'>Biedermann-Herwig-Nr.</f:taxonomy>			
+			<f:taxonomy xml:id='graef'>Gräf Nr.</f:taxonomy>
+			<f:taxonomy xml:id='pniower'>Pniower Nr.</f:taxonomy>
+			<f:taxonomy xml:id='quz'>QuZ Nr.</f:taxonomy>
+			<f:taxonomy xml:id='bie3'>Biedermann-Herwig Nr.</f:taxonomy>			
 		</f:taxonomies>
 	</xsl:variable>
 	
