@@ -48,6 +48,11 @@
 			<p:load name="load">
 				<p:with-option name="href" select="$filename"/>
 			</p:load>
+			
+			<p:xslt>
+				<p:input port="stylesheet"><p:document href="xslt/normalize-characters.xsl"/></p:input>
+				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			</p:xslt>
 					
 			<p:xslt name="generate-html">
 				<p:input port="stylesheet"><p:document href="xslt/testimony2html.xsl"/></p:input>
