@@ -56,7 +56,7 @@
 											then 'bibliography'
 											else 'alpha'
 										}"> 
-										<xsl:value-of select="."/>
+										<xsl:value-of select="if (. = 'Bie3') then 'Biedermann³' else ."/>
 									</th>
 								</xsl:for-each>							
 								<th data-sortable-type="alpha">Auszug</th>
