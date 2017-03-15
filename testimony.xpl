@@ -45,11 +45,11 @@
 			<p:variable name="basename" select="replace(replace($filename, '.*/', ''), '.xml$', '')"/>
 			<p:variable name="outfile" select="p:resolve-uri(concat($basename, '.html'), $testihtml)"/>
 			
-			<p:load name="load">
+			<p:load>
 				<p:with-option name="href" select="$filename"/>
 			</p:load>
 			
-			<p:xslt>
+			<p:xslt name="testimony-xml">
 				<p:input port="stylesheet"><p:document href="xslt/normalize-characters.xsl"/></p:input>
 				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 			</p:xslt>
@@ -66,7 +66,7 @@
 			
 			<!-- Now, the file we've just converted is read again and we collect all the <milestone unit='testimony' xml:id='two_part_id' -->
 			<p:xslt>
-				<p:input port="source"><p:pipe port="result" step="load"/></p:input>			
+				<p:input port="source"><p:pipe port="result" step="testimony-xml"/></p:input>			
 				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 				<p:with-param name="from" select="replace($filename, concat('^', $source), 'faust://xml/')"/>
 				<p:with-param name="outfile" select="$outfile"/>
