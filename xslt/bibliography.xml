@@ -352,6 +352,11 @@
         <f:reference>Grumach, Ernst: Aus Goethes Vorarbeiten zu den Helenaszenen. In: faust://bibliography/gjb_75, S. 45–71.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/grumach1959">
+        <f:citation>Grumach 1959</f:citation>
+        <f:reference>Kanzler von Müller: Unterhaltungen mit Goethe. Kleine Ausgabe hrsg. von Ernst Grumach mit Anmerkungen von Renate Fischer-Lamberg. Weimar 1959. </f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/grumach1962">
         <f:citation>Grumach 1962</f:citation>
         <f:reference>Grumach, Ernst: Zueignung V. 21–24. In: faust://bibliography/gjb_79, S. 288–290.</f:reference>
@@ -1292,11 +1297,6 @@
         <f:reference>Goethe-Jahrbuch, Bd. 125, hrsg. von Werner Frick, Jochen Golz, Albert Meier und Edith Zehm, Weimar 2008.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/graef1901-1914_II_2">
-        <f:citation>Gräf II 2</f:citation>
-        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. II: Die Dramatischen Dichtungen, Bd. 2 (Bd. 4 der Gesamtreihe), Frankfurt am Main 1904.</f:reference>
-    </f:bib>
-
     <f:bib uri="faust://bibliography/alt_14">
         <f:citation>Alt 14</f:citation>
         <f:reference>Goethes Werke. Vollständige Ausgabe in vierzig Teilen. Auf Grund der Hempelschen Ausgabe neu herausgegeben, mit Einleitungen und Anmerkungen sowie einem Gesamtregister versehen von Karl Alt. 14. Teil: Dramen in ursprünglicher Gestalt, hrsg. von Robert Riemann und Karl Alt, Berlin u.a. o.J. [1909–1926].</f:reference>
@@ -1467,6 +1467,16 @@
         <f:reference>Anonym: [Rez.] Über den Faust von Müller. In: Berliner Litteratur- und Theaterzeitung 2 (1779), S. 236-239. </f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/baldensperger1932">
+        <f:citation>Baldensperger 1932</f:citation>
+        <f:reference>Baldensperger, Fernand: Fragments inédits des lettres de J.J. Ampère à Albert Stapfer sur sa visite à Goethe. In: Revue de littérature comparée 12 (1932), S. 208-216.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/berend1959">
+        <f:citation>Berend 1959</f:citation>
+        <f:reference>Jean Pauls sämtliche Werke. Historisch-kritische Ausgabe. Abt. III: Briefe. Bd. 3: 1797 - 1800. Hrsg. von Eduard Berend. Weimar 1959.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/bergmann1938">
         <f:citation>Bergmann 1938</f:citation>
         <f:reference>Briefe des Herzogs Carl-August von Sachsen-Weimar an seine Mutter, die Herzogin Anna Amalia (Oktober 1774 bis Januar 1807). Hrsg. von Alfred Bergmann. Jena 1938. (= Jenaer germanistische Forschugnen; 30.)</f:reference>
@@ -1595,6 +1605,11 @@
     <f:bib uri="faust://bibliography/djg2_4">
         <f:citation>DjG2, Bd. 4</f:citation>
         <f:reference>Der junge Goethe. Neue Ausgabe in 6 Bänden, Bd. 4. Besorgt von Max Morris. Leipzig 1909-1912.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/dnl_111">
+        <f:citation>DNL 111</f:citation>
+        <f:reference>Goethe, Werke. 36 Theile (in 41 Bdn.), Stuttgart o. J. (1882-1897). (= Deutsche National-Litteratur. Historisch-kritische Ausgabe. Hrsg. von Joseph Kürschner, Bde. 82-117,II.) Tl. 30: Aufsätze über bildende Kunst und Theater, hrsg. von A. G. Meyer und G. Witkowski, 1895 (DNL Bd. 111). [Gräf, Nr. 1953]</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/dobbek1963-2104_4">
@@ -1882,6 +1897,11 @@
         <f:reference>N. N.: Karl Ludwig von Knebel. Bericht eines ihm Verwandten. In: Berühmte Schriftsteller der Deutschen: Schilderung nach Selbstanschauung theils auch berühmter Zeitgenossen aus dem Leben von Goethe […] und Andern. Bisher in keiner Sammlung. Hrsg. von Friedrich Wilhelm Gubitz. Bd. 1. Berlin 1854, S. 319–338.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/kuhn1979-1983_1">
+        <f:citation>Kuhn 1979-1983, Bd. 1; Kuhn 1979-1983, Bd. 2</f:citation>
+        <f:reference>Johann Wolfgang von Goethe und Johann Friedrich von Cotta, Briefwechsel 1797-1832. Textkritische und kommentierte Ausgabe in drei Bänden. Hrsg. von Dorothea Kuhn. 3 Bde. Stuttgart 1979-1983.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/leitzmann1900">
         <f:citation>Leitzmann 1900</f:citation>
         <f:reference>Briefwechsel zwischen Schiller und Wilhelm von Humboldt nebst einem Porträt Wilhelm von Humboldts. Dritte vermehrte Ausgabe mit Anmerkungen von Albert Leitzmann. Stuttgart 1900.</f:reference>
@@ -1942,6 +1962,11 @@
         <f:reference>Pavie, V[ictor]: Goëthe et David, Souvenirs d'un voyage à Weimar (II). In: Mémoires de la sociéte nationale d'agriculture 17 (1874), S. 81-145.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/plitt1869-1870_2">
+        <f:citation>Plitt 1869-1870, Bd. 2</f:citation>
+        <f:reference>Aus Schellings Leben. In Briefen. Hrsg. von Gustav Leopold Plitt. 3 Bde., Berlin 1869-1870; Bd. 2, 1870.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/pniower1891">
         <f:citation>Pniower 1891</f:citation>
         <f:reference>Pniower, Otto: Die Schülerszene im Urfaust. In: Vierteljahrsschrift für Literaturgeschichte 4 (1891), S. 317-335.</f:reference>
@@ -1987,6 +2012,11 @@
         <f:reference>Richter, Elke: »’s ist ein Genie, von Geist und Kraft…«. Eine Neujahrs-Matinée im Weimarer Fürstenhaus. In: Album amicarum et amicorum. Für Hans Grüters. Frankfurt am Main 2010, S. 159–175.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/riemer1833-1834_3">
+        <f:citation>Riemer 1833-1834, Bd. 3/4/5/6</f:citation>
+        <f:reference>Briefwechsel zwischen Goethe und Zelter in den Jahren 1796 bis 1832. Hrsg. von Friedrich Wilhelm Riemer, 6 Theile, Th. 5. Berlin: Duncker und Humblot 1833-1834.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/riemer1841_1">
         <f:citation>Riemer 1841, Bd. 1</f:citation>
         <f:reference>* Riemer, Friedrich Wilhelm: Mittheilungen über Goethe aus mündlichen und schriftlichen, gedruckten und ungedruckten Quellen. 2 Bde., Bd. 1: Berlin 1841.</f:reference>
@@ -2000,6 +2030,11 @@
     <f:bib uri="faust://bibliography/riemer1846">
         <f:citation>Riemer 1846</f:citation>
         <f:reference>Briefe von und an Goethe. Desgleichen Aphorismen und Brocardia. Hrsg. von Friedrich Wilhelm Riemer. Leipzig 1846.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/sauer1902">
+        <f:citation>Sauer 1902</f:citation>
+        <f:reference>Ausgewählte Werke des Grafen Kaspar von Sternberg. Erster Band: Briefwechsel zwischen J. W. v. Goethe und Kaspar Graf v. Sternberg (1820-1832.) Hrsg. von August Sauer. Prag: Clave 1902 (= Bibliothek Deutscher Schriftsteller aus Böhmen, Mähren und Schlesien; 13).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/sauer1902-1903">
@@ -2022,6 +2057,11 @@
         <f:reference>[Schmidt, Erich: Bericht über einen Vortrag]. In: Deutsche Literatur-Zeitung 29 (1908), Sp. 3243.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/schoch1832_1">
+        <f:citation>Schoch 1832, Bd. 1</f:citation>
+        <f:reference>Friedrich v. Matthisson's Literarischer Nachlaß; nebst einer Auswahl von Briefen seiner Freunde; ein Supplement zu allen Ausgaben seiner Schriften. Hrsg. von F. R. Schoch. 4 Bde., Bd. 1. Berlin: Mylius 1832.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/schoell1877">
         <f:citation>Schöll 1877</f:citation>
         <f:reference>Schöll, Adolf: Ein Brief des Hauptmanns Karl Ludwig von Knebel an den Geheimsecretär Friedr. Joh. Justin Bertuch in Weimar. Mit Anmerkungen. In: Deutsche Rundschau 12 (1877), S. 517-520.</f:reference>
@@ -2037,14 +2077,34 @@
         <f:reference>Goethe und die Romantik. Bd. I. Hrsg. von Carl Schüddekopf und Oskar Walzel. Weimar 1898 (= Schriften der Goethe-Gesellschaft, Bd. 13).</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/seckendorff1782">
+        <f:citation>Seckendorff 1782</f:citation>
+        <f:reference>Seckendorff,  Karl Sigmund von: Volks- und andere Lieder, mit Begleitung des Fortepiano, 3. Heft, 1782, S. 6.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/siebs1915">
         <f:citation>Siebs 1915</f:citation>
         <f:reference>Siebs, Theodor: Hermann Allmers. Sein Leben und Dichten mit Benutzung seines Nachlasses dargestellt. Berlin 1915.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/strehlke1882-1884_1">
+        <f:citation>Strehlke 1882-1884, Bd. 1</f:citation>
+        <f:reference>Goethe's Briefe. Verzeichniß unter Angabe von Quelle, Ort, Datum und Anfangsworten [...] Hrsg. von Friedrich Strehlke. 3 Theile, Theil 1. Berlin 1882-1884.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/strodtmann1874_1">
         <f:citation>Strodtmann 1874</f:citation>
         <f:reference>Briefe von und an Gottfried August Bürger. Ein Beitrag zur Literaturgeschichte seiner Zeit. Aus dem Nachlasse Bürger's und anderen, meist handschriftlichen Quellen hrsg. von Adolf Strodtmann. Bd. 1. Berlin 1874.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/sydow1906-1916_7">
+        <f:citation>Sydow 1906-1907, Bd. 7</f:citation>
+        <f:reference>Wilhelm und Caroline von Humboldt in ihren Briefen. Hrsg. von Anna von Sydow. 7 Bde., Bd. 7. Berlin 1906-1916.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/sydow1906-1916_3">
+        <f:citation>Sydow 1906-1907, Bd. 3</f:citation>
+        <f:reference>Wilhelm und Caroline von Humboldt in ihren Briefen. Hrsg. von Anna von Sydow. 7 Bde., Bd. 3. Berlin 1906-1916.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/ticknor1876_1">
@@ -2057,6 +2117,26 @@
         <f:reference>Tille, Alexander: Die Faustsplitter in der Literatur des 16. bis 18. Jahrhunderts nach den ältesten Quellen, Berlin 1900.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/urlichs1860-1865_3">
+        <f:citation>Urlichs 1860-1865, Bd. 3</f:citation>
+        <f:reference>Charlotte von Schiller und ihre Freunde. Hrsg. von Ludwig Urlichs. 3 Bde., Bd. 3, Stuttgart 1860-1865.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/varnhagen1861-1870_2">
+        <f:citation>Varnhagen 1861-1870, Bd. 2</f:citation>
+        <f:reference>Varnhagen von Ense, Karl August: Tagebücher. Aus dem Nachlaß Varnhagen's von Ense. 14 Bde. Leipzig 1861-1862 (Bd. 1-6), Zürich 1865 (Bd. 7-8), Hamburg 1868-1870 (Bd. 9-14); Bd. 2, 1861.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/vogel1834">
+        <f:citation>Vogel 1834</f:citation>
+        <f:reference>Goethe in amtlichen Verhältnissen. Aus den Acten, besonders durch die Correspondenzen zwischen ihm und dem Grossherzog Carl August von Carl Vogel u.a. dargestellt. Jena: Frommann 1834.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/vollmer1876">
+        <f:citation>Vollmer 1876</f:citation>
+        <f:reference>Briefwechsel zwischen Schiller und Cotta. Hrsg. von Wilhelm Vollmer. Stuttgart 1876.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wagner1838">
         <f:citation>Wagner 1838</f:citation>
         <f:reference>Briefe an und von Johann Heinrich Merck. Eine selbständige Folge der im Jahr 1835 erschienenen Briefe an J. H. Merck. Aus den Handschriften hrsg. von Dr. Karl Wagner. Darmstadt 1838.</f:reference>
@@ -2065,6 +2145,11 @@
     <f:bib uri="faust://bibliography/wagner1847">
         <f:citation>Wagner 1847</f:citation>
         <f:reference>Briefe aus dem Freundeskreise von Goethe, Herder, Höpfner und Merck. Eine selbständige Folge der beiden in den Jahren 1835 und 1838 erschienen Merckischen Briefsammlungen. Aus den Handschriften hrsg. von Dr. Karl Wagner. Darmstadt 1847.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/walzel1890">
+        <f:citation>Walzel 1890</f:citation>
+        <f:reference>Friedrich Schlegels Briefe an seinen Bruder August Wilhelm. Hrsg. von Oskar F. Walzel. Berlin 1890.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/weinhold1868">

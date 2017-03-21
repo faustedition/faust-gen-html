@@ -4563,7 +4563,7 @@
     <field label="Datum">02.03.1809</field>
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Wilhelm Grimm</field>
-    <field label="Adressat">Ludwig Joachim Arnim</field>
+    <field label="Adressat">Ludwig Achim von Arnim</field>
     <field label="Druckort">Steig 1912, S. 305</field>
   </testimony>
   <testimony id="graef_1098">
@@ -4593,7 +4593,7 @@
     <field label="Pniower"/>
     <field label="QuZ"/>
     <field label="Bie3">3285</field>
-    <field label="Datum">09.1810</field>
+    <field label="Datum">28.06.1843</field>
     <field label="Quellengattung">Gespräch</field>
     <field label="Verfasser">Karl August Varnhagen von Ense</field>
     <field label="Adressat"/>
@@ -5213,7 +5213,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Friedrich Wilhelm Riemer</field>
     <field label="Adressat"/>
-    <field label="Druckort">Polmer 1923, S. 61</field>
+    <field label="Druckort">Pollmer 1923, S. 61</field>
   </testimony>
   <testimony id="graef_1151a">
     <field label="Gräf">1151a</field>
@@ -5345,7 +5345,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Friedrich von Matthisson</field>
     <field label="Adressat"/>
-    <field label="Druckort">Matthisson 1825-1829, 7, 36</field>
+    <field label="Druckort">Matthisson 1825-1829, Bd. 7, 36</field>
   </testimony>
   <testimony id="graef_1159">
     <field label="Gräf">1159</field>
@@ -5873,7 +5873,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Johann Baptist von Paar</field>
-    <field label="Druckort">sauer 1902-1903, Bd. 1, S. 141</field>
+    <field label="Druckort">Sauer 1902-1903, Bd. 1, S. 141</field>
   </testimony>
   <testimony id="graef_1200">
     <field label="Gräf">1200</field>
@@ -5917,7 +5917,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 70 [2 III H59]</field>
+    <field label="Druckort">WA I, 15 (2), 70</field>
   </testimony>
   <testimony id="graef_1203">
     <field label="Gräf">1203</field>
@@ -6533,7 +6533,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 68f. [2 III H6, H15, H18, H23, 35.]</field>
+    <field label="Druckort">WA I, 15 (2), 68f.</field>
   </testimony>
   <testimony id="graef_1250">
     <field label="Gräf">1250</field>
@@ -6885,7 +6885,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Karl Wesselhöft</field>
     <field label="Adressat">Johann Wolfgang Goethe</field>
-    <field label="Druckort">WA I, 15 (2), 68 [2 III H19]</field>
+    <field label="Druckort">WA I, 15 (2), 68</field>
   </testimony>
   <testimony id="graef_1271">
     <field label="Gräf">1271</field>
@@ -7050,7 +7050,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Johann Stephan Schütze</field>
-    <field label="Druckort">WA I, 15 (2), 69 [2 III H38]</field>
+    <field label="Druckort">WA I, 15 (2), 69</field>
   </testimony>
   <testimony id="graef_1281">
     <field label="Gräf">1281</field>
@@ -7072,7 +7072,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Christian Gottfried Daniel Nees von Esenbeck</field>
-    <field label="Druckort">WA I, 15 (2), 147 [2 V H9]</field>
+    <field label="Druckort">WA I, 15 (2), 147</field>
   </testimony>
   <testimony id="pniower_941">
     <field label="Gräf"/>
@@ -7083,7 +7083,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 69 [2 III H42]</field>
+    <field label="Druckort">WA I, 15 (2), 69</field>
   </testimony>
   <testimony id="graef_1282">
     <field label="Gräf">1282</field>
@@ -7457,7 +7457,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Friedrich Wilhelm Riemer</field>
-    <field label="Druckort">G-Schiller-Archiv</field>
+    <field label="Druckort">Pniower 1899, S. 145</field>
   </testimony>
   <testimony id="graef_1312">
     <field label="Gräf">1312</field>
@@ -7655,7 +7655,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Karl Wilhelm Göttling</field>
-    <field label="Druckort">Göttlings Briefwechsel mit G. Hrsg. Fischer. München, 1880. 7</field>
+    <field label="Druckort">Fischer 1880, S. 7</field>
   </testimony>
   <testimony id="graef_1327">
     <field label="Gräf">1327</field>
@@ -7743,7 +7743,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Graf Joseph Ignaz von Beroldingen</field>
-    <field label="Druckort">WA I, 15 (2), 71 [H78]</field>
+    <field label="Druckort">WA I, 15 (2), 71</field>
   </testimony>
   <testimony id="graef_1331">
     <field label="Gräf">1331</field>
@@ -7776,7 +7776,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Friedrich von Cotta</field>
     <field label="Adressat">Johann Wolfgang Goethe; August von Goethe</field>
-    <field label="Druckort">Kuhn II, 144f</field>
+    <field label="Druckort">Kuhn 1979-1983, Bd. 2, S. 144f</field>
   </testimony>
   <testimony id="quz_II-638, IV-1797">
     <field label="Gräf"/>
@@ -9338,7 +9338,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Friedrich von Cotta</field>
     <field label="Adressat">Johann Wolfgang Goethe</field>
-    <field label="Druckort">Kuhn II, 190</field>
+    <field label="Druckort">Kuhn 1979-1983, Bd. 2, S. 190</field>
   </testimony>
   <testimony id="graef_1445">
     <field label="Gräf">1445</field>
@@ -9668,7 +9668,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Friedrich von Cotta</field>
     <field label="Adressat">Johann Wolfgang Goethe</field>
-    <field label="Druckort">Kuhn II, 196f</field>
+    <field label="Druckort">Kuhn 1979-1983, Bd. 2, S. 196f</field>
   </testimony>
   <testimony id="graef_1465">
     <field label="Gräf">1465</field>
@@ -9965,7 +9965,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Jean-Jacques Ampère</field>
     <field label="Adressat">Albert Stapfer</field>
-    <field label="Druckort">Revue de littérature comparée 12 (1932), 213-216</field>
+    <field label="Druckort">Baldensperger 1932, S. 213-216</field>
   </testimony>
   <testimony id="bie3_5973">
     <field label="Gräf"/>
@@ -10218,7 +10218,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Karl Ludwig von Knebel</field>
-    <field label="Druckort">Knebels Briefwechsel mit G. Hrsg. Düntzer. Jena, 1858. 2, 375</field>
+    <field label="Druckort">Düntzer 1858, Bd. 2, 375</field>
   </testimony>
   <testimony id="graef_1503">
     <field label="Gräf">1503</field>
@@ -10284,7 +10284,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 10 [2 I H7]</field>
+    <field label="Druckort">WA I, 15 (2), 10</field>
   </testimony>
   <testimony id="graef_1507">
     <field label="Gräf">1507</field>
@@ -10735,7 +10735,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 10 [2 I H8]</field>
+    <field label="Druckort">WA I, 15 (2), 10</field>
   </testimony>
   <testimony id="graef_1544">
     <field label="Gräf">1544</field>
@@ -10845,7 +10845,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 37 [2 II H3]</field>
+    <field label="Druckort">WA I, 15 (2), 37</field>
   </testimony>
   <testimony id="pniower_952">
     <field label="Gräf"/>
@@ -10856,7 +10856,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 11 [2 I H26]</field>
+    <field label="Druckort">WA I, 15 (2), 11</field>
   </testimony>
   <testimony id="graef_1552">
     <field label="Gräf">1552</field>
@@ -11010,7 +11010,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 11 [2 I H34]</field>
+    <field label="Druckort">WA I, 15 (2), 11</field>
   </testimony>
   <testimony id="pniower_954">
     <field label="Gräf"/>
@@ -11021,7 +11021,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 10 [2 I H9]</field>
+    <field label="Druckort">WA I, 15 (2), 10</field>
   </testimony>
   <testimony id="graef_1565">
     <field label="Gräf">1565</field>
@@ -11054,7 +11054,7 @@
     <field label="Quellengattung">Paralipomenon</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 12 [2 I H43]</field>
+    <field label="Druckort">WA I, 15 (2), 12</field>
   </testimony>
   <testimony id="graef_1567">
     <field label="Gräf">1567</field>
@@ -11120,7 +11120,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 10 [2 I H42]</field>
+    <field label="Druckort">WA I, 15 (2), 10</field>
   </testimony>
   <testimony id="pniower_957">
     <field label="Gräf"/>
@@ -11131,7 +11131,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 12 [2 I H43]</field>
+    <field label="Druckort">WA I, 15 (2), 12</field>
   </testimony>
   <testimony id="graef_1569">
     <field label="Gräf">1569</field>
@@ -11164,7 +11164,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 13 [2 I Hc, 2 I Hd]</field>
+    <field label="Druckort">WA I, 15 (2), 13</field>
   </testimony>
   <testimony id="pniower_599">
     <field label="Gräf"/>
@@ -11175,7 +11175,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 13 [Hb,He,Hf]</field>
+    <field label="Druckort">WA I, 15 (2), 13</field>
   </testimony>
   <testimony id="graef_1571">
     <field label="Gräf">1571</field>
@@ -11197,7 +11197,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 12 [2 I H45]</field>
+    <field label="Druckort">WA I, 15 (2), 12</field>
   </testimony>
   <testimony id="graef_1572">
     <field label="Gräf">1572</field>
@@ -11483,7 +11483,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Karl Friedrich Zelter</field>
-    <field label="Druckort">Zelters Briefwechsel mit G. Hrsg. Riemer. Berlin, 1834. 5, 4</field>
+    <field label="Druckort">Riemer 1833-1834, Bd. 5, S. 4</field>
   </testimony>
   <testimony id="graef_1593">
     <field label="Gräf">1593</field>
@@ -11956,7 +11956,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Karl Friedrich Zelter</field>
-    <field label="Druckort">Zelters Briefwechsel mit G. Hrsg. Riemer. Berlin, 1834. 5, 43f</field>
+    <field label="Druckort">Riemer 1833-1834, Bd. 5, S. 43f</field>
   </testimony>
   <testimony id="bie3_6153">
     <field label="Gräf"/>
@@ -12088,7 +12088,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Karl Friedrich Zelter</field>
-    <field label="Druckort">Zelters Briefwechsel mit G. Hrsg. Riemer. Berlin, 1834. 5, 77</field>
+    <field label="Druckort">Riemer 1833-1834, Bd. 5, S. 77</field>
   </testimony>
   <testimony id="graef_1639">
     <field label="Gräf">1639</field>
@@ -13375,7 +13375,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Karl Friedrich Zelter</field>
-    <field label="Druckort">Zelters Briefwechsel mit G. Hrsg. Riemer. Berlin, 1834. 5, 329f</field>
+    <field label="Druckort">Riemer 1833-1834., Bd. 5, S. 329f</field>
   </testimony>
   <testimony id="graef_1740">
     <field label="Gräf">1740</field>
@@ -13562,7 +13562,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Karl Friedrich Zelter</field>
-    <field label="Druckort">Zelters Briefwechsel mit G. Hrsg. Riemer. Berlin, 1834. 5, 340</field>
+    <field label="Druckort">Riemer 1833-1834, Bd. 5, S. 340</field>
   </testimony>
   <testimony id="graef_1755">
     <field label="Gräf">1755</field>
@@ -13650,7 +13650,7 @@
     <field label="Quellengattung">Gespräch</field>
     <field label="Verfasser">Friedrich Wilhelm Riemer</field>
     <field label="Adressat"/>
-    <field label="Druckort">Riemer 2, 1, 396</field>
+    <field label="Druckort">Riemer 1841, Bd. 1, S. 396</field>
   </testimony>
   <testimony id="graef_1763">
     <field label="Gräf">1763</field>
@@ -14343,7 +14343,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Karl Friedrich Zelter</field>
-    <field label="Druckort">Zelters Briefwechsel mit G. Hrsg. Riemer. Berlin, 1834. 5, 411</field>
+    <field label="Druckort">Riemer 1833-1834, Bd. 5, S. 411</field>
   </testimony>
   <testimony id="graef_1820">
     <field label="Gräf">1820</field>
@@ -15443,7 +15443,7 @@
     <field label="Quellengattung">Paralipomenon</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 133 [2 IV H22]</field>
+    <field label="Druckort">WA I, 15 (2), 133</field>
   </testimony>
   <testimony id="graef_1910">
     <field label="Gräf">1910</field>
@@ -15916,7 +15916,7 @@
     <field label="Quellengattung">Gespräch</field>
     <field label="Verfasser">Friedrich Förster</field>
     <field label="Adressat"/>
-    <field label="Druckort">Kunst und Leben. Försters Nachlass. Hrsg. Kletke. Berlin, 1873. 216ff</field>
+    <field label="Druckort">Kletke 1873, S. 216ff</field>
   </testimony>
   <testimony id="graef_1949">
     <field label="Gräf">1949</field>
@@ -16103,7 +16103,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Wilhelm von Humboldt</field>
     <field label="Adressat">Johann Wolfgang Goethe</field>
-    <field label="Druckort">Gebrüder Humboldts Briefwechsel mit G. Hrsg. Bratranek. Leipzig, 1876. 298f</field>
+    <field label="Druckort">Bratranek 1876, S. 298f</field>
   </testimony>
   <testimony id="graef_1965">
     <field label="Gräf">1965</field>
@@ -16290,7 +16290,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Wilhelm von Humboldt</field>
-    <field label="Druckort">Gebrüder Humboldts Briefwechsel mit G. Hrsg. Bratranek. Leipzig, 1876. 302</field>
+    <field label="Druckort">Bratranek 1876, S. 302</field>
   </testimony>
   <testimony id="quz_III-1">
     <field label="Gräf"/>
