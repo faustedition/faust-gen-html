@@ -123,6 +123,14 @@
 		<!-- ############################################################################## -->
 		<!-- The following steps don't depend on the full workflow, but rather only on parts. -->
 		
+		<!-- ### Step 1a: scene line mapping -->
+		<p:xslt>
+			<p:input port="source"><p:document href="xslt/scenes.xml"></p:document></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/scene-line-mapping.xsl"></p:document></p:input>		
+		</p:xslt>
+		<p:store method="text" encoding="utf-8">
+			<p:with-option name="href" select="resolve-uri('www/data/scene_line_mapping.js', resolve-uri($builddir))"/>
+		</p:store>
 		
 		<!-- ### Step 3a: Apparatus -->
 		<f:generate-app>
