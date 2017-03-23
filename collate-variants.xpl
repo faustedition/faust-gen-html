@@ -56,7 +56,7 @@
 
       <!-- Das Transkript wird geladen ... -->
       <p:load>
-        <p:with-option name="href" select="resolve-uri(concat('emended/', $documentURI), $builddir)"
+        <p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $documentURI), $builddir)"
         />
       </p:load>
 
