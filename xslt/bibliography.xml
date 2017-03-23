@@ -1357,6 +1357,11 @@
         <f:reference>Goethe, Johann Wolfgang von: Die Schriften zur Naturwissenschaft. Vollständige mit Erläuterungen versehene Ausgabe im Auftrage der Deutschen Akademie der Naturforscher Leopoldina, hrsg. von D. Kuhn, W. von Engelhardt und I. Müller, 2. Abt., Bd. 2: Zur Meteorologie und Astronomie. Ergänzungen und Erläuterungen, bearbeitet von Gisela Nickel, Weimar 2005.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/corpus_VIa">
+        <f:citation>CGZ VIa</f:citation>
+        <f:reference>Goethes Sammlungen zur Kunst, Literatur und Naturwissenschaft. Corpus der Goethezeichnungen. Bd. VIa. Nr. 1–302. Zeichnungen aus den Beständen des Goethe- und Schiller-Archivs. Bearbeitet von Gerhard Femmel. Leipzig 1970.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/djg2_3">
         <f:citation>DjG2 3</f:citation>
         <f:reference>Der junge Goethe. Neu Ausgabe in sechs Bänden besorgt von Max Morris, Bd. 3, Leipzig 1910.</f:reference>
@@ -1382,6 +1387,11 @@
         <f:reference>Der junge Goethe. Neu bearbeitete Ausgabe in fünf Bänden, hrsg. von Hanna Fischer-Lamberg, Bd. 5, Berlin und New York 1973.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/eibl1998">
+        <f:citation>Eibl 1998</f:citation>
+        <f:reference>Der junge Goethe in seiner Zeit. Texte und Kontexte, hrsg. von Karl Eibl, Fotis Jannidis und Marianne Willems, 2 Bde., Frankfurt am Main, Leipzig 1998.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/gt_4_1">
         <f:citation>GT 4,1</f:citation>
         <f:reference>Goethe, Johann Wolfgang: Tagebücher. Historisch-kritische Ausgabe, Bd. 4,1: 1809–1812: Text und Register, hrsg. von Edith Zehm, Sebastian Mangold und Ariane Ludwig, Stuttgart und Weimar 2008.</f:reference>
@@ -1390,6 +1400,16 @@
     <f:bib uri="faust://bibliography/gt_4_2">
         <f:citation>GT 4,2</f:citation>
         <f:reference>Goethe, Johann Wolfgang: Tagebücher. Historische-kritische Ausgabe, Bd. 4,2: Kommentar, hrsg. von Edith Zehm, Sebastian Mangold und Ariane Ludwig, Stuttgart und Weimar 2008.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/ja_13">
+        <f:citation>JA 13</f:citation>
+        <f:reference>Goethes Sämtliche Werke. Jubiläums-Ausgabe, Bd. 13: Faust. Mit Einleitungen und Anmerkungen von Erich Schmidt. Erster Teil, Stuttgart, Berlin o.J. [1903].</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/ja_14">
+        <f:citation>JA 14</f:citation>
+        <f:reference>Goethes Sämtliche Werke. Jubiläums-Ausgabe. Bd. 14: Faust. Mit Einleitungen und Anmerkungen von Erich Schmidt. Zweiter Teil, Stuttgart, Berlin o.J.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/ma_18_1">
@@ -1402,9 +1422,34 @@
         <f:reference>Goethe, Johann Wolfgang: Sämtliche Werke. Briefe, Tagebücher und Gespräche. Vierzig Bände, hrsg. von Friedmar Apel u.a. I. Abteilung, Bde. 7/1: Faust. Texte und 7/2: Faust. Kommentare, hrsg. von Albrecht Schöne, Frankfurt am Main 1994. </f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/schoene1999">
+        <f:citation>Schöne 1999</f:citation>
+        <f:reference>Goethe, Johann Wolfgang: Faust, hrsg. von Albrecht Schöne, 2 Bde., 4. Aufl. Frankfurt am Main 1999. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/schoene2003">
+        <f:citation>Schöne 2003</f:citation>
+        <f:reference>Goethe, Johann Wolfgang: Faust, hrsg. von Albrecht Schöne, 2 Bde., 5. Aufl., Frankfurt am Main 2003.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/schoene2005">
         <f:citation>Schöne 2005</f:citation>
         <f:reference>Goethe, Johann Wolfgang: Faust, hrsg. von Albrecht Schöne, 2 Bde., 6., revidierte Auflage, Frankfurt am Main 2005. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wga_12">
+        <f:citation>WGA 12 (1932)</f:citation>
+        <f:reference>Welt-Goethe-Ausgabe, Band 12, hrsg. von Max Hecker, Mainz 1932.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wga_13">
+        <f:citation>WGA 13 (1932)</f:citation>
+        <f:reference>Welt-Goethe-Ausgabe, Band 13, hrsg. von Max Hecker, Mainz 1932.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wga_13_1937">
+        <f:citation>WGA 13 (1937)</f:citation>
+        <f:reference>Welt-Goethe-Ausgabe, Band 13, hrsg. von Max Hecker, Mainz 1937.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/q_1_2">
@@ -1412,14 +1457,34 @@
         <f:reference>Goethe’s poetische und prosaische Werke in Zwei Bänden, Bd. 1, Abt. 2, Stuttgart und Tübingen 1837.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/braunschweiger1987">
+        <f:citation>Braunschweiger 1987</f:citation>
+        <f:reference>Johann Wolfgang Goethe, Urfaust. Goethes „Faust“ in ursprünglicher Gestalt, mit einem Nachwort v. Robert Petsch, neu durchgesehen [von Horst Braunschweiger], Stuttgart 1987 (Reclams Universal-Bibliothek Nr. 5273).</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/graef1922">
         <f:citation>Gräf 1922</f:citation>
         <f:reference>Goethes Faust. Textrevision von Hans Gerhard Gräf, Leipzig [ca. 1922].</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/hecker1941">
+        <f:citation>Hecker 1941 </f:citation>
+        <f:reference>Goethes Faust. Gesamtausgabe. Neue, von Max Hecker unter Mitw. d. Insel-Verlags gestaltete Ausgabe, Leipzig 1941.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/holland1882">
+        <f:citation>Holland 1882</f:citation>
+        <f:reference>Goethes Faust ein Fragment in der ursprünglichen Gestalt neu herausgegeben von Wilhelm Ludwig Holland, Freiburg i. Br., Tübingen 1882.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/keller1985">
         <f:citation>Keller 1985</f:citation>
         <f:reference>Johann Wolfgang von Goethe, Urfaust – Faust. Ein Fragment – Faust. Eine Tragödie. Paralleldruck der drei Fassungen, hrsg. von Werner Keller, 2 Bde., 5. Aufl., Frankfurt am Main 1985 (= Insel Taschenbuch 625). </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/oettingen1915">
+        <f:citation>Oettingen 1915 </f:citation>
+        <f:reference>Wolfgang von Oettingen, Vorwort zum achten Abdruck. In: faust://bibliography/schmidt1915, S. LXXIXf.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schmidt1887">
@@ -1432,9 +1497,19 @@
         <f:reference>Goethes Faust in ursprünglicher Gestalt nach der Göchhausenschen Abschrift hrsg. von Erich Schmidt, 3. Abdruck mit sehr erweiterter Einleitung, Weimar 1894.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/schmidt1915">
+        <f:citation>Schmidt 1915</f:citation>
+        <f:reference>Goethes Faust in ursprünglicher Gestalt nach der Göchhausenschen Abschrift hrsg. von Erich Schmidt, 8. Abdruck, Weimar 1915.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/schroeer1881">
         <f:citation>Schröer 1881</f:citation>
         <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer (1. Aufl.), 2 Bde., Heilbronn 1881.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/schroeer1886">
+        <f:citation>Schröer 1886</f:citation>
+        <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer (2. Aufl.), 2 Bde., Heilbronn 1886.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schroeer1914">
@@ -1447,13 +1522,18 @@
         <f:reference>Faust. Ein Fragment von Goethe, hrsg. von Bernhard Seuffert, Heilbronn 1882 (= Deutsche Litteraturdenkmale des 18. Jahrhunderts in Neudrucken 5).</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/strehlke1891">
+        <f:citation>Strehlke 1891</f:citation>
+        <f:reference>Paralipomena zu Goethes Faust. Entwürfe, Skizzen, Vorarbeiten und Fragmente geordnet und erläutert von Fr[iedrich] Strehlke, Stuttgart, Leipzig, Berlin, Wien 1891.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/witkowski1906">
         <f:citation>Witkowski 1906</f:citation>
         <f:reference>Goethes Faust, hrsg. von Georg Witkowski, Erster Band: Der Tragödie erster und zweiter Teil; Urfaust; Entwürfe und Skizzen, Leipzig 1906.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/witkowski1936">
-        <f:citation>Witkowski 1936</f:citation>
+        <f:citation>Witkowski 1936, Bd. 1</f:citation>
         <f:reference>Goethes Faust, hrsg. von Georg Witkowski, 9. Aufl., Bd. 1, Leiden 1936.</f:reference>
     </f:bib>
 
@@ -1552,6 +1632,11 @@
         <f:reference>Friedrich Arnold Brockhaus. Sein Leben und Wirken nach Briefen und Aufzeichnungen geschildert von seinem Enkel Heinrich Eduard Brockhaus. 3 Theile, Th. 1. Leipzig 1872.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/burkhardt1870">
+        <f:citation>Burkhardt 1870</f:citation>
+        <f:reference>Goethes Unterhaltungen mit dem Kanzler Friedrich v. Müller, hg. v. C.A.H. Burkhardt, Stuttgart 1870.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/burkhardt1899">
         <f:citation>Burkhardt 1899</f:citation>
         <f:reference>Carl August Hugo Burkhardt: Zur Kentniß der Goethe-Handschriften. II. Chronologisches Verzeihnis der Dictat-Arbeiten und und Reinschriften. Nach den Quellen bearbeitet [...], mit Faksimiles Goethescher Hilfsarbeiter. Wien 1899. (= Beilage zum XIV. Bande der „Chronik des Wiener Goethe-Vereins“, Nr. 7-8.) <strong>TODO Autopsie nötig</strong></f:reference>
@@ -1560,6 +1645,11 @@
     <f:bib uri="faust://bibliography/carus1843">
         <f:citation>Carus 1843</f:citation>
         <f:reference>Carus, Carl Gustav: Göthe. Zu dessen näherem Verständniss. Beigegeben ist eine Reihe bisher ungedruckter Briefe Göthe's an den Herausgeber. Leipzig 1843.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/chevreux1875_1">
+        <f:citation>Chevreux 1875, Bd. 1 </f:citation>
+        <f:reference>Ampère, André-Marie und Jean-Jacques: Correspondance et souvenirs (de 1805 à 1864). Hrsg. von Henriette Chevreux. 2 Bde., Bd. 1, Paris: Hetzel 1875.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/cohn1889">
@@ -1635,6 +1725,11 @@
     <f:bib uri="faust://bibliography/duentzer1858">
         <f:citation>Düntzer 1858</f:citation>
         <f:reference>Aus Karl Ludwig von Knebels Briefwechsel mit seiner Schwester Henriette (1774-1813). Ein Beitrag zur deutschen Hof- und Litteraturgeschichte. Hrsg. von Heinrich Düntzer. Jena 1858.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/duentzer1874_2">
+        <f:citation>Düntzer 1874, Bd. 2</f:citation>
+        <f:reference>Heinrich Düntzer: Charlotte von Stein: Charlotte von Stein, Goethes Freundin. Bd. 2. Stuttgart 1874.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1882">
@@ -1763,7 +1858,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/granville">
-        <f:citation>Granville 1828 ‘’’ändern zu: Granville 1828, Bd. 2’’’</f:citation>
+        <f:citation>Granville 1828 <strong>ändern zu: Granville 1828, Bd. 2</strong></f:citation>
         <f:reference>Granville, Augustus Bozzi: St. Petersburgh. A Journal of Travels to and from that Capital, through Flanders, Prussia, Russia, Poland, Silesia, Saxony, &amp;c. &amp;c. 2 Bde., London 1828.</f:reference>
     </f:bib>
 
@@ -1777,13 +1872,18 @@
         <f:reference>Briefwechsel zwischen Goethe und Knebel (1774-1832). Vorrede von G. E. Guhrauer. 2 Bde, Bd. 2. Leipzig 1851.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/harding_2_1920">
+        <f:citation>Harding 1920, Bd. 2</f:citation>
+        <f:reference>Correspondance de H.C. Örsted. Avec divers Savants, 2 Bde., Bd. 2, hrsg. M[arius] C[hristian] Harding. Kopenhagen 1920. </f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/harnack1890">
         <f:citation>Harnack 1890</f:citation>
         <f:reference>Zur Nachgeschichte der italienischen Reise. Goethes Briefwechsel mit Freunden und Kunstgenossen in Italien 1788-1790. Hrsg. Otto Harnack. Weimar 1890. (= Schriften der Goethe-Gesellschaft; 5.)</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hegel1887_2">
-        <f:citation>Hegel ^887, Bd. 2</f:citation>
+        <f:citation>Hegel 1887, Bd. 2</f:citation>
         <f:reference>Briefe von und an Hegel, hrsg. von Karl Hegel, 2 Thle., Theil 2. Leipzig 1887. (= Georg Wilhelm Friedrich Hegel's Werke. Vollständige Ausgabe durch einen Verein von Freunden des Verewigten; Bd.19.1-2.) </f:reference>
     </f:bib>
 
@@ -1814,7 +1914,7 @@
 
     <f:bib uri="faust://bibliography/houben1948">
         <f:citation>Houben 1948</f:citation>
-        <f:reference>Eckermann, Johann Peter:  Gespräche mit Goethe in den letzten Jahren seines Lebens. 23. Originalaufage. Nach dem ersten Drucke, dem Originalsmanuskript des dritten Teils und Eckermanns handschrifdtlichem Nachlaß neu hrsg. von H[einrich] H[ubert] Houben, Leipzig 1948. </f:reference>
+        <f:reference>Eckermann, Johann Peter:  Gespräche mit Goethe in den letzten Jahren seines Lebens. 23. Originalaufage. Nach dem ersten Drucke, dem Originalsmanuskript des dritten Teils und Eckermanns handschrifdtlichem Nachlaß neu hrsg. von H[einrich] H[ubert] Houben, Leipzig 1948.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/jacobi1846">
@@ -1913,8 +2013,18 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1879">
-        <f:citation>Loeper 1879a  ‘‘derzeit noch Loeper 1879‘‘‘</f:citation>
+        <f:citation>Loeper 1879</f:citation>
+        <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G[ustav] von Loeper. Zweite Bearbeitung. Theil 1. 2. Berlin, 1879.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/loeper1879">
+        <f:citation>Loeper 1879a  <strong>derzeit noch Loeper 1879</strong></f:citation>
         <f:reference>Goethe, Johann Wolfgang von: Briefe an Sophie von La Roche und Bettina Brentano nebst dichterischer Beilagen hrsg. von Gustav von Loeper. Berlin 1879.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/luden1847">
+        <f:citation>Luden 1847</f:citation>
+        <f:reference>Rückblicke in mein Leben. Aus dem Nachlasse von Heinrich Luden. Jena 1847.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/manning1896">
@@ -1949,7 +2059,7 @@
 
     <f:bib uri="faust://bibliography/nerval1828">
         <f:citation>Nerval 1828</f:citation>
-        <f:reference>Goethe, Johann Wolfgang : Faust. Tragédie Goëthe. Nouvelle trad. complete en prose et en vers par Gérard de Nerval. Paris 1828.</f:reference>
+        <f:reference>Goethe, Johann Wolfgang: Faust. Tragédie. Nouvelle traduction complète en prose et en vers par Gérard de Nerval. Paris 1828.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/oldenberg1887">
@@ -2042,6 +2152,11 @@
         <f:reference>Goethe und Österreich. Bd. I. Hrsg. von August Sauer. Weimar 1902 (= Schriften der Goethe-Gesellschaft, Bd. 17).</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/schmid1989">
+        <f:citation>Schmid 1989</f:citation>
+        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 1, Schillerbestand. Hrsg. v. der Stiftung Weimarer Klassik, Goethe- und Schiller-Archiv. Redaktor Gerhard Schmid. Weimar 1989.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/schmidt1892">
         <f:citation>Schmidt 1892</f:citation>
         <f:reference>Schmidt, Erich: Ein verschollener Aufsatz A. W. Schlegels über Goethes 'Triumph der Empfindsamkeit'. In: Festschrift zur Begrüßung des Fünften Allgemeinen Deutschen Neuphilologentages zu Berlin Pfingsten 1892. Hrsg. v. Julius Zupitzka. Berlin 1892, S. 77-92.</f:reference>
@@ -2067,6 +2182,16 @@
         <f:reference>Schöll, Adolf: Ein Brief des Hauptmanns Karl Ludwig von Knebel an den Geheimsecretär Friedr. Joh. Justin Bertuch in Weimar. Mit Anmerkungen. In: Deutsche Rundschau 12 (1877), S. 517-520.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/schorn1911-1912_1">
+        <f:citation>Schorn 1911-1912, Bd. 1</f:citation>
+        <f:reference>Schorn, Adelheid von: Das nachklassische Weimar. 2 Bde., Bd. 1. Weimar 1911/1912.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/schroeer1896">
+        <f:citation>Schröer 1896</f:citation>
+        <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer. Theil 1, vierte, durchaus revidierte Auflage. Leipzig 1896.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/schroeer1898">
         <f:citation>Schröer 1898</f:citation>
         <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer. Theil 2, dritte, durchaus revidierte Auflage. Leipzig 1898.</f:reference>
@@ -2087,9 +2212,24 @@
         <f:reference>Siebs, Theodor: Hermann Allmers. Sein Leben und Dichten mit Benutzung seines Nachlasses dargestellt. Berlin 1915.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/solger1882">
+        <f:citation>Solger 1882</f:citation>
+        <f:reference>Solger, Karoline: Briefe von Heinrich Voss an Karl Solger. In: Archiv für Litteraturgeschichte 11 (1882), S. 94-141, hier S. 113f.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/steig1904">
+        <f:citation>Steig 1904</f:citation>
+        <f:reference>Achim von Arnim und und die ihm nahestanden. Bd. 3: Achim von Arnim und Jacob und Wilhelm Grimm. Hrsg. von Reinhold Steig. Berlin 1904.  </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/steig1912">
+        <f:citation>Steig 1912</f:citation>
+        <f:reference>Reinhold Steig: Daniel Engelhard, der Architekt der Wahlverwandtschaften In: Jahrbuch des freien deutschen Hochstifts 1912, S.285-331.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/strehlke1882-1884_1">
         <f:citation>Strehlke 1882-1884, Bd. 1</f:citation>
-        <f:reference>Goethe's Briefe. Verzeichniß unter Angabe von Quelle, Ort, Datum und Anfangsworten [...] Hrsg. von Friedrich Strehlke. 3 Theile, Theil 1. Berlin 1882-1884.</f:reference>
+        <f:reference>Goethe's Briefe. Verzeichniß unter Angabe von Quelle, Ort, Datum und Anfangsworten [...]. Hrsg. von Friedrich Strehlke. 3 Theile, Theil 1. Berlin 1882-1884.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/strodtmann1874_1">
@@ -2105,6 +2245,16 @@
     <f:bib uri="faust://bibliography/sydow1906-1916_3">
         <f:citation>Sydow 1906-1907, Bd. 3</f:citation>
         <f:reference>Wilhelm und Caroline von Humboldt in ihren Briefen. Hrsg. von Anna von Sydow. 7 Bde., Bd. 3. Berlin 1906-1916.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/tewes1901">
+        <f:citation>Tewes 1901</f:citation>
+        <f:reference>Goethes Faust am Hofe des Kaisers. In 3 Akten für die Bühne eingerichtet von J. P. Eckermann. Hrsg. von Friedrich Tewes. Berlin 1901.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/tewes1905">
+        <f:citation>Tewes 1905</f:citation>
+        <f:reference>Aus Goethes Lebenskreise. J.P. Eckermanns Nachlaß. Hrsg. von Friedrich Tewes. Bd. 1. Berlin: Reimer 1905. [mehr nicht erschienen]</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/ticknor1876_1">
@@ -2147,6 +2297,11 @@
         <f:reference>Briefe aus dem Freundeskreise von Goethe, Herder, Höpfner und Merck. Eine selbständige Folge der beiden in den Jahren 1835 und 1838 erschienen Merckischen Briefsammlungen. Aus den Handschriften hrsg. von Dr. Karl Wagner. Darmstadt 1847.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/waitz1871">
+        <f:citation>Waitz 1871</f:citation>
+        <f:reference>Schelling, Caroline von: Briefe an ihre Geschwister, ihre Tochter Auguste, die Familie Gotter, F. L. W. Meyer, A. W. u. Fr. Schlegel, J. Schelling u.a. Nebst Briefen v. A. W. u. Fr. Schlegel u.a. Hrsg. von Georg Waitz. Leipzig: Hirzel 1871.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/walzel1890">
         <f:citation>Walzel 1890</f:citation>
         <f:reference>Friedrich Schlegels Briefe an seinen Bruder August Wilhelm. Hrsg. von Oskar F. Walzel. Berlin 1890.</f:reference>
@@ -2155,6 +2310,11 @@
     <f:bib uri="faust://bibliography/weinhold1868">
         <f:citation>Weinhold 1868</f:citation>
         <f:reference>Karl Weinhold: Heinrich Christian Boie. Beitrag zur Geschichte der deutschen Literatur im 18. Jahrhundert. Halle: Verlag der Buchhandlung des Waisenhauses, 1868. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/werner1902">
+        <f:citation>Werner 1902</f:citation>
+        <f:reference>Werner, Richard Maria: Ein Besuch bei Goethe. In: Euphorion 9 (1902), S. 338-341.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wieland1776">

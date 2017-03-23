@@ -1517,7 +1517,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 69 [2 III H40]</field>
+    <field label="Druckort">WA I, 15 (2), 69 </field>
   </testimony>
   <testimony id="pniower_85">
     <field label="Gräf"/>
@@ -4135,7 +4135,7 @@
     <field label="Quellengattung">Brief</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Johann Friedrich von Cotta</field>
-    <field label="Druckort">WA IV, 20, 10</field>
+    <field label="Druckort">QuZ I, 437</field>
   </testimony>
   <testimony id="quz_I-1019">
     <field label="Gräf"/>
@@ -6929,7 +6929,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat">Adressat unbekannt</field>
-    <field label="Druckort">WA I, 15 (2), 69 [2 III H39]</field>
+    <field label="Druckort">WA I, 15 (2), 69</field>
   </testimony>
   <testimony id="graef_1273">
     <field label="Gräf">1273</field>
@@ -6960,7 +6960,7 @@
     <field label="Bie3"/>
     <field label="Datum">10.01.1825</field>
     <field label="Quellengattung">Gespräch</field>
-    <field label="Verfasser">Johannes Peter Eckermann</field>
+    <field label="Verfasser">Johann Peter Eckermann</field>
     <field label="Adressat"/>
     <field label="Druckort">Biedermann (1), Bd. 5, S. 125f</field>
   </testimony>
@@ -7171,7 +7171,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 69 [2 III H31]</field>
+    <field label="Druckort">WA I, 15 (2), 69</field>
   </testimony>
   <testimony id="graef_1289">
     <field label="Gräf">1289</field>
@@ -7204,7 +7204,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 148 [2 V H15]</field>
+    <field label="Druckort">WA I, 15 (2), 148</field>
   </testimony>
   <testimony id="graef_1291">
     <field label="Gräf">1291</field>
@@ -7358,7 +7358,7 @@
     <field label="Quellengattung">Paralipomenon</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 219f</field>
+    <field label="Druckort">WA I, 15 (2), 220f</field>
   </testimony>
   <testimony id="graef_1304">
     <field label="Gräf">1304</field>
@@ -7963,7 +7963,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 70 [2 III H46]</field>
+    <field label="Druckort">WA I, 15 (2), 70</field>
   </testimony>
   <testimony id="bie3_5817">
     <field label="Gräf"/>
@@ -7996,7 +7996,7 @@
     <field label="Quellengattung">Tagebuch</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA III, 10 180</field>
+    <field label="Druckort">WA III, 10, 180</field>
   </testimony>
   <testimony id="graef_1345">
     <field label="Gräf">1345</field>
@@ -9580,7 +9580,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 71 [2 III H73]</field>
+    <field label="Druckort">WA I, 15 (2), 71</field>
   </testimony>
   <testimony id="graef_1461">
     <field label="Gräf">1461</field>
@@ -10471,7 +10471,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 37 [2 II H1]</field>
+    <field label="Druckort">WA I, 15 (2), 37</field>
   </testimony>
   <testimony id="graef_1523">
     <field label="Gräf">1523</field>
@@ -11076,7 +11076,7 @@
     <field label="Quellengattung">Text</field>
     <field label="Verfasser">Johann Wolfgang Goethe</field>
     <field label="Adressat"/>
-    <field label="Druckort">WA I, 15 (2), 10 [2 I H11]</field>
+    <field label="Druckort">WA I, 15 (2), 10</field>
   </testimony>
   <testimony id="quz_II-1199">
     <field label="Gräf"/>
@@ -12550,7 +12550,7 @@
     <field label="Quellengattung">Gespräch</field>
     <field label="Verfasser">Johann Karl August von La Roche</field>
     <field label="Adressat"/>
-    <field label="Druckort">K.J. Schröer, hg., Faust, 1. Theil, 2. Aufl., Heilbronn 1886, XCVf</field>
+    <field label="Druckort">Schröer 1886, Bd. 1, S. XCVf</field>
   </testimony>
   <testimony id="bie3_6681">
     <field label="Gräf"/>
@@ -12561,7 +12561,7 @@
     <field label="Quellengattung">Gespräch</field>
     <field label="Verfasser">Joseph Karl August von La Roche</field>
     <field label="Adressat"/>
-    <field label="Druckort">K.J. Schröer, hg., Faust, 1. Theil, 2. Aufl., Heilbronn 1886, XCVIIff</field>
+    <field label="Druckort">Schröer 1886, Bd. 1, S. XCVIIff</field>
   </testimony>
   <testimony id="graef_1676">
     <field label="Gräf">1676</field>
