@@ -123,7 +123,7 @@
 	<xsl:template match="*[f:hasvars(.)]" priority="1">
 		<xsl:param name="group" as="node()*"/>
 		<div class="{string-join(f:generic-classes(.), ' ')}" 
-			data-n="{@n}" data-source="{@f:doc}">
+			data-n="{@n}" data-source="{string-join(current-group()/@f:doc, ' ')}">
 			<xsl:call-template name="generate-style"/>
 			
 			<!-- first format the line's content ... -->
