@@ -91,7 +91,7 @@ The document is passed through the following steps:
 
 1. [textTranscr_pre_transpose.xsl](textTranscr_pre_transpose.xsl) normalizes references inside `ge:transpose` 
 2. [textTranscr_transpose.xsl](textTranscr_transpose.xsl) applies transpositions
-3. [emend-core.xsl](emend-core.xsl) (previous name: textTranscr_fuer_Drucke.xsl) applies genetic markup (`del`, `corr` etc.), performs character normalizations and a set of other normalizations. This also includes the rules for [harmonize-antilabes.xsl](harmonize-antilabes.xsl), which transforms the antilabe encoding that are in the the _join_ form to the _part_ form so we only have to deal with one form in the further processing.
+3. [emend-core.xsl](xslt/emend-core.xsl) (previous name: textTranscr_fuer_Drucke.xsl) applies genetic markup (`del`, `corr` etc.), performs character normalizations and a set of other normalizations. This also includes the rules for [harmonize-antilabes.xsl](harmonize-antilabes.xsl), which transforms the antilabe encoding that are in the the _join_ form to the _part_ form so we only have to deal with one form in the further processing.
 4. [text-emend.xsl](text-emend.xsl) applies genetic markup that is using `spanTo` etc. **Attention**, this step will _remove text_ if you include `delSpan` elements that point to a non-existing anchor. The script will print a warning if it detects such a case.
 5. [clean-up.xsl](clean-up.xsl) removes TEI containers that are empty after the steps above.
 6. [prose-to-lines.xsl](prose-to-lines.xsl) transforms the `<p>`-based markup in _Trüber Tag. Feld._ to a `<lg>/<l>` based markup as in the verse parts to ease collation.
