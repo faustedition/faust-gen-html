@@ -265,6 +265,11 @@
 	</xsl:template>
 	<xsl:template match="/*/metadata">
 		<h2><xsl:value-of select="idno[@type='faustedition'][1]"/></h2>
+		<xsl:if test="classification and classification != ('n.s.', 'none', '')">
+			<h3 class="md-classification">
+				<xsl:value-of select="classification"/>
+			</h3>			
+		</xsl:if>
 		<h3 class="md-headNote">
 			<xsl:value-of select="headNote"/>
 		</h3>
@@ -273,7 +278,7 @@
 		</p>
 		<dl>
 			<xsl:apply-templates select="* 
-				except (idno[@type=('faustedition', 'wa_faust')][1] | headNote | headNote/following-sibling::*[1][self::note])"/>
+				except (idno[@type=('faustedition', 'wa_faust')][1] | headNote | headNote/following-sibling::*[1][self::note] | classification)"/>
 		</dl>
 	</xsl:template>
 	
