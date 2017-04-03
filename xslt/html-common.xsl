@@ -248,7 +248,7 @@
 	<xsl:template match="supplied">
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="with" select="'[',']'"/>
-			<xsl:with-param name="title">editorisch ergänzt</xsl:with-param>
+			<xsl:with-param name="title">editorisch erschlossen</xsl:with-param>
 			<xsl:with-param name="classes" select="f:generic-classes(.), 'appnote'"></xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
