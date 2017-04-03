@@ -32,7 +32,7 @@
         
 
 
-    <l:recursive-directory-list>
+    <l:recursive-directory-list name="list">
       <p:with-option name="path" select="concat($source, '/document')"/>
     </l:recursive-directory-list>
 
@@ -85,7 +85,97 @@
       </p:xslt>      
     </p:for-each>
     
-    <p:identity name="metadata-citations"/>
+    <p:identity name="converted-metadata"/>
+    
+    <p:identity>
+      <p:input port="source"><p:pipe port="result" step="list"></p:pipe></p:input>
+    </p:identity>
+    
+    <p:for-each name="list-headnotes">
+      <p:iteration-source select="//c:file[$debug or not(ends-with(@name, 'test.xml'))]"/>
+      <p:variable name="filename" select="p:resolve-uri(/c:file/@name)"/>      
+      
+      <p:load>
+        <p:with-option name="href" select="$filename"/>
+      </p:load>
+      
+      <p:xslt>
+        <p:input port="stylesheet">
+          <p:inline>
+            <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns="http://www.w3.org/1999/xhtml">
+              <xsl:import href="xslt/bibliography.xsl"/>
+              <xsl:template match="/">                
+                <xsl:for-each select="(//f:metadata)[1]">
+                  <xsl:variable name="sigil" select="f:idno[@type='faustedition']"/>
+                  <xsl:variable name="sigil_n" select="replace(lower-case($sigil), '[ .*]', '')"/>
+                  <div data-sigil="{$sigil}">                                    
+                    <h3 class="sigil"><xsl:value-of select="f:idno[@type='faustedition']"/>
+                    <span class="headnote"><xsl:value-of select="f:headNote"/></span>
+                    <a id="{$sigil_n}" href="#{$sigil_n}">§</a>
+                    </h3>
+                    <p class="first-note"><xsl:for-each select="f:headNote/following-sibling::f:note[1]">
+                      <xsl:call-template name="parse-for-bib"/>
+                    </xsl:for-each></p>
+                  </div>                  
+                </xsl:for-each>
+              </xsl:template>
+            </xsl:stylesheet>
+          </p:inline>
+        </p:input>
+        <p:with-param name="builddir-resolved" select="$builddir"/>
+      </p:xslt>
+    </p:for-each>
+    
+    <p:wrap-sequence wrapper="f:doc" />     
+        
+    
+    <p:xslt>
+      <p:input port="stylesheet">
+        <p:inline>
+          <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns="http://www.w3.org/1999/xhtml" xpath-default-namespace="http://www.w3.org/1999/xhtml">
+            <xsl:import href="xslt/utils.xsl"/>
+            
+            <!--<xsl:import href="xslt/html-frame.xsl"/>-->
+            
+            <xsl:template match="/">             
+<!--              <xsl:call-template name="html-frame">
+                <xsl:with-param name="content">
+-->               
+              <html>
+                <head>
+                  <title>Die ersten notes nach der headNote</title>
+                  <style>
+                    .headnote {
+                      font-weight: normal;
+                      margin-left: 2em;
+                      color: gray;
+                    }
+                  </style>
+                </head>
+                <body>                  
+                  <xsl:for-each select="//div">
+                    <xsl:sort select="f:splitSigil(@data-sigil)[1]" stable="yes"/>
+                    <xsl:sort select="f:splitSigil(@data-sigil)[2]" data-type="number"/>
+                    <xsl:sort select="f:splitSigil(@data-sigil)[3]"/>   
+                    <xsl:copy-of select="."/>
+                  </xsl:for-each>                                 
+                </body>
+              </html>
+                <!--</xsl:with-param>
+              </xsl:call-template>-->
+            </xsl:template>
+          </xsl:stylesheet>
+        </p:inline>
+      </p:input>
+    </p:xslt>
+    
+    <p:store method="xhtml">
+      <p:with-option name="href" select="concat($metahtml, 'first-notes.html')"/>
+    </p:store>
+    
+    <p:identity name="metadata-citations">
+      <p:input port="source"><p:pipe port="result" step="converted-metadata"/></p:input>
+    </p:identity>
   
   </p:group>
   
