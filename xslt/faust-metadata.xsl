@@ -265,7 +265,7 @@
 	</xsl:template>
 	<xsl:template match="/*/metadata">
 		<h2><xsl:value-of select="idno[@type='faustedition'][1]"/></h2>
-		<xsl:if test="classification and classification != ('n.s.', 'none', '')">
+		<xsl:if test="classification and not(classification = ('n.s.', 'none', ''))">
 			<h3 class="md-classification">
 				<xsl:value-of select="classification"/>
 			</h3>			
