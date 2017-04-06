@@ -21,10 +21,7 @@
 		<head>
 			<meta charset="utf-8"/>
 
-			<script type="text/javascript" src="{$assets}/js/sortable.min.js"/>
-			<script type="text/javascript" src="{$assets}/js/faust_common.js"/>
-			<script type="text/javascript" src="{$assets}/js/faust_print_interaction.js"/>
-			
+			<script type="text/javascript" src="{$assets}/js/require.js"/>		
 
 			<link rel="stylesheet" href="{$assets}/css/document-text.css"/>
 			<link rel="stylesheet" href="{$assets}/css/document-transcript.css"/>
@@ -38,7 +35,13 @@
 			<link rel="stylesheet" href="{$assets}/css/pure-custom.css"/>
 			<link rel="stylesheet" href="{$assets}/css/basic_layout.css"/>
 			<link rel="stylesheet" href="{$assets}/css/textual-transcript.css"/>
-			<script><xsl:text>window.addEventListener("DOMContentLoaded", function(){addPrintInteraction("../");});</xsl:text></script>
+			<script><xsl:text>
+				requirejs(["/js/faust_common"], function(Faust) {
+					requirejs(["faust_print_interaction"], function(addPrintInteraction) {
+						window.addEventListener("DOMContentLoaded", function(){addPrintInteraction("../");});
+					});
+				});
+			</xsl:text></script>
 
 			<link rel="icon" type="image/png" href="/favicon-16x16.png"
 				sizes="16x16"/>
