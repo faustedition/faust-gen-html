@@ -17,6 +17,11 @@
   <xsl:include href="split.xsl"/>
   
   <xsl:param name="view">print</xsl:param>
+  <xsl:param name="scriptAdditions">
+    requirejs(['domReady', 'faust_print_interaction'], function(domReady, addPrintInteraction) {
+     domReady(function() { addPrintInteraction('/', undefined, '<xsl:value-of select="$documentURI"/>'); });
+    });
+  </xsl:param>
   
   
   <xsl:output method="xhtml" include-content-type="yes"/>

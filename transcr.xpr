@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="18.1">
+<project version="19.0">
     <meta>
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="18.1" xml:space="preserve">
+            <serialized version="19.0" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>enable.project.master.files.support</String>
@@ -3541,6 +3541,7 @@
         <folder masterFiles="true" name="Master Files">
             <file name="xslt/apparatus.xsl"/>
             <file name="xslt/print2html.xsl"/>
+            <file name="../../../../../../../var/www/faust-gen/src/main/xproc/xslt/print2html.xsl"/>
             <file name="xslt/testimony2html.xsl"/>
         </folder>
         <folder path="../../../../../../../var/www/faust-gen/data/xml/"/>

@@ -10,6 +10,7 @@
 	<xsl:param name="assets" select="$edition"/>
 	<xsl:param name="debug" select="false()"/>
 	<xsl:param name="headerAdditions"/>
+	<xsl:param name="scriptAdditions"/>
 	<xsl:param name="query" select="/f:results/@query"/>
 
 	<xsl:output method="xhtml" indent="yes" include-content-type="no"
@@ -18,6 +19,7 @@
 	<xsl:template name="html-head">
 		<xsl:param name="title" select="$title" tunnel="yes"/>
 		<xsl:param name="headerAdditions" select="$headerAdditions"/>
+		<xsl:param name="scriptAdditions" select="$scriptAdditions"/>
 		<head>
 			<meta charset="utf-8"/>
 
@@ -35,13 +37,11 @@
 			<link rel="stylesheet" href="{$assets}/css/pure-custom.css"/>
 			<link rel="stylesheet" href="{$assets}/css/basic_layout.css"/>
 			<link rel="stylesheet" href="{$assets}/css/textual-transcript.css"/>
-			<script><xsl:text>
+			<script>
 				requirejs(["/js/faust_common"], function(Faust) {
-					requirejs(["faust_print_interaction"], function(addPrintInteraction) {
-						window.addEventListener("DOMContentLoaded", function(){addPrintInteraction("../");});
-					});
+					<xsl:copy-of select="$scriptAdditions"/>
 				});
-			</xsl:text></script>
+			</script>
 
 			<link rel="icon" type="image/png" href="/favicon-16x16.png"
 				sizes="16x16"/>
