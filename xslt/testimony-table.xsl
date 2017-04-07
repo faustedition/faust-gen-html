@@ -39,10 +39,18 @@
 	<xsl:template name="start">
 		<xsl:call-template name="html-frame">
 			<xsl:with-param name="headerAdditions"><xsl:copy-of select="$extrastyle"/></xsl:with-param>
+			<xsl:with-param name="scriptAdditions">
+				requirejs(['sortable'], function(Sortable) {
+					domReady(function() {
+						document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Archiv", link: "archive"}, {caption: "Dokumente zur Entstehungsgeschichte"}]));
+						Sortable.initTable(document.getElementById('testimony-table'));
+					});						
+				});
+			</xsl:with-param>
 			<xsl:with-param name="content">
 				
 				<div id="testimony-table-container">
-					<table data-sortable='true' class='pure-table'>
+					<table data-sortable='true' class='pure-table' id="testimony-table">
 						<thead>
 							<tr>
 								<xsl:for-each select=".//testimony[1]/field/@label">
@@ -67,12 +75,6 @@
 						</tbody>
 					</table>
 				</div>
-				
-				<script type="text/javascript">
-					// set breadcrumbs
-					document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Archiv", link: "archive"}, {caption: "Dokumente zur Entstehungsgeschichte"}]));
-				</script>
-				
 				
 			</xsl:with-param>
 		</xsl:call-template>

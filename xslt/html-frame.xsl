@@ -39,7 +39,9 @@
 			<link rel="stylesheet" href="{$assets}/css/textual-transcript.css"/>
 			<script>
 				requirejs(["/js/faust_common"], function(Faust) {
+					requirejs(["domReady"], function(domReady) {
 					<xsl:copy-of select="$scriptAdditions"/>
+				  });
 				});
 			</script>
 
@@ -137,8 +139,12 @@
 			<xsl:apply-templates/>
 		</xsl:param>
 		<xsl:param name="headerAdditions" select="$headerAdditions"/>
+		<xsl:param name="scriptAdditions" select="$scriptAdditions"/>
 		<html>
-			<xsl:call-template name="html-head"><xsl:with-param name="headerAdditions" select="$headerAdditions"/></xsl:call-template>
+			<xsl:call-template name="html-head">
+				<xsl:with-param name="headerAdditions" select="$headerAdditions"/>
+				<xsl:with-param name="scriptAdditions" select="$scriptAdditions"/>
+			</xsl:call-template>
 			<body>
 				<xsl:call-template name="header"/>
 				<main class="nofooter">
