@@ -1137,9 +1137,49 @@
         <f:reference>WA, Abt. II, Bd. 13, Weimar 1904.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_III_1">
+        <f:citation>WA III 1</f:citation>
+        <f:reference>WA, Abt. III, Bd. 1, Weimar 1887.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_2">
+        <f:citation>WA III 2</f:citation>
+        <f:reference>WA, Abt. III, Bd. 2, Weimar 1888.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_3">
+        <f:citation>WA III 3</f:citation>
+        <f:reference>WA, Abt. III, Bd. 3, Weimar 1889.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_III_4">
         <f:citation>WA III 4</f:citation>
         <f:reference>WA, Abt. III, Bd. 4, Weimar 1891.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_5">
+        <f:citation>WA III 5</f:citation>
+        <f:reference>WA, Abt. III, Bd. 5, Weimar 1893.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_6">
+        <f:citation>WA III 6</f:citation>
+        <f:reference>WA, Abt. III, Bd. 6, Weimar 1894.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_7">
+        <f:citation>WA III 7</f:citation>
+        <f:reference>WA, Abt. III, Bd. 7, Weimar 1895.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_8">
+        <f:citation>WA III 8</f:citation>
+        <f:reference>WA, Abt. III, Bd. 8, Weimar 1896.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_9">
+        <f:citation>WA III 9</f:citation>
+        <f:reference>WA, Abt. III, Bd. 9, Weimar 1897.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_III_10">
@@ -1155,6 +1195,11 @@
     <f:bib uri="faust://bibliography/wa_III_12">
         <f:citation>WA III 12</f:citation>
         <f:reference>WA, Abt. III, Bd. 12, Weimar 1901.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_13">
+        <f:citation>WA III 13</f:citation>
+        <f:reference>WA, Abt. III, Bd. 13, Weimar 1903.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_IV_15">
@@ -1674,7 +1719,7 @@
 
     <f:bib uri="faust://bibliography/crueger1884">
         <f:citation>Crueger 1884</f:citation>
-        <f:reference>Johannes Crueger: Bodmer über Goethe. 1773-82. (Aus dem ungedruckten Nachlass Bodmers auf der Zürcher Stadtbibliothek). In: GJb 5 (1884), S. 177-216.</f:reference>
+        <f:reference>Crueger, Johannes: Bodmer über Goethe. 1773-82. (Aus dem ungedruckten Nachlass Bodmers auf der Zürcher Stadtbibliothek). In: faust://bibliography/gjb_5, S. 177-216.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/deetjen1928">
@@ -1782,6 +1827,11 @@
         <f:reference>Fischer, Kuno: Goethes Faust. 4., duchgesehen und vermehrte Auflage. Bd. 2: Entstehung, Idee und Composition des goetheschen Faust. Heidelberg [1902].</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/fluegel1903">
+        <f:citation>Flügel 1903</f:citation>
+        <f:reference>Flügel, Ewald (Hrsg.): Carlyle und Eckermann, in: faust://bibliography/gjb_24, S. 4–39.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/funck1901">
         <f:citation>Funck 1901</f:citation>
         <f:reference>Goethe und Lavater. Briefe und Tagebücher. Hrsg. von Heinrich Funck, Weimar 1901. (= Schriften der Goethe-Gesellschaft; 16).</f:reference>
@@ -1789,7 +1839,27 @@
 
     <f:bib uri="faust://bibliography/geiger1882">
         <f:citation>Geiger 1882</f:citation>
-        <f:reference>Geiger, Ludwig: Aus Bertuchs Nachlaß. In: GJb 2 (1882), S. 374–414.</f:reference>
+        <f:reference>Geiger, Ludwig: Aus Bertuchs Nachlaß. In: faust://bibliography/gjb_2, S. 374–414.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1889">
+        <f:citation>Geiger 1889</f:citation>
+        <f:reference>Geiger, Ludwig u.a.: Mittheilungen von Zeitgenossen über Goethe, 1774-1835, in: faust://bibliography/gjb_10, S. 139–166.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1890">
+        <f:citation>Geiger 1890</f:citation>
+        <f:reference>Geiger, Ludwig mit Beiträgen von Erich Schmidt und Stephan Wätzoldt: Bibliographie, in: faust://bibliography/gjb_11, S. 207–279.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1897">
+        <f:citation>Geiger 1897</f:citation>
+        <f:reference>Geiger, Ludwig: Mittheilungen von Zeitgenossen über Goethe 1772-1832, in: faust://bibliography/gjb_18, S. 113-160.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1900">
+        <f:citation>Geiger 1900</f:citation>
+        <f:reference>Geiger, Ludwig: Ein Gespräch mit Goethe, in: faust://bibliography/gjb_21, S. 284–287.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gleichen-russwurm1930">
@@ -1807,39 +1877,44 @@
         <f:reference>Goethe, Johann Wolfgang: Wilhelm Meisters Lehrjahre. Erster Band. 1794.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    <f:bib uri="faust://bibliography/geiger1882">
+        <f:citation>Geiger 1882</f:citation>
+        <f:reference>Geiger, Ludwig: Aus Bertuchs Nachlaß, in: faust://bibliography/gjb_2, S. 374–414.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    <f:bib uri="faust://bibliography/loeper1882">
+        <f:citation>Loeper 1882</f:citation>
+        <f:reference>Loeper, G. von: Aus Briefen von C. A. Vulpius in Weimar an Nic. Meyer in Bremen, in: faust://bibliography/gjb_2, S. 415-424.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    <f:bib uri="faust://bibliography/crueger1884">
+        <f:citation>Crueger 1884</f:citation>
+        <f:reference>Crueger, Johannes: Bodmer über Goethe. 1773-82. Aus dem ungedruckten Nachlass Bodmers auf der Zürcher Stadtbibliothek, in: faust://bibliography/gjb_5, S. 177–216.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    <f:bib uri="faust://bibliography/geiger1889">
+        <f:citation>Geiger 1889</f:citation>
+        <f:reference>Geiger, Ludwig u.a.: Mittheilungen von Zeitgenossen über Goethe, 1774-1835, in: faust://bibliography/gjb_10, S. 139–166.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    <f:bib uri="faust://bibliography/geiger1890">
+        <f:citation>Geiger 1890</f:citation>
+        <f:reference>Geiger, Ludwig mit Beiträgen von Erich Schmidt und Stephan Wätzoldt: Bibliographie, in: faust://bibliography/gjb_11, S. 207–279.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    <f:bib uri="faust://bibliography/Geiger1897">
+        <f:citation>Geiger 1897</f:citation>
+        <f:reference>Geiger, Ludwig: Mittheilungen von Zeitgenossen über Goethe 1772-1832, in: faust://bibliography/gjb_18, S. 113-160.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
+    <f:bib uri="faust://bibliography/geiger1900">
+        <f:citation>Geiger 1900</f:citation>
+        <f:reference>Geiger, Ludwig: Ein Gespräch mit Goethe, in: faust://bibliography/gjb_21, S. 284–287.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/fluegel1903">
+        <f:citation>Flügel 1903</f:citation>
+        <f:reference>Flügel, Ewald (Hrsg.): Carlyle und Eckermann, in: faust://bibliography/gjb_24, S. 4–39.&lt;/s></f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/n_3">
@@ -2020,6 +2095,11 @@
     <f:bib uri="faust://bibliography/loeper1879">
         <f:citation>Loeper 1879a  <strong>derzeit noch Loeper 1879</strong></f:citation>
         <f:reference>Goethe, Johann Wolfgang von: Briefe an Sophie von La Roche und Bettina Brentano nebst dichterischer Beilagen hrsg. von Gustav von Loeper. Berlin 1879.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/loeper1882">
+        <f:citation>Loeper 1882</f:citation>
+        <f:reference>Loeper, G. von: Aus Briefen von C. A. Vulpius in Weimar an Nic. Meyer in Bremen, in: faust://bibliography/gjb_2, S. 415-424.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/luden1847">
