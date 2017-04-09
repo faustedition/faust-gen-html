@@ -76,7 +76,7 @@
 			<j:object name="sigils">
 				<!-- Yes, these aren't all real sigils ... -->
 				<j:string name="headNote" value="{metadata/headNote}"/>
-				
+				<j:string name="classification" value="{if (metadata/classification = ('n.s.', 'none', '')) then '' else metadata/classification}"/>				
 				<xsl:if test="metadata/subrepository">
 					<j:string name="subRepository" value="{metadata/subRepository}"/>			
 				</xsl:if>
