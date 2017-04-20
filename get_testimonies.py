@@ -160,7 +160,7 @@ def main():
         df = read_testimonies(fetch_table())
     # write_html("src/main/web/archive_testimonies.php", html_table(df))
     xml = to_xml(df)
-    xml.write('src/main/xproc/xslt/testimony-table.xml',
+    xml.write('xslt/testimony-table.xml',
               encoding='utf-8',
               xml_declaration=True,
               pretty_print=True)
