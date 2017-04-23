@@ -69,7 +69,7 @@
 	
 	<xsl:template match="del[@f:revType='instant']" priority="1">
 		<xsl:call-template name="app">
-			<xsl:with-param name="braces" select="('⟨', ' &gt;⟩')"/>
+			<xsl:with-param name="braces" select="('〈', ' &gt;〉')"/>
 			<xsl:with-param name="app">
 				<xsl:call-template name="del-instant-body"/>
 			</xsl:with-param>
@@ -121,7 +121,7 @@
      			<add>zweifache</add>
   			  </subst> Ersetzung.
   		
-  		should be contracted to »Eine simple ⟨: einfache : zweifache ⟩ Ersetzung«. 
+  		should be contracted to »Eine simple 〈: einfache : zweifache 〉 Ersetzung«. 
   		
   		However, this is only applicable if the inner <subst> is the only non-whitespace child of the outer del. 
 
@@ -326,7 +326,7 @@ in <xsl:value-of select="document-uri(/)"/>
 			<xsl:call-template name="highlight-group">
 				<xsl:with-param name="others" select="id($id)"/>
 			</xsl:call-template>
-			<span class="generated-text">⟨</span>
+			<span class="generated-text">〈</span>
 		</span>
 	</xsl:template>
 	<xsl:key name="addSpan" match="addSpan[@spanTo]" use="substring(@spanTo, 2)"/>
@@ -338,7 +338,7 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:call-template name="app">
 			<xsl:with-param name="also-highlight" select="$source"/>
 			<xsl:with-param name="context" select="$source"/>
-			<xsl:with-param name="braces" select="('', '⟩')"/>
+			<xsl:with-param name="braces" select="('', '〉')"/>
 			<xsl:with-param name="label">erg</xsl:with-param>
 		</xsl:call-template>
 		<xsl:if test="key('delSpan', @xml:id)">
@@ -378,7 +378,7 @@ in <xsl:value-of select="document-uri(/)"/>
 				then concat('umst', if ($undone) then ' rückg' else '')
 				else ''"/>
 			<xsl:with-param name="context" select="if ($last) then $transpose else ()"/>
-			<xsl:with-param name="braces" select="if ($last) then ('⟨', '⟩') else ('','')"/>
+			<xsl:with-param name="braces" select="if ($last) then ('〈', '〉') else ('','')"/>
 			<xsl:with-param name="title" select="concat('Vertauscht mit »', f:totext($replacement), '«', if ($undone) then ' (rückgängig gemacht)' else ())"/>
 			<xsl:with-param name="also-highlight" select="//*[@xml:id and key('transpose', @xml:id)/.. is $transpose]"/>
 		</xsl:call-template>		
@@ -413,11 +413,11 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:param name="affected"/>
 		<!-- Class additional to affected for the content from $affected. Token(s) -->
 		<xsl:param name="affected-class"/>
-		<!-- Text that appears  immediately before the ⟨, in generated-text style -->
+		<!-- Text that appears  immediately before the 〈, in generated-text style -->
 		<xsl:param name="prebracket"/>
-		<!-- Apparatus text to be inserted after the ⟨, before the $app -->
+		<!-- Apparatus text to be inserted after the 〈, before the $app -->
 		<xsl:param name="pre"/>
-		<!-- Content that appears inside the ⟨⟩. original TEI, possibly mixed with XHTML -->
+		<!-- Content that appears inside the 〈〉. original TEI, possibly mixed with XHTML -->
 		<xsl:param name="app"/>
 		<!-- This is the element from which we get f:proposed etc. -->
 		<xsl:param name="context" select="."/>
@@ -429,7 +429,7 @@ in <xsl:value-of select="document-uri(/)"/>
 		     stuff found automatically via ge:stage, will be highlighted together with this apparatus element. -->
 		<xsl:param name="also-highlight" as="element()*"/>
 		<!-- opening and closing apparatus brace. Customization only for special cases … -->
-		<xsl:param name="braces" select="('⟨', '⟩')"/>
+		<xsl:param name="braces" select="('〈', '〉')"/>
 		
 		<xsl:variable name="real-title">
 			<xsl:value-of select="$title"/>

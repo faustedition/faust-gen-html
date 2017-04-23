@@ -134,7 +134,7 @@ To find out which page is where, we generate an index that maps faust:// URIs an
 There is experimental code to generate an _Einblendungsapparat_ as well. This
 kind of apparatus is based on the first level of the text, not the last, and it
 signifies later editings in the text in special markup using editorial notes in
-⟨angled brackets⟩. The current implementation is still unfinished and renders
+〈angled brackets〉. The current implementation is still unfinished and renders
 only the most frequent editings. 
 
 * [apparatus.xsl](apparatus.xsl) contains the actual code for generating this kind of visualisation. It includes [html-common.xsl](html-common.xsl), [html-frame.xsl](html-frame.xsl) and [utils.xsl](utils.xsl), so most stuff works like in the other visualisations.
