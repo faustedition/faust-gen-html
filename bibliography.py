@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 
-import requests
-from getpass import getpass
-import codecs
 import re
 import sys
+import logging
+logger = logging.getLogger(__name__)
+
+BIBLIO_PAGE = "Bibliographische Verweise"
+TARGET = "xslt/bibliography.xml"
+
 
 URI = re.compile(r'^\*\s*(faust://bibliography/\S*)')
 SHORT = re.compile(r'^\*{2}\s*(.*)')
@@ -51,6 +54,7 @@ def cleanup(lines):
 
 def wiki_to_xml(lines, outfile=sys.stdout):
     lines = iter(cleanup(lines))
+    entrycount = 0
     try:
         outfile.write(START)
         line = next(lines)
@@ -67,42 +71,13 @@ def wiki_to_xml(lines, outfile=sys.stdout):
                     if full:
                         entry["full"] = full.group(1)
                         outfile.write(ENTRY.format_map(entry))
+                        entrycount += 1
                         line = next(lines)
             else:
                 line = next(lines)
     except StopIteration:
         outfile.write(STOP)
+    logger.info("Wrote %d bibliography entries to %s", entrycount, outfile)
 
 
-def fetch_bib():
-    api = "https://faustedition.uni-wuerzburg.de/wiki/api.php"
-    index = "https://faustedition.uni-wuerzburg.de/wiki/index.php"
-    lguser = input("Wiki User: ")
-    lgpass = getpass("Wiki Password: ")
-
-    s = requests.Session()
-    s.verify = False
-
-    loginparams = dict(
-        lgname=lguser,
-        lgpassword=lgpass,
-        action='login',
-        format='json')
-    login1 = s.post(api, params=loginparams)
-    token = login1.json()['login']['token']
-    loginparams["lgtoken"] = token
-    login2 = s.post(api, params=loginparams)
-    result = login2.json()["login"]["result"]
-    if result != "Success":
-        raise PermissionError("Login failed: " + result)
-
-    page = s.get(index, params=dict(
-        title="Bibliographische Verweise",
-        action="raw",
-        token=token))
-    text = codecs.decode(page.content, page.encoding)
-    return text.split('\n')
-
-if __name__ == "__main__":
-    with open("xslt/bibliography.xml", "w", encoding="UTF-8") as outfile:
-        wiki_to_xml(fetch_bib(), outfile)
+__all__ = [BIBLIO_PAGE, TARGET, wiki_to_xml]

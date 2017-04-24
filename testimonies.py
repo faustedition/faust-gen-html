@@ -4,29 +4,25 @@
 """
 This script reads the table of testimonies from an excel file in the wiki
 and writes it to a simple HTML table.
-
-
-Attributes:
-
-    selected_columns (list): Labels of the columns in the original table that should be selected.
-    column_labels (list): New labels for the selected_columns
-
 """
 
 import pandas as pd
 from lxml import etree
-import requests
-from getpass import getpass
-import io
 import sys
 import unicodedata
 import re
+import logging
+logger = logging.getLogger(__name__)
 
-def sanitize_colname(colname):
-    colname = unicodedata.normalize('NFKC', colname).lower()
+TABLE_URL = "https://faustedition.uni-wuerzburg.de/wiki/images/b/b5/Dokumente_zur_Entstehungsgeschichte.xls"
+TARGET = "xslt/testimony-table.xml"
+
+def sanitize_colname(orig_colname):
+    colname = unicodedata.normalize('NFKC', orig_colname).lower()
     colname = colname.translate({ ord('ä'): 'ae', ord('ü'): 'ue', ord('ö'):
                                  'oe', ord('ß'): 'ss'})
     colname = re.sub(r'[\W_-]+', '-', colname).strip('-')
+    logger.debug('Sanitized column name "%s" to "%s"', orig_colname, colname)
     return colname
 
 def to_id(row):
@@ -34,31 +30,6 @@ def to_id(row):
                            ('quz', 'quz'), ('biedermann-herwignr', 'bie3')]:
         if not pd.isnull(row[column]):
             return prefix + '_' + str(row[column])
-
-
-def fetch_table():
-    """
-    Fetches the excel file from the wiki, interactively asking for a password
-    """
-    api = "https://faustedition.uni-wuerzburg.de/wiki/api.php"
-    xlsurl = "https://faustedition.uni-wuerzburg.de/wiki/images/b/b5/Dokumente_zur_Entstehungsgeschichte.xls"
-    lguser = input("Wiki User: ")
-    lgpass = getpass("Wiki Password: ")
-
-    s = requests.Session()
-    s.verify = False
-
-    loginparams = dict(
-        lgname=lguser,
-        lgpassword=lgpass,
-        action='login',
-        format='json')
-    login1 = s.post(api, params=loginparams)
-    token = login1.json()['login']['token']
-    loginparams["lgtoken"] = token
-    s.post(api, params=loginparams)
-    response = s.get(xlsurl, params=dict(token=token))
-    return io.BytesIO(response.content)
 
 def read_testimonies(buf, **kwargs):
     """
@@ -83,7 +54,7 @@ def improve_testimony_table(testimonies):
     testimonies.loc[:,'ID'] = testimonies.apply(to_id, axis=1)
     return testimonies
 
-def to_xml(testimony_df, orignames):
+def to_xml(testimony_df, orignames, output_file=None):
     ns = "http://www.faustedition.net/ns"
     NS = "{"+ns+"}"
     nsmap = {None : ns}
@@ -114,22 +85,11 @@ def to_xml(testimony_df, orignames):
             el.text = str(value)
             row_el.append(el)
         root.append(row_el)
-    return etree.ElementTree(root)
+    xml = etree.ElementTree(root)
+    if output_file is not None:
+        xml.write(output_file, encoding='utf-8', xml_declaration=True,
+                  pretty_print=True)
+        logger.info("Wrote testimony XML to %s", output_file)
 
 
-def main():
-    pd.set_option('max_colwidth', 10000)
-    if len(sys.argv) > 1:
-        df = read_testimonies(sys.argv[1])
-    else:
-        df = read_testimonies(fetch_table())
-    # write_html("src/main/web/archive_testimonies.php", html_table(df))
-    sanitized = improve_testimony_table(df)
-    xml = to_xml(sanitized, df.columns)
-    xml.write('xslt/testimony-table.xml',
-              encoding='utf-8',
-              xml_declaration=True,
-              pretty_print=True)
-
-if __name__ == '__main__':
-    main()
+__all__ = [TABLE_URL, TARGET, read_testimonies, improve_testimony_table, to_xml]
