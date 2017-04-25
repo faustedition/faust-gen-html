@@ -94,6 +94,7 @@
 			<p:input port="stylesheet"><p:document href="xslt/testimony-table.xsl"></p:document></p:input>
 			<p:input port="source"><p:pipe port="result" step="testimony-index"></p:pipe></p:input>
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>			
+			<p:with-param name="builddir-resolved" select="$builddir"/>
 		</p:xslt>
 		
 		<!-- and directly store the resulting HTML file. -->
