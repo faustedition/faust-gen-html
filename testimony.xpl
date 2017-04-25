@@ -98,7 +98,7 @@
 		</p:xslt>
 		
 		<!-- and directly store the resulting HTML file. -->
-		<p:store method="xhtml" include-content-type="false" indent="true">
+		<p:store method="xhtml" include-content-type="false" indent="false">
 			<p:with-option name="href" select="resolve-uri('www/archive_testimonies.html', $builddir)"></p:with-option>
 		</p:store>
 			
