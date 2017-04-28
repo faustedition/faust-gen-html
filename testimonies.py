@@ -29,7 +29,8 @@ def to_id(row):
     for column, prefix in [('graef-nr', 'graef'), ('pniower-nr', 'pniower'),
                            ('quz', 'quz'), ('biedermann-herwignr', 'bie3')]:
         if not pd.isnull(row[column]):
-            return prefix + '_' + str(row[column])
+            ids = re.split(r'[,;]\s*', str(row[column]))
+            return prefix + '_' + ids[0]
 
 def read_testimonies(buf, **kwargs):
     """
