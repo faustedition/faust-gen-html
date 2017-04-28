@@ -48,11 +48,16 @@
 		<fieldspec name="quz" spreadsheet="QuZ">QuZ</fieldspec>
 		<fieldspec name="biedermann-herwignr" spreadsheet=" Biedermann-HerwigNr.">Biedermann³</fieldspec>
 		<fieldspec name="datum-von" spreadsheet="Datum.(von)" sortable-type="date-de">Datum</fieldspec>
-		<fieldspec name="dokumenttyp" spreadsheet="Dokumenttyp">Quellengattung</fieldspec>		
-		<fieldspec name="verfasser" spreadsheet="Verfasser">Verfasser</fieldspec>
-		<fieldspec name="adressat" spreadsheet="Adressat">Adressat</fieldspec>
+		<fieldspec name="dokumenttyp" spreadsheet="Dokumenttyp">Beschreibung</fieldspec>		
 		<fieldspec name="druckort" spreadsheet="Druckort" sortable-type="bibliography">Druckort</fieldspec>
 		<fieldspec name="excerpt" generated="true">Auszug</fieldspec>
+	</xsl:variable>
+	
+	<xsl:variable name="beschreibung" xmlns="http://www.faustedition.net/ns">
+		<template name="Brief">Brief von $verfasser an $addressat</template>
+		<template name="Tagebuch">Tagebucheintrag von $verfasser</template>
+		<template name="Gespräch">Gespräch</template>
+		<template name="Text">$titel</template>
 	</xsl:variable>
 	
 	<xsl:function name="f:field-label">
@@ -62,10 +67,20 @@
 	
 	<xsl:function name="f:expand-fields">
 		<xsl:param name="template" as="xs:string"/>
-		<xsl:param name="context" as="node()*"/>
+		<xsl:param name="context"/>
 		<xsl:analyze-string select="$template" regex="\$[a-z0-9_-]+">
 			<xsl:matching-substring>
-				<xsl:value-of select="$context//*[@name = substring(., 2)]"/>
+				<xsl:variable name="field" select="substring(., 2)"/>
+				<xsl:variable name="substitution" select="$context//*[@name = $field]"/>
+				<xsl:message><xsl:copy-of select="$substitution"/></xsl:message>
+				<xsl:choose>
+					<xsl:when test="$substitution">
+						<span title="{$field}"><xsl:value-of select="$substitution"/></span>
+					</xsl:when>
+					<xsl:otherwise>
+						<span class="message warning">$<xsl:value-of select="$field"/></span>
+					</xsl:otherwise>
+				</xsl:choose>
 			</xsl:matching-substring>
 			<xsl:non-matching-substring><xsl:value-of select="."/></xsl:non-matching-substring>
 		</xsl:analyze-string>
@@ -222,6 +237,21 @@
 				<xsl:next-match/>
 			</xsl:otherwise>
 		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template match="field[@name='dokumenttyp']">
+		<td title="Beschreibung">
+			<xsl:variable name="type" select="normalize-space(.)"/>
+			<xsl:variable name="template" select="$beschreibung//template[@name=$type]"/>			
+			<xsl:choose>
+				<xsl:when test="$template">
+					<xsl:sequence select="f:expand-fields($template, ..)"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<div class="message warning"><xsl:value-of select="."/></div>
+				</xsl:otherwise>
+			</xsl:choose>
+		</td>
 	</xsl:template>
 	
 	<xsl:template match="field[@name='excerpt']">
