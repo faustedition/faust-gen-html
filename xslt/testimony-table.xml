@@ -887,13 +887,12 @@
     <field name="druckort">Reichard 1778a, S. 18</field>
     <field name="alternativer-druckort">Tille 1900, S. 709</field>
   </testimony>
-  <testimony id="quz_ ">
+  <testimony>
     <field name="status">NEU</field>
     <field name="lfd-nr-allerneuestens">42</field>
     <field name="lfd-nr-neuestens">43</field>
     <field name="lfd-nr-ganz-neu">29c</field>
     <field name="tille-nr">310</field>
-    <field name="quz"> </field>
     <field name="verfasser">ohne Verfasser</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
     <field name="dokumenttyp">Text</field>

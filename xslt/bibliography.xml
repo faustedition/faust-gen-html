@@ -2362,6 +2362,26 @@
         <f:reference>N. N.: Karl Ludwig von Knebel. Bericht eines ihm Verwandten. In: Berühmte Schriftsteller der Deutschen: Schilderung nach Selbstanschauung theils auch berühmter Zeitgenossen aus dem Leben von Goethe […] und Andern. Bisher in keiner Sammlung. Hrsg. von Friedrich Wilhelm Gubitz. Bd. 1. Berlin 1854, S. 319–338.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/kua_2-3">
+        <f:citation>KuA II/3</f:citation>
+        <f:reference>Über Kunst und Alterthum. Von Goethe. Bd. 2, H. 3. Stuttgart 1820.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/kua_5-3">
+        <f:citation>KuA V/3</f:citation>
+        <f:reference>Über Kunst und Alterthum. Von Goethe. Bd. 5, H. 3. Stuttgart 1826.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/kua_6-2">
+        <f:citation>KuA VI/2</f:citation>
+        <f:reference>Über Kunst und Alterthum. Von Goethe. Bd. 6, H. 2. Stuttgart 1828.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/kua_6-3">
+        <f:citation>KuA VI/3</f:citation>
+        <f:reference>Über Kunst und Alterthum. Von Goethe. Bd. 6, H. 3. Stuttgart 1832.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/kuhn1979-1983_1">
         <f:citation>Kuhn 1979-1983, Bd. 1; Kuhn 1979-1983, Bd. 2</f:citation>
         <f:reference>Johann Wolfgang von Goethe und Johann Friedrich von Cotta, Briefwechsel 1797-1832. Textkritische und kommentierte Ausgabe in drei Bänden. Hrsg. von Dorothea Kuhn. 3 Bde. Stuttgart 1979-1983.</f:reference>
@@ -2405,6 +2425,11 @@
     <f:bib uri="faust://bibliography/matthisson1825-1829_7">
         <f:citation>Matthisson 1825-1829, Bd. 7</f:citation>
         <f:reference>Matthisson, Friedrich von: Schriften. Ausgabe letzter Hand. Bd. 7. Zürich 1829.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/matthisson1825-1829_8">
+        <f:citation>Matthisson 1825-1829, Bd. 8</f:citation>
+        <f:reference>Matthisson, Friedrich von: Schriften. Ausgabe letzter Hand. Bd. 8. Zürich 1829.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/mendelssohn1861">
@@ -2477,13 +2502,13 @@
         <f:reference>[Anonymus:] Goethe und sein Jahrhundert. (Aus der Minerva besonders abgedruckt.) Jena 1835. Jena: Bran, 1835. [als Verfasser werden August Wilhelm Rehberg und Philipp Joseph von Rehfues genannt] </f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/reichard1779_a">
-        <f:citation>Reichard 1779a</f:citation>
+    <f:bib uri="faust://bibliography/reichard1778a">
+        <f:citation>Reichard 1778a</f:citation>
         <f:reference>N.N.: Doktor Faust: ein komisches Duodrama, von Schink. Aus einem Schreiben an den Herausgeber [Heinrich August Ottokar Reichard]. In: Theater-Journal für Deutschland, 6. Stück, 1778, S. 18-43.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/reichard1779_b">
-        <f:citation>Reichard 1779b</f:citation>
+    <f:bib uri="faust://bibliography/reichard1778b">
+        <f:citation>Reichard 1778b</f:citation>
         <f:reference>Bibliothek der Romane. Erster Band. [Hrsg. von Heinrich August Ottokar Reichard.] Berlin 1778.</f:reference>
     </f:bib>
 
