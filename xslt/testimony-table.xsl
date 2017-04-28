@@ -55,6 +55,22 @@
 		<fieldspec name="excerpt" generated="true">Auszug</fieldspec>
 	</xsl:variable>
 	
+	<xsl:function name="f:field-label">
+		<xsl:param name="name"/>
+		<xsl:value-of select="$columns/fieldspec[@name = $name]/node()"/>
+	</xsl:function>
+	
+	<xsl:function name="f:expand-fields">
+		<xsl:param name="template" as="xs:string"/>
+		<xsl:param name="context" as="node()*"/>
+		<xsl:analyze-string select="$template" regex="\$[a-z0-9_-]+">
+			<xsl:matching-substring>
+				<xsl:value-of select="$context//*[@name = substring(., 2)]"/>
+			</xsl:matching-substring>
+			<xsl:non-matching-substring><xsl:value-of select="."/></xsl:non-matching-substring>
+		</xsl:analyze-string>
+	</xsl:function>
+	
 	<!-- Used for the message column. Can be removed once there are no more warnings etc. -->
 	<xsl:param name="extrastyle">
 		<style type="text/css">
@@ -104,6 +120,21 @@
 		</xsl:call-template>
 	</xsl:template>
 	
+	
+	<!-- 
+	
+		Rendering a single testimony to a row works as follows:
+		
+		1. first, all additional data like usage and bibliography information are collected. There are also some consistency checks
+		   that result in <message> elements.
+		   
+		2. then, we're adding additional empty <field name="…"/> elements for all fields in $columns but not in the current 
+		   entry.
+
+        3. finally, for each fieldspec in $column, we call <xsl:apply-templates/> on the corresponding <field/> from step 1/2.
+           This should generate the actual <td> for the column. There are default implementations below.
+	
+	-->
 	<xsl:template match="citation|testimony">
 		<xsl:variable name="entry" select="."/>
 		<xsl:variable name="lbl" select="string-join(
@@ -111,24 +142,19 @@
 			', ')"/>
 		<xsl:variable name="used" select="$usage//*[@testimony-id=current()/@id]"/>
 		
-		<!-- We're building an XML fragment that will finally serve as  info container for the current entry -->
+		<!-- We're building an XML fragment that will finally be moved into the current <testimony> entry -->
 		<xsl:variable name="rowinfo_raw">
 			
 			<!-- now a bunch of assertions -->
 			<xsl:choose>
-				<xsl:when test="not($used) and $entry//field[@name='h-sigle']">
-					<f:excerpt/>	<!-- keine Warnung nötig -->
-				</xsl:when>
-				<xsl:when test="not($used) and (not(@id) or @id = '' or contains(@id, ' '))">
-					<f:excerpt/>
+				<xsl:when test="not($used) and $entry//field[@name='h-sigle']"/>
+				<xsl:when test="not($used) and (not(@id) or @id = '' or contains(@id, ' '))">					
 					<f:message status="error">keine/komische ID: »<xsl:value-of select="@id"/>«</f:message>
 				</xsl:when>
 				<xsl:when test="not($used)">
-					<f:excerpt/>
 					<f:message status="info">kein XML für »<xsl:value-of select="@id"/>«</f:message>
 				</xsl:when>
-				<xsl:when test="count($used) > 1">
-					<f:excerpt/>
+				<xsl:when test="count($used) > 1">					
 					<f:message status="error"><xsl:value-of select="concat(count($used), ' XML-Quellen: ', string-join($used/@base, ', '))"/></f:message>
 				</xsl:when>				
 				<xsl:otherwise>
@@ -142,7 +168,7 @@
 					<xsl:if test="not($excerpt)">
 						<f:message status="info">kein Auszug</f:message>
 					</xsl:if>
-					<f:excerpt><xsl:value-of select="$excerpt"/></f:excerpt>
+					<f:field name="excerpt"><xsl:value-of select="$excerpt"/></f:field>
 					<xsl:if test="not($bib)">
 						<f:message status="warning">kein Literaturverzeichniseintrag für faust://bibliography/<xsl:value-of select="$used/@base"/></f:message>
 					</xsl:if>
@@ -150,49 +176,30 @@
 			</xsl:choose>
 		</xsl:variable>
 		
-		<xsl:variable name="rowinfo">
-			<f:row id="{@testimony-id}" lbl="{$lbl}">
+		<xsl:variable name="rowinfo" as="element()">
+			<xsl:copy> 
+				<xsl:attribute name="id" select="@testimony-id"/>
 				<xsl:copy-of select="@*"/>
-				<xsl:for-each select="$columns/fieldspec[@name != 'excerpt']">
-					<xsl:variable name="fieldspec" select="." as="element()"/>
-					<xsl:variable name="field" select="$entry//f:field[@name = $fieldspec/@name]" as="element()*"/>
-					<xsl:choose>
-						<xsl:when test="$field">
-							<xsl:for-each select="$field">
-								<xsl:copy>
-									<xsl:copy-of select="@*"/>
-									<xsl:attribute name="label" select="string-join($fieldspec, '')"/>
-									<xsl:copy-of select="node()"/>
-								</xsl:copy>
-							</xsl:for-each>
-						</xsl:when>
-						<xsl:otherwise>
-							<f:field name="{$fieldspec/@name}" label="{string-join($fieldspec, '')}"/>
-						</xsl:otherwise>
-					</xsl:choose>
+				<xsl:sequence select="*"/>
+				<xsl:sequence select="$rowinfo_raw"/>
+				<xsl:for-each select="$columns/fieldspec">
+					<xsl:if test="not(@name = ($entry//field/@name, $rowinfo_raw/field/@name))">
+						<f:field name="{@name}"/>
+					</xsl:if>
 				</xsl:for-each>
-				<xsl:copy-of select="$rowinfo_raw/*[local-name() != 'message']"/>				
-				<f:messages>
-					<xsl:copy-of select="$rowinfo_raw/message"/>
-				</f:messages>
-				<f:metadata>
-					<xsl:copy-of select="$entry//f:field"/>					
-				</f:metadata>
-			</f:row>
+			</xsl:copy>
 		</xsl:variable>
-		
-		<xsl:apply-templates select="$rowinfo"/>
-		
-	</xsl:template>
-	
-	<xsl:template match="row">
-		<tr id="{@id}">
-			<xsl:apply-templates/>			
+				
+		<tr id="{$rowinfo/@id}">
+			<xsl:for-each select="$columns//fieldspec">
+				<xsl:variable name="fieldname" select="@name"/>
+				<xsl:apply-templates select="$rowinfo//field[@name=$fieldname]"/>
+			</xsl:for-each>
 		</tr>
 	</xsl:template>
-	
+		
 	<xsl:template match="field">
-		<td title="{if (text()) then concat(@label, ': ', .) else @label}">
+		<td title="{if (normalize-space(.)) then concat(f:field-label(@name), ': ', .) else f:field-label(@name)}">
 			<xsl:apply-templates/>
 		</td>
 	</xsl:template>
@@ -217,10 +224,10 @@
 		</xsl:choose>
 	</xsl:template>
 	
-	<xsl:template match="excerpt">
+	<xsl:template match="field[@name='excerpt']">
 		<td>
-			<xsl:if test="../metadata/field[@name='h-sigle']">				
-				<xsl:variable name="sigils" select="normalize-space(../metadata/field[@name='h-sigle']/text())"/>
+			<xsl:if test="../field[@name='h-sigle']">				
+				<xsl:variable name="sigils" select="normalize-space(../field[@name='h-sigle']/text())"/>
 				<xsl:text>→ </xsl:text>
 				<xsl:for-each select="tokenize($sigils, ';\s*')">
 					<xsl:variable name="sigil" select="."/>
@@ -245,7 +252,8 @@
 			<xsl:if test="normalize-space(.)">
 				<a href="{../href}">… <xsl:apply-templates/> …</a>				
 			</xsl:if>
-			<xsl:for-each select="../messages/message">
+			
+			<xsl:for-each select="../message">
 				<div class="message {@status}"><xsl:value-of select="."/></div>
 			</xsl:for-each>
 		</td>
@@ -256,17 +264,5 @@
 			<xsl:message select="concat(upper-case(@status), ':', ../../base, ':', ., ' (', ../../@lbl, ')')"/>			
 		</xsl:for-each>
 	</xsl:template>
-	
-	<xsl:template match="row/*" priority="-1"/>
-	<!--		
-		<xsl:comment>
-			<xsl:value-of select="concat(name(), ' ', @name, ' ', .)"/>
-		</xsl:comment>
-	</xsl:template>
-	
-	<xsl:template match="metadata" priority="-0.9">
-		<xsl:comment select="string-join(for $field in field return string-join(($field/@name, $field), ': '), '&#10;')"/>
-	</xsl:template>
-	-->		
 	
 </xsl:stylesheet>
