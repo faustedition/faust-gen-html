@@ -54,7 +54,7 @@
 	</xsl:variable>
 	
 	<xsl:variable name="beschreibung" xmlns="http://www.faustedition.net/ns">
-		<template name="Brief">Brief von $verfasser an $addressat</template>
+		<template name="Brief">Brief von $verfasser an $adressat</template>
 		<template name="Tagebuch">Tagebucheintrag von $verfasser</template>
 		<template name="Gespräch">Gespräch</template>
 		<template name="Text">$titel</template>
