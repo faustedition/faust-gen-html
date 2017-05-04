@@ -221,7 +221,7 @@
 									<xsl:text> </xsl:text>
 								</xsl:if>
 							</xsl:template>
-							<!-- sample data for MC; to be moved at the end of procedures when reading text is finished -->
+							<!--<!-\- sample data for MC; to be moved at the end of procedures when reading text is finished -\->
 							<xsl:template match="div/@n"/>
 							<xsl:template match="orig | unclear">
 								<xsl:apply-templates/>
@@ -238,7 +238,7 @@
 									</note>
 									<xsl:text>Graus.</xsl:text>
 								</l>
-							</xsl:template>
+							</xsl:template>-->
 						</xsl:stylesheet>
 					</p:inline>
 				</p:input>
