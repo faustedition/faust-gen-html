@@ -213,7 +213,7 @@
 							</xsl:template>
 							<xsl:template
 								match="creation | sourceDesc | profileDesc | encodingDesc | revisionDesc 
-								| pb[not(@break='no')] | hi/@status | */@xml:space"/>
+								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | hi/@status | */@xml:space"/>
 
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">
