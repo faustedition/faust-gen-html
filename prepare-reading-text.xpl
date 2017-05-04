@@ -213,7 +213,8 @@
 							</xsl:template>
 							<xsl:template
 								match="creation | sourceDesc | profileDesc | encodingDesc | revisionDesc 
-								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | hi/@status | */@xml:space"/>
+								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | hi/@status | */@xml:space
+								| div[@type='stueck']"/>
 
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">
@@ -240,6 +241,20 @@
 								</l>
 							</xsl:template>-->
 						</xsl:stylesheet>
+						<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+							xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
+							
+							<!-- Identitätstransformation -->
+							<xsl:template match="node()|@*">
+								<xsl:copy>
+									<xsl:apply-templates select="@*, node()"/>
+								</xsl:copy>
+							</xsl:template>
+							
+							<xsl:template match="text[not(normalize-space(.))]"/>
+							
+						</xsl:stylesheet>
+						
 					</p:inline>
 				</p:input>
 				<p:input port="parameters">
