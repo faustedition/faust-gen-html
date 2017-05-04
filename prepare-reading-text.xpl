@@ -36,7 +36,7 @@
 					<target>file:/Users/Gerrit/faustedition/xml/</target>
 					<!-- Quell-Transkripte: -->
 					<transcript path="transcript/test/test.xml"/>
-					<transcript path="transcript/gsa/391098/391098.xml" output="2_H.xml"/>
+					<transcript path="transcript/gsa/391098/391098.xml" output="w1.xml"/>
 				</config>
 			</p:inline>
 		</p:input>
