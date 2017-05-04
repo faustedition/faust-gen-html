@@ -208,7 +208,7 @@
 
 							<xsl:template match="fw"/>
 
-							<xsl:template match="l/hi[@rend='big']">
+							<xsl:template match="l/hi[@rend='big'] | seg[@f:questionedBy or @f:markedBy]">
 								<xsl:apply-templates/>
 							</xsl:template>
 							<xsl:template
