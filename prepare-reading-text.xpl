@@ -208,7 +208,8 @@
 
 							<xsl:template match="fw"/>
 
-							<xsl:template match="l/hi[@rend='big'] | seg[@f:questionedBy or @f:markedBy]">
+							<xsl:template
+								match="l/hi[@rend='big'] | seg[@f:questionedBy or @f:markedBy]">
 								<xsl:apply-templates/>
 							</xsl:template>
 							<xsl:template
@@ -222,7 +223,8 @@
 									<xsl:text> </xsl:text>
 								</xsl:if>
 							</xsl:template>
-							<xsl:strip-space elements="TEI teiHeader fileDesc titleStmt publicationStmt"/>
+							<xsl:strip-space
+								elements="TEI teiHeader fileDesc titleStmt publicationStmt"/>
 							<!--<!-\- sample data for MC; to be moved at the end of procedures when reading text is finished -\->
 							<xsl:template match="div/@n"/>
 							<xsl:template match="orig | unclear">
@@ -242,31 +244,31 @@
 								</l>
 							</xsl:template>-->
 						</xsl:stylesheet>
-						
+
 					</p:inline>
 				</p:input>
 				<p:input port="parameters">
 					<p:empty/>
 				</p:input>
 			</p:xslt>
-			
+
 			<p:xslt>
 				<p:input port="stylesheet">
 					<p:inline>
 						<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 							xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
-							
+
 							<!-- Identitätstransformation -->
 							<xsl:template match="node()|@*">
 								<xsl:copy>
 									<xsl:apply-templates select="@*, node()"/>
 								</xsl:copy>
 							</xsl:template>
-							
-							<xsl:template match="text[not(normalize-space(.))]"/>							
-							
+
+							<xsl:template match="text[not(normalize-space(.))]"/>
+
 						</xsl:stylesheet>
-						
+
 					</p:inline>
 				</p:input>
 				<p:input port="parameters">
