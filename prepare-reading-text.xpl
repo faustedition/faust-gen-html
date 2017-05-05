@@ -216,7 +216,7 @@
 							<xsl:template
 								match="creation | sourceDesc | profileDesc | encodingDesc | revisionDesc 
 								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | hi/@status | anchor | corr | 
-								join[@type='antilabe'] | join[@result='sp'] | */@xml:space
+								join[@type='antilabe'] | join[@result='sp'] | join[@type='former_unit'] | */@xml:space
 								| div[@type='stueck']"/>
 
 							<!-- lb -> Leerzeichen -->
