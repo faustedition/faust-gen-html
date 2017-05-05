@@ -209,12 +209,12 @@
 							<xsl:template match="fw"/>
 
 							<xsl:template
-								match="l/hi[@rend='big'] | seg[@f:questionedBy or @f:markedBy]">
+								match="group | l/hi[@rend='big'] | seg[@f:questionedBy or @f:markedBy] | c | damage | damage/supplied">
 								<xsl:apply-templates/>
 							</xsl:template>
 							<xsl:template
 								match="creation | sourceDesc | profileDesc | encodingDesc | revisionDesc 
-								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | hi/@status | */@xml:space
+								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | hi/@status | anchor | corr | join[@type='antilabe'] | join[@result='sp'] | */@xml:space
 								| div[@type='stueck']"/>
 
 							<!-- lb -> Leerzeichen -->
