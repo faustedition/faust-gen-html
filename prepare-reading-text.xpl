@@ -129,6 +129,13 @@
 							version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
 
 							<xsl:include href="xslt/emend-core.xsl"/>
+													
+							<xsl:template match="choice[abbr|expan]" priority="4.0" mode="emend">
+								<!-- Später, cf. #111 -->
+								<xsl:copy>
+									<xsl:apply-templates select="@*, node()" mode="#current"/>
+								</xsl:copy>
+							</xsl:template>
 
 							<xsl:template match="*[@ge:stage='#posthumous']" priority="5.0">
 								<xsl:copy>
@@ -278,13 +285,64 @@
 				</p:input>
 			</p:xslt>
 
-
+			<!-- Speichern der Einzeldatei -->
+			<p:identity name="final-single-text"/>
 			<p:store>
 				<p:with-option name="href" select="$output"/>
 			</p:store>
 
-
+			<!-- Kopie der fertigen Einzeldatei soll hinten aus der for-each-Schleife fallen: -->
+			<p:identity><p:input port="source"><p:pipe port="result" step="final-single-text"/></p:input></p:identity>
 		</p:for-each>
+		
+		<!-- alles zusammenkleben zum gemeinsamen Bearbeiten: -->
+		<p:wrap-sequence wrapper="tei:teiCorpus"/>
+		
+		<p:xslt>
+			<p:input port="stylesheet"><p:inline>
+				<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" 
+					xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+					xmlns="http://www.tei-c.org/ns/1.0">
+					<xsl:import href="xslt/utils.xsl"/>
+					<xsl:template match="/">
+						<f:expan-map xmlns="http://www.tei-c.org/ns/1.0">
+							<xsl:for-each-group select="//abbr[not(preceding-sibling::expan | following-sibling::expan)]" group-by="f:normalize-space(.)">
+								<xsl:variable name="abbr" select="current-grouping-key()"/>
+								<choice>
+									<xsl:comment select="string-join(current-group()/ancestor::*[f:hasvars(.)]/@n, ', ')"/>
+									<abbr><xsl:value-of select="$abbr"/></abbr>
+									
+									<!-- find all expansions for the current abbr elsewhere in the text -->
+									<xsl:variable name="expansions">
+										<xsl:for-each-group select="//expan[
+											preceding-sibling::abbr[f:normalize-space(.) = $abbr] |
+											following-sibling::abbr[f:normalize-space(.) = $abbr]
+										]" group-by="f:normalize-space(.)">
+											<expan><xsl:value-of select="current-grouping-key()"/></expan>
+										</xsl:for-each-group>										
+									</xsl:variable>
+									
+									<xsl:choose>
+										<xsl:when test="$expansions//expan">
+											<xsl:copy-of select="$expansions"/>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:comment>TODO</xsl:comment>
+											<expan><xsl:value-of select="$abbr"/></expan>
+										</xsl:otherwise>
+									</xsl:choose>
+								</choice>
+							</xsl:for-each-group>
+						</f:expan-map>
+					</xsl:template>					
+				</xsl:stylesheet>
+			</p:inline></p:input>
+			<p:input port="parameters"/>
+		</p:xslt>
+		
+		<p:store indent="true">
+			<p:with-option name="href" select="resolve-uri('expan-map.xml.in', $target)"/>
+		</p:store>
 
 	</p:group>
 
