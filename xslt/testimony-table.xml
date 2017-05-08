@@ -6716,13 +6716,12 @@
     <field name="vorlage-seite-bis">66</field>
     <field name="vorlage-absatz-bis">5</field>
   </testimony>
-  <testimony id="pniower_243">
+  <testimony id="quz_I-870a">
     <field name="lfd-nr-allerneuestens">333</field>
     <field name="lfd-nr-neuestens">334</field>
     <field name="lfd-nr-ganz-neu">321</field>
     <field name="lfd-nr-neu">320</field>
     <field name="lfd-nr-alt">319</field>
-    <field name="pniower-nr">243</field>
     <field name="quz">I-870a</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
@@ -7319,6 +7318,7 @@
     <field name="vorlage-absatz-von">2</field>
   </testimony>
   <testimony id="graef_1067*">
+    <field name="status">ENTFÄLLT</field>
     <field name="lfd-nr-allerneuestens">363</field>
     <field name="lfd-nr-neuestens">364</field>
     <field name="lfd-nr-ganz-neu">351</field>
@@ -7339,13 +7339,13 @@
     <field name="vorlage-seite-von">512</field>
     <field name="vorlage-absatz-von">3</field>
   </testimony>
-  <testimony id="graef_1067**">
+  <testimony id="graef_1067">
     <field name="lfd-nr-allerneuestens">364</field>
     <field name="lfd-nr-neuestens">365</field>
     <field name="lfd-nr-ganz-neu">352</field>
     <field name="lfd-nr-neu">351</field>
     <field name="lfd-nr-alt">350</field>
-    <field name="graef-nr">1067**</field>
+    <field name="graef-nr">1067</field>
     <field name="quz">I-960a</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
@@ -7370,6 +7370,7 @@
     <field name="lfd-nr-neu">352</field>
     <field name="lfd-nr-alt">351</field>
     <field name="graef-nr">1068</field>
+    <field name="quz">I-960</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
     <field name="dokumenttyp">Brief</field>
@@ -9326,6 +9327,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="vorlage-absatz-von">4</field>
   </testimony>
   <testimony id="graef_1148*">
+    <field name="status">ENTFÄLLT</field>
     <field name="lfd-nr-allerneuestens">469</field>
     <field name="lfd-nr-neuestens">470</field>
     <field name="lfd-nr-ganz-neu">458</field>
@@ -9339,17 +9341,18 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="adressat">Johann Friedrich von Cotta</field>
     <field name="adressat-gsa-personennummer">36466</field>
     <field name="datum-von">12.11.1812</field>
+    <field name="bemerkung">Brief an sich kein Zeugnis, eigentliches Zeugnis ist nur die Beilage (QuZ I-1100a)</field>
     <field name="wa-druckort">WA IV, 23, 132</field>
     <field name="druckort">WA IV, 23, 132</field>
     <field name="vorlage-seite-von">132</field>
   </testimony>
-  <testimony id="graef_1148**">
+  <testimony id="graef_1148">
     <field name="lfd-nr-allerneuestens">470</field>
     <field name="lfd-nr-neuestens">471</field>
     <field name="lfd-nr-ganz-neu">459</field>
     <field name="lfd-nr-neu">458</field>
     <field name="lfd-nr-alt">457</field>
-    <field name="graef-nr">1148**</field>
+    <field name="graef-nr">1148</field>
     <field name="wa-brief-nr">6415</field>
     <field name="quz">I-1100a</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
@@ -9361,7 +9364,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="adressat-gsa-personennummer">36466</field>
     <field name="datum-von">12.11.1812</field>
     <field name="vermerk">s. Gräf II/1, S. 9, Z. 11.</field>
-    <field name="bemerkung">Beilage zu QuZ I-1100</field>
+    <field name="bemerkung">Beilage zu QuZ I-1100 (Brief an Cotta von 12.11.1812)</field>
     <field name="wa-druckort">WA IV, 23, 133</field>
     <field name="druckort">WA IV, 23, 133</field>
     <field name="fehler-in-zeno">S. 134 Z. 10.;in Zeno vorhanden</field>
