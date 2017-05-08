@@ -72,7 +72,6 @@
 			<xsl:matching-substring>
 				<xsl:variable name="field" select="substring(., 2)"/>
 				<xsl:variable name="substitution" select="$context//*[@name = $field]"/>
-				<xsl:message><xsl:copy-of select="$substitution"/></xsl:message>
 				<xsl:choose>
 					<xsl:when test="$substitution">
 						<span title="{$field}"><xsl:value-of select="$substitution"/></span>
