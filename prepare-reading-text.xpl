@@ -32,8 +32,8 @@
 
 					<!-- URL, unter der die transformierten Dateien
 					     gespeichert werden sollen:	-->
-					<!--<target>file:/home/tv/git/faust-gen/target/prepare-reading-text/</target>-->
-					<target>file:/Users/Gerrit/faustedition/xml/</target>
+					<target>file:/home/tv/git/faust-gen/target/prepare-reading-text/</target>
+					<!--<target>file:/Users/Gerrit/faustedition/xml/</target>-->
 					<!-- Quell-Transkripte: -->
 					<transcript path="transcript/test/test.xml"/>
 					<transcript path="transcript/gsa/391098/391098.xml" output="w1.xml"/>
