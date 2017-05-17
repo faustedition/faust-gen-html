@@ -37,7 +37,11 @@
 					<target>file:/Users/gerri/faustedition/xml/</target>
 					<!-- Quell-Transkripte: -->
 					<!--<transcript path="transcript/test/test.xml"/>-->
-					<transcript path="transcript/gsa/391098/391098.xml" output="w1.xml"/>
+					<transcript path="transcript/gsa/391098/391098.xml" output="h.xml"/>
+					<transcript path="transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml" output="h0a.xml"/>
+					<transcript path="print/C(1)4_IIIB24.xml" output="c14.xml"/>
+					<transcript path="print/C(2a)4_IIIB28.xml" output="c2a4.xml"/>
+					<transcript path="print/C(3)4_IIIB27_chartUngleich.xml" output="c34.xml"/>
 				</config>
 			</p:inline>
 		</p:input>
