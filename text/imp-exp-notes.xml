@@ -15,7 +15,7 @@
 rtf = C:\users\gerri\txstep\txt\nii.rtf
 *eof
 #anmelde, rtf, traeger = -
-#*import, rtf, nii-t, ignor = +
+#*import, rtf, nii-t, ignor = -
     </tustep>
     <transform source="$nii-t" destination="$nii2-t">
         <pass>
@@ -23,7 +23,7 @@ rtf = C:\users\gerri\txstep\txt\nii.rtf
                 <exchange>
                     <exchange-table>
                         <string-pair>
-                            <search-string>{{p}}{[}*((</search-string>
+                            <search-string>}}{[}*((</search-string>
                             <replacement-string/>
                         </string-pair>
                         <string-pair>
