@@ -123,13 +123,34 @@
 						taxonomy="{id($id[1], $taxonomies)}"
 						n="{$id[2]}"
 						testimony-id="{$real-id}"
-						rs="{f:normalize-space((following::rs)[1])}">
+						rs="{f:find-rs(.)}">
 						<xsl:value-of select="$biburl"/>
 					</f:citation>					
 				</xsl:if>
 			</xsl:for-each>
 		</f:citations>		
 	</xsl:template>
+	
+	<xsl:template name="milestone-content">
+		<xsl:param name="milestone" select="self::milestone"/>
+		<xsl:for-each select="$milestone">
+			<xsl:variable name="target" select="id(substring(@spanTo, 2))"/>
+			<xsl:sequence select="., following::node() except ($target/following::node(), following::*/node())"/>
+			<xsl:if test="@next">
+				<xsl:call-template name="milestone-content"><xsl:with-param name="milestone" select="id(substring(@next, 2))"/></xsl:call-template>
+			</xsl:if>			
+		</xsl:for-each>
+	</xsl:template>
+	
+	<xsl:function name="f:find-rs">
+		<xsl:param name="milestone"/>
+		<xsl:variable name="content"><xsl:call-template name="milestone-content"><xsl:with-param name="milestone" select="$milestone"/></xsl:call-template></xsl:variable>
+		<xsl:variable name="rs" select="($content//rs)[1]"/>
+		<xsl:choose>
+			<xsl:when test="$rs"><xsl:value-of select="f:normalize-space($rs)"/></xsl:when>
+			<!--<xsl:otherwise><xsl:message select="concat('Testimony ', $milestone/@xml:id, ' has no &lt;rs> but content: ', f:normalize-space($content))"/></xsl:otherwise>-->
+		</xsl:choose>		
+	</xsl:function>
 	
 	<!-- suppress pb when there's no content afterwards, before the next pb or document end -->
 	<xsl:template match="pb">
