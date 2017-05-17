@@ -1,15 +1,41 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <script xmlns="http://www.xstep.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <variables>
-        <variable type="execution-file" name="execute">file:///C:/users/Gerrit/txstep/ueb/txstep.tu</variable>
+        <variable type="execution-file" name="execute"
+            >file:///C:/users/gerri/txstep/ueb/txstep.tu</variable>
         <variable type="permanent-file" name="nii-t" option="erase"
-            >file:///C:/Users/Gerrit/txstep/txt/nii.tf</variable>
+            >file:///C:/Users/gerri/txstep/txt/nii.tf</variable>
+        <variable type="permanent-file" name="nii2-t" option="erase"
+            >file:///C:/Users/gerri/txstep/txt/nii2.tf</variable>
+        <variable type="permanent-file" name="rtf2" option="erase" format="system"
+            >file:///C:/Users/gerri/txstep/txt/nii2.rtf</variable>
     </variables>
     <tustep>
 #de,da=*
-rtf = C:\users\gerri\txstep\txt\notesii.rtf
+rtf = C:\users\gerri\txstep\txt\nii.rtf
 *eof
 #anmelde, rtf, traeger = -
 #*import, rtf, nii-t, ignor = +
+    </tustep>
+    <transform source="$nii-t" destination="$nii2-t">
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{{p}}{[}*((</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>))</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+    </transform>
+    <tustep>
+#*export, nii2-t, rtf2, loeschen = +        
     </tustep>
 </script>
