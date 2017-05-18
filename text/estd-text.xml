@@ -8,6 +8,8 @@
             >file:///C:/Users/gerri/faustedition/xml/h.xml</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="z1"
             >file:///C:/Users/gerri/txstep/txt/z1.tf</variable>
+        <variable type="permanent-file" code="UTF-8" name="kt-x" option="erase"
+            >file:///C:/Users/gerri/faustedition/xml/kt.xml</variable>
         <variable type="scratch-file" name="ko1"/>
     </variables>
     <transform source="$h-x" destination="$z1" save-params="ko1">
@@ -19,6 +21,7 @@
                 </comparison-table>
             </text-unit-start>
         </define-text-units>
+        <!-- tags into tokens -->
         <pass>
             <modify>
                 <exchange>
@@ -30,6 +33,21 @@
                         <string-pair>
                             <search-string>{{{00}{c:tg}{[} {]}{00}{c:tg}}}</search-string>
                             <replacement-string>+</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+    </transform>
+    <!-- tokens back into tags -->
+    <transform source="$z1" destination="$kt-x">
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{{{00}{c:tg}{[}+{]}{00}{c:tg}}}</search-string>
+                            <replacement-string> </replacement-string>
                         </string-pair>
                     </exchange-table>
                 </exchange>
