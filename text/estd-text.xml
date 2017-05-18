@@ -90,6 +90,7 @@
             </modify>
         </pass>
         <remove-blanks where="both"/>
+        <suppress-blank-lines/>
     </transform>
     <!-- tokens back into tags -->
     <transform source="$z1" destination="$kt-x">
