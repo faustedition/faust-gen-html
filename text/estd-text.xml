@@ -6,13 +6,19 @@
             >file:///C:/Users/gerri/txstep/ueb/txstep.tu</variable>
         <variable type="permanent-file" code="UTF-8" name="h-x"
             >file:///C:/Users/gerri/faustedition/xml/h.xml</variable>
-        <variable type="permanent-file" format="tustep" option="erase" name="z1"
-            >file:///C:/Users/gerri/txstep/txt/z1.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="hz1"
+            >file:///C:/Users/gerri/txstep/txt/hz1.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="h"
+            >file:///C:/Users/gerri/txstep/txt/h.tf</variable>
+        <variable type="permanent-file"  code="UTF-8" name="crith" option="erase"
+            >file:///C:/Users/gerri/faustedition/txt/crith.txt</variable>
         <variable type="permanent-file" code="UTF-8" name="kt-x" option="erase"
             >file:///C:/Users/gerri/faustedition/xml/kt.xml</variable>
         <variable type="scratch-file" name="ko1"/>
+        <variable type="scratch-file" name="ko2"/>
+        <variable type="scratch-file" name="crit"/>
     </variables>
-    <transform source="$h-x" destination="$z1" save-params="ko1">
+    <transform source="h-x" destination="$hz1" save-params="ko1">
         <define-text-units>
             <text-unit-start>
                 <comparison-table>
@@ -92,8 +98,91 @@
         <remove-blanks where="both"/>
         <suppress-blank-lines/>
     </transform>
+    <transform source="$hz1" destination="h" save-params="$ko2" mode="+">
+        <define-text-units>
+            <text-unit-start>
+                <comparison-table>
+                    <exclusion-string>{{abbr}}</exclusion-string>
+                    <exclusion-string>{{expan}}</exclusion-string>
+                    <exclusion-string>{{choice</exclusion-string>
+                    <exclusion-string>{{corr</exclusion-string>
+                    <exclusion-string>{{damage</exclusion-string>
+                    <exclusion-string>{{emph}}</exclusion-string>
+                    <exclusion-string>{{hi}}</exclusion-string>
+                    <exclusion-string>{{hi+</exclusion-string>
+                    <exclusion-string>{{l}}</exclusion-string>
+                    <exclusion-string>{{l+</exclusion-string>
+                    <exclusion-string>{{note</exclusion-string>
+                    <exclusion-string>{{orig}}</exclusion-string>
+                    <exclusion-string>{{reg}}</exclusion-string>
+                    <exclusion-string>{{s}}</exclusion-string>
+                    <exclusion-string>{{seg}}</exclusion-string>
+                    <exclusion-string>{{sic}}</exclusion-string>
+                    <exclusion-string>{{speaker</exclusion-string>
+                    <exclusion-string>{{supplied</exclusion-string>
+                    <exclusion-string>{{surplus}}</exclusion-string>
+                    <exclusion-string>{{unclear}}</exclusion-string>
+                    <comparison-string>{{</comparison-string>
+                </comparison-table>
+            </text-unit-start>
+        </define-text-units>
+        <new-line-before>
+            <!-- za -->
+            <search-table>
+                <exception-string>{{abbr}}</exception-string>
+                <exception-string>{{expan}}</exception-string>
+                <exception-string>{{choice</exception-string>
+                <exception-string>{{corr</exception-string>
+                <exception-string>{{damage</exception-string>
+                <exception-string>{{emph}}</exception-string>
+                <exception-string>{{hi}}</exception-string>
+                <exception-string>{{hi+</exception-string>
+                <exception-string>{{note</exception-string>
+                <exception-string>{{orig}}</exception-string>
+                <exception-string>{{reg}}</exception-string>
+                <exception-string>{{s}}</exception-string>
+                <exception-string>{{seg}}</exception-string>
+                <exception-string>{{sic}}</exception-string>
+                <exception-string>{{sp}}</exception-string>
+                <exception-string>{{speaker</exception-string>
+                <exception-string>{{supplied</exception-string>
+                <exception-string>{{surplus}}</exception-string>
+                <exception-string>{{unclear}}</exception-string>
+                <exception-string>{{/</exception-string>
+                <search-string>{{lg*}} {{l</search-string>
+                <search-string>{{</search-string>
+            </search-table>
+        </new-line-before>
+    </transform>
+    <transform source="h" destination="crith" save-params="crit">
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>{{corr</search-string>
+                            <search-string>{{sic</search-string>
+                            <search-string>{{supplied</search-string>
+                            <search-string>{{surplus</search-string>
+                            <search-string>{{!--</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>+</search-string>
+                            <replacement-string> </replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+    </transform>
     <!-- tokens back into tags -->
-    <transform source="$z1" destination="$kt-x">
+    <transform source="h" destination="kt-x">
         <pass>
             <modify>
                 <exchange>
