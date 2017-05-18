@@ -230,9 +230,8 @@
 								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | fw | hi/@status | anchor |  
 								join[@type='antilabe'] | join[@result='sp'] | join[@type='former_unit'] | */@xml:space
 								| div[@type='stueck'] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage/@rend
-								| l/@rend | space | hi[not(@rend[contains(.,'antiqua')]) and not(@rend[contains(.,'latin')])]/@rend"/>
-							<!-- wenn H Antilabe 8424 geprüft, auch l/@xml:id -->
-							<!-- comments prüfen und raus -->
+								| l/@rend | l/@xml:id | space | hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
+								| sp/@who | note[@type='editorial']"/>
 
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">
