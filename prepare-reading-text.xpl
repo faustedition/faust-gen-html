@@ -218,8 +218,6 @@
 								</xsl:copy>
 							</xsl:template>
 
-							<xsl:template match="fw"/>
-
 							<xsl:template
 								match="group | l/hi[@rend='big'] | seg[@f:questionedBy or @f:markedBy] | c | damage | 
 								damage/supplied">
@@ -227,7 +225,7 @@
 							</xsl:template>
 							<xsl:template
 								match="creation | sourceDesc | profileDesc | encodingDesc | revisionDesc 
-								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | hi/@status | anchor | corr | 
+								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | fw | hi/@status | anchor | corr | 
 								join[@type='antilabe'] | join[@result='sp'] | join[@type='former_unit'] | */@xml:space
 								| div[@type='stueck']"/>
 
