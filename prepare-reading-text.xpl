@@ -229,7 +229,8 @@
 								match="creation | sourceDesc | profileDesc | encodingDesc | revisionDesc 
 								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | fw | hi/@status | anchor | corr | 
 								join[@type='antilabe'] | join[@result='sp'] | join[@type='former_unit'] | */@xml:space
-								| div[@type='stueck'] | lg/@type "/>
+								| div[@type='stueck'] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage/@rend
+								| l/@rend | space | //hi[not(@rend[contains(.,'antiqua')]) and not(@rend[contains(.,'latin')])]/@rend"/>
 
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">
@@ -279,7 +280,7 @@
 								</xsl:copy>
 							</xsl:template>
 
-							<xsl:template match="text[not(normalize-space(.))]"/>
+							<xsl:template match="text[not(normalize-space(.))] | front[not(normalize-space(.))]"/>
 							<xsl:template match="text[text]">
 								<xsl:apply-templates/>
 							</xsl:template>
