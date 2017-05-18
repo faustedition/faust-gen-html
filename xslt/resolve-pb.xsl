@@ -55,7 +55,7 @@
 					<xsl:attribute name="f:docTranscriptNo" select="string-join($docTranscriptNos, ' ')"/>					
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:if test="$type == 'archivalDocument'">
+					<xsl:if test="$type = 'archivalDocument'">
 						<xsl:message>WARNING: No doc transcript; using fallback pageno <xsl:value-of select="$pbNo"/> in <xsl:value-of select="id('sigil')"/></xsl:message>
 					</xsl:if>
 					<xsl:attribute name="f:docTranscriptNo" select="$pbNo"/>
