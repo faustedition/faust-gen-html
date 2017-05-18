@@ -46,6 +46,37 @@
                 </exchange>
             </modify>
         </pass>
+        <!-- separate most tags from text: -->
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <exception-string>{{{0}/abbr}}</exception-string>
+                        <exception-string>{{{0}/choice}}</exception-string>
+                        <exception-string>{{{0}/corr}}</exception-string>
+                        <exception-string>{{corr{00}{c:tg}}}</exception-string>
+                        <exception-string>{{{0}/emph}}</exception-string>
+                        <exception-string>{{{0}/expan}}</exception-string>
+                        <exception-string>{{{0}/hi}}</exception-string>
+                        <exception-string>{{hi{00}{c:tg}}}</exception-string>
+                        <exception-string>{{{0}/orig}}</exception-string>
+                        <exception-string>{{{0}/sic}}</exception-string>
+                        <exception-string>{{{0}/supplied}}</exception-string>
+                        <exception-string>{{supplied{00}{c:tg}}}</exception-string>
+                        <exception-string>{{{0}/surplus}}</exception-string>
+                        <exception-string>{{{0}/unclear}}</exception-string>
+                        <string-pair>
+                            <search-string>}}</search-string>
+                            <replacement-string>}} </replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{</search-string>
+                            <replacement-string> {{</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
     </transform>
     <!-- tokens back into tags -->
     <transform source="$z1" destination="$kt-x">
