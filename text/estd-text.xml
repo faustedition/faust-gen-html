@@ -21,11 +21,19 @@
                 </comparison-table>
             </text-unit-start>
         </define-text-units>
-        <!-- tags into tokens -->
         <pass>
             <modify>
                 <exchange>
                     <exchange-table>
+                        <string-pair>
+                            <search-string>*{{\T\E\I*</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{/TEI}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <!-- tags into tokens: -->
                         <string-pair>
                             <search-string>{1-0} }}</search-string>
                             <replacement-string>}}</replacement-string>
