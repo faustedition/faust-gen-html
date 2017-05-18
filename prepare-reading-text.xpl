@@ -222,7 +222,7 @@
 
 							<xsl:template
 								match="group | l/hi[@rend='big'] | seg[@f:questionedBy or @f:markedBy] | c | damage[not(descendant::supplied)] 
-								| s">
+								| s| seg[@xml:id]">
 								<xsl:apply-templates/>
 							</xsl:template>
 							<xsl:template
@@ -231,7 +231,7 @@
 								join[@type='antilabe'] | join[@result='sp'] | join[@type='former_unit'] | */@xml:space
 								| div[@type='stueck'] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage/@rend
 								| l/@rend | l/@xml:id | space | hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
-								| sp/@who | note[@type='editorial']"/>
+								| sp/@who | note[@type='editorial'] "/>
 
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">
