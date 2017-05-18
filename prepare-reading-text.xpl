@@ -30,7 +30,7 @@
 					<!--<base>http://dev.faustedition.net/xml</base>-->
 					<!--<base>file:/home/tv/git/faust-gen/data/xml</base>-->
 					<base>file:/Users/gerri/faustedition/xml</base>
-					
+
 					<!-- URL, unter der die transformierten Dateien
 					     gespeichert werden sollen:	-->
 					<!--<target>file:/home/tv/git/faust-gen/target/prepare-reading-text/</target>-->
@@ -38,7 +38,9 @@
 					<!-- Quell-Transkripte: -->
 					<!--<transcript path="transcript/test/test.xml"/>-->
 					<transcript path="transcript/gsa/391098/391098.xml" output="h.xml"/>
-					<transcript path="transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml" output="h0a.xml"/>
+					<transcript
+						path="transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml"
+						output="h0a.xml"/>
 					<transcript path="print/C(1)4_IIIB24.xml" output="c14.xml"/>
 					<transcript path="print/C(2a)4_IIIB28.xml" output="c2a4.xml"/>
 					<transcript path="print/C(3)4_IIIB27_chartUngleich.xml" output="c34.xml"/>
@@ -134,7 +136,7 @@
 							version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
 
 							<xsl:include href="xslt/emend-core.xsl"/>
-													
+
 							<xsl:template match="choice[abbr|expan]" priority="4.0" mode="emend">
 								<!-- Später, cf. #111 -->
 								<xsl:copy>
@@ -220,14 +222,14 @@
 
 							<xsl:template
 								match="group | l/hi[@rend='big'] | seg[@f:questionedBy or @f:markedBy] | c | damage | 
-								damage/supplied">
+								damage/supplied | s">
 								<xsl:apply-templates/>
 							</xsl:template>
 							<xsl:template
 								match="creation | sourceDesc | profileDesc | encodingDesc | revisionDesc 
 								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | fw | hi/@status | anchor | corr | 
 								join[@type='antilabe'] | join[@result='sp'] | join[@type='former_unit'] | */@xml:space
-								| div[@type='stueck']"/>
+								| div[@type='stueck'] | lg/@type "/>
 
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">
@@ -278,6 +280,9 @@
 							</xsl:template>
 
 							<xsl:template match="text[not(normalize-space(.))]"/>
+							<xsl:template match="text[text]">
+								<xsl:apply-templates/>
+							</xsl:template>
 
 						</xsl:stylesheet>
 
@@ -295,54 +300,70 @@
 			</p:store>
 
 			<!-- Kopie der fertigen Einzeldatei soll hinten aus der for-each-Schleife fallen: -->
-			<p:identity><p:input port="source"><p:pipe port="result" step="final-single-text"/></p:input></p:identity>
+			<p:identity>
+				<p:input port="source">
+					<p:pipe port="result" step="final-single-text"/>
+				</p:input>
+			</p:identity>
 		</p:for-each>
-		
+
 		<!-- alles zusammenkleben zum gemeinsamen Bearbeiten: -->
 		<p:wrap-sequence wrapper="tei:teiCorpus"/>
-		
+
 		<p:xslt>
-			<p:input port="stylesheet"><p:inline>
-				<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" 
-					xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-					xmlns="http://www.tei-c.org/ns/1.0">
-					<xsl:import href="xslt/utils.xsl"/>
-					<xsl:template match="/">
-						<f:expan-map xmlns="http://www.tei-c.org/ns/1.0">
-							<xsl:for-each-group select="//abbr[not(preceding-sibling::expan | following-sibling::expan)]" group-by="f:normalize-space(.)">
-								<xsl:variable name="abbr" select="current-grouping-key()"/>
-								<choice>
-									<xsl:comment select="string-join(current-group()/ancestor::*[f:hasvars(.)]/@n, ', ')"/>
-									<abbr><xsl:value-of select="$abbr"/></abbr>
-									
-									<!-- find all expansions for the current abbr elsewhere in the text -->
-									<xsl:variable name="expansions">
-										<xsl:for-each-group select="//expan[
+			<p:input port="stylesheet">
+				<p:inline>
+					<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
+						xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+						xmlns="http://www.tei-c.org/ns/1.0">
+						<xsl:import href="xslt/utils.xsl"/>
+						<xsl:template match="/">
+							<f:expan-map xmlns="http://www.tei-c.org/ns/1.0">
+								<xsl:for-each-group
+									select="//abbr[not(preceding-sibling::expan | following-sibling::expan)]"
+									group-by="f:normalize-space(.)">
+									<xsl:variable name="abbr" select="current-grouping-key()"/>
+									<choice>
+										<xsl:comment select="string-join(current-group()/ancestor::*[f:hasvars(.)]/@n, ', ')"/>
+										<abbr>
+											<xsl:value-of select="$abbr"/>
+										</abbr>
+
+										<!-- find all expansions for the current abbr elsewhere in the text -->
+										<xsl:variable name="expansions">
+											<xsl:for-each-group
+												select="//expan[
 											preceding-sibling::abbr[f:normalize-space(.) = $abbr] |
 											following-sibling::abbr[f:normalize-space(.) = $abbr]
-										]" group-by="f:normalize-space(.)">
-											<expan><xsl:value-of select="current-grouping-key()"/></expan>
-										</xsl:for-each-group>										
-									</xsl:variable>
-									
-									<xsl:choose>
-										<xsl:when test="$expansions//expan">
-											<xsl:copy-of select="$expansions"/>
-										</xsl:when>
-										<xsl:otherwise>
-											<xsl:comment>TODO</xsl:comment>
-											<expan><xsl:value-of select="$abbr"/></expan>
-										</xsl:otherwise>
-									</xsl:choose>
-								</choice>
-							</xsl:for-each-group>
-						</f:expan-map>
-					</xsl:template>					
-				</xsl:stylesheet>
-			</p:inline></p:input>
+										]"
+												group-by="f:normalize-space(.)">
+												<expan>
+												<xsl:value-of select="current-grouping-key()"/>
+												</expan>
+											</xsl:for-each-group>
+										</xsl:variable>
+
+										<xsl:choose>
+											<xsl:when test="$expansions//expan">
+												<xsl:copy-of select="$expansions"/>
+											</xsl:when>
+											<xsl:otherwise>
+												<xsl:comment>TODO</xsl:comment>
+												<expan>
+												<xsl:value-of select="$abbr"/>
+												</expan>
+											</xsl:otherwise>
+										</xsl:choose>
+									</choice>
+								</xsl:for-each-group>
+							</f:expan-map>
+						</xsl:template>
+					</xsl:stylesheet>
+				</p:inline>
+			</p:input>
 			<p:input port="parameters"/>
 		</p:xslt>
-		
+
 		<p:store indent="true">
 			<p:with-option name="href" select="resolve-uri('expan-map.xml.in', $target)"/>
 		</p:store>
