@@ -13,6 +13,8 @@
         <variable type="scratch-file" name="ko1"/>
         <variable type="scratch-file" name="ko2"/>
         <variable type="scratch-file" name="crit"/>
+        <variable type="permanent-file" format="tustep" option="erase" name="zuni"
+            >file:///C:/Users/gerri/txstep/txt/zuni.tf</variable>
         <variable type="execution-file" name="execute"
             >file:///C:/Users/gerri/txstep/ueb/txstep.tu</variable>
         <variable type="permanent-file" code="UTF-8" name="h-x"
@@ -35,8 +37,10 @@
             >file:///C:/Users/gerri/faustedition/txt/crith0a.txt</variable>
         <variable type="permanent-file" code="UTF-8" name="kt-x" option="erase"
             >file:///C:/Users/gerri/faustedition/xml/kt.xml</variable>
-        <variable type="permanent-file" format="tustep" option="erase" name="zuni"
-            >file:///C:/Users/gerri/txstep/txt/zuni.tf</variable>
+        <variable type="permanent-file" name="diff1" option="erase" format="tustep"
+            >file:///C:/Users/gerri/txstep/ve/diff1</variable>
+        <variable type="permanent-file" name="diff-list1" option="erase" format="tustep"
+            >file:///C:/Users/gerri/txstep/va/difflist1</variable>
     </variables>
     <!-- extract header: -->
     <transform source="h-x" destination="hheader">
@@ -287,9 +291,20 @@
             </modify>
         </pass>
     </transform>
+    <!-- transform h0a: -->
     <transform source="h0a-x" destination="h0az1" take-params="ko1"/>
     <transform source="h0az1" destination="h0a" take-params="ko2" mode="+"/>
     <transform source="h0a" destination="crith0a" take-params="crit"/>
+    <!-- collate h and h0a -->
+    <compare versiona="h" versionb="h0a" variants="diff1" type="corrections" listing="-">
+        <compare-units mode="word"/>
+        <select-area versiona="1.10-28.9" versionb="1.3-28.3,9"/>
+        <version-id>H.0a</version-id>
+    </compare>
+    <collate source="h" mode="single-witness" diff-file="diff1" listing="$diff-list1">
+        <list lines="with-variants"/>
+    </collate>
+    <!--    <display file="diff-list1" type="listing" mode="ps-landscape"/>-->
     <!-- build kt: -->
     <transform source="hheader" destination="kt-x">
         <pass>
