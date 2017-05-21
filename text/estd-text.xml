@@ -41,6 +41,8 @@
             >file:///C:/Users/gerri/txstep/ve/diff1</variable>
         <variable type="permanent-file" name="diff-list1" option="erase" format="tustep"
             >file:///C:/Users/gerri/txstep/va/difflist1</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="kth0a"
+            >file:///C:/Users/gerri/txstep/txt/kth0a.tf</variable>
     </variables>
     <!-- extract header: -->
     <transform source="h-x" destination="hheader">
@@ -213,7 +215,7 @@
                     <exclusion-string>{{speaker</exclusion-string>
                     <exclusion-string>{{supplied</exclusion-string>
                     <exclusion-string>{{surplus}}</exclusion-string>
-                    <exclusion-string>{{unclear}}</exclusion-string>
+                    <exclusion-string>{{unclear</exclusion-string>
                     <comparison-string>{{</comparison-string>
                 </comparison-table>
             </text-unit-start>
@@ -239,7 +241,7 @@
                 <exception-string>{{speaker</exception-string>
                 <exception-string>{{supplied</exception-string>
                 <exception-string>{{surplus}}</exception-string>
-                <exception-string>{{unclear}}</exception-string>
+                <exception-string>{{unclear</exception-string>
                 <exception-string>{{/</exception-string>
                 <search-string>{{lg*}} {{l</search-string>
                 <search-string>{{/body}}</search-string>
@@ -259,6 +261,7 @@
                             <search-string>{{sic</search-string>
                             <search-string>{{supplied</search-string>
                             <search-string>{{surplus</search-string>
+                            <search-string>{{unclear</search-string>
                             <search-string>{{!--</search-string>
                         </search-table>
                     </text-contains>
@@ -298,13 +301,19 @@
     <!-- collate h and h0a -->
     <compare versiona="h" versionb="h0a" variants="diff1" type="corrections" listing="-">
         <compare-units mode="word"/>
-        <select-area versiona="1.10-28.9" versionb="1.3-28.3,9"/>
+        <add-context>
+            <omission length-before="0" length-lemma="3" length-after="0"/>
+            <replacement length-before="0" length-lemma="3" length-after="0"/>
+            <insertion length-before="1" length-after="0"/>
+        </add-context>
+        <select-area versiona="1.10-28.9" versionb="1.3-28.3,10"/>
         <version-id>H.0a</version-id>
     </compare>
-    <collate source="h" mode="single-witness" diff-file="diff1" listing="$diff-list1">
+    <!--<collate source="h" mode="single-witness" diff-file="diff1" listing="$diff-list1">
         <list lines="with-variants"/>
-    </collate>
+    </collate>-->
     <!--    <display file="diff-list1" type="listing" mode="ps-landscape"/>-->
+    <correct source="h" destination="kth0a" corrections="diff1" option="erase"/>
     <!-- build kt: -->
     <transform source="hheader" destination="kt-x">
         <pass>
