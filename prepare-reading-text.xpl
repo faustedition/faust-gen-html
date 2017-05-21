@@ -240,7 +240,7 @@
 								</xsl:if>
 							</xsl:template>
 							<xsl:strip-space
-								elements="TEI teiHeader fileDesc titleStmt publicationStmt"/>
+								elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc ge:transpose"/>
 							<xsl:template match="ge:transpose/add/text()"/>
 							<!--<!-\- sample data for MC; to be moved at the end of procedures when reading text is finished -\->
 							<xsl:template match="div/@n"/>
