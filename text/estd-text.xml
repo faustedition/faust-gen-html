@@ -10,6 +10,9 @@
             <member>5930</member>
             <member>5966</member>
         </string-group>
+        <variable type="scratch-file" name="ko1"/>
+        <variable type="scratch-file" name="ko2"/>
+        <variable type="scratch-file" name="crit"/>
         <variable type="execution-file" name="execute"
             >file:///C:/Users/gerri/txstep/ueb/txstep.tu</variable>
         <variable type="permanent-file" code="UTF-8" name="h-x"
@@ -34,9 +37,6 @@
             >file:///C:/Users/gerri/faustedition/xml/kt.xml</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="zuni"
             >file:///C:/Users/gerri/txstep/txt/zuni.tf</variable>
-        <variable type="scratch-file" name="ko1"/>
-        <variable type="scratch-file" name="ko2"/>
-        <variable type="scratch-file" name="crit"/>
     </variables>
     <!-- extract header: -->
     <transform source="h-x" destination="hheader">
