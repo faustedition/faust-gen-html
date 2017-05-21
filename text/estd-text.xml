@@ -144,7 +144,7 @@
                         <exception-string>{{corr{00}{c:tg}}}</exception-string>
                         <exception-string>{{{0}/emph}}</exception-string>
                         <exception-string>{{{0}/expan}}</exception-string>
-                        <exception-string>{{[0}/g}}</exception-string>
+                        <exception-string>{{{0}/g}}</exception-string>
                         <exception-string>{{{0}/hi}}</exception-string>
                         <exception-string>{{hi{00}{c:tg}}}</exception-string>
                         <exception-string>{{{0}/orig}}</exception-string>
