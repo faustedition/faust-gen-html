@@ -28,6 +28,8 @@
             >file:///C:/Users/gerri/txstep/txt/h0a.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="crith" option="erase"
             >file:///C:/Users/gerri/faustedition/txt/crith.txt</variable>
+        <variable type="permanent-file" code="UTF-8" name="crith0a" option="erase"
+            >file:///C:/Users/gerri/faustedition/txt/crith0a.txt</variable>
         <variable type="permanent-file" code="UTF-8" name="kt-x" option="erase"
             >file:///C:/Users/gerri/faustedition/xml/kt.xml</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="zuni"
@@ -80,7 +82,7 @@
                         </string-pair>
                         <string-pair>
                             <search-string>{{/teiHeader}}</search-string>
-                            <replacement-string></replacement-string>
+                            <replacement-string/>
                         </string-pair>
                     </exchange-table>
                 </exchange>
@@ -142,6 +144,7 @@
                         <exception-string>{{corr{00}{c:tg}}}</exception-string>
                         <exception-string>{{{0}/emph}}</exception-string>
                         <exception-string>{{{0}/expan}}</exception-string>
+                        <exception-string>{{[0}/g}}</exception-string>
                         <exception-string>{{{0}/hi}}</exception-string>
                         <exception-string>{{hi{00}{c:tg}}}</exception-string>
                         <exception-string>{{{0}/orig}}</exception-string>
@@ -187,6 +190,7 @@
                     <exclusion-string>{{corr</exclusion-string>
                     <exclusion-string>{{damage</exclusion-string>
                     <exclusion-string>{{emph}}</exclusion-string>
+                    <exclusion-string>{{g}}</exclusion-string>
                     <exclusion-string>{{hi}}</exclusion-string>
                     <exclusion-string>{{hi+</exclusion-string>
                     <exclusion-string>{{l}}</exclusion-string>
@@ -214,6 +218,7 @@
                 <exception-string>{{corr</exception-string>
                 <exception-string>{{damage</exception-string>
                 <exception-string>{{emph}}</exception-string>
+                <exception-string>{{g}}</exception-string>
                 <exception-string>{{hi}}</exception-string>
                 <exception-string>{{hi+</exception-string>
                 <exception-string>{{note</exception-string>
@@ -233,7 +238,6 @@
             </search-table>
         </new-line-before>
     </transform>
-    <transform source="h0a-x" destination="h0a" take-params="ko1"/>
     <transform source="h" destination="zuni" option="append" save-params="crit">
         <pass>
             <examine-text>
@@ -275,6 +279,9 @@
             </modify>
         </pass>
     </transform>
+    <transform source="h0a-x" destination="h0az1" take-params="ko1"/>
+    <transform source="h0az1" destination="h0a" take-params="ko2" mode="+"/>
+    <!-- build kt: -->
     <transform source="hheader" destination="kt-x">
         <pass>
             <modify>
