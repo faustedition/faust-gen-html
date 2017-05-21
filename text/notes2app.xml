@@ -3,21 +3,27 @@
     <variables>
         <variable type="execution-file" name="execute"
             >file:///C:/users/gerri/txstep/ueb/txstep.tu</variable>
-        <variable type="permanent-file" name="nii-t" option="erase"
-            >file:///C:/Users/gerri/txstep/txt/nii.tf</variable>
-        <variable type="permanent-file" name="nii2-t" option="erase"
+        <char-group name="bt">?{-}\]</char-group>
+        <variable type="permanent-file" name="niiimp" option="erase"
+            >file:///C:/Users/gerri/txstep/txt/niiimp.tf</variable>
+        <variable type="permanent-file" name="niiimp-full" option="erase"
+            >file:///C:/Users/gerri/txstep/txt/niiimp-full.tf</variable>
+        <variable type="permanent-file" name="niiimp-full2" option="erase"
             >file:///C:/Users/gerri/txstep/txt/nii2.tf</variable>
-        <variable type="permanent-file" name="rtf2" option="erase" format="system"
-            >file:///C:/Users/gerri/txstep/txt/nii2.rtf</variable>
+        <variable type="permanent-file" name="niiread" option="erase" format="system"
+            >file:///C:/Users/gerri/txstep/txt/niiread.rtf</variable>
     </variables>
     <tustep>
 #de,da=*
 rtf = C:\users\gerri\txstep\txt\nii.rtf
+rtf-s = C:\users\gerri\txstep\txt\nii-sample.rtf
 *eof
 #anmelde, rtf, traeger = -
-#*import, rtf, nii-t, ignor = -
+#anmelde, rtf-s, traeger = -
+#*import, rtf-s, niiimp, ignor = +
+#*import, rtf, niiimp-full, ignor = -
     </tustep>
-    <transform source="$nii-t" destination="$nii2-t">
+    <transform source="$niiimp-full" destination="$niiimp-full2">
         <pass>
             <modify>
                 <exchange>
@@ -36,6 +42,6 @@ rtf = C:\users\gerri\txstep\txt\nii.rtf
         </pass>
     </transform>
     <tustep>
-#*export, nii2-t, rtf2, loeschen = +        
+#*export, niiimp-full2, niiread, loeschen = +        
     </tustep>
 </script>
