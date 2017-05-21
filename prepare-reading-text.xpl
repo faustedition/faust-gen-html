@@ -222,16 +222,16 @@
 
 							<xsl:template
 								match="group | l/hi[@rend='big'] | seg[@f:questionedBy or @f:markedBy] | c | damage[not(descendant::supplied)] 
-								| s| seg[@xml:id]">
+								| s| seg[@xml:id] | profileDesc | creation | ge:transposeGrp">
 								<xsl:apply-templates/>
 							</xsl:template>
 							<xsl:template
-								match="creation | sourceDesc | profileDesc | encodingDesc | revisionDesc 
+								match="sourceDesc | encodingDesc | revisionDesc 
 								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | fw | hi/@status | anchor |  
 								join[@type='antilabe'] | join[@result='sp'] | join[@type='former_unit'] | */@xml:space
 								| div[@type='stueck'] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage/@rend
 								| l/@rend | l/@xml:id | space | hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
-								| sp/@who | note[@type='editorial'] "/>
+								| sp/@who | note[@type='editorial'] | ge:transpose[not(@ge:stage='#posthumous')] | ge:stageNotes | handNotes"/>
 
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">
@@ -241,6 +241,7 @@
 							</xsl:template>
 							<xsl:strip-space
 								elements="TEI teiHeader fileDesc titleStmt publicationStmt"/>
+							<xsl:template match="ge:transpose/add/text()"/>
 							<!--<!-\- sample data for MC; to be moved at the end of procedures when reading text is finished -\->
 							<xsl:template match="div/@n"/>
 							<xsl:template match="orig | unclear">
