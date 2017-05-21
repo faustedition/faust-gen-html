@@ -12,7 +12,7 @@
             >file:///C:/Users/gerri/txstep/txt/hz1.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h"
             >file:///C:/Users/gerri/txstep/txt/h.tf</variable>
-        <variable type="permanent-file"  code="UTF-8" name="crith" option="erase"
+        <variable type="permanent-file" code="UTF-8" name="crith" option="erase"
             >file:///C:/Users/gerri/faustedition/txt/crith.txt</variable>
         <variable type="permanent-file" code="UTF-8" name="kt-x" option="erase"
             >file:///C:/Users/gerri/faustedition/xml/kt.xml</variable>
