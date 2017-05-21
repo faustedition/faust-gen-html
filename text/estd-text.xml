@@ -302,7 +302,7 @@
     <compare versiona="h" versionb="h0a" variants="diff1" type="corrections" listing="-">
         <compare-units mode="word"/>
         <add-context>
-            <omission length-before="0" length-lemma="3" length-after="0"/>
+            <omission length-before="0" length-lemma="5" length-after="0"/>
             <replacement length-before="0" length-lemma="3" length-after="0"/>
             <insertion length-before="1" length-after="0"/>
         </add-context>
@@ -334,7 +334,7 @@
         </pass>
     </transform>
     <!-- tokens back into tags -->
-    <transform source="h" destination="kt-x" option="append">
+    <transform source="kth0a" destination="kt-x" option="append">
         <pass>
             <modify>
                 <exchange>
