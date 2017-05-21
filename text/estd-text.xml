@@ -3,6 +3,7 @@
     <variables>
         <char-group name="tg">?{-}{{}}%</char-group>
         <string-group name="ea">
+            <member>4795</member>
             <member>4761</member>
             <member>5086</member>
             <member>5642</member>
@@ -43,6 +44,8 @@
             >file:///C:/Users/gerri/txstep/va/difflist1</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="kth0a"
             >file:///C:/Users/gerri/txstep/txt/kth0a.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="ktemend"
+            >file:///C:/Users/gerri/txstep/txt/ktemend.tf</variable>
     </variables>
     <!-- extract header: -->
     <transform source="h-x" destination="hheader">
@@ -313,7 +316,24 @@
         <list lines="with-variants"/>
     </collate>-->
     <!--    <display file="diff-list1" type="listing" mode="ps-landscape"/>-->
+    <!-- correct h -->
     <correct source="h" destination="kth0a" corrections="diff1" option="erase"/>
+    <!-- emend kt and add app entries: -->
+    <transform source="kth0a" destination="ktemend">
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <!-- sample correction: 11160 fremdem] fremden H -->
+                        <string-pair>
+                            <search-string>"11160"*{|}fremden</search-string>
+                            <replacement-string>{=1=}{{seg+xml:id="l^_11160fremdem"}}fremdem{{/seg}}{{note+target="^#l^_11160fremdem"}}{{app+loc="11160"}}{{lem}}fremdem{{/lem}}{{rdg+wit="faust://document/faustedition/2^_H"}}fremden{{/rdg}}{{/app}}{{/note}}</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+    </transform>
     <!-- build kt: -->
     <transform source="hheader" destination="kt-x">
         <pass>
@@ -334,7 +354,7 @@
         </pass>
     </transform>
     <!-- tokens back into tags -->
-    <transform source="kth0a" destination="kt-x" option="append">
+    <transform source="ktemend" destination="kt-x" option="append">
         <pass>
             <modify>
                 <exchange>
