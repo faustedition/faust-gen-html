@@ -226,7 +226,7 @@
 								<xsl:apply-templates/>
 							</xsl:template>
 							<xsl:template
-								match="sourceDesc | encodingDesc | revisionDesc 
+								match="sourceDesc/* | encodingDesc | revisionDesc 
 								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | fw | hi/@status | anchor |  
 								join[@type='antilabe'] | join[@result='sp'] | join[@type='former_unit'] | */@xml:space
 								| div[@type='stueck'] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage/@rend
