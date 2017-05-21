@@ -6,6 +6,8 @@
             >file:///C:/Users/gerri/txstep/ueb/txstep.tu</variable>
         <variable type="permanent-file" code="UTF-8" name="h-x"
             >file:///C:/Users/gerri/faustedition/xml/h.xml</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="hheader"
+            >file:///C:/Users/gerri/txstep/txt/hheader.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hz1"
             >file:///C:/Users/gerri/txstep/txt/hz1.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h"
@@ -18,6 +20,21 @@
         <variable type="scratch-file" name="ko2"/>
         <variable type="scratch-file" name="crit"/>
     </variables>
+    <transform source="h-x" destination="hheader">
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>{{\T\E\I</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <remove-blanks where="both"/>
+        <insert-at-end>{{/teiHeader}}</insert-at-end>
+    </transform>
     <transform source="h-x" destination="crith">
         <pass>
             <examine-text>
@@ -203,8 +220,9 @@
             </modify>
         </pass>
     </transform>
+    <transform source="hheader" destination="kt-x"/>
     <!-- tokens back into tags -->
-    <transform source="h" destination="kt-x">
+    <transform source="h" destination="kt-x" option="append">
         <pass>
             <modify>
                 <exchange>
@@ -217,5 +235,6 @@
                 </exchange>
             </modify>
         </pass>
+        <insert-at-end>{{/TEI}}</insert-at-end>
     </transform>
 </script>
