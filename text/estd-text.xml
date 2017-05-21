@@ -220,7 +220,24 @@
             </modify>
         </pass>
     </transform>
-    <transform source="hheader" destination="kt-x"/>
+    <transform source="hheader" destination="kt-x">
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{{title}}{[}H{]}{{/title}}</search-string>
+                            <replacement-string>Faust II</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{sourceDesc/}}</search-string>
+                            <replacement-string>{{sourceDesc}}{{p}}konstituiert{{/p}}{{/sourceDesc}}</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+    </transform>
     <!-- tokens back into tags -->
     <transform source="h" destination="kt-x" option="append">
         <pass>
