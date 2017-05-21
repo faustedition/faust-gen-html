@@ -231,7 +231,8 @@
 								join[@type='antilabe'] | join[@result='sp'] | join[@type='former_unit'] | */@xml:space
 								| div[@type='stueck'] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage/@rend
 								| l/@rend | l/@xml:id | space | hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
-								| sp/@who | note[@type='editorial'] | ge:transpose[not(@ge:stage='#posthumous')] | ge:stageNotes | handNotes"/>
+								| sp/@who | note[@type='editorial'] | ge:transpose[not(@ge:stage='#posthumous')] | ge:stageNotes | 
+								handNotes | unclear/@cert | lg/@xml:id"/>
 
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">
