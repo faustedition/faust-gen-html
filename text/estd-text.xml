@@ -2,20 +2,36 @@
 <script xmlns="http://www.xstep.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <variables>
         <char-group name="tg">?{-}{{}}%</char-group>
+        <string-group name="ea">
+            <member>4761</member>
+            <member>5086</member>
+            <member>5642</member>
+            <member>5893</member>
+            <member>5930</member>
+            <member>5966</member>
+        </string-group>
         <variable type="execution-file" name="execute"
             >file:///C:/Users/gerri/txstep/ueb/txstep.tu</variable>
         <variable type="permanent-file" code="UTF-8" name="h-x"
             >file:///C:/Users/gerri/faustedition/xml/h.xml</variable>
+        <variable type="permanent-file" code="UTF-8" name="h0a-x"
+            >file:///C:/Users/gerri/faustedition/xml/h0a.xml</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hheader"
             >file:///C:/Users/gerri/txstep/txt/hheader.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hz1"
             >file:///C:/Users/gerri/txstep/txt/hz1.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="h0az1"
+            >file:///C:/Users/gerri/txstep/txt/h0az1.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h"
             >file:///C:/Users/gerri/txstep/txt/h.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="h0a"
+            >file:///C:/Users/gerri/txstep/txt/h0a.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="crith" option="erase"
             >file:///C:/Users/gerri/faustedition/txt/crith.txt</variable>
         <variable type="permanent-file" code="UTF-8" name="kt-x" option="erase"
             >file:///C:/Users/gerri/faustedition/xml/kt.xml</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="zuni"
+            >file:///C:/Users/gerri/txstep/txt/zuni.tf</variable>
         <variable type="scratch-file" name="ko1"/>
         <variable type="scratch-file" name="ko2"/>
         <variable type="scratch-file" name="crit"/>
@@ -36,6 +52,15 @@
         <insert-at-end>{{/teiHeader}}</insert-at-end>
     </transform>
     <transform source="h-x" destination="crith">
+        <define-text-units>
+            <text-unit-start>
+                <comparison-table>
+                    <exclusion-string>{{/</exclusion-string>
+                    <exclusion-string>{{abbr</exclusion-string>
+                    <comparison-string>{{</comparison-string>
+                </comparison-table>
+            </text-unit-start>
+        </define-text-units>
         <pass>
             <examine-text>
                 <select>
@@ -46,6 +71,20 @@
                     </text-contains>
                 </select>
             </examine-text>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{00} </search-string>
+                            <replacement-string> </replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{/teiHeader}}</search-string>
+                            <replacement-string></replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
         </pass>
         <remove-blanks where="both"/>
     </transform>
@@ -54,6 +93,7 @@
             <text-unit-start>
                 <comparison-table>
                     <exclusion-string>{{/</exclusion-string>
+                    <exclusion-string>{{abbr</exclusion-string>
                     <comparison-string>{{</comparison-string>
                 </comparison-table>
             </text-unit-start>
@@ -193,7 +233,8 @@
             </search-table>
         </new-line-before>
     </transform>
-    <transform source="h" destination="crith" option="append" save-params="crit">
+    <transform source="h0a-x" destination="h0a" take-params="ko1"/>
+    <transform source="h" destination="zuni" option="append" save-params="crit">
         <pass>
             <examine-text>
                 <select>
@@ -214,6 +255,20 @@
                         <string-pair>
                             <search-string>+</search-string>
                             <replacement-string> </replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+    </transform>
+    <transform source="zuni" destination="crith">
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{{l n="{s:ea}*</search-string>
+                            <replacement-string/>
                         </string-pair>
                     </exchange-table>
                 </exchange>
