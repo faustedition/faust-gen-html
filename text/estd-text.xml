@@ -38,6 +38,7 @@
         <variable type="scratch-file" name="ko2"/>
         <variable type="scratch-file" name="crit"/>
     </variables>
+    <!-- extract header: -->
     <transform source="h-x" destination="hheader">
         <pass>
             <examine-text>
@@ -53,6 +54,7 @@
         <remove-blanks where="both"/>
         <insert-at-end>{{/teiHeader}}</insert-at-end>
     </transform>
+    <!-- extract transpose: -->
     <transform source="h-x" destination="crith">
         <define-text-units>
             <text-unit-start>
@@ -90,6 +92,7 @@
         </pass>
         <remove-blanks where="both"/>
     </transform>
+    <!-- ko 1 h: -->
     <transform source="h-x" destination="$hz1" save-params="ko1">
         <define-text-units>
             <text-unit-start>
@@ -133,7 +136,7 @@
                 </exchange>
             </modify>
         </pass>
-        <!-- separate most tags from text: -->
+        <!-- separate chunk level element tags from text: -->
         <pass>
             <modify>
                 <exchange>
@@ -165,6 +168,7 @@
                 </exchange>
             </modify>
         </pass>
+        <!-- collapse whitespace: -->
         <pass>
             <modify>
                 <exchange>
@@ -180,6 +184,7 @@
         <remove-blanks where="both"/>
         <suppress-blank-lines/>
     </transform>
+    <!-- define record structure: -->
     <transform source="$hz1" destination="h" save-params="$ko2" mode="+">
         <define-text-units>
             <text-unit-start>
@@ -210,7 +215,6 @@
             </text-unit-start>
         </define-text-units>
         <new-line-before>
-            <!-- za -->
             <search-table>
                 <exception-string>{{abbr}}</exception-string>
                 <exception-string>{{expan}}</exception-string>
@@ -234,6 +238,8 @@
                 <exception-string>{{unclear}}</exception-string>
                 <exception-string>{{/</exception-string>
                 <search-string>{{lg*}} {{l</search-string>
+                <search-string>{{/body}}</search-string>
+                <search-string>{{/text}}</search-string>
                 <search-string>{{</search-string>
             </search-table>
         </new-line-before>
@@ -281,6 +287,7 @@
     </transform>
     <transform source="h0a-x" destination="h0az1" take-params="ko1"/>
     <transform source="h0az1" destination="h0a" take-params="ko2" mode="+"/>
+    <transform source="h0a" destination="crith0a" take-params="crit"/>
     <!-- build kt: -->
     <transform source="hheader" destination="kt-x">
         <pass>
