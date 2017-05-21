@@ -252,6 +252,8 @@
                 <search-string>{{</search-string>
             </search-table>
         </new-line-before>
+        <suppress-blank-lines/>
+        <!-- <output-records max-length="120"/> when necessary-->
     </transform>
     <!-- critapp lines h (1): -->
     <transform source="h" destination="zuni" option="append" save-params="crit">
@@ -367,6 +369,7 @@
                 </exchange>
             </modify>
         </pass>
+        <suppress-blank-lines/>
         <insert-at-end>{{/TEI}}</insert-at-end>
     </transform>
 </script>
