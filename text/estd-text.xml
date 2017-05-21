@@ -184,7 +184,7 @@
         <remove-blanks where="both"/>
         <suppress-blank-lines/>
     </transform>
-    <!-- define record structure: -->
+    <!-- ko 2 h: define record structure: -->
     <transform source="$hz1" destination="h" save-params="$ko2" mode="+">
         <define-text-units>
             <text-unit-start>
@@ -244,6 +244,7 @@
             </search-table>
         </new-line-before>
     </transform>
+    <!-- critapp lines h (1): -->
     <transform source="h" destination="zuni" option="append" save-params="crit">
         <pass>
             <examine-text>
@@ -271,6 +272,7 @@
             </modify>
         </pass>
     </transform>
+    <!-- critapp lines h (2): -->
     <transform source="zuni" destination="crith">
         <pass>
             <modify>
