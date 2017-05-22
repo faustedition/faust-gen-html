@@ -144,10 +144,8 @@
 								</xsl:copy>
 							</xsl:template>
 
-							<xsl:template match="*[@ge:stage='#posthumous']" priority="5.0">
-								<xsl:copy>
-									<xsl:apply-templates select="@*, node()"/>
-								</xsl:copy>
+							<xsl:template match="*[@ge:stage='#posthumous']" priority="10.0" mode="#all">
+								<xsl:copy-of select="."/>									
 							</xsl:template>
 
 						</xsl:stylesheet>

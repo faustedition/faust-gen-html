@@ -41,12 +41,12 @@
         <xsl:next-match/>
     </xsl:template>
     
-    <xsl:template match="add | mod">
+<!--    <xsl:template match="add | mod">
         <xsl:apply-templates/>
     </xsl:template>
     
     <xsl:template match="del"/>
-    
+-->    
     <xsl:template match="addSpan | delSpan | modSpan"/>
     
     <xsl:key name="delSpan-for-text" match="delSpan">
