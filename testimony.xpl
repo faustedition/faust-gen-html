@@ -58,8 +58,21 @@
 				<p:iteration-source>
 					<p:pipe port="secondary" step="split-testimony"/>
 				</p:iteration-source>
+				
+				<p:identity name="single-testimony-tei"/>
+				
 				<p:store indent="true">
 					<p:with-option name="href" select="p:base-uri()"/>
+				</p:store>
+				
+				<p:xslt>
+					<p:input port="source"><p:pipe port="result" step="single-testimony-tei"/></p:input>
+					<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+					<p:input port="stylesheet"><p:document href="xslt/single-testimony-html.xsl"/></p:input>
+				</p:xslt>
+				
+				<p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
+					<p:with-option name="href" select="p:resolve-uri(replace(p:base-uri(), '.*/([^/.]*)\.xml$', '$1.html'), $testihtml)"/>
 				</p:store>
 			</p:for-each>
 			
