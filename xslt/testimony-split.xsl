@@ -49,17 +49,27 @@
 				<xsl:for-each select="$div">					
 					<xsl:variable name="metadata" select="$table//f:testimony[@id=$id]"/>
 					<TEI>
-						<teiHeader>
-							<xsl:copy-of select="/TEI/teiHeader/@*"></xsl:copy-of>
-							<xsl:comment>Preliminary TEI header</xsl:comment>
-							<xsl:copy-of select="/TEI/teiHeader/*"/>
-							<xenoData>
-								<xsl:copy-of select="$metadata"/>
-								<f:biburl><xsl:value-of select="$biburl"/></f:biburl>
-							</xenoData>
-						</teiHeader>
+						<xsl:for-each select="/TEI/teiHeader">
+							<teiHeader>	
+								<xsl:copy-of select="@*"/>
+								<xsl:comment>Preliminary TEI header</xsl:comment>
+								<xsl:copy-of select="* except revisionDesc"/>
+								<xenoData>
+									<xsl:for-each select="$metadata">
+										<xsl:copy>
+											<xsl:copy-of select="@*"/>
+											<xsl:copy-of select="*"/>
+											<f:biburl><xsl:value-of select="$biburl"/></f:biburl>										
+										</xsl:copy>
+									</xsl:for-each>								
+								</xenoData>
+								<xsl:copy-of select="revisionDesc"/>								
+							</teiHeader>
+						</xsl:for-each>
 						<text>
-							<xsl:copy-of select="$div"/>
+							<body>
+								<xsl:copy-of select="$div"/>								
+							</body>
 						</text>
 					</TEI>
 				</xsl:for-each>
