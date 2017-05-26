@@ -152,6 +152,19 @@
                 </exchange>
             </modify>
         </pass>
+        <!-- collapse multiple +: -->
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{00}+</search-string>
+                            <replacement-string>+</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
         <!-- separate chunk level element tags from text: -->
         <pass>
             <modify>
@@ -230,7 +243,11 @@
                     <exclusion-string>{{s}}</exclusion-string>
                     <exclusion-string>{{seg}}</exclusion-string>
                     <exclusion-string>{{sic}}</exclusion-string>
+                    <exclusion-string>{{stage+n="before^_5357^_a"}}</exclusion-string>
+                    <exclusion-string>{{sp+xml:id="sp^_l^_6359"}}</exclusion-string>
+                    <exclusion-string>{{sp+xml:id="sp^_l^_6360"}}</exclusion-string>
                     <exclusion-string>{{speaker</exclusion-string>
+                    <exclusion-string>{{stage</exclusion-string>
                     <exclusion-string>{{subst</exclusion-string>
                     <exclusion-string>{{supplied</exclusion-string>
                     <exclusion-string>{{surplus}}</exclusion-string>
@@ -260,6 +277,13 @@
                 <exception-string>{{sic}}</exception-string>
                 <exception-string>{{sp}}</exception-string>
                 <exception-string>{{speaker</exception-string>
+                <exception-string>{{stage+n="before^_5357^_a"}}</exception-string>
+                <exception-string>{{sp+xml:id="sp^_l^_6359"}}</exception-string>
+                <exception-string>{{l+n="6359"}}</exception-string>
+                <exception-string>{{sp+xml:id="sp^_l^_6360"}}</exception-string>
+                <exception-string>{{stage+n="before^_6360^_b"}}</exception-string>
+                <exception-string>{{l+n="6360"}}</exception-string>
+                <exception-string>{{stage+n="before^_6361"}}</exception-string>
                 <exception-string>{{subst</exception-string>
                 <exception-string>{{supplied</exception-string>
                 <exception-string>{{surplus}}</exception-string>
