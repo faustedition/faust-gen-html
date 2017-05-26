@@ -43,7 +43,7 @@
 						output="h0a.xml"/>
 					<transcript path="print/C(1)4_IIIB24.xml" output="c14.xml"/>
 					<transcript path="print/C(2a)4_IIIB28.xml" output="c2a4.xml"/>
-					<transcript path="print/C(3)4_IIIB27_chartUngleich.xml" output="c34.xml"/>
+					<transcript path="print/C(3)4_IIIB27.xml" output="c34.xml"/>
 				</config>
 			</p:inline>
 		</p:input>
