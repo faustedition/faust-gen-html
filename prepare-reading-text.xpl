@@ -27,9 +27,9 @@
 				<config>
 					<!-- URL, von der die Quelldaten kommen sollen: -->
 					<!--<base>https://faustedition.uni-wuerzburg.de/xml</base>-->
-					<!--<base>http://dev.faustedition.net/xml</base>-->
+					<base>http://dev.faustedition.net/xml</base>
 					<!--<base>file:/home/tv/git/faust-gen/data/xml</base>-->
-					<base>file:/Users/gerri/faustedition/xml</base>
+					<!--					<base>file:/Users/gerri/faustedition/xml</base>-->
 
 					<!-- URL, unter der die transformierten Dateien
 					     gespeichert werden sollen:	-->
