@@ -267,8 +267,11 @@
                 <select>
                     <text-contains>
                         <search-table>
+                            <search-string>{{add</search-string>
                             <search-string>{{corr</search-string>
+                            <search-string>{{del</search-string>
                             <search-string>{{sic</search-string>
+                            <search-string>{{subst</search-string>
                             <search-string>{{supplied</search-string>
                             <search-string>{{surplus</search-string>
                             <search-string>{{unclear</search-string>
@@ -322,7 +325,7 @@
     <collate source="h" mode="single-witness" diff-file="diff1" listing="$diff-list1">
         <list lines="with-variants"/>
     </collate>
-        <display file="diff-list1" type="listing" mode="ps-landscape"/>
+    <!--        <display file="diff-list1" type="listing" mode="ps-landscape"/>-->
     <!-- correct h -->
     <correct source="h" destination="kth0a" corrections="diff1" option="erase"/>
     <!-- emend kt and add app entries: -->
