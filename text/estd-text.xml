@@ -198,11 +198,13 @@
         <define-text-units>
             <text-unit-start>
                 <comparison-table>
+                    <exclusion-string>{{add}}</exclusion-string>
                     <exclusion-string>{{abbr}}</exclusion-string>
                     <exclusion-string>{{expan}}</exclusion-string>
                     <exclusion-string>{{choice</exclusion-string>
                     <exclusion-string>{{corr</exclusion-string>
                     <exclusion-string>{{damage</exclusion-string>
+                    <exclusion-string>{{del</exclusion-string>
                     <exclusion-string>{{emph}}</exclusion-string>
                     <exclusion-string>{{g}}</exclusion-string>
                     <exclusion-string>{{hi}}</exclusion-string>
@@ -226,10 +228,13 @@
         <new-line-before>
             <search-table>
                 <exception-string>{{abbr}}</exception-string>
+                <exception-string>{{add}}</exception-string>
+                <exception-string>{{add+</exception-string>
                 <exception-string>{{expan}}</exception-string>
                 <exception-string>{{choice</exception-string>
                 <exception-string>{{corr</exception-string>
                 <exception-string>{{damage</exception-string>
+                <exception-string>{{del</exception-string>
                 <exception-string>{{emph}}</exception-string>
                 <exception-string>{{g}}</exception-string>
                 <exception-string>{{hi}}</exception-string>
@@ -314,10 +319,10 @@
         <select-area versiona="1.10-28.9" versionb="1.3-28.3,10"/>
         <version-id>H.0a</version-id>
     </compare>
-    <!--<collate source="h" mode="single-witness" diff-file="diff1" listing="$diff-list1">
+    <collate source="h" mode="single-witness" diff-file="diff1" listing="$diff-list1">
         <list lines="with-variants"/>
-    </collate>-->
-    <!--    <display file="diff-list1" type="listing" mode="ps-landscape"/>-->
+    </collate>
+        <display file="diff-list1" type="listing" mode="ps-landscape"/>
     <!-- correct h -->
     <correct source="h" destination="kth0a" corrections="diff1" option="erase"/>
     <!-- emend kt and add app entries: -->
