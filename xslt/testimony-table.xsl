@@ -173,7 +173,7 @@
 				</xsl:when>				
 				<xsl:otherwise>
 					<f:base><xsl:value-of select="$used/@base"/></f:base>
-					<f:href><xsl:value-of select="concat('testimony/', $used/@base, '#', $used/@testimony-id)"/></f:href>
+					<f:href><xsl:value-of select="concat('testimony/', (: $used/@base, '#', :) $used/@testimony-id)"/></f:href>
 					<xsl:variable name="bibref" select="normalize-space($used/text())"/>
 					<xsl:variable name="bib" select="$bibliography//bib[@uri=$bibref]"/> <!-- TODO refactor to bibliography.xsl -->
 					<xsl:copy-of select="$bib"/>

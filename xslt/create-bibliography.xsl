@@ -57,7 +57,7 @@
 									<xsl:for-each-group select="current-group()" group-by="@taxonomy">
 										<xsl:value-of select="current-grouping-key()"/><xsl:text> </xsl:text>
 										<xsl:for-each select="current-group()">
-											<a href="/testimony/{@testimony}"><xsl:value-of select="@n"/></a>
+											<a href="/testimony/{@testimony-id}"><xsl:value-of select="@n"/></a>
 											<xsl:if test="position() != last()">, </xsl:if>
 										</xsl:for-each>
 										<xsl:if test="position() != last()">; </xsl:if>

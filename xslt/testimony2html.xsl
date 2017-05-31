@@ -18,57 +18,28 @@
 	
 	<xsl:template match="/TEI">
 		<xsl:call-template name="html-frame">
-			<xsl:with-param name="content">
-				
+			<xsl:with-param name="content">				
 					<xsl:apply-templates select="text"/>					
-				
+			</xsl:with-param>
+			<xsl:with-param name="breadcrumbs" tunnel="yes">
+				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
+					<small id="breadcrumbs">
+						<span>
+							<a href="/archive">Archiv</a>
+							<i class="fa fa-angle-right"/>
+							<a href="/archive_testimonies">Entstehungszeugnisse</a>
+						</span>
+					</small>
+				</div>
+				<div id="current" class="pure-nowrap">
+					<span>
+						<xsl:attribute name="title" select="f:cite($biburl, true())"/>
+						<xsl:value-of select="f:cite($biburl, false())"></xsl:value-of>
+					</span>
+				</div>				
 			</xsl:with-param>
 		</xsl:call-template>
-	</xsl:template>
-	
-	
-	<xsl:template name="html-frame">
-		<xsl:param name="content"><xsl:apply-templates/></xsl:param>
-		<xsl:param name="sidebar"/>
-		<html>
-			<xsl:call-template name="html-head"/>
-			<body>
-				<xsl:call-template name="header">
-					<xsl:with-param name="breadcrumbs" tunnel="yes">
-						<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
-							<small id="breadcrumbs">
-								<span>
-									<a href="/archive">Archiv</a>
-									<i class="fa fa-angle-right"/>
-									<a href="/archive_testimonies">Entstehungszeugnisse</a>
-								</span>
-							</small>
-						</div>
-						<div id="current" class="pure-nowrap">
-							<span>
-								<xsl:attribute name="title" select="f:cite($biburl, true())"/>
-								<xsl:value-of select="f:cite($biburl, false())"></xsl:value-of>
-							</span>
-						</div>
-					</xsl:with-param>
-				</xsl:call-template>
-				
-				<main class="nofooter">
-					<div class="print testimony">
-						<div class="print-side-column"/><!-- 1. Spalte (1/5) bleibt erstmal frei -->						
-						<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
-							<xsl:sequence select="$content"/>
-						</div>
-						<div class="print-side-column">  <!-- 3. Spalte (1/5) für die lokale Navigation  -->
-							<xsl:sequence select="$sidebar"/>
-						</div>
-					</div>
-				</main>
-				<xsl:call-template name="footer"/>
-			</body>
-		</html>
-	</xsl:template>
-	
+	</xsl:template>	
 	
 	<xsl:template match="rs">
 		<mark class="{string-join(f:generic-classes(.), ' ')}">
@@ -85,6 +56,12 @@
 		</f:taxonomies>
 	</xsl:variable>
 	
+	<xsl:function name="f:testimony-label">
+		<xsl:param name="testimony-id"/>
+		<xsl:variable name="id_parts" select="tokenize($testimony-id[1], '_')"/>
+		<xsl:value-of select="concat(id($id_parts[1], $taxonomies)/text(), ' ', $id_parts[2])"/>
+	</xsl:function>
+	
 	<xsl:function name="f:real_id" as="xs:string">
 		<xsl:param name="id"/>
 		<xsl:value-of select="replace($id, '^(\w+)_0*(.*)$', '$1_$2')"/>
@@ -99,7 +76,7 @@
 				<xsl:if test="not($taxlabel) or $id_parts[2] = ''">
 					<xsl:message select="concat('WARNING: Invalid testimony id ', $id, ' in ', document-uri(/))"/>
 				</xsl:if>
-				<a id="{$id}" href="/archive_testimonies#{$id}" class="testimony"><xsl:value-of select="concat($taxlabel, ' ', $id_parts[2])"/></a>
+				<a id="{$id}" href="/archive_testimonies#{$id}" class="testimony"><xsl:value-of select="f:testimony-label($id)"/></a>
 			</xsl:when>
 			<xsl:when test="count($id_parts) = 3 and string-length($id_parts[2]) > 0 and matches($id_parts[2], '.*\d.*')">
 				<!--<xsl:message select="concat('INFO:',document-uri(/),': Skipping three-part testimony id ', @xml:id)"/>-->				

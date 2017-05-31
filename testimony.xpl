@@ -45,11 +45,39 @@
 			<p:variable name="basename" select="replace(replace($filename, '.*/', ''), '.xml$', '')"/>
 			<p:variable name="outfile" select="p:resolve-uri(concat($basename, '.html'), $testihtml)"/>
 			
-			<p:load>
+			<p:load name="load-testimony">
 				<p:with-option name="href" select="$filename"/>
 			</p:load>
 			
+			<p:xslt name="split-testimony">
+				<p:input port="stylesheet"><p:document href="xslt/testimony-split.xsl"/></p:input>
+				<p:input port="parameters"><p:pipe port="result" step="config"></p:pipe></p:input>
+			</p:xslt>
+			<p:sink/>
+			<p:for-each>
+				<p:iteration-source>
+					<p:pipe port="secondary" step="split-testimony"/>
+				</p:iteration-source>
+				
+				<p:identity name="single-testimony-tei"/>
+				
+				<p:store indent="true">
+					<p:with-option name="href" select="p:base-uri()"/>
+				</p:store>
+				
+				<p:xslt>
+					<p:input port="source"><p:pipe port="result" step="single-testimony-tei"/></p:input>
+					<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+					<p:input port="stylesheet"><p:document href="xslt/single-testimony-html.xsl"/></p:input>
+				</p:xslt>
+				
+				<p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
+					<p:with-option name="href" select="p:resolve-uri(replace(p:base-uri(), '.*/([^/.]*)\.xml$', '$1.html'), $testihtml)"/>
+				</p:store>
+			</p:for-each>
+			
 			<p:xslt name="testimony-xml">
+				<p:input port="source"><p:pipe port="result" step="load-testimony"/></p:input>
 				<p:input port="stylesheet"><p:document href="xslt/normalize-characters.xsl"/></p:input>
 				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 			</p:xslt>
