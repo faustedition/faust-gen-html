@@ -1202,6 +1202,11 @@
         <f:reference>WA, Abt. III, Bd. 13, Weimar 1903.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_IV_1">
+        <f:citation>WA IV 1</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 1, Weimar 1887.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_IV_2">
         <f:citation>WA IV 2</f:citation>
         <f:reference>WA, Abt. IV, Bd. 2, Weimar 1887.</f:reference>
@@ -2197,7 +2202,7 @@
         <f:reference>Briefwechsel zwischen Goethe und Knebel (1774-1832). Vorrede von G. E. Guhrauer. 2 Bde, Bd. 2. Leipzig 1851.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/harding_2_1920">
+    <f:bib uri="faust://bibliography/harding1920_2">
         <f:citation>Harding 1920, Bd. 2</f:citation>
         <f:reference>Correspondance de H.C. Örsted. Avec divers Savants, 2 Bde., Bd. 2, hrsg. M[arius] C[hristian] Harding. Kopenhagen 1920. </f:reference>
     </f:bib>
