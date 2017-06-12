@@ -17,22 +17,22 @@
 		Whitespace from the original files w/o semantics is stripped or normalized to a single space character.
 		Then, linebreaks are introduced after elements that should become paragraphs in Indesign's data model.
 		
-	2.  Introduction of paragraph templates via aid:pformat attributes.
+	2.  Introduction of paragraph templates via aid:pstyle attributes.
 	
-		For elements that should become paragraphs in InDesign's model, we add a aid:pformat attribute. This is 
+		For elements that should become paragraphs in InDesign's model, we add a aid:pstyle attribute. This is 
 		a hyphen-delimited string of a main template name and optionally one or more template suffixes for special 
 		cases. The main template name is either mentioned in the $format-names variable below or it is simply the
-		element name. The suffixes are generated in the pformat-extras template below for special cases. E.g., an 
+		element name. The suffixes are generated in the pstyle-extras template below for special cases. E.g., an 
 		<l> element inside a <lg rend="indented"> might get the template name Verse-Indented, and if there is 
 		a line number to print, it might be Verse-VerseNo-Indented.
 		
-	3.  Introduction of character templates via aid:cformat attributes.
+	3.  Introduction of character templates via aid:cstyle attributes.
 	
 		Simply for all inline elements.
 		
 	4.  Generation of verse numbers.
 	
-		All verses with a Schroer number divisible by 5 is prefixed with <seg aid:cformat="VerseNo">number[Tab]</seg>.
+		All verses with a Schroer number divisible by 5 is prefixed with <seg aid:cstyle="VerseNo">number[Tab]</seg>.
 		
 	5.  Everything else is just passed through.
 	
@@ -61,7 +61,7 @@
 
 	<!-- Explicitely insert the verse no + Tab if applicable -->
 	<xsl:template match="l[f:is-schroer(.) and number(@n) mod 5 = 0]" mode="prefix">
-		<seg aid:cformat="versnr">
+		<seg aid:cstyle="versnr">
 			<xsl:value-of select="@n"/>
 			<xsl:text>&#9;</xsl:text>
 		</seg>
@@ -70,10 +70,10 @@
 	<!-- List all elements that should become paragraphs here -->
 	<xsl:template match="l|stage|speaker|head">
 		<xsl:copy>
-			<xsl:variable name="pformat-extras" as="item()*">
-				<xsl:call-template name="pformat-extras"/>
+			<xsl:variable name="pstyle-extras" as="item()*">
+				<xsl:call-template name="pstyle-extras"/>
 			</xsl:variable>
-			<xsl:attribute name="aid:pformat" select="f:format-name(., $pformat-extras)"/>
+			<xsl:attribute name="aid:pstyle" select="f:format-name(., $pstyle-extras)"/>
 			<xsl:apply-templates select="@*"/>
 			<xsl:apply-templates select="." mode="prefix"/>
 			<xsl:apply-templates select="node()"/>
@@ -82,7 +82,7 @@
 	</xsl:template>
 	
 	<!-- Additons for the paragraph templates -->
-	<xsl:template name="pformat-extras" as="item()*">
+	<xsl:template name="pstyle-extras" as="item()*">
 		<xsl:if test="self::l[f:is-schroer(.) and number(@n) mod 5 = 0]">VerseNo</xsl:if>
 		<xsl:if test="ancestor::lg[@rend='indented']/*">Indented</xsl:if>	
 		<xsl:if test="parent::lg and position()=1">FirstInLG</xsl:if>
@@ -92,7 +92,7 @@
 	<!-- We add character formats for just any inline element -->
 	<xsl:template match="*[f:isInline(.)]">
 		<xsl:copy>
-			<xsl:attribute name="aid:cformat" select="f:format-name(., ())"/>
+			<xsl:attribute name="aid:cstyle" select="f:format-name(., ())"/>
 			<xsl:apply-templates select="@*, node()"/>
 		</xsl:copy>
 	</xsl:template>
