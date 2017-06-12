@@ -5,7 +5,7 @@
 	xmlns:f="http://www.faustedition.net/ns"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	exclude-result-prefixes="xs"
+	exclude-result-prefixes="xs f"
 	version="2.0">
 	
 	<!--
@@ -47,6 +47,9 @@
 	
 	-->
 	<xsl:import href="utils.xsl"/>
+	
+	<xsl:param name="transcripts">../../../../target/faust-transcripts.xml</xsl:param>
+	<xsl:variable name="urimap" select="doc($transcripts)"/>
 
 	<!-- Brutal white-space solution. See the strip-space of tei's to-text for alternatives. -->
 	<xsl:strip-space elements="*"/>
@@ -61,7 +64,7 @@
 
 	<!-- Explicitely insert the verse no + Tab if applicable -->
 	<xsl:template match="l[f:is-schroer(.) and number(@n) mod 5 = 0]" mode="prefix">
-		<seg aid:cstyle="versnr">
+		<seg aid:cstyle="VerseNo">
 			<xsl:value-of select="@n"/>
 			<xsl:text>&#9;</xsl:text>
 		</seg>
@@ -81,6 +84,40 @@
 		<xsl:text>&#10;</xsl:text>
 	</xsl:template>
 	
+	<xsl:template match="app">
+		<xsl:copy>		
+			<xsl:variable name="pstyle-extras" as="item()*">
+				<xsl:call-template name="pstyle-extras"/>
+			</xsl:variable>
+			<xsl:attribute name="aid:pstyle" select="f:format-name(., $pstyle-extras)"/>
+			<seg aid:cstyle="App-VerseNo">
+				<xsl:value-of select="@loc"/>
+				<xsl:text>&#9;</xsl:text>
+			</seg>
+			<xsl:apply-templates select="node()"/>
+		</xsl:copy>
+		<xsl:text>&#10;</xsl:text>
+	</xsl:template>
+	
+	<xsl:template match="lem">
+		<xsl:copy>
+			<xsl:attribute name="aid:cstyle">lemma</xsl:attribute>
+			<xsl:apply-templates select="@*, node()"/>
+		</xsl:copy>
+		<seg aid:cstyle="lem-bracket">] </seg>
+	</xsl:template>
+	<xsl:template match="rdg">
+		<xsl:copy>
+			<xsl:attribute name="aid:cstyle">rdg</xsl:attribute>
+			<xsl:apply-templates select="@*, node()"/>
+		</xsl:copy>
+		<seg aid:cstyle="rdg-witness">
+			<xsl:text> </xsl:text>
+			<xsl:variable name="wit" select="@wit"/>
+			<xsl:value-of select="$urimap//*[@uri=$wit]/../f:idno[@type='faustedition']"/>
+		</seg>
+	</xsl:template>
+	
 	<!-- Additons for the paragraph templates -->
 	<xsl:template name="pstyle-extras" as="item()*">
 		<xsl:if test="self::l[f:is-schroer(.) and number(@n) mod 5 = 0]">VerseNo</xsl:if>
@@ -90,7 +127,7 @@
 	</xsl:template>
 	
 	<!-- We add character formats for just any inline element -->
-	<xsl:template match="*[f:isInline(.)]">
+	<xsl:template match="*[f:isInline(.)]" priority="-0.1">
 		<xsl:copy>
 			<xsl:attribute name="aid:cstyle" select="f:format-name(., ())"/>
 			<xsl:apply-templates select="@*, node()"/>
