@@ -52,6 +52,7 @@
 			<p:xslt name="split-testimony">
 				<p:input port="stylesheet"><p:document href="xslt/testimony-split.xsl"/></p:input>
 				<p:input port="parameters"><p:pipe port="result" step="config"></p:pipe></p:input>
+				<p:with-param name="builddir-resolved" select="$builddir"></p:with-param>
 			</p:xslt>
 			<p:sink/>
 			<p:for-each>
