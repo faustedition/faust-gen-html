@@ -124,8 +124,11 @@
 						</tbody>
 					</table>
 				</div>
-				
+				<script type="text/javascript" src="js/jquery.min.js"></script> 
+				<script type="text/javascript" src="js/jquery.table.js"></script> 
+	
 				<script type="text/javascript">
+					$("table[data-sortable]").fixedtableheader();
 					// set breadcrumbs
 					document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Archiv", link: "archive"}, {caption: "Dokumente zur Entstehungsgeschichte"}]));
 				</script>
