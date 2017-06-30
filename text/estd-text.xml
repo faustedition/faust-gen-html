@@ -243,7 +243,6 @@
                     <exclusion-string>{{s}}</exclusion-string>
                     <exclusion-string>{{seg}}</exclusion-string>
                     <exclusion-string>{{sic}}</exclusion-string>
-                    <exclusion-string>{{stage+n="before^_5357^_a"}}</exclusion-string>
                     <exclusion-string>{{sp+xml:id="sp^_l^_6359"}}</exclusion-string>
                     <exclusion-string>{{sp+xml:id="sp^_l^_6360"}}</exclusion-string>
                     <exclusion-string>{{speaker</exclusion-string>
@@ -277,7 +276,6 @@
                 <exception-string>{{sic}}</exception-string>
                 <exception-string>{{sp}}</exception-string>
                 <exception-string>{{speaker</exception-string>
-                <exception-string>{{stage+n="before^_5357^_a"}}</exception-string>
                 <exception-string>{{sp+xml:id="sp^_l^_6359"}}</exception-string>
                 <exception-string>{{l+n="6359"}}</exception-string>
                 <exception-string>{{sp+xml:id="sp^_l^_6360"}}</exception-string>
@@ -360,10 +358,10 @@
         <select-area versiona="1.10-28.9" versionb="1.3-28.3,10"/>
         <version-id>H.0a</version-id>
     </compare>
-    <!--<collate source="h" mode="single-witness" diff-file="diff1" listing="$diff-list1">
+    <collate source="h" mode="single-witness" diff-file="diff1" listing="$diff-list1">
         <list lines="with-variants"/>
-    </collate>-->
-    <!--        <display file="diff-list1" type="listing" mode="ps-landscape"/>-->
+    </collate>
+    <display file="diff-list1" type="listing" mode="ps-landscape"/>
     <!-- correct h -->
     <correct source="h" destination="kth0a" corrections="diff1" option="erase"/>
     <!-- emend kt and add app entries: -->
