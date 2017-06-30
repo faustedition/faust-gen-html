@@ -22,16 +22,22 @@
             >file:///C:/Users/gerri/faustedition/xml/h.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="h0a-x"
             >file:///C:/Users/gerri/faustedition/xml/h0a.xml</variable>
+        <variable type="permanent-file" code="UTF-8" name="c14-x"
+            >file:///C:/Users/gerri/faustedition/xml/c14.xml</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hheader"
             >file:///C:/Users/gerri/txstep/txt/hheader.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hz1"
             >file:///C:/Users/gerri/txstep/txt/hz1.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h0az1"
             >file:///C:/Users/gerri/txstep/txt/h0az1.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="c14z1"
+            >file:///C:/Users/gerri/txstep/txt/c14z1.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h"
             >file:///C:/Users/gerri/txstep/txt/h.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h0a"
             >file:///C:/Users/gerri/txstep/txt/h0a.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="c14"
+            >file:///C:/Users/gerri/txstep/txt/c14.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="crith" option="erase"
             >file:///C:/Users/gerri/faustedition/txt/crith.txt</variable>
         <variable type="permanent-file" code="UTF-8" name="crith0a" option="erase"
@@ -40,8 +46,12 @@
             >file:///C:/Users/gerri/faustedition/xml/kt.xml</variable>
         <variable type="permanent-file" name="diff1" option="erase" format="tustep"
             >file:///C:/Users/gerri/txstep/ve/diff1</variable>
+        <variable type="permanent-file" name="diff2" option="erase" format="tustep"
+            >file:///C:/Users/gerri/txstep/ve/diff2</variable>
         <variable type="permanent-file" name="diff-list1" option="erase" format="tustep"
             >file:///C:/Users/gerri/txstep/va/difflist1</variable>
+        <variable type="permanent-file" name="diff-list2" option="erase" format="tustep"
+            >file:///C:/Users/gerri/txstep/va/difflist2</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="kth0a"
             >file:///C:/Users/gerri/txstep/txt/kth0a.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="ktemend"
@@ -347,6 +357,9 @@
     <transform source="h0a-x" destination="h0az1" take-params="ko1"/>
     <transform source="h0az1" destination="h0a" take-params="ko2" mode="+"/>
     <transform source="h0a" destination="crith0a" take-params="crit"/>
+    <!-- transform c14: -->
+    <transform source="c14-x" destination="c14z1" take-params="ko1"/>
+    <transform source="c14z1" destination="c14" take-params="ko2" mode="+"/>
     <!-- collate h and h0a -->
     <compare versiona="h" versionb="h0a" variants="diff1" type="corrections" listing="-">
         <compare-units mode="word"/>
@@ -361,7 +374,22 @@
     <collate source="h" mode="single-witness" diff-file="diff1" listing="$diff-list1">
         <list lines="with-variants"/>
     </collate>
-    <display file="diff-list1" type="listing" mode="ps-landscape"/>
+    <!--<display file="diff-list1" type="listing" mode="ps-landscape"/>-->
+    <!-- collate h and c14 -->
+    <compare versiona="h" versionb="c14" variants="diff2" type="corrections" listing="-">
+        <compare-units mode="word"/>
+        <add-context>
+            <omission length-before="0" length-lemma="5" length-after="0"/>
+            <replacement length-before="0" length-lemma="3" length-after="0"/>
+            <insertion length-before="1" length-after="0"/>
+        </add-context>
+        <select-area versiona="81.8-111.33,39" versionb="1.3-31.29,39"/>
+        <version-id>C.1 4</version-id>
+    </compare>
+    <collate source="h" mode="single-witness" diff-file="diff2" listing="$diff-list2">
+        <list lines="with-variants"/>
+    </collate>
+    <display file="diff-list2" type="listing" mode="ps-landscape"/>
     <!-- correct h -->
     <correct source="h" destination="kth0a" corrections="diff1" option="erase"/>
     <!-- emend kt and add app entries: -->
