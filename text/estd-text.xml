@@ -355,7 +355,7 @@
             <replacement length-before="0" length-lemma="3" length-after="0"/>
             <insertion length-before="1" length-after="0"/>
         </add-context>
-        <select-area versiona="1.10-28.9" versionb="1.3-28.3,10"/>
+        <select-area versiona="1.10-28.6,10" versionb="1.3-28.4,10"/>
         <version-id>H.0a</version-id>
     </compare>
     <collate source="h" mode="single-witness" diff-file="diff1" listing="$diff-list1">
