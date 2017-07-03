@@ -3,7 +3,7 @@
 	xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:pxp="http://exproc.org/proposed/steps"
 	xmlns:pxf="http://exproc.org/proposed/steps/file" xmlns:f="http://www.faustedition.net/ns"
 	xmlns:ge="http://www.tei-c.org/ns/geneticEditions" xmlns:tei="http://www.tei-c.org/ns/1.0"
-	xmlns:l="http://xproc.org/library" name="main" version="1.0">
+	xmlns:l="http://xproc.org/library" name="main" version="2.0">
 
 	<p:input port="source">
 		<p:empty/>
@@ -29,7 +29,7 @@
 					<!--<base>https://faustedition.uni-wuerzburg.de/xml</base>-->
 					<base>http://dev.faustedition.net/xml</base>
 					<!--<base>file:/home/tv/git/faust-gen/data/xml</base>-->
-					<!--					<base>file:/Users/gerri/faustedition/xml</base>-->
+					<!--                                    <base>file:/Users/gerri/faustedition/xml</base>-->
 
 					<!-- URL, unter der die transformierten Dateien
 					     gespeichert werden sollen:	-->
@@ -147,7 +147,13 @@
 							<xsl:template match="*[@ge:stage='#posthumous']" priority="10.0" mode="#all">
 								<xsl:copy-of select="."/>									
 							</xsl:template>
-
+							
+							<xsl:template match="choice[sic]" mode="emend">
+								<xsl:copy>
+									<xsl:apply-templates select="@*, node()" mode="#current"/>
+								</xsl:copy>
+							</xsl:template>
+						
 						</xsl:stylesheet>
 					</p:inline>
 				</p:input>
