@@ -38,8 +38,6 @@
             >file:///C:/Users/gerri/faustedition/txt/crith.txt</variable>
         <variable type="permanent-file" code="UTF-8" name="crith0a" option="erase"
             >file:///C:/Users/gerri/faustedition/txt/crith0a.txt</variable>
-        <variable type="permanent-file" code="UTF-8" name="kt-x" option="erase"
-            >file:///C:/Users/gerri/faustedition/xml/kt.xml</variable>
         <variable type="permanent-file" name="diff1" option="erase" format="tustep"
             >file:///C:/Users/gerri/txstep/ve/diff1</variable>
         <variable type="permanent-file" name="diff2" option="erase" format="tustep"
@@ -52,6 +50,8 @@
             >file:///C:/Users/gerri/txstep/txt/kth0a.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="ktemend"
             >file:///C:/Users/gerri/txstep/txt/ktemend.tf</variable>
+        <variable type="permanent-file" code="UTF-8" name="kt-x" option="erase"
+            >file:///C:/Users/gerri/faustedition/xml/kt.xml</variable>
     </variables>
     <!-- extract header: -->
     <transform source="h-x" destination="hheader">
@@ -370,7 +370,7 @@
     <collate source="h" mode="single-witness" diff-file="diff1" listing="$diff-list1">
         <list lines="with-variants"/>
     </collate>
-    <!--<display file="diff-list1" type="listing" mode="ps-landscape"/>-->
+<!--    <display file="diff-list1" type="listing" mode="ps-landscape"/>-->
     <!-- collate h and c14 -->
     <compare versiona="h" versionb="c14" variants="diff2" type="corrections" listing="-">
         <compare-units mode="word"/>
