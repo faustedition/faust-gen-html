@@ -16,8 +16,8 @@
         <variable type="scratch-file" name="ko1"/>
         <variable type="scratch-file" name="ko2"/>
         <variable type="scratch-file" name="crit"/>
-        <variable type="permanent-file" format="tustep" option="erase" name="zuni"
-            >file:///C:/Users/gerri/txstep/txt/zuni.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="intmedfile"
+            >file:///C:/Users/gerri/txstep/txt/intmedfile.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="h-x"
             >file:///C:/Users/gerri/faustedition/xml/h.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="h0a-x"
@@ -28,10 +28,6 @@
             >file:///C:/Users/gerri/txstep/txt/hheader.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hz1"
             >file:///C:/Users/gerri/txstep/txt/hz1.tf</variable>
-        <variable type="permanent-file" format="tustep" option="erase" name="h0az1"
-            >file:///C:/Users/gerri/txstep/txt/h0az1.tf</variable>
-        <variable type="permanent-file" format="tustep" option="erase" name="c14z1"
-            >file:///C:/Users/gerri/txstep/txt/c14z1.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h"
             >file:///C:/Users/gerri/txstep/txt/h.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h0a"
@@ -307,7 +303,7 @@
         <!-- <output-records max-length="120"/> when necessary-->
     </transform>
     <!-- critapp lines h (1): -->
-    <transform source="h" destination="zuni" option="append" save-params="crit">
+    <transform source="h" destination="intmedfile" option="append" save-params="crit">
         <pass>
             <examine-text>
                 <select>
@@ -339,7 +335,7 @@
         </pass>
     </transform>
     <!-- critapp lines h (2): -->
-    <transform source="zuni" destination="crith">
+    <transform source="intmedfile" destination="crith">
         <pass>
             <modify>
                 <exchange>
@@ -354,12 +350,12 @@
         </pass>
     </transform>
     <!-- transform h0a: -->
-    <transform source="h0a-x" destination="h0az1" take-params="ko1"/>
-    <transform source="h0az1" destination="h0a" take-params="ko2" mode="+"/>
+    <transform source="h0a-x" destination="intmedfile" take-params="ko1" option="erase"/>
+    <transform source="intmedfile" destination="h0a" take-params="ko2" mode="+"/>
     <transform source="h0a" destination="crith0a" take-params="crit"/>
     <!-- transform c14: -->
-    <transform source="c14-x" destination="c14z1" take-params="ko1"/>
-    <transform source="c14z1" destination="c14" take-params="ko2" mode="+"/>
+    <transform source="c14-x" destination="intmedfile" take-params="ko1" option="erase"/>
+    <transform source="intmedfile" destination="c14" take-params="ko2" mode="+"/>
     <!-- collate h and h0a -->
     <compare versiona="h" versionb="h0a" variants="diff1" type="corrections" listing="-">
         <compare-units mode="word"/>
@@ -397,7 +393,7 @@
     <collate source="h" mode="single-witness" diff-file="diff2" listing="$diff-list2">
         <list lines="with-variants"/>
     </collate>
-    <display file="diff-list2" type="listing" mode="ps-landscape"/>
+    <!--<display file="diff-list2" type="listing" mode="ps-landscape"/>-->
     <!-- correct h -->
     <correct source="h" destination="kth0a" corrections="diff1" option="erase"/>
     <!-- emend kt and add app entries: -->
