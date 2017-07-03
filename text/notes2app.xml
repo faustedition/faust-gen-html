@@ -12,15 +12,21 @@
             >file:///C:/Users/gerri/txstep/txt/nii2.tf</variable>
         <variable type="permanent-file" name="niiread" option="erase" format="system"
             >file:///C:/Users/gerri/txstep/txt/niiread.rtf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="xxtable"
+            >file:///C:/Users/gerri/txstep/txt/xxtable.tf</variable>
+        <variable type="permanent-file" code="UTF-8" name="xxtable-x" option="erase"
+            >file:///C:/Users/gerri/faustedition/xml/xxtable.xml</variable>
     </variables>
     <tustep>
 #de,da=*
 rtf = C:\users\gerri\txstep\txt\nii.rtf
-rtf-s = C:\users\gerri\txstep\txt\nii-sample.rtf
+rtf-samp = C:\users\gerri\txstep\txt\nii-sample.rtf
+rtf-sour = C:\users\gerri\txstep\txt\nii-source.rtf
 *eof
 #anmelde, rtf, traeger = -
-#anmelde, rtf-s, traeger = -
-#*import, rtf-s, niiimp, ignor = +
+#anmelde, rtf-samp, traeger = -
+#anmelde, rtf-sour, traeger = -
+#*import, rtf-sour, niiimp, ignor = +
 #*import, rtf, niiimp-full, ignor = -
     </tustep>
     <transform source="$niiimp-full" destination="$niiimp-full2">
@@ -44,4 +50,127 @@ rtf-s = C:\users\gerri\txstep\txt\nii-sample.rtf
     <tustep>
 #*export, niiimp-full2, niiread, loeschen = +        
     </tustep>
+    <transform source="niiimp" destination="xxtable">
+        <insert-at-start>{{exchange-table}}</insert-at-start>
+        <exchange-on-input>
+            <exchange-table>
+                <string-pair>
+                    <search-string>{{document source=*</search-string>
+                    <replacement-string/>
+                </string-pair>
+                <string-pair>
+                    <search-string>{{/document}}</search-string>
+                    <replacement-string/>
+                </string-pair>
+                <string-pair>
+                    <search-string>{{{0}/body}}</search-string>
+                    <replacement-string/>
+                </string-pair>
+                <string-pair>
+                    <search-string>{{{0}/section*</search-string>
+                    <replacement-string/>
+                </string-pair>
+            </exchange-table>
+        </exchange-on-input>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{[}{{p}}::{|}*{|}::{|}*{|}||</search-string>
+                            <replacement-string>{{sp}}{{ss}}"{=2=}"\*\{|\}{=4=}{{/ss}}</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{{/ss}}{[}id={|}*{|}::{|}*{|}((*(Typ {|}*{|}){{/i}}))*</search-string>
+                            <replacement-string>{{rs}}\{=1=\}\{\{seg+xml:id="{=2=}"}}{=4=}\{\{/seg\}\}\{\{note+target="^#{=2=}"+type="textcrit"+subtype="{=6=}"}}{=5=}{=6=}{=7=}{{/rs}}{{/sp}}</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>(({{i}}{|}*{|}{{/i}} {|}*{|} {{i}}\[\[{|}*{|}\]\]{{/i}}\]</search-string>
+                            <replacement-string>\{\{app+loc="{=2=}"}} \{\{lem+wit="faust://document/faustedition/{=6=}"\}\}{=4=}\{\{/lem\}\}</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>\{\{/lem\}\} {|}*{|} {{i}}\[\[{|}*{|}\]\]*)){{/p}}</search-string>
+                            <replacement-string>{=1=}\{\{rdg+wit="faust://document/faustedition/{=4=}"\}\}{=2=}\{\{/rdg\}\} \{\{/app\}\}\{\{/note\}\}</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <new-line-before>
+            <search-table>
+                <search-string>{{sp}}</search-string>
+                <search-string>{{ss}}</search-string>
+                <search-string>{{rs}}</search-string>
+                <search-string>\{\{{0}/note</search-string>
+                <search-string>\{\{app</search-string>
+                <search-string>\{\{rdg</search-string>
+                <search-string>{{/sp}}</search-string>
+            </search-table>
+        </new-line-before>
+        <suppress-blank-lines/>
+        <insert-at-end>{{/exchange-table}}</insert-at-end>
+    </transform>
+    <transform source="xxtable" destination="xxtable-x">
+        <define-text-units>
+            <text-unit-start>
+                <comparison-table>
+                    <exclusion-string>\{\{note</exclusion-string>
+                    <exclusion-string>\{\{app</exclusion-string>
+                    <exclusion-string>\{\{rdg</exclusion-string>
+                    <comparison-string>{{sp}}</comparison-string>
+                    <comparison-string>{{/sp}}</comparison-string>
+                </comparison-table>
+            </text-unit-start>
+        </define-text-units>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{{{0}/{[}sp{]}}}</search-string>
+                            <replacement-string>string-pair</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{{0}/{[}ss{]}}}</search-string>
+                            <replacement-string>search-string</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{{0}/{[}rs{]}}}</search-string>
+                            <replacement-string>replacement-string</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <new-line-before>
+            <search-table>
+                <search-string>{{search</search-string>
+                <search-string>{{replacement</search-string>
+            </search-table>
+        </new-line-before>
+    </transform>
 </script>
