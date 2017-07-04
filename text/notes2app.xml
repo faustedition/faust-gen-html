@@ -14,8 +14,10 @@
             >file:///C:/Users/gerri/txstep/txt/niiread.rtf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="xxtable"
             >file:///C:/Users/gerri/txstep/txt/xxtable.tf</variable>
-        <variable type="permanent-file" code="UTF-8" name="xxtable-x" option="erase"
+<!--        <variable type="permanent-file" code="UTF-8" name="xxtable-x" option="erase"
             >file:///C:/Users/gerri/faustedition/xml/xxtable.xml</variable>
+-->        <variable type="permanent-file" format="tustep" option="erase" name="xxtable-x"
+            >file:///C:/Users/gerri/txstep/txt/xxtable-x.tf</variable>
     </variables>
     <tustep>
 #de,da=*
@@ -90,7 +92,7 @@ rtf-sour = C:\users\gerri\txstep\txt\nii-source.rtf
                     <exchange-table>
                         <string-pair>
                             <search-string>{{/ss}}{[}id={|}*{|}::{|}*{|}((*(Typ {|}*{|}){{/i}}))*</search-string>
-                            <replacement-string>{{rs}}\{=1=\}\{\{seg+xml:id="{=2=}"}}{=4=}\{\{/seg\}\}\{\{note+target="^#{=2=}"+type="textcrit"+subtype="{=6=}"}}{=5=}{=6=}{=7=}{{/rs}}{{/sp}}</replacement-string>
+                            <replacement-string>{{rs}}\{=1=\}\{\{seg+xml:id="{=2=}"\}\}{=4=}\{\{/seg\}\}\{\{note+target="^#{=2=}"+type="textcrit"+subtype="{=6=}"\}\}{=5=}{=6=}{=7=}{{/rs}}{{/sp}}</replacement-string>
                         </string-pair>
                     </exchange-table>
                 </exchange>
@@ -102,7 +104,7 @@ rtf-sour = C:\users\gerri\txstep\txt\nii-source.rtf
                     <exchange-table>
                         <string-pair>
                             <search-string>(({{i}}{|}*{|}{{/i}} {|}*{|} {{i}}\[\[{|}*{|}\]\]{{/i}}\]</search-string>
-                            <replacement-string>\{\{app+loc="{=2=}"}} \{\{lem+wit="faust://document/faustedition/{=6=}"\}\}{=4=}\{\{/lem\}\}</replacement-string>
+                            <replacement-string>\{\{app+loc="{=2=}"\}\} \{\{lem+wit="{=6=}"\}\}{=4=}\{\{/lem\}\}</replacement-string>
                         </string-pair>
                     </exchange-table>
                 </exchange>
@@ -114,7 +116,7 @@ rtf-sour = C:\users\gerri\txstep\txt\nii-source.rtf
                     <exchange-table>
                         <string-pair>
                             <search-string>\{\{/lem\}\} {|}*{|} {{i}}\[\[{|}*{|}\]\]*)){{/p}}</search-string>
-                            <replacement-string>{=1=}\{\{rdg+wit="faust://document/faustedition/{=4=}"\}\}{=2=}\{\{/rdg\}\} \{\{/app\}\}\{\{/note\}\}</replacement-string>
+                            <replacement-string>{=1=}\{\{rdg+wit="{=4=}"\}\}{=2=}\{\{/rdg\}\} \{\{/app\}\}\{\{/note\}\}</replacement-string>
                         </string-pair>
                     </exchange-table>
                 </exchange>
