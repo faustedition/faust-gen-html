@@ -383,13 +383,13 @@
             <replacement length-before="0" length-lemma="3" length-after="0"/>
             <insertion length-before="1" length-after="0"/>
         </add-context>
-        <select-area versiona="81.8-111.33,39" versionb="1.3-31.29,39"/>
+        <select-area versiona="81.8-111.33,40" versionb="1.3-31.29,39"/>
         <version-id>C.1 4</version-id>
     </compare>
     <collate source="h" mode="single-witness" diff-file="diff2" listing="$diff-list2">
         <list lines="with-variants"/>
     </collate>
-<!--    <display file="diff-list2" type="listing" mode="ps-landscape"/>-->
+    <!--    <display file="diff-list2" type="listing" mode="ps-landscape"/>-->
     <!-- correct h -->
     <correct source="h" destination="kth0a" corrections="diff1" option="erase"/>
     <!-- emend kt and add app entries: -->
