@@ -370,7 +370,7 @@
     <collate source="h" mode="single-witness" diff-file="diff1" listing="$diff-list1">
         <list lines="with-variants"/>
     </collate>
-<!--    <display file="diff-list1" type="listing" mode="ps-landscape"/>-->
+    <!--    <display file="diff-list1" type="listing" mode="ps-landscape"/>-->
     <!-- collate h and c14 -->
     <compare versiona="h" versionb="c14" variants="diff2" type="corrections" listing="-">
         <compare-units mode="word"/>
@@ -407,6 +407,11 @@
                             <search-string>"11160"*{|}fremden</search-string>
                             <replacement-string>{=1=}{{seg+xml:id="l^_11160fremdem"}}fremdem{{/seg}}{{note+target="^#l^_11160fremdem"}}{{app+loc="11160"}}{{lem}}fremdem{{/lem}}{{rdg+wit="faust://document/faustedition/2^_H"}}fremden{{/rdg}}{{/app}}{{/note}}</replacement-string>
                         </string-pair>
+                        <!-- test case: -->
+                        <string-pair>
+                            <search-string>"before^_5295^_a"*{|}vorüber</search-string>
+                            <replacement-string>{=1=}{{seg+xml:id="before^_5295^_a^_vorbey">vorbey{{/seg}} {{note+target="^#before^_5295^_a^_vorbey"+type="textcrit"+subtype="2a"> {{app+loc="vor 5295"> {{lem+wit="faust://document/faustedition/2^_H"}}vorbey{{/lem}} {{rdg+wit="faust://document/faustedition/2^_I^_H.0a"}}vorüber{{/rdg}} {{/app}} {{/note}}</replacement-string>
+                        </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>
@@ -440,6 +445,10 @@
                         <string-pair>
                             <search-string>{{{00}{c:tg}{[}+{]}{00}{c:tg}}}</search-string>
                             <replacement-string> </replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>+{[}ge:stage</search-string>
+                            <replacement-string>change</replacement-string>
                         </string-pair>
                     </exchange-table>
                 </exchange>
