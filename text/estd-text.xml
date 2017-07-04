@@ -405,12 +405,12 @@
                         <!-- sample correction: 11160 fremdem] fremden H -->
                         <string-pair>
                             <search-string>"11160"*{|}fremden</search-string>
-                            <replacement-string>{=1=}{{seg+xml:id="l^_11160fremdem"}}fremdem{{/seg}}{{note+target="^#l^_11160fremdem"}}{{app+loc="11160"}}{{lem}}fremdem{{/lem}}{{rdg+wit="faust://document/faustedition/2^_H"}}fremden{{/rdg}}{{/app}}{{/note}}</replacement-string>
+                            <replacement-string>{=1=}{{seg+xml:id="l^_11160fremdem"}}fremdem{{/seg}}{{note+target="^#l^_11160fremdem"}}{{app+loc="11160"}}{{lem}}fremdem{{/lem}}{{rdg+wit="2^_H"}}fremden{{/rdg}}{{/app}}{{/note}}</replacement-string>
                         </string-pair>
                         <!-- test case: -->
                         <string-pair>
                             <search-string>"before^_5295^_a"*{|}vorüber</search-string>
-                            <replacement-string>{=1=}{{seg+xml:id="before^_5295^_a^_vorbey">vorbey{{/seg}} {{note+target="^#before^_5295^_a^_vorbey"+type="textcrit"+subtype="2a"> {{app+loc="vor 5295"> {{lem+wit="faust://document/faustedition/2^_H"}}vorbey{{/lem}} {{rdg+wit="faust://document/faustedition/2^_I^_H.0a"}}vorüber{{/rdg}} {{/app}} {{/note}}</replacement-string>
+                            <replacement-string>{=1=}{{seg+xml:id="before^_5295^_a^_vorbey"}}vorbey{{/seg}} {{note+target="^#before^_5295^_a^_vorbey"+type="textcrit"+subtype="2a"}} {{app+loc="vor 5295"}} {{lem+wit="2^_H"}}vorbey{{/lem}} {{rdg+wit="2^_I^_H.0a"}}vorüber{{/rdg}} {{/app}} {{/note}}</replacement-string>
                         </string-pair>
                     </exchange-table>
                 </exchange>
