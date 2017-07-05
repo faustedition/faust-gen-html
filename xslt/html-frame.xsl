@@ -26,18 +26,13 @@
 			<script type="text/javascript" src="{$assets}/js/faust_print_interaction.js"/>
 			
 
-			<link rel="stylesheet" href="{$assets}/css/document-text.css"/>
-			<link rel="stylesheet" href="{$assets}/css/document-transcript.css"/>
-			<link rel="stylesheet"
-				href="{$assets}/css/document-transcript-highlight-hands.css"/>
-			<link rel="stylesheet"
-				href="{$assets}/css/document-transcript-interaction.css"/>
 			<link rel="stylesheet" href="{$assets}/css/webfonts.css"/>
 			<link rel="stylesheet" href="{$assets}/css/fontawesome-min.css"/>
 			<link rel="stylesheet" href="{$assets}/css/pure-min.css"/>
 			<link rel="stylesheet" href="{$assets}/css/pure-custom.css"/>
 			<link rel="stylesheet" href="{$assets}/css/basic_layout.css"/>
 			<link rel="stylesheet" href="{$assets}/css/textual-transcript.css"/>
+			<link rel="stylesheet" href="{$assets}/css/prints-viewer.css"/>
 			<script><xsl:text>window.addEventListener("DOMContentLoaded", function(){addPrintInteraction("../");});</xsl:text></script>
 
 			<link rel="icon" type="image/png" href="/favicon-16x16.png"
