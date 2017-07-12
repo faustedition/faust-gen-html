@@ -342,7 +342,7 @@
     </transform>
     <!-- critapp lines h (2): -->
     <transform source="intmedfile" destination="crith">
-        <pass>
+        <!--<pass>
             <modify>
                 <exchange>
                     <exchange-table>
@@ -353,7 +353,7 @@
                     </exchange-table>
                 </exchange>
             </modify>
-        </pass>
+        </pass>-->
     </transform>
     <!-- transform h0a: -->
     <transform source="h0a-x" destination="intmedfile" take-params="ko1" option="erase"/>
