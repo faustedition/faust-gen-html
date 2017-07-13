@@ -2,22 +2,22 @@
 <script xmlns="http://www.xstep.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <variables>
         <variable type="execution-file" name="execute"
-            >file:///C:/users/gerri/txstep/ueb/txstep.tu</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/ueb/txstep.tu</variable>
         <char-group name="bt">?{-}\]</char-group>
         <variable type="permanent-file" name="niiimp" option="erase"
-            >file:///C:/Users/gerri/txstep/txt/niiimp.tf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/niiimp.tf</variable>
         <variable type="permanent-file" name="niiimp-full" option="erase"
-            >file:///C:/Users/gerri/txstep/txt/niiimp-full.tf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/niiimp-full.tf</variable>
         <variable type="permanent-file" name="niiimp-full2" option="erase"
-            >file:///C:/Users/gerri/txstep/txt/nii2.tf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/nii2.tf</variable>
         <variable type="permanent-file" name="niiread" option="erase" format="system"
-            >file:///C:/Users/gerri/txstep/txt/niiread.rtf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/niiread.rtf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="xxtable"
-            >file:///C:/Users/gerri/txstep/txt/xxtable.tf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/xxtable.tf</variable>
 <!--        <variable type="permanent-file" code="UTF-8" name="xxtable-x" option="erase"
-            >file:///C:/Users/gerri/faustedition/xml/xxtable.xml</variable>
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/xxtable.xml</variable>
 -->        <variable type="permanent-file" format="tustep" option="erase" name="xxtable-x"
-            >file:///C:/Users/gerri/txstep/txt/xxtable-x.tf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/xxtable-x.tf</variable>
     </variables>
     <tustep>
 #de,da=*

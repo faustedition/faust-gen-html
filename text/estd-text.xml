@@ -2,7 +2,7 @@
 <script xmlns="http://www.xstep.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <variables>
         <variable type="execution-file" name="execute"
-            >file:///C:/Users/gerri/txstep/ueb/txstep.tu</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/ueb/txstep.tu</variable>
         <char-group name="tg">?{-}{{}}%</char-group>
         <string-group name="ea">
             <member>4795</member>
@@ -23,41 +23,41 @@
         <variable type="scratch-file" name="ko2"/>
         <variable type="scratch-file" name="crit"/>
         <variable type="permanent-file" format="tustep" option="erase" name="intmedfile"
-            >file:///C:/Users/gerri/txstep/txt/intmedfile.tf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/intmedfile.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="h-x"
-            >file:///C:/Users/gerri/faustedition/xml/h.xml</variable>
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/h.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="h0a-x"
-            >file:///C:/Users/gerri/faustedition/xml/h0a.xml</variable>
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/h0a.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="c14-x"
-            >file:///C:/Users/gerri/faustedition/xml/c14.xml</variable>
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/c14.xml</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hheader"
-            >file:///C:/Users/gerri/txstep/txt/hheader.tf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/hheader.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hz1"
-            >file:///C:/Users/gerri/txstep/txt/hz1.tf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/hz1.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h"
-            >file:///C:/Users/gerri/txstep/txt/h.tf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/h.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h0a"
-            >file:///C:/Users/gerri/txstep/txt/h0a.tf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/h0a.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="c14"
-            >file:///C:/Users/gerri/txstep/txt/c14.tf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/c14.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="crith" option="erase"
-            >file:///C:/Users/gerri/faustedition/txt/crith.txt</variable>
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/txt/crith.txt</variable>
         <variable type="permanent-file" code="UTF-8" name="crith0a" option="erase"
-            >file:///C:/Users/gerri/faustedition/txt/crith0a.txt</variable>
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/txt/crith0a.txt</variable>
         <variable type="permanent-file" name="diff1" option="erase" format="tustep"
-            >file:///C:/Users/gerri/txstep/ve/diff1</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/ve/diff1</variable>
         <variable type="permanent-file" name="diff2" option="erase" format="tustep"
-            >file:///C:/Users/gerri/txstep/ve/diff2</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/ve/diff2</variable>
         <variable type="permanent-file" name="diff-list1" option="erase" format="tustep"
-            >file:///C:/Users/gerri/txstep/va/difflist1</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/va/difflist1</variable>
         <variable type="permanent-file" name="diff-list2" option="erase" format="tustep"
-            >file:///C:/Users/gerri/txstep/va/difflist2</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/va/difflist2</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="kth0a"
-            >file:///C:/Users/gerri/txstep/txt/kth0a.tf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/kth0a.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="ktemend"
-            >file:///C:/Users/gerri/txstep/txt/ktemend.tf</variable>
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ktemend.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="kt-x" option="erase"
-            >file:///C:/Users/gerri/faustedition/xml/kt.xml</variable>
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/kt.xml</variable>
     </variables>
     <!-- extract header: -->
     <transform source="h-x" destination="hheader">
