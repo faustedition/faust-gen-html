@@ -188,8 +188,10 @@
                         <exception-string>{{{0}/choice}}</exception-string>
                         <exception-string>{{{0}/corr}}</exception-string>
                         <exception-string>{{corr{00}{c:tg}}}</exception-string>
-                        <exception-string>{{{0}/del}}</exception-string>
+                        <exception-string>{{damage{00}{c:tg}}}</exception-string>
+                        <exception-string>{{{0}/damage}}</exception-string>
                         <exception-string>{{del{00}{c:tg}}}</exception-string>
+                        <exception-string>{{{0}/del}}</exception-string>
                         <exception-string>{{{0}/emph}}</exception-string>
                         <exception-string>{{{0}/expan}}</exception-string>
                         <exception-string>{{{0}/g}}</exception-string>
