@@ -21,9 +21,9 @@
     </variables>
     <tustep>
 #de,da=*
-rtf = C:\users\gerri\txstep\txt\nii.rtf
-rtf-samp = C:\users\gerri\txstep\txt\nii-sample.rtf
-rtf-sour = C:\users\gerri\txstep\txt\nii-source.rtf
+rtf = C:\users\bruening.FDH-FFM\txstep\txt\nii.rtf
+rtf-samp = C:\users\bruening.FDH-FFM\txstep\txt\nii-sample.rtf
+rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
 *eof
 #anmelde, rtf, traeger = -
 #anmelde, rtf-samp, traeger = -
