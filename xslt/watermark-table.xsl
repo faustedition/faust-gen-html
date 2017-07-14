@@ -78,26 +78,30 @@
 				</xsl:if>
 				<td><xsl:value-of select="@countermark[1]"/></td>
 				<td>
-					<xsl:for-each select="current-group()[normalize-space(@countermark) != '']">
-						<xsl:sort select="f:splitSigil(@sigil)[1]"/>
-						<xsl:sort select="f:splitSigil(@sigil)[2]"/>
-						<xsl:sort select="f:splitSigil(@sigil)[3]"/>						
-						<a href="/documentViewer?faustUri={@faust-uri}&amp;view=structure"><xsl:value-of select="@sigil"/></a>
-						<xsl:if test="position() != last()">, </xsl:if>
-					</xsl:for-each>
+					<xsl:sequence select="f:sigils(current-group()[normalize-space(@countermark) != ''])"/>					
 				</td>
 				<td>
-					<xsl:for-each select="current-group()[normalize-space(@countermark) = '']">
-						<xsl:sort select="f:splitSigil(@sigil)[1]"/>
-						<xsl:sort select="f:splitSigil(@sigil)[2]"/>
-						<xsl:sort select="f:splitSigil(@sigil)[3]"/>
-						<a href="/documentViewer?faustUri={@faust-uri}&amp;view=structure"><xsl:value-of select="@sigil"/></a>
-						<xsl:if test="position() != last()">, </xsl:if>
-					</xsl:for-each>					
+					<xsl:sequence select="f:sigils(current-group()[normalize-space(@countermark) = ''])"/>
 				</td>
 			</tr>
 		</xsl:for-each-group>
 	</xsl:template>
+	
+	<xsl:function name="f:sigils">
+		<xsl:param name="watermarks" as="element()*"/>
+		<xsl:variable name="watermarks-uniq" as="element()*">
+			<xsl:for-each-group select="$watermarks" group-by="@sigil">
+				<xsl:copy-of select="current-group()[1]"/>
+			</xsl:for-each-group>
+		</xsl:variable>
+		<xsl:for-each select="$watermarks-uniq">
+			<xsl:sort select="f:splitSigil(@sigil)[1]"/>
+			<xsl:sort select="f:splitSigil(@sigil)[2]"/>
+			<xsl:sort select="f:splitSigil(@sigil)[3]"/>
+			<a href="/documentViewer?faustUri={@faust-uri}&amp;view=structure"><xsl:value-of select="@sigil"/></a>
+			<xsl:if test="position() != last()">, </xsl:if>
+		</xsl:for-each>							
+	</xsl:function>
 		
 	
 	
