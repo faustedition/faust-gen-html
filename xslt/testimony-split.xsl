@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns="http://www.tei-c.org/ns/1.0"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:math="http://www.w3.org/1998/Math/MathML"
+    xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
+	xmlns="http://www.tei-c.org/ns/1.0"	
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 	xmlns:f="http://www.faustedition.net/ns"
-	exclude-result-prefixes="xs"
+	exclude-result-prefixes="xs xi svg math xd f"
 	version="2.0">
 	
 	<xsl:import href="bibliography.xsl"/>	
@@ -45,7 +49,7 @@
 		</xsl:if>
 		<xsl:for-each select="$milestones">
 			<xsl:variable name="id" select="f:real_id(@xml:id)"/>
-			<xsl:result-document href="{resolve-uri(concat($id, '.xml'), $output)}">
+			<xsl:result-document href="{resolve-uri(concat($id, '.xml'), $output)}" exclude-result-prefixes="xs xi svg math xd f">
 				<xsl:for-each select="$div">					
 					<xsl:variable name="metadata" select="$table//f:testimony[@id=$id]"/>
 					<TEI>
@@ -67,15 +71,56 @@
 							</teiHeader>
 						</xsl:for-each>
 						<text>
-							<body>
-								<xsl:copy-of select="$div"/>								
-							</body>
+							<group>
+								<text>
+									<body>
+										<xsl:copy-of select="$div"/>								
+									</body>
+								</text>
+								<text copyOf="#{$id}" type="testimony">
+									<xsl:call-template name="milestone-content">
+										<xsl:with-param name="milestone" select="id($id)"/>
+									</xsl:call-template>
+								</text>
+							</group>
 						</text>
 					</TEI>
 				</xsl:for-each>
 			</xsl:result-document>
 		</xsl:for-each>		
 	</xsl:template>
-
+	
+	<xsl:template name="milestone-content">
+		<xsl:param name="milestone" select="self::milestone"/>
+		<xsl:param name="allow-leading-gap" select="true()"/>
+		<xsl:for-each select="$milestone">
+			<xsl:variable name="target" select="id(substring(@spanTo, 2))"/>
+			<xsl:variable name="content">
+				<xsl:if test="$allow-leading-gap and (preceding-sibling::* or normalize-space(preceding-sibling::text()) != '')">
+					<gap reason="irrelevant"/>
+				</xsl:if>
+				<xsl:sequence select="following::node() except (., $target, $target/following::node(), following::*/node())"/>
+				<xsl:if test="@next or following-sibling::* or normalize-space(following-sibling::text()) != ''">
+					<gap reason="irrelevant"/>
+				</xsl:if>
+			</xsl:variable>
+			<xsl:choose>
+				<xsl:when test="parent::div or parent::text">
+					<xsl:sequence select="$content"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:for-each select="parent::*">
+						<xsl:copy>
+							<xsl:sequence select="$content"/>
+						</xsl:copy>
+					</xsl:for-each>
+				</xsl:otherwise>
+			</xsl:choose>
+			<xsl:call-template name="milestone-content">
+				<xsl:with-param name="milestone" select="id(substring(@next, 2))"/>
+				<xsl:with-param name="allow-leading-gap" select="false()"/>
+			</xsl:call-template>						
+		</xsl:for-each>
+	</xsl:template>
 	
 </xsl:stylesheet>
