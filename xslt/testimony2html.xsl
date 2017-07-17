@@ -110,13 +110,8 @@
 	
 	<xsl:template name="milestone-content">
 		<xsl:param name="milestone" select="self::milestone"/>
-		<xsl:for-each select="$milestone">
-			<xsl:variable name="target" select="id(substring(@spanTo, 2))"/>
-			<xsl:sequence select="., following::node() except ($target/following::node(), following::*/node())"/>
-			<xsl:if test="@next">
-				<xsl:call-template name="milestone-content"><xsl:with-param name="milestone" select="id(substring(@next, 2))"/></xsl:call-template>
-			</xsl:if>			
-		</xsl:for-each>
+		<!-- Prepared in testimony-split.xsl -->
+		<xsl:sequence select="root($milestone)//text[@copyOf=concat('#', @xml:id)]"/>
 	</xsl:template>
 	
 	<xsl:function name="f:find-rs">
@@ -137,5 +132,7 @@
 			<xsl:next-match/>
 		</xsl:if>
 	</xsl:template>
+	
+	<xsl:template match="text[@copyOf]"/>
 	
 </xsl:stylesheet>
