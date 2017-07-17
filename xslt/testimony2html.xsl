@@ -13,7 +13,7 @@
 	<xsl:import href="bibliography.xsl"/>	
 	
 	<xsl:variable name="basename" select="replace(document-uri(/), '^.*/([^/]+)\.xml', '$1')"/>
-	<xsl:variable name="biburl" select="concat('faust://bibliography/', $basename)"/>
+	<xsl:variable name="biburl" select="if (//f:biburl) then //f:biburl[1] else concat('faust://bibliography/', $basename)"/>
 	
 	
 	<xsl:template match="/TEI">

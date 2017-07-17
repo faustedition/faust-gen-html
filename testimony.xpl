@@ -75,8 +75,27 @@
 				<p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
 					<p:with-option name="href" select="p:resolve-uri(replace(p:base-uri(), '.*/([^/.]*)\.xml$', '$1.html'), $testihtml)"/>
 				</p:store>
+				
+				<!-- Now, the file we've just converted is read again and we collect all the <milestone unit='testimony' xml:id='two_part_id' -->
+				<p:xslt>
+					<p:input port="source"><p:pipe port="result" step="single-testimony-tei"/></p:input>			
+					<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+					<p:with-param name="from" select="replace($filename, concat('^', $source), 'faust://xml/')"/>
+					<p:with-param name="outfile" select="$outfile"/>
+					<p:with-option name="template-name" select="'get-citations'"></p:with-option>
+					<p:input port="stylesheet"><p:document href="xslt/testimony2html.xsl"/></p:input>
+				</p:xslt>      
+				
 			</p:for-each>
 			
+			<p:wrap-sequence wrapper="f:citations" name="citations-by-source"/>
+			
+			<!-- 
+				DEPRECATED:
+				
+				The following three steps create a html rendering of each original testimony file,
+				i.e. a file for each source. These are no longer linked in the edition.
+			-->
 			<p:xslt name="testimony-xml">
 				<p:input port="source"><p:pipe port="result" step="load-testimony"/></p:input>
 				<p:input port="stylesheet"><p:document href="xslt/normalize-characters.xsl"/></p:input>
@@ -93,15 +112,7 @@
 				<p:with-option name="href" select="$outfile"/>
 			</p:store>
 			
-			<!-- Now, the file we've just converted is read again and we collect all the <milestone unit='testimony' xml:id='two_part_id' -->
-			<p:xslt>
-				<p:input port="source"><p:pipe port="result" step="testimony-xml"/></p:input>			
-				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
-				<p:with-param name="from" select="replace($filename, concat('^', $source), 'faust://xml/')"/>
-				<p:with-param name="outfile" select="$outfile"/>
-				<p:with-option name="template-name" select="'get-citations'"></p:with-option>
-				<p:input port="stylesheet"><p:document href="xslt/testimony2html.xsl"/></p:input>
-			</p:xslt>      
+			<p:identity><p:input port="source"><p:pipe port="result" step="citations-by-source"/></p:input></p:identity>
 		</p:for-each>
 		
 		<!-- Now we've an index doc for every testimony file, join them together -->
