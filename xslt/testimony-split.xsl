@@ -78,9 +78,11 @@
 									</body>
 								</text>
 								<text copyOf="#{$id}" type="testimony">
-									<xsl:call-template name="milestone-content">
-										<xsl:with-param name="milestone" select="id($id)"/>
-									</xsl:call-template>
+									<body>
+										<xsl:call-template name="milestone-content">
+											<xsl:with-param name="milestone" select="id($id)"/>
+										</xsl:call-template>										
+									</body>
 								</text>
 							</group>
 						</text>

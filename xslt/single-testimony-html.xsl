@@ -91,7 +91,7 @@
 					<div class="print-side-column"></div>
 					<div class="print-center-column">
 						<xsl:apply-templates select="//f:testimony"/>
-						<xsl:apply-templates select="//text"/>						
+						<xsl:apply-templates select="//text//text[not(@copyOf)]"/>						
 					</div>
 					<div class="print-side-column"></div>
 				</div>
