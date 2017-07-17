@@ -111,7 +111,7 @@
 	<xsl:template name="milestone-content">
 		<xsl:param name="milestone" select="self::milestone"/>
 		<!-- Prepared in testimony-split.xsl -->
-		<xsl:sequence select="root($milestone)//text[@copyOf=concat('#', @xml:id)]"/>
+		<xsl:sequence select="root($milestone)//text[@copyOf=concat('#', $milestone/@xml:id)]"/>
 	</xsl:template>
 	
 	<xsl:function name="f:find-rs">
