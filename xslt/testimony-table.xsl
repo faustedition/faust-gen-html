@@ -282,7 +282,7 @@
 				</xsl:for-each>
 			</xsl:if>
 			<xsl:if test="normalize-space(.)">
-				<a href="{../href}">… <xsl:apply-templates/> …</a>				
+				<a href="{../href}"><xsl:apply-templates/></a>				
 			</xsl:if>
 			
 			<xsl:for-each select="../message">

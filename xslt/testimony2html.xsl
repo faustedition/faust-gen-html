@@ -117,10 +117,12 @@
 	<xsl:function name="f:find-rs">
 		<xsl:param name="milestone"/>
 		<xsl:variable name="content"><xsl:call-template name="milestone-content"><xsl:with-param name="milestone" select="$milestone"/></xsl:call-template></xsl:variable>
+		<xsl:variable name="content-str" select="normalize-space($content)"/>
 		<xsl:variable name="rs" select="($content//rs)[1]"/>
 		<xsl:choose>
-			<xsl:when test="$rs"><xsl:value-of select="f:normalize-space($rs)"/></xsl:when>
-			<!--<xsl:otherwise><xsl:message select="concat('Testimony ', $milestone/@xml:id, ' has no &lt;rs> but content: ', f:normalize-space($content))"/></xsl:otherwise>-->
+			<xsl:when test="$rs">… <xsl:value-of select="f:normalize-space($rs)"/> …</xsl:when>			
+			<xsl:when test="string-length($content-str) &lt; 50"><xsl:value-of select="$content-str"/> …</xsl:when>
+			<xsl:otherwise><xsl:value-of select="replace(substring($content-str, 1, 50), ' ?\w+$', ' …')"/></xsl:otherwise>			
 		</xsl:choose>		
 	</xsl:function>
 	
