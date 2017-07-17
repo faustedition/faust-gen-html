@@ -67,24 +67,79 @@
 		<xsl:value-of select="replace($id, '^(\w+)_0*(.*)$', '$1_$2')"/>
 	</xsl:function>
 	
+	<xsl:function name="f:root-milestone" as="element()?">
+		<xsl:param name="el"/>
+		<xsl:for-each select="$el">
+			<xsl:variable name="previous" select="preceding::milestone[@next = concat('#', $el/@xml:id)]"/>
+			<xsl:variable name="pointshere" select="preceding::milestone[@spanTo = concat('#', $el/@xml:id)]"/>
+			<xsl:choose>
+				<xsl:when test="$previous"><xsl:sequence select="f:root-milestone($previous)"/></xsl:when>
+				<xsl:when test="$pointshere"><xsl:sequence select="f:root-milestone($pointshere)"/></xsl:when>
+				<xsl:when test="self::milestone"><xsl:sequence select="."/></xsl:when>
+				<xsl:otherwise><xsl:message select="concat('Warning: Nothing points to ', @xml:id)"/></xsl:otherwise>
+			</xsl:choose>			
+		</xsl:for-each>
+	</xsl:function>
+	
+	<xsl:function name="f:milestone-chain" as="element()*">
+		<xsl:param name="start"/>
+		<xsl:for-each select="$start">
+			<xsl:sequence select=".,
+				if (@spanTo) 
+					then f:milestone-chain(id(substring-after('#', @spanTo)))
+					else (),
+				if (@next)
+					then f:milestone-chain(id(substring-after('#', @next)))
+					else ()
+				"/>
+		</xsl:for-each>
+	</xsl:function>
+	
 	<xsl:template match="milestone[@unit='testimony']">
 		<xsl:variable name="id" select="f:real_id(@xml:id)"/>
 		<xsl:variable name="id_parts" select="tokenize($id, '_')"/>
+		<xsl:variable name="root" select="f:root-milestone(.)"/>
+		<xsl:variable name="taxlabel" select="id($id_parts[1], $taxonomies)/text()"/>
 		<xsl:choose>
 			<xsl:when test="count($id_parts) = 2">
-				<xsl:variable name="taxlabel" select="id($id_parts[1], $taxonomies)/text()"/>
 				<xsl:if test="not($taxlabel) or $id_parts[2] = ''">
 					<xsl:message select="concat('WARNING: Invalid testimony id ', $id, ' in ', document-uri(/))"/>
 				</xsl:if>
-				<a id="{$id}" href="/archive_testimonies#{$id}" class="testimony"><xsl:value-of select="f:testimony-label($id)"/></a>
+				<a class="appnote generated-text testimony-ref" id="{$id}" href="/archive_testimonies#{$id}">
+					<xsl:call-template name="highlight-group">
+						<xsl:with-param name="others" select="f:milestone-chain($root)"/>						
+					</xsl:call-template>				
+					<xsl:text>[ </xsl:text>
+					<xsl:value-of select="f:testimony-label($id)"/>					
+					<xsl:text>: </xsl:text>					
+				</a>	
 			</xsl:when>
-			<xsl:when test="count($id_parts) = 3 and string-length($id_parts[2]) > 0 and matches($id_parts[2], '.*\d.*')">
-				<!--<xsl:message select="concat('INFO:',document-uri(/),': Skipping three-part testimony id ', @xml:id)"/>-->				
+			<xsl:when test="count($id_parts) = 3 and string-length($id_parts[2]) > 0 and matches($id_parts[2], '.*\d.*') and $root">
+				<a class="appnote generated-text testimony-ref" href="#{$id}">
+					<xsl:call-template name="highlight-group">
+						<xsl:with-param name="others" select="f:milestone-chain($root)"/>						
+					</xsl:call-template>				
+					<xsl:text>[ </xsl:text>
+					<xsl:value-of select="f:testimony-label($id)"/>					
+					<xsl:text> (weiter): </xsl:text>					
+				</a>					
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:message>WARNING:<xsl:value-of select="document-uri(/)"/>:Invalid/strange testimony id "<xsl:value-of select="$id"/>" <xsl:copy-of select="."/></xsl:message>
 			</xsl:otherwise>
 		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template match="anchor[preceding::milestone[substring(@spanTo, 2) = current()/@xml:id]]">
+		<xsl:variable name="root" select="f:root-milestone(.)" as="element()*"/>
+		<xsl:variable name="id" select="f:real_id($root[1]/@xml:id)"/>
+		<xsl:variable name="label" select="f:testimony-label($id)"/>
+		<a class="appnote generated-text testimony-ref" href="#{$id}" title="Ende {$label}">
+			<xsl:call-template name="highlight-group">
+				<xsl:with-param name="others" select="f:milestone-chain($root)"/>
+			</xsl:call-template>
+			<xsl:text> ]</xsl:text>
+		</a>
 	</xsl:template>
 	
 	<!-- following template extracts f:citation elements for all  -->
