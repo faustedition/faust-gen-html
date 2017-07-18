@@ -10,13 +10,28 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/niiimp-full.tf</variable>
         <variable type="permanent-file" name="niiimp-full2" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/nii2.tf</variable>
+        <variable type="permanent-file" name="head" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/head.tf</variable>
+        <variable type="permanent-file" name="intro" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/intro.tf</variable>
+        <variable type="permanent-file" name="typ1" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/typ1.tf</variable>
+        <variable type="permanent-file" name="trail" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/trail.tf</variable>
+        <variable type="permanent-file" name="sort" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/sort.tf</variable>
+        <variable type="permanent-file" name="clean" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/clean.tf</variable>
+        <variable type="permanent-file" name="sort-rtf" option="erase" format="system"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/sort.rtf</variable>
         <variable type="permanent-file" name="niiread" option="erase" format="system"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/niiread.rtf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="xxtable"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/xxtable.tf</variable>
-<!--        <variable type="permanent-file" code="UTF-8" name="xxtable-x" option="erase"
+        <!--        <variable type="permanent-file" code="UTF-8" name="xxtable-x" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/xxtable.xml</variable>
--->        <variable type="permanent-file" format="tustep" option="erase" name="xxtable-x"
+-->
+        <variable type="permanent-file" format="tustep" option="erase" name="xxtable-x"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/xxtable-x.tf</variable>
     </variables>
     <tustep>
@@ -49,7 +64,127 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
             </modify>
         </pass>
     </transform>
+    <transform source="niiimp-full" destination="head">
+        <define-text-units>
+            <text-unit-start>
+                <comparison-table>
+                    <comparison-string>{{document</comparison-string>
+                    <comparison-string>{{p </comparison-string>
+                    <comparison-string>{{/section}}</comparison-string>
+                    <comparison-string>{{/body}}</comparison-string>
+                    <comparison-string>{{/document}}</comparison-string>
+                </comparison-table>
+            </text-unit-start>
+        </define-text-units>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>{{document</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+    </transform>
+    <transform source="niiimp-full" destination="intro">
+        <define-text-units>
+            <text-unit-start>
+                <comparison-table>
+                    <exclusion-string>{{br/}}</exclusion-string>
+                    <comparison-string>{{</comparison-string>
+                </comparison-table>
+            </text-unit-start>
+        </define-text-units>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>font size="14"</search-string>
+                            <search-string>Die Kategorisierungen</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <transform source="niiimp-full" destination="typ1">
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 1: Korrekturen eindeutiger (sprachlich sinnloser) Fehler {{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <exception-string>Ohne Eingriff{{/b}}{{/p}}</exception-string>
+                            <exception-string>Noch zu entscheiden{{/b}}{{/p}}</exception-string>
+                            <search-string>{{/b}}{{/p}}</search-string>
+                            <search-string>\[Typ 1\]</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <transform source="niiimp-full" destination="trail">
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>{{/section}}</search-string>
+                            <search-string>{{/body}}</search-string>
+                            <search-string>{{/document}}</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+    </transform>
+    <!-- collect head, ..., and trailing section -->
+    <transform source="head" destination="sort"/>
+    <transform source="intro" destination="sort" option="append"/>
+    <transform source="typ1" destination="sort" option="append"/>
+    <transform source="trail" destination="sort" option="append"/>
+    <transform source="sort" destination="clean">
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>}}{[}*((</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>))</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>before^_</search-string>
+                            <replacement-string>vor </replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>after^_</search-string>
+                            <replacement-string>nach </replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+    </transform>
     <tustep>
+#*export, clean, sort-rtf, loeschen = +        
 #*export, niiimp-full2, niiread, loeschen = +        
     </tustep>
     <transform source="niiimp" destination="xxtable">
