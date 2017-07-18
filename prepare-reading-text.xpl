@@ -29,7 +29,7 @@
 					<!--<base>https://faustedition.uni-wuerzburg.de/xml</base>-->
 					<base>http://dev.faustedition.net/xml</base>
 					<!--<base>file:/home/tv/git/faust-gen/data/xml</base>-->
-					<!--                                    <base>file:/Users/gerri/faustedition/xml</base>-->
+<!--					<base>file:/Users/bruening.FDH-FFM/faustedition/xml</base>-->
 
 					<!-- URL, unter der die transformierten Dateien
 					     gespeichert werden sollen:	-->
@@ -38,6 +38,7 @@
 					<!-- Quell-Transkripte: -->
 					<transcript path="transcript/test/test.xml"/>
 					<transcript path="transcript/gsa/391098/391098.xml" output="h.xml"/>
+					<transcript path="transcript/gsa/390643/390643.xml" output="h14.xml"/>
 					<transcript
 						path="transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml"
 						output="h0a.xml"/>

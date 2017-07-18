@@ -28,6 +28,8 @@
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/h.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="h0a-x"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/h0a.xml</variable>
+        <variable type="permanent-file" code="UTF-8" name="h14-x"
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/h14.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="c14-x"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/c14.xml</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hheader"
@@ -38,6 +40,8 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/h.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h0a"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/h0a.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="h14"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/h14.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="c14"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/c14.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="crith" option="erase"
@@ -48,6 +52,8 @@
             >file:///C:/Users/bruening.FDH-FFM/faustedition/txt/critc14.txt</variable>
         <variable type="permanent-file" name="diff1" option="erase" format="tustep"
             >file:///C:/Users/bruening.FDH-FFM/txstep/ve/diff1</variable>
+        <variable type="permanent-file" name="diff1b" option="erase" format="tustep"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/ve/diff1b</variable>
         <variable type="permanent-file" name="diff2" option="erase" format="tustep"
             >file:///C:/Users/bruening.FDH-FFM/txstep/ve/diff2</variable>
         <variable type="permanent-file" name="diff-list1" option="erase" format="tustep"
@@ -363,6 +369,9 @@
     <transform source="h0a-x" destination="intmedfile" take-params="ko1" option="erase"/>
     <transform source="intmedfile" destination="h0a" take-params="ko2" mode="+"/>
     <transform source="h0a" destination="crith0a" take-params="crit"/>
+    <!-- transform h14: -->
+    <transform source="h14-x" destination="intmedfile" take-params="ko1" option="erase"/>
+    <transform source="intmedfile" destination="h14" take-params="ko2" mode="+"/>
     <!-- transform c14: -->
     <transform source="c14-x" destination="intmedfile" take-params="ko1" option="erase"/>
     <transform source="intmedfile" destination="c14" take-params="ko2" mode="+"/>
@@ -378,7 +387,17 @@
         <select-area versiona="1.10-28.6,10" versionb="1.3-28.4,10"/>
         <version-id>H.0a</version-id>
     </compare>
-    <collate source="h" mode="single-witness" diff-file="diff1" listing="$diff-list1">
+    <compare versiona="h" versionb="h14" variants="diff1b" type="corrections" listing="-">
+        <compare-units mode="word"/>
+        <add-context>
+            <omission length-before="0" length-lemma="5" length-after="0"/>
+            <replacement length-before="0" length-lemma="3" length-after="0"/>
+            <insertion length-before="1" length-after="0"/>
+        </add-context>
+        <select-area versiona="12.23-13.4,7" versionb="1.2-1.43,6"/>
+        <version-id>H.14</version-id>
+    </compare>
+    <collate source="h" mode="single-witness" diff-file="diff1b'diff1" listing="$diff-list1">
         <list lines="with-variants"/>
     </collate>
     <display file="diff-list1" type="listing" mode="ps-landscape"/>
@@ -404,7 +423,7 @@
     <collate source="h" mode="single-witness" diff-file="diff2" listing="$diff-list2">
         <list lines="with-variants"/>
     </collate>
-    <display file="diff-list2" type="listing" mode="ps-landscape"/>
+<!--    <display file="diff-list2" type="listing" mode="ps-landscape"/>-->
     <!-- correct h -->
     <correct source="h" destination="kth0a" corrections="diff1" option="erase"/>
     <!-- emend kt and add app entries: -->
