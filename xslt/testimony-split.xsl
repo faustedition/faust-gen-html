@@ -49,6 +49,8 @@
 		</xsl:if>
 		<xsl:for-each select="$milestones">
 			<xsl:variable name="id" select="f:real_id(@xml:id)"/>
+			<xsl:variable name="xml-id" select="@xml:id"/>
+			<xsl:variable name="milestone" select="."/>
 			<xsl:result-document href="{resolve-uri(concat($id, '.xml'), $output)}" exclude-result-prefixes="xs xi svg math xd f">
 				<xsl:for-each select="$div">					
 					<xsl:variable name="metadata" select="$table//f:testimony[@id=$id]"/>
@@ -77,10 +79,12 @@
 										<xsl:copy-of select="$div"/>								
 									</body>
 								</text>
-								<text copyOf="#{$id}" type="testimony">
-									<xsl:call-template name="milestone-content">
-										<xsl:with-param name="milestone" select="id($id)"/>
-									</xsl:call-template>
+								<text copyOf="#{$xml-id}" type="testimony">
+									<body>
+										<xsl:call-template name="milestone-content">
+											<xsl:with-param name="milestone" select="id($xml-id)"/>
+										</xsl:call-template>										
+									</body>
 								</text>
 							</group>
 						</text>
@@ -96,7 +100,7 @@
 		<xsl:for-each select="$milestone">
 			<xsl:variable name="target" select="id(substring(@spanTo, 2))"/>
 			<xsl:variable name="content">
-				<xsl:if test="$allow-leading-gap and (preceding-sibling::* or normalize-space(preceding-sibling::text()) != '')">
+				<xsl:if test="$allow-leading-gap and (preceding-sibling::* or normalize-space(string-join('', preceding-sibling::text())) != '')">
 					<gap reason="irrelevant"/>
 				</xsl:if>
 				<xsl:sequence select="following::node() except (., $target, $target/following::node(), following::*/node())"/>
