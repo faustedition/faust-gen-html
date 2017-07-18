@@ -44,6 +44,8 @@
             >file:///C:/Users/bruening.FDH-FFM/faustedition/txt/crith.txt</variable>
         <variable type="permanent-file" code="UTF-8" name="crith0a" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/txt/crith0a.txt</variable>
+        <variable type="permanent-file" code="UTF-8" name="critc14" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/txt/critc14.txt</variable>
         <variable type="permanent-file" name="diff1" option="erase" format="tustep"
             >file:///C:/Users/bruening.FDH-FFM/txstep/ve/diff1</variable>
         <variable type="permanent-file" name="diff2" option="erase" format="tustep"
@@ -364,6 +366,7 @@
     <!-- transform c14: -->
     <transform source="c14-x" destination="intmedfile" take-params="ko1" option="erase"/>
     <transform source="intmedfile" destination="c14" take-params="ko2" mode="+"/>
+    <transform source="c14" destination="critc14" take-params="crit"/>
     <!-- collate h and h0a -->
     <compare versiona="h" versionb="h0a" variants="diff1" type="corrections" listing="-">
         <compare-units mode="word"/>
