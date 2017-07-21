@@ -16,6 +16,8 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/intro.tf</variable>
         <variable type="permanent-file" name="typ1" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/typ1.tf</variable>
+        <variable type="permanent-file" name="typ2a" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/typ2a.tf</variable>
         <variable type="permanent-file" name="trail" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/trail.tf</variable>
         <variable type="permanent-file" name="sort" option="erase"
@@ -129,6 +131,24 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
+    <transform source="niiimp-full" destination="typ2a">
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 2a: Emendationen von Überlieferungsfehlern: Schreib- oder Setzerfehler gegen die unmittelbare Vorlage{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <exception-string>Ohne Eingriff{{/b}}{{/p}}</exception-string>
+                            <exception-string>Noch zu entscheiden{{/b}}{{/p}}</exception-string>
+                            <search-string>{{/b}}{{/p}}</search-string>
+                            <search-string>\[Typ 2a\]</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
     <transform source="niiimp-full" destination="trail">
         <pass>
             <examine-text>
@@ -148,6 +168,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
     <transform source="head" destination="sort"/>
     <transform source="intro" destination="sort" option="append"/>
     <transform source="typ1" destination="sort" option="append"/>
+    <transform source="typ2a" destination="sort" option="append"/>
     <transform source="trail" destination="sort" option="append"/>
     <transform source="sort" destination="clean">
         <pass>
@@ -171,12 +192,20 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
                 <exchange>
                     <exchange-table>
                         <string-pair>
+                            <search-string>Calibri</search-string>
+                            <replacement-string>Times</replacement-string>
+                        </string-pair>
+                        <string-pair>
                             <search-string>before^_</search-string>
                             <replacement-string>vor </replacement-string>
                         </string-pair>
                         <string-pair>
                             <search-string>after^_</search-string>
                             <replacement-string>nach </replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>2^_I^_H.0a</search-string>
+                            <replacement-string>I H{{sup}}0a{{/sup}}</replacement-string>
                         </string-pair>
                     </exchange-table>
                 </exchange>
