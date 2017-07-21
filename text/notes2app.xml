@@ -218,7 +218,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
                         </string-pair>
                         <string-pair>
                             <search-string>\[Typ*\]</search-string>
-                            <replacement-string>I H{{sup}}0a{{/sup}}</replacement-string>
+                            <replacement-string/>
                         </string-pair>
                         <string-pair>
                             <search-string>before^_</search-string>
