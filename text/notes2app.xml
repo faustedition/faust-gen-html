@@ -20,6 +20,8 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/typ2a.tf</variable>
         <variable type="permanent-file" name="typ2b" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/typ2b.tf</variable>
+        <variable type="permanent-file" name="typ4" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/typ4.tf</variable>
         <variable type="permanent-file" name="trail" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/trail.tf</variable>
         <variable type="permanent-file" name="sort" option="erase"
@@ -169,6 +171,24 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
+    <transform source="niiimp-full" destination="typ4">
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 4: Wiederherstellung oder Ausschließung von übergangenen Autorvarianten{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <exception-string>Ohne Eingriff{{/b}}{{/p}}</exception-string>
+                            <exception-string>Noch zu entscheiden{{/b}}{{/p}}</exception-string>
+                            <search-string>{{/b}}{{/p}}</search-string>
+                            <search-string>\[Typ 4</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
     <transform source="niiimp-full" destination="trail">
         <pass>
             <examine-text>
@@ -190,6 +210,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
     <transform source="typ1" destination="sort" option="append"/>
     <transform source="typ2a" destination="sort" option="append"/>
     <transform source="typ2b" destination="sort" option="append"/>
+    <transform source="typ4" destination="sort" option="append"/>
     <transform source="trail" destination="sort" option="append"/>
     <transform source="sort" destination="clean">
         <pass>
