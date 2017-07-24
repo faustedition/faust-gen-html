@@ -71,6 +71,7 @@
     <field name="druckort">WA I, 9, 96</field>
   </testimony>
   <testimony id="pniower_7">
+    <field name="status">ENTFÄLLT</field>
     <field name="lfd-nr-allerneuestens">2</field>
     <field name="lfd-nr-neuestens">2</field>
     <field name="lfd-nr-ganz-neu">2</field>
@@ -113,7 +114,8 @@
     <field name="vermerk">vgl. Gräf II/2,  S.12</field>
     <field name="bemerkung">Vgl. Creizenach 1882; DjG3 3, S. 420</field>
     <field name="druckort">DjG2 6, S. 267</field>
-    <field name="alternativer-druckort">Creizenach 1837, S. 386; </field>
+    <field name="alternativer-druckort">GB 2II, S. 84-86
+Creizenach 1837, S. 386; </field>
     <field name="fremdzeugnis-nr">1</field>
   </testimony>
   <testimony id="graef_850">
@@ -7751,7 +7753,7 @@
     <field name="div-type">diary</field>
     <field name="datum-von">13.05.1808</field>
     <field name="wa-druckort">WA III, 3, 335</field>
-    <field name="druckort">WA III, 335</field>
+    <field name="druckort">WA III, 3, 335</field>
     <field name="texttranscript">faust://xml/testimony/wa_III/wa_III_3.xml#graef_1078</field>
     <field name="vorlage-seite-von">335</field>
     <field name="vorlage-absatz-von">13</field>
@@ -8554,7 +8556,7 @@
     <field name="adressat-gsa-personennummer">36466</field>
     <field name="datum-von">16.11.1810</field>
     <field name="wa-druckort">WA IV, 30, 160f.</field>
-    <field name="druckort"> </field>
+    <field name="druckort">WA IV, 30, 160f </field>
   </testimony>
   <testimony id="graef_1110">
     <field name="lfd-nr-allerneuestens">428</field>

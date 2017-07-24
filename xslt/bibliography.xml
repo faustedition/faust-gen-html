@@ -2132,6 +2132,11 @@
         <f:reference>Goethe und Lavater. Briefe und Tagebücher. Hrsg. von Heinrich Funck, Weimar 1901. (= Schriften der Goethe-Gesellschaft; 16).</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gb2II">
+        <f:citation>GB 2II</f:citation>
+        <f:reference>Goethe, Johann Wolfgang: Briefe. Historisch-kritische Ausgabe. Band 2 II. Anfang 1773-Ende Oktober 1775. Kommentar. Herausgegeben von Georg Kurscheidt und Elke Richter. Berlin 2009.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/geiger1882">
         <f:citation>Geiger 1882</f:citation>
         <f:reference>Geiger, Ludwig: Aus Bertuchs Nachlaß. In: faust://bibliography/gjb_2, S. 374–414.</f:reference>
