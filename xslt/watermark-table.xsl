@@ -27,6 +27,7 @@
 							<th data-sorted="false" data-sortable-type='alpha'>Gegenzeichen</th>
 							<th data-sorted="false" data-sortable-type='sigil'>Zeugen</th>
 							<th data-sorted="false" data-sortable-type='sigil'>Zeugen (nur Hauptzeichen)</th>
+							<th data-sorted="false" data-sortable-type='sigil'>Zeugen (nur Gegenzeichen)</th>
 						</tr>
 					</thead>
 					<tbody>
