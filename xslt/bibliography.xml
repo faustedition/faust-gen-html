@@ -2089,7 +2089,7 @@
 
     <f:bib uri="faust://bibliography/eberwein1853">
         <f:citation>Eberwein 1853</f:citation>
-        <f:reference>Eberwein, Karl: Die Musik zum Goetheschen Faust. In: Europa. Chronik der gebildeten Welt 1853, Nr. 43, 26. Mai, S. 337-<strong>###</strong>. </f:reference>
+        <f:reference>Eberwein, Karl: Die Musik zum Goetheschen Faust. In: Europa. Chronik der gebildeten Welt 1853, Nr. 43, 26. Mai, S. 337-341. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/falk1832">
@@ -2625,6 +2625,11 @@
     <f:bib uri="faust://bibliography/solger1882">
         <f:citation>Solger 1882</f:citation>
         <f:reference>Solger, Karoline: Briefe von Heinrich Voss an Karl Solger. In: Archiv für Litteraturgeschichte 11 (1882), S. 94-141, hier S. 113f.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/stapfer1828">
+        <f:citation>Stapfer 1828</f:citation>
+        <f:reference>Faust, Tragédie de M. de Goethe, traduite en français par M. Albert Stapfer. Ornée d'un portrait de l'auteur, et de 17 dessins composés d'après les principales scènes de l'ouvrage et exécutés sur pierre par M. Eugène Delacroix. Paris 1828.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/steig1904">
