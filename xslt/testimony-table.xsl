@@ -171,13 +171,10 @@
 				<xsl:when test="not($used)">
 					<f:message status="info">kein XML für »<xsl:value-of select="@id"/>«</f:message>
 				</xsl:when>
-				<xsl:when test="count($used) > 1">					
-					<f:message status="error"><xsl:value-of select="concat(count($used), ' XML-Quellen: ', string-join($used/@base, ', '))"/></f:message>
-				</xsl:when>				
 				<xsl:otherwise>
 					<f:base><xsl:value-of select="$used/@base"/></f:base>
-					<f:href><xsl:value-of select="concat('testimony/', (: $used/@base, '#', :) $used/@testimony-id)"/></f:href>
-					<xsl:variable name="bibref" select="normalize-space($used/text())"/>
+					<f:href><xsl:value-of select="concat('testimony/', @id)(: $used/@base, '#', $used/@testimony-id):)"/></f:href>
+					<xsl:variable name="bibref" select="normalize-space($used[1]/text())"/>
 					<xsl:variable name="bib" select="$bibliography//bib[@uri=$bibref]"/> <!-- TODO refactor to bibliography.xsl -->
 					<xsl:copy-of select="$bib"/>
 					<xsl:variable name="excerpt" select="$used/@rs"/>
