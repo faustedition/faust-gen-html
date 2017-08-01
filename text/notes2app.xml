@@ -40,10 +40,20 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/trail.tf</variable>
         <variable type="permanent-file" name="sort" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/sort.tf</variable>
+        <variable type="permanent-file" name="abr" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/abr.tf</variable>
+        <variable type="permanent-file" name="abrsort" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/abrsort.tf</variable>
         <variable type="permanent-file" name="clean" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/clean.tf</variable>
+        <variable type="permanent-file" name="open" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/open.tf</variable>
+        <variable type="permanent-file" name="abrclean" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/abrclean.tf</variable>
         <variable type="permanent-file" name="sort-rtf" option="erase" format="system"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/sort.rtf</variable>
+        <variable type="permanent-file" name="abrsort-rtf" option="erase" format="system"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/abrsort.rtf</variable>
         <variable type="permanent-file" name="niiread" option="erase" format="system"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/niiread.rtf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="xxtable"
@@ -53,6 +63,7 @@
 -->
         <variable type="permanent-file" format="tustep" option="erase" name="xxtable-x"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/xxtable-x.tf</variable>
+        <variable type="scratch-file" name="cleanup"/>
     </variables>
     <tustep>
 #de,da=*
@@ -358,7 +369,37 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
     <transform source="typ0" destination="sort" option="append"/>
     <transform source="typqu" destination="sort" option="append"/>
     <transform source="trail" destination="sort" option="append"/>
-    <transform source="sort" destination="clean">
+    <transform source="sort" destination="abr">
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>+abr</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>+abr</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+    </transform>
+    <transform source="head" destination="abrsort"/>
+    <transform source="abr" destination="abrsort" option="append">
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Von ABR akzeptiert{{/font}}{{/p}}</insert-at-start>
+    </transform>
+    <transform source="trail" destination="abrsort" option="append"/>
+    <transform source="sort" destination="clean" save-params="cleanup">
         <pass>
             <modify>
                 <exchange>
@@ -384,10 +425,6 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
                             <replacement-string>Times</replacement-string>
                         </string-pair>
                         <string-pair>
-                            <search-string>\[Typ*\]</search-string>
-                            <replacement-string/>
-                        </string-pair>
-                        <string-pair>
                             <search-string>before^_</search-string>
                             <replacement-string>vor </replacement-string>
                         </string-pair>
@@ -403,6 +440,8 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
                 </exchange>
             </modify>
         </pass>
+    </transform>
+    <transform source="clean" destination="open">
         <pass>
             <modify>
                 <exchange>
@@ -415,9 +454,23 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
                 </exchange>
             </modify>
         </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>\[Typ*\]</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
     </transform>
+    <transform source="abrsort" destination="abrclean" take-params="cleanup"/>
     <tustep>
-#*export, clean, sort-rtf, loeschen = +        
+#*export, open, sort-rtf, loeschen = +        
+#*export, abrclean, abrsort-rtf, loeschen = +        
 #*export, niiimp-full2, niiread, loeschen = +        
     </tustep>
     <transform source="niiimp" destination="xxtable">
