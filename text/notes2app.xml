@@ -237,7 +237,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    
+
     <transform source="niiimp-full" destination="typ7">
         <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 7: Ausschließung oder Übernahme von Autorvarianten aus der Seitenüberlieferung{{/font}}{{/p}}</insert-at-start>
         <pass>
@@ -273,7 +273,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
             </examine-text>
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
-    </transform>    
+    </transform>
     <transform source="niiimp-full" destination="typ10">
         <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 10: Erläuterungsbedürftige Befunde{{/font}}{{/p}}</insert-at-start>
         <pass>
@@ -291,7 +291,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
             </examine-text>
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
-    </transform>    
+    </transform>
     <transform source="niiimp-full" destination="typ0">
         <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Ohne Eingriff{{/font}}{{/p}}</insert-at-start>
         <pass>
@@ -309,7 +309,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
             </examine-text>
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
-    </transform>    
+    </transform>
     <transform source="niiimp-full" destination="typqu">
         <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Zweifelhaftes{{/font}}{{/p}}</insert-at-start>
         <pass>
@@ -327,7 +327,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
             </examine-text>
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
-    </transform>    
+    </transform>
     <transform source="niiimp-full" destination="trail">
         <pass>
             <examine-text>
@@ -398,6 +398,18 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
                         <string-pair>
                             <search-string>2^_I^_H.0a</search-string>
                             <replacement-string>I H{{sup}}0a{{/sup}}</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>*+abr*</search-string>
+                            <replacement-string/>
                         </string-pair>
                     </exchange-table>
                 </exchange>
