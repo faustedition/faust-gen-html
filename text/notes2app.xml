@@ -161,7 +161,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
     <transform source="niiimp-full" destination="typ2a">
-        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 2a: Emendationen von Überlieferungsfehlern: Schreib- oder Setzerfehler gegen die unmittelbare Vorlage{{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 2a: Emendationen von Überlieferungsfehlern: Schreib- oder Setzerfehler gegen die unmittelbare Vorlage der Textgrundlage („Zeller 2“){{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
