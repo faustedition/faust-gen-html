@@ -466,6 +466,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
                 </exchange>
             </modify>
         </pass>
+        <suppress-blank-lines/>
     </transform>
     <transform source="abrsort" destination="abrclean" take-params="cleanup"/>
     <tustep>
