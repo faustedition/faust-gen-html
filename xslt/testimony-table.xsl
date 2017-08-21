@@ -184,7 +184,7 @@
 					</xsl:if>
 					<f:field name="excerpt"><xsl:value-of select="$excerpt"/></f:field>
 					<xsl:if test="not($bib)">
-						<f:message status="warning">kein Literaturverzeichniseintrag für faust://bibliography/<xsl:value-of select="$used/@base"/></f:message>
+						<f:message status="warning">kein Literaturverzeichniseintrag für <xsl:value-of select="$bibref"/></f:message>
 					</xsl:if>
 				</xsl:otherwise>
 			</xsl:choose>
