@@ -28,8 +28,11 @@
 		<xsl:value-of select="replace($id, '^(\w+)_0*(.*)$', '$1_$2')"/>
 	</xsl:function>
 	
-	
-	
+	<xsl:function name="f:unfree-text" as="xs:boolean">
+		<xsl:param name="el"/>
+		<xsl:value-of select="matches(document-uri(root($el)), '/quz_.*(\.xml)?')"/>
+	</xsl:function>
+		
 	<xsl:template match="/">
 		<xsl:variable name="root-divs" select="//div[descendant::milestone[@unit='testimony'] and not(ancestor::div)]"/>		
 		<xsl:message select="concat(if (count($root-divs) = 0) then 'WARNING: ' else '', count($root-divs), ' testimony divs in ', $basename)"/>
@@ -76,7 +79,18 @@
 							<group>
 								<text>
 									<body>
-										<xsl:copy-of select="$div"/>								
+										<xsl:choose>
+											<xsl:when test="f:unfree-text(.)">
+												<desc type="editorial" subtype="info">
+													Für die Veröffentlichung dieses Volltexts liegt noch keine Freigabe vor.
+													<xsl:copy-of select="$milestone"/>
+												</desc>
+												
+											</xsl:when>
+											<xsl:otherwise>
+												<xsl:copy-of select="$div"/>												
+											</xsl:otherwise>
+										</xsl:choose>
 									</body>
 								</text>
 								<text copyOf="#{$xml-id}" type="testimony">

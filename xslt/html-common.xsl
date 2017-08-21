@@ -521,5 +521,10 @@ in <xsl:value-of select="document-uri(/)"/>
 		</a>
 	</xsl:template>
 	
+	<xsl:template match="desc[@type='editorial']">
+		<div class="pure-alert {if (@subtype) then concat('pure-alert-', @subtype) else ()}">
+			<xsl:apply-templates/>
+		</div>
+	</xsl:template>
 	
 </xsl:stylesheet>

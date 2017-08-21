@@ -95,6 +95,7 @@
 		</xsl:for-each>
 	</xsl:function>
 	
+	<xsl:template match="desc/milestone" priority="1"/>
 	<xsl:template match="milestone[@unit='testimony']">
 		<xsl:variable name="id" select="f:real_id(@xml:id)"/>
 		<xsl:variable name="id_parts" select="tokenize($id, '_')"/>
