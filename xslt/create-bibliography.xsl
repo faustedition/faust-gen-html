@@ -51,7 +51,7 @@
 						</xsl:variable>
 						<xsl:variable name="testimonies" select="current-group()[@testimony]" as="element()*"/>
 						<xsl:variable name="testimony-part">
-							<xsl:for-each-group select="$testimonies" group-by="@base">
+							<xsl:for-each-group select="$testimonies" group-by=".">
 								<small class="bib-testimonies">
 									Entstehungszeugnisse:
 									<xsl:for-each-group select="current-group()" group-by="@taxonomy">
