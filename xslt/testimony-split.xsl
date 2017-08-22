@@ -114,7 +114,7 @@
 		<xsl:for-each select="$milestone">
 			<xsl:variable name="target" select="id(substring(@spanTo, 2))"/>
 			<xsl:variable name="content">
-				<xsl:if test="$allow-leading-gap and (preceding-sibling::* or normalize-space(string-join('', preceding-sibling::text())) != '')">
+				<xsl:if test="$allow-leading-gap and (preceding-sibling::* or normalize-space(string-join(preceding-sibling::text(), '')) != '')">
 					<gap reason="irrelevant"/>
 				</xsl:if>
 				<xsl:sequence select="following::node() except (., $target, $target/following::node(), following::*/node())"/>
