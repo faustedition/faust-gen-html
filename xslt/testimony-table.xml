@@ -831,12 +831,12 @@ Creizenach 1837, S. 386; </field>
     <field name="alternativer-druckort">Böttiger 1998, S. 42</field>
     <field name="fremdzeugnis-nr">16</field>
   </testimony>
-  <testimony id="graef_859A_e">
+  <testimony id="graef_859A">
     <field name="lfd-nr-neuneu">37</field>
     <field name="lfd-nr-allerneuestens">38</field>
     <field name="lfd-nr-neuestens">39</field>
     <field name="lfd-nr-ganz-neu">28</field>
-    <field name="graef-nr">859A_e</field>
+    <field name="graef-nr">859A</field>
     <field name="verfasser">Karl Gottlob Küttner</field>
     <field name="verfasser-gsa-personennummer">38880</field>
     <field name="dokumenttyp">Brief</field>
@@ -9835,13 +9835,14 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="vorlage-seite-bis">252</field>
     <field name="vorlage-absatz-bis">Z. 13</field>
   </testimony>
-  <testimony>
+  <testimony id="bie3_3903">
     <field name="lfd-nr-neuneu">471</field>
     <field name="lfd-nr-allerneuestens">474</field>
     <field name="lfd-nr-neuestens">475</field>
     <field name="lfd-nr-ganz-neu">463</field>
     <field name="lfd-nr-neu">462</field>
     <field name="lfd-nr-alt">461</field>
+    <field name="biedermann-herwignr">3903</field>
     <field name="verfasser">Friedrich Wilhelm Riemer</field>
     <field name="verfasser-gsa-personennummer">40714</field>
     <field name="dokumenttyp">Text</field>
@@ -10013,7 +10014,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="graef-nr">1155</field>
     <field name="pniower-nr">305</field>
     <field name="biedermann-nr-alt">620</field>
-    <field name="biedermann-herwignr">7488 a</field>
+    <field name="biedermann-herwignr">7488a</field>
     <field name="verfasser">Heinrich Voß</field>
     <field name="verfasser-gsa-personennummer">45625</field>
     <field name="dokumenttyp">Gespräch</field>
@@ -10088,7 +10089,8 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="datierungsvermerk">April 1815 oder Mitte Juli 1816; Jahr ergänzt</field>
     <field name="vermerk">s. Gräf II/1, S. 142, 7-15.</field>
     <field name="wa-druckort">WA I, 30, 268</field>
-    <field name="druckort">Hempel 1868-1879, Bd. 24, S. 160</field>
+    <field name="druckort">WA I, 30, 268</field>
+    <field name="alternativer-druckort">Hempel 1868-1879, Bd. 24, S. 160</field>
   </testimony>
   <testimony id="graef_1158">
     <field name="lfd-nr-neuneu">483</field>
@@ -11198,8 +11200,9 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="titel">‚Summarische Jahresfolge Goethe'scher Schriften‘</field>
     <field name="datum-von">03.1819</field>
     <field name="datierungsvermerk">Anfang März 1819</field>
-    <field name="wa-druckort">WA I, 42.1, 77ff.</field>
-    <field name="druckort">Hempel 1868-1879, Bd. 29, S. 323ff,</field>
+    <field name="wa-druckort">WA I, 42.1, 77-87</field>
+    <field name="druckort">WA I, 42.1, 77-87</field>
+    <field name="alternativer-druckort">Hempel 1868-1879, Bd. 29, S. 323ff,</field>
   </testimony>
   <testimony id="graef_1205">
     <field name="lfd-nr-neuneu">538</field>
@@ -12205,7 +12208,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="lfd-nr-neu">581</field>
     <field name="lfd-nr-alt">579</field>
     <field name="pniower-nr">932</field>
-    <field name="h-sigle">2 III H.6; 2 III H.15; 2 III H.18; 2 III H.23; 2 III H.35</field>
+    <field name="h-sigle">2 III H.6:1; 2 III H.15; 2 III H.18; 2 III H.23; 2 III H.35</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
     <field name="dokumenttyp">Text</field>
@@ -12345,12 +12348,13 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="lfd-nr-ganz-neu">590</field>
     <field name="lfd-nr-neu">588</field>
     <field name="lfd-nr-alt">586</field>
-    <field name="biedermann-nr-alt">840</field>
+    <field name="biedermann-2">2092</field>
     <field name="biedermann-herwignr">5147</field>
     <field name="verfasser">Frédéric Soret</field>
     <field name="verfasser-gsa-personennummer">46734</field>
     <field name="dokumenttyp">Gespräch</field>
     <field name="datum-von">13.04.1823</field>
+    <field name="druckort">Biedermann (2), Bd. 2, S. 628</field>
   </testimony>
   <testimony id="graef_1255">
     <field name="status">NEU</field>
@@ -12365,7 +12369,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="adressat">Karl Theodor Küstner</field>
     <field name="adressat-gsa-personennummer">38876</field>
     <field name="datum-von">27.05.1823</field>
-    <field name="druckort">Biedermann 1875, Bd. 2, S. 187</field>
+    <field name="druckort">Biedermann 1865, Bd. 2, S. 187</field>
   </testimony>
   <testimony id="graef_1256">
     <field name="lfd-nr-neuneu">599</field>
@@ -12818,7 +12822,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="lfd-nr-neu">612</field>
     <field name="lfd-nr-alt">610</field>
     <field name="pniower-nr">934</field>
-    <field name="h-sigle">2 III H19</field>
+    <field name="h-sigle">2 III H.19</field>
     <field name="verfasser">Johann Karl Wesselhöft</field>
     <field name="verfasser-gsa-personennummer">42632</field>
     <field name="dokumenttyp">Text</field>
@@ -12840,21 +12844,6 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="lfd-nr-alt">611</field>
     <field name="graef-nr">1271</field>
     <field name="biedermann-nr-alt">1732</field>
-    <field name="verfasser">Heinrich Heine</field>
-    <field name="verfasser-gsa-personennummer">50496</field>
-    <field name="dokumenttyp">Gespräch</field>
-    <field name="datum-von">02.10.1824</field>
-    <field name="druckort">Biedermann (1), Bd. 10, S. 131</field>
-    <field name="texttranscript">faust://xml/testimony/biedermann1889-1896/biedermann1889-1896_10.xml#graef_1271</field>
-  </testimony>
-  <testimony id="bie3_5528">
-    <field name="lfd-nr-neuneu">624</field>
-    <field name="lfd-nr-allerneuestens">628</field>
-    <field name="lfd-nr-neuestens">630</field>
-    <field name="lfd-nr-ganz-neu">616</field>
-    <field name="lfd-nr-neu">614</field>
-    <field name="lfd-nr-alt">612</field>
-    <field name="biedermann-nr-alt">1732</field>
     <field name="biedermann-herwignr">5528</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
@@ -12864,6 +12853,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="datum-ereignis-genau">02.10.1824</field>
     <field name="datum-von">1868</field>
     <field name="druckort">Biedermann (1), Bd. 10, S. 130f.</field>
+    <field name="texttranscript">faust://xml/testimony/biedermann1889-1896/biedermann1889-1896_10.xml#graef_1271</field>
   </testimony>
   <testimony id="graef_1272">
     <field name="lfd-nr-neuneu">625</field>
@@ -14564,7 +14554,8 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="titel">‚Anzeige von Goethe's sämmtlichen Werken, vollständige Ausgabe letzter Hand‘</field>
     <field name="datum-von">01.02.1826</field>
     <field name="wa-druckort">WA I, 42.1, 109-120</field>
-    <field name="druckort">Hempel 1868-1879, Bd. 29, S. 350ff.</field>
+    <field name="druckort">WA I, 42.1, 109-120</field>
+    <field name="alternativer-druckort">Hempel 1868-1879, Bd. 29, S. 350ff.</field>
   </testimony>
   <testimony id="pniower_401">
     <field name="lfd-nr-neuneu">708</field>
@@ -15409,7 +15400,8 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="datum-von">08.05.1826</field>
     <field name="datierungsvermerk">Jahr ergänzt</field>
     <field name="wa-druckort">WA I, 42.2, S. 491</field>
-    <field name="druckort">Hempel 1868-1879, Bd. 29, S. 665</field>
+    <field name="druckort">WA I, 42.2, S. 491</field>
+    <field name="alternativer-druckort">Hempel 1868-1879, Bd. 29, S. 665</field>
   </testimony>
   <testimony id="graef_1367">
     <field name="lfd-nr-neuneu">750</field>
@@ -15753,8 +15745,10 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="datierungsvermerk">zwischen 31. Mai und 06. August 1826; Jahreszahl ergänzt</field>
     <field name="vermerk">?</field>
     <field name="bemerkung">Gräf Nr. bezieht sich nicht auf das Zeugnis selbst, sondern auf die darauf bzgl. Tgb.-Einträge</field>
+    <field name="zuordnung-zu-wanderjahren-trunz-aber-vgl-quz-ii-s-477f-anm-2"> </field>
     <field name="wa-druckort">WA I, 41.2, S. 177-198</field>
-    <field name="druckort">Hempel 1868-1879, Bd. 29, S. 683-691</field>
+    <field name="druckort">WA I, 41.2, S. 177-198</field>
+    <field name="alternativer-druckort">Hempel 1868-1879, Bd. 29, S. 683-691</field>
   </testimony>
   <testimony id="graef_1380a">
     <field name="lfd-nr-neuneu">767</field>
@@ -16915,7 +16909,8 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
     <field name="dokumenttyp">Anzeige</field>
     <field name="datum-von">18.11.1826</field>
-    <field name="wa-druckort">WA I, 42 (1), 121</field>
+    <field name="wa-druckort">WA I, 42 (1), 121-123</field>
+    <field name="druckort">WA I, 42 (1), 121-123</field>
     <field name="alternativer-druckort">Allgemeine Zeitung Nr 322, 18.11.1826, Beilage</field>
     <field name="vorlage-seite-von">121</field>
     <field name="vorlage-seite-bis">123</field>
@@ -17096,6 +17091,8 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="lfd-nr-neu">823</field>
     <field name="lfd-nr-alt">817</field>
     <field name="graef-nr">1435</field>
+    <field name="verfasser">Johann Wolfgang Goethe</field>
+    <field name="verfasser-gsa-personennummer">n.v.</field>
     <field name="dokumenttyp">Brief</field>
     <field name="adressat">Friedrich Wilhelm Riemer</field>
     <field name="adressat-gsa-personennummer">40714</field>
@@ -17456,7 +17453,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="lfd-nr-neu">841</field>
     <field name="lfd-nr-alt">833</field>
     <field name="pniower-nr">945</field>
-    <field name="h-sigle">2 III H.7</field>
+    <field name="h-sigle">2 III H.7:4</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
     <field name="dokumenttyp">Text</field>
@@ -27374,7 +27371,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
     <field name="dokumenttyp">Text</field>
     <field name="div-type">text</field>
-    <field name="titel">Nachtrag zum Textament</field>
+    <field name="titel">Nachtrag zum Testament</field>
     <field name="datum-von">22.01.1831</field>
     <field name="druckort">QuZ II, 693-695</field>
     <field name="alternativer-druckort">Tewes 1905, S. 273</field>
