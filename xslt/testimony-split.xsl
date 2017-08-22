@@ -93,7 +93,7 @@
 										</xsl:choose>
 									</body>
 								</text>
-								<text copyOf="#{$xml-id}" type="testimony">
+								<text n="{$id}" copyOf="#{$xml-id}" type="testimony">
 									<body>
 										<xsl:call-template name="milestone-content">
 											<xsl:with-param name="milestone" select="id($xml-id)"/>

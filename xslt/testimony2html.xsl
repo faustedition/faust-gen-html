@@ -143,25 +143,19 @@
 		</a>
 	</xsl:template>
 	
-	<!-- following template extracts f:citation elements for all  -->
+	<!-- following template generates a f:citation element for the current split testimony -->
 	<xsl:template name="get-citations">
-		<f:citations>
-			<xsl:for-each select="//milestone[@unit='testimony']">
-				<xsl:variable name="real-id" select="f:real_id(@xml:id)"/>
-				<xsl:variable name="id" select="tokenize($real-id, '_')"/>
-				<xsl:if test="count($id) = 2">
-					<f:citation 
-						testimony="{$basename}#{$real-id}" 
-						base="{$basename}" 
-						taxonomy="{id($id[1], $taxonomies)}"
-						n="{$id[2]}"
-						testimony-id="{$real-id}"
-						rs="{f:find-rs(.)}">
-						<xsl:value-of select="$biburl"/>
-					</f:citation>					
-				</xsl:if>
-			</xsl:for-each>
-		</f:citations>		
+		<xsl:variable name="real-id" select="//f:testimony/@id"/>
+		<xsl:variable name="id" select="tokenize($real-id, '_')"/>
+		<f:citation 
+			testimony="{$basename}#{$real-id}" 
+			base="{$basename}" 
+			taxonomy="{id($id[1], $taxonomies)}"
+			n="{$id[2]}"
+			testimony-id="{$real-id}"
+			rs="{f:find-rs(//text[@type='testimony' and @n=$real-id])}">
+			<xsl:value-of select="$biburl"/>
+		</f:citation>					
 	</xsl:template>
 	
 	<xsl:template name="milestone-content">
@@ -170,10 +164,9 @@
 		<xsl:sequence select="root($milestone)//text[@copyOf=concat('#', $milestone/@xml:id)]"/>
 	</xsl:template>
 	
-	<xsl:function name="f:find-rs">
-		<xsl:param name="milestone"/>
-		<xsl:variable name="content"><xsl:call-template name="milestone-content"><xsl:with-param name="milestone" select="$milestone"/></xsl:call-template></xsl:variable>
-		<xsl:variable name="content-str" select="normalize-space($content)"/>
+	<xsl:function name="f:find-rs">		
+		<xsl:param name="content"/>
+		<xsl:variable name="content-str" select="normalize-space(string-join($content, ''))"/>
 		<xsl:variable name="rs" select="($content//rs)[1]"/>
 		<xsl:choose>
 			<xsl:when test="$rs">… <xsl:value-of select="f:normalize-space($rs)"/> …</xsl:when>			
