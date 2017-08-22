@@ -117,7 +117,18 @@
 				<xsl:if test="$allow-leading-gap and (preceding-sibling::* or normalize-space(string-join(preceding-sibling::text(), '')) != '')">
 					<gap reason="irrelevant"/>
 				</xsl:if>
-				<xsl:sequence select="following::node() except (., $target, $target/following::node(), following::*/node())"/>
+				<xsl:variable name="actual-content" select="following::node() except (., $target, $target/following::node(), following::*/node())"/>
+				<xsl:choose>
+					<xsl:when test="$target is $milestone">
+						<xsl:message>ERROR: <xsl:value-of select="$milestone/@xml:id"/> spans to itself in <xsl:value-of select="$basename"/>!</xsl:message>
+						<xsl:text>⚠↺ </xsl:text>					
+					</xsl:when>
+					<xsl:when test="not($actual-content)">
+						<xsl:message>ERROR: <xsl:value-of select="$milestone/@xml:id"/> does not have any content in <xsl:value-of select="$basename"/>!</xsl:message>
+						<xsl:text>⚠∅ </xsl:text>					
+					</xsl:when>					
+				</xsl:choose>
+				<xsl:sequence select="$actual-content"/>
 				<xsl:if test="@next or following-sibling::* or normalize-space(following-sibling::text()) != ''">
 					<gap reason="irrelevant"/>
 				</xsl:if>
