@@ -167,9 +167,9 @@
 	<xsl:function name="f:find-rs">		
 		<xsl:param name="content"/>
 		<xsl:variable name="content-str" select="normalize-space(string-join($content, ''))"/>
-		<xsl:variable name="rs" select="($content//rs)[1]"/>
+		<xsl:variable name="rs" select="$content//rs"/>
 		<xsl:choose>
-			<xsl:when test="$rs">… <xsl:value-of select="f:normalize-space($rs)"/> …</xsl:when>			
+			<xsl:when test="$rs">… <xsl:value-of select="string-join(for $single-rs in $rs return f:normalize-space($single-rs), ' … ')"/> …</xsl:when>			
 			<xsl:when test="string-length($content-str) &lt; 50"><xsl:value-of select="$content-str"/> …</xsl:when>
 			<xsl:otherwise><xsl:value-of select="replace(substring($content-str, 1, 50), ' ?\w+$', ' …')"/></xsl:otherwise>			
 		</xsl:choose>		
