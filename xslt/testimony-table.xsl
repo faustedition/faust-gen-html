@@ -277,6 +277,7 @@
 					</xsl:choose>
 					<xsl:if test="not(position() = last())">; </xsl:if>
 				</xsl:for-each>
+				<xsl:if test="normalize-space(.)"> / </xsl:if>
 			</xsl:if>
 			<xsl:if test="normalize-space(.)">
 				<a href="{../href}"><xsl:apply-templates/></a>				
