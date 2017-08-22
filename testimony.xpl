@@ -88,31 +88,7 @@
 				
 			</p:for-each>
 			
-			<p:wrap-sequence wrapper="f:citations" name="citations-by-source"/>
-			
-			<!-- 
-				DEPRECATED:
-				
-				The following three steps create a html rendering of each original testimony file,
-				i.e. a file for each source. These are no longer linked in the edition.
-			-->
-			<p:xslt name="testimony-xml">
-				<p:input port="source"><p:pipe port="result" step="load-testimony"/></p:input>
-				<p:input port="stylesheet"><p:document href="xslt/normalize-characters.xsl"/></p:input>
-				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
-			</p:xslt>
-					
-			<p:xslt name="generate-html">
-				<p:input port="stylesheet"><p:document href="xslt/testimony2html.xsl"/></p:input>
-				<p:with-param name="builddir-resolved" select="$builddir"/>
-				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
-			</p:xslt>
-			
-			<p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
-				<p:with-option name="href" select="$outfile"/>
-			</p:store>
-			
-			<p:identity><p:input port="source"><p:pipe port="result" step="citations-by-source"/></p:input></p:identity>
+			<p:wrap-sequence wrapper="f:citations" name="citations-by-source"/>			
 		</p:for-each>
 		
 		<!-- Now we've an index doc for every testimony file, join them together -->
