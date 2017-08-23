@@ -359,18 +359,22 @@
 								</xenoData>
 							</teiHeader>
 							<text>
-								<body>
-									<desc type="editorial" subtype="info">
-										<xsl:choose>
-											<xsl:when test=".//field[@name='h-sigle']">
-												Text in der Edition, Links in der Tabelle
-											</xsl:when>
-											<xsl:otherwise>
-												noch kein Text vorhanden
-											</xsl:otherwise>
-										</xsl:choose>
-									</desc>
-								</body>
+								<group>
+									<text>
+										<body>
+											<desc type="editorial" subtype="info">
+												<xsl:choose>
+													<xsl:when test=".//field[@name='h-sigle']">
+														Text in der Edition, Links in der Tabelle
+													</xsl:when>
+													<xsl:otherwise>
+														noch kein Text vorhanden
+													</xsl:otherwise>
+												</xsl:choose>
+											</desc>
+										</body>										
+									</text>
+								</group>
 							</text>
 						</TEI>
 					</xsl:result-document>
