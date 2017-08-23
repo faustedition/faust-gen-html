@@ -48,9 +48,13 @@
 		<xsl:for-each select="$milestones">
 			<xsl:variable name="id" select="f:real_id(@xml:id)"/>
 			<xsl:variable name="xml-id" select="@xml:id"/>
-			<xsl:variable name="milestone" select="."/>
+			<xsl:variable name="milestone" select="." as="element()"/>
+			<xsl:variable name="chain" select="f:milestone-chain($milestone)" as="element()*"/>
+			<xsl:variable name="last-milestone" select="$chain[position() = last()]"/>
+			<xsl:variable name="last-div" select="$last-milestone/ancestor::div[not(ancestor::div)]"/>
+			<xsl:variable name="context" select="$div, $div/following::node() except ($div/following::*//node(), $last-div/following::node())"/>
 			<xsl:result-document href="{resolve-uri(concat($id, '.xml'), $output)}" exclude-result-prefixes="xs xi svg math xd f">
-				<xsl:for-each select="$div">					
+				<xsl:for-each select="$context">					
 					<xsl:variable name="metadata" select="$table//f:testimony[@id=$id]"/>
 					<TEI>
 						<xsl:for-each select="/TEI/teiHeader">

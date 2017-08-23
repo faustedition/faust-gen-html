@@ -8,7 +8,7 @@
     version="2.0">
     
     <xsl:function name="f:milestone-chain" as="element()*">
-        <xsl:param name="start"/>
+        <xsl:param name="start" as="element()*"/>
         <xsl:for-each select="$start">
             <xsl:sequence select=".,
                 if (@spanTo) 
