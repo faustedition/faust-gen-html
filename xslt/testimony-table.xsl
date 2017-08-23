@@ -165,7 +165,12 @@
 			
 			<!-- now a bunch of assertions -->
 			<xsl:choose>
-				<xsl:when test="not($used) and $entry//field[@name='h-sigle']"/>
+				<xsl:when test="not($used) and $entry//field[@name='h-sigle']">
+					<xsl:variable name="pseudoid" select="f:get-or-create-id($entry)"/>
+					<f:href><xsl:value-of select="concat('testimony/', $pseudoid)"/></f:href>
+					<f:field name="excerpt">[Beschreibung]</f:field>
+					<f:generate-tei>sigil</f:generate-tei>					
+				</xsl:when>
 				<xsl:when test="not($used) and (not(@id) or @id = '')">
 					<xsl:variable name="pseudoid" select="f:get-or-create-id($entry)"/>
 					<f:href><xsl:value-of select="concat('testimony/', $pseudoid)"/></f:href>
@@ -263,30 +268,35 @@
 		</td>
 	</xsl:template>
 	
+	<xsl:function name="f:sigil-links" as="node()*">
+		<xsl:param name="sigils"/>
+		<xsl:for-each select="tokenize($sigils, ';\s*')">
+			<xsl:variable name="sigil" select="."/>
+			<xsl:variable name="document" select="doc($transcript-list)//*[@f:sigil=$sigil]"/>
+			<xsl:variable name="uri" select="$document/idno[@type='faust-doc-uri']/text()"/>
+			<xsl:choose>
+				<xsl:when test="not($document)">
+					<a class="message error">H-Sigle nicht gefunden: <a title="zur Handschriftenliste" href="/archive_manuscripts">»<xsl:value-of select="$sigil"/>«</a></a>
+				</xsl:when>
+				<xsl:otherwise>
+					<a href="{if ($document/@type='print')
+						then concat('/print/', replace(replace($document/@uri, '^.*/', ''), '\.xml$', ''))
+						else concat('/documentViewer?faustUri=', $uri)}"
+						title="{$document/headNote}">
+						<xsl:value-of select="$sigil"/>
+					</a>											
+				</xsl:otherwise>
+			</xsl:choose>
+			<xsl:if test="not(position() = last())">; </xsl:if>
+		</xsl:for-each>
+	</xsl:function>
+	
 	<xsl:template match="field[@name='excerpt']">
 		<td>			
 			<xsl:if test="../field[@name='h-sigle']">				
 				<xsl:variable name="sigils" select="normalize-space(../field[@name='h-sigle']/text())"/>
 				<xsl:text>→ </xsl:text>
-				<xsl:for-each select="tokenize($sigils, ';\s*')">
-					<xsl:variable name="sigil" select="."/>
-					<xsl:variable name="document" select="doc($transcript-list)//*[@f:sigil=$sigil]"/>
-					<xsl:variable name="uri" select="$document/idno[@type='faust-doc-uri']/text()"/>
-					<xsl:choose>
-						<xsl:when test="not($document)">
-							<a class="message error">H-Sigle nicht gefunden: <a title="zur Handschriftenliste" href="/archive_manuscripts">»<xsl:value-of select="$sigil"/>«</a></a>
-						</xsl:when>
-						<xsl:otherwise>
-							<a href="{if ($document/@type='print')
-									  then concat('/print/', replace(replace($document/@uri, '^.*/', ''), '\.xml$', ''))
-								      else concat('/documentViewer?faustUri=', $uri)}"
-							   title="{$document/headNote}">
-								<xsl:value-of select="$sigil"/>
-							</a>											
-						</xsl:otherwise>
-					</xsl:choose>
-					<xsl:if test="not(position() = last())">; </xsl:if>
-				</xsl:for-each>
+				<xsl:sequence select="f:sigil-links($sigils)"/>
 				<xsl:text> / </xsl:text>
 			</xsl:if>
 			<xsl:choose>
@@ -369,7 +379,8 @@
 											<desc type="editorial" subtype="info">
 												<xsl:choose>
 													<xsl:when test=".//field[@name='h-sigle']">
-														Text in der Edition, Links in der Tabelle
+														<xsl:variable name="sigils" select="f:field[@name='h-sigle']/text()"/>
+														Entspricht <xsl:sequence select="f:sigil-links($sigils)"/>
 													</xsl:when>
 													<xsl:otherwise>
 														noch kein Text vorhanden
