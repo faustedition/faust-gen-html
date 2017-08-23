@@ -59,7 +59,11 @@
 	<xsl:function name="f:testimony-label">
 		<xsl:param name="testimony-id"/>
 		<xsl:variable name="id_parts" select="tokenize($testimony-id[1], '_')"/>
-		<xsl:value-of select="concat(id($id_parts[1], $taxonomies)/text(), ' ', $id_parts[2])"/>
+		<xsl:variable name="taxonomy" select="
+			if (starts-with($id_parts[1], 'lfd-nr'))
+			then 'Lfd. Nr.' 
+			else id($id_parts[1], $taxonomies)/text()"/>
+		<xsl:value-of select="concat($taxonomy, ' ', $id_parts[2])"/>
 	</xsl:function>
 	
 	<xsl:function name="f:real_id" as="xs:string">

@@ -202,7 +202,7 @@
 		
 		<xsl:variable name="rowinfo" as="element()">
 			<xsl:copy> 
-				<xsl:attribute name="id" select="@testimony-id"/>
+				<xsl:attribute name="id" select="f:get-or-create-id($entry)"/>
 				<xsl:copy-of select="@*"/>
 				<xsl:sequence select="*"/>
 				<xsl:sequence select="$rowinfo_raw"/>
@@ -355,7 +355,11 @@
 							<teiHeader>
 								<xsl:comment>Preliminary TEI header</xsl:comment>
 								<xenoData>
-									<xsl:copy-of select="."/>
+									<xsl:copy>
+										<xsl:attribute name="id" select="$id"/>
+										<xsl:copy-of select="@* except @id"/>
+										<xsl:copy-of select="node()"/>
+									</xsl:copy>
 								</xenoData>
 							</teiHeader>
 							<text>
