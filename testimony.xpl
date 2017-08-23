@@ -98,15 +98,15 @@
 				<p:pipe port="result" step="testimony-index-parts"/>				
 			</p:input>
 		</p:wrap-sequence>		
-		<p:unwrap match="f:citations" name="testimony-index"/>
+		<p:unwrap match="f:citations" name="testimony-index"/>		
 		
 		<!-- We save this for debugging purposes, but its also the input for the next step -->
 		<p:store method="xml" include-content-type="false" indent="true">
 			<p:with-option name="href" select="resolve-uri('testimony-index.xml', $builddir)"/>
 		</p:store>
-		
+				
 		<!-- now convert the table, using the usage index just collected ... -->
-		<p:xslt>
+		<p:xslt name="testimony-table">
 			<p:input port="stylesheet"><p:document href="xslt/testimony-table.xsl"></p:document></p:input>
 			<p:input port="source"><p:pipe port="result" step="testimony-index"></p:pipe></p:input>
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>			
@@ -117,7 +117,46 @@
 		<p:store method="xhtml" include-content-type="false" indent="false">
 			<p:with-option name="href" select="resolve-uri('www/archive_testimonies.html', $builddir)"></p:with-option>
 		</p:store>
+		
+		
+		<p:xslt name="pseudo-testimonies" template-name="generate-pseudo-testimonies">
+			<p:input port="stylesheet"><p:document href="xslt/testimony-table.xsl"></p:document></p:input>
+			<p:input port="source"><p:pipe port="result" step="testimony-index"></p:pipe></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>			
+			<p:with-param name="builddir-resolved" select="$builddir"/>
+		</p:xslt>
+		
+		
+		<!-- Store the generated fake TEI files -->
+		<p:for-each>
+			<p:iteration-source>
+				<p:pipe port="secondary" step="pseudo-testimonies"/>
+			</p:iteration-source>
+			<p:variable name="base-uri" select="p:base-uri()"/>
 			
+			<p:identity name="pseudo-testimony-tei"/>
+			
+			<p:store indent="true">
+				<p:with-option name="href" select="p:base-uri()"/>
+			</p:store>
+			
+			<!-- and convert to html -->
+			<p:xslt>
+				<p:input port="source"><p:pipe port="result" step="pseudo-testimony-tei"/></p:input>
+				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+				<p:input port="stylesheet"><p:document href="xslt/single-testimony-html.xsl"/></p:input>
+			</p:xslt>
+			
+			<cx:message>
+				<p:with-option name="message" select="concat('Storing HTML for ', $base-uri, '.')"/>
+			</cx:message>
+			
+			<p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
+				<p:with-option name="href" select="p:resolve-uri(replace($base-uri, '.*/([^/.]*)\.xml$', '$1.html'), $testihtml)"/>
+			</p:store>
+			
+		</p:for-each>
+		
 		<p:identity><p:input port="source"><p:pipe port="result" step="testimony-index"/></p:input></p:identity>
 	
 	</p:group>
