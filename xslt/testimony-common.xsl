@@ -7,11 +7,24 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
+    <!-- 
+    
+        This stylesheet contains common code used throughout various parts
+        of the testimony handling.
+    
+    -->
+    
     <xsl:param name="builddir-resolved" select="resolve-uri('../../../../target/')"/>
     <xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
     
     
+    <!-- ### Rendering of the field 'dokumenttyp' -> 'beschreibung'.  -->
     
+    <!-- This is the spec: 
+        
+         If the field has the value from the name attribute, use the corresponding template.
+         Replace $verfasser with the value of f:field[@name='verfasser'] from the table and so on.
+    -->
     <xsl:variable name="beschreibung" xmlns="http://www.faustedition.net/ns">
         <template name="Brief">Brief von $verfasser an $adressat</template>
         <template name="Tagebuch">Tagebucheintrag von $verfasser</template>
@@ -19,9 +32,10 @@
         <template name="Text">$titel</template>
     </xsl:variable>
     
+    <!-- Expands the fields according to the rules above. -->
     <xsl:function name="f:expand-fields">
         <xsl:param name="template" as="xs:string"/>
-        <xsl:param name="context"/>
+        <xsl:param name="context" as="node()*"/>
         <xsl:analyze-string select="$template" regex="\$[a-z0-9_-]+">
             <xsl:matching-substring>
                 <xsl:variable name="field" select="substring(., 2)"/>
@@ -39,8 +53,9 @@
         </xsl:analyze-string>
     </xsl:function>
     
+    <!-- Renders the dokumenttyp field. Context: <field name='dokumenttyp'/> -->
     <xsl:template name="render-dokumenttyp">
-        <xsl:param name="beschreibung"/>
+        <!--<xsl:param name="beschreibung"/>-->
         <xsl:variable name="type" select="normalize-space(.)"/>
         <xsl:variable name="template" select="$beschreibung//template[@name = $type]"/>
         <xsl:choose>
@@ -55,6 +70,10 @@
         </xsl:choose>
     </xsl:template>
     
+    <!-- ### Sigil links
+    
+        Takes a list of sigils like '2 H; 1 H.2' and generates HTML links to the corresponding witnesses.     
+    -->
     <xsl:function name="f:sigil-links" as="node()*">
         <xsl:param name="sigils"/>
         <xsl:for-each select="tokenize($sigils, ';\s*')">
@@ -79,7 +98,7 @@
     </xsl:function>
     
     
-        
+    <!-- Returns a sequence of milestone and anchor elements that are linked from the given start milestone. --> 
     <xsl:function name="f:milestone-chain" as="element()*">
         <xsl:param name="start" as="element()*"/>      
         <xsl:for-each select="$start">
@@ -96,11 +115,13 @@
         </xsl:for-each>
     </xsl:function>
     
+    <!-- Removes leading zeroes from a testimony id -->
     <xsl:function name="f:real_id" as="xs:string">
         <xsl:param name="id"/>
         <xsl:value-of select="replace($id, '^(\w+)_0*(.*)$', '$1_$2')"/>
     </xsl:function>
     
+    <!-- Returns the root milestone element for a given milestone -->
     <xsl:function name="f:root-milestone" as="element()?">
         <xsl:param name="el"/>
         <xsl:for-each select="$el">
@@ -115,6 +136,7 @@
         </xsl:for-each>
     </xsl:function>
     
+    <!-- ### Labels for the various testimony IDs -->
     <xsl:variable name="taxonomies">
         <f:taxonomies>
             <f:taxonomy xml:id='graef'>Gräf Nr.</f:taxonomy>
