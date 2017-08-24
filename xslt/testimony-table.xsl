@@ -8,6 +8,7 @@
 	version="2.0">
 		
 	<xsl:import href="utils.xsl"/>
+	<xsl:import href="testimony-common.xsl"/>
 	<xsl:include href="html-frame.xsl"/>
 	
 	<xsl:strip-space elements="*"/>	
@@ -54,37 +55,12 @@
 		<fieldspec name="excerpt" generated="true">Auszug</fieldspec>
 	</xsl:variable>
 	
-	<xsl:variable name="beschreibung" xmlns="http://www.faustedition.net/ns">
-		<template name="Brief">Brief von $verfasser an $adressat</template>
-		<template name="Tagebuch">Tagebucheintrag von $verfasser</template>
-		<template name="Gespräch">Gesprächsbericht von $verfasser</template>
-		<template name="Text">$titel</template>
-	</xsl:variable>
-	
 	<xsl:function name="f:field-label">
 		<xsl:param name="name"/>
 		<xsl:value-of select="$columns/fieldspec[@name = $name]/node()"/>
 	</xsl:function>
 	
-	<xsl:function name="f:expand-fields">
-		<xsl:param name="template" as="xs:string"/>
-		<xsl:param name="context"/>
-		<xsl:analyze-string select="$template" regex="\$[a-z0-9_-]+">
-			<xsl:matching-substring>
-				<xsl:variable name="field" select="substring(., 2)"/>
-				<xsl:variable name="substitution" select="$context//*[@name = $field]"/>
-				<xsl:choose>
-					<xsl:when test="$substitution">
-						<span title="{$field}"><xsl:value-of select="$substitution"/></span>
-					</xsl:when>
-					<xsl:otherwise>
-						<span class="message warning">$<xsl:value-of select="$field"/></span>
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:matching-substring>
-			<xsl:non-matching-substring><xsl:value-of select="."/></xsl:non-matching-substring>
-		</xsl:analyze-string>
-	</xsl:function>
+	
 	
 	<!-- Used for the message column. Can be removed once there are no more warnings etc. -->
 	<xsl:param name="extrastyle">
@@ -255,16 +231,7 @@
 	
 	<xsl:template match="field[@name='dokumenttyp']">
 		<td title="Beschreibung">
-			<xsl:variable name="type" select="normalize-space(.)"/>
-			<xsl:variable name="template" select="$beschreibung//template[@name=$type]"/>			
-			<xsl:choose>
-				<xsl:when test="$template">
-					<xsl:sequence select="f:expand-fields($template, ..)"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<div class="message warning"><xsl:value-of select="."/></div>
-				</xsl:otherwise>
-			</xsl:choose>
+			<xsl:call-template name="render-dokumenttyp"/>			
 		</td>
 	</xsl:template>
 	

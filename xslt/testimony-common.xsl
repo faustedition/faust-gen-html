@@ -7,6 +7,51 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
+    <xsl:variable name="beschreibung" xmlns="http://www.faustedition.net/ns">
+        <template name="Brief">Brief von $verfasser an $adressat</template>
+        <template name="Tagebuch">Tagebucheintrag von $verfasser</template>
+        <template name="Gespräch">Gesprächsbericht von $verfasser</template>
+        <template name="Text">$titel</template>
+    </xsl:variable>
+    
+    <xsl:function name="f:expand-fields">
+        <xsl:param name="template" as="xs:string"/>
+        <xsl:param name="context"/>
+        <xsl:analyze-string select="$template" regex="\$[a-z0-9_-]+">
+            <xsl:matching-substring>
+                <xsl:variable name="field" select="substring(., 2)"/>
+                <xsl:variable name="substitution" select="$context//*[@name = $field]"/>
+                <xsl:choose>
+                    <xsl:when test="$substitution">
+                        <span title="{$field}"><xsl:value-of select="$substitution"/></span>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <span class="message warning">$<xsl:value-of select="$field"/></span>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring><xsl:value-of select="."/></xsl:non-matching-substring>
+        </xsl:analyze-string>
+    </xsl:function>
+    
+    <xsl:template name="render-dokumenttyp">
+        <xsl:param name="beschreibung"/>
+        <xsl:variable name="type" select="normalize-space(.)"/>
+        <xsl:variable name="template" select="$beschreibung//template[@name = $type]"/>
+        <xsl:choose>
+            <xsl:when test="$template">
+                <xsl:sequence select="f:expand-fields($template, ..)"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <div class="message warning">
+                    <xsl:value-of select="."/>
+                </div>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    
+        
     <xsl:function name="f:milestone-chain" as="element()*">
         <xsl:param name="start" as="element()*"/>      
         <xsl:for-each select="$start">

@@ -140,6 +140,11 @@
 		</dd>
 	</xsl:template>
 	
+	<xsl:template match="f:field[@name='dokumenttyp']">
+		<dt><xsl:value-of select="f:fieldlabel(@name)"/></dt>
+		<dd><xsl:call-template name="render-dokumenttyp"/></dd>
+	</xsl:template>
+	
 	<xsl:function name="f:fieldlabel">
 		<xsl:param name="fieldname"/>
 		<xsl:variable name="spec" select="$fields//f:fieldspec[@name = $fieldname]"/>
