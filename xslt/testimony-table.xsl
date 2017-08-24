@@ -343,7 +343,7 @@
 						<!--<xsl:message>Skipping testimony generation (<xsl:value-of select="$id"/>)</xsl:message>-->
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:message>Running testimony generation (<xsl:value-of select="$id"/>)</xsl:message>
+						<!--<xsl:message>Running testimony generation (<xsl:value-of select="$id"/>)</xsl:message>-->
 						<xsl:call-template name="create-empty-tei"/>
 					</xsl:otherwise>
 				</xsl:choose>				
@@ -359,7 +359,7 @@
 				<xsl:otherwise>
 					<xsl:variable name="id" select="f:get-or-create-id(.)"/>
 					<xsl:variable name="filename" select="resolve-uri(concat($id, '.xml'), $output)"/>
-					<xsl:message>Creating empty testimony TEI <xsl:value-of select="$filename"/></xsl:message>
+					<!--<xsl:message>Creating empty testimony TEI <xsl:value-of select="$filename"/></xsl:message>-->
 					<xsl:result-document href="{$filename}" exclude-result-prefixes="xs f">
 						<TEI xmlns="http://www.tei-c.org/ns/1.0">
 							<teiHeader>

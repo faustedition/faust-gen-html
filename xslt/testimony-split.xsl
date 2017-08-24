@@ -29,8 +29,10 @@
 	</xsl:function>
 		
 	<xsl:template match="/">
-		<xsl:variable name="root-divs" select="//div[descendant::milestone[@unit='testimony'] and not(ancestor::div)]"/>		
-		<xsl:message select="concat(if (count($root-divs) = 0) then 'WARNING: ' else '', count($root-divs), ' testimony divs in ', $basename)"/>
+		<xsl:variable name="root-divs" select="//div[descendant::milestone[@unit='testimony'] and not(ancestor::div)]"/>
+		<xsl:if test="count($root-divs) = 0">
+			<xsl:message select="concat('WARNING: No testimony divs found in ', $basename)"/>		
+		</xsl:if>		
 		
 		<xsl:for-each select="$root-divs">
 			<xsl:call-template name="process-testimony-div"/>

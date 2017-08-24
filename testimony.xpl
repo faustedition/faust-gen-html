@@ -146,11 +146,7 @@
 				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 				<p:input port="stylesheet"><p:document href="xslt/single-testimony-html.xsl"/></p:input>
 			</p:xslt>
-			
-			<cx:message>
-				<p:with-option name="message" select="concat('Storing HTML for ', $base-uri, '.')"/>
-			</cx:message>
-			
+						
 			<p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
 				<p:with-option name="href" select="p:resolve-uri(replace($base-uri, '.*/([^/.]*)\.xml$', '$1.html'), $testihtml)"/>
 			</p:store>
