@@ -20,17 +20,6 @@
     
     <!-- ### Rendering of the field 'dokumenttyp' -> 'beschreibung'.  -->
     
-    <!-- This is the spec: 
-        
-         If the field has the value from the name attribute, use the corresponding template.
-         Replace $verfasser with the value of f:field[@name='verfasser'] from the table and so on.
-    -->
-    <xsl:variable name="beschreibung" xmlns="http://www.faustedition.net/ns">
-        <template name="Brief">Brief von $verfasser an $adressat</template>
-        <template name="Tagebuch">Tagebucheintrag von $verfasser</template>
-        <template name="Gespräch">Gesprächsbericht von $verfasser</template>
-        <template name="Text">$titel</template>
-    </xsl:variable>
     
     <!-- Expands the fields according to the rules above. -->
     <xsl:function name="f:expand-fields">
@@ -55,7 +44,18 @@
     
     <!-- Renders the dokumenttyp field. Context: <field name='dokumenttyp'/> -->
     <xsl:template name="render-dokumenttyp">
-        <!--<xsl:param name="beschreibung"/>-->
+        <!-- This is the spec: 
+        
+         If the field has the value from the name attribute, use the corresponding template.
+         Replace $verfasser with the value of f:field[@name='verfasser'] from the table and so on.
+        -->
+        <xsl:variable name="beschreibung" xmlns="http://www.faustedition.net/ns">
+            <template name="Brief">Brief von $verfasser an $adressat</template>
+            <template name="Tagebuch">Tagebucheintrag von $verfasser</template>
+            <template name="Gespräch">Gesprächsbericht von $verfasser</template>
+            <template name="Text">$titel</template>
+        </xsl:variable>
+        
         <xsl:variable name="type" select="normalize-space(.)"/>
         <xsl:variable name="template" select="$beschreibung//template[@name = $type]"/>
         <xsl:choose>
@@ -63,9 +63,9 @@
                 <xsl:sequence select="f:expand-fields($template, ..)"/>
             </xsl:when>
             <xsl:otherwise>
-                <div class="message warning">
+                <span class="message warning">
                     <xsl:value-of select="."/>
-                </div>
+                </span>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
