@@ -145,6 +145,14 @@
 		<dd><xsl:call-template name="render-dokumenttyp"/></dd>
 	</xsl:template>
 	
+	<xsl:template match="f:field[@name='druckort']">
+		<dt><xsl:value-of select="f:fieldlabel(@name)"/></dt>
+		<dd>
+			<xsl:value-of select="."/>
+			<xsl:if test="../f:field[@name='alternativer-druckort']">; <xsl:value-of select="../f:field[@name='alternativer-druckort']"/></xsl:if>
+		</dd>
+	</xsl:template>
+	
 	<xsl:function name="f:fieldlabel">
 		<xsl:param name="fieldname"/>
 		<xsl:variable name="spec" select="$fields//f:fieldspec[@name = $fieldname]"/>
