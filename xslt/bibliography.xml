@@ -2022,11 +2022,6 @@
         <f:reference>Der junge Goethe. Neue Ausgabe in 6 Bänden, Bd. 4. Besorgt von Max Morris. Leipzig 1909-1912.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/dnl_111">
-        <f:citation>DNL 111</f:citation>
-        <f:reference>Goethe, Werke. 36 Theile (in 41 Bdn.), Stuttgart o. J. (1882-1897). (= Deutsche National-Litteratur. Historisch-kritische Ausgabe. Hrsg. von Joseph Kürschner, Bde. 82-117,II.) Tl. 30: Aufsätze über bildende Kunst und Theater, hrsg. von A. G. Meyer und G. Witkowski, 1895 (DNL Bd. 111). [Gräf, Nr. 1953]</f:reference>
-    </f:bib>
-
     <f:bib uri="faust://bibliography/dobbek1963-2104_4">
         <f:citation>Dobbek 1963-2104, Bd. 4</f:citation>
         <f:reference>Herder, Johann Gottfried: Briefe. Gesamtausgabe, Band 4: Oktober 1776 - August 1783. Hrsg. von Wilhelm Dobbek und Günter Arnold. Weimar 1977.</f:reference>
@@ -2445,6 +2440,11 @@
     <f:bib uri="faust://bibliography/mendelssohn1861">
         <f:citation>Mendelssohn-Bartholdy 1861</f:citation>
         <f:reference>Reisebriefe von Felix Mendelssohn Bartholdy aus den Jahren 1830 bis 1832. Hrsg. von Paul Mendelssohn-Bartholdy. Leipzig 1861.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/meyer_witkowski1895">
+        <f:citation>Meyer/Witkowski 1895 <strong>[zuvor: DNL 111]</strong></f:citation>
+        <f:reference>Goethe, Werke. 36 Theile (in 41 Bdn.), Stuttgart o. J. (1882-1897). (= Deutsche National-Litteratur. Historisch-kritische Ausgabe. Hrsg. von Joseph Kürschner, Bde. 82-117,II.) Tl. 30: Aufsätze über bildende Kunst und Theater, hrsg. von A. G. Meyer und G. Witkowski, 1895 (= DNL, Bd. 111).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/mueller1832">
