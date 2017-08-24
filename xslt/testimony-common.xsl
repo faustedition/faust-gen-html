@@ -57,7 +57,7 @@
         </xsl:variable>
         
         <xsl:variable name="type" select="normalize-space(.)"/>
-        <xsl:variable name="template" select="$beschreibung//template[@name = $type]"/>
+        <xsl:variable name="template" select="$beschreibung//f:template[@name = $type]"/>
         <xsl:choose>
             <xsl:when test="$template">
                 <xsl:sequence select="f:expand-fields($template, ..)"/>
