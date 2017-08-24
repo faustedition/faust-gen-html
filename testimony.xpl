@@ -77,6 +77,7 @@
 					<p:input port="source"><p:pipe port="result" step="single-testimony-tei"/></p:input>
 					<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 					<p:input port="stylesheet"><p:document href="xslt/single-testimony-html.xsl"/></p:input>
+					<p:with-param name="builddir-resolved" select="$builddir"></p:with-param>
 				</p:xslt>
 				
 				<p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
@@ -89,6 +90,7 @@
 					<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 					<p:with-param name="from" select="replace($filename, concat('^', $source), 'faust://xml/')"/>
 					<p:with-param name="outfile" select="$outfile"/>
+					<p:with-param name="builddir-resolved" select="$builddir"></p:with-param>
 					<p:with-option name="template-name" select="'get-citations'"></p:with-option>
 					<p:input port="stylesheet"><p:document href="xslt/testimony2html.xsl"/></p:input>
 				</p:xslt>      
@@ -152,6 +154,7 @@
 				<p:input port="source"><p:pipe port="result" step="pseudo-testimony-tei"/></p:input>
 				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 				<p:input port="stylesheet"><p:document href="xslt/single-testimony-html.xsl"/></p:input>
+				<p:with-param name="builddir-resolved" select="$builddir"></p:with-param>
 			</p:xslt>
 						
 			<p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
