@@ -8,14 +8,14 @@
     version="2.0">
     
     <xsl:function name="f:milestone-chain" as="element()*">
-        <xsl:param name="start" as="element()*"/>
+        <xsl:param name="start" as="element()*"/>      
         <xsl:for-each select="$start">
             <xsl:sequence select=".,
                 if (@spanTo) 
-                then f:milestone-chain(id(substring-after('#', @spanTo)))
+                then f:milestone-chain(id(substring-after(@spanTo, '#')))
                 else (),
                 if (@next)
-                then f:milestone-chain(id(substring-after('#', @next)))
+                then f:milestone-chain(id(substring-after(@next, '#')))
                 else ()
                 "/>
         </xsl:for-each>
