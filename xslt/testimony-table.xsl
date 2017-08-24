@@ -49,7 +49,6 @@
 		<fieldspec name="biedermann-herwignr" spreadsheet=" Biedermann-HerwigNr.">Biedermann³</fieldspec>
 		<fieldspec name="datum-von" spreadsheet="Datum.(von)" sortable-type="date-de">Datum</fieldspec>
 		<fieldspec name="dokumenttyp" spreadsheet="Dokumenttyp">Beschreibung</fieldspec>		
-		<fieldspec name="druckort" spreadsheet="Druckort" sortable-type="bibliography">Druckort</fieldspec>
 		<fieldspec name="excerpt" generated="true">Auszug</fieldspec>
 	</xsl:variable>
 	
@@ -205,26 +204,6 @@
 		<td title="{if (normalize-space(.)) then concat(f:field-label(@name), ': ', .) else f:field-label(@name)}">
 			<xsl:apply-templates/>
 		</td>
-	</xsl:template>
-	
-	<xsl:template match="field[@name='druckort']">
-		<xsl:choose>
-			<xsl:when test="../bib">
-				<td>	
-					<cite class="bib-short bib-testimony" title="{../bib/reference}" data-bib-uri="faust://bibliography/{../base}">
-						<a href="{../href}"><xsl:value-of select="."/></a>
-					</cite>								
-				</td>
-			</xsl:when>
-			<xsl:when test="../base">
-				<td>
-					<a href="{../href}"><xsl:value-of select="."/></a>
-				</td>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:next-match/>
-			</xsl:otherwise>
-		</xsl:choose>
 	</xsl:template>
 	
 	<xsl:template match="field[@name='dokumenttyp']">
