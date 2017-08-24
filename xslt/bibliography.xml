@@ -1037,6 +1037,11 @@
         <f:reference>WA, Abt. I, Bd. 6, Weimar 1888.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_I_9">
+        <f:citation>WA I 9</f:citation>
+        <f:reference>WA, Abt. I, Bd. 9, Weimar 1891</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_I_10">
         <f:citation>WA I 10</f:citation>
         <f:reference>WA, Abt. I, Bd. 10, Weimar 1889.</f:reference>
@@ -1062,9 +1067,39 @@
         <f:reference>WA, Abt. I, Bd. 15,2, Weimar 1888.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_I_16">
+        <f:citation>WA I 16</f:citation>
+        <f:reference>WA, Abt. I, Bd. 16, Weimar 1894</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_I_21">
         <f:citation>WA I 21</f:citation>
         <f:reference>WA, Abt. I, Bd. 21, Weimar 1898.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_26">
+        <f:citation>WA I 26</f:citation>
+        <f:reference>WA, Abt. I, Bd. 26, Weimar 1889</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_27">
+        <f:citation>WA I 27</f:citation>
+        <f:reference>WA, Abt. I, Bd. 27, Weimar 1889</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_28">
+        <f:citation>WA I 28</f:citation>
+        <f:reference>WA, Abt. I, Bd. 28, Weimar 1890</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_29">
+        <f:citation>WA I 29</f:citation>
+        <f:reference>WA, Abt. I, Bd. 29, Weimar 1891</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_30">
+        <f:citation>WA I 30</f:citation>
+        <f:reference>WA, Abt. I, Bd. 30, Weimar 1903</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_I_32">
@@ -1072,9 +1107,19 @@
         <f:reference>WA, Abt. I, Bd. 32, Weimar 1906.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_I_34_1">
+        <f:citation>WA I 34,1</f:citation>
+        <f:reference>WA, Abt. I, Bd. 34,1, Weimar 1902</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_I_34_2">
         <f:citation>WA I 34,2</f:citation>
         <f:reference>WA, Abt. I, Bd. 34,2, Weimar 1904.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_35">
+        <f:citation>WA I 35</f:citation>
+        <f:reference>WA, Abt. I, Bd. 35, Weimar 1892</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_I_36">
