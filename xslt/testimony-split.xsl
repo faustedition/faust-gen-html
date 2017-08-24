@@ -54,7 +54,7 @@
 			<xsl:variable name="last-div" select="$last-milestone/ancestor::div[not(ancestor::div)]"/>
 			<xsl:variable name="context" select="$div, $div/following::node() except ($div/following::*//node(), $last-div/following::node())"/>
 			<xsl:result-document href="{resolve-uri(concat($id, '.xml'), $output)}" exclude-result-prefixes="xs xi svg math xd f">
-				<xsl:for-each select="$context">					
+									
 					<xsl:variable name="metadata" select="$table//f:testimony[@id=$id]"/>
 					<TEI>
 						<xsl:for-each select="/TEI/teiHeader">
@@ -87,7 +87,7 @@
 												
 											</xsl:when>
 											<xsl:otherwise>
-												<xsl:copy-of select="$div"/>												
+												<xsl:copy-of select="$context"/>												
 											</xsl:otherwise>
 										</xsl:choose>
 									</body>
@@ -102,7 +102,7 @@
 							</group>
 						</text>
 					</TEI>
-				</xsl:for-each>
+				
 			</xsl:result-document>
 		</xsl:for-each>		
 	</xsl:template>

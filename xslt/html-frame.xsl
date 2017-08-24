@@ -18,6 +18,7 @@
 	<xsl:template name="html-head">
 		<xsl:param name="title" select="$title" tunnel="yes"/>
 		<xsl:param name="headerAdditions" select="$headerAdditions"/>
+		<xsl:comment select="concat('Generated: ', current-dateTime())"/>
 		<head>
 			<meta charset="utf-8"/>
 
