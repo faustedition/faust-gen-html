@@ -10,12 +10,14 @@
     <xsl:function name="f:milestone-chain" as="element()*">
         <xsl:param name="start" as="element()*"/>      
         <xsl:for-each select="$start">
+            <xsl:variable name="spanTo-target" select="id(substring-after(@spanTo, '#'))"/>
+            <xsl:variable name="next-target" select="id(substring-after(@next, '#'))"/>
             <xsl:sequence select=".,
-                if (@spanTo) 
-                then f:milestone-chain(id(substring-after(@spanTo, '#')))
+                if (@spanTo and not($spanTo-target is .)) 
+                then f:milestone-chain($spanTo-target)
                 else (),
-                if (@next)
-                then f:milestone-chain(id(substring-after(@next, '#')))
+                if (@next and not ($next-target is .))
+                then f:milestone-chain($next-target)
                 else ()
                 "/>
         </xsl:for-each>
