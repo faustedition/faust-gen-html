@@ -7,6 +7,11 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
+    <xsl:param name="builddir-resolved" select="resolve-uri('../../../../target/')"/>
+    <xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
+    
+    
+    
     <xsl:variable name="beschreibung" xmlns="http://www.faustedition.net/ns">
         <template name="Brief">Brief von $verfasser an $adressat</template>
         <template name="Tagebuch">Tagebucheintrag von $verfasser</template>
@@ -49,6 +54,29 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
+    <xsl:function name="f:sigil-links" as="node()*">
+        <xsl:param name="sigils"/>
+        <xsl:for-each select="tokenize($sigils, ';\s*')">
+            <xsl:variable name="sigil" select="."/>
+            <xsl:variable name="document" select="doc($transcript-list)//*[@f:sigil=$sigil]"/>
+            <xsl:variable name="uri" select="$document/idno[@type='faust-doc-uri']/text()"/>
+            <xsl:choose>
+                <xsl:when test="not($document)">
+                    <a class="message error">H-Sigle nicht gefunden: <a title="zur Handschriftenliste" href="/archive_manuscripts">»<xsl:value-of select="$sigil"/>«</a></a>
+                </xsl:when>
+                <xsl:otherwise>
+                    <a href="{if ($document/@type='print')
+                        then concat('/print/', replace(replace($document/@uri, '^.*/', ''), '\.xml$', ''))
+                        else concat('/documentViewer?faustUri=', $uri)}"
+                        title="{$document/headNote}">
+                        <xsl:value-of select="$sigil"/>
+                    </a>											
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:if test="not(position() = last())">; </xsl:if>
+        </xsl:for-each>
+    </xsl:function>
     
     
         

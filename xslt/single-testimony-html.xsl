@@ -153,6 +153,11 @@
 		</dd>
 	</xsl:template>
 	
+	<xsl:template match="f:field[@name='h-sigle']">
+		<dt><xsl:value-of select="f:fieldlabel(@name)"/></dt>
+		<dd><xsl:sequence select="f:sigil-links(.)"/></dd>
+	</xsl:template>
+	
 	<xsl:function name="f:fieldlabel">
 		<xsl:param name="fieldname"/>
 		<xsl:variable name="spec" select="$fields//f:fieldspec[@name = $fieldname]"/>
