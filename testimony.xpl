@@ -49,6 +49,12 @@
 				<p:with-option name="href" select="$filename"/>
 			</p:load>
 			
+			<p:xslt name="testimony-xml">
+				<p:input port="source"><p:pipe port="result" step="load-testimony"/></p:input>
+				<p:input port="stylesheet"><p:document href="xslt/normalize-characters.xsl"/></p:input>
+				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			</p:xslt>			
+			
 			<p:xslt name="split-testimony">
 				<p:input port="stylesheet"><p:document href="xslt/testimony-split.xsl"/></p:input>
 				<p:input port="parameters"><p:pipe port="result" step="config"></p:pipe></p:input>
@@ -65,6 +71,7 @@
 				<p:store indent="true">
 					<p:with-option name="href" select="p:base-uri()"/>
 				</p:store>
+								
 				
 				<p:xslt>
 					<p:input port="source"><p:pipe port="result" step="single-testimony-tei"/></p:input>
