@@ -103,7 +103,7 @@
 				<link rel="stylesheet" href="{$assets}/css/document-viewer.css"/>
 			</xsl:with-param>
 			<xsl:with-param name="content">
-				<div class="print">
+				<div class="print testimony">
 					<div class="print-side-column"></div>
 					<div class="print-center-column">
 						<xsl:apply-templates select="//f:testimony"/>
