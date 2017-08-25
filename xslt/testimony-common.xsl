@@ -143,6 +143,7 @@
             <f:taxonomy xml:id='pniower'>Pniower Nr.</f:taxonomy>
             <f:taxonomy xml:id='quz'>QuZ Nr.</f:taxonomy>
             <f:taxonomy xml:id='bie3'>Biedermann-Herwig Nr.</f:taxonomy>			
+            <f:taxonomy xml:id='tille'>Tille Nr.</f:taxonomy>
         </f:taxonomies>
     </xsl:variable>
     
