@@ -99,16 +99,25 @@
 	<!-- following template generates a f:citation element for the current split testimony -->
 	<xsl:template name="get-citations">
 		<xsl:variable name="real-id" select="//f:testimony/@id"/>
-		<xsl:variable name="id" select="tokenize($real-id, '_')"/>
-		<f:citation 
-			testimony="{$basename}#{$real-id}" 
-			base="{$basename}" 
-			taxonomy="{id($id[1], $taxonomies)}"
-			n="{$id[2]}"
-			testimony-id="{$real-id}"
-			rs="{f:find-rs(//text[@type='testimony' and @n=$real-id])}">
-			<xsl:value-of select="$biburl"/>
-		</f:citation>					
+		<xsl:choose>
+			<xsl:when test="count($real-id) = 1">
+				<xsl:variable name="id" select="tokenize($real-id, '_')"/>
+				<f:citation 
+					testimony="{$basename}#{$real-id}" 
+					base="{$basename}" 
+					taxonomy="{id($id[1], $taxonomies)}"
+					n="{$id[2]}"
+					testimony-id="{$real-id}"
+					rs="{f:find-rs(//text[@type='testimony' and @n=$real-id])}">
+					<xsl:value-of select="$biburl"/>
+				</f:citation>									
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:variable name="msg" select="concat('WARNING: Trying to create citation for doc with ', count($real-id), ' testimony ids ', string-join($real-id, '; '), ' → ', $biburl)"/>
+				<xsl:message select="$msg"/>
+				<xsl:comment select="$msg"/>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 	
 	<xsl:template name="milestone-content">

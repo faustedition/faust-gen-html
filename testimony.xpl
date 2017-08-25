@@ -49,16 +49,21 @@
 				<p:with-option name="href" select="$filename"/>
 			</p:load>
 			
+			
+			
 			<p:xslt name="testimony-xml">
+				<p:with-option name="output-base-uri" select="p:base-uri()"/>
 				<p:input port="source"><p:pipe port="result" step="load-testimony"/></p:input>
 				<p:input port="stylesheet"><p:document href="xslt/normalize-characters.xsl"/></p:input>
 				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 			</p:xslt>			
 			
 			<p:xslt name="split-testimony">
+				<p:with-option name="output-base-uri" select="p:base-uri()"/>			
 				<p:input port="stylesheet"><p:document href="xslt/testimony-split.xsl"/></p:input>
-				<p:input port="parameters"><p:pipe port="result" step="config"></p:pipe></p:input>
-				<p:with-param name="builddir-resolved" select="$builddir"></p:with-param>
+				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+				<p:with-param name="builddir-resolved" select="$builddir"/>
+				<p:with-param name="source-uri" select="$filename"/>
 			</p:xslt>
 			<p:sink/>
 			<p:for-each>
