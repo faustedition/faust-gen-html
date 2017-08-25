@@ -859,7 +859,7 @@ Creizenach 1837, S. 386; </field>
     <field name="vermerk">s. Gräf II/2, S. 21</field>
     <field name="bemerkung">nach Minor 1, 7 ist bei dem Brief Zimmermanns an Reich eher an „Auerbachs Keller“ als an das Gespräch zwischen Mephistopheles und dem Schüler zu denken</field>
     <field name="druckort">Cohn 1889</field>
-    <field name="alternativer-druckort">GJb 11, S. 267; DjG2, Bd. 5, S. 470-471</field>
+    <field name="alternativer-druckort">Geiger 1890, S. 267; DjG2, Bd. 5, S. 470-471</field>
     <field name="fremdzeugnis-nr">12</field>
     <field name="digitalisat-dateiname">gjb_11_0266-0267-0268 </field>
   </testimony>
@@ -902,7 +902,7 @@ Creizenach 1837, S. 386; </field>
     <field name="adressat-gsa-personennummer">43118</field>
     <field name="datum-von">11.05.1777</field>
     <field name="vermerk">s. Gräf II/2, S. 34</field>
-    <field name="druckort">Geiger 1882, S. 392-394</field>
+    <field name="druckort">Geiger 1881b, S. 392-394</field>
     <field name="fremdzeugnis-nr">18</field>
     <field name="digitalisat-dateiname">gjb_2_0392-0393, gjb_2_0394-0395 </field>
   </testimony>
@@ -918,7 +918,7 @@ Creizenach 1837, S. 386; </field>
     <field name="pniower-nr">29</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Verzeichnis</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. list</field>
     <field name="titel">Postsendungen 1777</field>
     <field name="datum-von">01.12.1777</field>
@@ -1285,7 +1285,7 @@ Creizenach 1837, S. 386; </field>
     <field name="adressat-gsa-personennummer">45783</field>
     <field name="datum-von">14.10.1786</field>
     <field name="bemerkung">Name der Verfasserin in GJ „Frau von Gravmayer“, zur Identifikation vgl. Schmid 1989, S. 255</field>
-    <field name="druckort">GJb 10, S. 145-146</field>
+    <field name="druckort">Geiger 1889, S. 145-146</field>
     <field name="digitalisat-dateiname">gjb_10_0145, gjb_10_0146 </field>
   </testimony>
   <testimony id="graef_864">
@@ -1421,7 +1421,7 @@ Creizenach 1837, S. 386; </field>
     <field name="quz">I-83</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Tabelle</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomenon 3. list</field>
     <field name="titel">‚Italienische Reise‘, Rubrik „Poetische Arb(eiten)“ in einem tabellarischen Schema</field>
     <field name="datum-von">01.1787</field>
@@ -2133,7 +2133,7 @@ Creizenach 1837, S. 386; </field>
     <field name="quz">I-272</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Schema</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomenon</field>
     <field name="titel">Paralipomenon zur ‚Italienischen Reise‘, Nr. 31</field>
     <field name="datum-von">03.1788</field>
@@ -2154,7 +2154,7 @@ Creizenach 1837, S. 386; </field>
     <field name="quz">I-273</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Schema</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomenon</field>
     <field name="titel">Paralipomenon zur ‚Italienischen Reise‘, Nr. 32</field>
     <field name="datum-von">03.1788</field>
@@ -2175,9 +2175,9 @@ Creizenach 1837, S. 386; </field>
     <field name="quz">I-274</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Tabelle</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomenon 3. list</field>
-    <field name="titel">Paralipomenon zur ‚Italienischen Reise‘, Nr. 39</field>
+    <field name="titel">Paralipomenon zur ‚Italienischen Reise‘, Nr. 39: Rubrik „Poetische Arb[eiten]“ in tabellarischem Schema</field>
     <field name="datum-von">03.1788</field>
     <field name="intervall-erschlossen">x</field>
     <field name="wa-druckort">WA I 32, S. 487</field>
@@ -2708,7 +2708,7 @@ Creizenach 1837, S. 386; </field>
     <field name="quz">I-407</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Verzeichnis</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. list</field>
     <field name="titel">Briefverzeichnis 1790. 1791</field>
     <field name="datum-von">10.01.1790</field>
@@ -2730,7 +2730,7 @@ Creizenach 1837, S. 386; </field>
     <field name="quz">I-411</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Verzeichnis</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. list</field>
     <field name="titel">Briefverzeichnis 1790. 1791</field>
     <field name="datum-von">23.01.1790</field>
@@ -2842,7 +2842,7 @@ Creizenach 1837, S. 386; </field>
     <field name="adressat-gsa-personennummer">37512</field>
     <field name="datum-von">03.03.1790</field>
     <field name="wa-druckort">WA IV 30, S. 47</field>
-    <field name="druckort">GJb 22, S. 74</field>
+    <field name="druckort">Geiger 1901, S. 74</field>
   </testimony>
   <testimony id="graef_896">
     <field name="lfd-nr-neu-2">123</field>
@@ -2898,7 +2898,7 @@ Creizenach 1837, S. 386; </field>
     <field name="graef-nr">897</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Verzeichnis</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. list</field>
     <field name="titel">Briefverzeichnis 1790. 1791</field>
     <field name="datum-von">21.06.1790</field>
@@ -3803,7 +3803,7 @@ Creizenach 1837, S. 386; </field>
     <field name="adressat">Karl August Böttiger</field>
     <field name="adressat-gsa-personennummer">35888</field>
     <field name="datum-von">10.10.1797</field>
-    <field name="druckort">GJb 1, S. 321</field>
+    <field name="druckort">Boxberger 1880, S. 321</field>
     <field name="alternativer-druckort">QuZ I, S. 331</field>
     <field name="digitalisat-dateiname">quz_1_331</field>
     <field name="vorlage-seite-von">GJb1-321</field>
@@ -4434,7 +4434,7 @@ Creizenach 1837, S. 386; </field>
     <field name="h-sigle">H P20</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomeon 3. drama</field>
     <field name="titel">Paralipomenon 20</field>
     <field name="datum-von">05.1798</field>
@@ -4678,7 +4678,7 @@ Creizenach 1837, S. 386; </field>
     <field name="h-sigle">H P1</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomeon 3. drama</field>
     <field name="titel">Paralipomenon 1</field>
     <field name="datum-von">07.1799</field>
@@ -5016,9 +5016,9 @@ Creizenach 1837, S. 386; </field>
     <field name="h-sigle">H P97; H P98</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomeon 3. drama</field>
-    <field name="titel">Abkündigung - Abschied </field>
+    <field name="titel">‚Abkündigung‘ - ‚Abschied‘</field>
     <field name="datum-von">11.04.1800</field>
     <field name="datum-bis">22.05.1800</field>
     <field name="intervall-erschlossen">x</field>
@@ -5303,7 +5303,7 @@ Creizenach 1837, S. 386; </field>
     <field name="intervall-erschlossen">x</field>
     <field name="vermerk">vgl. Gräf II/2,  S. 167, Anm. 1</field>
     <field name="bemerkung">Rochlitz an Böttiger, 22.06.1808; vgl. Gräf II/2, 92f., Anm.</field>
-    <field name="druckort">GJb 18, S. 149-150</field>
+    <field name="druckort">Geiger 1897, S. 149-150</field>
     <field name="digitalisat-dateiname">gjb_18_0149, gjb_18_0150 </field>
   </testimony>
   <testimony id="graef_971">
@@ -7399,7 +7399,7 @@ Creizenach 1837, S. 386; </field>
     <field name="adressat-gsa-personennummer">44570</field>
     <field name="datum-von">22.10.1804</field>
     <field name="vermerk">vgl. Gräf II/2,  S. 116 Anm. 2</field>
-    <field name="druckort">GJb 2, S. 420</field>
+    <field name="druckort">Loeper 1881, S. 420</field>
     <field name="digitalisat-dateiname">Gjb_2_0420</field>
   </testimony>
   <testimony id="graef_1045">
@@ -7521,8 +7521,9 @@ Creizenach 1837, S. 386; </field>
     <field name="quz">I-870a</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Beilage</field>
-    <field name="div-type">1 letter 2. enclosure</field>
+    <field name="dokumenttyp">Text</field>
+    <field name="div-type">1. text 2. letter 3. enclosure</field>
+    <field name="titel">Nachtrag zum Vertragsentwurf für die erste Cottasche Ausgabe</field>
     <field name="adressat">Johann Friedrich von Cotta</field>
     <field name="adressat-gsa-personennummer">36466</field>
     <field name="datum-von">28.09.1805</field>
@@ -11935,7 +11936,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="graef-nr">1204</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Tabelle</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. list</field>
     <field name="titel">‚Summarische Jahresfolge Goethe’scher Schriften‘</field>
     <field name="datum-von">03.1819</field>
@@ -12104,7 +12105,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="pniower-nr">325</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomeon 3. poem</field>
     <field name="titel">‚Zahme Xenien I‘ („Wie es dir nicht…“ und „Gibt’s ein Gespräch…“)</field>
     <field name="datum-ereignis-genau">1819</field>
@@ -12572,7 +12573,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="adressat-gsa-personennummer">51200</field>
     <field name="datum-von">03.12.1821</field>
     <field name="wa-druckort">WA IV 35, S. 200</field>
-    <field name="druckort">GJb 2, S. 291</field>
+    <field name="druckort">Geiger 1881a, S. 291</field>
   </testimony>
   <testimony id="pniower_335">
     <field name="lfd-nr-neu-2">567</field>
@@ -13328,7 +13329,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="datierungsvermerk">zwischen 11. und 21. August 1823</field>
     <field name="wa-druckort">WA I 53, S. 208-210</field>
     <field name="druckort">WA I 53, S. 208-210</field>
-    <field name="alternativer-druckort">GJb 15, S. 17f.</field>
+    <field name="alternativer-druckort">Suphan 1894, S. 17f.</field>
   </testimony>
   <testimony id="quz_II-146">
     <field name="lfd-nr-neu-2">603</field>
@@ -13550,7 +13551,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="dokumenttyp">Gespräch</field>
     <field name="div-type">1. letter 2. conversation</field>
     <field name="datum-von">18.05.1824</field>
-    <field name="druckort">GJb 21, S. 285</field>
+    <field name="druckort">Geiger 1900, S. 285</field>
     <field name="digitalisat-dateiname">gjb_21_0285, gjb_21_0286, gjb_21_0287 </field>
   </testimony>
   <testimony id="bie3_5467">
@@ -13857,7 +13858,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="quz">II-298</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. draft</field>
     <field name="titel">‚Anordnung der neuen Ausgabe‘ (erster Entwurf)</field>
     <field name="datum-von">12.01.1825</field>
@@ -13877,7 +13878,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="quz">II-300</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. draft</field>
     <field name="titel">Inhaltsverzeichnis der geplanten Ausgabe letzter Hand</field>
     <field name="datum-von">13.01.1825</field>
@@ -14631,7 +14632,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="h-sigle">H P140</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomeon 3. drama</field>
     <field name="titel">Paralipomena 140-146 (auf Rückseite eines Briefes an K.W. v. Fritsch, 27.03.1825)</field>
     <field name="datum-von">27.03.1825</field>
@@ -15490,7 +15491,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="h-sigle">H P163</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomeon 3. drama</field>
     <field name="titel">Paralipomenon 163 (auf Rückseite eines Briefes von Friedrich von Müller an Goethe, 1825)</field>
     <field name="datum-von">1825</field>
@@ -15530,15 +15531,18 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="lfd-nr-alt">695</field>
     <field name="graef-nr">1333</field>
     <field name="pniower-nr">403</field>
+    <field name="quz">II-814</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
     <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. notice</field>
     <field name="titel">‚Anzeige von Goethe’s sämmtlichen Werken, vollständige Ausgabe letzter Hand‘</field>
-    <field name="datum-von">01.02.1826</field>
+    <field name="datum-ereignis-genau">01.03.1826</field>
+    <field name="datum-von">19.07.1826</field>
+    <field name="datierungsvermerk">unterrzeichnet vom 01.03.1826; erschienen im Morgenblatt Nr. 171, 19.07.1826</field>
     <field name="wa-druckort">WA I 42.1, S. 109-120</field>
     <field name="druckort">WA I 42.1, S. 109-120</field>
-    <field name="alternativer-druckort">Hempel 1868-1879, Bd. 29, S. 350ff.</field>
+    <field name="alternativer-druckort">Morgenblatt 1826, Intelligenzbl Nr. 25, S. 97-99, Beilage zu Nr. 171</field>
   </testimony>
   <testimony id="pniower_401">
     <field name="lfd-nr-neu-2">706</field>
@@ -16140,8 +16144,9 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="quz">II-748a</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Beilage zu Brief</field>
-    <field name="div-type">1. letter 2. enclosure</field>
+    <field name="dokumenttyp">Text</field>
+    <field name="div-type">1. text 2. letter 3. enclosure</field>
+    <field name="titel">‚Bemerkungen zu dem abesandten revidirten Exemplar meiner Werke, die ersten fünf Bände‘</field>
     <field name="adressat">Johann Friedrich von Cotta</field>
     <field name="adressat-gsa-personennummer">36466</field>
     <field name="datum-von">16.04.1826</field>
@@ -16789,7 +16794,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
     <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. article</field>
-    <field name="titel">‚Oeuvres dramatiques de Goethe, traduites de l‚allemand‘</field>
+    <field name="titel">‚Oeuvres dramatiques de Goethe, traduites de l‘allemand‘</field>
     <field name="datum-von">31.05.1826</field>
     <field name="datum-bis">06.08.1826</field>
     <field name="datierungsvermerk">zwischen 31. Mai und 06. August 1826; Jahreszahl ergänzt</field>
@@ -17395,26 +17400,6 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="texttranscript">faust://xml/testimony/wa_III/wa_III_10.xml#graef_1400</field>
     <field name="vorlage-seite-von">219</field>
     <field name="vorlage-absatz-von">19</field>
-  </testimony>
-  <testimony id="quz_II-814">
-    <field name="lfd-nr-neu-2">793</field>
-    <field name="lfd-nr-neuneu">795</field>
-    <field name="lfd-nr-allerneuestens">799</field>
-    <field name="lfd-nr-neuestens">800</field>
-    <field name="lfd-nr-ganz-neu">786</field>
-    <field name="lfd-nr-neu">784</field>
-    <field name="lfd-nr-alt">778</field>
-    <field name="quz">II-814</field>
-    <field name="verfasser">Johann Wolfgang Goethe</field>
-    <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Text</field>
-    <field name="div-type">1. text 2. notice</field>
-    <field name="titel">Anzeige von Goethe’s sämmtlichen Werken, vollständige Ausgabe letzter Hand</field>
-    <field name="datum-von">19.07.1826</field>
-    <field name="datierungsvermerk">Tag nach Morgenblatt Nr. 171, 19.07.1826</field>
-    <field name="wa-druckort">WA I 42.1, S. 109-120</field>
-    <field name="druckort">WA I 42.1, S. 109-120</field>
-    <field name="alternativer-druckort">Morgenblatt 1826, Intelligenzbl Nr. 25, S. 97-99; Beilage zu Nr. 171</field>
   </testimony>
   <testimony id="graef_1401">
     <field name="lfd-nr-neu-2">794</field>
@@ -18045,8 +18030,9 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="quz">II-905</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Anzeige</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. notice</field>
+    <field name="titel">Zweite Anzeige von Goethe's sämmtlichen Werken, volständige Ausgabe letzter Hand</field>
     <field name="datum-von">18.11.1826</field>
     <field name="wa-druckort">WA I 42.1, S. 121-123</field>
     <field name="druckort">WA I 42.1, S. 121-123</field>
@@ -18223,7 +18209,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="h-sigle">H P123.2; H P123.5</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomeon 3. drama</field>
     <field name="titel">‚Helena. Zwischenspiel zu Faust. Ankündigung‘</field>
     <field name="datum-von">15.12.1826</field>
@@ -18841,8 +18827,9 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="quz">II-946</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Beilage zu Manuskript</field>
-    <field name="div-type">1. letter 2. enclosure</field>
+    <field name="dokumenttyp">Text</field>
+    <field name="div-type">1. text 2. letter 3. enclosure</field>
+    <field name="titel">Satzanweisung als Beilage zu dem Manuskript von ‚Helena‘</field>
     <field name="adressat">Johann Friedrich von Cotta</field>
     <field name="adressat-gsa-personennummer">36466</field>
     <field name="datum-von">25.01.1827</field>
@@ -20758,7 +20745,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="datum-von">18.09.1827</field>
     <field name="wa-druckort">WA IV 43, S. 62</field>
     <field name="druckort">WA IV 43, S. 62</field>
-    <field name="alternativer-druckort">GJb 2, S. 304</field>
+    <field name="alternativer-druckort">Geiger 1881a, S. 304</field>
   </testimony>
   <testimony id="graef_1528">
     <field name="lfd-nr-neu-2">954</field>
@@ -20844,7 +20831,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="adressat">Karl Jakob Ludwig Iken</field>
     <field name="adressat-gsa-personennummer">44118</field>
     <field name="datum-von">27.09.1827</field>
-    <field name="bemerkung">bei Pniower und Gräf nach dem Konzept zitiert und datiert vom 23.09.1827 (gemäß WA III11, 113) ; die Beilage in WA I 15 (2), 126 (wohl unzutreffend) zwischen 08. und 15. September 1827 datiert; Zusammengehörigkeit von Brief und Beilage erst in WA IV 43 erkannt</field>
+    <field name="bemerkung">bei Pniower und Gräf nach dem Konzept zitiert und datiert vom 23.09.1827 (gemäß WA III 11, 113) ; die Beilage in WA I 15 (2), 126 (wohl unzutreffend) zwischen 08. und 15. September 1827 datiert; Zusammengehörigkeit von Brief und Beilage erst in WA IV 43 erkannt</field>
     <field name="wa-druckort">WA IV 43, S. 80-85</field>
     <field name="druckort">WA IV 43, S. 81, S. 85; WA I 15.2, S. 126 (Beilage)</field>
     <field name="vorlage-seite-von">81</field>
@@ -21319,7 +21306,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="h-sigle">2 I H.24b</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomeon 3. drama</field>
     <field name="titel">Paralipomenon 104 (auf Rückseite eines Briefes an K.A. Varnhagen v. Ense vom 08.11.1827)</field>
     <field name="datum-von">08.11.1827</field>
@@ -21730,10 +21717,10 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="lfd-nr-neu">991</field>
     <field name="lfd-nr-alt">973</field>
     <field name="pniower-nr">594</field>
-    <field name="h-sigle">H.P106</field>
+    <field name="h-sigle">H P106</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomeon 3. drama</field>
     <field name="titel">Paralipomeon 106 (datiert)</field>
     <field name="datum-von">16.12.1827</field>
@@ -21811,7 +21798,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="h-sigle">2 I H.43</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomeon 3. drama</field>
     <field name="titel">Entwurf zu ‚Faust II‘, Akt 1 (auf Rückseite eines datierten Schemas, Paralipomenon 106Var)</field>
     <field name="datum-von">22.12.1827</field>
@@ -28619,7 +28606,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="h-sigle">H P157</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomeon 3. drama</field>
     <field name="titel">Paralipomenon 157 (datiert)</field>
     <field name="datum-von">18.06.1830</field>
@@ -28647,7 +28634,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="datum-von">25.06.1830</field>
     <field name="wa-druckort">WA IV 47, S. 112</field>
     <field name="druckort">WA IV 47, S. 112</field>
-    <field name="alternativer-druckort">GJb 11, S. 99</field>
+    <field name="alternativer-druckort">Geiger 1890a, S. 99</field>
   </testimony>
   <testimony id="graef_1855">
     <field name="lfd-nr-neu-2">1335</field>
@@ -28988,7 +28975,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="datum-von">13.12.1830</field>
     <field name="datierungsvermerk">Jahr ergänzt</field>
     <field name="bemerkung">Verfasser in GJ nicht angegeben, Quelle: ein Nachruf-Artikel; dokumentiert ein Gespräch des Verfassers mit Goethe</field>
-    <field name="druckort">GJb 24, S. 37</field>
+    <field name="druckort">Flügel 1903, S. 37</field>
     <field name="digitalisat-dateiname">gjb_24_0036, gjb_24_0037, gjb_24_0038, gjb_24_0039 </field>
   </testimony>
   <testimony id="graef_1870">
@@ -29896,7 +29883,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="h-sigle">2 IV H.22</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Paralipomenon</field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. paralipomeon 3. drama</field>
     <field name="titel">Paralipomeon 178 (datiert)</field>
     <field name="datum-von">16.05.1831</field>
@@ -30009,7 +29996,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="div-type">conversation</field>
     <field name="datum-von">01.06.1831</field>
     <field name="datierungsvermerk">Jahr ergänzt, Zeugnisdatum 24.11.1831</field>
-    <field name="druckort">GJb 18, S. 156</field>
+    <field name="druckort">Geiger 1897, S. 156</field>
     <field name="digitalisat-dateiname">Gjb_18_0156</field>
   </testimony>
   <testimony id="graef_1914">
@@ -31631,7 +31618,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="quz">III-4</field>
     <field name="verfasser">Friedrich von Müller</field>
     <field name="verfasser-gsa-personennummer">44617</field>
-    <field name="dokumenttyp">Brief (Konzept)</field>
+    <field name="dokumenttyp">Brief</field>
     <field name="div-type">1. letter 2. draft</field>
     <field name="adressat">Johann Friedrich von Cotta</field>
     <field name="adressat-gsa-personennummer">36466</field>
@@ -31650,7 +31637,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="quz">III-5</field>
     <field name="verfasser">Johann Peter Eckermann</field>
     <field name="verfasser-gsa-personennummer">36828</field>
-    <field name="dokumenttyp">Brief (Entwurf)</field>
+    <field name="dokumenttyp">Brief</field>
     <field name="div-type">1. letter 2. draft</field>
     <field name="adressat">Johann Friedrich von Cotta</field>
     <field name="adressat-gsa-personennummer">36466</field>
@@ -31951,7 +31938,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="quz">III-69</field>
     <field name="verfasser">Friedrich von Müller</field>
     <field name="verfasser-gsa-personennummer">44617</field>
-    <field name="dokumenttyp">Brief (Konzept)</field>
+    <field name="dokumenttyp">Brief</field>
     <field name="div-type">1. letter 2. draft</field>
     <field name="adressat">Wilhelm Reichel</field>
     <field name="adressat-gsa-personennummer">40581</field>
@@ -32200,7 +32187,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="quz">III-114</field>
     <field name="verfasser">Friedrich von Müller</field>
     <field name="verfasser-gsa-personennummer">44617</field>
-    <field name="dokumenttyp">Brief (Konzept)</field>
+    <field name="dokumenttyp">Brief</field>
     <field name="div-type">1. letter 2. draft</field>
     <field name="adressat">Johann Friedrich von Cotta</field>
     <field name="adressat-gsa-personennummer">36466</field>
@@ -32257,7 +32244,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="quz">III-127</field>
     <field name="verfasser">Friedrich von Müller</field>
     <field name="verfasser-gsa-personennummer">44617</field>
-    <field name="dokumenttyp">Brief (Konzept)</field>
+    <field name="dokumenttyp">Brief</field>
     <field name="div-type">1. letter 2. draft</field>
     <field name="adressat">Johann Georg Cotta</field>
     <field name="adressat-gsa-personennummer">43381</field>
@@ -32432,7 +32419,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="quz">III-180</field>
     <field name="verfasser">Friedrich von Müller</field>
     <field name="verfasser-gsa-personennummer">44617</field>
-    <field name="dokumenttyp">Brief (Konzept)</field>
+    <field name="dokumenttyp">Brief</field>
     <field name="div-type">1. letter 2. draft</field>
     <field name="adressat">Wilhelm Reichel</field>
     <field name="adressat-gsa-personennummer">40581</field>
@@ -32644,7 +32631,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="quz">III-365</field>
     <field name="verfasser">Friedrich von Müller</field>
     <field name="verfasser-gsa-personennummer">44617</field>
-    <field name="dokumenttyp">Brief (Konzept)</field>
+    <field name="dokumenttyp">Brief</field>
     <field name="div-type">1. letter 2. draft</field>
     <field name="adressat">Johann Georg Cotta</field>
     <field name="adressat-gsa-personennummer">43381</field>
@@ -32756,8 +32743,9 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="quz">III-449a</field>
     <field name="verfasser">Christian Theodor Musculus</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
-    <field name="dokumenttyp">Beilage </field>
+    <field name="dokumenttyp">Text</field>
     <field name="div-type">1. text 2. enclosure 3. list </field>
+    <field name="titel">‚Zu der neuen Ausgabe von Goethes poetischen und prosaischen Werken in zei Bänden‘</field>
     <field name="datum-von">05.01.1836</field>
     <field name="druckort">QuZ III, S. 358-359</field>
     <field name="digitalisat-dateiname">quz_3_0358, quz_3_0359 </field>
@@ -32876,7 +32864,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="gespraechspartner-wenn-nicht-identisch-mit-verfasser">Hermann Allmers</field>
     <field name="gespraechspartner-gsa-personennummer">n.v.</field>
     <field name="datum-von">1845</field>
-    <field name="bemerkung">Fuast II-Hs im Besitz von Johann Christian Mämpel</field>
+    <field name="bemerkung">Faust II-Hs im Besitz von Johann Christian Mämpel</field>
     <field name="druckort">Siebs 1915, S. 79</field>
     <field name="digitalisat-dateiname">siebs1915_0079 </field>
   </testimony>
