@@ -25,11 +25,24 @@ def sanitize_colname(orig_colname):
     logger.debug('Sanitized column name "%s" to "%s"', orig_colname, colname)
     return colname
 
+
+def unfloat(number):
+    """
+    Iff number is a float that is (almost) equal to the corresponding int,
+    return number cast to int. Otherwise, return number as is, so it is safe to
+    paste something that isn't numeric.
+    """
+    if isinstance(number, float):
+        if abs(number - int(number) < 1e-6):
+            return int(number)
+    return number
+
 def to_id(row):
     for column, prefix in [('graef-nr', 'graef'), ('pniower-nr', 'pniower'),
-                           ('quz', 'quz'), ('biedermann-herwignr', 'bie3')]:
+                           ('quz', 'quz'), ('biedermann-herwignr', 'bie3'),
+                           ('tille-nr', 'tille')]:
         if not pd.isnull(row[column]):
-            ids = re.split(r'[,;]\s*', str(row[column]))
+            ids = re.split(r'[,;]\s*', str(unfloat(row[column])))
             return prefix + '_' + ids[0]
 
 def read_testimonies(buf, **kwargs):

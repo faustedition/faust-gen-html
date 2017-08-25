@@ -28610,7 +28610,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="alternativer-druckort">Riemer 1841, Bd. 2, S. 22f.; Richter 2010, S. 170/172</field>
     <field name="fremdzeugnis-nr">17</field>
   </testimony>
-  <testimony>
+  <testimony id="tille_309">
     <field name="status">NEU</field>
     <field name="lfd-nr-neuneu">40</field>
     <field name="lfd-nr-allerneuestens">41</field>
@@ -28628,7 +28628,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="druckort">Tille 1900, S. 709</field>
     <field name="alternativer-druckort">Reichard 1778a, S. 18</field>
   </testimony>
-  <testimony>
+  <testimony id="tille_310">
     <field name="status">NEU</field>
     <field name="lfd-nr-neuneu">41</field>
     <field name="lfd-nr-allerneuestens">42</field>
@@ -28644,7 +28644,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="druckort">Tille 1900, S. 726</field>
     <field name="alternativer-druckort">Reichard 1778b, S. 82</field>
   </testimony>
-  <testimony>
+  <testimony id="tille_313">
     <field name="lfd-nr-neuneu">43</field>
     <field name="lfd-nr-allerneuestens">44</field>
     <field name="lfd-nr-neuestens">45</field>
