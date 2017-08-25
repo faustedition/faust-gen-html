@@ -86,10 +86,11 @@
 							</button>
 						</form>
 					</li>
-					<li>
-						<a href="{$edition}/imprint">
-							<small class="pure-fade-50">Impressum</small>
-						</a>
+					<li id="imprint_sitemap">
+					  <small class="pure-fade-50">
+					    <a href="{$edition}/imprint">Impressum</a>
+					    <a href="{$edition}/intro#sitemap">Sitemap</a>
+					  </small>
 					</li>
 					<li>
 						<a href="{$edition}/help">
