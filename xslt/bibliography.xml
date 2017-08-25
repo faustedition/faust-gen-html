@@ -1977,6 +1977,11 @@
         <f:reference>Sulpiz Boisserée. [Hrsg. von Mathilde Boisserée.] 2 Bde., Bd. 2: Briefwechsel mit Goethe. Stuttgart: Cotta Verlag 1862. </f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/boxberger1880">
+        <f:citation>Boxberger 1880</f:citation>
+        <f:reference>Boxberger, Robert, mit Beiträgen von H. Grimm, H. Huefferer, L. Urlichs: Mittheilungen von Zeitgenossen über Goethe. In:  GJb 1 (1880), S. 314-359. </f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/brandl1899">
         <f:citation>Brandl 1899</f:citation>
         <f:reference>Brandl, A[lois]: Goethes Verhältniß zu Byron. In:  GJb. 20 (1899), S. 3-36.</f:reference>
@@ -2177,29 +2182,49 @@
         <f:reference>Goethe, Johann Wolfgang: Briefe. Historisch-kritische Ausgabe. Band 2 II. Anfang 1773-Ende Oktober 1775. Kommentar. Herausgegeben von Georg Kurscheidt und Elke Richter. Berlin 2009.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/geiger1881a">
+        <f:citation>Geiger 1881a</f:citation>
+        <f:reference>Geiger, Ludwig, mit Beiträgen von W. Arndt, K. Bartsch, R. Köhler, G. v. Loeper, F. Muncker: Einundvierzig Briefe von Goethe nebst 2 Briefen der Frau Rath und 1 Brief von K. Ph. Moritz. In: faust://bibliography/gjb_2, S. 237–315.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1881b">
+        <f:citation>Geiger 1881b</f:citation>
+        <f:reference>Geiger, Ludwig: Aus Bertuchs Nachlaß. In: faust://bibliography/gjb_2, S. 374–414.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/geiger1882">
-        <f:citation>Geiger 1882</f:citation>
+        <f:citation>Geiger 1882 <strong>[muss in Geiger 1881b umbenannt werden]</strong></f:citation>
         <f:reference>Geiger, Ludwig: Aus Bertuchs Nachlaß. In: faust://bibliography/gjb_2, S. 374–414.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/geiger1889">
         <f:citation>Geiger 1889</f:citation>
-        <f:reference>Geiger, Ludwig u.a.: Mittheilungen von Zeitgenossen über Goethe, 1774-1835, in: faust://bibliography/gjb_10, S. 139–166.</f:reference>
+        <f:reference>Geiger, Ludwig, mit Beiträgen von O. Brahm, Th. Distel, O. Hoffmann, B. Litzmann, J. Minor, B. Seuffert, G. Weisstein: Mittheilungen von Zeitgenossen über Goethe, 1774-1835, in: faust://bibliography/gjb_10, S. 139–166.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1890a">
+        <f:citation>Geiger 1890a</f:citation>
+        <f:reference>Geiger, Ludwig, mit Beiträgen von C.A.H. Burkhardt, J. Elias, H. Frommann, L. Hirzel, F. Lamey, B. Litzmann, H. Rollett, M. Schubart, G. Weisstein: Neunundvierzig Briefe von Goethe, neun an Goethe, ein Brief von Goethes Eltern und ein Brief von Frau Rath. In: faust://bibliography/gjb_11, S. 71–120.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/geiger1890">
-        <f:citation>Geiger 1890</f:citation>
-        <f:reference>Geiger, Ludwig mit Beiträgen von Erich Schmidt und Stephan Wätzoldt: Bibliographie, in: faust://bibliography/gjb_11, S. 207–279.</f:reference>
+        <f:citation>Geiger 1890 <strong>[muss zu Geiger 1890b geändert oder besser ganz umbenannt wewrden]</strong></f:citation>
+        <f:reference>Geiger, Ludwig, mit Beiträgen von Erich Schmidt und Stephan Wätzoldt: Bibliographie, in: faust://bibliography/gjb_11, S. 207–279.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/geiger1897">
         <f:citation>Geiger 1897</f:citation>
-        <f:reference>Geiger, Ludwig: Mittheilungen von Zeitgenossen über Goethe 1772-1832, in: faust://bibliography/gjb_18, S. 113-160.</f:reference>
+        <f:reference>Geiger, Ludwig, mit Beiträgen von L. Bobé und M. Grunwald: Mittheilungen von Zeitgenossen über Goethe 1772-1832, in: faust://bibliography/gjb_18, S. 113-160.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/geiger1900">
         <f:citation>Geiger 1900</f:citation>
         <f:reference>Geiger, Ludwig: Ein Gespräch mit Goethe, in: faust://bibliography/gjb_21, S. 284–287.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1901">
+        <f:citation>Geiger 1901</f:citation>
+        <f:reference>Geiger, Ludwig: Fünf Briefe Goethes 1790-1819, in: faust://bibliography/gjb_22, S. 74–84.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gleichen-russwurm1930">
@@ -2457,6 +2482,11 @@
         <f:reference>Goethe, Johann Wolfgang von: Briefe an Sophie von La Roche und Bettina Brentano nebst dichterischer Beilagen hrsg. von Gustav von Loeper. Berlin 1879.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/loeper1881">
+        <f:citation>Loeper 1881</f:citation>
+        <f:reference>Loeper, G. von: Aus Briefen von C. A. Vulpius in Weimar an Nic. Meyer in Bremen, in: faust://bibliography/gjb_2, S. 415-424.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/loeper1882">
         <f:citation>Loeper 1882</f:citation>
         <f:reference>Loeper, G. von: Aus Briefen von C. A. Vulpius in Weimar an Nic. Meyer in Bremen, in: faust://bibliography/gjb_2, S. 415-424.</f:reference>
@@ -2695,6 +2725,11 @@
     <f:bib uri="faust://bibliography/strodtmann1874_1">
         <f:citation>Strodtmann 1874</f:citation>
         <f:reference>Briefe von und an Gottfried August Bürger. Ein Beitrag zur Literaturgeschichte seiner Zeit. Aus dem Nachlasse Bürger's und anderen, meist handschriftlichen Quellen hrsg. von Adolf Strodtmann. Bd. 1. Berlin 1874.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/suphan1894">
+        <f:citation>Suphan 1894</f:citation>
+        <f:reference>Suphan, Bernhard: Ouvrages poétiques de Goethe. In: GJb 15 (1894), S. 17-19.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/sydow1906-1916_7">
