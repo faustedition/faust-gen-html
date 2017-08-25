@@ -95,11 +95,18 @@
 								<xsl:sort select="    number(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$4'))"/>
 								<xsl:variable name="id"
 									select="replace(@data-bib-uri, '^faust://bibliography/', '')"/>
-								<dt id="{$id}">
-									<xsl:value-of select="@data-citation"/>
-									<a href="#{$id}" class="hover-link">¶</a>
-								</dt>
-								<xsl:sequence select="."/>
+								<xsl:choose>
+									<xsl:when test="tokenize(@class, '\s+') = 'bib-notfound'">
+										<xsl:comment>WARNING: No bibliography entry for <xsl:value-of select="."/></xsl:comment>
+									</xsl:when>
+									<xsl:otherwise>
+										<dt id="{$id}">
+											<xsl:value-of select="@data-citation"/>
+											<a href="#{$id}" class="hover-link">¶</a>
+										</dt>
+										<xsl:sequence select="."/>										
+									</xsl:otherwise>
+								</xsl:choose>
 							</xsl:for-each>
 						</dl>
 						
