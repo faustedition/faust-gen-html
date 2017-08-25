@@ -152,7 +152,7 @@
         <xsl:variable name="id_parts" select="tokenize($testimony-id[1], '_')"/>
         <xsl:variable name="taxonomy" select="
             if (starts-with($id_parts[1], 'lfd-nr'))
-            then 'Lfd. Nr.' 
+            then 'Zeugnis Nr.' 
             else id($id_parts[1], $taxonomies)/text()"/>
         <xsl:value-of select="concat($taxonomy, ' ', $id_parts[2])"/>
     </xsl:function>

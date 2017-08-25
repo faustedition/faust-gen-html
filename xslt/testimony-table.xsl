@@ -246,12 +246,21 @@
 		<xsl:for-each select="$entry"><!-- focus -->
 			<xsl:choose>
 				<xsl:when test="@id"><xsl:value-of select="@id"/></xsl:when>
+				<xsl:when test="f:find-inferior-id(.)">
+					<xsl:value-of select="f:find-inferior-id(.)"/>
+				</xsl:when>				
 				<xsl:otherwise>
 					<xsl:variable name="src" select="f:field[starts-with(@name, 'lfd-nr')][1]"/>
 					<xsl:value-of select="concat($src/@name, '_', $src)"/>
 				</xsl:otherwise>
 			</xsl:choose>			
 		</xsl:for-each>
+	</xsl:function>
+	
+	<xsl:function name="f:find-inferior-id" as="xs:string?">
+		<xsl:param name="entry"/><!-- f:testimony w/o @id -->
+		<xsl:variable name="candidate-ids" select="for $f in $entry//f:field return concat($f/@name, '_', $f)"/>
+		<xsl:sequence select="($candidate-ids[. = $usage//f:citation/@testimony-id])[1]"/>
 	</xsl:function>
 
 	<xsl:template name="generate-pseudo-testimonies">
