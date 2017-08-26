@@ -18,6 +18,7 @@
 	<xsl:param name="builddir-resolved" select="resolve-uri('../../../../target/')"/>
 	<xsl:param name="output" select="resolve-uri('testimony-split/', $builddir-resolved)"/>
 	<xsl:param name="source-uri" select="document-uri(/)"/>
+	<xsl:variable name="unfree-text" select="matches($source-uri, '/quz_.*(\.xml)?')"/>
 	
 	<xsl:variable name="basename" select="replace($source-uri, '^.*/([^/]+)\.xml', '$1')"/>
 	<xsl:variable name="biburl" select="concat('faust://bibliography/', $basename)"/>
@@ -49,6 +50,7 @@
 			<xsl:message select="concat('WARNING: div[', position(), '] in ', $basename, ' contains ', count($milestones), ' testimonies: ', string-join($milestones/@xml:id, ', '))"/>
 			<!--<xsl:message><xsl:copy-of select="$milestones"/></xsl:message>-->
 		</xsl:if>
+		
 		<xsl:for-each select="$milestones">
 			<xsl:variable name="id" select="f:real_id(@xml:id)"/>
 			<xsl:variable name="xml-id" select="@xml:id"/>
@@ -104,7 +106,8 @@
 								<text>
 									<body>
 										<xsl:choose>
-											<xsl:when test="f:unfree-text(.)">
+											<xsl:when test="$unfree-text">
+												<xsl:message select="concat('Skipping unfree ', $id, ' from ', $source-uri)"/>
 												<desc type="editorial" subtype="info">
 													Für die Veröffentlichung dieses Volltexts liegt noch keine Freigabe vor.
 													<xsl:copy-of select="$milestone"/>
