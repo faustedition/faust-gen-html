@@ -17,8 +17,12 @@
 	<xsl:variable name="biburl" select="if (//f:biburl) then //f:biburl[1] else concat('faust://bibliography/', $basename)"/>
 	
 	
+	
 	<xsl:template match="/TEI">
 		<xsl:call-template name="html-frame">
+			<xsl:with-param name="headerAdditions">
+				<script type="text/javascript" src="{$assets}/js/faust_app.js"/>
+			</xsl:with-param>			
 			<xsl:with-param name="content">				
 					<xsl:apply-templates select="text"/>					
 			</xsl:with-param>
@@ -49,50 +53,43 @@
 	</xsl:template>
 				
 	<xsl:template match="desc/milestone" priority="1"/>
-	<xsl:template match="milestone[@unit='testimony']">
-		<xsl:variable name="id" select="f:real_id(@xml:id)"/>
-		<xsl:variable name="id_parts" select="tokenize($id, '_')"/>
-		<xsl:variable name="root" select="f:root-milestone(.)"/>
-		<xsl:variable name="taxlabel" select="id($id_parts[1], $taxonomies)/text()"/>
-		<xsl:choose>
-			<xsl:when test="count($id_parts) = 2">
-				<xsl:if test="not($taxlabel) or $id_parts[2] = ''">
-					<xsl:message select="concat('WARNING: Invalid testimony id ', $id, ' in ', document-uri(/))"/>
-				</xsl:if>
-				<a class="appnote generated-text testimony-ref" id="{$id}" href="/archive_testimonies#{$id}">
-					<xsl:call-template name="highlight-group">
-						<xsl:with-param name="others" select="f:milestone-chain($root)"/>						
-					</xsl:call-template>				
-					<xsl:text>[ </xsl:text>
-					<xsl:value-of select="f:testimony-label($id)"/>					
-					<xsl:text>: </xsl:text>					
-				</a>	
-			</xsl:when>
-			<xsl:when test="count($id_parts) = 3 and string-length($id_parts[2]) > 0 and matches($id_parts[2], '.*\d.*') and $root">
-				<a class="appnote generated-text testimony-ref" href="#{$id}">
-					<xsl:call-template name="highlight-group">
-						<xsl:with-param name="others" select="f:milestone-chain($root)"/>						
-					</xsl:call-template>				
-					<xsl:text>[ </xsl:text>
-					<xsl:value-of select="f:testimony-label($id)"/>					
-					<xsl:text> (weiter): </xsl:text>					
-				</a>					
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:message>WARNING:<xsl:value-of select="document-uri(/)"/>:Invalid/strange testimony id "<xsl:value-of select="$id"/>" <xsl:copy-of select="."/></xsl:message>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
 	
-	<xsl:template match="anchor[preceding::milestone[substring(@spanTo, 2) = current()/@xml:id]]">
-		<xsl:variable name="root" select="f:root-milestone(.)" as="element()*"/>
-		<xsl:variable name="id" select="f:real_id($root[1]/@xml:id)"/>
-		<xsl:variable name="label" select="f:testimony-label($id)"/>
-		<a class="appnote generated-text testimony-ref" href="#{$id}" title="Ende {$label}">
-			<xsl:call-template name="highlight-group">
-				<xsl:with-param name="others" select="f:milestone-chain($root)"/>
-			</xsl:call-template>
-			<xsl:text> ]</xsl:text>
+	<xsl:template name="testimony-marker" match="milestone[@unit='testimony']|anchor[preceding::milestone[substring(@spanTo, 2) = current()/@xml:id]]">
+		<xsl:variable name="root" select="f:root-milestone(.)"/>
+		<xsl:variable name="chain" select="f:milestone-chain($root)"/>
+		<xsl:variable name="root_id" select="f:real_id($root/@xml:id)"/>
+		<xsl:variable name="position" select="count($chain[current() >> .])"/>
+		<xsl:variable name="marker_id" select="if ($position = 0) then $root_id else concat($root_id, '_', $position)"/>
+		<xsl:variable name="all_marker_ids" select="($root_id, for $n in 1 to count($chain)-1 return concat($root_id, '_', $n))"/>
+		<xsl:variable name="other_ids" select="$all_marker_ids"/>
+
+		<a 	class="appnote generated-text testimony-ref"
+			id="{$marker_id}"			
+			data-also-highlight="{string-join($other_ids, ' ')}">
+			<xsl:choose>
+				<xsl:when test="$position = 0">		<!-- first <milestone> -->
+					<xsl:attribute name="href" select="concat('/archive_testimonies#', $root_id)"/>
+					<xsl:text>[ </xsl:text>
+					<xsl:value-of select="f:testimony-label($root_id)"/>					
+					<xsl:text>: </xsl:text>										
+				</xsl:when>
+				<xsl:when test="self::milestone and $position > 1"> <!-- continuation milestone -->
+					<xsl:attribute name="href" select="concat('#', $root_id)"/>
+					<xsl:text>[ </xsl:text>
+					<xsl:value-of select="f:testimony-label($root_id)"/>					
+					<xsl:text> (weiter): </xsl:text>					
+				</xsl:when>
+				<xsl:when test="$position > 1">
+					<xsl:attribute name="href" select="concat('#', $root_id, '_', $position - 1)"/>
+					<xsl:attribute name="title" select="concat('Ende ', f:testimony-label($root_id), ' (forts.)')"/>
+					<xsl:text> ]</xsl:text>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:attribute name="href" select="concat('#', $root_id)"/>
+					<xsl:attribute name="title" select="concat('Ende ', f:testimony-label($root_id))"/>
+					<xsl:text> ]</xsl:text>					
+				</xsl:otherwise>
+			</xsl:choose>
 		</a>
 	</xsl:template>
 	
