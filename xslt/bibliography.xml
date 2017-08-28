@@ -182,8 +182,13 @@
         <f:reference>Faust. Eine Tragödie von Goethe. Mit berichtigtem Texte, den verschiedenen Lesarten, erklärenden Anmerkungen und Einleitung, 2 Tle., [hrsg. von Heinrich Düntzer], Leipzig [1868].</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/duentzer1882a">
+        <f:citation>Düntzer 1882a </f:citation>
+        <f:reference>Goethes Werke, Bd. 12: Faust, hrsg. von H[einrich] Düntzer, Stuttgart: Union, Deutsche Verlagsanstalt [zugl.: Berlin: Spemann?], o.J. [1. Lfg. 1882] (= Deutsche National-Litteratur. Historisch kritische Ausgabe, hrsg. von Joseph Kürschner, Bd. 93).</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/duentzer1882">
-        <f:citation>Düntzer 1882 <strong>[muss zu DÜntzer 1882a geändert werden]</strong></f:citation>
+        <f:citation>Düntzer 1882</f:citation>
         <f:reference>Goethes Werke, Bd. 12: Faust, hrsg. von H[einrich] Düntzer, Stuttgart: Union, Deutsche Verlagsanstalt [zugl.: Berlin: Spemann?], o.J. [1. Lfg. 1882] (= Deutsche National-Litteratur. Historisch kritische Ausgabe, hrsg. von Joseph Kürschner, Bd. 93).</f:reference>
     </f:bib>
 
@@ -565,6 +570,11 @@
     <f:bib uri="faust://bibliography/loeper1879">
         <f:citation>Loeper 1879 <strong>[muss zu Loeper 1879a geändert wwerden]</strong></f:citation>
         <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G. von Loeper, 2. Bearbeitung, 2 Tle., Berlin 1879. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/loeper1881b">
+        <f:citation>Loeper 1881b </f:citation>
+        <f:reference>Loeper, Gustav von: [Rez.] faust://bibliography/schroeer1881. In: Anzeiger fuer deutsches Alterthum und deutsche Literatur, Jg. 7, 4. September 1881, S. 452–456.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1881">
@@ -1482,9 +1492,19 @@
         <f:reference>WA, Abt. IV, Bd. 51, München 1990.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gjb_1">
+        <f:citation>GJb 1</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Erster Band, Frankfurt am Main 1880.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/gjb_2">
         <f:citation>GJb 2</f:citation>
         <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Zweiter Band, Frankfurt am Main 1881.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_3">
+        <f:citation>GJb 3</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Dritter Band, Frankfurt am Main 1882.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_4">
@@ -1494,12 +1514,22 @@
 
     <f:bib uri="faust://bibliography/gjb_5">
         <f:citation>GJb 5</f:citation>
-        <f:reference>Goethe-Jahrbuch 5 (1884).</f:reference>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Fünfter Band, Frankfurt am Main 1884.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_6">
+        <f:citation>GJb 6</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Sechster Band, Frankfurt am Main 1885.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_7">
         <f:citation>GJb 7</f:citation>
         <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Siebenter Band. Mit dem ersten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1886.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_8">
+        <f:citation>GJb 8</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Achter Band. Mit dem zweiten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1887.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_9">
@@ -1509,12 +1539,37 @@
 
     <f:bib uri="faust://bibliography/gjb_10">
         <f:citation>GJb 10</f:citation>
-        <f:reference>Goethe-Jahrbuch 10 (1889).</f:reference>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Zehnter Band. Mit dem vierten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1889.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_11">
         <f:citation>GJb 11</f:citation>
-        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Elfter Band, Frankfurt am Main 1890.</f:reference>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Elfter Band. Mit dem fünften Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1890.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_12">
+        <f:citation>GJb 12</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Zwölfter Band. Mit dem sechsten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1891.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_13">
+        <f:citation>GJb 13</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Dreizehnter Band. Mit dem siebenten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1892.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_14">
+        <f:citation>GJb 14</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Vierzehnter Band. Mit dem achten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1893.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_15">
+        <f:citation>GJb 15</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Fünfzehnter Band. Mit dem neunten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1894.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_16">
+        <f:citation>GJb 16</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Sechzehnter Band. Mit dem zehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1895.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_17">
@@ -1523,13 +1578,23 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_18">
-        <f:citation>Gjb 18</f:citation>
-        <f:reference>Goethe-Jahrbuch 18 (1897).</f:reference>
+        <f:citation>GJb 18</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Achtzehnter BandMit dem zwölften Jahresbericht der Goethe-Gesellschaft, , Frankfurt am Main 1897.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_19">
+        <f:citation>GJb 19</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Neunzehnter BandMit dem dreihzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1898</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_20">
+        <f:citation>Gjb 20</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Zwanzigster Band. Mit dem vierzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1899</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_21">
         <f:citation>GJb 21</f:citation>
-        <f:reference>Goethe-Jahrbuch 21 (1900).</f:reference>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Einundzwanzigster Band. Mit dem fünfzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1900.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_22">
@@ -1537,9 +1602,14 @@
         <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Zweiundzwanzigster Band. Mit dem sechzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1901.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gjb_23">
+        <f:citation>GJb 23</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Dreiundzwanzigster Band. Mit dem siebzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1902.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/gjb_24">
         <f:citation>GJb 24</f:citation>
-        <f:reference>Goethe-Jahrbuch 24 (1903).</f:reference>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Vierundzwanzigster Band. Mit dem achtzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1903.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_25">
@@ -1550,6 +1620,16 @@
     <f:bib uri="faust://bibliography/gjb_47">
         <f:citation>GJb 47</f:citation>
         <f:reference>Jahrbuch der Goethe-Gesellschaft, im Auftrage des Vorstandes hrsg. von Max Hecker, Dreizehnter Band, Weimar 1927.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_50">
+        <f:citation>GJb 50</f:citation>
+        <f:reference>Jahrbuch der Goethe-Gesellschaft, im Auftrage des Vorstandes hrsg. von Max Hecker, Sechzehnter Band, Weimar 1930.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_59">
+        <f:citation>GJb 59</f:citation>
+        <f:reference>Goethe. Viermonatsschrift der Goethe-Gesellschaft. Neue Folge des Jahrbuchs, hrsg. von Hans Wahl, Vierter Band, Weimar 1939.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_69-70">
@@ -2142,8 +2222,13 @@
         <f:reference>Heinrich Düntzer: Charlotte von Stein: Charlotte von Stein, Goethes Freundin. Bd. 2. Stuttgart 1874.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/duentzer1882b">
+        <f:citation>Düntzer 1882b </f:citation>
+        <f:reference>Düntzer, Heinrich: Erläuterungen zu den Deutschen Klassikern. 1. Abt., Bd. 12: Faust. Erster Theil. Leipzig 1882.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/duentzer1882">
-        <f:citation>Düntzer 1882 <strong>[muss zu DÜntzer 1882b geändert werden]</strong></f:citation>
+        <f:citation>Düntzer 1882 </f:citation>
         <f:reference>Düntzer, Heinrich: Erläuterungen zu den Deutschen Klassikern. 1. Abt., Bd. 12: Faust. Erster Theil. Leipzig 1882.</f:reference>
     </f:bib>
 
@@ -2153,17 +2238,17 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1885_1">
-        <f:citation>Duentzer 1885, Bd. 1</f:citation>
+        <f:citation>Duentzer 1885, Bd. 1 </f:citation>
         <f:reference>Eckermann, Johann Peter: Gespräche mit Goethe in den letzten Jahren seines Lebens. Sechste Auflage. Mit einleitender Abhandlung und Anmerkungen von Heinrich Düntzer. Bd. 1. Leipzig 1885.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1885_2">
-        <f:citation>Duentzer 1885, Bd. 2</f:citation>
+        <f:citation>Duentzer 1885, Bd. 2 </f:citation>
         <f:reference>Eckermann, Johann Peter: Gespräche mit Goethe in den letzten Jahren seines Lebens. Sechste Auflage. Mit einleitender Abhandlung und Anmerkungen von Heinrich Düntzer. Bd. 2. Leipzig 1885.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1885_3">
-        <f:citation>Duentzer 1885, Bd. 3</f:citation>
+        <f:citation>Duentzer 1885, Bd. 3 </f:citation>
         <f:reference>Eckermann, Johann Peter: Gespräche mit Goethe in den letzten Jahren seines Lebens. Sechste Auflage. Mit einleitender Abhandlung und Anmerkungen von Heinrich Düntzer. Bd. 3. Leipzig 1885.</f:reference>
     </f:bib>
 
@@ -2233,7 +2318,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/geiger1882">
-        <f:citation>Geiger 1882 <strong>[muss in Geiger 1881b umbenannt werden]</strong></f:citation>
+        <f:citation>Geiger 1882 </f:citation>
         <f:reference>Geiger, Ludwig: Aus Bertuchs Nachlaß. In: faust://bibliography/gjb_2, S. 374–414.</f:reference>
     </f:bib>
 
@@ -2248,7 +2333,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/geiger1890">
-        <f:citation>Geiger 1890 <strong>[muss zu Geiger 1890b geändert oder besser ganz umbenannt wewrden]</strong></f:citation>
+        <f:citation>Geiger 1890 </f:citation>
         <f:reference>Geiger, Ludwig, mit Beiträgen von Erich Schmidt und Stephan Wätzoldt: Bibliographie. In: faust://bibliography/gjb_11, S. 207–279.</f:reference>
     </f:bib>
 
@@ -2517,13 +2602,18 @@
         <f:reference>Goethe, Johann Wolfgang von: Briefe an Sophie von La Roche und Bettina Brentano nebst dichterischer Beilagen hrsg. von Gustav von Loeper. Berlin 1879.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/loeper1881a">
+        <f:citation>Loeper 1881a</f:citation>
+        <f:reference>Loeper, G. von: Aus Briefen von C. A. Vulpius in Weimar an Nic. Meyer in Bremen. In: faust://bibliography/gjb_2, S. 415–424.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/loeper1881">
-        <f:citation>Loeper 1881</f:citation>
+        <f:citation>Loeper 1881 </f:citation>
         <f:reference>Loeper, G. von: Aus Briefen von C. A. Vulpius in Weimar an Nic. Meyer in Bremen. In: faust://bibliography/gjb_2, S. 415–424.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1882">
-        <f:citation>Loeper 1882</f:citation>
+        <f:citation>Loeper 1882 </f:citation>
         <f:reference>Loeper, G. von: Aus Briefen von C. A. Vulpius in Weimar an Nic. Meyer in Bremen. In: faust://bibliography/gjb_2, S. 415–424.</f:reference>
     </f:bib>
 
