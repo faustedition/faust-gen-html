@@ -4,6 +4,7 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://www.faustedition.net/ns"
 	exclude-result-prefixes="xs"
+	default-collation="http://www.w3.org/2013/collation/UCA?lang=de"
 	version="2.0">
 	
 	<xsl:import href="bibliography.xsl"/>
