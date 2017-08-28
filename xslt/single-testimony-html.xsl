@@ -173,8 +173,10 @@
 	</xsl:template>
 	
 	<xsl:template match="f:biburl">
+		<xsl:variable name="citation" select="f:cite(., false())"/>
+		<xsl:if test="starts-with($citation, 'faust://')"><xsl:message select="concat('WARNING: Citation ', ., ' missing in testimony ', $id)"/></xsl:if>
 		<dt>Quelle</dt>
-		<dd><xsl:sequence select="f:cite(., false())"/></dd>
+		<dd><xsl:sequence select="$citation"/></dd>
 	</xsl:template>
 	
 </xsl:stylesheet>
