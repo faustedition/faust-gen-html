@@ -183,7 +183,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1882">
-        <f:citation>Düntzer 1882</f:citation>
+        <f:citation>Düntzer 1882 <strong>[muss zu DÜntzer 1882a geändert werden]</strong></f:citation>
         <f:reference>Goethes Werke, Bd. 12: Faust, hrsg. von H[einrich] Düntzer, Stuttgart: Union, Deutsche Verlagsanstalt [zugl.: Berlin: Spemann?], o.J. [1. Lfg. 1882] (= Deutsche National-Litteratur. Historisch kritische Ausgabe, hrsg. von Joseph Kürschner, Bd. 93).</f:reference>
     </f:bib>
 
@@ -309,7 +309,7 @@
 
     <f:bib uri="faust://bibliography/goeres1969">
         <f:citation>Göres 1969</f:citation>
-        <f:reference>Göres, Jörn, Goethe-Museum / Anton- und Katharina-Kippenberg-Stiftung: [Gabe für den Freundeskreis des Goethe-Museums, mit eeinem Faksimile der Hs. NW 1153/1969], Düsseldorf o.J. [1969].</f:reference>
+        <f:reference>Göres, Jörn, Goethe-Museum / Anton- und Katharina-Kippenberg-Stiftung: [Gabe für den Freundeskreis des Goethe-Museums, mit einem Faksimile der Hs. NW 1153/1969], Düsseldorf o.J. [1969].</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/goeres1970">
@@ -552,11 +552,6 @@
         <f:reference>Katalog einer schönen Autographensammlung. Zum grössten Theile aus dem Besitze eines wohlbekannten Sammlers,  Leo Liepmannssohn, Antiquariat, Berlin. 7. Mai 1896.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/loeper1881">
-        <f:citation>Loeper 1881</f:citation>
-        <f:reference>Loeper, Gustav von: [Rez.] faust://bibliography/schroeer1881. In: Anzeiger fuer deutsches Alterthum und deutsche Literatur, Jg. 7, 4. September 1881, S. 452–456.</f:reference>
-    </f:bib>
-
     <f:bib uri="faust://bibliography/loeper1869">
         <f:citation>Loeper 1869</f:citation>
         <f:reference>Zwei Inedita von Goethe, [hrsg. von Gustav von Loeper], Berlin 1869. </f:reference>
@@ -568,8 +563,13 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1879">
-        <f:citation>Loeper 1879</f:citation>
+        <f:citation>Loeper 1879 <strong>[muss zu Loeper 1879a geändert wwerden]</strong></f:citation>
         <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G. von Loeper, 2. Bearbeitung, 2 Tle., Berlin 1879. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/loeper1881">
+        <f:citation>Loeper 1881</f:citation>
+        <f:reference>Loeper, Gustav von: [Rez.] faust://bibliography/schroeer1881. In: Anzeiger fuer deutsches Alterthum und deutsche Literatur, Jg. 7, 4. September 1881, S. 452–456.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1883">
@@ -595,11 +595,6 @@
     <f:bib uri="faust://bibliography/maisak2007">
         <f:citation>Maisak 2007</f:citation>
         <f:reference>Maisak, Petra: [Katalog] Goethes ‚Faust‘. Verwandlungen eines „Hexenmeisters“ (Frankfurt am Main, 28. August bis 11. November 2007), mit einer Einführung von Anne Bohnenkamp, Frankfurt am Main 2007.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/manning1896">
-        <f:citation>Manning 1896</f:citation>
-        <f:reference>Manning, Eugene W.: Zur Chronologie des ersten Paralipomenon zu Goethes Faust. (Mit Facsimile.) In: faust://bibliography/gjb_17, S. 209–214.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/matuschek2005">
@@ -1602,6 +1597,51 @@
         <f:reference>Goethe-Jahrbuch, Bd. 125, hrsg. von Werner Frick, Jochen Golz, Albert Meier und Edith Zehm, Weimar 2008.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/graef1901-1914_I_1">
+        <f:citation>Gräf I 1</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. I: Die Epischen Dichtungen, Bd. 1, Frankfurt am Main 1901 (Bd. 1 d. Ges.-R.).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_I_2">
+        <f:citation>Gräf I 2</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. I: Die Epischen Dichtungen, Bd. 2, Frankfurt am Main 1902 (Bd. 2 d. Ges.-R.).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_II_1">
+        <f:citation>Gräf II 1</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. II: Die Dramatischen Dichtungen, Bd. 1, Frankfurt am Main 1903 (Bd. 3 d. Ges.-R.).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_II_2">
+        <f:citation>Gräf II 2</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. II: Die Dramatischen Dichtungen, Bd. 2, Frankfurt am Main 1904 (Bd. 4 der Gesamtreihe).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_II_3">
+        <f:citation>Gräf II 3</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. II: Die Dramatischen Dichtungen, Bd. 3, Frankfurt am Main 1906 (Bd. 5 der Gesamtreihe).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_II_4">
+        <f:citation>Gräf II 4</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. II: Die Dramatischen Dichtungen, Bd. 4, Frankfurt am Main 1908 (Bd. 6 der Gesamtreihe).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_III_1">
+        <f:citation>Gräf III 1</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. III: Die Lyrischen Dichtungen, Bd. 2, Frankfurt am Main 1912 (Bd. 7 der Gesamtreihe).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_III_2.1">
+        <f:citation>Gräf III 2.1</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. III: Die Lyrischen Dichtungen, Bd. 2, Hälfte 1, Frankfurt am Main 1914 (Bd. 8 der Gesamtreihe).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_III_2.2">
+        <f:citation>Gräf III 2.2</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. III: Die Lyrischen Dichtungen, Bd. 2, Hälfte 2, Frankfurt am Main 1914 (Bd. 9 der Gesamtreihe).</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/alt_14">
         <f:citation>Alt 14</f:citation>
         <f:reference>Goethes Werke. Vollständige Ausgabe in vierzig Teilen. Auf Grund der Hempelschen Ausgabe neu herausgegeben, mit Einleitungen und Anmerkungen sowie einem Gesamtregister versehen von Karl Alt. 14. Teil: Dramen in ursprünglicher Gestalt, hrsg. von Robert Riemann und Karl Alt, Berlin u.a. o.J. [1909–1926].</f:reference>
@@ -2103,7 +2143,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1882">
-        <f:citation>Düntzer 1882</f:citation>
+        <f:citation>Düntzer 1882 <strong>[muss zu DÜntzer 1882b geändert werden]</strong></f:citation>
         <f:reference>Düntzer, Heinrich: Erläuterungen zu den Deutschen Klassikern. 1. Abt., Bd. 12: Faust. Erster Theil. Leipzig 1882.</f:reference>
     </f:bib>
 
@@ -2473,12 +2513,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1879">
-        <f:citation>Loeper 1879</f:citation>
-        <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G[ustav] von Loeper. Zweite Bearbeitung. Theil 1. 2. Berlin, 1879.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/loeper1879">
-        <f:citation>Loeper 1879a  <strong>derzeit noch Loeper 1879</strong></f:citation>
+        <f:citation>Loeper 1879 </f:citation>
         <f:reference>Goethe, Johann Wolfgang von: Briefe an Sophie von La Roche und Bettina Brentano nebst dichterischer Beilagen hrsg. von Gustav von Loeper. Berlin 1879.</f:reference>
     </f:bib>
 
@@ -2499,7 +2534,7 @@
 
     <f:bib uri="faust://bibliography/manning1896">
         <f:citation>Manning 1896 </f:citation>
-        <f:reference>Eugene W. Manning: Zur Chronologie des ersten Paralipomenon zu Goethes Faust. In: GJ 17 (1896), S. 209–214. </f:reference>
+        <f:reference>Eugene W. Manning: Zur Chronologie des ersten Paralipomenon zu Goethes Faust. In: faust://bibliography/gjb_17, S. 209–214. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/matthisson1825-1829_7">
@@ -2560,11 +2595,6 @@
     <f:bib uri="faust://bibliography/plitt1869-1870_2">
         <f:citation>Plitt 1869–1870, Bd. 2</f:citation>
         <f:reference>Aus Schellings Leben. In Briefen. Hrsg. von Gustav Leopold Plitt. 3 Bde., Berlin 1869–1870; Bd. 2, 1870.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/pniower1891">
-        <f:citation>Pniower 1891</f:citation>
-        <f:reference>Pniower, Otto: Die Schülerszene im Urfaust. In: Vierteljahrsschrift für Literaturgeschichte 4 (1891), S. 317–335.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/pollmer1923">
