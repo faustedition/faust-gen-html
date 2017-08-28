@@ -5,7 +5,7 @@
 	xmlns:f="http://www.faustedition.net/ns" exclude-result-prefixes="xs f"
 	version="2.0">
 
-	<xsl:param name="title">Faustedition [beta.3]</xsl:param>
+	<xsl:param name="title">Faustedition [alpha]</xsl:param>
 	<xsl:param name="edition"></xsl:param>
 	<xsl:param name="assets" select="$edition"/>
 	<xsl:param name="debug" select="false()"/>
