@@ -83,6 +83,9 @@
 	
 	<xsl:template match="/TEI">
 		<xsl:call-template name="html-frame">
+			<xsl:with-param name="headerAdditions">
+				<script type="text/javascript" src="{$assets}/js/faust_app.js"/>
+			</xsl:with-param>
 			<xsl:with-param name="breadcrumbs" tunnel="yes">				
 				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
 					<small id="breadcrumbs">
