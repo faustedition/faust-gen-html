@@ -230,7 +230,7 @@
 			</xsl:choose>
 			
 			<xsl:for-each select="../message">
-				<div class="message {@status}"><xsl:value-of select="."/></div>
+				<xsl:comment><xsl:value-of select="."/></xsl:comment>
 			</xsl:for-each>
 		</td>
 	</xsl:template>
