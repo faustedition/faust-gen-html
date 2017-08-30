@@ -59,30 +59,34 @@
 			<xsl:variable name="last-milestone" select="$chain[position() = last()]"/>
 			<xsl:variable name="last-div" select="$last-milestone/ancestor::div[not(ancestor::div)]"/>
 			<xsl:variable name="context" select="$div, $div/following::node() except ($div/following::*//node(), $last-div/following::node())"/>
-			<xsl:result-document href="{resolve-uri(concat($id, '.xml'), $output)}" exclude-result-prefixes="xs xi svg math xd f">
-									
-					<xsl:variable name="metadata0" select="$table//f:testimony[@id=$id]"/>
-					<xsl:variable name="metadata" as="element()?">
+			<xsl:variable name="metadata0" select="$table//f:testimony[@id=$id]"/>
+			<xsl:variable name="metadata" as="element()?">
+				<xsl:choose>
+					<xsl:when test="$metadata0"><xsl:sequence select="$metadata0"/></xsl:when>
+					<xsl:otherwise>
+						<xsl:variable name="id_parts" select="tokenize($id, '_')"/>
+						<xsl:variable name="matching-md" as="element()*" select="$table//f:testimony[f:field[@name = $id_parts[1] and . = $id_parts[2]]]"/>
 						<xsl:choose>
-							<xsl:when test="$metadata0"><xsl:sequence select="$metadata0"/></xsl:when>
-							<xsl:otherwise>
-								<xsl:variable name="id_parts" select="tokenize($id, '_')"/>
-								<xsl:variable name="matching-md" as="element()*" select="$table//f:testimony[f:field[@name = $id_parts[1] and . = $id_parts[2]]]"/>
-								<xsl:choose>
-									<xsl:when test="count($matching-md) = 1">
-										<xsl:for-each select="$matching-md">
-											<xsl:copy>
-												<xsl:attribute name="id" select="if (@id) then @id else $id"/>
-												<xsl:copy-of select="*"/>
-											</xsl:copy>
-										</xsl:for-each>
-										<xsl:message select="concat('WARNING: Using inferior testimony id ', $id)"/>
-									</xsl:when>
-									<xsl:otherwise><xsl:message select="concat('ERROR: ', count($matching-md), ' metadata records match ', $id)"/></xsl:otherwise>
-								</xsl:choose>
-							</xsl:otherwise>
+							<xsl:when test="count($matching-md) = 1">
+								<xsl:for-each select="$matching-md">
+									<xsl:copy>
+										<xsl:attribute name="id" select="if (@id) then @id else $id"/>
+										<xsl:copy-of select="*"/>
+									</xsl:copy>
+								</xsl:for-each>
+								<xsl:message select="concat('WARNING: Using inferior testimony id ', $id)"/>
+							</xsl:when>
+							<xsl:otherwise><xsl:message select="concat('ERROR: ', count($matching-md), ' metadata records match ', $id)"/></xsl:otherwise>
 						</xsl:choose>
-					</xsl:variable>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+			<xsl:variable name="basename" select="
+				if ($metadata/@id != $id and not(//milestone[@unit='testimony'][$metadata/@id = f:real_id(@xml:id)]))
+				then $metadata/@id
+				else $id"/>
+			
+			<xsl:result-document href="{resolve-uri(concat($basename, '.xml'), $output)}" exclude-result-prefixes="xs xi svg math xd f">									
 					<TEI>
 						<xsl:for-each select="/TEI/teiHeader">
 							<teiHeader>	
