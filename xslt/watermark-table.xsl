@@ -49,7 +49,15 @@
 	<xsl:function name="f:wm-label">
 		<xsl:param name="wm-id"/>
 		<xsl:variable name="id" select="normalize-space($wm-id)"/>		
-		<xsl:value-of select="document('watermark-labels.xml')//watermark[@id=$id]"/>				
+		<xsl:variable name="normalized" select="document('watermark-labels.xml')//watermark[@id=$id]"/>
+		<xsl:choose>
+			<xsl:when test="$normalized = ('k.A.', '', '-', '–', '—')">
+				<xsl:text/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$normalized"/>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:function>
 	
 	<xsl:function name="f:toid">
