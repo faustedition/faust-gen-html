@@ -25,7 +25,7 @@
 						<tr>
 							<th data-sorted="true" data-sorted-direction="ascending"  data-sortable-type='alpha'>Hauptzeichen</th>
 							<th data-sorted="false" data-sortable-type='alpha'>Gegenzeichen</th>
-							<th data-sorted="false" data-sortable-type='sigil'>Zeugen</th>
+							<th data-sorted="false" data-sortable-type='sigil'>Zeugen (Haupt- und Gegenzeichen)</th>
 							<th data-sorted="false" data-sortable-type='sigil'>Zeugen (nur Hauptzeichen)</th>
 							<th data-sorted="false" data-sortable-type='sigil'>Zeugen (nur Gegenzeichen)</th>
 						</tr>
@@ -78,22 +78,32 @@
 			</xsl:for-each>			
 		</xsl:variable>
 		
-		<xsl:for-each-group select="$watermarks" group-by="@watermark">
+		<xsl:for-each-group select="$watermarks[not(@watermark = '' and @countermark = '')]" group-by="@watermark">
 			<xsl:sort select="lower-case(replace(current-grouping-key(), '\W+', ''))"/>
 			<tr id="{f:toid(current-grouping-key())}">
 				<td><xsl:value-of select="@watermark[1]"/></td>
-				<xsl:if test="count(distinct-values(@countermark)) > 1">
-					<xsl:message select="concat('WARNING: For watermark ', @watermark[1], ', there are multiple countermarks: ', string-join(distinct-values(@countermark), ', '))"/>					
-				</xsl:if>
-				<td><xsl:value-of select="@countermark[1]"/></td>
 				<td>
+					<xsl:value-of select="@countermark[1]"/>
+					<xsl:if test="count(distinct-values(@countermark)) > 1">
+						<xsl:value-of select="concat(' (⚠ ', string-join(distinct-values(@countermark), '; '), ')')"/>
+						<xsl:message select="concat('WARNING: For watermark ', @watermark[1], ', there are multiple countermarks: ', string-join(distinct-values(@countermark), ', '))"/>					
+					</xsl:if>
+				</td>
+				<td><!-- Watermark and Countermark -->
 					<xsl:sequence select="f:sigils(current-group()[normalize-space(@countermark) != ''])"/>					
 				</td>
-				<td>
+				<td><!-- Watermark only -->
 					<xsl:sequence select="f:sigils(current-group()[normalize-space(@countermark) = ''])"/>
+				</td>				
+				<td><!-- Countermark only -->					
+					<xsl:variable name="current-cm" select="@countermark[1]"/>
+					<xsl:if test="$current-cm != ''">
+						<xsl:sequence select="f:sigils($watermarks[@countermark = $current-cm and @watermark = ''])"/>						
+					</xsl:if>
 				</td>
 			</tr>
 		</xsl:for-each-group>
+		
 	</xsl:template>
 	
 	<xsl:function name="f:sigils">
