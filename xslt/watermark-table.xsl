@@ -77,31 +77,33 @@
 				</f:watermark>							
 			</xsl:for-each>			
 		</xsl:variable>
-		
+				
 		<xsl:for-each-group select="$watermarks[not(@watermark = '' and @countermark = '')]" group-by="@watermark">
-			<xsl:sort select="lower-case(replace(current-grouping-key(), '\W+', ''))"/>
+			<xsl:sort select="lower-case(replace(current-grouping-key(), '\W+', ''))" stable="yes"/>
 			<tr id="{f:toid(current-grouping-key())}">
-				<td><xsl:value-of select="@watermark[1]"/></td>
-				<td>
-					<xsl:value-of select="@countermark[1]"/>
-					<xsl:if test="count(distinct-values(@countermark)) > 1">
-						<xsl:value-of select="concat(' (⚠ ', string-join(distinct-values(@countermark), '; '), ')')"/>
-						<xsl:message select="concat('WARNING: For watermark ', @watermark[1], ', there are multiple countermarks: ', string-join(distinct-values(@countermark), ', '))"/>					
-					</xsl:if>
-				</td>
-				<td><!-- Watermark and Countermark -->
-					<xsl:sequence select="f:sigils(current-group()[normalize-space(@countermark) != ''])"/>					
-				</td>
-				<td><!-- Watermark only -->
-					<xsl:sequence select="f:sigils(current-group()[normalize-space(@countermark) = ''])"/>
-				</td>				
-				<td><!-- Countermark only -->					
-					<xsl:variable name="current-cm" select="@countermark[1]"/>
-					<xsl:if test="$current-cm != ''">
-						<xsl:sequence select="f:sigils($watermarks[@countermark = $current-cm and @watermark = ''])"/>						
-					</xsl:if>
-				</td>
-			</tr>
+				<xsl:for-each select="(current-group()[@countermark != ''], current-group())[1]">
+					<td><xsl:value-of select="@watermark[1]"/></td>
+					<td>
+						<xsl:value-of select="@countermark[. != ''][1]"/>
+						<xsl:if test="count(distinct-values(current-group()/@countermark)) > 1">
+							<xsl:value-of select="concat(' (⚠ ', string-join(distinct-values(current-group()/@countermark), '; '), ')')"/>
+							<xsl:message select="concat('WARNING: For watermark ', @watermark[1], ', there are multiple countermarks: ', string-join(distinct-values(current-group()/@countermark), ', '))"/>					
+						</xsl:if>
+					</td>
+					<td><!-- Watermark and Countermark -->
+						<xsl:sequence select="f:sigils(current-group()[normalize-space(@countermark) != ''])"/>					
+					</td>
+					<td><!-- Watermark only -->
+						<xsl:sequence select="f:sigils(current-group()[normalize-space(@countermark) = ''])"/>
+					</td>				
+					<td><!-- Countermark only -->					
+						<xsl:variable name="current-cm" select="@countermark[1]"/>
+						<xsl:if test="$current-cm != ''">
+							<xsl:sequence select="f:sigils($watermarks[@countermark = $current-cm and @watermark = ''])"/>						
+						</xsl:if>
+					</td>
+				</xsl:for-each>
+			</tr>			
 		</xsl:for-each-group>
 		
 	</xsl:template>
