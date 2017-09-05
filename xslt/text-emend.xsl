@@ -17,7 +17,7 @@
     
     <xsl:strip-space elements="mod"/>
     
-    <xsl:template match="*|text()|@*">
+    <xsl:template match="node()|@*">
         <xsl:copy copy-namespaces="no">
             <xsl:apply-templates select="@*, node()"/>
         </xsl:copy>
