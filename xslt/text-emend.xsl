@@ -5,30 +5,21 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs"
     version="2.0">
-
-    <!--
-         by Wendel Piez, cf.
-         https://github.com/wendellpiez/MITH_XSLT/blob/master/xslt/text-emend.xsl
-
-         with additions by Thorsten Vitt
-     -->
     
-    <!--
-        add: passes through without copying
-        del: dropped
-        mod: passes through without copying
-        add/ptr: resolved (target contents copied in)
-        addSpan, modSpan: dropped
-        delSpan: dropped
-        also removes all text after a delSpan up to its anchor (indicated by the delSpan/@spanTo)
-        
+    <!-- 
+    
+        * Removes everything covered by delSpan
+        * Removes addSpan / delSpan elements and correponding anchors
+        * Everything else, especially <add>/<del>, is passed through
+    
     -->
+
     
     <xsl:strip-space elements="mod"/>
     
-    <xsl:template match="* | @*">
+    <xsl:template match="*|text()|@*">
         <xsl:copy copy-namespaces="no">
-            <xsl:apply-templates select="node() | @*"/>
+            <xsl:apply-templates select="@*, node()"/>
         </xsl:copy>
     </xsl:template>
     
@@ -41,61 +32,18 @@
         <xsl:next-match/>
     </xsl:template>
     
-<!--    <xsl:template match="add | mod">
-        <xsl:apply-templates/>
-    </xsl:template>
-    
-    <xsl:template match="del"/>
--->    
-    <xsl:template match="addSpan | delSpan | modSpan"/>
-    
-    <xsl:key name="delSpan-for-text" match="delSpan">
-        <xsl:apply-templates select="following::node()[1]" mode="collect-delSpan">
-            <xsl:with-param name="delSpanTo" tunnel="yes" select="replace(@spanTo,'^#','')"/>
-        </xsl:apply-templates>
-    </xsl:key>
-    
-    <xsl:template match="node()" mode="collect-delSpan">
-        <xsl:apply-templates select="(descendant::node() | following::node())[1]"
-            mode="collect-delSpan" />
-    </xsl:template>
-    
-    <xsl:template match="anchor" mode="collect-delSpan">
-        <xsl:param name="delSpanTo" required="yes" tunnel="yes"/>
-        <xsl:if test="@xml:id ne $delSpanTo">
-            <xsl:next-match/>
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="text()" mode="collect-delSpan" priority="1">
-        <xsl:sequence select="generate-id()"/>
-        <xsl:next-match/>
-    </xsl:template>
-    
-    <xsl:template match="text()">
-        <xsl:if test="empty(key('delSpan-for-text',generate-id()))">
-            <xsl:next-match/>
-        </xsl:if>
-    </xsl:template>
-    
-    <xsl:template match="ptr">
-        <add source="{@target}">
-            <xsl:apply-templates select="id(replace(@target,'^#',''))" mode="insert"/>
-        </add>
-    </xsl:template>
-    
-    <!-- insert mode doesn't copy the element being inserted, but all its contents -->
-    <xsl:template match="*" mode="insert">
-        <xsl:apply-templates/>
-    </xsl:template>
-    
-    <xsl:template match="addSpan" mode="insert">
-        <!-- The anchor $upTo is expected to share its parent with the addSpan:
-            this is a problem to come back to! -->
-        <xsl:variable name="upTo" select="id(replace(@spanTo,'^#',''))"/>
-        <xsl:apply-templates select="following-sibling::node()[. &lt;&lt; $upTo]"/>
-    </xsl:template>
-    
-    
-    
+    <!-- 
+        Iff $node is a node that is in the span some delSpan, key('delSpan-for-node', generate-id($node)) will return 
+        the corresponding delSpan element (otherwise it's the empty sequence)
+        
+        This approach, inspired by Wendell Piez, is much faster than any complex checking in the template pattern
+    -->
+    <xsl:key name="delSpan-for-node" match="delSpan">
+        <xsl:variable name="target" as="element()" select="id(substring(@spanTo, 2))"/>
+        <xsl:variable name="nodes" select="following::node() except ($target//node(), $target/following::node())"/>
+        <xsl:sequence select="for $node in $nodes return generate-id($node)"/>
+    </xsl:key>     
+    <xsl:template match="node()[key('delSpan-for-node', generate-id())]"/>    
+
+    <xsl:template match="addSpan | delSpan | modSpan"/>    
 </xsl:stylesheet>
