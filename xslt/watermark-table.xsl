@@ -17,6 +17,17 @@
 	<xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
 	<xsl:param name="docbase">http://beta.faustedition.net/documentViewer?faustUri=faust://xml</xsl:param>
 	
+	
+	<!-- 
+		
+		This stylesheet creates a table that links all watermark / countermark combinations to the list of witnesses that
+		contain paper with the watermark, the countermark, or both. 
+		
+		Input is a single XML document that wraps all the metadata xml files. We expect each files' root element to be
+		augmented by a faust-uri attribute. This is prepared by metadata-html.xpl
+	-->
+	
+	
 	<xsl:template match="/">
 		<xsl:call-template name="html-frame">
 			<xsl:with-param name="content">
@@ -46,6 +57,7 @@
 		</xsl:call-template>
 	</xsl:template>
 	
+	<!-- The actual watermark IDs in the data are to be normalized. watermark-labels.xml contaisn the mapping for that. -->
 	<xsl:function name="f:wm-label">
 		<xsl:param name="wm-id"/>
 		<xsl:variable name="id" select="normalize-space($wm-id)"/>		
@@ -60,56 +72,102 @@
 		</xsl:choose>
 	</xsl:function>
 	
+	<!-- watermark label -> something we could use as an id -->
 	<xsl:function name="f:toid">
 		<xsl:param name="wm-id"/>
 		<xsl:value-of select="replace(normalize-space($wm-id), '\W', '_')"/>
 	</xsl:function>
 	
+	
 	<xsl:template name="watermark-table-body">
-		<!-- <watermark watermark= countermark= faust-uri= sigil= /> -->
+		<!-- first, extract the relevant info from the input data. Creates a sequence of elements of this form:
+		     
+		     <watermark watermark= countermark= faust-uri= sigil= />
+		     
+		     One element for each watermarkID/countermarkID pair		     
+		-->
 		<xsl:variable name="watermarks"  as="element()*">
-			<xsl:for-each select="//*[ends-with(local-name(), 'atermarkID')][not(normalize-space(.) = ('', 'none', 'n.a.'))]">
+			<xsl:for-each select="//*[ends-with(local-name(), 'atermarkID')]">
 				<f:watermark>
 					<xsl:attribute name="watermark" select="normalize-space(f:wm-label(.)[1])"/>
 					<xsl:attribute name="countermark" select="normalize-space(f:wm-label((following-sibling::countermarkID|following-sibling::patchCountermarkID)[1]))"/>
 					<xsl:attribute name="faust-uri" select="ancestor::*/@faust-uri"/>					
 					<xsl:attribute name="sigil" select="ancestor-or-self::*[@faust-uri]/metadata/idno[@type='faustedition'][1]"/>									
 				</f:watermark>							
+			</xsl:for-each>
+			<!-- now the countermarks w/o watermarks: -->
+			<xsl:for-each select="//*[ends-with(local-name(), 'ountermarkID')][not(f:wm-label((preceding-sibling::watermarkID|preceding-sibling::patchWatermarkID)[1]) = '')]">
+				<f:watermark>
+					<xsl:attribute name="watermark"/>
+					<xsl:attribute name="countermark" select="normalize-space(f:wm-label(.)[1])"/>
+					<xsl:attribute name="faust-uri" select="ancestor::*/@faust-uri"/>					
+					<xsl:attribute name="sigil" select="ancestor-or-self::*[@faust-uri]/metadata/idno[@type='faustedition'][1]"/>									
+				</f:watermark>				
 			</xsl:for-each>			
 		</xsl:variable>
-				
-		<xsl:for-each-group select="$watermarks[not(@watermark = '' and @countermark = '')]" group-by="@watermark">
-			<xsl:sort select="lower-case(replace(current-grouping-key(), '\W+', ''))" stable="yes"/>
-			<tr id="{f:toid(current-grouping-key())}">
-				<xsl:for-each select="(current-group()[@countermark != ''], current-group())[1]">
-					<td><xsl:value-of select="@watermark[1]"/></td>
-					<td>
-						<xsl:value-of select="@countermark[. != ''][1]"/>
-						<xsl:if test="count(distinct-values(current-group()/@countermark)) > 1">
-							<xsl:value-of select="concat(' (⚠ ', string-join(distinct-values(current-group()/@countermark), '; '), ')')"/>
-							<xsl:message select="concat('WARNING: For watermark ', @watermark[1], ', there are multiple countermarks: ', string-join(distinct-values(current-group()/@countermark), ', '))"/>					
-						</xsl:if>
-					</td>
-					<td><!-- Watermark and Countermark -->
-						<xsl:sequence select="f:sigils(current-group()[normalize-space(@countermark) != ''])"/>					
-					</td>
-					<td><!-- Watermark only -->
-						<xsl:sequence select="f:sigils(current-group()[normalize-space(@countermark) = ''])"/>
-					</td>				
-					<td><!-- Countermark only -->					
-						<xsl:variable name="current-cm" select="@countermark[1]"/>
-						<xsl:if test="$current-cm != ''">
-							<xsl:sequence select="f:sigils($watermarks[@countermark = $current-cm and @watermark = ''])"/>						
-						</xsl:if>
-					</td>
-				</xsl:for-each>
-			</tr>			
+		
+		<!-- for all distinct watermark values ... -->
+		<xsl:for-each-group select="$watermarks[@watermark != '']" group-by="@watermark">
+			<xsl:sort select="current-grouping-key()"/>
+			<xsl:variable name="wm" select="current-grouping-key()"/>
+			
+			<!-- which non-empty countermark values occur with this watermark? -->
+			<xsl:variable name="countermarks" select="distinct-values(current-group()/@countermark[. != ''])"/>
+			<!-- build a table row for each combination ... -->
+			<xsl:for-each select="$countermarks">
+				<xsl:sort select="."/>
+				<xsl:sequence select="f:watermark-row($wm, ., $watermarks)"/>
+			</xsl:for-each>
+			<xsl:if test="count($countermarks) = 0"> <!-- wm never appears with a countermark -->
+				<xsl:sequence select="f:watermark-row($wm, '', $watermarks)"/>
+			</xsl:if>
 		</xsl:for-each-group>
 		
+		<!-- countermarks that never appear with a watermark in our corpus have not been dealt with yet: -->
+		<xsl:for-each-group select="$watermarks" group-by="@countermark">
+			<xsl:sort select="current-grouping-key()"/>
+			<xsl:variable name="cm" select="current-grouping-key()"/>
+			<xsl:if test="empty(current-group()[@watermark != ''])">
+				<!-- $cm is a countermark which never appears together with a watermark -->
+				<xsl:sequence select="f:watermark-row('', $cm, $watermarks)"/>
+			</xsl:if>
+		</xsl:for-each-group>
 	</xsl:template>
 	
+	<!-- a single row in the table. -->
+	<xsl:function name="f:watermark-row">
+		<xsl:param name="wm" as="xs:string"/> <!-- watermark, may be '' -->
+		<xsl:param name="cm" as="xs:string"/> <!-- countermark, may be '' -->
+		<xsl:param name="watermarks" as="element()*"/> <!-- The whole watermark list, we select from that -->
+		<tr id="{f:toid($wm)}">		
+			<td><xsl:value-of select="$wm"/></td>
+			<td>
+				<xsl:if test="$cm != ''">
+					<xsl:attribute name="id" select="f:toid($cm)"/>
+				</xsl:if>
+				<xsl:value-of select="$cm"/>
+			</td>				
+			<td><!-- Watermark and Countermark -->
+				<xsl:if test="$cm != '' and $wm != ''">
+					<xsl:sequence select="f:sigils($watermarks[@watermark=$wm][@countermark=$cm])"/>											
+				</xsl:if>
+			</td>
+			<td><!-- Watermark only -->
+				<xsl:if test="$wm != ''">
+					<xsl:sequence select="f:sigils($watermarks[@watermark=$wm][@countermark=''])"/>					
+				</xsl:if>
+			</td>				
+			<td><!-- Countermark only -->					
+				<xsl:if test="$cm != ''">
+					<xsl:sequence select="f:sigils($watermarks[@countermark = $cm and @watermark = ''])"/>						
+				</xsl:if>
+			</td>			
+		</tr>
+	</xsl:function>	
+	
+	<!-- a list of links to the witnesses -->
 	<xsl:function name="f:sigils">
-		<xsl:param name="watermarks" as="element()*"/>
+		<xsl:param name="watermarks" as="element()*"/> <!-- <watermark> elements as in $watermarks above -->
 		<xsl:variable name="watermarks-uniq" as="element()*">
 			<xsl:for-each-group select="$watermarks" group-by="@sigil">
 				<xsl:copy-of select="current-group()[1]"/>
