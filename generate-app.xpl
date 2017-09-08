@@ -30,7 +30,7 @@
 		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
 	
 	<cx:message log="info">
-		<p:with-option name="message" select="'Reading transcript files ...'"/>
+		<p:with-option name="message" select="'Generating inline apparatus ...'"/>
 	</cx:message>
 	
 	<!-- 
@@ -47,9 +47,9 @@
 		<p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
 
 
-		<cx:message>
+		<!--<cx:message>
 			<p:with-option name="message" select="concat('Generating inline apparatus for ', $sigil, ' (',  $transcriptFile, ')')"/>
-		</cx:message>
+		</cx:message>-->
 
 
 		<!-- Das Transkript wird geladen ... -->

@@ -21,6 +21,7 @@
     <p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
     <p:variable name="debug" select="//c:param[@name='debug']/@value"><p:pipe port="result" step="config"/></p:variable>
     <p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
+        
   
     <p:wrap-sequence wrapper="f:citations" name="wrapped-citations">
       <p:input port="source">
@@ -28,7 +29,8 @@
         <p:document href="additional-citations.xml"/>
       </p:input>
     </p:wrap-sequence>
-        
+    
+    <cx:message message="Creating bibliography ..."/>    
     
     <p:xslt>
       <p:input port="stylesheet"><p:document href="xslt/create-bibliography.xsl"/></p:input>

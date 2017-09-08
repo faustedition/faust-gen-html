@@ -23,6 +23,8 @@
 		<p:variable name="html" select="//c:param[@name='html']/@value"><p:pipe port="result" step="config"></p:pipe></p:variable>
 		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
 		
+		<cx:message message="Rendering emended versions to html ..."/>
+		
 	<!-- 
     Wir iterieren über die Transkripteliste, die vom Skript in collect-metadata.xpl generiert wird.
     Für die Variantengenerierung berücksichtigen wir dabei jedes dort verzeichnete Transkript.
@@ -37,9 +39,9 @@
 		<p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
 
 
-		<cx:message>
+		<!--<cx:message>
 			<p:with-option name="message" select="concat('Rendering emended version for ', $sigil, ' (',  $transcriptFile, ') to HTML ...')"/>
-		</cx:message>
+		</cx:message>-->
 
 
 		<!-- Das Transkript wird geladen ... -->

@@ -16,7 +16,8 @@
 	<xsl:param name="builddir-resolved" select="$builddir"/>	
 	<xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
 	<xsl:param name="docbase">http://beta.faustedition.net/documentViewer?faustUri=faust://xml</xsl:param>
-		
+	<xsl:param name="source-uri" select="document-uri(/)"/>
+	
 	
 	
 	<xsl:variable name="labels" xmlns="http://www.faustedition.net/ns">
@@ -161,7 +162,7 @@
 					<xsl:when test="$sigil">Sigle <xsl:value-of select="$sigil"/></xsl:when>
 					<xsl:otherwise>
 						Sigle <xsl:value-of select="@type"/>
-						<xsl:message select="concat('WARNING: idno label &quot;', @type, '&quot; not found.')"/>
+						<xsl:message select="concat('WARNING: idno label &quot;', @type, '&quot; not found.', ' (in ', $source-uri, ')')"/>
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:with-param>
@@ -312,7 +313,7 @@
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:value-of select="$id"/>
-						<xsl:message select="concat('WARNING: Watermark label not found for ', name(), ' ', $id)"/>
+						<xsl:message select="concat('WARNING: Watermark label not found for ', name(), ' ', $id, ' (in ', $source-uri, ')')"/>
 					</xsl:otherwise>					
 				</xsl:choose>
 			</xsl:with-param>
@@ -399,7 +400,7 @@
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:value-of select="$key"/>
-				<xsl:message select="concat('WARNING: Did not find &quot;', $key, '&quot; in ', $type)"/>
+				<xsl:message select="concat('WARNING: Did not find &quot;', $key, '&quot; in ', $type, ' (in ', $source-uri, ')')"/>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>

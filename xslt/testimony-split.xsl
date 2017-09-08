@@ -47,7 +47,7 @@
 		<!-- First find the testimony id(s). -->
 		<xsl:variable name="milestones" select="descendant::milestone[@unit='testimony'][count(tokenize(@xml:id, '_')) = 2]"/>
 		<xsl:if test="count($milestones) > 1">
-			<xsl:message select="concat('WARNING: div[', position(), '] in ', $basename, ' contains ', count($milestones), ' testimonies: ', string-join($milestones/@xml:id, ', '))"/>
+			<xsl:message select="concat('INFO: div[', position(), '] in ', $basename, ' contains ', count($milestones), ' testimonies: ', string-join($milestones/@xml:id, ', '))"/>
 			<!--<xsl:message><xsl:copy-of select="$milestones"/></xsl:message>-->
 		</xsl:if>
 		
@@ -74,9 +74,9 @@
 										<xsl:copy-of select="*"/>
 									</xsl:copy>
 								</xsl:for-each>
-								<xsl:message select="concat('WARNING: Using inferior testimony id ', $id)"/>
+								<xsl:message select="concat('WARNING: Using inferior testimony id ', $id, ' (in ', $basename, ')')"/>
 							</xsl:when>
-							<xsl:otherwise><xsl:message select="concat('ERROR: ', count($matching-md), ' metadata records match ', $id)"/></xsl:otherwise>
+							<xsl:otherwise><xsl:message select="concat('ERROR: ', count($matching-md), ' metadata records match ', $id, ' (in ', $basename, ')')"/></xsl:otherwise>
 						</xsl:choose>
 					</xsl:otherwise>
 				</xsl:choose>
@@ -110,13 +110,11 @@
 								<text>
 									<body>
 										<xsl:choose>
-											<xsl:when test="$unfree-text">
-												<xsl:message select="concat('Skipping unfree ', $id, ' from ', $source-uri)"/>
+											<xsl:when test="$unfree-text">												
 												<desc type="editorial" subtype="info">
-													Für die Veröffentlichung dieses Volltexts liegt noch keine Freigabe vor.
+													<xsl:text>Für die Veröffentlichung dieses Volltexts liegt noch keine Freigabe vor.</xsl:text>
 													<xsl:copy-of select="$milestone"/>
-												</desc>
-												
+												</desc>											
 											</xsl:when>
 											<xsl:otherwise>
 												<xsl:copy-of select="$context"/>												

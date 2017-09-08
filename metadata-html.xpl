@@ -47,9 +47,9 @@
         <p:with-option name="href" select="$filename"/>
       </p:load>
       
-      <cx:message log="info">        
+      <!--<cx:message log="info">        
         <p:with-option name="message" select="concat('Rendering metadata of ', //f:idno[@type='faustedition'], ' (', $filename, ') to HTML ...')"/>
-      </cx:message>
+      </cx:message>-->
 
       <p:xslt name="generate-html">
         <p:input port="stylesheet"><p:document href="xslt/faust-metadata.xsl"/></p:input>

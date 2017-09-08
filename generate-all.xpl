@@ -80,6 +80,7 @@
 		<f:generate-search name="generate-search"/>
 		<!-- TODO this by side-effect also collects the bargraph information  -->
 				
+		<cx:message message="Creating emended versions ..."/>
 		
 		<!-- ############ STEP 3: Create the emended version -->
 		<p:for-each name="apply-edits">
@@ -100,7 +101,7 @@
 					<p:identity/>
 				</p:when>
 				<p:otherwise>
-					<cx:message><p:with-option name="message" select="concat('Emending ', $sigil, ' (', $documentURI, ') ...')"/></cx:message>
+					<!--<cx:message><p:with-option name="message" select="concat('Emending ', $sigil, ' (', $documentURI, ') ...')"/></cx:message>-->
 					<f:apply-edits/>					
 				</p:otherwise>
 			</p:choose>

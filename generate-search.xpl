@@ -27,7 +27,7 @@
 		
 	
 	<cx:message log="info">
-		<p:with-option name="message" select="'Reading transcript files ...'"/>
+		<p:with-option name="message" select="'Adding generated markup to transcripts ...'"/>
 	</cx:message>
 	
 	<!-- 
@@ -45,9 +45,9 @@
 		<p:variable name="number" select="/f:textTranscript/@number"/>
 
 
-		<cx:message>
+		<!--<cx:message>
 			<p:with-option name="message" select="concat('Adding generated markup to ', $sigil, ' (', $transcriptFile, ')')"/>
-		</cx:message>
+		</cx:message>-->
 
 
 		<!-- Das Transkript wird geladen ... -->

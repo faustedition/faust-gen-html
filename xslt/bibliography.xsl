@@ -13,6 +13,7 @@
     <xsl:param name="idmap" select="doc($transcript-list)"/>
     <xsl:param name="docbase">http://beta.faustedition.net/documentViewer?faustUri=faust://xml</xsl:param>
     <xsl:param name="edition"></xsl:param>
+    <xsl:param name="source-uri" select="document-uri(/)"/>
     <xsl:variable name="bibliography" select="doc('bibliography.xml')"/>
     
     
@@ -28,7 +29,7 @@
         <xsl:param name="full" as="item()"/>
         <xsl:variable name="bib_" select="$bibliography//bib[@uri=$uri]"/>
         <xsl:variable name="bib" select="$bib_[1]"/>
-        <xsl:if test="count($bib_) != 1">
+        <xsl:if test="count($bib_) > 1">
             <xsl:message select="concat('WARNING: ', count($bib_), ' bibliography entries for ', $uri, ', ignoring all but the first')"/>
         </xsl:if>
         <xsl:variable name="id" select="replace($uri, 'faust://bibliography/', '')"/>
@@ -53,7 +54,7 @@
             </xsl:when>
             <xsl:otherwise>
                 <cite class="bib-notfound"><xsl:value-of select="$uri"/></cite>
-                <xsl:message select="concat('WARNING: Citation not found: ', $uri)"/>
+                <xsl:message select="concat('WARNING: Citation not found: ', $uri, ' (in ', $source-uri, ')')"/>
             </xsl:otherwise>
         </xsl:choose>		
     </xsl:function>
@@ -98,7 +99,7 @@
                     </xsl:when>					
                     <xsl:otherwise>
                         <mark class="md-unresolved-uri"><xsl:copy/></mark>
-                        <xsl:message select="concat('WARNING: Unresolved URI reference in text: ', .)"/>
+                        <xsl:message select="concat('WARNING: Unresolved URI reference in text: ', ., ' (in ', $source-uri, ')')"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:matching-substring>

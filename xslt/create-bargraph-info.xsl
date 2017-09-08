@@ -7,6 +7,8 @@
 	version="2.0">
 	
 	<xsl:import href="utils.xsl"/>
+	
+	<xsl:param name="source-uri" select="document-uri(/)"/>
 
 	<xsl:output method="xml"/>
 	
@@ -123,7 +125,7 @@
 							<xsl:sequence select="f:line(xs:integer(.), $page, $type, ())"/>
 						</xsl:when>
 						<xsl:otherwise>
-							<xsl:message>WARNING: Cannot parse relatedLines: <xsl:copy-of select="."/></xsl:message>
+							<xsl:message>WARNING: Cannot parse relatedLines: <xsl:copy-of select="."/> (in <xsl:value-of select="$source-uri"/>)</xsl:message>
 						</xsl:otherwise>						
 					</xsl:choose>
 				</xsl:non-matching-substring>
