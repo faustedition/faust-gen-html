@@ -1,35 +1,27 @@
 Faust Edition Text Generation
 =============================
 
-This project contains processing steps for generating the more reading-text, less diplomatic text representations of the [Faust edition](http://faustedition.de/). 
+This project contains processing steps for generating the more reading-text, less diplomatic text representations of the [Faust edition](http://faustedition.de/) and most other generated or converted data, except for the diplomatic text representations
 
 This is work in progress.
-
-
-Overview
---------
-
-The scripts can be used to generate an HTML representation for (theoretically) any of the Faust transcripts, although they are mainly tested with the transcripts selected for generating the reading texts for Faust I and II. For each text they run on, they generate two HTML representations, one that contains the whole text and one that is split by `<div>`s  (i.e., acts and scenes). These representations are optimized for easy reading: They have their genetic markup removed, `ſ` has been normalized to `s`, most of the original prints' typography is not reproduced, etc.
-
-For each of the chunks (lines, mostly) that have a canonical numbering, an apparatus generated from all of the witnesses in the edition is available by clicking the line. Available variants are indicated by a shaded background. The lines in the apparatus have been post-processed in the same way as the main texts.
-
 
 Usage
 -----
 
-To generate the HTML representation, you need:
+This is mainly used as a submodule to https://gihub.com/faustediion/faust-gen – the easiest way to run this is to checkout that module including all submodules and running `mvn -Pxproc` there.
+
+Alternatively, you need:
 
 * The XProc processor [XML Calabash](http://xmlcalabash.com/download/). The scripts have only been tested with version 1.0.25-96.
 * A local copy of the XML folder of the Faust edition.
-* Time :-)
 
-You should then clone this repository and edit the [configuration file, config.xml](config.xml) as you see fit (e.g., enter the path to your copy of the Faust data. You could also leave the config file as it is and pass in the relevant parameters as parameters to the XML processor.
+You should then clone this repository and edit the [configuration file, config.xml](config.xml) as you see fit (e.g., enter the path to your copy of the Faust data). You could also leave the config file as it is and pass in the relevant parameters as parameters to the XML processor.
 
 To generate all data, run the pipeline `generate-all`, e.g., using
 
     calabash generate-all.xpl
 
-This will run all processing steps and generate the HTML data in `target/lesetext_demo` by default.
+This will run all processing steps and generate the HTML data in subdirectories of `target` by default.
 
 
 Source Code Details
