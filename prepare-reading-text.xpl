@@ -3,7 +3,7 @@
 	xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:pxp="http://exproc.org/proposed/steps"
 	xmlns:pxf="http://exproc.org/proposed/steps/file" xmlns:f="http://www.faustedition.net/ns"
 	xmlns:ge="http://www.tei-c.org/ns/geneticEditions" xmlns:tei="http://www.tei-c.org/ns/1.0"
-	xmlns:l="http://xproc.org/library" name="main" version="1.0">
+	xmlns:l="http://xproc.org/library" name="main" version="2.0">
 
 	<p:input port="source">
 		<p:empty/>
@@ -29,14 +29,22 @@
 					<!--<base>https://faustedition.uni-wuerzburg.de/xml</base>-->
 					<base>http://dev.faustedition.net/xml</base>
 					<!--<base>file:/home/tv/git/faust-gen/data/xml</base>-->
+<!--					<base>file:/Users/bruening.FDH-FFM/faustedition/xml</base>-->
 
 					<!-- URL, unter der die transformierten Dateien
 					     gespeichert werden sollen:	-->
 					<!--<target>file:/home/tv/git/faust-gen/target/prepare-reading-text/</target>-->
-					<target>file:/Users/Gerrit/faustedition/xml/</target>
+					<target>file:/Users/bruening.FDH-FFM/faustedition/xml/</target>
 					<!-- Quell-Transkripte: -->
 					<transcript path="transcript/test/test.xml"/>
-					<transcript path="transcript/gsa/391098/391098.xml" output="2_H.xml"/>
+					<transcript path="transcript/gsa/391098/391098.xml" output="h.xml"/>
+					<transcript path="transcript/gsa/390643/390643.xml" output="h14.xml"/>
+					<transcript
+						path="transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml"
+						output="h0a.xml"/>
+					<transcript path="print/C(1)4_IIIB24.xml" output="c14.xml"/>
+					<transcript path="print/C(2a)4_IIIB28.xml" output="c2a4.xml"/>
+					<transcript path="print/C(3)4_IIIB27.xml" output="c34.xml"/>
 				</config>
 			</p:inline>
 		</p:input>
@@ -130,12 +138,23 @@
 
 							<xsl:include href="xslt/emend-core.xsl"/>
 
-							<xsl:template match="*[@ge:stage='#posthumous']" priority="5.0">
+							<xsl:template match="choice[abbr|expan]" priority="4.0" mode="emend">
+								<!-- Später, cf. #111 -->
 								<xsl:copy>
-									<xsl:apply-templates select="@*, node()"/>
+									<xsl:apply-templates select="@*, node()" mode="#current"/>
 								</xsl:copy>
 							</xsl:template>
 
+							<xsl:template match="*[@ge:stage='#posthumous']" priority="10.0" mode="#all">
+								<xsl:copy-of select="."/>									
+							</xsl:template>
+							
+							<xsl:template match="choice[sic]" mode="emend">
+								<xsl:copy>
+									<xsl:apply-templates select="@*, node()" mode="#current"/>
+								</xsl:copy>
+							</xsl:template>
+						
 						</xsl:stylesheet>
 					</p:inline>
 				</p:input>
@@ -206,14 +225,19 @@
 								</xsl:copy>
 							</xsl:template>
 
-							<xsl:template match="fw"/>
-
-							<xsl:template match="l/hi[@rend='big']">
+							<xsl:template
+								match="group | l/hi[@rend='big'] | seg[@f:questionedBy or @f:markedBy] | c | damage[not(descendant::supplied)] 
+								| s| seg[@xml:id] | profileDesc | creation | ge:transposeGrp">
 								<xsl:apply-templates/>
 							</xsl:template>
 							<xsl:template
-								match="creation | sourceDesc | profileDesc | encodingDesc | revisionDesc 
-								| pb[not(@break='no')] | hi/@status | */@xml:space"/>
+								match="sourceDesc/* | encodingDesc | revisionDesc 
+								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | fw | hi/@status | anchor |  
+								join[@type='antilabe'] | join[@result='sp'] | join[@type='former_unit'] | */@xml:space
+								| div[@type='stueck'] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage/@rend
+								| l/@rend | l/@xml:id | space[@type='typographical'] | hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
+								| sp/@who | note[@type='editorial'] | ge:transpose[not(@ge:stage='#posthumous')] | ge:stageNotes | 
+								handNotes | unclear/@cert | lg/@xml:id"/>
 
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">
@@ -221,7 +245,10 @@
 									<xsl:text> </xsl:text>
 								</xsl:if>
 							</xsl:template>
-							<!-- sample data for MC; to be moved at the end of procedures when reading text is finished -->
+							<xsl:strip-space
+								elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc ge:transpose"/>
+							<xsl:template match="ge:transpose/add/text()"/>
+							<!--<!-\- sample data for MC; to be moved at the end of procedures when reading text is finished -\->
 							<xsl:template match="div/@n"/>
 							<xsl:template match="orig | unclear">
 								<xsl:apply-templates/>
@@ -238,8 +265,9 @@
 									</note>
 									<xsl:text>Graus.</xsl:text>
 								</l>
-							</xsl:template>
+							</xsl:template>-->
 						</xsl:stylesheet>
+
 					</p:inline>
 				</p:input>
 				<p:input port="parameters">
@@ -247,13 +275,107 @@
 				</p:input>
 			</p:xslt>
 
+			<p:xslt>
+				<p:input port="stylesheet">
+					<p:inline>
+						<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+							xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
 
+							<!-- Identitätstransformation -->
+							<xsl:template match="node()|@*">
+								<xsl:copy>
+									<xsl:apply-templates select="@*, node()"/>
+								</xsl:copy>
+							</xsl:template>
+
+							<xsl:template match="text[not(normalize-space(.))] | front[not(normalize-space(.))]"/>
+							<xsl:template match="text[text]">
+								<xsl:apply-templates/>
+							</xsl:template>
+
+						</xsl:stylesheet>
+
+					</p:inline>
+				</p:input>
+				<p:input port="parameters">
+					<p:empty/>
+				</p:input>
+			</p:xslt>
+
+			<!-- Speichern der Einzeldatei -->
+			<p:identity name="final-single-text"/>
 			<p:store>
 				<p:with-option name="href" select="$output"/>
 			</p:store>
 
-
+			<!-- Kopie der fertigen Einzeldatei soll hinten aus der for-each-Schleife fallen: -->
+			<p:identity>
+				<p:input port="source">
+					<p:pipe port="result" step="final-single-text"/>
+				</p:input>
+			</p:identity>
 		</p:for-each>
+
+		<!-- alles zusammenkleben zum gemeinsamen Bearbeiten: -->
+		<p:wrap-sequence wrapper="tei:teiCorpus"/>
+
+		<p:xslt>
+			<p:input port="stylesheet">
+				<p:inline>
+					<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
+						xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+						xmlns="http://www.tei-c.org/ns/1.0">
+						<xsl:import href="xslt/utils.xsl"/>
+						<xsl:template match="/">
+							<f:expan-map xmlns="http://www.tei-c.org/ns/1.0">
+								<xsl:for-each-group
+									select="//abbr[not(preceding-sibling::expan | following-sibling::expan)]"
+									group-by="f:normalize-space(.)">
+									<xsl:variable name="abbr" select="current-grouping-key()"/>
+									<choice>
+										<xsl:comment select="string-join(current-group()/ancestor::*[f:hasvars(.)]/@n, ', ')"/>
+										<abbr>
+											<xsl:value-of select="$abbr"/>
+										</abbr>
+
+										<!-- find all expansions for the current abbr elsewhere in the text -->
+										<xsl:variable name="expansions">
+											<xsl:for-each-group
+												select="//expan[
+											preceding-sibling::abbr[f:normalize-space(.) = $abbr] |
+											following-sibling::abbr[f:normalize-space(.) = $abbr]
+										]"
+												group-by="f:normalize-space(.)">
+												<expan>
+												<xsl:value-of select="current-grouping-key()"/>
+												</expan>
+											</xsl:for-each-group>
+										</xsl:variable>
+
+										<xsl:choose>
+											<xsl:when test="$expansions//expan">
+												<xsl:copy-of select="$expansions"/>
+											</xsl:when>
+											<xsl:otherwise>
+												<xsl:comment>TODO</xsl:comment>
+												<expan>
+												<xsl:value-of select="$abbr"/>
+												</expan>
+											</xsl:otherwise>
+										</xsl:choose>
+									</choice>
+								</xsl:for-each-group>
+							</f:expan-map>
+						</xsl:template>
+					</xsl:stylesheet>
+				</p:inline>
+			</p:input>
+			<p:input port="parameters"/>
+		</p:xslt>
+
+		<p:store indent="true">
+			<p:with-option name="href" select="resolve-uri('expan-map.xml.in', $target)"/>
+		</p:store>
 
 	</p:group>
 

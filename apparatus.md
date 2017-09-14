@@ -2,7 +2,7 @@
 % Thorsten Vitt
 % Summer 2016
 
-The idea of the inline apparatus is to render the base level of the textual transcript (i.e. _before_ any editings), and then visualize the subsequent editings via inline notes in ⟨angled brackets⟩. This convention has been developed bei Siegfried Scheibe et al. for a printed edition, and we are slightly adopting this for a first visualization of the textual transcription.
+The idea of the inline apparatus is to render the base level of the textual transcript (i.e. _before_ any editings), and then visualize the subsequent editings via inline notes in 〈angled brackets〉. This convention has been developed bei Siegfried Scheibe et al. for a printed edition, and we are slightly adopting this for a first visualization of the textual transcription.
 
 ### Implementation Overview
 
@@ -12,13 +12,13 @@ The implementation reuses most of the code developed for the reading version of 
 
 Simple stuff should look like this:
 
-> Eine <span style="color:grey;">⟨</span>einfache <span style="color:grey"><i>erg</i>⟩</span> Ergänzung.
-> Eine <span style="border-bottom: 1px solid grey;">einfache</span><span style="color:gray">⟨<i>tilgt</i>⟩</span> Tilgung.
+> Eine <span style="color:grey;">〈</span>einfache <span style="color:grey"><i>erg</i>〉</span> Ergänzung.
+> Eine <span style="border-bottom: 1px solid grey;">einfache</span><span style="color:gray">〈<i>tilgt</i>〉</span> Tilgung.
 
 I.e.: 
 
 1. All characters that are not part of the text, but editorial signs and additions are grey.
-2. Apparatus aside from the text's base level is delimited by ⟨angled brackets⟩.
+2. Apparatus aside from the text's base level is delimited by 〈angled brackets〉.
 3. Editorial signs and notes apart from brackets are in _italics_.
 4. Spans of the base text that are affected by the editorial remark that follows is underlined in grey.
 
@@ -36,11 +36,11 @@ The part of the base level text that is affected by the current edit is enclosed
 
 #### Editorial notes and marks: `span.generated-text`, `.app`
 
-Everything that has never been in the original text is marked using `<span class="generated-text">`. This includes marks like the ⟨angled brackets⟩ as well as notes like _tilgt_. Editorial marks are additionally marked using the `app` class, this will render them in italics.
+Everything that has never been in the original text is marked using `<span class="generated-text">`. This includes marks like the 〈angled brackets〉 as well as notes like _tilgt_. Editorial marks are additionally marked using the `app` class, this will render them in italics.
 
-Note that this _does not_ mean that all text inside ⟨·⟩ is always gray – in stuff like
+Note that this _does not_ mean that all text inside 〈·〉 is always gray – in stuff like
 
-> Eine <span style="color:grey;">⟨</span>einfache <span style="color:grey"><i>erg</i>⟩</span> Ergänzung.
+> Eine <span style="color:grey;">〈</span>einfache <span style="color:grey"><i>erg</i>〉</span> Ergänzung.
 
 we have original text (although not from the base level) inside the brackets, and this is, like all original text, rendered in the normal text color.
 

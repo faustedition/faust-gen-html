@@ -1,4 +1,4 @@
-<watermarks xmlns="http://www.faustedition.net/ns">
+<?xml version="1.0" encoding="UTF-8"?><watermarks xmlns="http://www.faustedition.net/ns">
   <!-- 
 
   This table maps the content of {patch,}{water,counter}markID to labels that are actually displayed.
@@ -23,6 +23,7 @@
   <watermark id="&quot;I L A[BT]&quot;">I L ABT</watermark>
   <watermark id="&quot;JGH&quot; über &quot;N 3&quot;">JGH über N3</watermark>
   <watermark id="&quot;JGH&quot; über &quot;N3&quot;">JGH über N3</watermark>
+  <watermark id="'JGH' über 'N 3.'">JGH über N3</watermark>
   <watermark id="&quot;N 1&quot;">N1</watermark>
   <watermark id="&quot;N 1&quot; (wohl unter &quot;Stuetzerbach&quot;)">N1 (vermutlich unter Stuetzerbach)</watermark>
   <watermark id="&quot;N 3&quot;">N3</watermark>
@@ -35,7 +36,6 @@
   <watermark id="'H' über 'N 1'">H über N1</watermark>
   <watermark id="'H' über 'Stuetzerbach'">H über Stuetzerbach</watermark>
   <watermark id="'H', vermutlich über 'Stuetzerbach'">H (vermutlich über Stuetzerbach)</watermark>
-  <watermark id="'JGH' über 'N 3.'">JGH über N3.</watermark>
   <watermark id="(wohl achtzackiger) Stern">(vermutlich achtzackiger) Stern</watermark>
   <watermark id="12-strahliger Stern, 4 große, 8 kleine Strahlen, darunter N1 (kursiv)">zwölfzackiger Stern über N1</watermark>
   <watermark id="12zackiger Stern über &quot;N 1&quot;(?)">zwölfzackiger Stern über N1 (?)</watermark>
@@ -57,8 +57,7 @@
   <watermark id="D &amp; A Cowan">D &amp; A Cowan</watermark>
   <watermark id="David mit Harfe">David mit Harfe im Wappen</watermark>
   <watermark id="David mit Harfe in Wappen">David mit Harfe im Wappen</watermark>
-  <watermark id="David mit Harfe in Wappen, mit vierblättigen Ornamenten verziert, über dem Wappen siebenzackige Krone">David mit Harfe im Wappen, mit vierblättigen Ornamenten verziert, über
-					dem Wappen siebenzackige Krone</watermark>
+  
   <watermark id="David mit Harfe in Wappen, mit vierblättigen Ornamenten verziert, über dem Wappen siebenzackige Krone">David mit Harfe im Wappen, mit vierblättigen Ornamenten verziert, über
 					dem Wappen siebenzackige Krone</watermark>
   <watermark id="DetC_Blauw">D &amp; C BLAUW</watermark>
@@ -116,7 +115,7 @@
   <watermark id="IGH">IGH</watermark>
   <watermark id="IGH_ueber_N6">IGH über N6 mit Zierrand</watermark>
   <watermark id="ILAbt">I L ABT</watermark>
-  <watermark id="In der Bogenmitte c) Bruchstück eines gekrönten sächsischen Rautenkranzwappens zwischen Zweigen, angehängter achtstrahliger Stern mit Mittelkreis, belegt mit M">mit Kurhut gekröntes Rautenkranzwappen zwischen Zweigen, darunter achtstrahliger Stern mit Mittelkreis, Innenkreis belegt mit M (doppellinig)</watermark>
+  
   <watermark id="In der Bogenmitte c) Bruchstück eines gekrönten sächsischen Rautenkranzwappens zwischen Zweigen, angehängter achtstrahliger Stern mit Mittelkreis, belegt mit M">mit Kurhut gekröntes Rautenkranzwappen zwischen Zweigen, darunter achtstrahliger Stern mit Mittelkreis, Innenkreis belegt mit M (doppellinig)</watermark>
   <watermark id="J(G?)H N3">J(G?)H N3</watermark>
   <watermark id="JG Haendel 1807">JG Haendel 1807</watermark>
@@ -162,8 +161,7 @@
   <watermark id="Posthornschild_DetC_Blauw_Fe_Nr_16">Posthorn im gekrönten Schild mit angehängter Dreipassmarke, darunter D &amp; C BLAUW</watermark>
   <watermark id="Posthornschild_DetC_Blauw_symmetrische_Dreipassmarke">Posthorn im gekrönten Schild mit angehängter Dreipassmarke, darunter D &amp; C BLAUW</watermark>
   <watermark id="Rautenkranzoval">Bruchstück eines nicht erkennbaren Motivs im Zieroval</watermark>
-  <watermark id="Rautenkranzoval mit Pflanzenornament und Krone über achtzackigem Stern">Rautenkranzoval mit Pflanzenornament und Krone über
-								achtzackigem Stern</watermark>
+  
   <watermark id="Rautenkranzoval mit Pflanzenornament und Krone über achtzackigem Stern">Rautenkranzoval mit Pflanzenornament und Krone über
 							achtzackigem Stern</watermark>
   <watermark id="Rautenkranzoval mit Pflanzenornament über achtzackigem(?) Stern">Rautenkranzoval mit Pflanzenornament über achtzackigem (?)
@@ -194,10 +192,10 @@
   <watermark id="Sächsisches Rautenkranzwappen">Rautenkranzwappen</watermark>
   <watermark id="Sächsisches Rautenkranzwappen mit Krone">gekröntes Rautenkranzwappen</watermark>
   <watermark id="Sächsisches Rautenkranzwappen mit Krone über 'Stuetzerbach'">gekröntes Rautenkranzwappen über Stuetzerbach</watermark>
-  <watermark id="Sächsisches Rautenkranzwappen über &quot;Stuetzerbach&quot;">gekröntes Rautenkranzwappen über Stuetzerbach</watermark>
+  
   <watermark id="Sächsisches Rautenkranzwappen über &quot;Stuetzerbach&quot;">gekröntes Rautenkranzwappen über Stuetzerbach</watermark>
   <watermark id="Sächsisches Rautenkranzwappen über &quot;Stuetzerbach&quot;, balkenverziert">gekröntes Rautenkranzwappen über Stuetzerbach</watermark>
-  <watermark id="Sächsisches Rautenkranzwappen über &quot;Stuetzerbach&quot;, Balken ohne Verzierung">gekröntes Rautenkranzwappen über Stuetzerbach</watermark>
+  
   <watermark id="Sächsisches Rautenkranzwappen über &quot;Stuetzerbach&quot;, Balken ohne Verzierung">gekröntes Rautenkranzwappen über Stuetzerbach</watermark>
   <watermark id="Sächsisches Rautenkranzwappen über 'Stuetzerbach'">gekröntes Rautenkranzwappen über Stuetzerbach</watermark>
   <watermark id="Sächsisches Wappen mit Krone über &quot;Stuetzerbach&quot;">gekröntes Rautenkranzwappen über Stuetzerbach</watermark>
@@ -239,9 +237,9 @@
   <watermark id="eventuell Krone (über nicht sichtbarem Rautenkranzwappen">möglicherweise Krone (über nicht sichtbarem Rautenkranzwappen</watermark>
   <watermark id="eventuell Krone über Posthorn">möglicherweise Krone über Posthorn</watermark>
   <watermark id="eventuell Stern, acht- oder zehnzackig">möglicherweise Stern, acht- oder zehnzackig</watermark>
+  
   <watermark id="herzoglich-sächsisches Wappen mit Krone über &quot;Stuetzerbach&quot;">gekröntes Rautenkranzwappen über Stuetzerbach</watermark>
-  <watermark id="herzoglich-sächsisches Wappen mit Krone über &quot;Stuetzerbach&quot;">gekröntes Rautenkranzwappen über Stuetzerbach</watermark>
-  <watermark id="herzogliches-sächsisches Wappen mit Krone über &quot;Stuetzerbach&quot;">gekröntes Rautenkranzwappen über Stuetzerbach</watermark>
+  
   <watermark id="herzogliches-sächsisches Wappen mit Krone über &quot;Stuetzerbach&quot;">gekröntes Rautenkranzwappen über Stuetzerbach</watermark>
   <watermark id="n.s.">k.A.</watermark>
   <watermark id="nicht erkennbares Wappen in Rautenform">nicht erkennbares Wappen in Rautenform</watermark>

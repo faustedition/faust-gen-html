@@ -29,7 +29,7 @@
 
     <f:bib uri="faust://bibliography/beck2012">
         <f:citation>Beck 2012</f:citation>
-        <f:reference>Beck, Eva: Das erste Findbuch des Archivs - Kräuters „Repertorium über die Goethesche Repositur“. In: Manuskripte 5, hrsg. von der Freundesgesellschaft des Goethe- und Schiller-Archivs Weimar e.V., Weimar 2012, S. 47-62. </f:reference>
+        <f:reference>Beck, Eva: Das erste Findbuch des Archivs – Kräuters „Repertorium über die Goethesche Repositur“. In: Manuskripte 5, hrsg. von der Freundesgesellschaft des Goethe- und Schiller-Archivs Weimar e.V., Weimar 2012, S. 47–62. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/bell2003">
@@ -74,17 +74,17 @@
 
     <f:bib uri="faust://bibliography/bluhm1966">
         <f:citation>Bluhm 1966</f:citation>
-        <f:reference>Bluhm, Heinz: Die Entwicklung von Fausts erstem Monolog in der Szene „Mitternacht“ in Faust II, 5. In: Forschen und Bilden 2 (1966), S. 8-26. </f:reference>
+        <f:reference>Bluhm, Heinz: Die Entwicklung von Fausts erstem Monolog in der Szene „Mitternacht“ in Faust II, 5. In: Forschen und Bilden 2 (1966), S. 8–26. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/bluhm1972">
         <f:citation>Bluhm 1972</f:citation>
-        <f:reference>Bluhm, Heinz: Zur Entstehung und Interpretation der Szene ‚Großer Vorhof des Palasts‘ in der Fausthandschrift VH2. In: Traditions and Transitions. Studies in Honor of Harold Jantz, ed. by L. E. von Kurth, W. H. McClain, H. Homann. München 1972, S. 142-161.</f:reference>
+        <f:reference>Bluhm, Heinz: Zur Entstehung und Interpretation der Szene ‚Großer Vorhof des Palasts‘ in der Fausthandschrift VH2. In: Traditions and Transitions. Studies in Honor of Harold Jantz, ed. by L. E. von Kurth, W. H. McClain, H. Homann. München 1972, S. 142–161.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/blumenthal1953">
         <f:citation>Blumenthal 1953</f:citation>
-        <f:reference>Blumenthal, Lieselotte: Goethes Gedicht „Der Bräutigam“. In: faust://bibliography/gjb_69-70, 1953, S. 108ff.</f:reference>
+        <f:reference>Blumenthal, Lieselotte: Goethes Gedicht „Der Bräutigam“. In: faust://bibliography/gjb_69-70, S. 108–135.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/blumenthal1965">
@@ -99,7 +99,7 @@
 
     <f:bib uri="faust://bibliography/bohnenkamp1997">
         <f:citation>Bohnenkamp 1997</f:citation>
-        <f:reference>Bohnenkamp, Anne: Goethes Arbeit am ‚Faust‘. In: faust://bibliography/gjb_114, 1997, S. 199–217.</f:reference>
+        <f:reference>Bohnenkamp, Anne: Goethes Arbeit am ‚Faust‘. In: faust://bibliography/gjb_114, S. 199–217.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/boisseree1862">
@@ -149,7 +149,7 @@
 
     <f:bib uri="faust://bibliography/collin1920">
         <f:citation>Collin 1920</f:citation>
-        <f:reference>Collin, Josef: Zur Mummenschanz-Szene in Goethes Faust. In: Aufsätze zur Sprach- und Literaturgeschichte. Wilhelm Braune zum 20. 2. 1920, Dortmund 1920, S. 360-400.</f:reference>
+        <f:reference>Collin, Josef: Zur Mummenschanz-Szene in Goethes Faust. In: Aufsätze zur Sprach- und Literaturgeschichte. Wilhelm Braune zum 20. 2. 1920, Dortmund 1920, S. 360–400.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/dedner_et_al2005">
@@ -182,6 +182,11 @@
         <f:reference>Faust. Eine Tragödie von Goethe. Mit berichtigtem Texte, den verschiedenen Lesarten, erklärenden Anmerkungen und Einleitung, 2 Tle., [hrsg. von Heinrich Düntzer], Leipzig [1868].</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/duentzer1882a">
+        <f:citation>Düntzer 1882a </f:citation>
+        <f:reference>Goethes Werke, Bd. 12: Faust, hrsg. von H[einrich] Düntzer, Stuttgart: Union, Deutsche Verlagsanstalt [zugl.: Berlin: Spemann?], o.J. [1. Lfg. 1882] (= Deutsche National-Litteratur. Historisch kritische Ausgabe, hrsg. von Joseph Kürschner, Bd. 93).</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/duentzer1882">
         <f:citation>Düntzer 1882</f:citation>
         <f:reference>Goethes Werke, Bd. 12: Faust, hrsg. von H[einrich] Düntzer, Stuttgart: Union, Deutsche Verlagsanstalt [zugl.: Berlin: Spemann?], o.J. [1. Lfg. 1882] (= Deutsche National-Litteratur. Historisch kritische Ausgabe, hrsg. von Joseph Kürschner, Bd. 93).</f:reference>
@@ -189,12 +194,12 @@
 
     <f:bib uri="faust://bibliography/duentzer1891a">
         <f:citation>Düntzer 1891a</f:citation>
-        <f:reference>Düntzer, Heinrich: Die Entstehung der beiden ersten Akte des zweiten Teiles des ‚Faust‘ bis zur ‚klassischen Walpurgisnacht‘. In: ders.: Zur Goetheforschung. Neue Beiträge, Stuttgart u. a. 1891, S. 246-313.</f:reference>
+        <f:reference>Düntzer, Heinrich: Die Entstehung der beiden ersten Akte des zweiten Teiles des ‚Faust‘ bis zur ‚klassischen Walpurgisnacht‘. In: ders.: Zur Goetheforschung. Neue Beiträge, Stuttgart u. a. 1891, S. 246–313.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1891b">
         <f:citation>Düntzer 1891b</f:citation>
-        <f:reference>Düntzer, Heinrich: Die Entstehung der beiden letzten Akte des zweiten Teils des ‚Faust‘. In: ders.: Zur Goetheforschung. Neue Beiträge, Stuttgart u. a. 1891, S. 314-379.</f:reference>
+        <f:reference>Düntzer, Heinrich: Die Entstehung der beiden letzten Akte des zweiten Teils des ‚Faust‘. In: ders.: Zur Goetheforschung. Neue Beiträge, Stuttgart u. a. 1891, S. 314–379.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1891c">
@@ -254,7 +259,7 @@
 
     <f:bib uri="faust://bibliography/fischer-lamberg1957">
         <f:citation>Fischer-Lamberg 1957</f:citation>
-        <f:reference>Fischer-Lamberg, Hanna: Zur Datierung der ältesten Szenen des Urfaust. In: Zeitschrift für deutsche Philologie 76 (1957), S. 379-406.</f:reference>
+        <f:reference>Fischer-Lamberg, Hanna: Zur Datierung der ältesten Szenen des Urfaust. In: Zeitschrift für deutsche Philologie 76 (1957), S. 379–406.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/fischer-lamberg1959">
@@ -274,7 +279,7 @@
 
     <f:bib uri="faust://bibliography/fritze1964">
         <f:citation>Fritze 1964</f:citation>
-        <f:reference>Fritze, Marie-Elisabeth: Untersuchungen zur vierbändigen „geringeren“ Ausgabe von Goethes Werken bei Göschen 1787--1791 (S²), Berlin, Humboldt-Univ., Diss. 1964 (masch.).</f:reference>
+        <f:reference>Fritze, Marie-Elisabeth: Untersuchungen zur vierbändigen „geringeren“ Ausgabe von Goethes Werken bei Göschen 1787–1791 (S²), Berlin, Humboldt-Univ., Diss. 1964 (masch.).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gajek1966">
@@ -284,7 +289,7 @@
 
     <f:bib uri="faust://bibliography/gerber1900">
         <f:citation>Gerber 1900</f:citation>
-        <f:reference>Gerber, Adolf: Additional remarks on the evolution of the Classical Walpurgis-Night and the scene in Hades. In: Americana Germanica 3 (1899/1900), S. 212-218.</f:reference>
+        <f:reference>Gerber, Adolf: Additional remarks on the evolution of the Classical Walpurgis-Night and the scene in Hades. In: Americana Germanica 3 (1899/1900), S. 212–218.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/geigy-hagenbach1933">
@@ -309,7 +314,7 @@
 
     <f:bib uri="faust://bibliography/goeres1969">
         <f:citation>Göres 1969</f:citation>
-        <f:reference>Göres, Jörn, Goethe-Museum / Anton- und Katharina-Kippenberg-Stiftung: [Gabe für den Freundeskreis des Goethe-Museums, mit eeinem Faksimile der Hs. NW 1153/1969], Düsseldorf o.J. [1969].</f:reference>
+        <f:reference>Göres, Jörn, Goethe-Museum / Anton- und Katharina-Kippenberg-Stiftung: [Gabe für den Freundeskreis des Goethe-Museums, mit einem Faksimile der Hs. NW 1153/1969], Düsseldorf o.J. [1969].</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/goeres1970">
@@ -344,7 +349,7 @@
 
     <f:bib uri="faust://bibliography/grumach1954">
         <f:citation>Grumach 1954</f:citation>
-        <f:reference>Grumach, Ernst: Zum Urfaust. In: faust://bibliography/gjb_71), S. 135-142.</f:reference>
+        <f:reference>Grumach, Ernst: Zum Urfaust. In: faust://bibliography/gjb_71, S. 135–142.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/grumach1958">
@@ -379,12 +384,12 @@
 
     <f:bib uri="faust://bibliography/harnack1891">
         <f:citation>Harnack 1891</f:citation>
-        <f:reference>Harnack, Otto: Beiträge zur Chronologie der Faustparalipomena. In: 	Vierteljahrschrift für Litteraturgeschichte 4 (1891), S. 169-173.</f:reference>
+        <f:reference>Harnack, Otto: Beiträge zur Chronologie der Faustparalipomena. In: 	Vierteljahrschrift für Litteraturgeschichte 4 (1891), S. 169–173.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/harnack1899">
         <f:citation>Harnack 1899</f:citation>
-        <f:reference>Harnack, Otto: Ueber die Entstehung des ‚Faust‘. In: ders.: Essais und Studien zur Literaturgeschichte, Braunschweig 1899, S. 58-76.</f:reference>
+        <f:reference>Harnack, Otto: Ueber die Entstehung des ‚Faust‘. In: ders.: Essais und Studien zur Literaturgeschichte, Braunschweig 1899, S. 58–76.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hartung_und_hartung_112">
@@ -414,7 +419,7 @@
 
     <f:bib uri="faust://bibliography/hertz1924">
         <f:citation>Hertz 1924</f:citation>
-        <f:reference>Hertz, Gottfried Wilhelm: Entstehungsgeschichte und Gehalt von <strong>Faust II, Akt 2</strong>. In: Euphorion 25 (1924),S. 389-406, 609-629.</f:reference>
+        <f:reference>Hertz, Gottfried Wilhelm: Entstehungsgeschichte und Gehalt von <strong>Faust II, Akt 2</strong>. In: Euphorion 25 (1924),S. 389–406, 609–629.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hertz1931">
@@ -424,7 +429,7 @@
 
     <f:bib uri="faust://bibliography/hertz1932">
         <f:citation>Hertz 1932</f:citation>
-        <f:reference>Hertz, Gottfried Wilhelm: Zur Entstehungsgeschichte von <strong>Faust II Akt 5</strong>. (1825. 1826. 1830.) In: Euphorion 33 (1932), S. 244-277.</f:reference>
+        <f:reference>Hertz, Gottfried Wilhelm: Zur Entstehungsgeschichte von <strong>Faust II Akt 5</strong>. (1825. 1826. 1830.) In: Euphorion 33 (1932), S. 244–277.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hirzel1874">
@@ -434,7 +439,7 @@
 
     <f:bib uri="faust://bibliography/hohlfeld1955">
         <f:citation>Hohlfeld 1955</f:citation>
-        <f:reference>Hohlfeld, Alexander Rudolph: Die Entstehung des Faust-Manuskripts von 1825-26 (VH2). In: Euphorion 49 (1955), S. 283-304.</f:reference>
+        <f:reference>Hohlfeld, Alexander Rudolph: Die Entstehung des Faust-Manuskripts von 1825–26 (VH2). In: Euphorion 49 (1955), S. 283–304.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/houben1909">
@@ -474,7 +479,7 @@
 
     <f:bib uri="faust://bibliography/jensen1968">
         <f:citation>Jensen 1968</f:citation>
-        <f:reference>Jensen, Inge: Zum Chor der Gärtnerinnen in der Mummenschanz-Szene von Faust II. In: Studien zur Goethezeit. Festschrift für Liselotte Blumenthal, hrsg. von Helmut Holtzhauer und Bernhard Zeller unter Mitarb. von Hans Henning, Weimar 1968, S. 165-177.</f:reference>
+        <f:reference>Jensen, Inge: Zum Chor der Gärtnerinnen in der Mummenschanz-Szene von Faust II. In: Studien zur Goethezeit. Festschrift für Liselotte Blumenthal, hrsg. von Helmut Holtzhauer und Bernhard Zeller unter Mitarb. von Hans Henning, Weimar 1968, S. 165–177.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/jokisch1922">
@@ -504,7 +509,7 @@
 
     <f:bib uri="faust://bibliography/knopf2004">
         <f:citation>Knopf 2004</f:citation>
-        <f:reference>Knopf, Sabine: „Habent sua fata autographa“. Über die Schicksale der Leipziger Sammlungen Rudolf Brockhaus und Anton Kippenberg. In: Librarium (2004), S. 149-175.</f:reference>
+        <f:reference>Knopf, Sabine: „Habent sua fata autographa“. Über die Schicksale der Leipziger Sammlungen Rudolf Brockhaus und Anton Kippenberg. In: Librarium (2004), S. 149–175.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/knopf2006">
@@ -519,7 +524,7 @@
 
     <f:bib uri="faust://bibliography/koestler2008">
         <f:citation>Köstler 2008</f:citation>
-        <f:reference>Köstler, Eberhard: Eduard Fischer von Röslerstamm d.J. und seine Mittheilungen für Autographensammler. In: Parallelwelten des Buches, Wiesbaden 2008, S. 323-371.</f:reference>
+        <f:reference>Köstler, Eberhard: Eduard Fischer von Röslerstamm d.J. und seine Mittheilungen für Autographensammler. In: Parallelwelten des Buches, Wiesbaden 2008, S. 323–371.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/koetschau1901">
@@ -529,7 +534,7 @@
 
     <f:bib uri="faust://bibliography/krogmann1932">
         <f:citation>Krogmann 1932</f:citation>
-        <f:reference>Krogmann, Willy: Zur zeitlichen Bestimmung der Faustkonzeption. In: Neuphilologische Mitteilungen 35 (1932), S. 121-130.</f:reference>
+        <f:reference>Krogmann, Willy: Zur zeitlichen Bestimmung der Faustkonzeption. In: Neuphilologische Mitteilungen 35 (1932), S. 121–130.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/krogmann1932a">
@@ -552,11 +557,6 @@
         <f:reference>Katalog einer schönen Autographensammlung. Zum grössten Theile aus dem Besitze eines wohlbekannten Sammlers,  Leo Liepmannssohn, Antiquariat, Berlin. 7. Mai 1896.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/loeper1881">
-        <f:citation>Loeper 1881</f:citation>
-        <f:reference>Loeper, Gustav von: [Rez.] faust://bibliography/schroeer1881. In: Anzeiger fuer deutsches Alterthum und deutsche Literatur, Jg. 7, 4. September 1881, S. 452–456.</f:reference>
-    </f:bib>
-
     <f:bib uri="faust://bibliography/loeper1869">
         <f:citation>Loeper 1869</f:citation>
         <f:reference>Zwei Inedita von Goethe, [hrsg. von Gustav von Loeper], Berlin 1869. </f:reference>
@@ -568,8 +568,18 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1879">
-        <f:citation>Loeper 1879</f:citation>
+        <f:citation>Loeper 1879 <strong>[muss zu Loeper 1879a geändert wwerden]</strong></f:citation>
         <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G. von Loeper, 2. Bearbeitung, 2 Tle., Berlin 1879. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/loeper1881b">
+        <f:citation>Loeper 1881b </f:citation>
+        <f:reference>Loeper, Gustav von: [Rez.] faust://bibliography/schroeer1881. In: Anzeiger fuer deutsches Alterthum und deutsche Literatur, Jg. 7, 4. September 1881, S. 452–456.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/loeper1881">
+        <f:citation>Loeper 1881</f:citation>
+        <f:reference>Loeper, Gustav von: [Rez.] faust://bibliography/schroeer1881. In: Anzeiger fuer deutsches Alterthum und deutsche Literatur, Jg. 7, 4. September 1881, S. 452–456.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1883">
@@ -579,7 +589,7 @@
 
     <f:bib uri="faust://bibliography/lohmeyer1927">
         <f:citation>Lohmeyer 1927</f:citation>
-        <f:reference>Lohmeyer, Karl: Das Meer und die Wolken in den beiden letzten Akten des Faust. In: faust://bibliography/gjb_47, S. 106-133.</f:reference>
+        <f:reference>Lohmeyer, Karl: Das Meer und die Wolken in den beiden letzten Akten des Faust. In: faust://bibliography/gjb_47, S. 106–133.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/lotto2000">
@@ -595,11 +605,6 @@
     <f:bib uri="faust://bibliography/maisak2007">
         <f:citation>Maisak 2007</f:citation>
         <f:reference>Maisak, Petra: [Katalog] Goethes ‚Faust‘. Verwandlungen eines „Hexenmeisters“ (Frankfurt am Main, 28. August bis 11. November 2007), mit einer Einführung von Anne Bohnenkamp, Frankfurt am Main 2007.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/manning1896">
-        <f:citation>Manning 1896</f:citation>
-        <f:reference>Manning, Eugene W.: Zur Chronologie des ersten Paralipomenon zu Goethes Faust. (Mit Facsimile.) In: faust://bibliography/gjb_17, S. 209–214.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/matuschek2005">
@@ -659,7 +664,7 @@
 
     <f:bib uri="faust://bibliography/mmommsen1953">
         <f:citation>Mommsen 1953</f:citation>
-        <f:reference>Mommsen, Momme: Zum Faustparalipomenon 10. In: faust://bibliography/gjb_69-70, S. 342-343. </f:reference>
+        <f:reference>Mommsen, Momme: Zum Faustparalipomenon 10. In: faust://bibliography/gjb_69-70, S. 342–343. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/moering2008">
@@ -669,12 +674,12 @@
 
     <f:bib uri="faust://bibliography/morris1899">
         <f:citation>Morris 1899</f:citation>
-        <f:reference>Morris, Max: Die Walpurgisnacht. In: Euphorion 6 (1899), S. 638-716.</f:reference>
+        <f:reference>Morris, Max: Die Walpurgisnacht. In: Euphorion 6 (1899), S. 638–716.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1900">
         <f:citation>Morris 1900</f:citation>
-        <f:reference>Morris, Max: Ein Faustschema. In: Euphorion 7 (1900), S. 713-716.</f:reference>
+        <f:reference>Morris, Max: Ein Faustschema. In: Euphorion 7 (1900), S. 713–716.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1902_1">
@@ -689,7 +694,7 @@
 
     <f:bib uri="faust://bibliography/morris1902a">
         <f:citation>Morris 1902a</f:citation>
-        <f:reference>Morris, Max: Faustquellen. In: faust://bibliography/morris1902_1, S. 97-113.</f:reference>
+        <f:reference>Morris, Max: Faustquellen. In: faust://bibliography/morris1902_1, S. 97–113.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1902b">
@@ -699,7 +704,7 @@
 
     <f:bib uri="faust://bibliography/morris1902c">
         <f:citation>Morris 1902c</f:citation>
-        <f:reference>Morris, Max: Die Walpurgisnacht. In: faust://bibliography/morris1902_1, S. 54-96.</f:reference>
+        <f:reference>Morris, Max: Die Walpurgisnacht. In: faust://bibliography/morris1902_1, S. 54–96.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1902d">
@@ -709,12 +714,12 @@
 
     <f:bib uri="faust://bibliography/morris1902e">
         <f:citation>Morris 1902e</f:citation>
-        <f:reference>Morris, Max: Gemälde und Bildwerke im Faust. In: faust://bibliography/morris1902_1, S. 114-152.</f:reference>
+        <f:reference>Morris, Max: Gemälde und Bildwerke im Faust. In: faust://bibliography/morris1902_1, S. 114–152.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1902f">
         <f:citation>Morris 1902f</f:citation>
-        <f:reference>Morris, Max: Zur Textkritik. In: faust://bibliography/morris1902_2, S. 263-266.</f:reference>
+        <f:reference>Morris, Max: Zur Textkritik. In: faust://bibliography/morris1902_2, S. 263–266.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1904">
@@ -724,12 +729,12 @@
 
     <f:bib uri="faust://bibliography/morris1910">
         <f:citation>Morris 1910</f:citation>
-        <f:reference>Morris, Max: Der Abschluß der Gedichte in der Weimarer Goethe-Ausgabe. In: Euphorion 17 (1910), S. 386-394.</f:reference>
+        <f:reference>Morris, Max: Der Abschluß der Gedichte in der Weimarer Goethe-Ausgabe. In: Euphorion 17 (1910), S. 386–394.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/niejahr1894">
         <f:citation>Niejahr 1894</f:citation>
-        <f:reference>Niejahr, Johannes: Goethes ‚Helena‘. In: Euphorion 1 (1894), S. 81-109.</f:reference>
+        <f:reference>Niejahr, Johannes: Goethes ‚Helena‘. In: Euphorion 1 (1894), S. 81–109.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/nollendorfs1967">
@@ -749,7 +754,7 @@
 
     <f:bib uri="faust://bibliography/petsch1926">
         <f:citation>Petsch 1926</f:citation>
-        <f:reference>Petsch, Robert: Zur Chronologie des Faust. In: Euphorion 27 (1926), S. 207-222.</f:reference>
+        <f:reference>Petsch, Robert: Zur Chronologie des Faust. In: Euphorion 27 (1926), S. 207–222.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/pniower1891">
@@ -759,7 +764,7 @@
 
     <f:bib uri="faust://bibliography/pniower1892">
         <f:citation>Pniower 1892</f:citation>
-        <f:reference>Pniower, Otto: Einige Faustparalipomena Goethes. In: Vierteljahrschrift für Litteraturgeschichte 5 (1892), S. 408-430.</f:reference>
+        <f:reference>Pniower, Otto: Einige Faustparalipomena Goethes. In: Vierteljahrschrift für Litteraturgeschichte 5 (1892), S. 408–430.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/pniower1899">
@@ -769,7 +774,7 @@
 
     <f:bib uri="faust://bibliography/pniower1924">
         <f:citation>Pniower 1924</f:citation>
-        <f:reference>Pniower, Otto: Das erste Paralipomenon. (Miszellen zum ‚Faust‘). In: faust://bibliography/gjb_44, S. 143-146.</f:reference>
+        <f:reference>Pniower, Otto: Das erste Paralipomenon. (Miszellen zum ‚Faust‘). In: faust://bibliography/gjb_44, S. 143–146.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/sarauw1917">
@@ -809,22 +814,22 @@
 
     <f:bib uri="faust://bibliography/scheibe1972">
         <f:citation>Scheibe 1972</f:citation>
-        <f:reference>Scheibe, Siegfried: Noch einmal zum bezifferten Faustschema von 1797. In: faust://bibliography/gjb_89, S. 235-255.</f:reference>
+        <f:reference>Scheibe, Siegfried: Noch einmal zum bezifferten Faustschema von 1797. In: faust://bibliography/gjb_89, S. 235–255.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schillemeit1985">
         <f:citation>Schillemeit 1985</f:citation>
-        <f:reference>Schillemeit, Jost: Faust und der tragische Trimeter. Zur Vorgeschichte der Klassischen Walpurgisnacht. In: Jahrbuch des Freien Deutschen Hochstifts (1985), S. 33-51.</f:reference>
+        <f:reference>Schillemeit, Jost: Faust und der tragische Trimeter. Zur Vorgeschichte der Klassischen Walpurgisnacht. In: Jahrbuch des Freien Deutschen Hochstifts (1985), S. 33–51.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schillemeit1986">
         <f:citation>Schillemeit 1986</f:citation>
-        <f:reference>Schillemeit, Jost: Das ‚Vorspiel auf dem Theater‘ zu Goethes ‚Faust‘. Entstehungszusammenhänge und Folgerungen für sein Verständnis. In: Euphorion 80 (1986), S. 149-166.</f:reference>
+        <f:reference>Schillemeit, Jost: Das ‚Vorspiel auf dem Theater‘ zu Goethes ‚Faust‘. Entstehungszusammenhänge und Folgerungen für sein Verständnis. In: Euphorion 80 (1986), S. 149–166.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schillemeit1987">
         <f:citation>Schillemeit 1987</f:citation>
-        <f:reference>Schillemeit, Jost: Faustparalipomenon 164a. Aus der Arbeit Goethes an der ‚Helena‘-Dichtung. In: Textkritik und Interpretation, Festschrift für Karl Konrad Polheim zum 60. Geburtstag, hrsg. von Heimo Reinitzer, Bonn u.a. 1987, S. 229-252.</f:reference>
+        <f:reference>Schillemeit, Jost: Faustparalipomenon 164a. Aus der Arbeit Goethes an der ‚Helena‘-Dichtung. In: Textkritik und Interpretation, Festschrift für Karl Konrad Polheim zum 60. Geburtstag, hrsg. von Heimo Reinitzer, Bonn u.a. 1987, S. 229–252.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schillemeit1988">
@@ -934,7 +939,7 @@
 
     <f:bib uri="faust://bibliography/suphan1881">
         <f:citation>Suphan 1881</f:citation>
-        <f:reference>Suphan, Bernhard: Ältere Gestalten Goethe’scher Gedichte. In: faust://bibliography/gjb_2, S. 103ff.</f:reference>
+        <f:reference>Suphan, Bernhard: Ältere Gestalten Goethe’scher Gedichte. In: faust://bibliography/gjb_2, S. 103–145.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/suphan1907">
@@ -959,7 +964,7 @@
 
     <f:bib uri="faust://bibliography/wahl1939">
         <f:citation>Wahl 1939</f:citation>
-        <f:reference>Wahl, Hans: Faust-Handschrift gesucht!. In: faust://bibliography/gjb_59, S. 112.</f:reference>
+        <f:reference>Wahl, Hans: Faust-Handschrift gesucht! In: faust://bibliography/gjb_59, S. 112.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wahle1927">
@@ -1037,6 +1042,11 @@
         <f:reference>WA, Abt. I, Bd. 6, Weimar 1888.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_I_9">
+        <f:citation>WA I 9</f:citation>
+        <f:reference>WA, Abt. I, Bd. 9, Weimar 1891</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_I_10">
         <f:citation>WA I 10</f:citation>
         <f:reference>WA, Abt. I, Bd. 10, Weimar 1889.</f:reference>
@@ -1062,9 +1072,39 @@
         <f:reference>WA, Abt. I, Bd. 15,2, Weimar 1888.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_I_16">
+        <f:citation>WA I 16</f:citation>
+        <f:reference>WA, Abt. I, Bd. 16, Weimar 1894</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_I_21">
         <f:citation>WA I 21</f:citation>
         <f:reference>WA, Abt. I, Bd. 21, Weimar 1898.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_26">
+        <f:citation>WA I 26</f:citation>
+        <f:reference>WA, Abt. I, Bd. 26, Weimar 1889</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_27">
+        <f:citation>WA I 27</f:citation>
+        <f:reference>WA, Abt. I, Bd. 27, Weimar 1889</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_28">
+        <f:citation>WA I 28</f:citation>
+        <f:reference>WA, Abt. I, Bd. 28, Weimar 1890</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_29">
+        <f:citation>WA I 29</f:citation>
+        <f:reference>WA, Abt. I, Bd. 29, Weimar 1891</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_30">
+        <f:citation>WA I 30</f:citation>
+        <f:reference>WA, Abt. I, Bd. 30, Weimar 1903</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_I_32">
@@ -1072,9 +1112,19 @@
         <f:reference>WA, Abt. I, Bd. 32, Weimar 1906.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_I_34_1">
+        <f:citation>WA I 34,1</f:citation>
+        <f:reference>WA, Abt. I, Bd. 34,1, Weimar 1902</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_I_34_2">
         <f:citation>WA I 34,2</f:citation>
         <f:reference>WA, Abt. I, Bd. 34,2, Weimar 1904.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_35">
+        <f:citation>WA I 35</f:citation>
+        <f:reference>WA, Abt. I, Bd. 35, Weimar 1892</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_I_36">
@@ -1137,9 +1187,49 @@
         <f:reference>WA, Abt. II, Bd. 13, Weimar 1904.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_III_1">
+        <f:citation>WA III 1</f:citation>
+        <f:reference>WA, Abt. III, Bd. 1, Weimar 1887.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_2">
+        <f:citation>WA III 2</f:citation>
+        <f:reference>WA, Abt. III, Bd. 2, Weimar 1888.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_3">
+        <f:citation>WA III 3</f:citation>
+        <f:reference>WA, Abt. III, Bd. 3, Weimar 1889.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_III_4">
         <f:citation>WA III 4</f:citation>
         <f:reference>WA, Abt. III, Bd. 4, Weimar 1891.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_5">
+        <f:citation>WA III 5</f:citation>
+        <f:reference>WA, Abt. III, Bd. 5, Weimar 1893.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_6">
+        <f:citation>WA III 6</f:citation>
+        <f:reference>WA, Abt. III, Bd. 6, Weimar 1894.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_7">
+        <f:citation>WA III 7</f:citation>
+        <f:reference>WA, Abt. III, Bd. 7, Weimar 1895.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_8">
+        <f:citation>WA III 8</f:citation>
+        <f:reference>WA, Abt. III, Bd. 8, Weimar 1896.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_III_9">
+        <f:citation>WA III 9</f:citation>
+        <f:reference>WA, Abt. III, Bd. 9, Weimar 1897.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_III_10">
@@ -1157,9 +1247,74 @@
         <f:reference>WA, Abt. III, Bd. 12, Weimar 1901.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_III_13">
+        <f:citation>WA III 13</f:citation>
+        <f:reference>WA, Abt. III, Bd. 13, Weimar 1903.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_1">
+        <f:citation>WA IV 1</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 1, Weimar 1887.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_2">
+        <f:citation>WA IV 2</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 2, Weimar 1887.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_4">
+        <f:citation>WA IV 4</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 4, Weimar 1889.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_5">
+        <f:citation>WA IV 5</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 5, Weimar 1889.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_7">
+        <f:citation>WA IV 7</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 7, Weimar 1891.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_8">
+        <f:citation>WA IV 8</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 8, Weimar 1890.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_9">
+        <f:citation>WA IV 9</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 9, Weimar 1891.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_10">
+        <f:citation>WA IV 10</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 10, Weimar 1892.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_12">
+        <f:citation>WA IV 12</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 12, Weimar 1893.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_13">
+        <f:citation>WA IV 13</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 13, Weimar 1893.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_14">
+        <f:citation>WA IV 14</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 14, Weimar 1893.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_IV_15">
         <f:citation>WA IV 15</f:citation>
         <f:reference>WA, Abt. IV, Bd. 15, Weimar 1894.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_16">
+        <f:citation>WA IV 16</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 16, Weimar 1894.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_IV_17">
@@ -1167,13 +1322,123 @@
         <f:reference>WA, Abt. IV, Bd. 17, Weimar 1895.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_IV_18">
+        <f:citation>WA IV 18</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 18, Weimar 1895.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_19">
+        <f:citation>WA IV 19</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 19, Weimar 1895.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_20">
+        <f:citation>WA IV 20</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 20, Weimar 1896.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_21">
+        <f:citation>WA IV 21</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 21, Weimar 1896.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_22">
+        <f:citation>WA IV 22</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 22, Weimar 1901.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_23">
+        <f:citation>WA IV 23</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 23, Weimar 1900.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_24">
+        <f:citation>WA IV 24</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 24, Weimar 1901.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_25">
+        <f:citation>WA IV 25</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 25, Weimar 1901.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_26">
+        <f:citation>WA IV 26</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 26, Weimar 1902.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_27">
+        <f:citation>WA IV 27</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 27, Weimar 1903.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_28">
+        <f:citation>WA IV 28</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 28, Weimar 1903.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_29">
+        <f:citation>WA IV 29</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 29, Weimar 1904.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_30">
+        <f:citation>WA IV 30</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 30, Weimar 1905.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_31">
+        <f:citation>WA IV 31</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 31, Weimar 1905.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_32">
+        <f:citation>WA IV 32</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 32, Weimar 1906.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_33">
+        <f:citation>WA IV 33</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 33, Weimar 1905.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_34">
+        <f:citation>WA IV 34</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 34, Weimar 1905.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_35">
+        <f:citation>WA IV 35</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 35, Weimar 1906.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_36">
+        <f:citation>WA IV 36</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 36, Weimar 1907.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_37">
+        <f:citation>WA IV 37</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 37, Weimar 1906.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_38">
+        <f:citation>WA IV 38</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 38, Weimar 1906.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_IV_39">
         <f:citation>WA IV 39</f:citation>
         <f:reference>WA, Abt. IV, Bd. 39, Weimar 1907.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_IV_40">
+        <f:citation>WA IV 40</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 40, Weimar 1907.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_IV_41">
-        <f:citation>WA I 41</f:citation>
+        <f:citation>WA IV 41</f:citation>
         <f:reference>WA, Abt. IV, Bd. 41, Weimar 1907.</f:reference>
     </f:bib>
 
@@ -1185,6 +1450,16 @@
     <f:bib uri="faust://bibliography/wa_IV_43">
         <f:citation>WA IV 43</f:citation>
         <f:reference>WA, Abt. IV, Bd. 43, Weimar 1908.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_44">
+        <f:citation>WA IV 44</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 44, Weimar 1909.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_45">
+        <f:citation>WA IV 45</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 45, Weimar 1908.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_IV_46">
@@ -1202,9 +1477,24 @@
         <f:reference>WA, Abt. IV, Bd. 48, Weimar 1909.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_IV_49">
+        <f:citation>WA IV 49</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 49, Weimar 1909.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_50">
+        <f:citation>WA IV 50</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 50, Weimar 1912.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_IV_51">
         <f:citation>WA IV 51</f:citation>
         <f:reference>WA, Abt. IV, Bd. 51, München 1990.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_1">
+        <f:citation>GJb 1</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Erster Band, Frankfurt am Main 1880.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_2">
@@ -1212,9 +1502,24 @@
         <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Zweiter Band, Frankfurt am Main 1881.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gjb_3">
+        <f:citation>GJb 3</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Dritter Band, Frankfurt am Main 1882.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/gjb_4">
         <f:citation>GJb 4</f:citation>
         <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Vierter Band, Frankfurt am Main 1883.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_5">
+        <f:citation>GJb 5</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Fünfter Band, Frankfurt am Main 1884.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_6">
+        <f:citation>GJb 6</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Sechster Band, Frankfurt am Main 1885.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_7">
@@ -1222,14 +1527,49 @@
         <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Siebenter Band. Mit dem ersten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1886.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gjb_8">
+        <f:citation>GJb 8</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Achter Band. Mit dem zweiten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1887.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/gjb_9">
         <f:citation>GJb 9</f:citation>
         <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Neunter Band. Mit dem dritten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1888.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gjb_10">
+        <f:citation>GJb 10</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Zehnter Band. Mit dem vierten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1889.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/gjb_11">
         <f:citation>GJb 11</f:citation>
-        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Elfter Band, Frankfurt am Main 1890.</f:reference>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Elfter Band. Mit dem fünften Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1890.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_12">
+        <f:citation>GJb 12</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Zwölfter Band. Mit dem sechsten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1891.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_13">
+        <f:citation>GJb 13</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Dreizehnter Band. Mit dem siebenten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1892.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_14">
+        <f:citation>GJb 14</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Vierzehnter Band. Mit dem achten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1893.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_15">
+        <f:citation>GJb 15</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Fünfzehnter Band. Mit dem neunten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1894.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_16">
+        <f:citation>GJb 16</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Sechzehnter Band. Mit dem zehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1895.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_17">
@@ -1237,9 +1577,39 @@
         <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Siebzehnter Band. Mit dem elften Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1896.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gjb_18">
+        <f:citation>GJb 18</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Achtzehnter BandMit dem zwölften Jahresbericht der Goethe-Gesellschaft, , Frankfurt am Main 1897.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_19">
+        <f:citation>GJb 19</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Neunzehnter BandMit dem dreihzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1898</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_20">
+        <f:citation>Gjb 20</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Zwanzigster Band. Mit dem vierzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1899</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_21">
+        <f:citation>GJb 21</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Einundzwanzigster Band. Mit dem fünfzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1900.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/gjb_22">
         <f:citation>GJb 22</f:citation>
         <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Zweiundzwanzigster Band. Mit dem sechzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1901.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_23">
+        <f:citation>GJb 23</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Dreiundzwanzigster Band. Mit dem siebzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1902.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_24">
+        <f:citation>GJb 24</f:citation>
+        <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Vierundzwanzigster Band. Mit dem achtzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1903.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_25">
@@ -1250,6 +1620,16 @@
     <f:bib uri="faust://bibliography/gjb_47">
         <f:citation>GJb 47</f:citation>
         <f:reference>Jahrbuch der Goethe-Gesellschaft, im Auftrage des Vorstandes hrsg. von Max Hecker, Dreizehnter Band, Weimar 1927.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_50">
+        <f:citation>GJb 50</f:citation>
+        <f:reference>Jahrbuch der Goethe-Gesellschaft, im Auftrage des Vorstandes hrsg. von Max Hecker, Sechzehnter Band, Weimar 1930.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_59">
+        <f:citation>GJb 59</f:citation>
+        <f:reference>Goethe. Viermonatsschrift der Goethe-Gesellschaft. Neue Folge des Jahrbuchs, hrsg. von Hans Wahl, Vierter Band, Weimar 1939.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_69-70">
@@ -1295,6 +1675,51 @@
     <f:bib uri="faust://bibliography/gjb_125">
         <f:citation>GJb 125</f:citation>
         <f:reference>Goethe-Jahrbuch, Bd. 125, hrsg. von Werner Frick, Jochen Golz, Albert Meier und Edith Zehm, Weimar 2008.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_I_1">
+        <f:citation>Gräf I 1</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. I: Die Epischen Dichtungen, Bd. 1, Frankfurt am Main 1901 (Bd. 1 d. Ges.-R.).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_I_2">
+        <f:citation>Gräf I 2</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. I: Die Epischen Dichtungen, Bd. 2, Frankfurt am Main 1902 (Bd. 2 d. Ges.-R.).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_II_1">
+        <f:citation>Gräf II 1</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. II: Die Dramatischen Dichtungen, Bd. 1, Frankfurt am Main 1903 (Bd. 3 d. Ges.-R.).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_II_2">
+        <f:citation>Gräf II 2</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. II: Die Dramatischen Dichtungen, Bd. 2, Frankfurt am Main 1904 (Bd. 4 der Gesamtreihe).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_II_3">
+        <f:citation>Gräf II 3</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. II: Die Dramatischen Dichtungen, Bd. 3, Frankfurt am Main 1906 (Bd. 5 der Gesamtreihe).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_II_4">
+        <f:citation>Gräf II 4</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. II: Die Dramatischen Dichtungen, Bd. 4, Frankfurt am Main 1908 (Bd. 6 der Gesamtreihe).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_III_1">
+        <f:citation>Gräf III 1</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. III: Die Lyrischen Dichtungen, Bd. 2, Frankfurt am Main 1912 (Bd. 7 der Gesamtreihe).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_III_2.1">
+        <f:citation>Gräf III 2.1</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. III: Die Lyrischen Dichtungen, Bd. 2, Hälfte 1, Frankfurt am Main 1914 (Bd. 8 der Gesamtreihe).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/graef1901-1914_III_2.2">
+        <f:citation>Gräf III 2.2</f:citation>
+        <f:reference>Gräf, Hans Gerhard: Goethe über seine Dichtungen. Versuch einer Sammlung aller Äußerungen des Dichters über seine poetischen Werke, Tl. III: Die Lyrischen Dichtungen, Bd. 2, Hälfte 2, Frankfurt am Main 1914 (Bd. 9 der Gesamtreihe).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/alt_14">
@@ -1507,9 +1932,9 @@
         <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer (1. Aufl.), 2 Bde., Heilbronn 1881.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/schroeer1886">
-        <f:citation>Schröer 1886</f:citation>
-        <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer (2. Aufl.), 2 Bde., Heilbronn 1886.</f:reference>
+    <f:bib uri="faust://bibliography/schroeer1886_1">
+        <f:citation>Schröer 1886, Bd. 1</f:citation>
+        <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer (2. Aufl.), Bd. 1, Heilbronn 1886.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schroeer1914">
@@ -1537,9 +1962,24 @@
         <f:reference>Goethes Faust, hrsg. von Georg Witkowski, 9. Aufl., Bd. 1, Leiden 1936.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/quz_1">
+        <f:citation>QuZ 1</f:citation>
+        <f:reference>Quellen und Zeugnisse zur Druckgeschichte von Goethes Werken, Bd. 1: Gesamtausgaben bis 1822, bearbeitet von Waltraud Hagen unter Mitarbeit von Edith Nahler, Berlin 1966 (=AA Erg.-Bd. 2.1).</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/quz_2">
         <f:citation>QuZ 2</f:citation>
         <f:reference>Quellen und Zeugnisse zur Druckgeschichte von Goethes Werken, Bd. 2: Die Ausgabe letzter Hand, bearbeitet von Waltraud Hagen, Berlin 1982.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/quz_3">
+        <f:citation>QuZ 3</f:citation>
+        <f:reference>Quellen und Zeugnisse zur Druckgeschichte von Goethes Werken, Bd. 3: Die nachgelassenen Werke und die Quartausgabe, bearbeitet von Edith Nahler und Horst Nahler, Berlin 1986.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/quz_4">
+        <f:citation>QuZ 4</f:citation>
+        <f:reference>Quellen und Zeugnisse zur Druckgeschichte von Goethes Werken, Bd. 4: Die Einzeldrucke, bearbeitet von Inge Jensen, Berlin 1984.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/anonym1779">
@@ -1549,12 +1989,12 @@
 
     <f:bib uri="faust://bibliography/baldensperger1932">
         <f:citation>Baldensperger 1932</f:citation>
-        <f:reference>Baldensperger, Fernand: Fragments inédits des lettres de J.J. Ampère à Albert Stapfer sur sa visite à Goethe. In: Revue de littérature comparée 12 (1932), S. 208-216.</f:reference>
+        <f:reference>Baldensperger, Fernand: Fragments inédits des lettres de J.J. Ampère à Albert Stapfer sur sa visite à Goethe. In: Revue de littérature comparée 12 (1932), S. 208–216.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/berend1959">
         <f:citation>Berend 1959</f:citation>
-        <f:reference>Jean Pauls sämtliche Werke. Historisch-kritische Ausgabe. Abt. III: Briefe. Bd. 3: 1797 - 1800. Hrsg. von Eduard Berend. Weimar 1959.</f:reference>
+        <f:reference>Jean Pauls sämtliche Werke. Historisch-kritische Ausgabe. Abt. III: Briefe. Bd. 3: 1797–1800. Hrsg. von Eduard Berend. Weimar 1959.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/bergmann1938">
@@ -1564,7 +2004,7 @@
 
     <f:bib uri="faust://bibliography/bertuch1786">
         <f:citation>Bertuch 1786</f:citation>
-        <f:reference>ohne Verfasser [Friedrich Justin Bertuch]: [Avertissement über die Ausgaben von Goethes Schriften]. In: Journal von und für Deutschland. Hrsg. von Siegmund Frh. von Bibra, 3 (1786), 6. Stück, S. 575-578.</f:reference>
+        <f:reference>ohne Verfasser [Friedrich Justin Bertuch]: [Avertissement über die Ausgaben von Goethes Schriften]. In: Journal von und für Deutschland. Hrsg. von Siegmund Frh. von Bibra, 3 (1786), 6. Stück, S. 575–578.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/biedermann1865_2">
@@ -1577,14 +2017,64 @@
         <f:reference>Goethes Briefwechsel mit Friedrich Rochlitz. Hrsg. von Gustav Woldemar Freiherr von Biedermann. Leipzig 1887.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/biedermann1889-1896_1">
+        <f:citation>Biedermann 1889–1896, Bd. 1</f:citation>
+        <f:reference>Goethes Gespräche. Hrsg. von Woldemar Freiherr von Biedermann. Bd. 1. Leipzig, 1889.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1889-1896_2">
+        <f:citation>Biedermann 1889–1896, Bd. 2</f:citation>
+        <f:reference>Goethes Gespräche. Hrsg. von Woldemar Freiherr von Biedermann. Gespräche Bd. 2. Leipzig, 1889.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1889-1896_3">
+        <f:citation>Biedermann 1889–1896, Bd. 3</f:citation>
+        <f:reference>Goethes Gespräche. Hrsg. von Woldemar Freiherr von Biedermann. Bd. 3. Leipzig, 1889.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1889-1896_4">
+        <f:citation>Biedermann 1889–1896, Bd. 4</f:citation>
+        <f:reference>Goethes Gespräche. Hrsg. von Woldemar Freiherr von Biedermann. Bd. 4. Leipzig, 1889.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1889-1896_5">
+        <f:citation>Biedermann 1889–1896, Bd. 5</f:citation>
+        <f:reference>Goethes Gespräche. Hrsg. von Woldemar Freiherr von Biedermann. Bd. 5. Leipzig, 1890.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1889-1896_6">
+        <f:citation>Biedermann 1889–1896, Bd. 6</f:citation>
+        <f:reference>Goethes Gespräche. Hrsg. von Woldemar Freiherr von Biedermann. Bd. 6. Leipzig, 1890.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1889-1896_7">
+        <f:citation>Biedermann 1889–1896, Bd. 7</f:citation>
+        <f:reference>Goethes Gespräche. Hrsg. von Woldemar Freiherr von Biedermann. Bd. 7. Leipzig, 1890.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1889-1896_8">
+        <f:citation>Biedermann 1889–1896, Bd. 8</f:citation>
+        <f:reference>Goethes Gespräche. Hrsg. von Woldemar Freiherr von Biedermann. Bd. 8. Leipzig, 1890.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1889-1896_9">
+        <f:citation>Biedermann 1889–1896, Bd. 9</f:citation>
+        <f:reference>Goethes Gespräche. Hrsg. von Woldemar Freiherr von Biedermann. Bd. 9. Leipzig, 1891.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1889-1896_10">
+        <f:citation>Biedermann 1889–1896, Bd. 10</f:citation>
+        <f:reference>Goethes Gespräche. Hrsg. von Woldemar Freiherr von Biedermann. Bd. 10. Leipzig, 1896.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/bode1921-1923_3">
-        <f:citation>Bode 1921-1923, Bd. 3</f:citation>
-        <f:reference>Goethe in vertraulichen Briefen seiner Zeitgenossen. Hrsg. von Wilhelm Bode. 3 Bde., Bd. 3. Berlin 1921-1923.</f:reference>
+        <f:citation>Bode 1921–1923, Bd. 3</f:citation>
+        <f:reference>Goethe in vertraulichen Briefen seiner Zeitgenossen. Hrsg. von Wilhelm Bode. 3 Bde., Bd. 3. Berlin 1921–1923.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/boas">
         <f:citation>Boas 1846, Bd. 2</f:citation>
-        <f:reference>Eduard Boas: Nachträge zu Goethe's sämmtlichen Werken. 2. Theil. Leipzig 1846, S. 181-184. [[file:Boas, E., Varianten zu Faust, 1846.pdf]]</f:reference>
+        <f:reference>Eduard Boas: Nachträge zu Goethe's sämmtlichen Werken. 2. Theil. Leipzig 1846, S. 181–184. [[file:Boas, E., Varianten zu Faust, 1846.pdf]]</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/bodemann1878">
@@ -1607,9 +2097,14 @@
         <f:reference>Sulpiz Boisserée. [Hrsg. von Mathilde Boisserée.] 2 Bde., Bd. 2: Briefwechsel mit Goethe. Stuttgart: Cotta Verlag 1862. </f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/boxberger1880">
+        <f:citation>Boxberger 1880</f:citation>
+        <f:reference>Boxberger, Robert, mit Beiträgen von H. Grimm, H. Huefferer, L. Urlichs: Mittheilungen von Zeitgenossen über Goethe. In:  GJb 1 (1880), S. 314–359. </f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/brandl1899">
         <f:citation>Brandl 1899</f:citation>
-        <f:reference>Brandl, A[lois]: Goethes Verhältniß zu Byron. In:  GJb. 20 (1899), S. 3-36.</f:reference>
+        <f:reference>Brandl, A[lois]: Goethes Verhältniß zu Byron. In:  GJb. 20 (1899), S. 3–36.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/braaeuning-oktavio1911">
@@ -1624,7 +2119,7 @@
 
     <f:bib uri="faust://bibliography/bratranek1876">
         <f:citation>Bratranek 1876</f:citation>
-        <f:reference>Neue Mittheilungen aus Johann Wolfgang von Goethe's handschriftlichem Nachlasse. 3: Goethe's Briefwechsel mit den Gebrüdern von Humboldt (1795-1832). Im Auftrage der Goethe'schen Familie hrsg. von Frantisek Tomás Bratranek. Leipzig 1876.</f:reference>
+        <f:reference>Neue Mittheilungen aus Johann Wolfgang von Goethe's handschriftlichem Nachlasse. 3: Goethe's Briefwechsel mit den Gebrüdern von Humboldt (1795–1832). Im Auftrage der Goethe'schen Familie hrsg. von Frantisek Tomás Bratranek. Leipzig 1876.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/brockhaus1872_1">
@@ -1639,7 +2134,7 @@
 
     <f:bib uri="faust://bibliography/burkhardt1899">
         <f:citation>Burkhardt 1899</f:citation>
-        <f:reference>Carl August Hugo Burkhardt: Zur Kentniß der Goethe-Handschriften. II. Chronologisches Verzeihnis der Dictat-Arbeiten und und Reinschriften. Nach den Quellen bearbeitet [...], mit Faksimiles Goethescher Hilfsarbeiter. Wien 1899. (= Beilage zum XIV. Bande der „Chronik des Wiener Goethe-Vereins“, Nr. 7-8.) <strong>TODO Autopsie nötig</strong></f:reference>
+        <f:reference>Carl August Hugo Burkhardt: Zur Kentniß der Goethe-Handschriften. II. Chronologisches Verzeihnis der Dictat-Arbeiten und und Reinschriften. Nach den Quellen bearbeitet [...], mit Faksimiles Goethescher Hilfsarbeiter. Wien 1899. (= Beilage zum XIV. Bande der „Chronik des Wiener Goethe-Vereins“, Nr. 7–8.) <strong>TODO Autopsie nötig</strong></f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/carus1843">
@@ -1659,7 +2154,7 @@
 
     <f:bib uri="faust://bibliography/creizenach1837">
         <f:citation>Creizenach 1837</f:citation>
-        <f:reference>[Creizenach, Theodor:] Zwei Episteln aus Goethe's erster Schriftstellerperiode. In: Zeitschrift für die elegante Welt 1837, Nr. 97 vom 22. Mai, S. 385-386.</f:reference>
+        <f:reference>[Creizenach, Theodor:] Zwei Episteln aus Goethe's erster Schriftstellerperiode. In: Zeitschrift für die elegante Welt 1837, Nr. 97 vom 22. Mai, S. 385–386.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/creizenach1878">
@@ -1669,17 +2164,17 @@
 
     <f:bib uri="faust://bibliography/creizenach1882">
         <f:citation>Creizenach 1882</f:citation>
-        <f:reference>Wilhelm Creizenach: Zu dem poetischen Briefwechsel zwischen Goethe und Gotter. In: GJb 3 (1882), S. 323-324.</f:reference>
+        <f:reference>Wilhelm Creizenach: Zu dem poetischen Briefwechsel zwischen Goethe und Gotter. In: faust://bibliography/gjb_3, S. 323–324.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/crueger1884">
         <f:citation>Crueger 1884</f:citation>
-        <f:reference>Johannes Crueger: Bodmer über Goethe. 1773-82. (Aus dem ungedruckten Nachlass Bodmers auf der Zürcher Stadtbibliothek). In: GJb 5 (1884), S. 177-216.</f:reference>
+        <f:reference>Crueger, Johannes: Bodmer über Goethe. 1773–82. (Aus dem ungedruckten Nachlass Bodmers auf der Zürcher Stadtbibliothek). In: faust://bibliography/gjb_5, S. 177–216.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/deetjen1928">
         <f:citation>Deetjen 1928</f:citation>
-        <f:reference>Werner Deetjen: Zum 'Urfaust'. Ein Brief Knebels an Friedrich Hildebrand von Einsiedel, in: GJb 48 (1928), S. 80–81.</f:reference>
+        <f:reference>Werner Deetjen: Zum 'Urfaust'. Ein Brief Knebels an Friedrich Hildebrand von Einsiedel. In: faust://bibliography/gjb_48, S. 80–81.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/dembowski1889">
@@ -1694,17 +2189,12 @@
 
     <f:bib uri="faust://bibliography/djg2_4">
         <f:citation>DjG2, Bd. 4</f:citation>
-        <f:reference>Der junge Goethe. Neue Ausgabe in 6 Bänden, Bd. 4. Besorgt von Max Morris. Leipzig 1909-1912.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/dnl_111">
-        <f:citation>DNL 111</f:citation>
-        <f:reference>Goethe, Werke. 36 Theile (in 41 Bdn.), Stuttgart o. J. (1882-1897). (= Deutsche National-Litteratur. Historisch-kritische Ausgabe. Hrsg. von Joseph Kürschner, Bde. 82-117,II.) Tl. 30: Aufsätze über bildende Kunst und Theater, hrsg. von A. G. Meyer und G. Witkowski, 1895 (DNL Bd. 111). [Gräf, Nr. 1953]</f:reference>
+        <f:reference>Der junge Goethe. Neue Ausgabe in 6 Bänden, Bd. 4. Besorgt von Max Morris. Leipzig 1909–1912.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/dobbek1963-2104_4">
-        <f:citation>Dobbek 1963-2104, Bd. 4</f:citation>
-        <f:reference>Herder, Johann Gottfried: Briefe. Gesamtausgabe, Band 4: Oktober 1776 - August 1783. Hrsg. von Wilhelm Dobbek und Günter Arnold. Weimar 1977.</f:reference>
+        <f:citation>Dobbek 1963–2104, Bd. 4</f:citation>
+        <f:reference>Herder, Johann Gottfried: Briefe. Gesamtausgabe, Band 4: Oktober 1776 – August 1783. Hrsg. von Wilhelm Dobbek und Günter Arnold. Weimar 1977.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/dorow1845">
@@ -1724,7 +2214,7 @@
 
     <f:bib uri="faust://bibliography/duentzer1858">
         <f:citation>Düntzer 1858</f:citation>
-        <f:reference>Aus Karl Ludwig von Knebels Briefwechsel mit seiner Schwester Henriette (1774-1813). Ein Beitrag zur deutschen Hof- und Litteraturgeschichte. Hrsg. von Heinrich Düntzer. Jena 1858.</f:reference>
+        <f:reference>Aus Karl Ludwig von Knebels Briefwechsel mit seiner Schwester Henriette (1774–1813). Ein Beitrag zur deutschen Hof- und Litteraturgeschichte. Hrsg. von Heinrich Düntzer. Jena 1858.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1874_2">
@@ -1732,14 +2222,34 @@
         <f:reference>Heinrich Düntzer: Charlotte von Stein: Charlotte von Stein, Goethes Freundin. Bd. 2. Stuttgart 1874.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/duentzer1882b">
+        <f:citation>Düntzer 1882b </f:citation>
+        <f:reference>Düntzer, Heinrich: Erläuterungen zu den Deutschen Klassikern. 1. Abt., Bd. 12: Faust. Erster Theil. Leipzig 1882.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/duentzer1882">
-        <f:citation>Düntzer 1882</f:citation>
+        <f:citation>Düntzer 1882 </f:citation>
         <f:reference>Düntzer, Heinrich: Erläuterungen zu den Deutschen Klassikern. 1. Abt., Bd. 12: Faust. Erster Theil. Leipzig 1882.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1883">
         <f:citation>Düntzer 1883</f:citation>
         <f:reference>Briefe des Herzogs Karl August von Sachsen-Weimar-Eisenach an Knebel und Herder. Hrsg. von Heinrich Düntzer. Leipzig 1883.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/duentzer1885_1">
+        <f:citation>Duentzer 1885, Bd. 1 </f:citation>
+        <f:reference>Eckermann, Johann Peter: Gespräche mit Goethe in den letzten Jahren seines Lebens. Sechste Auflage. Mit einleitender Abhandlung und Anmerkungen von Heinrich Düntzer. Bd. 1. Leipzig 1885.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/duentzer1885_2">
+        <f:citation>Duentzer 1885, Bd. 2 </f:citation>
+        <f:reference>Eckermann, Johann Peter: Gespräche mit Goethe in den letzten Jahren seines Lebens. Sechste Auflage. Mit einleitender Abhandlung und Anmerkungen von Heinrich Düntzer. Bd. 2. Leipzig 1885.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/duentzer1885_3">
+        <f:citation>Duentzer 1885, Bd. 3 </f:citation>
+        <f:reference>Eckermann, Johann Peter: Gespräche mit Goethe in den letzten Jahren seines Lebens. Sechste Auflage. Mit einleitender Abhandlung und Anmerkungen von Heinrich Düntzer. Bd. 3. Leipzig 1885.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1891">
@@ -1749,7 +2259,7 @@
 
     <f:bib uri="faust://bibliography/eberwein1853">
         <f:citation>Eberwein 1853</f:citation>
-        <f:reference>Eberwein, Karl: Die Musik zum Goetheschen Faust. In: Europa. Chronik der gebildeten Welt 1853, Nr. 43, 26. Mai, S. 337-<strong>###</strong>. </f:reference>
+        <f:reference>Eberwein, Karl: Die Musik zum Goetheschen Faust. In: Europa. Chronik der gebildeten Welt 1853, Nr. 43, 26. Mai, S. 337–341. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/falk1832">
@@ -1763,8 +2273,8 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/fehling-schiller1925-1934_1">
-        <f:citation>Fehling-Schiller 1925-1934, Bd. 1</f:citation>
-        <f:reference>Briefe an Cotta. Band 1: Das Zeitalter Goethes und Napoleons 1794-1815. Hrsg. von Maria Fehling. Stuttgart – Berlin 1925. </f:reference>
+        <f:citation>Fehling-Schiller 1925–1934, Bd. 1</f:citation>
+        <f:reference>Briefe an Cotta. Band 1: Das Zeitalter Goethes und Napoleons 1794–1815. Hrsg. von Maria Fehling. Stuttgart – Berlin 1925. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/firmenich-richartz1916">
@@ -1774,7 +2284,7 @@
 
     <f:bib uri="faust://bibliography/fischer1880">
         <f:citation>Fischer 1880</f:citation>
-        <f:reference>Briefwechsel zwischen Goethe und Göttling in den Jahren 1824-1831. Hrsg. und mit einem Vorwort begleitet von Kuno Fischer. München 1880.</f:reference>
+        <f:reference>Briefwechsel zwischen Goethe und Göttling in den Jahren 1824–1831. Hrsg. und mit einem Vorwort begleitet von Kuno Fischer. München 1880.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/fischer1902">
@@ -1782,64 +2292,79 @@
         <f:reference>Fischer, Kuno: Goethes Faust. 4., duchgesehen und vermehrte Auflage. Bd. 2: Entstehung, Idee und Composition des goetheschen Faust. Heidelberg [1902].</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/fluegel1903">
+        <f:citation>Flügel 1903</f:citation>
+        <f:reference>Flügel, Ewald (Hrsg.): Carlyle und Eckermann. In: faust://bibliography/gjb_24, S. 4–39.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/funck1901">
         <f:citation>Funck 1901</f:citation>
         <f:reference>Goethe und Lavater. Briefe und Tagebücher. Hrsg. von Heinrich Funck, Weimar 1901. (= Schriften der Goethe-Gesellschaft; 16).</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gb2II">
+        <f:citation>GB 2II</f:citation>
+        <f:reference>Goethe, Johann Wolfgang: Briefe. Historisch-kritische Ausgabe. Band 2 II. Anfang 1773 – Ende Oktober 1775. Kommentar. Herausgegeben von Georg Kurscheidt und Elke Richter. Berlin 2009.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1881a">
+        <f:citation>Geiger 1881a</f:citation>
+        <f:reference>Geiger, Ludwig, mit Beiträgen von W. Arndt, K. Bartsch, R. Köhler, G. v. Loeper, F. Muncker: Einundvierzig Briefe von Goethe nebst 2 Briefen der Frau Rath und 1 Brief von K. Ph. Moritz. In: faust://bibliography/gjb_2, S. 237–315.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1881b">
+        <f:citation>Geiger 1881b</f:citation>
+        <f:reference>Geiger, Ludwig: Aus Bertuchs Nachlaß. In: faust://bibliography/gjb_2, S. 374–414.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/geiger1882">
-        <f:citation>Geiger 1882</f:citation>
-        <f:reference>Geiger, Ludwig: Aus Bertuchs Nachlaß. In: GJb 2 (1882), S. 374–414.</f:reference>
+        <f:citation>Geiger 1882 </f:citation>
+        <f:reference>Geiger, Ludwig: Aus Bertuchs Nachlaß. In: faust://bibliography/gjb_2, S. 374–414.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1889">
+        <f:citation>Geiger 1889</f:citation>
+        <f:reference>Geiger, Ludwig, mit Beiträgen von O. Brahm, Th. Distel, O. Hoffmann, B. Litzmann, J. Minor, B. Seuffert, G. Weisstein: Mittheilungen von Zeitgenossen über Goethe, 1774–1835. In: faust://bibliography/gjb_10, S. 139–166.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1890a">
+        <f:citation>Geiger 1890a</f:citation>
+        <f:reference>Geiger, Ludwig, mit Beiträgen von C.A.H. Burkhardt, J. Elias, H. Frommann, L. Hirzel, F. Lamey, B. Litzmann, H. Rollett, M. Schubart, G. Weisstein: Neunundvierzig Briefe von Goethe, neun an Goethe, ein Brief von Goethes Eltern und ein Brief von Frau Rath. In: faust://bibliography/gjb_11, S. 71–120.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1890">
+        <f:citation>Geiger 1890 </f:citation>
+        <f:reference>Geiger, Ludwig, mit Beiträgen von Erich Schmidt und Stephan Wätzoldt: Bibliographie. In: faust://bibliography/gjb_11, S. 207–279.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1897">
+        <f:citation>Geiger 1897</f:citation>
+        <f:reference>Geiger, Ludwig, mit Beiträgen von L. Bobé und M. Grunwald: Mittheilungen von Zeitgenossen über Goethe 1772–1832. In: faust://bibliography/gjb_18, S. 113–160.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1900">
+        <f:citation>Geiger 1900</f:citation>
+        <f:reference>Geiger, Ludwig: Ein Gespräch mit Goethe. In: faust://bibliography/gjb_21, S. 284–287.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/geiger1901">
+        <f:citation>Geiger 1901</f:citation>
+        <f:reference>Geiger, Ludwig: Fünf Briefe Goethes 1790–1819. In: faust://bibliography/gjb_22, S. 74–84.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gleichen-russwurm1930">
         <f:citation>Gleichen-Rußwurm 1930</f:citation>
-        <f:reference>Gleichen-Rußwurm, Alexander von: Das Schema im 'Faust'. In: GJb 50 (1930), S. 209-223.</f:reference>
+        <f:reference>Gleichen-Rußwurm, Alexander von: Das Schema im 'Faust'. In: faust://bibliography/gjb_50, S. 209–223.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/goeschen1790">
         <f:citation>Göschen 1790</f:citation>
-        <f:reference>[Göschen, Georg Joachim]: [Verlagsanzeige über Beendigung der Goethe-Augabe]. In: Journal des Luxus und der Moden. Hrsg. von Friedrich Justin Bertuch und Georg Melchior Kraus. Bd. 5.Weimar 1790. Intelligenzblatt Nr. 5, LX-LXII.</f:reference>
+        <f:reference>[Göschen, Georg Joachim]: [Verlagsanzeige über Beendigung der Goethe-Augabe]. In: Journal des Luxus und der Moden. Hrsg. von Friedrich Justin Bertuch und Georg Melchior Kraus. Bd. 5.Weimar 1790. Intelligenzblatt Nr. 5, LX–LXII.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/goethe1794">
         <f:citation>Goethe 1794</f:citation>
         <f:reference>Goethe, Johann Wolfgang: Wilhelm Meisters Lehrjahre. Erster Band. 1794.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/autorjahr">
-        <f:citation>Autor Jahr</f:citation>
-        <f:reference>Nachname, Vorname: Titel, in: faust://bibliography/gjb_2, S. ###–###.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/n_3">
@@ -1849,7 +2374,7 @@
 
     <f:bib uri="faust://bibliography/hirzel1856">
         <f:citation>Hirzel 1856</f:citation>
-        <f:reference>Goethe, Johann Wolfgang von und Christiane: Freundschaftliche Briefe von Goethe und seiner Frau an Nicolaus Meyer. Aus den Jahren 1800-1831. [Hrsg. von Salomon Hirzel.] Leipzig 1856. (= Bibliothek der deutschen Literatur; 3780). </f:reference>
+        <f:reference>Goethe, Johann Wolfgang von und Christiane: Freundschaftliche Briefe von Goethe und seiner Frau an Nicolaus Meyer. Aus den Jahren 1800–1831. [Hrsg. von Salomon Hirzel.] Leipzig 1856. (= Bibliothek der deutschen Literatur; 3780). </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/graef1896">
@@ -1869,32 +2394,47 @@
 
     <f:bib uri="faust://bibliography/guhrauer1851_2">
         <f:citation>Guhrauer 1851, Bd. 2</f:citation>
-        <f:reference>Briefwechsel zwischen Goethe und Knebel (1774-1832). Vorrede von G. E. Guhrauer. 2 Bde, Bd. 2. Leipzig 1851.</f:reference>
+        <f:reference>Briefwechsel zwischen Goethe und Knebel (1774–1832). Vorrede von G. E. Guhrauer. 2 Bde, Bd. 2. Leipzig 1851.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/harding_2_1920">
+    <f:bib uri="faust://bibliography/harding1920_2">
         <f:citation>Harding 1920, Bd. 2</f:citation>
         <f:reference>Correspondance de H.C. Örsted. Avec divers Savants, 2 Bde., Bd. 2, hrsg. M[arius] C[hristian] Harding. Kopenhagen 1920. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/harnack1890">
         <f:citation>Harnack 1890</f:citation>
-        <f:reference>Zur Nachgeschichte der italienischen Reise. Goethes Briefwechsel mit Freunden und Kunstgenossen in Italien 1788-1790. Hrsg. Otto Harnack. Weimar 1890. (= Schriften der Goethe-Gesellschaft; 5.)</f:reference>
+        <f:reference>Zur Nachgeschichte der italienischen Reise. Goethes Briefwechsel mit Freunden und Kunstgenossen in Italien 1788–1790. Hrsg. Otto Harnack. Weimar 1890. (= Schriften der Goethe-Gesellschaft; 5.)</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/hase1848-1849_2">
+        <f:citation>Hase 1848–1849, Bd. 2</f:citation>
+        <f:reference>Literarischer Nachlass der Frau Caroline von Wolzogen. Hrsg. von Karl von Hase. Bd. 2. Leipzig 1849.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hegel1887_2">
         <f:citation>Hegel 1887, Bd. 2</f:citation>
-        <f:reference>Briefe von und an Hegel, hrsg. von Karl Hegel, 2 Thle., Theil 2. Leipzig 1887. (= Georg Wilhelm Friedrich Hegel's Werke. Vollständige Ausgabe durch einen Verein von Freunden des Verewigten; Bd.19.1-2.) </f:reference>
+        <f:reference>Briefe von und an Hegel, hrsg. von Karl Hegel, 2 Thle., Theil 2. Leipzig 1887. (= Georg Wilhelm Friedrich Hegel's Werke. Vollständige Ausgabe durch einen Verein von Freunden des Verewigten; Bd.19.1–2.) </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hettner1875">
         <f:citation>Hettner 1875</f:citation>
-        <f:reference>Hettner, Hermann: Briefe Goethe's an K. E. Schubarth. In: Deutsche Rundschau 2 (1875), H. 1, S. 23-40.</f:reference>
+        <f:reference>Hettner, Hermann: Briefe Goethe's an K. E. Schubarth. In: Deutsche Rundschau 2 (1875), H. 1, S. 23–40.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/heuermann1904">
         <f:citation>Heuermann 1904</f:citation>
         <f:reference>Abeken, Bernhard Rudolf: Goethe in meinem Leben. Erinnerungen und Betrachtungen. Nebst Mittheilungen über Goethe, Schiller, Wieland und ihre Zeit. Hrsg. von Adolf Heuermann. Weimar 1904.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/holtei1859_4">
+        <f:citation>Holtei 1859, Bd. 4</f:citation>
+        <f:reference>Holtei, Karl von: Vierzig Jahre. Bd. 4. Zweite Auflage. Breslau 1859.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/holtei1859_5">
+        <f:citation>Holtei 1859, Bd. 5</f:citation>
+        <f:reference>Holtei, Karl von: Vierzig Jahre. Bd. 5. Zweite Auflage. Breslau 1859.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/holtei1870">
@@ -1903,13 +2443,18 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/holtei1870-1871_1">
-        <f:citation>Holtei 1870-1871, Bd. 1</f:citation>
-        <f:reference>Holtei, Karl von: Nachlese. Erzählungen und Plaudereien. 3 Bde., Bd. 1. Breslau: Trewendt 1870-1871.</f:reference>
+        <f:citation>Holtei 1870–1871, Bd. 1</f:citation>
+        <f:reference>Holtei, Karl von: Nachlese. Erzählungen und Plaudereien. 3 Bde., Bd. 1. Breslau: Trewendt 1870–1871.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/houben1925-1928_1">
+        <f:citation>Houben 1925–1928, Bd. 1</f:citation>
+        <f:reference>Eckermann, J. P.: Sein Leben für Goethe. Nach seinen neu aufgefundenen Tagebüchern und Briefen. Dargestellt von H[einrich] H[ubert] Houben. Bd. 1. Leipzig 1925.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/houben1929">
         <f:citation>Houben 1929</f:citation>
-        <f:reference>Soret, Frédéric Jacob: Zehn Jahre bei Goethe. Erinnergen an Weimars klass. Zeit 1822-1832. Aus Sorets handschriftl. Nachlaß, seinen Tagebüchern u. seinem Briefwechsel zum erstenmal zusammengestellt, übersetzt und erläutert von H[einrich] H[ubert] Houben. Leipzig 1929.</f:reference>
+        <f:reference>Soret, Frédéric Jacob: Zehn Jahre bei Goethe. Erinnergen an Weimars klass. Zeit 1822–1832. Aus Sorets handschriftl. Nachlaß, seinen Tagebüchern u. seinem Briefwechsel zum erstenmal zusammengestellt, übersetzt und erläutert von H[einrich] H[ubert] Houben. Leipzig 1929.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/houben1948">
@@ -1927,6 +2472,26 @@
         <f:reference>Janssen, Johannes: Friedrich Leopold Graf zu Stolberg. Größtenteils aus dem bisher noch ungedruckten Familiennachlaß dargestellt. 2 Bde., Bd. 1. Freiburg i. Br. 1877.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/jonas1892-1897_4">
+        <f:citation>Jonas 1892–1897, Bd. 4</f:citation>
+        <f:reference>Schillers Briefe. Hrsg. und mit Anm. versehen von Fritz Jonas. Kritische Gesamtausgabe. Bd. 4. Stuttgart, Leipzig, u.a. o.J. [1892–1897]. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/jonas1892-1897_5">
+        <f:citation>Jonas 1892–1897, Bd. 5</f:citation>
+        <f:reference>Schillers Briefe. Hrsg. und mit Anm. versehen von Fritz Jonas. Kritische Gesamtausgabe. Bd. 5. Stuttgart, Leipzig, u.a. o.J. [1892–1897].</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/jonas1892-1897_6">
+        <f:citation>Jonas 1892–1897, Bd. 6</f:citation>
+        <f:reference>Schillers Briefe. Hrsg. und mit Anm. versehen von Fritz Jonas. Kritische Gesamtausgabe. Bd. 6. Stuttgart, Leipzig, u.a. o.J. [1892–1897].</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/jonas1892-1897_7">
+        <f:citation>Jonas 1892–1897, Bd. 7</f:citation>
+        <f:reference>Schillers Briefe. Hrsg. und mit Anm. versehen von Fritz Jonas. Kritische Gesamtausgabe. Bd. 7. Stuttgart, Leipzig, u.a. o.J. [1892–1897].</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/kasten1926">
         <f:citation>Kasten 1926</f:citation>
         <f:reference>Goethes Bremer Freund Dr. Nicolaus Meyer. Briefwechsel mit Goethe und dem Weimarer Kreis. Im Auftr. des Goethe- u. Schiller-Archivs hrsg. von Hans Kasten. Bremen 1926.</f:reference>
@@ -1934,52 +2499,52 @@
 
     <f:bib uri="faust://bibliography/keil1875">
         <f:citation>Keil 1875</f:citation>
-        <f:reference>Goethe's Tagebuch aus den Jahren 1776-1782. Mitgetheilt von Robert Keil. Leipzig 1875.</f:reference>
+        <f:reference>Goethe's Tagebuch aus den Jahren 1776–1782. Mitgetheilt von Robert Keil. Leipzig 1875.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/keil1886">
-        <f:citation>Keil 1886-1887,I</f:citation>
-        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [I], in: Deutsche Revue 11 (1886), Bd. 1 (Januar), S. 59-67. </f:reference>
+        <f:citation>Keil 1886–1887,I</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [I]. In: Deutsche Revue 11 (1886), Bd. 1 (Januar), S. 59–67. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/keil1886-1887_II">
-        <f:citation>Keil 1886-1887,II</f:citation>
-        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [II], in: Deutsche Revue 11 (1886), Bd. 2 (Mai), S. 162-172.</f:reference>
+        <f:citation>Keil 1886–1887,II</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [II]. In: Deutsche Revue 11 (1886), Bd. 2 (Mai), S. 162–172.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/keil1886-1887_III">
-        <f:citation>Keil 1886-1887,III</f:citation>
-        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [III], in: Deutsche Revue 11 (1886), Bd. 4 (Oktober), S. 20-38.</f:reference>
+        <f:citation>Keil 1886–1887,III</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [III]. In: Deutsche Revue 11 (1886), Bd. 4 (Oktober), S. 20–38.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/keil1886-1887_IV">
-        <f:citation>Keil 1886-1887,IV</f:citation>
-        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [IV], in: Deutsche Revue 12 (1887), Bd. 1 (Januar), S. 11-20.</f:reference>
+        <f:citation>Keil 1886–1887,IV</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [IV]. In: Deutsche Revue 12 (1887), Bd. 1 (Januar), S. 11–20.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/keil1886-1887_V">
-        <f:citation>Keil 1886-1887,V</f:citation>
-        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [V], in: Deutsche Revue 12 (1887), Bd. 1 (Februar), S. 173-181.</f:reference>
+        <f:citation>Keil 1886–1887,V</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [V]. In: Deutsche Revue 12 (1887), Bd. 1 (Februar), S. 173–181.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/keil1886-1887_VI">
-        <f:citation>Keil 1886-1887,VI</f:citation>
-        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [VI], in: Deutsche Revue 12 (1887), Bd. 1 (März), S. 278-288.</f:reference>
+        <f:citation>Keil 1886–1887,VI</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [VI]. In: Deutsche Revue 12 (1887), Bd. 1 (März), S. 278–288.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/keil1886-1887_VII">
-        <f:citation>Keil 1886-1887,VII</f:citation>
-        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [VII], in: Deutsche Revue 12 (1887), Bd. 3 (Juli), S. 55-64.</f:reference>
+        <f:citation>Keil 1886–1887,VII</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [VII]. In: Deutsche Revue 12 (1887), Bd. 3 (Juli), S. 55–64.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/keil1886-1887_VIII">
-        <f:citation>Keil 1886-1887,VIII</f:citation>
-        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [VIII], in: Deutsche Revue 12 (1887), Bd. 4 (Oktober), S. 39-47.</f:reference>
+        <f:citation>Keil 1886–1887,VIII</f:citation>
+        <f:reference>Keil, Robert: Aus den Tagebüchern Riemers, des vertrauten Freundes von Goethe. Mitgeteilt von Robert Keil [VIII]. In: Deutsche Revue 12 (1887), Bd. 4 (Oktober), S. 39–47.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/kippenberg1931">
         <f:citation>Kippenberg 1931</f:citation>
-        <f:reference>N.N. [Kippenberg, Anton?]: Ungedrucktes von Goethe. Aufzeichnungen von Riemers Hand. In: Jahrbuch der Sammlung Kippenberg 9 (1931), S. 295-297.</f:reference>
+        <f:reference>N.N. [Kippenberg, Anton?]: Ungedrucktes von Goethe. Aufzeichnungen von Riemers Hand. In: Jahrbuch der Sammlung Kippenberg 9 (1931), S. 295–297.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/kletke1873">
@@ -1997,9 +2562,29 @@
         <f:reference>N. N.: Karl Ludwig von Knebel. Bericht eines ihm Verwandten. In: Berühmte Schriftsteller der Deutschen: Schilderung nach Selbstanschauung theils auch berühmter Zeitgenossen aus dem Leben von Goethe […] und Andern. Bisher in keiner Sammlung. Hrsg. von Friedrich Wilhelm Gubitz. Bd. 1. Berlin 1854, S. 319–338.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/kua_2-3">
+        <f:citation>KuA II/3</f:citation>
+        <f:reference>Über Kunst und Alterthum. Von Goethe. Bd. 2, H. 3. Stuttgart 1820.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/kua_5-3">
+        <f:citation>KuA V/3</f:citation>
+        <f:reference>Über Kunst und Alterthum. Von Goethe. Bd. 5, H. 3. Stuttgart 1826.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/kua_6-2">
+        <f:citation>KuA VI/2</f:citation>
+        <f:reference>Über Kunst und Alterthum. Von Goethe. Bd. 6, H. 2. Stuttgart 1828.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/kua_6-3">
+        <f:citation>KuA VI/3</f:citation>
+        <f:reference>Über Kunst und Alterthum. Von Goethe. Bd. 6, H. 3. Stuttgart 1832.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/kuhn1979-1983_1">
-        <f:citation>Kuhn 1979-1983, Bd. 1; Kuhn 1979-1983, Bd. 2</f:citation>
-        <f:reference>Johann Wolfgang von Goethe und Johann Friedrich von Cotta, Briefwechsel 1797-1832. Textkritische und kommentierte Ausgabe in drei Bänden. Hrsg. von Dorothea Kuhn. 3 Bde. Stuttgart 1979-1983.</f:reference>
+        <f:citation>Kuhn 1979–1983, Bd. 1; Kuhn 1979–1983, Bd. 2</f:citation>
+        <f:reference>Johann Wolfgang von Goethe und Johann Friedrich von Cotta, Briefwechsel 1797–1832. Textkritische und kommentierte Ausgabe in drei Bänden. Hrsg. von Dorothea Kuhn. 3 Bde. Stuttgart 1979–1983.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/leitzmann1900">
@@ -2013,13 +2598,23 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1879">
-        <f:citation>Loeper 1879</f:citation>
-        <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G[ustav] von Loeper. Zweite Bearbeitung. Theil 1. 2. Berlin, 1879.</f:reference>
+        <f:citation>Loeper 1879 </f:citation>
+        <f:reference>Goethe, Johann Wolfgang von: Briefe an Sophie von La Roche und Bettina Brentano nebst dichterischer Beilagen hrsg. von Gustav von Loeper. Berlin 1879.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/loeper1879">
-        <f:citation>Loeper 1879a  <strong>derzeit noch Loeper 1879</strong></f:citation>
-        <f:reference>Goethe, Johann Wolfgang von: Briefe an Sophie von La Roche und Bettina Brentano nebst dichterischer Beilagen hrsg. von Gustav von Loeper. Berlin 1879.</f:reference>
+    <f:bib uri="faust://bibliography/loeper1881a">
+        <f:citation>Loeper 1881a</f:citation>
+        <f:reference>Loeper, G. von: Aus Briefen von C. A. Vulpius in Weimar an Nic. Meyer in Bremen. In: faust://bibliography/gjb_2, S. 415–424.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/loeper1881">
+        <f:citation>Loeper 1881 </f:citation>
+        <f:reference>Loeper, G. von: Aus Briefen von C. A. Vulpius in Weimar an Nic. Meyer in Bremen. In: faust://bibliography/gjb_2, S. 415–424.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/loeper1882">
+        <f:citation>Loeper 1882 </f:citation>
+        <f:reference>Loeper, G. von: Aus Briefen von C. A. Vulpius in Weimar an Nic. Meyer in Bremen. In: faust://bibliography/gjb_2, S. 415–424.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/luden1847">
@@ -2029,12 +2624,27 @@
 
     <f:bib uri="faust://bibliography/manning1896">
         <f:citation>Manning 1896 </f:citation>
-        <f:reference>Eugene W. Manning: Zur Chronologie des ersten Paralipomenon zu Goethes Faust. In: GJ 17 (1896), S. 209-214. </f:reference>
+        <f:reference>Eugene W. Manning: Zur Chronologie des ersten Paralipomenon zu Goethes Faust. In: faust://bibliography/gjb_17, S. 209–214. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/matthisson1825-1829_7">
+        <f:citation>Matthisson 1825–1829, Bd. 7</f:citation>
+        <f:reference>Matthisson, Friedrich von: Schriften. Ausgabe letzter Hand. Bd. 7. Zürich 1829.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/matthisson1825-1829_8">
+        <f:citation>Matthisson 1825–1829, Bd. 8</f:citation>
+        <f:reference>Matthisson, Friedrich von: Schriften. Ausgabe letzter Hand. Bd. 8. Zürich 1829.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/mendelssohn1861">
         <f:citation>Mendelssohn-Bartholdy 1861</f:citation>
         <f:reference>Reisebriefe von Felix Mendelssohn Bartholdy aus den Jahren 1830 bis 1832. Hrsg. von Paul Mendelssohn-Bartholdy. Leipzig 1861.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/meyer_witkowski1895">
+        <f:citation>Meyer/Witkowski 1895 <strong>[zuvor: DNL 111]</strong></f:citation>
+        <f:reference>Goethe, Werke. 36 Theile (in 41 Bdn.), Stuttgart o. J. (1882–1897). (= Deutsche National-Litteratur. Historisch-kritische Ausgabe. Hrsg. von Joseph Kürschner, Bde. 82–117,II.) Tl. 30: Aufsätze über bildende Kunst und Theater, hrsg. von A. G. Meyer und G. Witkowski, 1895 (= DNL, Bd. 111).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/mueller1832">
@@ -2069,32 +2679,27 @@
 
     <f:bib uri="faust://bibliography/pavie1874">
         <f:citation>Pavie 1874</f:citation>
-        <f:reference>Pavie, V[ictor]: Goëthe et David, Souvenirs d'un voyage à Weimar (II). In: Mémoires de la sociéte nationale d'agriculture 17 (1874), S. 81-145.</f:reference>
+        <f:reference>Pavie, V[ictor]: Goëthe et David, Souvenirs d'un voyage à Weimar (II). In: Mémoires de la sociéte nationale d'agriculture 17 (1874), S. 81–145.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/plitt1869-1870_2">
-        <f:citation>Plitt 1869-1870, Bd. 2</f:citation>
-        <f:reference>Aus Schellings Leben. In Briefen. Hrsg. von Gustav Leopold Plitt. 3 Bde., Berlin 1869-1870; Bd. 2, 1870.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/pniower1891">
-        <f:citation>Pniower 1891</f:citation>
-        <f:reference>Pniower, Otto: Die Schülerszene im Urfaust. In: Vierteljahrsschrift für Literaturgeschichte 4 (1891), S. 317-335.</f:reference>
+        <f:citation>Plitt 1869–1870, Bd. 2</f:citation>
+        <f:reference>Aus Schellings Leben. In Briefen. Hrsg. von Gustav Leopold Plitt. 3 Bde., Berlin 1869–1870; Bd. 2, 1870.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/pollmer1923">
         <f:citation>Pollmer 1923</f:citation>
-        <f:reference>Friedrich Wilhelm Riemers Tagebücher 1811-1816. Im Auszug hrsg. und eingeleitet von Arthur Pollmer. In: Jahrbuch der Sammlung Kippenberg 3 (1923), S. 24-79.</f:reference>
+        <f:reference>Friedrich Wilhelm Riemers Tagebücher 1811–1816. Im Auszug hrsg. und eingeleitet von Arthur Pollmer. In: Jahrbuch der Sammlung Kippenberg 3 (1923), S. 24–79.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/pollmer1924">
         <f:citation>Pollmer 1924</f:citation>
-        <f:reference>Friedrich Wilhelm Riemers Tagebücher 1817-1832. Im Auszug hrsg. und eingeleitet von Arthur Pollmer. In: Jahrbuch der Sammlung Kippenberg 4 (1924), S. 20-71.</f:reference>
+        <f:reference>Friedrich Wilhelm Riemers Tagebücher 1817–1832. Im Auszug hrsg. und eingeleitet von Arthur Pollmer. In: Jahrbuch der Sammlung Kippenberg 4 (1924), S. 20–71.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/pollmer1925">
         <f:citation>Pollmer 1925</f:citation>
-        <f:reference>Friedrich Wilhelm Riemers Tagebücher 1832-1845. Im Auszug hrsg. und eingeleitet von Arthur Pollmer. In: Jahrbuch der Sammlung Kippenberg 5 (1925), S. 22-72.</f:reference>
+        <f:reference>Friedrich Wilhelm Riemers Tagebücher 1832–1845. Im Auszug hrsg. und eingeleitet von Arthur Pollmer. In: Jahrbuch der Sammlung Kippenberg 5 (1925), S. 22–72.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/anonym1835">
@@ -2102,13 +2707,13 @@
         <f:reference>[Anonymus:] Goethe und sein Jahrhundert. (Aus der Minerva besonders abgedruckt.) Jena 1835. Jena: Bran, 1835. [als Verfasser werden August Wilhelm Rehberg und Philipp Joseph von Rehfues genannt] </f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/reichard1779_a">
-        <f:citation>Reichard 1779a</f:citation>
-        <f:reference>N.N.: Doktor Faust: ein komisches Duodrama, von Schink. Aus einem Schreiben an den Herausgeber [Heinrich August Ottokar Reichard]. In: Theater-Journal für Deutschland, 6. Stück, 1778, S. 18-43.</f:reference>
+    <f:bib uri="faust://bibliography/reichard1778a">
+        <f:citation>Reichard 1778a</f:citation>
+        <f:reference>N.N.: Doktor Faust: ein komisches Duodrama, von Schink. Aus einem Schreiben an den Herausgeber [Heinrich August Ottokar Reichard]. In: Theater-Journal für Deutschland, 6. Stück, 1778, S. 18–43.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/reichard1779_b">
-        <f:citation>Reichard 1779b</f:citation>
+    <f:bib uri="faust://bibliography/reichard1778b">
+        <f:citation>Reichard 1778b</f:citation>
         <f:reference>Bibliothek der Romane. Erster Band. [Hrsg. von Heinrich August Ottokar Reichard.] Berlin 1778.</f:reference>
     </f:bib>
 
@@ -2123,8 +2728,8 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/riemer1833-1834_3">
-        <f:citation>Riemer 1833-1834, Bd. 3/4/5/6</f:citation>
-        <f:reference>Briefwechsel zwischen Goethe und Zelter in den Jahren 1796 bis 1832. Hrsg. von Friedrich Wilhelm Riemer, 6 Theile, Th. 5. Berlin: Duncker und Humblot 1833-1834.</f:reference>
+        <f:citation>Riemer 1833–1834, Bd. 3/4/5/6  </f:citation>
+        <f:reference>Briefwechsel zwischen Goethe und Zelter in den Jahren 1796 bis 1832. Hrsg. von Friedrich Wilhelm Riemer, 6 Theile, Th. 5. Berlin: Duncker und Humblot 1833–1834.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/riemer1841_1">
@@ -2144,11 +2749,11 @@
 
     <f:bib uri="faust://bibliography/sauer1902">
         <f:citation>Sauer 1902</f:citation>
-        <f:reference>Ausgewählte Werke des Grafen Kaspar von Sternberg. Erster Band: Briefwechsel zwischen J. W. v. Goethe und Kaspar Graf v. Sternberg (1820-1832.) Hrsg. von August Sauer. Prag: Clave 1902 (= Bibliothek Deutscher Schriftsteller aus Böhmen, Mähren und Schlesien; 13).</f:reference>
+        <f:reference>Ausgewählte Werke des Grafen Kaspar von Sternberg. Erster Band: Briefwechsel zwischen J. W. v. Goethe und Kaspar Graf v. Sternberg (1820–1832.) Hrsg. von August Sauer. Prag: Clave 1902 (= Bibliothek Deutscher Schriftsteller aus Böhmen, Mähren und Schlesien; 13).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/sauer1902-1903">
-        <f:citation>Sauer 1902-1903, Bd. 1; Sauer 1902-1903, Bd. 2</f:citation>
+        <f:citation>Sauer 1902–1903, Bd. 1; Sauer 1902–1903, Bd. 2</f:citation>
         <f:reference>Goethe und Österreich. Bd. I. Hrsg. von August Sauer. Weimar 1902 (= Schriften der Goethe-Gesellschaft, Bd. 17).</f:reference>
     </f:bib>
 
@@ -2159,7 +2764,7 @@
 
     <f:bib uri="faust://bibliography/schmidt1892">
         <f:citation>Schmidt 1892</f:citation>
-        <f:reference>Schmidt, Erich: Ein verschollener Aufsatz A. W. Schlegels über Goethes 'Triumph der Empfindsamkeit'. In: Festschrift zur Begrüßung des Fünften Allgemeinen Deutschen Neuphilologentages zu Berlin Pfingsten 1892. Hrsg. v. Julius Zupitzka. Berlin 1892, S. 77-92.</f:reference>
+        <f:reference>Schmidt, Erich: Ein verschollener Aufsatz A. W. Schlegels über Goethes 'Triumph der Empfindsamkeit'. In: Festschrift zur Begrüßung des Fünften Allgemeinen Deutschen Neuphilologentages zu Berlin Pfingsten 1892. Hrsg. v. Julius Zupitzka. Berlin 1892, S. 77–92.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schmidt1901">
@@ -2179,11 +2784,11 @@
 
     <f:bib uri="faust://bibliography/schoell1877">
         <f:citation>Schöll 1877</f:citation>
-        <f:reference>Schöll, Adolf: Ein Brief des Hauptmanns Karl Ludwig von Knebel an den Geheimsecretär Friedr. Joh. Justin Bertuch in Weimar. Mit Anmerkungen. In: Deutsche Rundschau 12 (1877), S. 517-520.</f:reference>
+        <f:reference>Schöll, Adolf: Ein Brief des Hauptmanns Karl Ludwig von Knebel an den Geheimsecretär Friedr. Joh. Justin Bertuch in Weimar. Mit Anmerkungen. In: Deutsche Rundschau 12 (1877), S. 517–520.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schorn1911-1912_1">
-        <f:citation>Schorn 1911-1912, Bd. 1</f:citation>
+        <f:citation>Schorn 1911–1912, Bd. 1</f:citation>
         <f:reference>Schorn, Adelheid von: Das nachklassische Weimar. 2 Bde., Bd. 1. Weimar 1911/1912.</f:reference>
     </f:bib>
 
@@ -2214,7 +2819,12 @@
 
     <f:bib uri="faust://bibliography/solger1882">
         <f:citation>Solger 1882</f:citation>
-        <f:reference>Solger, Karoline: Briefe von Heinrich Voss an Karl Solger. In: Archiv für Litteraturgeschichte 11 (1882), S. 94-141, hier S. 113f.</f:reference>
+        <f:reference>Solger, Karoline: Briefe von Heinrich Voss an Karl Solger. In: Archiv für Litteraturgeschichte 11 (1882), S. 94–141.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/stapfer1828">
+        <f:citation>Stapfer 1828</f:citation>
+        <f:reference>Faust, Tragédie de M. de Goethe, traduite en français par M. Albert Stapfer. Ornée d'un portrait de l'auteur, et de 17 dessins composés d'après les principales scènes de l'ouvrage et exécutés sur pierre par M. Eugène Delacroix. Paris 1828.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/steig1904">
@@ -2224,12 +2834,12 @@
 
     <f:bib uri="faust://bibliography/steig1912">
         <f:citation>Steig 1912</f:citation>
-        <f:reference>Reinhold Steig: Daniel Engelhard, der Architekt der Wahlverwandtschaften In: Jahrbuch des freien deutschen Hochstifts 1912, S.285-331.</f:reference>
+        <f:reference>Reinhold Steig: Daniel Engelhard, der Architekt der Wahlverwandtschaften In: Jahrbuch des freien deutschen Hochstifts 1912, S.285–331.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/strehlke1882-1884_1">
-        <f:citation>Strehlke 1882-1884, Bd. 1</f:citation>
-        <f:reference>Goethe's Briefe. Verzeichniß unter Angabe von Quelle, Ort, Datum und Anfangsworten [...]. Hrsg. von Friedrich Strehlke. 3 Theile, Theil 1. Berlin 1882-1884.</f:reference>
+        <f:citation>Strehlke 1882–1884, Bd. 1</f:citation>
+        <f:reference>Goethe's Briefe. Verzeichniß unter Angabe von Quelle, Ort, Datum und Anfangsworten [...]. Hrsg. von Friedrich Strehlke. 3 Theile, Theil 1. Berlin 1882–1884.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/strodtmann1874_1">
@@ -2237,14 +2847,19 @@
         <f:reference>Briefe von und an Gottfried August Bürger. Ein Beitrag zur Literaturgeschichte seiner Zeit. Aus dem Nachlasse Bürger's und anderen, meist handschriftlichen Quellen hrsg. von Adolf Strodtmann. Bd. 1. Berlin 1874.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/suphan1894">
+        <f:citation>Suphan 1894</f:citation>
+        <f:reference>Suphan, Bernhard: Ouvrages poétiques de Goethe. In: faust://bibliography/gjb_15, S. 17–19.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/sydow1906-1916_7">
-        <f:citation>Sydow 1906-1907, Bd. 7</f:citation>
-        <f:reference>Wilhelm und Caroline von Humboldt in ihren Briefen. Hrsg. von Anna von Sydow. 7 Bde., Bd. 7. Berlin 1906-1916.</f:reference>
+        <f:citation>Sydow 1906–1907, Bd. 7</f:citation>
+        <f:reference>Wilhelm und Caroline von Humboldt in ihren Briefen. Hrsg. von Anna von Sydow. 7 Bde., Bd. 7. Berlin 1906–1916.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/sydow1906-1916_3">
-        <f:citation>Sydow 1906-1907, Bd. 3</f:citation>
-        <f:reference>Wilhelm und Caroline von Humboldt in ihren Briefen. Hrsg. von Anna von Sydow. 7 Bde., Bd. 3. Berlin 1906-1916.</f:reference>
+        <f:citation>Sydow 1906–1907, Bd. 3</f:citation>
+        <f:reference>Wilhelm und Caroline von Humboldt in ihren Briefen. Hrsg. von Anna von Sydow. 7 Bde., Bd. 3. Berlin 1906–1916.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/tewes1901">
@@ -2268,13 +2883,13 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/urlichs1860-1865_3">
-        <f:citation>Urlichs 1860-1865, Bd. 3</f:citation>
-        <f:reference>Charlotte von Schiller und ihre Freunde. Hrsg. von Ludwig Urlichs. 3 Bde., Bd. 3, Stuttgart 1860-1865.</f:reference>
+        <f:citation>Urlichs 1860–1865, Bd. 3</f:citation>
+        <f:reference>Charlotte von Schiller und ihre Freunde. Hrsg. von Ludwig Urlichs. 3 Bde., Bd. 3, Stuttgart 1860–1865.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/varnhagen1861-1870_2">
-        <f:citation>Varnhagen 1861-1870, Bd. 2</f:citation>
-        <f:reference>Varnhagen von Ense, Karl August: Tagebücher. Aus dem Nachlaß Varnhagen's von Ense. 14 Bde. Leipzig 1861-1862 (Bd. 1-6), Zürich 1865 (Bd. 7-8), Hamburg 1868-1870 (Bd. 9-14); Bd. 2, 1861.</f:reference>
+        <f:citation>Varnhagen 1861–1870, Bd. 2</f:citation>
+        <f:reference>Varnhagen von Ense, Karl August: Tagebücher. Aus dem Nachlaß Varnhagen's von Ense. 14 Bde. Leipzig 1861–1862 (Bd. 1–6), Zürich 1865 (Bd. 7–8), Hamburg 1868–1870 (Bd. 9–14); Bd. 2, 1861.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/vogel1834">
@@ -2314,12 +2929,12 @@
 
     <f:bib uri="faust://bibliography/werner1902">
         <f:citation>Werner 1902</f:citation>
-        <f:reference>Werner, Richard Maria: Ein Besuch bei Goethe. In: Euphorion 9 (1902), S. 338-341.</f:reference>
+        <f:reference>Werner, Richard Maria: Ein Besuch bei Goethe. In: Euphorion 9 (1902), S. 338–341.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wieland1776">
         <f:citation>Wieland 1776</f:citation>
-        <f:reference>W. [Wieland, Christoph Martin:] An Psyche. In: Der Teutsche Merkur 1776, Vierteljahr 1, Januar, S. 12-18.</f:reference>
+        <f:reference>W. [Wieland, Christoph Martin:] An Psyche. In: Der Teutsche Merkur 1776, Vierteljahr 1, Januar, S. 12–18.</f:reference>
     </f:bib>
 
 </f:bibliography>

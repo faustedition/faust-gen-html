@@ -39,7 +39,7 @@
 	
 	
 	<xsl:param name="headerAdditions">
-		<title>Faust-Edition | Suche: <xsl:value-of select="$query"/></title>									
+		<title>Faustedition | Suche: <xsl:value-of select="$query"/></title>									
 		<style type="text/css">
 			.hit .headnote { font-weight: lighter; margin-left: 1em;}
 			.hit h3 { margin-bottom: 3pt; vertical-align: middle; }
@@ -219,7 +219,7 @@
 					<xsl:value-of select="@query"/>
 				</div>
 			</xsl:with-param>
-			<xsl:with-param name="title" tunnel="yes">Faust-Edition: Suche nach <xsl:value-of select="$query"/></xsl:with-param>
+			<xsl:with-param name="title" tunnel="yes">Faustedition: Suche nach <xsl:value-of select="$query"/></xsl:with-param>
 			<xsl:with-param name="content">
 				<div id="main" class="print">
 					<div class="print-side-column">

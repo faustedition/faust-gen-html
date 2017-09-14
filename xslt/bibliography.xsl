@@ -26,7 +26,11 @@
     <xsl:function name="f:cite" as="element()">
         <xsl:param name="uri" as="xs:string"/>
         <xsl:param name="full" as="item()"/>
-        <xsl:variable name="bib" select="$bibliography//bib[@uri=$uri]"/>
+        <xsl:variable name="bib_" select="$bibliography//bib[@uri=$uri]"/>
+        <xsl:variable name="bib" select="$bib_[1]"/>
+        <xsl:if test="count($bib_) != 1">
+            <xsl:message select="concat('WARNING: ', count($bib_), ' bibliography entries for ', $uri, ', ignoring all but the first')"/>
+        </xsl:if>
         <xsl:variable name="id" select="replace($uri, 'faust://bibliography/', '')"/>
         <xsl:variable name="parsed-ref">
             <xsl:for-each select="$bib/reference/node()">

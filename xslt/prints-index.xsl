@@ -21,10 +21,12 @@
 		
 		<xsl:call-template name="html-frame">
 			<xsl:with-param name="scriptAdditions">
-				requirejs(["sortable"], function(Sortable) {
+				requirejs(["sortable", "jquery", "jquery.table"], function(Sortable, $, $table) {
 					domReady(function() {				
 						document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Archiv", link: "archive"}, {caption: "Drucke"}]));
 						Sortable.initTable(document.getElementById('prints'));
+                        $("table[data-sortable]").fixedtableheader();
+
 					});
 				});				
 			</xsl:with-param>

@@ -5,7 +5,7 @@
 	xmlns:f="http://www.faustedition.net/ns" exclude-result-prefixes="xs f"
 	version="2.0">
 
-	<xsl:param name="title">Faust-Edition [alpha]</xsl:param>
+	<xsl:param name="title">Faustedition [alpha]</xsl:param>
 	<xsl:param name="edition"></xsl:param>
 	<xsl:param name="assets" select="$edition"/>
 	<xsl:param name="debug" select="false()"/>
@@ -20,28 +20,22 @@
 		<xsl:param name="title" select="$title" tunnel="yes"/>
 		<xsl:param name="headerAdditions" select="$headerAdditions"/>
 		<xsl:param name="scriptAdditions" select="$scriptAdditions"/>
+		<xsl:comment select="concat('Generated: ', current-dateTime())"/>
 		<head>
 			<meta charset="utf-8"/>
 
 			<script type="text/javascript" src="{$assets}/js/require.js"/>		
 
-			<link rel="stylesheet" href="{$assets}/css/document-text.css"/>
-			<link rel="stylesheet" href="{$assets}/css/document-transcript.css"/>
-			<link rel="stylesheet"
-				href="{$assets}/css/document-transcript-highlight-hands.css"/>
-			<link rel="stylesheet"
-				href="{$assets}/css/document-transcript-interaction.css"/>
 			<link rel="stylesheet" href="{$assets}/css/webfonts.css"/>
 			<link rel="stylesheet" href="{$assets}/css/fontawesome-min.css"/>
 			<link rel="stylesheet" href="{$assets}/css/pure-min.css"/>
 			<link rel="stylesheet" href="{$assets}/css/pure-custom.css"/>
 			<link rel="stylesheet" href="{$assets}/css/basic_layout.css"/>
 			<link rel="stylesheet" href="{$assets}/css/textual-transcript.css"/>
+			<link rel="stylesheet" href="{$assets}/css/prints-viewer.css"/>
 			<script>
 				requirejs(["/js/faust_common"], function(Faust) {
-					requirejs(["domReady"], function(domReady) {
-					<xsl:copy-of select="$scriptAdditions"/>
-				  });
+    				<xsl:copy-of select="$scriptAdditions"/>				  
 				});
 			</script>
 
@@ -95,10 +89,11 @@
 							</button>
 						</form>
 					</li>
-					<li>
-						<a href="{$edition}/imprint">
-							<small class="pure-fade-50">Impressum</small>
-						</a>
+					<li id="imprint_sitemap">
+					  <small class="pure-fade-50">
+					    <a href="{$edition}/imprint">Impressum</a>
+					    <a href="{$edition}/intro#sitemap">Sitemap</a>
+					  </small>
 					</li>
 					<li>
 						<a href="{$edition}/help">

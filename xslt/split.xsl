@@ -111,6 +111,8 @@
 		<xsl:next-match/>
 	</xsl:template>
 	
+	<xsl:template mode="tocpage" match="div[@type='stueck']"/>
+	
 	<xsl:template mode="tocpage" match="div">
 		<li>
 			<xsl:call-template name="section-link"/>

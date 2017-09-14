@@ -18,7 +18,7 @@
   
   <xsl:param name="view">print</xsl:param>
   <xsl:param name="scriptAdditions">
-    requirejs(['domReady', 'faust_print_interaction'], function(domReady, addPrintInteraction) {
+    require(['domReady', 'faust_print_interaction'], function(domReady, addPrintInteraction) {
      domReady(function() { addPrintInteraction('/', undefined, '<xsl:value-of select="$documentURI"/>'); });
     });
   </xsl:param>

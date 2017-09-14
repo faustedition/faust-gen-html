@@ -87,6 +87,32 @@
     
     <p:identity name="converted-metadata"/>
     
+    <p:identity><p:input port="source"><p:pipe port="result" step="list"/></p:input></p:identity>
+    <cx:message message="Generating watermark table ..."/>
+
+    <p:for-each name="list-wm">
+      <p:iteration-source select="//c:file[$debug or not(ends-with(@name, 'test.xml'))]"/>
+      <p:variable name="filename" select="p:resolve-uri(/c:file/@name)"/>            
+      <p:load>
+        <p:with-option name="href" select="$filename"/>
+      </p:load>
+      <p:add-attribute match="/*" attribute-name="faust-uri">
+        <p:with-option name="attribute-value" select="replace($filename, concat('^', $source), 'faust://xml/')"/>
+      </p:add-attribute>
+    </p:for-each>
+    
+    <p:wrap-sequence wrapper="f:documents"/>
+    
+    <p:xslt>
+      <p:input port="stylesheet"><p:document href="xslt/watermark-table.xsl"/></p:input>
+      <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+    </p:xslt>
+    
+    <p:store indent="true" method="xhtml">
+      <p:with-option name="href" select="resolve-uri('www/watermark-table.html', $builddir)"/>
+    </p:store>
+      
+    
     <p:identity>
       <p:input port="source"><p:pipe port="result" step="list"></p:pipe></p:input>
     </p:identity>

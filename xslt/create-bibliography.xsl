@@ -4,6 +4,7 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://www.faustedition.net/ns"
 	exclude-result-prefixes="xs"
+	default-collation="http://www.w3.org/2013/collation/UCA?lang=de"
 	version="2.0">
 	
 	<xsl:import href="bibliography.xsl"/>
@@ -57,13 +58,13 @@
 						</xsl:variable>
 						<xsl:variable name="testimonies" select="current-group()[@testimony]" as="element()*"/>
 						<xsl:variable name="testimony-part">
-							<xsl:for-each-group select="$testimonies" group-by="@base">
+							<xsl:for-each-group select="$testimonies" group-by=".">
 								<small class="bib-testimonies">
 									Entstehungszeugnisse:
 									<xsl:for-each-group select="current-group()" group-by="@taxonomy">
 										<xsl:value-of select="current-grouping-key()"/><xsl:text> </xsl:text>
 										<xsl:for-each select="current-group()">
-											<a href="/testimony/{@testimony}"><xsl:value-of select="@n"/></a>
+											<a href="/testimony/{@testimony-id}"><xsl:value-of select="@n"/></a>
 											<xsl:if test="position() != last()">, </xsl:if>
 										</xsl:for-each>
 										<xsl:if test="position() != last()">; </xsl:if>
@@ -101,11 +102,18 @@
 								<xsl:sort select="    number(replace(@data-citation, '(\D+)(\d*)(\D*)(\d*)', '$4'))"/>
 								<xsl:variable name="id"
 									select="replace(@data-bib-uri, '^faust://bibliography/', '')"/>
-								<dt id="{$id}">
-									<xsl:value-of select="@data-citation"/>
-									<a href="#{$id}" class="hover-link">¶</a>
-								</dt>
-								<xsl:sequence select="."/>
+								<xsl:choose>
+									<xsl:when test="tokenize(@class, '\s+') = 'bib-notfound'">
+										<xsl:comment>WARNING: No bibliography entry for <xsl:value-of select="."/></xsl:comment>
+									</xsl:when>
+									<xsl:otherwise>
+										<dt id="{$id}">
+											<xsl:value-of select="@data-citation"/>
+											<a href="#{$id}" class="hover-link">¶</a>
+										</dt>
+										<xsl:sequence select="."/>										
+									</xsl:otherwise>
+								</xsl:choose>
 							</xsl:for-each>
 						</dl>
 						
