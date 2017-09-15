@@ -79,8 +79,8 @@
 		<xsl:call-template name="html-frame">
 			<xsl:with-param name="headerAdditions"><xsl:copy-of select="$extrastyle"/></xsl:with-param>
 			<xsl:with-param name="scriptAdditions">
-				requirejs(['sortable', 'jquery', 'jquery.table'], function(Sortable, $. $table) {
-					domReady(function() {
+				requirejs(['sortable', 'jquery', 'jquery.table'], function(Sortable, $, $table) {
+					$(function() {
 						document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Archiv", link: "archive"}, {caption: "Dokumente zur Entstehungsgeschichte"}]));
 						Sortable.initTable(document.getElementById('testimony-table'));
                         $("table[data-sortable]").fixedtableheader();
