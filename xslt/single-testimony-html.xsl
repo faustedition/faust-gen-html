@@ -99,9 +99,11 @@
 					</span>
 				</div>								
 			</xsl:with-param>
-			<xsl:with-param name="headerAdditions">
-				<script type="text/javascript" src="{$assets}/js/faust_app.js"/>
+			<xsl:with-param name="headerAdditions">				
 				<link rel="stylesheet" href="{$assets}/css/document-viewer.css"/>
+			</xsl:with-param>
+			<xsl:with-param name="scriptAdditions">
+				require(['faust_app']);
 			</xsl:with-param>
 			<xsl:with-param name="content">
 				<div class="print testimony">

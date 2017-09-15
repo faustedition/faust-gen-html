@@ -78,10 +78,19 @@
 	<xsl:template name="start">
 		<xsl:call-template name="html-frame">
 			<xsl:with-param name="headerAdditions"><xsl:copy-of select="$extrastyle"/></xsl:with-param>
+			<xsl:with-param name="scriptAdditions">
+				requirejs(['sortable', 'jquery', 'jquery.table'], function(Sortable, $, $table) {
+					$(function() {
+						document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Archiv", link: "archive"}, {caption: "Dokumente zur Entstehungsgeschichte"}]));
+						Sortable.initTable(document.getElementById('testimony-table'));
+                        $("table[data-sortable]").fixedtableheader();
+					});						
+				});
+			</xsl:with-param>
 			<xsl:with-param name="content">
 				
 				<div id="testimony-table-container">
-					<table data-sortable='true' class='pure-table'>
+					<table data-sortable='true' class='pure-table' id="testimony-table">
 						<thead>
 							<tr>
 								<xsl:for-each select="$columns/fieldspec">
@@ -98,15 +107,7 @@
 						</tbody>
 					</table>
 				</div>
-				<script type="text/javascript" src="js/jquery.min.js"></script> 
-				<script type="text/javascript" src="js/jquery.table.js"></script> 
-	
-				<script type="text/javascript">
-					$("table[data-sortable]").fixedtableheader();
-					// set breadcrumbs
-					document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Archiv", link: "archive"}, {caption: "Dokumente zur Entstehungsgeschichte"}]));
-				</script>
-								
+				
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
@@ -179,7 +180,7 @@
 		</xsl:variable>
 		
 		<xsl:variable name="rowinfo" as="element()">
-			<xsl:copy> 
+			<xsl:copy>
 				<xsl:attribute name="id" select="f:get-or-create-id($entry)"/>
 				<xsl:copy-of select="@*"/>
 				<xsl:sequence select="*"/>

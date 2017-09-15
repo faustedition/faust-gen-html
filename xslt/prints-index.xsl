@@ -20,6 +20,16 @@
 		<xsl:variable name="transcripts" select="."/>
 		
 		<xsl:call-template name="html-frame">
+			<xsl:with-param name="scriptAdditions">
+				requirejs(["sortable", "jquery", "jquery.table"], function(Sortable, $, $table) {
+					domReady(function() {				
+						document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Archiv", link: "archive"}, {caption: "Drucke"}]));
+						Sortable.initTable(document.getElementById('prints'));
+                        $("table[data-sortable]").fixedtableheader();
+
+					});
+				});				
+			</xsl:with-param>
 			<xsl:with-param name="content">
 				<table id="prints" data-sortable="true" class="pure-table">
 					<thead>
@@ -45,20 +55,6 @@
 						</xsl:for-each>							
 					</tbody>
 				</table>
-				
-				<script type="text/javascript" src="js/jquery.min.js"></script> 
-				<script type="text/javascript" src="js/jquery.table.js"></script> 
-				<script type="text/javascript">
-					$("table[data-sortable]").fixedtableheader();	
-
-					// Setup breadcrumbs
-					document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Archiv", link: "archive"}, {caption: "Drucke"}]));
-
-					window.addEventListener("DOMContentLoaded", function(){
-						Sortable.initTable(document.getElementById('prints'));
-					});
-				</script>
-				
 			</xsl:with-param>
 		</xsl:call-template>
 		

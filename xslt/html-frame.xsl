@@ -10,6 +10,7 @@
 	<xsl:param name="assets" select="$edition"/>
 	<xsl:param name="debug" select="false()"/>
 	<xsl:param name="headerAdditions"/>
+	<xsl:param name="scriptAdditions"/>
 	<xsl:param name="query" select="/f:results/@query"/>
 
 	<xsl:output method="xhtml" indent="yes" include-content-type="no"
@@ -18,14 +19,12 @@
 	<xsl:template name="html-head">
 		<xsl:param name="title" select="$title" tunnel="yes"/>
 		<xsl:param name="headerAdditions" select="$headerAdditions"/>
+		<xsl:param name="scriptAdditions" select="$scriptAdditions"/>
 		<xsl:comment select="concat('Generated: ', current-dateTime())"/>
 		<head>
 			<meta charset="utf-8"/>
 
-			<script type="text/javascript" src="{$assets}/js/sortable.min.js"/>
-			<script type="text/javascript" src="{$assets}/js/faust_common.js"/>
-			<script type="text/javascript" src="{$assets}/js/faust_print_interaction.js"/>
-			
+			<script type="text/javascript" src="{$assets}/js/require.js"/>		
 
 			<link rel="stylesheet" href="{$assets}/css/webfonts.css"/>
 			<link rel="stylesheet" href="{$assets}/css/fontawesome-min.css"/>
@@ -34,7 +33,11 @@
 			<link rel="stylesheet" href="{$assets}/css/basic_layout.css"/>
 			<link rel="stylesheet" href="{$assets}/css/textual-transcript.css"/>
 			<link rel="stylesheet" href="{$assets}/css/prints-viewer.css"/>
-			<script><xsl:text>window.addEventListener("DOMContentLoaded", function(){addPrintInteraction("../");});</xsl:text></script>
+			<script>
+				requirejs(["/js/faust_common"], function(Faust) {
+    				<xsl:copy-of select="$scriptAdditions"/>				  
+				});
+			</script>
 
 			<link rel="icon" type="image/png" href="/favicon-16x16.png"
 				sizes="16x16"/>
@@ -59,7 +62,7 @@
 					<img src="{$assets}/img/faustlogo.svg" alt="Faustedition"/>
 				</a>
 				<sup class="pure-fade-50">
-					<mark>beta.3</mark>
+					<mark>alpha</mark>
 				</sup>
 			</div>
 
@@ -131,8 +134,12 @@
 			<xsl:apply-templates/>
 		</xsl:param>
 		<xsl:param name="headerAdditions" select="$headerAdditions"/>
+		<xsl:param name="scriptAdditions" select="$scriptAdditions"/>
 		<html>
-			<xsl:call-template name="html-head"><xsl:with-param name="headerAdditions" select="$headerAdditions"/></xsl:call-template>
+			<xsl:call-template name="html-head">
+				<xsl:with-param name="headerAdditions" select="$headerAdditions"/>
+				<xsl:with-param name="scriptAdditions" select="$scriptAdditions"/>
+			</xsl:call-template>
 			<body>
 				<xsl:call-template name="header"/>
 				<main class="nofooter">

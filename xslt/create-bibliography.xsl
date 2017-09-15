@@ -31,6 +31,12 @@
 	<xsl:template match="/">
 		<xsl:call-template name="html-frame">
 			<xsl:with-param name="title" tunnel="yes">Bibliographie</xsl:with-param>
+			<xsl:with-param name="scriptAdditions">
+				domReady(function() {
+					document.getElementById("breadcrumbs").appendChild(
+						Faust.createBreadcrumbs([{caption: "Archiv", link: "archive"}, {caption: "Bibliographie"}]));
+				});
+			</xsl:with-param>
 			<xsl:with-param name="content">
 				<xsl:variable name="entries" as="element()*">
 					<xsl:for-each-group select="//f:citation" group-by=".">
@@ -112,13 +118,7 @@
 						</dl>
 						
 					</article>
-				</section>
-
-				<script type="text/javascript">
-					// set breadcrumbs
-					document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Archiv", link: "archive"}, {caption: "Bibliographie"}]));
-				</script>
-				
+				</section>				
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>

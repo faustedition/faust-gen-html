@@ -22,6 +22,11 @@
 		<html>
 			<xsl:call-template name="html-head">
 				<xsl:with-param name="title" select="$title" tunnel="yes"/>
+			  <xsl:with-param name="scriptAdditions">
+			    domReady(function() {
+			     document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "<xsl:value-of select="$title"/>"}]));
+			   });
+			  </xsl:with-param>
 			</xsl:call-template>
 			<body>
 				<xsl:call-template name="header"/>
@@ -95,10 +100,6 @@
           </section>
 
 				<xsl:call-template name="footer"/>
-			  <script type="text/javascript">
-			    // set breadcrumbs
-			    document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "<xsl:value-of select="$title"/>"}]));
-			  </script>
 			</body>
 		</html>
 		
