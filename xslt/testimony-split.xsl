@@ -28,7 +28,7 @@
 	
 	<xsl:function name="f:unfree-text" as="xs:boolean">
 		<xsl:param name="el"/>
-		<xsl:value-of select="matches(document-uri(root($el)), '/quz_.*(\.xml)?')"/>
+		<xsl:value-of select="false() (:matches(document-uri(root($el)), '/quz_.*(\.xml)?'):)"/>
 	</xsl:function>
 		
 	<xsl:template match="/">
