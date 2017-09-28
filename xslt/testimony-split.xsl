@@ -148,6 +148,10 @@
 				</xsl:if>
 				<xsl:variable name="actual-content" select="following::node() except (., $target, $target/following::node(), following::*/node())"/>
 				<xsl:choose>
+					<xsl:when test="not($target)">
+						<xsl:message>ERROR: <xsl:value-of select="$milestone/@xml:id"/> spans to <xsl:value-of select="@spanTo"/>, which doesn't exist (#?). </xsl:message>
+						<xsl:text>⚠# </xsl:text>
+					</xsl:when>
 					<xsl:when test="$target is $milestone">
 						<xsl:message>ERROR: <xsl:value-of select="$milestone/@xml:id"/> spans to itself in <xsl:value-of select="$basename"/>!</xsl:message>
 						<xsl:text>⚠↺ </xsl:text>					
