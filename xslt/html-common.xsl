@@ -419,9 +419,9 @@ in <xsl:value-of select="document-uri(/)"/>
 			<xsl:when test="@n">
 				<a id="l{@n}" href="#l{@n}" class="lineno invisible">∞</a>
 			</xsl:when>
-			<xsl:otherwise>
+			<xsl:when test="not(f:isInline(.))">
 				<a class="lineno invisible">&#160;</a>
-			</xsl:otherwise>
+			</xsl:when>
 		</xsl:choose>
 	</xsl:template>
 	
