@@ -323,6 +323,14 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
     </transform>
     <transform source="niiimp-full" destination="typqu">
         <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Zweifelhaftes{{/font}}{{/p}}</insert-at-start>
+        <define-text-units>
+            <text-unit-start>
+                <comparison-table>
+                    <exclusion-string>{{br/}}</exclusion-string>
+                    <comparison-string>{{</comparison-string>
+                </comparison-table>
+            </text-unit-start>
+        </define-text-units>
         <pass>
             <examine-text>
                 <select>
