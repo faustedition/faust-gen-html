@@ -1137,6 +1137,11 @@
         <f:reference>WA, Abt. I, Bd. 39, Weimar 1897.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/wa_I_40">
+        <f:citation>WA I 40</f:citation>
+        <f:reference>WA, Abt. I, Bd. 40, Weimar 1901.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/wa_I_41_2">
         <f:citation>WA I 41,2</f:citation>
         <f:reference>WA, Abt. I, Bd. 41,2, Weimar 1903.</f:reference>
@@ -1150,6 +1155,11 @@
     <f:bib uri="faust://bibliography/wa_I_42_2">
         <f:citation>WA I 42,2</f:citation>
         <f:reference>WA, Abt. I, Bd. 42,2, Weimar 1907.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_I_49_1">
+        <f:citation>WA I 49,1</f:citation>
+        <f:reference>WA, Abt. I, Bd. 49,1, Weimar 1898.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_I_53">
