@@ -211,13 +211,9 @@
 	
 	<xsl:template match="/f:results">
 		<xsl:call-template name="html-frame">
-			<xsl:with-param name="breadcrumbs" tunnel="yes">						
-				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
-					<small id="breadcrumbs"><a>Suchergebnisse</a></small>
-				</div>
-				<div id="current" class="pure-nowrap" title="{@query}">
-					<xsl:value-of select="@query"/>
-				</div>
+			<xsl:with-param name="breadcrumb-def" tunnel="yes">						
+					<a>Suchergebnisse</a>
+					<a><xsl:value-of select="@query"/></a>				
 			</xsl:with-param>
 			<xsl:with-param name="title" tunnel="yes">Faustedition: Suche nach <xsl:value-of select="$query"/></xsl:with-param>
 			<xsl:with-param name="content">

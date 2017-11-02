@@ -26,22 +26,12 @@
 			<xsl:with-param name="content">				
 					<xsl:apply-templates select="text"/>					
 			</xsl:with-param>
-			<xsl:with-param name="breadcrumbs" tunnel="yes">
-				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
-					<small id="breadcrumbs">
-						<span>
-							<a href="/archive">Archiv</a>
-							<i class="fa fa-angle-right"/>
-							<a href="/archive_testimonies">Entstehungszeugnisse</a>
-						</span>
-					</small>
-				</div>
-				<div id="current" class="pure-nowrap">
-					<span>
-						<xsl:attribute name="title" select="f:cite($biburl, true())"/>
-						<xsl:value-of select="f:cite($biburl, false())"></xsl:value-of>
-					</span>
-				</div>				
+			<xsl:with-param name="breadcrumb-def" tunnel="yes">
+				<a href="/archive">Archiv</a>
+				<a href="/archive_testimonies">Entstehungszeugnisse</a>
+				<a title="{f:cite($biburl, true())}">
+					<xsl:value-of select="f:cite($biburl, false())"/>
+				</a>
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>	

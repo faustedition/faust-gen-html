@@ -83,22 +83,11 @@
 	
 	<xsl:template match="/TEI">
 		<xsl:call-template name="html-frame">
-			<xsl:with-param name="breadcrumbs" tunnel="yes">				
-				<div class="breadcrumbs pure-right pure-nowrap pure-fade-50">
-					<small id="breadcrumbs">
-						<span>
-							<a href="/archive">Archiv</a>
-							<i class="fa fa-angle-right"/>
-							<a href="/archive_testimonies#{$id}">Entstehungszeugnisse</a>
-						</span>
-					</small>
-				</div>				
-				<div id="current" class="pure-nowrap">
-					<span>						
-						<xsl:value-of select="f:testimony-label($id)"/>
-					</span>
-				</div>								
-			</xsl:with-param>
+			<xsl:with-param name="breadcrumb-def" tunnel="yes">
+				<a href="/archive">Archiv</a>
+				<a href="/archive_testimonies#{$id}">Entstehungszeugnisse</a>
+				<a><xsl:value-of select="f:testimony-label($id)"/></a>
+			</xsl:with-param>			
 			<xsl:with-param name="headerAdditions">				
 				<link rel="stylesheet" href="{$assets}/css/document-viewer.css"/>
 			</xsl:with-param>

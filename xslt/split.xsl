@@ -241,11 +241,8 @@
 		<html>
 			<xsl:call-template name="html-head"/>
 			<body>
-				<xsl:call-template name="header">
-					<xsl:with-param name="breadcrumbs" tunnel="yes">
-						<xsl:call-template name="breadcrumbs"/>
-					</xsl:with-param>
-				</xsl:call-template>
+				<xsl:call-template name="header"/>
+				
 				
 				<main class="nofooter">
 					<div  class="print">
@@ -258,7 +255,26 @@
 						</div>
 					</div>
 				</main>
-				<xsl:call-template name="footer"/>
+		
+				<xsl:variable name="breadcrumbs"><xsl:call-template name="breadcrumbs"/></xsl:variable>
+				<xsl:choose>
+					<xsl:when test="$breadcrumbs/xh:span">
+						<xsl:call-template name="footer">
+							<xsl:with-param name="breadcrumb-def" tunnel="yes" select="$breadcrumbs/xh:span[1]"/>
+							<xsl:with-param name="scriptAdditions">
+								breadcrumbs.appendChild(document.createElement("br"));
+								breadcrumbs.appendChild(Faust.createBreadcrumbs(<xsl:value-of select="f:breadcrumb-json($breadcrumbs/xh:span[2])"/>));
+								<xsl:value-of select="$scriptAdditions"/>
+							</xsl:with-param>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:call-template name="footer">
+							<xsl:with-param name="breadcrumb-def" tunnel="yes" select="$breadcrumbs"/>
+						</xsl:call-template>
+					</xsl:otherwise>
+				</xsl:choose>
+
 			</body>
 		</html>
 	</xsl:template>
