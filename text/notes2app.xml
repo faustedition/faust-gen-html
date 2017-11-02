@@ -20,6 +20,8 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/typ2a.tf</variable>
         <variable type="permanent-file" name="typ2b" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/typ2b.tf</variable>
+        <variable type="permanent-file" name="typ3" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/typ3.tf</variable>
         <variable type="permanent-file" name="typ4" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/typ4.tf</variable>
         <variable type="permanent-file" name="typ5" option="erase"
@@ -42,18 +44,18 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/sort.tf</variable>
         <variable type="permanent-file" name="abr" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/abr.tf</variable>
-        <variable type="permanent-file" name="abrsort" option="erase"
-            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/abrsort.tf</variable>
-        <variable type="permanent-file" name="clean" option="erase"
-            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/clean.tf</variable>
-        <variable type="permanent-file" name="open" option="erase"
-            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/open.tf</variable>
+        <variable type="permanent-file" name="sortclean" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/sortclean.tf</variable>
+        <variable type="permanent-file" name="sortwoabr" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/sortwoabr.tf</variable>
         <variable type="permanent-file" name="abrclean" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/abrclean.tf</variable>
         <variable type="permanent-file" name="sort-rtf" option="erase" format="system"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/sort.rtf</variable>
-        <variable type="permanent-file" name="abrsort-rtf" option="erase" format="system"
-            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/abrsort.rtf</variable>
+        <variable type="permanent-file" name="woabr-rtf" option="erase" format="system"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/sortwoabr.rtf</variable>
+        <variable type="permanent-file" name="abr-rtf" option="erase" format="system"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/abr.rtf</variable>
         <variable type="permanent-file" name="niiread" option="erase" format="system"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/niiread.rtf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="xxtable"
@@ -67,7 +69,7 @@
     </variables>
     <tustep>
 #de,da=*
-rtf = C:\users\bruening.FDH-FFM\txstep\txt\nii.rtf
+rtf = C:\users\bruening.FDH-FFM\txstep\txt\appii.rtf
 rtf-samp = C:\users\bruening.FDH-FFM\txstep\txt\nii-sample.rtf
 rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
 *eof
@@ -143,7 +145,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
     <transform source="niiimp-full" destination="typ1">
-        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 1: Korrekturen eindeutiger (sprachlich sinnloser) Fehler {{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Typ 1: Korrekturen eindeutiger (sprachlich sinnloser) Fehler {{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
@@ -161,7 +163,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
     <transform source="niiimp-full" destination="typ2a">
-        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 2a: Emendationen von Überlieferungsfehlern: Schreib- oder Setzerfehler gegen die unmittelbare Vorlage der Textgrundlage („Zeller 2“){{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Typ 2a: Emendationen von Überlieferungsfehlern: Schreib- oder Setzerfehler gegen die unmittelbare Vorlage der Textgrundlage{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
@@ -179,7 +181,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
     <transform source="niiimp-full" destination="typ2b">
-        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 2b: Emendationen von Überlieferungsfehlern: aus der unmittelbaren Vorlage geerbte Fehler{{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Typ 2b: Emendationen von Überlieferungsfehlern: aus der unmittelbaren Vorlage geerbte Fehler{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
@@ -196,8 +198,26 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
+    <transform source="niiimp-full" destination="typ3">
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Typ 3: Konjekturen{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <exception-string>Ohne Eingriff{{/b}}{{/p}}</exception-string>
+                            <exception-string>Noch zu entscheiden{{/b}}{{/p}}</exception-string>
+                            <search-string>{{/b}}{{/p}}</search-string>
+                            <search-string>\[Typ 3\]</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
     <transform source="niiimp-full" destination="typ4">
-        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 4: Wiederherstellung oder Ausschließung von übergangenen Autorvarianten{{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Typ 2c/d (alt: 4): Wiederherstellung oder Nichtwiederherstellung von übergangenen Autorvarianten{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
@@ -215,13 +235,13 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
     <transform source="niiimp-full" destination="typ5">
-        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 5: Rekonstruktion der Druckvorlage von C{{sup}}3{{/sup}} 4{{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Typ 4 (alt: 5): Rekonstruktion der Druckvorlage{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>Textgrundlage: C</search-string>
+                            <search-string>ge: C</search-string>
                             <search-string>\[Typ 5</search-string>
                         </search-table>
                     </text-contains>
@@ -231,7 +251,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
     <transform source="niiimp-full" destination="typ6">
-        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 6: Beibehaltung vom Autor gebilligter Fremdvarianten{{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Typ 2e (alt: 6): Beibehaltung vom Autor gebilligter Fremdvarianten{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
@@ -250,7 +270,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
     </transform>
 
     <transform source="niiimp-full" destination="typ7">
-        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 7: Ausschließung oder Übernahme von Autorvarianten aus der Seitenüberlieferung{{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Typ 5a/b (alt: 7): Ausschließung oder Übernahme von Autorvarianten aus der Seitenüberlieferung{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
@@ -268,7 +288,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
     <transform source="niiimp-full" destination="typ9">
-        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 9: Ausschließung postum vorgenommener Änderungen{{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Typ 6 (alt: 9): Ausschließung postum vorgenommener Änderungen{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
@@ -286,7 +306,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
     <transform source="niiimp-full" destination="typ10">
-        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Entscheidungen des Typs 10: Erläuterungsbedürftige Befunde{{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Typ 7 (alt: 10): Erläuterungsbedürftige Befunde{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
@@ -322,7 +342,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
     <transform source="niiimp-full" destination="typqu">
-        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Zweifelhaftes{{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Zweifelsfälle{{/font}}{{/p}}</insert-at-start>
         <define-text-units>
             <text-unit-start>
                 <comparison-table>
@@ -362,22 +382,32 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
             </examine-text>
         </pass>
     </transform>
-    <!-- collect head, ..., and trailing section -->
+    <!-- build sort.tf: collect head, typ... files, and trailing section -->
     <transform source="head" destination="sort"/>
     <transform source="intro" destination="sort" option="append"/>
     <transform source="typ1" destination="sort" option="append"/>
     <transform source="typ2a" destination="sort" option="append"/>
     <transform source="typ2b" destination="sort" option="append"/>
     <transform source="typ4" destination="sort" option="append"/>
-    <transform source="typ5" destination="sort" option="append"/>
+    <!-- neu: 2c/d -->
     <transform source="typ6" destination="sort" option="append"/>
+    <!-- neu: 2e -->
+    <transform source="typ3" destination="sort" option="append"/>
+    <transform source="typ5" destination="sort" option="append"/>
+    <!-- neu: 4 -->
     <transform source="typ7" destination="sort" option="append"/>
+    <!-- neu: 5a/b -->
     <transform source="typ9" destination="sort" option="append"/>
+    <!-- neu: 6 -->
     <transform source="typ10" destination="sort" option="append"/>
-    <transform source="typ0" destination="sort" option="append"/>
+    <!-- neu: 7 -->
     <transform source="typqu" destination="sort" option="append"/>
+    <transform source="typ0" destination="sort" option="append"/>
     <transform source="trail" destination="sort" option="append"/>
-    <transform source="sort" destination="abr">
+    <!-- build abr: collect head, abr+ records, and trailing section -->
+    <transform source="head" destination="abr"/>
+    <transform source="sort" destination="abr" option="append">
+        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Von ABR akzeptiert{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
@@ -397,17 +427,33 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
                             <search-string>+abr</search-string>
                             <replacement-string/>
                         </string-pair>
+                        <string-pair>
+                            <search-string>Typ 4</search-string>
+                            <replacement-string>Typ 2c/d</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>Typ 6</search-string>
+                            <replacement-string>Typ 2e</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>Typ 5</search-string>
+                            <replacement-string>Typ 4</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>Typ 9</search-string>
+                            <replacement-string>Typ 6</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>Typ 10</search-string>
+                            <replacement-string>Typ 7</replacement-string>
+                        </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>
         </pass>
     </transform>
-    <transform source="head" destination="abrsort"/>
-    <transform source="abr" destination="abrsort" option="append">
-        <insert-at-start>{{p after="0" line-feed="12"}}{{font size="12"}}Von ABR akzeptiert{{/font}}{{/p}}</insert-at-start>
-    </transform>
-    <transform source="trail" destination="abrsort" option="append"/>
-    <transform source="sort" destination="clean" save-params="cleanup">
+    <transform source="trail" destination="abr" option="append"/>
+    <transform source="sort" destination="sortclean" save-params="cleanup">
         <pass>
             <modify>
                 <exchange>
@@ -444,12 +490,16 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
                             <search-string>2^_I^_H.0a</search-string>
                             <replacement-string>I H{{sup}}0a{{/sup}}</replacement-string>
                         </string-pair>
+                        <string-pair>
+                            <search-string>+abr</search-string>
+                            <replacement-string>+ABR</replacement-string>
+                        </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>
         </pass>
     </transform>
-    <transform source="clean" destination="open">
+    <transform source="sortclean" destination="sortwoabr">
         <pass>
             <modify>
                 <exchange>
@@ -476,10 +526,11 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
         </pass>
         <suppress-blank-lines/>
     </transform>
-    <transform source="abrsort" destination="abrclean" take-params="cleanup"/>
+    <transform source="abr" destination="abrclean" take-params="cleanup"/>
     <tustep>
-#*export, open, sort-rtf, loeschen = +        
-#*export, abrclean, abrsort-rtf, loeschen = +        
+#*export, sortclean, sort-rtf, loeschen = +        
+#*export, sortwoabr, woabr-rtf, loeschen = +        
+#*export, abrclean, abr-rtf, loeschen = +        
 #*export, niiimp-full2, niiread, loeschen = +        
     </tustep>
     <transform source="niiimp" destination="xxtable">
