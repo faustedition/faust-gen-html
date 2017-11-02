@@ -391,6 +391,7 @@ in <xsl:value-of select="document-uri(/)"/>
 		<f:agent xml:id="g-o-ri" shorthand="G od Ri">Goethe oder Riemer</f:agent>
 		<f:agent xml:id="go" shorthand="Gö">Göttling</f:agent>
 		<f:agent xml:id="go_bl" shorthand="Gö">Göttling</f:agent>
+		<f:agent xml:id="re" shorthand="Re">Reichel</f:agent>
 		<f:agent xml:id="ri" shorthand="Ri">Riemer</f:agent>
 		<f:agent xml:id="sc" shorthand="zS">zeitgenöss Schreiber</f:agent> 		
 	</xsl:variable>
