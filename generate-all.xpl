@@ -197,6 +197,27 @@
 		</f:generate-para-table>
 		
 		
+		<!-- ### Step XXX: Wortindex -->
+		<p:for-each>
+			<p:iteration-source select="//f:textTranscript">
+				<p:pipe port="result" step="emended-version"/>
+			</p:iteration-source>
+			<p:variable name="documentURI" select="/f:textTranscript/@document"/>	
+			<p:load>
+				<p:with-option name="href" select="resolve-uri(concat('emended/', $documentURI), $builddir)"/>
+			</p:load>
+		</p:for-each>		
+		<p:wrap-sequence wrapper="doc" name="wrap-emended"/>
+		<p:xslt>
+			<p:input port="stylesheet"><p:document href="xslt/word-index.xsl"/></p:input>
+		</p:xslt>		
+		<p:store method="xhtml" indent="true">
+			<p:with-option name="href" select="resolve-uri('www/word-index.html', $builddir)"/>
+		</p:store>
+		<p:store method="xhtml" indent="true">
+			<p:with-option name="href" select="resolve-uri('emended-texts.xml', $builddir)"/>
+			<p:input port="source"><p:pipe port="result" step="wrap-emended"></p:pipe></p:input>
+		</p:store>
 		
 		
 	</p:group>
