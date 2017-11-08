@@ -10,19 +10,19 @@
 	version="3.0">
 	
 	<xsl:import href="html-frame.xsl"/>
-	<xsl:param name="limit" select="10"></xsl:param>
+	<xsl:param name="limit" select="1"></xsl:param>
 	
 	<!-- tokenize -->
 	<xsl:template match="text()" priority="1">
 		<xsl:variable name="sigil" select="ancestor::TEI//idno[@type='faustedition']"/>
 		<xsl:variable name="n" select="ancestor::*[@n][1]/@n"/>
 		<xsl:variable name="transcript" select="ancestor::TEI//idno[@type='fausttranscript']"/>
-		<xsl:variable name="section" select="ancestor::*/@f:section[1]"/>
+		<xsl:variable name="section" select="if (ancestor::TEI/@split='true') then concat($transcript, '.', ancestor::*/@f:section[1]) else $transcript"/>
 		<xsl:analyze-string select="." regex="\w+">
 			<xsl:matching-substring>
 				<xsl:choose>
-					<xsl:when test="not(matches(., '^[0-9]+$') or $sigil='Lesetext')">
-						<tei:w s="{$sigil}" n="{$n}" t="{$transcript}{if ($section) then concat('.', $section) else ''}"><xsl:value-of select="."/></tei:w>						
+					<xsl:when test="not(matches(., '^[0-9]+$') or $sigil=('Lesetext', 'Testhandschrift'))">
+						<tei:w s="{$sigil}" n="{$n}" t="{$section}"><xsl:value-of select="."/></tei:w>						
 					</xsl:when>
 					<xsl:otherwise><xsl:copy/></xsl:otherwise>
 				</xsl:choose>
@@ -60,7 +60,7 @@
 								<xsl:text> (</xsl:text>					
 								<xsl:for-each select="current-group()">
 									<xsl:choose>
-										<xsl:when test="@n">
+										<xsl:when test="@n != ''">
 											<a href="/print/{@t}#l{@n}"><xsl:value-of select="@n"/></a>											
 										</xsl:when>
 										<xsl:otherwise>
