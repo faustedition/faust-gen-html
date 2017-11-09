@@ -7,11 +7,21 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1.tf</variable>
         <variable type="permanent-file" name="app1head" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1head.tf</variable>
+        <variable type="permanent-file" name="app1trail" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1trail.tf</variable>
         <variable type="permanent-file" name="app1fn" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1fn.tf</variable>
         <variable type="permanent-file" name="app1p" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1p.tf</variable>
-        <variable type="scratch-file" name="p-head"/>
+        <variable type="permanent-file" name="app1t1a" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t1a.tf</variable>
+        <variable type="permanent-file" name="app1t1b" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t1b.tf</variable>
+        <variable type="permanent-file" name="app1sort" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1sort.tf</variable>
+        <variable type="permanent-file" name="app1sort-rtf" option="erase" format="system"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1sort.rtf</variable>
+        <variable type="scratch-file" name="head"/>
     </variables>
     <tustep>
 #de,da=*
@@ -20,7 +30,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
 #anmelde, app1rtf, traeger = -
 #*import, app1rtf, app1, ignor = -
     </tustep>
-    <transform source="app1" destination="app1head" save-params="p-head">
+    <transform source="app1" destination="app1head" save-params="head">
         <define-text-units>
             <text-unit-start>
                 <comparison-table>
@@ -43,6 +53,21 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>{{document</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+    </transform>
+    <transform source="app1" destination="app1trail">
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>{{/section}}</search-string>
+                            <search-string>{{/body}}</search-string>
+                            <search-string>{{/document}}</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -100,4 +125,42 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
             </modify>
         </pass>
     </transform>
+    <transform source="app1p" destination="app1t1a">
+        <insert-at-start>{{p}}{{font size="12"}}Typ 1a{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>1\a</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <transform source="app1p" destination="app1t1b">
+        <insert-at-start>{{p}}{{font size="12"}}Typ 1b{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>1\b</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <!-- build app1sort -->
+    <transform source="app1head" destination="app1sort"/>
+    <transform source="app1t1a" destination="app1sort" option="append"/>
+    <transform source="app1t1b" destination="app1sort" option="append"/>
+    <transform source="app1trail" destination="app1sort" option="append"/>
+    <tustep>
+#*export, app1sort, app1sort-rtf, loeschen = +        
+    </tustep>
 </script>
