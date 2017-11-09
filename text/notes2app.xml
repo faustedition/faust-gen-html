@@ -6,6 +6,14 @@
         <char-group name="bt">?{-}\]</char-group>
         <variable type="permanent-file" name="niiimp" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/niiimp.tf</variable>
+        <variable type="permanent-file" name="appi" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/appi.tf</variable>
+        <variable type="permanent-file" name="appihead" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/appihead.tf</variable>
+        <variable type="permanent-file" name="appifn" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/appifn.tf</variable>
+        <variable type="permanent-file" name="app1p" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1p.tf</variable>
         <variable type="permanent-file" name="niiimp-full" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/niiimp-full.tf</variable>
         <variable type="permanent-file" name="niiimp-full2" option="erase"
@@ -65,8 +73,96 @@
 -->
         <variable type="permanent-file" format="tustep" option="erase" name="xxtable-x"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/xxtable-x.tf</variable>
+        <variable type="scratch-file" name="p-head"/>
         <variable type="scratch-file" name="cleanup"/>
     </variables>
+    <tustep>
+#de,da=*
+appirtf = C:\users\bruening.FDH-FFM\txstep\txt\appi.rtf
+*eof
+#anmelde, appirtf, traeger = -
+#*import, appirtf, appi, ignor = -
+    </tustep>
+    <transform source="appi" destination="appihead" save-params="p-head">
+        <define-text-units>
+            <text-unit-start>
+                <comparison-table>
+                    <exclusion-string>{{head}}</exclusion-string>
+                    <exclusion-string>{{dstyle</exclusion-string>
+                    <exclusion-string>{{pstyle</exclusion-string>
+                    <exclusion-string>{{cstyle</exclusion-string>
+                    <exclusion-string>{{/head}}</exclusion-string>
+                    <exclusion-string>{{body</exclusion-string>
+                    <exclusion-string>{{section</exclusion-string>
+                    <comparison-string>{{document</comparison-string>
+                    <comparison-string>{{p</comparison-string>
+                    <!-- sonst Fehlerhalt -->
+                </comparison-table>
+            </text-unit-start>
+        </define-text-units>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>{{document</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+    </transform>
+    <transform source="appi" destination="appifn">
+        <new-line-before>
+            <search-table>
+                <search-string>{{fn}}</search-string>
+            </search-table>
+        </new-line-before>
+        <new-line-after>
+            <search-table>
+                <search-string>{{/fn}}</search-string>
+            </search-table>
+        </new-line-after>
+    </transform>
+    <transform source="appifn" destination="app1p">
+        <!--<pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>{{fn</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+            <!-\-<modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{{fn*</search-string>
+                            <replacement-string>{{p}}{=1=}{{/p}}</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>-\->
+        </pass>-->
+        <!--<pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{{{0}/fn}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{{0}/fn-p*}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>-->
+    </transform>
     <tustep>
 #de,da=*
 rtf = C:\users\bruening.FDH-FFM\txstep\txt\appii.rtf
@@ -97,30 +193,7 @@ rtf-sour = C:\users\bruening.FDH-FFM\txstep\txt\nii-source.rtf
             </modify>
         </pass>
     </transform>
-    <transform source="niiimp-full" destination="head">
-        <define-text-units>
-            <text-unit-start>
-                <comparison-table>
-                    <comparison-string>{{document</comparison-string>
-                    <comparison-string>{{p </comparison-string>
-                    <comparison-string>{{/section}}</comparison-string>
-                    <comparison-string>{{/body}}</comparison-string>
-                    <comparison-string>{{/document}}</comparison-string>
-                </comparison-table>
-            </text-unit-start>
-        </define-text-units>
-        <pass>
-            <examine-text>
-                <select>
-                    <text-contains>
-                        <search-table>
-                            <search-string>{{document</search-string>
-                        </search-table>
-                    </text-contains>
-                </select>
-            </examine-text>
-        </pass>
-    </transform>
+    <transform source="niiimp-full" destination="head" take-params="p-head"/>
     <transform source="niiimp-full" destination="intro">
         <define-text-units>
             <text-unit-start>
