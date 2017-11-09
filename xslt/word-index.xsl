@@ -41,13 +41,13 @@
 					<xsl:apply-templates select="//text"/>
 				</xsl:variable>
 				
-				<h1>Index seltener Tokens (weniger als <xsl:value-of select="$limit"/> Vorkommen)</h1>
+				<h1>Index seltener Tokens (höchstens <xsl:value-of select="$limit"/> Vorkommen)</h1>
 				
 				<xsl:for-each-group select="$tokenized//w" group-by=".">
 					<xsl:sort select="current-grouping-key()"/>					
 					<xsl:variable name="total" select="count(current-group())"/>
 					
-					<xsl:if test="$total lt $limit">
+					<xsl:if test="$total le $limit">
 						<div class="l">
 							<strong>
 								<xsl:if test="matches(current-grouping-key(), '[a-z][A-Z]')">
