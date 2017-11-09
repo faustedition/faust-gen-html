@@ -3,24 +3,24 @@
     <variables>
         <variable type="execution-file" name="execute"
             >file:///C:/Users/bruening.FDH-FFM/txstep/ueb/txstep.tu</variable>
-        <variable type="permanent-file" name="appi" option="erase"
-            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/appi.tf</variable>
-        <variable type="permanent-file" name="appihead" option="erase"
-            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/appihead.tf</variable>
-        <variable type="permanent-file" name="appifn" option="erase"
-            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/appifn.tf</variable>
+        <variable type="permanent-file" name="app1" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1.tf</variable>
+        <variable type="permanent-file" name="app1head" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1head.tf</variable>
+        <variable type="permanent-file" name="app1fn" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1fn.tf</variable>
         <variable type="permanent-file" name="app1p" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1p.tf</variable>
         <variable type="scratch-file" name="p-head"/>
     </variables>
     <tustep>
 #de,da=*
-appirtf = C:\users\bruening.FDH-FFM\txstep\txt\appi.rtf
+app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
 *eof
-#anmelde, appirtf, traeger = -
-#*import, appirtf, appi, ignor = -
+#anmelde, app1rtf, traeger = -
+#*import, app1rtf, app1, ignor = -
     </tustep>
-    <transform source="appi" destination="appihead" save-params="p-head">
+    <transform source="app1" destination="app1head" save-params="p-head">
         <define-text-units>
             <text-unit-start>
                 <comparison-table>
@@ -49,7 +49,7 @@ appirtf = C:\users\bruening.FDH-FFM\txstep\txt\appi.rtf
             </examine-text>
         </pass>
     </transform>
-    <transform source="appi" destination="appifn">
+    <transform source="app1" destination="app1fn">
         <new-line-before>
             <search-table>
                 <search-string>{{fn}}</search-string>
@@ -61,7 +61,7 @@ appirtf = C:\users\bruening.FDH-FFM\txstep\txt\appi.rtf
             </search-table>
         </new-line-after>
     </transform>
-    <transform source="appifn" destination="app1p">
+    <transform source="app1fn" destination="app1p">
         <pass>
             <examine-text>
                 <select>
@@ -72,7 +72,7 @@ appirtf = C:\users\bruening.FDH-FFM\txstep\txt\appi.rtf
                     </text-contains>
                 </select>
             </examine-text>
-            <!--<modify>
+            <modify>
                 <exchange>
                     <exchange-table>
                         <string-pair>
@@ -81,9 +81,9 @@ appirtf = C:\users\bruening.FDH-FFM\txstep\txt\appi.rtf
                         </string-pair>
                     </exchange-table>
                 </exchange>
-            </modify>-->
+            </modify>
         </pass>
-        <!--<pass>
+        <pass>
             <modify>
                 <exchange>
                     <exchange-table>
@@ -98,6 +98,6 @@ appirtf = C:\users\bruening.FDH-FFM\txstep\txt\appi.rtf
                     </exchange-table>
                 </exchange>
             </modify>
-        </pass>-->
+        </pass>
     </transform>
 </script>
