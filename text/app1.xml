@@ -19,6 +19,22 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t1b.tf</variable>
         <variable type="permanent-file" name="app1t1c" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t1c.tf</variable>
+        <variable type="permanent-file" name="app1t2a" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2a.tf</variable>
+        <variable type="permanent-file" name="app1t2a0" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2a0.tf</variable>
+        <variable type="permanent-file" name="app1t2aa" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2aa.tf</variable>
+        <variable type="permanent-file" name="app1t2b" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2b.tf</variable>
+        <variable type="permanent-file" name="app1t2b0" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2b0.tf</variable>
+        <variable type="permanent-file" name="app1t2c" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2c.tf</variable>
+        <variable type="permanent-file" name="app1t2c0" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2c0.tf</variable>
+        <variable type="permanent-file" name="app1t2d" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2d.tf</variable>
         <variable type="permanent-file" name="app1sort" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1sort.tf</variable>
         <variable type="permanent-file" name="app1sort-rtf" option="erase" format="system"
