@@ -37,7 +37,7 @@
 
 
     <cx:message log="info">
-      <p:with-option name="message" select="'Reading emended transcript files ...'"/>
+      <p:with-option name="message" select="'Reading prepared transcript files ...'"/>
     </cx:message>
 
     <!-- 
@@ -59,6 +59,10 @@
         <p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $documentURI), $builddir)"
         />
       </p:load>
+      
+      <p:xslt>
+        <p:input port="stylesheet"><p:document href="xslt/prose-to-lines.xsl"/></p:input>
+      </p:xslt>
 
       <!-- 
           nun extrahieren wir die Elemente ("lines"), die für den Variantenapparat
