@@ -35,6 +35,20 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2c0.tf</variable>
         <variable type="permanent-file" name="app1t2d" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2d.tf</variable>
+        <variable type="permanent-file" name="app1t3" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t3.tf</variable>
+        <variable type="permanent-file" name="app1t4a" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t4b.tf</variable>
+        <variable type="permanent-file" name="app1t4b" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t4b.tf</variable>
+        <variable type="permanent-file" name="app1t5" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t5.tf</variable>
+        <variable type="permanent-file" name="app1t6" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t6.tf</variable>
+        <variable type="permanent-file" name="app1t7" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t7.tf</variable>
+        <variable type="permanent-file" name="app1t8" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t8.tf</variable>
         <variable type="permanent-file" name="app1sort" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1sort.tf</variable>
         <variable type="permanent-file" name="app1sort-rtf" option="erase" format="system"
@@ -236,7 +250,121 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    
+    <transform source="app1p" destination="app1t3">
+        <insert-at-start>{{p}}{{font size="12"}}Typ 3{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>typ 3</search-string>
+                            <search-string>oder 3</search-string>
+                            <search-string>bzw. 3</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <transform source="app1p" destination="app1t4a">
+        <insert-at-start>{{p}}{{font size="12"}}Typ 4a{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>4\a</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <transform source="app1p" destination="app1t4b">
+        <insert-at-start>{{p}}{{font size="12"}}Typ 4b{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>4\b</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <transform source="app1p" destination="app1t5">
+        <insert-at-start>{{p}}{{font size="12"}}Typ 5{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>typ 5</search-string>
+                            <search-string>oder 5</search-string>
+                            <search-string>bzw. 5</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <transform source="app1p" destination="app1t6">
+        <insert-at-start>{{p}}{{font size="12"}}Typ 6{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>typ 6</search-string>
+                            <search-string>oder 6</search-string>
+                            <search-string>bzw. 6</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <transform source="app1p" destination="app1t7">
+        <insert-at-start>{{p}}{{font size="12"}}Typ 7{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>typ 7</search-string>
+                            <search-string>oder 7</search-string>
+                            <search-string>bzw. 7</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <transform source="app1p" destination="app1t8">
+        <insert-at-start>{{p}}{{font size="12"}}Typ 8{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>typ 8</search-string>
+                            <search-string>oder 8</search-string>
+                            <search-string>bzw. 8</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
     <!-- build app1sort -->
     <transform source="app1head" destination="app1sort"/>
     <transform source="app1t1a" destination="app1sort" option="append"/>
@@ -245,6 +373,13 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
     <transform source="app1t2a" destination="app1sort" option="append"/>
     <transform source="app1t2a0" destination="app1sort" option="append"/>
     <transform source="app1t2aa" destination="app1sort" option="append"/>
+    <transform source="app1t3" destination="app1sort" option="append"/>
+    <transform source="app1t4a" destination="app1sort" option="append"/>
+    <transform source="app1t4b" destination="app1sort" option="append"/>
+    <transform source="app1t5" destination="app1sort" option="append"/>
+    <transform source="app1t6" destination="app1sort" option="append"/>
+    <transform source="app1t7" destination="app1sort" option="append"/>
+    <transform source="app1t8" destination="app1sort" option="append"/>
     <transform source="app1trail" destination="app1sort" option="append"/>
     <tustep>
 #*export, app1sort, app1sort-rtf, loeschen = +        
