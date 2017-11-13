@@ -55,6 +55,8 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t7.tf</variable>
         <variable type="permanent-file" name="app1t8" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t8.tf</variable>
+        <variable type="permanent-file" name="app1tq" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1tq.tf</variable>
         <variable type="permanent-file" name="app1sort" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1sort.tf</variable>
         <variable type="permanent-file" name="app1sort-rtf" option="erase" format="system"
@@ -425,6 +427,22 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
+    <transform source="app1p" destination="app1tq">
+        <insert-at-start>{{p}}{{font size="12"}}Typ: ?{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>typ: ?</search-string>
+                            <search-string>typ:_?</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
     <!-- build app1sort -->
     <transform source="app1head" destination="app1sort"/>
     <transform source="app1t1a" destination="app1sort" option="append"/>
@@ -443,6 +461,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
     <transform source="app1t6" destination="app1sort" option="append"/>
     <transform source="app1t7" destination="app1sort" option="append"/>
     <transform source="app1t8" destination="app1sort" option="append"/>
+    <transform source="app1tq" destination="app1sort" option="append"/>
     <transform source="app1trail" destination="app1sort" option="append"/>
     <tustep>
 #*export, app1sort, app1sort-rtf, loeschen = +        
