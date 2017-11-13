@@ -29,6 +29,8 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2a0.tf</variable>
         <variable type="permanent-file" name="app1t2aa" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2aa.tf</variable>
+        <variable type="permanent-file" name="app1t2aa0" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2aa0.tf</variable>
         <variable type="permanent-file" name="app1t2b" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2b.tf</variable>
         <variable type="permanent-file" name="app1t2b0" option="erase"
@@ -284,7 +286,23 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
+                            <exception-string>2aa#\[2310\]</exception-string>
                             <search-string>2\a\a</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <transform source="app1p" destination="app1t2aa0">
+        <insert-at-start>{{p}}{{font size="12"}}Typ 2aa#[2310]{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>2aa#\[2310\]</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -417,6 +435,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
     <transform source="app1t2a" destination="app1sort" option="append"/>
     <transform source="app1t2a0" destination="app1sort" option="append"/>
     <transform source="app1t2aa" destination="app1sort" option="append"/>
+    <transform source="app1t2aa0" destination="app1sort" option="append"/>
     <transform source="app1t3" destination="app1sort" option="append"/>
     <transform source="app1t4a" destination="app1sort" option="append"/>
     <transform source="app1t4b" destination="app1sort" option="append"/>
