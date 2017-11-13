@@ -21,6 +21,8 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t1b0.tf</variable>
         <variable type="permanent-file" name="app1t1c" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t1c.tf</variable>
+        <variable type="permanent-file" name="app1t1c0" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t1c0.tf</variable>
         <variable type="permanent-file" name="app1t2a" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1t2a.tf</variable>
         <variable type="permanent-file" name="app1t2a0" option="erase"
@@ -214,7 +216,26 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>1\c</search-string>
+                            <exception-string>\[typ 1c#\[2310\]\]</exception-string>
+                            <exception-string>1c0</exception-string>
+                            <search-string>typ 1\c</search-string>
+                            <search-string>1\c oder 1c#\[2310\]</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <transform source="app1p" destination="app1t1c0">
+        <insert-at-start>{{p}}{{font size="12"}}Typ 1c#[2310]{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>1c#\[2310\]</search-string>
+                            <search-string>1c0</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -392,6 +413,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
     <transform source="app1t1b" destination="app1sort" option="append"/>
     <transform source="app1t1b0" destination="app1sort" option="append"/>
     <transform source="app1t1c" destination="app1sort" option="append"/>
+    <transform source="app1t1c0" destination="app1sort" option="append"/>
     <transform source="app1t2a" destination="app1sort" option="append"/>
     <transform source="app1t2a0" destination="app1sort" option="append"/>
     <transform source="app1t2aa" destination="app1sort" option="append"/>
