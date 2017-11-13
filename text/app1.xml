@@ -209,6 +209,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
+                            <exception-string>2a#\[2310\]</exception-string>
                             <exception-string>2\a0</exception-string>
                             <exception-string>2\a\a</exception-string>
                             <search-string>2\a</search-string>
