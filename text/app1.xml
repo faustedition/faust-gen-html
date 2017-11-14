@@ -97,6 +97,16 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     </text-contains>
                 </select>
             </examine-text>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>font="Calibri"</search-string>
+                            <replacement-string>font="Times"</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
         </pass>
     </transform>
     <transform source="app1" destination="app1trail">
@@ -434,8 +444,8 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>typ: ?</search-string>
-                            <search-string>typ:_?</search-string>
+                            <search-string>typ: \?</search-string>
+                            <search-string>typ:_\?</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -462,6 +472,21 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
     <transform source="app1t7" destination="app1sort" option="append"/>
     <transform source="app1t8" destination="app1sort" option="append"/>
     <transform source="app1tq" destination="app1sort" option="append"/>
+    <transform source="app1p" destination="app1sort" option="append">
+        <insert-at-start>{{p}}{{font size="12"}}Diskussionsbedürftig{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>++</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
     <transform source="app1trail" destination="app1sort" option="append"/>
     <tustep>
 #*export, app1sort, app1sort-rtf, loeschen = +        
