@@ -47,7 +47,8 @@
 		<head>
 			<meta charset="utf-8"/>
 
-			<script type="text/javascript" src="{$assets}/js/require.js"/>		
+			<script type="text/javascript" src="{$assets}/js/require.js"/>
+			<script type="text/javascript" src="{$assets}/js/faust_config.js"/>
 
 			<link rel="stylesheet" href="{$assets}/css/webfonts.css"/>
 			<link rel="stylesheet" href="{$assets}/css/fontawesome-min.css"/>
@@ -59,7 +60,7 @@
 			<link rel="stylesheet" href="{$assets}/css/prints-viewer.css"/>
 			<xsl:if test="$scriptAdditions">
 				<script>
-					requirejs(["/js/faust_common"], function(Faust) {
+					requirejs(["faust_common"], function(Faust) {
 	    				<xsl:copy-of select="$scriptAdditions"/>				  
 					});
 				</script>				
@@ -179,8 +180,8 @@
 		</script>
 		
 		<script>
-			requirejs(['/js/faust_common.js'], function(Faust) {
-				requirejs(['jquery', 'jquery.chocolat', 'jquery.overlays', 'jquery.clipboard', 'faust_print_interaction'], function ($, $chocolat, $overlays, $clipboard, addPrintInteraction) {
+			requirejs(['faust_common', 'jquery', 'jquery.chocolat', 'jquery.overlays', 'jquery.clipboard', 'faust_print_interaction'], 
+				 function (Faust, $, $chocolat, $overlays, $clipboard, addPrintInteraction) {
 						$('main').Chocolat({className:'faustedition', loop:true});
 						$('header nav').menuOverlays({highlightClass:'pure-menu-selected', onAfterShow: function() {
 							$('[data-target]').copyToClipboard();
@@ -192,7 +193,6 @@
 					</xsl:if>
 					<xsl:value-of select="$scriptAdditions"/>
 				});
-			});
 		</script>
 		
 		<!-- Piwik -->
