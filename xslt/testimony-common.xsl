@@ -79,7 +79,7 @@
         <xsl:for-each select="tokenize($sigils, ';\s*')">
             <xsl:variable name="sigil" select="."/>
             <xsl:variable name="document" select="doc($transcript-list)//*[@f:sigil=$sigil]"/>
-            <xsl:variable name="uri" select="$document/idno[@type='faust-doc-uri']/text()"/>
+            <xsl:variable name="uri" select="$document/f:idno[@type='faust-doc-uri']/text()"/>
             <xsl:choose>
                 <xsl:when test="not($document)">
                     <a class="message error">H-Sigle nicht gefunden: <a title="zur Handschriftenliste" href="/archive_manuscripts">»<xsl:value-of select="$sigil"/>«</a></a>
@@ -88,7 +88,7 @@
                     <a href="{if ($document/@type='print')
                         then concat('/print/', replace(replace($document/@uri, '^.*/', ''), '\.xml$', ''))
                         else concat('/documentViewer?faustUri=', $uri)}"
-                        title="{$document/headNote}">
+                        title="{$document/f:headNote}">
                         <xsl:value-of select="$sigil"/>
                     </a>											
                 </xsl:otherwise>
