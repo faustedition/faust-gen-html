@@ -80,6 +80,13 @@
             <xsl:variable name="sigil" select="."/>
             <xsl:variable name="document" select="doc($transcript-list)//*[@f:sigil=$sigil]"/>
             <xsl:variable name="uri" select="$document/f:idno[@type='faust-doc-uri']/text()"/>
+            
+            <xsl:choose>
+                <xsl:when test="not(doc-available($transcript-list))"><xsl:message select="concat('ERROR: Transcript list not found: ', $transcript-list)"/></xsl:when>
+                <xsl:when test="not($document/*)"><xsl:message select="concat('ERROR: Sigil ', $sigil, ' not found in ', $transcript-list)"></xsl:message></xsl:when>
+                <xsl:when test="not($uri) or normalize-space($uri) = ''"><xsl:message select="concat('ERROR: no URI found for ', $sigil, ', transcript ', $document)"/></xsl:when>
+            </xsl:choose>
+            
             <xsl:choose>
                 <xsl:when test="not($document)">
                     <a class="message error">H-Sigle nicht gefunden: <a title="zur Handschriftenliste" href="/archive_manuscripts">»<xsl:value-of select="$sigil"/>«</a></a>
