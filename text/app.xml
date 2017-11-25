@@ -156,7 +156,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <exclusion-string>{{section</exclusion-string>
                     <comparison-string>{{document</comparison-string>
                     <comparison-string>{{p</comparison-string>
-                    <!-- sonst Fehlerhalt -->
+                    <!-- p, sonst Fehlerhalt -->
                 </comparison-table>
             </text-unit-start>
         </define-text-units>
@@ -181,6 +181,17 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 </exchange>
             </modify>
         </pass>
+        <new-line-before>
+            <search-table>
+                <search-string>{{head</search-string>
+                <search-string>{{dstyle</search-string>
+                <search-string>{{pstyle</search-string>
+                <search-string>{{cstyle</search-string>
+                <search-string>{{/head</search-string>
+                <search-string>{{body</search-string>
+                <search-string>{{section</search-string>
+            </search-table>
+        </new-line-before>
     </transform>
     <transform source="app1p" destination="app1sort" option="append">
         <insert-at-start>{{p}}{{font size="12"}}Typ 1a{{/font}}{{/p}}</insert-at-start>
