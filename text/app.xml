@@ -63,6 +63,10 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1clean.tf</variable>
         <variable type="permanent-file" name="app1sort-rtf" option="erase" format="system"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1sort.rtf</variable>
+        <variable type="permanent-file" name="app2" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2.tf</variable>
+        <variable type="permanent-file" name="app2sort" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2sort.tf</variable>
         <variable type="scratch-file" name="head"/>
     </variables>
     <tustep>
@@ -571,7 +575,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <exchange-table>
                         <string-pair>
                             <search-string>^+</search-string>
-                            <replacement-string></replacement-string>
+                            <replacement-string/>
                         </string-pair>
                         <string-pair>
                             <search-string>name="Times"}}{|}*\[*\]\{*\}</search-string>
@@ -585,4 +589,13 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
     <tustep>
 #*export, app1clean, app1sort-rtf, loeschen = +        
     </tustep>
+    <tustep>
+#de,da=*
+app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
+*eof
+#anmelde, app2rtf, traeger = -
+#*import, app2rtf, app2, ignor = -
+    </tustep>
+    <!-- build app2 -->
+    <transform source="app2" destination="app2sort" take-params="head"/>
 </script>
