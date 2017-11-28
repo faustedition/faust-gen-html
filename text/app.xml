@@ -621,6 +621,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
     </tustep>
     <!-- build app2 -->
     <transform source="app2" destination="app2sort" take-params="head"/>
+    <transform source="app2" destination="app2sort" take-params="typ1a" option="append"/>
     <transform source="app2" destination="app2sort" take-params="trail" option="append"/>
     <tustep>
 #*export, app2sort, app2sort-rtf, loeschen = +        
