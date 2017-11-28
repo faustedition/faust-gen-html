@@ -27,6 +27,12 @@
         <variable type="scratch-file" name="typ1a"/>
         <variable type="scratch-file" name="trail"/>
         <variable type="scratch-file" name="cleanup"/>
+        <string-group name="ty">
+            <member>typ</member>
+            <member>(</member>
+            <member>bzw.</member>
+            <member>oder</member>
+        </string-group>
     </variables>
     <tustep>
 #de,da=*
@@ -159,10 +165,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>typ {0}n1\a</search-string>
-                            <search-string>(1\a</search-string>
-                            <search-string>bzw. 1\a</search-string>
-                            <search-string>oder 1\a</search-string>
+                            <search-string>{s:ty}{0} {0}n1\a</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -177,9 +180,9 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <exception-string>\[typ 1b#\[2310\]\]</exception-string>
-                            <exception-string>1b0</exception-string>
-                            <search-string>1\b</search-string>
+                            <exception-string>{s:ty}{0} 1b#\[2310\]</exception-string>
+                            <exception-string>typ 1b0</exception-string>
+                            <search-string>{s:ty}{0} {0}n1\b</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -194,8 +197,8 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>1b#\[2310\]</search-string>
-                            <search-string>1b0</search-string>
+                            <search-string>{s:ty}{0} {0}n1b#\[2310\]</search-string>
+                            <search-string>{s:ty}{0} {0}n1b0</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -210,10 +213,9 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <exception-string>\[typ 1c#\[2310\]\]</exception-string>
-                            <exception-string>1c0</exception-string>
-                            <search-string>typ 1\c</search-string>
-                            <search-string>1\c oder 1c#\[2310\]</search-string>
+                            <exception-string>{s:ty}{0} 1c#\[2310\]</exception-string>
+                            <exception-string>{s:ty}{0} 1c0</exception-string>
+                            <search-string>{s:ty}{0} {0}n1\c</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -577,6 +579,6 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
     <transform source="app2" destination="app2sort" take-params="trail" option="append"/>
     <transform source="app2sort" destination="app2clean" take-params="cleanup"/>
     <tustep>
-#*export, app2sort, app2sort-rtf, loeschen = +        
+#*export, app2clean, app2sort-rtf, loeschen = +        
     </tustep>
 </script>
