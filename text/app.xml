@@ -67,14 +67,10 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2.tf</variable>
         <variable type="permanent-file" name="app2sort" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2sort.tf</variable>
-        <variable type="permanent-file" name="app2clean" option="erase"
-            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2clean.tf</variable>
         <variable type="permanent-file" name="app2sort-rtf" option="erase" format="system"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2sort.rtf</variable>
         <variable type="scratch-file" name="head"/>
-        <variable type="scratch-file" name="typ1a"/>
         <variable type="scratch-file" name="trail"/>
-        <variable type="scratch-file" name="cleanup"/>
     </variables>
     <tustep>
 #de,da=*
@@ -200,17 +196,14 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
             </search-table>
         </new-line-before>
     </transform>
-    <transform source="app1p" destination="app1sort" save-params="typ1a" option="append">
+    <transform source="app1p" destination="app1sort" option="append">
         <insert-at-start>{{p}}{{font size="12"}}Typ 1a{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>typ {0}n1\a</search-string>
-                            <search-string>(1\a</search-string>
-                            <search-string>bzw. 1\a</search-string>
-                            <search-string>oder 1\a</search-string>
+                            <search-string>1\a</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -589,7 +582,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
             </examine-text>
         </pass>
     </transform>
-    <transform source="app1sort" destination="app1clean" save-params="cleanup">
+    <transform source="app1sort" destination="app1clean">
         <pass>
             <modify>
                 <exchange>
@@ -600,10 +593,6 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                         </string-pair>
                         <string-pair>
                             <search-string>name="Times"}}{|}*\[*\]\{*\}</search-string>
-                            <replacement-string>{=1=}</replacement-string>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>left="8"}}{|}*\[*\]\{*\}</search-string>
                             <replacement-string>{=1=}</replacement-string>
                         </string-pair>
                     </exchange-table>
@@ -621,10 +610,8 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
     </tustep>
     <!-- build app2 -->
     <transform source="app2" destination="app2sort" take-params="head"/>
-    <transform source="app2" destination="app2sort" take-params="typ1a" option="append"/>
     <transform source="app2" destination="app2sort" take-params="trail" option="append"/>
-    <transform source="app2sort" destination="app2clean" take-params="cleanup"/>
     <tustep>
-#*export, app2clean, app2sort-rtf, loeschen = +        
+#*export, app2sort, app2sort-rtf, loeschen = +        
     </tustep>
 </script>
