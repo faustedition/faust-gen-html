@@ -46,6 +46,7 @@
         <variable type="scratch-file" name="typ6"/>
         <variable type="scratch-file" name="typ7"/>
         <variable type="scratch-file" name="typ8"/>
+        <variable type="scratch-file" name="typq"/>
         <variable type="scratch-file" name="trail"/>
         <variable type="scratch-file" name="cleanup"/>
         <string-group name="ty">
@@ -269,7 +270,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                         <search-table>
                             <exception-string>2a#\[2310\]</exception-string>
                             <exception-string>2\a0</exception-string>
-                            <exception-string>2\a\a</exception-string>
+                            <exception-string>{s:ty}{0} {0}n2\a\a</exception-string>
                             <search-string>{s:ty}{0} {0}n2\a</search-string>
                         </search-table>
                     </text-contains>
@@ -286,7 +287,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>2a#\[2310\]</search-string>
-                            <search-string>2\a0</search-string>
+                            <search-string>{s:ty}{0} {0}n2\a0</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -302,7 +303,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <exception-string>2aa#\[2310\]</exception-string>
-                            <search-string>2\a\a</search-string>
+                            <search-string>{s:ty}{0} {0}n2\a\a</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -334,7 +335,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                         <search-table>
                             <exception-string>2b#\[2310\]</exception-string>
                             <exception-string>2\b0</exception-string>
-                            <search-string>2\b</search-string>
+                            <search-string>{s:ty}{0} {0}n2\b</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -350,6 +351,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>2b#\[2310\]</search-string>
+                            <search-string>{s:ty}{0} {0}n2b0</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -365,7 +367,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <exception-string>2c#\[2310\]</exception-string>
-                            <search-string>2c</search-string>
+                            <search-string>{s:ty}{0} {0}n2c</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -381,6 +383,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>2c#\[2310\]</search-string>
+                            <search-string>2c0</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -396,6 +399,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>2d#\[2310\]</search-string>
+                            <search-string>2d0</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -410,9 +414,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>typ 3</search-string>
-                            <search-string>oder 3</search-string>
-                            <search-string>bzw. 3</search-string>
+                            <search-string>{s:ty}{0} {0}n3</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -427,7 +429,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>4\a</search-string>
+                            <search-string>{s:ty}{0} {0}n4\a</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -442,7 +444,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>4\b</search-string>
+                            <search-string>{s:ty}{0} {0}n4\b</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -457,7 +459,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>4\c</search-string>
+                            <search-string>{s:ty}{0} {0}n4\c</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -472,9 +474,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>typ 5</search-string>
-                            <search-string>oder 5</search-string>
-                            <search-string>bzw. 5</search-string>
+                            <search-string>{s:ty}{0} {0}n5</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -489,9 +489,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>typ 6</search-string>
-                            <search-string>oder 6</search-string>
-                            <search-string>bzw. 6</search-string>
+                            <search-string>{s:ty}{0} {0}n6</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -506,9 +504,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>typ 7</search-string>
-                            <search-string>oder 7</search-string>
-                            <search-string>bzw. 7</search-string>
+                            <search-string>{s:ty}{0} {0}n7</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -523,9 +519,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>typ 8</search-string>
-                            <search-string>oder 8</search-string>
-                            <search-string>bzw. 8</search-string>
+                            <search-string>{s:ty}{0} {0}n8</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -533,7 +527,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typq">
         <insert-at-start>{{p}}{{font size="12"}}Typ: ?{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -616,6 +610,23 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
     <transform source="app2" destination="app2sort" take-params="typ1b0" option="append"/>
     <transform source="app2" destination="app2sort" take-params="typ1c" option="append"/>
     <transform source="app2" destination="app2sort" take-params="typ1c0" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ2a" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ2a0" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ2aa" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ2aa0" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ2b" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ2b0" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ2c" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ2c0" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ2d" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ3" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ4a" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ4b" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ4c" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ5" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ6" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ7" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ8" option="append"/>
     <transform source="app2" destination="app2sort" take-params="trail" option="append"/>
     <transform source="app2sort" destination="app2clean" take-params="cleanup"/>
     <tustep>
