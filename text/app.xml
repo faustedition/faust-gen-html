@@ -21,8 +21,16 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2sort.tf</variable>
         <variable type="permanent-file" name="app2clean" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2clean.tf</variable>
+        <variable type="permanent-file" name="app2go" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2go.tf</variable>
+        <variable type="permanent-file" name="app2open" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2open.tf</variable>
         <variable type="permanent-file" name="app2sort-rtf" option="erase" format="system"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2sort.rtf</variable>
+        <variable type="permanent-file" name="app2go-rtf" option="erase" format="system"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2go.rtf</variable>
+        <variable type="permanent-file" name="app2open-rtf" option="erase" format="system"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2open.rtf</variable>
         <variable type="scratch-file" name="head"/>
         <variable type="scratch-file" name="typ1a"/>
         <variable type="scratch-file" name="typ1b"/>
@@ -188,6 +196,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>{s:ty}{0} {0}n1\a</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -205,6 +214,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                             <exception-string>{s:ty}{0} 1b#\[2310\]</exception-string>
                             <exception-string>typ 1b0</exception-string>
                             <search-string>{s:ty}{0} {0}n1\b</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -221,6 +231,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                         <search-table>
                             <search-string>{s:ty}{0} {0}n1b#\[2310\]</search-string>
                             <search-string>{s:ty}{0} {0}n1b0</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -238,6 +249,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                             <exception-string>{s:ty}{0} 1c#\[2310\]</exception-string>
                             <exception-string>{s:ty}{0} 1c0</exception-string>
                             <search-string>{s:ty}{0} {0}n1\c</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -254,6 +266,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                         <search-table>
                             <search-string>1c#\[2310\]</search-string>
                             <search-string>1c0</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -272,6 +285,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                             <exception-string>2\a0</exception-string>
                             <exception-string>{s:ty}{0} {0}n2\a\a</exception-string>
                             <search-string>{s:ty}{0} {0}n2\a</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -288,6 +302,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                         <search-table>
                             <search-string>2a#\[2310\]</search-string>
                             <search-string>{s:ty}{0} {0}n2\a0</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -304,6 +319,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                         <search-table>
                             <exception-string>2aa#\[2310\]</exception-string>
                             <search-string>{s:ty}{0} {0}n2\a\a</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -319,6 +335,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>2aa#\[2310\]</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -336,6 +353,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                             <exception-string>2b#\[2310\]</exception-string>
                             <exception-string>2\b0</exception-string>
                             <search-string>{s:ty}{0} {0}n2\b</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -352,6 +370,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                         <search-table>
                             <search-string>2b#\[2310\]</search-string>
                             <search-string>{s:ty}{0} {0}n2b0</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -367,7 +386,9 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <exception-string>2c#\[2310\]</exception-string>
+                            <search-string>{s:ty}{0} {0}n2c0</search-string>
                             <search-string>{s:ty}{0} {0}n2c</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -384,6 +405,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                         <search-table>
                             <search-string>2c#\[2310\]</search-string>
                             <search-string>2c0</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -400,6 +422,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                         <search-table>
                             <search-string>2d#\[2310\]</search-string>
                             <search-string>2d0</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -415,6 +438,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>{s:ty}{0} {0}n3</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -430,6 +454,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>{s:ty}{0} {0}n4\a</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -445,6 +470,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>{s:ty}{0} {0}n4\b</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -460,6 +486,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>{s:ty}{0} {0}n4\c</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -475,6 +502,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>{s:ty}{0} {0}n5</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -490,6 +518,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>{s:ty}{0} {0}n6</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -505,6 +534,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>{s:ty}{0} {0}n7</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -520,6 +550,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>{s:ty}{0} {0}n8</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -536,6 +567,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                         <search-table>
                             <search-string>typ: \?</search-string>
                             <search-string>typ:_\?</search-string>
+                            <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -592,7 +624,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                         </string-pair>
                         <string-pair>
                             <search-string>typ {[}\N{]}{#}</search-string>
-                            <replacement-string></replacement-string>
+                            <replacement-string/>
                         </string-pair>
                     </exchange-table>
                 </exchange>
@@ -634,7 +666,49 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
     <transform source="app2" destination="app2sort" take-params="typq" option="append"/>
     <transform source="app2" destination="app2sort" take-params="trail" option="append"/>
     <transform source="app2sort" destination="app2clean" take-params="cleanup"/>
+    <!-- build app2go -->
+    <transform source="app2" destination="app2go" take-params="head"/>
+    <transform source="app2clean" destination="app2go" option="append">
+        <insert-at-start>{{p}}{{font size="12"}}Gebilligt{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>{{p}}{{font size="12"}}Typ</search-string>
+                            <search-string>+abr*+sh</search-string>
+                            <search-string>+sh*+abr</search-string>
+                            <search-string>Textgrundlage: </search-string>
+                            <search-string>{{p after="0" line-feed="12"/}}</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+    </transform>
+    <transform source="app2" destination="app2go" take-params="trail" option="append"/>
+    <transform source="app2clean" destination="app2open">
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>*+abr*+sh*</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>*+sh*+abr*</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <suppress-blank-lines/>
+    </transform>
     <tustep>
 #*export, app2clean, app2sort-rtf, loeschen = +        
+#*export, app2go, app2go-rtf, loeschen = +        
+#*export, app2open, app2open-rtf, loeschen = +        
     </tustep>
 </script>
