@@ -29,6 +29,23 @@
         <variable type="scratch-file" name="typ1b0"/>
         <variable type="scratch-file" name="typ1c"/>
         <variable type="scratch-file" name="typ1c0"/>
+        <variable type="scratch-file" name="typ2a"/>
+        <variable type="scratch-file" name="typ2a0"/>
+        <variable type="scratch-file" name="typ2aa"/>
+        <variable type="scratch-file" name="typ2aa0"/>
+        <variable type="scratch-file" name="typ2b"/>
+        <variable type="scratch-file" name="typ2b0"/>
+        <variable type="scratch-file" name="typ2c"/>
+        <variable type="scratch-file" name="typ2c0"/>
+        <variable type="scratch-file" name="typ2d"/>
+        <variable type="scratch-file" name="typ3"/>
+        <variable type="scratch-file" name="typ4a"/>
+        <variable type="scratch-file" name="typ4b"/>
+        <variable type="scratch-file" name="typ4c"/>
+        <variable type="scratch-file" name="typ5"/>
+        <variable type="scratch-file" name="typ6"/>
+        <variable type="scratch-file" name="typ7"/>
+        <variable type="scratch-file" name="typ8"/>
         <variable type="scratch-file" name="trail"/>
         <variable type="scratch-file" name="cleanup"/>
         <string-group name="ty">
@@ -243,7 +260,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ2a">
         <insert-at-start>{{p}}{{font size="12"}}Typ 2a{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -261,7 +278,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ2a0">
         <insert-at-start>{{p}}{{font size="12"}}Typ 2a#[2310]{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -277,7 +294,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ2aa">
         <insert-at-start>{{p}}{{font size="12"}}Typ 2aa{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -293,7 +310,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ2aa0">
         <insert-at-start>{{p}}{{font size="12"}}Typ 2aa#[2310]{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -308,7 +325,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ2b">
         <insert-at-start>{{p}}{{font size="12"}}Typ 2b{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -325,7 +342,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ2b0">
         <insert-at-start>{{p}}{{font size="12"}}Typ 2b#[2310]{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -340,7 +357,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ2c">
         <insert-at-start>{{p}}{{font size="12"}}Typ 2c{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -356,7 +373,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ2c0">
         <insert-at-start>{{p}}{{font size="12"}}Typ 2c#[2310]{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -371,7 +388,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ2d">
         <insert-at-start>{{p}}{{font size="12"}}Typ 2d (immer 2d#[2310]){{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -386,7 +403,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ3">
         <insert-at-start>{{p}}{{font size="12"}}Typ 3 (immer 3#[2310]){{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -403,7 +420,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ4a">
         <insert-at-start>{{p}}{{font size="12"}}Typ 4a{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -418,7 +435,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ4b">
         <insert-at-start>{{p}}{{font size="12"}}Typ 4b{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -433,7 +450,22 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ4c">
+        <insert-at-start>{{p}}{{font size="12"}}Typ 4c{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>4\c</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ5">
         <insert-at-start>{{p}}{{font size="12"}}Typ 5{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -450,7 +482,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ6">
         <insert-at-start>{{p}}{{font size="12"}}Typ 6{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -467,7 +499,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ7">
         <insert-at-start>{{p}}{{font size="12"}}Typ 7{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
@@ -484,7 +516,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
-    <transform source="app1p" destination="app1sort" option="append">
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ8">
         <insert-at-start>{{p}}{{font size="12"}}Typ 8{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
