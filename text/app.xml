@@ -590,6 +590,10 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                             <search-string>left="8"}}{|}*\[*\]\{*\}</search-string>
                             <replacement-string>{=1=}</replacement-string>
                         </string-pair>
+                        <string-pair>
+                            <search-string>typ {[}\N{]}{#}</search-string>
+                            <replacement-string></replacement-string>
+                        </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>
@@ -627,6 +631,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
     <transform source="app2" destination="app2sort" take-params="typ6" option="append"/>
     <transform source="app2" destination="app2sort" take-params="typ7" option="append"/>
     <transform source="app2" destination="app2sort" take-params="typ8" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typq" option="append"/>
     <transform source="app2" destination="app2sort" take-params="trail" option="append"/>
     <transform source="app2sort" destination="app2clean" take-params="cleanup"/>
     <tustep>
