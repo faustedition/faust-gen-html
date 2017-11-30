@@ -95,13 +95,13 @@
 				require(['faust_app']);
 			</xsl:with-param>
 			<xsl:with-param name="content">
-				<div class="print testimony">
-					<div class="print-side-column"></div>
-					<div class="print-center-column">
-						<xsl:apply-templates select="//f:testimony"/>
-						<xsl:apply-templates select="//text//text[not(@copyOf)]"/>						
+				<div class="testimony pure-g-r">
+					<div class="pure-u-1-2">
+						<xsl:apply-templates select="//f:testimony"/>						
 					</div>
-					<div class="print-side-column"></div>
+					<div class="pure-u-1-2">
+						<xsl:apply-templates select="//text//text[not(@copyOf)]"/>						
+					</div>					
 				</div>
 			</xsl:with-param>
 		</xsl:call-template>				
