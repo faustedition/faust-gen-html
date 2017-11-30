@@ -111,6 +111,7 @@
 	<xsl:template match="f:testimony">
 		<dl class="metadata-container testimony-metadata">
 			<xsl:apply-templates/>
+			<dd><a href="#{$id}">zum Entstehungszeugnis im Text <i class="fa fa-right-dir"></i></a></dd>			
 		</dl>
 	</xsl:template>
 	
