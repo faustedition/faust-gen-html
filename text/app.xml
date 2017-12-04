@@ -421,7 +421,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>2d#\[2310\]</search-string>
-                            <search-string>2d0</search-string>
+                            <search-string>2d</search-string>
                             <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
