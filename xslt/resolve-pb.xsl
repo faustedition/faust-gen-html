@@ -40,7 +40,7 @@
 		<xsl:variable name="docTranscriptNos">
 			<xsl:for-each select="tokenize(@n, '\s+')">
 				<xsl:variable name="n" select="replace(., '^0+', '')"/>
-				<xsl:variable name="pattern" select="concat('0*(', $n, ')(\.xml)?')"/>
+				<xsl:variable name="pattern" select="concat('^0*(', $n, ')(\.xml)?')"/>
 				<xsl:variable name="pageElem"
 					select="$metadata//f:docTranscript[matches(@uri, $pattern)]/ancestor::f:page[1]"/>
 				<xsl:for-each select="$pageElem[1]">
