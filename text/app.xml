@@ -33,6 +33,8 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2open.rtf</variable>
         <variable type="permanent-file" name="app2closed" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2closed.tf</variable>
+        <variable type="permanent-file" name="app2norm" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2norm.tf</variable>
         <variable type="permanent-file" name="app2xml" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2xml.tf</variable>
         <variable type="scratch-file" name="head"/>
@@ -728,7 +730,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
             </examine-text>
         </pass>
     </transform>
-    <transform source="app2closed" destination="app2xml">
+    <transform source="app2closed" destination="app2norm">
         <pass>
             <modify>
                 <exchange>
@@ -749,10 +751,98 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <search-string>+sh</search-string>
                             <replacement-string/>
                         </string-pair>
+                        <string-pair>
+                            <search-string>{{fn}}*{{/fn}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{sup}}{|}*{|}{{/sup}}</search-string>
+                            <replacement-string>.{=2=}</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>\[{[}typ {0}\N{]}{#}</search-string>
+                            <replacement-string>type=</replacement-string>
+                        </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>
         </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{{i}}{[}\H{]}{{/i}}</search-string>
+                            <replacement-string>2^_H</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{i}}{[}\H{]} \[</search-string>
+                            <replacement-string>2^_H</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>\I{[} {]}\H.</search-string>
+                            <replacement-string>^_</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>\V{[} {]}\H.</search-string>
+                            <replacement-string>^_</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>C.{#}{[}_{]}4</search-string>
+                            <replacement-string>^_</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>C.{#}{[} {]}4</search-string>
+                            <replacement-string>^_</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{{i}}{[}\I{]}^_H.{#}</search-string>
+                            <replacement-string>2^_I</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{i}}{[}\I\I{]}^_H.{#}</search-string>
+                            <replacement-string>2^_II</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{i}}{[}\I\I\I{]}^_H.{#}</search-string>
+                            <replacement-string>2^_III</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{i}}{[}\I\V{]}^_H.{#}</search-string>
+                            <replacement-string>2^_IV</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{i}}{[}\V{]}^_H.{#}</search-string>
+                            <replacement-string>2^_V</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{[}{{i}}{|}*{|}{{/i}} {|}*{|} {{i}}{|}*{|}{{/i}}\] {|}*{|} {{i}}</search-string>
+                            <replacement-string>{=2=}\[{=8=}\]\{{=4=}\} {=1=}{=2=}{=3=}{=4=}{=5=}{=6=}{=7=}{=8=}{=9=}</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <remove-blanks where="both"/>
+    </transform>
+    <!-- non-italics are readings {{/i}}{[} * {]}{{i}} -->
+    <transform source="app2norm" destination="app2xml">
         <pass>
             <modify>
                 <exchange>
