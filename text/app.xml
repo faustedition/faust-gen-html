@@ -719,7 +719,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
 #*export, app2go, app2go-rtf, loeschen = +        
 #*export, app2open, app2open-rtf, loeschen = +        
     </tustep>
-    <transform source="app2sort" destination="app2closed">
+    <transform source="app2" destination="app2closed">
         <pass>
             <examine-text>
                 <select>
