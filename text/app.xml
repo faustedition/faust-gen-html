@@ -35,6 +35,8 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2closed.tf</variable>
         <variable type="permanent-file" name="app2norm" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2norm.tf</variable>
+        <variable type="permanent-file" name="app2norm-txt" option="erase" format="system"
+            code="UTF-8">file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2norm.txt</variable>
         <variable type="permanent-file" name="app2xml" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2xml.tf</variable>
         <variable type="scratch-file" name="head"/>
@@ -756,6 +758,18 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <replacement-string/>
                         </string-pair>
                         <string-pair>
+                            <search-string>{{color fgc="000000"}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{/color}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{{0}/No-Spacing}}</search-string>
+                            <replacement-string></replacement-string>
+                        </string-pair>
+                        <string-pair>
                             <search-string>{{sup}}{|}*{|}{{/sup}}</search-string>
                             <replacement-string>.{=2=}</replacement-string>
                         </string-pair>
@@ -839,8 +853,25 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                 </exchange>
             </modify>
         </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{00} {]}{{/i}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{[}span{]}\[</search-string>
+                            <replacement-string>!SPAN</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
         <remove-blanks where="both"/>
     </transform>
+    <transform source="app2norm" destination="app2norm-txt"/>
     <!-- non-italics are readings {{/i}}{[} * {]}{{i}} -->
     <transform source="app2norm" destination="app2xml">
         <pass>
