@@ -60,8 +60,10 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/va/difflist1</variable>
         <variable type="permanent-file" name="diff-list2" option="erase" format="tustep"
             >file:///C:/Users/bruening.FDH-FFM/txstep/va/difflist2</variable>
-        <variable type="permanent-file" format="tustep" option="erase" name="kth0a"
-            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/kth0a.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="hh0a"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/hh0a.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="hh0ac14"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/hh0ac14.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="ktemend"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ktemend.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="kt-x" option="erase"
@@ -425,9 +427,10 @@
     </collate>
 <!--    <display file="diff-list2" type="listing" mode="ps-landscape"/>-->
     <!-- correct h -->
-    <correct source="h" destination="kth0a" corrections="diff1" option="erase"/>
+    <correct source="h" destination="hh0a" corrections="diff1" option="erase"/>
+    <correct source="hh0a" destination="hh0ac14" corrections="diff2" option="erase"></correct>
     <!-- emend kt and add app entries: -->
-    <transform source="kth0a" destination="ktemend">
+    <transform source="hh0ac14" destination="ktemend">
         <pass>
             <modify>
                 <exchange>
