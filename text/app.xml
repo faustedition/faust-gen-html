@@ -727,6 +727,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                     <text-contains>
                         <search-table>
                             <search-string>+abr*+sh</search-string>
+                            <search-string>}}{[}span\[</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -800,6 +801,10 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                         </string-pair>
                         <string-pair>
                             <search-string>{{i}}{[}\H{]} \[</search-string>
+                            <replacement-string>2^_H</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{i}}{[}\H{]} :</search-string>
                             <replacement-string>2^_H</replacement-string>
                         </string-pair>
                         <string-pair>
