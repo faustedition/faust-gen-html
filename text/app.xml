@@ -66,6 +66,7 @@
         <variable type="scratch-file" name="trail"/>
         <variable type="scratch-file" name="cleanup"/>
         <string-group name="ty">
+            <exception>({#}{#}{#})</exception>
             <member>typ</member>
             <member>(</member>
             <member>bzw.</member>
@@ -773,6 +774,14 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <search-string>{{sup}}{|}*{|}{{/sup}}</search-string>
                             <replacement-string>.{=2=}</replacement-string>
                         </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
                         <string-pair>
                             <search-string>\[{[}typ {0}\N{]}{#}</search-string>
                             <replacement-string>type=</replacement-string>
