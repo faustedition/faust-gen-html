@@ -717,6 +717,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
             <modify>
                 <exchange>
                     <exchange-table>
+                        <exception-string>*Typ*4b*+abr*+sh*</exception-string>
                         <string-pair>
                             <search-string>*+abr*+sh*</search-string>
                             <replacement-string/>
