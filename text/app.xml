@@ -727,6 +727,10 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                     <exchange-table>
                         <exception-string>*Typ*4b*+abr*+sh*</exception-string>
                         <string-pair>
+                            <search-string>{{p}}{{font size="12"}}Typ 1a{{/font}}{{/p}}</search-string>
+                            <replacement-string>{{p}}{{font size="12"}}Ausstehende Entscheidungen{{/font}}{{/p}}{=1=}</replacement-string>
+                        </string-pair>
+                        <string-pair>
                             <search-string>*+abr*+sh*</search-string>
                             <replacement-string/>
                         </string-pair>
@@ -742,6 +746,11 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                 </exchange>
             </modify>
         </pass>
+        <new-line-before>
+            <search-table>
+                <search-string>{{p}}</search-string>
+            </search-table>
+        </new-line-before>
         <suppress-blank-lines/>
     </transform>
     <tustep>
