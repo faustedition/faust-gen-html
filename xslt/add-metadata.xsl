@@ -212,7 +212,13 @@
 			</xsl:choose>
 			
 			<xsl:apply-templates select="@*"/>
-			<xsl:apply-templates select="node()"/>			
+			
+			<xsl:variable name="content">
+				<xsl:apply-templates select="node()"/>				
+			</xsl:variable>
+			<xsl:attribute name="f:first-verse" select="($content//*/@f:schroer)[1]"/>
+			<xsl:attribute name="f:last-verse" select="($content//*/@f:schroer)[last()]"/>			
+			<xsl:sequence select="$content"/>
 		</xsl:copy>
 	</xsl:template>
 	
@@ -257,6 +263,13 @@
 			for $n in tokenize(., '\s+')
 			return replace($n, '(\d+)[a-z]$', '$1'),
 			' ')"/>
+	</xsl:template>
+	
+	<xsl:template match="*[f:is-schroer(.)]">
+		<xsl:copy>
+			<xsl:attribute name="f:schroer" select="f:lineno-for-display(@n)"/>
+			<xsl:apply-templates select="@*, node()"/>
+		</xsl:copy>
 	</xsl:template>
 	
 	
