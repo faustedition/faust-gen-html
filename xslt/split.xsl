@@ -115,7 +115,21 @@
 	
 	<xsl:template mode="tocpage" match="div">
 		<li>
-			<xsl:call-template name="section-link"/>
+			<xsl:call-template name="section-link">
+				<xsl:with-param name="suffix">
+					<xsl:if test="@f:first-verse != ''">
+						<small class="pure-fade-50 verse">
+							<xsl:text> (Verse </xsl:text>
+							<xsl:value-of select="@f:first-verse"/>
+							<xsl:if test="@f:last-verse != @f:first-verse">
+								<xsl:text> – </xsl:text>
+								<xsl:value-of select="@f:last-verse"/>
+							</xsl:if>
+							<xsl:text>)</xsl:text>
+						</small>
+					</xsl:if>
+				</xsl:with-param>
+			</xsl:call-template>
 			<xsl:if test="descendant::div[@f:scene]">
 				<ul>
 					<xsl:apply-templates mode="#current"/>
