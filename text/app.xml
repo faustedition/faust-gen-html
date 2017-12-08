@@ -683,13 +683,13 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
     <transform source="app2" destination="app2sort" take-params="typ8" option="append"/>
     <transform source="app2" destination="app2sort" take-params="typq" option="append"/>
     <transform source="app2" destination="app2sort" option="append">
-        <insert-at-start>{{p}}{{font size="12"}}Diskussionswürdige Nichteingriffe{{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p}}{{font size="12"}}Erwähnenswerte Nichteingriffe{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>typ: 0</search-string>
+                            <search-string>typ: 0!</search-string>
                         </search-table>
                     </text-contains>
                 </select>
@@ -732,6 +732,10 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                         </string-pair>
                         <string-pair>
                             <search-string>*+sh*+abr*</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>*Textgrundlage:*</search-string>
                             <replacement-string/>
                         </string-pair>
                     </exchange-table>
