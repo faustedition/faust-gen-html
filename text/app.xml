@@ -569,7 +569,15 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
     <transform source="app1p" destination="app1sort" option="append" save-params="typq">
-        <insert-at-start>{{p}}{{font size="12"}}Typ: ?{{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p}}{{font size="12"}}Zweifelhafte Fälle{{/font}}{{/p}}</insert-at-start>
+        <define-text-units>
+            <text-unit-start>
+                <comparison-table>
+                    <exclusion-string>{{br/}}</exclusion-string>
+                    <comparison-string>{{</comparison-string>
+                </comparison-table>
+            </text-unit-start>
+        </define-text-units>
         <pass>
             <examine-text>
                 <select>
