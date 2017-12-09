@@ -60,7 +60,7 @@ sigils = read_sigils()
 
 # one app line
 APP = re.compile(
-    r'''(?<n>\w+?)
+    r'''(?<n>(\w|\|)+?)
         \[(?<replace>.*?)\]
         \{(?<insert>.*?)\}
         \s*<i>(?<reference>.*?)<\/i>
@@ -74,14 +74,17 @@ def parse_app2norm(app_text='app2norm.txt'):
             match = APP.match(line)
             if match:
                 log.info('Parsed: %s', line[:-1])
-                parsed = defaultdict(str, match.groupdict())
-                app = T.app(
-                    F.replace(parsed['replace']),
-                    parse_xml(parsed['insert'], F.ins(), TEI_NS),
-                    T.label(parsed['reference']),
-                    T.lem(parsed['lemma'], wit=parsed['lwitness']),
-                    n=parsed['n']
-                )
+                parsed = match.groupdict()
+                if parsed['insert'] == '=':
+                    parsed['insert'] = parsed['replace']
+                ns = parsed['n'].split('|')
+                app = T.app(n=' '.join(ns))
+                for n, replace, insert in zip(ns, parsed['replace'].split('|'), parsed['insert'].split('|')):
+                    app.append(F.replace(replace, n=n))
+                    app.append(parse_xml(insert, F.ins(n=n), TEI_NS))
+                app.append(T.label(parsed['reference']))
+                app.append(T.lem(parsed['lemma'], wit=parsed['lwitness']))
+
                 readings = parse_readings(parsed['readings'])
                 app.extend(readings)
                 log.debug('-> %s', etree.tostring(app, encoding='unicode', pretty_print=False))
@@ -141,6 +144,6 @@ def app2xml(apps, filename):
         outfile.write(etree.tostring(xml, pretty_print=True, encoding='utf-8', xml_declaration=True))
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG, format='%(levelname)s: %(message)s')
+    logging.basicConfig(level=logging.WARNING, format='%(levelname)s: %(message)s')
     app = list(parse_app2norm('app2norm.txt'))
     app2xml(app, 'app2norm.xml')
