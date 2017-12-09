@@ -379,7 +379,7 @@ in <xsl:value-of select="document-uri(/)"/>
 	
 	<!-- Erzeugt die Zeilennummer vor der Zeile -->
 	<xsl:template name="generate-lineno">
-		<xsl:variable name="display-line" select="f:lineno-for-display(@n)"/>
+		<xsl:variable name="display-line" select="if (@f:schroer) then @f:schroer else 0"/>
 		<xsl:choose>
 			<xsl:when test="number($display-line) gt 0">
 				<!-- Klick auf Zeilennummer führt zu einem Link, der wiederum auf die Zeilennummer verweist -->
@@ -388,7 +388,7 @@ in <xsl:value-of select="document-uri(/)"/>
 					<xsl:attribute name="class">
 						<xsl:text>lineno</xsl:text>
 						<!-- Jede 5. ist immer sichtbar, alle anderen nur wenn über die Zeile gehovert wird -->
-						<xsl:if test="$display-line mod 5 != 0">
+						<xsl:if test="$display-line mod 5 != 0 and not (ancestor::div[@f:first-verse]/(@f:first-verse, @f:last-verse) = data(@f:schroer))">
 							<xsl:text> invisible</xsl:text>
 						</xsl:if>
 					</xsl:attribute>
