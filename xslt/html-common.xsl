@@ -388,7 +388,7 @@ in <xsl:value-of select="document-uri(/)"/>
 					<xsl:attribute name="class">
 						<xsl:text>lineno</xsl:text>
 						<!-- Jede 5. ist immer sichtbar, alle anderen nur wenn über die Zeile gehovert wird -->
-						<xsl:if test="$display-line mod 5 != 0 and not (ancestor::div[@f:first-verse]/(@f:first-verse, @f:last-verse) = data(@f:schroer))">
+						<xsl:if test="$display-line mod 5 != 0 and not (ancestor::*[@f:first-verse]/(@f:first-verse, @f:last-verse) = data(@f:schroer))">
 							<xsl:text> invisible</xsl:text>
 						</xsl:if>
 					</xsl:attribute>

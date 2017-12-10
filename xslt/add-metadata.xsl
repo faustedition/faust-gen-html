@@ -151,6 +151,18 @@
 			or count($div/ancestor-or-self::div) lt $depth_n and not($div/descendant::div[f:section-div(.)])"/>
 	</xsl:function>
 	
+	<xsl:template match="text">
+		<xsl:variable name="content">
+			<xsl:apply-templates select="node()"/>
+		</xsl:variable>
+		<xsl:copy>
+			<xsl:copy-of select="@*"/>
+			<xsl:attribute name="f:first-verse" select="($content//*/@f:schroer)[1]"/>
+			<xsl:attribute name="f:last-verse" select="($content//*/@f:schroer)[last()]"/>
+			<xsl:sequence select="$content"/>
+		</xsl:copy>
+	</xsl:template>
+	
 	<!-- one template to rule them all -->
 	<xsl:template match="div" priority="5">
 		<xsl:variable name="explicit-scene" select="$scenes//f:scene[@n = current()/@n]"/>
