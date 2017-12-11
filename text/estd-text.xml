@@ -269,6 +269,7 @@
                     <exclusion-string>{{sic}}</exclusion-string>
                     <exclusion-string>{{sp+xml:id="sp^_l^_6359"}}</exclusion-string>
                     <exclusion-string>{{sp+xml:id="sp^_l^_6360"}}</exclusion-string>
+                    <exclusion-string>{{stage+n="before^_8275^_b"</exclusion-string>
                     <exclusion-string>{{speaker</exclusion-string>
                     <exclusion-string>{{stage</exclusion-string>
                     <exclusion-string>{{subst</exclusion-string>
@@ -306,6 +307,7 @@
                 <exception-string>{{stage+n="before^_6360^_b"}}</exception-string>
                 <exception-string>{{l+n="6360"}}</exception-string>
                 <exception-string>{{stage+n="before^_6361"}}</exception-string>
+                <exception-string>{{stage+n="before^_8275^_b"</exception-string>
                 <exception-string>{{subst</exception-string>
                 <exception-string>{{supplied</exception-string>
                 <exception-string>{{surplus}}</exception-string>
