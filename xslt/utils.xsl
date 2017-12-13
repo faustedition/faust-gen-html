@@ -90,10 +90,10 @@
     <xsl:param name="element"/>    
     <xsl:choose>
       <xsl:when test="$element[self::div or self::l or self::lg or self::p or self::sp
-        or self::head or self::closer or (@n and not(self::milestone))]">
+        or self::head or self::closer or (@n and not(self::milestone or self::pb))]">
         <xsl:sequence select="false()"/>
       </xsl:when>
-      <xsl:when test="$element[self::hi or self::seg or self::w]">
+      <xsl:when test="$element[self::hi or self::seg or self::w or self::pb]">
         <xsl:sequence select="true()"/>
       </xsl:when>
       <xsl:when test="some $descendant in $element//* satisfies not(f:isInline($descendant))">
