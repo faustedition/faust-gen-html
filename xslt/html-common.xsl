@@ -110,7 +110,10 @@
 		<xsl:param name="element"/>
 		<xsl:for-each select="$element">
 			<xsl:sequence select="local-name($element)"/>
-			<xsl:sequence select="for $rend in tokenize($element/@rend, ' ') return concat('rend-', $rend)"/>
+			<xsl:sequence select="for $rend in tokenize($element/@rend, ' ') return
+				if ($rend = 'indented' and $element[self::l] and $element is $element/ancestor::lg[1])
+				then ('rend-indented-but-ignored')
+				else concat('rend-', $rend)"/>
 			<!-- 
 	      @rend values will be included as rend-<value> in the class attribute. However, there is an exception:
 	      hi elements having _only_ 'big' or 'small' as rend value should not be highlighted. We deal with this
