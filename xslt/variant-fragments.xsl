@@ -170,5 +170,7 @@
 			</xsl:element>
 		</xsl:for-each-group>
 	</xsl:template>
+	
+	<xsl:template match="pb" priority="2"/>
 		
 </xsl:stylesheet>
