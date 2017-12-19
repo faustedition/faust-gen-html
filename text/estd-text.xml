@@ -40,6 +40,8 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/hz1.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/h.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="ih12a"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ih12a.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h0a"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/h0a.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="h14"
@@ -375,6 +377,9 @@
     <transform source="h0a-x" destination="intmedfile" take-params="ko1" option="erase"/>
     <transform source="intmedfile" destination="h0a" take-params="ko2" mode="+"/>
     <transform source="h0a" destination="crith0a" take-params="crit"/>
+    <!-- transform ih12a -->
+    <transform source="ih12a-x" destination="intmedfile" take-params="ko1" option="erase"/>
+    <transform source="intmedfile" destination="ih12a" take-params="ko2" mode="+"/>
     <!-- transform h14: -->
     <transform source="h14-x" destination="intmedfile" take-params="ko1" option="erase"/>
     <transform source="intmedfile" destination="h14" take-params="ko2" mode="+"/>
