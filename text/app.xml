@@ -680,8 +680,8 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
     <transform source="app2" destination="app2sort" take-params="typ5" option="append"/>
     <transform source="app2" destination="app2sort" take-params="typ6" option="append"/>
     <transform source="app2" destination="app2sort" take-params="typ7" option="append"/>
-    <!--<transform source="app2" destination="app2sort" take-params="typ8" option="append"/>-->
-    <!--<transform source="app2" destination="app2sort" take-params="typq" option="append"/>-->
+    <transform source="app2" destination="app2sort" take-params="typ8" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typq" option="append"/>
     <transform source="app2" destination="app2sort" option="append">
         <insert-at-start>{{p}}{{font size="12"}}Erwähnenswerte Nichteingriffe{{/font}}{{/p}}</insert-at-start>
         <pass>
