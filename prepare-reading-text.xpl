@@ -29,7 +29,7 @@
 					<!--<base>https://faustedition.uni-wuerzburg.de/xml</base>-->
 					<base>http://dev.faustedition.net/xml</base>
 					<!--<base>file:/home/tv/git/faust-gen/data/xml</base>-->
-<!--					<base>file:/Users/bruening.FDH-FFM/faustedition/xml</base>-->
+					<!--					<base>file:/Users/bruening.FDH-FFM/faustedition/xml</base>-->
 
 					<!-- URL, unter der die transformierten Dateien
 					     gespeichert werden sollen:	-->
@@ -148,7 +148,8 @@
 								</xsl:copy>
 							</xsl:template>
 
-							<xsl:template match="*[@ge:stage='#posthumous']" priority="10.0" mode="#all">
+							<xsl:template match="*[@ge:stage='#posthumous']" priority="10.0"
+								mode="#all">
 								<xsl:copy-of select="."/>
 							</xsl:template>
 
