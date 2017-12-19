@@ -48,6 +48,7 @@
 					<transcript path="print/C(1)4_IIIB24.xml" output="c14.xml"/>
 					<transcript path="print/C(2a)4_IIIB28.xml" output="c2a4.xml"/>
 					<transcript path="print/C(3)4_IIIB27.xml" output="c34.xml"/>
+					<transcript path="transcript/gsa/390706/390706.xml" output="ivh20.xml"/>
 				</config>
 			</p:inline>
 		</p:input>
@@ -238,7 +239,7 @@
 								match="sourceDesc/* | encodingDesc | revisionDesc 
 								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | fw | hi/@status | anchor |  
 								join[@type='antilabe'] | join[@result='sp'] | join[@type='former_unit'] | */@xml:space
-								| div[@type='stueck'] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage/@rend
+								| div[@type='stueck' and not(.//l[@n])] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage/@rend
 								| l/@rend | l/@xml:id | space[@type='typographical'] | hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
 								| sp/@who | note[@type='editorial'] | ge:transpose[not(@ge:stage='#posthumous')] | ge:stageNotes | 
 								handNotes | unclear/@cert | lg/@xml:id"/>
