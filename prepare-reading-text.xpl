@@ -38,6 +38,9 @@
 					<!-- Quell-Transkripte: -->
 					<transcript path="transcript/test/test.xml"/>
 					<transcript path="transcript/gsa/391098/391098.xml" output="h.xml"/>
+					<transcript
+						path="transcript/bl_oxford/MS_M_D_Mendelsson_c_21/MS_M_D_Mendelsson_c_21.xml"
+						output="ih12a.xml"/>
 					<transcript path="transcript/gsa/390643/390643.xml" output="h14.xml"/>
 					<transcript
 						path="transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml"
@@ -146,15 +149,15 @@
 							</xsl:template>
 
 							<xsl:template match="*[@ge:stage='#posthumous']" priority="10.0" mode="#all">
-								<xsl:copy-of select="."/>									
+								<xsl:copy-of select="."/>
 							</xsl:template>
-							
+
 							<xsl:template match="choice[sic]" mode="emend">
 								<xsl:copy>
 									<xsl:apply-templates select="@*, node()" mode="#current"/>
 								</xsl:copy>
 							</xsl:template>
-						
+
 						</xsl:stylesheet>
 					</p:inline>
 				</p:input>
@@ -288,7 +291,8 @@
 								</xsl:copy>
 							</xsl:template>
 
-							<xsl:template match="text[not(normalize-space(.))] | front[not(normalize-space(.))]"/>
+							<xsl:template
+								match="text[not(normalize-space(.))] | front[not(normalize-space(.))]"/>
 							<xsl:template match="text[text]">
 								<xsl:apply-templates/>
 							</xsl:template>
