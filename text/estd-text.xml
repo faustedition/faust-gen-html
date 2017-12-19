@@ -34,6 +34,8 @@
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/h14.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="c14-x"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/c14.xml</variable>
+        <variable type="permanent-file" code="UTF-8" name="ivh20-x"
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/ivh20.xml</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hheader"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/hheader.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hz1"
@@ -50,6 +52,8 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/c14.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="crith" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/txt/crith.txt</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="ivh20"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ivh20.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="crith0a" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/txt/crith0a.txt</variable>
         <variable type="permanent-file" code="UTF-8" name="critc14" option="erase"
@@ -504,6 +508,10 @@
         <insert-at-end>{{/TEI}}</insert-at-end>
     </transform>
     <!-- collate h and preceding mss -->
+    <!-- transform ivh20 -->
+    <transform source="ivh20-x" destination="intmedfile" take-params="ko1" option="erase"/>
+    <transform source="intmedfile" destination="ivh20" take-params="ko2" mode="+"/>
+    <!-- act 1 (version-sort-val 1-25 -->
     <compare versiona="h" versionb="ih12a" variants="diffhprec" listing="-">
         <compare-units mode="word"/>
         <add-context>
@@ -512,10 +520,27 @@
             <insertion length-before="1" length-after="0"/>
         </add-context>
         <select-area versiona="11.58-12.20,99" versionb="1.3-1.25,99"/>
+        <select-area versiona="16.53-17.9,99" versionb="1.30-1.46,99"/>
+        <select-area versiona="16.17-16.33,99" versionb="1.51-2.7,99"/>
         <pos-ind-b value="yes"/>
         <version-id>IH12a</version-id>
         <version-sort-val value="1"/>
     </compare>
+    <!-- act 2 (version-sort-val 26-40) -->
+    <!-- act 3 (version-sort-val 41-65 -->
+    <!-- act 4 (version-sort-val 66-80 -->
+    <compare versiona="h" versionb="ivh20" variants="diffhprec" listing="-" option="append">
+        <compare-units mode="word"/>
+        <add-context>
+            <omission length-before="0" length-lemma="5" length-after="0"/>
+            <replacement length-before="0" length-lemma="3" length-after="0"/>
+            <insertion length-before="1" length-after="0"/>
+        </add-context>
+        <select-area versiona="129.19-129.40,99" versionb="1.36-1.57,10"/>
+        <version-id>IVH20</version-id>
+        <version-sort-val value="66"/>
+    </compare>
+    <!-- Akt 5 (version-sort-val 81-99 -->
     <sort source="diffhprec" destination="diffhprec">
         <sort-field num="1" start="1" length="17" order="ascending"/>
         <sort-field num="2" start="37" length="2"/>
@@ -525,9 +550,12 @@
     </sort>
     <collate source="h" mode="cumulated" diff-file="diffhprec" listing="diffhprec-va"
         special="code">
-        <list lines="all"/>
+        <list lines="with-variants"/>
         <version-sort-val value="1"/>
         <version-id>IH12a</version-id>
+        <version-list list="variants"/>
+        <version-sort-val value="66"/>
+        <version-id>IVH20</version-id>
         <version-list list="variants"/>
         <var-marks id-text="=" missing-text=" " id-var="id-prev"/>
     </collate>
