@@ -60,10 +60,14 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/ve/diff1b</variable>
         <variable type="permanent-file" name="diff2" option="erase" format="tustep"
             >file:///C:/Users/bruening.FDH-FFM/txstep/ve/diff2</variable>
+        <variable type="permanent-file" name="diffhprec" option="erase" format="tustep"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/ve/diffhprec</variable>
         <variable type="permanent-file" name="diff-list1" option="erase" format="tustep"
             >file:///C:/Users/bruening.FDH-FFM/txstep/va/difflist1</variable>
         <variable type="permanent-file" name="diff-list2" option="erase" format="tustep"
             >file:///C:/Users/bruening.FDH-FFM/txstep/va/difflist2</variable>
+        <variable type="permanent-file" name="diffhprec-va" option="erase" format="tustep"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/va/diffhprec-va</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hh0a"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/hh0a.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hh0ac14"
@@ -420,7 +424,7 @@
             <replacement length-before="0" length-lemma="3" length-after="0"/>
             <insertion length-before="1" length-after="0"/>
         </add-context>
-        <select-area versiona="81.8-111.33,40" versionb="1.3-31.29,39"/>
+        <select-area versiona="80.60-111.25,40" versionb="1.3-31.29,39"/>
         <normalize>
             <exchange-table>
                 <string-pair>
@@ -434,10 +438,10 @@
     <collate source="h" mode="single-witness" diff-file="diff2" listing="$diff-list2">
         <list lines="with-variants"/>
     </collate>
-<!--    <display file="diff-list2" type="listing" mode="ps-landscape"/>-->
+    <!--    <display file="diff-list2" type="listing" mode="ps-landscape"/>-->
     <!-- correct h -->
     <correct source="h" destination="hh0a" corrections="diff1" option="erase"/>
-    <correct source="hh0a" destination="hh0ac14" corrections="diff2" option="erase"></correct>
+    <correct source="hh0a" destination="hh0ac14" corrections="diff2" option="erase"/>
     <!-- emend kt and add app entries: -->
     <transform source="hh0ac14" destination="ktemend">
         <pass>
@@ -499,4 +503,33 @@
         <suppress-blank-lines/>
         <insert-at-end>{{/TEI}}</insert-at-end>
     </transform>
+    <!-- collate h and preceding mss -->
+    <compare versiona="h" versionb="ih12a" variants="diffhprec" listing="-">
+        <compare-units mode="word"/>
+        <add-context>
+            <omission length-before="0" length-lemma="5" length-after="0"/>
+            <replacement length-before="0" length-lemma="3" length-after="0"/>
+            <insertion length-before="1" length-after="0"/>
+        </add-context>
+        <select-area versiona="11.58-12.20,99" versionb="1.3-1.25,99"/>
+        <pos-ind-b value="yes"/>
+        <version-id>IH12a</version-id>
+        <version-sort-val value="1"/>
+    </compare>
+    <sort source="diffhprec" destination="diffhprec">
+        <sort-field num="1" start="1" length="17" order="ascending"/>
+        <sort-field num="2" start="37" length="2"/>
+        <!--  1-17: starting pos. of lemma ,18-34: end position of lemma, 35: type of reference (whole line or words in a line), 
+            36:  2 = omission, 3 = replacement, 4 = insertion,  37-38: version number for sorting, 
+            39-41: continuation lines for long variants,42-44: Pointer to 1st character after context info -->
+    </sort>
+    <collate source="h" mode="cumulated" diff-file="diffhprec" listing="diffhprec-va"
+        special="code">
+        <list lines="all"/>
+        <version-sort-val value="1"/>
+        <version-id>IH12a</version-id>
+        <version-list list="variants"/>
+        <var-marks id-text="=" missing-text=" " id-var="id-prev"/>
+    </collate>
+    <display file="$diffhprec-va" type="listing" mode="ps-landscape"/>
 </script>
