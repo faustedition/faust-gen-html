@@ -242,9 +242,8 @@
 								| div[@type='stueck' and not(.//l[@n])] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage/@rend
 								| l/@rend | l/@xml:id | space[@type='typographical'] | hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
 								| sp/@who | note[@type='editorial'] | ge:transpose[not(@ge:stage='#posthumous')] | ge:stageNotes | 
-								handNotes | unclear/@cert | lg/@xml:id"/>
+								handNotes | unclear/@cert | lg/@xml:id | addSpan[not(@ge:stage='#posthumous')]"/>
 							<xsl:template match="comment()" priority="1"/>
-
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">
 								<xsl:if test="not(@break='no')">
