@@ -243,7 +243,7 @@
 								| l/@rend | l/@xml:id | space[@type='typographical'] | hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
 								| sp/@who | note[@type='editorial'] | ge:transpose[not(@ge:stage='#posthumous')] | ge:stageNotes | 
 								handNotes | unclear/@cert | lg/@xml:id"/>
-							<xsl:template match="comment()"/>
+							<xsl:template match="comment()" priority="1"/>
 
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">
