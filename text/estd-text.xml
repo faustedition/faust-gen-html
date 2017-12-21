@@ -36,6 +36,8 @@
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/c14.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="ivh20-x"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/ivh20.xml</variable>
+        <variable type="permanent-file" code="UTF-8" name="ivh22e-x"
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/ivh22e.xml</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hheader"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/hheader.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="hz1"
@@ -54,6 +56,8 @@
             >file:///C:/Users/bruening.FDH-FFM/faustedition/txt/crith.txt</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="ivh20"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ivh20.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="ivh22e"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ivh22e.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="crith0a" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/txt/crith0a.txt</variable>
         <variable type="permanent-file" code="UTF-8" name="critc14" option="erase"
@@ -511,6 +515,9 @@
     <!-- transform ivh20 -->
     <transform source="ivh20-x" destination="intmedfile" take-params="ko1" option="erase"/>
     <transform source="intmedfile" destination="ivh20" take-params="ko2" mode="+"/>
+    <!-- transform ivh22e -->
+    <transform source="ivh22e-x" destination="intmedfile" take-params="ko1" option="erase"/>
+    <transform source="intmedfile" destination="ivh22e" take-params="ko2" mode="+"/>
     <!-- act 1 (version-sort-val 1-25 -->
     <compare versiona="h" versionb="ih12a" variants="diffhprec" listing="-">
         <compare-units mode="word"/>
@@ -541,6 +548,17 @@
         <version-id>IVH20</version-id>
         <version-sort-val value="75"/>
     </compare>
+    <compare versiona="h" versionb="ivh22e" variants="diffhprec" listing="-" option="append">
+        <compare-units mode="word"/>
+        <add-context>
+            <omission length-before="0" length-lemma="5" length-after="0"/>
+            <replacement length-before="0" length-lemma="3" length-after="0"/>
+            <insertion length-before="1" length-after="0"/>
+        </add-context>
+        <select-area versiona="129.57-130.57,99" versionb="1.2-2.4,99"/>
+        <version-id>IVH22e</version-id>
+        <version-sort-val value="76"/>
+    </compare>
     <!-- Akt 5 (version-sort-val 81-99 -->
     <sort source="diffhprec" destination="diffhprec">
         <sort-field num="1" start="1" length="17" order="ascending"/>
@@ -551,12 +569,15 @@
     </sort>
     <collate source="h" mode="cumulated" diff-file="diffhprec" listing="diffhprec-va"
         special="code">
-        <list lines="with-variants"/>
+        <list lines="all"/>
         <version-sort-val value="1"/>
         <version-id>IH12a</version-id>
         <version-list list="variants"/>
         <version-sort-val value="75"/>
         <version-id>IVH20</version-id>
+        <version-list list="variants"/>
+        <version-sort-val value="76"/>
+        <version-id>IVH22e</version-id>
         <version-list list="variants"/>
         <var-marks id-text="=" missing-text=" " id-var="id-prev"/>
     </collate>
