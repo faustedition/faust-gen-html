@@ -49,6 +49,7 @@
 					<transcript path="print/C(2a)4_IIIB28.xml" output="c2a4.xml"/>
 					<transcript path="print/C(3)4_IIIB27.xml" output="c34.xml"/>
 					<transcript path="transcript/gsa/390706/390706.xml" output="ivh20.xml"/>
+					<transcript path="transcript/bb_cologny/G-30_11/G-30_11.xml" output="ivh22e.xml"/>
 				</config>
 			</p:inline>
 		</p:input>
@@ -242,7 +243,7 @@
 								| div[@type='stueck' and not(.//l[@n])] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage/@rend
 								| l/@rend | l/@xml:id | space[@type='typographical'] | hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
 								| sp/@who | note[@type='editorial'] | ge:transpose[not(@ge:stage='#posthumous')] | ge:stageNotes | 
-								handNotes | unclear/@cert | lg/@xml:id | addSpan[not(@ge:stage='#posthumous')]"/>
+								handNotes | unclear/@cert | lg/@xml:id | addSpan[not(@ge:stage='#posthumous')] | milestone[@unit='group']"/>
 							<xsl:template match="comment()" priority="1"/>
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">
