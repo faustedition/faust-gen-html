@@ -51,6 +51,7 @@
 					<transcript path="transcript/gsa/390706/390706.xml" output="ivh20.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_11/G-30_11.xml" output="ivh22e.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_12/G-30_12.xml" output="ivh22f.xml"/>
+					<transcript path="transcript/sa_hannover/Slg_Culemann_0666/0666.xml" output="ivh22g.xml"/>
 				</config>
 			</p:inline>
 		</p:input>
