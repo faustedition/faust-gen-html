@@ -50,6 +50,7 @@
 					<transcript path="print/C(3)4_IIIB27.xml" output="c34.xml"/>
 					<transcript path="transcript/gsa/390706/390706.xml" output="ivh20.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_11/G-30_11.xml" output="ivh22e.xml"/>
+					<transcript path="transcript/bb_cologny/G-30_12/G-30_12.xml" output="ivh22f.xml"/>
 				</config>
 			</p:inline>
 		</p:input>
