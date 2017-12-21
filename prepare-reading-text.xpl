@@ -48,6 +48,7 @@
 					<transcript path="print/C(1)4_IIIB24.xml" output="c14.xml"/>
 					<transcript path="print/C(2a)4_IIIB28.xml" output="c2a4.xml"/>
 					<transcript path="print/C(3)4_IIIB27.xml" output="c34.xml"/>
+					<transcript path="transcript/gsa/390295/390295.xml" output="ivh1.xml"/>
 					<transcript path="transcript/gsa/390706/390706.xml" output="ivh20.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_11/G-30_11.xml" output="ivh22e.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_12/G-30_12.xml" output="ivh22f.xml"/>
