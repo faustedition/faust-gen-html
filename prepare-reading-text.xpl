@@ -54,6 +54,10 @@
 					<transcript path="transcript/gsa/389773/389773.xml" output="ivh7.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_07/G-30_07.xml" output="ivh7b.xml"/>
 					<transcript path="transcript/gsa/390881/390881.xml" output="ivh8.xml"/>
+					<transcript path="transcript/gsa/390000/390000.xml" output="ivh10.xml"/>
+					<transcript path="transcript/gsa/389992/389992.xml" output="ivh13.xml"/>
+					<!-- 390690 h.15 -->
+					<transcript path="transcript/gsa/391325/391325.xml" output="ivh18.xml"/>
 					<transcript path="transcript/gsa/390706/390706.xml" output="ivh20.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_11/G-30_11.xml" output="ivh22e.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_12/G-30_12.xml" output="ivh22f.xml"/>
