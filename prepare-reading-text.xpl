@@ -49,10 +49,12 @@
 					<transcript path="print/C(2a)4_IIIB28.xml" output="c2a4.xml"/>
 					<transcript path="print/C(3)4_IIIB27.xml" output="c34.xml"/>
 					<transcript path="transcript/gsa/390295/390295.xml" output="ivh1.xml"/>
+					<transcript path="transcript/gsa/389863/389863.xml" output="ivh2.xml"/>
 					<transcript path="transcript/gsa/390706/390706.xml" output="ivh20.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_11/G-30_11.xml" output="ivh22e.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_12/G-30_12.xml" output="ivh22f.xml"/>
-					<transcript path="transcript/sa_hannover/Slg_Culemann_0666/0666.xml" output="ivh22g.xml"/>
+					<transcript path="transcript/sa_hannover/Slg_Culemann_0666/0666.xml"
+						output="ivh22g.xml"/>
 				</config>
 			</p:inline>
 		</p:input>
@@ -246,7 +248,7 @@
 								| div[@type='stueck' and not(.//l[@n])] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage/@rend
 								| l/@rend | l/@xml:id | space[@type='typographical'] | hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
 								| sp/@who | note[@type='editorial'] | ge:transpose[not(@ge:stage='#posthumous')] | ge:stageNotes | 
-								handNotes | unclear/@cert | lg/@xml:id | addSpan[not(@ge:stage='#posthumous')] | milestone[@unit='group']"/>
+								handNotes | unclear/@cert | lg/@xml:id | addSpan[not(@ge:stage='#posthumous')] | milestone[@unit='group' or @unit='stage']"/>
 							<xsl:template match="comment()" priority="1"/>
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">

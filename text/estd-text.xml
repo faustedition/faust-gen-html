@@ -36,6 +36,8 @@
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/c14.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="ivh1-x"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/ivh1.xml</variable>
+        <variable type="permanent-file" code="UTF-8" name="ivh2-x"
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/ivh2.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="ivh20-x"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/ivh20.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="ivh22e-x"
@@ -60,10 +62,12 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/c14.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="crith" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/txt/crith.txt</variable>
-        <variable type="permanent-file" format="tustep" option="erase" name="ivh20"
-            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ivh20.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="ivh1"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ivh1.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="ivh2"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ivh2.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="ivh20"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ivh20.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="ivh22e"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ivh22e.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="ivh22f"
@@ -289,6 +293,7 @@
                     <exclusion-string>{{hi+</exclusion-string>
                     <exclusion-string>{{l}}</exclusion-string>
                     <exclusion-string>{{l+</exclusion-string>
+                    <exclusion-string>{{name</exclusion-string>
                     <exclusion-string>{{note</exclusion-string>
                     <exclusion-string>{{orig}}</exclusion-string>
                     <exclusion-string>{{reg}}</exclusion-string>
@@ -321,6 +326,7 @@
                 <exception-string>{{g}}</exception-string>
                 <exception-string>{{hi}}</exception-string>
                 <exception-string>{{hi+</exception-string>
+                <exception-string>{{name</exception-string>
                 <exception-string>{{note</exception-string>
                 <exception-string>{{orig}}</exception-string>
                 <exception-string>{{reg}}</exception-string>
@@ -527,6 +533,9 @@
     <!-- transform ivh1 -->
     <transform source="ivh1-x" destination="intmedfile" take-params="ko1" option="erase"/>
     <transform source="intmedfile" destination="ivh1" take-params="ko2" mode="+"/>
+    <!-- transform ivh2 -->
+    <transform source="ivh2-x" destination="intmedfile" take-params="ko1" option="erase"/>
+    <transform source="intmedfile" destination="ivh2" take-params="ko2" mode="+"/>
     <!-- transform ivh20 -->
     <transform source="ivh20-x" destination="intmedfile" take-params="ko1" option="erase"/>
     <transform source="intmedfile" destination="ivh20" take-params="ko2" mode="+"/>
@@ -570,6 +579,21 @@
         <version-id>IVH1</version-id>
         <version-sort-val value="66"/>
     </compare>
+    <compare versiona="h" versionb="ivh2" variants="diffhprec" listing="-" option="append">
+        <compare-units mode="word"/>
+        <add-context>
+            <omission length-before="0" length-lemma="5" length-after="0"/>
+            <replacement length-before="0" length-lemma="3" length-after="0"/>
+            <insertion length-before="1" length-after="0"/>
+        </add-context>
+        <!-- vor 10067 -->
+        <select-area versiona="111.60-112.5,99" versionb="1.3-1.8,99"/>
+        <!-- -10119 -->
+        <select-area versiona="112.47-112.59,99" versionb="1.9-1.20,99"/>
+        <select-area versiona="113.12-114.49,99" versionb="1.27-3.6,11"/>
+        <version-id>IVH2</version-id>
+        <version-sort-val value="68"/>
+    </compare>
     <compare versiona="h" versionb="ivh20" variants="diffhprec" listing="-" option="append">
         <compare-units mode="word"/>
         <add-context>
@@ -577,7 +601,7 @@
             <replacement length-before="0" length-lemma="3" length-after="0"/>
             <insertion length-before="1" length-after="0"/>
         </add-context>
-        <select-area versiona="129.19-129.40,99" versionb="1.36-1.57,10"/>
+        <select-area versiona="129.19-129.40,99" versionb="1.32-1.53,10"/>
         <version-id>IVH20</version-id>
         <version-sort-val value="75"/>
     </compare>
@@ -630,6 +654,9 @@
         <version-list list="variants"/>
         <version-sort-val value="66"/>
         <version-id>IVH1</version-id>
+        <version-list list="variants"/>
+        <version-sort-val value="68"/>
+        <version-id>IVH2</version-id>
         <version-list list="variants"/>
         <version-sort-val value="75"/>
         <version-id>IVH20</version-id>
