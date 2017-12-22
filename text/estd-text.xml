@@ -55,6 +55,10 @@
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/ivh18.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="ivh20-x"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/ivh20.xml</variable>
+        <variable type="permanent-file" code="UTF-8" name="ivh21a-x"
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/ivh21a.xml</variable>
+        <variable type="permanent-file" code="UTF-8" name="ivh22d-x"
+            >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/ivh22d.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="ivh22e-x"
             >file:///C:/Users/bruening.FDH-FFM/faustedition/xml/ivh22e.xml</variable>
         <variable type="permanent-file" code="UTF-8" name="ivh22f-x"
@@ -97,6 +101,10 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ivh18.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="ivh20"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ivh20.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="ivh21a"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ivh21a.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="ivh22d"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ivh22d.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="ivh22e"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/ivh22e.tf</variable>
         <variable type="permanent-file" format="tustep" option="erase" name="ivh22f"
@@ -613,6 +621,12 @@
     <!-- transform ivh20 -->
     <transform source="ivh20-x" destination="intmedfile" take-params="ko1" option="erase"/>
     <transform source="intmedfile" destination="ivh20" take-params="ko2" mode="+"/>
+    <!-- transform ivh21a-->
+    <transform source="ivh21a-x" destination="intmedfile" take-params="ko1" option="erase"/>
+    <transform source="intmedfile" destination="ivh21a" take-params="ko2" mode="+"/>
+    <!-- transform ivh22d-->
+    <transform source="ivh22d-x" destination="intmedfile" take-params="ko1" option="erase"/>
+    <transform source="intmedfile" destination="ivh22d" take-params="ko2" mode="+"/>
     <!-- transform ivh22e -->
     <transform source="ivh22e-x" destination="intmedfile" take-params="ko1" option="erase"/>
     <transform source="intmedfile" destination="ivh22e" take-params="ko2" mode="+"/>
@@ -810,6 +824,18 @@
         <version-id>IVH22g</version-id>
         <version-sort-val value="78"/>
     </compare>
+    <!--<compare versiona="h" versionb="ivh21a" variants="diffhprec" listing="-" option="append">
+        <compare-units mode="word"/>
+        <add-context>
+            <omission length-before="0" length-lemma="5" length-after="0"/>
+            <replacement length-before="0" length-lemma="3" length-after="0"/>
+            <insertion length-before="1" length-after="0"/>
+        </add-context>
+        <!-\- before^_10849^_a -  -\->
+        <select-area versiona="" versionb="1.25"/>
+        <version-id>IVH21a</version-id>
+        <version-sort-val value="79"/>
+    </compare>-->
     <!-- Akt 5 (version-sort-val 81-99 -->
     <sort source="diffhprec" destination="diffhprec">
         <sort-field num="1" start="1" length="17" order="ascending"/>
@@ -851,6 +877,7 @@
         <version-sort-val value="73"/>
         <version-id>IVH18</version-id>
         <version-list list="variants"/>
+        <!-- 74: ?? -->
         <version-sort-val value="75"/>
         <version-id>IVH20</version-id>
         <version-list list="variants"/>
@@ -863,6 +890,8 @@
         <version-sort-val value="78"/>
         <version-id>IVH22g</version-id>
         <version-list list="variants"/>
+        <!-- 79: H.21a -->
+        <!-- 80: H.22d -->
         <var-marks id-text="=" missing-text=" " id-var="id-prev"/>
     </collate>
     <display file="$diffhprec-va" type="listing" mode="ps-landscape"/>

@@ -59,6 +59,8 @@
 					<!-- 390690 h.15 -->
 					<transcript path="transcript/gsa/391325/391325.xml" output="ivh18.xml"/>
 					<transcript path="transcript/gsa/390706/390706.xml" output="ivh20.xml"/>
+					<transcript path="transcript/bb_cologny/G-30_09/G-30_09.xml" output="ivh21a.xml"/>
+					<transcript path="transcript/bb_cologny/G-30_10/G-30_10.xml" output="ivh22d.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_11/G-30_11.xml" output="ivh22e.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_12/G-30_12.xml" output="ivh22f.xml"/>
 					<transcript path="transcript/sa_hannover/Slg_Culemann_0666/0666.xml"
