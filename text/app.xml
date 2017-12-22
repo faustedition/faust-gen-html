@@ -746,6 +746,18 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                 </exchange>
             </modify>
         </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{{{0}/color{0} *}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
         <new-line-before>
             <search-table>
                 <search-string>{{p}}</search-string>
