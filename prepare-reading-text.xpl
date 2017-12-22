@@ -51,6 +51,9 @@
 					<transcript path="transcript/gsa/390295/390295.xml" output="ivh1.xml"/>
 					<transcript path="transcript/gsa/389863/389863.xml" output="ivh2.xml"/>
 					<transcript path="transcript/gsa/389786/389786.xml" output="ivh3.xml"/>
+					<transcript path="transcript/gsa/389773/389773.xml" output="ivh7.xml"/>
+					<transcript path="transcript/bb_cologny/G-30_07/G-30_07.xml" output="ivh7b.xml"/>
+					<transcript path="transcript/gsa/390881/390881.xml" output="ivh8.xml"/>
 					<transcript path="transcript/gsa/390706/390706.xml" output="ivh20.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_11/G-30_11.xml" output="ivh22e.xml"/>
 					<transcript path="transcript/bb_cologny/G-30_12/G-30_12.xml" output="ivh22f.xml"/>
@@ -249,7 +252,7 @@
 								| div[@type='stueck' and not(.//l[@n])] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage/@rend
 								| l/@rend | l/@xml:id | space[@type='typographical'] | hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
 								| sp/@who | note[@type='editorial'] | ge:transpose[not(@ge:stage='#posthumous')] | ge:stageNotes | 
-								handNotes | unclear/@cert | lg/@xml:id | addSpan[not(@ge:stage='#posthumous')] | milestone[@unit='group' or @unit='stage']"/>
+								handNotes | unclear/@cert | lg/@xml:id | addSpan[not(@ge:stage='#posthumous')] | milestone[@unit='group' or @unit='stage'] | ge:rewrite"/>
 							<xsl:template match="comment()" priority="1"/>
 							<!-- lb -> Leerzeichen -->
 							<xsl:template match="lb">
@@ -260,6 +263,9 @@
 							<xsl:strip-space
 								elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc ge:transpose"/>
 							<xsl:template match="ge:transpose/add/text()"/>
+							<xsl:template match="choice[sic]">
+								<xsl:apply-templates select="sic"/>
+							</xsl:template>
 							<!--<!-\- sample data for MC; to be moved at the end of procedures when reading text is finished -\->
 							<xsl:template match="div/@n"/>
 							<xsl:template match="orig | unclear">
