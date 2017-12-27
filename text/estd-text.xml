@@ -256,6 +256,19 @@
                 </exchange>
             </modify>
         </pass>
+        <!-- provisional harmonization step -->
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{{{0}/{[}name{]}}}</search-string>
+                            <replacement-string>hi</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
         <!-- separate chunk level element tags from text: -->
         <pass>
             <modify>
@@ -357,10 +370,6 @@
                         <string-pair>
                             <search-string>{{{0}/abbr}}</search-string>
                             <replacement-string/>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>{{{0}/{[}name{]}}}</search-string>
-                            <replacement-string>hi</replacement-string>
                         </string-pair>
                         <string-pair>
                             <search-string>{{{0}/orig}}</search-string>
