@@ -824,18 +824,30 @@
         <version-id>IVH22g</version-id>
         <version-sort-val value="78"/>
     </compare>
-    <!--<compare versiona="h" versionb="ivh21a" variants="diffhprec" listing="-" option="append">
+    <compare versiona="h" versionb="ivh21a" variants="diffhprec" listing="-" option="append">
         <compare-units mode="word"/>
         <add-context>
             <omission length-before="0" length-lemma="5" length-after="0"/>
             <replacement length-before="0" length-lemma="3" length-after="0"/>
             <insertion length-before="1" length-after="0"/>
         </add-context>
-        <!-\- before^_10849^_a -  -\->
-        <select-area versiona="" versionb="1.25"/>
+        <!-- before^_10849^_a - 10888 -->
+        <select-area versiona="128.20-129.5,99" versionb="1.25-2.11,99"/>
         <version-id>IVH21a</version-id>
         <version-sort-val value="79"/>
-    </compare>-->
+    </compare>
+    <compare versiona="h" versionb="ivh22d" variants="diffhprec" listing="-" option="append">
+        <compare-units mode="word"/>
+        <add-context>
+            <omission length-before="0" length-lemma="5" length-after="0"/>
+            <replacement length-before="0" length-lemma="3" length-after="0"/>
+            <insertion length-before="1" length-after="0"/>
+        </add-context>
+        <!-- before^_10889 - before^_10899 -->
+        <select-area versiona="129.6-129.18,99" versionb="1.2-1.14,99"/>
+        <version-id>IVH22d</version-id>
+        <version-sort-val value="80"/>
+    </compare>
     <!-- Akt 5 (version-sort-val 81-99 -->
     <sort source="diffhprec" destination="diffhprec">
         <sort-field num="1" start="1" length="17" order="ascending"/>
@@ -890,8 +902,12 @@
         <version-sort-val value="78"/>
         <version-id>IVH22g</version-id>
         <version-list list="variants"/>
-        <!-- 79: H.21a -->
-        <!-- 80: H.22d -->
+        <version-sort-val value="79"/>
+        <version-id>IVH21a</version-id>
+        <version-list list="variants"/>
+        <version-sort-val value="80"/>
+        <version-id>IVH22d</version-id>
+        <version-list list="variants"/>
         <var-marks id-text="=" missing-text=" " id-var="id-prev"/>
     </collate>
     <display file="$diffhprec-va" type="listing" mode="ps-landscape"/>
