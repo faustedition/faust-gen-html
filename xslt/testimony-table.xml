@@ -2296,9 +2296,10 @@ Creizenach 1837, S. 386; </field>
     <field name="adressat-gsa-personennummer">37512</field>
     <field name="datum-von">15.07.1788</field>
     <field name="vermerk">s. Gräf II/1, S. 429, Z. 11 – 13.</field>
+    <field name="bemerkung">Vgl. WA IV 18, S. 110 (Ausfertigung)</field>
     <field name="wa-druckort">WA IV 9, S. 2</field>
     <field name="druckort">WA IV 9, S. 2</field>
-    <field name="fehler-in-zeno">Text in Gräf nach Original, in WA Kopie, Text stimmt aber nicht mit Zeno überein</field>
+    <field name="fehler-in-zeno">Text in Gräf nach Original, in WA Concept, Text stimmt nicht mit Zeno überein - Zeno versucht, die Lesarten in den Brief einzuarbeiten.</field>
     <field name="vorlage-seite-von">2</field>
     <field name="vorlage-absatz-von">3</field>
   </testimony>

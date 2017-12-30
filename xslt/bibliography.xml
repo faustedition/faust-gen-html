@@ -182,14 +182,9 @@
         <f:reference>Faust. Eine Tragödie von Goethe. Mit berichtigtem Texte, den verschiedenen Lesarten, erklärenden Anmerkungen und Einleitung, 2 Tle., [hrsg. von Heinrich Düntzer], Leipzig [1868].</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/duentzer1882a">
-        <f:citation>Düntzer 1882a </f:citation>
-        <f:reference>Goethes Werke, Bd. 12: Faust, hrsg. von H[einrich] Düntzer, Stuttgart: Union, Deutsche Verlagsanstalt [zugl.: Berlin: Spemann?], o.J. [1. Lfg. 1882] (= Deutsche National-Litteratur. Historisch kritische Ausgabe, hrsg. von Joseph Kürschner, Bd. 93).</f:reference>
-    </f:bib>
-
     <f:bib uri="faust://bibliography/duentzer1882">
         <f:citation>Düntzer 1882</f:citation>
-        <f:reference>Goethes Werke, Bd. 12: Faust, hrsg. von H[einrich] Düntzer, Stuttgart: Union, Deutsche Verlagsanstalt [zugl.: Berlin: Spemann?], o.J. [1. Lfg. 1882] (= Deutsche National-Litteratur. Historisch kritische Ausgabe, hrsg. von Joseph Kürschner, Bd. 93).</f:reference>
+        <f:reference>Goethes Werke, Bd. 12: Faust, hrsg. von H[einrich] Düntzer, Berlin und Stuttgart o.J. [1882] (= Deutsche National-Litteratur. Historisch kritische Ausgabe, hrsg. von Joseph Kürschner, Bd. 93).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1891a">
