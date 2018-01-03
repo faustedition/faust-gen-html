@@ -79,6 +79,26 @@
 	</xsl:template>
 	
 	
+	<!-- The following post-processing steps need to be applied afterwards: -->
+	<xsl:template match="/">
+		<xsl:variable name="stage1">
+			<xsl:apply-templates/>
+		</xsl:variable>
+		<xsl:apply-templates mode="stage2" select="$stage1"/>
+	</xsl:template>
+	
+	<!-- Drop now-empty container elements -->
+	<xsl:template mode="stage2"	match="
+		  text[not(normalize-space(.))] 
+		| front[not(normalize-space(.))]"/>
+	
+	<!-- Drop outer text containers -->
+	<xsl:template mode="stage2" match="text[text]">
+		<xsl:apply-templates mode="#current"/>
+	</xsl:template>
+	
+	
+	
 	<!--<!-\- sample data for MC; to be moved at the end of procedures when reading text is finished -\->
 						<xsl:template match="div/@n"/>
 						<xsl:template match="orig | unclear">
@@ -100,11 +120,12 @@
 
 
 	<!-- Keep everything else as is -->
-	<xsl:template match="node()|@*">
+	<xsl:template match="node()|@*" mode="#all">
 		<xsl:copy>
-			<xsl:apply-templates select="@*, node()"/>
+			<xsl:apply-templates select="@*, node()" mode="#current"/>
 		</xsl:copy>
 	</xsl:template>
+
 	
 	
 </xsl:stylesheet>
