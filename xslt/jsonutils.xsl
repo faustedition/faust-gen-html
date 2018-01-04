@@ -16,7 +16,7 @@
 	<j:number/>    a valid json number as text content is directly copied
 	<j:bool/>      a valid json bool as text content is directly copied
 	<j:string/>    plain-text, which is quoted and included.
-	<j:array/>     j:* elements that form the array's content
+	<j:array/>     j:* elements that form the array's content, @dropempty -> nothing for empty element
 	<j:object/>    j:* elements with a name attribute that form the array's content.
 	
 
@@ -37,17 +37,19 @@
 	
 	
 	
-	<xsl:template match="j:array" name="j:array" as="xs:string" mode="#default json">
+	<xsl:template match="j:array" name="j:array" as="xs:string?" mode="#default json">
 		<xsl:param name="items" as="item()*">
 			<xsl:apply-templates mode="json">
 				<xsl:with-param name="j:object" select="false()" tunnel="yes"/>
 			</xsl:apply-templates>
 		</xsl:param>
 		<xsl:param name="sep">,</xsl:param>
-		<xsl:variable name="key">
-			<xsl:call-template name="j:key"/>
-		</xsl:variable>
-		<xsl:value-of select="concat($key, '[', string-join($items, $sep), ']')"/>
+		<xsl:if test="not(empty($items) and @dropempty)">
+			<xsl:variable name="key">
+				<xsl:call-template name="j:key"/>
+			</xsl:variable>
+			<xsl:value-of select="concat($key, '[', string-join($items, $sep), ']')"/>			
+		</xsl:if>
 	</xsl:template>
 	
 	<xsl:template match="j:object" as="xs:string" mode="#default json">
