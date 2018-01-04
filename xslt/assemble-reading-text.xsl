@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:tei="http://www.tei-c.org/ns/1.0"
+	xmlns="http://www.tei-c.org/ns/1.0"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 	exclude-result-prefixes="xs"
 	version="2.0">
@@ -12,15 +12,47 @@
 	<xsl:param name="source">file:/home/tv/git/faust-gen/data/xml/</xsl:param>
 	
 	<!-- If you pass URLs in, the respective witnesses will be read from these files, otherwise from unprocessed source tree -->
+	<xsl:param name="A-uri" select="resolve-uri('print/A8_IIIB18.xml', $source)"/>
 	<xsl:param name="H-uri" select="resolve-uri('transcript/gsa/391098/391098.xml', $source)"/>
 	<xsl:param name="H0a-uri" select="resolve-uri('transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml', $source)"/>
 	<xsl:param name="C1_4-uri" select="resolve-uri('print/C(1)4_IIIB24.xml', $source)"/>
 	
 	<!-- pass in to provide witness content directly, otherwise URIs are used -->
+	<xsl:param name="A" select="doc($A-uri)"/>
 	<xsl:param name="H" select="doc($H-uri)"/>
 	<xsl:param name="H0a" select="doc($H0a-uri)"/>
 	<xsl:param name="C1_4" select="doc($C1_4-uri)"/>
+	
+	
+	<!-- 
+	
+		If you start this stylesheet using start template 'faust', it takes A for Faust I and
+		adds Faust II to the end of it:
+		
+	-->
+	<xsl:template name="faust">
+		<xsl:comment>### Aus A: ###</xsl:comment>
+		<xsl:apply-templates select="$A"/>
+	</xsl:template>
+		
+	<xsl:template match="div[descendant::l[@n='4612']]"> 
+		<!-- div that encloses all of Faust 1, doesn't have an @n unfortunately  -->
+		<xsl:next-match/>
+		
+		<div n="2">
+			<head>TODO: Der Tragödie zweiter Teil oder so</head>
+			<xsl:comment>### Aus 2 H: ###</xsl:comment>
+			<xsl:apply-templates select="$H//body/*"/>
+		</div>
+	</xsl:template>
+	
 
+	<!-- Alternatively, use -it faust2 to start this /only/ for Faust II  -->
+	<xsl:template name="faust2">
+		<xsl:comment>### Aus 2 H: ###</xsl:comment>
+		<xsl:apply-templates select="$H"/>
+	</xsl:template>
+	
 		
 	<!--
 			
@@ -99,12 +131,7 @@
 	</xsl:template>
 	
 
-	<!-- global start templates: -->
 	
-	<xsl:template name="faust2">
-		<xsl:comment>### Aus 2 H: ###</xsl:comment>
-		<xsl:apply-templates select="$H"/>
-	</xsl:template>
 		
 		
 </xsl:stylesheet>
