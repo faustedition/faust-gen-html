@@ -35,7 +35,7 @@
 		<xsl:apply-templates select="$A"/>
 	</xsl:template>
 		
-	<xsl:template match="div[descendant::l[@n='4612']]"> 
+	<xsl:template match="div[descendant::l[@n='354'] and descendant::l[@n='4612']]"> 
 		<!-- div that encloses all of Faust 1, doesn't have an @n unfortunately  -->
 		<xsl:next-match/>
 		
@@ -130,8 +130,5 @@
 		</xsl:copy>
 	</xsl:template>
 	
-
-	
-		
 		
 </xsl:stylesheet>
