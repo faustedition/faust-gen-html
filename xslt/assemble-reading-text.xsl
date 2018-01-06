@@ -10,6 +10,8 @@
 
 	<!-- URL for the source XML files -->
 	<xsl:param name="source">file:/home/tv/git/faust-gen/data/xml/</xsl:param>
+
+	<xsl:param name="use-collection" select="false()"/>
 	
 	<!-- If you pass URLs in, the respective witnesses will be read from these files, otherwise from unprocessed source tree -->
 	<xsl:param name="A-uri" select="resolve-uri('print/A8_IIIB18.xml', $source)"/>
@@ -18,12 +20,11 @@
 	<xsl:param name="C1_4-uri" select="resolve-uri('print/C(1)4_IIIB24.xml', $source)"/>
 	
 	<!-- pass in to provide witness content directly, otherwise URIs are used -->
-	<xsl:param name="A" select="doc($A-uri)"/>
-	<xsl:param name="H" select="doc($H-uri)"/>
-	<xsl:param name="H0a" select="doc($H0a-uri)"/>
-	<xsl:param name="C1_4" select="doc($C1_4-uri)"/>
-	
-	
+	<xsl:param name="A" select="if ($use-collection) then collection()[1] else doc($A-uri)"/>
+	<xsl:param name="H" select="if ($use-collection) then collection()[2] else doc($H-uri)"/>
+	<xsl:param name="H0a" select="if ($use-collection) then collection()[3] else doc($H0a-uri)"/>
+	<xsl:param name="C1_4" select="if ($use-collection) then collection()[4] else doc($C1_4-uri)"/>
+		
 	<!-- 
 	
 		If you start this stylesheet using start template 'faust', it takes A for Faust I and
@@ -31,6 +32,9 @@
 		
 	-->
 	<xsl:template name="faust">
+		<xsl:message select="concat('Assembling from: ', 
+			'A: ', document-uri($A), '; 2 H: ', document-uri($H), 
+			'; 2 H.0a: ', document-uri($H0a), '; C.1_4: ', document-uri($C1_4))"/>
 		<xsl:comment>### Aus A: ###</xsl:comment>
 		<xsl:apply-templates select="$A"/>
 	</xsl:template>
