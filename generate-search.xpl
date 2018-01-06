@@ -71,10 +71,9 @@
 		
 		<p:choose>
 			
-			<!-- Für den Lesetext die Endstufe herstellen -->
+			
 			<p:when test="$type = 'lesetext'">
-				<cx:message><p:with-option name="message" select="concat(' - emending ', $sigil, ' (', $documentURI, ') ...')"/></cx:message>
-				<f:apply-edits/>
+				<p:identity/>
 			</p:when>
 			
 			<p:otherwise>

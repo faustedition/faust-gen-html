@@ -52,6 +52,8 @@
 			<p:load><p:with-option name="href" select="$source-uri"/></p:load>
 
 			<f:preprocess-reading-text-sources/>
+			
+			<pxp:set-base-uri><p:with-option name="uri" select="$source-uri"/></pxp:set-base-uri>
 
 		</p:for-each>
 				

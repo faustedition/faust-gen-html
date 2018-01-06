@@ -11,7 +11,7 @@
 	<!-- Additional cleanup steps for preparing the reading text. -->
 
 	<xsl:strip-space elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc ge:transpose"/>
-	
+
 	
 	<!-- These elements are replaced with their respective content: -->
 	<xsl:template match="
@@ -78,6 +78,9 @@
 		<xsl:apply-templates select="sic"/>
 	</xsl:template>
 	
+	<xsl:template match="text/@type">
+		<xsl:attribute name="type">lesetext</xsl:attribute>
+	</xsl:template>
 	
 	<!-- The following post-processing steps need to be applied afterwards: -->
 	<xsl:template match="/">
