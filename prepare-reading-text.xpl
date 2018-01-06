@@ -4,6 +4,17 @@
 	xmlns:pxf="http://exproc.org/proposed/steps/file" xmlns:f="http://www.faustedition.net/ns"
 	xmlns:ge="http://www.tei-c.org/ns/geneticEditions" xmlns:tei="http://www.tei-c.org/ns/1.0"
 	xmlns:l="http://xproc.org/library" name="main" version="2.0">
+	
+	<!-- 
+	
+		This pipeline loads a bunch of source input files and massages them to a form that will
+		also be used by the reading text. It prepares raw files that are used to prepare the
+		apparatus. 
+		
+		This pipeline is not part of the global pipeline to generate the edition but rather
+		to be run standalone.
+	
+	-->
 
 	<p:input port="source">
 		<p:empty/>
@@ -18,7 +29,7 @@
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
 	<p:import href="http://xproc.org/library/store.xpl"/>
 
-	<p:import href="apply-edits.xpl"/>
+	<p:import href="preprocess-reading-text-sources.xpl"/>
 
 
 	<p:identity name="config">
@@ -119,208 +130,12 @@
 				</p:otherwise>
 			</p:choose>
 
-			<!-- Transformationsschritte aus apply-edits.xpl -->
-			<p:xslt>
-				<p:input port="stylesheet">
-					<p:document href="xslt/normalize-characters.xsl"/>
-				</p:input>
-				<p:input port="parameters">
-					<p:empty/>
-				</p:input>
-			</p:xslt>
-
-			<!-- Vereinheitlicht die Transpositionsdeklarationen im Header -->
-			<p:xslt>
-				<p:input port="stylesheet">
-					<p:document href="xslt/textTranscr_pre_transpose.xsl"/>
-				</p:input>
-				<p:input port="parameters">
-					<p:empty/>
-				</p:input>
-			</p:xslt>
-
-			<!-- Führt die Transpositionen aus -->
-			<p:xslt>
-				<p:input port="stylesheet">
-					<p:document href="xslt/textTranscr_transpose.xsl"/>
-				</p:input>
-				<p:input port="parameters">
-					<p:empty/>
-				</p:input>
-			</p:xslt>
-
-			<!-- Emendationsschritte für <del> etc. -->
-			<p:xslt initial-mode="emend">
-				<p:input port="stylesheet">
-					<p:inline>
-						<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-							version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
-
-							<xsl:include href="xslt/emend-core.xsl"/>
-
-							<xsl:template match="choice[abbr|expan]" priority="4.0" mode="emend">
-								<!-- Später, cf. #111 -->
-								<xsl:copy>
-									<xsl:apply-templates select="@*, node()" mode="#current"/>
-								</xsl:copy>
-							</xsl:template>
-
-							<xsl:template match="*[@ge:stage='#posthumous']" priority="10.0"
-								mode="#all">
-								<xsl:copy-of select="."/>
-							</xsl:template>
-
-							<xsl:template match="choice[sic]" mode="emend">
-								<xsl:copy>
-									<xsl:apply-templates select="@*, node()" mode="#current"/>
-								</xsl:copy>
-							</xsl:template>
-
-						</xsl:stylesheet>
-					</p:inline>
-				</p:input>
-				<p:input port="parameters">
-					<p:empty/>
-				</p:input>
-			</p:xslt>
-
-			<!-- Emendationsschritte für <delSpan> etc. -->
-			<p:choose>
-				<p:when test="//tei:delSpan | //tei:modSpan">
-					<p:xslt>
-						<p:input port="stylesheet">
-							<p:document href="xslt/text-emend.xsl"/>
-						</p:input>
-						<p:input port="parameters">
-							<p:empty/>
-						</p:input>
-					</p:xslt>
-				</p:when>
-				<p:otherwise>
-					<p:identity/>
-				</p:otherwise>
-			</p:choose>
-
-			<!-- leere Elemente entfernen -->
-			<p:xslt>
-				<p:input port="stylesheet">
-					<p:document href="xslt/clean-up.xsl"/>
-				</p:input>
-				<p:input port="parameters">
-					<p:empty/>
-				</p:input>
-			</p:xslt>
-
-			<!-- Komischen Whitespace rund um Interpunktionszeichen aufräumen -->
-			<p:xslt>
-				<p:input port="stylesheet">
-					<p:document href="xslt/fix-punct-wsp.xsl"/>
-				</p:input>
-				<p:input port="parameters">
-					<p:empty/>
-				</p:input>
-			</p:xslt>
-
-			<!-- join/@type='antilabe' -> l/@part=('I', 'M', 'F') -->
-			<p:xslt>
-				<p:input port="stylesheet">
-					<p:document href="xslt/harmonize-antilabes.xsl"/>
-				</p:input>
-				<p:input port="parameters">
-					<p:empty/>
-				</p:input>
-			</p:xslt>
-
+			<f:preprocess-reading-text-sources/>
 
 			<!-- weitere Aufräumschritte -->
 			<p:xslt>
 				<p:input port="stylesheet">
-					<p:inline>
-						<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-							xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
-
-							<!-- Identitätstransformation -->
-							<xsl:template match="node()|@*">
-								<xsl:copy>
-									<xsl:apply-templates select="@*, node()"/>
-								</xsl:copy>
-							</xsl:template>
-
-							<xsl:template
-								match="group | l/hi[@rend='big'] | seg[@f:questionedBy or @f:markedBy] | c | damage[not(descendant::supplied)] 
-								| s| seg[@xml:id] | profileDesc | creation | ge:transposeGrp">
-								<xsl:apply-templates/>
-							</xsl:template>
-							<xsl:template
-								match="sourceDesc/* | encodingDesc | revisionDesc 
-								| titlePage[not(./titlePart[@n])] | pb[not(@break='no')] | fw | hi/@status | anchor |  
-								join[@type='antilabe'] | join[@result='sp'] | join[@type='former_unit'] | */@xml:space
-								| div[@type='stueck' and not(.//l[@n])] | lg/@type | figure | text[not(.//l[@n])] | speaker/@rend | stage[not(matches(@rend,'inline'))]/@rend
-								| l/@rend | l/@xml:id | space[@type='typographical'] | hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
-								| sp/@who | note[@type='editorial'] | ge:transpose[not(@ge:stage='#posthumous')] | ge:stageNotes | 
-								handNotes | unclear/@cert | lg/@xml:id | addSpan[not(@ge:stage='#posthumous')] | milestone[@unit='group' or @unit='stage'] | ge:rewrite"/>
-							<xsl:template match="comment()" priority="1"/>
-							<!-- lb -> Leerzeichen -->
-							<xsl:template match="lb">
-								<xsl:if test="not(@break='no')">
-									<xsl:text> </xsl:text>
-								</xsl:if>
-							</xsl:template>
-							<xsl:strip-space
-								elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc ge:transpose"/>
-							<xsl:template match="ge:transpose/add/text()"/>
-							<xsl:template match="choice[sic]">
-								<xsl:apply-templates select="sic"/>
-							</xsl:template>
-							<!--<!-\- sample data for MC; to be moved at the end of procedures when reading text is finished -\->
-							<xsl:template match="div/@n"/>
-							<xsl:template match="orig | unclear">
-								<xsl:apply-templates/>
-							</xsl:template>
-							<xsl:template match="l[@n='4625']">
-								<l n="4625">
-									<xsl:text>Sein Innres reinigt von verlebtem</xsl:text>
-									<note type="textcrit">
-										<it>
-											<xsl:text>4625</xsl:text>
-										</it>
-										<xsl:text> Lemma] Variante </xsl:text>
-										<it><xsl:text>Sigle</xsl:text></it>
-									</note>
-									<xsl:text>Graus.</xsl:text>
-								</l>
-							</xsl:template>-->
-						</xsl:stylesheet>
-
-					</p:inline>
-				</p:input>
-				<p:input port="parameters">
-					<p:empty/>
-				</p:input>
-			</p:xslt>
-
-			<p:xslt>
-				<p:input port="stylesheet">
-					<p:inline>
-						<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-							xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
-
-							<!-- Identitätstransformation -->
-							<xsl:template match="node()|@*">
-								<xsl:copy>
-									<xsl:apply-templates select="@*, node()"/>
-								</xsl:copy>
-							</xsl:template>
-
-							<xsl:template
-								match="text[not(normalize-space(.))] | front[not(normalize-space(.))]"/>
-							<xsl:template match="text[text]">
-								<xsl:apply-templates/>
-							</xsl:template>
-
-						</xsl:stylesheet>
-
-					</p:inline>
+					<p:document href="xslt/text-cleanup.xsl"/>
 				</p:input>
 				<p:input port="parameters">
 					<p:empty/>

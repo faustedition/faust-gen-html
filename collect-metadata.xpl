@@ -34,17 +34,7 @@
       <p:input port="source"><p:pipe port="source" step="main"></p:pipe></p:input>      
       <p:with-option name="message" select="concat('Collecting metadata from ', $source, ' (builddir=', $builddir, ')')"/>
     </cx:message>
-    
-    <pxf:copy>
-      <p:with-option name="href" select="concat($source, '/print/A8_IIIB18.xml')"/>
-      <p:with-option name="target" select="resolve-uri('lesetext/faust1.xml', $builddir)"/>
-    </pxf:copy>
-
-    <pxf:copy>
-      <p:with-option name="href" select="concat($source, '/transcript/gsa/391098/391098.xml')"/>
-      <p:with-option name="target" select="resolve-uri('lesetext/faust2.xml', $builddir)"/>
-    </pxf:copy>
-    
+        
 
 
     <l:recursive-directory-list>
@@ -211,16 +201,9 @@
             <xsl:template match="/*">              
               <xsl:copy>                
                 <xsl:variable name="sorted-transcripts">
-                  <!-- Lesetext Faust I: -->
-                  <textTranscript xmlns:f="http://www.faustedition.net/ns" uri="faust://lesetext/faust1.xml"
-                    href="{resolve-uri('lesetext/faust1.xml', $builddir)}" document="lesetext/faust1.xml"
-                    type="lesetext" f:sigil="Lesetext">
-                    <idno type="faustedition">Lesetext</idno>
-                  </textTranscript>
-
-                  <!-- Lesetext Faust II: -->
-                  <textTranscript xmlns:f="http://www.faustedition.net/ns" uri="faust://lesetext/faust2.xml"
-                    href="{resolve-uri('lesetext/faust2.xml', $builddir)}" document="lesetext/faust2.xml"
+                  <!-- Lesetext: -->
+                  <textTranscript xmlns:f="http://www.faustedition.net/ns" uri="faust://lesetext/faust.xml"
+                    href="{resolve-uri('lesetext/faust.xml', $builddir)}" document="lesetext/faust.xml"
                     type="lesetext" f:sigil="Lesetext">
                     <idno type="faustedition">Lesetext</idno>
                   </textTranscript>

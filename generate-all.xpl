@@ -29,6 +29,8 @@
 	<p:import href="bibliography.xpl"/>
 	<p:import href="create-para-table.xpl"/>	
 	<p:import href="testimony.xpl"/>
+	
+	<p:import href="generate-reading-text.xpl"/>
 
 <!--	
 	<p:import href="generate-indexes.xpl"/>
@@ -62,6 +64,12 @@
 			<p:with-option name="href" select="resolve-uri('www/data/archives.js', $builddir)"/>
 		</p:store>
 		
+		<!-- Step 1b Lesetext -->
+		<f:generate-reading-text/>
+		<p:store method="xml" indent="true">
+			<p:with-option name="href" select="resolve-uri('lesetext/faust.xml', $builddir)"/>
+		</p:store>
+		
 		
 		<!-- ############ STEP 1: Create list of all transcripts -->			
 
@@ -74,7 +82,7 @@
 		<l:store name="save-transcripts">
 			<p:with-option name="href" select="resolve-uri('faust-transcripts.xml', $builddir)"/>
 		</l:store>	
-		
+
 		
 		<!-- ############ STEP 2: Enhance all transcripts with metadata -->
 		<f:generate-search name="generate-search"/>
