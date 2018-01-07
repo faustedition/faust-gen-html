@@ -4,7 +4,7 @@
 	xmlns:pxf="http://exproc.org/proposed/steps/file" xmlns:f="http://www.faustedition.net/ns"
 	xmlns:ge="http://www.tei-c.org/ns/geneticEditions" xmlns:tei="http://www.tei-c.org/ns/1.0"
 	xmlns:l="http://xproc.org/library" name="main" version="2.0">
-	
+
 	<!-- 
 	
 		This pipeline loads a bunch of source input files and massages them to a form that will
