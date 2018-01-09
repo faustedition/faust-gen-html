@@ -353,6 +353,8 @@
                     <exclusion-string>{{sp+xml:id="sp^_l^_6359"}}</exclusion-string>
                     <exclusion-string>{{sp+xml:id="sp^_l^_6360"}}</exclusion-string>
                     <exclusion-string>{{stage+n="before^_8275^_b"</exclusion-string>
+                    <exclusion-string>{{stage+n="before^_10345^_b"}} Des</exclusion-string>
+                    <exclusion-string>{{stage+n="before^_10423^_b"}} {{hi}}die</exclusion-string>
                     <exclusion-string>{{speaker</exclusion-string>
                     <exclusion-string>{{stage</exclusion-string>
                     <exclusion-string>{{subst</exclusion-string>
@@ -412,6 +414,8 @@
                 <exception-string>{{l+n="6360"}}</exception-string>
                 <exception-string>{{stage+n="before^_6361"}}</exception-string>
                 <exception-string>{{stage+n="before^_8275^_b"</exception-string>
+                <exception-string>{{stage+n="before^_10345^_b"}} Des</exception-string>
+                <exception-string>{{stage+n="before^_10423^_b"}} {{hi}}die</exception-string>
                 <exception-string>{{subst</exception-string>
                 <exception-string>{{supplied</exception-string>
                 <exception-string>{{surplus}}</exception-string>
@@ -534,7 +538,7 @@
     <collate source="h" mode="single-witness" diff-file="diff2" listing="$diff-list2">
         <list lines="with-variants"/>
     </collate>
-    <!--    <display file="diff-list2" type="listing" mode="ps-landscape"/>-->
+    <!--<display file="diff-list2" type="listing" mode="ps-landscape"/>-->
     <!-- correct h -->
     <correct source="h" destination="hh0a" corrections="diff1" option="erase"/>
     <correct source="hh0a" destination="hh0ac14" corrections="diff2" option="erase"/>
@@ -866,7 +870,7 @@
             39-41: continuation lines for long variants,42-44: Pointer to 1st character after context info -->
     </sort>
     <collate source="h" mode="cumulated" diff-file="diffhprec" listing="diffhprec-va" special="code">
-        <list lines="with-variants"/>
+        <list lines="all"/>
         <version-sort-val value="1"/>
         <version-id>IH12a</version-id>
         <version-list list="variants"/>
