@@ -23,7 +23,7 @@
             <note type="textcrit">
                 <xsl:for-each select="$apps">
                     <xsl:copy-of select="label" copy-namespaces="no"/>
-                    <app corresp="{generate-id(f:ins)}">
+                    <app corresp="#{generate-id(f:ins)}">
                         <xsl:apply-templates select="lem" mode="app"/>
                         <xsl:apply-templates select="rdg" mode="app"/>
                     </app>
