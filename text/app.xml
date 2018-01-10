@@ -33,6 +33,10 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2open.rtf</variable>
         <variable type="permanent-file" name="app2closed" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2closed.tf</variable>
+        <variable type="permanent-file" name="app1norm" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1norm.tf</variable>
+        <variable type="permanent-file" name="app1norm-txt" option="erase" format="system"
+            code="UTF-8">file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1norm.txt</variable>
         <variable type="permanent-file" name="app2norm" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2norm.tf</variable>
         <variable type="permanent-file" name="app2norm-txt" option="erase" format="system"
@@ -657,6 +661,83 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
 #anmelde, app2rtf, traeger = -
 #*import, app2rtf, app2, ignor = -
     </tustep>
+    <transform source="app1p" destination="app1norm">
+        <!-- possibly select -->
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <exception-string>{{font name="Times" char-space="+1"}}*{{/font}}</exception-string>
+                        <string-pair>
+                            <search-string>{[}{{p}}{{font name="Times" size="12"}}*</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{[}{{p}} </search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{/p}}{]}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{font name="Times"}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{/font}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>+abr</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>#\[2310\]abr</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>+sh</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{sup}}{|}*{|}{{/sup}}</search-string>
+                            <replacement-string>.{=2=}</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>\[{[}typ {]}{#}</search-string>
+                            <replacement-string>type=</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{[}^+{{i}}{|}{#}{|}{{/i}} {|}*{|} {{i}}</search-string>
+                            <replacement-string>{=2=}\[{=4=}\]\{=\} {=1=}{=2=}{=3=}{=4=}{=5=}</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>\{=\} {[}^+{]}{{i}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+    </transform>
+    <transform source="app1norm" destination="app1norm-txt"/>
     <!-- build app2 -->
     <transform source="app2" destination="app2sort" take-params="head"/>
     <transform source="app2" destination="app2sort" take-params="typ1a" option="append"/>
