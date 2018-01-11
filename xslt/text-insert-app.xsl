@@ -13,9 +13,9 @@
     <xsl:variable name="app" select="doc('../text/app1norm.xml'), doc('../text/app2norm.xml')"/>
     
     
-    <xsl:template match="*[f:hasvars(.)][@n = $app//f:replace/@n]">
-        <xsl:variable name="current-line" select="@n"/>
-        <xsl:variable name="apps" select="$app//f:replace[@n=$current-line]/.." as="element()*"/>
+    <xsl:template match="*[f:hasvars(.)][tokenize(@n, '\s+') = tokenize($app//f:replace/@n, '\s+')]">
+        <xsl:variable name="current-line" select="tokenize(@n, '\s+')"/>
+        <xsl:variable name="apps" select="$app//f:replace[tokenize(@n, '\s+')=$current-line]/.." as="element()*"/>
         <xsl:copy copy-namespaces="no">
             <xsl:apply-templates select="@*, node()" mode="with-app">
                 <xsl:with-param name="apps" select="$apps" tunnel="yes"/>
