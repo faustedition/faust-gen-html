@@ -57,6 +57,9 @@
         <xsl:copy copy-namespaces="no">
             <xsl:apply-templates mode="#current" select="@*, node()"/>
         </xsl:copy>
-    </xsl:template>    
+    </xsl:template>
+
+
+<!-- zwei Versnummern in @n möglich!!! -->
     
 </xsl:stylesheet>
