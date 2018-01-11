@@ -46,7 +46,7 @@
 		<div n="2">
 			<head>TODO: Der Tragödie zweiter Teil oder so</head>
 			<xsl:comment>### Aus 2 H: ###</xsl:comment>
-			<xsl:apply-templates select="$H//body/*"/>
+			<xsl:apply-templates select="$H/TEI/text"/>
 		</div>
 	</xsl:template>
 	
@@ -94,7 +94,7 @@
 	-->
 	
 	<xsl:template match="div[@n='2.1']">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*"/>	
 			<xsl:apply-templates select="node() except (div[@n='2.1.1'], div[@n='2.1.1']/following::node())"/>
 			<xsl:comment>### Aus 2 H.0a: ###</xsl:comment>
@@ -119,7 +119,7 @@
 	</xsl:template>
 	
 	<xsl:template match="div[@n='2.3']">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*, node() except (div[1], div[1]/following::node())"/>
 			<xsl:comment>### Aus C.1_4: ###</xsl:comment>
 			<xsl:apply-templates select="$C1_4//div[starts-with(@n, '2.3.')]"/>
@@ -129,7 +129,7 @@
 	<!-- identity transformation; just copy everything else from the current source: -->
 	
 	<xsl:template match="node() | @*">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates mode="#current" select="@*, node()"/>
 		</xsl:copy>
 	</xsl:template>
