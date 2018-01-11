@@ -2,5 +2,5 @@ target
 node_modules
 exist.rc
 __pycache__
-app2norm.txt
+app1norm.xml
 app2norm.xml
