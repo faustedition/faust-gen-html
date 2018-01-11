@@ -985,6 +985,10 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <search-string>C.{#}{[} {]}4</search-string>
                             <replacement-string>^_</replacement-string>
                         </string-pair>
+                        <string-pair>
+                            <search-string>C.2#g+a#g-_</search-string>
+                            <replacement-string>C.2alpha^_</replacement-string>
+                        </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>
