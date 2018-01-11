@@ -36,11 +36,11 @@
         <variable type="permanent-file" name="app1norm" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1norm.tf</variable>
         <variable type="permanent-file" name="app1norm-txt" option="erase" format="system"
-            code="UTF-8">file:///C:/Users/bruening.FDH-FFM/txstep/txt/app1norm.txt</variable>
+            code="UTF-8">file:///C:/Users/bruening.FDH-FFM/github/faustedition/faust-gen-html/text/app1norm.txt</variable>
         <variable type="permanent-file" name="app2norm" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2norm.tf</variable>
         <variable type="permanent-file" name="app2norm-txt" option="erase" format="system"
-            code="UTF-8">file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2norm.txt</variable>
+            code="UTF-8">file:///C:/Users/bruening.FDH-FFM/github/faustedition/faust-gen-html/text/app2norm.txt</variable>
         <variable type="permanent-file" name="app2xml" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2xml.tf</variable>
         <variable type="scratch-file" name="head"/>
