@@ -5,9 +5,9 @@ from lxml import etree
 
 import regex as re
 from lxml.builder import ElementMaker
-from ruamel.yaml import YAML
 from collections import defaultdict
 
+from lxml.etree import ParseError
 
 log = logging.getLogger(__name__)
 
@@ -40,7 +40,12 @@ def parse_xml(text, container=None, namespace=TEI_NS):
     """
     root_tag = container if isinstance(container, str) else 'root'
     pseudo_xml = "<{tag}>{text}</{tag}>".format_map(dict(tag=root_tag, text=text))
-    xml = etree.fromstring(pseudo_xml)
+    try:
+        xml = etree.fromstring(pseudo_xml)
+    except ParseError as e:
+        log.error('Failed to parse %s as xml, using unparsed version instead', text, exc_info=True)
+        xml = etree.Element('root')
+        xml.text = text
     if namespace is not None:
         namespaceify(xml, namespace)
     if isinstance(container, etree._Element):
@@ -145,5 +150,5 @@ def app2xml(apps, filename):
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING, format='%(levelname)s: %(message)s')
-    app = list(parse_app2norm('app2norm.txt'))
-    app2xml(app, 'app2norm.xml')
+    app2xml(list(parse_app2norm('app1norm.txt')), 'app1norm.xml')
+    app2xml(list(parse_app2norm('app2norm.txt')), 'app2norm.xml')
