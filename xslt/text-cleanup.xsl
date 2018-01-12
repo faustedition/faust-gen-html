@@ -59,11 +59,12 @@
 		| handNotes 
 		| unclear/@cert 
 		| lg/@xml:id 
-		| addSpan[not(@ge:stage='#posthumous')] 
-		| milestone[@unit='group' or @unit='stage'] 
+		| addSpan[not(@ge:stage='#posthumous')]
+		| milestone[@unit='group' or @unit='stage']
 		| ge:rewrite
-		| ge:transpose/add/text()"/>	
-	
+		| ge:transpose/add/text()
+		| div[@type='stueck']"/>
+
 	<!-- Drop comments as well; this needs to override node() from above -->
 	<xsl:template match="comment()" priority="1"/>
 	
