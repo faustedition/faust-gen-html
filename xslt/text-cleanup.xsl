@@ -122,13 +122,17 @@
 						</xsl:template>-->
 
 
+	<xsl:template match="processing-instruction('oxygen')|processing-instruction('xml-model')">
+		<xsl:processing-instruction name="xml-model">href="http://dev.digital-humanities.de/ci/job/faust-schema/lastSuccessfulBuild/artifact/target/schema/faust-tei.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:processing-instruction>
+		<xsl:processing-instruction name="xml-model">href="http://dev.digital-humanities.de/ci/job/faust-schema/lastSuccessfulBuild/artifact/target/schema/faust-tei.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"</xsl:processing-instruction>		
+	</xsl:template>
+
 	<!-- Keep everything else as is -->
 	<xsl:template match="node()|@*" mode="#all">
 		<xsl:copy>
 			<xsl:apply-templates select="@*, node()" mode="#current"/>
 		</xsl:copy>
 	</xsl:template>
-
 	
 	
 </xsl:stylesheet>
