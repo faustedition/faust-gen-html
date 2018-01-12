@@ -100,7 +100,11 @@
 		<xsl:apply-templates mode="#current"/>
 	</xsl:template>
 	
-	
+	<xsl:template match="stage/emph">
+		<xsl:element name="hi">
+			<xsl:apply-templates select="@*, node()"/>
+		</xsl:element>
+	</xsl:template>
 	
 	<!--<!-\- sample data for MC; to be moved at the end of procedures when reading text is finished -\->
 						<xsl:template match="div/@n"/>
