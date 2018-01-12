@@ -1051,7 +1051,21 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
         </pass>
         <remove-blanks where="both"/>
     </transform>
-    <transform source="app2norm" destination="app2norm-txt"/>
+    <transform source="app2norm" destination="app2norm-txt">
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <exception-string>^_</exception-string>
+                        <string-pair>
+                            <search-string>^</search-string>
+                            <replacement-string>#\[005E\]</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+    </transform>
     <!-- non-italics are readings {{/i}}{[} * {]}{{i}} -->
     <transform source="app2norm" destination="app2xml">
         <pass>

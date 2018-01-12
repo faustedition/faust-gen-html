@@ -5,11 +5,11 @@ before_4634_b[gesammelt]{gesammt} <i>before_4634_b</i> gesammt <i>2_H</i>] gesam
 4687[tausendstimmigen]{tausendstimmigem} <i>4687</i> tausendstimmigem <i>2_H</i>] tausendstimmigen <i>2_I_H.0a [type=2aa]</i>
 4710[welch’]{welch} <i>4710</i> welch <i>2_H</i>] welch’ <i>2_I_H.0a [type=1b]</i>
 4721[ersprießend]{entsprießend} <i>4721</i> entsprießend <i>2_H</i>] ersprießend <i>2_I_H.0a [type=2aa]</i>
-4877[Ich]{Ich?} <i>4877</i> Ich? <i>2_H</i>] Ich^^ <i>2_I_H.0a [type=2aa]</i>
+4877[Ich]{Ich?} <i>4877</i> Ich? <i>2_H</i>] Ich^ <i>2_I_H.0a [type=2aa]</i>
 4975[falschgehofft]{falsch gehofft} <i>4975</i> falsch gehofft <i>2_H</i>] falschgehofft <i>2_I_H.0a [type=2aa]</i>
 4989|4990[Wenn|Wenn]{Wem|Wem} <i>4989–4990</i> Wem … Wem <i>2_H</i>] Wenn … Wenn <i>2_H :</i> Wem … Wem <i>durch Rasur</i> Wenn … Wenn <i>2_I_H.0a [type=2aa]</i>
 5018[allverwahrten]{altverwahrten} <i>5018</i> altverwahrten <i>2_H</i>] allverwahrten <i>2_I_H.0a [type=2aa]</i>
-5107[verwandt]{verwandt.} <i>5107</i> verwandt. <i>2_H</i>] verwandt^^ <i>2_I_H.0a [type=1b]</i>
+5107[verwandt]{verwandt.} <i>5107</i> verwandt. <i>2_H</i>] verwandt^ <i>2_I_H.0a [type=1b]</i>
 5146[Wunder seltsam]{Wunderseltsam} <i>5146</i> Wunderseltsam <i>2_H</i>] Wunder seltsam <i>2_I_H.0a [type=2aa]</i>
 5152|5153[verkündet|entzündet]{=} <i>5152–5153</i> verkündet … entzündet <i>2_I_H.0a</i>] entzündet … verkündet <i>2_H</i> entzündet … entzündet <i>2_I_H.0a :</i> verkündet … entzündet <i>vorschl Ri bill G [type=2d]</i>
 5182[sie]{dich} <i>5182</i> dich <i>2_I_H.12a</i>] sie <i>H.0a [type=2b]</i>
@@ -81,7 +81,7 @@ before_8245_b[(erstaunt]{<stage>erstaunt</stage>} <i>before_8245_b</i> <stage>er
 8650[Vom]{Von} <i>8650</i> Von <i>2_III_H.2:1</i>] Vom <i>C.1_4 [type=2b]</i>
 8656[Entlaßnem]{Entlass’nem} <i>8656</i> Entlass’nem <i>C.2alpha_4 C.3_4</i>] Entlaßnem <i>C.1_4 [type=4b]</i>
 8714[Lohe]{Lohn} <i>8714</i> Lohn <i>2_H</i>] Lohe <i>C.1_4 [type=2aa]</i>
-<i>8727</i> mich.] mich^^ <i>C.1_4 [type=1b]</i>
+<i>8727</i> mich.] mich^ <i>C.1_4 [type=1b]</i>
 8741[nicht.]{nicht,} <i>8741</i> nicht, <i>H C.2alpha_4 C.3_4</i>] nicht. <i>C.1_4 [type=4b]</i>
 8776[schlachterzogne]{schlechterzogne} <i>8776</i> schlechterzogne <i>H.3a:1</i>] schlachterzogne <i>C.1_4 [type=2b]</i>
 8803[Anerkannte! nun]{Anerkannte! neu} <i>8803</i> Anerkannte! neu <i>2_III_H.1</i>] Anerkannte! nun <i>C.1_4 [type=2b]</i>
@@ -100,7 +100,7 @@ before_8245_b[(erstaunt]{<stage>erstaunt</stage>} <i>before_8245_b</i> <stage>er
 9152[Aufgeht]{Auf geht} <i>9152</i> Auf geht <i>2_H</i>] Aufgeht <i>C.1_4 [type=2aa]</i>
 9193[erfurchtsvollem]{ehrfurchtsvollem} <i>9193</i> ehrfurchtsvollem <i>2_H</i>] erfurchtsvollem <i>C.1_4 [type=2aa]</i>
 9206[welch’]{welch} <i>9206</i> welch <i>2_III_H.2:1</i>] welch’ <i>C.1_4 [type=1b]</i>
-before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^^ <i>H.45a C.2alpha_4 C.3_4</i>] Thurmwärter, <i>C.1_4 [type=4b]</i>
+before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>H.45a C.2alpha_4 C.3_4</i>] Thurmwärter, <i>C.1_4 [type=4b]</i>
 9227[Höh’n,]{Höh’n} <i>9227</i> Höh’n <i>C.1_4</i>] Höh’n, <i>C.2alpha_4 C.3_4 [type=4a]</i>
 9235[geschloßnes]{geschloss’nes} <i>9235</i> geschloss’nes <i>C.2alpha_4 C.3_4</i>] geschloßnes <i>C.1_4 [type=4b]</i>
 9247[Welch’]{Welch} <i>9247</i> Welch <i>2_H</i>] Welch’ <i>C.1_4 [type=1b]</i>
@@ -136,14 +136,14 @@ nach 10344[allzusammen]{allezusammen} <i>nach 10344</i> allezusammen <i>2_IV_H.8
 10439[Negromant]{Negromant} <i>10439</i> Negromant <i>2_H</i>] Negromant <i>2_H :</i> Nekromant <i><color bgc="FFFF00">Ec.1(sieht nicht so aus wie in “kauert“) [type=6]</i>
 10452[Krafte]{Kräfte} <i>10452</i> Kräfte <i>2_IV_H.13</i>] Krafte <i>2_H [type=1a]</i>
 !SPAN[]{^&lt;l n="10524"^&gt;Er ist behend, reist alles mit sich fort.^&lt;/l^&gt;} <i>10524</i> Er ist behend, reist alles mit sich fort.] Er … fort <i>erg G.1 IV_H.18 fehlt IV_H.13 H [type=2b]</i>
-<i>10524</i> fort.] fort^^ <i>2_IV_H.18 [type=1b]</i>
+<i>10524</i> fort.] fort^ <i>2_IV_H.18 [type=1b]</i>
 10556[aufgeräumt]{ausgeräumt} <i>10556</i> ausgeräumt <i>2_IV_H.20</i>] aufgeräumt <i>2_H [type=2b]</i>
 after_10570[Posauenschall]{Posaunenschall} <i>after_10570</i> Posaunenschall <i>2_IV_H.21a</i>] Posauenschall <i>2_H [type=1a]</i>
-10619[erfahren?]{erfahren?} <i>10619</i> erfahren? <i>2_H</i>] erfahren? <i>2_H :</i> erfahren^^ <i>auf eingeklebtem Zettel [type=7]</i>
+10619[erfahren?]{erfahren?} <i>10619</i> erfahren? <i>2_H</i>] erfahren? <i>2_H :</i> erfahren^ <i>auf eingeklebtem Zettel [type=7]</i>
 10635[Zerrzerrt]{Zerzerrt} <i>10635</i> Zerzerrt <i>none</i>] Zerrzerrt <i>2_H [type=1a]</i>
 10636[gesenckten]{gesencktem} <i>10636</i> gesencktem <i>none</i>] gesenckten <i>2_H [type=1a]</i>
 before_10654_a[Kaiser:]{<speaker>Kaiser</speaker>} <i>before_10654_a</i> <speaker>Kaiser</speaker> <i>2_IV_H.8</i>] Kaiser: <i>2_H [type=1c]</i>
-10790[schlecht]{schlecht.} <i>10790</i> schlecht. <i>2_IV_H.8</i>] schlecht^^ <i>2_H [type=1b]</i>
+10790[schlecht]{schlecht.} <i>10790</i> schlecht. <i>2_IV_H.8</i>] schlecht^ <i>2_H [type=1b]</i>
 !SPAN[]{} <i>before_10811_b kein Text</i>] (kauert nieder.) <i>erg Ec.1 H [type=6]</i>
 10818[den]{dem} <i>10818</i> dem <i>2_IV_H.8</i>] den <i>2_H [type=2aa]</i>
 10832[willkommne]{willkommner} <i>10832</i> willkommner <i>2_IV_H.8</i>] willkommne <i>2_H [type=2aa]</i>
