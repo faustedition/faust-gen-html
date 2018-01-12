@@ -90,6 +90,11 @@
 				<p:empty/>
 			</p:input>
 		</p:xslt>
+		
+		<p:xslt>
+			<p:input port="stylesheet"><p:document href="xslt/text-insert-app.xsl"/></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+		</p:xslt>
 
 	</p:group>
 
