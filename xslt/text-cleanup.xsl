@@ -18,12 +18,13 @@
 		  group 
 		| l/hi[@rend='big'] 
 		| seg[@f:questionedBy or @f:markedBy] 
-		| c 
-		| damage[not(descendant::supplied)] 
+		| c
+		| damage[not(descendant::supplied)]
 		| s
-		| seg[@xml:id] 
-		| profileDesc 
-		| creation 
+		| seg[@xml:id]
+		| orig
+		| profileDesc
+		| creation
 		| ge:transposeGrp">
 		<xsl:apply-templates/>
 	</xsl:template>
@@ -143,6 +144,9 @@
 							</l>
 						</xsl:template>-->
 
+	<xsl:template match="text()" priority="0.5">
+		<xsl:value-of select="replace(replace(replace(., 'Ae', 'Ä'), 'Oe', 'Ö'), 'Ue', 'Ü')"/>
+	</xsl:template>
 
 	<xsl:template match="processing-instruction('oxygen')|processing-instruction('xml-model')">
 		<xsl:processing-instruction name="xml-model">href="http://dev.digital-humanities.de/ci/job/faust-schema/lastSuccessfulBuild/artifact/target/schema/faust-tei.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:processing-instruction>
