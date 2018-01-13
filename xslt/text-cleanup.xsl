@@ -10,7 +10,7 @@
 	
 	<!-- Additional cleanup steps for preparing the reading text. -->
 
-	<xsl:strip-space elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc ge:transpose"/>
+	<xsl:strip-space elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc ge:transpose choice"/>
 
 	
 	<!-- These elements are replaced with their respective content: -->
@@ -19,13 +19,16 @@
 		| l/hi[@rend='big'] 
 		| seg[@f:questionedBy or @f:markedBy] 
 		| c
-		| damage[not(descendant::supplied)]
+		| damage
 		| s
 		| seg[@xml:id]
 		| orig
 		| profileDesc
 		| creation
-		| ge:transposeGrp">
+		| ge:transposeGrp
+		| surplus
+		| unclear
+		| supplied">
 		<xsl:apply-templates/>
 	</xsl:template>
 	
@@ -77,7 +80,7 @@
 	</xsl:template>
 
 	<xsl:template match="choice[sic]">
-		<xsl:apply-templates select="sic"/>
+		<xsl:apply-templates select="sic/text()"/>
 	</xsl:template>
 	
 	<xsl:template match="text/@type">
