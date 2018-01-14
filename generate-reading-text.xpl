@@ -68,7 +68,7 @@
 		</p:for-each>
 
 
-		<p:xslt template-name="faust">
+		<p:xslt template-name="faust" name="assemble">
 			<p:input port="stylesheet">
 				<p:document href="xslt/assemble-reading-text.xsl"/>
 			</p:input>
@@ -82,7 +82,7 @@
 		</p:xslt>
 
 
-		<p:xslt>
+		<p:xslt name="cleanup">
 			<p:input port="stylesheet">
 				<p:document href="xslt/text-cleanup.xsl"/>
 			</p:input>
@@ -91,10 +91,36 @@
 			</p:input>
 		</p:xslt>
 		
-		<p:xslt>
+		<p:xslt name="app">
 			<p:input port="stylesheet"><p:document href="xslt/text-insert-app.xsl"/></p:input>
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 		</p:xslt>
+		
+		
+		<p:xslt name="issue-178-list">
+			<p:input port="source"><p:pipe port="result" step="assemble"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/list-interesting-elements.xsl"/></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+		</p:xslt>
+		
+		<p:store method="xml" indent="true">
+			<p:with-option name="href" select="resolve-uri('lesetext/issue-178.xml', $builddir)"/>
+		</p:store>
+		
+		<p:xslt>
+			<p:input port="source"><p:pipe port="result" step="issue-178-list"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/apparatus.xsl"/></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			<p:with-param name="split" select="false()"/>
+			<p:with-param name="type" select="'lesetext'"/>
+		</p:xslt>
+		
+		<p:store method="xhtml">
+			<p:with-option name="href" select="resolve-uri('www/print/issue-178.html', $builddir)"/>
+		</p:store>
+		
+		
+		<p:identity><p:input port="source"><p:pipe port="result" step="app"/></p:input></p:identity>
 
 	</p:group>
 
