@@ -58,7 +58,9 @@
     </xsl:template>
 
     <xsl:template mode="app" match="@wit">
-        <xsl:attribute name="wit"><xsl:value-of select="concat('faust://document/faustedition/', .)"/></xsl:attribute>
+        <xsl:attribute name="wit" select="
+            for $wit in tokenize(., '\s+')
+                return concat('faust://document/faustedition/', $wit)"/>
     </xsl:template>
     
     <xsl:template match="node() | @*" mode="#all">
