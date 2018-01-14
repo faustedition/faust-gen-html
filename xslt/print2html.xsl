@@ -13,6 +13,7 @@
   -->
 
   <xsl:import href="html-frame.xsl"/>
+  <xsl:import href="bibliography.xsl"/>
   <xsl:include href="html-common.xsl"/>
   <xsl:include href="split.xsl"/>
   
@@ -94,9 +95,7 @@
       <xsl:apply-templates mode="#current"/>
     </xsl:element>
   </xsl:template>
-  
-  
-  
+
   <!-- Critical apparatus -->
   <xsl:template match="note[@type='textcrit']/ref">
     <span class="{string-join((f:generic-classes(.), 'lineno'), ' ')}">
@@ -104,6 +103,16 @@
     </span>
   </xsl:template>
   
+  <xsl:template match="note[@type='textcrit']" priority="1">
+    <span class="{string-join(f:generic-classes(.), ' ')}">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+
+  <xsl:template match="note[@type='textcrit']/app">
+    <xsl:apply-templates/>
+  </xsl:template>
+
   <xsl:template match="note[@type='textcrit']/app/lem">
     <span class="{string-join(f:generic-classes(.), ' ')}">
       <xsl:apply-templates/>
@@ -116,7 +125,8 @@
       <xsl:apply-templates/>
       <xsl:if test="@wit">
         <xsl:text> </xsl:text>
-        <xsl:sequence select="f:doclink(@wit, (), ../@n)"/>
+        <xsl:comment select="concat('wit=', @wit, ' transcript-list=', $transcript-list)"/>
+        <xsl:sequence select="for $wit in tokenize(@wit, '\s+') return f:resolve-faust-doc($wit, $transcript-list)"/>
       </xsl:if>
       <xsl:if test="@type">
         <span class="reading-type">
@@ -127,6 +137,4 @@
   </xsl:template>
   
   
-
-
 </xsl:stylesheet>

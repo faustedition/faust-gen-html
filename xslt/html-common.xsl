@@ -274,7 +274,7 @@
 		</span>		
 	</xsl:template>
 	
-	<xsl:template match="app[lem and rdg]">
+	<xsl:template match="app[lem and rdg and not(ancestor::note[@type='textcrit'])]">
 		<span class="{string-join((f:generic-classes(lem), 'appnote'), ' ')}">
 			<xsl:attribute name="title">
 				<xsl:for-each select="rdg">
@@ -511,4 +511,9 @@ in <xsl:value-of select="document-uri(/)"/>
 			<xsl:apply-templates/>
 		</div>
 	</xsl:template>
+
+	<!-- will be overridden in print2html, but we don't want it in the variant app etc. -->
+	<xsl:template match="note[@type='textcrit']"/>
+
+
 </xsl:stylesheet>
