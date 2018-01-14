@@ -22,8 +22,8 @@
             </xsl:apply-templates>
             <note type="textcrit">
                 <xsl:for-each select="$apps">
-                    <xsl:copy-of select="label" copy-namespaces="no"/>
-                    <app corresp="#{generate-id(f:ins[1])}">
+                    <xsl:copy-of select="ref" copy-namespaces="no"/>
+                    <app from="#{generate-id(f:ins[1])}">
                         <xsl:apply-templates select="lem" mode="app"/>
                         <xsl:apply-templates select="rdg" mode="app"/>
                     </app>

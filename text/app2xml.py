@@ -103,7 +103,7 @@ def parse_app2norm(app_text='app2norm.txt'):
                 for n, replace, insert in zip(ns, parsed['replace'].split('|'), parsed['insert'].split('|')):
                     app.append(F.replace(replace, n=n))
                     app.append(parse_xml(insert, F.ins(n=n), TEI_NS))
-                app.append(T.label(parsed['reference']))
+                app.append(T.ref(parsed['reference']))
                 app.append(T.lem(parsed['lemma'], wit=parsed['lwitness']))
 
                 readings = parse_readings(parsed['readings'])
