@@ -7,7 +7,7 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
-    <xsl:param name="builddir">../../../target</xsl:param>
+    <xsl:param name="builddir">../../../target/</xsl:param>
     <xsl:param name="builddir-resolved" select="$builddir"/>	
     <xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
     <xsl:param name="idmap" select="doc($transcript-list)"/>
