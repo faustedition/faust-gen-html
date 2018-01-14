@@ -262,6 +262,16 @@
 					<div  class="print">
 						<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
 						<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
+							<xsl:if test="$type = 'lesetext'">
+								<!-- Placeholder navigation to push down margin notes -->
+								<xsl:for-each select="$sidebar/*">
+									<xsl:copy copy-namespaces="no">
+										<xsl:attribute name="class" select="string-join((@class, 'type-textcrit', 'placeholder'), ' ')"/>
+										<xsl:copy-of select="@* except @class"/>
+										<xsl:copy-of select="node()"/>
+									</xsl:copy>
+								</xsl:for-each>
+							</xsl:if>
 							<xsl:sequence select="$content"/>
 						</div>
 						<div class="print-side-column">  <!-- 3. Spalte (1/5) für die lokale Navigation  -->
