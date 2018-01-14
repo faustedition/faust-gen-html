@@ -104,7 +104,7 @@ def parse_app2norm(app_text='app2norm.txt'):
                     app.append(F.replace(replace, n=n))
                     app.append(parse_xml(insert, F.ins(n=n), TEI_NS))
                 app.append(T.ref(parsed['reference']))
-                app.append(T.lem(parsed['lemma'], wit=parsed['lwitness']))
+                app.append(parse_xml(parsed['lemma'], T.lem(wit=parsed['lwitness']), TEI_NS))
 
                 readings = parse_readings(parsed['readings'])
                 app.extend(readings)
@@ -140,7 +140,7 @@ def parse_readings(reading_str):
                 else:
                     notes.append(ref)
 
-            rdg = T.rdg(reading['text'])
+            rdg = parse_xml(reading['text'], T.rdg(), TEI_NS)
             if wits:
                 rdg.set('wit', ' '.join(wits))
             if hands:
