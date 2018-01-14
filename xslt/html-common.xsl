@@ -511,5 +511,4 @@ in <xsl:value-of select="document-uri(/)"/>
 			<xsl:apply-templates/>
 		</div>
 	</xsl:template>
-	
 </xsl:stylesheet>

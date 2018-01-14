@@ -95,6 +95,38 @@
     </xsl:element>
   </xsl:template>
   
+  
+  
+  <!-- Critical apparatus -->
+  <xsl:template match="note[@type='textcrit']/ref">
+    <span class="{string-join((f:generic-classes(.), 'lineno'), ' ')}">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+  
+  <xsl:template match="note[@type='textcrit']/app/lem">
+    <span class="{string-join(f:generic-classes(.), ' ')}">
+      <xsl:apply-templates/>
+    </span>
+    <xsl:text>] </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="note[@type='textcrit']/app/rdg">
+    <span class="{string-join(f:generic-classes(.), ' ')}">
+      <xsl:apply-templates/>
+      <xsl:if test="@wit">
+        <xsl:text> </xsl:text>
+        <xsl:sequence select="f:doclink(@wit, (), ../@n)"/>
+      </xsl:if>
+      <xsl:if test="@type">
+        <span class="reading-type">
+          <xsl:value-of select="concat(' [Typ ', @type, ']')"/>
+        </span>
+      </xsl:if>
+    </span>
+  </xsl:template>
+  
+  
 
 
 </xsl:stylesheet>
