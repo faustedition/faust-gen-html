@@ -117,16 +117,16 @@
     <span class="{string-join(f:generic-classes(.), ' ')}">
       <xsl:apply-templates/>
     </span>
-    <xsl:text>] </xsl:text>
+    <xsl:text>]</xsl:text>
   </xsl:template>
   
   <xsl:template match="note[@type='textcrit']/app/rdg">
+    <xsl:text> </xsl:text>
     <span class="{string-join(f:generic-classes(.), ' ')}">
       <xsl:apply-templates/>
       <xsl:if test="@wit">
-        <xsl:text> </xsl:text>
         <xsl:comment select="concat('wit=', @wit, ' transcript-list=', $transcript-list)"/>
-        <xsl:sequence select="for $wit in tokenize(@wit, '\s+') return f:resolve-faust-doc($wit, $transcript-list)"/>
+        <xsl:sequence select="for $wit in tokenize(@wit, '\s+') return (' ', f:resolve-faust-doc($wit, $transcript-list))"/>
       </xsl:if>
       <xsl:if test="@type">
         <span class="reading-type">
