@@ -118,6 +118,7 @@
       <xsl:apply-templates/>
     </span>
     <xsl:text>]</xsl:text>
+    <xsl:sequence select="for $wit in tokenize(@wit, '\s+') return (' ', f:resolve-faust-doc($wit, $transcript-list))"/>
   </xsl:template>
   
   <xsl:template match="note[@type='textcrit']/app/rdg">
