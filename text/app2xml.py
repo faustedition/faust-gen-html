@@ -92,6 +92,10 @@ def parse_app2norm(app_text='app2norm.txt'):
     with open(app_text, encoding='utf-8-sig') as app2norm:
         for line in app2norm:
             yield etree.Comment(line[:-1])
+            # fix some easily replacable issues from previous processing steps
+            line = re.sub('</?(font|color).*?>', '', line)
+            line = re.sub(r'\^?&gt;', '>', line)
+            line = re.sub(r'\^?&lt;', '<', line)
             match = APP.match(line)
             if match:
                 log.info('Parsed: %s', line[:-1])
@@ -181,5 +185,7 @@ def app2xml(apps, filename):
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING, format='%(levelname)s: %(message)s')
+    logfile = logging.FileHandler('apptoxml.log')
+    log.addHandler(logfile)
     app2xml(list(parse_app2norm('app1norm.txt')), 'app1norm.xml')
     app2xml(list(parse_app2norm('app2norm.txt')), 'app2norm.xml')
