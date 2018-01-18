@@ -796,6 +796,21 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
         </pass>
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
+    <transform source="app2" destination="app2sort" option="append">
+        <insert-at-start>{{p}}{{font size="12"}}Alle Nichteingriffe{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>typ: 0</search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
     <transform source="app2" destination="app2sort" take-params="trail" option="append"/>
     <transform source="app2sort" destination="app2clean" take-params="cleanup"/>
     <!-- build app2go -->
