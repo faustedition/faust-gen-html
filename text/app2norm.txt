@@ -1,7 +1,4 @@
-﻿before_4613_j[^]{<stage>XXX Einfügung davor</stage>} <i>vor 4613</i> <stage>XXX Einfügung davor (Beispiel)</stage> <i>2_H</i>] (kein Text) <i>2_I_H.0a [type=119_21a]</i>
-4633[$]{<stage>XXX Einfügung danach</stage>} <i>nach 4633</i> <stage>XXX Einfügung danach (Beispiel)</stage> <i>2_H</i>] (kein Text) <i>2_I_H.0a [type=119_21b]</i>
-4617[^]{<milestone unit="lg" rend="indented"/>} <i>ab 4617</i> XXX neue Strophe <i>2_H</i>] nur eine Strophe von 4613–1620 <i>2_I_H.0a [type=119_22]</i>
-before_4613_c[]{} <i>vor 4613</i> Der … Acten <i>2_H</i>] <i>davor</i> <titlePart>Faust.</titlePart> <i>[type=7] danach</i> <titlePart>(1831.)</titlePart> <i>erg Ec.0 2_H [type=6]</i>
+﻿before_4613_c[]{} <i>vor 4613</i> Der … Acten <i>2_H</i>] <i>davor</i> <titlePart>Faust.</titlePart> <i>[type=7] danach</i> <titlePart>(1831.)</titlePart> <i>erg Ec.0 2_H [type=6]</i>
 4625[erlebtem]{verlebtem} <i>4625</i> verlebtem <i>2_H</i>] erlebtem <i>2_I_H.0a [type=2aa]</i>
 before_4634_b[gesammelt]{gesammt} <i>before_4634_b</i> gesammt <i>2_H</i>] gesammelt <i>2_I_H.0a [type=2aa]</i>
 4679[Lebenspulse]{Lebens Pulse} <i>4679</i> Lebens Pulse <i>2_H</i>] Lebenspulse <i>2_I_H.0a [type=2aa]</i>
@@ -22,7 +19,7 @@ before_5199_b[geben zu]{=} <i>vor 5199</i> zu <i>2_I_H.0a</i>] zu <i>vermeintlic
 5265[Luft]{Lust} <i>5265</i> Lust <i>2_I_H.15b</i>] Luft <i>2_I_H.15b :</i> Lust <i>G.1</i> Luft <i>2_H 2_I_H.0a [type=2b] :</i> Lust <i>Sc.1 2_H [type=6]</i>
 5282[kneipt]{kneipt} <i>5282</i> kneipt <i>2_I_H.0a</i>] kneipt <i>(G) I_H.15b 2_H I_H.0a</i> borgt <i>Ec H [type=6]</i>
 before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2_I_H.0a [type=2aa]</i>
-before_5357_b[]{} <i>vor 5357</i> <speaker>Alecto</speaker> <i>2_I_H.0a</i>] <font name="Cambria Math">⟨</font><stage>Die Furien <i>erg G</i></stage><font name="Cambria Math">⟩</font> <speaker>Alecto.</speaker> <i>2_H [type=2c0]</i>
+before_5357_b[]{} <i>vor 5357</i> <speaker>Alecto</speaker> <i>2_I_H.0a</i>] <font name="Cambria Math">⟨</font><stage>Die Furien</stage> <i>erg G</i><font name="Cambria Math">⟩</font> <speaker>Alecto.</speaker> <i>2_H [type=2c0]</i>
 5388[beging]{beging’} <i>5388</i> beging’ <i>2_I_H.0a</i>] beging <i>2_I_H.0a :</i> beging’ <i>Ri G [type=2d]</i>
 //lg[l[@n="5441"]]|//lg[l[@n="5445"]]|//lg[l[@n="5449"]][]{rend="indented"|rend="indented"|rend="indented"} <i>5441–5456 Einrückung</i><color bgc="FFFF00">] <i>nicht eingerückt I_H.0a [type=1c]</i>
 //sp[l[@n="5484"]][]{//lg[@rend="indented"]} <i>5484–5493 Einrückung</i><color bgc="FFFF00">] <i>nicht eingerückt I_H.0a [type=1c]</i>
