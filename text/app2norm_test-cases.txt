@@ -1,0 +1,3 @@
+﻿﻿before_4613_j[^]{<stage>XXX Einfügung davor</stage>} <i>vor 4613</i> <stage>XXX Einfügung davor (Beispiel)</stage> <i>2_H</i>] (kein Text) <i>2_I_H.0a [type=119_21a]</i>
+4633[$]{<stage>XXX Einfügung danach</stage>} <i>nach 4633</i> <stage>XXX Einfügung danach (Beispiel)</stage> <i>2_H</i>] (kein Text) <i>2_I_H.0a [type=119_21b]</i>
+4617[^]{<milestone unit="lg" rend="indented"/>} <i>ab 4617</i> XXX neue Strophe <i>2_H</i>] nur eine Strophe von 4613–1620 <i>2_I_H.0a [type=119_22]</i>
