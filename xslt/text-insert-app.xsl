@@ -10,15 +10,17 @@
     <xsl:import href="utils.xsl"/>
     <xsl:output method="xml" indent="yes"/>
        
-    <xsl:variable name="app" select="doc('../text/app1norm.xml'), doc('../text/app2norm.xml')"/>
+    <!-- The apparatus specification in XML form -->
+    <xsl:variable name="spec" select="doc('../text/app1norm.xml'), doc('../text/app2norm.xml')"/>
     
     
-    <xsl:template match="*[f:hasvars(.)][@n = $app//f:replace/@n]">
-        <xsl:variable name="current-line" select="@n"/>
-        <xsl:variable name="apps" select="$app//f:replace[@n=$current-line]/.." as="element()*"/>
+    <xsl:template match="*[f:hasvars(.)][tokenize(@n, '\s+') = $spec//f:replace/@n]">
+        <xsl:variable name="current-line" select="tokenize(@n, '\s+')"/>
+        <xsl:variable name="apps" select="$spec//f:replace[@n=$current-line]/.." as="element()*"/>
         <xsl:copy copy-namespaces="no">
             <xsl:apply-templates select="@*, node()" mode="with-app">
                 <xsl:with-param name="apps" select="$apps" tunnel="yes"/>
+                <xsl:with-param name="current-line" select="$current-line" tunnel="yes"/>
             </xsl:apply-templates>
             <note type="textcrit">
                 <xsl:for-each select="$apps">
@@ -34,6 +36,7 @@
     
     <xsl:template mode="with-app" match="text()" priority="1">
         <xsl:param name="apps" tunnel="yes"/>
+        <xsl:param name="current-line" tunnel="yes"/>
         <xsl:variable name="re" select="replace(string-join($apps/f:replace, '|'), '([\]().*+?\[])', '\$1')"/>
         <!--<xsl:message select="concat('searching for /', $re, '/ in ', string-join($apps/@n, ', '))"/>-->
         <xsl:choose>
@@ -45,9 +48,9 @@
                     <xsl:matching-substring>
                         <xsl:variable name="current-match" select="."/>
                         <xsl:variable name="current-app" select="$apps[descendant::f:replace = $current-match]"/>
-                        <seg type="lem" xml:id="{generate-id(($current-app//f:ins)[1])}"> <!-- TODO klären was hier passiert -->
-                            <xsl:value-of select="$current-app//f:ins"/>
-                        </seg>
+                        <seg type="lem" xml:id="{generate-id($current-app//f:ins[@n = $current-line])}"> <!-- TODO klären was hier passiert -->
+                            <xsl:value-of select="$current-app//f:ins[@n = $current-line]"/>
+                        </seg> 
                     </xsl:matching-substring>
                     <xsl:non-matching-substring>
                         <xsl:copy copy-namespaces="no"/>
@@ -69,7 +72,4 @@
         </xsl:copy>
     </xsl:template>
 
-
-<!-- zwei Versnummern in @n möglich!!! -->
-    
 </xsl:stylesheet>

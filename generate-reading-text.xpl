@@ -119,6 +119,10 @@
 			<p:with-option name="href" select="resolve-uri('www/print/issue-178.html', $builddir)"/>
 		</p:store>
 		
+		<p:store>
+			<p:input port="source"><p:pipe port="result" step="cleanup"/></p:input>
+			<p:with-option name="href" select="resolve-uri('lesetext/without-app.xml', $builddir)"/>
+		</p:store>
 		
 		<p:identity><p:input port="source"><p:pipe port="result" step="app"/></p:input></p:identity>
 

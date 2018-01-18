@@ -34,7 +34,7 @@ def namespaceify(tree: etree._Element, namespace=TEI_NS):
             el.tag = prefix + el.tag
 
 
-def parse_xml(text, container=None, namespace=TEI_NS):
+def parse_xml(text, container=None, namespace=TEI_NS) -> etree._Element:
     """parses a fragment that may contain xml elements to a tree.
 
     Args:
@@ -92,6 +92,10 @@ def parse_app2norm(app_text='app2norm.txt'):
     with open(app_text, encoding='utf-8-sig') as app2norm:
         for line in app2norm:
             yield etree.Comment(line[:-1])
+            # fix some easily replacable issues from previous processing steps
+            line = re.sub('</?(font|color).*?>', '', line)
+            line = re.sub(r'\^?&gt;', '>', line)
+            line = re.sub(r'\^?&lt;', '<', line)
             match = APP.match(line)
             if match:
                 log.info('Parsed: %s', line[:-1])
@@ -116,6 +120,20 @@ def parse_app2norm(app_text='app2norm.txt'):
 # a reading, i.e. last part of app line
 READING = re.compile(r'\s*(?<text>.*?)\s*<i>(?<references>.*?)\s*(\[(type=|Typ\s+)(?<type>\w+)\]\s*)?~?<\/i>')
 HANDS = {'G', 'Gö', 'Ri', 'Re'}
+
+def append_text(element: etree.ElementBase, text: str):
+    try:
+        if element[-1].tail:
+            element[-1].tail += text
+        else:
+            element[-1].tail = text
+    except IndexError:
+        if element.text:
+            element.text += text
+        else:
+            element.text = text
+
+
 
 def parse_readings(reading_str):
     readings = []
@@ -146,6 +164,7 @@ def parse_readings(reading_str):
             if hands:
                 rdg.set('hand', ' '.join(hands))
             if notes:
+                append_text(rdg, ' ')
                 rdg.append(T.note(' '.join(notes)))
         if 'type' in reading and reading['type']:
             rdg.set('type', reading['type'])
@@ -166,5 +185,7 @@ def app2xml(apps, filename):
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING, format='%(levelname)s: %(message)s')
+    logfile = logging.FileHandler('apptoxml.log')
+    log.addHandler(logfile)
     app2xml(list(parse_app2norm('app1norm.txt')), 'app1norm.xml')
     app2xml(list(parse_app2norm('app2norm.txt')), 'app2norm.xml')
