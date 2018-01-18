@@ -89,13 +89,21 @@ APP = re.compile(
         (?<readings>.*)''', flags=re.X)
 
 def parse_app2norm(app_text='app2norm.txt'):
+    SPECIAL_REPLACEMENTS = {
+        '^': dict(place='before'),
+        '$': dict(place='after'),
+        '@lg': dict(place='enclosing-lg')
+    }
     with open(app_text, encoding='utf-8-sig') as app2norm:
-        for line in app2norm:
-            yield etree.Comment(line[:-1])
+        for raw_line in app2norm:
+            line = raw_line[:-1]
+            yield etree.Comment(line)
             # fix some easily replacable issues from previous processing steps
             line = re.sub('</?(font|color).*?>', '', line)
             line = re.sub(r'\^?&gt;', '>', line)
             line = re.sub(r'\^?&lt;', '<', line)
+            if line != raw_line[:-1]:
+                yield etree.Comment('FIXED: ' + line)
             match = APP.match(line)
             if match:
                 log.info('Parsed: %s', line[:-1])
@@ -105,8 +113,12 @@ def parse_app2norm(app_text='app2norm.txt'):
                 ns = parsed['n'].split('|')
                 app = T.app(n=' '.join(ns))
                 for n, replace, insert in zip(ns, parsed['replace'].split('|'), parsed['insert'].split('|')):
-                    app.append(F.replace(replace, n=n))
-                    app.append(parse_xml(insert, F.ins(n=n), TEI_NS))
+                    ins_element = parse_xml(insert, F.ins(n=n), TEI_NS)
+                    if replace in SPECIAL_REPLACEMENTS:
+                        ins_element.attrib.update(SPECIAL_REPLACEMENTS[replace])
+                    else:
+                        app.append(F.replace(replace, n=n))
+                    app.append(ins_element)
                 app.append(T.ref(parsed['reference']))
                 app.append(parse_xml(parsed['lemma'], T.lem(wit=parsed['lwitness']), TEI_NS))
 

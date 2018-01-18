@@ -125,6 +125,25 @@
 			<xsl:apply-templates select="$C1_4//div[starts-with(@n, '2.3.')]"/>
 		</xsl:copy>
 	</xsl:template>
+	
+	<!-- https://github.com/faustedition/faust-gen-html/issues/182 -->
+	<xsl:template match="teiHeader">
+		<teiHeader>
+			<fileDesc>
+				<titleStmt>
+					<title>Faust</title>
+					<title>Eine Tragödie</title>
+					<title>Konstituierter Text</title>
+				</titleStmt>
+				<publicationStmt>
+					<p>Publication Information</p>
+				</publicationStmt>
+				<sourceDesc>
+					<p>Information about the source</p>
+				</sourceDesc>
+			</fileDesc>
+		</teiHeader>
+	</xsl:template>
 
 	<!-- identity transformation; just copy everything else from the current source: -->
 	

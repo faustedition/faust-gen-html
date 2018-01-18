@@ -14,24 +14,50 @@
     <xsl:variable name="spec" select="doc('../text/app1norm.xml'), doc('../text/app2norm.xml')"/>
     
     
-    <xsl:template match="*[f:hasvars(.)][tokenize(@n, '\s+') = $spec//f:replace/@n]">
+    <xsl:template match="/">
+        <xsl:variable name="inserted-apps">
+            <xsl:apply-templates/>
+        </xsl:variable>
+        
+        <xsl:apply-templates mode="fix-lgs" select="$inserted-apps"/>        
+    </xsl:template>
+    
+    
+    <xsl:template match="*[f:hasvars(.)][tokenize(@n, '\s+') = $spec//f:ins/@n]">
         <xsl:variable name="current-line" select="tokenize(@n, '\s+')"/>
         <xsl:variable name="apps" select="$spec//f:replace[@n=$current-line]/.." as="element()*"/>
+        <xsl:for-each select="$spec//f:ins[@place='before' and @n= $current-line]">
+            <xsl:copy-of select="node()" copy-namespaces="no"/>
+            <xsl:call-template name="create-app-note"><xsl:with-param name="apps" select=".."/></xsl:call-template>
+        </xsl:for-each>
         <xsl:copy copy-namespaces="no">
             <xsl:apply-templates select="@*, node()" mode="with-app">
                 <xsl:with-param name="apps" select="$apps" tunnel="yes"/>
                 <xsl:with-param name="current-line" select="$current-line" tunnel="yes"/>
             </xsl:apply-templates>
-            <note type="textcrit">
-                <xsl:for-each select="$apps">
-                    <xsl:copy-of select="ref" copy-namespaces="no"/>
-                    <app from="#{generate-id(f:ins[1])}">
-                        <xsl:apply-templates select="lem" mode="app"/>
-                        <xsl:apply-templates select="rdg" mode="app"/>
-                    </app>
-                </xsl:for-each>
-            </note>
+            <xsl:call-template name="create-app-note">
+                <xsl:with-param name="apps" select="$apps"/>
+            </xsl:call-template>
         </xsl:copy>
+        <xsl:for-each select="$spec//f:ins[@place='after' and @n= $current-line]">
+            <xsl:copy-of select="node()" copy-namespaces="no"/>
+            <xsl:call-template name="create-app-note"><xsl:with-param name="apps" select=".."/></xsl:call-template>
+        </xsl:for-each>
+    </xsl:template>
+    
+    
+    
+    <xsl:template name="create-app-note">
+        <xsl:param name="apps"/>
+        <note type="textcrit">
+            <xsl:for-each select="$apps">
+                <xsl:copy-of select="ref" copy-namespaces="no"/>
+                <app from="#{generate-id(f:ins[1])}">
+                    <xsl:apply-templates select="lem" mode="app"/>
+                    <xsl:apply-templates select="rdg" mode="app"/>
+                </app>
+            </xsl:for-each>
+        </note>
     </xsl:template>
     
     <xsl:template mode="with-app" match="text()" priority="1">
@@ -65,6 +91,38 @@
             for $wit in tokenize(., '\s+')
                 return concat('faust://document/faustedition/', $wit)"/>
     </xsl:template>
+    
+    
+    <xsl:template mode="fix-lgs" match="lg[milestone[@unit='lg']]" name="build-lgs">
+        <xsl:param name="original-lg" select="."/>
+        <xsl:for-each-group select="node()" group-starting-with="milestone[@unit='lg']">
+            <lg>
+                <xsl:choose>
+                    <xsl:when test="self::milestone[@unit='lg']">
+                        <xsl:copy-of select="@* except @unit"/>
+                        <xsl:apply-templates mode="#current" select="subsequence(current-group(), 2)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:copy-of select="$original-lg/@*"/>
+                        <xsl:apply-templates mode="#current" select="current-group()"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </lg>
+        </xsl:for-each-group>
+    </xsl:template>
+    
+    <xsl:template mode="fix-lgs" match="sp[milestone[@unit='lg']]">
+        <xsl:copy copy-namespaces="no">
+            <!-- collect children up to the first l -->
+            <xsl:variable name="not-to-group" select="node()[not(preceding-sibling::l | self::l | self::milestone[@unit='lg'])]"/>
+            <xsl:copy-of select="@*, $not-to-group" copy-namespaces="no"/>
+            <xsl:for-each select="node() except $not-to-group">
+                <xsl:call-template name="build-lgs"><xsl:with-param name="original-lg" select="()"/></xsl:call-template>
+            </xsl:for-each>
+        </xsl:copy>
+    </xsl:template>
+    
+    
     
     <xsl:template match="node() | @*" mode="#all">
         <xsl:copy copy-namespaces="no">
