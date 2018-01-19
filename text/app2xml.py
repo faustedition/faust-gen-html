@@ -11,6 +11,7 @@ from lxml.builder import ElementMaker
 from collections import defaultdict
 
 from lxml.etree import ParseError
+import os
 
 log = logging.getLogger(__name__)
 
@@ -113,7 +114,11 @@ def parse_app2norm(app_text='app2norm.txt'):
                 ns = parsed['n'].split('|')
                 app = T.app(n=' '.join(ns))
                 for n, replace, insert in zip(ns, parsed['replace'].split('|'), parsed['insert'].split('|')):
-                    ins_element = parse_xml(insert, F.ins(n=n), TEI_NS)
+                    if replace == '@lg':
+                        attrs = parse_attrs(insert)
+                        ins_element = F.ins(T.lg(**attrs), n=n)
+                    else:
+                        ins_element = parse_xml(insert, F.ins(n=n), TEI_NS)
                     if replace in SPECIAL_REPLACEMENTS:
                         ins_element.attrib.update(SPECIAL_REPLACEMENTS[replace])
                     else:
@@ -128,6 +133,22 @@ def parse_app2norm(app_text='app2norm.txt'):
                 yield app
             else:
                 log.error("No match: %s", line[:-1])
+
+
+def parse_attrs(attr_spec: str) -> dict:
+    """
+    Parses a pseudo-attribute string to a dictionary.
+
+    Argument is a whitespace-separated string with items of the form
+    key=value or key="value with spaces" or key='value ' or key=
+    """
+    ATTR = re.compile(r'''(?<name>\w+)=(["']?)(?<value>[^"']*)\2(\s+?|$)''')
+    matches = ATTR.finditer(attr_spec)
+    attrs = {gd['name']: gd['value']
+             for gd in [match.groupdict()
+                        for match in matches]}
+    return attrs
+
 
 # a reading, i.e. last part of app line
 READING = re.compile(r'\s*(?<text>.*?)\s*<i>(?<references>.*?)\s*(\[(type=|Typ\s+)(?<type>\w+)\]\s*)?~?<\/i>')
@@ -197,7 +218,8 @@ def app2xml(apps, filename):
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING, format='%(levelname)s: %(message)s')
-    logfile = logging.FileHandler('apptoxml.log')
+    logfile = logging.FileHandler('app2xml.log')
+    logfile.setFormatter(logging.Formatter('%(levelname)s:%(funcName)s: %(message)s'))
     log.addHandler(logfile)
-    app2xml(list(parse_app2norm('app1norm.txt')), 'app1norm.xml')
-    app2xml(list(parse_app2norm('app2norm.txt')), 'app2norm.xml')
+    for file in 'app1norm.txt', 'app2norm.txt', 'app2norm_test-cases.txt':
+        app2xml(list(parse_app2norm(file)), os.path.splitext(file)[0] + '.xml')

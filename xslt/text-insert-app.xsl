@@ -11,8 +11,9 @@
     <xsl:output method="xml" indent="yes"/>
        
     <!-- The apparatus specification in XML form -->
-    <xsl:variable name="spec" select="doc('../text/app1norm.xml'), doc('../text/app2norm.xml')"/>
-    
+    <xsl:variable name="spec" select="doc('../text/app1norm.xml'), 
+                                      doc('../text/app2norm.xml'), 
+                                      doc('../text/app2norm_test-cases.xml')"/>
     
     <xsl:template match="/">
         <xsl:variable name="inserted-apps">
@@ -92,6 +93,22 @@
                 return concat('faust://document/faustedition/', $wit)"/>
     </xsl:template>
     
+    <xsl:template match="lg[*[@n = $spec//f:ins[@place='enclosing-lg']/@n]]">
+        <xsl:variable name="insert-element" select="$spec//f:ins[@place='enclosing-lg'][@n = current()/l/@n]"/>
+        <xsl:variable name="app-spec" select="$insert-element/.."/>
+        <xsl:copy copy-namespaces="no">
+            <!-- attributes from the apparatus -->
+            <xsl:copy-of select="$insert-element/*/@*[data(.) != '']"/>
+            <!-- attributes from the lg that are _not_ in the apparatus -->
+            <xsl:apply-templates select="@*[not(name() = (for $attr in $insert-element/*/@* return name($attr)))]" mode="#current"/>
+            <!-- text-critical note -->
+            <xsl:call-template name="create-app-note">
+                <xsl:with-param name="apps" select="$app-spec"/>
+            </xsl:call-template>
+            <!-- Everything else -->
+            <xsl:apply-templates select="node()" mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
     
     <xsl:template mode="fix-lgs" match="lg[milestone[@unit='lg']]" name="build-lgs">
         <xsl:param name="original-lg" select="."/>
