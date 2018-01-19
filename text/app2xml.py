@@ -86,7 +86,7 @@ APP = re.compile(
         \[(?<replace>.*?)\]
         \{(?<insert>.*?)\}
         \s*<i>(?<reference>.*?)<\/i>
-        \s*(?<lemma>.*?)\s*<i>(?<lwitness>.*?)<\/i>\]
+        \s*(?<lemmapart>.*?)\]
         (?<readings>.*)''', flags=re.X)
 
 def parse_app2norm(app_text='app2norm.txt'):
@@ -98,7 +98,7 @@ def parse_app2norm(app_text='app2norm.txt'):
     with open(app_text, encoding='utf-8-sig') as app2norm:
         for raw_line in app2norm:
             line = raw_line[:-1]
-            yield etree.Comment(line)
+            yield etree.Comment('       ' + line)
             # fix some easily replacable issues from previous processing steps
             line = re.sub('</?(font|color).*?>', '', line)
             line = re.sub(r'\^?&gt;', '>', line)
@@ -107,7 +107,7 @@ def parse_app2norm(app_text='app2norm.txt'):
                 yield etree.Comment('FIXED: ' + line)
             match = APP.match(line)
             if match:
-                log.info('Parsed: %s', line[:-1])
+                log.info('Parsed: %s', line)
                 parsed = match.groupdict()
                 if parsed['insert'] == '=':
                     parsed['insert'] = parsed['replace']
@@ -125,14 +125,21 @@ def parse_app2norm(app_text='app2norm.txt'):
                         app.append(F.replace(replace, n=n))
                     app.append(ins_element)
                 app.append(T.ref(parsed['reference']))
-                app.append(parse_xml(parsed['lemma'], T.lem(wit=parsed['lwitness']), TEI_NS))
+                # app.append(parse_xml(parsed['lemma'], T.lem(wit=parsed['lwitness']), TEI_NS))
+                lemmas = parse_readings(parsed['lemmapart'], tag='lem')
+                if lemmas:
+                    if len(lemmas) != 2:
+                        log.error('Lemma section »%s« parses to %d lemmas instead of one', parsed['lemmapart'], len(lemmas)/2)
+                    app.extend(lemmas)
+                else:
+                    app.append(parse_xml(parsed['lemmapart'], T.lem)) # error msg from parse_readings already there
 
                 readings = parse_readings(parsed['readings'])
                 app.extend(readings)
                 log.debug('-> %s', etree.tostring(app, encoding='unicode', pretty_print=False))
                 yield app
             else:
-                log.error("No match: %s", line[:-1])
+                log.error("No match: %s", line)
 
 
 def parse_attrs(attr_spec: str) -> dict:
@@ -168,7 +175,7 @@ def append_text(element: etree.ElementBase, text: str):
 
 
 
-def parse_readings(reading_str):
+def parse_readings(reading_str, tag='rdg'):
     readings = []
     carry = None
     for match in READING.finditer(reading_str):
@@ -191,7 +198,7 @@ def parse_readings(reading_str):
                 else:
                     notes.append(ref)
 
-            rdg = parse_xml(reading['text'], T.rdg(), TEI_NS)
+            rdg = parse_xml(reading['text'], T(tag), TEI_NS)
             if wits:
                 rdg.set('wit', ' '.join(wits))
             if hands:
@@ -203,10 +210,10 @@ def parse_readings(reading_str):
             rdg.set('type', reading['type'])
         readings.append(etree.Comment(match.group(0)))
         readings.append(rdg)
-        log.debug(' - Reading "%s" -> %s', reading_str, etree.tostring(rdg, encoding='unicode', pretty_print=False))
+        log.debug(' - Reading »%s« -> %s', reading_str, etree.tostring(rdg, encoding='unicode', pretty_print=False))
 
     if not readings:
-        log.error("No reading found in %s", reading_str)
+        log.error("No %s found in »%s«", tag, reading_str)
 
     return readings
 
@@ -218,7 +225,7 @@ def app2xml(apps, filename):
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING, format='%(levelname)s: %(message)s')
-    logfile = logging.FileHandler('app2xml.log')
+    logfile = logging.FileHandler('app2xml.log', mode='wt')
     logfile.setFormatter(logging.Formatter('%(levelname)s:%(funcName)s: %(message)s'))
     log.addHandler(logfile)
     for file in 'app1norm.txt', 'app2norm.txt', 'app2norm_test-cases.txt':
