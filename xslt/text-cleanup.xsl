@@ -120,11 +120,11 @@
 	
 	<xsl:template match="sp[stage[not(following-sibling::*)]]">
 		<xsl:next-match/>
-		<for-each select="stage[not(following-sibling::*)]">
+		<xsl:for-each select="stage[not(following-sibling::*)]">
 			<xsl:copy>
 				<xsl:apply-templates select="@*, node()"/>
 			</xsl:copy>
-		</for-each>
+		</xsl:for-each>
 	</xsl:template>
 	<xsl:template match="sp/stage[not(following-sibling::*)]"/>
 
