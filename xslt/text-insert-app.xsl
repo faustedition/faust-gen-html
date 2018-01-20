@@ -8,6 +8,7 @@
     version="2.0">
     
     <xsl:import href="utils.xsl"/>
+    <xsl:import href="bibliography.xsl"/>
     <xsl:output method="xml" indent="yes"/>
        
     <!-- The apparatus specification in XML form -->
@@ -18,9 +19,8 @@
     <xsl:template match="/">
         <xsl:variable name="inserted-apps">
             <xsl:apply-templates/>
-        </xsl:variable>
-        
-        <xsl:apply-templates mode="fix-lgs" select="$inserted-apps"/>        
+        </xsl:variable>        
+        <xsl:apply-templates mode="pass2" select="$inserted-apps"/>        
     </xsl:template>
     
     
@@ -110,7 +110,7 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template mode="fix-lgs" match="lg[milestone[@unit='lg']]" name="build-lgs">
+    <xsl:template mode="pass2" match="lg[milestone[@unit='lg']]" name="build-lgs">
         <xsl:param name="original-lg" select="."/>
         <xsl:for-each-group select="node()" group-starting-with="milestone[@unit='lg']">
             <lg>
@@ -128,7 +128,7 @@
         </xsl:for-each-group>
     </xsl:template>
     
-    <xsl:template mode="fix-lgs" match="sp[milestone[@unit='lg']]">
+    <xsl:template mode="pass2" match="sp[milestone[@unit='lg']]">
         <xsl:copy copy-namespaces="no">
             <!-- collect children up to the first l -->
             <xsl:variable name="not-to-group" select="node()[not(preceding-sibling::l | self::l | self::milestone[@unit='lg'])]"/>
@@ -139,6 +139,17 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template mode="pass2" match="sourceDesc">
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates mode="#current" select="@*"/>
+            <listWit>
+                <xsl:for-each-group select="for $wit in (//lem|//rdg)/@wit return tokenize($wit, '\s+')" group-by=".">
+                    <xsl:variable name="uri" select="current-grouping-key()"/>                    
+                    <witness corresp="{$uri}"><xsl:value-of select="$idmap//f:idno[@uri=$uri]/../f:idno[@type='faustedition']"/></witness>                    
+                </xsl:for-each-group>
+            </listWit>
+        </xsl:copy>
+    </xsl:template>
     
     
     <xsl:template match="node() | @*" mode="#all">
