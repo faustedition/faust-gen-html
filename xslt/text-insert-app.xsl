@@ -23,6 +23,23 @@
         <xsl:apply-templates mode="pass2" select="$inserted-apps"/>        
     </xsl:template>
     
+    <xsl:function name="f:seg-id" as="xs:string">
+        <xsl:param name="ins" as="element(f:ins)"/>
+        <xsl:variable name="parts" as="item()*">
+            <xsl:for-each select="$ins">
+                <xsl:variable name="strrep" select="replace(lower-case(.), '\W+', '')"/>
+                <xsl:text>lem</xsl:text>
+                <xsl:value-of select="@n"/>
+                <xsl:choose>
+                    <xsl:when test="$strrep != ''"><xsl:value-of select="$strrep"/></xsl:when>
+                    <xsl:when test="@place"><xsl:value-of select="@place"/></xsl:when>
+                    <xsl:otherwise><xsl:value-of select="count($ins/../preceding::app)"/></xsl:otherwise>
+                </xsl:choose>                        
+            </xsl:for-each>
+        </xsl:variable>
+        <xsl:value-of select="string-join($parts, '.')"/>
+    </xsl:function>
+    
     
     <xsl:template match="*[f:hasvars(.)][tokenize(@n, '\s+') = $spec//f:ins/@n]">
         <xsl:variable name="current-line" select="tokenize(@n, '\s+')"/>
@@ -53,7 +70,7 @@
         <note type="textcrit">
             <xsl:for-each select="$apps">
                 <xsl:copy-of select="ref" copy-namespaces="no"/>
-                <app from="#{generate-id(f:ins[1])}">
+                <app from="#{f:seg-id(f:ins[1])}">
                     <xsl:apply-templates select="lem" mode="app"/>
                     <xsl:apply-templates select="rdg" mode="app"/>
                 </app>
@@ -75,7 +92,7 @@
                     <xsl:matching-substring>
                         <xsl:variable name="current-match" select="."/>
                         <xsl:variable name="current-app" select="$apps[descendant::f:replace = $current-match]"/>
-                        <seg type="lem" xml:id="{generate-id($current-app//f:ins[@n = $current-line])}"> <!-- TODO klären was hier passiert -->
+                        <seg type="lem" xml:id="{f:seg-id($current-app//f:ins[@n = $current-line])}"> <!-- TODO klären was hier passiert -->
                             <xsl:value-of select="$current-app//f:ins[@n = $current-line]"/>
                         </seg> 
                     </xsl:matching-substring>
