@@ -97,6 +97,7 @@
 		</p:xslt>
 		
 		
+		<!-- Generate a list of interesting elements with context and store as XML and HTML -->
 		<p:xslt name="issue-178-list">
 			<p:input port="source"><p:pipe port="result" step="assemble"/></p:input>
 			<p:input port="stylesheet"><p:document href="xslt/list-interesting-elements.xsl"/></p:input>
@@ -119,11 +120,24 @@
 			<p:with-option name="href" select="resolve-uri('www/print/issue-178.html', $builddir)"/>
 		</p:store>
 		
+		<!-- Perform some validation steps on the apparatus and store report as HTML -->
+		<p:xslt>
+			<p:input port="source"><p:pipe port="result" step="app"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/text-app-validate.xsl"/></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+		</p:xslt>
+		
+		<p:store method="xhtml">
+			<p:with-option name="href" select="resolve-uri('lesetext/app-validation.html', $builddir)"/>
+		</p:store>
+		
+		<!-- Store a copy of the assembled text to have a source for debugging the insert-app xslt -->
 		<p:store>
 			<p:input port="source"><p:pipe port="result" step="cleanup"/></p:input>
 			<p:with-option name="href" select="resolve-uri('lesetext/without-app.xml', $builddir)"/>
 		</p:store>
 		
+		<!-- pass out the real result -->
 		<p:identity><p:input port="source"><p:pipe port="result" step="app"/></p:input></p:identity>
 
 	</p:group>
