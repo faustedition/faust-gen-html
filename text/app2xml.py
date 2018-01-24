@@ -132,7 +132,7 @@ def parse_app2norm(app_text='app2norm.txt'):
                         log.error('Lemma section »%s« parses to %d lemmas instead of one', parsed['lemmapart'], len(lemmas)/2)
                     app.extend(lemmas)
                 else:
-                    app.append(parse_xml(parsed['lemmapart'], T.lem)) # error msg from parse_readings already there
+                    app.append(parse_xml(parsed['lemmapart'], T.lem())) # error msg from parse_readings already there
 
                 readings = parse_readings(parsed['readings'])
                 app.extend(readings)
@@ -193,6 +193,7 @@ def parse_readings(reading_str, tag='rdg'):
                     wits.append(ref)
                 elif ref in HANDS:
                     hands.append(ref)
+                    notes.append('<seg type="hand">{}</seg>'.format(ref))
                 elif ref == ":":
                     carry = wits
                 else:
@@ -205,7 +206,7 @@ def parse_readings(reading_str, tag='rdg'):
                 rdg.set('hand', ' '.join(hands))
             if notes:
                 append_text(rdg, ' ')
-                rdg.append(T.note(' '.join(notes)))
+                rdg.append(parse_xml(' '.join(notes), T.note()))
         if 'type' in reading and reading['type']:
             rdg.set('type', reading['type'])
         readings.append(etree.Comment(match.group(0)))
