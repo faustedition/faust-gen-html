@@ -43,7 +43,9 @@
 				<h1>App Spec Validation</h1>
 				<xsl:call-template name="apps-without-ins"/>
 				<h1>Usage Report</h1>
-				<xsl:call-template name="all-apps-used"/>
+				<xsl:call-template name="all-apps-used"/>				
+				<xsl:call-template name="find-broken-wits"/>
+				<xsl:call-template name="summarize-notes"/>
 			</body>
 		</html>
 		
@@ -119,6 +121,67 @@
 			<xsl:text> </xsl:text>
 			<span class="lem"><xsl:value-of select="lem"/>] </span>
 		</span>
+	</xsl:template>
+	
+	<xsl:template name="find-broken-wits">
+		<xsl:variable name="wits" as="element()*">
+			<xsl:for-each select="$spec//*[@wit]">
+				<xsl:variable name="app" select="ancestor::app"/>
+				<xsl:for-each select="tokenize(@wit, '\s+')">
+					<tei:wit wit="{.}">
+						<xsl:copy-of select="$app"/>
+					</tei:wit>
+				</xsl:for-each>
+			</xsl:for-each>
+		</xsl:variable>
+				
+		
+		<xsl:variable name="analyzed-wits" as="element()*">
+			
+		<xsl:for-each-group select="$wits" group-by="@wit">
+			<xsl:variable name="uri" select="concat('faust://document/faustedition/', current-grouping-key())"/>
+			<xsl:message select="$uri"></xsl:message>
+			<xsl:choose>
+				<xsl:when test="$uri = $idmap//f:idno/@uri">
+					<p class="passed"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<p class="failed">Sigle <strong><xsl:value-of select="current-grouping-key()"/></strong>
+						nicht gefunden, benutzt in <xsl:value-of select="count(current-group())"/> Apparateinträgen:
+					<xsl:for-each select="current-group()">
+						<xsl:apply-templates select="."/>
+						<xsl:if test="position() != last()">, </xsl:if>
+					</xsl:for-each>
+					</p>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:for-each-group>
+		</xsl:variable>
+		
+		<xsl:choose>
+			<xsl:when test="$analyzed-wits[@class='failed']">
+				<h3 class="failed"><strong><xsl:value-of select="count($analyzed-wits[@class='failed'])"/></strong> invalid witness references 
+				(<xsl:value-of select="count($analyzed-wits[@class='passed'])"/> witnesses are identified correctly)</h3>
+				<xsl:copy-of select="$analyzed-wits[@class='failed']"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<p class="passed"><xsl:value-of select="count($analyzed-wits[@class='passed'])"/> korrekte Siglen gefunden.</p>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="summarize-notes">
+		<h3>Different Apparatus Notes, sorted by length:</h3>
+		<ol>
+			<xsl:for-each-group select="$spec//note/node()[not(self::seg[@type])]" group-by="normalize-space(.)">
+				<xsl:sort select="string-length(.)"/>
+				<li>
+					<q><xsl:value-of select="."/></q> (<xsl:value-of select="count(current-group())"/> ×):
+					<xsl:apply-templates select="for $note in current-group() return $note/ancestor::app"/>					
+				</li>
+			</xsl:for-each-group>	
+		</ol>
+		
 	</xsl:template>
 	
 </xsl:stylesheet>
