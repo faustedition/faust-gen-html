@@ -64,13 +64,13 @@ def read_sigils(filename='../../../../target/faust-transcripts.xml', secondary_f
         xml = etree.parse(filename)
         idnos = xml.xpath('//f:idno[@type="faustedition" and @uri]', namespaces={'f': FAUST_NS})
         short_sigil = re.compile('faust://document/faustedition/(\S+)') # re.Regex
+        sigils = { short_sigil.match(idno.get('uri')).group(1) : idno.text  for idno in idnos }
         try:
-            sigils = { short_sigil.match(idno.get('uri')).group(1) : idno.text  for idno in idnos }
             with open(secondary_filename, 'wt', encoding='utf-8') as out:
                 json.dump(sigils, out, ensure_ascii=False, indent=True, sort_keys=True)
-        except:
+        except IOError:
             log.error('Failed saving secondary sigils file %s', secondary_filename, exc_info=True)
-    except IOError:
+    except:
         log.warning('Failed loading generated sigils file %s, trying fallback %s', filename, secondary_filename, exc_info=True)
         with open(secondary_filename, 'rt', encoding='utf-8') as f:
             sigils = json.load(f)
