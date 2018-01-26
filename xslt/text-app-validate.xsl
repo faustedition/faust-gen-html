@@ -24,7 +24,7 @@
 	<xsl:template match="/">
 		<html>
 			<head>
-				<title>Lesetext Validations</title>
+				<title>Lesetext-Validierung</title>
 				<style>
 					.passed:before { content: "✔ "; color: green; } 
 					.passed > strong { color: green; }
@@ -39,10 +39,8 @@
 				</style>
 			</head>
 			<body>
-				<p>Validation report: <xsl:value-of select="current-dateTime()"/></p>
-				<h1>App Spec Validation</h1>
-				<xsl:call-template name="apps-without-ins"/>
-				<h1>Usage Report</h1>
+				<p>Berichtsdatum: <xsl:value-of select="current-dateTime()"/></p>				
+				<xsl:call-template name="apps-without-ins"/>			
 				<xsl:call-template name="all-apps-used"/>				
 				<xsl:call-template name="find-broken-wits"/>
 				<xsl:call-template name="summarize-notes"/>
@@ -53,15 +51,16 @@
 	
 	
 	<xsl:template name="apps-without-ins">
+		<a name="no-ins"/>
 		<xsl:variable name="apps-without-ins" select="$spec//app[not(f:ins)]" as="element()*"/>
 		<xsl:choose>
 			<xsl:when test="count($apps-without-ins) = 0">
-				<p class="passed">All <code>app</code> elements have at least one <code>f:ins</code>
-					child.</p>
+				<p class="passed">Alle <code>app</code>-Elemente haben mindestens ein <code>f:ins</code>.</p>
 			</xsl:when>
 			<xsl:otherwise>
-				<h3 class="failed"><xsl:value-of select="count($apps-without-ins)"/> app entries
-					without <code>f:ins</code>:</h3>
+				<h3 class="failed"><xsl:value-of select="count($apps-without-ins)"/> <code>app</code>-Einträge
+					ohne <code>f:ins</code>:</h3>
+				<p class="help">Ohne <code>f:ins</code>-Element, d.h. Einfügeklammern in der Textform, werden die Einträge nicht aufgegriffen.</p>
 				<ul>
 					<xsl:for-each select="$apps-without-ins">
 						<li><xsl:value-of select="@n"/>
@@ -83,7 +82,7 @@
 						<p class="passed"/>
 					</xsl:when>
 					<xsl:when test="count($apps-in-text) = 0">
-						<p class="failed"><xsl:apply-templates select="."/>: No apparatus in text (<xsl:value-of select="$id"/>)</p>
+						<p class="failed"><xsl:apply-templates select="."/>: Kein Apparat im Text (<xsl:value-of select="$id"/>)</p>
 					</xsl:when>
 					<xsl:otherwise>
 						<p class="warn"><xsl:apply-templates select="."/>: <strong><xsl:value-of select="count($apps-in-text)"/></strong> apps in text</p>
@@ -91,12 +90,30 @@
 				</xsl:choose>
 			</xsl:for-each>
 		</xsl:variable>
-		
+
+		<h1 id="usage">Apparatgebrauch</h1>
+		<div class="help">
+			<p>
+				Das Apparateinfügen erfolgt textgetrieben, d.h. für jede mögliche Stelle im Text wird 
+				anhand n-Attribut und Ersetzungstext geprüft, ob dafür ein relevanter Apparateintrag 
+				gefunden wird. Dementsprechend können zwei Fehler auftreten: Ein Apparateintrag wird
+				übersehen, oder er passt an mehreren Stellen.
+				<ol>
+					<li>Für <strong>nicht eingefügte Apparateinträge</strong>: n-Wert (ersten Eintrag 
+						im Textapparat) prüfen, außerdem prüfen ob der Replace-String (<code>[…]</code>) 
+						wirklich wörtlich dem Text oder einem vereinbarten Codezeichen entspricht.</li>
+					<li>Mehrfache Einträge werden z.Z. noch nicht aufgeräumt</li>
+					<li>
+						Apparateinträge, die <a href="#app2xml">gar nicht erst geparst werden konnten</a>, werden hier nicht berücksichtigt
+					</li>
+				</ol>				
+			</p>
+		</div>
 		
 			<xsl:if test="$details[@class='failed']">
 				<h3 class="failed">
 					<strong><xsl:value-of select="count($details[@class='failed'])"/></strong>
-					<xsl:text> apparatus entries have not been inserted: </xsl:text>					
+					<xsl:text> Apparateinträge wurden nicht eingefügt: </xsl:text>					
 				</h3>
 				<xsl:sequence select="$details[@class='failed']"/>				
 			</xsl:if>
@@ -104,13 +121,13 @@
 			<xsl:if test="$details[@class='warn']">
 				<h3 class="failed">
 					<strong><xsl:value-of select="count($details[@class='warn'])"/></strong>
-					<xsl:text> apparatus entries been inserted more than once: </xsl:text>					
+					<xsl:text> Apparateinträge wurden mehrfach eingefügt: </xsl:text>					
 				</h3>
 				<xsl:sequence select="$details[@class='warn']"/>				
 			</xsl:if>
 		
 			<xsl:if test="$details[@class='passed']">
-				<h3 class="passed"><strong><xsl:value-of select="count($details[@class='passed'])"/></strong> apparatus entries have been inserted exactly once into the reading text.</h3>
+				<h3 class="passed"><strong><xsl:value-of select="count($details[@class='passed'])"/></strong> Apparateinträge wurden genau einmal eingefügt.</h3>
 			</xsl:if>
 		
 	</xsl:template>
@@ -171,7 +188,17 @@
 	</xsl:template>
 	
 	<xsl:template name="summarize-notes">
-		<h3>Different Apparatus Notes, sorted by length:</h3>
+		<h3>Apparat-Notes, nach Länge sortiert</h3>
+		<div class="help">
+			<p>Diese Liste enthält alle unterschiedlichen Bemerkungen aus dem Apparat, die nicht als Schreiberhand, Sigle etc.
+			erkannt wurden. Nur einige diese Einträge weisen auf Fehler hin.</p>
+			<ul>
+				<li>Steht hier eine <strong>Sigle</strong>, so ist sie nicht in der korrekten Form (d.h. konnte keiner
+					URI zugeordnet werden) und muss angepasst werden.</li>
+				<li>Steht hier eine Schreiberhand, so muss sie in die Liste aufgenommen werden (z.Z. in app2xml.py)</li>
+				<li>Typen, spitze Klammern etc. weisen auf Formatierungsfehler im zugehörigen Eintrag.</li>				
+			</ul>			
+		</div>
 		<ol>
 			<xsl:for-each-group select="$spec//note/node()[not(self::seg[@type])]" group-by="normalize-space(.)">
 				<xsl:sort select="string-length(.)"/>
