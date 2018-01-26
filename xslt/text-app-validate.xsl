@@ -32,10 +32,12 @@
 					.failed:before { content: "✘ "; color: red;  }
 					.failed > strong { color: red; }
 					
-					.warn:before   { content: "⚠ "; background: yellow; }
+					.warn:before   { content: "⚠ "; color: yellow; font-weight: bold; text-shadow: 0px 0px 1px black; }
 					.warn > strong { background: yellow; }
 					
 					.app { font-family: "Ubuntu", sans-serif; font-size: smaller;}
+					
+					.help { color: #444; font-style: italic; }
 				</style>
 			</head>
 			<body>
@@ -119,7 +121,7 @@
 			</xsl:if>
 		
 			<xsl:if test="$details[@class='warn']">
-				<h3 class="failed">
+				<h3 class="warn">
 					<strong><xsl:value-of select="count($details[@class='warn'])"/></strong>
 					<xsl:text> Apparateinträge wurden mehrfach eingefügt: </xsl:text>					
 				</h3>
@@ -134,7 +136,7 @@
 	
 	<xsl:template match="app">
 		<span class="app">
-			<strong class="n"><xsl:value-of select="@n"/></strong>
+			<a href="http://dev.faustedition.net/print/faust.all#l{@n}"><strong class="n"><xsl:value-of select="@n"/></strong></a>
 			<xsl:text> </xsl:text>
 			<span class="lem"><xsl:value-of select="lem"/>] </span>
 		</span>
@@ -199,15 +201,22 @@
 				<li>Typen, spitze Klammern etc. weisen auf Formatierungsfehler im zugehörigen Eintrag.</li>				
 			</ul>			
 		</div>
-		<ol>
+		<table>
+			<tr>
+				<th>Bemerkung</th>
+				<th>Anzahl</th>
+				<th>Stellen</th>
+			</tr>
+		
 			<xsl:for-each-group select="$spec//note/node()[not(self::seg[@type])]" group-by="normalize-space(.)">
 				<xsl:sort select="string-length(.)"/>
-				<li>
-					<q><xsl:value-of select="."/></q> (<xsl:value-of select="count(current-group())"/> ×):
-					<xsl:apply-templates select="for $note in current-group() return $note/ancestor::app"/>					
-				</li>
+				<tr>
+					<td><xsl:value-of select="."/></td> 
+					<td><xsl:value-of select="count(current-group())"/></td>
+					<td><xsl:apply-templates select="for $note in current-group() return $note/ancestor::app"/></td>					
+				</tr>
 			</xsl:for-each-group>	
-		</ol>
+		</table>
 		
 	</xsl:template>
 	
