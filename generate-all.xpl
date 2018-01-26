@@ -79,12 +79,7 @@
 		</l:store>
 		
 		<!-- ## Step 1.5: Lesetext -->
-		<f:generate-reading-text/>		
-		
-		<p:store method="xml" indent="true">			
-			<p:with-option name="href" select="resolve-uri('lesetext/faust.xml', $builddir)"/>
-		</p:store>
-		
+		<f:generate-reading-text/>				
 
 		
 		<!-- ############ STEP 2: Enhance all transcripts with metadata -->

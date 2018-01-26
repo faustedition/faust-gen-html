@@ -137,7 +137,13 @@
 			<p:with-option name="href" select="resolve-uri('lesetext/without-app.xml', $builddir)"/>
 		</p:store>
 		
-		<!-- pass out the real result -->
+		<!-- Store the final marked-up text -->
+		<p:store method="xml" indent="true">
+			<p:input port="source"><p:pipe port="result" step="app"/></p:input>			
+			<p:with-option name="href" select="resolve-uri('lesetext/faust.xml', $builddir)"/>
+		</p:store>		
+		
+		<!-- additionally, pass out the real result -->
 		<p:identity><p:input port="source"><p:pipe port="result" step="app"/></p:input></p:identity>
 
 	</p:group>
