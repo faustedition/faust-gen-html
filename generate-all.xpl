@@ -76,11 +76,21 @@
 		<!-- We need to save it now, its referenced later. -->
 		<l:store name="save-transcripts">
 			<p:with-option name="href" select="resolve-uri('faust-transcripts.xml', $builddir)"/>
-		</l:store>	
+		</l:store>
+		
+		<!-- ## Step 1.5: Lesetext -->
+		<f:generate-reading-text/>		
+		
+		<p:store method="xml" indent="true">			
+			<p:with-option name="href" select="resolve-uri('lesetext/faust.xml', $builddir)"/>
+		</p:store>
+		
 
 		
 		<!-- ############ STEP 2: Enhance all transcripts with metadata -->
-		<f:generate-search name="generate-search"/>
+		<f:generate-search name="generate-search">
+			<p:input port="source"><p:pipe port="result" step="save-transcripts"/></p:input>
+		</f:generate-search>
 		<!-- TODO this by side-effect also collects the bargraph information  -->
 				
 		<cx:message message="Creating emended versions ..."/>
@@ -184,13 +194,6 @@
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>
 		</f:testimony>
 		
-		<!-- ## Step 2e: Lesetext -->
-		<f:generate-reading-text>
-			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>
-		</f:generate-reading-text>
-		<p:store method="xml" indent="true">			
-			<p:with-option name="href" select="resolve-uri('lesetext/faust.xml', $builddir)"/>
-		</p:store>
 		
 		
 		<!-- ## Step 3a: bibliography -->		
