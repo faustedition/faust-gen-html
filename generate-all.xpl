@@ -64,11 +64,6 @@
 			<p:with-option name="href" select="resolve-uri('www/data/archives.js', $builddir)"/>
 		</p:store>
 		
-		<!-- Step 1b Lesetext -->
-		<f:generate-reading-text/>
-		<p:store method="xml" indent="true">
-			<p:with-option name="href" select="resolve-uri('lesetext/faust.xml', $builddir)"/>
-		</p:store>
 		
 		
 		<!-- ############ STEP 1: Create list of all transcripts -->			
@@ -188,6 +183,15 @@
 		<f:testimony name="testimony">
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>
 		</f:testimony>
+		
+		<!-- ## Step 2e: Lesetext -->
+		<f:generate-reading-text>
+			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>
+		</f:generate-reading-text>
+		<p:store method="xml" indent="true">			
+			<p:with-option name="href" select="resolve-uri('lesetext/faust.xml', $builddir)"/>
+		</p:store>
+		
 		
 		<!-- ## Step 3a: bibliography -->		
 		<f:bibliography>
