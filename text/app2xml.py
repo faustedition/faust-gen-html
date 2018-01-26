@@ -3,6 +3,7 @@
 import logging
 from itertools import chain
 
+import sys
 from lxml import etree
 import json
 
@@ -47,7 +48,7 @@ def parse_xml(text, container=None, namespace=TEI_NS) -> etree._Element:
     try:
         xml = etree.fromstring(pseudo_xml)
     except ParseError as e:
-        log.error('Failed to parse %s as xml, using unparsed version instead', text, exc_info=True)
+        log.warning('Failed to parse %s as xml, using unparsed version instead', text, exc_info=True)
         xml = etree.Element('root')
         xml.text = text
     if namespace is not None:
@@ -158,7 +159,7 @@ def parse_attrs(attr_spec: str) -> dict:
 
 
 # a reading, i.e. last part of app line
-READING = re.compile(r'\s*(?<text>.*?)\s*<i>(?<references>.*?)\s*(\[(type=|Typ\s+)(?<type>\w+)\]\s*)?~?<\/i>')
+READING = re.compile(r'\s*(?<text>.*?)\s*<i>(?<references>.*?)\s*(\[(type=|Typ\s+)(?<type>\w+¬?)\]\s*)?~?<\/i>')
 HANDS = {'G', 'Gö', 'Ri', 'Re'}
 
 def append_text(element: etree.ElementBase, text: str):
@@ -214,7 +215,7 @@ def parse_readings(reading_str, tag='rdg'):
         log.debug(' - Reading »%s« -> %s', reading_str, etree.tostring(rdg, encoding='unicode', pretty_print=False))
 
     if not readings:
-        log.error("No %s found in »%s«", tag, reading_str)
+        log.warning("Failed to parse »%s« as %s", reading_str, tag)
 
     return readings
 
@@ -224,10 +225,19 @@ def app2xml(apps, filename):
     with open(filename, 'wb') as outfile:
         outfile.write(etree.tostring(xml, pretty_print=True, encoding='utf-8', xml_declaration=True))
 
-if __name__ == '__main__':
-    logging.basicConfig(level=logging.WARNING, format='%(levelname)s: %(message)s')
+def setup_logging():
+    # logging.basicConfig(level=logging.WARNING, format='%(levelname)s: %(message)s')
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    consoleHandler = logging.StreamHandler()
+    consoleHandler.setLevel(logging.WARNING)
+    consoleHandler.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
+    logger.addHandler(consoleHandler)
     logfile = logging.FileHandler('app2xml.log', mode='wt')
     logfile.setFormatter(logging.Formatter('%(levelname)s:%(funcName)s: %(message)s'))
-    log.addHandler(logfile)
+    logger.addHandler(logfile)
+
+if __name__ == '__main__':
+    setup_logging()
     for file in 'app1norm.txt', 'app2norm.txt', 'app2norm_test-cases.txt':
         app2xml(list(parse_app2norm(file)), os.path.splitext(file)[0] + '.xml')

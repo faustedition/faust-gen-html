@@ -26,26 +26,42 @@
 			<head>
 				<title>Lesetext-Validierung</title>
 				<style>
+					
+					nav { display: flex; margin: 0 1em }
+					nav a { flex: content; margin: 0 1ex; padding: 0 6px; box-shadow: 1px 1px 2px silver;}				
+					
 					.passed:before { content: "✔ "; color: green; } 
-					.passed > strong { color: green; }
-					
+					.passed strong { color: green; }
 					.failed:before { content: "✘ "; color: red;  }
-					.failed > strong { color: red; }
-					
+					.failed strong { color: red; }
 					.warn:before   { content: "⚠ "; color: yellow; font-weight: bold; text-shadow: 0px 0px 1px black; }
-					.warn > strong { background: yellow; }
+					.warn strong { text-shadow: 1px 1px 2px yellow; }
 					
 					.app { font-family: "Ubuntu", sans-serif; font-size: smaller;}
 					
 					.help { color: #444; font-style: italic; }
+					
+					.code { border: 1px inset silver; background: #f8f8f8; padding: 3px; }
+					.code pre { margin: 0 }
+					.ERROR { background: #fdd; }
+					.WARNING { background: #ff8; }
+					.INFO { background: #efe; }
 				</style>
 			</head>
-			<body>
-				<p>Berichtsdatum: <xsl:value-of select="current-dateTime()"/></p>				
+			<body>			
+				<p>Berichtsdatum: <xsl:value-of select="current-dateTime()"/></p>
+				<nav>
+					<a href="#apps-without-ins">app ohne ins</a>
+					<a href="#usage">Verwendung</a>
+					<a href="#wits">kaputte wits</a>
+					<a href="#notes">Bemerkungen</a>
+					<a href="#app2xml">app2xml</a>
+				</nav>				
 				<xsl:call-template name="apps-without-ins"/>			
 				<xsl:call-template name="all-apps-used"/>				
 				<xsl:call-template name="find-broken-wits"/>
 				<xsl:call-template name="summarize-notes"/>
+				<xsl:call-template name="app2xml"/>
 			</body>
 		</html>
 		
@@ -53,7 +69,7 @@
 	
 	
 	<xsl:template name="apps-without-ins">
-		<a name="no-ins"/>
+		<a name="apps-without-ins"/>
 		<xsl:variable name="apps-without-ins" select="$spec//app[not(f:ins)]" as="element()*"/>
 		<xsl:choose>
 			<xsl:when test="count($apps-without-ins) = 0">
@@ -179,18 +195,18 @@
 		
 		<xsl:choose>
 			<xsl:when test="$analyzed-wits[@class='failed']">
-				<h3 class="failed"><strong><xsl:value-of select="count($analyzed-wits[@class='failed'])"/></strong> invalid witness references 
+				<h3 id="wits" class="failed"><strong><xsl:value-of select="count($analyzed-wits[@class='failed'])"/></strong> invalid witness references 
 				(<xsl:value-of select="count($analyzed-wits[@class='passed'])"/> witnesses are identified correctly)</h3>
 				<xsl:copy-of select="$analyzed-wits[@class='failed']"/>
 			</xsl:when>
 			<xsl:otherwise>
-				<p class="passed"><xsl:value-of select="count($analyzed-wits[@class='passed'])"/> korrekte Siglen gefunden.</p>
+				<p id="wits" class="passed"><xsl:value-of select="count($analyzed-wits[@class='passed'])"/> korrekte Siglen gefunden.</p>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 	
 	<xsl:template name="summarize-notes">
-		<h3>Apparat-Notes, nach Länge sortiert</h3>
+		<h3 id="notes">Apparat-Notes, nach Länge sortiert</h3>
 		<div class="help">
 			<p>Diese Liste enthält alle unterschiedlichen Bemerkungen aus dem Apparat, die nicht als Schreiberhand, Sigle etc.
 			erkannt wurden. Nur einige diese Einträge weisen auf Fehler hin.</p>
@@ -218,6 +234,48 @@
 			</xsl:for-each-group>	
 		</table>
 		
+	</xsl:template>
+	
+	<xsl:template name="app2xml">
+		<h3 id="app2xml">XML-Konvertierung</h3>
+		<xsl:variable name="parsed-log">
+			<xsl:variable name="logtext" select="unparsed-text('../text/app2xml.log', 'utf-8')"/>
+			<xsl:analyze-string select="$logtext" regex=".+\n">
+				<xsl:matching-substring>
+					<xsl:choose>
+						<xsl:when test="matches(., '^(ERROR|WARNING|INFO):')">
+							<pre class="{substring-before(., ':')}"><xsl:value-of select="."/></pre>
+						</xsl:when>
+						<xsl:otherwise>
+							<pre><xsl:value-of select="."/></pre>
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:matching-substring>
+				<xsl:non-matching-substring>
+					<p class="failed">Fehler beim Parsen des Texts</p>
+					<pre>
+						<xsl:copy-of select="$logtext"/>
+					</pre>
+				</xsl:non-matching-substring>
+			</xsl:analyze-string>			
+		</xsl:variable>
+				
+		<div class="help">
+			Dies ist das Logfile der Konvertierung des Apparats aus dem Text- ins XML-Format. Fehler (<span class="ERROR">ERROR</span>) hier weisen
+			auf Einträge hin, die gar nicht erst im XML landen und damit in den anderen Validierungsberichten <em>nicht</em>
+			enthalten sind. <span class="WARNING">WARNINGS</span> kennzeichnen Einträge, die nicht vollständig korrekt verarbeitet werden konnten und
+			damit kaputt im XML landen. <span class="INFO">INFO</span> kennzeichnet erfolgreich geparste Einträge,
+			sonstige Zeilen sind Details.			
+		</div>
+		<p>
+			<strong class="failed"><xsl:value-of select="count($parsed-log//*[@class='ERROR'])"/></strong> Fehler,
+			<strong class="warn"><xsl:value-of select="count($parsed-log//*[@class='WARNING'])"/></strong> Warnungen,
+			<strong class="passed"><xsl:value-of select="count($parsed-log//*[@class='INFO'])"/></strong> erfolgreich geparste Einträge:
+		</p>
+		
+		<div class="code">
+			<xsl:sequence select="$parsed-log"/>
+		</div>
 	</xsl:template>
 	
 </xsl:stylesheet>
