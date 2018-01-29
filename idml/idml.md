@@ -24,3 +24,10 @@ sind grundsätzlich möglich, kommen aber nur vereinzelt vor (siehe
 Bühnenanweisungen erscheinen zentriert, u.U. gemeinsam mit davorstehender Sprecherbezeichnung.
 
 Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile.
+
+## Antilaben
+Die Verse mit `part="M"` und `part="F"` werden gemäß der Länge des vorherigen Teils einer Antilabe eingerückt.
+
+Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende //l[@part] um ein Leerzeichen mehr eingerückt.
+
+## Kolumnentitel
