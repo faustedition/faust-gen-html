@@ -13,3 +13,7 @@ Siehe https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
 
 ## Abkürzungen (`abbr` / `expan`)
 Sollen in der Vorlage nicht mehr vorkommen, siehe [#195](https://github.com/faustedition/faust-gen-html/issues/195).
+
+## Figurenreden (`sp`) ohne Sprecher (`speaker`)
+sind grundsätzlich möglich, kommen aber nur vereinzelt vor (siehe 
+[#197](https://github.com/faustedition/faust-gen-html/issues/197)).
