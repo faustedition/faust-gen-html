@@ -6,10 +6,10 @@ Hier werden die zur IDML-Synthese notwendigen Festlegungen getroffen.
 # Fragen
 Siehe https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
 
-# Verwendete Kürzel
+# Verwendete Kürzel und Bezeichnungen
 * BA = Bühnenanweisung (`stage`)
-* Sprecher = Sprecherbezeichnung (`speaker`) 
- 
+* Sprecher = Sprecherbezeichnung (`speaker`)
+* Musterseite / Stammseite in InDesign: Seiten, auf denen Gestaltungen definiert werden, die für alle Seiten gelten sollen, auf die sich die Stammseite bezieht (`Musterseite A` mit Kolumnenzeile und Pagina, `Musterseite B` ohne Kolumnenzeile). 
 # Regeln
 
 ## Abkürzungen (`abbr` / `expan`)
@@ -44,3 +44,4 @@ Die Verse mit `part="M"` und `part="F"` werden gemäß der Länge des vorherigen
 Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende //l[@part] um ein Leerzeichen mehr eingerückt.
 
 ## Kolumnentitel
+* entfallen bei Akt- und Szenenanfängen 
