@@ -28,6 +28,9 @@ Bühnenanweisungen erscheinen zentriert, u.U. gemeinsam mit davorstehender Sprec
 
 Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile.
 
+### Hervorhebungen in BA (`//stage/hi`)
+Output: Zeichenformat `Figur`.
+
 ## Sprecher mit BA in derselben Zeile
 Bsp.:
 
