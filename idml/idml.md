@@ -21,6 +21,7 @@ sind grundsätzlich möglich, kommen aber nur vereinzelt vor (siehe
 [#197](https://github.com/faustedition/faust-gen-html/issues/197)).
 
 ## Sprecher
+Zeichenformat: `Sprecher`, Formatierung: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
 
 ## BA
 ### Position
@@ -30,6 +31,9 @@ Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzt
 
 ### Hervorhebungen in BA (`//stage/hi`)
 Output: Zeichenformat `Figur`.
+
+### Auftritt (`move type="entrance"`)
+Output: Zeichenformat `Auftritt` innerhalb von Absatzformat `BA ...`.
 
 ## Sprecher mit BA in derselben Zeile
 Bsp.:
@@ -41,10 +45,24 @@ Erkennungszeichen `@rend`-Wert `inline`.
 
 Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 0,0`. Der Inhalt von `speaker` erhält das Zeichenformat `Sprecher`. 
 
-## Antilaben
+## Verse 
+
+### Eingerückte Verse (parent::lg[@rend="indented"])
+Im InDesign-Template stehen drei (?) Tabs davor, letztlich sollen sie auf optische Mitte kommen.
+
+### Antilaben
 Die Verse mit `part="M"` und `part="F"` werden gemäß der Länge des vorherigen Teils einer Antilabe eingerückt.
 
 Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende //l[@part] um ein Leerzeichen mehr eingerückt.
 
+Absatzformat im InDesign-Template: "Vers Antilabe".
+
 ## Kolumnentitel
-* entfallen bei Akt- und Szenenanfängen 
+* entfallen bei Akt- und Szenenanfängen
+
+## Feinsatz
+* Seitenumbrüche
+* Einfügen von Leerzeilen (wo?)
+* Zeilenumbrüche bei Bühnenanweisungen
+* optische Mitte der Liedverse
+* Einrichtung der Szene "Trüber Tag. Feld" (verkleinerter Satzspiegel?)
