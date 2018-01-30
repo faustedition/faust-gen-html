@@ -11,6 +11,53 @@ Siehe https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
 * Sprecher = Sprecherbezeichnung (`speaker`)
 * Musterseite / Stammseite in InDesign: Seiten, auf denen Gestaltungen definiert werden, die für alle Seiten gelten sollen, auf die sich die Stammseite bezieht (`Musterseite A` mit Kolumnenzeile und Pagina als Textvariablen definiert, `Musterseite B` ohne Kolumnenzeile). 
 
+# Absatzformate
+
+## BA ...
+Die folgend beschriebenen `BA ...`-Absatzformate können dem XML-Pattern `speaker`, `stage`, aber auch `speaker`+`stage` entsprechen. 
+
+`BA ...` aus dem Pattern `speaker`+`stage` hat folgende Form (Bsp.):
+
+                            <speaker n="before_350_b">Mephistopheles</speaker>
+                            <stage n="before_350_c" rend="inline small">allein.</stage>
+
+Erkennungszeichen `@rend`-Wert `inline`.
+
+Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 0,0`. Der Inhalt von `speaker` erhält das Zeichenformat `Figur`. 
+
+### BA zentr. 0,5
+
+### BA Blocks. 0,0 
+
+### BA Blocks. 1,5 
+
+## Sprecher ... 
+XML: `speaker` ohne folgende `stage` mir `@rend`-Wert `inline`.
+
+### Sprecher 1,5
+
+### Sprecher 0,5
+
+# Zeichenformate
+
+## Auftritt
+Grundsätzliches pattern: `//move/following-sibling::*[1]`, d.h. der `move` bekommt nichts, sondern das folgende Element (wohl immer `stage`, wäre übrigens interessant zu wissen -- `speaker`?).
+
+Das Zeichenformat `Auftritt` bekommt nun entweder der 
+* der Inhalt der ganzen `stage` (wenn `//stage[not(hi)]`) oder
+* `stage/hi` (wenn `//stage[hi]`)
+
+InDesign:
+* Zeichenformat `Auftritt` innerhalb von Absatzformat `BA ...`.
+* Satzzeichen, die vom pattern miterfasst werden, (z.B. `<hi>Der Herr, die himmlischen Heerscharen,</hi>`) erhalten das Zeichenformat nicht.
+
+## Sprecher
+XML-Pattern: `speaker`.
+
+Nota bene, `speaker` ist Zeichenformat als Teil der Absatzformate `BA ...`..
+
+Formatierung: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
+
 # Regeln
 
 ## Abkürzungen (`abbr` / `expan`)
@@ -25,38 +72,17 @@ Siehe
 sind grundsätzlich möglich, kommen aber nur vereinzelt vor (siehe 
 [#197](https://github.com/faustedition/faust-gen-html/issues/197)).
 
-## Sprecher
-Zeichenformat: `Sprecher`, Formatierung: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
-
 ## BA
 ### Position
 Bühnenanweisungen erscheinen zentriert, u.U. gemeinsam mit davorstehender Sprecherbezeichnung.
 
 Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile.
 
+### Abstand nach oben
+* 
+
 ### Hervorhebungen in BA (`//stage/hi`)
 Output: Zeichenformat `Figur`.
-
-### Auftritt (`move`)
-Grundsätzliches pattern: `//move/following-sibling::*[1]`, d.h. der `move` bekommt nichts, sondern das folgende Element (wohl immer `stage`, wäre übrigens interessant zu wissen -- `speaker`?).
-
-Das Zeichenformat `Auftritt` bekommt nun entweder der 
-* der Inhalt der ganzen `stage` (wenn `//stage[not(hi)]`) oder
-* `stage/hi` (wenn `//stage[hi]`)
-
-InDesign:
-* Zeichenformat `Auftritt` innerhalb von Absatzformat `BA ...`.
-* Satzzeichen, die vom pattern miterfasst werden, (z.B. `<hi>Der Herr, die himmlischen Heerscharen,</hi>`) erhalten das Zeichenformat nicht.
-
-## Sprecher mit BA in derselben Zeile
-Bsp.:
-
-                            <speaker n="before_350_b">Mephistopheles</speaker>
-                            <stage n="before_350_c" rend="inline small">allein.</stage>
-
-Erkennungszeichen `@rend`-Wert `inline`.
-
-Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 0,0`. Der Inhalt von `speaker` erhält das Zeichenformat `Sprecher`. 
 
 ## Vers (`l`)
 InDesign: Absatzformat `Vers`.
@@ -96,7 +122,7 @@ InDesign: Zeichenformat `lateinisch`.
 Links:
 * Faust. Eine Tragödie (Vorspann Faust I)
 * Der Tragödie erster Teil
-* Der Tragödie zweiter Teil)
+* Der Tragödie zweiter Teil
 
 Rechts:
 * Szene (Faust I)
