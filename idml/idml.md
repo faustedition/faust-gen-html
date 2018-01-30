@@ -46,6 +46,8 @@ Das Zeichenformat `Auftritt` bekommt nun entweder der
 
 Output: Zeichenformat `Auftritt` innerhalb von Absatzformat `BA ...`.
 
+Satzzeichen, die vom pattern miterfasst werden, (z.B. `<hi>Der Herr, die himmlischen Heerscharen,</hi>`) erhalten das Zeichenformat nicht.
+
 ## Sprecher mit BA in derselben Zeile
 Bsp.:
 
@@ -73,7 +75,8 @@ Absatzformat im InDesign-Template: "Vers Antilabe".
 
 ## Finis
 > kommt nur einmal vor, ganz am Schluss
-## Sperrung
+
+## Sperrung (`l/emph` / `stage/hi`)
 Umgebende Leerzeichen werden mitgesperrt.
 
 ## Kolumnentitel
