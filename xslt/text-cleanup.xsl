@@ -105,6 +105,15 @@
 		<xsl:apply-templates mode="#current"/>
 	</xsl:template>
 	
+	<!-- Further text fixes (that shouldn't collide with Ae transformation) -->
+	
+	<!-- Remove parentheses from stage directions, and add a trailing . if missing -->
+	<xsl:template mode="stage2" match="stage/text()">
+		<xsl:variable name="no-leading-paren" select="if (position()=1) then replace(., '^(', '') else ."/>
+		<xsl:variable name="no-trailing-paren" select="if (position()=last()) then replace($no-leading-paren, '\)$', '') else $no-leading-paren"/>
+		<xsl:value-of select="if (position() != last() or ends-with($no-trailing-paren, '.')) then $no-trailing-paren else concat($no-trailing-paren, '.')"/>
+	</xsl:template>
+	
 	<!-- The following fixes are eventually to be implemented in all source files: -->
 	<xsl:template match="stage/emph">
 		<xsl:element name="hi">
