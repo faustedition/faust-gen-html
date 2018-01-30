@@ -114,6 +114,11 @@
 		<xsl:value-of select="if (position() != last() or ends-with($no-trailing-paren, '.')) then $no-trailing-paren else concat($no-trailing-paren, '.')"/>
 	</xsl:template>
 	
+	<!-- Remove a trailing . from speaker -->
+	<xsl:template mode="stage2" match="speaker/text()[position()=last()]">
+		<xsl:value-of select="replace(., '\.\s*$', '')"/>
+	</xsl:template>
+	
 	<!-- The following fixes are eventually to be implemented in all source files: -->
 	<xsl:template match="stage/emph">
 		<xsl:element name="hi">
