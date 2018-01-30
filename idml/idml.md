@@ -44,9 +44,9 @@ Das Zeichenformat `Auftritt` bekommt nun entweder der
 * der Inhalt der ganzen `stage` (wenn `//stage[not(hi)]`) oder
 * `stage/hi` (wenn `//stage[hi]`)
 
-Output: Zeichenformat `Auftritt` innerhalb von Absatzformat `BA ...`.
-
-Satzzeichen, die vom pattern miterfasst werden, (z.B. `<hi>Der Herr, die himmlischen Heerscharen,</hi>`) erhalten das Zeichenformat nicht.
+InDesign:
+* Zeichenformat `Auftritt` innerhalb von Absatzformat `BA ...`.
+* Satzzeichen, die vom pattern miterfasst werden, (z.B. `<hi>Der Herr, die himmlischen Heerscharen,</hi>`) erhalten das Zeichenformat nicht.
 
 ## Sprecher mit BA in derselben Zeile
 Bsp.:
@@ -58,7 +58,8 @@ Erkennungszeichen `@rend`-Wert `inline`.
 
 Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 0,0`. Der Inhalt von `speaker` erhält das Zeichenformat `Sprecher`. 
 
-## Verse 
+## Vers (`l`)
+InDesign: Absatzformat `Vers`.
 
 ### Eingerückte Verse (parent::lg[@rend="indented"])
 Im InDesign-Template stehen drei (?) Tabs davor, letztlich sollen sie auf optische Mitte kommen.
@@ -76,8 +77,17 @@ Absatzformat im InDesign-Template: "Vers Antilabe".
 ## Finis
 > kommt nur einmal vor, ganz am Schluss
 
-## Sperrung (`l/emph` / `stage/hi`)
-Umgebende Leerzeichen werden mitgesperrt.
+InDesign: Absatzformat `Finis`.
+
+## Hervorhebungen
+
+### Hervorhebung in Vers und BA (`l/emph` / `stage/hi`)
+InDesign: Sperrung. Umgebende Leerzeichen werden mitgesperrt.
+
+### Antiqua und lateinische Schrift
+XML-Pattern: `//*[@rend="antiqua" or @rend="latin"]`. Nicht durchgängig so kodiert; wer mag, kann auf fehlende Auszeichnungen hinweisen.
+
+InDesign: Zeichenformat `lateinisch`.
 
 ## Kolumnentitel
 * entfallen bei Akt- und Szenenanfängen (= Absenkung)
