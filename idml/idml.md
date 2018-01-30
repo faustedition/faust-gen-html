@@ -25,95 +25,91 @@ Erkennungszeichen `@rend`-Wert `inline`.
 
 Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 0,0`. Der Inhalt von `speaker` erhält das Zeichenformat `Figur`. 
 
+### BA zentr. 0,0
+evtl. nur für den Feinsatz.
+
 ### BA zentr. 0,5
 
-### BA Blocks. 0,0 
+### BA Blocks. ...
+Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile.
 
-### BA Blocks. 1,5 
+#### BA Blocks. 0,0 
+
+#### BA Blocks. 1,5 
 
 ## Sprecher ... 
-XML: `speaker` ohne folgende `stage` mir `@rend`-Wert `inline`.
+XML: `speaker` ohne folgende `stage` mit `@rend`-Wert `inline`.
 
 ### Sprecher 1,5
 
 ### Sprecher 0,5
 
+## Vers ...
+
+### Vers
+XML: `l`.
+
+### Vers eingerückt (so?)
+XML: `parent::lg[@rend="indented"]`
+
+Im InDesign-Template stehen drei (?) Tabs davor, letztlich sollen sie auf optische Mitte kommen.
+
+### Vers Antilabe
+XML: `l[@part="M"]` oder `l[@part="M"]` (`l[@part="I"]` bleibt unverändert). 
+
+Die Verse mit `part="M"` und `part="F"` werden gemäß der Länge des vorherigen Teils einer Antilabe eingerückt.
+
+Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende //l[@part] um ein Leerzeichen mehr eingerückt.
+
 # Zeichenformate
 
+## Figur
+(Hervorhebungen in BA) 
+
+XML: `//stage/hi`.
+
+Formatierung: Sperrung. Umgebende Leerzeichen werden mitgesperrt.
+
+## Nomen nominandum
+(= "Hervorhebung Vers" o.ä.)
+
+XML: `l/emph`.
+
 ## Auftritt
-Grundsätzliches pattern: `//move/following-sibling::*[1]`, d.h. der `move` bekommt nichts, sondern das folgende Element (wohl immer `stage`, wäre übrigens interessant zu wissen -- `speaker`?).
+(innerhalb von Absatzformat `BA ...`)
+
+Grundsätzliches XML-Pattern: `//move/following-sibling::*[1]`, d.h. der `move` bekommt nichts, sondern das folgende Element (wohl immer `stage`, wäre übrigens interessant zu wissen -- `speaker`?).
 
 Das Zeichenformat `Auftritt` bekommt nun entweder der 
 * der Inhalt der ganzen `stage` (wenn `//stage[not(hi)]`) oder
 * `stage/hi` (wenn `//stage[hi]`)
 
-InDesign:
-* Zeichenformat `Auftritt` innerhalb von Absatzformat `BA ...`.
-* Satzzeichen, die vom pattern miterfasst werden, (z.B. `<hi>Der Herr, die himmlischen Heerscharen,</hi>`) erhalten das Zeichenformat nicht.
+Formatierung: Satzzeichen, die vom pattern miterfasst werden, (z.B. `<hi>Der Herr, die himmlischen Heerscharen,</hi>`) erhalten das Zeichenformat nicht.
 
 ## Sprecher
 XML-Pattern: `speaker`.
 
-Nota bene, `speaker` ist Zeichenformat als Teil der Absatzformate `BA ...`..
+Merke: `speaker` ist Zeichenformat als Teil der Absatzformate `BA ...`..
 
 Formatierung: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
 
-# Regeln
+### lateinisch
+(= Antiqua und lateinische Schrift in Versen, Sprechern, BA und Finis)
 
-## Abkürzungen (`abbr` / `expan`)
-Sollen in der Vorlage nicht mehr vorkommen, siehe [#195](https://github.com/faustedition/faust-gen-html/issues/195). Bitte zurückmelden, wenn es nach dem Fix von 
-[#112](https://github.com/faustedition/faust-gen-html/issues/112)doch noch auftreten sollte.
+XML: `//*[@rend="antiqua" or @rend="latin"]`.
+
+Nicht durchgängig so kodiert; wer mag, kann auf fehlende Auszeichnungen hinweisen.
+
+## Zwischenzeile
+
+## Finis
+XML: `trailer`.
+
+# Seitengestaltung 
 
 ##Absenkung
 Siehe 
 [#210](https://github.com/faustedition/faust-gen-html/issues/210).
-
-## Figurenreden (`sp`) ohne Sprecher (`speaker`)
-sind grundsätzlich möglich, kommen aber nur vereinzelt vor (siehe 
-[#197](https://github.com/faustedition/faust-gen-html/issues/197)).
-
-## BA
-### Position
-Bühnenanweisungen erscheinen zentriert, u.U. gemeinsam mit davorstehender Sprecherbezeichnung.
-
-Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile.
-
-### Abstand nach oben
-* 
-
-### Hervorhebungen in BA (`//stage/hi`)
-Output: Zeichenformat `Figur`.
-
-## Vers (`l`)
-InDesign: Absatzformat `Vers`.
-
-### Eingerückte Verse (parent::lg[@rend="indented"])
-Im InDesign-Template stehen drei (?) Tabs davor, letztlich sollen sie auf optische Mitte kommen.
-
-### Antilaben
-Die Verse mit `part="M"` und `part="F"` werden gemäß der Länge des vorherigen Teils einer Antilabe eingerückt.
-
-Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende //l[@part] um ein Leerzeichen mehr eingerückt.
-
-Absatzformat im InDesign-Template: "Vers Antilabe".
-
-## Zwischenzeile
-> Das Format Zwischenzeile kommt nur einmal vor, nämlich beim »oder« zwischen Walpurgisnachtstraum und Oberons und Titanias goldne Hochzeit.
-
-## Finis
-> kommt nur einmal vor, ganz am Schluss
-
-InDesign: Absatzformat `Finis`.
-
-## Hervorhebungen
-
-### Hervorhebung in Vers und BA (`l/emph` / `stage/hi`)
-InDesign: Sperrung. Umgebende Leerzeichen werden mitgesperrt.
-
-### Antiqua und lateinische Schrift
-XML-Pattern: `//*[@rend="antiqua" or @rend="latin"]`. Nicht durchgängig so kodiert; wer mag, kann auf fehlende Auszeichnungen hinweisen.
-
-InDesign: Zeichenformat `lateinisch`.
 
 ## Kolumnentitel
 * entfallen bei Akt- und Szenenanfängen (= Absenkung)
@@ -128,7 +124,17 @@ Rechts:
 * Szene (Faust I)
 * Akt · Szene / Unterszene (?) (Faust II)
 
-## Feinsatz
+# Sonderphänomene
+
+## Abkürzungen (`abbr` / `expan`)
+Sollen in der Vorlage nicht mehr vorkommen, siehe [#195](https://github.com/faustedition/faust-gen-html/issues/195). Bitte zurückmelden, wenn es nach dem Fix von 
+[#112](https://github.com/faustedition/faust-gen-html/issues/112)doch noch auftreten sollte.
+
+## Figurenreden (`sp`) ohne Sprecher (`speaker`)
+sind grundsätzlich möglich, kommen aber nur vereinzelt vor (siehe 
+[#197](https://github.com/faustedition/faust-gen-html/issues/197)).
+
+# Feinsatz
 * Seitenumbrüche
 * Einfügen von Leerzeilen (wo?)
 * Zeilenumbrüche bei Bühnenanweisungen
