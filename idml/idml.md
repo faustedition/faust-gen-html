@@ -59,7 +59,10 @@ XML: `l[@part="M"]` oder `l[@part="M"]` (`l[@part="I"]` bleibt unverändert).
 
 Die Verse mit `part="M"` und `part="F"` werden gemäß der Länge des vorherigen Teils einer Antilabe eingerückt.
 
-Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende //l[@part] um ein Leerzeichen mehr eingerückt.
+Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende `//l[@part]` um ein Leerzeichen mehr eingerückt.
+
+### Verszahlen
+`@n` wenn `self::l and matches(@n, '^\d+') and @n mod 5 = 0`
 
 # Zeichenformate
 
@@ -107,7 +110,7 @@ XML: `trailer`.
 
 # Seitengestaltung 
 
-##Absenkung
+## Absenkung
 Siehe 
 [#210](https://github.com/faustedition/faust-gen-html/issues/210).
 
