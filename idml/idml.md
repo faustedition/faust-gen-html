@@ -96,23 +96,17 @@ Merke: `speaker` ist Zeichenformat als Teil der Absatzformate `BA ...`..
 
 Formatierung: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
 
-### lateinisch
+## lateinisch
 (= Antiqua und lateinische Schrift in Versen, Sprechern, BA und Finis)
 
 XML: `//*[@rend="antiqua" or @rend="latin"]`.
 
 Nicht durchgängig so kodiert; wer mag, kann auf fehlende Auszeichnungen hinweisen.
 
-## Zwischenzeile
-
-## Finis
-XML: `trailer`.
-
 # Seitengestaltung 
 
 ## Absenkung
-Siehe 
-[#210](https://github.com/faustedition/faust-gen-html/issues/210).
+Siehe [#210](https://github.com/faustedition/faust-gen-html/issues/210).
 
 ## Kolumnentitel
 * entfallen bei Akt- und Szenenanfängen (= Absenkung)
