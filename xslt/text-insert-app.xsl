@@ -79,6 +79,42 @@
         </note>
     </xsl:template>
     
+    <!-- 
+        esp. for the printed edition, we create a short sigil that leaves out the leading arabic number
+        and uses superscript indexes for sigil parts that are preceded by .
+        
+        This function creates a TEI representation.
+    -->
+    <xsl:function name="f:short-sigil" as="item()*">
+        <xsl:param name="sigil"/>
+        <xsl:variable name="noprefix" select="replace($sigil, '^\d+\s*', '')"/>
+        <xsl:analyze-string select="$noprefix" regex="\.(\S+)">
+            <xsl:matching-substring>
+                <hi rend="superscript">
+                    <xsl:value-of select="regex-group(1)"/>
+                </hi>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <xsl:copy/>
+            </xsl:non-matching-substring>            
+        </xsl:analyze-string>
+    </xsl:function>
+    
+    <!-- We add a <wit> element with the sigil as it should be rendered at the end  -->
+    <xsl:template match="lem|rdg" mode="app">
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates mode="#current" select="@*, node()"/>
+            <xsl:for-each select="tokenize(@wit, '\s+')">
+                <xsl:variable name="uri" select="if (starts-with(., 'faust://')) then . else concat('faust://document/faustedition/', .)"/>
+                <xsl:variable name="sigil" select="$idmap//f:idno[@uri=$uri]"/>
+                <xsl:text> </xsl:text>
+                <wit wit="{$uri}">
+                    <xsl:sequence select="f:short-sigil($sigil)"/>                    
+                </wit>
+            </xsl:for-each>
+        </xsl:copy>
+    </xsl:template>
+    
     <!-- the with-app mode is chosen for content where we know there is a lemma inside somewhere -->
     <!-- 
         This processes a relevant text node: It searches the text content for any lem inside, and

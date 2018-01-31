@@ -511,7 +511,13 @@ in <xsl:value-of select="document-uri(/)"/>
 			<xsl:apply-templates/>
 		</div>
 	</xsl:template>
-
+	
+	<xsl:template match="hi[tokenize(@rend, '\s+') = 'superscript']">
+		<sup class="{string-join(f:generic-classes(.), '')}">
+			<xsl:apply-templates mode="#current" select="node()"/>
+		</sup>
+	</xsl:template>
+	
 	<!-- will be overridden in print2html, but we don't want it in the variant app etc. -->
 	<xsl:template match="note[@type='textcrit']"/>
 
