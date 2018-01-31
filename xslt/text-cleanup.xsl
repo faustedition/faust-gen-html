@@ -73,7 +73,7 @@
 	<xsl:template match="comment()" priority="1"/>
 	
 	<!-- lb -> space -->
-	<xsl:template match="lb">
+	<xsl:template match="lb[not(ancestor::head)]">
 		<xsl:if test="not(@break='no')">
 			<xsl:text> </xsl:text>
 		</xsl:if>
@@ -103,6 +103,20 @@
 	<!-- Drop outer text containers -->
 	<xsl:template mode="stage2" match="text[text]">
 		<xsl:apply-templates mode="#current"/>
+	</xsl:template>
+	
+	<!-- Further text fixes (that shouldn't collide with Ae transformation) -->
+	
+	<!-- Remove parentheses from stage directions, and add a trailing . if missing -->
+	<xsl:template mode="stage2" match="stage/text()">
+		<xsl:variable name="no-leading-paren" select="if (position()=1) then replace(., '^(', '') else ."/>
+		<xsl:variable name="no-trailing-paren" select="if (position()=last()) then replace($no-leading-paren, '\)$', '') else $no-leading-paren"/>
+		<xsl:value-of select="if (position() != last() or ends-with($no-trailing-paren, '.')) then $no-trailing-paren else concat($no-trailing-paren, '.')"/>
+	</xsl:template>
+	
+	<!-- Remove a trailing . from speaker -->
+	<xsl:template mode="stage2" match="speaker/text()[position()=last()]">
+		<xsl:value-of select="replace(., '\.\s*$', '')"/>
 	</xsl:template>
 	
 	<!-- The following fixes are eventually to be implemented in all source files: -->

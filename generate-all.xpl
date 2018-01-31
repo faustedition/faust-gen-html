@@ -106,7 +106,9 @@
 		
 			<p:choose>
 				<p:when test="$type = 'lesetext'">
-					<p:identity/>
+					<p:xslt>
+						<p:input port="stylesheet"><p:document href="xslt/prose-to-lines.xsl"/></p:input>
+					</p:xslt>
 				</p:when>
 				<p:otherwise>
 					<!--<cx:message><p:with-option name="message" select="concat('Emending ', $sigil, ' (', $documentURI, ') ...')"/></cx:message>-->
