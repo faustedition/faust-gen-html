@@ -111,7 +111,11 @@
 	<xsl:template mode="stage2" match="stage/text()">
 		<xsl:variable name="no-leading-paren" select="if (position()=1) then replace(., '^(', '') else ."/>
 		<xsl:variable name="no-trailing-paren" select="if (position()=last()) then replace($no-leading-paren, '\)$', '') else $no-leading-paren"/>
-		<xsl:value-of select="if (position() != last() or ends-with($no-trailing-paren, '.')) then $no-trailing-paren else concat($no-trailing-paren, '.')"/>
+		<xsl:value-of select="if (position() != last() 
+			                   or ends-with($no-trailing-paren, '.')
+			                   or ends-with(normalize-space(ancestor::stage), '.'))
+			                   then $no-trailing-paren 
+			                   else concat($no-trailing-paren, '.')"/>
 	</xsl:template>
 	
 	<!-- Remove a trailing . from speaker -->
