@@ -227,7 +227,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <exception-string>{s:ty}{0} 1b#\[2310\]</exception-string>
+                            <exception-string>{s:ty}{0} 1b\*</exception-string>
                             <exception-string>typ 1b0</exception-string>
                             <search-string>{s:ty}{0} {0}n1\b</search-string>
                             <search-string>Textgrundlage: </search-string>
@@ -245,7 +245,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>{s:ty}{0} {0}n1b#\[2310\]</search-string>
+                            <search-string>{s:ty}{0} {0}n1b\*</search-string>
                             <search-string>{s:ty}{0} {0}n1b0</search-string>
                             <search-string>Textgrundlage: </search-string>
                         </search-table>
@@ -262,7 +262,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <exception-string>{s:ty}{0} 1c#\[2310\]</exception-string>
+                            <exception-string>{s:ty}{0} 1c\*</exception-string>
                             <exception-string>{s:ty}{0} 1c0</exception-string>
                             <search-string>{s:ty}{0} {0}n1\c</search-string>
                             <search-string>Textgrundlage: </search-string>
@@ -280,7 +280,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>1c#\[2310\]</search-string>
+                            <search-string>1c\*</search-string>
                             <search-string>1c0</search-string>
                             <search-string>Textgrundlage: </search-string>
                         </search-table>
@@ -297,7 +297,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <exception-string>2a#\[2310\]</exception-string>
+                            <exception-string>2a\*</exception-string>
                             <exception-string>{s:ty}{0} {0}n2\a0</exception-string>
                             <exception-string>{s:ty}{0} {0}n2\a\a</exception-string>
                             <search-string>{s:ty}{0} {0}n2\a</search-string>
@@ -316,7 +316,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>2a#\[2310\]</search-string>
+                            <search-string>2a\*</search-string>
                             <search-string>{s:ty}{0} {0}n2\a0</search-string>
                             <search-string>Textgrundlage: </search-string>
                         </search-table>
@@ -333,7 +333,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <exception-string>2aa#\[2310\]</exception-string>
+                            <exception-string>2aa\*</exception-string>
                             <search-string>{s:ty}{0} {0}n2\a\a</search-string>
                             <search-string>Textgrundlage: </search-string>
                         </search-table>
@@ -350,7 +350,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>2aa#\[2310\]</search-string>
+                            <search-string>2aa\*</search-string>
                             <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
@@ -366,7 +366,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <exception-string>2b#\[2310\]</exception-string>
+                            <exception-string>2b\*</exception-string>
                             <exception-string>2\b0</exception-string>
                             <search-string>{s:ty}{0} {0}n2\b</search-string>
                             <search-string>Textgrundlage: </search-string>
@@ -384,7 +384,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>2b#\[2310\]</search-string>
+                            <search-string>2b\*</search-string>
                             <search-string>{s:ty}{0} {0}n2b0</search-string>
                             <search-string>Textgrundlage: </search-string>
                         </search-table>
@@ -401,7 +401,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <exception-string>2c#\[2310\]</exception-string>
+                            <exception-string>2c\*</exception-string>
                             <exception-string>{s:ty}{0} {0}n2c0</exception-string>
                             <search-string>{s:ty}{0} {0}n2c</search-string>
                             <search-string>Textgrundlage: </search-string>
@@ -419,7 +419,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>2c#\[2310\]</search-string>
+                            <search-string>2c\*</search-string>
                             <search-string>2c0</search-string>
                             <search-string>Textgrundlage: </search-string>
                         </search-table>
@@ -436,7 +436,7 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                 <select>
                     <text-contains>
                         <search-table>
-                            <search-string>2d#\[2310\]</search-string>
+                            <search-string>2d\*</search-string>
                             <search-string>2d</search-string>
                             <search-string>Textgrundlage: </search-string>
                         </search-table>
