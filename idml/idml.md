@@ -13,13 +13,16 @@ Siehe https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
 
 # Absatzformate
 
+## NN (Überschrift ...)
+Wenn `head/lb`, so soll der Inhalt des `head` auf aufeinanderfolgende `Überschrift ...`-Absätze aufgeteilt werden.
+
 ## BA ...
 Die folgend beschriebenen `BA ...`-Absatzformate können dem XML-Pattern `speaker`, `stage`, aber auch `speaker`+`stage` entsprechen. 
 
 `BA ...` aus dem Pattern `speaker`+`stage` hat folgende Form (Bsp.):
 
-                            <speaker n="before_350_b">Mephistopheles</speaker>
-                            <stage n="before_350_c" rend="inline small">allein.</stage>
+    <speaker n="before_350_b">Mephistopheles</speaker>
+    <stage n="before_350_c" rend="inline small">allein.</stage>
 
 Erkennungszeichen `@rend`-Wert `inline`.
 
@@ -59,7 +62,7 @@ XML: `l[@part="M"]` oder `l[@part="M"]` (`l[@part="I"]` bleibt unverändert).
 
 Die Verse mit `part="M"` und `part="F"` werden gemäß der Länge des vorherigen Teils einer Antilabe eingerückt.
 
-Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende `//l[@part]` um ein Leerzeichen mehr eingerückt.
+Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende `l[@part]` um ein Leerzeichen mehr eingerückt.
 
 ### Verszahlen
 `@n` wenn `self::l and matches(@n, '^\d+') and @n mod 5 = 0`
@@ -69,7 +72,7 @@ Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende `//
 ## Figur
 (Hervorhebungen in BA) 
 
-XML: `//stage/hi`.
+XML: `stage/hi`.
 
 Formatierung: Sperrung. Umgebende Leerzeichen werden mitgesperrt.
 
@@ -81,11 +84,11 @@ XML: `l/emph`.
 ## Auftritt
 (innerhalb von Absatzformat `BA ...`)
 
-Grundsätzliches XML-Pattern: `//move/following-sibling::*[1]`, d.h. der `move` bekommt nichts, sondern das folgende Element (wohl immer `stage`, wäre übrigens interessant zu wissen -- `speaker`?).
+Grundsätzliches XML-Pattern: `move/following-sibling::*[1]`, d.h. der `move` bekommt nichts, sondern das folgende Element (wohl immer `stage`, wäre übrigens interessant zu wissen -- `speaker`?).
 
 Das Zeichenformat `Auftritt` bekommt nun entweder der 
-* der Inhalt der ganzen `stage` (wenn `//stage[not(hi)]`) oder
-* `stage/hi` (wenn `//stage[hi]`)
+* der Inhalt der ganzen `stage` (wenn `stage[not(hi)]`) oder
+* `stage/hi` (wenn `stage[hi]`)
 
 Formatierung: Satzzeichen, die vom pattern miterfasst werden, (z.B. `<hi>Der Herr, die himmlischen Heerscharen,</hi>`) erhalten das Zeichenformat nicht.
 
@@ -99,7 +102,7 @@ Formatierung: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
 ## lateinisch
 (= Antiqua und lateinische Schrift in Versen, Sprechern, BA und Finis)
 
-XML: `//*[@rend="antiqua" or @rend="latin"]`.
+XML: `*[@rend="antiqua" or @rend="latin"]`.
 
 Nicht durchgängig so kodiert; wer mag, kann auf fehlende Auszeichnungen hinweisen.
 
