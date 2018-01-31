@@ -114,40 +114,14 @@ after_2048[ehrerbietieg]{ehrerbietig} <i>nach 2048</i> ehrerbietig] ehrerbietieg
 2142[für]{=} <i>2142</i> für <i>S A B.a</i>]   vor <i>1_H.5 B [type=7]</i>
 2144[Heerd]{Herd} <i>2144</i> Herd <i>S B B.a</i>]   Heerd <i>1_H.5 A D.1 [type=2a]</i>
 2160[ſiehſt,]{=} <i>2160</i> ſiehſt, <i>S A B.a</i>]   ſiehſt^ <i>B [Typ 4c]</i>
-●●●before_2184[ansehend]{ansehend.} <i>vor 2184</i> anſehend. <i>S  D.1 B B.a</i>]   anſehend^ <i>A [type=1c]</i>
-●●●<i>vor 2195</i> <speaker>Altmayer</speaker>^ leiſe. <i>S D.1 B</i>] <br/><c>Altmayer</c>. leiſe^ <i>A</i><br/><c>Altmayer</c> (leiſe). <i>B.a [type=1c]</i>
-●●●<i>vor 2207</i> Singt. <i>S D.1</i>] <br/>Singt^ <i>A</i><br/>Singt: <i>B</i><br/>(Singt). <i>B.a [type=1c]</i>
-●●●<i>vor 2211</i> <speaker>Mephiſtopheles</speaker> ſingt. <i>S D.1</i>] <br/><c>Mephiſtopheles</c> ſingt^ <i>A </i><br/><c>Mephiſtopheles</c> ſingt: <i>B</i><br/><c>Mephiſtopheles</c> (ſingt). <i>B.a [type=1c]</i>
-●●●<i>vor 2239</i> <speaker>Chorus</speaker> jauchzend. <i>S D.1 B</i>] <br/><c>Chorus</c> jauchzend^ <i>A </i><br/><c>Chorus</c> (jauchzend). <i>B.a [type=1c]</i>
-●●●<i>vor 2256</i> <speaker>Altmayer</speaker> leiſe. <i>S D.1 B</i>] <br/><c>Altmayer</c> leiſe^ <i>A</i><br/><c>Altmayer</c> (leiſe). <i>B.a [type=1c]</i>
-●●●<i>vor 2260</i> <speaker>Mephiſtopheles</speaker> / nimmt den Bohrer. / Zu Frosch. <i>S B</i>] <br/><c>Mephiſtopheles</c> / nimmt den Bohrer / zu Frosch^ <i>A</i><br/><c>Mephiſtopheles</c> / nimmt den Bohrer. / zu Frosch^ <i>D.1</i><br/><c>Mephiſtopheles</c> / (nimmt den Bohrer, zu Frosch). <i>B.a [type=1c]</i>
 2261[meynt]{=} <i>2261</i> meynt <i>A</i>]   meint  <i>S B B.a [type=4a]</i>
 2262[jeden]{=} <i>2262</i> jeden <i>S A</i>]   Jeden <i>B B.a [type=4a]</i>
-●●●<i>vor 2263</i> <speaker>Altmayer</speaker> / zu Froſch. <i>S D.1 B</i>] <br/><c>Altmayer</c> / zu Froſch^ <i>A</i><br/><c>Altmayer</c> / (zu Froſch). <i>B.a  [type=1c]</i>
-●●●<i>vor 2266</i> <speaker>Mephiſtopheles</speaker> / indem <i>…</i> bohrt. <i>S D.1</i>] <br/><c>Mephiſtopheles</c>. (indem <i>…</i> bohrt.) <i>A</i><br/><c>Mephiſtopheles</c>, / indem <i>…</i> bohrt. <i>B</i><br/><c>Mephiſtopheles</c> (indem <i>…</i> bohrt). <i>B.a  [type=1c]</i>
-●●●<i>vor 2268</i> <speaker>Mephiſtopheles</speaker> / zu Brander. <i>S D.1 B</i>] <br/>Mephiſtopheles (zu Brander)^ <i>A</i><br/>Mephiſtopheles (zu Brander). <i>B.a  [type=1c]</i>
 before_2270_a[Wachspropfen]{Wachspfropfen} <i>nach 2269</i> Wachspfropfen <i>S B B.a</i>]   Wachspropfen <i>A D.1 [type=2a]</i>
-●●●<i>nach 2269</i> <speaker>Mephiſtopheles</speaker> / bohrt, <i>…</i> verſtopft. <i>S D.1 B</i>] <br/><c>Mephiſtopheles</c>. / (bohrt, <i>…</i> verſtopft.) <i>A</i><br/><c>Mephiſtopheles</c> / (bohrt, <i>…</i> verſtopft). <i>B.a [type=1c]</i>
-●●●<i>vor 2274</i> <c>Siebel</c> / indem <i>…</i> nähert. <i>S</i>] <br/><c>Siebel</c>. / (indem <i>…</i> nähert.) <i>A</i><br/><c>Siebel</c>. / indem <i>…</i> nähert. <i>D.1</i><br/><c>Siebel</c>, / indem <i>…</i> nähert. <i>B</i><br/><c>Siebel</c> / (indem <i>…</i> nähert). <i>B.a [type=1c]</i>
-●●●<i>vor 2276</i> <speaker>Mephiſtopheles</speaker> bohrt. <i>S D.1 B</i>] <br/><c>Mephiſtopheles</c> (bohrt.) <i>A</i><br/><c>Mephiſtopheles</c> (bohrt). <i>B.a [type=1c]</i>
 2281[grad’{=} <i>2281</i> grad’ <i>A B B.a</i>]   g’rad^#[2019 <i>S  [type=2a*]</i>]
-●●●<i>vor 2284</i> Nachdem <i>…</i> ſind, <i>S D.1 B</i>] <br/> (Nachdem <i>…</i> ſind,) <i>A</i><br/> (Nachdem <i>…</i> ſind.) <i>B.a [type=1c]</i>
-●●●<i>vor 2284</i> <speaker>Mephiſtopheles</speaker> mit ſeltſamen Geberden. <i>S D.1</i>] <br/><c>Mephiſtopheles</c> (mit ſeltſamen Geberden)^  <i>A</i><br/><c>Mephiſtopheles</c> mit ſeltſamen Geberden^ <i>B</i><br/>Mephiſtopheles (mit ſeltſamen Geberden). <i>B.a [type=1c]</i>
-●●●<i>vor 2291</i> <speaker>Alle</speaker> / indem <i>…</i> läuft. <i>S B</i>] <br/><c>Alle</c>. / (indem <i>…</i> läuft)^  <i>A</i><br/><c>Alle</c>. <c>/</c> indem <i>…</i> läuft<c>. <i>D.1</i></c><br/><c>Alle</c> / (indem <i>…</i> läuft).  <i>B.a [type=1c]</i>
-●●●<i>nach 2292</i> Sie trinken wiederholt. <i>D.1 B</i>] <br/>Sie trinken wiederhohlt. <i>S</i><br/> (Sie trinken wiederholt.)  <i>A</i><br/> (Sie trinken wiederhohlt.)  <i>B.a [type=1c]</i>
-●●●<i>vor 2293</i> Alle ſingen. <i>S D.1</i>] <br/>Alle (ſingen)^ <i>A</i><br/>Alle ſingen^ <i>B</i><br/>Alle (ſingen).  <i>B.a [type=1c]</i>
-●●●<i>vor 2299</i> <speaker>Siebel</speaker> / trinkt <i>…</i> Flamme. <i>S B</i>] <br/><c>Siebel</c>. / trinkt <i>…</i> Flamme. <i>A D.1</i><br/><c>Siebel</c> / (trinkt <i>…</i> Flamme). <i>B.a [type=1c]</i>
-●●●<i>vor 2301</i> Zu dem Geſellen. <i>S  D.2</i>] <br/>zu dem Geſellen.  <i>A D.1 B</i><br/> (Zu dem Geſellen.) <i>B.a [type=1c]</i>
 2302[Wart]{=} <i>2302</i> Wart <i>S A B B.a</i>]   Wart^#[2019 <i>ci. Düntzer [type=3*]</i>]
-●●●<i>vor 2311</i> <speaker>Altmayer</speaker> / zieht <i>…</i> entgegen. <i>S B</i>] <br/><c>Altmayer</c>. / zieht <i>…</i> entgegen^ <i>A </i><br/><c>Altmayer</c>. / zieht <i>…</i> entgegen. <i>D.1</i><br/><c>Altmayer</c> / (zieht <i>…</i> entgegen). <i>B.a [type=1c]</i>
-●●●<i>vor 2313</i> <speaker>Mephiſtopheles</speaker> mit ernſthafter Geberde. <i>S D.1 B</i>] <br/><c>Mephiſtopheles</c> mit ernſthafter Geberde^ <i>A </i><br/><c>Mephiſtopheles</c> (mit ernſthafter Geberde). <i>B.a [type=1c]</i>
 before_2320_a[bey]{bei} <i>vor 2320</i> bey <i>1_H.5 S B B.a</i>]   bei <i>A D.1 [type=2a]</i>
-●●●<i>vor 2321</i> <speaker>Mephiſtopheles</speaker> wie oben. <i>S D.1 B</i>] <br/><c>Mephiſtopheles</c> wie oben^ <i>A </i><br/><c>Mephiſtopheles</c> (wie oben). <i>B.a [type=1c]</i>
 2321[euch,]{=} <i>2321</i> euch, <i>S A B.a</i>]   euch^ <i>B [Typ 4c]</i>
 2322[giebt’{=} <i>2322</i> giebt’s <i>A D.1</i>]   gibt’s <i>S B B.a [type=4a]</i>
-●●●<i>2322 In S A D.1 B 1_H.1 ist der mittlere Teil des antilabischen Verses (</i>Wie?<i>) nicht korrekt unterhalb des vorangehenden Teils (</i>Was giebt’s<i>) plaziert; korrigiert in B.a C.1 C.3. [type=1c]</i>
-●●●<i>vor 2323</i> <speaker>Brander</speaker> zu Siebel. <i>S</i>] <br/><c>Brander</c> (zu Siebel)^ <i>A D.1 B</i><br/><c>Brander</c> (zu Siebel). <i>B.a [type=1c]</i>
-●●●<i>vor 2332</i> Sich <i>…</i> wendend. <i>S D.1 B</i>] <br/> (Sich <i>…</i> wendend.) <i>A B.a [type=1c]</i>
 <i>nach 2336</i> Hexenküche. <i>S D.1 B B.a</i>]   Hexenküche^ <i>A [type=1c]</i>
 2348[Doch]{Dich} <i>2348</i> Dich <i>S 1_H.2</i>]   Doch <i>A B B.a C [type=2c]</i>
 2348[verjüngen,]{=} <i>2348</i> verjüngen, <i>S A  B.a</i>]   verjüngen^ <i>B [Typ 4c]</i>
