@@ -115,10 +115,14 @@
 
   <xsl:template match="note[@type='textcrit']/app/lem">
     <span class="{string-join(f:generic-classes(.), ' ')}">
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="node() except (wit[1], wit[1]/following-sibling::node())"/>
     </span>
-    <xsl:text>]</xsl:text>
-    <xsl:sequence select="for $wit in tokenize(@wit, '\s+') return (' ', f:resolve-faust-doc($wit, $transcript-list))"/>
+    <xsl:text>] </xsl:text>
+    <xsl:apply-templates select="wit[1], wit[1]/following-sibling::node()"/>
+  </xsl:template>
+  
+  <xsl:template match="lem/wit | rdg/wit">
+    <xsl:sequence select="f:resolve-faust-doc(@wit, $transcript-list)"/>
   </xsl:template>
   
   <xsl:template match="note[@type='textcrit']/app/rdg">
@@ -126,8 +130,7 @@
     <span class="{string-join(f:generic-classes(.), ' ')}">
       <xsl:apply-templates/>
       <xsl:if test="@wit">
-        <xsl:comment select="concat('wit=', @wit, ' transcript-list=', $transcript-list)"/>
-        <xsl:sequence select="for $wit in tokenize(@wit, '\s+') return (' ', f:resolve-faust-doc($wit, $transcript-list))"/>
+        <xsl:comment select="concat('wit=', @wit, ' transcript-list=', $transcript-list)"/>        
       </xsl:if>
       <xsl:if test="@type">
         <span class="reading-type">

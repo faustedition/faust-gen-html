@@ -10,6 +10,7 @@
     <xsl:import href="utils.xsl"/>
     <xsl:import href="bibliography.xsl"/>
     <xsl:output method="xml" indent="yes"/>
+    <xsl:strip-space elements="app choice subst"/>
        
     <!-- The apparatus specification in XML form -->
     <xsl:variable name="spec" select="doc('../text/app1norm.xml'), 
