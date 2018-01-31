@@ -15,14 +15,15 @@
     <xsl:variable name="spec" select="doc('../text/app1norm.xml'), 
                                       doc('../text/app2norm.xml'), 
                                       doc('../text/app2norm_test-cases.xml')"/>
-    
+
     <xsl:template match="/">
         <xsl:variable name="inserted-apps">
             <xsl:apply-templates/>
         </xsl:variable>        
         <xsl:apply-templates mode="pass2" select="$inserted-apps"/>        
     </xsl:template>
-    
+
+    <!-- calculates an id for the seg corresponding to an app's f:ins -->
     <xsl:function name="f:seg-id" as="xs:string">
         <xsl:param name="ins" as="element(f:ins)"/>
         <xsl:variable name="parts" as="item()*">
@@ -41,6 +42,7 @@
     </xsl:function>
     
     
+    <!-- lines for which an apparatus entry exists -->
     <xsl:template match="*[f:hasvars(.)][tokenize(@n, '\s+') = $spec//f:ins/@n]">
         <xsl:variable name="current-line" select="tokenize(@n, '\s+')"/>
         <xsl:variable name="apps" select="$spec//f:replace[@n=$current-line]/.." as="element()*"/>
@@ -63,8 +65,7 @@
         </xsl:for-each>
     </xsl:template>
     
-    
-    
+    <!-- creates the note[@type="textcrit"] for the givven app element -->    
     <xsl:template name="create-app-note">
         <xsl:param name="apps"/>
         <note type="textcrit">
@@ -78,9 +79,14 @@
         </note>
     </xsl:template>
     
+    <!-- the with-app mode is chosen for content where we know there is a lemma inside somewhere -->
+    <!-- 
+        This processes a relevant text node: It searches the text content for any lem inside, and
+        if it finds one, it encloses it with <seg> and adds an apparatus note.
+    -->
     <xsl:template mode="with-app" match="text()" priority="1">
         <xsl:param name="apps" tunnel="yes"/>
-        <xsl:param name="current-line" tunnel="yes"/>
+        <xsl:param name="current-line" tunnel="yes"/>        
         <xsl:variable name="re" select="replace(string-join($apps/f:replace, '|'), '([\]().*+?\[])', '\$1')"/>
         <!--<xsl:message select="concat('searching for /', $re, '/ in ', string-join($apps/@n, ', '))"/>-->
         <xsl:choose>
@@ -110,6 +116,7 @@
                 return concat('faust://document/faustedition/', $wit)"/>
     </xsl:template>
     
+    <!-- f:ins[@place='enclosing-lg'] allows to set attributes on the lg enclosing a specific verse -->
     <xsl:template match="lg[*[@n = $spec//f:ins[@place='enclosing-lg']/@n]]">
         <xsl:variable name="insert-element" select="$spec//f:ins[@place='enclosing-lg'][@n = current()/l/@n]"/>
         <xsl:variable name="app-spec" select="$insert-element/.."/>
@@ -127,6 +134,11 @@
         </xsl:copy>
     </xsl:template>
     
+    <!-- 
+        To split an existing lg, insert a <milestone unit='lg'/> at the break point. This template
+        takes care of actually performing the split. The apparatus has already been generated when
+        inserting the milestone. Attributes except @unit are copied from the milestone to the lg.    
+    -->
     <xsl:template mode="pass2" match="lg[milestone[@unit='lg']]" name="build-lgs">
         <xsl:param name="original-lg" select="."/>
         <xsl:for-each-group select="node()" group-starting-with="milestone[@unit='lg']">
@@ -145,6 +157,10 @@
         </xsl:for-each-group>
     </xsl:template>
     
+    <!-- 
+        To create lgs out of thin air, insert <milestone unit="@lg"/> in the appropriate places.
+        This template takes the <sp> as outer boundary.
+    -->
     <xsl:template mode="pass2" match="sp[milestone[@unit='lg']]">
         <xsl:copy copy-namespaces="no">
             <!-- collect children up to the first l -->
@@ -156,6 +172,9 @@
         </xsl:copy>
     </xsl:template>
     
+    <!-- 
+        List of witnesses.
+    -->
     <xsl:template mode="pass2" match="sourceDesc">
         <xsl:copy copy-namespaces="no">
             <xsl:apply-templates mode="#current" select="@*"/>
@@ -168,7 +187,7 @@
         </xsl:copy>
     </xsl:template>
     
-    
+    <!-- Pass through unchanged everything else. -->
     <xsl:template match="node() | @*" mode="#all">
         <xsl:copy copy-namespaces="no">
             <xsl:apply-templates mode="#current" select="@*, node()"/>
