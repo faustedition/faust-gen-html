@@ -79,7 +79,7 @@
 		</l:store>
 		
 		<!-- ## Step 1.5: Lesetext -->
-		<f:generate-reading-text/>				
+		<f:generate-reading-text name="generate-reading-text"/>				
 
 		
 		<!-- ############ STEP 2: Enhance all transcripts with metadata -->
@@ -143,10 +143,10 @@
 			<p:with-option name="href" select="resolve-uri('www/data/scene_line_mapping.js', resolve-uri($builddir))"/>
 		</p:store>
 		
-		<!-- ### Step 3a: Apparatus -->
+		<!-- ### Step 3a: Inline Apparatus -->
 		<f:generate-app>
 			<p:input port="source"><p:pipe port="result" step="generate-search"></p:pipe></p:input>
-		</f:generate-app>
+		</f:generate-app>		
 		
 		<!-- ### Step 3b: pages.json -->
 		<p:identity><p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input></p:identity>
@@ -163,6 +163,16 @@
 		</p:xslt>
 		<p:store method="text" media-type="application/json">
 			<p:with-option name="href" select="resolve-uri('pages.json', resolve-uri($html))"/>			
+		</p:store>
+		
+		<!-- ### Step 3c: Reading text apparatus list -->
+		<p:xslt>
+			<p:input port="source"><p:pipe port="result" step="generate-reading-text"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/text-applist.xsl"/></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+		</p:xslt>
+		<p:store method="xhtml">
+			<p:with-option name="href" select="resolve-uri('www/text-app.html', $builddir)"/>
 		</p:store>
 		
 		<!-- ### Step 2a: Metadata HTML -->
