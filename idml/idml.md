@@ -147,7 +147,9 @@ Bedeutet, dass Finis wie Szene behandelt wird.
 "Walpurgisnachtstraum" soll bekommen `Szene nach Teil`. 
 
 ### Zwischenzeile (WNT)
-für das "oder"
+(für das "oder")
+
+XML: `head[@n="before_4223_a"]/hi[2][text()[contains(.,'oder')]]`.
 
 ### Szene nach Zwischenzeile (WNT)
 für "Oberons ..."
