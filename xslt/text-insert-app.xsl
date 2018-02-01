@@ -103,6 +103,7 @@
     
     <!-- We add a <wit> element with the sigil as it should be rendered at the end  -->
     <xsl:template match="lem|rdg" mode="app">
+        <xsl:variable name="element" select="."/>
         <xsl:copy copy-namespaces="no">
             <xsl:apply-templates mode="#current" select="@*, node()"/>
             <xsl:for-each select="tokenize(@wit, '\s+')">
@@ -209,6 +210,33 @@
         </xsl:copy>
     </xsl:template>
     
+    <!-- Mark base witnesses. We need to do this when the wits are already inserted -->
+    <xsl:function name="f:is-base-witness" as="xs:boolean">
+        <xsl:param name="context"/>
+        <xsl:param name="uri"/>
+        <xsl:variable name="lastShift" select="$context/preceding::witStart[1]" as="element()*"/>
+        <xsl:if test="$lastShift">
+            <xsl:message>
+                <xsl:copy-of select="$lastShift"/>
+            </xsl:message>
+        </xsl:if>
+        <xsl:variable name="baseUri" select="if ($lastShift) then $lastShift else 'faust://document/faustedition/A'"/>
+        <xsl:value-of select="$uri = $baseUri"/>
+    </xsl:function>
+    
+    <xsl:template mode="pass2" match="wit">
+        <xsl:variable name="lastShift" select="preceding::witStart[1]"/>
+        <xsl:variable name="currentBase" select="if ($lastShift) then $lastShift/@wit else 'faust://document/faustedition/A'"/>
+        <xsl:copy>            
+            <xsl:if test="$currentBase = @wit">
+                <xsl:attribute name="f:is-base">true</xsl:attribute>
+            </xsl:if>
+            <xsl:copy-of select="@* except f:is-base"/>
+            <xsl:apply-templates mode="#current"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    
     <!-- 
         List of witnesses.
     -->
@@ -223,6 +251,7 @@
             </listWit>
         </xsl:copy>
     </xsl:template>
+    
     
     <!-- Pass through unchanged everything else. -->
     <xsl:template match="node() | @*" mode="#all">

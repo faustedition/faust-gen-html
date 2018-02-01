@@ -2,3 +2,4 @@
 4633[$]{<stage>XXX Einfügung danach</stage>} <i>nach 4633</i> <stage>XXX Einfügung danach (Beispiel)</stage> <i>2_H</i>] (kein Text) <i>2_I_H.0a [type=119_21b]</i>
 4617[^]{<milestone unit="lg" rend="indented"/>} <i>ab 4617</i> XXX neue Strophe <i>2_H</i>] nur eine Strophe von 4613–1620 <i>2_I_H.0a [type=119_22]</i>
 5441|5445|5449[@lg]{rend="indented"|rend="indented"|rend="indented"} <i>5441–5456</i> <i>Einrückung 2_H</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
+before_2366[]{} <i>vor 2366–2377</i>] <i>Die Verse fehlen in S . [type=7]</i>
