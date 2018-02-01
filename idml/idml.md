@@ -151,7 +151,9 @@ Bedeutet, dass Finis wie Szene behandelt wird.
 ## Walpurgisnachtstraum
 
 ### (WNT-Titel)
-https://github.com/faustedition/faust-gen-html/issues/246
+XML: `head[@n="before_4223_a"]/hi[1]`.
+
+Output: `Teil / Akt`.
 
 ### Zwischenzeile (WNT)
 (für das "oder")
