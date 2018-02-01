@@ -21,18 +21,18 @@ before_5199_b[geben zu]{=} <i>vor 5199</i> zu <i>2_I_H.0a</i>] zu <i>vermeintlic
 before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2_I_H.0a [type=2aa]</i>
 before_5357_b[]{} <i>vor 5357</i> <speaker>Alecto</speaker> <i>2_I_H.0a</i>] <font name="Cambria Math">⟨</font><stage>Die Furien</stage> <i>erg G</i><font name="Cambria Math">⟩</font> <speaker>Alecto.</speaker> <i>2_H [type=2c0]</i>
 5388[beging]{beging’} <i>5388</i> beging’ <i>2_I_H.0a</i>] beging <i>2_I_H.0a :</i> beging’ <i>Ri G [type=2d]</i>
-5441|5445|5449|5452[@lg|@lg|@lg|@lg]{rend="indented"|rend="indented"|rend="indented"|rend="indented"} <i>5441–5456 Einrückung</i>] <i>fehlt I_H.0a [type=1c]</i>
+5441|5445|5449|5452[@lg|@lg|@lg|@lg]{rend="indented"|rend="indented"|rend="indented"|rend="indented"} <i>5441–5456 Die Verse sind in I_H.0a nicht eingerückt [type=1c]</i>
 5484[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5484–5493 Einrückung</i>] <i>fehlt I_H.0a [type=1c]</i>
 5487[Gespenstische]{gespenstische} <i>5487</i> gespenstische <i>2_H</i>] Gespenstische <i>2_I_H.0a [type=2aa]</i>
 5519[Stürmgewalt]{Sturmgewalt} <i>5519</i> Sturmgewalt <i>2_H</i>] Stürmgewalt <i>2_I_H.0a [type=2aa]</i>
 5592[ein]{im} <i>5592</i> im <i>2_H</i>] ein <i>2_I_H.0a [type=2aa]</i>
 5656[böser]{böser} <i>5656</i> böser <i>2_I_H.0a</i>] böser <i>2_H :</i> böse <i>Sc.1 [type=6]</i>
 5750[Hindermann]{=} <i>5750</i> Hindermann <i>2_I_H.0a</i>] Hindermann <i>2_H :</i> Hintermann <i>Ec [type=6]</i>
-5775[am]{an} <i>5775</i> an <i>H.33</i>] am <i>2_I_H.0a [type=2b]</i>
+5775[am]{an} <i>5775</i> an <i>2_I_H.33</i>] am <i>2_H I_H.0a [type=2b]</i>
 before_5801[Gesang]{Ungesang} <i>before_5801</i> Ungesang <i>2_H</i>] Gesang <i>2_I_H.0a [type=2aa]</i>
 5896[ehre]{Ehre} <i>5896</i> Ehre <i>2_H</i>] ehre <i>2 I_H.0a [type=2aa]</i>
 5925[Glut und Sud]{Glut und Sud} <i>5925</i> Glut und Sud <i>2_I_H.0a</i>] Glut und Sud <i>H.41a</i> Sud und Glut <i>2_H</i> Glut und Sud <i>H.0a [type=7]</i>
-5929[solchen]{solchem} <i>5929</i> solchem <i>2_I_H.41a</i>] solchen <i>H.0a [type=2b]</i>
+5929[solchen]{solchem} <i>5929</i> solchem <i>2_I_H.41a</i>] solchen <i>2_H H.0a [type=2b]</i>
 before_5987_c[anständig nicht auffallend nach Sitte gekleidet, beyde knieen.]{=} <i>vor 5987</i> anständig … knieen. <i>2_I_H.0a</i>] anständig nicht auffallend nach Sitte gekleidet, beyde knieen. <i>2_H :</i> (anständig … knieen.) <i>Ec.# [type=6]</i>
 before_6086[Marschalck]{=} <i>vor 6086</i> <speaker>Marschalck</speaker> <i>2_H</i>] <speaker>Schatzmeister</speaker> <i>2_H :</i> <speaker>Marschalck</speaker> <i>vorschl G.1 [type=7]</i>
 before_6097[Mephistofeles]{Mephistopheles} <i>before_6097</i> Mephistopheles <i>none</i>] Mephistofeles <i>2_H [type=1a]</i>
@@ -48,17 +48,17 @@ before_6319_a[]{} <i>vor 6319</i> <speaker>Blondine</speaker> <i>2_H</i>] <speak
 6363[]{} <i>vor 6363</i> (Andere drängen sich herzu) <i>erg Ec.1 [type=6]</i>
 6384[beqeumlichstens]{bequemlichstens} <i>6384</i> bequemlichstens <i>none</i>] beqeumlichstens <i>2_H [type=1a]</i>
 6447[Saulenschaft]{Säulenschaft} <i>6447</i> Säulenschaft <i>none</i>] Saulenschaft <i>2_H [type=1a]</i>
-before_6479_a[tritt auf]{=} <i>vor</i> <i>6479</i> tritt auf <i>2_H</i>] tritt auf <i>2_H :</i> hervortretend <i>Ec [type=6]</i>
+before_6479_a[tritt auf]{=} <i>vor</i> <i>6479</i> tritt auf <i>2_H</i>] tritt auf <i>2_H :</i> hervortretend <i>Ec.0 [type=6]</i>
 before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht] zurückzieht <i>ci. Fiedler [type=3]</i>
-6652[allen]{allen} <i>6652</i> allen <i>2_H</i>] allen <i>2_H :</i> Allen <i>Ec [type=6]</i>
-6654[Des Meisters]{Des Meisters} <i>6654</i> Des Meisters <i>2_H</i>] Des Meisters <i>2_H :</i> Selbst Faustus <i>Ec [type=6]</i>
+6652[allen]{allen} <i>6652</i> allen <i>2_H</i>] allen <i>2_H :</i> Allen <i>Ec.0 [type=6]</i>
+6654[Des Meisters]{Des Meisters} <i>6654</i> Des Meisters <i>2_H</i>] Des Meisters <i>2_H :</i> Selbst Faustus <i>Ec.0 [type=6]</i>
 6717|6718[war er schon gewandt,|Ob ich gleich ihn]{=} <i>6717–6718</i> war er schon gewandt, / Ob ich gleich ihn <i>2_H</i>] war … ihn <i>2_H :</i> schien er zwar gewandt, / Als ich ihn noch <i>Ec [type=6]</i>
 6726[anderer]{anderer} <i>6726</i> anderer <i>2_H</i>] anderer <i>2_H :</i> Anderer <i>Ec [type=6]</i>
-before_6792_a[]{} <i>vor 6792</i> <speaker>Mephistopheles</speaker> <i>2_H</i>] <font name="Cambria Math">⟨</font><stage>(abseits)</stage> <i>erg Ri.# Ec.#</i><font name="Cambria Math">⟩</font> <i>2_H [type=6]</i>
+before_6792_a[]{} <i>vor 6792</i> <speaker>Mephistopheles</speaker> <i>2_H</i>] <font name="Cambria Math">⟨</font><stage>(abseits)</stage> <i>erg G.1 G.0</i><font name="Cambria Math">⟩</font> <i>2_H [type=6]</i>
 6832[Willkommmen]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkommmen <i>2_H [type=1a]</i>
 6847[höhern, höhern]{höhern, höhern} <i>6847</i> höhern, höhern <i>2_H</i>] höhern, höhern <i>2_H : mon Ri</i> hehren <i>vorschl Ri [type=6]</i>
-6988[wichtigstes]{wichtigstes} <i>6988</i> wichtigstes <i>2_H</i>] wichtigstes <i>2_H :</i> Wichtigstes <i>Ec [type=6]</i>
-6994[i]{i} <i>6994</i> i <i>2_H</i>] i <i>2_H :</i> I <i>Ec.0 [type=6]</i>
+6988[wichtigstes]{wichtigstes} <i>6988</i> wichtigstes <i>2_H</i>] wichtigstes <i>2_H :</i> Wichtigstes <i><color bgc="FFFF00">Ec.0 [type=6]</i>
+6994[i]{i} <i>6994</i> i <i>2_H</i>] i <i>2_H :</i> I <i><color bgc="FFFF00">Ec.0 [type=6]</i>
 before_7249_a[Peneus]{=} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>] Peneus <i>(Jo) H mon Ri (</i>Penéus <i>Ri alR) :</i> Peneius <i>vorschl Ri [type=7]</i>
 7437[Erungene]{Errungene} <i>7437</i> Errungene <i>none</i>] Erungene <i>2_H [type=1a]</i>
 #before_7495_a[]{} <i>vor 7495</i> <stage>Am obern Peneios</stage> <i>…</i> <speaker>Sirenen</speaker> <i>2_H</i>] <speaker>Sirenen</speaker> <stage>(Am … zuvor)</stage> <i>2_H :</i> <stage>(Am … zuvor)</stage> <speaker>Sirenen</speaker> <i>vermutlich G.1 [type=7]</i>
@@ -68,25 +68,25 @@ before_7249_a[Peneus]{=} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>] Peneu
 7877[Homunnkulus]{Homunkulus} <i>7877</i> Homunkulus <i>2_II_H.74</i>] Homunnkulus <i>2_H [type=1a]</i>
 before_7982[Phorkyas]{=} <i>vor 7982</i> <speaker>Phorkyas</speaker> <i>none</i>] <speaker>Phork.</speaker> <i>2_H [type=7]</i>
 before_8245_b[(erstaunt]{<stage>erstaunt</stage>} <i>before_8245_b</i> <stage>erstaunt</stage> <i>2_H</i>] (erstaunt <i>2_H [type=8]</i>
-8331[Bist du einmal]{Bist du einmal} <i>8331</i> Bist du einmal <i>2_H</i>] Bist du einmal <i>2_H :</i> Denn bist du erst <color bgc="FFFF00"><i>Ec H [type=6]</i>
+8331[Bist du einmal]{Bist du einmal} <i>8331</i> Bist du einmal <i>2_H</i>] Bist du einmal <i>2_H :</i> Denn bist du erst <i>Ec.0 H [type=6]</i>
 8352[Muschelpfad]{Muschelfahrt} <i>8352</i> Muschelfahrt <i>2_II_H.69</i>] Muschelpfad <i>2_H [type=2b]</i>
 8374[wägt und regt]{=} <i>8374</i> wägt und regt <i>2_H</i>] regt <i>2_II_H.71</i> regt und wagt <i>G.1 II_H.69</i> wägt und trägt <i>Jo II_H.70 :</i> wägt und regt <i>G.1 II_H.70 2_H [type=7]</i>
 8450[Galatees]{Galatees} <i>8450</i> Galatees <i>2_H</i>] Galatees <i>2_H :</i> Galateas <i>Sc [type=6]</i>
 8497[Tyndareos]{=} <i>8497</i> Tyndareos <i>C.1_4</i>] Tyndareus <i>2_III_H.3</i> Tydareus <i>2_III_H.3a:1 2_H</i> Tyndareos <i>vorschl Gö III_H.3b</i> <add>Tydareos</add> <i>G 2_H [type=7]</i>
-8506[Eröffnet C.1_4]{Eröffenet} <i>8506</i> Eröffenet <i>2_III_H.3a:1</i>] Eröffnet C.1_4 <i>[type=2b]</i>
+8506[Eröffnet]{Eröffenet} <i>8506</i> Eröffenet <i>(Ri.1) III_H.3a:1</i>] Eröffnet <i>2_H C.1_4 [type=2b]</i>
 8510[Stelle]{Schwelle} <i>8510</i> Schwelle <i>2_III_H.2:1</i>] Stelle <i>C.1_4 [type=2b]</i>
 8542[mustre]{mustere} <i>8542</i> mustere <i>2_III_H.3a:1</i>] mustre <i>C.1_4 [type=2b]</i>
 8574[heiligen]{heilgen} <i>8574</i> heilgen <i>2_H</i>] heiligen <i>C.1_4 [type=2aa]</i>
 8578[hin]{heim} <i>8578</i> heim <i>2_III_H.3a:1</i>] hin <i>C.1_4 [type=2b]</i>
 8645[seh’]{seh} <i>8645</i> seh <i>C.1_4</i>] seh’ <i>C.2alpha_4 C.3_4 [type=4a]</i>
 8650[Vom]{Von} <i>8650</i> Von <i>2_III_H.2:1</i>] Vom <i>C.1_4 [type=2b]</i>
-8656[Entlaßnem]{Entlass’nem} <i>8656</i> Entlass’nem <i>C.2alpha_4 C.3_4</i>] Entlaßnem <i>C.1_4 [type=4b]</i>
+8656[Entlaßnem]{Entlass’nem} <i>8656</i> Entlass’nem <i>C.2alpha_4 C.3_4</i>] Entlaßnem <i>C.1_4 [type=4a]</i>
 8714[Lohe]{Lohn} <i>8714</i> Lohn <i>2_H</i>] Lohe <i>C.1_4 [type=2aa]</i>
 8727[mich^]{mich.} <i>8727</i> mich. <i>2_H</i>] mich^ <i>C.1_4 [type=1b]</i>
 8741[nicht.]{nicht,} <i>8741</i> nicht, <i>H C.2alpha_4 C.3_4</i>] nicht. <i>C.1_4 [type=4b]</i>
 8776[schlachterzogne]{schlechterzogne} <i>8776</i> schlechterzogne <i>H.3a:1</i>] schlachterzogne <i>C.1_4 [type=2b]</i>
 8803[Anerkannte! nun]{Anerkannte! neu} <i>8803</i> Anerkannte! neu <i>2_III_H.1</i>] Anerkannte! nun <i>C.1_4 [type=2b]</i>
-8850[zehenjährig]{siebenjährig} <i>8850</i> siebenjährig <i>C.1_4</i>] zehenjährig <i>2_H :</i> siebenjährig <i><color bgc="FFFF00">vorschl Gö bill G H C.1_4 C.2alpha_4 C.3_4</i> zehenjährig <i>Ec.1 H (vgl. Gespräch vom 17. März 1830) :</i> dreyzehnjährig <i>Ri.1 [type=6]</i>
+8850[zehenjährig]{siebenjährig} <i>8850</i> siebenjährig <i>C.1_4</i>] zehenjährig <i>2_H :</i> siebenjährig <i><color bgc="FFFF00">vorschl Gö III_H.### bill G H C.1_4 C.2alpha_4 C.3_4</i> zehenjährig <i>Ec.1 H (vgl. Gespräch vom 17. März 1830) :</i> dreyzehnjährig <i>Ri.1 [type=6]</i>
 after_8881[Arme.]{=} <i>after_8881</i> Arme.] Arme). <i>C.1_4 statt</i> Arme.) <i>C.2alpha_4 C.3_4 [type=8]</i>
 8900[Glanz]{Glanz} <i>8900</i> Glanz <i>C.1_4</i>] Glanz <i>2_H :</i> Glanze <i>Sc.1 [type=7]</i>
 before_8924f[Phorkyas]{=} <i>before_8924f</i> <speaker>Phorkyas</speaker> <i>none</i>] <i>Punkt fehlt C.1_4 [type=8]</i>
@@ -99,11 +99,11 @@ before_8924f[Phorkyas]{=} <i>before_8924f</i> <speaker>Phorkyas</speaker> <i>non
 9115[Schrittes]{Schritts} <i>9115</i> Schritts <i>2_H</i>] Schrittes <i>C.1_4</i> <i>[type=2aa]</i>
 9140[ich.]{ich,} <i>9140</i> ich, <i>C.1_4</i>] ich. <i>C.2alpha_4 C.3_4 [type=4a]</i>
 9152[Aufgeht]{<color bgc="FFFF00">Auf geht} <i>9152</i> <color bgc="FFFF00">Auf geht <i>2_H</i>] Aufgeht <i>C.1_4 [type=2aa] -sh</i>
-9193[erfurchtsvollem]{ehrfurchtsvollem} <i>9193</i> ehrfurchtsvollem <i>2_H</i>] erfurchtsvollem <i>C.1_4 [type=2aa]</i>
+9193[erfurchtsvollem]{ehrfurchtsvollem} <i>9193</i> ehrfurchtsvollem <i>H C.2alpha_4 C.3_4</i>] erfurchtsvollem <i>C.1_4 [type=2aa]</i>
 9206[welch’]{welch} <i>9206</i> welch <i>2_III_H.2:1</i>] welch’ <i>C.1_4 [type=1b]</i>
 before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>H.45a C.2alpha_4 C.3_4</i>] Thurmwärter, <i>C.1_4 [type=4b]</i>
 9227[Höh’n,]{Höh’n} <i>9227</i> Höh’n <i>C.1_4</i>] Höh’n, <i>C.2alpha_4 C.3_4 [type=4a]</i>
-9235[geschloßnes]{geschloss’nes} <i>9235</i> geschloss’nes <i>C.2alpha_4 C.3_4</i>] geschloßnes <i>C.1_4 [type=4b]</i>
+9235[geschloßnes]{geschloss’nes} <i>9235</i> geschloss’nes <i>C.2alpha_4 C.3_4</i>] geschloßnes <i>C.1_4 [type=4a]</i>
 9247[Welch’]{Welch} <i>9247</i> Welch <i>2_H</i>] Welch’ <i>C.1_4 [type=1b]</i>
 9373[euch]{auch} <i>9373</i> auch <i>2_H</i>] euch <i>C.1_4 [type=2aa]</i>
 9378[vom]{von} <i>9378</i> von <i>2_III_H.3a:2</i>] vom <i>C.1_4 [type=2b]</i>
@@ -128,13 +128,13 @@ after_9807[Höhe.]{=} <i>nach 9807</i> Höhe.] Höhe). <i>C.1_4 statt</i> Höhe.
 before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>H.45a C.2alpha_4 C.3_4</i>] Chorführerin <i>C.1_4 [type=4b]</i>
 10001[Vogelsingen]{Vogelsängen} <i>10001</i> Vogelsängen <i>2_H</i>] Vogelsingen <i>C.1_4 [type=2aa]</i>
 10030[in’s]{ins} <i>10030</i> ins <i>C.1_4</i>] in’s <i>C.2alpha_4 C.3_4 [type=4a]</i>
-before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>ci. Schmidt [type=3]</i>
+before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>ci. Erich Schmidt [type=3] <color bgc="FFFF00"></i>
 before_10067_a[alsbald]{also bald} <i>before_10067_a</i> also bald <i>2_IV_H.3</i>] alsbald <i>2_H [type=2aa]</i>
 10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074 eingerückt 2_H [type=1c]</i>
 10150[ewigen-]{ewigen} <i>10150</i> ewigen <i>2_IV_H.2</i>] ewigen- <i>2_H [type=1c]</i>
 after_10344[allzusammen]{allezusammen} <i>nach 10344</i> allezusammen <i>2_IV_H.8</i>] allzusammen <i>2_H [type=2aa]</i>
 10415[hattet]{hättet} <i>10415</i> hättet <i>none</i>] hattet <i>(G.1) H [type=7]</i>
-10439[Negromant]{Negromant} <i>10439</i> Negromant <i>2_H</i>] Negromant <i>2_H :</i> Nekromant <i><color bgc="FFFF00">Ec.1(sieht nicht so aus wie in “kauert“) [type=6]</i>
+10439[Negromant]{Negromant} <i>10439</i> Negromant <i>2_H</i>] Negromant <i>2_H :</i> Nekromant <i><color bgc="FFFF00">Ec.1 [type=6]</i>
 10452[Krafte]{Kräfte} <i>10452</i> Kräfte <i>2_IV_H.13</i>] Krafte <i>2_H [type=1a]</i>
 10523[$]{^&lt;l n="10524"^&gt;Er ist behend, reist alles mit sich fort.^&lt;/l^&gt;} <i>10524</i> Er <i>…</i> fort.] Er … fort <i>erg G.1 IV_H.18 fehlt IV_H.13 H [type=2b]</i>
 <i>10524</i> fort.] fort^ <i>2_IV_H.18 [type=1b]</i>
@@ -145,7 +145,7 @@ after_10570[Posauenschall]{Posaunenschall} <i>after_10570</i> Posaunenschall <i>
 10636[gesenckten]{gesencktem} <i>10636</i> gesencktem <i>none</i>] gesenckten <i>2_H [type=1a]</i>
 before_10654_a[Kaiser:]{<speaker>Kaiser</speaker>} <i>before_10654_a</i> <speaker>Kaiser</speaker> <i>2_IV_H.8</i>] Kaiser: <i>2_H [type=1c]</i>
 10790[schlecht]{schlecht.} <i>10790</i> schlecht. <i>2_IV_H.8</i>] schlecht^ <i>2_H [type=1b]</i>
-!SPAN[]{} <i>before_10811_b kein Text</i>] (kauert nieder.) <i>erg Ec.1 H [type=6]</i>
+before_10811_a[§]{^&lt;stage rend="inline"^&gt;kauert nieder.^&lt;/stage^&gt;} <i>before_10811_b</i> <stage>kauert nieder.</stage>] <i>2_IV_H.8 fehlt H [type=2aa] : erg Ec.1 [type=6]</i>
 10818[den]{dem} <i>10818</i> dem <i>2_IV_H.8</i>] den <i>2_H [type=2aa]</i>
 10832[willkommne]{willkommner} <i>10832</i> willkommner <i>2_IV_H.8</i>] willkommne <i>2_H [type=2aa]</i>
 10876[Erbmarschall]{Erzmarschall} <i>10876</i> Erzmarschall <i>2_IV_H.21a</i>] Erbmarschall <i>2_H [type=2aa]</i>
@@ -153,7 +153,7 @@ vor 10877[Erbmarschall]{<speaker>Erzmarschall</speaker>} <i>vor 10877</i> <speak
 10880[Vaterburg]{Väterburg} <i>10880</i> Väterburg <i>2_IV_H.21a</i>] Vaterburg <i>2_H [type=2aa]</i>
 10885[allen]{allem} <i>10885</i> allem <i>2_IV_H.21a</i>] allen <i>2_H [type=2aa]</i>
 10901[Lieblingsspeise wahl]{Lieblingsspeisen Wahl} <i>10901</i> Lieblingsspeisen Wahl <i>2_IV_H.20</i>] Lieblingsspeise wahl <i>2_H [type=2aa]</i>
-10909[von Festen]{=} <i>10909</i> von Festen <i>2_H</i>] von Fasten <i>2_IV_H.20 :</i> vom Fasten <i>G.3</i> von Fasten <i>2_H :</i> von Festen <i>G [type=2d]</i>
+10909[von Festen]{=} <i>10909</i> von Festen <i>2_H</i>] von Fasten <i>2_IV_H.20 :</i> vom Fasten <i>G.3</i> <color bgc="FFFF00">von Fasten <i>2_H :</i> von Festen <i>G [type=2d]</i>
 10912[gutem Weine]{guten Weinen} <i>10912</i> guten Weinen <i>2_IV_H.20</i> gutem Weine <i>2_H [type=2aa]</i>
 10917[großem]{großen} <i>10917</i> großen <i>2_IV_H.1</i>] großem <i>2_H [type=2aa]</i>
 10923[Wunderschatz]{Wunderschutz} <i>10923</i> Wunderschutz <i>2_IV_H.1</i>] Wunderschatz <i>2_H [type=2aa]</i>
@@ -162,7 +162,7 @@ vor 10877[Erbmarschall]{<speaker>Erzmarschall</speaker>} <i>vor 10877</i> <speak
 10998[steter]{fetter} <i>10998</i> fetter <i>2_IV_H.22f</i>] steter <i>2_H [type=2aa]</i>
 11099[Doch!]{Doch!} <i>11099</i> Doch! <i>2_H</i>] Doch! <i>2_H :</i> Dort <i>Sc.1 [type=6]</i>
 11160[fremden]{fremdem} <i>11160</i> fremdem <i>2_V_H.1</i>] fremden <i>2_H [type=2aa]</i>
-!SPAN[]{} <i>11203–11206</i> for- / dern gleichen … o- / ben <i>2_H</i>] for- / dern gleichen … o- / ben <i>2_H :</i> fordern / Gleichen … oben <i><color bgc="FFFF00">Ec [type=6]</i>
+!SPAN[]{} <i>11203–11206</i> for- / dern gleichen … o- / ben <i>2_H</i>] for- / dern gleichen … o- / ben <i>2_H :</i> fordern / Gleichen … oben <i><color bgc="FFFF00">Ec.0 [type=6]</i>
 11235[Vielgewandten]{Vielgewandtem} <i>11235</i> Vielgewandtem <i>2_V_H.1</i>] Vielgewandten <i>2_H [type=1a]</i>
 after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab) <i>2_V_H.1 fehlt 2_H</i> (Regum I. 21.) <i>erg G [type=2aa0]</i>
 11422[dich!]{dich.} <i>11422</i> dich. <i>2_V_H.2</i>] dich! <i>2_V_H.6</i> dich^ <i>2_H [type=1b]</i>
@@ -174,7 +174,7 @@ after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab)
 <i>11439</i> mächtig;] <i>Semikolon in H nicht mehr zu erkennen; ergänzt nach V_H.2 [type=7]</i>
 <i>11635</i> wieder. <i>2_V_H.2</i>] <i>Punkt in H nicht zu erkennen; ergänzt nach V_H.2 [type=7]</i>
 11638[Vom]{Von} <i>11638</i> Von <i>2_V_H.2</i>] Vom <i>2_H [type=2aa]</i>
-11724|11725[]{} <i>11724–11725</i> … jene … <i>Jo.1 :</i> … ferne … <i>(?) G.1 :</i> fremde <i>Ec [type=6]</i>
+11724[erlischt]{=} <i>11724</i> erlischt <i>2_H</i>] verlischt <i>2_H :</i> erlischt <i>vermutlich G.1 :</i> erlischt, <i>Sc.1 [type=6]</i>
 11760[im]{in} <i>11760</i> in <i>2_V_H.2</i>] im <i>2_H [type=2aa]</i>
 !SPAN[]{} <i>11936–11937</i> „Wer … erlösen.“ <i>2_H</i>] Wer … erlösen. <i>2_H :</i> „Wer … erlösen.“ <i>G.1 [type=7]</i>
 12071[Die]{Du} <i>12071</i> Du <i>2_V_H.37f</i>] Die <i>2_H [type=2a]</i>
