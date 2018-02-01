@@ -3,7 +3,8 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns="http://www.tei-c.org/ns/1.0"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-	exclude-result-prefixes="xs"
+	xmlns:f="http://www.faustedition.net/ns"
+	exclude-result-prefixes="xs f"
 	version="2.0">
 	
 	<xsl:import href="utils.xsl"/>
@@ -38,14 +39,19 @@
 		<xsl:comment>### Aus A: ###</xsl:comment>
 		<xsl:apply-templates select="$A"/>
 	</xsl:template>
+	
+	<xsl:function name="f:source" as="node()*">
+		<xsl:param name="sigil"/>
+		<xsl:comment select="concat('### Aus ', $sigil, ': ###')"></xsl:comment>
+		<app><rdg><witStart wit="faust://document/faustedition/{$sigil}"/></rdg></app>
+	</xsl:function>
 		
 	<xsl:template match="div[descendant::l[@n='354'] and descendant::l[@n='4612']]"> 
 		<!-- div that encloses all of Faust 1, doesn't have an @n unfortunately  -->
 		<xsl:next-match/>
 		
-		<div n="2">
-			<head>TODO: Der Tragödie zweiter Teil oder so</head>
-			<xsl:comment>### Aus 2 H: ###</xsl:comment>
+		<div n="2">			
+			<xsl:sequence select="f:source('2_H')"/>
 			<xsl:apply-templates select="$H/TEI/text"/>
 		</div>
 	</xsl:template>
@@ -96,8 +102,8 @@
 	<xsl:template match="div[@n='2.1']">
 		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*"/>	
-			<xsl:apply-templates select="node() except (div[@n='2.1.1'], div[@n='2.1.1']/following::node())"/>
-			<xsl:comment>### Aus 2 H.0a: ###</xsl:comment>
+			<xsl:apply-templates select="node() except (div[@n='2.1.1'], div[@n='2.1.1']/following::node())"/>			
+			<xsl:sequence select="f:source('2_H.0a')"/>
 			<xsl:apply-templates select="$H0a//div[@n='2.1.1']"/>
 			<xsl:apply-templates select="$H0a//div[@n='2.1.1']/following-sibling::node() except $H0a//sp[l[@n='6036']]/following::node()"/>			
 			<xsl:comment>### Weiter aus 2 H: ###</xsl:comment>
@@ -108,20 +114,20 @@
 	<xsl:template match="sp[l[@n='6036']]">
 		<!-- this will match inside $H0a//div[@n=2.1.2.3] -->
 		<xsl:next-match/>	<!-- default handling for the actual sp and its content -->
-		<xsl:comment>### Aus 2 H: ###</xsl:comment>
+		<xsl:sequence select="f:source('2_H')"/>
 		<xsl:apply-templates select="$H//sp[l[@n='6036']]/following-sibling::node()"/>
 	</xsl:template>
 	
 	<xsl:template match="div[@n='2.1.2.3']">
-		<xsl:next-match/>
-		<xsl:comment>### Aus 2 H: ###</xsl:comment>
+		<xsl:next-match/>		
+		<xsl:sequence select="f:source('2_H')"/>
 		<xsl:apply-templates select="$H//div[@n='2.1.2.3']/following-sibling::node()"/>
 	</xsl:template>
 	
 	<xsl:template match="div[@n='2.3']">
 		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*, node() except (div[1], div[1]/following::node())"/>
-			<xsl:comment>### Aus C.1_4: ###</xsl:comment>
+			<xsl:sequence select="f:source('C.1_4')"/>
 			<xsl:apply-templates select="$C1_4//div[starts-with(@n, '2.3.')]"/>
 		</xsl:copy>
 	</xsl:template>

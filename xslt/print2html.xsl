@@ -122,7 +122,16 @@
   </xsl:template>
   
   <xsl:template match="lem/wit | rdg/wit">
-    <xsl:sequence select="f:resolve-faust-doc(@wit, $transcript-list)"/>
+    <xsl:choose>
+      <xsl:when test="@f:is-base">
+        <strong>
+          <xsl:sequence select="f:resolve-faust-doc(@wit, $transcript-list)"/>          
+        </strong>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:sequence select="f:resolve-faust-doc(@wit, $transcript-list)"/>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
   
   <xsl:template match="note[@type='textcrit']/app/rdg">
