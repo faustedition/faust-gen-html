@@ -15,9 +15,6 @@ Siehe https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
 
 ## Apparat
 
-## NN (Überschrift ...)
-Wenn `head/lb`, so soll der Inhalt des `head` auf aufeinanderfolgende `Überschrift ...`-Absätze aufgeteilt werden.
-
 ## BA ...
 Die folgend beschriebenen `BA ...`-Absatzformate können dem XML-Pattern `speaker`, `stage`, aber auch `speaker`+`stage` entsprechen. 
 
@@ -59,7 +56,8 @@ XML: `speaker` ohne folgende `stage` mit `@rend`-Wert `inline`.
 
 ### Sprecher 1,5
 
-## ... Szene ...
+## (Überschriften)
+Wenn `head/lb`, so soll der Inhalt des `head` auf aufeinanderfolgende `Überschrift ...`-Absätze aufgeteilt werden.
 
 ### Szene
 (Szenenüberschrift)
@@ -74,7 +72,7 @@ XML: `speaker` ohne folgende `stage` mit `@rend`-Wert `inline`.
 
 ## Teil / Akt
 
-## Vers ...
+## (Verse)
 
 ### Vers
 XML: `l`.
@@ -117,18 +115,6 @@ Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende `l[
 
 # Zeichenformate
 
-## Figur
-(Hervorhebungen in BA) 
-
-XML: `stage/hi`.
-
-Formatierung: Sperrung. Umgebende Leerzeichen werden mitgesperrt.
-
-## Nomen nominandum
-(= "Hervorhebung Vers" o.ä.)
-
-XML: `l/emph`.
-
 ## Auftritt
 (innerhalb von Absatzformat `BA ...`)
 
@@ -140,22 +126,51 @@ Das Zeichenformat `Auftritt` bekommt nun entweder der
 
 Formatierung: Satzzeichen, die vom pattern miterfasst werden, (z.B. `<hi>Der Herr, die himmlischen Heerscharen,</hi>`) erhalten das Zeichenformat nicht.
 
-## Sprecher
-XML-Pattern: `speaker`.
+## Figur
+(Hervorhebungen in BA) 
 
-Merke: `speaker` ist Zeichenformat als Teil der Absatzformate `BA ...`..
+XML: `stage/hi`.
 
-Formatierung: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
+Formatierung: Sperrung. Umgebende Leerzeichen werden mitgesperrt.
 
-## lateinisch
+## Kolumne links
+
+## Kolumne rechts
+
+## Kursiv
+
+## Kursiv (Apparat)
+
+## Nomen nominandum (Hervorhebung Vers)
+
+XML: `l/emph`.
+
+## Nomen nominandum (lateinisch)
 (= Antiqua und lateinische Schrift in Versen, Sprechern, BA und Finis)
 
 XML: `*[@rend="antiqua" or @rend="latin"]`.
 
 Nicht durchgängig so kodiert; wer mag, kann auf fehlende Auszeichnungen hinweisen.
 
-### Verszahl
+## Sperrung
+
+## Sprecher
+XML-Pattern: `speaker`.
+
+Merke: `speaker` ist Zeichenformat als Teil der Absatzformate `BA ...`.
+
+Formatierung: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
+
+## Sprecher lateinisch
+
+## Sprecher lateinisch gesperrt
+
+## Vers lateinisch
+
+## Verszahl
 Wert von `@n` ausgeben, wenn `self::l and matches(@n, '^\d+') and @n mod 5 = 0`.
+
+## Weiß
 
 # Seitengestaltung 
 
