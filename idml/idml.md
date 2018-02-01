@@ -11,6 +11,9 @@ Siehe https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
 * Sprecher = Sprecherbezeichnung (`speaker`)
 * Musterseite / Stammseite in InDesign: Seiten, auf denen Gestaltungen definiert werden, die für alle Seiten gelten sollen, auf die sich die Stammseite bezieht (`Musterseite A` mit Kolumnenzeile und Pagina als Textvariablen definiert, `Musterseite B` ohne Kolumnenzeile). 
 
+# Allgemeine Regel zur Sperrung
+Umgebende Leerzeichen werden mitgesperrt.
+
 # Absatzformate
 
 ## Apparat
@@ -49,7 +52,10 @@ Normaler Replikenabstand, auch für Auftritte. Zu überlegen, ob Auftritte einen
 ### BA Blocks. ...
 Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile.
 
-#### BA Blocks. 0,0 
+#### BA Blocks. 0,0
+(Standardfall von `BA Blocks. ...`)
+
+XML: `stage` ohne `@rend`-Wert `inline`.
 
 #### BA Blocks. 1,5
 
@@ -112,7 +118,7 @@ XML: `l`.
 halbzeiliger Abstand nach oben (ca. 2,3 mm)
 
 ### Vers Einrückung
-XML: `parent::lg[@rend="indented"]`
+XML: `parent::lg[@rend="indented"]`.
 
 Im InDesign-Template stehen drei (?) Tabs davor, letztlich sollen sie auf optische Mitte kommen.
 
@@ -172,14 +178,12 @@ Das Zeichenformat `Auftritt` bekommt nun entweder der
 * der Inhalt der ganzen `stage` (wenn `stage[not(hi)]`) oder
 * `stage/hi` (wenn `stage[hi]`)
 
-Formatierung: Satzzeichen, die vom pattern miterfasst werden, (z.B. `<hi>Der Herr, die himmlischen Heerscharen,</hi>`) erhalten das Zeichenformat nicht.
-
 ## Figur
 (Hervorhebungen in BA) 
 
 XML: `stage/hi`.
 
-Formatierung: Sperrung. Umgebende Leerzeichen werden mitgesperrt.
+Formatierung: Sperrung.
 
 ## (Kolumnentitel)
 * entfallen bei Akt- und Szenenanfängen (= Absenkung)
