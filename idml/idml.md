@@ -31,10 +31,12 @@ Erkennungszeichen `@rend`-Wert `inline`.
 Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 0,0`. Der Inhalt von `speaker` erhält das Zeichenformat `Figur`. 
 
 ### BA zentr. 0,0
-Normalfall; immer, wenn BA zwischen Versen steht.
+Vorkommen:
+* angeblich "Normalfall"; also einfach `stage` und für die anderen `BA`-Fälle Sonderregeln? 
+* jedenfalls für alle `stage` mit erstem `preceding` und erstem `following-sibling::l` (BA zwischen Versen, nicht zwischen Versgruppen)
 
 ### BA zentr. 0,5
-Wenn Antilabenvers vorhergeht, der weiter links als die BA endet.
+Wenn Antilabenvers (`l[@part and not(@part="F")]`) vorhergeht, der weiter links als die BA endet.
 
 ### BA zentr. 1,5 
 * before_243_c (da auf eine BA mit Auftritt)
