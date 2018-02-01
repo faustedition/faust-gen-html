@@ -726,6 +726,10 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <search-string>\H.{#}</search-string>
                             <replacement-string>1^_{=1=}</replacement-string>
                         </string-pair>
+                        <string-pair>
+                            <search-string>\C.{#}</search-string>
+                            <replacement-string>{=1=}^_12</replacement-string>
+                        </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>
