@@ -253,8 +253,8 @@ before_3184[lezte]{letzte} <i>vor 3184</i> letzte <i>S</i>]   lezte <i>1_H.5</i>
 ●●●●†<i>3787–3788</i> Beteſt du für deiner Mutter Seel / Die durch dich sich in die Pein hinüberschlief. <i>1_H.5 [type=2b*]</i>
 3793[ahndungsvoller]{=} <i>3793</i> ahndungsvoller <i>S 1_H.13 A</i>]   ahnde voller <i>1_H.5</i> ahnungsvoller <i>B B.a [type=4a]</i>
 3817 [Mauern-Pfeiler]{Mauern Pfeiler} <i>3817</i> Mauern Pfeiler <i>1_H.5</i>]   Mauern-Pfeiler <i>S 1_H.13 A B B.a 1_H.1 C.1_12 C.3_12 [Typ: 2b]  </i>
-3821[Verbirg’]{Verbirg} <i>3821</i> Verbirg <i>S 1_H.13</i>]   <add>Verbirgſt</add> <i>1_H.5</i> Verbirg’ <i>A B B.a 1_H.1 C.1_12 C.3_12    <add>[type=1b]</add></i>
-3822[Bleibt’]{Bleibt} <i>3822</i> Bleibt <i>S 1_H.13 </i>]  Bleibt’ <i>A D.1</i> Bleibt <i>B B.a  <add>[type=1b]</add></i>
+3821[Verbirg’]{Verbirg} <i>3821</i> Verbirg <i>S 1_H.13</i>]   Verbirgſt <i>1_H.5</i> Verbirg’ <i>A B B.a 1_H.1 C.1_12 C.3_12    [type=1b]</i>
+3822[Bleibt’]{Bleibt} <i>3822</i> Bleibt <i>S 1_H.13 </i>]  Bleibt’ <i>A D.1</i> Bleibt <i>B B.a  [type=1b]</i>
 ●●●●†<i>3872–3911 Die Verse sind in A B B.a linksbündig gesetzt, in C.1_12 und C.3_12 sind sie eingerückt. [Typ: ?] (1c* oder 1c oder 7) ++</i>
 3892[durchs]{=} <i>3892</i> durchs <i>1_H.14 A</i>]   durch’s <i>B B.a [type=4a]</i>
 3899[Stecken]{Strecken} <i>3899</i> Strecken <i>1_H.14 1_H.6</i>]   Stecken <i>A B B.a</i> Strecken <i>1_H.1 C.1_12 C.3_12  [type=2a]</i>
