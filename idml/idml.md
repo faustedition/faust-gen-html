@@ -150,7 +150,8 @@ Bedeutet, dass Finis wie Szene behandelt wird.
 
 ## Walpurgisnachtstraum
 
-"Walpurgisnachtstraum" soll bekommen `Szene nach Teil`. 
+### (WNT-Titel)
+https://github.com/faustedition/faust-gen-html/issues/246
 
 ### Zwischenzeile (WNT)
 (für das "oder")
@@ -159,6 +160,9 @@ XML: `head[@n="before_4223_a"]/hi[2][text()[contains(.,'oder')]]`.
 
 ### Szene nach Zwischenzeile (WNT)
 für "Oberons ..."
+
+### (WNT-Text)
+Text der Szene "Walpurgisnachtstraum" soll bekommen `Szene nach Teil`. 
 
 ## Titel (Faust)
 
