@@ -14,8 +14,11 @@ Siehe https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
 # Absatzformate
 
 ## Apparat
+XML: `note type="textcrit"`.
 
-## BA ...
+Output: Fußnotenartiges Konstrukt ohne Anmerkungsziffer.
+
+## (Bühnenanweisungen)
 Die folgend beschriebenen `BA ...`-Absatzformate können dem XML-Pattern `speaker`, `stage`, aber auch `speaker`+`stage` entsprechen. 
 
 `BA ...` aus dem Pattern `speaker`+`stage` hat folgende Form (Bsp.):
@@ -42,28 +45,33 @@ Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzt
 #### BA Blocks. 1,5 
 
 ## Kolumne
+(Kolumnentitel mit Text?)
 
-### Kolumne weiß
+## Kolumne weiß
+(Kolumnentitel ohne Text?)
 
 ## Leerzeilen
+(Gibt es die noch?)
 
 ## Prosa
+(Absätze in Trüber Tag. Feld?) 
 
 ## Sprecher ... 
-XML: `speaker` ohne folgende `stage` mit `@rend`-Wert `inline`.
+XML: `speaker` ohne folgende `stage` , mit `@rend`-Wert `inline`.
 
 ### Sprecher 0,5
 
 ### Sprecher 1,5
+Normalfall für `speaker` ohne ... (s.o.)
 
 ## (Überschriften)
 Wenn `head/lb`, so soll der Inhalt des `head` auf aufeinanderfolgende `Überschrift ...`-Absätze aufgeteilt werden.
 
 ### Szene
-(Szenenüberschrift)
+(Szenenüberschrift?)
 
 ### Szene nach Akt
-(Szenenüberschrift nach Aktüberschrift)
+(Szenenüberschrift nach Aktüberschrift?)
 
 ### Untertitel Szene
 (Szenenunterüberschrift)
@@ -133,9 +141,18 @@ XML: `stage/hi`.
 
 Formatierung: Sperrung. Umgebende Leerzeichen werden mitgesperrt.
 
-## Kolumne links
+## (Kolumnentitel)
+* entfallen bei Akt- und Szenenanfängen (= Absenkung)
+* in modernisierter Schreibweise
 
-## Kolumne rechts
+### Kolumne links
+* Faust. Eine Tragödie (Vorspann Faust I)
+* Der Tragödie erster Teil
+* Der Tragödie zweiter Teil
+
+### Kolumne rechts
+* Szene (Faust I)
+* Akt · Szene / Unterszene (?) (Faust II)
 
 ## Kursiv
 
@@ -176,19 +193,6 @@ Wert von `@n` ausgeben, wenn `self::l and matches(@n, '^\d+') and @n mod 5 = 0`.
 
 ## Absenkung
 Siehe [#210](https://github.com/faustedition/faust-gen-html/issues/210).
-
-## Kolumnentitel
-* entfallen bei Akt- und Szenenanfängen (= Absenkung)
-* in modernisierter Schreibweise
-
-Links:
-* Faust. Eine Tragödie (Vorspann Faust I)
-* Der Tragödie erster Teil
-* Der Tragödie zweiter Teil
-
-Rechts:
-* Szene (Faust I)
-* Akt · Szene / Unterszene (?) (Faust II)
 
 # Sonderphänomene
 
