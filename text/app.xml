@@ -778,6 +778,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
             <modify>
                 <exchange>
                     <exchange-table>
+                        <exception-string>\[2019\] {{i}}*{{/i}}</exception-string>
                         <string-pair>
                             <search-string>\] {|}{{i}}*{{/i}}</search-string>
                             <replacement-string> {=2=}{=1=}</replacement-string>
