@@ -13,6 +13,8 @@ Siehe https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
 
 # Absatzformate
 
+## Apparat
+
 ## NN (Überschrift ...)
 Wenn `head/lb`, so soll der Inhalt des `head` auf aufeinanderfolgende `Überschrift ...`-Absätze aufgeteilt werden.
 
@@ -33,6 +35,8 @@ evtl. nur für den Feinsatz.
 
 ### BA zentr. 0,5
 
+### BA zentr. 1,5
+
 ### BA Blocks. ...
 Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile.
 
@@ -40,22 +44,49 @@ Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzt
 
 #### BA Blocks. 1,5 
 
+## Kolumne
+
+### Kolumne weiß
+
+## Leerzeilen
+
+## Prosa
+
 ## Sprecher ... 
 XML: `speaker` ohne folgende `stage` mit `@rend`-Wert `inline`.
 
+### Sprecher 0,5
+
 ### Sprecher 1,5
 
-### Sprecher 0,5
+## ... Szene ...
+
+### Szene
+(Szenenüberschrift)
+
+### Szene nach Akt
+(Szenenüberschrift nach Aktüberschrift)
+
+### Untertitel Szene
+(Szenenunterüberschrift)
+
+### Untertitel Szene nach Szene
+
+## Teil / Akt
 
 ## Vers ...
 
 ### Vers
 XML: `l`.
 
-### Vers eingerückt (so?)
+### Vers Abstand
+
+### Vers Einrückung
 XML: `parent::lg[@rend="indented"]`
 
 Im InDesign-Template stehen drei (?) Tabs davor, letztlich sollen sie auf optische Mitte kommen.
+
+### Vers Einrückung Abstand
 
 ### Vers Antilabe
 XML: `l[@part="M"]` oder `l[@part="M"]` (`l[@part="I"]` bleibt unverändert). 
@@ -64,8 +95,7 @@ Die Verse mit `part="M"` und `part="F"` werden gemäß der Länge des vorherigen
 
 Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende `l[@part]` um ein Leerzeichen mehr eingerückt.
 
-### Verszahlen
-`@n` wenn `self::l and matches(@n, '^\d+') and @n mod 5 = 0`
+## Zentriert
 
 # Zeichenformate
 
@@ -105,6 +135,9 @@ Formatierung: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
 XML: `*[@rend="antiqua" or @rend="latin"]`.
 
 Nicht durchgängig so kodiert; wer mag, kann auf fehlende Auszeichnungen hinweisen.
+
+### Verszahl
+Wert von `@n` ausgeben, wenn `self::l and matches(@n, '^\d+') and @n mod 5 = 0`.
 
 # Seitengestaltung 
 
