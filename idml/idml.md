@@ -97,6 +97,24 @@ Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende `l[
 
 ## Zentriert
 
+# Absatzformate einmalig
+
+## BA zentr. 0,0 nach Teil (Vorspiel/Prolog)
+
+## Szene lateinisch (Finis)
+
+## Szene nach Teil (Nacht)
+
+## Szene nach Zwischenzeile (WNT)
+
+## Titel (Faust)
+
+## Untertitel (Eine Tragödie)
+
+## Vers nach Teil (Zueignung)
+
+## Zwischenzeile (WNT)
+
 # Zeichenformate
 
 ## Figur
