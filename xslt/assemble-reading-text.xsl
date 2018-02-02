@@ -17,13 +17,13 @@
 	<!-- If you pass URLs in, the respective witnesses will be read from these files, otherwise from unprocessed source tree -->
 	<xsl:param name="A-uri" select="resolve-uri('print/A8_IIIB18.xml', $source)"/>
 	<xsl:param name="H-uri" select="resolve-uri('transcript/gsa/391098/391098.xml', $source)"/>
-	<xsl:param name="H0a-uri" select="resolve-uri('transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml', $source)"/>
+	<xsl:param name="IH0a-uri" select="resolve-uri('transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml', $source)"/>
 	<xsl:param name="C1_4-uri" select="resolve-uri('print/C(1)4_IIIB24.xml', $source)"/>
 	
 	<!-- pass in to provide witness content directly, otherwise URIs are used -->
 	<xsl:param name="A" select="if ($use-collection) then collection()[1] else doc($A-uri)"/>
 	<xsl:param name="H" select="if ($use-collection) then collection()[2] else doc($H-uri)"/>
-	<xsl:param name="H0a" select="if ($use-collection) then collection()[3] else doc($H0a-uri)"/>
+	<xsl:param name="IH0a" select="if ($use-collection) then collection()[3] else doc($IH0a-uri)"/>
 	<xsl:param name="C1_4" select="if ($use-collection) then collection()[4] else doc($C1_4-uri)"/>
 		
 	<!-- 
@@ -35,7 +35,7 @@
 	<xsl:template name="faust">
 		<xsl:message select="concat('Assembling from: ', 
 			'A: ', document-uri($A), '; 2 H: ', document-uri($H), 
-			'; 2 H.0a: ', document-uri($H0a), '; C.1_4: ', document-uri($C1_4))"/>
+			'; 2 I H.0a: ', document-uri($IH0a), '; C.1_4: ', document-uri($C1_4))"/>
 		<xsl:comment>### Aus A: ###</xsl:comment>
 		<xsl:apply-templates select="$A"/>
 	</xsl:template>
@@ -69,7 +69,7 @@
 	This stylesheet assembles the reading text from its main parts, 2 H with the following replacements:
 			
 			
-	  **H**           **H**           **H.0a / C.1\_4**   **H.0a / C.1\_4**
+	  **H**           **H**           **I H.0a / C.1\_4** **I H.0a / C.1\_4**
 	  **von**         **bis**         **von**             **bis**
 	  div n="2.1.1"   l n="6036"      div n="2.1.1"       l n="6036"
 	  div n="2.3.1"   div n="2.3.3"   div n="2.3.1"       div n="2.3.3"
@@ -81,13 +81,13 @@
 	the boundary marker (#).
 	
 	*	2.1 / head from   2 H
-		2.1.1      from   2 H.0a
+		2.1.1      from   2 I H.0a
 		2.1.2 with
-		    - head        2 H.0a
-		    - 2.1.2.1     2 H.0a
-		    - 2.1.2.2     2 H.0a 
+		    - head        2 I H.0a
+		    - 2.1.2.1     2 I H.0a
+		    - 2.1.2.2     2 I H.0a 
 	#*		- 2.1.2.3
-			    - up & including sp[l[@n='6036']]  2 H.0a
+			    - up & including sp[l[@n='6036']]  2 I H.0a
 	#		    - sp[l[@n='6036']]/following:*     2 H
 			- 2.1.2.4-6   2 H
 		2.2 from          2 H
@@ -103,9 +103,9 @@
 		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*"/>	
 			<xsl:apply-templates select="node() except (div[@n='2.1.1'], div[@n='2.1.1']/following::node())"/>			
-			<xsl:sequence select="f:source('2_H.0a')"/>
-			<xsl:apply-templates select="$H0a//div[@n='2.1.1']"/>
-			<xsl:apply-templates select="$H0a//div[@n='2.1.1']/following-sibling::node() except $H0a//sp[l[@n='6036']]/following::node()"/>			
+			<xsl:sequence select="f:source('2_I_H.0a')"/>
+			<xsl:apply-templates select="$IH0a//div[@n='2.1.1']"/>
+			<xsl:apply-templates select="$IH0a//div[@n='2.1.1']/following-sibling::node() except $IH0a//sp[l[@n='6036']]/following::node()"/>			
 			<xsl:comment>### Weiter aus 2 H: ###</xsl:comment>
 			<xsl:apply-templates select="$H//div[@n='2.1.2']/following-sibling::node()"/>			
 		</xsl:copy>
