@@ -28,7 +28,9 @@
 				<style>
 					
 					nav { display: flex; margin: 0 1em }
-					nav a { flex: content; margin: 0 1ex; padding: 0 6px; box-shadow: 1px 1px 2px silver;}				
+					nav a { flex: content; margin: 0 1ex; padding: 0 6px; box-shadow: 1px 1px 2px silver;}
+					
+					tr { background: #f8f8f8; }
 					
 					.passed:before { content: "✔ "; color: green; } 
 					.passed strong { color: green; }
@@ -53,12 +55,14 @@
 				<nav>
 					<a href="#apps-without-ins">app ohne ins</a>
 					<a href="#usage">Verwendung</a>
+					<a href="#dangling">Anwendung im Text</a>
 					<a href="#wits">kaputte wits</a>
-					<a href="#notes">Bemerkungen</a>
+					<a href="#notes">Kommentare im Apparat</a>
 					<a href="#app2xml">app2xml</a>
 				</nav>				
 				<xsl:call-template name="apps-without-ins"/>			
-				<xsl:call-template name="all-apps-used"/>				
+				<xsl:call-template name="all-apps-used"/>	
+				<xsl:call-template name="broken-app-links"/>
 				<xsl:call-template name="find-broken-wits"/>
 				<xsl:call-template name="summarize-notes"/>
 				<xsl:call-template name="app2xml"/>
@@ -124,6 +128,7 @@
 					<li>
 						Apparateinträge, die <a href="#app2xml">gar nicht erst geparst werden konnten</a>, werden hier nicht berücksichtigt
 					</li>
+					<li>Dass ein Eintrag eingefügt wurde, <a href="#dangling">heißt noch nicht, dass alles gut ging</a>.</li>
 				</ol>				
 			</p>
 		</div>
@@ -208,7 +213,7 @@
 	<xsl:template name="summarize-notes">
 		<h3 id="notes">Apparat-Notes, nach Länge sortiert</h3>
 		<div class="help">
-			<p>Diese Liste enthält alle unterschiedlichen Bemerkungen aus dem Apparat, die nicht als Schreiberhand, Sigle etc.
+			<p>Diese Liste enthält alle unterschiedlichen Kommentare aus dem Apparat, die nicht als Schreiberhand, Sigle etc.
 			erkannt wurden. Nur einige diese Einträge weisen auf Fehler hin.</p>
 			<ul>
 				<li>Steht hier eine <strong>Sigle</strong>, so ist sie nicht in der korrekten Form (d.h. konnte keiner
@@ -219,7 +224,7 @@
 		</div>
 		<table>
 			<tr>
-				<th>Bemerkung</th>
+				<th>Kommentar</th>
 				<th>Anzahl</th>
 				<th>Stellen</th>
 			</tr>
@@ -277,5 +282,79 @@
 			<xsl:sequence select="$parsed-log"/>
 		</div>
 	</xsl:template>
+	
+	<xsl:template name="broken-app-links">
+		<xsl:variable name="details">
+			<xsl:for-each select="$text//note[@type='textcrit']//app[@from]">
+				<xsl:variable name="id" select="substring(@from, 2)"/>
+				<xsl:variable name="referenced" as="element()*" select="$text//*[@xml:id=$id]"/>
+				<xsl:variable name="count" select="count($referenced)"/>
+				<xsl:variable name="n" select="tokenize($id, '\.')[2]"/>
+				<xsl:variable name="ins" select="$spec//f:ins[@n=$n]"/>
+				<xsl:variable name="repl" select="$spec//f:replace[@n=$n]"/>
+				<xsl:variable name="line">
+					<xsl:apply-templates mode="noapp" select="ancestor::*[@n][self::l or self::stage][1]"/>
+				</xsl:variable>				
+				<xsl:variable name="case">
+					<xsl:choose>
+						<xsl:when test="$count=1">passed</xsl:when>
+						<xsl:when test="$count>1">duplicate</xsl:when>
+						<xsl:when test="$ins[@place]">place</xsl:when>
+						<xsl:otherwise>dangling</xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
+				<tr data-case="{$case}">					
+					<td><xsl:value-of select="$n"/></td>
+					<xsl:choose>
+						<xsl:when test="$case = 'dangling'">
+							<td><xsl:value-of select="$repl"/></td>
+							<td><xsl:value-of select="$ins"/></td>
+							<td><xsl:value-of select="$line"/></td>
+						</xsl:when>
+						<xsl:when test="$case = 'duplicate'">
+							<td><xsl:value-of select="$count"/></td>
+							<td><xsl:value-of select="$repl"/></td>
+							<td><xsl:value-of select="$line"/></td>							
+						</xsl:when>
+					</xsl:choose>
+				</tr>
+			</xsl:for-each>
+		</xsl:variable>
+		
+		<h3 id="dangling">Apparat ohne Verankerung im Text</h3>
+		<p class="passed"><strong><xsl:value-of select="count($details/*[@data-case='passed'])"/></strong> Apparateinträge haben genau eine Stelle im Text</p>
+		<p class="warn"><strong><xsl:value-of select="count($details/*[@data-case='place'])"/></strong> Einträge beziehen sich auf eingefügte Inhalte oder ganze Elemente</p>
+		<h4 class="failed">Bei <strong><xsl:value-of select="count($details/*[@data-case='dangling'])"/></strong> Einträgen hat das Einfügen nicht geklappt:</h4>		
+		<div class="help">
+			<p>Die folgende Tabelle listet alle Apparateinträge auf, die es zwar in den Lesetext geschafft haben, aber für
+			die kein passendes &lt;seg&gt; eingetragen werden konnte. Ausgenommen sind Fälle, die nicht an einer Textstelle,
+			sondern lediglich an einem Vers oder an generiertem Inhalt aufgehängt sind (place-Fälle). Im Text hat das diese Auswirkungen:</p>
+			<ul>
+				<li>es gibt keinen (unterstrichenen/gehighlighteten) Eintrag im Text</li>
+				<li>der Eintrag der replace-Spalte wurde nicht durch die insert-Spalte ersetzt.</li>
+			</ul>
+			<p>Leere replace-Werte weisen auf einen falschen Apparateintrag hin. Vorhandene replace-Werte müssen wörtlich so im Text
+			vorkommen, damit das funktioniert.</p>
+		</div>
+		<table>
+			<th>@n</th>
+			<th>[replace]</th>
+			<th>{insert}</th>
+			<th>Vers</th>
+			<xsl:sequence select="$details/*[@data-case='dangling']"/>
+		</table>
+		
+		<h4 class="failed">Bei <strong><xsl:value-of select="count($details/*[@data-case='duplicate'])"/></strong> Einträgen sind mehr als ein seg im Text markiert:</h4>
+		
+		<table>
+			<th>@n</th>
+			<th>Anzahl</th>
+			<th>[replace]</th>
+			<th>Vers</th>
+			<xsl:sequence select="$details/*[@data-case='duplicate']"/>
+		</table>		
+	</xsl:template>
+	
+	<xsl:template match="note[@type='textcrit']" mode="noapp"/>
 	
 </xsl:stylesheet>
