@@ -39,7 +39,7 @@ Vorkommen:
 * jedenfalls für alle `stage` mit erstem `preceding` und erstem `following-sibling::l` (BA zwischen Versen, nicht zwischen Versgruppen)
 
 ### BA zentr. 0,5
-Wenn Antilabenvers (`l[@part and not(@part="F")]`) vorhergeht, der weiter links als die BA endet.
+Wenn Antilabenvers (`l[@part and not(@part="F")]`) vorhergeht, der weiter links als die BA endet ([#213](https://github.com/faustedition/faust-gen-html/issues/213#issuecomment-362507356)).
 
 ### BA zentr. 1,5 
 * before_243_c (da auf eine BA mit Auftritt)
@@ -80,7 +80,7 @@ Absätze in "Trüber Tag. Feld".
 XML: `speaker` ohne folgende `stage` , mit `@rend`-Wert `inline`.
 
 ### Sprecher 0,5
-Siehe https://github.com/faustedition/faust-gen-html/issues/203.
+Wenn Antilabenvers (`l[@part and not(@part="F")]`) vorhergeht, der weiter links als die BA endet ([#203](https://github.com/faustedition/faust-gen-html/issues/203#issuecomment-362506592)).
 
 ### Sprecher 1,5
 Normalfall für `speaker` ohne ... (s.o.)
