@@ -42,6 +42,8 @@ Vorkommen:
 Wenn Antilabenvers (`l[@part and not(@part="F")]`) vorhergeht, der weiter links als die BA endet ([#213](https://github.com/faustedition/faust-gen-html/issues/213#issuecomment-362507356)).
 
 ### BA zentr. 1,5 
+Siehe 
+[#247](https://github.com/faustedition/faust-gen-html/issues/247):
 * before_243_c (da auf eine BA mit Auftritt)
 * before_2337_c Faust. Meph in der Hexenküche 
 * vor before_4666_a Ungeheures Getöse (?)
@@ -65,7 +67,7 @@ XML: `stage` ohne `@rend`-Wert `inline`.
 Abstand nach oben wie `Vers Abstand`.
 
 ## Kolumne
-Kolumnentitel mit Text.
+Kolumnentitel mit Text. Alles weitere unten zu den dazugehörigen Zeichenformaten.
 
 ## Kolumne weiß
 Nicht relevant für XML.
