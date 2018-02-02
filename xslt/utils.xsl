@@ -385,7 +385,7 @@
   </xsl:function>
   
   <!-- Zeichen -->
-  <xsl:function name="f:normalize-print-chars">
+  <xsl:function name="f:normalize-print-chars_">
     <xsl:param name="text"/>
     <xsl:variable name="tmp1" select=" replace(normalize-unicode($text),'ā','aa')"/>
     <xsl:variable name="tmp2" select=" replace($tmp1,'ē','ee')"/>
@@ -398,7 +398,10 @@
     <xsl:variable name="tmp8" select=" replace($tmp7,'&#x00AD;','')"/>  <!-- Soft Hyphen -->
     <xsl:value-of select="$tmp8"/>
   </xsl:function>
-  
+  <xsl:function name="f:normalize-print-chars" as="item()*">
+    <xsl:param name="texts" as="item()*"/>
+    <xsl:sequence select="for $text in $texts return f:normalize-print-chars_($text)"/>
+  </xsl:function>
   
   
 </xsl:stylesheet>
