@@ -111,8 +111,8 @@
 	<xsl:template mode="stage2" match="stage/text()">
 		<xsl:variable name="no-leading-paren" select="replace(., '^\s*\(', '')"/>
 		<xsl:variable name="no-trailing-paren" select="replace($no-leading-paren, '\)\s*$', '')"/>
-		<xsl:value-of select="if (ends-with($no-trailing-paren, '.')
-			                   or ends-with(normalize-space(ancestor::stage), '.'))
+		<xsl:value-of select="if (matches($no-trailing-paren, '\p{P}$')
+			                   or matches(normalize-space(ancestor::stage), '\p{P}$'))
 			                   then $no-trailing-paren 
 			                   else concat($no-trailing-paren, '.')"/>
 	</xsl:template>
