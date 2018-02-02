@@ -195,7 +195,7 @@ Formatierung: Sperrung.
 
 ## (Kolumnentitel)
 * entfallen bei Akt- und Szenenanfängen (= Absenkung)
-* in modernisierter Schreibweise
+* gemäß [xslt/scenes.xml](https://github.com/faustedition/faust-gen-html/blob/master/xslt/scenes.xml)
 
 ### Kolumne links
 * Faust. Eine Tragödie (Vorspann Faust I)
@@ -204,7 +204,7 @@ Formatierung: Sperrung.
 
 ### Kolumne rechts
 * Szene (Faust I)
-* Akt (arabischen Ziffern gezählt) · Szene (Faust II)
+* Akt ("Erster Akt", "Zweiter " etc.) · Szene (Faust II)
 
 ## Kursiv
 (entfällt)
