@@ -136,7 +136,7 @@
                     <xsl:matching-substring>
                         <xsl:variable name="current-match" select="."/>
                         <xsl:variable name="current-app" select="$apps[descendant::f:replace = $current-match]"/>
-                        <seg type="lem" xml:id="{f:seg-id(($current-app//f:ins[@n = $current-line])[1])}"> <!-- TODO klären was hier passiert -->
+                        <seg type="lem" xml:id="{f:seg-id($current-app//f:ins[@n = $current-line])}">
                             <xsl:value-of select="$current-app//f:ins[@n = $current-line]"/>
                         </seg> 
                     </xsl:matching-substring>
