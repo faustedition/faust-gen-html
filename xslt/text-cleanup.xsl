@@ -3,6 +3,7 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	exclude-result-prefixes="xs"
 	xmlns:tei="http://www.tei-c.org/ns/1.0"
+	xmlns="http://www.tei-c.org/ns/1.0"
 	xmlns:f="http://www.faustedition.net/ns"
 	xmlns:ge="http://www.tei-c.org/ns/geneticEditions"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
@@ -28,9 +29,13 @@
 		| ge:transposeGrp
 		| surplus
 		| unclear
-		| supplied">
+		| supplied
+		| div//text
+		| div//front
+		| div//body
+		| div//titlePage">
 		<xsl:apply-templates/>
-	</xsl:template>
+	</xsl:template>	
 	
 	<!-- These nodes are dropped, together with their content: -->
 	<xsl:template match="
@@ -85,6 +90,12 @@
 	
 	<xsl:template match="text/@type">
 		<xsl:attribute name="type">lesetext</xsl:attribute>
+	</xsl:template>
+	
+	<xsl:template match="titlePart">
+		<head>
+			<xsl:apply-templates select="@*, node()"/>
+		</head>
 	</xsl:template>
 	
 	<!-- The following post-processing steps need to be applied afterwards: -->
