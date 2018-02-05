@@ -193,7 +193,7 @@ Grundsätzliches XML-Pattern: `move/following-sibling::*[1]`, d.h. der `move` be
 
 Das Zeichenformat `Auftritt` bekommt nun entweder der 
 * der Inhalt der ganzen `stage` (wenn `stage[not(hi)]`) oder
-* `stage/hi` (wenn `stage[hi]`)  <!--- tel. besprochen am 5.2.18 --->
+* `stage/hi` (wenn `stage[hi]`)  <!-- tel. besprochen am 5.2.18 -->
 
 ## Figur
 (Hervorhebungen in BA) 
