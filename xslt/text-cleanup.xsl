@@ -76,6 +76,7 @@
 		| milestone[@unit='group' or @unit='stage']
 		| ge:rewrite
 		| ge:transpose/add/text()
+		| space[not(ancestor::div[@n='2'])]
 		| div[@type='stueck']"/>
 
 	<!-- Drop comments as well; this needs to override node() from above -->
