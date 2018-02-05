@@ -38,6 +38,8 @@ Vorkommen:
 * angeblich "Normalfall"; also einfach `stage` und für die anderen `BA`-Fälle Sonderregeln? 
 * jedenfalls für alle `stage` mit erstem `preceding` und erstem `following-sibling::l` (BA zwischen Versen, nicht zwischen Versgruppen)
 
+### BA zentr. 0,0 / 2,3 unten
+
 ### BA zentr. 0,5
 Wenn Antilabenvers (`l[@part and not(@part="F")]`) vorhergeht, der weiter links als die BA endet ([#213](https://github.com/faustedition/faust-gen-html/issues/213#issuecomment-362507356)).
 
