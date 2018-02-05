@@ -52,7 +52,7 @@ Siehe
 Normaler Replikenabstand, auch für Auftritte. Zu überlegen, ob Auftritte einen größeren erhalten.
 
 ### BA Blocks. ...
-Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile.
+Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile. Als ungefähre Heuristik wird eine Zahl von Zeichen genommen, ab der mit hoher Wahrscheinlichkeit im Umbruch mehr als drei Zeilen entstehen. (Hängt ab von [#209](https://github.com/faustedition/faust-gen-html/issues/209)!)
 
 #### BA Blocks. 0,0
 (Standardfall von `BA Blocks. ...`)
@@ -136,12 +136,21 @@ Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende `l[
 ## Zentriert
 (entfallen)
 
-# Absatzformate einmalig
+# (Absatzformate Sonderfälle)
 
 ## BA zentr. 0,0 nach Teil (Vorspiel/Prolog)
-(Überschrift hier `Teil / Akt`, neue Seite beginnt mit BA, die keinen Abstand nach oben hat. 
-Problem: Wenn Absatzformat neue Seite verlangt, kann kein Abstand zum Satzspiegelrand definiert werden. 
-Stattdessen wird auf vorheriger Seite der Seitenwechsel.  
+("Director, ..." / "Der Herr, ...")
+
+XML:
+* `stage[@n="before_33_b]`
+* `stage[@n="before_243_b]`
+
+Output: Mit beiden BA soll jeweils eine neue rechte Seite anfangen. 
+
+Hier gibt es ein Problem: Wenn das Absatzformat eine neue Seite verlangt, kann kein Abstand zum Satzspiegelrand definiert werden. Genau dies ist hier aber gewünscht ("Absenkung").
+Evtle. Lösung:
+* Den Seitenwechsel mit dem vorherigen Absatz (Format `Teil / Akt`) anweisen.
+* Alternative: Die beiden BA-Formate mit dem Abstand nach oben ausstatten, der hier benötigt wird.
 
 ## Szene (Finis)
 (entfällt vorläufig)
@@ -211,12 +220,12 @@ Formatierung: Sperrung.
 
 ## Kursiv (Apparat)
 
-## Nomen nominandum (lateinisch)
+## (Antiqua / lateinisch)
 (= Antiqua und lateinische Schrift in Versen, Sprechern, BA und Finis)
 
 XML: `*[@rend="antiqua" or @rend="latin"]`.
 
-Nicht durchgängig so kodiert; wer mag, kann auf fehlende Auszeichnungen hinweisen.
+Nicht durchgängig so kodiert, keine Umsetzung vorgesehen.
 
 ## Sperrung
 XML: `l/emph`.
@@ -250,13 +259,18 @@ Siehe [#210](https://github.com/faustedition/faust-gen-html/issues/210).
 
 # Sonderphänomene
 
-## Abkürzungen (`abbr` / `expan`)
-Sollen in der Vorlage nicht mehr vorkommen, siehe [#195](https://github.com/faustedition/faust-gen-html/issues/195). Bitte zurückmelden, wenn es nach dem Fix von 
-[#112](https://github.com/faustedition/faust-gen-html/issues/112)doch noch auftreten sollte.
-
 ## Figurenreden (`sp`) ohne Sprecher (`speaker`)
 sind grundsätzlich möglich, kommen aber nur vereinzelt vor (siehe 
 [#197](https://github.com/faustedition/faust-gen-html/issues/197)).
+
+# XML-Elemente, die in der XML-Vorlage nicht mehr vorkommen (sollen)
+Für diese braucht in der Transformation nichts zu geschehen, also auch keine Regel geschrieben werden.
+* `abbr` (siehe [#195](https://github.com/faustedition/faust-gen-html/issues/195). Bitte gerne zurückmelden, wenn es nach dem Fix von 
+[#112](https://github.com/faustedition/faust-gen-html/issues/112) doch noch auftreten sollte.)
+* `expan`
+* `del`
+* `add`
+* `subst`
 
 # Feinsatz
 * Seitenumbrüche
