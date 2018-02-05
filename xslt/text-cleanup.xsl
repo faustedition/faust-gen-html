@@ -9,7 +9,11 @@
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 	version="2.0">
 	
-	<!-- Additional cleanup steps for preparing the reading text. -->
+	<!-- 
+		Additional cleanup steps for preparing the reading text. 
+	
+		These steps are performed _after_ assembling the reading text.
+	-->
 
 	<xsl:strip-space elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc ge:transpose choice"/>
 
@@ -130,6 +134,10 @@
 	
 	<!-- Remove a trailing . from speaker -->
 	<xsl:template mode="stage2" match="speaker/text()[position()=last()]">
+		<xsl:value-of select="replace(., '\.\s*$', '')"/>
+	</xsl:template>
+	
+	<xsl:template mode="stage2" match="head/text()[position()=last()]">
 		<xsl:value-of select="replace(., '\.\s*$', '')"/>
 	</xsl:template>
 	
