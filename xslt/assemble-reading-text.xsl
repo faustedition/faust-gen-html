@@ -142,7 +142,7 @@
 					<title>Konstituierter Text</title>
 				</titleStmt>
 				<publicationStmt>
-					<p>Publication Information</p>
+					<p><date when="{current-dateTime()}"/></p>
 				</publicationStmt>
 				<sourceDesc>
 					<p>Information about the source</p>

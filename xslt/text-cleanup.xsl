@@ -9,7 +9,13 @@
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 	version="2.0">
 	
-	<!-- Additional cleanup steps for preparing the reading text. -->
+	<!-- 
+		Additional cleanup steps for preparing the reading text. 
+	
+		These steps are performed _after_ assembling the reading text from its main
+		parts (assemble-reading-text.xsl), but _before_ the apparatus entries are
+		applied (text-insert-app.xsl).
+	-->
 
 	<xsl:strip-space elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc ge:transpose choice"/>
 
@@ -33,7 +39,7 @@
 		| div//text
 		| div//front
 		| div//body
-		| div//titlePage">
+		| div//titlePage[titlePart[@n]]">
 		<xsl:apply-templates/>
 	</xsl:template>	
 	
@@ -42,7 +48,7 @@
 		  sourceDesc/* 
 		| encodingDesc 
 		| revisionDesc 
-		| titlePage[not(./titlePart[@n])] 
+		| titlePage[not(titlePart[@n])] 
 		| pb[not(@break='no')] 
 		| fw 
 		| hi/@status 
@@ -72,6 +78,7 @@
 		| milestone[@unit='group' or @unit='stage']
 		| ge:rewrite
 		| ge:transpose/add/text()
+		| space[not(ancestor::div[@n='2'])]
 		| div[@type='stueck']"/>
 
 	<!-- Drop comments as well; this needs to override node() from above -->
@@ -133,6 +140,10 @@
 		<xsl:value-of select="replace(., '\.\s*$', '')"/>
 	</xsl:template>
 	
+	<xsl:template mode="stage2" match="head/text()[position()=last()]">
+		<xsl:value-of select="replace(., '\.\s*$', '')"/>
+	</xsl:template>
+	
 	<!-- The following fixes are eventually to be implemented in all source files: -->
 	<xsl:template match="stage/emph">
 		<xsl:element name="hi">
@@ -186,7 +197,7 @@
 
 	<!-- Keep everything else as is -->
 	<xsl:template match="node()|@*" mode="#all">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*, node()" mode="#current"/>
 		</xsl:copy>
 	</xsl:template>
