@@ -39,7 +39,7 @@
 		| div//text
 		| div//front
 		| div//body
-		| div//titlePage">
+		| div//titlePage[titlePart[@n]]">
 		<xsl:apply-templates/>
 	</xsl:template>	
 	
@@ -48,7 +48,7 @@
 		  sourceDesc/* 
 		| encodingDesc 
 		| revisionDesc 
-		| titlePage[not(./titlePart[@n])] 
+		| titlePage[not(titlePart[@n])] 
 		| pb[not(@break='no')] 
 		| fw 
 		| hi/@status 
