@@ -72,6 +72,7 @@ Betrifft:
 * `after_10131` "(Matth. 4)"
 * `before_10323_b` "Sam. II. 23. 8." ohne Klammern [in WA in Klammern und zentriert]
 * `after_11287` "(Regum I. 21.)"
+
 XML: `note[not(@type='textcrit') and not(ancestor::app) and not(@rend='inline')]`
 
 Formatierung: rechtsbündig.
