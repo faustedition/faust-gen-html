@@ -3,6 +3,7 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	exclude-result-prefixes="xs"
 	xmlns:tei="http://www.tei-c.org/ns/1.0"
+	xmlns="http://www.tei-c.org/ns/1.0"
 	xmlns:f="http://www.faustedition.net/ns"
 	xmlns:ge="http://www.tei-c.org/ns/geneticEditions"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
@@ -28,9 +29,13 @@
 		| ge:transposeGrp
 		| surplus
 		| unclear
-		| supplied">
+		| supplied
+		| div//text
+		| div//front
+		| div//body
+		| div//titlePage">
 		<xsl:apply-templates/>
-	</xsl:template>
+	</xsl:template>	
 	
 	<!-- These nodes are dropped, together with their content: -->
 	<xsl:template match="
@@ -87,6 +92,12 @@
 		<xsl:attribute name="type">lesetext</xsl:attribute>
 	</xsl:template>
 	
+	<xsl:template match="titlePart">
+		<head>
+			<xsl:apply-templates select="@*, node()"/>
+		</head>
+	</xsl:template>
+	
 	<!-- The following post-processing steps need to be applied afterwards: -->
 	<xsl:template match="/">
 		<xsl:variable name="stage1">
@@ -111,8 +122,8 @@
 	<xsl:template mode="stage2" match="stage/text()">
 		<xsl:variable name="no-leading-paren" select="replace(., '^\s*\(', '')"/>
 		<xsl:variable name="no-trailing-paren" select="replace($no-leading-paren, '\)\s*$', '')"/>
-		<xsl:value-of select="if (ends-with($no-trailing-paren, '.')
-			                   or ends-with(normalize-space(ancestor::stage), '.'))
+		<xsl:value-of select="if (matches($no-trailing-paren, '\p{P}$')
+			                   or matches(normalize-space(ancestor::stage), '\p{P}$'))
 			                   then $no-trailing-paren 
 			                   else concat($no-trailing-paren, '.')"/>
 	</xsl:template>
