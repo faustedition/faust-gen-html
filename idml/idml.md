@@ -66,6 +66,16 @@ XML: `stage` ohne `@rend`-Wert `inline`.
 
 Abstand nach oben wie `Vers Abstand`.
 
+## NN (Bibelstelle eigene Zeile)
+Betrifft:
+* `after_10094` "(Ephes. 6. 12)" [in FA in derselben Zeile]
+* `after_10131` "(Matth. 4)"
+* `before_10323_b` "Sam. II. 23. 8." ohne Klammern [in WA in Klammern und zentriert]
+* `after_11287` "(Regum I. 21.)"
+XML: `note[not(@type='textcrit') and not(ancestor::app) and not(@rend='inline')]`
+
+Formatierung: rechtsbündig.
+
 ## Kolumne
 Kolumnentitel mit Text. Alles weitere unten zu den dazugehörigen Zeichenformaten.
 
@@ -194,6 +204,16 @@ Grundsätzliches XML-Pattern: `move/following-sibling::*[1]`, d.h. der `move` be
 Das Zeichenformat `Auftritt` bekommt nun entweder der 
 * der Inhalt der ganzen `stage` (wenn `stage[not(hi)]`) oder
 * `stage/hi` (wenn `stage[hi]`)  <!-- tel. besprochen am 5.2.18 -->
+
+## NN (Bibelstelle in Zeile)
+betrifft (Kontext jeweils `BA zentr. 1,5`)
+* `before_12037_b` "(St Lucae VII. 36)"
+* `before_12045_b` "(St. Joh. IV." ohne schließende Klammer
+* `before_12053_b` "(Acta Sanctorum)"
+ 
+XML: `note[not(@type='textcrit') and not(ancestor::app) and @rend='inline']`
+
+Formatierung: zusammen zentriert wie übrige `BA zentr.` ohne besondere Auszeichnung und ohne vergrößerten Abstand. 
 
 ## Figur
 (Hervorhebungen in BA) 
