@@ -12,7 +12,9 @@
 	<!-- 
 		Additional cleanup steps for preparing the reading text. 
 	
-		These steps are performed _after_ assembling the reading text.
+		These steps are performed _after_ assembling the reading text from its main
+		parts (assemble-reading-text.xsl), but _before_ the apparatus entries are
+		applied (text-insert-app.xsl).
 	-->
 
 	<xsl:strip-space elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc ge:transpose choice"/>
@@ -195,7 +197,7 @@
 
 	<!-- Keep everything else as is -->
 	<xsl:template match="node()|@*" mode="#all">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*, node()" mode="#current"/>
 		</xsl:copy>
 	</xsl:template>

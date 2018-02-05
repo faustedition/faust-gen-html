@@ -96,6 +96,12 @@
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 		</p:xslt>
 		
+		<p:xslt name="postprocess">
+			<p:input port="stylesheet"><p:document href="xslt/text-postprocess.xsl"/></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+		</p:xslt>
+
+		<p:identity name="final-text"/>
 		
 		<!-- Generate a list of interesting elements with context and store as XML and HTML -->
 		<p:xslt name="issue-178-list">
@@ -122,7 +128,7 @@
 		
 		<!-- Perform some validation steps on the apparatus and store report as HTML -->
 		<p:xslt>
-			<p:input port="source"><p:pipe port="result" step="app"/></p:input>
+			<p:input port="source"><p:pipe port="result" step="final-text"/></p:input>
 			<p:input port="stylesheet"><p:document href="xslt/text-app-validate.xsl"/></p:input>
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 		</p:xslt>
@@ -136,15 +142,15 @@
 			<p:input port="source"><p:pipe port="result" step="cleanup"/></p:input>
 			<p:with-option name="href" select="resolve-uri('lesetext/without-app.xml', $builddir)"/>
 		</p:store>
-		
+
 		<!-- Store the final marked-up text -->
 		<p:store method="xml" indent="true">
-			<p:input port="source"><p:pipe port="result" step="app"/></p:input>			
+			<p:input port="source"><p:pipe port="result" step="final-text"/></p:input>
 			<p:with-option name="href" select="resolve-uri('lesetext/faust.xml', $builddir)"/>
-		</p:store>		
-		
+		</p:store>
+
 		<!-- additionally, pass out the real result -->
-		<p:identity><p:input port="source"><p:pipe port="result" step="app"/></p:input></p:identity>
+		<p:identity><p:input port="source"><p:pipe port="result" step="final-text"/></p:input></p:identity>
 
 	</p:group>
 
