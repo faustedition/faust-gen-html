@@ -16,6 +16,9 @@ Umgebende Leerzeichen werden mitgesperrt.
 
 # Absatzformate
 
+## NN (Abstand)
+XML: `space`
+
 ## Apparat
 XML: `note type="textcrit"`.
 
@@ -128,9 +131,9 @@ Immer `head` oder auch `stage`?
 XML: `l`.
 
 ### Vers Abstand
-(erster Vers einer zweiten Versgruppe)
+XML: zweite, dritte, ... `lg`, erstes `l`
 
-halbzeiliger Abstand nach oben (ca. 2,3 mm)
+Formatierung: halbzeiliger Abstand nach oben (ca. 2,3 mm)
 
 ### Vers Einrückung
 XML: `parent::lg[@rend="indented"]`.
@@ -160,7 +163,7 @@ XML:
 
 Output: Mit beiden BA soll jeweils eine neue rechte Seite anfangen. 
 
-Hier gibt es ein Problem: Wenn das Absatzformat eine neue Seite verlangt, kann kein Abstand zum Satzspiegelrand definiert werden. Genau dies ist hier aber gewünscht ("Absenkung").
+Hier gibt es ein Problem: Wenn das Absatzformat eine neue Seite verlangt, kann kein Abstand zum oberen Satzspiegelrand definiert werden. Genau dies ist hier aber gewünscht ("Absenkung").
 Evtle. Lösung:
 * Den Seitenwechsel mit dem vorherigen Absatz (Format `Teil / Akt`) anweisen.
 * Alternative: Die beiden BA-Formate mit dem Abstand nach oben ausstatten, der hier benötigt wird.
