@@ -1053,6 +1053,10 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <search-string>^}}</search-string>
                             <replacement-string>&gt;</replacement-string>
                         </string-pair>
+                        <string-pair>
+                            <search-string>titlePart</search-string>
+                            <replacement-string>head</replacement-string>
+                        </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>
