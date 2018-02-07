@@ -126,13 +126,12 @@
 	<!-- Further text fixes (that shouldn't collide with Ae transformation) -->
 	
 	<!-- Remove parentheses from stage directions, and add a trailing . if missing -->
-	<xsl:template mode="stage2" match="stage/text()">
-		<xsl:variable name="no-leading-paren" select="replace(., '^\s*\(', '')"/>
-		<xsl:variable name="no-trailing-paren" select="replace($no-leading-paren, '\)\s*$', '')"/>
-		<xsl:value-of select="if (matches($no-trailing-paren, '\p{P}$')
-			                   or matches(normalize-space(ancestor::stage), '\p{P}$'))
-			                   then $no-trailing-paren 
-			                   else concat($no-trailing-paren, '.')"/>
+	<xsl:template mode="stage2" match="stage/text()">		
+		<xsl:variable name="without-parens" select="replace(., '[()]', '')"/>
+		<xsl:value-of select="if (matches($without-parens, '\p{P}$')
+							   or matches(normalize-space(ancestor::stage), '\p{P}$'))
+			                   then $without-parens 
+			                   else concat($without-parens, '.')"/>
 	</xsl:template>
 	
 	<!-- Remove a trailing . from speaker -->
