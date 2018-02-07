@@ -43,9 +43,7 @@
 		<p:input port="stylesheet">
 			<p:document href="xslt/textTranscr_transpose.xsl"/>
 		</p:input>
-		<p:input port="parameters">
-			<p:empty/>
-		</p:input>
+		<p:with-param name="skip-posthumous" select="'true'"/>
 	</p:xslt>
 	
 	<!-- Emendationsschritte für <del> etc. -->
@@ -86,7 +84,7 @@
 	<!-- Emendationsschritte für <delSpan> etc. -->
 	<p:xslt>
 		<p:input port="stylesheet">
-			<p:document href="xslt/text-emend.xsl"/>
+			<p:document href="xslt/text-emend-except-posthumous.xsl"/>
 		</p:input>
 		<p:input port="parameters">
 			<p:empty/>

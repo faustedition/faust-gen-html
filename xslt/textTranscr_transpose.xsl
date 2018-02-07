@@ -4,10 +4,13 @@
 	xmlns:f="http://www.faustedition.net/ns" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 	exclude-result-prefixes="xs f" version="2.0" xmlns:ge="http://www.tei-c.org/ns/geneticEditions">
 	
+	<xsl:param name="skip-posthumous" select="false()"/>
+	
 	<!-- delivers the tei:ptr in a not-undone ge:transpose element that points to the given @xml:id string -->
 	<xsl:key 
 		name="transpose" 
-		match="ge:transpose/ptr[not(..[@xml:id and concat('#', @xml:id) = //ge:undo/@target])]" 
+		match="ge:transpose[not($skip-posthumous and @ge:stage='#posthumous')]
+					/ptr[not(..[@xml:id and concat('#', @xml:id) = //ge:undo/@target])]" 
 		use="substring(@target, 2)"/>
 		
 	<!-- 
@@ -28,10 +31,6 @@
 			</xsl:copy>
 		</xsl:for-each>
 	</xsl:template>
-	
-	
-	
-	
 	
 	
 	<!-- identity transformation -->
