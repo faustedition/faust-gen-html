@@ -109,6 +109,9 @@ Wenn `head/lb`, so soll der Inhalt des `head` auf aufeinanderfolgende `Überschr
 ### Teil / Akt
 (Zueignung, ..., Teil- und Aktüberschrift) 
 
+Formatierung: `Teil / Akt` soll immer auf einer rechten Seite stehen.
+
+
 ### Szene
 (Szenenüberschrift)
 
@@ -116,10 +119,13 @@ Szenenüberschriften beginnen immer auf einer neuen Seite und führen zur Absenk
 
 ### Szene nach Akt
 (Szenenüberschrift nach Aktüberschrift)
+XML müsste eigentlich sein: `div[@type='act']/div[@type='scene' and not(position()=(1))]/head[1]`.
 
 Immer `head` oder auch `stage`?
 
 ### Unterszene
+XML: `div[@type='subscene']/head`.
+
 (Unterszenenüberschrift, 4. Stelle in der Szenenzählung)
 
 ### Unterszene nach Szene
@@ -131,7 +137,7 @@ Immer `head` oder auch `stage`?
 XML: `l`.
 
 ### Vers Abstand
-XML: zweite, dritte, ... `lg`, erstes `l`
+XML: zweite, dritte, ... `lg`, erstes `l`.
 
 Formatierung: halbzeiliger Abstand nach oben (ca. 2,3 mm)
 
@@ -163,10 +169,13 @@ XML:
 
 Output: Mit beiden BA soll jeweils eine neue rechte Seite anfangen. 
 
-Hier gibt es ein Problem: Wenn das Absatzformat eine neue Seite verlangt, kann kein Abstand zum oberen Satzspiegelrand definiert werden. Genau dies ist hier aber gewünscht ("Absenkung").
-Evtle. Lösung:
-* Den Seitenwechsel mit dem vorherigen Absatz (Format `Teil / Akt`) anweisen.
-* Alternative: Die beiden BA-Formate mit dem Abstand nach oben ausstatten, der hier benötigt wird.
+Hier gibt es ein Problem: Wenn das Absatzformat eine neue Seite verlangt, 
+kann kein Abstand zum oberen Satzspiegelrand definiert werden. 
+Genau dies ist hier aber gewünscht ("Absenkung").
+
+Lösung:
+* Der Seitenwechsel wird mit dem Format `Szene` angewiesen.
+* Zeilenumbrüche am Anfang des betreffenden Absatzes
 
 ## Szene (Finis)
 (entfällt vorläufig)
@@ -293,10 +302,14 @@ sind grundsätzlich möglich, kommen aber nur vereinzelt vor (siehe
 Für diese braucht in der Transformation nichts zu geschehen, also auch keine Regel geschrieben werden.
 * `abbr` (siehe [#195](https://github.com/faustedition/faust-gen-html/issues/195). Bitte gerne zurückmelden, wenn es nach dem Fix von 
 [#112](https://github.com/faustedition/faust-gen-html/issues/112) doch noch auftreten sollte.)
+* `add`
 * `expan`
 * `del`
-* `add`
 * `subst`
+
+# XML-Elemente, die keine besondere Behandlung benötigen
+* `TEI`
+* `body`
 
 # Feinsatz
 * Seitenumbrüche
