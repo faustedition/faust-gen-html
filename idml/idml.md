@@ -40,7 +40,7 @@ Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 
 ### (Bühnenanweisungen unterschieden nach Element-Kontext)
 Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Figurenreden.
 
-#### (Bühnenanweisungen in Figurenreden [`sp`])
+#### (Bühnenanweisungen **in** Figurenreden [`sp`])
 * direkt nach Sprecher auf derselben Zeile (`speaker/following-sibling::*[self::stage and position()=(1) and @rend[contains(.,'inline')]]`)
   * --> Teil von BA zentr. 1,5
 * direkt nach Sprecher auf eigener Zeile (`speaker/following-sibling::*[self::stage and position()=(1) and not(@rend[contains(.,'inline')])]`)
