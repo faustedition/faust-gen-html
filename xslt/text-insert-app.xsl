@@ -125,14 +125,19 @@
     <xsl:template mode="with-app" match="text()" priority="1">
         <xsl:param name="apps" tunnel="yes"/>
         <xsl:param name="current-line" tunnel="yes"/>        
-        <xsl:variable name="re" select="replace(string-join(for $repl in $apps/f:replace return f:normalize-print-chars($repl), '|'), '([\]().*+?\[])', '\\$1')"/>
+        <xsl:variable name="replace-strings" select="for $repl in $apps/f:replace return replace(f:normalize-print-chars($repl), '([\]().*+?\[])', '\\$1')" as="item()*"/>       
+        <xsl:variable name="rs-left-boundary" select="for $repl in $replace-strings return
+                                                        if (matches($repl, '^\w')) then concat('\b', $repl) else $repl"/>
+        <xsl:variable name="rs-right-boundary" select="for $repl in $rs-left-boundary return 
+                                                        if (matches($repl, '\w$')) then concat($repl, '\b') else $repl"/>
+        <xsl:variable name="re" select="string-join($rs-right-boundary, '|')"/> 
 <!--        <xsl:message select="concat('searching for /', $re, '/ in ', string-join($apps/@n, ', '))"/>-->
         <xsl:choose>
-            <xsl:when test="$re = ''">
+            <xsl:when test="string-join($replace-strings, '') = ''">
                 <xsl:copy/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:analyze-string select="." regex="{$re}">
+                <xsl:analyze-string select="." regex="{$re}" flags="!">
                     <xsl:matching-substring>
                         <xsl:variable name="current-match" select="."/>
                         <xsl:variable name="current-app" select="$apps[f:normalize-print-chars(descendant::f:replace) = $current-match]"/>
