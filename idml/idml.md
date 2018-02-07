@@ -88,11 +88,17 @@ Kolumnentitel mit Text. Alles weitere unten zu den dazugehörigen Zeichenformate
 ## Kolumne weiß
 Nicht relevant für XML.
 
-## Leerzeilen
-(entfallen)
+## Leerzeile
+XML:
+* `space[@unit='lines' and @quantity='2']`
+* `space[@unit='lines' and @quantity='5']`
+
+Output: Anzahl der Leerzeilen nach Wert von `@quantity` (2 bzw. 5). 
 
 ## Prosa
-Absätze in "Trüber Tag. Feld".
+(Absätze in "Trüber Tag. Feld")
+
+XML: `p`.
 
 ## Sprecher ... 
 XML: `speaker` ohne folgende `stage` , mit `@rend`-Wert `inline`.
@@ -292,6 +298,12 @@ Wert von `@n` ausgeben, wenn `self::l and matches(@n, '^\d+') and @n mod 5 = 0`.
 ## Weiß
 Siehe https://github.com/faustedition/faust-gen-html/issues/207#issuecomment-361256998
 
+# (Zeilenumbruch)
+XML:
+* `lb` --> ein Zeilenumbruch
+
+Output: Zeilenumbruch.
+
 # Seitengestaltung 
 
 ## Absenkung
@@ -316,6 +328,7 @@ Für diese braucht in der Transformation nichts zu geschehen, also auch keine Re
 * `corr`
 * `expan`
 * `del`
+* `sic`
 * `subst`
 
 # XML-Elemente, die keine besondere Behandlung benötigen
@@ -324,10 +337,16 @@ Für diese braucht in der Transformation nichts zu geschehen, also auch keine Re
 * `date`
 * `div`
 * `fileDesc`
+* `lg`
+* `listWit` (content löschen)
+* `publicationStmt` (content löschen)
+* `sourceDesc`
+* `sp`
 * `###`
 * `###`
 * `###`
 * `###`
+
 
 # Feinsatz
 * Seitenumbrüche
