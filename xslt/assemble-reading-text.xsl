@@ -140,6 +140,7 @@
 					<title>Faust</title>
 					<title>Eine Tragödie</title>
 					<title>Konstituierter Text</title>
+					<title>Bearbeitet von Gerrit Brüning und Dietmar Pravida</title>
 				</titleStmt>
 				<publicationStmt>
 					<p><date when="{current-dateTime()}"/></p>
