@@ -59,7 +59,10 @@
 					<a href="#wits">kaputte wits</a>
 					<a href="#notes">Kommentare im Apparat</a>
 					<a href="#app2xml">app2xml</a>
-				</nav>				
+				</nav>
+				<p class="help">
+					<a href="https://github.com/faustedition/faust-gen-html/blob/master/text/README-app_norm.md">die wichtigsten Regeln für die app*norm.txt-Dateien</a> 
+				</p>				
 				<xsl:call-template name="apps-without-ins"/>			
 				<xsl:call-template name="all-apps-used"/>	
 				<xsl:call-template name="broken-app-links"/>
@@ -218,7 +221,7 @@
 			<ul>
 				<li>Steht hier eine <strong>Sigle</strong>, so ist sie nicht in der korrekten Form (d.h. konnte keiner
 					URI zugeordnet werden) und muss angepasst werden.</li>
-				<li>Steht hier eine Schreiberhand, so muss sie in die Liste aufgenommen werden (z.Z. in app2xml.py)</li>
+				<li>Steht hier eine Schreiberhand oder Abkürzung, so muss sie in die entsprechende Liste aufgenommen werden (z.Z. in app2xml.py)</li>
 				<li>Typen, spitze Klammern etc. weisen auf Formatierungsfehler im zugehörigen Eintrag.</li>				
 			</ul>			
 		</div>
@@ -333,8 +336,9 @@
 				<li>es gibt keinen (unterstrichenen/gehighlighteten) Eintrag im Text</li>
 				<li>der Eintrag der replace-Spalte wurde nicht durch die insert-Spalte ersetzt.</li>
 			</ul>
-			<p>Leere replace-Werte weisen auf einen falschen Apparateintrag hin. Vorhandene replace-Werte müssen wörtlich so im Text
-			vorkommen, damit das funktioniert.</p>
+			<p>Leere replace-Werte weisen auf einen falschen Apparateintrag hin oder auf einen Fall, in dem ein Apparat sich nur
+				auf eine Zeile / Element bezieht, aber keine explizite Stelle darin. Vorhandene replace-Werte müssen wörtlich so im Text
+			vorkommen, damit das funktioniert, XML oder <code>^</code> sind in replace verboten. Leere Verse weisen auf falsches @n hin.</p>
 		</div>
 		<table>
 			<th>@n</th>
@@ -345,7 +349,7 @@
 		</table>
 		
 		<h4 class="failed">Bei <strong><xsl:value-of select="count($details/*[@data-case='duplicate'])"/></strong> Einträgen sind mehr als ein seg im Text markiert:</h4>
-		
+		<p class="help">Weist darauf hin, das das Lemma (bzw. der replace-Wert) nicht eindeutig gewählt wurde → besseres replace / lemma wählen.</p>
 		<table>
 			<th>@n</th>
 			<th>Anzahl</th>
