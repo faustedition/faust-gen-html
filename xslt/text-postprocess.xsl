@@ -79,6 +79,20 @@
 		</xsl:copy>
 	</xsl:template>
 	
+	<xsl:function name="f:split-string" as="xs:string*">
+		<xsl:param name="string"></xsl:param>
+		<xsl:sequence select="for $cp in string-to-codepoints($string) return codepoints-to-string($cp)"/>
+	</xsl:function>
+
+	<xsl:template match="g[matches(., '^\.{2,4}$')]">
+		<xsl:if test="not(matches(preceding-sibling::*[1], '\s$'))">
+			<xsl:text> </xsl:text>
+		</xsl:if>
+		<xsl:copy>
+			<xsl:apply-templates select="@*" mode="#current"/>
+			<xsl:value-of select="string-join(f:split-string(.), '&#x202f;')"/>
+		</xsl:copy>
+	</xsl:template>
 	
 
 	<!-- Keep everything else as is -->
