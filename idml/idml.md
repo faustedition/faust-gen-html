@@ -220,6 +220,11 @@ Das Zeichenformat `Auftritt` bekommt nun entweder der
 * der Inhalt der ganzen `stage` (wenn `stage[not(hi)]`) oder
 * `stage/hi` (wenn `stage[hi]`)  <!-- tel. besprochen am 5.2.18 -->
 
+## Auslassungspunkte
+XML: `g`
+
+Formatierung: [#267](https://github.com/faustedition/faust-gen-html/issues/267).
+
 ## NN (Bibelstelle in Zeile)
 betrifft (Kontext jeweils `BA zentr. 1,5`)
 * `before_12037_b` "(St Lucae VII. 36)"
@@ -303,6 +308,12 @@ Für diese braucht in der Transformation nichts zu geschehen, also auch keine Re
 * `abbr` (siehe [#195](https://github.com/faustedition/faust-gen-html/issues/195). Bitte gerne zurückmelden, wenn es nach dem Fix von 
 [#112](https://github.com/faustedition/faust-gen-html/issues/112) doch noch auftreten sollte.)
 * `add`
+* `br` (
+[#265](https://github.com/faustedition/faust-gen-html/issues/265))
+* `c` (
+[#266](https://github.com/faustedition/faust-gen-html/issues/266))
+* `choice`
+* `corr`
 * `expan`
 * `del`
 * `subst`
@@ -310,6 +321,13 @@ Für diese braucht in der Transformation nichts zu geschehen, also auch keine Re
 # XML-Elemente, die keine besondere Behandlung benötigen
 * `TEI`
 * `body`
+* `date`
+* `div`
+* `fileDesc`
+* `###`
+* `###`
+* `###`
+* `###`
 
 # Feinsatz
 * Seitenumbrüche
