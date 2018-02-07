@@ -89,6 +89,8 @@ Kolumnentitel mit Text. Alles weitere unten zu den dazugehörigen Zeichenformate
 Nicht relevant für XML.
 
 ## Leerzeile
+(betrifft Lücken nach 6062 und nach 6358) 
+
 XML:
 * `space[@unit='lines' and @quantity='2']`
 * `space[@unit='lines' and @quantity='5']`
