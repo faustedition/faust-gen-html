@@ -125,17 +125,21 @@
     <xsl:template mode="with-app" match="text()" priority="1">
         <xsl:param name="apps" tunnel="yes"/>
         <xsl:param name="current-line" tunnel="yes"/>        
-        <xsl:variable name="re" select="replace(string-join(for $repl in $apps/f:replace return f:normalize-print-chars($repl), '|'), '([\]().*+?\[])', '\\$1')"/>
-<!--        <xsl:message select="concat('searching for /', $re, '/ in ', string-join($apps/@n, ', '))"/>-->
+        <xsl:variable name="re" select="concat('\b', string-join(
+                for $repl in $apps/f:replace 
+                return replace(f:normalize-print-chars($repl), '([\]().*+?\[])', '\\$1'), 
+                '\b|\b'), '\b')"/>
+        <!--<xsl:message select="concat('searching for /', $re, '/ in ', string-join($apps/@n, ', '))"/>-->
         <xsl:choose>
-            <xsl:when test="$re = ''">
+            <xsl:when test="$re = '\b\b'">
                 <xsl:copy/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:analyze-string select="." regex="{$re}">
-                    <xsl:matching-substring>
+                <xsl:analyze-string select="." regex="{$re}" flags="!">
+                    <xsl:matching-substring>                        
                         <xsl:variable name="current-match" select="."/>
                         <xsl:variable name="current-app" select="$apps[f:normalize-print-chars(descendant::f:replace) = $current-match]"/>
+                        <!--<xsl:message>current-match=<xsl:value-of select="$current-match"/>, current-app: <xsl:copy-of select="$current-app"/></xsl:message>-->
                         <seg type="lem" xml:id="{f:seg-id($current-app//f:ins[@n = $current-line])}">
                             <xsl:value-of select="f:normalize-print-chars($current-app//f:ins[@n = $current-line])"/>
                         </seg> 
