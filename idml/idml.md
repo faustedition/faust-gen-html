@@ -27,6 +27,7 @@ Output: Fußnotenartiges Konstrukt ohne Anmerkungsziffer.
 ## (Bühnenanweisungen)
 Die folgend beschriebenen `BA ...`-Absatzformate können dem XML-Pattern `speaker`, `stage`, aber auch `speaker`+`stage` entsprechen. 
 
+### (Bühnenanweisungen aus `speaker` und `stage`)
 `BA ...` aus dem Pattern `speaker`+`stage` hat folgende Form (Bsp.):
 
     <speaker n="before_350_b">Mephistopheles</speaker>
@@ -34,7 +35,22 @@ Die folgend beschriebenen `BA ...`-Absatzformate können dem XML-Pattern `speake
 
 Erkennungszeichen `@rend`-Wert `inline`.
 
-Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 0,0`. Der Inhalt von `speaker` erhält das Zeichenformat `Figur`. 
+Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 0,0`. Der Inhalt von `speaker` erhält das Zeichenformat `Figur`.
+
+### (Bühnenanweisungen unterschieden nach Element-Kontext)
+Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Figurenreden.
+
+#### (Bühnenanweisungen in Figurenreden [`sp`])
+* direkt nach Sprecher auf derselben Zeile (`speaker/following-sibling::*[self::stage and position()=(1) and @rend[contains(.,'inline')]]`)
+  * --> Teil von BA zentr. 1,5
+* direkt nach Sprecher auf eigener Zeile (`speaker/following-sibling::*[self::stage and position()=(1) and not(@rend[contains(.,'inline')])]`)
+  * --> BA zentr. 0,0
+* zwischen Versen (`stage[preceding-sibling::l[1] and following-sibling::l[1]]`)
+  * --> BA zentr. 0,0
+* zwischen Versgruppen (`stage[preceding-sibling::lg[1] and following-sibling::lg[1]]`)
+  * --> BA Abst.
+* am Ende von Figurenreden (`sp/*[self::stage and position()=last()]`)
+  * kommt regulär nicht vor 
 
 ### BA zentr. 0,0
 Vorkommen:
@@ -57,7 +73,7 @@ Siehe
 Normaler Replikenabstand, auch für Auftritte. Zu überlegen, ob Auftritte einen größeren erhalten.
 
 ### BA Blocks. ...
-Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile. Als ungefähre Heuristik wird eine Zahl von Zeichen genommen, ab der mit hoher Wahrscheinlichkeit im Umbruch mehr als drei Zeilen entstehen. (Hängt ab von [#209](https://github.com/faustedition/faust-gen-html/issues/209)!)
+Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile. Als ungefähre Heuristik wird eine Zahl von Zeichen genommen, ab der mit hoher Wahrscheinlichkeit im Umbruch mehr als drei Zeilen entstehen. (Hängt ab von [#209](https://github.com/faustedition/faust-gen-html/issues/209)!). Momentane Heuristik: 210 Zeichen als Richtwert, der zur Zuweisung von `BA Blocks. ...` führt.
 
 #### BA Blocks. 0,0
 (Standardfall von `BA Blocks. ...`)
@@ -237,6 +253,8 @@ Das Zeichenformat `Auftritt` bekommt nun entweder der
 * der Inhalt der ganzen `stage` (wenn `stage[not(hi)]`) oder
 * `stage/hi` (wenn `stage[hi]`)  <!-- tel. besprochen am 5.2.18 -->
 
+Formatierung: s.o. zur Sperrung (umgebende Leerzeichen).
+
 ## Auslassungspunkte
 XML: `g`
 
@@ -310,8 +328,7 @@ Wert von `@n` ausgeben, wenn `self::l and matches(@n, '^\d+') and @n mod 5 = 0`.
 Siehe https://github.com/faustedition/faust-gen-html/issues/207#issuecomment-361256998
 
 # (Zeilenumbruch)
-XML:
-* `lb` --> ein Zeilenumbruch
+XML: `lb`.
 
 Output: Zeilenumbruch.
 
