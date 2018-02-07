@@ -71,6 +71,11 @@ XML: `stage` ohne `@rend`-Wert `inline`.
 
 Abstand nach oben wie `Vers Abstand`.
 
+## Bandtitel
+XML: `title`.
+
+Output: einfach zentrierte Absätze o.ä., nach dem letzten `title` ein Seitenumbruch. 
+
 ## NN (Bibelstelle eigene Zeile)
 Betrifft:
 * `after_10094` "(Ephes. 6. 12)" [in FA in derselben Zeile]
@@ -81,6 +86,11 @@ Betrifft:
 XML: `note[not(@type='textcrit') and not(ancestor::app) and not(@rend='inline')]`
 
 Formatierung: rechtsbündig.
+
+## Finis
+XML: `trailer`.
+
+Formatierung: ?
 
 ## Kolumne
 Kolumnentitel mit Text. Alles weitere unten zu den dazugehörigen Zeichenformaten.
@@ -118,7 +128,6 @@ Wenn `head/lb`, so soll der Inhalt des `head` auf aufeinanderfolgende `Überschr
 (Zueignung, ..., Teil- und Aktüberschrift) 
 
 Formatierung: `Teil / Akt` soll immer auf einer rechten Seite stehen.
-
 
 ### Szene
 (Szenenüberschrift)
@@ -332,6 +341,7 @@ Für diese braucht in der Transformation nichts zu geschehen, also auch keine Re
 * `del`
 * `sic`
 * `subst`
+* `titlePart`, siehe [#270](https://github.com/faustedition/faust-gen-html/issues/270)
 
 # XML-Elemente, die keine besondere Behandlung benötigen
 * `TEI`
@@ -344,11 +354,11 @@ Für diese braucht in der Transformation nichts zu geschehen, also auch keine Re
 * `publicationStmt` (content löschen)
 * `sourceDesc`
 * `sp`
-* `###`
-* `###`
-* `###`
-* `###`
-
+* `teiHeader`
+* `text`
+* `titleStmt`
+* `witStart`
+* `witness` (content löschen, `child` von `listWit`, s.o.)
 
 # Feinsatz
 * Seitenumbrüche
