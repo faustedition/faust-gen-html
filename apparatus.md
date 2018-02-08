@@ -55,8 +55,3 @@ Additionally, we would like to highlight all ‘related’ `.appnote` elements. 
 * for related changes marked with `@ge:stage`, everything with the same value of `@ge:stage`
 
 This is implemented by adding an id and a proprietary `data-also-highlight` attribute to each `.appnote` involved in a common highlighting. The `data-also-highlight` attribute contains the space-separated list of ids of all _other_ elements that need to be highlighted synchronous to the current element.
-
-### Practical guidance
-* [#119 (comment)](https://github.com/faustedition/faust-gen-html/issues/119#issuecomment-356986496)
-* [dito](https://github.com/faustedition/faust-gen-html/issues/119#issuecomment-357749252)
-* [#119 ("Suchmuster")](https://github.com/faustedition/faust-gen-html/issues/119#issuecomment-358938705)
