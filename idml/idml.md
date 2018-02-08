@@ -259,7 +259,7 @@ Output:
   * danach das Zeichen `]` mit Zeichenformat `Lemmaklammer` 
   * danach ein Leerzeichen
 * wenn `rdg`
-  * davor 1 `em` Abstand
+  * davor 1 `em` Abstand (variable Abstände zwischen Siglen und folgender Lesart bei zeilenfüllende Apparateinträgen?)
   * danach ein Leerzeichen
 
 ### Lemma-Lesart BA
@@ -294,7 +294,7 @@ Output: kursiv.
 
 XML: `wit/hi[@rend='superscript']`.
 
-Output: kursiv.
+Output: hochgestellt.
 
 ### Editortext
 XML: `app//note`.
@@ -309,8 +309,9 @@ Output:
 * wenn diese `Lemma-Leart` die letzte des `Apparat`-Absatzes ist: 1 `em` Abstand vor Typenbezeichnung 
 
 ### (Sonderwünsche)
-* vergrößerte Abstände zwischen `Sigle` und folgendem `Lemma-Lesart ...` **und** zwischen letzter `Lemma-Lesart` und `Typenbezeichnung`
-* [#211 (comment)](https://github.com/faustedition/faust-gen-html/issues/211#issuecomment-362241864)
+Eventuell enthalten Apparateinträge nicht nur Zeichenformate, sondern wiederum eigene Absätze:
+* https://github.com/faustedition/faust-gen-html/issues/276
+* https://github.com/faustedition/faust-gen-html/issues/277
 
 ## Auftritt
 (innerhalb von Absatzformat `BA ...`)
