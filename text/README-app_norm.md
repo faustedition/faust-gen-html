@@ -45,3 +45,8 @@ Der <i>Text der notes</i> in wird an Leerzeichen zerlegt und jedes Token überpr
 * `:`, steht für letzte Sigle
 * _Schreibersigle_, [Liste hier](https://github.com/faustedition/faust-gen-html/blob/master/text/app2xml.py#L163), Auflösung noch nötig
 * Abkürzung, #232
+
+## Praktische Hinweise
+* [#119 (comment)](https://github.com/faustedition/faust-gen-html/issues/119#issuecomment-356986496)
+* [dito](https://github.com/faustedition/faust-gen-html/issues/119#issuecomment-357749252)
+* [#119 ("Suchmuster")](https://github.com/faustedition/faust-gen-html/issues/119#issuecomment-358938705)
