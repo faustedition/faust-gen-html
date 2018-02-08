@@ -16,9 +16,6 @@ Umgebende Leerzeichen werden mitgesperrt.
 
 # Absatzformate
 
-## NN (Abstand)
-XML: `space`
-
 ## Apparat
 XML: `note type="textcrit"`.
 
@@ -105,8 +102,6 @@ Formatierung: rechtsbündig.
 
 ## Finis
 XML: `trailer`.
-
-Formatierung: ?
 
 ## Kolumne
 Kolumnentitel mit Text. Alles weitere unten zu den dazugehörigen Zeichenformaten.
@@ -243,6 +238,79 @@ Text der Szene "Walpurgisnachtstraum" soll bekommen `Szene nach Teil`.
 Extra-Abstand nach oben.
 
 # Zeichenformate
+
+## (Apparateinträge)
+(Zeichenformate in der ungefähren Reihenfolge, wie sie im Apparateintrag vorkommen)
+
+### Zeilenreferenz
+XML: `ref`.
+
+Output: erstmal ohne besondere Formatierung, danach ein `em` Abstand.
+
+### Lemma-Lesart
+XML:
+* `lem`
+* `rdg`
+
+Output:
+* ohne besondere Formatierung
+* wenn `lem`
+  * danach 1/6 oder 1/8 Geviert Abstand 
+  * danach das Zeichen `]` mit Zeichenformat `Lemmaklammer` 
+  * danach ein Leerzeichen
+* wenn `rdg`
+  * davor 1 `em` Abstand
+  * danach ein Leerzeichen
+
+### Lemma-Lesart BA
+XML: `*[self::lem or self::rdg]/stage`.
+
+Output: wie `Lemma-Lesart`, nähere Formatierung noch festzulagen, u.a. abhängig von der Schriftgröße im Apparat.
+
+### Lemma-Lesart Sprecher
+XML: `*[self::lem or self::rdg]/speaker`.
+
+Output:
+* wenn `lem`, Formatierung Großbuchstaben
+* nähere Formatierung festzulegen, siehe `Lemma-Lesart BA`
+
+### Lemma-Lesart Sperrung
+XML: `*[self::lem or self::rdg]/emph`.
+
+Output: vorläufig analag zu `Sperrung`.
+
+### Sigle
+XML: `wit`. 
+
+Output: kursiv.
+
+### Sigle Grundtext
+XML: `wit[@f:is-base='true']`. 
+
+Output: kursiv.
+
+### Siglenziffer
+(die hochgestellte arabische, evtl. Buchstaben statt Ziffern, evtl. mit Suffixen)
+
+XML: `wit/hi[@rend='superscript']`.
+
+Output: kursiv.
+
+### Editortext
+XML: `app//note`.
+
+Output: kursiv.
+
+### Typenbezeichnung
+XML: `rdg/@type`
+
+Output:
+* in `(...)` hinter die betreffende `Lemma-Lesart`
+* wenn diese `Lemma-Leart` die letzte des `Apparat`-Absatzes ist: 1 `em` Abstand vor Typenbezeichnung 
+
+### (Sonderwünsche)
+* vergrößerte Abstände zwischen `Sigle` und folgendem `Lemma-Lesart ...` **und** zwischen letzter `Lemma-Lesart` und `Typenbezeichnung`
+* [#211 (comment)](https://github.com/faustedition/faust-gen-html/issues/211#issuecomment-362241864)
 
 ## Auftritt
 (innerhalb von Absatzformat `BA ...`)
