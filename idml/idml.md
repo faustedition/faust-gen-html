@@ -56,12 +56,14 @@ XML: `stage[preceding-sibling::*[1][self::sp] and following-sibling::*[1][self::
 
 → (bei entsprechender Länge) `BA Blocks. 1,5` (Bsp.: `before_2465_a` "Der Kessel ...") 
 
-#### (BA nach Überschrift)
-XML: `head/following-sibling::stage[1][not(preceding-sibling::speaker) and not(preceding-sibling::sp)]`.
+#### (BA nach Überschrift, kein Auftritt)
+(Bsp.: `before_4613_f` "Faust auf blumigen ...")
+
+XML: `//head/following-sibling::*[1][self::stage]`.
 
 → `BA zentr. 0,0` oder (bei entsprechender Länge) `BA Blocks. 0,0`.
 
-Generelle Andersbehandlung von BA nach Überschriften ist fragwürdig, da auch BAs direkt nachfolgen können.
+Generelle Andersbehandlung von BA nach Überschriften ist fragwürdig, da weitere BAs direkt nachfolgen können.
 
 #### (BA nach Überschrift mit Auftrittsbezeichnung, nicht Sprecher)
 (überschneidet sich mit vorigem)
@@ -296,8 +298,11 @@ Extra-Abstand nach oben.
 
 ## (Sonderfälle, die keine sind)
 
+### (TTF)
+Siehe https://github.com/faustedition/faust-gen-html/issues/259. 
+
 ### (before_4666_a)
-(Ungeheures Getöse)
+("Ungeheures Getöse")
 
 Siehe https://github.com/faustedition/faust-gen-html/issues/256.
 
