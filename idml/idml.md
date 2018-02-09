@@ -80,7 +80,7 @@ XML: `move/following-sibling::*[1][self::stage]`
 #### (BA mit Auftrittsbezeichnung, nicht Sprecher **nach** BA mit Auftrittsbezeichnung, nicht Sprecher) 
 (Bsp.: `before_2337_c` "Faust. Mephistopheles.")
 
-XML: `stage[preceding-sibling::*[1][self::move[preceding-sibling::*[1][self::stage[preceding-sibling::*[1][self::move]]]]]]`.
+XML: `move/following-sibling::*[1][self::stage]/following-sibling::*[1][self::move]/following-sibling::*[1][self::stage]`.
 
 → `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
 
