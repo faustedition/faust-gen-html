@@ -192,6 +192,8 @@ def parse_readings(reading_str, tag='rdg'):
             for ref in reading['references'].split():
                 if ref in sigils:
                     wits.append(ref)
+                elif ref == 'none':
+                    carry = wits  # otherwise drop, cf. #225
                 elif ref in HANDS:
                     hands.append(ref)
                     notes.append('<seg type="hand">{}</seg>'.format(ref))
