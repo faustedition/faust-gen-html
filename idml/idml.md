@@ -110,8 +110,6 @@ Wenn Antilabenvers (`l[@part and not(@part="F")]`) vorhergeht, der weiter links 
 ### BA zentr. 1,5 
 Siehe 
 [#247](https://github.com/faustedition/faust-gen-html/issues/247):
-* before_243_c (da auf eine BA mit Auftritt)
-* vor before_4666_a Ungeheures Getöse (?)
 * alle Bühnenanweisungen, die auf eine Szenenüberschrift folgen, sollen Abstand nach unten haben? Dann aber mehr als 1,5
 
 Normaler Replikenabstand, auch für Auftritte. Zu überlegen, ob Auftritte einen größeren erhalten.
@@ -295,6 +293,15 @@ für "Oberons ..."
 
 ## Vers nach Teil (Zueignung)
 Extra-Abstand nach oben.
+
+## (Sonderfälle, die keine sind)
+
+### (before_4666_a)
+(Ungeheures Getöse)
+
+Siehe https://github.com/faustedition/faust-gen-html/issues/256.
+
+Gehört zum Typ BA nach Figurenrede (s.o.).
 
 # Zeichenformate
 
