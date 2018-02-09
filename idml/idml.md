@@ -72,7 +72,7 @@ XML: `move[preceding-sibling::*[1][self::head]]/following-sibling::*[1][self::st
 
 → `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
 
-### (BA mit Auftrittsbezeichnung, nicht Sprecher)
+#### (BA mit Auftrittsbezeichnung, nicht Sprecher)
 (überschneidet sich mit vorigem)
 
 XML: `move/following-sibling::*[1][self::stage]`
