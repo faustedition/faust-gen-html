@@ -85,7 +85,7 @@
 	</xsl:function>
 
 	<xsl:template match="g[matches(., '^\.{2,4}$')]">
-		<xsl:if test="not(matches(preceding-sibling::*[1], '\s$'))">
+		<xsl:if test="not(matches(preceding-sibling::node()[1], '\s$'))">
 			<xsl:text> </xsl:text>
 		</xsl:if>
 		<xsl:copy>
