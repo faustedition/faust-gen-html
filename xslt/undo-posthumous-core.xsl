@@ -24,6 +24,13 @@
     
     <xsl:template match="subst[@ge:stage='#posthumous']">
         <xsl:apply-templates select="del/node()" mode="#current"/>
-    </xsl:template>   
+    </xsl:template>
+    
+    
+    <xsl:template match="node() | @*">
+        <xsl:copy>
+            <xsl:apply-templates select="@*, node()"/>
+        </xsl:copy>
+    </xsl:template>
 
 </xsl:stylesheet>
