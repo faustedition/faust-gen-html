@@ -77,6 +77,8 @@ XML: `move/following-sibling::*[1][self::stage]`
 
 → `BA zentr. ?? / ?? unten` (`??` = mehr als 1,5 Abstand nach oben / = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
 
+#### BA nach BA
+
 ### BA zentr. 0,0
 
 ### BA zentr. 0,0 / 2,3 unten
