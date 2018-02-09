@@ -82,7 +82,7 @@ XML: `move/following-sibling::*[1][self::stage]`
 
 XML: `move/following-sibling::*[1][self::stage]/following-sibling::*[1][self::move]/following-sibling::*[1][self::stage]`.
 
-→ `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
+→ `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt). Extra-Abstand nach oben braucht die BA nicht, dafür sorgt schon der Abstand nach der vorigen BA.  
 
 #### (BA nach BA, nicht in Figurenrede)
 (Anlass: `before_243_c` "Die drey Erzengel ...")
