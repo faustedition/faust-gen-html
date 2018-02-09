@@ -80,9 +80,6 @@ XML: `move/following-sibling::*[1][self::stage]`
 → `BA zentr. ?? / ?? unten` (`??` = mehr als 1,5 Abstand nach oben / = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
 
 ### BA zentr. 0,0
-Vorkommen:
-* angeblich "Normalfall"; also einfach `stage` und für die anderen `BA`-Fälle Sonderregeln? 
-* jedenfalls für alle `stage` mit erstem `preceding` und erstem `following-sibling::l` (BA zwischen Versen, nicht zwischen Versgruppen)
 
 ### BA zentr. 0,0 / 2,3 unten
 
