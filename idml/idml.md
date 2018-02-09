@@ -32,9 +32,9 @@ Die folgend beschriebenen `BA ...`-Absatzformate können dem XML-Pattern `speake
 
 Erkennungszeichen `@rend`-Wert `inline`.
 
-Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 0,0`. Der Inhalt von `speaker` erhält das Zeichenformat `Figur`.
+Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 1,5` (doch wohl nicht `0,0`?). Der Inhalt von `speaker` erhält das Zeichenformat `Figur`.
 
-### (BA unterschieden nach Element-Kontext)
+### (BA unterschieden nach Kontext)
 Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Figurenreden.
 
 #### (BA **in** Figurenreden)
