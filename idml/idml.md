@@ -66,9 +66,7 @@ Generelle Andersbehandlung von BA nach Überschriften ist fragwürdig, da auch B
 #### (BA nach Überschrift mit Auftrittsbezeichnung, nicht Sprecher)
 (überschneidet sich mit vorigem)
 
-XML: `move[preceding-sibling::*[1][self::head]]/following-sibling::*[1][self::stage]`, z.B.
-* `before_33_b` "Director, ..."
-* `before_243_b` "Der Herr, ..."
+XML: `move[preceding-sibling::*[1][self::head]]/following-sibling::*[1][self::stage]`
 
 → `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
 
@@ -170,7 +168,9 @@ Formatierung: `Teil / Akt` soll immer auf einer rechten Seite stehen.
 ### Szene
 (Szenenüberschrift)
 
-Szenenüberschriften beginnen immer auf einer neuen Seite und führen zur Absenkung.
+Output: 
+* Seitenwechsel
+* 3 Zeilenumbrüche am Anfang des Absatzes
 
 ### Szene nach Akt
 (Szenenüberschrift nach Aktüberschrift)
@@ -216,21 +216,22 @@ Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende `l[
 # (Absatzformate Sonderfälle)
 
 ## BA zentr. 0,0 nach Teil (Vorspiel/Prolog)
-("Director, ..." / "Der Herr, ...")
+(eigens für `before_33_b` "Director, ..." und `before_243_b`)
 
 XML:
-* `stage[@n="before_33_b]`
-* `stage[@n="before_243_b]`
+* `stage[@n='before_33_b']` 
+* `stage[@n='before_243_b']`
 
-Output: Mit beiden BA soll jeweils eine neue rechte Seite anfangen. 
+Output:
+* Seitenwechsel
+* 3 Zeilenumbrüche am Anfang des Absatzes
 
-Hier gibt es ein Problem: Wenn das Absatzformat eine neue Seite verlangt, 
-kann kein Abstand zum oberen Satzspiegelrand definiert werden. 
-Genau dies ist hier aber gewünscht ("Absenkung").
+Formatierung: Abstand nach unten wie `BA ...` mit `Auftritt` (siehe 
+[#251 (comment)](https://github.com/faustedition/faust-gen-html/issues/251#issuecomment-364304733)).
 
-Lösung:
-* Der Seitenwechsel wird mit dem Format `Szene` angewiesen.
-* Zeilenumbrüche am Anfang des betreffenden Absatzes
+Dieser Abstand kommt zu dem Replikenabstand hinzu, den der jeweils folgende Absatz von sich aus hat:
+* `Sprecher` (`before_33_c` "Director") 
+* `BA`(`before_243_c` "Die drey Erzengel ...")
 
 ## Szene (Finis)
 (entfällt vorläufig)
