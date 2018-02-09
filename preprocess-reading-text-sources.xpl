@@ -46,6 +46,11 @@
 		<p:with-param name="skip-posthumous" select="'true'"/>
 	</p:xslt>
 	
+	<p:xslt>
+		<p:input port="stylesheet"><p:document href="xslt/undo-posthumous-core.xsl"/></p:input>
+		<p:input port="parameters"><p:empty/></p:input>
+	</p:xslt>
+	
 	<!-- Emendationsschritte für <del> etc. -->
 	<p:xslt initial-mode="emend">
 		<p:input port="stylesheet">
@@ -60,11 +65,6 @@
 						<xsl:copy>
 							<xsl:apply-templates select="@*, node()" mode="#current"/>
 						</xsl:copy>
-					</xsl:template>
-					
-					<xsl:template match="*[@ge:stage='#posthumous']" priority="10.0"
-						mode="#all">
-						<xsl:copy-of select="."/>
 					</xsl:template>
 					
 					<xsl:template match="choice[sic]" mode="emend">
