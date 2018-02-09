@@ -77,6 +77,13 @@ XML: `move/following-sibling::*[1][self::stage]`
 
 → `BA zentr. ?? / ?? unten` (`??` = mehr als 1,5 Abstand nach oben / = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
 
+#### (BA mit Auftrittsbezeichnung, nicht Sprecher **nach** BA mit Auftrittsbezeichnung, nicht Sprecher) 
+(Bsp.: `before_2337_c` "Faust. Mephistopheles.")
+
+XML: `stage[preceding-sibling::*[1][self::move[preceding-sibling::*[1][self::stage[preceding-sibling::*[1][self::move]]]]]]`.
+
+→ `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
+
 #### (BA nach BA, nicht in Figurenrede)
 (Anlass: `before_243_c` "Die drey Erzengel ...")
 
@@ -264,8 +271,7 @@ XML: `head[@n="before_4223_a"]/hi[2][text()[contains(.,'oder')]]`.
 ### Szene nach Zwischenzeile (WNT)
 für "Oberons ..."
 
-### (WNT-Text)
-Text der Szene "Walpurgisnachtstraum" soll bekommen `Szene nach Teil`. 
+### (Sprecher nach WNT-Titel)
 
 ## Titel (Faust)
 
