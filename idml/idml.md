@@ -34,20 +34,34 @@ Erkennungszeichen `@rend`-Wert `inline`.
 
 Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 0,0`. Der Inhalt von `speaker` erhält das Zeichenformat `Figur`.
 
-### (Bühnenanweisungen unterschieden nach Element-Kontext)
+### (BA unterschieden nach Element-Kontext)
 Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Figurenreden.
 
-#### (Bühnenanweisungen **in** Figurenreden [`sp`])
-* direkt nach Sprecher auf derselben Zeile (`speaker/following-sibling::*[self::stage and position()=(1) and @rend[contains(.,'inline')]]`)
+#### (BA **in** Figurenreden [`sp`])
+* direkt nach Sprecher auf derselben Zeile (`speaker/following-sibling::*[1][self::stage and @rend[contains(.,'inline')]]`)
   * --> Teil von BA zentr. 1,5
-* direkt nach Sprecher auf eigener Zeile (`speaker/following-sibling::*[self::stage and position()=(1) and not(@rend[contains(.,'inline')])]`)
+* direkt nach Sprecher auf eigener Zeile (`speaker/following-sibling::*[1][self::stage and not(@rend[contains(.,'inline')])]`)
   * --> BA zentr. 0,0
-* zwischen Versen (`stage[preceding-sibling::l[1] and following-sibling::l[1]]`)
+* zwischen Versen (`stage[preceding-sibling::*[1][self::l] and following-sibling::*[1][self::l]]`)
   * --> BA zentr. 0,0
-* zwischen Versgruppen (`stage[preceding-sibling::lg[1] and following-sibling::lg[1]]`)
+* zwischen Versgruppen (`stage[preceding-sibling::*[1][self::lg] and following-sibling::*[1][self::lg]]`)
   * --> BA Abst.
 * am Ende von Figurenreden (`sp/*[self::stage and position()=last()]`)
   * kommt regulär nicht vor 
+
+#### (BA **zwischen** Figurenreden [`sp`])
+XML: `stage[preceding-sibling::*[1][self::sp] and following-sibling::*[1][self::sp or self::move[following-sibling::*[1][self::sp]]]]`.
+
+→ `BA zentr. 1,5` 
+
+→ (bei entsprechender Länge) `BA Blocks. 1,5` (Bsp.: `before_2465_a` "Der Kessel ...") 
+
+#### (BA nach Überschriften)
+XML: ´head/following-sibling::stage[1][not(preceding-sibling::speaker) and not(preceding-sibling::sp)]´.
+
+-->  `BA zentr. 0,0` oder (bei entsprechender Länge) `BA Blocks. 0,0`.
+
+#### (BA mit Auftrittsbezeichnung, nicht Sprecher)
 
 ### BA zentr. 0,0
 Vorkommen:
