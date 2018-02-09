@@ -85,6 +85,13 @@ XML: `move/following-sibling::*[1][self::stage]/following-sibling::*[1][self::mo
 → `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt). Extra-Abstand nach oben braucht die BA nicht, dafür sorgt schon der Abstand nach der vorigen BA.  
 
 #### (BA nach BA, nicht in Figurenrede)
+XML: `stage[not(ancestor::sp) and preceding-sibling::*[1][self::stage]]`.
+
+→ `BA zentr. 1,5` 
+
+→ (bei entsprechender Länge) `BA Blocks. 1,5` 
+
+#### (BA nach BA mit Auftritt, nicht in Figurenrede)
 (Anlass: `before_243_c` "Die drey Erzengel ...")
 
 XML: `stage[not(ancestor::sp) and preceding-sibling::*[1][self::stage]]`.
@@ -104,7 +111,6 @@ Wenn Antilabenvers (`l[@part and not(@part="F")]`) vorhergeht, der weiter links 
 Siehe 
 [#247](https://github.com/faustedition/faust-gen-html/issues/247):
 * before_243_c (da auf eine BA mit Auftritt)
-* before_2337_c Faust. Meph in der Hexenküche 
 * vor before_4666_a Ungeheures Getöse (?)
 * alle Bühnenanweisungen, die auf eine Szenenüberschrift folgen, sollen Abstand nach unten haben? Dann aber mehr als 1,5
 
@@ -248,6 +254,16 @@ Formatierung: Abstand nach unten wie `BA ...` mit `Auftritt` (siehe
 Dieser Abstand kommt zu dem Replikenabstand hinzu, den der jeweils folgende Absatz von sich aus hat:
 * `Sprecher` (`before_33_c` "Director") 
 * `BA`(`before_243_c` "Die drey Erzengel ...")
+
+## (BAs vor 350)
+XML: `stage before_350_a` ("Der Himmel schließt, ...").
+
+--> `BA zentr. 1,5` (ausnahmsweise Replikenabstand nach oben)
+
+XML: `before_350_b` zusammen mit `before_350_c` ("Mephistopheles allein.")
+--> `BA zentr. 0,0` (ausnahmsweise keinen Replikenabstand nach oben, da Einheit mit vorhergehender BA).
+
+Der Grund ist, dass die XML-Auszeichnung die Struktur des Textes hier nicht voll adäquat abbildet.
 
 ## Szene (Finis)
 (entfällt vorläufig)
