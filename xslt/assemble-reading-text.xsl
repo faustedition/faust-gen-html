@@ -52,7 +52,8 @@
 		
 		<div n="2">			
 			<xsl:sequence select="f:source('2_H')"/>
-			<xsl:apply-templates select="$H/TEI/text"/>
+			<xsl:apply-templates select="$H//*[@n='before_4613_c']"/>
+			<xsl:apply-templates select="$H/TEI/text/group/text[1]/body"/>
 		</div>
 	</xsl:template>
 	
