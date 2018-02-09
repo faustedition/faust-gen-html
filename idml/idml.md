@@ -37,7 +37,7 @@ Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 
 ### (BA unterschieden nach Element-Kontext)
 Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Figurenreden.
 
-#### (BA **in** Figurenreden [`sp`])
+#### (BA **in** Figurenreden)
 * direkt nach Sprecher auf derselben Zeile (`speaker/following-sibling::*[1][self::stage and @rend[contains(.,'inline')]]`)
   * → Teil von BA zentr. 1,5
 * direkt nach Sprecher auf eigener Zeile (`speaker/following-sibling::*[1][self::stage and not(@rend[contains(.,'inline')])]`)
@@ -49,7 +49,7 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
 * am Ende von Figurenreden (`sp/*[self::stage and position()=last()]`)
   * kommt regulär nicht vor 
 
-#### (BA **zwischen** Figurenreden [`sp`])
+#### (BA **zwischen** Figurenreden)
 XML: `stage[preceding-sibling::*[1][self::sp] and following-sibling::*[1][self::sp or self::move[following-sibling::*[1][self::sp]]]]`.
 
 → `BA zentr. 1,5` 
@@ -77,7 +77,14 @@ XML: `move/following-sibling::*[1][self::stage]`
 
 → `BA zentr. ?? / ?? unten` (`??` = mehr als 1,5 Abstand nach oben / = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
 
-#### BA nach BA
+#### (BA nach BA, nicht in Figurenrede)
+(Anlass: `before_243_c` "Die drey Erzengel ...")
+
+XML: `stage[not(ancestor::sp) and preceding-sibling::*[1][self::stage]]`.
+
+→ `BA zentr. 1,5` 
+
+→ (bei entsprechender Länge) `BA Blocks. 1,5` 
 
 ### BA zentr. 0,0
 
