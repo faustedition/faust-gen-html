@@ -179,6 +179,7 @@ def append_text(element: etree.ElementBase, text: str):
 def parse_readings(reading_str, tag='rdg'):
     readings = []
     carry = None
+    reading_str = reading_str.replace('^', '<pc>‸</pc>')
     for match in READING.finditer(reading_str):
         reading = match.groupdict()
         if 'references' in reading:
