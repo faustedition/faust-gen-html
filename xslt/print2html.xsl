@@ -34,7 +34,7 @@
    -->
   
 <!-- Die Behandlung von den meisten Elementen ist relativ gleich: -->
-  <xsl:template match="*" priority="-0.1">
+  <xsl:template match="*[f:hasvars(.)]" priority="-0.1">
     <!-- # Varianten aus dem variants-Folder auslesen: -->
     <xsl:variable name="varinfo" as="node()*">
       <xsl:choose>

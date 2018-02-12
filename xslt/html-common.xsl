@@ -155,13 +155,23 @@
 	
 	<xsl:template match="space" priority="2">
 	  <xsl:choose>
-	    <xsl:when test="$type = 'archivalDocument'">
+	    <xsl:when test="$type != 'print'">
     	  <span class="{string-join(f:generic-classes(.), ' ')} generated-text appnote" title="Lücke">[***]</span>	      
 	    </xsl:when>
 	    <xsl:otherwise>
 	      <xsl:next-match/>
 	    </xsl:otherwise>
 	  </xsl:choose>
+	</xsl:template>
+	
+	<xsl:template match="space[@unit='lines']" priority="3">	
+		<div class="{string-join(f:generic-classes(.), ' ')} generated-text appnote"
+			 title="{@quantity} Zeilen Lücke">
+			<xsl:comment><xsl:copy-of select="."/></xsl:comment>
+			<xsl:for-each select="1 to xs:integer(round(@quantity))">
+				<br/>
+			</xsl:for-each>
+		</div>
 	</xsl:template>
 	
 	
