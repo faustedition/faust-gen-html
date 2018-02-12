@@ -35,9 +35,9 @@ Erkennungszeichen `@rend`-Wert `inline`.
 Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 1,5` (doch wohl nicht `0,0`?). Der Inhalt von `speaker` erhält das Zeichenformat `Figur`.
 
 ### (BA unterschieden nach Kontext)
-Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Figurenreden.
+Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Repliken.
 
-#### (BA **in** Figurenreden)
+#### (BA **in** Replik)
 * direkt nach Sprecher auf derselben Zeile (`speaker/following-sibling::*[1][self::stage and @rend[contains(.,'inline')]]`)
   * → Teil von BA zentr. 1,5
 * direkt nach Sprecher auf eigener Zeile (`speaker/following-sibling::*[1][self::stage and not(@rend[contains(.,'inline')])]`)
@@ -46,10 +46,10 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
   * → BA zentr. 0,0
 * zwischen Versgruppen (`stage[preceding-sibling::*[1][self::lg] and following-sibling::*[1][self::lg]]`)
   * → BA Abst.
-* am Ende von Figurenreden (`sp/*[self::stage and position()=last()]`)
+* am Ende von Repliken (`sp/*[self::stage and position()=last()]`)
   * kommt regulär nicht vor 
 
-#### (BA **zwischen** Figurenreden)
+#### (BA **zwischen** Repliken)
 (z.B. `before_4666_a` "Ungeheures Getöse ...", siehe [#256](https://github.com/faustedition/faust-gen-html/issues/256))
 
 XML: `stage[preceding-sibling::*[1][self::sp] and following-sibling::*[1][self::sp or self::move[following-sibling::*[1][self::sp]]]]`.
@@ -88,14 +88,14 @@ XML: `move/following-sibling::*[1][self::stage]/following-sibling::*[1][self::mo
 
 → `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt). Extra-Abstand nach oben braucht die BA nicht, dafür sorgt schon der Abstand nach der vorigen BA.  
 
-#### (BA nach BA, nicht in Figurenrede)
+#### (BA nach BA, nicht in Replik)
 XML: `stage[not(ancestor::sp) and preceding-sibling::*[1][self::stage]]`.
 
 → `BA zentr. 1,5` 
 
 → (bei entsprechender Länge) `BA Blocks. 1,5` 
 
-#### (BA nach BA mit Auftritt, nicht in Figurenrede)
+#### (BA nach BA mit Auftritt, nicht in Replik)
 (Anlass: `before_243_c` "Die drey Erzengel ...")
 
 XML: `stage[not(ancestor::sp) and preceding-sibling::*[1][self::stage]]`.
@@ -308,7 +308,7 @@ Siehe https://github.com/faustedition/faust-gen-html/issues/259.
 
 Siehe https://github.com/faustedition/faust-gen-html/issues/256.
 
-Gehört zum Typ BA nach Figurenrede (s.o.).
+Gehört zum Typ BA nach Replik (s.o.).
 
 # Zeichenformate
 
@@ -481,7 +481,7 @@ Siehe [#210](https://github.com/faustedition/faust-gen-html/issues/210).
 
 # Sonderphänomene
 
-## Figurenreden (`sp`) ohne Sprecher (`speaker`)
+## Replik (`sp`) ohne Sprecher (`speaker`)
 sind grundsätzlich möglich, kommen aber nur vereinzelt vor (siehe 
 [#197](https://github.com/faustedition/faust-gen-html/issues/197)).
 
