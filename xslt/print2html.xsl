@@ -143,11 +143,28 @@
       </xsl:if>
       <xsl:if test="@type">
         <span class="reading-type">
-          <xsl:value-of select="concat(' (Typ ', @type, ')')"/>
+          <xsl:value-of select="concat(' (', f:format-rdg-type(@type), ')')"/>
         </span>
       </xsl:if>
     </span>
   </xsl:template>
+  
+  <xsl:function name="f:format-rdg-type" as="xs:string">
+    <xsl:param name="type"/>
+    <xsl:variable name="typeno" select="replace($type, '^type_', '')"/>
+    <xsl:variable name="formatted-typeno">
+      <xsl:analyze-string select="$typeno" regex="\d+">
+        <xsl:matching-substring>
+          <xsl:number format="I" value="."/>
+          <xsl:text> </xsl:text>
+        </xsl:matching-substring>
+        <xsl:non-matching-substring>
+          <xsl:copy/>
+        </xsl:non-matching-substring>
+      </xsl:analyze-string>
+    </xsl:variable>
+    <xsl:value-of select="string-join($formatted-typeno, '')"/>
+  </xsl:function>
   
   
 </xsl:stylesheet>
