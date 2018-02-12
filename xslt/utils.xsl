@@ -197,7 +197,15 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:function>
-
+  
+  <xsl:template mode="remove-notes" match="node() | @*">
+    <xsl:copy><xsl:apply-templates select="@*, node()" mode="#current"/></xsl:copy>
+  </xsl:template>
+  <xsl:template mode="remove-notes" match="note"/>
+  <xsl:function name="f:remove-notes" as="item()*">
+    <xsl:param name="content"/>
+    <xsl:apply-templates mode="remove-notes" select="$content"/>
+  </xsl:function>
 
   <xsl:template name="generate-style">
     <xsl:if test="@n and @part and @part != 'I'">
@@ -205,8 +213,8 @@
       <xsl:variable name="start" select="preceding::*[@part='I'][1]"/>
       <xsl:variable name="sigil" select="@f:sigil"/>
       <xsl:variable name="before"
-        select="normalize-space(string-join(($start, preceding::*[@part and . >> $start and 
-          (if (@f:sigil) then @f:sigil=$sigil else true())]), ' '))"/>
+        select="normalize-space(string-join(f:remove-notes(($start, preceding::*[@part and . >> $start and 
+          (if (@f:sigil) then @f:sigil=$sigil else true())])), ' '))"/>
       <xsl:attribute name="style"
         select="concat('text-indent:', 1.5 + 0.49*string-length($before), 'em;')"/>
 <!--      <xsl:message select="concat('n=', $n, '; part=', @part, '; .=', normalize-space(.) , '; start=', normalize-space($start), '; before=', normalize-space($before))"/>-->
@@ -349,7 +357,7 @@
   <xsl:function name="f:scene-for" as="element()?">
     <xsl:param name="element"/>
     <xsl:variable name="n" select="$element/@n"/>
-    <xsl:sequence select="$scenes//f:scene[@n = $n] | $scenes//f:scene[number(f:rangeStart) le number($n) and  number(f:rangeEnd) ge number($n)][1]"/>
+    <xsl:sequence select="($scenes//f:scene[@n = $n], $scenes//f:scene[number(f:rangeStart) le number($n) and  number(f:rangeEnd) ge number($n)])[1]"/>
   </xsl:function>
   
   <xsl:function name="f:is-schroer" as="xs:boolean">
