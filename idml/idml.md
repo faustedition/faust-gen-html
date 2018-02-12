@@ -109,7 +109,7 @@ XML: `stage[not(ancestor::sp) and preceding-sibling::*[1][self::stage]]`.
 ### BA zentr. 0,0 / 2,3 unten
 
 ### BA zentr. 0,5
-Wenn Antilabenvers (`l[@part and not(@part="F")]`) vorhergeht, der weiter links als die BA endet ([#213](https://github.com/faustedition/faust-gen-html/issues/213#issuecomment-362507356)).
+(entfällt möglicherweise, siehe [#213](https://github.com/faustedition/faust-gen-html/issues/213#issuecomment-362507356))
 
 ### BA zentr. 1,5 
 Siehe 
