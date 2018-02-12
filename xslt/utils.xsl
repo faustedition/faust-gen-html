@@ -357,7 +357,7 @@
   <xsl:function name="f:scene-for" as="element()?">
     <xsl:param name="element"/>
     <xsl:variable name="n" select="$element/@n"/>
-    <xsl:sequence select="$scenes//f:scene[@n = $n] | $scenes//f:scene[number(f:rangeStart) le number($n) and  number(f:rangeEnd) ge number($n)][1]"/>
+    <xsl:sequence select="($scenes//f:scene[@n = $n], $scenes//f:scene[number(f:rangeStart) le number($n) and  number(f:rangeEnd) ge number($n)])[1]"/>
   </xsl:function>
   
   <xsl:function name="f:is-schroer" as="xs:boolean">
