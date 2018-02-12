@@ -49,12 +49,19 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
 * am Ende von Repliken (`sp/*[self::stage and position()=last()]`)
   * kommt regulär nicht vor 
 
-#### (BA **zwischen** Repliken)
+#### (BA nach Replik ohne Figur)
 (z.B. `before_4666_a` "Ungeheures Getöse ...", siehe [#256](https://github.com/faustedition/faust-gen-html/issues/256))
 
-XML: `stage[preceding-sibling::*[1][self::sp] and following-sibling::*[1][self::sp or self::move[following-sibling::*[1][self::sp]]]]`.
+XML: `stage[not(hi) and preceding-sibling::*[1][self::sp] and following-sibling::*[1][self::sp or self::move[following-sibling::*[1][self::sp]]]]`.
 
-→ `BA zentr. 1,5` 
+→ `BA zentr. 1,5`, siehe aber [#286](https://github.com/faustedition/faust-gen-html/issues/286) 
+
+→ (bei entsprechender Länge) `BA Blocks. 1,5` (Bsp.: `before_2465_a` "Der Kessel ...") 
+
+#### (BA nach Replik mit Figur)
+XML: `stage[hi and preceding-sibling::*[1][self::sp] and following-sibling::*[1][self::sp or self::move[following-sibling::*[1][self::sp]]]]`.
+
+→ `BA zentr. 1,5`
 
 → (bei entsprechender Länge) `BA Blocks. 1,5` (Bsp.: `before_2465_a` "Der Kessel ...") 
 
@@ -112,11 +119,6 @@ XML: `stage[not(ancestor::sp) and preceding-sibling::*[1][self::stage]]`.
 (entfällt möglicherweise, siehe [#213](https://github.com/faustedition/faust-gen-html/issues/213#issuecomment-362507356))
 
 ### BA zentr. 1,5 
-Siehe 
-[#247](https://github.com/faustedition/faust-gen-html/issues/247):
-* alle Bühnenanweisungen, die auf eine Szenenüberschrift folgen, sollen Abstand nach unten haben? Dann aber mehr als 1,5
-
-Normaler Replikenabstand, auch für Auftritte. Zu überlegen, ob Auftritte einen größeren erhalten.
 
 ### BA Blocks. ...
 Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile. Als ungefähre Heuristik wird eine Zahl von Zeichen genommen, ab der mit hoher Wahrscheinlichkeit im Umbruch mehr als drei Zeilen entstehen. (Hängt ab von [#209](https://github.com/faustedition/faust-gen-html/issues/209)!). Momentane Heuristik: 210 Zeichen als Richtwert, der zur Zuweisung von `BA Blocks. ...` führt.
