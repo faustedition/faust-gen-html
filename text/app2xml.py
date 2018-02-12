@@ -94,8 +94,8 @@ sigils = read_sigils()
 
 # one app line
 APP = re.compile(
-    r'''(?<n>(\w|\|)+?)
-        \[(?<replace>.*?)\]
+    r'''(?<n>(\w|\|)+?)\s*
+        \[(?<replace>.*?)\]\s*
         \{(?<insert>.*?)\}
         \s*<i>(?<reference>.*?)<\/i>
         \s*(?<lemmapart>.*?)\]
