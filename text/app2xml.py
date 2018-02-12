@@ -36,6 +36,17 @@ def namespaceify(tree: etree._Element, namespace=TEI_NS):
             el.tag = prefix + el.tag
 
 
+def significant_whitespace(xml: etree.ElementBase) -> etree.ElementBase:
+    """
+    Recursively marks the given elements _contents_ to be not eligible for pretty_print=True whitespace additions
+    """
+    for element in xml:
+        element = significant_whitespace(element)
+        if element.tail is None:
+            element.tail = ''
+    return xml
+
+
 def parse_xml(text, container=None, namespace=TEI_NS) -> etree._Element:
     """parses a fragment that may contain xml elements to a tree.
 
@@ -57,7 +68,7 @@ def parse_xml(text, container=None, namespace=TEI_NS) -> etree._Element:
         container.text = xml.text
         container.extend(xml)
         xml = container
-    return xml
+    return significant_whitespace(xml)
 
 def read_sigils(filename='../../../../target/faust-transcripts.xml', secondary_filename='sigils.json'):
     """parses faust-transcripts.xml and returns a mapping machine-readable sigil : human-readable sigil"""
