@@ -50,6 +50,8 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
   * kommt regulär nicht vor 
 
 #### (BA **zwischen** Figurenreden)
+(z.B. `before_4666_a` "Ungeheures Getöse ...", siehe [#256](https://github.com/faustedition/faust-gen-html/issues/256))
+
 XML: `stage[preceding-sibling::*[1][self::sp] and following-sibling::*[1][self::sp or self::move[following-sibling::*[1][self::sp]]]]`.
 
 → `BA zentr. 1,5` 
