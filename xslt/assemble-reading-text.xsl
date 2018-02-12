@@ -48,7 +48,10 @@
 		
 	<xsl:template match="div[descendant::l[@n='354'] and descendant::l[@n='4612']]"> 
 		<!-- div that encloses all of Faust 1, doesn't have an @n unfortunately  -->
-		<xsl:next-match/>
+		<xsl:copy>
+			<xsl:if test="not(@n)"><xsl:attribute name="n">1.1</xsl:attribute></xsl:if>
+			<xsl:apply-templates select="@*, node()"/>
+		</xsl:copy>
 		
 		<div n="2">			
 			<xsl:sequence select="f:source('2_H')"/>
