@@ -223,7 +223,7 @@ def parse_readings(reading_str, tag='rdg'):
                 append_text(rdg, ' ')
                 rdg.append(parse_xml(' '.join(notes), T.note()))
         if 'type' in reading and reading['type']:
-            rdg.set('type', reading['type'])
+            rdg.set('type', 'type_' + reading['type'])
         readings.append(etree.Comment(match.group(0)))
         readings.append(rdg)
         log.debug(' - Reading »%s« -> %s', reading_str, etree.tostring(rdg, encoding='unicode', pretty_print=False))
