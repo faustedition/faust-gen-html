@@ -45,7 +45,7 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
 * zwischen Versen (`stage[preceding-sibling::*[1][self::l] and following-sibling::*[1][self::l]]`)
   * → BA zentr. 0,0
 * zwischen Versgruppen (`stage[preceding-sibling::*[1][self::lg] and following-sibling::*[1][self::lg]]`)
-  * → BA Abst.
+  * → BA Abstand
 * am Ende von Repliken (`sp/*[self::stage and position()=last()]`)
   * kommt regulär nicht vor 
 
@@ -124,9 +124,6 @@ XML: `stage[not(ancestor::sp) and preceding-sibling::*[1][self::stage]]`.
 Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile. Als ungefähre Heuristik wird eine Zahl von Zeichen genommen, ab der mit hoher Wahrscheinlichkeit im Umbruch mehr als drei Zeilen entstehen. (Hängt ab von [#209](https://github.com/faustedition/faust-gen-html/issues/209)!). Momentane Heuristik: 210 Zeichen als Richtwert, der zur Zuweisung von `BA Blocks. ...` führt.
 
 #### BA Blocks. 0,0
-(Standardfall von `BA Blocks. ...`)
-
-XML: `stage` ohne `@rend`-Wert `inline`.
 
 #### BA Blocks. 1,5
 
