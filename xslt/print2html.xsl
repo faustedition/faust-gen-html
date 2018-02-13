@@ -101,6 +101,7 @@
     <span class="{string-join((f:generic-classes(.), 'lineno'), ' ')}">
       <xsl:apply-templates/>
     </span>
+    <xsl:text> </xsl:text>
   </xsl:template>
   
   <xsl:template match="note[@type='textcrit']" priority="1">
@@ -117,7 +118,7 @@
     <span class="{string-join(f:generic-classes(.), ' ')}">
       <xsl:apply-templates select="node() except (wit[1], wit[1]/following-sibling::node())"/>
     </span>
-    <xsl:text>] </xsl:text>
+    <xsl:text> ] </xsl:text>
     <xsl:apply-templates select="wit[1], wit[1]/following-sibling::node()"/>
   </xsl:template>
   
@@ -143,7 +144,9 @@
       </xsl:if>
       <xsl:if test="@type">
         <span class="reading-type">
-          <xsl:value-of select="concat(' (', f:format-rdg-type(@type), ')')"/>
+          <xsl:value-of select="concat(
+            if (position() = last()) then ' ' else ' ',   (: em space before last type :)
+            '(', f:format-rdg-type(@type), ')')"/>
         </span>
       </xsl:if>
     </span>

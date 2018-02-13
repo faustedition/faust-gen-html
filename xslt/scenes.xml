@@ -169,6 +169,10 @@
         <title>Kerker</title>
         <id>1.1.25</id>
     </scene>
+    <scene n="2">
+        <title>Der Tragödie zweiter Teil</title>
+        <id>2</id>
+    </scene>    
     <scene n="2.1.1">
         <rangeStart>4613</rangeStart>
         <rangeEnd>4727</rangeEnd>

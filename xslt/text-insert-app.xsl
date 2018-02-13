@@ -9,7 +9,7 @@
     
     <xsl:import href="utils.xsl"/>
     <xsl:import href="bibliography.xsl"/>
-    <xsl:output method="xml" indent="yes"/>
+    <xsl:output method="xml" indent="no"/>
     <xsl:strip-space elements="app choice subst"/>
        
     <!-- The apparatus specification in XML form -->
@@ -69,15 +69,15 @@
     <!-- creates the note[@type="textcrit"] for the givven app element -->    
     <xsl:template name="create-app-note">
         <xsl:param name="apps"/>
-        <note type="textcrit">
-            <xsl:for-each select="$apps">
+        <xsl:for-each select="$apps">
+            <note type="textcrit">
                 <xsl:copy-of select="ref" copy-namespaces="no"/>
                 <app from="#{f:seg-id(f:ins[1])}">
                     <xsl:apply-templates select="lem" mode="app"/>
                     <xsl:apply-templates select="rdg" mode="app"/>
                 </app>
-            </xsl:for-each>
-        </note>
+            </note>
+        </xsl:for-each>
     </xsl:template>
     
     <!-- 
