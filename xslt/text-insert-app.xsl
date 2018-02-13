@@ -9,7 +9,7 @@
     
     <xsl:import href="utils.xsl"/>
     <xsl:import href="bibliography.xsl"/>
-    <xsl:output method="xml" indent="yes"/>
+    <xsl:output method="xml" indent="no"/>
     <xsl:strip-space elements="app choice subst"/>
        
     <!-- The apparatus specification in XML form -->
