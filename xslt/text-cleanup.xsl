@@ -156,13 +156,21 @@
 		</xsl:choose>	
 	</xsl:template>
 	
-	<!-- Remove a trailing . from speaker -->
+	<!-- Remove a trailing . from speaker and head and at end of / immediately after hi -->
 	<xsl:template mode="pass2" match="speaker/text()[position()=last()]">
 		<xsl:value-of select="replace(., '\.\s*$', '')"/>
 	</xsl:template>
 	
 	<xsl:template mode="pass2" match="head/text()[position()=last()]">
 		<xsl:value-of select="replace(., '\.\s*$', '')"/>
+	</xsl:template>
+	
+	<xsl:template mode="pass2" match="stage//hi/text()[position()=last()]">
+		<xsl:value-of select="replace(., '\.$', '')"/>
+	</xsl:template>
+	
+	<xsl:template mode="pass2" match="stage//text()[preceding-sibling::node()[1][self::hi]]">
+		<xsl:value-of select="replace(., '^\.', '')"/>
 	</xsl:template>
 	
 	<!-- The following fixes are eventually to be implemented in all source files: -->
