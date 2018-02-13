@@ -291,8 +291,11 @@ für "Oberons ..."
 ### (Sprecher nach WNT-Titel)
 
 ## Titel (Faust)
+XML: `before_1_a`.
 
 ## Untertitel (Eine Tragödie)
+XML: `before_1_b`.
+
 
 ## Vers nach Teil (Zueignung)
 Extra-Abstand nach oben.
