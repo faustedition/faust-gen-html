@@ -30,7 +30,7 @@ Die folgend beschriebenen `BA ...`-Absatzformate können dem XML-Pattern `speake
     <speaker n="before_350_b">Mephistopheles</speaker>
     <stage n="before_350_c" rend="inline small">allein.</stage>
 
-Erkennungszeichen `@rend`-Wert `inline`.
+Erkennungszeichen: `stage[matches(@rend, 'inline')]`.
 
 Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 1,5` (doch wohl nicht `0,0`?). Der Inhalt von `speaker` erhält das Zeichenformat `Figur`.
 
@@ -388,12 +388,15 @@ Eventuell enthalten Apparateinträge nicht nur Zeichenformate, sondern wiederum 
 ## Auftritt
 (innerhalb von Absatzformat `BA ...`)
 
-Grundsätzliches XML-Pattern: `move/following-sibling::*[1]`, d.h. der `move` bekommt nichts, sondern das folgende Element (wohl immer `stage`, wäre übrigens interessant zu wissen -- `speaker`?).
+Grundsätzliches XML-Pattern: `move/following-sibling::*[1]`, d.h. der `move` bekommt nichts, sondern der Inhalt oder Teile des Inhalts des folgenden Element (in 37 Fällen `stage`, in 22 Fällen `sp/speaker`).
 
 Das Zeichenformat `Auftritt` bekommt nun entweder der 
-* der Inhalt der ganzen `stage` (wenn `stage[not(hi)]`) oder
-* `stage/hi` (wenn `stage[hi]`)  <!-- tel. besprochen am 5.2.18 -->
-
+* der Inhalt der ganzen BA (`move/following-sibling::*[1][self::stage[not(hi)]]`) oder
+* der Inhalt der einfachen Hervorhebung in der BA (`move/following-sibling::*[1][self::stage]/hi[not(hi)]`)  <!-- tel. besprochen am 5.2.18 --> oder
+* der Inhalt der Hervorhebung in der Hervorhebung in der BA (`move/following-sibling::*[1][self::stage]/hi/hi`) oder
+* bei BA aus dem Inhalt von `speaker` und `stage[matches(@rend, 'inline')]`: davon der Inhalt von `move/following-sibling::*[1][self::sp/speaker]/speaker`
+  * sowie ggf. `move/following-sibling::*[1][self::sp/speaker]/speaker/following-sibling::*[1][self::stage]/hi/hi` (Spezialfall `before_1178_b` "Pudel")
+  
 Formatierung: s.o. zur Sperrung (umgebende Leerzeichen).
 
 ## Auslassungspunkte
