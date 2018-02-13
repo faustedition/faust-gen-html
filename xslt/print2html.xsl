@@ -143,7 +143,9 @@
       </xsl:if>
       <xsl:if test="@type">
         <span class="reading-type">
-          <xsl:value-of select="concat(' (', f:format-rdg-type(@type), ')')"/>
+          <xsl:value-of select="concat(
+            if (position() = last()) then ' ' else ' ',   (: em space before last type :)
+            '(', f:format-rdg-type(@type), ')')"/>
         </span>
       </xsl:if>
     </span>
