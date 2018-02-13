@@ -50,7 +50,7 @@
 		  sourceDesc/* 
 		| encodingDesc 
 		| revisionDesc 
-		| titlePage[not(titlePart[@n])] 
+		| titlePage[not(descendant::titlePart[@n])] 
 		| pb[not(@break='no')] 
 		| fw 
 		| hi/@status 
@@ -101,7 +101,7 @@
 		<xsl:attribute name="type">lesetext</xsl:attribute>
 	</xsl:template>
 	
-	<xsl:template match="titlePart">
+	<xsl:template match="div//titlePart">
 		<head>
 			<xsl:apply-templates select="@*, node()"/>
 		</head>
