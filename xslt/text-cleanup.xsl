@@ -30,6 +30,8 @@
 		| s
 		| seg[@xml:id]
 		| orig
+		| sic
+		| corr
 		| profileDesc
 		| creation
 		| ge:transposeGrp
