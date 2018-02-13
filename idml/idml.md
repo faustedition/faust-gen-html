@@ -414,6 +414,13 @@ XML: `note[not(@type='textcrit') and not(ancestor::app) and @rend='inline']`
 
 Formatierung: zusammen zentriert wie übrige `BA zentr.` ohne besondere Auszeichnung und ohne vergrößerten Abstand. 
 
+## Doppelunterstreichung
+(individuelle Vorkommen im Faust II, siehe [xml/issues/66](https://github.com/faustedition/xml/issues/66)) 
+
+XML: `*[self::hi or self::stage or self::speaker]/emph`.
+
+Formatierung: vorläufig wie `Auftritt`.
+
 ## Figur
 (Hervorhebungen in BA) 
 
