@@ -172,13 +172,12 @@ Output: Anzahl der Leerzeilen nach Wert von `@quantity` (2 bzw. 5).
 XML: `p`.
 
 ## Sprecher ... 
-XML: `speaker` ohne folgende `stage` , mit `@rend`-Wert `inline`.
 
 ### Sprecher 0,5
 (entfällt, siehe [#203](https://github.com/faustedition/faust-gen-html/issues/203))
 
 ### Sprecher 1,5
-Normalfall für `speaker` ohne ... (s.o.)
+XML: `speaker` ohne folgende `stage[matches(@rend, 'inline')]`.
 
 ## (Überschriften)
 Wenn `head/lb`, so soll der Inhalt des `head` auf aufeinanderfolgende `Überschrift ...`-Absätze aufgeteilt werden.
