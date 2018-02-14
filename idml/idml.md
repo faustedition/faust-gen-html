@@ -471,7 +471,7 @@ Merke: Das Zeichenformat `Sprecher` kommt vor
 
 Formatierung:
 * Zeichenformat `Sprecher`: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
-* Zeichenformat `[No character style]` im Absatzformat `Sprecher` (`//speaker[hi]/text()`): normale Schriftgröße (nicht verkleinert)
+* Zeichenformat `[No character style]` im Absatzformat `Sprecher` (`//speaker[hi]/text()`): normale Schriftgröße (nicht verkleinert) (siehe [#293](https://github.com/faustedition/faust-gen-html/issues/293))
 
 ## Sprecher lateinisch
 (entfällt vorläufig)
