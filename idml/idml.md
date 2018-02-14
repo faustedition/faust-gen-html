@@ -175,7 +175,7 @@ XML: `p`.
 XML: `speaker` ohne folgende `stage` , mit `@rend`-Wert `inline`.
 
 ### Sprecher 0,5
-Wenn Antilabenvers (`l[@part and not(@part="F")]`) vorhergeht, der weiter links als die BA endet ([#203](https://github.com/faustedition/faust-gen-html/issues/203#issuecomment-362506592)).
+(entfällt, siehe [#203](https://github.com/faustedition/faust-gen-html/issues/203))
 
 ### Sprecher 1,5
 Normalfall für `speaker` ohne ... (s.o.)
@@ -461,11 +461,17 @@ Nicht durchgängig so kodiert, keine Umsetzung vorgesehen.
 XML: `l/emph`.
 
 ## Sprecher
-XML-Pattern: `speaker`.
+XML-Pattern:
+* `speaker[not(hi)]`
+* `speaker/hi`
 
-Merke: `speaker` ist Zeichenformat als Teil der Absatzformate `BA ...`.
+Merke: Das Zeichenformat `Sprecher` kommt vor  
+* im Absatzformat `Sprecher`
+* in den Absatzformaten `BA ...`
 
-Formatierung: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
+Formatierung:
+* Zeichenformat `Sprecher`: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
+* Zeichenformat `[No character style]` im Absatzformat `Sprecher` (`//speaker[hi]/text()`): normale Schriftgröße (nicht verkleinert)
 
 ## Sprecher lateinisch
 (entfällt vorläufig)
