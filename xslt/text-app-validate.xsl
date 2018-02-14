@@ -62,13 +62,20 @@
 				</nav>
 				<p class="help">
 					<a href="https://github.com/faustedition/faust-gen-html/blob/master/text/README-app_norm.md">die wichtigsten Regeln für die app*norm.txt-Dateien</a> 
-				</p>				
-				<xsl:call-template name="apps-without-ins"/>			
-				<xsl:call-template name="all-apps-used"/>	
-				<xsl:call-template name="broken-app-links"/>
-				<xsl:call-template name="find-broken-wits"/>
-				<xsl:call-template name="summarize-notes"/>
-				<xsl:call-template name="app2xml"/>
+				</p>
+				<xsl:message>Validating apparatus insertion ...</xsl:message>
+				<xsl:variable name="results">					
+					<xsl:call-template name="apps-without-ins"/>			
+					<xsl:call-template name="all-apps-used"/>	
+					<xsl:call-template name="broken-app-links"/>
+					<xsl:call-template name="find-broken-wits"/>
+					<xsl:call-template name="summarize-notes"/>
+					<xsl:call-template name="app2xml"/>
+				</xsl:variable>
+				<xsl:sequence select="$results"/>
+				<xsl:for-each select="$results//*[self::p|self::tr][contains(@class, 'failed')]">
+					<xsl:message select="string-join(('ERROR', .), ' ')"/>				
+				</xsl:for-each>				
 			</body>
 		</html>
 		
