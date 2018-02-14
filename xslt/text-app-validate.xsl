@@ -107,7 +107,7 @@
 	<xsl:template name="all-apps-used">
 		<xsl:variable name="details" as="element()*">
 			<xsl:for-each select="$spec//app">
-				<xsl:variable name="id" select="f:seg-id(f:ins[1])"/>
+				<xsl:variable name="id" select="f:app-id(.)"/>
 				<xsl:variable name="apps-in-text" select="$text//app[@from = concat('#', $id)]"/>
 				<xsl:choose>
 					<xsl:when test="count($apps-in-text) = 1">
