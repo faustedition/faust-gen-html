@@ -21,25 +21,40 @@
         <xsl:variable name="inserted-apps">
             <xsl:apply-templates/>
         </xsl:variable>        
-        <xsl:apply-templates mode="pass2" select="$inserted-apps"/>        
+        <xsl:variable name="pass2"><xsl:apply-templates mode="pass2" select="$inserted-apps"/></xsl:variable>
+        <xsl:apply-templates mode="pass3" select="$pass2"/>        
     </xsl:template>
 
-    <!-- calculates an id for the seg corresponding to an app's f:ins -->
-    <xsl:function name="f:seg-id" as="xs:string">
+    <!-- base function for the id calculations, based in an app's f:ins -->
+    <xsl:function name="f:ins-id" as="xs:string">
+        <xsl:param name="prefix" as="xs:string"/>        
         <xsl:param name="ins" as="element(f:ins)"/>
         <xsl:variable name="parts" as="item()*">
-            <xsl:for-each select="$ins">
+            <xsl:for-each select="$ins"><!-- focus -->
                 <xsl:variable name="strrep" select="replace(lower-case(.), '\W+', '')"/>
-                <xsl:text>lem</xsl:text>
+                <xsl:value-of select="$prefix"/>
                 <xsl:value-of select="@n"/>
                 <xsl:choose>
                     <xsl:when test="$strrep != ''"><xsl:value-of select="$strrep"/></xsl:when>
-                    <xsl:when test="@place"><xsl:value-of select="@place"/></xsl:when>
-                    <xsl:otherwise><xsl:value-of select="count($ins/../preceding::app)"/></xsl:otherwise>
+                    <xsl:when test="@place"><xsl:value-of select="@place"/></xsl:when>                    
                 </xsl:choose>                        
             </xsl:for-each>
         </xsl:variable>
         <xsl:value-of select="string-join($parts, '.')"/>
+    </xsl:function>
+    
+    <!-- calculates an id for the seg corresponding to an app's f:ins -->
+    <xsl:function name="f:seg-id" as="xs:string">
+        <xsl:param name="ins" as="element(f:ins)"/>
+        <xsl:value-of select="f:ins-id('seg', $ins)"/>
+    </xsl:function>
+    
+    <!-- calculates an id for an app -->
+    <xsl:function name="f:app-id" as="xs:string">
+        <xsl:param name="for" as="node()"/>
+        <xsl:variable name="app" select="$for/ancestor-or-self::app[1]"/>
+        <xsl:variable name="ins" select="$app/f:ins[1]"/>
+        <xsl:value-of select="f:ins-id('app', $ins)"/>
     </xsl:function>
     
     
@@ -66,13 +81,15 @@
         </xsl:for-each>
     </xsl:template>
     
-    <!-- creates the note[@type="textcrit"] for the givven app element -->    
+    <!-- creates the note[@type="textcrit"] for the given app element -->    
     <xsl:template name="create-app-note">
         <xsl:param name="apps"/>
         <xsl:for-each select="$apps">
             <note type="textcrit">
+                <xsl:attribute name="xml:id" select="f:app-id(.)"/>
                 <xsl:copy-of select="ref" copy-namespaces="no"/>
-                <app from="#{f:seg-id(f:ins[1])}">
+                <app>
+                    <xsl:attribute name="from" select="for $ins in f:ins return concat('#', f:seg-id($ins))" separator=" "/>                    
                     <xsl:apply-templates select="lem" mode="app"/>
                     <xsl:apply-templates select="rdg" mode="app"/>
                 </app>
@@ -256,6 +273,41 @@
             </listWit>
         </xsl:copy>
     </xsl:template>
+    
+    
+    <!-- Removing duplicates -->
+    <!-- Phase 1: The antilabe case.  -->
+    <xsl:template mode="pass2" match="note[@type='textcrit']">
+        <xsl:variable name="current-id" select="@xml:id"/>
+        <xsl:variable name="fromrefs" select="for $fromref in tokenize(app/@from, '\s+') return replace($fromref, '^#', '')" as="item()*"/>
+        <xsl:choose>
+            <!-- no duplicate: keep -->
+            <xsl:when test="count(//note[@xml:id=$current-id]) = 1">
+                <xsl:next-match/>               
+            </xsl:when>
+            <!-- references sth in the current line: keep -->
+            <xsl:when test="ancestor::*[f:hasvars(.)]//seg[@xml:id = $fromrefs]">
+                <xsl:next-match/>
+            </xsl:when>
+            <!-- something else referenced from the current app: drop here, keep there -->
+            <xsl:when test="//seg[@xml:id = $fromrefs]"/>
+            <!-- otherwise drop, just to be sure -->
+            <xsl:otherwise>
+                <xsl:next-match/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- Phase 2: drop all remaining duplicates. Only the first instance is kept. -->
+    <xsl:template mode="pass3" match="note[@type='textcrit']">
+        <xsl:variable name="current-id" select="@xml:id"/>
+        <xsl:if test="not(preceding::note[@type='textcrit'][@xml:id=$current-id])">
+            <xsl:next-match/>
+        </xsl:if>
+    </xsl:template>
+    
+    
+    
     
     
     <!-- Pass through unchanged everything else. -->

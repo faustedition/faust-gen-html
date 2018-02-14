@@ -165,14 +165,16 @@
 		<xsl:value-of select="replace(., '\.\s*$', '')"/>
 	</xsl:template>
 	
-	<xsl:template mode="pass2" match="stage//hi/text()[position()=last()]">
-		<xsl:value-of select="replace(., '\.$', '')"/>
+	<xsl:template mode="pass2" match="stage//hi/text()[position()=last()]" priority="1">
+		<xsl:variable name="prep"><xsl:next-match/></xsl:variable>
+		<xsl:value-of select="replace($prep, '\.$', '')"/>
 	</xsl:template>
 	
 	<xsl:template mode="pass2" match="stage//text()[preceding-sibling::node()[1][self::hi]]" priority="1">
 		<xsl:variable name="prep"><xsl:next-match/></xsl:variable>
 		<xsl:value-of select="replace($prep, '^\.', '')"/>
 	</xsl:template>
+	
 	
 	<!-- The following fixes are eventually to be implemented in all source files: -->
 	<xsl:template match="stage/emph">
