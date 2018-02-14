@@ -291,11 +291,12 @@ für "Oberons ..."
 ### (Sprecher nach WNT-Titel)
 
 ## Titel (Faust)
-XML: `before_1_a`.
+XML: `titlePart[@n='before_1_a']`.
 
 ## Untertitel (Eine Tragödie)
-XML: `before_1_b`.
+XML: `titlePart[@n='before_1_b']`.
 
+Formatierung: am Anfang des Absatzes 7 Zeilenumbrüche einfügen.
 
 ## Vers nach Teil (Zueignung)
 Extra-Abstand nach oben.
