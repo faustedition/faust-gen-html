@@ -121,6 +121,8 @@ def parse_app2norm(app_text='app2norm.txt'):
             if match:
                 log.info('Parsed: %s', line)
                 parsed = match.groupdict()
+                if len(parsed['replace']) > 2:
+                    parsed['replace'] = parsed['replace'].replace('^', '')
                 if parsed['insert'] == '=':
                     parsed['insert'] = parsed['replace']
                 ns = parsed['n'].split('|')
