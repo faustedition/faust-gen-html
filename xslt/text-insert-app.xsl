@@ -21,7 +21,8 @@
         <xsl:variable name="inserted-apps">
             <xsl:apply-templates/>
         </xsl:variable>        
-        <xsl:apply-templates mode="pass2" select="$inserted-apps"/>        
+        <xsl:variable name="pass2"><xsl:apply-templates mode="pass2" select="$inserted-apps"/></xsl:variable>
+        <xsl:apply-templates mode="pass3" select="$pass2"/>        
     </xsl:template>
 
     <!-- base function for the id calculations, based in an app's f:ins -->
@@ -272,6 +273,41 @@
             </listWit>
         </xsl:copy>
     </xsl:template>
+    
+    
+    <!-- Removing duplicates -->
+    <!-- Phase 1: The antilabe case.  -->
+    <xsl:template mode="pass2" match="note[@type='textcrit']">
+        <xsl:variable name="current-id" select="@xml:id"/>
+        <xsl:variable name="fromrefs" select="for $fromref in tokenize(app/@from, '\s+') return replace($fromref, '^#', '')" as="item()*"/>
+        <xsl:choose>
+            <!-- no duplicate: keep -->
+            <xsl:when test="count(//note[@xml:id=$current-id]) = 1">
+                <xsl:next-match/>               
+            </xsl:when>
+            <!-- references sth in the current line: keep -->
+            <xsl:when test="ancestor::*[f:hasvars(.)]//seg[@xml:id = $fromrefs]">
+                <xsl:next-match/>
+            </xsl:when>
+            <!-- something else referenced from the current app: drop here, keep there -->
+            <xsl:when test="//seg[@xml:id = $fromrefs]"/>
+            <!-- otherwise drop, just to be sure -->
+            <xsl:otherwise>
+                <xsl:next-match/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- Phase 2: drop all remaining duplicates. Only the first instance is kept. -->
+    <xsl:template mode="pass3" match="note[@type='textcrit']">
+        <xsl:variable name="current-id" select="@xml:id"/>
+        <xsl:if test="not(preceding::note[@type='textcrit'][@xml:id=$current-id])">
+            <xsl:next-match/>
+        </xsl:if>
+    </xsl:template>
+    
+    
+    
     
     
     <!-- Pass through unchanged everything else. -->
