@@ -6,6 +6,10 @@ Hier werden die zur IDML-Synthese notwendigen Festlegungen getroffen.
 # Fragen
 Siehe https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
 
+# Issues nach Zuweisung
+
+z.B. https://github.com/faustedition/faust-gen-html/issues?q=assignee%3Amarkusciupke+is%3Aopen
+
 # Verwendete Kürzel und Bezeichnungen
 * BA = Bühnenanweisung (`stage`)
 * Sprecher = Sprecherbezeichnung (`speaker`)
