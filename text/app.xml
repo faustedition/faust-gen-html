@@ -719,6 +719,10 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <replacement-string>s</replacement-string>
                         </string-pair>
                         <string-pair>
+                            <search-string>\Ae</search-string>
+                            <replacement-string>Ä</replacement-string>
+                        </string-pair>
+                        <string-pair>
                             <search-string>{{sup}}{|}*{|}{{/sup}}</search-string>
                             <replacement-string>.{=2=}</replacement-string>
                         </string-pair>
@@ -824,6 +828,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                 </exchange>
             </modify>
         </pass>
+        <!-- some repair work -->
         <pass>
             <modify>
                 <exchange>
@@ -831,6 +836,10 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                         <string-pair>
                             <search-string>\[{#}\]{|}\{=\}</search-string>
                             <replacement-string>{=1=}\]{=2=}</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>3409{{/i}}{|}*\]{{/i}}{|}\]</search-string>
+                            <replacement-string>{=1=}{=3=}{=2=}</replacement-string>
                         </string-pair>
                     </exchange-table>
                 </exchange>

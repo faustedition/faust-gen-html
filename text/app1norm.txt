@@ -60,7 +60,7 @@ before_354_c[Zimmer]{Zimmer,} <i>vor 354</i> Zimmer, <i>S</i>]   Zimmer^ <i>A B
 813[andern]{=} <i>813</i> andern <i>A</i>]   Andern <i>B B.a [type=4a]</i>
 845[Sontags]{=} <i>845</i> Sontags <i>A</i>]   Sonntags <i>B B.a [type=4a]</i>
 †<i>852|859</i> <i>Die Verse sind in Q eingerückt, in Analogie zu 949–980. [type=1c*]</i>]
-859[Aerndetag]{=} <i>859</i> Aerndetag <i>A</i>]   Aerntetag <i>B</i> Erntetag <i>B.a [type=4a]</i>
+859[Ärndetag]{=} <i>859</i> Ärndetag <i>A</i>]   Ärntetag <i>B</i> Erntetag <i>B.a [type=4a]</i>
 879[künftgen]{=} <i>879</i> künftgen <i>A</i>]   künft’gen <i>B B.a [type=4a]</i>
 914[fehlts]{=} <i>914</i> fehlts <i>A</i>]   fehlt’s <i>B B.a [type=4a]</i>
 958[an,]{=} <i>958</i> an, <i>A B.a</i>]   an^ <i>B [Typ 4c]</i>
@@ -227,7 +227,7 @@ before_3206f_c[zurück gebend]{=} <i>vor 3206</i> zurück gebend <i>S A</i>]   
 3369[er]{=} <i>3369</i> er <i>S A B B.a</i>]   es <i>1_H.5 emend. Resenhöfft [type=2b*]</i>
 3372[abgeschmackters]{=} <i>3372</i> abgeschmackters <i>S A</i>]   Abgeschmackters <i>B B.a [type=4a]</i>
 3395[Sein’]{=} <i>3395</i> Sein’ <i>S A B B.a</i>]   Sein <i>1_H.5 1_H.7 1_H.11 konj. Schröer [type=2b*]  </i>
-3409[]{} <i>nach 3409</i> <i>Die Strophengrenze nach Vers 3409 wird in 1_H.5 durch eine Leerzeile markiert, keine Leerzeile findet sich in S A B B.a; Leerzeile in 1_H.1 propon. Gö bill. G; keine Leerzeile in C.1_12 C.3_12. [type=2b]</i>]
+3409[]{} <i>nach 3409</i>] <i>Die Strophengrenze nach Vers 3409 wird in 1_H.5 durch eine Leerzeile markiert, keine Leerzeile findet sich in S A B B.a; Leerzeile in 1_H.1 propon. Gö bill. G; keine Leerzeile in C.1_12 C.3_12. [type=2b]</i>
 3417[hält’st]{hältst} <i>3417</i> hältst <i>1_H.5</i>]   hält’st <i>S A B</i> hältst <i>B.a</i>  <i>[type=1b]</i>
 3419[ließ’]{=} <i>3419</i> ließ’ <i>S A</i>]   lies <i>1_H.5</i> ließ <i>B B.a [type=4a]</i>
 3422[Muß]{=} <i>3422</i> Muß <i>A B B.a</i>]   Muss <i>1_H.5</i> <emph>Muß</emph> <i>S [type=2a*]</i>
@@ -266,7 +266,7 @@ before_3587[Gretchen.]{Gretchen} <i>vor 3587</i> <speaker>Gretchen^</speaker> <i
 3908[Alles^ alles]{=} <i>3908</i> Alles^ alles <i>1_H.14 A</i>]   Alles, Alles <i>B</i> Alles^ Alles <i>B.a [type=4a]</i>
 3916[glimmert]{glimmet} <i>3916</i> glimmet <i>1_H.14</i>]   glimmert <i>A B B.a  1_H.1 C.1_12 C.3_12 [type=2a]  </i>
 3925[durchs]{=} <i>3925</i> durchs <i>1_H.14 A</i>]   durch’s <i>B B.a [type=4a]</i>
-3945[Aeste^]{=} <i>3945</i> Aeste^ <i>A B B.a 1_H.1 C.1_12</i>]   Aeste! <i>1_H.14 </i> Aeste! <i>C.3_12 [type=2a*]</i>
+3945[Äste^]{=} <i>3945</i> Äste^ <i>A B B.a 1_H.1 C.1_12</i>]   Äste! <i>1_H.14 </i> Äste! <i>C.3_12 [type=2a*]</i>
 3957[gelb^]{=} <i>3957</i> gelb^ <i>1_H.14 A</i>]   gelb, <i>D.1 </i> gelb, <i>B B.a [type=4a]</i>
 3961[f—t die Hexe, es st—t]{=} <i>3961</i> f—t <i>…</i> st—t <i>A B B.a</i>]   farzt <i>…</i> stinckt <i>1_H.14[type=7]</i>
 3964[dem]{denn} 3964 denn <i>1_H.14</i>]   dem <i>A B B.a 1_H.1 C.1_12 C.3_12 [type=2a]  </i>
