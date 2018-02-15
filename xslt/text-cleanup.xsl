@@ -151,7 +151,7 @@
 			<xsl:otherwise>
 				<!-- Otherwise add period at end, removing trailing whitespace -->
 				<xsl:variable name="text"><xsl:next-match/></xsl:variable>
-				<xsl:value-of select="replace($text, '\s*$', '.')"/>
+				<xsl:value-of select="concat(replace($text, '\s+$', ''), '.')"/>
 			</xsl:otherwise>
 		</xsl:choose>	
 	</xsl:template>
