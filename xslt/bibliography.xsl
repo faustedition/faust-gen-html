@@ -59,25 +59,39 @@
         </xsl:choose>		
     </xsl:function>
     
-    <xsl:function name="f:resolve-faust-doc">
+    <xsl:function name="f:resolve-faust-doc" as="element()*">
         <xsl:param name="uri"/>
         <xsl:param name="transcript-list"/>
-        <!-- Function doesn't resolve document parameters :-(, so let's pass this in -->		
-        <xsl:for-each select="document($transcript-list)//idno[@uri=$uri]/..">
-            <xsl:variable name="docinfo" select="."/>
-            <xsl:choose>
-                <xsl:when test="$docinfo/@type='print'">
-                    <a class="md-document-ref" href="../meta/{replace($docinfo/@document, '.*/(.*?)\.xml', '$1')}" title="{$docinfo/headNote}">
-                        <xsl:value-of select="$docinfo/@f:sigil"/>
-                    </a>				
-                </xsl:when>
-                <xsl:otherwise>
-                    <a class="md-document-ref" href="{$docbase}/{$docinfo/@document}" title="{$docinfo/headNote}">
-                        <xsl:value-of select="$docinfo/@f:sigil"/>
-                    </a>								
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:for-each>		
+        <!-- Function doesn't resolve document parameters :-(, so let's pass this in -->
+        <xsl:variable name="result" as="element()*">
+            <xsl:for-each select="document($transcript-list)//idno[@uri=$uri]/..">
+                <xsl:variable name="docinfo" select="."/>
+                <xsl:choose>
+                    <xsl:when test="$docinfo/@type='print'">
+                        <a class="md-document-ref" href="../meta/{replace($docinfo/@document, '.*/(.*?)\.xml', '$1')}" title="{$docinfo/headNote}">
+                            <xsl:value-of select="$docinfo/@f:sigil"/>
+                        </a>				
+                    </xsl:when>                
+                    <xsl:otherwise>
+                        <a class="md-document-ref" href="{$docbase}/{$docinfo/@document}" title="{$docinfo/headNote}">
+                            <xsl:value-of select="$docinfo/@f:sigil"/>
+                        </a>								
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:for-each>		            
+        </xsl:variable>
+        <xsl:choose>
+            <xsl:when test="$result">
+                <xsl:sequence select="$result"/>
+                <xsl:if test="count($result) > 1">
+                    <xsl:message select="concat('WARNING: ', $uri, ' resolved to more than one docs: ', string-join($result, ', '))"/>
+                </xsl:if>
+            </xsl:when>
+            <xsl:otherwise>
+                <a class="pure-alert-error" title="Error: unresolved reference"><xsl:value-of select="$uri"/></a>
+                <xsl:message select="concat('ERROR: Unresolved reference: ', $uri)"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:function>		
     
     <xsl:template name="parse-for-bib">

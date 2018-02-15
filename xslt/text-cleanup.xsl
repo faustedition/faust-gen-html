@@ -144,14 +144,14 @@
 				<xsl:text>.</xsl:text>
 			</xsl:when>
 			<xsl:when test="normalize-space(.) = ''">
-				<!-- Ends with whitespace: Prefix with period -->
+				<!-- Ends with whitespace only: Prefix with period -->
 				<xsl:text>.</xsl:text>
 				<xsl:next-match/>
 			</xsl:when>
 			<xsl:otherwise>
-				<!-- Otherwise add period at end -->
-				<xsl:next-match/>
-				<xsl:text>.</xsl:text>
+				<!-- Otherwise add period at end, removing trailing whitespace -->
+				<xsl:variable name="text"><xsl:next-match/></xsl:variable>
+				<xsl:value-of select="concat(replace($text, '\s+$', ''), '.')"/>
 			</xsl:otherwise>
 		</xsl:choose>	
 	</xsl:template>
@@ -170,7 +170,7 @@
 		<xsl:value-of select="replace($prep, '\.$', '')"/>
 	</xsl:template>
 	
-	<xsl:template mode="pass2" match="stage//text()[preceding-sibling::node()[1][self::hi]]" priority="1">
+	<xsl:template mode="pass2" match="stage//text()[preceding-sibling::node()[1][self::hi]]" priority="2">
 		<xsl:variable name="prep"><xsl:next-match/></xsl:variable>
 		<xsl:value-of select="replace($prep, '^\.', '')"/>
 	</xsl:template>

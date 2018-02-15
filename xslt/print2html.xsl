@@ -104,8 +104,38 @@
     <xsl:text> </xsl:text>
   </xsl:template>
   
+  <!-- Returns all elements that are referenced by the current apparatus' @from attribute -->
+  <xsl:function name="f:referenced-segs" as="element()*">
+    <xsl:param name="context"/>
+    <xsl:variable name="apps" select="$context/descendant-or-self::app"/>
+    <xsl:for-each select="$apps">
+      <xsl:variable name="app" select="."/>
+      <xsl:for-each select="tokenize(@from, '\s+')">
+        <xsl:variable name="id" select="replace(., '^#', '')"/>
+        <xsl:sequence select="id($id, $app)"/>
+      </xsl:for-each>
+    </xsl:for-each>
+  </xsl:function>
+  
   <xsl:template match="note[@type='textcrit']" priority="1">
-    <span class="{string-join(f:generic-classes(.), ' ')}">
+    <span>
+      <xsl:attribute name="class" select="f:generic-classes(.), 'appnote'" separator=" "/>
+      <xsl:call-template name="highlight-group">
+        <xsl:with-param name="others" select="f:referenced-segs(.)"/>
+      </xsl:call-template>
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+  
+  <xsl:key name="app-for-seg" match="app" use="for $f in tokenize(@from, '\s+') return replace($f, '^#', '')"/>
+  <xsl:template match="seg[@xml:id]">
+    <xsl:variable name="id" select="@xml:id"/>
+    <xsl:variable name="current-app" select="key('app-for-seg', $id)"/>
+    <span>
+      <xsl:attribute name="class" select="f:generic-classes(.), 'appnote'" separator=" "/>
+      <xsl:call-template name="highlight-group">
+        <xsl:with-param name="others" select="$current-app/.., f:referenced-segs($current-app)"/>
+      </xsl:call-template>
       <xsl:apply-templates/>
     </span>
   </xsl:template>
@@ -115,14 +145,16 @@
   </xsl:template>
 
   <xsl:template match="note[@type='textcrit']/app/lem">
-    <span class="{string-join(f:generic-classes(.), ' ')}">
-      <xsl:apply-templates select="node() except (wit[1], wit[1]/following-sibling::node())"/>
-    </span>
-    <xsl:text> ] </xsl:text>
-    <xsl:apply-templates select="wit[1], wit[1]/following-sibling::node()"/>
+    <xsl:if test="node()">
+      <span class="{string-join(f:generic-classes(.), ' ')}">        
+        <xsl:apply-templates select="node() except ((note|wit)[1], (note|wit)[1]/following-sibling::node())"/>
+      </span>
+      <xsl:text> ] </xsl:text>
+      <xsl:apply-templates select="(note|wit)[1], (note|wit)[1]/following-sibling::node()"/>      
+    </xsl:if>
   </xsl:template>
   
-  <xsl:template match="lem/wit | rdg/wit">
+  <xsl:template match="lem//wit | rdg//wit">
     <xsl:choose>
       <xsl:when test="@f:is-base">
         <strong>
@@ -134,6 +166,8 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
+  
+  
   
   <xsl:template match="note[@type='textcrit']/app/rdg">
     <xsl:text> </xsl:text>
