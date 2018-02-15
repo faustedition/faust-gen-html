@@ -68,6 +68,7 @@ Die Kontexte können sein:
 * Szeneninneres (@markusciupke|s 'normale' BAs)
   * BAs innerhalb von Repliken (`sp`)
   * BAs zwischen Repliken (`sp`)
+
 Bei den letzten Unterpunkten lassen sich lokale Kontexte unterscheiden, die im folgenden aufgelistet werden.
 Hier gibt es noch Abstimmungsbedarf ([#298](https://github.com/faustedition/faust-gen-html/issues/298)).
 
