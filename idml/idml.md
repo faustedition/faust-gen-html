@@ -63,10 +63,13 @@ Entscheidend für die Zuweisung der richtigen Abstände ist zweierlei:
 (folgt)
 
 ### (In welchem Kontext steht die BA?)
-Die Kontexte sind zum einen:
+Die Kontexte können sein:
 * Szenenbeginn (@markusciupke|s 'prominente' BAs)
 * Szeneninneres (@markusciupke|s 'normale' BAs)
-Bei beiden gibt es wiederum spezifische lokale Kontexte, die im folgenden aufgelistet werden. 
+  * BAs innerhalb von Repliken (`sp`)
+  * BAs zwischen Repliken (`sp`)
+Bei den letzten Unterpunkten lassen sich lokale Kontexte unterscheiden, die im folgenden aufgelistet werden.
+Hier gibt es noch Abstimmungsbedarf ([#298](https://github.com/faustedition/faust-gen-html/issues/298)).
 
 ### (BA unterschieden nach Kontext)
 Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Repliken.
