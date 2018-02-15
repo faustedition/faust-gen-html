@@ -25,18 +25,31 @@ XML: `note type="textcrit"`.
 
 Output: Fußnotenartiges Konstrukt ohne Anmerkungsziffer.
 
-## (Bühnenanweisungen)
-Die folgend beschriebenen `BA ...`-Absatzformate können dem XML-Pattern `speaker`, `stage`, aber auch `speaker`+`stage` entsprechen. 
+## (BA)
+Die folgend beschriebenen `BA ...`-Absatzformate ergeben sich aus den unterschiedlichen Kontexten, in denen die entsprechenden Textphänomene (Bühnenanweisungen im klassischen Sinn, Sprecherbezeichnungen und die Kombination aus beidem) vorkommen können.
 
-### (Bühnenanweisungen aus `speaker` und `stage`)
-`BA ...` aus dem Pattern `speaker`+`stage` hat folgende Form (Bsp.):
+Diese Kontexte sind:
+* Szenenbeginn (@markusciupke|s 'prominente' BAs)
+* Szeneninneres (@markusciupke|s 'normale' BAs)
 
-    <speaker n="before_350_b">Mephistopheles</speaker>
-    <stage n="before_350_c" rend="inline small">allein.</stage>
+Die betreffenden XML-Elemente sind `speaker` (gut 2100 Vorkommen) und `stage` (gut 700).
 
-Erkennungszeichen: `stage[matches(@rend, 'inline')]`.
+Nicht aus jedem `speaker` oder `stage`-Element ergibt sich ein Absatz des Formats `BA ...`.
+Oft ergibt sich ein `BA ...`-Absatz aus der Kombination aus beiden:
 
-Umsetzung: `speaker` und `stage`-Inhalt zusammen in einen Absatz mit `BA zentr. 1,5` (doch wohl nicht `0,0`?). Der Inhalt von `speaker` erhält das Zeichenformat `Figur`.
+### (BA aus Sprecher und Bühnenanweisung)
+Im folgenden Bsp. ergibt sich der `BA ...`-Absatz aus den XML-Elementen `speaker`+`stage`:
+
+    <speaker n="before_482f_a">Faust</speaker>
+    <stage n="before_482f_b" rend="inline small">abgewendet.</stage>
+
+In allen derartigen Fällen (gut 170 Vorkommen) steht eine Bühnenanweisung in derselben Zeile mit der Sprecherbezeichnung.
+
+XML: `stage[matches(@rend, 'inline')]`.
+
+IDML-Umsetzung:
+* Inhalt von `speaker` und `stage` zusammen in einen Absatz des Formats `BA ...` mit Abstand `1,5 / 0,0` (die Zuordnungen von XML-Elementen je nach Kontext werden im folgenden für alle Falltypen erklärt). 
+* Der Inhalt von `speaker` erhält das Zeichenformat `Figur`.
 
 ### (BA unterschieden nach Kontext)
 Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Repliken.
@@ -176,6 +189,7 @@ Output: Anzahl der Leerzeilen nach Wert von `@quantity` (2 bzw. 5).
 XML: `p`.
 
 ## Sprecher ... 
+(die mit `Sprecher` beginnenden Absatzformate werden voraussichtlich in `BA ...` aufgelöst)
 
 ### Sprecher 0,5
 (entfällt, siehe [#203](https://github.com/faustedition/faust-gen-html/issues/203))
