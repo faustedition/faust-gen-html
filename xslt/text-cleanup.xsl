@@ -144,14 +144,14 @@
 				<xsl:text>.</xsl:text>
 			</xsl:when>
 			<xsl:when test="normalize-space(.) = ''">
-				<!-- Ends with whitespace: Prefix with period -->
+				<!-- Ends with whitespace only: Prefix with period -->
 				<xsl:text>.</xsl:text>
 				<xsl:next-match/>
 			</xsl:when>
 			<xsl:otherwise>
-				<!-- Otherwise add period at end -->
-				<xsl:next-match/>
-				<xsl:text>.</xsl:text>
+				<!-- Otherwise add period at end, removing trailing whitespace -->
+				<xsl:variable name="text"><xsl:next-match/></xsl:variable>
+				<xsl:value-of select="replace($text, '\s*$', '.')"/>
 			</xsl:otherwise>
 		</xsl:choose>	
 	</xsl:template>
