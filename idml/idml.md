@@ -43,9 +43,7 @@ Im folgenden Bsp. ergibt sich der `BA ...`-Absatz aus den XML-Elementen `speaker
     <speaker n="before_482f_a">Faust</speaker>
     <stage n="before_482f_b" rend="inline small">abgewendet.</stage>
 
-In allen derartigen Fällen (gut 170 Vorkommen) steht eine Bühnenanweisung in derselben Zeile mit der Sprecherbezeichnung.
-
-XML: `stage[matches(@rend, 'inline')]`.
+In allen derartigen Fällen (gut 170 Vorkommen) steht eine Bühnenanweisung in derselben Zeile mit der Sprecherbezeichnung (`stage[matches(@rend, 'inline')]`).
 
 IDML-Umsetzung:
 * Inhalt von `speaker` und `stage` zusammen in einen Absatz des Formats `BA ...` mit Abstand `1,5 / 0,0` (die Zuordnungen von XML-Elementen je nach Kontext werden im folgenden für alle Falltypen erklärt). 
