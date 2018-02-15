@@ -170,7 +170,7 @@
 		<xsl:value-of select="replace($prep, '\.$', '')"/>
 	</xsl:template>
 	
-	<xsl:template mode="pass2" match="stage//text()[preceding-sibling::node()[1][self::hi]]" priority="1">
+	<xsl:template mode="pass2" match="stage//text()[preceding-sibling::node()[1][self::hi]]" priority="2">
 		<xsl:variable name="prep"><xsl:next-match/></xsl:variable>
 		<xsl:value-of select="replace($prep, '^\.', '')"/>
 	</xsl:template>
