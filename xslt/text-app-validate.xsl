@@ -108,7 +108,7 @@
 		<xsl:variable name="details" as="element()*">
 			<xsl:for-each select="$spec//app">
 				<xsl:variable name="id" select="f:app-id(.)"/>
-				<xsl:variable name="apps-in-text" select="$text//app[@from = concat('#', $id)]"/>
+				<xsl:variable name="apps-in-text" select="$text//*[@xml:id=$id]"/>
 				<xsl:choose>
 					<xsl:when test="count($apps-in-text) = 1">
 						<p class="passed"/>
