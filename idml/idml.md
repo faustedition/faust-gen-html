@@ -26,28 +26,47 @@ XML: `note type="textcrit"`.
 Output: Fußnotenartiges Konstrukt ohne Anmerkungsziffer.
 
 ## (BA)
-Die folgend beschriebenen `BA ...`-Absatzformate ergeben sich aus den unterschiedlichen Kontexten, in denen die entsprechenden Textphänomene (Bühnenanweisungen im klassischen Sinn, Sprecherbezeichnungen und die Kombination aus beidem) vorkommen können.
 
-Diese Kontexte sind:
-* Szenenbeginn (@markusciupke|s 'prominente' BAs)
-* Szeneninneres (@markusciupke|s 'normale' BAs)
+### (Haben wir hier eine BA?)
+(oder: grundlegende Elemente und ihre Kombination)
 
-Die betreffenden XML-Elemente sind `speaker` (gut 2100 Vorkommen) und `stage` (gut 700).
+Die für die `BA`-Formate relevanten XML-Elemente sind `speaker` (gut 2100 Vorkommen) und `stage` (gut 700).
 
 Nicht aus jedem `speaker` oder `stage`-Element ergibt sich ein Absatz des Formats `BA ...`.
-Oft ergibt sich ein `BA ...`-Absatz aus der Kombination aus beiden:
 
-### (BA aus Sprecher und Bühnenanweisung)
-Im folgenden Bsp. ergibt sich der `BA ...`-Absatz aus den XML-Elementen `speaker`+`stage`:
+Deswegen lautet die Frage abgewandelt: Haben wir hier _eine_ BA oder _zwei_ BAs?
 
+Oft ergibt sich ein `BA ...`-Absatz aus der Kombination aus beiden.
+Nämlich dann, wenn Sprecherbezeichnung (`speaker`) und eine Bühnenanweisung zusammen in derselben Zeile stehen:
+* bezogen auf die `stage`: `stage[matches(@rend, 'inline')]`
+* bezogen auf den `speaker`: `speaker[following-sibling::*[1][self::stage[matches(@rend,'inline')]]]`
+Bsp.:
     <speaker n="before_482f_a">Faust</speaker>
     <stage n="before_482f_b" rend="inline small">abgewendet.</stage>
+In allen derartigen Fällen (gut 170 Vorkommen) steht eine Bühnenanweisung in derselben Zeile mit der Sprecherbezeichnung.
 
-In allen derartigen Fällen (gut 170 Vorkommen) steht eine Bühnenanweisung in derselben Zeile mit der Sprecherbezeichnung (`stage[matches(@rend, 'inline')]`).
+Wenn eine BA vorliegt, werden folgende Fragen gestellt. 
 
-IDML-Umsetzung:
-* Inhalt von `speaker` und `stage` zusammen in einen Absatz des Formats `BA ...` mit Abstand `1,5 / 0,0` (die Zuordnungen von XML-Elementen je nach Kontext werden im folgenden für alle Falltypen erklärt). 
-* Der Inhalt von `speaker` erhält das Zeichenformat `Figur`.
+### (1. Wie lang ist die BA?)
+Je nach Länge soll eine `BA zentr.` (für zentriert) oder eine `BA Blocks.` (für Blocksatz) entstehen.
+
+Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile. Als ungefähre Heuristik wird eine Zahl von Zeichen genommen, ab der mit hoher Wahrscheinlichkeit im Umbruch mehr als drei Zeilen entstehen. 
+Momentane Heuristik: 210 Zeichen als Richtwert, der zur Zuweisung von `BA Blocks. ...` führt.
+(Könnte sich evtl. verschieben in Abhängigkeit von [#209](https://github.com/faustedition/faust-gen-html/issues/209)!).
+
+Die Krux bei der Formatzuweisung liegt in den Abständen.
+Entscheidend für die Zuweisung der richtigen Abstände ist zweierlei:
+* Was enthält die BA? (Figur, Auftritt)
+* In welche Kontext steht die BA
+
+### (Was enthält die BA?)
+(folgt)
+
+### (In welchem Kontext steht die BA?)
+Die Kontexte sind zum einen:
+* Szenenbeginn (@markusciupke|s 'prominente' BAs)
+* Szeneninneres (@markusciupke|s 'normale' BAs)
+Bei beiden gibt es wiederum spezifische lokale Kontexte, die im folgenden aufgelistet werden. 
 
 ### (BA unterschieden nach Kontext)
 Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Repliken.
@@ -136,7 +155,6 @@ XML: `stage[not(ancestor::sp) and preceding-sibling::*[1][self::stage]]`.
 ### BA zentr. 1,5 
 
 ### BA Blocks. ...
-Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile. Als ungefähre Heuristik wird eine Zahl von Zeichen genommen, ab der mit hoher Wahrscheinlichkeit im Umbruch mehr als drei Zeilen entstehen. (Hängt ab von [#209](https://github.com/faustedition/faust-gen-html/issues/209)!). Momentane Heuristik: 210 Zeichen als Richtwert, der zur Zuweisung von `BA Blocks. ...` führt.
 
 #### BA Blocks. 0,0
 
