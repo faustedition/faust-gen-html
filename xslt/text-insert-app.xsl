@@ -118,20 +118,33 @@
         </xsl:analyze-string>
     </xsl:function>
     
-    <!-- We add a <wit> element with the sigil as it should be rendered at the end  -->
-    <xsl:template match="lem|rdg" mode="app">
-        <xsl:variable name="element" select="."/>
+    <!-- We add a <wit> element with the sigil as it should be rendered at the end 
+         unless there already are <wit> children -->
+    <xsl:template mode="app" match="rdg[@wit and not(descendant::wit)]|lem[@wit and not(descendant::wit)]">
         <xsl:copy copy-namespaces="no">
             <xsl:apply-templates mode="#current" select="@*, node()"/>
-            <xsl:for-each select="tokenize(@wit, '\s+')">
-                <xsl:variable name="uri" select="if (starts-with(., 'faust://')) then . else concat('faust://document/faustedition/', .)"/>
-                <xsl:variable name="sigil" select="$idmap//f:idno[@uri=$uri]"/>
-                <xsl:text> </xsl:text>
-                <wit wit="{$uri}">
-                    <xsl:sequence select="f:short-sigil($sigil)"/>                    
-                </wit>
-            </xsl:for-each>
+            <xsl:text> </xsl:text>
+            <xsl:call-template name="wit"><xsl:with-param name="wits" select="@wit"/></xsl:call-template>
         </xsl:copy>
+    </xsl:template>
+    
+    <!-- <wit> elements get a sigil as it should be rendered at the end -->
+    <xsl:template match="wit" name="wit" mode="app">        
+        <xsl:param name="wits" select="if (@wit) then @wit else ."/>
+        <xsl:for-each select="tokenize($wits, '\s+')">            
+            <xsl:variable name="uri" select="if (starts-with(., 'faust://')) then . else concat('faust://document/faustedition/', .)"/>
+            <xsl:variable name="sigil" select="$idmap//f:idno[@uri=$uri]"/>
+            <xsl:text> </xsl:text>
+            <wit wit="{$uri}">
+                <xsl:sequence select="f:short-sigil($sigil)"/>                    
+            </wit>
+            <xsl:if test="position() != last()"><xsl:text> </xsl:text></xsl:if>            
+        </xsl:for-each>
+    </xsl:template>
+    
+    <!-- <note> elements that just surround <wit>s and whitespace are superflous -->
+    <xsl:template match="note[wit and count(node()) = 1 or (not(* except wit) and matches(string-join(text(), ''), '^\s*$'))]" mode="app">
+        <xsl:apply-templates mode="#current"/>
     </xsl:template>
     
     <!-- the with-app mode is chosen for content where we know there is a lemma inside somewhere -->

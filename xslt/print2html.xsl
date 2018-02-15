@@ -115,14 +115,16 @@
   </xsl:template>
 
   <xsl:template match="note[@type='textcrit']/app/lem">
-    <span class="{string-join(f:generic-classes(.), ' ')}">
-      <xsl:apply-templates select="node() except (wit[1], wit[1]/following-sibling::node())"/>
-    </span>
-    <xsl:text> ] </xsl:text>
-    <xsl:apply-templates select="wit[1], wit[1]/following-sibling::node()"/>
+    <xsl:if test="node()">
+      <span class="{string-join(f:generic-classes(.), ' ')}">        
+        <xsl:apply-templates select="node() except ((note|wit)[1], (note|wit)[1]/following-sibling::node())"/>
+      </span>
+      <xsl:text> ] </xsl:text>
+      <xsl:apply-templates select="(note|wit)[1], (note|wit)[1]/following-sibling::node()"/>      
+    </xsl:if>
   </xsl:template>
   
-  <xsl:template match="lem/wit | rdg/wit">
+  <xsl:template match="lem//wit | rdg//wit">
     <xsl:choose>
       <xsl:when test="@f:is-base">
         <strong>
