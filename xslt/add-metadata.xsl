@@ -11,7 +11,50 @@
 		This stylesheet adds additional metadata provided by parameters and extracted from
 		document/**/*.xml to the transcript document. Metadata is copied mainly to the TEI 
 		header. Rest of the document is passed through as is.
+		
+		
+		This adds the following information:
+		
+		/TEI/@f:repository        The repository ID that holds the archival document
+		/TEI/@f:repository-label  it's label
+		/TEI/@f:split             true if this doc is to be split into multiple components
+		/TEI/@f:number            numbering passed in (i.e. order of sigils)
+		
+		//idno                    for every idno from the metadata
+		//idno/@type='headNote'   for the headNote
+		//idno/@type='fausturi'   for the full faust:// uri to the document
+		//idno/@type='fausttranscript' for the transcript's basename
+		//idno/@type='sigil_n'    for the 'shortened minimal' sigil      FIXME
+		
+		Attributes for divs:
+		f:act                     act number if it's an act div¹             
+		f:act-label               act label if it's an act div¹               split:211f
+		f:scene                   scene number if it's a scene¹               html-common:22
+		                                                                      split:133
+		f:scene-label             scene label if it's a scene¹                html-common:21-75
+		                                                                      search-results:102
+		                                                                      split:211f
+		                                                                      fts4.xql:90
+		                                                                      
+		   ¹ these might be merged to n/f:n and f:label, respectively		
+		f:first-verse             first Schröer verse number in the div
+		f:last-verse              last Schröer verse number in the div
+		
+		f:verse-range			  nominal verse range from the scene info
+		
+		f:section                 if /TEI/@f:split is true, this is the section
+		                          number that this div indicates.
+		
+		//l/@f:schroer            Schröer verse number if available 
+		
+		
+		
+		
+		From resolve-pbs.xsl:
+		//pb/@f:docTranscriptNo   number of the document transcript corresponding to that page
+		
 	-->
+	
 	
 	<xsl:import href="emend-core.xsl"/>
 	
@@ -146,9 +189,11 @@
 	<!-- f:section-div == this div will govern an own output file (section) -->
 	<xsl:function name="f:section-div" as="xs:boolean">
 		<xsl:param name="div"/>
-		<xsl:value-of select="$splittable 
-			and count($div/ancestor-or-self::div) = $depth_n
-			or count($div/ancestor-or-self::div) lt $depth_n and not($div/descendant::div[f:section-div(.)])"/>
+		<xsl:value-of select="$splittable and 
+			(if ($div/@type) 
+				then $div/@type='scene' and not($div/descendant::div[f:section-div(.)]) 
+				else  (count($div/ancestor-or-self::div) = $depth_n
+					or count($div/ancestor-or-self::div) lt $depth_n and not($div/descendant::div[f:section-div(.)])))"/>
 	</xsl:function>
 	
 	<xsl:template match="text">
