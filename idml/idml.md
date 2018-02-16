@@ -78,9 +78,9 @@ Die folgende XML-basierte Typeneinteilung beruht auf den Formaten vom Stand vor 
 Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Repliken.
 
 #### (BA **in** Replik)
-* direkt nach Sprecher auf derselben Zeile (`speaker/following-sibling::*[1][self::stage and @rend[contains(.,'inline')]]`)
-  * → Teil von BA zentr. 1,5
-* direkt nach Sprecher auf eigener Zeile (`speaker/following-sibling::*[1][self::stage and not(@rend[contains(.,'inline')])]`)
+* Kombination von Sprecherbezeichnung und Bühnenanweisung auf derselben Zeile (`speaker/following-sibling::*[1][self::stage and @rend[contains(.,'inline')]]`)
+  * → BA zentr. 1,5
+* direkt nach Sprecherbezeichnung auf eigener Zeile (`speaker/following-sibling::*[1][self::stage and not(@rend[contains(.,'inline')])]`)
   * → BA zentr. 0,0
 * zwischen Versen (`stage[preceding-sibling::*[1][self::l] and following-sibling::*[1][self::l]]`)
   * → BA zentr. 0,0
@@ -215,14 +215,19 @@ leer?
 
 #### 8. BA normal mit A/F vor BA-mit-F / Sp / V
 (1,5 / 0,0)
-* vor 350 [Sonderfall mit Individualregel]	
-* 482	
-* 514	
-* 522	
-* 602	
-* 737b	
-* 2465	
-* 2532
+XML: `stage[hi and not(matches(@rend,'inline'))][following-sibling::*[1][self::stage[hi] or self::sp or self::l]]` [und außerdem noch 'nichtprominent', XPath-Ausdruck dafür weiß ich nicht]
+
+In Tabelle genannte Beispiele:
+* vor 350 [Sonderfall, braucht Individualregel, s.u. [idml.md#bas-vor-350](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#bas-vor-350)]	
+* 482 (`before_482i_a`) = BA mit Auftritt, nicht Sprecher (s.o. [idml.md#ba-mit-auftritt-nicht-sprecher](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-mit-auftritt-nicht-sprecher))
+* 514 (`before_514_b`+`before_514_b` "Faust zusammenstürzend.") = in Replik, Unterpunkt 1 (s.o. [idml.md#ba-in-replik, Punkt 3](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-in-replik))
+* 522 = BA mit Auftritt, nicht Sprecher
+* 602 (Auftritt und zugleich Sprecherbezeichnung)
+* 737b	(`before_737_b` "Glockenklang ...") = BA mit Auftritt, nicht Sprecher 
+* 2465 (`before_2465_a` "Der Kessel ...") = BA nach Replik mit Figur (s.o. [idml.md#ba-nach-replik-mit-figur](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-nach-replik-mit-figur)) (kein Auftritt!) 	
+* 2532 = BA nach Replik mit Figur
+
+Kommentar: Gruppe umfasst Auftritte, die möglicherweise einen einzeiligen größeren Abstand nach oben und unten bekommen sollen.
 
 #### 9. BA normal ohne A/F vor BA-ohne-F
 (0,0 / 2,3)
