@@ -114,21 +114,21 @@ XML: `//head/following-sibling::*[1][self::stage]`.
 
 Generelle Andersbehandlung von BA nach Überschriften ist fragwürdig, da weitere BAs direkt nachfolgen können.
 
-#### (BA nach Überschrift mit Auftrittsbezeichnung, nicht Sprecher)
+#### (BA nach Überschrift mit Auftritt, nicht Sprecher)
 (überschneidet sich mit vorigem)
 
 XML: `move[preceding-sibling::*[1][self::head]]/following-sibling::*[1][self::stage]`
 
 → `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
 
-#### (BA mit Auftrittsbezeichnung, nicht Sprecher)
+#### (BA mit Auftritt, nicht Sprecher)
 (überschneidet sich mit vorigem)
 
 XML: `move/following-sibling::*[1][self::stage]`
 
 → `BA zentr. ?? / ?? unten` (`??` = mehr als 1,5 Abstand nach oben / = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
 
-#### (BA mit Auftrittsbezeichnung, nicht Sprecher **nach** BA mit Auftrittsbezeichnung, nicht Sprecher) 
+#### (BA mit Auftritt, nicht Sprecher **nach** BA mit Auftritt, nicht Sprecher) 
 (Bsp.: `before_2337_c` "Faust. Mephistopheles.")
 
 XML: `move/following-sibling::*[1][self::stage]/following-sibling::*[1][self::move]/following-sibling::*[1][self::stage]`.
@@ -175,7 +175,7 @@ Abstand nach oben wie `Vers Abstand`.
 
 #### 1. BA prom. mit A/F vor BA / Sp
 (0,0 / 2,3)
-* vor 33a	
+* vor 33a (`before_33_b`)
 * 243a	
 * 2337a	
 * 2337b	
