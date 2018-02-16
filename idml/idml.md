@@ -80,6 +80,8 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
 #### (BA **in** Replik)
 * Kombination von Sprecherbezeichnung und Bühnenanweisung auf derselben Zeile (`speaker/following-sibling::*[1][self::stage and @rend[contains(.,'inline')]]`)
   * → BA zentr. 1,5
+* dasselbe, dabei Sprecher- zugleich Auftrittsbezeichnung  (`move/following-sibling::*[1][self::sp]/speaker/following-sibling::*[1][self::stage and @rend[contains(.,'inline')]]`)
+  * → BA zentr. **evtl. mit ganzzeiligem Abstand nach oben**
 * direkt nach Sprecherbezeichnung auf eigener Zeile (`speaker/following-sibling::*[1][self::stage and not(@rend[contains(.,'inline')])]`)
   * → BA zentr. 0,0
 * zwischen Versen (`stage[preceding-sibling::*[1][self::l] and following-sibling::*[1][self::l]]`)
@@ -220,9 +222,9 @@ XML: `stage[hi and not(matches(@rend,'inline'))][following-sibling::*[1][self::s
 In Tabelle genannte Beispiele:
 * vor 350 [Sonderfall, braucht Individualregel, s.u. [idml.md#bas-vor-350](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#bas-vor-350)]	
 * 482 (`before_482i_a`) = BA mit Auftritt, nicht Sprecher (s.o. [idml.md#ba-mit-auftritt-nicht-sprecher](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-mit-auftritt-nicht-sprecher))
-* 514 (`before_514_b`+`before_514_b` "Faust zusammenstürzend.") = in Replik, Unterpunkt 1 (s.o. [idml.md#ba-in-replik, Punkt 3](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-in-replik))
+* 514 (`before_514_b`+`before_514_b` "Faust zusammenstürzend.") = Sprecherbezeichnung + Bühnenanweisung auf derselben Zeile (s.o. [idml.md#ba-in-replik](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-in-replik), Punkt 1)
 * 522 = BA mit Auftritt, nicht Sprecher
-* 602 (Auftritt und zugleich Sprecherbezeichnung)
+* 602 = Sprecherbezeichnung + Bühnenanweisung auf derselben Zeile, Sprecher- zugleich Auftrittsbezeichnung (s.o. [idml.md#ba-in-replik](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-in-replik), Punkt 2)
 * 737b	(`before_737_b` "Glockenklang ...") = BA mit Auftritt, nicht Sprecher 
 * 2465 (`before_2465_a` "Der Kessel ...") = BA nach Replik mit Figur (s.o. [idml.md#ba-nach-replik-mit-figur](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-nach-replik-mit-figur)) (kein Auftritt!) 	
 * 2532 = BA nach Replik mit Figur
