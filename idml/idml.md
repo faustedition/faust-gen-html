@@ -229,7 +229,7 @@ In Tabelle genannte Beispiele:
 * 2465 (`before_2465_a` "Der Kessel ...") = BA nach Replik mit Figur (s.o. [idml.md#ba-nach-replik-mit-figur](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-nach-replik-mit-figur)) (kein Auftritt!) 	
 * 2532 = BA nach Replik mit Figur
 
-Kommentar: Gruppe umfasst Auftritte, die möglicherweise einen einzeiligen größeren Abstand nach oben und unten bekommen sollen.
+Kommentar: Gruppe umfasst Auftritte, die möglicherweise einen größeren (einzeiligen) Abstand nach oben und unten bekommen sollen.
 
 #### 9. BA normal ohne A/F vor BA-ohne-F
 (0,0 / 2,3)
