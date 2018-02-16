@@ -18,7 +18,7 @@
 		/TEI/@f:repository        The repository ID that holds the archival document
 		/TEI/@f:repository-label  it's label
 		/TEI/@f:split             true if this doc is to be split into multiple components
-		/TEI/@f:number            number of components this doc is split into
+		/TEI/@f:number            numbering passed in (i.e. order of sigils)
 		
 		//idno                    for every idno from the metadata
 		//idno/@type='headNote'   for the headNote
