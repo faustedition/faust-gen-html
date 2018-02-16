@@ -230,7 +230,7 @@ leer?
 
 #### 10. BA normal ohne A/F vor BA-mit-F / Sp / V
 (0,0 / 0,0)
-* vor 429 = zwischen Versen)
+* vor 429 = zwischen Versen
 * 447 = zwischen Versen
 * 459 = zwischen Versen
 * 514 (`before_514_a`) = BA nach Replik ohne Figur (!)
