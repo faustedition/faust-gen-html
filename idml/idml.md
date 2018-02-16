@@ -215,7 +215,7 @@ leer?
 
 #### 8. BA normal mit A/F vor BA-mit-F / Sp / V
 (1,5 / 0,0)
-* vor 350	
+* vor 350 [Sonderfall mit Individualregel]	
 * 482	
 * 514	
 * 522	
@@ -400,10 +400,12 @@ XML: `stage before_350_a` ("Der Himmel schließt, ...").
 
 --> `BA zentr. 1,5` (ausnahmsweise Replikenabstand nach oben)
 
-XML: `before_350_b` zusammen mit `before_350_c` ("Mephistopheles allein.")
+XML: `before_350_b` zusammen mit `before_350_c` ("Mephistopheles allein.", standardmäßig kombiniert wg. `inline`)
 --> `BA zentr. 0,0` (ausnahmsweise keinen Replikenabstand nach oben, da Einheit mit vorhergehender BA).
 
 Der Grund ist, dass die XML-Auszeichnung die Struktur des Textes hier nicht voll adäquat abbildet.
+
+Alternativ können auch `before_350_b`+`before_350_c` zusammen mit `stage before_350_a` in einen BA-Absatz genommen werden mit Zeilenumbruch nach dem Inhalt von `stage before_350_a` (je nachdem, was für @pglatza einfacher ist).
 
 ## Szene (Finis)
 (entfällt vorläufig)
