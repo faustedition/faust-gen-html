@@ -246,7 +246,8 @@ In Tabelle genannte Beispiele:
 Kommentar:
 * klare Mitglieder einfacher zu definieren (zwischen Versen)
 * 2 fragliche Mitglieder, wo Abstand nach oben sinnvoll sein dürfte (würde bedeuten: Gruppe ist heterogen)
-
+* Abstand 0,0 / 0,0 außerdem auch dann erforderlich, wenn `Figur` vorkommt, aber BA innerhalb einer Replik steht (`stage[hi][ancestor::sp and not(matches(@rend,'inline'))]`) 
+  
 #### Aufschlüsselungen
 BA prom.
 * Bühnenanweisung vor dem 1. Vers einer Szene oder Unterszene
