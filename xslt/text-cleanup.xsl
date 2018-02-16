@@ -24,6 +24,7 @@
 	<xsl:template match="
 		  group 
 		| l/hi[@rend='big'] 
+		| hi[@rend='antiqua' or @rend='latin']
 		| seg[@f:questionedBy or @f:markedBy] 
 		| c
 		| damage
