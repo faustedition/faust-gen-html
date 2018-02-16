@@ -239,7 +239,7 @@
 				<th>Stellen</th>
 			</tr>
 		
-			<xsl:for-each-group select="$spec//note/node()[not(self::seg[@type])]" group-by="normalize-space(.)">
+			<xsl:for-each-group select="$spec//note/node()[not(self::seg[@type]|wit)]" group-by="normalize-space(.)">
 				<xsl:sort select="string-length(.)"/>
 				<tr>
 					<td><xsl:value-of select="."/></td> 
@@ -355,7 +355,8 @@
 			<xsl:sequence select="$details/*[@data-case='dangling']"/>
 		</table>
 		
-		<h4 class="failed">Bei <strong><xsl:value-of select="count($details/*[@data-case='duplicate'])"/></strong> Einträgen sind mehr als ein seg im Text markiert:</h4>
+		<xsl:variable name="duplicateSegCount" select="count($details/*[@data-case='duplicate'])"/>
+		<h4 class="{if ($duplicateSegCount = 0) then 'passed' else 'failed'}">Bei <strong><xsl:value-of select="$duplicateSegCount"/></strong> Einträgen sind mehr als ein seg im Text markiert:</h4>
 		<p class="help">Weist darauf hin, das das Lemma (bzw. der replace-Wert) nicht eindeutig gewählt wurde → besseres replace / lemma wählen.</p>
 		<table>
 			<th>@n</th>
