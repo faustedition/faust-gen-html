@@ -230,10 +230,14 @@ leer?
 
 #### 10. BA normal ohne A/F vor BA-mit-F / Sp / V
 (0,0 / 0,0)
-* vor 429 = zwischen Versen
+XML: `stage[not(hi) and not(matches(@rend,'inline')) and not(preceding-sibling::*[1][self::move])][following-sibling::*[1][self::stage[hi]
+or self::sp or self::l]]`
+
+In Tabelle genannte Beispiele:
+* vor 429 = zwischen Versen (s.o. [idml.md#ba-in-replik, Punkt 3](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-in-replik))
 * 447 = zwischen Versen
 * 459 = zwischen Versen
-* 514 (`before_514_a`) = BA nach Replik ohne Figur (!)
+* 514 (`before_514_a`) = BA nach Replik ohne Figur (!) (s.o. [idml.md#ba-nach-replik-ohne-figur](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-nach-replik-ohne-figur))
 * 518 = zwischen Versen 
 * 602 (`after_601`?) = BA nach Replik ohne Figur (!)  
 * 2378 = zwischen Versen
