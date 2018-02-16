@@ -231,7 +231,7 @@ leer?
 #### 10. BA normal ohne A/F vor BA-mit-F / Sp / V
 (0,0 / 0,0)
 XML: `stage[not(hi) and not(matches(@rend,'inline')) and not(preceding-sibling::*[1][self::move])][following-sibling::*[1][self::stage[hi]
-or self::sp or self::l]]`
+or self::sp or self::l]]` [und außerdem noch 'nichtprominent', XPath-Ausdruck dafür weiß ich nicht]
 
 In Tabelle genannte Beispiele:
 * vor 429 = zwischen Versen (s.o. [idml.md#ba-in-replik, Punkt 3](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-in-replik))
