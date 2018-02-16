@@ -72,6 +72,8 @@ Die Kontexte können sein:
 Bei den letzten Unterpunkten lassen sich lokale Kontexte unterscheiden, die im folgenden aufgelistet werden.
 Hier gibt es noch Abstimmungsbedarf ([#298](https://github.com/faustedition/faust-gen-html/issues/298)).
 
+Die folgende XML-basierte Typeneinteilung beruht auf den Formaten vom Stand vor 13.2.18, die nachfolgende auf dem Vorschlag zur Einteilung in "Bühnenanweisungen.xlsx".  
+
 ### (BA unterschieden nach Kontext)
 Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Repliken.
 
@@ -168,6 +170,96 @@ XML: `stage[not(ancestor::sp) and preceding-sibling::*[1][self::stage]]`.
 (für BA zwischen Versgruppen)
 
 Abstand nach oben wie `Vers Abstand`.
+
+### (Bühnenanweisungen.xlsx)
+
+#### 1. BA prom. mit A/F vor BA / Sp
+(0,0 / 2,3)
+* vor 33a	
+* 243a	
+* 2337a	
+* 2337b	
+* 3205	
+* 3544a	
+* 4728c	
+* 4728d
+
+#### 2. BA prom. mit A/F vor V
+(0,0 / 0,0)
+
+leer?
+
+#### 3. BA prom. ohne A/F vor BA-mit-A
+(1,5 / 4,6)
+
+leer?
+
+#### 4. BA prom. ohne A/F vor BA-ohne-F
+(1,5 / 2,3)
+* vor 4728a
+
+#### 5. BA prom. ohne A/F vor BA-mit-F / Sp / V
+(1,5 / 0,0)
+* vor 243b	
+* 4728b
+
+#### 6. BA normal mit A/F vor BA-mit-A
+(2,3 / 4,6)
+
+leer?
+
+#### 7. BA normal mit A/F vor BA-ohne-F
+(2,3 / 2,3)
+
+leer?
+
+#### 8. BA normal mit A/F vor BA-mit-F / Sp / V
+(1,5 / 0,0)
+* vor 350	
+* 482	
+* 514	
+* 522	
+* 602	
+* 737b	
+* 2465	
+* 2532
+
+#### 9. BA normal ohne A/F vor BA-ohne-F
+(0,0 / 2,3)
+* vor 737a
+
+#### 10. BA normal ohne A/F vor BA-mit-F / Sp / V
+(0,0 / 0,0)
+* vor 429	
+* 447	
+* 459	
+* 514	
+* 518	
+* 602	
+* 2378	
+* 2380
+
+#### Aufschlüsselungen
+BA prom.
+* Bühnenanweisung vor dem 1. Vers einer Szene oder Unterszene
+* `div/sp[1]/preceding-sibling::*[self::stage or self::speaker]`
+* und auch `div/sp[1]/l[1]/preceding-sibling::*[self::stage or self::speaker]`
+* mit BA kann auch die Kombination aus `speaker` und `stage` sein, s.o.
+BA normal	
+* Bühnenanweisung innerhalb einer Szene oder Unterszene
+* alle übrigen `speaker` und `stage` (kann ich nicht in XPath formulieren)
+
+A
+* Auftritt
+
+F	
+* Figur
+
+Sp
+* Sprecher
+
+V
+* Vers
 
 ## Bandtitel
 XML: `title`.
