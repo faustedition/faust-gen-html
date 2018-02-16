@@ -230,14 +230,18 @@ leer?
 
 #### 10. BA normal ohne A/F vor BA-mit-F / Sp / V
 (0,0 / 0,0)
-* vor 429	
-* 447	
-* 459	
-* 514	
-* 518	
-* 602	
-* 2378	
-* 2380
+* vor 429 = zwischen Versen)
+* 447 = zwischen Versen
+* 459 = zwischen Versen
+* 514 (`before_514_a`) = BA nach Replik ohne Figur (!)
+* 518 = zwischen Versen 
+* 602 (`after_601`?) = BA nach Replik ohne Figur (!)  
+* 2378 = zwischen Versen
+* 2380 = zwischen Versen
+
+Kommentar:
+* klare Mitglieder einfacher zu definieren (zwischen Versen)
+* 2 fragliche Mitglieder, wo Abstand nach oben sinnvoll sein dürfte (würde bedeuten: Gruppe ist heterogen)
 
 #### Aufschlüsselungen
 BA prom.
@@ -245,21 +249,22 @@ BA prom.
 * `div/sp[1]/preceding-sibling::*[self::stage or self::speaker]`
 * und auch `div/sp[1]/l[1]/preceding-sibling::*[self::stage or self::speaker]`
 * mit BA kann auch die Kombination aus `speaker` und `stage` sein, s.o.
+
 BA normal	
 * Bühnenanweisung innerhalb einer Szene oder Unterszene
-* alle übrigen `speaker` und `stage` (kann ich nicht in XPath formulieren)
+* alle übrigen `speaker` und `stage` (weiß ich keinen XPath-Ausdruck)
 
 A
-* Auftritt
+* Auftritt, siehe idml.md#auftritt
 
 F	
-* Figur
+* Figur, siehe idml.md#figur
 
 Sp
-* Sprecher
+* Sprecher (dieses Formats gibt es doch nicht mehr?)
 
 V
-* Vers
+* Vers, idml.md#vers
 
 ## Bandtitel
 XML: `title`.
@@ -557,9 +562,7 @@ Formatierung: vorläufig wie `Auftritt`.
 ## Figur
 (Hervorhebungen in BA) 
 
-XML: `stage/hi`.
-
-Formatierung: Sperrung.
+XML: `stage/hi`, `speaker`
 
 ## (Kolumnentitel)
 * entfallen bei Akt- und Szenenanfängen (= Absenkung)
