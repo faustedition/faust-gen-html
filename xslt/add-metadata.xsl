@@ -40,6 +40,8 @@
 		f:first-verse             first Schröer verse number in the div
 		f:last-verse              last Schröer verse number in the div
 		
+		f:verse-range			  nominal verse range from the scene info
+		
 		f:section                 if /TEI/@f:split is true, this is the section
 		                          number that this div indicates.
 		
@@ -187,9 +189,11 @@
 	<!-- f:section-div == this div will govern an own output file (section) -->
 	<xsl:function name="f:section-div" as="xs:boolean">
 		<xsl:param name="div"/>
-		<xsl:value-of select="$splittable 
-			and count($div/ancestor-or-self::div) = $depth_n
-			or count($div/ancestor-or-self::div) lt $depth_n and not($div/descendant::div[f:section-div(.)])"/>
+		<xsl:value-of select="$splittable and 
+			(if ($div/@type) 
+				then $div/@type='scene' and not($div/descendant::div[f:section-div(.)]) 
+				else  (count($div/ancestor-or-self::div) = $depth_n
+					or count($div/ancestor-or-self::div) lt $depth_n and not($div/descendant::div[f:section-div(.)])))"/>
 	</xsl:function>
 	
 	<xsl:template match="text">
