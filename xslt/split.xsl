@@ -130,7 +130,7 @@
 					</xsl:if>
 				</xsl:with-param>
 			</xsl:call-template>
-			<xsl:if test="descendant::div[@f:scene]">
+			<xsl:if test="descendant::div[@f:label]">
 				<ul>
 					<xsl:apply-templates mode="#current"/>
 				</ul>
@@ -208,8 +208,8 @@
 			<xsl:copy-of select="$prefix"/>
 			
 			<xsl:choose>
-				<xsl:when test="@f:scene-label or @f:act-label">
-					<xsl:value-of select="(@f:scene-label, @f:act-label)"/>
+				<xsl:when test="@f:label">
+					<xsl:value-of select="@f:label"/>
 				</xsl:when>
 				<xsl:when test="head">
 					<xsl:copy-of select="$title"/>
@@ -259,9 +259,9 @@
 				
 				
 				<main class="nofooter">
-					<div  class="print">
-						<div class="print-side-column"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
-						<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
+					<section  class="center pure-g-r print">
+						<div class="pure-u-1-5"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
+						<article class="pure-u-3-5">  <!-- 2. Spalte (3/5) für den Inhalt -->
 							<xsl:if test="$type = 'lesetext'">
 								<!-- Placeholder navigation to push down margin notes -->
 								<xsl:for-each select="$sidebar/*">
@@ -273,11 +273,11 @@
 								</xsl:for-each>
 							</xsl:if>
 							<xsl:sequence select="$content"/>
-						</div>
-						<div class="print-side-column">  <!-- 3. Spalte (1/5) für die lokale Navigation  -->
+						</article>
+						<div class="pure-u-1-5">  <!-- 3. Spalte (1/5) für die lokale Navigation  -->
 							<xsl:sequence select="$sidebar"/>
 						</div>
-					</div>
+					</section>
 				</main>
 		
 				<xsl:variable name="breadcrumbs"><xsl:call-template name="breadcrumbs"/></xsl:variable>

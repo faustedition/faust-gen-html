@@ -18,29 +18,24 @@
 	<xsl:template name="breadcrumbs">
 		<xsl:variable name="section" select="f:get-section-number(.)"/>
 		<xsl:variable name="section-div" select="if ($section) then //*[@f:section = $section] else ()"/>		
-		<xsl:variable name="scenes" select="(if ($section) then $section-div else .)/ancestor-or-self::div[@f:scene-label]"/>
-		<xsl:variable name="scene-id" select="data(($scenes/@f:scene)[last()])"/>
+		<xsl:variable name="hierarchy" select="($section-div/ancestor-or-self::div)" as="element()*"/>
+		<xsl:variable name="scenes" select="(if ($section) then $section-div else .)/ancestor-or-self::div[@f:label]"/>
+		<xsl:variable name="scene-id" select="data(($scenes/@n)[last()])"/>
 		<xsl:variable name="faust" select="if ($scene-id) then number(substring-before($scene-id, '.')) else 0"/>
-		
-		<xsl:choose>
-			<xsl:when test="self::TEI[@f:split] and $type = 'lesetext'">				
-				<a href="/text">Text</a>
-				<a>Faust <xsl:number value="$faust" format="I"/></a>
-			</xsl:when>
 			
+		<xsl:choose>
+			
+			<!-- Reading text: We have appropriate @n and @label annotations, just use these -->
 			<xsl:when test="$type = 'lesetext'">
 				<a href="/text">Text</a>
-				<xsl:if test="$faust">	
-					<a href="faust{$faust}">Faust <xsl:number value="$faust" format="I"/></a>
-				</xsl:if>
-				<xsl:for-each select="subsequence($scenes, 1, count($scenes)-1)">					
-					<a><xsl:value-of select="@f:scene-label"/></a>
-				</xsl:for-each>				
-				<a title="{$scenes[last()]/@f:scene-label}">
-					<xsl:value-of select="$scenes[last()]/@f:scene-label"/>
-				</a>				
-			</xsl:when>			
-			
+				<xsl:for-each select="$hierarchy">
+					<a href="{string-join(('faust', f:get-section-number(.)), '.')}#{@xml:id}" title="{@f:label}">
+						<xsl:value-of select="@f:label"/>
+					</a>
+				</xsl:for-each>
+			</xsl:when>
+						
+			<!-- For the rest, we need a double Archive / Genesis breadcrumb -->
 			<xsl:otherwise>
 				<span>
 					<a href="../archive">Archiv</a>
@@ -60,25 +55,29 @@
 				</span>
 				
 				<span>							
-					<a href="../genesis">Genese</a>
-					<xsl:if test="$faust">
-						<a>
-							<xsl:attribute name="href">../genesis_faust_<xsl:number value="$faust" format="i"/></xsl:attribute>
-							<xsl:text>Faust </xsl:text><xsl:number value="$faust" format="I"/>
-						</a>								
-					</xsl:if>
-					<xsl:if test="not(self::TEI[@f:split])">
-						<xsl:for-each select="$scenes[@f:verse-range]">
-							<xsl:variable name="range" select="tokenize(@f:verse-range, ' ')"/>
-							
-							<a href="../genesis_bargraph?rangeStart={$range[1]}&amp;rangeEnd={$range[2]}">
-								<xsl:value-of select="@f:scene-label"/>
-							</a>
-						</xsl:for-each>								
-					</xsl:if>
-					<a title="{//idno[@type='faustedition'][1]}">
-						<xsl:value-of select="//idno[@type='faustedition'][1]"/>
-					</a>					
+					<a href="{$edition}/genesis">Genese</a>
+					
+					<xsl:choose>
+						<xsl:when test="starts-with($scene-id, '1.') and not($hierarchy[@n='1.1'])">
+							<a href="{$edition}/genesis_faust_i">Faust I</a>
+						</xsl:when>
+						<xsl:when test="starts-with($scene-id, '2.') and not($hierarchy[@n='2'])">
+							<a href="{$edition}/genesis_faust_ii">Faust II</a>
+						</xsl:when>
+					</xsl:choose>
+					
+					<xsl:for-each select="$hierarchy">
+						<xsl:choose>
+							<xsl:when test="@n = '1.1'"><a href="{$edition}/genesis_faust_i">Faust I</a></xsl:when>
+							<xsl:when test="@n = '2'"><a href="{$edition}/genesis_faust_ii">Faust II</a></xsl:when>
+							<xsl:when test="@f:verse-range">
+								<xsl:variable name="range" select="tokenize(@f:verse-range, '\s+')"/>
+								<a href="{$edition}/genesis_bargraph?rangeStart={$range[1]}&amp;rangeEnd={$range[2]}">
+									<xsl:value-of select="@f:label"/>
+								</a>
+							</xsl:when>
+						</xsl:choose>
+					</xsl:for-each>
 				</span>
 			</xsl:otherwise>
 		</xsl:choose>
