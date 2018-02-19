@@ -85,6 +85,7 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
 * direkt nach Sprecherbezeichnung auf eigener Zeile (`speaker/following-sibling::*[1][self::stage and not(@rend[contains(.,'inline')])]`)
   * → BA zentr. 0,0
 * zwischen Versen (`stage[preceding-sibling::*[1][self::l] and following-sibling::*[1][self::l]]`)
+  * Bspp.: `before_430` "Er schlägt ..."  
   * → BA zentr. 0,0
 * zwischen Versgruppen (`stage[preceding-sibling::*[1][self::lg] and following-sibling::*[1][self::lg]]`)
   * → BA Abstand
