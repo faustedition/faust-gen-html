@@ -130,7 +130,7 @@
 					</xsl:if>
 				</xsl:with-param>
 			</xsl:call-template>
-			<xsl:if test="descendant::div[@f:scene]">
+			<xsl:if test="descendant::div[@f:label]">
 				<ul>
 					<xsl:apply-templates mode="#current"/>
 				</ul>
@@ -208,8 +208,8 @@
 			<xsl:copy-of select="$prefix"/>
 			
 			<xsl:choose>
-				<xsl:when test="@f:scene-label or @f:act-label">
-					<xsl:value-of select="(@f:scene-label, @f:act-label)"/>
+				<xsl:when test="@f:label">
+					<xsl:value-of select="@f:label"/>
 				</xsl:when>
 				<xsl:when test="head">
 					<xsl:copy-of select="$title"/>

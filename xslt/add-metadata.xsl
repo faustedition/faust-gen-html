@@ -16,7 +16,7 @@
 		This adds the following information:
 		
 		/TEI/@f:repository        The repository ID that holds the archival document
-		/TEI/@f:repository-label  it's label
+		/TEI/@f:repository-label  its label
 		/TEI/@f:split             true if this doc is to be split into multiple components
 		/TEI/@f:number            numbering passed in (i.e. order of sigils)
 		
@@ -242,8 +242,9 @@
 			<xsl:choose>
 				<xsl:when test="data($act) != ''">
 					<xsl:attribute name="f:act" select="$act"/>
+					<xsl:if test="not(@n)"><xsl:attribute name="n" select="concat('2.', $act)"/></xsl:if>
 					<xsl:call-template name="add-xmlid"><xsl:with-param name="id" select="concat('act_', $act)"/></xsl:call-template>										
-					<xsl:attribute name="f:act-label" >
+					<xsl:attribute name="f:label" >
 						<xsl:choose>
 							<xsl:when test="$type = 'lesetext'"><xsl:number format="I." ordinal="true" value="$act"/> Akt</xsl:when>
 							<xsl:otherwise><xsl:call-template name="extract-scene-label"/></xsl:otherwise>
@@ -253,10 +254,11 @@
 				
 				<xsl:when test="$explicit-scene or f:section-div(.)">
 					<xsl:attribute name="f:scene" select="$scene/@n"/>
+					<xsl:if test="not(@n)"><xsl:attribute name="n" select="$scene/@n"/></xsl:if>
 					<xsl:call-template name="add-xmlid">
 						<xsl:with-param name="id" select="concat('scene_', $scene/@n)"/>
 					</xsl:call-template>
-					<xsl:attribute name="f:scene-label">
+					<xsl:attribute name="f:label">
 						<xsl:choose>
 							<xsl:when test="$type = 'lesetext'"><xsl:value-of select="$scene//f:title"/></xsl:when>
 							<xsl:otherwise><xsl:call-template name="extract-scene-label"/></xsl:otherwise>
