@@ -331,7 +331,7 @@ XML: `p`.
 XML: `speaker` ohne folgende `stage[matches(@rend, 'inline')]`.
 
 ## (Überschriften)
-Wenn `head/lb`, so soll der Inhalt des `head` auf aufeinanderfolgende `Überschrift ...`-Absätze aufgeteilt werden.
+Bei `head/lb` wird innerhalb des betreffenden Absatzes ein Zeilenumbruch eingefügt.
 
 ### Teil / Akt
 (Zueignung, ..., Teil- und Aktüberschrift) 
