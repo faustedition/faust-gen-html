@@ -96,6 +96,7 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
 z.B. 
 * `before_514_a` "Verschwindet."
 * `before_4666_a` "Ungeheures Getöse ..."
+* Auch `before_4412` "er ergreift ... Es singt inwendig", worauf keine Sprecherbezeichnung folgt, wird nach demselben allgemeinen Prinzip behandelt.
 
 XML: `sp/following-sibling::*[1][self::stage[not(hi)]]`.
 
