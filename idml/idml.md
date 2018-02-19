@@ -93,7 +93,9 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
   * kommt regulär nicht vor 
 
 #### (BA nach Replik ohne Figur)
-(z.B. `before_4666_a` "Ungeheures Getöse ...", siehe [#256](https://github.com/faustedition/faust-gen-html/issues/256))
+z.B. 
+* `before_514_a` "Verschwindet."
+* `before_4666_a` "Ungeheures Getöse ..."
 
 XML: `sp/following-sibling::*[1][self::stage[not(hi)]]`.
 
