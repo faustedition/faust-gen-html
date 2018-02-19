@@ -403,7 +403,9 @@ Dieser Abstand kommt zu dem Replikenabstand hinzu, den der jeweils folgende Absa
 * `Sprecher` (`before_33_c` "Director") 
 * `BA`(`before_243_c` "Die drey Erzengel ...")
 
-## (BAs vor 350)
+## Individualregeln für BAs
+
+### (BAs vor 350)
 XML: `stage before_350_a` ("Der Himmel schließt, ...").
 
 --> `BA zentr. 1,5` (ausnahmsweise Replikenabstand nach oben)
@@ -414,6 +416,13 @@ XML: `before_350_b` zusammen mit `before_350_c` ("Mephistopheles allein.", stand
 Der Grund ist, dass die XML-Auszeichnung die Struktur des Textes hier nicht voll adäquat abbildet.
 
 Alternativ können auch `before_350_b`+`before_350_c` zusammen mit `stage before_350_a` in einen BA-Absatz genommen werden mit Zeilenumbruch nach dem Inhalt von `stage before_350_a` (je nachdem, was für @pglatza einfacher ist).
+
+### (BAs vor 350)
+Betrifft:
+* `before_2284_a` ("Nachdem die Löcher ... sind,")
+* `before_2284_b` + `before_2284_c` (da mit `inline`)
+
+Umsetzung genau analog zu [BAs vor 350](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#bas-vor-350).
 
 ## Szene (Finis)
 (entfällt vorläufig)
