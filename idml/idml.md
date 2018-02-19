@@ -417,7 +417,7 @@ Der Grund ist, dass die XML-Auszeichnung die Struktur des Textes hier nicht voll
 
 Alternativ können auch `before_350_b`+`before_350_c` zusammen mit `stage before_350_a` in einen BA-Absatz genommen werden mit Zeilenumbruch nach dem Inhalt von `stage before_350_a` (je nachdem, was für @pglatza einfacher ist).
 
-### (BAs vor 350)
+### (BAs vor 2284)
 Betrifft:
 * `before_2284_a` ("Nachdem die Löcher ... sind,")
 * `before_2284_b` + `before_2284_c` (da mit `inline`)
