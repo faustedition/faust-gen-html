@@ -178,7 +178,7 @@
 	
 	
 	<!-- The following fixes are eventually to be implemented in all source files: -->
-	<xsl:template match="stage/emph">
+	<xsl:template match="stage[not(@n='before_7503_a') and not(@n='before_12032_a')]/emph">
 		<xsl:element name="hi">
 			<xsl:apply-templates select="@*, node()"/>
 		</xsl:element>
