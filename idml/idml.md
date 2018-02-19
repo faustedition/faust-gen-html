@@ -95,18 +95,18 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
 #### (BA nach Replik ohne Figur)
 (z.B. `before_4666_a` "Ungeheures Getöse ...", siehe [#256](https://github.com/faustedition/faust-gen-html/issues/256))
 
-XML: `stage[not(hi) and preceding-sibling::*[1][self::sp] and following-sibling::*[1][self::sp or self::move[following-sibling::*[1][self::sp]]]]`.
+XML: `sp/following-sibling::*[1][self::stage[not(hi)]]`.
 
-→ `BA zentr. 1,5`, siehe aber [#286](https://github.com/faustedition/faust-gen-html/issues/286) 
+→ `BA zentr. ...`, abhängig von [#299](https://github.com/faustedition/faust-gen-html/issues/299) 
 
-→ (bei entsprechender Länge) `BA Blocks. 1,5` (Bsp.: `before_2465_a` "Der Kessel ...") 
+→ (bei entsprechender Länge) `BA Blocks. ...` 
 
 #### (BA nach Replik mit Figur)
 XML: `stage[hi and preceding-sibling::*[1][self::sp] and following-sibling::*[1][self::sp or self::move[following-sibling::*[1][self::sp]]]]`.
 
 → `BA zentr. 1,5`
 
-→ (bei entsprechender Länge) `BA Blocks. 1,5` (Bsp.: `before_2465_a` "Der Kessel ...") 
+→ (bei entsprechender Länge) `BA Blocks. 1,5` 
 
 #### (BA nach Überschrift, kein Auftritt)
 (Bsp.: `before_4613_f` "Faust auf blumigen ...")
