@@ -244,63 +244,37 @@
 	</xsl:template>
 	
 	<!-- 
-    Erzeugt das Grundgerüst einer HTML-Datei und ruft dann 
-    <xsl:apply-templates/> für den Inhalt auf. 
-  -->
+    Erzeugt das Grundgerüst einer HTML-Datei und ruft dann <xsl:apply-templates/> für den Inhalt auf. 
+    Ein Wrapper um das generischere html-frame, das das dreispaltige Layout mit der Seitennavigation erzeugt. 
+  	-->
 	<xsl:template name="generate-html-frame">
 		<!-- Single = true => alles auf einer Seite -->
 		<xsl:param name="single" select="false()" tunnel="yes"/>
 		<xsl:param name="content"><xsl:apply-templates/></xsl:param>
 		<xsl:param name="sidebar"><xsl:call-template name="local-nav"/></xsl:param>
-		<html>
-			<xsl:call-template name="html-head"/>
-			<body>
-				<xsl:call-template name="header"/>
-				
-				
-				<main class="nofooter">
-					<section  class="center pure-g-r print">
-						<div class="pure-u-1-5"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
-						<article class="pure-u-3-5">  <!-- 2. Spalte (3/5) für den Inhalt -->
-							<xsl:if test="$type = 'lesetext'">
-								<!-- Placeholder navigation to push down margin notes -->
-								<xsl:for-each select="$sidebar/*">
-									<xsl:copy copy-namespaces="no">
-										<xsl:attribute name="class" select="string-join((@class, 'type-textcrit', 'placeholder'), ' ')"/>
-										<xsl:copy-of select="@* except @class"/>
-										<xsl:copy-of select="node()"/>
-									</xsl:copy>
-								</xsl:for-each>
-							</xsl:if>
-							<xsl:sequence select="$content"/>
-						</article>
-						<div class="pure-u-1-5">  <!-- 3. Spalte (1/5) für die lokale Navigation  -->
-							<xsl:sequence select="$sidebar"/>
-						</div>
-					</section>
-				</main>
-		
-				<xsl:variable name="breadcrumbs"><xsl:call-template name="breadcrumbs"/></xsl:variable>
-				<xsl:choose>
-					<xsl:when test="$breadcrumbs/xh:span">
-						<xsl:call-template name="footer">
-							<xsl:with-param name="breadcrumb-def" tunnel="yes" select="$breadcrumbs/xh:span[1]"/>
-							<xsl:with-param name="scriptAdditions">
-								breadcrumbs.appendChild(document.createElement("br"));
-								breadcrumbs.appendChild(Faust.createBreadcrumbs(<xsl:value-of select="f:breadcrumb-json($breadcrumbs/xh:span[2])"/>));
-								<xsl:value-of select="$scriptAdditions"/>
-							</xsl:with-param>
-						</xsl:call-template>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:call-template name="footer">
-							<xsl:with-param name="breadcrumb-def" tunnel="yes" select="$breadcrumbs"/>
-						</xsl:call-template>
-					</xsl:otherwise>
-				</xsl:choose>
-
-			</body>
-		</html>
+		<xsl:call-template name="html-frame">
+			<xsl:with-param name="breadcrumb-def" tunnel="yes"><xsl:call-template name="breadcrumbs"/></xsl:with-param>
+			<xsl:with-param name="section-classes" select="('center', 'print')"/>			
+			<xsl:with-param name="grid-content">
+				<div class="pure-u-1-5"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
+				<article class="pure-u-3-5">  <!-- 2. Spalte (3/5) für den Inhalt -->
+					<xsl:if test="$type = 'lesetext'">
+						<!-- Placeholder navigation to push down margin notes -->
+						<xsl:for-each select="$sidebar/*">
+							<xsl:copy copy-namespaces="no">
+								<xsl:attribute name="class" select="string-join((@class, 'type-textcrit', 'placeholder'), ' ')"/>
+								<xsl:copy-of select="@* except @class"/>
+								<xsl:copy-of select="node()"/>
+							</xsl:copy>
+						</xsl:for-each>
+					</xsl:if>
+					<xsl:sequence select="$content"/>
+				</article>
+				<div class="pure-u-1-5">  <!-- 3. Spalte (1/5) für die lokale Navigation  -->
+					<xsl:sequence select="$sidebar"/>
+				</div>				
+			</xsl:with-param>
+		</xsl:call-template>
 	</xsl:template>
 	
 	

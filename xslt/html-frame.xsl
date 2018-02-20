@@ -18,6 +18,7 @@
 	<xsl:output method="xhtml" indent="yes" include-content-type="no"
 		omit-xml-declaration="yes"/>
 	
+	<!-- Creates the JSON required by Faust.createBreadcrumbs  -->
 	<xsl:function name="f:breadcrumb-json">
 		<xsl:param name="breadcrumb-html"/>
 		<xsl:choose>
@@ -38,6 +39,24 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
+	
+	<!-- 
+		Creates a short JS fragment that inserts breadcrumbs. The argument can be either:
+		(a) text: will just create a single text node as heading
+		(b) sequence of html a elements: will create a regular breadcrumb sequence
+		(c) two html spans, each with a sequence of a elements: will create a double breadcrumb 
+	-->
+	<xsl:template name="f:breadcrumb-script">
+		<xsl:param name="breadcrumb-def" required="yes"/>
+		<xsl:variable name="double" as="xs:boolean" select="not(empty($breadcrumb-def[count(h:span) = 2]))"/>
+			var breadcrumbs = document.getElementById("breadcrumbs");
+			breadcrumbs.appendChild(Faust.createBreadcrumbs(<xsl:value-of select="f:breadcrumb-json(if ($double) then $breadcrumb-def/h:span[1] else $breadcrumb-def)"/>));
+		<xsl:if test="$double">
+			breadcrumbs.appendChild(document.createElement("br"));
+			breadcrumbs.appendChild(Faust.createBreadcrumbs(<xsl:value-of select="f:breadcrumb-json($breadcrumb-def/h:span[2])"/>));				
+		</xsl:if>		
+	</xsl:template>
+	
 
 	<xsl:template name="html-head">
 		<xsl:param name="title" select="$title" tunnel="yes"/>
@@ -188,8 +207,9 @@
 						}});
 						$(function(){addPrintInteraction('/', undefined, '<xsl:value-of select="if ($documentURI) then $documentURI else 'undefined'"/>');})
 					<xsl:if test="$breadcrumb-def">
-						var breadcrumbs = document.getElementById("breadcrumbs");
-						breadcrumbs.appendChild(Faust.createBreadcrumbs(<xsl:value-of select="f:breadcrumb-json($breadcrumb-def)"/>));
+						<xsl:call-template name="f:breadcrumb-script">
+							<xsl:with-param name="breadcrumb-def" select="$breadcrumb-def"/>
+						</xsl:call-template>
 					</xsl:if>
 					<xsl:value-of select="$scriptAdditions"/>
 				});
@@ -219,26 +239,45 @@
 
 
 	<xsl:template name="html-frame">
-		<xsl:param name="content">
-			<xsl:apply-templates/>
-		</xsl:param>
+		<xsl:param name="content"/>
+		<xsl:param name="page-id" as="item()*"/>
+		<xsl:param name="grid-content"/>
+		<xsl:param name="section-classes" as="item()*"/>
 		<xsl:param name="headerAdditions" select="$headerAdditions"/>
 		<xsl:param name="scriptAdditions" select="$scriptAdditions"/>
+		<xsl:param name="breadcrumb-def" select="false()" tunnel="yes"/>
 		<html>
 			<xsl:call-template name="html-head">
 				<xsl:with-param name="headerAdditions" select="$headerAdditions"/>				
 			</xsl:call-template>
 			<body>
+				<xsl:if test="$page-id">
+					<xsl:attribute name="class" select="$page-id" separator=" "/>
+				</xsl:if>
 				<xsl:call-template name="header"/>
-				<main class="nofooter">
+				<main>
 					<section>
-						<article>
-							<xsl:sequence select="$content"/>
-						</article>
+						<xsl:attribute name="class" select="($section-classes, if ($grid-content) then 'pure-g-r' else ())" separator=" "/>
+						<xsl:choose>
+							<xsl:when test="$grid-content">								
+								<xsl:sequence select="$grid-content"/>	
+							</xsl:when>
+							<xsl:when test="$content">
+								<article>
+									<xsl:sequence select="$content"/>
+								</article>
+							</xsl:when>
+							<xsl:otherwise>
+								<article>
+									<xsl:apply-templates/>
+								</article>
+							</xsl:otherwise>
+						</xsl:choose>
 					</section>
 				</main>
 				<xsl:call-template name="footer">
 					<xsl:with-param name="scriptAdditions" select="$scriptAdditions"/>
+					<xsl:with-param name="breadcrumb-def" select="$breadcrumb-def" tunnel="yes"/>
 				</xsl:call-template>
 			</body>
 		</html>
