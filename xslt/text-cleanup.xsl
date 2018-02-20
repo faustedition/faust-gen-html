@@ -88,7 +88,7 @@
 	<xsl:template match="comment()" priority="1"/>
 	
 	<!-- lb -> space -->
-	<xsl:template match="lb[not(ancestor::head)]">
+	<xsl:template match="lb[not(ancestor::head) and not(ancestor::div[@n='1.1.23'])]">
 		<xsl:if test="not(@break='no')">
 			<xsl:text> </xsl:text>
 		</xsl:if>
