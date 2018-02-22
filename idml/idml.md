@@ -72,6 +72,8 @@ Die Kontexte können sein:
 Bei den letzten Unterpunkten lassen sich lokale Kontexte unterscheiden, die im folgenden aufgelistet werden.
 Hier gibt es noch Abstimmungsbedarf ([#298](https://github.com/faustedition/faust-gen-html/issues/298)).
 
+Die Detailbemerkungen zu @markusciupke|s Vorschlag stehen auf einer [eigenen Seite](https://github.com/faustedition/faust-gen-html/blob/master/idml/ba-diskussion.md).
+
 Die folgende XML-basierte Typeneinteilung beruht auf den Formaten vom Stand vor 13.2.18, die nachfolgende auf dem Vorschlag zur Einteilung in "Bühnenanweisungen.xlsx".  
 
 ### (BA unterschieden nach Kontext)
