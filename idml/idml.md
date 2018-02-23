@@ -177,6 +177,8 @@ XML: `stage[not(ancestor::sp) and preceding-sibling::*[1][self::stage]]`.
 #### BA Abstand
 (für BA zwischen Versgruppen)
 
+Zuweisungsprinzip s.o. [(BA in Replik)](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-in-replik), Punkt 5.
+
 Abstand nach oben wie `Vers Abstand`.
 
 ## Bandtitel
