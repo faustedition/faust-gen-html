@@ -186,17 +186,6 @@ XML: `title`.
 
 Output: einfach zentrierte Absätze o.ä., nach dem letzten `title` ein Seitenumbruch. 
 
-## NN (Bibelstelle eigene Zeile)
-Betrifft:
-* `after_10094` "(Ephes. 6. 12)" [in FA in derselben Zeile]
-* `after_10131` "(Matth. 4)"
-* `before_10323_b` "Sam. II. 23. 8." ohne Klammern [in WA in Klammern und zentriert]
-* `after_11287` "(Regum I. 21.)"
-
-XML: `note[not(@type='textcrit') and not(ancestor::app) and not(@rend='inline')]`
-
-Formatierung: rechtsbündig.
-
 ## Finis
 XML: `trailer`.
 
@@ -468,15 +457,32 @@ XML: `g`
 
 Formatierung: [#267](https://github.com/faustedition/faust-gen-html/issues/267).
 
-## NN (Bibelstelle in Zeile)
-betrifft (Kontext jeweils `BA zentr. 1,5`)
+## Bibelstelle
+Betrifft
+* `after_10094` "(Ephes. 6. 12)" [in FA in derselben Zeile]
+* `after_10131` "(Matth. 4)"
+* `before_10323_b` "Sam. II. 23. 8." ohne Klammern [in WA in Klammern und zentriert]
+* `after_11287` "(Regum I. 21.)"
 * `before_12037_b` "(St Lucae VII. 36)"
 * `before_12045_b` "(St. Joh. IV." ohne schließende Klammer
 * `before_12053_b` "(Acta Sanctorum)"
- 
-XML: `note[not(@type='textcrit') and not(ancestor::app) and @rend='inline']`
 
-Formatierung: zusammen zentriert wie übrige `BA zentr.` ohne besondere Auszeichnung und ohne vergrößerten Abstand. 
+XML: `note[@n]`
+
+Umsetzung:
+* einfügen in das jeweils vorhergehende Element `note[@n]/preceding-sibling::*[1]`.
+* davor einen Abstand von `1 em` hinzufügen 
+
+, d.h. 
+ `note[not(@type='textcrit') and not(ancestor::app) and @rend='inline']`
+
+## NN (Bibelstelle in Zeile)
+(jetzt: "Bibelstelle")
+
+## NN (Bibelstelle eigene Zeile)
+(zeitweise als Absatzformat vorgesehen; entfallen, siehe "Bibelstelle")
+
+Die Differenzierung zwischen `@rend='inline'`-Bibelstellen und denen auf eigener Zeile wurde aufgegeben.
 
 ## Doppelunterstreichung
 (individuelle Vorkommen im Faust II, siehe [xml/issues/66](https://github.com/faustedition/xml/issues/66)) 
