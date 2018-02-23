@@ -473,9 +473,6 @@ Umsetzung:
 * einfügen in das jeweils vorhergehende Element `note[@n]/preceding-sibling::*[1]`.
 * davor einen Abstand von `1 em` hinzufügen 
 
-, d.h. 
- `note[not(@type='textcrit') and not(ancestor::app) and @rend='inline']`
-
 ## NN (Bibelstelle in Zeile)
 (jetzt: "Bibelstelle")
 
