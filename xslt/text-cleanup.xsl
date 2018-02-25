@@ -18,6 +18,8 @@
 	-->
 
 	<xsl:strip-space elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc ge:transpose choice"/>
+	
+	<xsl:variable name="expan-map" select="document('../expan-map.xml')"/>
 
 	
 	<!-- These elements are replaced with their respective content: -->
@@ -96,6 +98,23 @@
 
 	<xsl:template match="choice[sic]">
 		<xsl:apply-templates select="sic/text()"/>
+	</xsl:template>
+	
+	<xsl:template match="abbr[not(parent::choice[expan] or ancestor::note)]">
+		<xsl:variable name="current-abbr" select="normalize-space(.)"/>
+		<xsl:variable name="expansion" select="$expan-map//choice[normalize-space(abbr) = $current-abbr]/expan"/>
+		<xsl:choose>
+			<xsl:when test="$expansion and normalize-space($expansion) != $current-abbr">
+				<choice>
+					<xsl:comment>generated from expan-map.xml</xsl:comment>
+					<xsl:next-match/>
+					<xsl:copy-of select="$expansion"/>
+				</choice>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:next-match/>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 	
 	<xsl:template match="text/@type">
