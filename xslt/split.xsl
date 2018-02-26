@@ -104,7 +104,37 @@
 				</xsl:with-param>
 			</xsl:call-template>
 		</xsl:result-document>
+		
+		<xsl:if test="$type = 'lesetext'">
+			
+			<xsl:result-document href="{$output-base}1.all.html">
+				<xsl:variable name="faust1"><xsl:apply-templates select="text" mode="extract-faust1"/></xsl:variable>
+				<xsl:call-template name="generate-html-frame">
+					<xsl:with-param name="single" select="true()" tunnel="yes"/>
+					<xsl:with-param name="content">
+						<xsl:apply-templates select="$faust1"/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:result-document>
+			
+			<xsl:result-document href="{$output-base}2.all.html">
+				<xsl:call-template name="generate-html-frame">
+					<xsl:with-param name="single" select="true()" tunnel="yes"/>
+					<xsl:with-param name="content">
+						<xsl:apply-templates select="text//div[@n='2']"/>
+					</xsl:with-param>
+				</xsl:call-template>
+			</xsl:result-document>
+			
+		</xsl:if>
 	</xsl:template>
+	
+	<xsl:template mode="extract-faust1" match="node()|@*">
+		<xsl:copy>
+			<xsl:apply-templates select="@*, node()" mode="#current"/>
+		</xsl:copy>
+	</xsl:template>
+	<xsl:template mode="extract-faust1" match="div[@n='2']"/>
 	
 	<xsl:template match="div[@xml:id]" priority="2">
 		<a name="{f:generate-id(.)}" id="{f:generate-id(.)}"/>
@@ -341,6 +371,19 @@
 							<xsl:when test="$single">
 								<span class="fa-li fa fa-docs"/>
 								<a href="{f:html-link($output-base)}">Szenenansicht</a>
+							</xsl:when>
+							<xsl:when test="$type = 'lesetext' and not(self::text)">
+								<xsl:variable name="part" select="substring(ancestor-or-self::div[@n][1]/@n, 1, 1)"/>
+								<xsl:variable name="label" select="if ($part = '1') then 'Faust I' else if ($part = '2') then 'Faust II' else ''"/>
+								<span class="fa-li fa fa-doc"/>
+								<xsl:choose>
+									<xsl:when test="$part">
+										<a href="{f:html-link(concat($output-base, $part, '.all'))}">Gesamtansicht <xsl:value-of select="$label"/></a>										
+									</xsl:when>
+									<xsl:otherwise>
+										<a href="{f:html-link(concat($output-base, '.all'))}">Gesamtansicht</a>										
+									</xsl:otherwise>
+								</xsl:choose>
 							</xsl:when>
 							<xsl:otherwise>
 								<span class="fa-li fa fa-doc"/>
