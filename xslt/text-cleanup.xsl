@@ -144,6 +144,11 @@
 		<xsl:apply-templates mode="#current"/>
 	</xsl:template>
 	
+	<!-- expand abbreviations -->
+	<xsl:template mode="pass2" match="choice[abbr and expan]">
+		<xsl:apply-templates mode="#current" select="expan/node()"/>
+	</xsl:template>
+
 	<!-- Further text fixes (that shouldn't collide with Ae transformation) -->
 	
 	<!-- Remove parentheses from stage directions -->
