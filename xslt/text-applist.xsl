@@ -20,8 +20,15 @@
 					}
 				</style>
 			</xsl:with-param>
-			<xsl:with-param name="content">				
-				<xsl:apply-templates select="//note[@type='textcrit']"/>					
+			<xsl:with-param name="section-classes" select="('print', 'center')"/>
+			<xsl:with-param name="content">
+				<xsl:for-each-group select="//note[@type='textcrit']" group-by="descendant::rdg/@type">
+					<xsl:sort select="current-grouping-key()"/>
+					<div>
+						<h3><xsl:value-of select="current-grouping-key()"/></h3>
+						<xsl:apply-templates select="current-group()"/>					
+					</div>
+				</xsl:for-each-group>				
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
