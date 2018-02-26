@@ -145,6 +145,9 @@
 	
 	<xsl:template mode="tocpage" match="div">
 		<li>
+			<xsl:if test="@xml:id">
+				<xsl:attribute name="id" select="@xml:id"/>
+			</xsl:if>
 			<xsl:call-template name="section-link">
 				<xsl:with-param name="suffix">
 					<xsl:if test="@f:first-verse != ''">
