@@ -186,7 +186,7 @@
 		<xsl:value-of select="replace(., '\.\s*$', '')"/>
 	</xsl:template>
 	
-	<xsl:template mode="pass2" match="head/text()[position()=last()]">
+	<xsl:template mode="pass2" match="*[self::head or self::titlePart]/text()[position()=last()]">
 		<xsl:value-of select="replace(., '\.\s*$', '')"/>
 	</xsl:template>
 	
