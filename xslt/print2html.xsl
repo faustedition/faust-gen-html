@@ -184,11 +184,10 @@
         <xsl:comment select="concat('wit=', @wit, ' transcript-list=', $transcript-list)"/>        
       </xsl:if>
       <xsl:if test="@type">
-        <span class="reading-type">
-          <xsl:value-of select="concat(
-            if (position() = last()) then ' ' else ' ',   (: em space before last type :)
-            '(', f:format-rdg-type(@type), ')')"/>
-        </span>
+        <xsl:value-of select="if (position() = last()) then ' ' else ' '"/>   <!-- em space before last type -->
+        <a class="reading-type" href="app#{@type}">
+          <xsl:value-of select="concat('(', f:format-rdg-type(@type), ')')"/>
+        </a>
       </xsl:if>
     </span>
   </xsl:template>

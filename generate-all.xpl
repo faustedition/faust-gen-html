@@ -168,11 +168,16 @@
 		<!-- ### Step 3c: Reading text apparatus list -->
 		<p:xslt>
 			<p:input port="source"><p:pipe port="result" step="generate-reading-text"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/add-metadata.xsl"/></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			<p:with-param name="type" select="'lesetext'"/>
+		</p:xslt>
+		<p:xslt>
 			<p:input port="stylesheet"><p:document href="xslt/text-applist.xsl"/></p:input>
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 		</p:xslt>
 		<p:store method="xhtml">
-			<p:with-option name="href" select="resolve-uri('www/text-app.html', $builddir)"/>
+			<p:with-option name="href" select="resolve-uri('www/print/app.html', $builddir)"/>
 		</p:store>
 		
 		<!-- ### Step 2a: Metadata HTML -->

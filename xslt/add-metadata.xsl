@@ -267,6 +267,9 @@
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:call-template name="add-xmlid"/>
+					<xsl:if test="not(@n) and $scene">
+						<xsl:attribute name="n" select="$scene/@n"/>
+					</xsl:if>
 				</xsl:otherwise>
 			</xsl:choose>
 			
