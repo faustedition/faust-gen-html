@@ -342,12 +342,14 @@
     <xsl:text> </xsl:text>
   </xsl:template>
   
+  <xsl:function name="f:normalize-space-xml" as="node()*">    
+    <xsl:param name="content" as="node()*"/>
+    <xsl:apply-templates select="$content" mode="normalize-space"/>          
+  </xsl:function>
+  
   <xsl:function name="f:normalize-space" as="xs:string">
-    <xsl:param name="text" as="node()*"/>
-    <xsl:variable name="nodes">
-      <xsl:apply-templates select="$text" mode="normalize-space"/>      
-    </xsl:variable>
-    <xsl:value-of select="replace(normalize-space($nodes), '&#x00AD;', '')"/> <!-- Soft Hyphen -->
+    <xsl:param name="content" as="node()*"/>
+    <xsl:value-of select="replace(normalize-space(string-join(f:normalize-space-xml($content), '')), '&#x00AD;', '')"/> <!-- Soft Hyphen -->
   </xsl:function>
   
 

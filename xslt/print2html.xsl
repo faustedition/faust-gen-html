@@ -146,10 +146,17 @@
 
   <xsl:template match="note[@type='textcrit']/app/lem">
     <xsl:if test="node()">
-      <span class="{string-join(f:generic-classes(.), ' ')}">        
-        <xsl:apply-templates select="node() except ((note|wit)[1], (note|wit)[1]/following-sibling::node())"/>
+      <xsl:variable name="lemma-tei" select="node() except ((note|wit)[1], (note|wit)[1]/following-sibling::node())"/>
+      <xsl:variable name="lemma">
+        <xsl:apply-templates select="f:normalize-space-xml($lemma-tei)"/>
+      </xsl:variable>
+      <span class="{string-join(f:generic-classes(.), ' ')}">
+        <xsl:sequence select="$lemma"/>
       </span>
-      <xsl:text> ] </xsl:text>
+      <xsl:if test="not(matches(string-join($lemma, ''), '\s+$'))">
+        <xsl:text> </xsl:text>
+      </xsl:if>
+      <xsl:text>] </xsl:text>
       <xsl:apply-templates select="(note|wit)[1], (note|wit)[1]/following-sibling::node()"/>      
     </xsl:if>
   </xsl:template>
