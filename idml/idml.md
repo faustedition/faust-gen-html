@@ -599,6 +599,14 @@ Für diese braucht in der Transformation nichts zu geschehen, also auch keine Re
 * `witStart`
 * `witness` (content löschen, `child` von `listWit`, s.o.)
 
+# Weitere Regelungen
+* BA mit Sprecher (content aus `speaker`) nicht vom ersten Vers trennen (siehe [#304](https://github.com/faustedition/faust-gen-html/issues/304), zum folgenden ebd.).
+* ersten Vers einer Replik (sp/l[1]) nicht vom nächsten Absatz trennen
+* ersten Vers einer Versgruppe (`lg/l[1]`) nicht vom nächsten Absatz trennen
+* letzten Vers einer Replik / einer Versgruppe nicht vom vorletzten trennen
+* Reimpaare nicht auseinanderreißen (ausnahmsweise mal nicht kodiert :-) 
+* BAs nach Repliken (s.o.) in vielen Fällen nicht vom letzten Vers / Prosa-Absatz der vorhergehenden Replik trennen  
+
 # Feinsatz
 * Seitenumbrüche
 * Einfügen von Leerzeilen (wo?)
