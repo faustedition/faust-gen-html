@@ -134,7 +134,7 @@
         <xsl:for-each select="tokenize($wits, '\s+')">            
             <xsl:variable name="uri" select="if (starts-with(., 'faust://')) then . else concat('faust://document/faustedition/', .)"/>
             <xsl:variable name="sigil" select="$idmap//f:idno[@uri=$uri]"/>
-            <xsl:text> </xsl:text>
+            <xsl:text> </xsl:text>
             <wit wit="{$uri}">
                 <xsl:sequence select="f:short-sigil($sigil)"/>                    
             </wit>
