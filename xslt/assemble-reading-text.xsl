@@ -49,11 +49,12 @@
 	<xsl:template match="div[descendant::l[@n='354'] and descendant::l[@n='4612']]"> 
 		<!-- div that encloses all of Faust 1, doesn't have an @n unfortunately  -->
 		<xsl:copy>
+			<xsl:if test="not(@xml:id)"><xsl:attribute name="xml:id">part_1.1</xsl:attribute></xsl:if>
 			<xsl:if test="not(@n)"><xsl:attribute name="n">1.1</xsl:attribute></xsl:if>
 			<xsl:apply-templates select="@*, node()"/>
 		</xsl:copy>
 		
-		<div n="2">			
+		<div n="2" xml:id="part_2">			
 			<xsl:sequence select="f:source('2_H')"/>
 			<xsl:apply-templates select="$H//*[@n='before_4613_c']"/>
 			<xsl:apply-templates select="$H/TEI/text/group/text[1]/body"/>
