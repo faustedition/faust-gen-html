@@ -211,5 +211,12 @@
     <xsl:value-of select="string-join($formatted-typeno, '')"/>
   </xsl:function>
   
+  <xsl:template match="note[@type='textcrit']//gap[@reason='ellipsis']">
+    <i>
+      <xsl:attribute name="class" select="f:generic-classes(.)" separator=" "/>
+      <xsl:text> bis </xsl:text>
+    </i>
+  </xsl:template>
+  
   
 </xsl:stylesheet>

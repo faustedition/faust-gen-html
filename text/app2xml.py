@@ -115,6 +115,7 @@ def parse_app2norm(app_text='app2norm.txt'):
             line = re.sub('</?(font|color).*?>', '', line)
             line = re.sub(r'\^?&gt;', '>', line)
             line = re.sub(r'\^?&lt;', '<', line)
+            line = re.sub(r'<i>…</i>|…|\.\.\.', '<gap reason="ellipsis"/>', line)
             if line != raw_line[:-1]:
                 yield etree.Comment('FIXED: ' + line)
             match = APP.match(line)
