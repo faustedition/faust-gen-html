@@ -167,9 +167,9 @@
 	
 	<xsl:template match="app">
 		<span class="app">
-			<a href="http://dev.faustedition.net/print/faust.all#l{@n}"><strong class="n"><xsl:value-of select="@n"/></strong></a>
-			<xsl:text> </xsl:text>
-			<span class="lem"><xsl:value-of select="lem"/>] </span>
+			<a href="http://dev.faustedition.net/print/app#l{f:app-id(.)}"><strong class="n"><xsl:value-of select="@n"/></strong>
+			<xsl:text> </xsl:text>
+			<span class="lem"><xsl:value-of select="lem"/>]</span></a><xsl:text> </xsl:text>
 		</span>
 	</xsl:template>
 	
@@ -239,7 +239,7 @@
 				<th>Stellen</th>
 			</tr>
 		
-			<xsl:for-each-group select="$spec//note/node()[not(self::seg[@type]|wit)]" group-by="normalize-space(.)">
+			<xsl:for-each-group select="$spec//note/node()[not(self::seg[@type]|self::wit)]" group-by="normalize-space(.)">
 				<xsl:sort select="string-length(.)"/>
 				<tr>
 					<td><xsl:value-of select="."/></td> 
