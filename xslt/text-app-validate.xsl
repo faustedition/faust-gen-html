@@ -241,11 +241,13 @@
 		
 			<xsl:for-each-group select="$spec//note/node()[not(self::seg[@type]|self::wit)]" group-by="normalize-space(.)">
 				<xsl:sort select="string-length(.)"/>
-				<tr>
-					<td><xsl:value-of select="."/></td> 
-					<td><xsl:value-of select="count(current-group())"/></td>
-					<td><xsl:apply-templates select="for $note in current-group() return $note/ancestor::app"/></td>					
-				</tr>
+				<xsl:if test="current-grouping-key() != ''">
+					<tr>
+						<td><xsl:value-of select="."/></td> 
+						<td><xsl:value-of select="count(current-group())"/></td>
+						<td><xsl:apply-templates select="for $note in current-group() return $note/ancestor::app"/></td>					
+					</tr>
+				</xsl:if>
 			</xsl:for-each-group>	
 		</table>
 		
