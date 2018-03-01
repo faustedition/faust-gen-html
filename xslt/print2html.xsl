@@ -33,21 +33,24 @@
     
    -->
   
-<!-- Die Behandlung von den meisten Elementen ist relativ gleich: -->
+  <!-- liefert für ein $n den entsprechenden Apparat-HTML-Block -->
+  <xsl:function name="f:variant-info">
+    <xsl:param name="n" as="item()?"/>
+    <xsl:choose>
+      <xsl:when test="$n">        
+        <xsl:variable name="variantfile" select="resolve-uri(concat(f:output-group($n), '.html'), resolve-uri($variants))"/>          
+        <xsl:sequence
+          select="document($variantfile)/xh:div/xh:div[@data-n = $n]"
+        />
+      </xsl:when>
+      <xsl:otherwise/>
+    </xsl:choose>
+  </xsl:function>
+  
+  <!-- Die Behandlung der meisten Elemente ist relativ gleich: -->
   <xsl:template match="*[f:hasvars(.)]" priority="-0.1">
     <!-- # Varianten aus dem variants-Folder auslesen: -->
-    <xsl:variable name="varinfo" as="node()*">
-      <xsl:choose>
-        <xsl:when test="@n">
-          <xsl:variable name="n" select="@n"/>
-          <xsl:variable name="variantfile" select="resolve-uri(concat(f:output-group($n), '.html'), resolve-uri($variants))"/>          
-          <xsl:sequence
-            select="document($variantfile)/xh:div/xh:div[@data-n = $n]"
-          />
-        </xsl:when>
-        <xsl:otherwise/>
-      </xsl:choose>
-    </xsl:variable>
+    <xsl:variable name="varinfo" as="node()*" select="f:variant-info(@n)"/>
     <xsl:variable name="varcount" select="if ($varinfo) then $varinfo/@data-witnesses else 0"/>
     
     <!-- Dann ein Element erzeugen: div oder span oder p, siehe utils.xsl -->
@@ -161,14 +164,18 @@
   </xsl:template>
   
   <xsl:template match="lem//wit | rdg//wit">
+    <xsl:variable name="varinfo" select="f:variant-info(ancestor::*[f:hasvars(.)][1]/@n)"/>
+    <xsl:variable name="sigil-link" select="f:resolve-faust-doc(@wit, $transcript-list)"/>
+    <xsl:variable name="link-from-varinfo" select="$varinfo//xh:a[data(.) = data($sigil-link)]"/>
+    <xsl:variable name="witness-link" select="if ($link-from-varinfo) then $link-from-varinfo else $sigil-link"/>
     <xsl:choose>
       <xsl:when test="@f:is-base">
         <strong>
-          <xsl:sequence select="f:resolve-faust-doc(@wit, $transcript-list)"/>          
+          <xsl:sequence select="$witness-link"/>          
         </strong>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:sequence select="f:resolve-faust-doc(@wit, $transcript-list)"/>
+        <xsl:sequence select="$witness-link"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
