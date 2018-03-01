@@ -146,9 +146,7 @@
 
   <xsl:template match="note[@type='textcrit']/app/lem">
     <xsl:if test="node()">
-      <xsl:variable name="lemma-tei">
-        <xsl:copy-of  select="node() except ((note|wit)[1], (note|wit)[1]/following-sibling::node())"/>
-      </xsl:variable>
+      <xsl:variable name="lemma-tei" select="node() except ((note|wit)[1], (note|wit)[1]/following-sibling::node())"/>
       <xsl:variable name="lemma">
         <xsl:apply-templates select="f:normalize-space-xml($lemma-tei)"/>
       </xsl:variable>
@@ -211,7 +209,7 @@
     <xsl:value-of select="string-join($formatted-typeno, '')"/>
   </xsl:function>
   
-  <xsl:template match="note[@type='textcrit']//gap[@reason='ellipsis']">
+  <xsl:template match="gap[@reason='ellipsis']">
     <i>
       <xsl:attribute name="class" select="f:generic-classes(.)" separator=" "/>
       <xsl:text> bis </xsl:text>
