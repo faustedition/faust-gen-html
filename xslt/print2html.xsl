@@ -146,18 +146,17 @@
 
   <xsl:template match="note[@type='textcrit']/app/lem">
     <xsl:if test="node()">
-      <xsl:variable name="lemma-tei" select="node() except ((note|wit)[1], (note|wit)[1]/following-sibling::node())"/>
-      <xsl:variable name="lemma">
-        <xsl:apply-templates select="f:normalize-space-xml($lemma-tei)"/>
-      </xsl:variable>
+      <xsl:variable name="lemma-after-bracket" select="((note|wit)[1], (note|wit)[1]/following-sibling::node())"/>
+      <xsl:variable name="lemma-before-bracket" select="node() except $lemma-after-bracket"/>
+      <xsl:variable name="lemma-str" select="f:normalize-space($lemma-before-bracket)"/>      
       <span class="{string-join(f:generic-classes(.), ' ')}">
-        <xsl:sequence select="$lemma"/>
+        <xsl:apply-templates select="$lemma-before-bracket"/>
       </span>
-      <xsl:if test="not(matches(string-join($lemma, ''), '\s+$'))">
+      <xsl:if test="not(matches($lemma-str, '\s+$'))">
         <xsl:text> </xsl:text>
       </xsl:if>
       <xsl:text>] </xsl:text>
-      <xsl:apply-templates select="(note|wit)[1], (note|wit)[1]/following-sibling::node()"/>      
+      <xsl:apply-templates select="$lemma-after-bracket"/>      
     </xsl:if>
   </xsl:template>
   
