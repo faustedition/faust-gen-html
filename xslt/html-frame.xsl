@@ -18,6 +18,13 @@
 	<xsl:output method="xhtml" indent="yes" include-content-type="no"
 		omit-xml-declaration="yes"/>
 	
+	<xsl:function name="f:enquote" as="xs:string">
+		<xsl:param name="what" as="xs:string"/>
+		<xsl:variable name="quote">'</xsl:variable>
+		<xsl:value-of select="concat($quote, $what, $quote)"/>
+	</xsl:function>
+	
+	
 	<!-- Creates the JSON required by Faust.createBreadcrumbs  -->
 	<xsl:function name="f:breadcrumb-json">
 		<xsl:param name="breadcrumb-html"/>
@@ -124,9 +131,18 @@
 		</header>
 	</xsl:template>
 
-	<xsl:template name="footer">
+	<xsl:template name="footer">		
 		<xsl:param name="breadcrumb-def" tunnel="yes" select="false()"/>
+		<!-- 
+			either a sequence of <a href>, or two spans each enclosing a sequence of <a href> for one- or two-line breadcrumbs,
+			or just a string for title without breadcrumbs		
+		-->
+		<xsl:param name="jsRequirements" as="xs:string*"/>
+		<!-- 
+			additional requirements for the script additions. Syntax of each string: requirejs_name:variable_name 
+		-->
 		<xsl:param name="scriptAdditions" select="$scriptAdditions"/>
+		<!-- additional javascript -->
 		<footer>
 			<div class="center pure-g-r">
 				<div class="pure-u-1-2 pure-fade-50">
@@ -199,8 +215,10 @@
 		</script>
 		
 		<script>
-			requirejs(['faust_common', 'jquery', 'jquery.chocolat', 'jquery.overlays', 'jquery.clipboard', 'faust_print_interaction'], 
-				 function (Faust, $, $chocolat, $overlays, $clipboard, addPrintInteraction) {
+			requirejs(['faust_common', 'jquery', 'jquery.chocolat', 'jquery.overlays', 'jquery.clipboard', 'faust_print_interaction'<xsl:value-of 
+				select="string-join(('', for $spec in $jsRequirements return f:enquote(substring-before($spec, ':'))), ', ')"/>], 
+				 function (Faust, $, $chocolat, $overlays, $clipboard, addPrintInteraction<xsl:value-of 
+				 	select="string-join(('', for $spec in $jsRequirements return substring-after($spec, ':')), ', ')"/>) {
 						$('main').Chocolat({className:'faustedition', loop:true});
 						$('header nav').menuOverlays({highlightClass:'pure-menu-selected', onAfterShow: function() {
 							$('[data-target]').copyToClipboard();
@@ -245,6 +263,7 @@
 		<xsl:param name="section-classes" as="item()*"/>
 		<xsl:param name="headerAdditions" select="$headerAdditions"/>
 		<xsl:param name="scriptAdditions" select="$scriptAdditions"/>
+		<xsl:param name="jsRequirements" as="xs:string*"/>
 		<xsl:param name="breadcrumb-def" select="false()" tunnel="yes"/>
 		<html>
 			<xsl:call-template name="html-head">
@@ -276,8 +295,9 @@
 					</section>
 				</main>
 				<xsl:call-template name="footer">
-					<xsl:with-param name="scriptAdditions" select="$scriptAdditions"/>
+					<xsl:with-param name="jsRequirements" select="$jsRequirements"/>					
 					<xsl:with-param name="breadcrumb-def" select="$breadcrumb-def" tunnel="yes"/>
+					<xsl:with-param name="scriptAdditions" select="$scriptAdditions"/>
 				</xsl:call-template>
 			</body>
 		</html>

@@ -287,6 +287,7 @@
 		<xsl:param name="sidebar"><xsl:call-template name="local-nav"/></xsl:param>
 		<xsl:call-template name="html-frame">
 			<xsl:with-param name="breadcrumb-def" tunnel="yes"><xsl:call-template name="breadcrumbs"/></xsl:with-param>
+			<xsl:with-param name="jsRequirements" select="'faust_app:faust_app'"/>
 			<xsl:with-param name="section-classes" select="('center', 'print')"/>			
 			<xsl:with-param name="grid-content">
 				<div class="pure-u-1-5"/> <!-- 1. Spalte (1/5) bleibt erstmal frei -->

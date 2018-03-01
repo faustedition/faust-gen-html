@@ -410,5 +410,4 @@
     <xsl:sequence select="for $text in $texts return f:normalize-print-chars_($text)"/>
   </xsl:function>
   
-  
 </xsl:stylesheet>
