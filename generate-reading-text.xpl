@@ -137,6 +137,18 @@
 			<p:with-option name="href" select="resolve-uri('lesetext/app-validation.html', $builddir)"/>
 		</p:store>
 		
+		<!-- Generate the expansion map template -->
+		<p:xslt>
+			<p:input port="source"><p:pipe port="result" step="assemble"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/extract-abbr-template.xsl"/></p:input>
+			<p:input port="parameters"><p:empty/></p:input>
+		</p:xslt>
+		
+		<p:store method="xml" indent="true">
+			<p:with-option name="href" select="resolve-uri('lesetext/expan-map.xml.in', $builddir)"/>
+		</p:store>
+		
+		
 		<!-- Store a copy of the assembled text to have a source for debugging the insert-app xslt -->
 		<p:store>
 			<p:input port="source"><p:pipe port="result" step="cleanup"/></p:input>
@@ -148,6 +160,7 @@
 			<p:input port="source"><p:pipe port="result" step="final-text"/></p:input>
 			<p:with-option name="href" select="resolve-uri('lesetext/faust.xml', $builddir)"/>
 		</p:store>
+		
 
 		<!-- additionally, pass out the real result -->
 		<p:identity><p:input port="source"><p:pipe port="result" step="final-text"/></p:input></p:identity>
