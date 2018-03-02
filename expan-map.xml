@@ -1,276 +1,294 @@
-<f:expan-map xmlns="http://www.tei-c.org/ns/1.0"
-             xmlns:c="http://www.w3.org/ns/xproc-step"
-             xmlns:cx="http://xmlcalabash.com/ns/extensions"
-             xmlns:pxp="http://exproc.org/proposed/steps"
-             xmlns:pxf="http://exproc.org/proposed/steps/file"
-             xmlns:f="http://www.faustedition.net/ns"
-             xmlns:ge="http://www.tei-c.org/ns/geneticEditions"
-             xmlns:tei="http://www.tei-c.org/ns/1.0"
-             xmlns:l="http://xproc.org/library">
-   <choice><!--before_4889, before_6119, before_6311, before_6340f, before_6479_b, before_6514f, before_6636i, before_6637, before_6744, before_6762_a, before_6807, before_6831_a, before_6836, before_6897f, before_6921, before_6936f, before_6944, before_6948, before_6979_a, before_7044, before_10075_a, before_10105, before_10124, before_10135f, before_10160, before_10177, before_10185, before_10189, before_10196, before_10210_a, before_10234_b, before_10236, before_10242, before_10260, before_10274, before_10285f, before_10297, before_10301, before_10309, before_10313, before_10321, before_10323_c, before_10547_a, before_10577, before_10606, before_10640_a, before_10664, before_10670_a, before_10688, before_10707, before_10710f, before_10723, before_10758, before_10768, before_11167_b, before_11171, before_11197, before_11205, before_11259, before_11273, before_11278, before_11282_c, before_11511_c, before_11551m, before_11557_a, before_11595f, before_11612, before_11685, before_11710_a, before_11735, before_11753, before_11809_a, before_11825_a-->
-      <abbr>Mephist.</abbr>
+<!--Edit expansions in this file and commit as expan-map.xml-->
+<f:expan-map xmlns="http://www.tei-c.org/ns/1.0" xmlns:f="http://www.faustedition.net/ns">
+   <choice>
+      <!--after_4756, before_6671, before_6727, before_11286_a-->
+      <abbr>Mephistoph.</abbr>
       <expan>Mephistopheles</expan>
    </choice>
-   <choice><!--before_4917, before_4977, before_5006, before_5039, before_5061, before_10067_b, before_11523, before_11587, before_4877, before_4917, before_4927, before_4947, before_4955_b, before_4977, before_5006, before_5039, before_5061, before_6003, before_6030-->
+   <choice>
+      <!--before_4877, before_4917, before_4927, before_4947, before_4955_b, before_4977, before_5006, before_5039, before_5061, before_6003, before_6030, before_10067_b, before_11523, before_11587-->
       <abbr>Mephisto.</abbr>
       <expan>Mephistopheles</expan>
    </choice>
-   <choice><!--before_6003, before_6030, before_6319_b, before_7696_b, before_5987_c-->
+   <choice>
+      <!--before_4889-->
+      <abbr>Mephistop.</abbr>
+      <expan>Mephistopheles</expan>
+   </choice>
+   <choice>
+      <!--5551-->
+      <abbr>A. B. C.</abbr>
+      <!--TODO-->
+      <expan>A. B. C.</expan>
+   </choice>
+   <choice>
+      <!--before_5987_c, before_6319_b, before_7696_b-->
       <abbr>Mephisto</abbr>
-      <!--TODO-->
       <expan>Mephistopheles</expan>
    </choice>
-   <choice><!--before_6162, before_6164, before_6166, before_6168, before_6169f, before_6172_a, before_6173_c, before_6188, before_6193, before_6209, before_6212, before_6216f, before_6218, before_6222f, before_6239, before_6257, before_6260, before_6262, before_6267, before_6275, before_6283, before_6293f_a, before_6303f, before_6305, before_6323f, before_6333, before_6335, before_6347, before_6355f_a, before_6360_a, before_6399_a, before_6501_a, before_6546, before_6564_b, before_6683, before_6766, before_6770_a, before_6772_a, before_6790, before_6792_a, before_6835i_a, before_6861, before_6956, before_6970, before_7001, before_7050, before_7062, before_7080_a, before_7098f, before_7112_a, before_7117, before_7124f, before_7127_a, before_7140_a, before_7146, before_7152_b, before_7172, before_7191, before_7214_a, before_7225_a, before_7239, before_7676_a, before_7710_a, before_7722_a, before_7729, before_7740, before_7748, before_7756, before_7769, before_7773, before_7791_a, before_7821, before_7842, before_7850, before_7951_a, before_7963, before_7969, before_7984, before_7995, before_8002, before_8012, before_8020, before_8026i, before_8026f_a, before_8029, before_8032, before_10292, before_10679, before_10734, before_11544_a, before_11594f-->
+   <choice>
+      <!--before_6119, before_6311, before_6340f, before_6479_b, before_6514f, before_6636i, before_6637, before_6744, before_6762_a, before_6807, before_6831_a, before_6836, before_6897f, before_6921, before_6936f, before_6944, before_6948, before_6979_a, before_7044, before_10075_a, before_10105, before_10124, before_10135f, before_10160, before_10177, before_10185, before_10189, before_10196, before_10210_a, before_10234_b, before_10236, before_10242, before_10260, before_10274, before_10285f, before_10297, before_10301, before_10309, before_10313, before_10321, before_10323_c, before_10547_a, before_10577, before_10606, before_10640_a, before_10664, before_10670_a, before_10688, before_10707, before_10710f, before_10723, before_10758, before_10768, before_11167_b, before_11171, before_11197, before_11205, before_11259, before_11273, before_11278, before_11282_c, before_11511_c, before_11551m, before_11557_a, before_11595f, before_11612, before_11685, before_11710_a, before_11735, before_11753, before_11809_a, before_11825_a-->
+      <abbr>Mephist.</abbr>
+      <expan>Mephistopheles</expan>
+   </choice>
+   <choice>
+      <!--before_6162, before_6164, before_6166, before_6168, before_6169f, before_6172_a, before_6173_c, before_6188, before_6193, before_6209, before_6212, before_6216f, before_6218, before_6222f, before_6239, before_6257, before_6260, before_6262, before_6267, before_6275, before_6283, before_6293f_a, before_6303f, before_6305, before_6323f, before_6333, before_6335, before_6347, before_6355f_a, before_6360_a, before_6399_a, before_6501_a, before_6546, before_6564_b, before_6683, before_6766, before_6770_a, before_6772_a, before_6790, before_6792_a, before_6835i_a, before_6861, before_6956, before_6970, before_7001, before_7050, before_7062, before_7080_a, before_7098f, before_7112_a, before_7117, before_7124f, before_7127_a, before_7140_a, before_7146, before_7152_b, before_7172, before_7191, before_7214_a, before_7225_a, before_7239, before_7676_a, before_7710_a, before_7722_a, before_7729, before_7740, before_7748, before_7756, before_7769, before_7773, before_7791_a, before_7821, before_7842, before_7850, before_7951_a, before_7963, before_7969, before_7984, before_7995, before_8002, before_8012, before_8020, before_8026i, before_8026f_a, before_8029, before_8032, before_10292, before_10679, before_10734, before_11544_a, before_11594f-->
       <abbr>Meph.</abbr>
-      <!--TODO-->
       <expan>Mephistopheles</expan>
    </choice>
-   <choice><!--after_6304, before_6377_b, after_7068, 7871, before_8034_d, before_8044_a, before_8064, before_8178, before_8186, before_8194, before_8196, before_8210, after_8218, before_8359_a, before_11350_a-->
+   <choice>
+      <!--after_6304, before_6377_b, after_7068, 7871, before_8034_d, before_8044_a, before_8064, before_8178, before_8186, before_8194, before_8196, before_8210, after_8218, before_8359_a, before_11350_a-->
       <abbr>u.</abbr>
       <expan>und</expan>
    </choice>
-   <choice><!--before_6307_d, before_6901f_a, before_7736_b, before_10703, before_11219_a-->
+   <choice>
+      <!--before_6307_d, before_6901f_a, before_7736_b, before_10703, before_11219_a-->
       <abbr>Mephist</abbr>
-      <!--TODO-->
       <expan>Mephistopheles</expan>
    </choice>
-   <choice><!--before_6516, before_6518, before_6520-->
+   <choice>
+      <!--before_6516, before_6518, before_6520-->
       <abbr>Hofm.</abbr>
-      <!--TODO-->
       <expan>Hofmann</expan>
    </choice>
-   <choice><!--before_6671, before_6727, before_11286_a, after_4756-->
-      <abbr>Mephistoph.</abbr>
-      <!--TODO-->
-      <expan>Mephistopheles</expan>
-   </choice>
-   <choice><!--before_6737, before_6750-->
+   <choice>
+      <!--before_6737, before_6750-->
       <abbr>Baccalaur.</abbr>
-      <!--TODO-->
       <expan>Baccalaureus</expan>
    </choice>
-   <choice><!--before_6758, before_6764-->
+   <choice>
+      <!--before_6758, before_6764-->
       <abbr>Baccal.</abbr>
-      <!--TODO-->
       <expan>Baccalaureus</expan>
    </choice>
-   <choice><!--before_6768, before_6771, before_6774, before_6791, before_6793-->
+   <choice>
+      <!--before_6768, before_6771, before_6774, before_6791, before_6793-->
       <abbr>Bacc.</abbr>
-      <!--TODO-->
       <expan>Baccalaureus</expan>
    </choice>
-   <choice><!--before_6937, before_6950, before_6964, before_6976f, before_6983f, before_6987f, before_7048, before_7068, before_7830, before_7849, before_7857_a, before_7881i, before_7936, before_8219, before_8235, before_8238_b, before_8265, before_8274, before_8327_a, before_8458-->
+   <choice>
+      <!--before_6937, before_6950, before_6964, before_6976f, before_6983f, before_6987f, before_7048, before_7068, before_7830, before_7849, before_7857_a, before_7881i, before_7936, before_8219, before_8235, before_8238_b, before_8265, before_8274, before_8327_a, before_8458-->
       <abbr>Homunk.</abbr>
-      <!--TODO-->
       <expan>Homunkulus</expan>
    </choice>
-   <choice><!--before_6945, before_7052, before_8092-->
+   <choice>
+      <!--before_6945, before_7052, before_8092-->
       <abbr>Hom.</abbr>
-      <!--TODO-->
       <expan>Homunkulus</expan>
    </choice>
-   <choice><!--before_6987m_a-->
+   <choice>
+      <!--before_6987m_a-->
       <abbr>Wagn.</abbr>
-      <!--TODO-->
-      <expan>Wagn.</expan>
+      <expan>Wagner</expan>
    </choice>
-   <choice><!--before_6999f_a-->
+   <choice>
+      <!--before_6999f_a-->
       <abbr>Wagn</abbr>
-      <!--TODO-->
-      <expan>Wagn</expan>
+      <expan>Wagner</expan>
    </choice>
-   <choice><!--before_7186-->
+   <choice>
+      <!--before_7186-->
       <abbr>bezügl.</abbr>
-      <!--TODO-->
-      <expan>bezügl.</expan>
+      <expan>bezüglich</expan>
    </choice>
-   <choice><!--before_7187-->
+   <choice>
+      <!--before_7187-->
       <abbr>bez.</abbr>
-      <!--TODO-->
-      <expan>bez.</expan>
+      <expan>bezüglich</expan>
    </choice>
-   <choice><!--before_7188-->
+   <choice>
+      <!--before_7188-->
       <abbr>bez</abbr>
       <!--TODO-->
       <expan>bez</expan>
    </choice>
-   <choice><!--before_7855, before_7859, before_7865, before_7873, before_7900_a-->
+   <choice>
+      <!--before_7855, before_7859, before_7865, before_7873, before_7900_a-->
       <abbr>Anax.</abbr>
-      <!--TODO-->
-      <expan>Anax.</expan>
+      <expan>Anaxagoras</expan>
    </choice>
-   <choice><!--before_8000, before_8026m, before_8028, before_8923f, before_8925m_a, before_8984, before_9004, before_9006, before_9030f, before_9045, before_9049, before_9585, before_9596-->
+   <choice>
+      <!--before_8000, before_8026m, before_8028-->
       <abbr>Phork.</abbr>
-      <expan>Phorkyas</expan>
+      <expan>Phorkyaden</expan>
    </choice>
-   <choice><!--before_8008f, before_8030-->
+   <choice>
+      <!--before_8008f, before_8030-->
       <abbr>Phor.</abbr>
-      <!--TODO-->
-      <expan>Phor.</expan>
+      <expan>Phorkyaden</expan>
    </choice>
-   <choice><!--before_8174, before_8182, before_8190, before_8195, before_8206, before_8212-->
+   <choice>
+      <!--before_8174, before_8182, before_8190, before_8195, before_8206, before_8212-->
       <abbr>Siren.</abbr>
-      <!--TODO-->
-      <expan>Siren.</expan>
+      <expan>Sirenen</expan>
    </choice>
-   <choice><!--before_8178, before_8194, before_8210-->
+   <choice>
+      <!--before_8178, before_8194, before_8210-->
       <abbr>Nereid.</abbr>
-      <!--TODO-->
-      <expan>Nereid.</expan>
+      <expan>Nereiden</expan>
    </choice>
-   <choice><!--before_8178, before_8186-->
+   <choice>
+      <!--before_8178, before_8186-->
       <abbr>Trit.</abbr>
-      <!--TODO-->
-      <expan>Trit.</expan>
+      <expan>Tritonen</expan>
    </choice>
-   <choice><!--before_8186, before_8196-->
+   <choice>
+      <!--before_8186, before_8196-->
       <abbr>Ner.</abbr>
-      <!--TODO-->
-      <expan>Ner.</expan>
+      <expan>Nereiden</expan>
    </choice>
-   <choice><!--before_8194, before_8196, before_8210, after_8218-->
+   <choice>
+      <!--before_8194, before_8196, before_8210, after_8218-->
       <abbr>Triton.</abbr>
-      <!--TODO-->
-      <expan>Triton.</expan>
+      <expan>Tritonen</expan>
    </choice>
-   <choice><!--before_8231f_b-->
+   <choice>
+      <!--before_8231f_b-->
       <abbr>Homunkul</abbr>
-      <!--TODO-->
-      <expan>Homunkul</expan>
+      <expan>Homunkulus</expan>
    </choice>
-   <choice><!--after_8244-->
+   <choice>
+      <!--after_8244-->
       <abbr>Homunk:</abbr>
-      <!--TODO-->
-      <expan>Homunk:</expan>
+      <expan>Homunkulus</expan>
    </choice>
-   <choice><!--before_8275_a-->
+   <choice>
+      <!--before_8275_a-->
       <abbr>v.</abbr>
-      <!--TODO-->
-      <expan>v.</expan>
+      <expan>von</expan>
    </choice>
-   <choice><!--before_8811, before_8813, before_8815, before_8817, before_8819, before_8821, before_8823, before_8825, before_8856, before_8860, before_8864, before_8868, before_8872, before_8876, before_8917, before_8921, before_8924f, before_8925f, before_8926f, before_8927f, before_8954, before_8971, before_8974, before_8994, before_9010f, before_9054, before_9060, before_9068, before_9069f, before_9588f-->
-      <abbr>Phork:</abbr>
-      <!--TODO-->
-      <expan>Phork:</expan>
-   </choice>
-   <choice><!--before_8824-->
-      <abbr>Chorführ:</abbr>
-      <!--TODO-->
-      <expan>Chorführ:</expan>
-   </choice>
-   <choice><!--before_8947-->
-      <abbr>Chorführ.</abbr>
-      <!--TODO-->
-      <expan>Chorführ.</expan>
-   </choice>
-   <choice><!--before_9127_b, before_9141, before_9182_b-->
-      <abbr>Chorf:</abbr>
-      <!--TODO-->
-      <expan>Chorf:</expan>
-   </choice>
-   <choice><!--10094, after_10094-->
+   <choice>
+      <!--after_10094-->
       <abbr>Ephes.</abbr>
       <!--TODO-->
       <expan>Ephes.</expan>
    </choice>
-   <choice><!--10131-->
+   <choice>
+      <!--after_10131-->
       <abbr>Matth.</abbr>
       <!--TODO-->
       <expan>Matth.</expan>
    </choice>
-   <choice><!--before_10323_a, before_10323_b-->
+   <choice>
+      <!--before_10323_b-->
       <abbr>Sam.</abbr>
       <!--TODO-->
       <expan>Sam.</expan>
    </choice>
-   <choice><!--before_10345_d, before_10351, before_10359, before_10369, before_10383, before_10397, before_10537, before_10693_a, after_10706-->
+   <choice>
+      <!--before_10345_d, before_10351, before_10359, before_10369, before_10383, before_10397, before_10537, before_10693_a, after_10706-->
       <abbr>Ob.</abbr>
       <!--TODO-->
       <expan>Ob.</expan>
    </choice>
-   <choice><!--before_10345_d, before_10351, before_10359, before_10369, before_10383, before_10397, before_10503, before_10693_a-->
+   <choice>
+      <!--before_10345_d, before_10351, before_10359, before_10369, before_10383, before_10397, before_10503, before_10693_a-->
       <abbr>Gen.</abbr>
       <!--TODO-->
       <expan>Gen.</expan>
    </choice>
-   <choice><!--before_10503-->
+   <choice>
+      <!--before_10503-->
       <abbr>Ober.</abbr>
       <!--TODO-->
       <expan>Ober.</expan>
    </choice>
-   <choice><!--before_10537-->
+   <choice>
+      <!--before_10537-->
       <abbr>Feldh.</abbr>
       <!--TODO-->
       <expan>Feldh.</expan>
    </choice>
-   <choice><!--after_10706-->
+   <choice>
+      <!--after_10706-->
       <abbr>Gen</abbr>
       <!--TODO-->
       <expan>Gen</expan>
    </choice>
-   <choice><!--before_10784, before_10787, before_10791, before_10795_a, before_10805, before_10809_b, before_10813, before_10819, before_10827-->
+   <choice>
+      <!--before_10784, before_10787, before_10791, before_10795_a, before_10805, before_10809_b, before_10813, before_10819, before_10827-->
       <abbr>Habeb.</abbr>
-      <!--TODO-->
-      <expan>Habeb.</expan>
+      <expan>Habebald</expan>
    </choice>
-   <choice><!--before_10785, before_10789, before_10803, before_10807, before_10811_a-->
+   <choice>
+      <!--before_10785, before_10789, before_10803, before_10807, before_10811_a-->
       <abbr>Eileb.</abbr>
-      <!--TODO-->
-      <expan>Eileb.</expan>
+      <expan>Eilebeute</expan>
    </choice>
-   <choice><!--before_10903-->
+   <choice>
+      <!--before_10903-->
       <abbr>Erztruchs.</abbr>
-      <!--TODO-->
-      <expan>Erztruchs.</expan>
+      <expan>Erztruchseß</expan>
    </choice>
-   <choice><!--before_10951-->
+   <choice>
+      <!--before_10951-->
       <abbr>Erzbisch.</abbr>
-      <!--TODO-->
-      <expan>Erzbisch.</expan>
+      <expan>Erzbischoff</expan>
    </choice>
-   <choice><!--before_10971-->
+   <choice>
+      <!--before_10971-->
       <abbr>Erzkanzl.</abbr>
-      <!--TODO-->
-      <expan>Erzkanzl.</expan>
+      <expan>Erzkanzler</expan>
    </choice>
-   <choice><!--before_10975-->
+   <choice>
+      <!--before_10975-->
       <abbr>Kais.</abbr>
-      <!--TODO-->
-      <expan>Kais.</expan>
+      <expan>Kaiser</expan>
    </choice>
-   <choice><!--before_11035_a, before_11040-->
+   <choice>
+      <!--before_11035_a, before_11040-->
       <abbr>Erzb.</abbr>
-      <!--TODO-->
-      <expan>Erzb.</expan>
+      <expan>Erzbischoff</expan>
    </choice>
-   <choice><!--before_11350_a-->
-      <abbr>Mepisto.</abbr>
+   <choice>
+      <!--before_11350_a-->
+      <abbr>Mepisto. Mephisto.</abbr>
       <!--TODO-->
-      <expan>Mepisto.</expan>
+      <expan>Mepisto. Mephisto.</expan>
    </choice>
-   <choice><!--before_11898, before_11918-->
+   <choice>
+      <!--before_11898, before_11918-->
       <abbr>Pat.</abbr>
-      <!--TODO-->
-      <expan>Pat.</expan>
+      <expan>Pater</expan>
    </choice>
-   <choice><!--before_11898, before_11918-->
+   <choice>
+      <!--before_11898, before_11918-->
       <abbr>Seraph.</abbr>
-      <!--TODO-->
-      <expan>Seraph.</expan>
+      <expan>Seraphicus</expan>
    </choice>
-   <choice><!--before_11926_a-->
+   <choice>
+      <!--before_11926_a-->
       <abbr>sel.</abbr>
-      <!--TODO-->
-      <expan>sel.</expan>
+      <expan>seliger</expan>
    </choice>
-   <choice><!--before_4889-->
-      <abbr>Mephistop.</abbr>
+   <!--additional expansions from the old expan-map.xml:-->
+   <choice>
+      <!--before_8811, before_8813, before_8815, before_8817, before_8819, before_8821, before_8823, before_8825, before_8856, before_8860, before_8864, before_8868, before_8872, before_8876, before_8917, before_8921, before_8924f, before_8925f, before_8926f, before_8927f, before_8954, before_8971, before_8974, before_8994, before_9010f, before_9054, before_9060, before_9068, before_9069f, before_9588f-->
+      <abbr>Phork:</abbr>
       <!--TODO-->
-      <expan>Mephistop.</expan>
+      <expan>Phork:</expan>
    </choice>
-   <choice><!--5551-->
-      <abbr>A. B. C.</abbr>
+   <choice>
+      <!--before_8824-->
+      <abbr>Chorführ:</abbr>
       <!--TODO-->
-      <expan>A. B. C.</expan>
+      <expan>Chorführ:</expan>
+   </choice>
+   <choice>
+      <!--before_8947-->
+      <abbr>Chorführ.</abbr>
+      <!--TODO-->
+      <expan>Chorführ.</expan>
+   </choice>
+   <choice>
+      <!--before_9127_b, before_9141, before_9182_b-->
+      <abbr>Chorf:</abbr>
+      <!--TODO-->
+      <expan>Chorf:</expan>
+   </choice>
+   <choice>
+      <!--before_11350_a-->
+      <abbr>Mepisto.</abbr>
+      <expan>Mephistopheles</expan>
    </choice>
 </f:expan-map>
