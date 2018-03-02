@@ -166,7 +166,7 @@
   <xsl:template match="lem//wit | rdg//wit">
     <xsl:variable name="varinfo" select="f:variant-info(ancestor::*[f:hasvars(.)][1]/@n)"/>
     <xsl:variable name="sigil-link" select="f:resolve-faust-doc(@wit, $transcript-list)"/>
-    <xsl:variable name="link-from-varinfo" select="$varinfo//xh:a[data(.) = data($sigil-link)]"/>
+    <xsl:variable name="link-from-varinfo" select="($varinfo//xh:a[data(.) = data($sigil-link)])[1]"/>
     <xsl:variable name="witness-link" select="if ($link-from-varinfo) then $link-from-varinfo else $sigil-link"/>
     <xsl:choose>
       <xsl:when test="@f:is-base">
