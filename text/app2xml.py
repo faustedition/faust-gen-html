@@ -105,7 +105,8 @@ def parse_app2norm(app_text='app2norm.txt'):
     SPECIAL_REPLACEMENTS = {
         '^': dict(place='before'),
         '$': dict(place='after'),
-        '@lg': dict(place='enclosing-lg')
+        '@lg': dict(place='enclosing-lg'),
+        '': dict(place='only-app')
     }
     with open(app_text, encoding='utf-8-sig') as app2norm:
         for raw_line in app2norm:
