@@ -6,10 +6,6 @@ Hier werden die zur IDML-Synthese notwendigen Festlegungen getroffen.
 # Fragen
 Siehe https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
 
-# Issues nach Zuweisung
-
-z.B. https://github.com/faustedition/faust-gen-html/issues?q=assignee%3Amarkusciupke+is%3Aopen
-
 # Verwendete Kürzel und Bezeichnungen
 * BA = Bühnenanweisung (`stage`)
 * Sprecher = Sprecherbezeichnung (`speaker`)
@@ -27,8 +23,7 @@ Output: Fußnotenartiges Konstrukt ohne Anmerkungsziffer.
 
 ## (BA)
 
-### (Haben wir hier eine BA?)
-(oder: grundlegende Elemente und ihre Kombination)
+### (allgemeines)
 
 Die für die `BA`-Formate relevanten XML-Elemente sind `speaker` (gut 2100 Vorkommen) und `stage` (gut 700).
 
@@ -45,38 +40,28 @@ Bsp.:
     <stage n="before_482f_b" rend="inline small">abgewendet.</stage>
 In allen derartigen Fällen (gut 170 Vorkommen) steht eine Bühnenanweisung in derselben Zeile mit der Sprecherbezeichnung.
 
-Wenn eine BA vorliegt, werden folgende Fragen gestellt. 
+### (Länge)
+Je nach Länge werden BAs unterschiedlich behandelt:
+* `BA zentr.` (für zentriert)
+* `BA Blocks.` (für Blocksatz)
 
-### (1. Wie lang ist die BA?)
-Je nach Länge soll eine `BA zentr.` (für zentriert) oder eine `BA Blocks.` (für Blocksatz) entstehen.
-
-Lange BA (ab drei Zeilen im Output) stehen im Blocksatz mit linksbündiger letzter Zeile. Als ungefähre Heuristik wird eine Zahl von Zeichen genommen, ab der mit hoher Wahrscheinlichkeit im Umbruch mehr als drei Zeilen entstehen. 
+Lange BA (ab drei Zeilen im Outputba mit ) stehen im Blocksatz mit linksbündiger letzter Zeile. Als ungefähre Heuristik wird eine Zahl von Zeichen genommen, ab der mit hoher Wahrscheinlichkeit im Umbruch mehr als drei Zeilen entstehen. 
 Momentane Heuristik: 210 Zeichen als Richtwert, der zur Zuweisung von `BA Blocks. ...` führt.
 (Könnte sich evtl. verschieben in Abhängigkeit von [#209](https://github.com/faustedition/faust-gen-html/issues/209)!).
 
+### (Abstände)
 Die Krux bei der Formatzuweisung liegt in den Abständen.
 Entscheidend für die Zuweisung der richtigen Abstände ist zweierlei:
 * Was enthält die BA? (Figur, Auftritt)
-* In welche Kontext steht die BA
+* In welche Kontext steht die BA?
 
-### (Was enthält die BA?)
-(folgt)
-
-### (In welchem Kontext steht die BA?)
-Die Kontexte können sein:
-* Szenenbeginn (@markusciupke|s 'prominente' BAs)
-* Szeneninneres (@markusciupke|s 'normale' BAs)
-  * BAs innerhalb von Repliken (`sp`)
-  * BAs zwischen Repliken (`sp`)
-
-Bei den letzten Unterpunkten lassen sich lokale Kontexte unterscheiden, die im folgenden aufgelistet werden.
 Hier gibt es noch Abstimmungsbedarf ([#298](https://github.com/faustedition/faust-gen-html/issues/298)).
 
-Die Detailbemerkungen zu @markusciupke|s Vorschlag stehen auf einer [eigenen Seite](https://github.com/faustedition/faust-gen-html/blob/master/idml/ba-diskussion.md).
+Bemerkungen zu @markusciupke|s Vorschlag stehen auf einer [eigenen Seite](https://github.com/faustedition/faust-gen-html/blob/master/idml/ba-diskussion.md).
 
 Die folgende XML-basierte Typeneinteilung beruht auf den Formaten vom Stand vor 13.2.18.
 
-### (BA unterschieden nach Kontext)
+### (BA unterschieden nach Kontext und Inhalt)
 Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Repliken.
 
 #### (BA **in** Replik)
@@ -94,7 +79,7 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
 * am Ende von Repliken (`sp/*[self::stage and position()=last()]`)
   * kommt regulär nicht vor 
 
-#### (BA nach Replik ohne Figur)
+#### (BA nach Replik, ohne Figur)
 z.B. 
 * `before_514_a` "Verschwindet."
 * `before_4666_a` "Ungeheures Getöse ..."
@@ -106,7 +91,11 @@ XML: `sp/following-sibling::*[1][self::stage[not(hi)]]`.
 
 → (bei entsprechender Länge) `BA Blocks. ...` 
 
-#### (BA nach Replik mit Figur)
+#### (BA nach Replik, mit Figur)
+(Quasi-Replik)
+z.B.
+* `before_993_a` "Das Volk ..."
+
 XML: `stage[hi and preceding-sibling::*[1][self::sp] and following-sibling::*[1][self::sp or self::move[following-sibling::*[1][self::sp]]]]`.
 
 → `BA zentr. 1,5`
@@ -131,6 +120,11 @@ XML: `move[preceding-sibling::*[1][self::head]]/following-sibling::*[1][self::st
 
 #### (BA mit Auftritt, nicht Sprecher)
 (überschneidet sich mit vorigem)
+* `before_354_c`
+* `before_482i_a`
+* `before_522_a`
+* `before_2337_b`
+* nicht `before_2465_a`
 
 XML: `move/following-sibling::*[1][self::stage]`
 
@@ -307,6 +301,11 @@ XML: `before_350_b` zusammen mit `before_350_c` ("Mephistopheles allein.", stand
 Der Grund ist, dass die XML-Auszeichnung die Struktur des Textes hier nicht voll adäquat abbildet.
 
 Alternativ können auch `before_350_b`+`before_350_c` zusammen mit `stage before_350_a` in einen BA-Absatz genommen werden mit Zeilenumbruch nach dem Inhalt von `stage before_350_a` (je nachdem, was für @pglatza einfacher ist).
+
+### (BA vor 949)
+XML: `before_949_c`.
+
+Umsetzung: entweder etwas sperren oder etwas Abstand davor und danach.
 
 ### (BAs vor 2284)
 Betrifft:
