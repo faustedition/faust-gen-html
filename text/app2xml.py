@@ -240,9 +240,11 @@ def parse_readings(reading_str, tag='rdg'):
 
 def app2xml(apps, filename):
     xml = F.apparatus()
+    tree = etree.ElementTree(xml)
+    xml.addprevious(etree.ProcessingInstruction('xml-model', 'href="appxnorm.rnc" type="application/relax-ng-compact-syntax"'))
     xml.extend(apps)
     with open(filename, 'wb') as outfile:
-        outfile.write(etree.tostring(xml, pretty_print=True, encoding='utf-8', xml_declaration=True))
+        outfile.write(etree.tostring(tree, pretty_print=True, encoding='utf-8', xml_declaration=True))
 
 def setup_logging():
     # logging.basicConfig(level=logging.WARNING, format='%(levelname)s: %(message)s')

@@ -1,0 +1,100 @@
+default namespace = "http://www.tei-c.org/ns/1.0"
+namespace f = "http://www.faustedition.net/ns"
+
+start = ## Contains a list of text operations to create the reading text and its apparatus.
+  element f:apparatus {
+  	App*
+  }
+
+App = ## A single apparatus entry contains text operations to perform on the reading text
+      ## and an apparatus note as TEI fragments that are augmented and inserted as apparatus
+      ## notes into the text.
+	element app {
+	  
+	  ## n-labels this applies to, separated by whitespace
+      attribute n { xsd:token },  # FIXME do we need this?
+      EditCommand+,
+	  
+	  ## human-readable reference to the source. E.g. 'vor 4711'
+      element ref { text },
+      
+      ## lemma part of the apparatus entry
+      element lem {
+      	Hand?,
+     	Wit?,
+        AppXmlFragment?
+      },
+      
+      ## a single reading
+      element rdg {				 
+        Hand?,
+        Wit?,
+        ## reading type in a form like type_2aa
+        attribute type { xsd:string { pattern = "type_\w+\*?"} }?,
+       	AppXmlFragment
+      }*
+    }*
+
+EditCommand = ## Operations to be performed to create the reading text 
+	ReplaceCommand | InsertOnlyCommand | LgCommand
+
+ReplaceCommand = ## This text (plain text only) is removed from the text content 
+				 ## within the element specified by n and replaced with the content
+				 ## of the matching f:ins element, surrounded by a <seg> to be 
+				 ## referenced from the apparatus. 
+	  element f:replace {
+           attribute n { xsd:NMTOKEN },
+           text
+      },
+      ## The XML fragment is inserted instead of the replaced text, surrounded by a
+      ## <seg>. If you only need to surround the existing text with <seg>, specify
+      ## the same text for f:replace and f:ins.
+      element f:ins {
+         attribute n { xsd:NMTOKEN },         
+         XmlFragment?
+      }
+      
+InsertOnlyCommand = 
+	## Inserts the given fragment relative to the element referenced by n.
+	element f:ins {
+		attribute n { xsd:NMTOKEN },
+		attribute place {
+			## insert before the referenced element
+			"before" |
+			## insert after the referenced element
+			"after"  |
+			## insert only the apparatus and link it with the element referenced by n
+			"only-app" },
+		XmlFragment?
+	}
+	
+LgCommand =
+	## Modifies the surrounding lg
+	element f:ins {
+		attribute n { xsd:NMTOKEN },
+		attribute place {
+			## modify the surrounding lg's attributes			
+		"@lg" },
+		## List of attribute="value" pairs to be inserted. attribute="" causes the attribute to be removed.
+		xsd:string { pattern = '\w+="[^"]*"(\s+\w+="[^"]*")*' }
+	}
+	
+XmlFragment = ## Text, may contain TEI fragments 
+	(text | element * { attribute * {text}*, XmlFragment* })+
+AppXmlFragment = ## Text, may contain TEI fragments, and notes)
+	(text 
+	| ## any comment that isn't a reference to original text
+	 element note {
+	 	( element abbr { text } 
+	 	| element wit { attribute wit { xsd:anyURI }, text }
+	 	| element seg { attribute type { "hand" }, text }
+	 	| XmlFragment
+	 	)*
+	 }
+	 | element * { attribute * {text}*, XmlFragment }
+	)+
+	
+Hand =  ## hand, list should be known
+        attribute hand { xsd:token }
+Wit = 	## witness, i.e. machine-readable last part of URI after faust://document/faustedition/
+        attribute wit { xsd:token }
