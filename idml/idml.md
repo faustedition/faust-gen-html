@@ -71,6 +71,8 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
   * → BA zentr. **evtl. mit ganzzeiligem Abstand nach oben**
 * direkt nach Sprecherbezeichnung auf eigener Zeile (`speaker/following-sibling::*[1][self::stage and not(@rend[contains(.,'inline')])]`)
   * → BA zentr. 0,0
+* BA auf eigener Zeile, nach Kombination von Sprecherbezeichnung und Bühnenanweisung auf derselben Zeile (`//speaker/following-sibling::*[1][self::stage and matches(@rend,'inline')]/following-sibling::*[1][self::stage]`)
+  * → BA zentr. 0,0  
 * zwischen Versen (`stage[preceding-sibling::*[1][self::l] and following-sibling::*[1][self::l]]`)
   * Bspp.: `before_430` "Er schlägt ...", `before_447` "Er beschaut ..."   
   * → BA zentr. 0,0
@@ -111,10 +113,9 @@ XML: `//head/following-sibling::*[1][self::stage]`.
 
 Generelle Andersbehandlung von BA nach Überschriften ist fragwürdig, da weitere BAs direkt nachfolgen können.
 
-#### (BA nach Überschrift mit Auftritt, nicht Sprecher)
-(überschneidet sich mit vorigem)
+#### (Auftritt nach Überschrift, nicht zugleich Sprecher)
 
-XML: `move[preceding-sibling::*[1][self::head]]/following-sibling::*[1][self::stage]`
+XML: `head/following-sibling::*[1][self::move]/following-sibling::*[1][self::stage]`
 
 → `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
 
