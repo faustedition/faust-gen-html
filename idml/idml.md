@@ -211,7 +211,15 @@ XML: `p`.
 (entfällt, siehe [#203](https://github.com/faustedition/faust-gen-html/issues/203))
 
 ### Sprecher 1,5
-XML: `speaker` ohne folgende `stage[matches(@rend, 'inline')]`.
+(normale reine Sprecher, d.h. nicht zugleich Auftrittsbezeichnung und nicht mit BA in einer Zeile) 
+
+XML:
+```
+speaker[
+not(parent::sp/preceding-sibling::*[1][self::move])
+and not(following-sibling::*[1][self::stage and matches(@rend,'inline')])
+]
+``` 
 
 ## (Überschriften)
 Bei `head/lb` wird innerhalb des betreffenden Absatzes ein Zeilenumbruch eingefügt.
@@ -348,7 +356,11 @@ XML: `titlePart[@n='before_1_b']`.
 Formatierung: am Anfang des Absatzes 7 Zeilenumbrüche einfügen.
 
 ## Vers nach Teil (Zueignung)
-Extra-Abstand nach oben.
+XML: `l[@n='1']`
+
+Umsetzung:
+* Seitenwechsel (neue rechte Seite)
+* 3 Zeilenumbrüche am Anfang des Absatzes
 
 ## (Sonderfälle, die keine sind)
 
