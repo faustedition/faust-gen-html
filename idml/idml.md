@@ -256,7 +256,7 @@ XML: `div[@type='subscene']/head`.
 XML: `l`.
 
 ### Vers Abstand
-XML: zweite, dritte, ... Versgruppe (`lg`), darin jeweils erster Vers (`l`): `lg[preceding-sibling::lg]/*[1][self::l]`.
+XML: zweite, dritte, ... **nicht eingerückte** Versgruppe, darin jeweils erster Vers (`l`): `lg[not(@rend='indented') and preceding-sibling::lg]/*[1][self::l]`.
 
 Formatierung: halbzeiliger Abstand nach oben (ca. 2,3 mm)
 
