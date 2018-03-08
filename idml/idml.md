@@ -253,18 +253,26 @@ XML: `div[@type='subscene']/head`.
 ## (Verse)
 
 ### Vers
-XML: `l`.
+`l[not(parent::lg[rend='indented'])]`.
+
+Priority: niedriger als rule für `Vers Abstand`.
 
 ### Vers Abstand
-XML: zweite, dritte, ... **nicht eingerückte** Versgruppe, darin jeweils erster Vers (`l`): `lg[not(@rend='indented') and preceding-sibling::lg]/*[1][self::l]`.
+XML: zweite, dritte, ... nicht eingerückte Versgruppe, darin jeweils erster Vers (`l`): `lg[not(@rend='indented') and preceding-sibling::lg]/*[1][self::l]`.
+
+Priority: siehe `Vers`.
 
 Formatierung: halbzeiliger Abstand nach oben (ca. 2,3 mm)
 
 ### Vers Einrückung
-XML: `parent::lg[@rend="indented"]`.
+XML: `lg[@rend='indented'/l`.
+
+Priority: niedriger als rule für `Vers Einrückung Abstand`.
 
 ### Vers Einrückung Abstand
 `lg[@rend='indented' and preceding-sibling::lg]/*[1][self::l]`
+
+Priority: siehe `Vers Einrückung`.
 
 ### Vers Antilabe
 XML: `l[@part="M"]` oder `l[@part="M"]` (`l[@part="I"]` bleibt unverändert). 
