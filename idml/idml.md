@@ -263,9 +263,8 @@ Formatierung: halbzeiliger Abstand nach oben (ca. 2,3 mm)
 ### Vers Einrückung
 XML: `parent::lg[@rend="indented"]`.
 
-Im InDesign-Template stehen drei (?) Tabs davor, letztlich sollen sie auf optische Mitte kommen.
-
 ### Vers Einrückung Abstand
+`lg[@rend='indented' and preceding-sibling::lg]/*[1][self::l]`
 
 ### Vers Antilabe
 XML: `l[@part="M"]` oder `l[@part="M"]` (`l[@part="I"]` bleibt unverändert). 
