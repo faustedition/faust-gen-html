@@ -121,14 +121,7 @@ XML: `//head/following-sibling::*[1][self::stage]`.
 
 Generelle Andersbehandlung von BA nach Überschriften ist fragwürdig, da weitere BAs direkt nachfolgen können.
 
-#### (Auftritt nach Überschrift, nicht zugleich Sprecher)
-
-XML: `head/following-sibling::*[1][self::move]/following-sibling::*[1][self::stage]`
-
-→ `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
-
-#### (BA mit Auftritt, nicht Sprecher)
-(überschneidet sich mit vorigem)
+#### (BA mit Auftritt, nicht zugleich Sprecher)
 * `before_354_c`
 * `before_482i_a`
 * `before_522_a`
@@ -137,7 +130,15 @@ XML: `head/following-sibling::*[1][self::move]/following-sibling::*[1][self::sta
 
 XML: `move/following-sibling::*[1][self::stage]`
 
-→ `BA zentr. ?? / ?? unten` (`??` = mehr als 1,5 Abstand nach oben / = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
+Priority: niedriger als die rule für BA mit Auftritt nach Überschrift ...
+
+Format: `C BA zentr. 2,3 / 0,0`
+
+#### (BA mit Auftritt nach Überschrift, nicht zugleich Sprecher)
+
+XML: `head/following-sibling::*[1][self::move]/following-sibling::*[1][self::stage]`
+
+→ `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
 
 #### (BA mit Auftritt, nicht Sprecher **nach** BA mit Auftritt, nicht Sprecher) 
 (Bsp.: `before_2337_c` "Faust. Mephistopheles.")
