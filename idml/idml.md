@@ -82,7 +82,7 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
 * am Ende von Repliken (`sp/*[self::stage and position()=last()]`)
   * kommt regulär nicht vor 
 
-#### (BA nach Replik, ohne Figur)
+#### (BA im Anschluss an Replik, ohne Figur)
 z.B. 
 * `before_514_a` "Verschwindet."
 * `before_4666_a` "Ungeheures Getöse ..."
@@ -104,6 +104,13 @@ XML: `stage[hi and preceding-sibling::*[1][self::sp] and following-sibling::*[1]
 → `BA zentr. 1,5`
 
 → (bei entsprechender Länge) `BA Blocks. 1,5` 
+
+#### (freie BA, ohne Figur)
+(z.B. `before_7040_a` "Die Luftfahrer oben", oft auch vor der ersten Replik)
+
+XML: `stage[not(ancestor::sp) and not(hi) and not(preceding-sibling::*[1][self::sp or self::move or self::head])]`
+
+Format: `C BA zentr. 2,3 / 0,0`
 
 #### (BA nach Überschrift, kein Auftritt)
 (Bsp.: `before_4613_f` "Faust auf blumigen ...")
