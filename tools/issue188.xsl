@@ -12,6 +12,28 @@
 	<xsl:output method="xhtml" indent="yes" include-content-type="yes"/>
 
 	<xsl:param name="coll" select="collection(concat(resolve-uri($path), '?select=', $pattern))"/>
+	
+	<xsl:param name="meta"/>
+	<xsl:variable name="metadata" select="if ($meta) then document($meta) else false()"/>
+	
+	<xsl:function name="f:pageno">
+		<xsl:param name="document" as="document-node()"/>
+		<xsl:variable name="pageid" select="replace(document-uri($document), '.*/(.*)\.xml$', '$1')"/>
+		<xsl:choose>
+			<xsl:when test="$metadata">
+				<xsl:variable name="pageno" select="replace($pageid, '^0+', '')"/>
+				<xsl:variable name="pattern" select="concat('^0*', $pageno)"/>
+				<xsl:variable name="pageElem"
+					select="$metadata//f:docTranscript[matches(@uri, $pattern)]/ancestor::f:page[1]"/>
+				<xsl:for-each select="$pageElem[1]">
+					<xsl:number format="1" level="any" from="f:archivalDocument|f:print"/>
+				</xsl:for-each>
+				<xsl:value-of select="concat(' (', $pageid, ')')"/>				
+			</xsl:when>
+			<xsl:otherwise><xsl:value-of select="$pageid"/></xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
 	<xsl:template name="start">
 
 		<html>
@@ -58,7 +80,7 @@
 				<xsl:sort select="document-uri(/)"/>
 				<tr>			
 					<td class="doc">
-						<xsl:value-of select="replace(document-uri(/), '.*/(.*)\.xml$', '$1')"/>
+						<xsl:value-of select="f:pageno(/)"/>
 					</td>
 					<td class="text">
 						<xsl:value-of select="."/>
@@ -92,7 +114,7 @@
 				<xsl:sort select="document-uri(/)"/>
 				<tr>			
 					<td class="doc">
-						<xsl:value-of select="replace(document-uri(/), '.*/(.*)\.xml$', '$1')"/>
+						<xsl:value-of select="f:pageno(/)"/>
 					</td>
 					<td class="text">
 						<xsl:variable name="text" select="string-join(following::* except document(@spanTo)/following::*, '')" as="xs:string"/>
@@ -108,7 +130,7 @@
 		
 		<table>
 			<tr>
-				<th>Document</th>
+				<th>Dokument</th>
 				<th>Attribute</th>				
 			</tr>
 			
@@ -116,7 +138,7 @@
 				<xsl:sort select="document-uri(/)"/>
 				<tr>
 					<td class="doc">
-						<xsl:value-of select="replace(document-uri(/), '.*/(.*)\.xml$', '$1')"/>
+						<xsl:value-of select="f:pageno(/)"/>
 					</td>
 					<td>
 						<xsl:for-each select="@*">
@@ -191,7 +213,7 @@
 		<tr class="case{$case}">
 			<td class="case"><xsl:value-of select="$case"/></td>
 			<td class="doc">
-				<xsl:value-of select="replace(document-uri(/), '.*/(.*)\.xml$', '$1')"/>
+				<xsl:value-of select="f:pageno(/)"/>
 			</td>
 			<td class="text">
 				<xsl:value-of select="."/>
