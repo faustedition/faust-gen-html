@@ -11,9 +11,6 @@ Siehe https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
 * Sprecher = Sprecherbezeichnung (`speaker`)
 * Musterseite / Stammseite in InDesign: Seiten, auf denen Gestaltungen definiert werden, die für alle Seiten gelten sollen, auf die sich die Stammseite bezieht (`Musterseite A` mit Kolumnenzeile und Pagina als Textvariablen definiert, `Musterseite B` ohne Kolumnenzeile). 
 
-# Allgemeine Regel zur Sperrung
-Umgebende Leerzeichen werden mitgesperrt.
-
 # Absatzformate
 
 ## Apparat
@@ -468,6 +465,18 @@ XML: `rdg/@type`
 Output:
 * in `(...)` hinter die betreffende `Lemma-Lesart`
 * wenn diese `Lemma-Leart` die letzte des `Apparat`-Absatzes ist: 1 `em` Abstand vor Typenbezeichnung 
+
+### (Zeichenformate mit Sperrung)
+* Auftritt
+* Doppelunterstreichung
+* Figur
+* Sperrung
+* Sprecher
+* (veraltet: Sprecher gesperrt)
+
+Allgemeine Regeln zur Umsetzung:
+* Umgebende Leerzeichen werden mitgesperrt (#321).
+* todo: Interpunktion ([#321 (comment)](https://github.com/faustedition/faust-gen-html/issues/321#issuecomment-372240044))
 
 ### (Sonderwünsche)
 Eventuell enthalten Apparateinträge nicht nur Zeichenformate, sondern wiederum eigene Absätze:
