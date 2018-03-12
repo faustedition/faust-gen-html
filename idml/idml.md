@@ -343,7 +343,7 @@ Umsetzung genau analog zu [BAs vor 350](https://github.com/faustedition/faust-ge
 Dies sind eigentlich normale BAs in Anschluss an Repliken.
 Für die Kolumnentitel wurden aber `div`s eingefügt, deren erste Kind-Elemente die BAs sind.
 
-XML: ´div[@n='2.3']/div/*[1][self::stage]`
+XML: `div[@n='2.3']/div/*[1][self::stage]`
 
 Format: `F BA zentr. 1,15 / 0,0`
 
