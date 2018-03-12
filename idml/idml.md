@@ -555,6 +555,7 @@ XML: `stage/hi`, `speaker`
 (entfällt)
 
 ## Kursiv (Apparat)
+Vermutlich überholt; siehe oben unter [(Apparateinträge)](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#apparateintr%C3%A4ge).
 
 ## (Antiqua / lateinisch)
 (= Antiqua und lateinische Schrift in Versen, Sprechern, BA und Finis)
