@@ -181,7 +181,7 @@
 		</xsl:choose>	
 	</xsl:template>
 	
-	<!-- Remove a trailing . from speaker and head and at end of / immediately after hi -->
+	<!-- Remove a trailing . from speaker and head and at end of / immediately after hi or (rarely) emph -->
 	<xsl:template mode="pass2" match="speaker/text()[position()=last()]">
 		<xsl:value-of select="replace(., '\.\s*$', '')"/>
 	</xsl:template>
@@ -195,7 +195,7 @@
 		<xsl:value-of select="replace($prep, '\.$', '')"/>
 	</xsl:template>
 	
-	<xsl:template mode="pass2" match="stage//text()[preceding-sibling::node()[1][self::hi]]" priority="2">
+	<xsl:template mode="pass2" match="stage//text()[preceding-sibling::node()[1][self::hi or self::emph]]" priority="2">
 		<xsl:variable name="prep"><xsl:next-match/></xsl:variable>
 		<xsl:value-of select="replace($prep, '^\.', '')"/>
 	</xsl:template>
