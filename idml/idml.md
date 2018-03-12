@@ -339,6 +339,14 @@ Betrifft:
 
 Umsetzung genau analog zu [BAs vor 350](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#bas-vor-350).
 
+### (BAs zu "Innerer Burghof" und "Schattiger Hain")
+Dies sind eigentlich normale BAs in Anschluss an Repliken.
+Für die Kolumnentitel wurden aber `div`s eingefügt, deren erste Kind-Elemente die BAs sind.
+
+XML: ´div[@n='2.3']/div/*[1][self::stage]`
+
+Format: `F BA zentr. 1,15 / 0,0`
+
 ## Szene (Finis)
 (entfällt vorläufig)
 Bedeutet, dass Finis wie Szene behandelt wird.
