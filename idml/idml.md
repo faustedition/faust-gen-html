@@ -230,29 +230,54 @@ and not(following-sibling::*[1][self::stage and matches(@rend,'inline')])
 ## (Überschriften)
 Bei `head/lb` wird innerhalb des betreffenden Absatzes ein Zeilenumbruch eingefügt.
 
-### Teil / Akt
-(Zueignung, ..., Teil- und Aktüberschrift) 
+### Teil
+(Zueignung, ..., Teilüberschrift) 
 
-Formatierung: `Teil / Akt` soll immer auf einer rechten Seite stehen.
+XML: `body/div/head`
+
+Formatierung:
+* `Teil` soll immer auf einer neuen rechten Seite stehen.
+* Der folgende Text soll ebenfalls auf einer neuen rechten Seite beginnen. 
+* Am Anfang des Absatzes 3 Zeilenumbrüche
+ 
+### Akt
+XML: `div[@type='act']/head`
+
+Formatierung:
+* neue Seite (kann auch eine linke sein)
+* 3 Zeilenumbrüche am Anfang des Absatzes
 
 ### Szene
 (Szenenüberschrift)
 
-Output: 
-* Seitenwechsel
+XML: `div/div[@type='scene' and not(@f:n='1.1.22')]/*[1][self::head]`
+
+Formatierung: 
+* neue Seite (kann auch eine linke sein)
 * 3 Zeilenumbrüche am Anfang des Absatzes
 
 ### Szene nach Akt
 (Szenenüberschrift nach Aktüberschrift)
-XML müsste eigentlich sein: `div[@type='act']/div[@type='scene' and not(position()=(1))]/head[1]`.
 
-Immer `head` oder auch `stage`?
+XML: `div[@type='act']/div[@type='scene' and position()=(1)]/head[1]`
+
+Formatierung: 
+* *keine* neue Seite
+* *keine* 3 Zeilenumbrüche am Anfang des Absatzes
+
+### Szenenunter
+
+XML: `div[@type='scene']/head[2]` (sollte auch ein `type="sub"` tragen)
 
 ### Unterszene
 XML: `div[@type='subscene']/*[1][self::head]`
 
 ### Unterszene nach Szene
 (Unterszenenüberschrift nach Szenenüberschrift)
+
+XML:
+* `head[@n='before_4728_b']` 
+*  `head[matches(@n,'before_7005_b')]`
 
 ## (Verse)
 
