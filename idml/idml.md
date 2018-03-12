@@ -249,9 +249,7 @@ XML müsste eigentlich sein: `div[@type='act']/div[@type='scene' and not(positio
 Immer `head` oder auch `stage`?
 
 ### Unterszene
-XML: `div[@type='subscene']/head`.
-
-(Unterszenenüberschrift, 4. Stelle in der Szenenzählung)
+XML: `div[@type='subscene']/*[1][self::head]`
 
 ### Unterszene nach Szene
 (Unterszenenüberschrift nach Szenenüberschrift)
