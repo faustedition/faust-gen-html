@@ -379,8 +379,6 @@ Bedeutet, dass Finis wie Szene behandelt wird.
 ### (WNT-Titel)
 XML: `head[@n="before_4223_a"]/hi[1]`.
 
-Output: `Teil / Akt`.
-
 ### Zwischenzeile (WNT)
 (für das "oder")
 
