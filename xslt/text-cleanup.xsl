@@ -68,7 +68,7 @@
 		| text[not(.//l[@n])] 
 		| speaker/@rend 
 		| stage[not(matches(@rend,'inline'))]/@rend
-		| l/@rend 
+		| l[not(@rend='indented')]/@rend 
 		| l/@xml:id 
 		| space[@type='typographical'] 
 		| hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
