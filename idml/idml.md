@@ -298,6 +298,21 @@ XML: `lg[@rend='indented'/l`.
 
 Priority: niedriger als rule für `Vers Einrückung Abstand`.
 
+Umsetzung:
+> linksbündigen Tab auf 18 mm vom linken Satzspiegelrand
+
+([#337, comment](https://github.com/faustedition/faust-gen-html/issues/337#issuecomment-372939872))
+
+#### Weiter eingerückte Verse
+An einer Stelle werden Verse weiter eingerückt als die vorherigen eingerückten Verse.
+
+XML: `lg[@rend='indented']/l[@rend='indented']`
+
+Umsetzung: 
+>  linksbündigen Tab ... auf 28 mm
+
+([#337, comment](https://github.com/faustedition/faust-gen-html/issues/337#issuecomment-372939872))
+
 ### Vers Einrückung Abstand
 `lg[@rend='indented' and preceding-sibling::lg]/*[1][self::l]`
 
