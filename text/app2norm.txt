@@ -77,10 +77,8 @@ before_8245_b[(erstaunt]{<stage>erstaunt</stage>} <i>before_8245_b</i> <stage>er
 8578[hin]{heim} <i>8578</i> heim <i>2_III_H.3a:1</i>] hin <i>C.1_4 [type=2b]</i>
 8645[seh’]{seh} <i>8645</i> seh <i>C.1_4</i>] seh’ <i>C.2alpha_4 C.3_4 [type=4a]</i>
 8650[Vom]{Von} <i>8650</i> Von <i>2_III_H.2:1</i>] Vom <i>C.1_4 [type=2b]</i>
-8656[Entlaßnem]{Entlass’nem} <i>8656</i> Entlass’nem <i>C.2alpha_4 C.3_4</i>] Entlaßnem <i>C.1_4 <color bgc="FFFF00">[type=4a]</i>
 8714[Lohe]{Lohn} <i>8714</i> Lohn <i>2_H</i>] Lohe <i>C.1_4 [type=2aa]</i>
 8727[mich^]{mich.} <i>8727</i> mich. <i>2_H</i>] mich^ <i>C.1_4 [type=1b]</i>
-8741[nicht.]{nicht,} <i>8741</i> nicht, <i>H C.2alpha_4 C.3_4</i>] nicht. <i>C.1_4 <color bgc="FFFF00">[type=4b]</i>
 8776[schlachterzogne]{schlechterzogne} <i>8776</i> schlechterzogne <i>H.3a:1</i>] schlachterzogne <i>C.1_4 [type=2b]</i>
 8803[Anerkannte! nun]{Anerkannte! neu} <i>8803</i> Anerkannte! neu <i>2_III_H.1</i>] Anerkannte! nun <i>C.1_4 [type=2b]</i>
 8850[zehenjährig]{siebenjährig} <i>8850</i> siebenjährig <i>C.1_4</i>] zehenjährig <i>2_H mon Gö III_H.3b</i> siebenjährig <i>G 2_H C.1_4 C.2alpha_4 C.3_4</i> zehenjährig <i>Ec H (vgl. Gespräch vom 17. März 1830) :</i> dreyzehnjährig <i>Ri [type=6]</i>
@@ -99,7 +97,6 @@ before_8924f[Phorkyas]{=} <i>before_8924f</i> <speaker>Phorkyas</speaker> <i>non
 9206[welch’]{welch} <i>9206</i> welch <i>2_III_H.2:1</i>] welch’ <i>C.1_4 [type=1b]</i>
 before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>H.45a C.2alpha_4 C.3_4</i>] Thurmwärter, <i>C.1_4 [type=4b]</i>
 9227[Höh’n,]{Höh’n} <i>9227</i> Höh’n <i>C.1_4</i>] Höh’n, <i>C.2alpha_4 C.3_4 [type=4a]</i>
-9235[geschloßnes]{geschloss’nes} <i>9235</i> geschloss’nes <i>C.2alpha_4 C.3_4</i>] geschloßnes <i>C.1_4 <color bgc="FFFF00">[type=4a]</i>
 9247[Welch’]{Welch} <i>9247</i> Welch <i>2_H</i>] Welch’ <i>C.1_4 [type=1b]</i>
 9373[euch]{auch} <i>9373</i> auch <i>2_H</i>] euch <i>C.1_4 [type=2aa]</i>
 9378[vom]{von} <i>9378</i> von <i>2_III_H.3a:2</i>] vom <i>C.1_4 [type=2b]</i>
@@ -120,7 +117,6 @@ before_9755_a[verschlungenen]{verschlungenem} <i>vor 9755</i> verschlungenem <i>
 after_9807[Höhe.]{=} <i>nach 9807</i> Höhe.] Höhe). <i>C.1_4 statt</i> Höhe.) <i>C.2alpha_4 C.3_4 [type=8]</i>
 9855[Welle]{Wälle} <i>9855</i> Wälle <i>2_H</i>] Welle <i>C.1_4 [type=2aa]</i>
 9942[sag’ ich]{sage} <i>9942</i> sage <i>2_III_H.75b</i>] sag’ ich <i>C.1_4 [type=2aa]</i>
-9962[los.]{los,} <i>9962</i> los, <i>H C.2alpha_4 C.3_4</i>] los. <i>C.1_4 <color bgc="FFFF00">[type=4b]</i>
 before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>H.45a C.2alpha_4 C.3_4</i>] Chorführerin <i>C.1_4 [type=4b]</i>
 10001[Vogelsingen]{Vogelsängen} <i>10001</i> Vogelsängen <i>2_H</i>] Vogelsingen <i>C.1_4 [type=2aa]</i>
 10030[in’s]{ins} <i>10030</i> ins <i>C.1_4</i>] in’s <i>C.2alpha_4 C.3_4 [type=4a]</i>
@@ -169,7 +165,7 @@ after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab)
 11578[Von]{Von} <i>11578</i> Von <i>2_H</i>] Von <i>2_H :</i> Hier <i>Ec [type=6]</i>
 <i>11635</i> wieder. <i>2_V_H.2</i>] <i>Punkt in H nicht zu erkennen; ergänzt nach V_H.2 [type=7]</i>
 11638[Vom]{Von} <i>11638</i> Von <i>2_V_H.2</i>] Vom <i>2_H [type=2aa]</i>
-11724[erlischt|Muth]{=} <i>11724</i> erlischt <i>…</i> Muth <i>2_H</i>] erlischt, <i>…</i> Muth! <i>Ec [type=6]</i>
+11724[erlischt|Muth]{=} <i>11724</i> erlischt <i>…</i> Muth <i>2_H</i>] erlischt, <i>…</i> Muth! <i>Ec 2_H [type=6]</i>
 11760[im]{in} <i>11760</i> in <i>2_V_H.2</i>] im <i>2_H [type=2aa]</i>
 before_12045_b[IV.]{IV.)} <i>vor 12045</i> (St. Joh. IV.)] <i>schließende Klammer fehlt H [type=1b]</i>
 12071[Die]{Du} <i>12071</i> Du <i>2_V_H.37f</i>] Die <i>2_H [type=2a]</i>
