@@ -959,7 +959,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
             <modify>
                 <exchange>
                     <exchange-table>
-                        <exception-string>*Typ*4b*+abr*+sh*</exception-string>
+                        <!--<exception-string>*Typ*4b*+abr*+sh*</exception-string>-->
                         <string-pair>
                             <search-string>{{p}}{{font size="12"}}Typ 1a{{/font}}{{/p}}</search-string>
                             <replacement-string>{{p}}{{font size="12"}}Ausstehende Entscheidungen{{/font}}{{/p}}{=1=}</replacement-string>
