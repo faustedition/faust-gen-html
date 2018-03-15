@@ -40,7 +40,7 @@
     -->
     <xsl:key name="delSpan-for-node" match="delSpan">
         <xsl:variable name="target" as="element()" select="id(substring(@spanTo, 2))"/>
-        <xsl:variable name="nodes" select="following::node() except ($target//node(), $target/following::node())"/>
+        <xsl:variable name="nodes" select="following::node() except ($target//node(), $target/following::node(), $target/ancestor::node())"/>
         <xsl:sequence select="for $node in $nodes return generate-id($node)"/>
     </xsl:key>     
     <xsl:template match="node()[key('delSpan-for-node', generate-id())]"/>    
