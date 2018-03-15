@@ -1,3 +1,4 @@
+<?xml-model href="faust-misc.rnc" type="application/relax-ng-compact-syntax"?>
 <sceneLineMapping xmlns="http://www.faustedition.net/ns">
     <scene n="1.0.1">
         <rangeStart>1</rangeStart>

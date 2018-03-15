@@ -74,6 +74,7 @@ def to_xml(testimony_df, orignames, output_file=None):
     nsmap = {None : ns}
     root = etree.Element(NS + "testimonies", nsmap=nsmap)
     root.addprevious(etree.Comment("This document is sporadically re-generated from an Excel sheet in the wiki. Please don't edit it directly"))
+    root.addprevious(etree.ProcessingInstruction('xml-model', 'href="testimony-table.rnc" type="application/relax-ng-compact-syntax"'))
 
     header = root.makeelement(NS + "header")
     header.append(etree.Comment("These fields have been found in the excel table:"))

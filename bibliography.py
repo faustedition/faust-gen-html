@@ -25,6 +25,7 @@ START = """<?xml version="1.0" encoding="utf-8"?>
     https://faustedition.uni-wuerzburg.de/wiki/index.php/Bibliographische_Verweise
     Please edit there
 -->
+<?xml-model href="bibliography.rnc"?>
 <f:bibliography
     xmlns:f="http://www.faustedition.net/ns"
     xmlns="http://www.w3.org/1999/xhtml">

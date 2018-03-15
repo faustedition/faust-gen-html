@@ -1,0 +1,45 @@
+default namespace = "http://www.faustedition.net/ns"
+
+start = SceneLineMapping | SigilLabels | WatermarkLabels
+
+SceneLineMapping =
+  ## A list of scenes and their labels
+  element sceneLineMapping {
+    ## single scene, act, or other section
+    element scene {
+      ## n attribute as used in div/@n, e.g. 2.2.1 for first scene in Act II
+      attribute n { xsd:NMTOKEN },
+      (## number of first verse in that scene, only for scenes 
+       element rangeStart { xsd:integer },
+       ## number of last verse in that scene
+       element rangeEnd { xsd:integer })?,
+      ## canonical scene titel
+      element title { text },
+      ## must be the same as @n
+      element id { xsd:NMTOKEN }?
+    }+
+  }
+
+SigilLabels =
+  ## Labels to be used for sigils and archive signatures
+  element sigil-labels {
+  	## human-readable label for a type of signature
+    element label {
+      ## the corresponding value from idno/@type
+      attribute type { xsd:NCName },
+      ## "signature" if this is an archival signature, if not present, it's a sigil
+      attribute kind { "signature" }?,
+      text
+    }+
+  }
+
+WatermarkLabels =
+  ## normalization map for watermark ids. Cf. watermark/countermark in document.
+  element watermarks {
+  	## The value to be displayed for a certain watermark
+    element watermark {
+      ## A value as it appears in watermarkID etc. in the metadata documents
+      attribute id { text  },
+      text
+    }+
+  }

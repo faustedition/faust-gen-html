@@ -1,9 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 
      This document contains the sigil labels.
 
 -->
+<?xml-model href="faust-misc.rnc" type="application/relax-ng-compact-syntax"?>
 <sigil-labels xmlns="http://www.faustedition.net/ns">
 	<label type="faustedition">Faustedition</label>
 	<label type="fausturi">URI</label>

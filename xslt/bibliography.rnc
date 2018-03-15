@@ -1,0 +1,27 @@
+default namespace = "http://www.w3.org/1999/xhtml"
+namespace f = "http://www.faustedition.net/ns"
+
+start =
+  element f:bibliography {
+  	## Single bibliography entry
+    element f:bib {
+      
+      ## Faust URI to identify the bibliography entry elsewhere
+      attribute uri { xsd:anyURI { pattern = "faust://bibliography/(\w|[\-_.])+" }},
+      
+      ## short citation to be used anywhere
+      element f:citation { text },
+      
+      ## long citation to be used in the bibliography and in tooltips
+      element f:reference {
+        (text
+         | Strong
+         | element a {  # TODO we need to care for this in the scripts?
+             attribute href { xsd:anyURI },
+             text
+           })+
+      }
+    }+
+  }
+  
+Strong = element strong { text }

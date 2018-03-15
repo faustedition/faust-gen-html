@@ -1,0 +1,33 @@
+default namespace = "http://www.faustedition.net/ns"
+
+start =
+  element testimonies {
+  	## List of available fields
+    element header {
+      ## Describes a field (i.e. a column of the table)
+      element fieldspec {
+      	## machine-readable name of the field
+        attribute name { xsd:NCName },
+        (   ## verbatim header from the Excel spreadsheet
+        	attribute spreadsheet { text } |
+        	## present for fields that are generated instead of taken from the spreadsheet
+          	attribute generated { "true" }),
+        ## sort type for the HTML table
+        attribute sortable-type { xsd:NCName }?,
+        ## Header for the HTML table / metadata field
+        text?
+      }+
+    },
+    ## a single testimony (i.e. a row from the Excel table). Contains a field element for each column that has a value. 
+    element testimony {
+      ## testimony id. This has the form fieldname_number, with fieldname the name of the preferred id field and number the value in that field
+      attribute id { xsd:NCName }?,
+      ## single metadata value describing this testimony
+      element field {
+      	## field name. Must be one of the field names from the header.
+        attribute name { xsd:NCName },
+        ## metadata value
+        text
+      }+
+    }*
+  }

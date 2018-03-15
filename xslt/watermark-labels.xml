@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><watermarks xmlns="http://www.faustedition.net/ns">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="faust-misc.rnc" type="application/relax-ng-compact-syntax"?>
+<watermarks xmlns="http://www.faustedition.net/ns">
   <!-- 
 
   This table maps the content of {patch,}{water,counter}markID to labels that are actually displayed.
