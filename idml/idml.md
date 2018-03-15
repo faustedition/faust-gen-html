@@ -309,7 +309,7 @@ An einer Stelle werden Verse weiter eingerückt als die vorherigen eingerückten
 XML: `lg[@rend='indented']/l[@rend='indented']`
 
 Umsetzung: 
->  linksbündigen Tab ... auf 28 mm
+>  linksbündigen Tab ... auf 28 mm [vom linken Satzspiegelrand]
 
 ([#337, comment](https://github.com/faustedition/faust-gen-html/issues/337#issuecomment-372939872))
 
