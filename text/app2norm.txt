@@ -59,7 +59,8 @@ before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht] zurückzieht <i>ci.
 6832[Willkommmen]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkommmen <i>2_H [type=1a]</i>
 6847[höhern, höhern]{höhern, höhern} <i>6847</i> höhern, höhern <i>2_H</i>] höhern, höhern <i>2_H : mon Ri</i> hehren <i>vorschl Ri [type=6]</i>
 <i>6983</i> Den] Nun auf! den <i>2_H :</i> den <i>G [type=7]</i>
-before_7249_a[Peneus]{=} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>] Peneus <i>(Jo) H mon Ri (</i>Penéus <i>Ri alR) :</i> Peneius <i>vorschl Ri [type=7]</i>
+7136[Kumpan]{Cumpan} <i>7136</i> Cumpan <i>2_H</i>] Kumpan <i>Ec H [type=6]</i>
+before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>] <i>Zeichen über dem zweiten</i> e <i>zur Verdeutlichung der Artikulation, alR</i> Peneus <i>mit Zeichen über dem zweiten</i> e<i>, darüber</i> ei <i>Ri H [type=7]</i>
 7437[Erungene]{Errungene} <i>7437</i> Errungene <i>none</i>] Erungene <i>2_H [type=1a]</i>
 7544[Angestregtest]{Angestrengtest} <i>7544</i> Angestrengtest <i>2_II_H.74</i>] Angestregtest <i>2_H [type=1a]</i>
 7729[ungewissen]{ungewissem} <i>7729</i> ungewissem <i>none</i>] ungewissen <i>2_H [type=1a]</i>
@@ -153,6 +154,7 @@ vor 10877[<speaker>Erbmarschall</speaker>]{<speaker>Erzmarschall</speaker>} <i>v
 10979[bangt]{=} <i>10979</i> bangt <i>2_H</i>] bangs <i>(G) IV_H.22e [type=2a0]</i>
 10998[steter]{fetter} <i>10998</i> fetter <i>2_IV_H.22f</i>] steter <i>2_H [type=2aa]</i>
 11099[Doch!]{=} <i>11099</i> Doch! <i>2 V_H.0b H</i>] Doch! <i>2_H :</i> Dort <i>Sc [type=6]</i>
+before_11143_c[Der]{der} <i>vor 11143</i> Lynceus der <i>none</i>] <font name="Cambria Math">⟨</font><stage>Lynceus</stage> <i>erg G</i><font name="Cambria Math">⟩</font> Der <i>2_H [type=7]</i>
 11160[fremden]{fremdem} <i>11160</i> fremdem <i>2_V_H.1</i>] fremden <i>2_H [type=2aa]</i>
 11203[]{} <i>11203–11206</i>] <l>Wir alle fordern</l> <l>Gleichen Theil.</l> <speaker>Mephist.</speaker> <l>Erst ordnet oben</l> <l>Saal an Saal.</l> <i>Ec 2_H [type=6]</i>
 11235[Vielgewandten]{Vielgewandtem} <i>11235</i> Vielgewandtem <i>2_V_H.1</i>] Vielgewandten <i>2_H [type=1a]</i>
