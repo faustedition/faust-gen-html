@@ -383,7 +383,7 @@ Umsetzung genau analog zu [BAs vor 350](https://github.com/faustedition/faust-ge
 
 XML: `l[@n='4412']
 
-Format: `Vers Abstand`
+Format: `Vers Einrückung Abstand`
 
 ### (BA vor 8217)
 (siehe xml #267)
