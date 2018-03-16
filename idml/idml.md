@@ -378,6 +378,13 @@ Betrifft:
 
 Umsetzung genau analog zu [BAs vor 350](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#bas-vor-350).
 
+### (Vers nach BA vor before_4412)
+(s.o. zu `before_4412`)
+
+XML: `l[@n='4412']
+
+Format: `Vers Abstand`
+
 ### (BA vor 8217)
 (siehe xml #267)
 
