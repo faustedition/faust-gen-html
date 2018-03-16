@@ -378,6 +378,11 @@ Betrifft:
 
 Umsetzung genau analog zu [BAs vor 350](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#bas-vor-350).
 
+### (BA vor 8217)
+XML: `before_8217`
+
+Format: `C BA zentr. 2,3 / 0,0` 
+
 ### (BAs zu "Innerer Burghof" und "Schattiger Hain")
 Dies sind eigentlich normale BAs in Anschluss an Repliken.
 Für die Kolumnentitel wurden aber `div`s eingefügt, deren erste Kind-Elemente die BAs sind.
