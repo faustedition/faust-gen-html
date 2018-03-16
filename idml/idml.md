@@ -351,16 +351,20 @@ Dieser Abstand kommt zu dem Replikenabstand hinzu, den der jeweils folgende Absa
 ## Individualregeln für BAs
 
 ### (BAs vor 350)
-XML: `stage before_350_a` ("Der Himmel schließt, ...").
+Betrifft gemeinschaftlich
+* XML: `stage before_350_a` ("Der Himmel schließt, ...").
+* XML: `before_350_b` ("Mephistopheles")
+* XML: `before_350_c` ("allein")
 
---> `BA zentr. 1,5` (ausnahmsweise Replikenabstand nach oben)
+Umsetzung:
+* `stage before_350_a` soll im Ergebnis eine eigene Zeile sein mit halbzeiligem Abstand nach oben (nicht viertelzeilig, obwohl direkt auf eine Replik folgend).
+* `before_350_b` und `before_350_c` werden standardmäßig in einen Absatz zusammengefasst wg. `@rend`-Wert `inline`. So weit in Ordnung. Aber außerdem sollen sie keinen Abstand nach oben erhalten.
 
-XML: `before_350_b` zusammen mit `before_350_c` ("Mephistopheles allein.", standardmäßig kombiniert wg. `inline`)
---> `BA zentr. 0,0` (ausnahmsweise keinen Replikenabstand nach oben, da Einheit mit vorhergehender BA).
-
-Der Grund ist, dass die XML-Auszeichnung die Struktur des Textes hier nicht voll adäquat abbildet.
-
-Alternativ können auch `before_350_b`+`before_350_c` zusammen mit `stage before_350_a` in einen BA-Absatz genommen werden mit Zeilenumbruch nach dem Inhalt von `stage before_350_a` (je nachdem, was für @pglatza einfacher ist).
+Das gewünschte Ergebnis kann auf zwei Weisen erreicht werden (je nachdem, was für @pglatza einfacher ist):
+* Entweder `stage before_350_a`, `before_350_b` und `before_350_c` in einen Absatz, Zeilenumbruch nach `stage before_350_a` (das schwebt MC vor)
+* Oder
+  * `stage before_350_a` → `C BA zentr. 2,3 / 0,0` (halbzeiligen Abstand nach oben)
+  * `before_350_b` + `before_350_c` → `A BA zentr. 0,0 / 0,0` (keinen Abstand nach oben)
 
 ### (BA vor 949)
 XML: `before_949_c`.
