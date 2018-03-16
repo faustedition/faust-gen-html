@@ -379,6 +379,8 @@ Betrifft:
 Umsetzung genau analog zu [BAs vor 350](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#bas-vor-350).
 
 ### (BA vor 8217)
+(siehe xml #267)
+
 XML: `before_8217`
 
 Format: `C BA zentr. 2,3 / 0,0` 
@@ -390,6 +392,11 @@ Für die Kolumnentitel wurden aber `div`s eingefügt, deren erste Kind-Elemente 
 XML: `div[@n='2.3']/div/*[1][self::stage]`
 
 Format: `F BA zentr. 1,15 / 0,0`
+
+### (BA vor 10849)
+XML: `stage[@n='before_10849_a']/lb`
+
+Umsetzung: Zeilenumbruch
 
 ## Szene (Finis)
 (entfällt vorläufig)
