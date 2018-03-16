@@ -166,7 +166,7 @@
 		</p:store>
 		
 		<!-- ### Step 3c: Reading text apparatus list -->
-		<p:xslt>
+		<p:xslt name="reading-text-md">
 			<p:input port="source"><p:pipe port="result" step="generate-reading-text"/></p:input>
 			<p:input port="stylesheet"><p:document href="xslt/add-metadata.xsl"/></p:input>
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
@@ -178,6 +178,17 @@
 		</p:xslt>
 		<p:store method="xhtml">
 			<p:with-option name="href" select="resolve-uri('www/print/app.html', $builddir)"/>
+		</p:store>
+		
+		<!-- ### Step 3d: Reading text word index -->
+		<p:xslt>
+			<p:input port="source"><p:pipe port="result" step="reading-text-md"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/word-index.xsl"></p:document></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"></p:pipe></p:input>
+			<p:with-param name="limit" select="0"/>
+		</p:xslt>
+		<p:store method="xhtml">
+			<p:with-option name="href" select="resolve-uri('www/print/faust.wordlist.html', $builddir)"/>
 		</p:store>
 		
 		<!-- ### Step 2a: Metadata HTML -->

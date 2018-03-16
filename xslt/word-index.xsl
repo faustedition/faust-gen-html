@@ -5,12 +5,13 @@
 	xmlns:f="http://www.faustedition.net/ns"
 	xmlns="http://www.w3.org/1999/xhtml"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-	exclude-result-prefixes="xs"
+	exclude-result-prefixes="xs tei f"
 	default-collation="http://www.w3.org/2013/collation/UCA?lang=de"
 	version="3.0">
 	
 	<xsl:import href="html-frame.xsl"/>
 	<xsl:param name="limit" select="1"></xsl:param>
+	<xsl:param name="title"/>
 	
 	<!-- tokenize -->
 	<xsl:template match="text()" priority="1">
@@ -34,48 +35,78 @@
 	</xsl:template>
 	
 	<xsl:template match="/">
+		<xsl:message select="concat('Generating word index for up to ', $limit, ' occurances ...')"/>		
 		<xsl:call-template name="html-frame">
+			<xsl:with-param name="headerAdditions">
+				<style>
+					.token { font-weight: bold; }
+					.camelcase { color: red; }
+					td.count { justify: right; }
+					.documents { color: gray; }
+				</style>
+			</xsl:with-param>
+			<xsl:with-param name="breadcrumb-def" tunnel="yes"><a>
+				<xsl:choose>
+					<xsl:when test="$title"><xsl:value-of select="$title"/></xsl:when>
+					<xsl:otherwise>Seltene Tokens (≤ <xsl:value-of select="$limit"/> Vorkommen)</xsl:otherwise>
+				</xsl:choose></a>
+			</xsl:with-param>
+			<xsl:with-param name="jsRequirements">sortable:Sortable</xsl:with-param>
+			<xsl:with-param name="scriptAdditions">Sortable.initTable(document.getElementById('wordlist'));</xsl:with-param>
 			<xsl:with-param name="content">			
 						
 				<xsl:variable name="tokenized">
 					<xsl:apply-templates select="//text"/>
-				</xsl:variable>
+				</xsl:variable>				
 				
-				<h1>Index seltener Tokens (höchstens <xsl:value-of select="$limit"/> Vorkommen)</h1>
-				
+				<table data-sortable="true" class="pure-table" xml:id="wordlist">
+				<thead>					
+					<th data-sortable-type="alpha">Token</th>
+					<th data-sortable-type="numericplus">Häufigkeit</th>
+					<th data-sortable-type="numericplus">Verse (Zeugen)</th>
+				</thead>
+				<tbody>
 				<xsl:for-each-group select="$tokenized//w" group-by=".">
+					<xsl:sort select="count(current-group())"/>
 					<xsl:sort select="current-grouping-key()"/>					
 					<xsl:variable name="total" select="count(current-group())"/>
 					
-					<xsl:if test="$total le $limit">
-						<div class="l">
-							<strong>
-								<xsl:if test="matches(current-grouping-key(), '[a-z][A-Z]')">
-									<xsl:attribute name="style">color:red;</xsl:attribute>
-								</xsl:if>
+					<xsl:if test="$limit = 0 or $total &lt;= $limit">
+						<tr>
+							<td>
+								<xsl:attribute name="class" separator=" ">
+									<xsl:text>token</xsl:text>
+									<xsl:if test="matches(current-grouping-key(), '[a-z][A-Z]')">
+										<xsl:text>camelcase</xsl:text>
+									</xsl:if>									
+								</xsl:attribute>
 								<xsl:value-of select="current-grouping-key()"/>
-							</strong> (<xsl:value-of select="$total"/>):<xsl:text> </xsl:text>
-							<xsl:for-each-group select="current-group()" group-by="@s">
-								<xsl:value-of select="current-grouping-key()"/> 
-								<xsl:text> (</xsl:text>					
-								<xsl:for-each select="current-group()">
-									<xsl:choose>
-										<xsl:when test="@n != ''">
-											<a href="/print/{@t}#l{@n}"><xsl:value-of select="@n"/></a>											
-										</xsl:when>
-										<xsl:otherwise>
-											<a href="/print/{@t}">ohne Versnr.</a>
-										</xsl:otherwise>
-									</xsl:choose>									
+							</td>
+							<td class="count">
+								<xsl:value-of select="$total"/>
+							</td>
+							<td class="where">
+								<xsl:for-each-group select="current-group()" group-by="@n">
+									<xsl:sort select="replace(current-grouping-key(), '\D*(\d+).*', '$1')"/>
+									<xsl:variable name="n" select="current-grouping-key()"/>
+									<xsl:value-of select="if ($n != '') then $n else 'ohne Versnr.'"/>
+									<small class="documents">
+										<xsl:text> (</xsl:text>					
+										<xsl:for-each-group select="current-group()" group-by="@s">
+											<xsl:variable name="w" select="current-group()[1]"/>
+											<a href="/print/{$w/@t}#l{$n}"><xsl:value-of select="$w/@s"/></a>											
+											<xsl:if test="position() != last()">, </xsl:if>
+										</xsl:for-each-group>
+										<xsl:text>)</xsl:text>										
+									</small>
 									<xsl:if test="position() != last()">, </xsl:if>
-								</xsl:for-each>
-								<xsl:text>)</xsl:text>
-								<xsl:if test="position() != last()">, </xsl:if>
-							</xsl:for-each-group>
-						</div>						
-					</xsl:if>
-					
-				</xsl:for-each-group>		
+								</xsl:for-each-group>								
+							</td>
+						</tr>						
+					</xsl:if>					
+				</xsl:for-each-group>
+				</tbody>
+				</table>
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>	
