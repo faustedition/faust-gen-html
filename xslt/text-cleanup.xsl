@@ -247,6 +247,11 @@
 		<xsl:value-of select="replace(replace(replace(., 'Ae', 'Ä'), 'Oe', 'Ö'), 'Ue', 'Ü')"/>
 	</xsl:template>
 
+	<xsl:template match="text()[not(ancestor::div[@n='1.1.23'])]" priority="1.0">
+		<xsl:variable name="normalized"><xsl:next-match/></xsl:variable>
+		<xsl:value-of select="replace($normalized, '&#x00AD;', '')"/> <!-- soft hyphen -->
+	</xsl:template>
+
 	<xsl:template match="processing-instruction('oxygen')|processing-instruction('xml-model')">
 		<xsl:processing-instruction name="xml-model">href="http://dev.digital-humanities.de/ci/job/faust-schema/lastSuccessfulBuild/artifact/target/schema/faust-tei.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:processing-instruction>
 		<xsl:processing-instruction name="xml-model">href="http://dev.digital-humanities.de/ci/job/faust-schema/lastSuccessfulBuild/artifact/target/schema/faust-tei.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"</xsl:processing-instruction>		
