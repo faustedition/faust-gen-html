@@ -112,7 +112,7 @@
                   <xsl:sequence select="$idnos/f:idno[1]"/>
                 </xsl:variable>
 
-                <xsl:copy>
+                <xsl:copy copy-namespaces="no">
                   <!-- Ein paar Metadaten speichern wir mit unseren Transkripten: -->
                   
                   <!-- Die URI zum Transkript: -->
@@ -141,18 +141,18 @@
                   <xsl:attribute name="f:sigil" select="$preferred-idno"/> 
                   
                   <!-- Nun die nach Rangfolge sortierten <idno>s. Siehe unten. -->
-                  <xsl:copy-of select="$idnos"/>
+                  <xsl:copy-of select="$idnos" copy-namespaces="no"/>
                   
                   <f:idno type="faust-doc-uri" rank="10000" uri="faust://xml/{$document}"><xsl:value-of select="concat('faust://xml/', $document)"/></f:idno>
-                  <xsl:copy-of select="..//f:headNote"></xsl:copy-of>
+                  <xsl:copy-of select="..//f:headNote" copy-namespaces="no"/>
                 </xsl:copy>
               </xsl:template>
 
               <xsl:template match="f:idno">
                 <!-- idnos werden nur übernommen, wenn da nicht 'none' drin steht. -->
                 <xsl:if test="normalize-space(.) != 'none'">
-                  <xsl:copy>
-                    <xsl:copy-of select="@*"/>
+                  <xsl:copy copy-namespaces="no">
+                    <xsl:copy-of select="@*" copy-namespaces="no"/>
                     
                     <!-- außerdem berechnen wir noch die faust://-URI aus der idno, wie in macrogenesis verwendet: -->
                     <xsl:attribute name="uri"
@@ -194,12 +194,12 @@
                        
             
             <xsl:template match="node()|@*">
-              <xsl:copy>
+              <xsl:copy copy-namespaces="no">
                 <xsl:apply-templates select="@*|node()"/>
               </xsl:copy>
             </xsl:template>
             <xsl:template match="/*">              
-              <xsl:copy>                
+              <xsl:copy copy-namespaces="no">                
                 <xsl:variable name="sorted-transcripts">
                   <!-- Lesetext: -->
                   <textTranscript xmlns:f="http://www.faustedition.net/ns" uri="faust://lesetext/faust.xml"
@@ -215,7 +215,7 @@
                   </xsl:apply-templates>
                 </xsl:variable>
                 <xsl:for-each select="$sorted-transcripts/*">
-                  <xsl:copy>
+                  <xsl:copy copy-namespaces="no">
                     <xsl:attribute name="number"><xsl:number/></xsl:attribute>
                     <xsl:copy-of select="@*"/>
                     <xsl:copy-of select="node()"/>
