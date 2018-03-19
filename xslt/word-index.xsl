@@ -10,8 +10,9 @@
 	version="3.0">
 	
 	<xsl:import href="html-frame.xsl"/>
-	<xsl:param name="limit" select="1"></xsl:param>
+	<xsl:param name="limit" select="1"/>
 	<xsl:param name="title"/>
+	<xsl:variable name="forbidden-sigils" select="if (count(//TEI) > 1) then ('Testhandschrift', 'Lesetext') else ()"/>
 	
 	<!-- tokenize -->
 	<xsl:template match="text()" priority="1">
@@ -22,8 +23,8 @@
 		<xsl:analyze-string select="." regex="\w+">
 			<xsl:matching-substring>
 				<xsl:choose>
-					<xsl:when test="not(matches(., '^[0-9]+$') or $sigil=('Lesetext', 'Testhandschrift'))">
-						<tei:w s="{$sigil}" n="{$n}" t="{$section}"><xsl:value-of select="."/></tei:w>						
+					<xsl:when test="not(matches(., '^[0-9]+$') or $sigil=$forbidden-sigils)">
+						<tei:w s="{$sigil}" n="{$n}" t="{$section}"><xsl:value-of select="."/></tei:w>
 					</xsl:when>
 					<xsl:otherwise><xsl:copy/></xsl:otherwise>
 				</xsl:choose>
@@ -36,6 +37,9 @@
 	
 	<xsl:template match="/">
 		<xsl:message select="concat('Generating word index for up to ', $limit, ' occurances ...')"/>		
+		<xsl:variable name="tokenized">
+			<xsl:apply-templates select="//text"/>
+		</xsl:variable>
 		<xsl:call-template name="html-frame">
 			<xsl:with-param name="headerAdditions">
 				<style>
@@ -55,23 +59,22 @@
 			<xsl:with-param name="scriptAdditions">Sortable.initTable(document.getElementById('wordlist'));</xsl:with-param>
 			<xsl:with-param name="content">			
 						
-				<xsl:variable name="tokenized">
-					<xsl:apply-templates select="//text"/>
-				</xsl:variable>				
 				
 				<table data-sortable="true" class="pure-table" xml:id="wordlist">
-				<thead>					
+				<thead><tr>
 					<th data-sortable-type="alpha">Token</th>
 					<th data-sortable-type="numericplus">Häufigkeit</th>
 					<th data-sortable-type="numericplus">Verse (Zeugen)</th>
-				</thead>
+				</tr></thead>
 				<tbody>
+					<xsl:comment select="$limit"/>
+					<xsl:comment select="$limit = 0"/>
 				<xsl:for-each-group select="$tokenized//w" group-by=".">
 					<xsl:sort select="count(current-group())"/>
 					<xsl:sort select="current-grouping-key()"/>					
 					<xsl:variable name="total" select="count(current-group())"/>
 					
-					<xsl:if test="$limit = 0 or $total &lt;= $limit">
+					<xsl:if test="($limit = 0) or ($total &lt;= $limit)">
 						<tr>
 							<td>
 								<xsl:attribute name="class" separator=" ">
@@ -107,7 +110,7 @@
 				</xsl:for-each-group>
 				</tbody>
 				</table>
-			</xsl:with-param>
+			</xsl:with-param>			
 		</xsl:call-template>
 	</xsl:template>	
 	

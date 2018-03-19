@@ -186,6 +186,7 @@
 			<p:input port="stylesheet"><p:document href="xslt/word-index.xsl"></p:document></p:input>
 			<p:input port="parameters"><p:pipe port="result" step="config"></p:pipe></p:input>
 			<p:with-param name="limit" select="0"/>
+			<p:with-param name="title" select="'Tokens im Lesetext'"/>
 		</p:xslt>
 		<p:store method="xhtml">
 			<p:with-option name="href" select="resolve-uri('www/print/faust.wordlist.html', $builddir)"/>
