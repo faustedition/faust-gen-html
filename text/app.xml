@@ -43,8 +43,6 @@
         <variable type="permanent-file" name="app2norm-txt" option="erase" format="system"
             code="UTF-8"
             >file:///C:/Users/bruening.FDH-FFM/github/faustedition/faust-gen-html/text/app2norm.txt</variable>
-        <variable type="permanent-file" name="app2xml" option="erase"
-            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/app2xml.tf</variable>
         <variable type="scratch-file" name="head"/>
         <variable type="scratch-file" name="typ1a"/>
         <variable type="scratch-file" name="typ1b"/>
@@ -1222,21 +1220,5 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                 </exchange>
             </modify>
         </pass>
-    </transform>
-    <!-- non-italics are readings {{/i}}{[} * {]}{{i}} -->
-    <transform source="app2norm" destination="app2xml">
-        <pass>
-            <modify>
-                <exchange>
-                    <exchange-table>
-                        <string-pair>
-                            <search-string>{[}*{|}\[{|}*{|}\]\{{|}*{|}\}{]} </search-string>
-                            <replacement-string>{{app n="{=1=}"}} {{rep}}{=3=}{{/rep}} {{ins}}{=5=}{{/ins}}</replacement-string>
-                        </string-pair>
-                    </exchange-table>
-                </exchange>
-            </modify>
-        </pass>
-        <remove-blanks where="both"/>
     </transform>
 </script>
