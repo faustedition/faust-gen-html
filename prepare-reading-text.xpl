@@ -142,6 +142,25 @@
 				</p:input>
 			</p:xslt>
 
+			<!-- noch weitere Aufräumschritte -->
+			<p:xslt>
+				<p:input port="stylesheet">
+					<p:inline>
+						<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+							xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
+							<!-- Identitätstransformation -->
+							<xsl:template match="node()|@*">
+								<xsl:copy>
+									<xsl:apply-templates select="@*, node()"/>
+								</xsl:copy>
+							</xsl:template>
+							<!-- hier folgen weitere Aufräumtemplates für den Lesetext, z.B.: -->
+							<xsl:template match="seg/attribute::*"/>
+						</xsl:stylesheet>
+					</p:inline>
+				</p:input>
+			</p:xslt>
+
 			<!-- Speichern der Einzeldatei -->
 			<p:identity name="final-single-text"/>
 			<p:store>
