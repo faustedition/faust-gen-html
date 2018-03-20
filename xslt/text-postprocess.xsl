@@ -94,6 +94,13 @@
 		</xsl:copy>
 	</xsl:template>
 	
+	
+	<xsl:template match="/TEI">
+		<xsl:copy>
+			<xsl:namespace name="f">http://www.faustedition.net/ns</xsl:namespace>
+			<xsl:apply-templates select="@*, node()"/>
+		</xsl:copy>
+	</xsl:template>
 
 	<!-- Keep everything else as is -->
 	<xsl:template match="node()|@*" mode="#all">
