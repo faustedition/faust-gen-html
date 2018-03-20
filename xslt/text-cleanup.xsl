@@ -34,7 +34,6 @@
 		| seg[@xml:id]
 		| orig
 		| sic
-		| corr
 		| profileDesc
 		| creation
 		| ge:transposeGrp
@@ -79,6 +78,7 @@
 		| ge:stageNotes 
 		| handNotes 
 		| unclear/@cert 
+		| corr
 		| lg/@xml:id 
 		| addSpan[not(@ge:stage='#posthumous')]
 		| milestone[@unit='group' or @unit='stage']
