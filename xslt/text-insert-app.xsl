@@ -173,7 +173,7 @@
                 <xsl:copy/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:analyze-string select="." regex="{$re}" flags="!">
+                <xsl:analyze-string select="f:normalize-space(.)" regex="{$re}" flags="!">
                     <xsl:matching-substring>
                         <xsl:variable name="current-match" select="."/>
                         <xsl:variable name="current-app" select="$apps[f:normalize-print-chars(descendant::f:replace) = $current-match]"/>

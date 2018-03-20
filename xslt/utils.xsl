@@ -345,9 +345,9 @@
   <xsl:function name="f:normalize-space" as="xs:string">
     <xsl:param name="text" as="node()*"/>
     <xsl:variable name="nodes">
-      <xsl:apply-templates select="$text" mode="normalize-space"/>      
+      <xsl:apply-templates select="$text" mode="normalize-space"/>
     </xsl:variable>
-    <xsl:value-of select="replace(normalize-space($nodes), '&#x00AD;', '')"/> <!-- Soft Hyphen -->
+    <xsl:value-of select="replace(string-join($nodes, ''), '&#x00AD;', '')"/> <!-- Soft Hyphen -->
   </xsl:function>
   
 
