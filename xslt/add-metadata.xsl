@@ -153,7 +153,7 @@
 
 			<idno type="sigil_n" xml:id="sigil_n"><xsl:value-of select="replace(lower-case($sigil), '[ .*]', '')"/></idno>						
 			<idno type="fausturi" xml:id="fausturi"><xsl:value-of select="$faustURI"/></idno>
-			<idno type="fausttranscript" xml:id="fausttranscript"><xsl:value-of select="$transcriptBase"/></idno>
+			<idno type="fausttranscript" xml:id="fausttranscript"><xsl:value-of select="if ($type='lesetext') then 'faust' else $transcriptBase"/></idno>
 			
 		</xsl:copy>
 	</xsl:template>

@@ -19,7 +19,7 @@
 		<xsl:variable name="sigil" select="ancestor::TEI//idno[@type='faustedition']"/>
 		<xsl:variable name="n" select="ancestor::*[@n][1]/@n"/>
 		<xsl:variable name="transcript" select="ancestor::TEI//idno[@type='fausttranscript']"/>
-		<xsl:variable name="section" select="if (ancestor::TEI/@split='true') then concat($transcript, '.', ancestor::*/@f:section[1]) else $transcript"/>
+		<xsl:variable name="section" select="if (ancestor::TEI/@f:split='true') then concat($transcript, '.', ancestor::*[@f:section][1]/@f:section) else $transcript"/>
 		<xsl:analyze-string select="." regex="(\w|[’])+">
 			<xsl:matching-substring>
 				<xsl:choose>

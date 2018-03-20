@@ -179,6 +179,10 @@
 		<p:store method="xhtml">
 			<p:with-option name="href" select="resolve-uri('www/print/app.html', $builddir)"/>
 		</p:store>
+		<p:store>
+			<p:input port="source"><p:pipe port="result" step="reading-text-md"/></p:input>
+			<p:with-option name="href" select="resolve-uri('lesetext/faust-md.xml', $builddir)"/>
+		</p:store>
 		
 		<!-- ### Step 3d: Reading text word index -->
 		<p:xslt>
