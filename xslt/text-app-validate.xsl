@@ -16,8 +16,8 @@
 	
 	<!-- The apparatus specification in XML form -->
 	<xsl:variable name="spec" select="doc('../text/app1norm.xml'), 
-		doc('../text/app2norm.xml'), 
-		doc('../text/app2norm_test-cases.xml')"/>
+		doc('../text/app2norm.xml')(:, 
+		doc('../text/app2norm_test-cases.xml'):)"/>
 	
 	<xsl:variable name="text" select="/"/>
 	
@@ -298,14 +298,17 @@
 	<xsl:template name="broken-app-links">
 		<xsl:variable name="details">
 			<xsl:for-each select="$text//note[@type='textcrit']//app[@from]">
-				<xsl:variable name="id" select="substring(@from, 2)"/>
+				<xsl:variable name="app" select="."/>
+				<xsl:for-each select="tokenize(@from, '\s+')">
+				
+				<xsl:variable name="id" select="substring(., 2)"/>
 				<xsl:variable name="referenced" as="element()*" select="$text//*[@xml:id=$id]"/>
 				<xsl:variable name="count" select="count($referenced)"/>
 				<xsl:variable name="n" select="tokenize($id, '\.')[2]"/>
 				<xsl:variable name="ins" select="$spec//f:ins[@n=$n]"/>
 				<xsl:variable name="repl" select="$spec//f:replace[@n=$n]"/>
 				<xsl:variable name="line">
-					<xsl:apply-templates mode="noapp" select="ancestor::*[@n][self::l or self::stage][1]"/>
+					<xsl:apply-templates mode="noapp" select="$app/ancestor::*[@n][self::l or self::stage][1]"/>
 				</xsl:variable>				
 				<xsl:variable name="case">
 					<xsl:choose>
@@ -316,7 +319,7 @@
 					</xsl:choose>
 				</xsl:variable>
 				<tr data-case="{$case}">					
-					<td><xsl:value-of select="$n"/></td>
+					<td><xsl:value-of select="$n"/></td>					
 					<xsl:choose>
 						<xsl:when test="$case = 'dangling'">
 							<td><xsl:value-of select="$repl"/></td>
@@ -330,6 +333,7 @@
 						</xsl:when>
 					</xsl:choose>
 				</tr>
+				</xsl:for-each>
 			</xsl:for-each>
 		</xsl:variable>
 		
