@@ -138,7 +138,7 @@ after_10570[Posauenschall]{Posaunenschall} <i>after_10570</i> Posaunenschall <i>
 10636[gesenckten]{gesencktem} <i>10636</i> gesencktem <i>none</i>] gesenckten <i>2_H [type=1a]</i>
 before_10654_a[Kaiser:]{<speaker>Kaiser</speaker>} <i>before_10654_a</i> <speaker>Kaiser</speaker> <i>2_IV_H.8</i>] Kaiser: <i>2_H [type=1b]</i>
 10790[schlecht]{schlecht.} <i>10790</i> schlecht. <i>2_IV_H.8</i>] schlecht^ <i>2_H [type=1b]</i>
-before_10811_a[§]{^&lt;stage n="before_10811_b" rend="inline"^&gt;kauert nieder.^&lt;/stage^&gt;} <i>vor 10811</i> <stage>kauert nieder</stage> <i>2_IV_H.8</i>] <i>erg Ec 2_H [type=2aa] [type=6]</i>
+before_10811_a[$]{^&lt;stage n="before_10811_b" rend="inline"^&gt;kauert nieder.^&lt;/stage^&gt;} <i>vor 10811</i> <stage>kauert nieder</stage> <i>2_IV_H.8</i>] <i>erg Ec 2_H [type=2aa] [type=6]</i>
 10818[den]{dem} <i>10818</i> dem <i>2_IV_H.8</i>] den <i>2_H [type=2aa]</i>
 10832[willkommne]{willkommner} <i>10832</i> willkommner <i>2_IV_H.8</i>] willkommne <i>2_H [type=2aa]</i>
 10876[Erbmarschall]{Erzmarschall} <i>10876</i> Erzmarschall <i>2_IV_H.21a</i>] Erbmarschall <i>2_H [type=2aa]</i>
