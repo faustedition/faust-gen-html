@@ -13,7 +13,7 @@
   <xsl:param name="printbase"/>
   <xsl:param name="documentURI"/>
   <xsl:param name="type" select="data(/TEI/type)"/>
-  
+    
   <!-- 
     
     Returns true if this document should be split into sections.
@@ -340,6 +340,12 @@
   
   <xsl:template match="lb[not(@break='no')]" mode="normalize-space">
     <xsl:text> </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="*|comment()|processing-instruction()|@*" mode="normalize-space">
+    <xsl:copy>
+      <xsl:apply-templates mode="#current" select="@*, node()"/>
+    </xsl:copy>
   </xsl:template>
   
   <xsl:function name="f:normalize-space" as="xs:string">

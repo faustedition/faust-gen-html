@@ -44,8 +44,8 @@
 
 					<!-- URL, unter der die transformierten Dateien
 					     gespeichert werden sollen:	-->
-					<!--<target>file:/home/tv/git/faust-gen/target/prepare-reading-text/</target>-->
-					<target>file:/Users/bruening.FDH-FFM/faustedition/xml/</target>
+					<target>file:/home/tv/git/faust-gen/target/prepare-reading-text/</target>
+					<!--<target>file:/Users/bruening.FDH-FFM/faustedition/xml/</target>-->
 					<!-- Quell-Transkripte: -->
 					<transcript path="transcript/test/test.xml"/>
 					<transcript path="transcript/gsa/391098/391098.xml" output="h.xml"/>
@@ -84,9 +84,10 @@
 	<p:group>
 		<p:variable name="base" select="/config/base"/>
 		<p:variable name="target" select="/config/target"/>
-		<p:for-each>
+		<p:for-each name="prepare-sources">
 			<!-- Das folgende wird pro transcript-Eintrag oben ausgeführt: -->
 			<p:iteration-source select="//transcript"/>
+			<p:output port="result" primary="true" sequence="true"/>
 			<p:variable name="path" select="/transcript/@path"/>
 			<p:variable name="filename"
 				select="if (/transcript/@output) 
@@ -141,6 +142,31 @@
 					<p:empty/>
 				</p:input>
 			</p:xslt>
+			
+			<!-- Ausgabedateinamen merken -->
+			<pxp:set-base-uri><p:with-option name="uri" select="$output"/></pxp:set-base-uri>
+		</p:for-each>
+		
+		<!-- faust.xml laden -->
+		<p:http-request>
+			<p:input port="source">
+				<p:inline>
+					<c:request method="GET" href="http://dev.digital-humanities.de/ci/job/faust-gen-fast/lastSuccessfulBuild/artifact/target/lesetext/faust.xml"/>					
+				</p:inline>
+			</p:input>
+		</p:http-request>
+		
+		<!-- hier Transformationsschritte _nur_ für faust.xml -->
+		
+		<pxp:set-base-uri name="load-faustxml"><p:with-option name="uri" select="p:resolve-uri('faust.xml', $target)"/></pxp:set-base-uri>
+		
+		<!-- Weitere Transformationsschritte für alles -->
+		<p:for-each>
+			<p:iteration-source>
+				<p:pipe port="result" step="prepare-sources"/>
+				<p:pipe port="result" step="load-faustxml"/>
+			</p:iteration-source>
+			<p:variable name="output" select="p:base-uri()"/>
 
 			<!-- noch weitere Aufräumschritte -->
 			<p:xslt>
@@ -163,6 +189,7 @@
 
 			<!-- Speichern der Einzeldatei -->
 			<p:identity name="final-single-text"/>
+			<cx:message><p:with-option name="message" select="concat('Saving to ', $output)"/></cx:message>
 			<p:store>
 				<p:with-option name="href" select="$output"/>
 			</p:store>
