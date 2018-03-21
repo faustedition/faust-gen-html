@@ -34,7 +34,7 @@
 						| //unclear
 						| //supplied
 						| //orig[matches(., '^[aou]$')]
-						| //*[@ge:stage='#posthumous']
+						| //*[matches(@ge:stage,'#posthumous')]
 						"
 						group-by="local-name()">
 						<div>
