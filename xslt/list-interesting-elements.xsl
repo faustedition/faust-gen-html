@@ -34,9 +34,9 @@
 						| //unclear
 						| //supplied
 						| //orig[matches(., '^[aou]$')]
-						| //*[matches(@ge:stage,'#posthumous')]
+						| //*[contains(@ge:stage, '#posthumous')]
 						"
-						group-by="local-name()">
+						group-by="if (contains(@ge:stage, 'posthumous')) then 'posthumous' else local-name()">
 						<div>
 							<head><xsl:copy-of select="current-grouping-key()"></xsl:copy-of></head>
 							<xsl:for-each select="current-group()">
