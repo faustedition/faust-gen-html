@@ -173,7 +173,8 @@
                 <xsl:copy/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:analyze-string select="f:normalize-space(.)" regex="{$re}" flags="!">
+                <xsl:variable name="wsp-normalized" select="f:normalize-space(.)"/>
+                <xsl:analyze-string select="$wsp-normalized" regex="{$re}" flags="!">
                     <xsl:matching-substring>
                         <xsl:variable name="current-match" select="."/>
                         <xsl:variable name="current-app" select="$apps[f:normalize-print-chars(descendant::f:replace) = $current-match]"/>
@@ -330,7 +331,7 @@
     
     
     <!-- Pass through unchanged everything else. -->
-    <xsl:template match="node() | @*" mode="#all">
+    <xsl:template match="node() | @*" mode="#default pass2 pass3 app remove-notes with-app">
         <xsl:copy copy-namespaces="no">
             <xsl:apply-templates mode="#current" select="@*, node()"/>
         </xsl:copy>
