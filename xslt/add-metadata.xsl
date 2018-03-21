@@ -36,7 +36,7 @@
 		                                                                      split:211f
 		                                                                      fts4.xql:90
 		                                                                      
-		   ¹ these might be merged to n/f:n and f:label, respectively		
+		   ¹ these might be merged to n and f:label, respectively		
 		f:first-verse             first Schröer verse number in the div
 		f:last-verse              last Schröer verse number in the div
 		

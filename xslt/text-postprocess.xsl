@@ -68,7 +68,7 @@
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:if test="not(@n)">
-						<xsl:attribute name="f:n" select="$scene/@n"/>						
+						<xsl:attribute name="n" select="$scene/@n"/>						
 					</xsl:if>
 					<xsl:attribute name="f:label">	
 						<xsl:value-of select="$scene//f:title"/>

@@ -151,7 +151,7 @@
 		<p:http-request>
 			<p:input port="source">
 				<p:inline>
-					<c:request method="GET" href="http://dev.digital-humanities.de/ci/job/faust-gen-fast/lastSuccessfulBuild/artifact/target/lesetext/faust.xml"/>					
+					<c:request method="GET" href="http://dev.digital-humanities.de/ci/job/faust-gen-fast/lastSuccessfulBuild/artifact/target/lesetext/faust.xml"/>
 				</p:inline>
 			</p:input>
 		</p:http-request>

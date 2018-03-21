@@ -250,7 +250,7 @@ Formatierung:
 ### Szene
 (Szenenüberschrift)
 
-XML: `div/div[@type='scene' and not(@f:n='1.1.22')]/*[1][self::head]`
+XML: `div/div[@type='scene' and not(@n='1.1.22')]/*[1][self::head]`
 
 Formatierung: 
 * neue Seite (kann auch eine linke sein)
