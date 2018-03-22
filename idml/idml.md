@@ -46,38 +46,38 @@ Lange BA (ab drei Zeilen im Outputba mit ) stehen im Blocksatz mit linksbündige
 Momentane Heuristik: 210 Zeichen als Richtwert, der zur Zuweisung von `BA Blocks. ...` führt.
 (Könnte sich evtl. verschieben in Abhängigkeit von [#209](https://github.com/faustedition/faust-gen-html/issues/209)!).
 
+Im folgenden ist nur von zentierten BAs (`... BA zentr. ...`) die Rede, weil diese den Normalfall darstellen.
+Dass bei entsprechender Länge das Format `... BA Blocks. ...` zugewiesen werden muss, wird nicht immer wiederholt. 
+
 ### (Abstände)
-Die Krux bei der Formatzuweisung liegt in den Abständen.
+Die differenzierte Formatzuweisung dient der Regelung der Abstände. 
 Entscheidend für die Zuweisung der richtigen Abstände ist zweierlei:
-* Was enthält die BA? (Figur, Auftritt)
 * In welche Kontext steht die BA?
+* Was enthält die BA: nur Text oder auch Figur oder Auftritt?
 
-Hier gibt es noch Abstimmungsbedarf ([#298](https://github.com/faustedition/faust-gen-html/issues/298)).
-
-Bemerkungen zu @markusciupke|s Vorschlag stehen auf einer [eigenen Seite](https://github.com/faustedition/faust-gen-html/blob/master/idml/ba-diskussion.md).
-
-Die folgende XML-basierte Typeneinteilung beruht auf den Formaten vom Stand vor 13.2.18.
+Die unterschiedlichen Kombinationen von Kontext und Inhalt wird im folgenden aufgeführt. 
 
 ### (BA unterschieden nach Kontext und Inhalt)
 Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhalb von Repliken.
 
 #### (BA **in** Replik)
 * Kombination von Sprecherbezeichnung und Bühnenanweisung auf derselben Zeile (`speaker/following-sibling::*[1][self::stage and @rend[contains(.,'inline')]]`)
-  * → BA zentr. 1,5
+  * → `C BA zentr. 2,3 / 0,0  (0,75 pt. nach oben)`
 * dasselbe, dabei Sprecher- zugleich Auftrittsbezeichnung  (`move/following-sibling::*[1][self::sp]/speaker/following-sibling::*[1][self::stage and @rend[contains(.,'inline')]]`)
-  * → BA zentr. **evtl. mit ganzzeiligem Abstand nach oben**
-* direkt nach Sprecherbezeichnung auf eigener Zeile (`speaker/following-sibling::*[1][self::stage and not(@rend[contains(.,'inline')])]`)
-  * → BA zentr. 0,0
-* BA auf eigener Zeile, nach Kombination von Sprecherbezeichnung und Bühnenanweisung auf derselben Zeile (`//speaker/following-sibling::*[1][self::stage and matches(@rend,'inline')]/following-sibling::*[1][self::stage]`)
-  * → BA zentr. 0,0  
+  * → `C BA zentr. 2,3 / 0,0  (0,75 pt. nach oben)`
+* direkt nach Sprecherbezeichnung auf eigener Zeile ohne Figur (`speaker/following-sibling::*[1][self::stage[not(hi)] and not(matches(@rend,'inline'))]`)
+  * → `A BA zentr. 0,0 / 0,0`
+* direkt nach Sprecherbezeichnung auf eigener Zeile mit Figur (`speaker/following-sibling::*[1][self::stage[hi] and not(matches(@rend,'inline'))]`)
+  * → `H BA zentr. 0,0 / 0,0 mit A/F (0,0 pt. n. o.)`
+* BA auf eigener Zeile, nach Kombination von Sprecherbezeichnung und Bühnenanweisung auf derselben Zeile (`speaker/following-sibling::*[1][self::stage and matches(@rend,'inline')]/following-sibling::*[1][self::stage]`)
+  * → `A BA zentr. 0,0 / 0,0`  
 * zwischen Versen ohne Figur (`stage[not(hi)][preceding-sibling::*[1][self::l] and following-sibling::*[1][self::l]]`)
   * Bspp.: `before_430` "Er schlägt ...", `before_447` "Er beschaut ..."   
-  * → BA zentr. 0,0
+  * → `A BA zentr. 0,0 / 0,0`
 * zwischen Versen mit Figur (`stage[hi][preceding-sibling::*[1][self::l] and following-sibling::*[1][self::l]]`) 
+  * → `H BA zentr. 0,0 / 0,0 mit A/F`
 * zwischen Versgruppen (`stage[preceding-sibling::*[1][self::lg] and following-sibling::*[1][self::lg]]`)
-  * → BA Abstand
-* am Ende von Repliken (`sp/*[self::stage and position()=last()]`)
-  * kommt regulär nicht vor 
+  * → `C BA zentr. 2,3 / 0,0  (0,75 pt. nach oben)`
 
 #### (BA im Anschluss an Replik, ohne Figur)
 z.B. 
@@ -87,36 +87,46 @@ z.B.
 
 XML: `sp/following-sibling::*[1][self::stage[not(hi)]]`.
 
-→ `BA zentr. ...`, abhängig von [#299](https://github.com/faustedition/faust-gen-html/issues/299) 
+Format: `F BA zentr. 1,15 / 0,0  (0,75 pt. nach oben)`
 
-→ (bei entsprechender Länge) `BA Blocks. ...` 
-
-#### (BA nach Replik, mit Figur)
+#### (BA im Anschluss an Replik, mit Figur)
 (Quasi-Replik)
 z.B.
 * `before_993_a` "Das Volk ..."
 
-XML: `stage[hi and preceding-sibling::*[1][self::sp] and following-sibling::*[1][self::sp or self::move[following-sibling::*[1][self::sp]]]]`.
+XML: `sp/following-sibling::*[1][self::stage[hi]]`
 
-→ `BA zentr. 1,5`
+Format: `C BA zentr. 2,3 / 0,0  (0,75 pt. nach oben)`
 
-→ (bei entsprechender Länge) `BA Blocks. 1,5` 
-
-#### (freie BA, ohne Figur)
+#### (freie BA)
 (z.B. `before_7040_a` "Die Luftfahrer oben", oft auch vor der ersten Replik)
 
-XML: `stage[not(ancestor::sp) and not(hi) and not(preceding-sibling::*[1][self::sp or self::move or self::head])]`
+XML: `stage[not(ancestor::sp) and not(preceding-sibling::*[1][self::sp])]`
 
-Format: `C BA zentr. 2,3 / 0,0`
+Format: `C BA zentr. 2,3 / 0,0  (0,75 pt. nach oben)`
 
-#### (BA nach Überschrift, kein Auftritt)
+Priority: niedriger als die rule für BA nach Überschrift.
+
+#### (BA nach Überschrift)
 (Bsp.: `before_4613_f` "Faust auf blumigen ...")
 
-XML: `//head/following-sibling::*[1][self::stage]`.
+Betrifft Aufeinanderfolge von
+* `head` -- (evtl. `move`) -- `stage`
+* `head` -- (evtl. `move`) -- `sp/speaker` -- `stage` mit `inline` (d.h. Sprecher-BA-Kombination)
 
-→ `BA zentr. 0,0` oder (bei entsprechender Länge) `BA Blocks. 0,0`.
+Die Aufeinanderfolge `head` -- (evtl. `move`) -- `sp/speaker` ohne nachfolgendes `stage` mit `inline` wird hier nicht berücksichtigt, da das betreffende `speaker`-Element keine BA wird, sondern `Sprecher nach Überschrift`, s.u.
 
-Generelle Andersbehandlung von BA nach Überschriften ist fragwürdig, da weitere BAs direkt nachfolgen können.
+XML:
+* `head/following-sibling::*[1][self::stage]`
+* `head/following-sibling::*[1][self::move]/following-sibling::*[1][self::stage]`
+* `head/following-sibling::*[1][self::sp]/speaker[following-sibling::*[1][self::stage[matches(@rend,'inline')]]]`
+* `head/following-sibling::*[1][self::move]/following-sibling::*[1][self::sp]/speaker[following-sibling::*[1][self::stage[matches(@rend,'inline')]]]`
+
+Format: `A BA zentr. 0,0 / 0,0`
+
+Priority:
+* höher als rules für BAs in Repliken (s.o.)
+* höher als rule für freie BA (s.o.)
 
 #### (BA mit Auftritt, nicht zugleich Sprecher)
 * `before_354_c`
@@ -127,60 +137,9 @@ Generelle Andersbehandlung von BA nach Überschriften ist fragwürdig, da weiter
 
 XML: `move/following-sibling::*[1][self::stage]`
 
-Priority: niedriger als die rule für BA mit Auftritt nach Überschrift ...
+Priority: niedriger als die rule für BA nach Überschrift
 
-Format: `C BA zentr. 2,3 / 0,0`
-
-#### (BA mit Auftritt nach Überschrift, nicht zugleich Sprecher)
-
-XML: `head/following-sibling::*[1][self::move]/following-sibling::*[1][self::stage]`
-
-→ `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt)
-
-#### (BA mit Auftritt, nicht Sprecher **nach** BA mit Auftritt, nicht Sprecher) 
-(Bsp.: `before_2337_c` "Faust. Mephistopheles.")
-
-XML: `move/following-sibling::*[1][self::stage]/following-sibling::*[1][self::move]/following-sibling::*[1][self::stage]`.
-
-→ `BA zentr. 0,0 / ?? unten` (`??` = Abstand nach unten, der zum normalen Replikenabstand hinzukommt). Extra-Abstand nach oben braucht die BA nicht, dafür sorgt schon der Abstand nach der vorigen BA.  
-
-#### (BA nach BA, nicht in Replik)
-XML: `stage[not(ancestor::sp) and preceding-sibling::*[1][self::stage]]`.
-
-→ `BA zentr. 1,5` 
-
-→ (bei entsprechender Länge) `BA Blocks. 1,5` 
-
-#### (BA nach BA mit Auftritt, nicht in Replik)
-(Anlass: `before_243_c` "Die drey Erzengel ...")
-
-XML: `stage[not(ancestor::sp) and preceding-sibling::*[1][self::stage]]`.
-
-→ `BA zentr. 1,5` 
-
-→ (bei entsprechender Länge) `BA Blocks. 1,5` 
-
-### BA zentr. 0,0
-
-### BA zentr. 0,0 / 2,3 unten
-
-### BA zentr. 0,5
-(entfällt möglicherweise, siehe [#213](https://github.com/faustedition/faust-gen-html/issues/213#issuecomment-362507356))
-
-### BA zentr. 1,5 
-
-### BA Blocks. ...
-
-#### BA Blocks. 0,0
-
-#### BA Blocks. 1,5
-
-#### BA Abstand
-(für BA zwischen Versgruppen)
-
-Zuweisungsprinzip s.o. [(BA in Replik)](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#ba-in-replik), Punkt 5.
-
-Abstand nach oben wie `Vers Abstand`.
+Format: `C BA zentr. 2,3 / 0,0  (0,75 pt. nach oben)`
 
 ## Bandtitel
 XML: `title`.
@@ -210,22 +169,26 @@ Output: Anzahl der Leerzeilen nach Wert von `@quantity` (2 bzw. 5).
 
 XML: `p`.
 
-## Sprecher ... 
-(die mit `Sprecher` beginnenden Absatzformate werden voraussichtlich in `BA ...` aufgelöst)
+## (Sprecher)
 
-### Sprecher 0,5
-(entfällt, siehe [#203](https://github.com/faustedition/faust-gen-html/issues/203))
+Format: `Sprecher`
 
-### Sprecher 1,5
-(normale reine Sprecher, d.h. nicht zugleich Auftrittsbezeichnung und nicht mit BA in einer Zeile) 
+XML: `speaker[not(following-sibling::*[1][self::stage[matches(@rend,'inline')]])]`
+
+Priority: niedriger als die rule für Sprecher nach Überschrift
+
+## (Sprecher nach Überschrift)
+Bei Auftritten steht noch ein `move` dazwischen, deswegen
 
 XML:
-```
-speaker[
-not(parent::sp/preceding-sibling::*[1][self::move])
-and not(following-sibling::*[1][self::stage and matches(@rend,'inline')])
-]
-``` 
+* `head/following-sibling::*[1][self::sp]/speaker[not(following-sibling::*[1][self::stage[matches(@rend,'inline')]])]`
+* `head/following-sibling::*[1][self::move]/following-sibling::*[1][self::sp]/speaker[not(following-sibling::*[1][self::stage[matches(@rend,'inline')]])]`
+
+`speaker` mit nochfolgendem `stage` mit `inline` werden zu einem BA-Format (s.o.).
+
+Format: `Sprecher nach Überschrift`
+
+Priority: höher als die rule für Sprecher
 
 ## (Überschriften)
 Bei `head/lb` wird innerhalb des betreffenden Absatzes ein Zeilenumbruch eingefügt.
@@ -684,6 +647,7 @@ Für diese braucht in der Transformation nichts zu geschehen, also auch keine Re
 * `expan`
 * `del`
 * `sic`
+* BAs am Ende von Repliken (`sp/*[self::stage and position()=last()]`)
 * `subst`
 * `titlePart`, siehe [#270](https://github.com/faustedition/faust-gen-html/issues/270)
 
