@@ -21,8 +21,8 @@ before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2
 5360[krauen.]{krauen} <i>5360</i> krauen^ <i>2_I_H.17 2_H</i>] krauen. <i>2_I_H.0a [type=1b]</i>
 before_5357_b[]{} <i>vor 5357</i> <speaker>Alecto</speaker> <i>2_I_H.0a</i>] <font name="Cambria Math">⟨</font><stage>Die Furien</stage> <i>erg G</i><font name="Cambria Math">⟩</font> <speaker>Alecto.</speaker> <i>2_H [type=2c*]</i>
 5388[beging]{beging’} <i>5388</i> beging’ <i>2_I_H.0a</i>] beging <i>2_I_H.0a :</i> beging’ <i>Ri G [type=2d]</i>
-5441|5445|5449|5452[@lg|@lg|@lg|@lg]{rend="indented"|rend="indented"|rend="indented"|rend="indented"} <i>5441–5456</i>] <i>Die Verse sind in I_H.0a nicht eingerückt [type=1c]</i>
-5484[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5484–5493</i>] <i>Die Verse sind in I_H.0a nicht eingerückt [type=1c]</i>
+5441|5445|5449|5452[@lg|@lg|@lg|@lg]{rend="indented"|rend="indented"|rend="indented"|rend="indented"} <i>5441–5456</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt (vgl. Goethe an Reichel, 22. Januar 1828) [type=1c]</i>
+5484[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5484–5493</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt (vgl. zu 5441–5456) [type=1c]</i>
 5487[Gespenstische]{gespenstische} <i>5487</i> gespenstische <i>2_H</i>] Gespenstische <i>2_I_H.0a [type=2aa]</i>
 5519[Stürmgewalt]{Sturmgewalt} <i>5519</i> Sturmgewalt <i>2_H</i>] Stürmgewalt <i>2_I_H.0a [type=2aa]</i>
 5592[ein]{im} <i>5592</i> im <i>2_H</i>] ein <i>2_I_H.0a [type=2aa]</i>
@@ -30,7 +30,7 @@ before_5357_b[]{} <i>vor 5357</i> <speaker>Alecto</speaker> <i>2_I_H.0a</i>] <fo
 5750[Hindermann]{=} <i>5750</i> Hindermann <i>2_I_H.0a</i>] Hintermann <i>Ec 2_H [type=6]</i>
 5775[am]{an} <i>5775</i> an <i>2_I_H.33</i>] am <i>2_H 2_I_H.0a [type=2b]</i>
 before_5801[Gesang]{Ungesang} <i>before_5801</i> Ungesang <i>2_H</i>] Gesang <i>2_I_H.0a [type=2aa]</i>
-5896[ehre]{Ehre} <i>5896</i> Ehre <i>2_H</i>] ehre <i>2 I_H.0a [type=2aa]</i>
+5896[ehre]{Ehre} <i>5896</i> Ehre <i>2_H</i>] ehre <i>2_I_H.0a [type=2aa]</i>
 5925[Glut und Sud]{Glut und Sud} <i>5925</i> Glut und Sud <i>2_I_H.0a</i>] Glut und Sud <i>2_I_H.41a</i> Sud und Glut <i>2_H</i> Glut und Sud <i>2_I_H.0a [type=7]</i>
 5929[solchen]{solchem} <i>5929</i> solchem <i>2_I_H.41a</i>] solchen <i>2_H 2_I_H.0a [type=2b]</i>
 before_5987_c[anständig, nicht auffallend, nach Sitte gekleidet, beyde knieen.]{=} <i>vor 5987</i> anständig <i>…</i> knieen. <i>2_I_H.0a</i>] anständig nicht auffallend <i>…</i> knieen. <i>2_H :</i> (anständig <i>…</i> knieen.) <i>Ec [type=6]</i>
@@ -56,7 +56,7 @@ before_6479_a[tritt auf]{=} <i>vor</i> <i>6479</i> tritt auf <i>2_H</i>] hervort
 before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht] zurückzieht <i>ci. Fiedler [type=3]</i>
 6654[Des Meisters]{=} <i>6654</i> Des Meisters <i>2_H</i>] Selbst Faustus <i>Ec 2_H [type=6]</i>
 6717[]{} <i>6717–6718</i> <l>Damals schien er zwar gewandt,</l> <l>Als ich ihn noch nicht verstand.</l> <i>Ec 2_H [type=6]</i>
-6832[Willkommmen]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkommmen <i>2_H [type=1a]</i>
+6832[Willkomm̄en]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkomm̄en <i>2_H [type=1a]</i>
 6847[höhern, höhern]{höhern, höhern} <i>6847</i> höhern, höhern <i>2_H</i>] höhern, höhern <i>2_H : mon Ri</i> hehren <i>vorschl Ri [type=6]</i>
 <i>6983</i> Den] Nun auf! den <i>2_H :</i> den <i>G [type=7]</i>
 7136[Cumpan]{=} <i>7136</i> Cumpan <i>2_H</i>] Kumpan <i>Ec 2_H [type=6]</i>
@@ -142,7 +142,7 @@ before_10811_a[$]{^&lt;stage n="before_10811_b" rend="inline"^&gt;kauert nieder.
 10818[den]{dem} <i>10818</i> dem <i>2_IV_H.8</i>] den <i>2_H [type=2aa]</i>
 10832[willkommne]{willkommner} <i>10832</i> willkommner <i>2_IV_H.8</i>] willkommne <i>2_H [type=2aa]</i>
 10876[Erbmarschall]{Erzmarschall} <i>10876</i> Erzmarschall <i>2_IV_H.21a</i>] Erbmarschall <i>2_H [type=2aa]</i>
-vor 10877[<speaker>Erbmarschall</speaker>]{<speaker>Erzmarschall</speaker>} <i>vor 10877</i> <speaker>Erzmarschall</speaker> <i>2_IV_H.21a</i>] <speaker>Erbmarschall</speaker> <i>2_H [type=2aa]</i>
+before_10877[Erbmarschall]{Erzmarschall} <i>vor 10877</i> <speaker>Erzmarschall</speaker> <i>2_IV_H.21a</i>] <speaker>Erbmarschall</speaker> <i>2_H [type=2aa]</i>
 10880[Vaterburg]{Väterburg} <i>10880</i> Väterburg <i>2_IV_H.21a</i>] Vaterburg <i>2_H [type=2aa]</i>
 10885[allen]{allem} <i>10885</i> allem <i>2_IV_H.21a</i>] allen <i>2_H [type=2aa]</i>
 10901[Lieblingsspeise wahl]{Lieblingsspeisen Wahl} <i>10901</i> Lieblingsspeisen Wahl <i>2_IV_H.20</i>] Lieblingsspeise wahl <i>2_H [type=2aa]</i>
@@ -169,5 +169,5 @@ after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab)
 11638[Vom]{Von} <i>11638</i> Von <i>2_V_H.2</i>] Vom <i>2_H [type=2aa]</i>
 11724[erlischt|Muth]{=} <i>11724</i> erlischt <i>…</i> Muth <i>2_H</i>] erlischt, <i>…</i> Muth! <i>Ec 2_H [type=6]</i>
 11760[im]{in} <i>11760</i> in <i>2_V_H.2</i>] im <i>2_H [type=2aa]</i>
-before_12045_b[IV.]{IV.)} <i>vor 12045</i> (St. Joh. IV.)] <i>schließende Klammer fehlt H [type=1b]</i>
+before_12045_b[IV.]{IV.)} <i>vor 12045</i> (St. Joh. IV.)] <i>schließende Klammer fehlt 2_H [type=1b]</i>
 12071[Die]{Du} <i>12071</i> Du <i>2_V_H.37f</i>] Die <i>2_H [type=2a]</i>
