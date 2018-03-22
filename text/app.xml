@@ -738,18 +738,6 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
             <modify>
                 <exchange>
                     <exchange-table>
-                        <!--<string-pair>
-                            <search-string>2d{[}\*</search-string>
-                            <replacement-string/>
-                        </string-pair>-->
-                    </exchange-table>
-                </exchange>
-            </modify>
-        </pass>
-        <pass>
-            <modify>
-                <exchange>
-                    <exchange-table>
                         <string-pair>
                             <search-string>{[}^+{{i}}{|}{#}{|}{{/i}} {|}*{|}\]</search-string>
                             <replacement-string>{=2=}\[{=4=}\]\{=\} {=1=}{=2=}{=3=}{=4=}{=5=}</replacement-string>
