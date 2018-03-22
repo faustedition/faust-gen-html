@@ -235,7 +235,7 @@ before_3206f_c[zurück gebend]{=} <i>vor 3206</i> zurück gebend <i>S A</i>]   
 3497[Meyn’]{=} <i>3497</i> Meyn’ <i>A</i>]   Meyn <i>1_H.5</i> Mein’ <i>S </i> Mein’ <i>B B.a  [type=4a]</i>
 3497[liebte dich]{=} <i>3497</i> liebte dich <i>A B B.a</i>]   liebte dich <i>1_H.5</i><i> </i> <emph>liebte dich</emph> <i>S [type=2a*]</i>
 before_3544[Lieschen]{=} <i>vor 3544</i> <speaker>Lieschen^</speaker> <i>S</i>]   <speaker>Liesgen^</speaker> <i>1_H.5</i> <speaker>Lieschen.</speaker> <i>A D.1</i> <speaker>Lieschen^</speaker> <i>B B.a</i> <i>[type=1c]</i>
-3551[]{} <i>3550–3551</i> <i>In 1_H.5 bilden 3550–3551 einen Vers:</i>]  [<speaker>Gretchen.</speaker>] Ach / [<speaker>Lieschen.</speaker>] Ja so ist’s ihr endlich gangen<i>. [type=2d*]</i>
+3551[]{} <i>3550–3551</i> <i>In 1_H.5 bilden 3550–3551 einen Vers:</i>]  [<speaker>Gretchen.</speaker>] Ach / [<speaker>Lieschen.</speaker>] Ja so ist’s ihr endlich gangen<i>. [type=2d]</i>
 3553[Spaziren]{=} <i>3553</i> Spaziren <i>A</i>]   gespazieren <i>1_H.5</i> Spatzieren <i>S</i> Spazieren <i>B</i> Spatzieren <i>B.a</i> <i>[type=4a]</i>
 3557[Bild’]{=} <i>3557</i> Bild’t <i>S A B B.a</i>]   Bildt <i>1_H.5</i> Bild’t’ <i>konj. Holland [type=3*]</i>
 3564[hinunterließ]{=} <i>3564</i> hinunterließ <i>A B</i>]   n’abe lies <i>1_H.5</i> hinunter ließ <i>S</i> hinunter ließ <i>B.a [type=7]</i>
