@@ -23,6 +23,8 @@
         </xsl:variable>        
         <xsl:variable name="pass2"><xsl:apply-templates mode="pass2" select="$inserted-apps"/></xsl:variable>
         <xsl:apply-templates mode="pass3" select="$pass2"/>
+        <!--<xsl:result-document href="/tmp/pass1.xml" indent="yes"><xsl:copy-of select="$inserted-apps"/></xsl:result-document>
+        <xsl:result-document href="/tmp/pass2.xml" indent="yes"><xsl:copy-of select="$pass2"/></xsl:result-document>-->
     </xsl:template>
 
     <!-- base function for the id calculations, based in an app's f:ins -->
@@ -63,8 +65,11 @@
         <xsl:variable name="current-line" select="tokenize(@n, '\s+')"/>
         <xsl:variable name="apps" select="$spec//(f:ins[@place='only-app']|f:replace)[@n=$current-line]/.." as="element()*"/>
         <xsl:for-each select="$spec//f:ins[@place='before' and @n= $current-line]">
-            <xsl:copy-of select="node()" copy-namespaces="no"/>
-            <xsl:call-template name="create-app-note"><xsl:with-param name="apps" select=".."/></xsl:call-template>
+            <xsl:call-template name="create-app-within-new-content">
+                <xsl:with-param name="new-content" select="node()"/>
+                <xsl:with-param name="apps" select=".."/>
+                <xsl:with-param name="id" select="f:seg-id(.)"/>
+            </xsl:call-template>
         </xsl:for-each>
         <xsl:copy copy-namespaces="no">
             <xsl:if test="$apps/f:ins[@place='only-app']">
@@ -79,9 +84,36 @@
             </xsl:call-template>
         </xsl:copy>
         <xsl:for-each select="$spec//f:ins[@place='after' and @n= $current-line]">
-            <xsl:copy-of select="node()" copy-namespaces="no"/>
-            <xsl:call-template name="create-app-note"><xsl:with-param name="apps" select=".."/></xsl:call-template>
+            <xsl:call-template name="create-app-within-new-content">
+                <xsl:with-param name="new-content" select="node()"/>
+                <xsl:with-param name="apps" select=".."/>
+                <xsl:with-param name="id" select="f:seg-id(.)"/>
+            </xsl:call-template>
         </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template name="create-app-within-new-content">
+        <xsl:param name="new-content" required="yes"/>
+        <xsl:param name="apps" required="yes"/>
+        <xsl:param name="id"/>
+        <xsl:choose>
+            <xsl:when test="$new-content[f:hasvars(.)]|$new-content[self::milestone]">
+                <xsl:for-each select="$new-content">
+                    <xsl:copy copy-namespaces="no">
+                        <xsl:apply-templates select="@*"/>
+                        <xsl:if test="$id">
+                            <xsl:attribute name="xml:id" select="$id"/>
+                        </xsl:if>
+                        <xsl:call-template name="create-app-note"><xsl:with-param name="apps" select="$apps"/></xsl:call-template>
+                        <xsl:apply-templates select="node()"/>
+                    </xsl:copy>
+                </xsl:for-each>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="create-app-note"><xsl:with-param name="apps" select="$apps"/></xsl:call-template>
+                <xsl:apply-templates select="$new-content"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <!-- creates the note[@type="textcrit"] for the given app element -->    
@@ -205,12 +237,15 @@
             <xsl:copy-of select="$insert-element/*/@*[data(.) != '']"/>
             <!-- attributes from the lg that are _not_ in the apparatus -->
             <xsl:apply-templates select="@*[not(name() = (for $attr in $insert-element/*/@* return name($attr)))]" mode="#current"/>
-            <!-- text-critical note -->
-            <xsl:call-template name="create-app-note">
+            <!-- id -->
+            <xsl:attribute name="xml:id" select="f:seg-id($insert-element[1])"/>
+            <!-- text-critical note -->            
+            <xsl:call-template name="create-app-within-new-content">
                 <xsl:with-param name="apps" select="$app-spec"/>
+                <xsl:with-param name="new-content" select="(*)[1]"/>                
             </xsl:call-template>
             <!-- Everything else -->
-            <xsl:apply-templates select="node()" mode="#current"/>
+            <xsl:apply-templates select="node() except (*)[1]" mode="#current"/>
         </xsl:copy>
     </xsl:template>
     
@@ -227,7 +262,15 @@
                 <xsl:choose>
                     <xsl:when test="self::milestone[@unit='lg']">
                         <xsl:copy-of select="@* except @unit"/>
-                        <xsl:apply-templates mode="#current" select="subsequence(current-group(), 2)"/>
+                        <xsl:variable name="note-textcrit" select="self::milestone[@unit='lg']/*"/>
+                        <xsl:for-each select="current-group()[2]">
+                            <xsl:copy>
+                                <xsl:apply-templates mode="#current" select="@*"/>
+                                <xsl:copy-of select="$note-textcrit"/>
+                                <xsl:apply-templates mode="#current" select="node()"/>
+                            </xsl:copy>
+                        </xsl:for-each>
+                        <xsl:apply-templates mode="#current" select="subsequence(current-group(), 3)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:copy-of select="$original-lg/@*"/>
