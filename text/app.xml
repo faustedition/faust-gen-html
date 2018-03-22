@@ -1113,6 +1113,18 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                 <exchange>
                     <exchange-table>
                         <string-pair>
+                            <search-string>0{]}\]</search-string>
+                            <replacement-string>\*</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
                             <search-string>{{i}}{[}\H{]}{{/i}}</search-string>
                             <replacement-string>2^_H</replacement-string>
                         </string-pair>

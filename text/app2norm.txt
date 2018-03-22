@@ -14,12 +14,12 @@ before_4634_b[gesammelt]{gesammt} <i>before_4634_b</i> gesammt <i>2_H</i>] gesam
 5146[Wunder seltsam]{Wunderseltsam} <i>5146</i> Wunderseltsam <i>2_H</i>] Wunder seltsam <i>2_I_H.0a [type=2aa]</i>
 5152|5153[verkündet|entzündet]{=} <i>5152–5153</i> verkündet … entzündet <i>2_I_H.0a</i>] entzündet … verkündet <i>2_H</i> entzündet … entzündet <i>2_I_H.0a :</i> verkündet … entzündet <i>vorschl Ri bill G [type=2d]</i>
 5182[sie]{dich} <i>5182</i> dich <i>2_I_H.12a</i>] sie <i>2_H 2_I_H.0a [type=2b]</i>
-5190[stillen]{stillen} <i>5190</i> stillen <i>2_I_H.0a</i>] stillen <i>2_H :</i> feinen <i>G [type=2c0]</i>
+5190[stillen]{stillen} <i>5190</i> stillen <i>2_I_H.0a</i>] stillen <i>2_H :</i> feinen <i>G [type=2c*]</i>
 5265[Luft]{Lust} <i>5265</i> Lust <i>2_I_H.15b</i>] Luft <i>2_I_H.15b :</i> Lust <i>G</i> Luft <i>2_H 2_I_H.0a [type=2b] :</i> Lust <i>Sc 2_H [type=6]</i>
 5282[kneipt]{kneipt} <i>5282</i> kneipt <i>2_I_H.0a</i>] kneipt <i>G 2_I_H.15b 2_H 2_I_H.0a</i> borgt <i>Ec 2_H [type=6]</i>
 before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2_I_H.0a [type=2aa]</i>
 5360[krauen.]{krauen} <i>5360</i> krauen^ <i>2_I_H.17 2_H</i>] krauen. <i>2_I_H.0a [type=1b]</i>
-before_5357_b[]{} <i>vor 5357</i> <speaker>Alecto</speaker> <i>2_I_H.0a</i>] <font name="Cambria Math">⟨</font><stage>Die Furien</stage> <i>erg G</i><font name="Cambria Math">⟩</font> <speaker>Alecto.</speaker> <i>2_H [type=2c0]</i>
+before_5357_b[]{} <i>vor 5357</i> <speaker>Alecto</speaker> <i>2_I_H.0a</i>] <font name="Cambria Math">⟨</font><stage>Die Furien</stage> <i>erg G</i><font name="Cambria Math">⟩</font> <speaker>Alecto.</speaker> <i>2_H [type=2c*]</i>
 5388[beging]{beging’} <i>5388</i> beging’ <i>2_I_H.0a</i>] beging <i>2_I_H.0a :</i> beging’ <i>Ri G [type=2d]</i>
 5441|5445|5449|5452[@lg|@lg|@lg|@lg]{rend="indented"|rend="indented"|rend="indented"|rend="indented"} <i>5441–5456</i>] <i>Die Verse sind in I_H.0a nicht eingerückt [type=1c]</i>
 5484[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5484–5493</i>] <i>Die Verse sind in I_H.0a nicht eingerückt [type=1c]</i>
@@ -151,14 +151,14 @@ vor 10877[<speaker>Erbmarschall</speaker>]{<speaker>Erzmarschall</speaker>} <i>v
 10917[großem]{großen} <i>10917</i> großen <i>2_IV_H.1</i>] großem <i>2_H [type=2aa]</i>
 10923[Wunderschatz]{Wunderschutz} <i>10923</i> Wunderschutz <i>2_IV_H.1</i>] Wunderschatz <i>2_H [type=2aa]</i>
 10959[heiligen]{heiligem} <i>10959</i> heiligem <i>2_IV_H.22e</i>] heiligen <i>2_H [type=2a]</i>
-10979[bangt]{=} <i>10979</i> bangt <i>2_H</i>] bangs <i>G 2_IV_H.22e [type=2a0]</i>
+10979[bangt]{=} <i>10979</i> bangt <i>2_H</i>] bangs <i>G 2_IV_H.22e [type=2a*]</i>
 10998[steter]{fetter} <i>10998</i> fetter <i>2_IV_H.22f</i>] steter <i>2_H [type=2aa]</i>
 11099[Doch!]{=} <i>11099</i> Doch! <i>2_V_H.0b 2_H</i>] Dort <i>Sc 2_H [type=6]</i>
 before_11143_c[Der]{der} <i>vor 11143</i> Lynceus der <i>none</i>] <font name="Cambria Math">⟨</font><stage>Lynceus</stage> <i>erg G</i><font name="Cambria Math">⟩</font> Der <i>2_H [type=7]</i>
 11160[fremden]{fremdem} <i>11160</i> fremdem <i>2_V_H.1</i>] fremden <i>2_H [type=2aa]</i>
 11203[]{} <i>11203–11206</i>] <l>Wir alle fordern</l> <l>Gleichen Theil.</l> <speaker>Mephist.</speaker> <l>Erst ordnet oben</l> <l>Saal an Saal.</l> <i>Ec 2_H [type=6]</i>
 11235[Vielgewandten]{Vielgewandtem} <i>11235</i> Vielgewandtem <i>2_V_H.1</i>] Vielgewandten <i>2_H [type=1a]</i>
-after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab) <i>2_V_H.1 fehlt 2_H</i> (Regum I. 21.) <i>erg G [type=2aa0]</i>
+after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab) <i>2_V_H.1 fehlt 2_H</i> (Regum I. 21.) <i>erg G [type=2aa*]</i>
 11422[dich]{dich.} <i>11422</i> dich. <i>2_V_H.2</i>] dich! <i>2_V_H.6</i> dich^ <i>2_H [type=1b]</i>
 <i>11439</i> mächtig; <i>2_V_H.2</i>] <i>Semikolon in H nicht mehr zu erkennen; ergänzt nach V_H.2 [type=7]</i>
 11473[Weges-Mitte]{Weges Mitte} <i>11473</i> Weges Mitte <i>2_V_H.11</i>] Weges-Mitte <i>2_V_H.2 2_H [type=2b]</i>
