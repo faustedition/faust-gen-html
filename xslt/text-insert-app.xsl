@@ -22,7 +22,7 @@
             <xsl:apply-templates/>
         </xsl:variable>        
         <xsl:variable name="pass2"><xsl:apply-templates mode="pass2" select="$inserted-apps"/></xsl:variable>
-        <xsl:apply-templates mode="pass3" select="$pass2"/>        
+        <xsl:apply-templates mode="pass3" select="$pass2"/>
     </xsl:template>
 
     <!-- base function for the id calculations, based in an app's f:ins -->
@@ -217,11 +217,12 @@
     <!-- 
         To split an existing lg, insert a <milestone unit='lg'/> at the break point. This template
         takes care of actually performing the split. The apparatus has already been generated when
-        inserting the milestone. Attributes except @unit are copied from the milestone to the lg.    
+        inserting the milestone. Attributes except @unit are copied from the milestone to the lg.
     -->
     <xsl:template mode="pass2" match="lg[milestone[@unit='lg']]" name="build-lgs">
         <xsl:param name="original-lg" select="."/>
-        <xsl:for-each-group select="node()" group-starting-with="milestone[@unit='lg']">
+        <xsl:param name="lines-to-regroup" select="node()"/>
+        <xsl:for-each-group select="$lines-to-regroup" group-starting-with="milestone[@unit='lg']">
             <lg>
                 <xsl:choose>
                     <xsl:when test="self::milestone[@unit='lg']">
@@ -246,9 +247,10 @@
             <!-- collect children up to the first l -->
             <xsl:variable name="not-to-group" select="node()[not(preceding-sibling::l | self::l | self::milestone[@unit='lg'])]"/>
             <xsl:copy-of select="@*, $not-to-group" copy-namespaces="no"/>
-            <xsl:for-each select="node() except $not-to-group">
-                <xsl:call-template name="build-lgs"><xsl:with-param name="original-lg" select="()"/></xsl:call-template>
-            </xsl:for-each>
+            <xsl:call-template name="build-lgs">
+                <xsl:with-param name="original-lg" select="()"/>
+                <xsl:with-param name="lines-to-regroup" select="node() except $not-to-group"/>
+            </xsl:call-template>
         </xsl:copy>
     </xsl:template>
     
