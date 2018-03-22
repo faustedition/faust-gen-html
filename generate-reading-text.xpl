@@ -38,7 +38,7 @@
 			<p:pipe port="result" step="config"/>
 		</p:variable>
 
-		<p:for-each>
+		<p:for-each name="load-sources">
 			<p:iteration-source select="//c:file">
 				<p:inline>
 					<c:directory>
@@ -50,6 +50,7 @@
 					</c:directory>
 				</p:inline>
 			</p:iteration-source>
+			<p:output port="result" primary="true" sequence="true"/>
 			<p:variable name="source-uri" select="resolve-uri(/c:file/@href, $source)"/>
 
 			<cx:message>
@@ -58,7 +59,14 @@
 			<p:load>
 				<p:with-option name="href" select="$source-uri"/>
 			</p:load>
+			<pxp:set-base-uri>
+				<p:with-option name="uri" select="$source-uri"/>
+			</pxp:set-base-uri>			
+		</p:for-each>
 
+		<p:for-each>			
+			<p:variable name="source-uri" select="p:base-uri()"/>
+			
 			<f:preprocess-reading-text-sources/>
 
 			<pxp:set-base-uri>
@@ -104,8 +112,19 @@
 		<p:identity name="final-text"/>
 		
 		<!-- Generate a list of interesting elements with context and store as XML and HTML -->
+		<p:xslt template-name="faust">
+			<p:input port="source"><p:pipe port="result" step="load-sources"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/assemble-reading-text.xsl"/></p:input>
+			<p:input port="parameters">
+				<p:inline>
+					<c:param-set>
+						<c:param name="use-collection" value="true"/>
+					</c:param-set>
+				</p:inline>
+			</p:input>
+		</p:xslt>
+		
 		<p:xslt name="issue-178-list">
-			<p:input port="source"><p:pipe port="result" step="assemble"/></p:input>
 			<p:input port="stylesheet"><p:document href="xslt/list-interesting-elements.xsl"/></p:input>
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 		</p:xslt>
@@ -114,7 +133,7 @@
 			<p:with-option name="href" select="resolve-uri('lesetext/issue-178.xml', $builddir)"/>
 		</p:store>
 		
-		<p:xslt>
+<!--		<p:xslt>
 			<p:input port="source"><p:pipe port="result" step="issue-178-list"/></p:input>
 			<p:input port="stylesheet"><p:document href="xslt/apparatus.xsl"/></p:input>
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
@@ -125,7 +144,7 @@
 		<p:store method="xhtml">
 			<p:with-option name="href" select="resolve-uri('www/print/issue-178.html', $builddir)"/>
 		</p:store>
-		
+-->		
 		<!-- Perform some validation steps on the apparatus and store report as HTML -->
 		<p:xslt>
 			<p:input port="source"><p:pipe port="result" step="final-text"/></p:input>

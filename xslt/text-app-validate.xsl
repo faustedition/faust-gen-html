@@ -59,6 +59,7 @@
 					<a href="#wits">kaputte wits</a>
 					<a href="#notes">Kommentare im Apparat</a>
 					<a href="#app2xml">app2xml</a>
+					<a href="#free-floating-apps">herumfliegende Apparate</a>
 				</nav>
 				<p class="help">
 					<a href="https://github.com/faustedition/faust-gen-html/blob/master/text/README-app_norm.md">die wichtigsten Regeln für die app*norm.txt-Dateien</a> 
@@ -70,6 +71,7 @@
 					<xsl:call-template name="broken-app-links"/>
 					<xsl:call-template name="find-broken-wits"/>
 					<xsl:call-template name="summarize-notes"/>
+					<xsl:call-template name="free-floating-apps"/>
 					<xsl:call-template name="app2xml"/>
 				</xsl:variable>
 				<xsl:sequence select="$results"/>
@@ -374,5 +376,54 @@
 	</xsl:template>
 	
 	<xsl:template match="note[@type='textcrit']" mode="noapp"/>
+	
+	
+	<xsl:template name="free-floating-apps">
+		<xsl:variable name="floating-app-reports">
+			<xsl:for-each select="$text//note[@type='textcrit'][not(ancestor::*[f:hasvars(.)])]">
+				<xsl:variable name="note" select="."/>
+				<xsl:variable name="app" select="descendant::app"/>
+				<xsl:for-each select="tokenize($app/@from, '\s+')">				
+					<xsl:variable name="id" select="substring(., 2)"/>
+					<xsl:variable name="referenced" as="element()*" select="$text//*[@xml:id=$id]"/>				
+					<xsl:variable name="n" select="tokenize($id, '\.')[2]"/>
+					<xsl:variable name="ins" select="$spec//f:ins[@n=$n]"/>				
+					<tr>
+						<td><xsl:value-of select="$note/ref"/></td>
+						<td><xsl:value-of select="$n"/></td>
+						<td><xsl:value-of select="$ins/@place"/></td>
+						<td>
+							<xsl:value-of select="name($ins/*[1])"/>
+							<xsl:if test="$ins/*[@n]">
+								n=<xsl:value-of select="$ins/*[1]/@n"/>
+							</xsl:if>
+						</td>
+						<td><xsl:value-of select="$note/preceding-sibling::*[1]/@n"/></td>
+						<td><xsl:value-of select="$note/following-sibling::*[1]/@n"/></td>
+					</tr>
+				</xsl:for-each>
+			</xsl:for-each>
+		</xsl:variable>
+		
+		<h3 id="free-floating-apps" class="{if ($floating-app-reports/*) then 'failed' else 'passed'})">
+			<strong><xsl:value-of select="count($floating-app-reports/*)"/></strong> Apparateinträge außerhalb von <i>Zeilen</i></h3>
+		<p class="help">Diese Elemente sind im TEI nicht innerhalb eines Verses/BA/Sprechers gelandet, sondern irgendwo dazwischen. Sie sind damit z.B. nicht gescheit klickbar. (Problem der Transformation, nicht des Apparats)</p>
+		
+		<table>
+			<thead>
+				<tr>
+					<th>Referenz</th>
+					<th>@n</th>
+					<th>f:ins/@place</th>
+					<th>erstes eingefügtes Element</th>
+					<th>@n davor</th>
+					<th>@n danach</th>
+				</tr>
+			</thead>
+			<tbody>
+				<xsl:copy-of select="$floating-app-reports"/>
+			</tbody>
+		</table>
+	</xsl:template>
 	
 </xsl:stylesheet>
