@@ -19,7 +19,6 @@ before_4634_b[gesammelt]{gesammt} <i>before_4634_b</i> gesammt <i>2_H</i>] gesam
 5282[kneipt]{kneipt} <i>5282</i> kneipt <i>2_I_H.0a</i>] kneipt <i>G 2_I_H.15b 2_H 2_I_H.0a</i> borgt <i>Ec 2_H [type=6]</i>
 before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2_I_H.0a [type=2aa]</i>
 5360[krauen.]{krauen} <i>5360</i> krauen^ <i>2_I_H.17 2_H</i>] krauen. <i>2_I_H.0a [type=1b]</i>
-before_5357_b[]{} <i>vor 5357</i> <speaker>Alecto</speaker> <i>2_I_H.0a</i>] <font name="Cambria Math">⟨</font><stage>Die Furien</stage> <i>erg G</i><font name="Cambria Math">⟩</font> <speaker>Alecto.</speaker> <i>2_H [type=2c*]</i>
 5388[beging]{beging’} <i>5388</i> beging’ <i>2_I_H.0a</i>] beging <i>2_I_H.0a :</i> beging’ <i>Ri G [type=2d]</i>
 5441|5445|5449|5452[@lg|@lg|@lg|@lg]{rend="indented"|rend="indented"|rend="indented"|rend="indented"} <i>5441–5456</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt (vgl. Goethe an Reichel, 22. Januar 1828) [type=1c]</i>
 5484[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5484–5493</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt (vgl. zu 5441–5456) [type=1c]</i>
