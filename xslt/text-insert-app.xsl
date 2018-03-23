@@ -15,7 +15,7 @@
     <!-- The apparatus specification in XML form -->
     <xsl:variable name="spec" select="doc('../text/app1norm.xml'),
                                       doc('../text/app2norm.xml'),
-                                      doc('../text/app2norm_special-cases.xml')"/>
+                                      doc('../text/app12norm_special-cases.xml')"/>
 
     <xsl:template match="/">
         <xsl:variable name="inserted-apps">
