@@ -22,8 +22,31 @@
             <note><wit wit="2_H">2_H</wit></note></rdg>-->
         <!-- neu: -->
         <rdg wit="2_H" type="type_2c*">⟨<stage>Die Furien</stage>
-            <note>erg <seg type="hand">G</seg></note>⟩
-            <speaker>Alecto.</speaker>
+            <note>erg <seg type="hand">G</seg></note>⟩ <speaker>Alecto.</speaker>
             <note><wit wit="2_H">2_H</wit></note></rdg>
+    </app>
+    <!--       before_6086[Marschalck]{=} <i>vor 6086</i> <speaker>Marschalck</speaker> <i>2_H</i>] <speaker>Schatzmeister</speaker> <i>2_H :</i> <speaker>Marschalck</speaker> <i>G (</i><speaker>Schatzmeister</speaker> <i>ungestrichen) [type=7]</i>-->
+    <app n="before_6086">
+        <f:replace n="before_6086">Marschalck</f:replace>
+        <f:ins n="before_6086">Marschalck</f:ins>
+        <ref>vor 6086</ref>
+        <!--<speaker>Marschalck</speaker> <i>2_H</i>-->
+        <lem wit="2_H"><speaker>Marschalck</speaker>
+            <note><wit wit="2_H">2_H</wit></note></lem>
+        <!-- aus py: -->
+        <!--<!-\- <speaker>Schatzmeister</speaker> <i>2_H :</i>-\->
+        <rdg wit="2_H"><speaker>Schatzmeister</speaker>
+            <note><wit wit="2_H">2_H</wit></note></rdg>
+        <!-\- <speaker>Marschalck</speaker> <i>G (</i>-\->
+        <rdg wit="2_H" hand="G"><speaker>Marschalck</speaker>
+            <note><seg type="hand">G</seg> (</note></rdg>
+        <!-\-<speaker>Schatzmeister</speaker> <i>ungestrichen) [type=7]</i>-\->
+        <rdg type="type_7"><speaker>Schatzmeister</speaker>
+            <note>ungestrichen)</note></rdg>-->
+        <!-- neu: -->
+        <rdg wit="2_H"><subst hand="G"><del><speaker>Schatzmeister</speaker></del>
+                <note><wit wit="2_H">2_H</wit></note>
+                <add><speaker>Marschalck</speaker></add></subst>
+            <note><seg type="hand">G</seg> (<quote>Schatzmeister</quote> ungestrichen)</note></rdg>
     </app>
 </f:apparatus>
