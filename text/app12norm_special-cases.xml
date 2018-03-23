@@ -49,4 +49,18 @@
                 <add><speaker>Marschalck</speaker></add></subst>
             <note><seg type="hand">G</seg> (<quote>Schatzmeister</quote> ungestrichen)</note></rdg>
     </app>
+    <!--       before_6319_a[]{} <i>vor 6319</i> <speaker>Blondine</speaker> <i>2_H</i>] <speaker>Blondine</speaker> <font name="Cambria Math">⟨</font><stage>(zu Mephisto)</stage> <i>erg Ec</i><font name="Cambria Math">⟩</font> <i>2_H [type=6]</i>-->
+    <!--FIXED: before_6319_a[]{} <i>vor 6319</i> <speaker>Blondine</speaker> <i>2_H</i>] <speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage> <i>erg Ec</i>⟩ <i>2_H [type=6]</i>-->
+    <app n="before_6319_a">
+        <f:ins n="before_6319_a" place="only-app"/>
+        <ref>vor 6319</ref>
+        <!--<speaker>Blondine</speaker> <i>2_H</i>-->
+        <lem wit="2_H"><speaker>Blondine</speaker> <note><wit wit="2_H">2_H</wit></note></lem>
+        <!-- aus py: -->
+        <!--<!-\- <speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage> <i>erg Ec</i>-\->
+        <rdg><speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage> <note>erg Ec</note></rdg>
+        <!-\-⟩ <i>2_H [type=6]</i>-\->
+        <rdg wit="2_H" type="type_6">⟩ <note><wit wit="2_H">2_H</wit></note></rdg>-->
+        <!-- neu: -->
+        <rdg wit="2_H" type="type_6"><speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage> <note>erg Ec</note>⟩ <note><wit wit="2_H">2_H</wit></note>P</rdg>    </app>
 </f:apparatus>
