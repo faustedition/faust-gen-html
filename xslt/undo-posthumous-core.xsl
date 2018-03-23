@@ -18,6 +18,8 @@
       
     <xsl:template match="add[matches(@ge:stage,'#posthumous')]"/>
     
+    <xsl:template match="restore[matches(@ge:stage,'#posthumous')]"/>
+
     <xsl:template match="del[matches(@ge:stage,'#posthumous')]">
         <xsl:apply-templates mode="#current"/>
     </xsl:template>
