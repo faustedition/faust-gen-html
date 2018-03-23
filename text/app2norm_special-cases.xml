@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://github.com/faustedition/faust-gen-html/blob/master/text/appxnorm.rnc" type="application/relax-ng-compact-syntax"?>
+<f:apparatus xmlns:f="http://www.faustedition.net/ns" xmlns="http://www.tei-c.org/ns/1.0">
+    <!--       before_5357_b[]{} <i>vor 5357</i> <speaker>Alecto</speaker> <i>2_I_H.0a</i>] <font name="Cambria Math">⟨</font><stage>Die Furien</stage> <i>erg G</i><font name="Cambria Math">⟩</font> <speaker>Alecto.</speaker> <i>2_H [type=2c*]</i>-->
+    <!--FIXED: before_5357_b[]{} <i>vor 5357</i> <speaker>Alecto</speaker> <i>2_I_H.0a</i>] ⟨<stage>Die Furien</stage> <i>erg G</i>⟩ <speaker>Alecto.</speaker> <i>2_H [type=2c*]</i>-->
+    <app n="before_5357_b">
+        <f:ins n="before_5357_b" place="only-app"/>
+        <ref>vor 5357</ref>
+        <!--<speaker>Alecto</speaker> <i>2_I_H.0a</i>-->
+        <lem wit="2_I_H.0a">
+            <speaker>Alecto</speaker>
+            <note>
+                <wit wit="2_I_H.0a">2_I_H.0a</wit>
+            </note>
+        </lem>
+        <!-- ⟨<stage>Die Furien</stage> <i>erg G</i>-->
+        <rdg hand="G">⟨<stage>Die Furien</stage>
+            <note>erg <seg type="hand">G</seg></note></rdg>
+        <!--⟩ <speaker>Alecto.</speaker> <i>2_H [type=2c*]</i>-->
+        <rdg wit="2_H" type="type_2c*">⟩ <speaker>Alecto.</speaker>
+            <note><wit wit="2_H">2_H</wit></note></rdg>
+    </app>
+</f:apparatus>
