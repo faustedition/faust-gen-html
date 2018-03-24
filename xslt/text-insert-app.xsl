@@ -13,9 +13,9 @@
     <xsl:strip-space elements="app choice subst"/>
        
     <!-- The apparatus specification in XML form -->
-    <xsl:variable name="spec" select="doc('../text/app1norm.xml'),
-                                      doc('../text/app2norm.xml'),
-                                      doc('../text/app12norm_special-cases.xml')"/>
+    <xsl:variable name="spec" select="doc('../text/app12norm_special-cases.xml'),
+                                      doc('../text/app1norm.xml'),
+                                      doc('../text/app2norm.xml')"/>
 
     <xsl:template match="/">
         <xsl:variable name="inserted-apps">
@@ -209,8 +209,13 @@
                 <xsl:analyze-string select="$wsp-normalized" regex="{$re}" flags="!">
                     <xsl:matching-substring>
                         <xsl:variable name="current-match" select="."/>
-                        <xsl:variable name="current-app" select="$apps[f:normalize-print-chars(descendant::f:replace) = $current-match]"/>
-                        <seg type="lem" xml:id="{f:seg-id($current-app//f:ins[@n = $current-line])}">
+                        <xsl:variable name="current-apps" select="$apps[f:normalize-print-chars(descendant::f:replace) = $current-match]"/>
+                        <xsl:if test="count($current-apps) > 1">
+                            <xsl:message select="concat('ERROR: Multiple app entries for ', $current-match, ' in ', $current-line,
+                                ': ', string-join(for $app in $apps return concat($app, ' @ ', document-uri(root($app))), '; '))"/>
+                        </xsl:if>
+                        <xsl:variable name="current-app" select="$current-apps[1]"/>
+                        <seg type="lem" xml:id="{f:seg-id($current-app//f:ins[@n = $current-line][1])}">
                             <xsl:value-of select="f:normalize-print-chars($current-app//f:ins[@n = $current-line])"/>
                         </seg> 
                     </xsl:matching-substring>
