@@ -42,7 +42,6 @@ before_6150_b[gleichfals]{=} <i>vor 6150</i> <stage>gleichfals</stage> <i>2_H</i
 6209[nicht]{nichts} <i>6209</i> nichts <i>2_I_H.48</i>] nicht <i>2_I_H.47 2_H [type=2b]</i>
 6211[Säumniß,]{Säumniß.} <i>6211</i> Säumniß. <i>none</i>] Säumniß, <i>2_I_H.47 2_H [type=1b]</i>
 6223[Nich]{Nicht} <i>6223</i> Nicht <i>2_I_H.47</i>] Nich <i>2_H [type=2aa]</i>
-before_6319_a[]{} <i>vor 6319</i> <speaker>Blondine</speaker> <i>2_H</i>] <speaker>Blondine</speaker> <font name="Cambria Math">⟨</font><stage>(zu Mephisto)</stage> <i>erg Ec</i><font name="Cambria Math">⟩</font> <i>2_H [type=6]</i>
 6354[Thüre]{=} <i>6354</i> Thüre <i>2_H</i>] Tür’ noch <i>Ec 2_H [type=6]</i>
 after_6358[]{} <i>nach 6358</i>] <speaker>Page.</speaker> <l>Ich bin verliebt, man hält mich nicht für voll.</l> <speaker>Meph.</speaker> <stage>(bey Seite)</stage> <l>Ich weiß nicht mehr wohin ich hören soll.</l> <i>in Lücke erg Ec 2_H [type=6]</i>
 before_6360_a[]{} <i>vor 6360–6359 tilgt Ec 2_H</i> <i>[type=6]</i>
@@ -153,7 +152,6 @@ before_10877[Erbmarschall]{Erzmarschall} <i>vor 10877</i> <speaker>Erzmarschall<
 10979[bangt]{=} <i>10979</i> bangt <i>2_H</i>] bangs <i>G 2_IV_H.22e [type=2a*]</i>
 10998[steter]{fetter} <i>10998</i> fetter <i>2_IV_H.22f</i>] steter <i>2_H [type=2aa]</i>
 11099[Doch!]{=} <i>11099</i> Doch! <i>2_V_H.0b 2_H</i>] Dort <i>Sc 2_H [type=6]</i>
-before_11143_c[Der]{der} <i>vor 11143</i> Lynceus der <i>none</i>] <font name="Cambria Math">⟨</font><stage>Lynceus</stage> <i>erg G</i><font name="Cambria Math">⟩</font> Der <i>2_H [type=7]</i>
 11160[fremden]{fremdem} <i>11160</i> fremdem <i>2_V_H.1</i>] fremden <i>2_H [type=2aa]</i>
 11203[]{} <i>11203–11206</i>] <l>Wir alle fordern</l> <l>Gleichen Theil.</l> <speaker>Mephist.</speaker> <l>Erst ordnet oben</l> <l>Saal an Saal.</l> <i>Ec 2_H [type=6]</i>
 11235[Vielgewandten]{Vielgewandtem} <i>11235</i> Vielgewandtem <i>2_V_H.1</i>] Vielgewandten <i>2_H [type=1a]</i>
