@@ -144,7 +144,7 @@ before_2429_b[Faust]{=} <i>vor 2429</i> <speaker>Faust</speaker>^ <i>B B.a</i>]
 before_2448[immmerfort]{immerfort} <i>vor 2448</i> immerfort  <i>none</i>] immmerfort <i>A</i>  immerfort <i>S </i> immerfort immerfort <i>D.1 </i> immerfort <i>B B.a  [type=1a]</i>
 before_2450_a[Thiere]{=} <i>vor 2450</i> <speaker>Thiere</speaker>^ <i>B B.a</i>]   <speaker>Thiere,</speaker> <i>S</i> <speaker>Thiere.</speaker> <i>A D.1 [type=1c]</i>
 before_2453[herumspringen]{=} <i>vor 2453</i> herumspringen <i>A B B.a</i>]   herum springen <i>S [type=2a*]</i>
-2455[reimen;]{=} <i>2455</i> reimen; <i>S A B B.a</i>]   reimen! <i>Q</i> reimen ^#[2013 <i>konj. Düntzer [type=1c*]</i>]
+2455[reimen;]{=} <i>2455</i> reimen; <i>S A B B.a</i>]   reimen! <i>Q</i> reimen – <i>konj. Düntzer [type=1c*]</i>]
 before_2465_a[ausser]{außer} <i>vor 2465</i> außer <i>S</i>]   ausser <i>A D.1</i> außer<i> B B.a [type=2a]</i>
 before_2465_a[grosse]{große } <i>vor 2465</i> große <i>S</i>]   grosse <i>A D.1 B</i> große<i> B.a [type=2a]</i>
 before_2465_a[hinaus schlägt]{=} <i>vor 2465</i> hinaus schlägt <i>A B</i>]   hinausschlägt <i>S </i> hinausschlägt  <i>B.a [type=2a*]</i>
@@ -310,7 +310,7 @@ before_4176[zu]{=} <i>vor 4176</i> zu <i>1_H.14 A</i>]  Zu <i>B B.a [type=4a]<
 4194[der Meduse]{=} <i>4194</i> der Meduse <i>A B B.a</i>]  den Medusen <i>1_H.14 [type=7]</i>
 4195[eines]{=} <i>4195</i> eines <i>1_H.14 A B.a</i>]   einer <i>B [type=7]</i>
 4200[jedem]{=} <i>4200</i> jedem <i>1_H.14 A</i>]   Jedem <i>B B.a [type=4a]</i>
-4208[abgeschlagen.^]{=} <i>4208</i> abgeschlagen.^ <i>1_H.14 A</i>]  abgeschlagen. ^#[2013 <i>B B.a [type=4a]</i>]
+4208[abgeschlagen.^]{=} <i>4208</i> abgeschlagen.^ <i>1_H.14 A</i>]  abgeschlagen. – <i>B B.a [type=4a]</i>]
 4214[giebt’]{=} <i>4214</i> giebt’s <i>A</i>]   gibt’s <i>B B.a [type=4a]</i>
 4235[queer]{=} <i>4235</i> queer <i>A</i>]   quer <i>B B.a [type=4a]</i>
 4261[giebt]{=} <i>4261</i> giebt <i>A</i>]   gibt <i>B B.a [type=4a]</i>
