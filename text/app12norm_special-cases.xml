@@ -47,7 +47,7 @@
         <rdg wit="2_H"><subst hand="G"><del><speaker>Schatzmeister</speaker></del>
                 <note><wit wit="2_H">2_H</wit></note>
                 <add><speaker>Marschalck</speaker></add></subst>
-            <note><seg type="hand">G</seg> (<quote>Schatzmeister</quote> ungestrichen)</note></rdg>
+            <note>(<quote>Schatzmeister</quote> ungestrichen) <seg type="hand">G</seg></note></rdg>
     </app>
     <!--       before_6319_a[]{} <i>vor 6319</i> <speaker>Blondine</speaker> <i>2_H</i>] <speaker>Blondine</speaker> <font name="Cambria Math">⟨</font><stage>(zu Mephisto)</stage> <i>erg Ec</i><font name="Cambria Math">⟩</font> <i>2_H [type=6]</i>-->
     <!--FIXED: before_6319_a[]{} <i>vor 6319</i> <speaker>Blondine</speaker> <i>2_H</i>] <speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage> <i>erg Ec</i>⟩ <i>2_H [type=6]</i>-->
@@ -55,12 +55,36 @@
         <f:ins n="before_6319_a" place="only-app"/>
         <ref>vor 6319</ref>
         <!--<speaker>Blondine</speaker> <i>2_H</i>-->
-        <lem wit="2_H"><speaker>Blondine</speaker> <note><wit wit="2_H">2_H</wit></note></lem>
+        <lem wit="2_H"><speaker>Blondine</speaker>
+            <note><wit wit="2_H">2_H</wit></note></lem>
         <!-- aus py: -->
         <!--<!-\- <speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage> <i>erg Ec</i>-\->
         <rdg><speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage> <note>erg Ec</note></rdg>
         <!-\-⟩ <i>2_H [type=6]</i>-\->
         <rdg wit="2_H" type="type_6">⟩ <note><wit wit="2_H">2_H</wit></note></rdg>-->
         <!-- neu: -->
-        <rdg wit="2_H" type="type_6"><speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage> <note>erg Ec</note>⟩ <note><wit wit="2_H">2_H</wit></note></rdg>    </app>
+        <rdg wit="2_H" type="type_6"><speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage>
+            <note>erg Ec</note>⟩ <note><wit wit="2_H">2_H</wit></note></rdg>
+    </app>
+    <!--       10909[von Festen]{=} <i>10909</i> von Festen <i>2_H</i>] von Fasten <i>2_IV_H.20 :</i> vom Fasten <i>G</i> von Festen <i>2_H mglw aus</i> von Fasten <i>[type=2d]</i>-->
+    <app n="10909">
+        <f:replace n="10909">von Festen</f:replace>
+        <f:ins n="10909">von Festen</f:ins>
+        <ref>10909</ref>
+        <!--von Festen <i>2_H</i>-->
+        <lem wit="2_H">von Festen <note><wit wit="2_H">2_H</wit></note></lem>
+        <!-- von Fasten <i>2_IV_H.20 :</i>-->
+        <rdg wit="2_IV_H.20">von Fasten <note><wit wit="2_IV_H.20">2_IV_H.20</wit></note></rdg>
+        <!-- vom Fasten <i>G</i>-->
+        <!-- aus py: -->
+        <!--<rdg wit="2_IV_H.20" hand="G">vom Fasten <note><seg type="hand">G</seg></note></rdg>
+        <!-\- von Festen <i>2_H mglw aus</i>-\->
+        <rdg wit="2_H">von Festen <note><wit wit="2_H">2_H</wit> mglw aus</note></rdg>
+        <!-\- von Fasten <i>[type=2d]</i>-\->
+        <rdg type="type_2d">von Fasten</rdg>-->
+        <!-- neu: -->
+        <rdg wit="2_IV_H.20" hand="G">vom Fasten <note><seg type="hand">G</seg></note></rdg>
+        <rdg wit="2_H" type="type_2d">von Festen <note>mglw aus <quote>von Fasten</quote>
+                <wit wit="2_H">2_H</wit></note></rdg>
+    </app>
 </f:apparatus>

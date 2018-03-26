@@ -144,7 +144,6 @@ before_10877[Erbmarschall]{Erzmarschall} <i>vor 10877</i> <speaker>Erzmarschall<
 10880[Vaterburg]{Väterburg} <i>10880</i> Väterburg <i>2_IV_H.21a</i>] Vaterburg <i>2_H [type=2aa]</i>
 10885[allen]{allem} <i>10885</i> allem <i>2_IV_H.21a</i>] allen <i>2_H [type=2aa]</i>
 10901[Lieblingsspeise wahl]{Lieblingsspeisen Wahl} <i>10901</i> Lieblingsspeisen Wahl <i>2_IV_H.20</i>] Lieblingsspeise wahl <i>2_H [type=2aa]</i>
-10909[von Festen]{=} <i>10909</i> von Festen <i>2_H</i>] von Fasten <i>2_IV_H.20 :</i> vom Fasten <i>G</i> von Festen <i>2_H mglw aus</i> von Fasten <i>[type=2d]</i>
 10912[gutem Weine]{guten Weinen} <i>10912</i> guten Weinen <i>2_IV_H.20</i>] gutem Weine <i>2_H [type=2aa]</i>
 10917[großem]{großen} <i>10917</i> großen <i>2_IV_H.1</i>] großem <i>2_H [type=2aa]</i>
 10923[Wunderschatz]{Wunderschutz} <i>10923</i> Wunderschutz <i>2_IV_H.1</i>] Wunderschatz <i>2_H [type=2aa]</i>
