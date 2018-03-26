@@ -184,7 +184,7 @@ XML:
 * `head/following-sibling::*[1][self::sp]/speaker[not(following-sibling::*[1][self::stage[matches(@rend,'inline')]])]`
 * `head/following-sibling::*[1][self::move]/following-sibling::*[1][self::sp]/speaker[not(following-sibling::*[1][self::stage[matches(@rend,'inline')]])]`
 
-`speaker` mit nochfolgendem `stage` mit `inline` werden zu einem BA-Format (s.o.).
+`speaker` mit nochfolgendem `stage` mit `inlin##e` werden zu einem BA-Format (s.o.).
 
 Format: `Sprecher nach Überschrift`
 
@@ -458,6 +458,13 @@ Output:
 XML: `*[self::lem or self::rdg]/emph`.
 
 Output: vorläufig analag zu `Sperrung`.
+
+### Auslassung
+XML: `gap reason='ellipsis'`
+
+Umsetzung: kursives Wort `bis`.
+
+Kommt innerhalb der Elemente vor, die zu `Lemma-Lesart ...` führen.
 
 ### Sigle
 XML: `wit`. 
