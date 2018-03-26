@@ -158,7 +158,9 @@
       <xsl:if test="not(matches($lemma-str, '\s+$'))">
         <xsl:text> </xsl:text>
       </xsl:if>
-      <xsl:text>] </xsl:text>
+      <xsl:if test="not(normalize-space($lemma-str) = '')">
+        <xsl:text>] </xsl:text>
+      </xsl:if>
       <xsl:apply-templates select="$lemma-after-bracket"/>      
     </xsl:if>
   </xsl:template>
