@@ -3,10 +3,12 @@
 <f:apparatus xmlns:f="http://www.faustedition.net/ns" xmlns="http://www.tei-c.org/ns/1.0">
     <!--       2709[]{} <i>2709</i> <i>Die Vershälften bilden in 1_H.5 und S einen antilabischen Vers, in A</i>]  <i>B</i> <i>B.asind es zwei Verse;wie bei 3994–3995 (zwei Verse in B 1_H.1 C.1_12 C.3_12, ein Vers in 1_H.14 A B.a) ist von einem Satzfehler auszugehen. [type=2a]</i>-->
     <app n="2709">
-        <f:replace id="l2709a" place="attributes"/>
-        <f:ins><l part="I"/></f:ins>
-        <f:replace id="l2709b" place="attributes"/>
-        <f:ins n="2709" place="only-app"><l part="F"/></f:ins>
+        <f:ins id="l2709a" place="attributes">
+            <l part="I"/>
+        </f:ins>
+        <f:ins id="l2709b" place="attributes">
+            <l part="F"/>
+        </f:ins>
         <ref>2709</ref>
         <lem/>
         <rdg wit="1_H.5 S A B B.a" type="type_2a">
