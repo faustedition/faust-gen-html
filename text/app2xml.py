@@ -200,8 +200,8 @@ def parse_readings(reading_str, tag='rdg'):
         reading = match.groupdict()
         if 'references' in reading:
             if carry:
-                wits = carry
-                carry = []
+                wits = [carry]
+                carry = None
             else:
                 wits = []
             hands = []
@@ -211,12 +211,12 @@ def parse_readings(reading_str, tag='rdg'):
                     wits.append(ref)
                     notes.append('<wit wit="{0}">{0}</wit>'.format(ref))
                 elif ref == 'none':
-                    carry = wits  # otherwise drop, cf. #225
+                    carry = wits[-1] if wits else None  # otherwise drop, cf. #225
                 elif ref in HANDS:
                     hands.append(ref)
                     notes.append('<seg type="hand">{}</seg>'.format(ref))
-                elif ref == ":":
-                    carry = wits
+                elif ref == ":" or ref == ": ":
+                    carry = wits[-1]
                 else:
                     notes.append(ref)
 
