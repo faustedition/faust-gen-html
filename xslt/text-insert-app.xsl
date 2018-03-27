@@ -64,7 +64,7 @@
     <xsl:template match="*[f:hasvars(.)][tokenize(@n, '\s+') = $spec//f:ins/@n] | *[@xml:id = $spec//f:ins/@id]">
         <xsl:variable name="current-line" select="tokenize(@n, '\s+')"/>
         <xsl:variable name="current-ins" select="$spec//f:ins[@n = $current-line or @id = current()/@xml:id]"/>
-        <xsl:variable name="apps" select="$spec//$current-ins[@place=('only-app', 'attributes')]/.." as="element()*"/>
+        <xsl:variable name="apps" select="$spec//$current-ins[not(@place=('before', 'after'))]/.." as="element()*"/>
         <xsl:for-each select="$current-ins[@place='before']">
             <xsl:call-template name="create-app-within-new-content">
                 <xsl:with-param name="new-content" select="node()"/>
