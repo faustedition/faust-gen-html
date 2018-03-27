@@ -176,6 +176,7 @@ def parse_attrs(attr_spec: str) -> dict:
 # a reading, i.e. last part of app line
 READING = re.compile(r'\s*(?<text>.*?)\s*<i>(?<references>.*?)\s*(\[(type=|Typ\s+)(?<type>\w+\*?)\]\s*)?~?<\/i>')
 HANDS = {'G', 'Gö', 'Ri', 'Re'}
+DELIMITER = re.compile(r'(\s+|[:.]\s+|[;()«»„“‚‘,]\s+|<.*?>)')
 
 def append_text(element: etree.ElementBase, text: str):
     try:
@@ -199,23 +200,23 @@ def parse_readings(reading_str, tag='rdg'):
         reading = match.groupdict()
         if 'references' in reading:
             if carry:
-                wits = carry
-                carry = []
+                wits = [carry]
+                carry = None
             else:
                 wits = []
             hands = []
             notes = []
-            for ref in reading['references'].split():
+            for ref in DELIMITER.split(reading['references']):
                 if ref in sigils:
                     wits.append(ref)
                     notes.append('<wit wit="{0}">{0}</wit>'.format(ref))
                 elif ref == 'none':
-                    carry = wits  # otherwise drop, cf. #225
+                    carry = wits[-1] if wits else None  # otherwise drop, cf. #225
                 elif ref in HANDS:
                     hands.append(ref)
                     notes.append('<seg type="hand">{}</seg>'.format(ref))
-                elif ref == ":":
-                    carry = wits
+                elif ref == ":" or ref == ": ":
+                    carry = wits[-1]
                 else:
                     notes.append(ref)
 
@@ -226,7 +227,7 @@ def parse_readings(reading_str, tag='rdg'):
                 rdg.set('hand', ' '.join(hands))
             if notes:
                 append_text(rdg, ' ')
-                rdg.append(parse_xml(' '.join(notes), T.note()))
+                rdg.append(parse_xml(''.join(notes), T.note()))
         if 'type' in reading and reading['type']:
             rdg.set('type', 'type_' + reading['type'])
         readings.append(etree.Comment(match.group(0)))
