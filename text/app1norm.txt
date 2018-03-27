@@ -167,7 +167,6 @@ before_2603[Leise]{Leise.} <i>vor 2603</i> Leise. <i>S</i>]   Leise^ <i>A D.1</
 before_2678_c[Margarete]{=} <i>vor 2678</i> <speaker>Margarete</speaker>^] <speaker>Margarethe^</speaker> <i>S</i> <speaker>Margarete.</speaker> <i>A D.1</i> <speaker>Margarete^</speaker> <i>B</i> <speaker>Margarethe^</speaker> <i>B.a [type=1c]</i>
 2678[wüßt’]{=} <i>2678</i> wüßt’, <i>S A B.a</i>]  wüsst’^ <i>B [Typ 4c]</i>
 2696[in]{=} <i>2696</i> in <i>1_H.5 S A</i>]   im <i>B B.a [type=4a]</i>
-2709[]{} <i>2709</i> <i>Die Vershälften bilden in 1_H.5 und S einen antilabischen Vers, in A</i>]  <i>B</i> <i>B.asind es zwei Verse;wie bei 3994–3995 (zwei Verse in B 1_H.1 C.1_12 C.3_12, ein Vers in 1_H.14 A B.a) ist von einem Satzfehler auszugehen. [type=2a]</i>
 2721[Umgiebt]{=} <i>2721</i> Umgiebt <i>A</i>]   Umgiebt <i>1_H.5</i> Umgibt <i>S</i> Umgibt <i>B B.a [type=4a]</i>
 2738[nicht,]{=} <i>2738</i> nicht, <i>S A B.a</i>]   nicht^ <i>1_H.5 </i> nicht^ <i>B [Typ 4c]</i>
 2740|2741[Lüsternheit|Tageszeit,]{=} <i>2740–2741</i> Lüsternheit^ <i>…</i> Tageszeit, <i>S A B.a</i>]  Lüsternheit, <i>…</i> Tageszeit^ <i>B [Typ 4c]</i>
