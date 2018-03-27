@@ -61,10 +61,10 @@
     
     
     <!-- lines for which an apparatus entry exists -->
-    <xsl:template match="*[f:hasvars(.)][tokenize(@n, '\s+') = $spec//f:ins/@n]">
+    <xsl:template match="*[f:hasvars(.)][tokenize(@n, '\s+') = $spec//f:ins/@n] | *[@xml:id = $spec//f:ins/@id]">
         <xsl:variable name="current-line" select="tokenize(@n, '\s+')"/>
-        <xsl:variable name="apps" select="$spec//(f:ins[@place='only-app']|f:replace)[@n=$current-line]/.." as="element()*"/>
-        <xsl:for-each select="$spec//f:ins[@place='before' and @n= $current-line]">
+        <xsl:variable name="apps" select="$spec//(f:ins[@place=('only-app', 'attributes')]|f:replace)[@n=$current-line or @id = current()/@xml:id]/.." as="element()*"/>
+        <xsl:for-each select="$spec//f:ins[@place='before' and (@n=$current-line or @id=current()/@xml:id)]">
             <xsl:call-template name="create-app-within-new-content">
                 <xsl:with-param name="new-content" select="node()"/>
                 <xsl:with-param name="apps" select=".."/>
@@ -72,10 +72,21 @@
             </xsl:call-template>
         </xsl:for-each>
         <xsl:copy copy-namespaces="no">
-            <xsl:if test="$apps/f:ins[@place='only-app']">
+            <xsl:if test="$apps/f:ins[@place='only-app'] and not(@xml:id)">
                 <xsl:attribute name="xml:id" select="concat('l', $current-line[1])"/>
             </xsl:if>
-            <xsl:apply-templates select="@*, node()" mode="with-app">
+            <xsl:choose>
+                <xsl:when test="$apps/f:ins[@place='attributes']">
+                    <xsl:variable name="ins-attrs" select="$apps/f:ins[@place='attributes']/*/@*"/>
+                    <xsl:copy-of select="$ins-attrs[data(.) != '']"/>
+                    <!-- attributes from the lg that are _not_ in the apparatus -->
+                    <xsl:apply-templates select="@*[not(name() = (for $attr in $ins-attrs return name($attr)))]" mode="#current"/>                    
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="@*" mode="with-app"/>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates select="node()" mode="with-app">
                 <xsl:with-param name="apps" select="$apps" tunnel="yes"/>
                 <xsl:with-param name="current-line" select="$current-line" tunnel="yes"/>
             </xsl:apply-templates>
@@ -83,7 +94,7 @@
                 <xsl:with-param name="apps" select="$apps"/>
             </xsl:call-template>
         </xsl:copy>
-        <xsl:for-each select="$spec//f:ins[@place='after' and @n= $current-line]">
+        <xsl:for-each select="$spec//f:ins[@place='after' and (@n=$current-line or @id=current()/@xml:id)]">
             <xsl:call-template name="create-app-within-new-content">
                 <xsl:with-param name="new-content" select="node()"/>
                 <xsl:with-param name="apps" select=".."/>
