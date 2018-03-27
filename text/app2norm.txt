@@ -50,7 +50,7 @@ before_6361[]{} <i>vor 6361</i> <speaker>Mephistopheles</speaker> <i>2_H</i>] <s
 before_6377_b[]{} <i>vor 6377</i> Dämmernde <i>none</i>] Dammernde <i>2_H [type=1a]</i>
 6384[beqeumlichstens]{bequemlichstens} <i>6384</i> bequemlichstens <i>none</i>] beqeumlichstens <i>2_H [type=1a]</i>
 6447[Saulenschaft]{Säulenschaft} <i>6447</i> Säulenschaft <i>none</i>] Saulenschaft <i>2_H [type=1a]</i>
-before_6479_a[tritt auf]{=} <i>vor</i> <i>6479</i> tritt auf <i>2_H</i>] hervortretend <i>Ec 2_H [type=6]</i>
+before_6479_a[tritt auf]{=} <i>vor 6479</i> tritt auf <i>2_H</i>] hervortretend <i>Ec 2_H [type=6]</i>
 before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückzieht <i>konj. Fiedler [type=3]</i>
 6654[Des Meisters]{=} <i>6654</i> Des Meisters <i>2_H</i>] Selbst Faustus <i>Ec 2_H [type=6]</i>
 6717[]{} <i>6717–6718</i> <l>Damals schien er zwar gewandt,</l> <l>Als ich ihn noch nicht verstand.</l> <i>Ec 2_H [type=6]</i>
