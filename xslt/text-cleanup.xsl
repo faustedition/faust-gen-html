@@ -69,7 +69,6 @@
 		| stage[not(matches(@rend,'inline'))]/@rend
 		| l[not(@rend='indented')]/@rend
 		| l[@rend='indented' and position()=1]/@rend
-		| l/@xml:id 
 		| space[@type='typographical'] 
 		| hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
 		| sp/@who 
@@ -78,8 +77,7 @@
 		| ge:stageNotes 
 		| handNotes 
 		| unclear/@cert 
-		| corr
-		| lg/@xml:id 
+		| corr		
 		| addSpan[not(@ge:stage='#posthumous')]
 		| milestone[@unit='group' or @unit='stage']
 		| ge:rewrite
