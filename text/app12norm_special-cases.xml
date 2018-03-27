@@ -86,6 +86,15 @@
         <rdg wit="2_H" type="type_6"><speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage>
             <note>erg Ec</note>⟩ <note><wit wit="2_H">2_H</wit></note></rdg>
     </app>
+    <!--FIXED: before_10811_a[$]{<stage n="before_10811_b" rend="inline">kauert nieder.</stage>} <i>vor 10811</i> <stage>kauert nieder</stage> <i>2_IV_H.8</i>] <i>erg Ec 2_H [type=2aa] [type=6]</i>-->
+    <app n="before_10811_a">
+        <f:ins n="before_10811_a" place="after"><stage n="before_10811_b" rend="inline">kauert nieder.</stage></f:ins>
+        <ref>vor 10811</ref>
+        <!--<stage>kauert nieder</stage> <i>2_IV_H.8</i>-->
+        <lem wit="2_IV_H.8"><stage>kauert nieder</stage> <note><wit wit="2_IV_H.8">2_IV_H.8</wit></note></lem>
+        <!-- <i>erg Ec 2_H [type=2aa] [type=6]</i>-->
+        <rdg wit="2_H" type="type_2aa type_6"> <note>erg Ec <wit wit="2_H">2_H</wit></note></rdg>
+    </app>
     <!--       10909[von Festen]{=} <i>10909</i> von Festen <i>2_H</i>] von Fasten <i>2_IV_H.20 :</i> vom Fasten <i>G</i> von Festen <i>2_H mglw aus</i> von Fasten <i>[type=2d]</i>-->
     <app n="10909">
         <f:replace n="10909">von Festen</f:replace>
