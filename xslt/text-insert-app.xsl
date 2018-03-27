@@ -35,11 +35,11 @@
             <xsl:for-each select="$ins"><!-- focus -->
                 <xsl:variable name="strrep" select="replace(lower-case(.), '\W+', '')"/>
                 <xsl:value-of select="$prefix"/>
-                <xsl:value-of select="@n"/>
+                <xsl:value-of select="@n, @id"/>
                 <xsl:choose>
                     <xsl:when test="$strrep != ''"><xsl:value-of select="$strrep"/></xsl:when>
                     <xsl:when test="@place"><xsl:value-of select="@place"/></xsl:when>                    
-                </xsl:choose>                        
+                </xsl:choose>
             </xsl:for-each>
         </xsl:variable>
         <xsl:value-of select="string-join($parts, '.')"/>
@@ -63,8 +63,9 @@
     <!-- lines for which an apparatus entry exists -->
     <xsl:template match="*[f:hasvars(.)][tokenize(@n, '\s+') = $spec//f:ins/@n] | *[@xml:id = $spec//f:ins/@id]">
         <xsl:variable name="current-line" select="tokenize(@n, '\s+')"/>
-        <xsl:variable name="apps" select="$spec//(f:ins[@place=('only-app', 'attributes')]|f:replace)[@n=$current-line or @id = current()/@xml:id]/.." as="element()*"/>
-        <xsl:for-each select="$spec//f:ins[@place='before' and (@n=$current-line or @id=current()/@xml:id)]">
+        <xsl:variable name="current-ins" select="$spec//f:ins[@n = $current-line or @id = current()/@xml:id]"/>
+        <xsl:variable name="apps" select="$spec//$current-ins[@place=('only-app', 'attributes')]/.." as="element()*"/>
+        <xsl:for-each select="$current-ins[@place='before']">
             <xsl:call-template name="create-app-within-new-content">
                 <xsl:with-param name="new-content" select="node()"/>
                 <xsl:with-param name="apps" select=".."/>
@@ -72,12 +73,12 @@
             </xsl:call-template>
         </xsl:for-each>
         <xsl:copy copy-namespaces="no">
-            <xsl:if test="$apps/f:ins[@place='only-app'] and not(@xml:id)">
+            <xsl:if test="$current-ins[@place='only-app'] and not(@xml:id)">
                 <xsl:attribute name="xml:id" select="concat('l', $current-line[1])"/>
             </xsl:if>
             <xsl:choose>
-                <xsl:when test="$apps/f:ins[@place='attributes']">
-                    <xsl:variable name="ins-attrs" select="$apps/f:ins[@place='attributes']/*/@*"/>
+                <xsl:when test="$current-ins[@place='attributes']">
+                    <xsl:variable name="ins-attrs" select="$current-ins[@place='attributes']/*/@*"/>
                     <xsl:copy-of select="$ins-attrs[data(.) != '']"/>
                     <!-- attributes from the lg that are _not_ in the apparatus -->
                     <xsl:apply-templates select="@*[not(name() = (for $attr in $ins-attrs return name($attr)))]" mode="#current"/>                    
@@ -94,7 +95,7 @@
                 <xsl:with-param name="apps" select="$apps"/>
             </xsl:call-template>
         </xsl:copy>
-        <xsl:for-each select="$spec//f:ins[@place='after' and (@n=$current-line or @id=current()/@xml:id)]">
+        <xsl:for-each select="$current-ins[@place='after']">
             <xsl:call-template name="create-app-within-new-content">
                 <xsl:with-param name="new-content" select="node()"/>
                 <xsl:with-param name="apps" select=".."/>
