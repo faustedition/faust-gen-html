@@ -122,6 +122,7 @@
 				<j:string name='imgLink' value="{replace($transcript//tei:graphic[@mimeType = 'image/svg+xml']/@url, $linkprefix, '')}"/>
 				<j:array name="img">
 					<xsl:for-each select="$transcript//tei:graphic[not(@mimeType = 'image/svg+xml')]/@url">
+						<xsl:sort select="."/>
 						<j:string value="{replace(., $imgprefix, '')}"/>
 					</xsl:for-each>
 				</j:array>				
