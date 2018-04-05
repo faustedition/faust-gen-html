@@ -12,7 +12,7 @@ App = ## A single apparatus entry contains text operations to perform on the rea
 	element app {
 	  
 	  ## n-labels this applies to, separated by whitespace
-      attribute n { xsd:token },  # FIXME do we need this?
+      # attribute n { xsd:token },  # FIXME do we need this?
       EditCommand+,
 	  
 	  ## human-readable reference to the source. E.g. 'vor 4711'

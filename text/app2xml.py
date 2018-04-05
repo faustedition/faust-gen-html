@@ -128,7 +128,7 @@ def parse_app2norm(app_text='app2norm.txt'):
                 if parsed['insert'] == '=':
                     parsed['insert'] = parsed['replace']
                 ns = parsed['n'].split('|')
-                app = T.app(n=' '.join(ns))
+                app = T.app() # n=' '.join(ns))
                 for n, replace, insert in zip(ns, parsed['replace'].split('|'), parsed['insert'].split('|')):
                     if replace == '@lg':
                         attrs = parse_attrs(insert)
@@ -209,7 +209,7 @@ def parse_readings(reading_str, tag='rdg'):
             for ref in DELIMITER.split(reading['references']):
                 if ref in sigils:
                     wits.append(ref)
-                    notes.append('<wit wit="{0}">{0}</wit>'.format(ref))
+                    notes.append('<wit>{0}</wit>'.format(ref))
                 elif ref == 'none':
                     carry = wits[-1] if wits else None  # otherwise drop, cf. #225
                 elif ref in HANDS:
