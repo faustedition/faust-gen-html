@@ -66,19 +66,20 @@
 
 	<xsl:template name="document">
 		<j:object sigil="{//f:idno[@type='faustedition']}">
+			<j:string name="sigil" value="{replace(normalize-space(//f:idno[@type='faustedition']), '\s+', '_')}"/>
 			<j:string name="document"><xsl:value-of select="replace(document-uri(/), concat($source, 'document/'), '')"/></j:string>
 			<xsl:if test="self::print">
 				<j:string name="type">print</j:string>
-			</xsl:if>					
+			</xsl:if>
 			<j:string name="base" value="{replace(@xml:base, $baseprefix, '')}"/>
 			<j:string name="text" value="{(//textTranscript/@uri, 'null')[1]}"/>
 			
 			<j:object name="sigils">
 				<!-- Yes, these aren't all real sigils ... -->
 				<j:string name="headNote" value="{metadata/headNote}"/>
-				<j:string name="classification" value="{if (metadata/classification = ('n.s.', 'none', '')) then '' else metadata/classification}"/>				
+				<j:string name="classification" value="{if (metadata/classification = ('n.s.', 'none', '')) then '' else metadata/classification}"/>
 				<xsl:if test="metadata/subrepository">
-					<j:string name="subRepository" value="{metadata/subRepository}"/>			
+					<j:string name="subRepository" value="{metadata/subRepository}"/>
 				</xsl:if>
 				<xsl:for-each select="metadata/idno[. != ('none', 'n.s.', 'n.a.')]">
 					<j:string name="idno_{@type}" value="{.}"/>
@@ -91,15 +92,19 @@
 				<j:string name='repository' value="{(metadata/repository, 'print')[1]}"/>
 			</j:object>
 			<j:array name="page">
-				<xsl:apply-templates select="//page"/>				
-			</j:array>			
-		</j:object>		
+				<xsl:apply-templates select="//page"/>
+			</j:array>
+		</j:object>
 	</xsl:template>
 
 	<xsl:template match="page">
 		<j:object>
 			<j:array name="doc">
-				<xsl:apply-templates select="descendant::docTranscript"/>				
+				<xsl:apply-templates select="descendant::docTranscript"/>
+				<xsl:if test="count(descendant::docTranscript) > 1">
+					<xsl:message select="concat('ATTN: ', document-uri(/), ' has multiple doc transcripts for a page: ', 
+						string-join(descendant::docTranscript/@uri, ', '))"/>
+				</xsl:if>
 			</j:array>
 			<j:bool name="empty" value="{
 				if (descendant::docTranscript[not(@uri)] and 

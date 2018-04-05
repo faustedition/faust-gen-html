@@ -138,10 +138,13 @@
                   <xsl:attribute name="type" select="local-name(/*)"/>
                   
                   <!-- Sigle, also bevorzugte idno (brauchen wir das noch?) -->
-                  <xsl:attribute name="f:sigil" select="$preferred-idno"/> 
+                  <xsl:attribute name="f:sigil" select="$preferred-idno"/>
+                  
+                  <xsl:attribute name="id" select="replace($idnos//f:idno[@type='faustedition']/@uri, '^.*/', '')"/>
                   
                   <!-- Nun die nach Rangfolge sortierten <idno>s. Siehe unten. -->
                   <xsl:copy-of select="$idnos" copy-namespaces="no"/>
+                                    
                   
                   <f:idno type="faust-doc-uri" rank="10000" uri="faust://xml/{$document}"><xsl:value-of select="concat('faust://xml/', $document)"/></f:idno>
                   <xsl:copy-of select="..//f:headNote" copy-namespaces="no"/>
