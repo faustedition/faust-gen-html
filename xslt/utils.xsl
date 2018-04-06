@@ -12,6 +12,7 @@
   <xsl:param name="docbase">/documentViewer?faustUri=faust://xml</xsl:param>
   <xsl:param name="printbase"/>
   <xsl:param name="documentURI"/>
+  <xsl:param name="sigil_t" select="//idno[@type='sigil_t']"/>
   <xsl:param name="type" select="data(/TEI/type)"/>
     
   <!-- 
@@ -46,7 +47,7 @@
   <xsl:function name="f:get-section-label">
     <xsl:param name="el"/>
     <xsl:variable name="secno" select="f:get-section-number($el)"/>
-    <xsl:variable name="basename" select="root($el)//idno[@type='fausttranscript']"/>
+    <xsl:variable name="basename" select="root($el)//idno[@type='sigil_t']"/>
     <xsl:value-of select="if ($secno != '') then concat($basename, '.', $secno) else $basename"/>
   </xsl:function>
   
@@ -229,10 +230,10 @@
   
   
   <xsl:function name="f:doclink">
-    <xsl:param name="document"/>
+    <xsl:param name="sigil_t"/>
     <xsl:param name="page"/>
     <xsl:param name="n"/>
-    <xsl:value-of select="concat($docbase, '/', $document, '&amp;view=print')"/>
+    <xsl:value-of select="concat('/documentViewer?sigil=', $sigil_t, '&amp;view=print')"/>
     <xsl:if test="$page">
       <xsl:value-of select="concat('&amp;page=', $page)"/>
     </xsl:if>

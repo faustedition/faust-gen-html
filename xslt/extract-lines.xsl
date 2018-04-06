@@ -51,6 +51,7 @@
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
       <xsl:attribute name="f:doc" select="$documentURI"/>
+      <xsl:attribute name="f:sigil_t" select="$sigil_t"/>
       <xsl:attribute name="f:href" select="$href"/>
       <xsl:attribute name="f:sigil" select="$sigil"/>      
       <xsl:variable name="pb" select="(preceding::pb[1] | descendant::pb[1])[1]"/>
@@ -59,7 +60,7 @@
         <xsl:attribute name="f:page" select="$pb/@f:docTranscriptNo"/>
       </xsl:if>      
       <xsl:attribute name="f:type" select="$type"/>
-      <xsl:attribute name="f:section" select="f:get-section-label(.)"/>
+      <xsl:attribute name="f:section" select="f:get-section-number(.)"/>
       <xsl:attribute name="f:headNote" select="id('headNote')"/>
       <xsl:apply-templates select="node()"/>
       <xsl:for-each select="following-sibling::*[@n = current()/@n and not(preceding-sibling::*[@n != current()/@n][. >> current()])]">

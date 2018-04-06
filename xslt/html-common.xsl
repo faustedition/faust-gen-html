@@ -362,7 +362,7 @@ in <xsl:value-of select="document-uri(/)"/>
     <a  
       class="{string-join((f:generic-classes(.), 'generated-text', 'pageno', 'doclink'), ' ')}"
       id="dt{$reference-pageno}"
-      href="{if ($type = 'archivalDocument') then f:doclink($documentURI, $docTranscriptNo, ()) else concat('#dt', $reference-pageno)}"> 
+      href="{if ($type = 'archivalDocument') then f:doclink($sigil_t, $docTranscriptNo, ()) else concat('#dt', $reference-pageno)}"> 
       <xsl:attribute name="title" select="$no-from-transcript"/>
       <xsl:sequence select="if ($type = 'print') then $no-from-transcript else $reference-pageno"/>
     </a>
