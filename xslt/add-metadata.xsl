@@ -76,6 +76,8 @@
 	<!-- Canonical URI for the document. Defaults to faust://xml/$documentURI -->
 	<xsl:param name="faustURI" select="concat('faust://xml/', $documentURI)"/>
 	
+	<xsl:param name="sigil_t" select="replace($documentURI, '.*/', '')"/>
+	
 	<xsl:param name="number"/>
 
 	<xsl:param name="depth">2</xsl:param>
@@ -151,6 +153,7 @@
 				</idno>
 			</xsl:for-each>
 
+			<idno typee="sigil_t" xml:id="sigil_t"><xsl:value-of select="$sigil_t"/></idno>
 			<idno type="sigil_n" xml:id="sigil_n"><xsl:value-of select="replace(lower-case($sigil), '[ .*]', '')"/></idno>						
 			<idno type="fausturi" xml:id="fausturi"><xsl:value-of select="$faustURI"/></idno>
 			<idno type="fausttranscript" xml:id="fausttranscript"><xsl:value-of select="if ($type='lesetext') then 'faust' else $transcriptBase"/></idno>

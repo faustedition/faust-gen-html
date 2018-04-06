@@ -52,11 +52,12 @@
       <p:variable name="type" select="/f:textTranscript/@type"/>
       <p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
       <p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
+      <p:variable name="sigil_t" select="/f:textTranscript/@sigil_t"/>
 
 
       <!-- Das Transkript wird geladen ... -->
       <p:load>
-        <p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $documentURI), $builddir)"
+        <p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir)"
         />
       </p:load>
       
@@ -79,6 +80,7 @@
           <p:pipe port="result" step="config"/>
         </p:input>
         <p:with-param name="documentURI" select="$documentURI"/>
+        <p:with-param name="sigil_t" select="$sigil_t"/>
         <p:with-param name="sigil" select="$sigil"/>
         <p:with-param name="sigil-type" select="$sigil-type"/>
         <p:with-param name="type" select="$type"/>
@@ -105,7 +107,7 @@
         <p:inline>
           <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
             <xsl:template match="f:variants">
-              <xsl:copy>
+              <xsl:copy copy-namespaces="no">
                 <xsl:namespace name="">http://www.tei-c.org/ns/1.0</xsl:namespace>
                 <xsl:namespace name="ge">http://www.tei-c.org/ns/geneticEditions</xsl:namespace>
                 <xsl:namespace name="svg">http://www.w3.org/2000/svg</xsl:namespace>
@@ -113,7 +115,7 @@
               </xsl:copy>
             </xsl:template>
             <xsl:template match="node()|@*">
-              <xsl:copy>
+              <xsl:copy copy-namespaces="no">
                 <xsl:apply-templates select="@*|node()"/>
               </xsl:copy>
             </xsl:template>

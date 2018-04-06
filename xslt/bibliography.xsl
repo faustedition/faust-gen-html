@@ -75,10 +75,10 @@
                     <xsl:otherwise>
                         <a class="md-document-ref" href="{$docbase}/{$docinfo/@document}" title="{$docinfo/headNote}">
                             <xsl:value-of select="$docinfo/@f:sigil"/>
-                        </a>								
+                        </a>
                     </xsl:otherwise>
                 </xsl:choose>
-            </xsl:for-each>		            
+            </xsl:for-each>
         </xsl:variable>
         <xsl:choose>
             <xsl:when test="$result">

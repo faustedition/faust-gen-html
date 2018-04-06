@@ -41,13 +41,15 @@
       <p:variable name="type" select="/f:textTranscript/@type"/>
       <p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
       <p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
-      <p:variable name="emended-version" select="resolve-uri($documentURI, resolve-uri('emended/', $builddir))"/>
+      <p:variable name="sigil_t" select="/f:textTranscript/@sigil_t"/>
+      <p:variable name="emended-version" select="resolve-uri(concat('emended/', $sigil_t, '.xml'), $builddir)"/>
       
       
-<!--      <cx:message>
+      
+    <cx:message>
         <p:with-option name="message" select="concat('Extracting paralipomena from ', $sigil, ' (', $emended-version, ')')"/>
       </cx:message>
--->    
+    
       
       <!-- Das Transkript wird geladen ... -->
       <p:load>

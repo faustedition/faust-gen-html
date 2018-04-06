@@ -45,6 +45,7 @@
 		<p:variable name="type" select="/f:textTranscript/@type"/>
 		<p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
 		<p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
+		<p:variable name="sigil_t" select="/f:textTranscript/@sigil_t"/>
 
 
 		<!--<cx:message>
@@ -54,10 +55,11 @@
 
 		<!-- Das Transkript wird geladen ... -->
 		<p:load>
-			<p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $documentURI), $builddir)"></p:with-option>			
+			<p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir)"></p:with-option>			
 		</p:load>
 
 		<f:apparatus name="apparatus">
+			<p:with-option name="basename" select="$sigil_t"/>
 			<p:with-param name="documentURI" select="$documentURI"/>
 			<p:with-param name="type" select="$type"/>
 		</f:apparatus>

@@ -98,9 +98,10 @@
 			<p:variable name="documentURI" select="/f:textTranscript/@document"/>
 			<p:variable name="type" select="/f:textTranscript/@type"/>
 			<p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
+			<p:variable name="sigil_t" select="/f:textTranscript/@sigil_t"/>
 			
 			<p:load>
-				<p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $documentURI), $builddir)"></p:with-option>
+				<p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir)"></p:with-option>
 			</p:load>
 			
 		
@@ -117,7 +118,7 @@
 			</p:choose>
 			
 			<p:store>
-				<p:with-option name="href" select="resolve-uri(concat('emended/', $documentURI), $builddir)"/>
+				<p:with-option name="href" select="resolve-uri(concat('emended/', $sigil_t, '.xml'), $builddir)"/>
 			</p:store>
 		</p:for-each>
 		<!-- Pipe through list of inputs -->
@@ -152,9 +153,9 @@
 		<p:identity><p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input></p:identity>
 		<p:for-each>
 			<p:iteration-source select="//f:textTranscript"/>
-			<p:variable name="documentURI" select="/f:textTranscript/@document"/>			
+			<p:variable name="sigil_t" select="/f:textTranscript/@sigil_t"/>			
 			<p:load>
-				<p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $documentURI), $builddir)"/>				
+				<p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir)"/>				
 			</p:load>
 		</p:for-each>
 		<p:xslt template-name="collection">
@@ -245,9 +246,9 @@
 			<p:iteration-source select="//f:textTranscript">
 				<p:pipe port="result" step="emended-version"/>
 			</p:iteration-source>
-			<p:variable name="documentURI" select="/f:textTranscript/@document"/>	
+			<p:variable name="sigil_t" select="/f:textTranscript/@sigil_t"/>	
 			<p:load>
-				<p:with-option name="href" select="resolve-uri(concat('emended/', $documentURI), $builddir)"/>
+				<p:with-option name="href" select="resolve-uri(concat('emended/', $sigil_t, '.xml'), $builddir)"/>
 			</p:load>
 		</p:for-each>		
 		<p:wrap-sequence wrapper="doc" name="wrap-emended"/>

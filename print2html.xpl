@@ -39,7 +39,7 @@
 			<p:pipe port="result" step="config"/>
 		</p:variable>
 		
-		<p:variable name="output-base" select="resolve-uri(//tei:idno[@type='fausttranscript'], $html)"></p:variable>		
+		<p:variable name="output-base" select="resolve-uri(concat('./', $basename), $html)"></p:variable>		
 		
 		<!-- Nun die eigentliche Transformation nach HTML. -->
 		<p:xslt name="html">

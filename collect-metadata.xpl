@@ -140,7 +140,7 @@
                   <!-- Sigle, also bevorzugte idno (brauchen wir das noch?) -->
                   <xsl:attribute name="f:sigil" select="$preferred-idno"/>
                   
-                  <xsl:attribute name="id" select="replace($idnos//f:idno[@type='faustedition']/@uri, '^.*/', '')"/>
+                  <xsl:attribute name="sigil_t" select="replace($idnos//f:idno[@type='faustedition']/@uri, '^.*/', '')"/>
                   
                   <!-- Nun die nach Rangfolge sortierten <idno>s. Siehe unten. -->
                   <xsl:copy-of select="$idnos" copy-namespaces="no"/>
@@ -207,7 +207,7 @@
                   <!-- Lesetext: -->
                   <textTranscript xmlns:f="http://www.faustedition.net/ns" uri="faust://lesetext/faust.xml"
                     href="{resolve-uri('lesetext/faust.xml', $builddir)}" document="lesetext/faust.xml"
-                    type="lesetext" f:sigil="Lesetext">
+                    type="lesetext" f:sigil="Lesetext" sigil_t="faust">
                     <idno type="faustedition">Lesetext</idno>
                   </textTranscript>
 
