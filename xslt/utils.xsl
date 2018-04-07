@@ -45,9 +45,9 @@
   </xsl:function>
   
   <xsl:function name="f:get-section-label">
-    <xsl:param name="el"/>
+    <xsl:param name="el" as="node()"/>
     <xsl:variable name="secno" select="f:get-section-number($el)"/>
-    <xsl:variable name="basename" select="root($el)//idno[@type='sigil_t']"/>
+    <xsl:variable name="basename" select="root($el)//idno[@type='sigil_t']"/>    
     <xsl:value-of select="if ($secno != '') then concat($basename, '.', $secno) else $basename"/>
   </xsl:function>
   
@@ -415,6 +415,13 @@
   <xsl:function name="f:normalize-print-chars" as="item()*">
     <xsl:param name="texts" as="item()*"/>
     <xsl:sequence select="for $text in $texts return f:normalize-print-chars_($text)"/>
+  </xsl:function>
+  
+  <xsl:function name="f:sigil-for-uri" as="xs:string">
+    <xsl:param name="sigil" as="xs:string"/>
+    <xsl:value-of select="if ($sigil = 'Lesetext' or $sigil = 'Text') 
+                          then 'faust' 
+                          else replace(normalize-space($sigil), '\s+', '_')"/>
   </xsl:function>
   
 </xsl:stylesheet>

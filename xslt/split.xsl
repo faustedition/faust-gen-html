@@ -23,7 +23,7 @@
 	
 	<!-- Dateiname/URI für die Ausgabedatei(en) ohne Endung. -->
 	<xsl:param name="output-base"
-		select="resolve-uri(//idno[@type='fausttranscript'][1], $html)"/>
+		select="resolve-uri(//idno[@type='sigil_t'][1], $html)"/>
 	
 	
 	<!-- Gesamttitel für die Datei. -->
@@ -402,7 +402,7 @@
 				<ul class="fa-ul">
 					<li>
 						<span class="fa-li fa fa-structure"/>					
-						<a href="../meta/{replace(//idno[@type='fausturi'][1], '^.*/(.*?)\.xml$', '$1')}">Metadaten</a>
+						<a href="../meta/{//idno[@type='sigil_t']}">Metadaten</a>
 					</li>
 				</ul>
 			</xsl:if>

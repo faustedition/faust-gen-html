@@ -453,7 +453,7 @@
 								</div>
 								<div class="pure-u-1-5">
 									<p>											
-										<a href="../print/{replace(//textTranscript[1]/@uri, '.xml', '')}"><i class="fa fa-variants"></i> Text</a>
+										<a href="../print/{//idno[@type='sigil_t']}"><i class="fa fa-variants"></i> Text</a>
 									</p>
 								</div>
 							</div>

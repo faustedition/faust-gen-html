@@ -48,7 +48,7 @@
 	</xsl:template>
 
 
-	<xsl:template match="/TEI" name="document">		
+	<xsl:template match="/TEI" name="document">			
 		<xsl:variable name="pages" as="item()*">
 			<xsl:for-each select="//pb[@f:docTranscriptNo != '']">				
 				<xsl:variable name="page" select="@f:docTranscriptNo"/>

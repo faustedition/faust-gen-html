@@ -159,7 +159,7 @@
                     
                     <!-- außerdem berechnen wir noch die faust://-URI aus der idno, wie in macrogenesis verwendet: -->
                     <xsl:attribute name="uri"
-                      select="concat('faust://document/', @type, '/', replace(normalize-space(.), '\s+', '_'))"/>
+                      select="concat('faust://document/', @type, '/', f:sigil-for-uri(.))"/>
                     
                     <!-- zu Debuggingzwecken die Rangfolge nach der auch sortiert wird: -->
                     <xsl:attribute name="rank" select="f:sigil-rank(@type)"/>
