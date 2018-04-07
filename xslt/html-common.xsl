@@ -167,9 +167,10 @@
 		<div class="{string-join(f:generic-classes(.), ' ')} generated-text appnote"
 			 title="{@quantity} Zeilen Lücke">
 			<xsl:comment><xsl:copy-of select="."/></xsl:comment>
+			<xsl:apply-templates/><!-- there might be a note -->
 			<xsl:for-each select="1 to xs:integer(round(@quantity))">
 				<br/>
-			</xsl:for-each>
+			</xsl:for-each>			
 		</div>
 	</xsl:template>
 	

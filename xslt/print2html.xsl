@@ -48,7 +48,8 @@
   </xsl:function>
   
   <!-- Die Behandlung der meisten Elemente ist relativ gleich: -->
-  <xsl:template match="*[f:hasvars(.)]" priority="-0.1">
+  <xsl:template match="*[f:hasvars(.)]" priority="-0.1" name="variant-line">
+    <xsl:param name="content"/>
     <!-- # Varianten aus dem variants-Folder auslesen: -->
     <xsl:variable name="varinfo" as="node()*" select="f:variant-info(@n)"/>
     <xsl:variable name="varcount" select="if ($varinfo) then $varinfo/@data-witnesses else 0"/>
@@ -95,8 +96,23 @@
 
       <!-- Zeilennummer als link, wird dann in textual-transcript.css weggestylt -->
       <xsl:call-template name="generate-lineno"/>
-      <xsl:apply-templates mode="#current"/>
+      <xsl:choose>
+        <xsl:when test="$content">
+          <xsl:copy-of select="$content"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates mode="#current"/>
+        </xsl:otherwise>
+      </xsl:choose>
     </xsl:element>
+  </xsl:template>
+  
+  <xsl:template match="space[@unit='lines'][f:hasvars(.)]" priority="5">
+    <xsl:call-template name="variant-line">
+      <xsl:with-param name="content">
+        <xsl:next-match/>
+      </xsl:with-param>
+    </xsl:call-template>
   </xsl:template>
 
   <!-- Critical apparatus -->
@@ -173,7 +189,7 @@
     <xsl:choose>
       <xsl:when test="@f:is-base">
         <strong>
-          <xsl:sequence select="$witness-link"/>          
+          <xsl:sequence select="$witness-link"/>
         </strong>
       </xsl:when>
       <xsl:otherwise>
