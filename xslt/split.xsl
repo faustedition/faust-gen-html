@@ -205,7 +205,7 @@
 		<xsl:variable name="basename" select="f:relativize($output-base, $filename)"/>
 		<xsl:value-of select="
 			if ($type = 'archivalDocument') 
-			then concat($docbase, '/', $documentURI, '&amp;section=', $basename,
+			then concat($docbase, $sigil_t, '&amp;section=', $basename,
 			if ($page) then concat('&amp;page=', $page) else '',
 			'&amp;view=', $view)
 			else $basename"/>		
