@@ -46,9 +46,9 @@
       
       
       
-    <cx:message>
+    <!--cx:message>
         <p:with-option name="message" select="concat('Extracting paralipomena from ', $sigil, ' (', $emended-version, ')')"/>
-      </cx:message>
+      </cx:message-->
     
       
       <!-- Das Transkript wird geladen ... -->

@@ -93,9 +93,9 @@
 				<p:pipe step="html" port="secondary"/>
 			</p:iteration-source>
 
-			<cx:message>
+			<!--cx:message>
 				<p:with-option name="message" select="concat('Saving ', p:base-uri())"/>
-			</cx:message>
+			</cx:message-->
 
 			<p:store name="store" method="xhtml" indent="true" include-content-type="true">
 				<p:with-option name="href" select="p:base-uri()"/>
