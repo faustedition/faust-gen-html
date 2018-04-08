@@ -421,7 +421,7 @@
     <xsl:param name="sigil" as="xs:string"/>
     <xsl:value-of select="if ($sigil = 'Lesetext' or $sigil = 'Text') 
                           then 'faust' 
-                          else replace(normalize-space($sigil), '\s+', '_')"/>
+                          else replace(replace(normalize-space($sigil), 'α', 'alpha'), '[^A-Za-z0-9.-]', '_')"/>
   </xsl:function>
   
 </xsl:stylesheet>
