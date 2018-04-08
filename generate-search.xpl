@@ -38,6 +38,7 @@
 		<p:iteration-source select="//f:textTranscript"/>
 		<p:variable name="transcriptFile" select="/f:textTranscript/@href"/>
 		<p:variable name="transcriptURI" select="/f:textTranscript/@uri"/>
+		<p:variable name="sigil_t" select="/f:textTranscript/@sigil_t"/>
 		<p:variable name="documentURI" select="/f:textTranscript/@document"/>
 		<p:variable name="type" select="/f:textTranscript/@type"/>
 		<p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
@@ -98,7 +99,7 @@
 		
 		<!-- erste Kopie: Unnormalisierte Zeichen zum Weiterarbeiten -->
 		<p:store>
-			<p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $documentURI), $builddir)"/>
+			<p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir)"/>
 		</p:store>
 		
 		<p:identity><p:input port="source"><p:pipe port="result" step="prepared-xml"/></p:input></p:identity>
@@ -116,7 +117,7 @@
 
 		<!-- zweite Kopie: Normalisierte Zeichen für die Suche -->
 		<p:store>
-			<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $documentURI), $builddir)"/>
+			<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $sigil_t, '.xml'), $builddir)"/>
 		</p:store>		
 		
 		<p:identity><p:input port="source"><p:pipe port="result" step="prepared-xml"/></p:input></p:identity>

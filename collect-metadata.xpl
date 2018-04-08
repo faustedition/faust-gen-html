@@ -140,7 +140,7 @@
                   <!-- Sigle, also bevorzugte idno (brauchen wir das noch?) -->
                   <xsl:attribute name="f:sigil" select="$preferred-idno"/>
                   
-                  <xsl:attribute name="id" select="replace($idnos//f:idno[@type='faustedition']/@uri, '^.*/', '')"/>
+                  <xsl:attribute name="sigil_t" select="replace($idnos//f:idno[@type='faustedition']/@uri, '^.*/', '')"/>
                   
                   <!-- Nun die nach Rangfolge sortierten <idno>s. Siehe unten. -->
                   <xsl:copy-of select="$idnos" copy-namespaces="no"/>
@@ -159,7 +159,7 @@
                     
                     <!-- außerdem berechnen wir noch die faust://-URI aus der idno, wie in macrogenesis verwendet: -->
                     <xsl:attribute name="uri"
-                      select="concat('faust://document/', @type, '/', replace(normalize-space(.), '\s+', '_'))"/>
+                      select="concat('faust://document/', @type, '/', f:sigil-for-uri(.))"/>
                     
                     <!-- zu Debuggingzwecken die Rangfolge nach der auch sortiert wird: -->
                     <xsl:attribute name="rank" select="f:sigil-rank(@type)"/>
@@ -207,7 +207,7 @@
                   <!-- Lesetext: -->
                   <textTranscript xmlns:f="http://www.faustedition.net/ns" uri="faust://lesetext/faust.xml"
                     href="{resolve-uri('lesetext/faust.xml', $builddir)}" document="lesetext/faust.xml"
-                    type="lesetext" f:sigil="Lesetext">
+                    type="lesetext" f:sigil="Lesetext" sigil_t="faust">
                     <idno type="faustedition">Lesetext</idno>
                   </textTranscript>
 

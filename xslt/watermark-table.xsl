@@ -15,7 +15,7 @@
 	<xsl:param name="builddir">../target</xsl:param>
 	<xsl:param name="builddir-resolved" select="$builddir"/>	
 	<xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
-	<xsl:param name="docbase">http://beta.faustedition.net/documentViewer?faustUri=faust://xml</xsl:param>
+	<xsl:param name="docbase">/document?sigil=</xsl:param>
 	
 	
 	<!-- 
@@ -177,7 +177,7 @@
 			<xsl:sort select="f:splitSigil(@sigil)[1]"/>
 			<xsl:sort select="f:splitSigil(@sigil)[2]"/>
 			<xsl:sort select="f:splitSigil(@sigil)[3]"/>
-			<a href="/documentViewer?faustUri={@faust-uri}&amp;view=structure"><xsl:value-of select="@sigil"/></a>
+			<a href="/document?sigil={f:sigil-for-uri(@sigil)}&amp;view=structure"><xsl:value-of select="@sigil"/></a>
 			<xsl:if test="position() != last()">, </xsl:if>
 		</xsl:for-each>							
 	</xsl:function>

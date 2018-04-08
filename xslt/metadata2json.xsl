@@ -125,7 +125,7 @@
 						<xsl:sort select="."/>
 						<j:string value="{replace(., $imgprefix, '')}"/>
 					</xsl:for-each>
-				</j:array>				
+				</j:array>
 			</xsl:if>
 		</j:object>
 	</xsl:template>

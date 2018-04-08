@@ -79,12 +79,12 @@
         <xsl:for-each select="tokenize($sigils, ';\s*')">
             <xsl:variable name="sigil" select="."/>
             <xsl:variable name="document" select="doc($transcript-list)//*[@f:sigil=$sigil]"/>
-            <xsl:variable name="uri" select="$document/f:idno[@type='faust-doc-uri']/text()"/>
+            <xsl:variable name="sigil_t" select="$document/@sigil_t"/>
             
             <xsl:choose>
                 <xsl:when test="not(doc-available($transcript-list))"><xsl:message select="concat('ERROR: Transcript list not found: ', $transcript-list)"/></xsl:when>
                 <xsl:when test="not($document/*)"><xsl:message select="concat('ERROR: Sigil ', $sigil, ' not found in ', $transcript-list)"></xsl:message></xsl:when>
-                <xsl:when test="not($uri) or normalize-space($uri) = ''"><xsl:message select="concat('ERROR: no URI found for ', $sigil, ', transcript ', $document)"/></xsl:when>
+                <xsl:when test="not($sigil_t) or normalize-space($sigil_t) = ''"><xsl:message select="concat('ERROR: no URI found for ', $sigil, ', transcript ', $document)"/></xsl:when>
             </xsl:choose>
             
             <xsl:choose>
@@ -93,8 +93,8 @@
                 </xsl:when>
                 <xsl:otherwise>
                     <a href="{if ($document/@type='print')
-                        then concat('/print/', replace(replace($document/@uri, '^.*/', ''), '\.xml$', ''))
-                        else concat('/documentViewer?faustUri=', $uri)}"
+                        then concat('/print/', $sigil_t)
+                        else concat('/document?sigil=', $sigil_t)}"
                         title="{$document/f:headNote}">
                         <xsl:value-of select="$sigil"/>
                     </a>											

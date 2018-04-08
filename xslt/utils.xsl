@@ -9,9 +9,10 @@
   <!-- should we split inside the current document or not? -->
   <xsl:param name="splitchars" select="5000"/>
   <xsl:param name="splitdivs" select="5"/>
-  <xsl:param name="docbase">/documentViewer?faustUri=faust://xml</xsl:param>
+  <xsl:param name="docbase">/document?sigil=</xsl:param>
   <xsl:param name="printbase"/>
   <xsl:param name="documentURI"/>
+  <xsl:param name="sigil_t" select="//idno[@type='sigil_t']"/>
   <xsl:param name="type" select="data(/TEI/type)"/>
     
   <!-- 
@@ -44,9 +45,9 @@
   </xsl:function>
   
   <xsl:function name="f:get-section-label">
-    <xsl:param name="el"/>
+    <xsl:param name="el" as="node()"/>
     <xsl:variable name="secno" select="f:get-section-number($el)"/>
-    <xsl:variable name="basename" select="root($el)//idno[@type='fausttranscript']"/>
+    <xsl:variable name="basename" select="root($el)//idno[@type='sigil_t']"/>    
     <xsl:value-of select="if ($secno != '') then concat($basename, '.', $secno) else $basename"/>
   </xsl:function>
   
@@ -229,10 +230,10 @@
   
   
   <xsl:function name="f:doclink">
-    <xsl:param name="document"/>
+    <xsl:param name="sigil_t"/>
     <xsl:param name="page"/>
     <xsl:param name="n"/>
-    <xsl:value-of select="concat($docbase, '/', $document, '&amp;view=print')"/>
+    <xsl:value-of select="concat('/document?sigil=', $sigil_t, '&amp;view=print')"/>
     <xsl:if test="$page">
       <xsl:value-of select="concat('&amp;page=', $page)"/>
     </xsl:if>
@@ -414,6 +415,13 @@
   <xsl:function name="f:normalize-print-chars" as="item()*">
     <xsl:param name="texts" as="item()*"/>
     <xsl:sequence select="for $text in $texts return f:normalize-print-chars_($text)"/>
+  </xsl:function>
+  
+  <xsl:function name="f:sigil-for-uri" as="xs:string">
+    <xsl:param name="sigil" as="xs:string"/>
+    <xsl:value-of select="if ($sigil = 'Lesetext' or $sigil = 'Text') 
+                          then 'faust' 
+                          else replace(replace(normalize-space($sigil), 'α', 'alpha'), '[^A-Za-z0-9.-]', '_')"/>
   </xsl:function>
   
 </xsl:stylesheet>

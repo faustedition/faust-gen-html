@@ -15,7 +15,7 @@
 	<xsl:param name="builddir">../target</xsl:param>
 	<xsl:param name="builddir-resolved" select="$builddir"/>	
 	<xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
-	<xsl:param name="docbase">http://beta.faustedition.net/documentViewer?faustUri=faust://xml</xsl:param>
+	<xsl:param name="docbase">/document?sigil=</xsl:param>
 	<xsl:param name="source-uri" select="document-uri(/)"/>
 	
 	
@@ -453,7 +453,7 @@
 								</div>
 								<div class="pure-u-1-5">
 									<p>											
-										<a href="../print/{replace(//textTranscript[1]/@uri, '.xml', '')}"><i class="fa fa-variants"></i> Text</a>
+										<a href="../print/{//idno[@type='sigil_t']}"><i class="fa fa-variants"></i> Text</a>
 									</p>
 								</div>
 							</div>

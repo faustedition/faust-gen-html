@@ -136,8 +136,8 @@
 					<xsl:variable 
 						name="target" 
 						select="if (@f:type='archivalDocument') 
-									then f:doclink(@f:doc, @f:page, @n) 
-									else concat($printbase, @f:section, '#l', @n)"/>						
+									then f:doclink(@f:sigil_t, @f:page, @n) 
+									else concat($printbase, @f:sigil_t, if (@f:section != '') then '.' else '', @f:section, '#l', @n)"/>						
 					<a class="sigil" href="{$target}" title="{@f:headNote}">
 						<xsl:value-of select="@f:sigil"/>
 					</a>

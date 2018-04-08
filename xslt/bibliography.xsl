@@ -11,7 +11,7 @@
     <xsl:param name="builddir-resolved" select="$builddir"/>	
     <xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
     <xsl:param name="idmap" select="doc($transcript-list)"/>
-    <xsl:param name="docbase">http://beta.faustedition.net/documentViewer?faustUri=faust://xml</xsl:param>
+    <xsl:param name="docbase">/document?sigil=</xsl:param>
     <xsl:param name="edition"></xsl:param>
     <xsl:param name="source-uri" select="document-uri(/)"/>
     <xsl:variable name="bibliography" select="doc('bibliography.xml')"/>
@@ -68,17 +68,17 @@
                 <xsl:variable name="docinfo" select="."/>
                 <xsl:choose>
                     <xsl:when test="$docinfo/@type='print'">
-                        <a class="md-document-ref" href="../meta/{replace($docinfo/@document, '.*/(.*?)\.xml', '$1')}" title="{$docinfo/headNote}">
+                        <a class="md-document-ref" href="../meta/{$docinfo/@sigil_t}" title="{$docinfo/headNote}">
                             <xsl:value-of select="$docinfo/@f:sigil"/>
                         </a>				
                     </xsl:when>                
                     <xsl:otherwise>
-                        <a class="md-document-ref" href="{$docbase}/{$docinfo/@document}" title="{$docinfo/headNote}">
+                        <a class="md-document-ref" href="{$docbase}/{$docinfo/@sigil_t}" title="{$docinfo/headNote}">
                             <xsl:value-of select="$docinfo/@f:sigil"/>
-                        </a>								
+                        </a>
                     </xsl:otherwise>
                 </xsl:choose>
-            </xsl:for-each>		            
+            </xsl:for-each>
         </xsl:variable>
         <xsl:choose>
             <xsl:when test="$result">

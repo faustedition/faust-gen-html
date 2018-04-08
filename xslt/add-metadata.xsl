@@ -140,6 +140,8 @@
 				</xsl:choose>
 			</xsl:variable>
 			
+			<xsl:variable name="sigil_t" select="f:sigil-for-uri($sigil)"/>
+			
 			<idno type="faustedition" xml:id="sigil"><xsl:value-of select="$sigil"/></idno>
 			<xsl:if test="$type != 'lesetext'">
 				<idno type="headNote"><xsl:value-of select="$metadata//f:headNote"/></idno>				
@@ -151,6 +153,7 @@
 				</idno>
 			</xsl:for-each>
 
+			<idno type="sigil_t" xml:id="sigil_t"><xsl:value-of select="$sigil_t"/></idno>
 			<idno type="sigil_n" xml:id="sigil_n"><xsl:value-of select="replace(lower-case($sigil), '[ .*]', '')"/></idno>						
 			<idno type="fausturi" xml:id="fausturi"><xsl:value-of select="$faustURI"/></idno>
 			<idno type="fausttranscript" xml:id="fausttranscript"><xsl:value-of select="if ($type='lesetext') then 'faust' else $transcriptBase"/></idno>

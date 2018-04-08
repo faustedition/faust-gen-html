@@ -39,7 +39,7 @@
     <p:for-each name="convert-metadata">
       <p:iteration-source select="//c:file[$debug or not(ends-with(@name, 'test.xml'))]"/>
       <p:variable name="filename" select="p:resolve-uri(/c:file/@name)"/>
-      <p:variable name="basename" select="replace(replace($filename, '.*/', ''), '.xml$', '')"/>
+      <p:variable name="basename" select="replace(doc($filename)//f:idno[@type='faustedition'], '\s+', '_')"/>
       <p:variable name="outfile" select="concat($metahtml, $basename, '.html')"/>
       
       
