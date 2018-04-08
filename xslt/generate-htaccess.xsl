@@ -23,7 +23,7 @@
                 '^.*/(.*).xml$', '$1')"/>
             <xsl:variable name="new" select="@sigil_t"/>
             <xsl:if test="$old != $new">                
-                <xsl:value-of select="concat('RewriteRule &quot;^', replace($old, '([]().[])', '\$1'), '(.*)&quot; &quot;', $new, '$1&quot; [R=301,L]&#10;')"/>
+                <xsl:value-of select="concat('RewriteRule &quot;^', replace($old, '([().])', '\\$1'), '(.*)&quot; &quot;', $new, '$1&quot; [R=301,L]&#10;')"/>
             </xsl:if>
         </xsl:for-each>
         </htaccess>
