@@ -9,7 +9,7 @@
   <!-- should we split inside the current document or not? -->
   <xsl:param name="splitchars" select="5000"/>
   <xsl:param name="splitdivs" select="5"/>
-  <xsl:param name="docbase">/documentViewer?faustUri=faust://xml</xsl:param>
+  <xsl:param name="docbase">/document?sigil=</xsl:param>
   <xsl:param name="printbase"/>
   <xsl:param name="documentURI"/>
   <xsl:param name="sigil_t" select="//idno[@type='sigil_t']"/>
@@ -233,7 +233,7 @@
     <xsl:param name="sigil_t"/>
     <xsl:param name="page"/>
     <xsl:param name="n"/>
-    <xsl:value-of select="concat('/documentViewer?sigil=', $sigil_t, '&amp;view=print')"/>
+    <xsl:value-of select="concat('/document?sigil=', $sigil_t, '&amp;view=print')"/>
     <xsl:if test="$page">
       <xsl:value-of select="concat('&amp;page=', $page)"/>
     </xsl:if>

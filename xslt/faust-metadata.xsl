@@ -15,7 +15,7 @@
 	<xsl:param name="builddir">../target</xsl:param>
 	<xsl:param name="builddir-resolved" select="$builddir"/>	
 	<xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
-	<xsl:param name="docbase">http://beta.faustedition.net/documentViewer?faustUri=faust://xml</xsl:param>
+	<xsl:param name="docbase">/document?sigil=</xsl:param>
 	<xsl:param name="source-uri" select="document-uri(/)"/>
 	
 	
