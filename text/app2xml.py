@@ -176,7 +176,7 @@ def parse_attrs(attr_spec: str) -> dict:
 # a reading, i.e. last part of app line
 READING = re.compile(r'\s*(?<text>.*?)\s*<i>(?<references>.*?)\s*(\[(type=|Typ\s+)(?<type>\w+\*?)\]\s*)?~?<\/i>')
 HANDS = {'G', 'Gö', 'Ri', 'Re'}
-DELIMITER = re.compile(r'(\s+|[:.]\s+|[;()«»„“‚‘,]\s+|<.*?>)')
+DELIMITER = re.compile(r'(\s+|\p{Cf}+|[:.]\s+|[;()«»„“‚‘,]\s+|<.*?>)')
 
 def append_text(element: etree.ElementBase, text: str):
     try:
