@@ -28,7 +28,7 @@
 				<a href="/text-app">Apparat</a>
 			</xsl:with-param>
 			<xsl:with-param name="content">				
-				<xsl:for-each-group select="//note[@type='textcrit']" group-by="descendant::rdg/@type">
+				<xsl:for-each-group select="//note[@type='textcrit']" group-by="tokenize(descendant::rdg/@type, '\s+')">
 					<xsl:sort select="current-grouping-key()"/>
 					<div>
 						<h2 id="{current-grouping-key()}"><xsl:value-of select="current-grouping-key()"/></h2>

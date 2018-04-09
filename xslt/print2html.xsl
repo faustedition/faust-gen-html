@@ -209,9 +209,24 @@
       </xsl:if>
       <xsl:if test="@type">
         <xsl:value-of select="if (position() = last()) then ' ' else ' '"/>   <!-- em space before last type -->
-        <a class="reading-type" href="app#{@type}" title="{@type}">
-          <xsl:value-of select="concat('(', f:format-rdg-type(@type), ')')"/>
-        </a>
+        <xsl:variable name="types" select="tokenize(@type, '\s+')"/>
+        <xsl:choose>
+          <xsl:when test="count($types) > 1">
+            <xsl:text>(</xsl:text>
+            <xsl:for-each select="$types">
+              <a class="reading-type" href="app#{.}" title="{.}">
+                <xsl:value-of select="f:format-rdg-type(.)"/>                
+              </a>
+              <xsl:if test="position() != last()">, </xsl:if>
+            </xsl:for-each>
+            <xsl:text>)</xsl:text>
+          </xsl:when>
+          <xsl:otherwise>
+            <a class="reading-type" href="app#{$types}" title="{$types}">
+                <xsl:value-of select="concat('(', f:format-rdg-type($types), ')')"/>
+            </a>            
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:if>
     </span>
   </xsl:template>
