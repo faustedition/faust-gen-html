@@ -648,6 +648,7 @@ Für diese braucht in der Transformation nichts zu geschehen, also auch keine Re
 
 # XML-Elemente, die keine besondere Behandlung benötigen
 * `TEI`
+* `ab`
 * `body`
 * `date`
 * `div`
