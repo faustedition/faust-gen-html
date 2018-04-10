@@ -32,6 +32,11 @@ Bsp.:
     <stage n="before_482f_b" rend="inline small">abgewendet.</stage>
 In allen derartigen Fällen (gut 170 Vorkommen) steht eine Bühnenanweisung in derselben Zeile mit der Sprecherbezeichnung.
 
+### (BA aus `speaker`)
+XML: `speaker[hi]` (evtl. folgt noch eine `stage` mit `inline`, dann gilt das im vorigen Abschnitt gesagte.
+
+Format: `C BA zentr. 2,3 / 0,0`.
+
 ### (Länge)
 Je nach Länge werden BAs unterschiedlich behandelt:
 * `BA zentr.` (für zentriert)
