@@ -565,7 +565,7 @@ Formatierung: vorläufig wie `Auftritt`.
 ## Figur
 (Hervorhebungen in BA) 
 
-XML: `stage/hi`, `speaker`
+XML: `stage/hi`, `speaker/hi`
 
 ## (Kolumnentitel)
 * entfallen bei Akt- und Szenenanfängen (= Absenkung)
@@ -597,17 +597,12 @@ Nicht durchgängig so kodiert, keine Umsetzung vorgesehen.
 XML: `l/emph`.
 
 ## Sprecher
-XML-Pattern:
-* `speaker[not(hi)]`
-* `speaker/hi`
+XML: `speaker[not(hi)]`
 
-Merke: Das Zeichenformat `Sprecher` kommt vor  
-* im Absatzformat `Sprecher`
-* in den Absatzformaten `BA ...`
+Formatierung: Zeichenformat `Sprecher`: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
 
-Formatierung:
-* Zeichenformat `Sprecher`: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
-* Zeichenformat `[No character style]` im Absatzformat `Sprecher` (`//speaker[hi]/text()`): normale Schriftgröße (nicht verkleinert) (siehe [#293](https://github.com/faustedition/faust-gen-html/issues/293))
+## ohne
+XML: `speaker[hi]/text()`
 
 ## Sprecher lateinisch
 (entfällt vorläufig)
