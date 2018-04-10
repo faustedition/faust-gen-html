@@ -184,7 +184,7 @@ XML:
 * `head/following-sibling::*[1][self::sp]/speaker[not(following-sibling::*[1][self::stage[matches(@rend,'inline')]])]`
 * `head/following-sibling::*[1][self::move]/following-sibling::*[1][self::sp]/speaker[not(following-sibling::*[1][self::stage[matches(@rend,'inline')]])]`
 
-`speaker` mit nochfolgendem `stage` mit `inlin##e` werden zu einem BA-Format (s.o.).
+`speaker` mit nochfolgendem `stage` mit `inline` werden zu einem BA-Format (s.o.).
 
 Format: `Sprecher nach Überschrift`
 
