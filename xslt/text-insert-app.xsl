@@ -11,6 +11,8 @@
     <xsl:import href="bibliography.xsl"/>
     <xsl:output method="xml" indent="no"/>
     <xsl:strip-space elements="app choice subst"/>
+    
+    <xsl:variable name="text" select="/"/>
        
     <!-- The apparatus specification in XML form -->
     <xsl:variable name="spec" select="doc('../text/app12norm_special-cases.xml'),
@@ -74,7 +76,7 @@
         </xsl:for-each>
         <xsl:copy copy-namespaces="no">
             <xsl:if test="$current-ins[@place='only-app'] and not(@xml:id)">
-                <xsl:attribute name="xml:id" select="concat('l', $current-line[1])"/>
+                <xsl:attribute name="xml:id" select="generate-id(.)"/>
             </xsl:if>
             <xsl:choose>
                 <xsl:when test="$current-ins[@place='attributes']">
@@ -138,7 +140,8 @@
                 <app>
                     <xsl:attribute name="from" separator=" " select="(
                         for $ins in f:ins[not(@place='only-app')] return concat('#', f:seg-id($ins)),
-                        for $ins in f:ins[@place='only-app'] return concat('#l', $ins/@n)
+                        for $ins in f:ins[@place='only-app'] return
+                            for $el in $text//*[@n = $ins/@n and f:hasvars(.)] return concat('#', generate-id($el))
                         )"/>                    
                     <xsl:apply-templates select="lem" mode="app"/>
                     <xsl:apply-templates select="rdg" mode="app"/>
