@@ -19,16 +19,11 @@ XML: `note type="textcrit"`.
 Output: Fußnotenartiges Konstrukt ohne Anmerkungsziffer.
 
 ## (BA)
+Die für die `BA`-Formate relevanten XML-Elemente sind `stage` (gut 700) und außerdem öfters `speaker` (gut 2100 Vorkommen). 
+Unter welchen Umständen `speaker` ins Spiel kommt, wird im folgenden erklärt.  
 
-### (allgemeines)
-
-Die für die `BA`-Formate relevanten XML-Elemente sind `speaker` (gut 2100 Vorkommen) und `stage` (gut 700).
-
-Nicht aus jedem `speaker` oder `stage`-Element ergibt sich ein Absatz des Formats `BA ...`.
-
-Deswegen lautet die Frage abgewandelt: Haben wir hier _eine_ BA oder _zwei_ BAs?
-
-Oft ergibt sich ein `BA ...`-Absatz aus der Kombination aus beiden.
+### (BA aus `speaker` und `stage`)
+Oft ergibt sich ein `BA ...`-Absatz aus der Kombination von `speaker` und `stage`.
 Nämlich dann, wenn Sprecherbezeichnung (`speaker`) und eine Bühnenanweisung zusammen in derselben Zeile stehen:
 * bezogen auf die `stage`: `stage[matches(@rend, 'inline')]`
 * bezogen auf den `speaker`: `speaker[following-sibling::*[1][self::stage[matches(@rend,'inline')]]]`
