@@ -304,13 +304,6 @@ Output:
 * Seitenwechsel
 * 3 Zeilenumbrüche am Anfang des Absatzes
 
-Formatierung: Abstand nach unten wie `BA ...` mit `Auftritt` (siehe 
-[#251 (comment)](https://github.com/faustedition/faust-gen-html/issues/251#issuecomment-364304733)).
-
-Dieser Abstand kommt zu dem Replikenabstand hinzu, den der jeweils folgende Absatz von sich aus hat:
-* `Sprecher` (`before_33_c` "Director") 
-* `BA`(`before_243_c` "Die drey Erzengel ...")
-
 ## Individualregeln für BAs
 
 ### (BAs vor 350)
