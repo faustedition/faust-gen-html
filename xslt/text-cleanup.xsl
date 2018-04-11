@@ -199,6 +199,9 @@
 		<xsl:value-of select="replace($prep, '^\.', '')"/>
 	</xsl:template>
 	
+	<xsl:template mode="pass2" match="speaker/hi/text()[position()=last()]|head/hi/text()[position()=last()]">
+		<xsl:value-of select="replace(., '\.$', '')"/>
+	</xsl:template>
 	
 	<!-- The following fixes are eventually to be implemented in all source files: -->
 	<xsl:template match="stage[not(@n='before_7503_a') and not(@n='before_12032_a')]/emph">
