@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="appxnorm.rnc" type="application/relax-ng-compact-syntax"?>
 <f:apparatus xmlns:f="http://www.faustedition.net/ns" xmlns="http://www.tei-c.org/ns/1.0">
-    <!--       2709[]{} <i>2709</i> <i>Die Vershälften bilden in 1_H.5 und S einen antilabischen Vers, in A</i>]  <i>B</i> <i>B.asind es zwei Verse;wie bei 3994–3995 (zwei Verse in B 1_H.1 C.1_12 C.3_12, ein Vers in 1_H.14 A B.a) ist von einem Satzfehler auszugehen. [type=2a]</i>-->
-    <app n="2709">
-        <f:ins id="l2709a" place="attributes">
+    <app>
+        <f:ins n="2709" id="l2709a" place="attributes">
             <l part="I"/>
         </f:ins>
-        <f:ins id="l2709b" place="attributes">
+        <f:ins n="2709" id="l2709b" place="attributes">
             <l part="F"/>
         </f:ins>
         <ref>2709</ref>
@@ -21,97 +20,50 @@
                     wit="A">A</wit> <wit wit="B.a">B.a</wit>) ist von einem Satzfehler
                 auszugehen.</note></rdg>
     </app>
-    <!--       before_5357_b[]{} <i>vor 5357</i> <speaker>Alecto</speaker> <i>2_I_H.0a</i>] <font name="Cambria Math">⟨</font><stage>Die Furien</stage> <i>erg G</i><font name="Cambria Math">⟩</font> <speaker>Alecto.</speaker> <i>2_H [type=2c*]</i>-->
-    <!--FIXED: before_5357_b[]{} <i>vor 5357</i> <speaker>Alecto</speaker> <i>2_I_H.0a</i>] ⟨<stage>Die Furien</stage> <i>erg G</i>⟩ <speaker>Alecto.</speaker> <i>2_H [type=2c*]</i>-->
-    <app n="before_5357_b">
+    <app>
         <f:ins n="before_5357_b" place="only-app"/>
         <ref>vor 5357</ref>
-        <!--<speaker>Alecto</speaker> <i>2_I_H.0a</i>-->
         <lem wit="2_I_H.0a">
             <speaker>Alecto</speaker>
             <note>
                 <wit wit="2_I_H.0a">2_I_H.0a</wit>
             </note>
         </lem>
-        <!-- aus py: -->
-        <!--<!-\- ⟨<stage>Die Furien</stage> <i>erg G</i>-\->
-        <rdg hand="G">⟨<stage>Die Furien</stage>
-            <note>erg <seg type="hand">G</seg></note></rdg>
-        <!-\-⟩ <speaker>Alecto.</speaker> <i>2_H [type=2c*]</i>-\->
-        <rdg wit="2_H" type="type_2c*">⟩ <speaker>Alecto.</speaker>
-            <note><wit wit="2_H">2_H</wit></note></rdg>-->
-        <!-- neu: -->
         <rdg wit="2_H" type="type_2c*">⟨<stage>Die Furien</stage>
             <note>erg <seg type="hand">G</seg></note>⟩ <speaker>Alecto.</speaker>
             <note><wit wit="2_H">2_H</wit></note></rdg>
     </app>
-    <!--       before_6086[Marschalck]{=} <i>vor 6086</i> <speaker>Marschalck</speaker> <i>2_H</i>] <speaker>Schatzmeister</speaker> <i>2_H :</i> <speaker>Marschalck</speaker> <i>G (</i><speaker>Schatzmeister</speaker> <i>ungestrichen) [type=7]</i>-->
-    <app n="before_6086">
+    <app>
         <f:replace n="before_6086">Marschalck</f:replace>
         <f:ins n="before_6086">Marschalck</f:ins>
         <ref>vor 6086</ref>
-        <!--<speaker>Marschalck</speaker> <i>2_H</i>-->
         <lem wit="2_H"><speaker>Marschalck</speaker>
             <note><wit wit="2_H">2_H</wit></note></lem>
-        <!-- aus py: -->
-        <!--<!-\- <speaker>Schatzmeister</speaker> <i>2_H :</i>-\->
-        <rdg wit="2_H"><speaker>Schatzmeister</speaker>
-            <note><wit wit="2_H">2_H</wit></note></rdg>
-        <!-\- <speaker>Marschalck</speaker> <i>G (</i>-\->
-        <rdg wit="2_H" hand="G"><speaker>Marschalck</speaker>
-            <note><seg type="hand">G</seg> (</note></rdg>
-        <!-\-<speaker>Schatzmeister</speaker> <i>ungestrichen) [type=7]</i>-\->
-        <rdg type="type_7"><speaker>Schatzmeister</speaker>
-            <note>ungestrichen)</note></rdg>-->
-        <!-- neu: -->
         <rdg wit="2_H"><subst hand="G"><del><speaker>Schatzmeister</speaker></del>
                 <note><wit wit="2_H">2_H</wit></note>
                 <add><speaker>Marschalck</speaker></add></subst>
             <note>(<quote>Schatzmeister</quote> ungestrichen) <seg type="hand">G</seg></note></rdg>
     </app>
-    <!--       before_6319_a[]{} <i>vor 6319</i> <speaker>Blondine</speaker> <i>2_H</i>] <speaker>Blondine</speaker> <font name="Cambria Math">⟨</font><stage>(zu Mephisto)</stage> <i>erg Ec</i><font name="Cambria Math">⟩</font> <i>2_H [type=6]</i>-->
-    <!--FIXED: before_6319_a[]{} <i>vor 6319</i> <speaker>Blondine</speaker> <i>2_H</i>] <speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage> <i>erg Ec</i>⟩ <i>2_H [type=6]</i>-->
-    <app n="before_6319_a">
+    <app>
         <f:ins n="before_6319_a" place="only-app"/>
         <ref>vor 6319</ref>
-        <!--<speaker>Blondine</speaker> <i>2_H</i>-->
         <lem wit="2_H"><speaker>Blondine</speaker>
             <note><wit wit="2_H">2_H</wit></note></lem>
-        <!-- aus py: -->
-        <!--<!-\- <speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage> <i>erg Ec</i>-\->
-        <rdg><speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage> <note>erg Ec</note></rdg>
-        <!-\-⟩ <i>2_H [type=6]</i>-\->
-        <rdg wit="2_H" type="type_6">⟩ <note><wit wit="2_H">2_H</wit></note></rdg>-->
-        <!-- neu: -->
         <rdg wit="2_H" type="type_6"><speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage>
             <note>erg Ec</note>⟩ <note><wit wit="2_H">2_H</wit></note></rdg>
     </app>
-    <!--FIXED: before_10811_a[$]{<stage n="before_10811_b" rend="inline">kauert nieder.</stage>} <i>vor 10811</i> <stage>kauert nieder</stage> <i>2_IV_H.8</i>] <i>erg Ec 2_H [type=2aa] [type=6]</i>-->
-    <app n="before_10811_a">
+    <app>
         <f:ins n="before_10811_a" place="after"><stage n="before_10811_b" rend="inline">kauert nieder.</stage></f:ins>
         <ref>vor 10811</ref>
-        <!--<stage>kauert nieder</stage> <i>2_IV_H.8</i>-->
         <lem wit="2_IV_H.8"><stage>kauert nieder</stage> <note><wit wit="2_IV_H.8">2_IV_H.8</wit></note></lem>
-        <!-- <i>erg Ec 2_H [type=2aa] [type=6]</i>-->
         <rdg wit="2_H" type="type_2aa type_6"> <note>erg Ec <wit wit="2_H">2_H</wit></note></rdg>
     </app>
-    <!--       10909[von Festen]{=} <i>10909</i> von Festen <i>2_H</i>] von Fasten <i>2_IV_H.20 :</i> vom Fasten <i>G</i> von Festen <i>2_H mglw aus</i> von Fasten <i>[type=2d]</i>-->
-    <app n="10909">
+    <app>
         <f:replace n="10909">von Festen</f:replace>
         <f:ins n="10909">von Festen</f:ins>
         <ref>10909</ref>
-        <!--von Festen <i>2_H</i>-->
         <lem wit="2_H">von Festen <note><wit wit="2_H">2_H</wit></note></lem>
-        <!-- von Fasten <i>2_IV_H.20 :</i>-->
         <rdg wit="2_IV_H.20">von Fasten <note><wit wit="2_IV_H.20">2_IV_H.20</wit></note></rdg>
-        <!-- vom Fasten <i>G</i>-->
-        <!-- aus py: -->
-        <!--<rdg wit="2_IV_H.20" hand="G">vom Fasten <note><seg type="hand">G</seg></note></rdg>
-        <!-\- von Festen <i>2_H mglw aus</i>-\->
-        <rdg wit="2_H">von Festen <note><wit wit="2_H">2_H</wit> mglw aus</note></rdg>
-        <!-\- von Fasten <i>[type=2d]</i>-\->
-        <rdg type="type_2d">von Fasten</rdg>-->
-        <!-- neu: -->
         <rdg wit="2_IV_H.20" hand="G">vom Fasten <note><seg type="hand">G</seg></note></rdg>
         <rdg wit="2_H" type="type_2d">von Festen <note>mglw aus <quote>von Fasten</quote>
                 <wit wit="2_H">2_H</wit></note></rdg>
