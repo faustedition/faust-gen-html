@@ -12,14 +12,14 @@ before_4634_b[gesammelt]{gesammt} <i>before_4634_b</i> gesammt <i>2_H</i>] gesam
 5025[Tauben]{Dauben} <i>5025</i> Dauben <i>none</i>] Tauben <i>2_H 2_I_H.0a</i> Dauben <i>C.1_12 C.3_12 [type=1a]</i>
 5107[verwandt]{verwandt.} <i>5107</i> verwandt. <i>2_H</i>] verwandt^ <i>2_I_H.0a [type=1b]</i>
 5146[Wunder seltsam]{Wunderseltsam} <i>5146</i> Wunderseltsam <i>2_H</i>] Wunder seltsam <i>2_I_H.0a [type=2aa]</i>
-5152|5153[verkündet|entzündet]{=} <i>5152–5153</i> verkündet … entzündet <i>2_I_H.0a</i>] entzündet … verkündet <i>2_H</i> entzündet … entzündet <i>2_I_H.0a :</i> verkündet … entzündet <i>vorschl Ri bill G [type=2d]</i>
+5152|5153[verkündet|entzündet]{=} <i>5152–5153</i> verkündet … entzündet <i>2_I_H.0a</i>] entzündet … verkündet <i>2_H</i> entzündet … entzündet <i>2_I_H.0a :</i> verkündet … entzündet <i>vorschl Ri bill G [type=2d*]</i>
 5182[sie]{dich} <i>5182</i> dich <i>2_I_H.12a</i>] sie <i>2_H 2_I_H.0a [type=2b]</i>
 5190[stillen]{stillen} <i>5190</i> stillen <i>2_I_H.0a</i>] stillen <i>2_H :</i> feinen <i>G [type=2c*]</i>
 5265[Luft]{Lust} <i>5265</i> Lust <i>2_I_H.15b</i>] Luft <i>2_I_H.15b :</i> Lust <i>G</i> Luft <i>2_H 2_I_H.0a [type=2b] :</i> Lust <i>Sc 2_H [type=6]</i>
 5282[kneipt]{kneipt} <i>5282</i> kneipt <i>2_I_H.0a</i>] kneipt <i>G 2_I_H.15b 2_H 2_I_H.0a</i> borgt <i>Ec 2_H [type=6]</i>
 before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2_I_H.0a [type=2aa]</i>
 5360[krauen.]{krauen} <i>5360</i> krauen^ <i>2_I_H.17 2_H</i>] krauen. <i>2_I_H.0a [type=1b]</i>
-5388[beging]{beging’} <i>5388</i> beging’ <i>2_I_H.0a</i>] beging <i>2_I_H.0a :</i> beging’ <i>Ri G [type=2d]</i>
+5388[beging]{beging’} <i>5388</i> beging’ <i>2_I_H.0a</i>] beging <i>2_I_H.0a :</i> beging’ <i>Ri G [type=2d*]</i>
 5441|5445|5449|5452[@lg|@lg|@lg|@lg]{rend="indented"|rend="indented"|rend="indented"|rend="indented"} <i>5441–5456</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt (vgl. Goethe an Reichel, 22. Januar 1828) [type=1c]</i>
 5484[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5484–5493</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt (vgl. zu 5441–5456) [type=1c]</i>
 5487[Gespenstische]{gespenstische} <i>5487</i> gespenstische <i>2_H</i>] Gespenstische <i>2_I_H.0a [type=2aa]</i>
@@ -51,8 +51,8 @@ before_6377_b[]{} <i>vor 6377</i> Dämmernde <i>none</i>] Dammernde <i>2_H [type
 6384[beqeumlichstens]{bequemlichstens} <i>6384</i> bequemlichstens <i>none</i>] beqeumlichstens <i>2_H [type=1a]</i>
 6447[Saulenschaft]{Säulenschaft} <i>6447</i> Säulenschaft <i>none</i>] Saulenschaft <i>2_H [type=1a]</i>
 before_6479_a[tritt auf]{=} <i>vor 6479</i> tritt auf <i>2_H</i>] hervortretend <i>Ec 2_H [type=6]</i>
-6552[Stand]{Stand} <i>6552</i> Stand <i>2_H</i>] Stand <i>undeutlich 2_I_H.48 2_I_H.60</i> Strand <i>konj. Lucä und Koch emend. Erich Schmidt [type=3]</i>
-before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückzieht <i>konj. Fiedler [type=3]</i>
+6552[Stand]{Stand} <i>6552</i> Stand <i>2_H</i>] Stand <i>undeutlich 2_I_H.48 2_I_H.60</i> Strand <i>konj. Lucä und Koch emend. Erich Schmidt [type=3*]</i>
+before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückzieht <i>konj. Fiedler [type=3*]</i>
 6654[Des Meisters]{=} <i>6654</i> Des Meisters <i>2_H</i>] Selbst Faustus <i>Ec 2_H [type=6]</i>
 6717[]{} <i>6717–6718</i> <l>Damals schien er zwar gewandt,</l> <l>Als ich ihn noch nicht verstand.</l> <i>Ec 2_H [type=6]</i>
 6832[Willkomm̄en]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkomm̄en <i>2_H [type=1a]</i>
@@ -91,7 +91,7 @@ before_8924f[Phorkyas]{=} <i>before_8924f</i> <speaker>Phorkyas</speaker> <i>C.1
 9012[verständger]{=} <i>9012</i> verständger <i>C.1_4</i>] verständ’ger <i>C.2α_4 C.3_4 [type=4a]</i>
 9029[ein,]{=} <i>9029</i> ein, <i>C.1_4</i>] ein. <i>C.2α_4 C.3_4 [type=4a]</i>
 9061[deine]{die} <i>9061</i> die <i>2_H</i>] deine <i>C.1_4 [type=2aa]</i>
-9076[In tiefem]{=} <i>9076</i> In tiefem <i>C.1_4</i>] Im tiefen <i>2_III_H.2:1</i> In tiefen <i>2_III_H.3a:1 2_H :</i> In tiefem <i>G [type=2d]</i>
+9076[In tiefem]{=} <i>9076</i> In tiefem <i>C.1_4</i>] Im tiefen <i>2_III_H.2:1</i> In tiefen <i>2_III_H.3a:1 2_H :</i> In tiefem <i>G [type=2d*]</i>
 9104[verheissener]{=} <i>9104</i> verheissener <i>C.1_4</i>] verheißener <i>C.2α_4 C.3_4 [type=4a]</i>
 9115[Schrittes]{Schritts} <i>9115</i> Schritts <i>2_H</i>] Schrittes <i>C.1_4</i> <i>[type=2aa]</i>
 9140[ich,]{=} <i>9140</i> ich, <i>C.1_4</i>] ich. <i>C.2α_4 C.3_4 [type=4a]</i>
@@ -123,7 +123,7 @@ after_9807[Höhe.]{=} <i>nach 9807</i> Höhe.] Höhe). <i>C.1_4</i> Höhe.) <i>C
 before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C.2α_4 C.3_4</i>] Chorführerin <i>C.1_4 [type=4b]</i>
 10001[Vogelsingen]{Vogelsängen} <i>10001</i> Vogelsängen <i>2_H</i>] Vogelsingen <i>C.1_4 [type=2aa]</i>
 10030[ins]{=} <i>10030</i> ins <i>C.1_4</i>] in’s <i>C.2α_4 C.3_4 [type=4a]</i>
-before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>konj. Erich Schmidt [type=3]</i>
+before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>konj. Erich Schmidt [type=3*]</i>
 before_10067_a[alsbald]{also bald} <i>before_10067_a</i> also bald <i>2_IV_H.3</i>] alsbald <i>2_H [type=2aa]</i>
 10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074 eingerückt 2_H [type=1c]</i>
 10150[ewigen-]{ewigen} <i>10150</i> ewigen <i>2_IV_H.2</i>] ewigen- <i>2_H [type=1b]</i>
