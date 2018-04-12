@@ -30,7 +30,7 @@ App = ## A single apparatus entry contains text operations to perform on the rea
         Hand?,
         Wit?,
         ## reading type in a form like type_2aa
-        attribute type { xsd:string { pattern = "type_\w+\*?"} }?,
+        attribute type { xsd:string { pattern = "(type_\w+\*?)(\s+type_\w+\*?)*"} }?,
        	AppXmlFragment
       }*
     }*
