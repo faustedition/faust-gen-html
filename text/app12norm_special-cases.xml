@@ -24,8 +24,12 @@
         <f:ins n="before_4613_c" place="only-app"/>
         <ref>vor 4613</ref>
         <lem wit="2_H">Der <gap reason="ellipsis"/> Acten <note><wit>2_H</wit></note></lem>
-        <rdg wit="2_H" type="type_7"><note>davor</note> <head>Faust.</head> <wit>2_H</wit></rdg>
-        <rdg wit="2_H" type="type_6"><note>danach</note> <head>(1831.)</head> <note>erg Ec <wit>2_H</wit></note></rdg>
+        <rdg wit="2_H" type="type_7"><note>davor</note>
+            <head>Faust.</head>
+            <wit>2_H</wit></rdg>
+        <rdg wit="2_H" type="type_6"><note>danach</note>
+            <head>(1831.)</head>
+            <note>erg Ec <wit>2_H</wit></note></rdg>
     </app>
     <app>
         <f:ins n="before_5357_b" place="only-app"/>
@@ -60,10 +64,38 @@
             <note>erg Ec</note>⟩ <note><wit wit="2_H">2_H</wit></note></rdg>
     </app>
     <app>
-        <f:ins n="before_10811_a" place="after"><stage n="before_10811_b" rend="inline">kauert nieder.</stage></f:ins>
+        <f:ins n="after_6358" place="only-app"/>
+        <ref>nach 6358</ref>
+        <lem/>
+        <rdg wit="2_H" type="type_6"><speaker>Page.</speaker>
+            <l n="6359">Ich bin verliebt, man hält mich nicht für voll.</l>
+            <speaker>Meph.</speaker>
+            <stage rend="inline">(bey Seite)</stage>
+            <l n="6360">Ich weiß nicht mehr wohin ich hören soll.</l>
+            <note>in Lücke erg Ec <wit>2_H</wit></note></rdg>
+    </app>
+    <app>
+        <f:ins n="before_6360_a" place="only-app"/>
+        <ref>vor 6360–6359</ref>
+        <lem/>
+        <rdg wit="2_H" type="type_6"><note>tilgt Ec 2_H</note></rdg>
+    </app>
+    <app>
+        <f:ins n="6717" place="only-app"/>
+        <ref>6717–6718</ref>
+        <lem/>
+        <rdg wit="2_H" type="type_6"><l n="6717">Damals schien er zwar gewandt,</l> <l n="6718">Als
+                ich ihn noch nicht verstand.</l>
+            <note>Ec <wit>2_H</wit></note></rdg>
+    </app>
+    <app>
+        <f:ins n="before_10811_a" place="after"><stage n="before_10811_b" rend="inline">kauert
+                nieder.</stage></f:ins>
         <ref>vor 10811</ref>
-        <lem wit="2_IV_H.8"><stage>kauert nieder</stage> <note><wit wit="2_IV_H.8">2_IV_H.8</wit></note></lem>
-        <rdg wit="2_H" type="type_2aa type_6"> <note>erg Ec <wit wit="2_H">2_H</wit></note></rdg>
+        <lem wit="2_IV_H.8"><stage>kauert nieder</stage>
+            <note><wit wit="2_IV_H.8">2_IV_H.8</wit></note></lem>
+        <rdg wit="2_H" type="type_2aa type_6">
+            <note>erg Ec <wit wit="2_H">2_H</wit></note></rdg>
     </app>
     <app>
         <f:replace n="10909">von Festen</f:replace>
