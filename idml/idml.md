@@ -337,7 +337,7 @@ Umsetzung genau analog zu [BAs vor 350](https://github.com/faustedition/faust-ge
 ### (Vers nach BA vor before_4412)
 (s.o. zu `before_4412`)
 
-XML: `l[@n='4412']
+XML: `l[@n='4412']`
 
 Format: `Vers Einrückung Abstand`
 
