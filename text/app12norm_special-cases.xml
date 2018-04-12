@@ -30,7 +30,10 @@
                 auszugehen.</note></rdg>
     </app>
     <app>
-        <f:ins n="3356" place="only-app"/>
+        <f:replace n="3356">Und ich, der Gottverhaßte, hatte nicht genug,</f:replace>         
+        <f:ins n="3356">Und ich, der Gottverhaßte,</f:ins>
+        <f:ins n="3356" place="attributes"><l n="3356"/></f:ins>
+        <f:ins n="3356" place="after"><l n="3357">Hatte nicht genug</l></f:ins>
         <ref>3356–3357</ref>
         <lem/>
         <rdg wit="1_H.5 S" type="type_2b"><note>In <wit>1_H.5</wit> bilden 3356–3357 zwei Verse: <quote>
