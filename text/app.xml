@@ -1084,7 +1084,15 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <replacement-string/>
                         </string-pair>
                         <string-pair>
+                            <search-string>\?abr</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
                             <search-string>+sh</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>-sh</search-string>
                             <replacement-string/>
                         </string-pair>
                         <string-pair>
@@ -1164,7 +1172,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <replacement-string>2^_H</replacement-string>
                         </string-pair>
                         <string-pair>
-                            <search-string>{{i}}{[}\H{]} \[</search-string>
+                            <search-string>{{i}}{[}\H{]} </search-string>
                             <replacement-string>2^_H</replacement-string>
                         </string-pair>
                         <string-pair>
@@ -1201,6 +1209,10 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                     <exchange-table>
                         <string-pair>
                             <search-string>{{i}}{[}\I{]}^_H.{#}</search-string>
+                            <replacement-string>2^_I</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string> {[}\I{]}^_H.{#}</search-string>
                             <replacement-string>2^_I</replacement-string>
                         </string-pair>
                         <string-pair>
