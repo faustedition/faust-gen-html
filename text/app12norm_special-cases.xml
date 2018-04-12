@@ -2,10 +2,10 @@
 <?xml-model href="appxnorm.rnc" type="application/relax-ng-compact-syntax"?>
 <f:apparatus xmlns:f="http://www.faustedition.net/ns" xmlns="http://www.tei-c.org/ns/1.0">
     <app>
-        <f:ins n="2709" id="l2709a" place="attributes">
+        <f:ins id="l2709a" place="attributes">
             <l part="I"/>
         </f:ins>
-        <f:ins n="2709" id="l2709b" place="attributes">
+        <f:ins id="l2709b" place="attributes">
             <l part="F"/>
         </f:ins>
         <ref>2709</ref>
