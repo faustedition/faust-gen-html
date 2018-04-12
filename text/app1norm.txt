@@ -277,7 +277,6 @@ before_3978[Halbes]{halbes} <i>vor 3978</i> <speaker>Hexenmeister</speaker>^ hal
 4008[giebt]{=} <i>4008</i> giebt <i>1_H.14 A</i>]   gibt <i>B B.a [type=4a]</i>
 4031[gemacht.]{=} <i>4031</i> gemacht. <i>1_H.14 A</i>]   gemacht; <i>B B.a [type=4a]</i>
 4046[blos]{=} <i>4046</i> blos <i>1_H.14 A</i>]   bloß <i>B B.a [type=4a]</i>
-4051[]{} <i>4051</i>] Verflucht Geschnarr! Man muß sich dran gewöhnen. <i>A B B.a 1_H.1 C.1_12 C.3_12</i>]   <sp><speaker>Faust.</speaker><l n=4051_I>Verflucht Geschnarr!</l></sp><sp><speaker>Mephistopheles.</l></speaker><l n=4051_F>Man muß sich dran gewöhnen.</l></sp> <i>konj. Resenhöfft [type=3*]  </i>
 4054[aufs neue]{=} <i>4054</i> aufs neue <i>1_H.14 A</i>]   auf’s Neue <i>B B.a [type=4a]</i>
 4058[schwazt]{=} <i>4058</i> schwazt <i>1_H.14 A</i>]   schwatzt <i>B B.a [type=4a]</i>
 4059[bessers]{=} <i>4059</i> bessers <i>1_H.14 A</i>]   Bessers <i>B B.a [type=4a]</i>
