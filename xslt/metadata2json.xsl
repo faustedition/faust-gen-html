@@ -66,7 +66,7 @@
 
 	<xsl:template name="document">
 		<j:object sigil="{//f:idno[@type='faustedition']}">
-			<j:string name="sigil" value="{replace(normalize-space(//f:idno[@type='faustedition']), '\s+', '_')}"/>
+			<j:string name="sigil" value="{f:sigil-for-uri(//f:idno[@type='faustedition'])}"/>
 			<j:string name="document"><xsl:value-of select="replace(document-uri(/), concat($source, 'document/'), '')"/></j:string>
 			<xsl:if test="self::print">
 				<j:string name="type">print</j:string>
