@@ -30,6 +30,19 @@
                 auszugehen.</note></rdg>
     </app>
     <app>
+        <f:ins n="3356" place="only-app"/>
+        <ref>3356–3357</ref>
+        <lem/>
+        <rdg wit="1_H.5 S" type="type_2b"><note>In <wit>1_H.5</wit> bilden 3356–3357 zwei Verse: <quote>
+                    <l n="3356">Und ich der Gott verhasste</l>
+                    <l n="3357">Hatte nicht genug</l>
+                </quote>, in <wit>S</wit> wurde daraus aus Versehen des Abschreibers oder des
+                Setzers nur ein Vers: <quote>
+                    <l n="3356 3357">Und ich, der Gottverhaßte, hatte nicht genug,</l>
+                </quote></note>
+        </rdg>
+    </app>
+    <app>
         <f:ins n="3551" place="only-app"/>
         <ref>3550–3551</ref>
         <lem/>

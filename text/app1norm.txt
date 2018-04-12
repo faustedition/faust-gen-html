@@ -220,7 +220,6 @@ before_3206f_c[zurück gebend]{=} <i>vor 3206</i> zurück gebend <i>S A</i>]   
 3286[Ahndungsdrang]{=} <i>3286</i> Ahndungsdrang <i>S A</i>]   Ahnungsdrang <i>B B.a [type=4a]</i>
 3289[alles]{=} <i>3289</i> alles <i>S A</i>]   Alles <i>B B.a [type=4a]</i>
 3319[Tagelang]{=} <i>3319</i> Tagelang <i>A B</i>]   Taglang <i>S</i> Tage lang <i>B.a [type=2a*]</i>
-3356[]{} <i>3356–3357</i>] <i>In 1_H.5 bilden 3356–3357 zwei Verse, in S wurde daraus aus Versehen des Abschreibers oder des Setzers nur ein Vers:</i> Und ich, der Gottverhaßte, hatte nicht genug, <i>[…]. [type=2b]  </i>
 3369[er]{=} <i>3369</i> er <i>S A B B.a</i>]   es <i>1_H.5 emend. Resenhöfft [type=2b*]</i>
 3372[abgeschmackters]{=} <i>3372</i> abgeschmackters <i>S A</i>]   Abgeschmackters <i>B B.a [type=4a]</i>
 3395[Sein’]{=} <i>3395</i> Sein’ <i>S A B B.a</i>]   Sein <i>1_H.5 1_H.7 1_H.11 konj. Schröer [type=2b*]  </i>
