@@ -1,5 +1,4 @@
-﻿before_4613_c[]{} <i>vor 4613</i> Der … Acten <i>2_H</i>] <i>davor</i> <head>Faust.</head> <i>[type=7] danach</i> <head>(1831.)</head> <i>erg Ec 2_H [type=6]</i>
-4625[erlebtem]{verlebtem} <i>4625</i> verlebtem <i>2_H</i>] erlebtem <i>2_I_H.0a [type=2aa]</i>
+﻿4625[erlebtem]{verlebtem} <i>4625</i> verlebtem <i>2_H</i>] erlebtem <i>2_I_H.0a [type=2aa]</i>
 before_4634_b[gesammelt]{gesammt} <i>before_4634_b</i> gesammt <i>2_H</i>] gesammelt <i>2_I_H.0a [type=2aa]</i>
 4679[Lebenspulse]{Lebens Pulse} <i>4679</i> Lebens Pulse <i>2_H</i>] Lebenspulse <i>2_I_H.0a [type=2aa]</i>
 4680[Dämmmerung]{Dämmerung} <i>4680</i> Dämmerung <i>2_H</i>] Däm̄merung <i>2_I_H.0a [type=1a]</i>

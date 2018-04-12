@@ -21,6 +21,13 @@
                 auszugehen.</note></rdg>
     </app>
     <app>
+        <f:ins n="before_4613_c" place="only-app"/>
+        <ref>vor 4613</ref>
+        <lem wit="2_H">Der <gap reason="ellipsis"/> Acten <note><wit>2_H</wit></note></lem>
+        <rdg wit="2_H" type="type_7"><note>davor</note> <head>Faust.</head> <wit>2_H</wit></rdg>
+        <rdg wit="2_H" type="type_6"><note>danach</note> <head>(1831.)</head> <note>erg Ec <wit>2_H</wit></note></rdg>
+    </app>
+    <app>
         <f:ins n="before_5357_b" place="only-app"/>
         <ref>vor 5357</ref>
         <lem wit="2_I_H.0a">
