@@ -126,7 +126,6 @@ before_2320_a[bei]{bey} <i>vor 2320</i> bey <i>1_H.5 S</i>]   bei <i>A D.1</i> 
 2321[euch,]{=} <i>2321</i> euch, <i>S A B.a</i>]   euch^ <i>B [Typ 4c]</i>
 2322[giebt’]{=} <i>2322</i> giebt’s <i>A D.1</i>]  gibt’s <i>S B B.a [type=4a]</i>
 before_2337_a[Hexenküche]{Hexenküche.} <i>nach 2336</i> Hexenküche. <i>S</i>]   Hexenküche^ <i>A</i> Hexenküche. <i>D.1 </i> Hexenküche. <i>B B.a  [type=1c]</i>
-2348[Doch]{Dich} <i>2348</i> Dich <i>S</i>]  <i>1_H.2</i>  Doch <i>A B B.a 1_H.1 C.1_12 C.3_12 [type=2c]</i>
 2348[verjüngen,]{=} <i>2348</i> verjüngen, <i>S A B.a</i>]   verjüngen^ <i>B [Typ 4c]</i>
 2353[aufs]{=} <i>2353</i> aufs <i>A</i>]   auf’s <i>S</i> auf’s <i>B B.a [type=4a]</i>
 2359[ärndest]{=} <i>2359</i> ärndest <i>A</i>]   erndest <i>S</i>  ärntest <i>B</i>  erntest <i>B.a [type=4a]</i>

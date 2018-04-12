@@ -2,6 +2,15 @@
 <?xml-model href="appxnorm.rnc" type="application/relax-ng-compact-syntax"?>
 <f:apparatus xmlns:f="http://www.faustedition.net/ns" xmlns="http://www.tei-c.org/ns/1.0">
     <app>
+        <f:replace n="2348">Doch</f:replace>
+        <f:ins n="2348">Dich</f:ins>
+        <ref>2348</ref>
+        <lem wit="S 1_H.2">Dich <note><wit>S</wit>
+                <wit>1_H.2</wit></note></lem>
+        <rdg wit="A B B.a 1_H.1 C.1_12 C.3_12" type="type_2a type_2c">Doch
+                    <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
+    </app>
+    <app>
         <f:ins id="l2709a" place="attributes">
             <l part="I"/>
         </f:ins>
