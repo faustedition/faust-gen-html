@@ -153,7 +153,7 @@ before_2475_b[Mephistopheles]{=} <i>vor 2475</i> <speaker>Mephistopheles^  <nC><
 before_2514_a[Gebärde]{Geberde} <i>vor 2514</i> Geberde <i>S</i>]   Gebärde <i>A B.a</i> Geberde<i> B [type=2a]</i>
 2529[beste]{=} <i>2529</i> beste <i>S A</i>]   Beste <i>B B.a [type=4a]</i>
 2531[gieb]{=} <i>2531</i> gieb <i>A</i>]   gib <i>S </i> gib <i>B B.a [type=4a]</i>
-<p><hi> before_2532_a[Hexe]{=} <i>vor 2532</i> <speaker>Hexe</speaker>^ <i>S</i>]  <speaker>Hexe.</speaker> <i>A D.1</i> <speaker>Hexe</speaker>^ <i>B B.a  [type=1c]</i></hi>
+before_2532_a[Hexe]{=} <i>vor 2532</i> <speaker>Hexe</speaker>^ <i>S</i>]  <speaker>Hexe.</speaker> <i>A D.1</i> <speaker>Hexe</speaker>^ <i>B B.a  [type=1c]</i>
 2540[]{} <i>2540–2552</i> <i>Die in allen Drucken fehlende Einrückung der Verse 2540–2552 gegenüber der Einrückung der Verse 2567–2572 geht vermutlich auf eine Unregemäßigkeit in der Druckvorlage zu S zurück; in WA sind sie eingerückt. [type=1c*]</i>]
 before_2583_a[Hexe]{=} <i>vor 2583</i> <speaker>Hexe</speaker>^ <i>S</i>]   <speaker>Hexe.</speaker> <i>A D.1</i> <speaker>Hexe</speaker>^ <i>B B.a  [type=1c]</i>
 2592[Würkung]{Wirkung} <i>2592</i> Wirkung <i>S</i>]   Würkung <i>A D.1</i> Wirkung<i> B B.a</i> <i>[type=2a]</i>
