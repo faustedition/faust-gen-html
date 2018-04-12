@@ -21,6 +21,23 @@
                 auszugehen.</note></rdg>
     </app>
     <app>
+        <f:ins n="3551" place="only-app"/>
+        <ref>3550–3551</ref>
+        <lem/>
+        <rdg wit="1_H.5" type="type_2d*"><note>In <wit>1_H.5</wit> bilden 3550–3551 einen
+                antilabischen Vers:</note>
+            <quote>
+                <sp>
+                    <speaker n="before_3550">Gretgen</speaker>
+                    <l n="3550" part="I">Ach</l>
+                </sp>
+                <sp>
+                    <speaker n="before_3551">Liesgen</speaker>
+                    <l n="3551" part="F">Ja so ist’s ihr endlich gangen</l></sp>
+            </quote>
+        </rdg>
+    </app>
+    <app>
         <f:ins n="4051" place="only-app"/>
         <ref>4051</ref>
         <lem/>
