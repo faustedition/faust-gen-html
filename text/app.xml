@@ -45,6 +45,7 @@
             >file:///C:/Users/bruening.FDH-FFM/github/faustedition/faust-gen-html/text/app2norm.txt</variable>
         <variable type="scratch-file" name="head"/>
         <variable type="scratch-file" name="typ1a"/>
+        <variable type="scratch-file" name="typ1a0"/>
         <variable type="scratch-file" name="typ1b"/>
         <variable type="scratch-file" name="typ1b0"/>
         <variable type="scratch-file" name="typ1c"/>
@@ -210,6 +211,22 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                     <text-contains>
                         <search-table>
                             <search-string>{s:ty}{0} {0}n1\a</search-string>
+                            <search-string>Textgrundlage: </search-string>
+                        </search-table>
+                    </text-contains>
+                </select>
+            </examine-text>
+        </pass>
+        <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
+    </transform>
+    <transform source="app1p" destination="app1sort" option="append" save-params="typ1a0">
+        <insert-at-start>{{p}}{{font size="12"}}Typ 1a\*{{/font}}{{/p}}</insert-at-start>
+        <pass>
+            <examine-text>
+                <select>
+                    <text-contains>
+                        <search-table>
+                            <search-string>{s:ty}{0} {0}n1\a0</search-string>
                             <search-string>Textgrundlage: </search-string>
                         </search-table>
                     </text-contains>
@@ -894,6 +911,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
     <!-- build app2 -->
     <transform source="app2" destination="app2sort" take-params="head"/>
     <transform source="app2" destination="app2sort" take-params="typ1a" option="append"/>
+    <transform source="app2" destination="app2sort" take-params="typ1a0" option="append"/>
     <transform source="app2" destination="app2sort" take-params="typ1b" option="append"/>
     <transform source="app2" destination="app2sort" take-params="typ1b0" option="append"/>
     <transform source="app2" destination="app2sort" take-params="typ1c" option="append"/>
