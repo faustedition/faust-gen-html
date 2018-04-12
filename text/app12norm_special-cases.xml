@@ -21,6 +21,20 @@
                 auszugehen.</note></rdg>
     </app>
     <app>
+        <f:ins n="4051" place="only-app"/>
+        <ref>4051</ref>
+        <lem/>
+        <rdg type="type_3*">
+            <sp>
+                <speaker>Faust</speaker>
+                <l n="4051" part="I">Verflucht Geschnarr!</l>
+            </sp>
+            <sp>
+                <speaker>Mephistopheles</speaker>
+                <l n="4051" part="F">Man muß sich dran gewöhnen.</l></sp>
+            <note>konj. Resenhöfft</note></rdg>
+    </app>
+    <app>
         <f:ins n="before_4613_c" place="only-app"/>
         <ref>vor 4613</ref>
         <lem wit="2_H">Der <gap reason="ellipsis"/> Acten <note><wit>2_H</wit></note></lem>
