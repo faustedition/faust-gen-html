@@ -424,4 +424,9 @@
                           else replace(replace(normalize-space($sigil), 'α', 'alpha'), '[^A-Za-z0-9.-]', '_')"/>
   </xsl:function>
   
+  <xsl:function name="f:contract-space" as="xs:string">
+    <xsl:param name="input" as="xs:string"/>
+    <xsl:value-of select="replace($input, '\s+', ' ')"/>
+  </xsl:function>
+  
 </xsl:stylesheet>

@@ -220,7 +220,7 @@
                 <xsl:copy/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:variable name="wsp-normalized" select="f:normalize-space(.)"/>
+                <xsl:variable name="wsp-normalized" select="f:contract-space(.)"/>
                 <xsl:analyze-string select="$wsp-normalized" regex="{$re}" flags="!">
                     <xsl:matching-substring>
                         <xsl:variable name="current-match" select="."/>
