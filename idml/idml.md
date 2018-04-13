@@ -356,11 +356,6 @@ XML: `div[@n='2.3']/div/*[1][self::stage]`
 
 Format: `F BA zentr. 1,15 / 0,0`
 
-### (BA vor 10849)
-XML: `stage[@n='before_10849_a']/lb`
-
-Umsetzung: Zeilenumbruch
-
 ## Szene (Finis)
 (entfällt vorläufig)
 Bedeutet, dass Finis wie Szene behandelt wird.
