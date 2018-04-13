@@ -190,9 +190,6 @@ Format: `Sprecher nach Überschrift`
 
 Priority: höher als die rule für Sprecher
 
-## (Überschriften)
-Bei `head/lb` wird innerhalb des betreffenden Absatzes ein Zeilenumbruch eingefügt.
-
 ### Teil
 (Zueignung, ..., Teilüberschrift) 
 
