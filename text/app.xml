@@ -920,6 +920,14 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <search-string>before^_2603\[Leise\]\{{[}Leise.{]}\}</search-string>
                             <replacement-string>=</replacement-string>
                         </string-pair>
+                        <string-pair>
+                            <search-string>{{/speaker}}{|}^^</search-string>
+                            <replacement-string>{=2=}{=1=}</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{/speaker}}{|},</search-string>
+                            <replacement-string>{=2=}{=1=}</replacement-string>
+                        </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>

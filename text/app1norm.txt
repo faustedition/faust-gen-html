@@ -141,25 +141,25 @@ before_2392[Thiere]{=} <i>vor 2392</i> <speaker>Thiere</speaker> <i>A B B.a 1
 2401[ins]{=} <i>2401</i> ins <i>A B</i>]   in’s <i>S </i> in’s <i>D.1 </i> in’s <i>B.a [type=2a*]</i>
 2407[inwendig,]{inwendig.} <i>2407</i> inwendig. <i>S</i>]   inwendig, <i>A B.a</i> inwendig.<i> B  [type=2a]</i>
 2415[giebt]{=} <i>2415</i> giebt <i>A</i>]   gibt <i>S </i> gibt <i>B B.a [type=4a]</i>
-before_2429_b[Faust]{=} <i>vor 2429</i> <speaker>Faust</speaker>^ <i>none</i>] <speaker>Faust</speaker>, <i>S</i> <speaker>Faust.</speaker> <i>A D.1</i> <speaker>Faust</speaker>^ <i>B B.a [type=8]</i>
+before_2429_b[Faust]{=} <i>vor 2429</i> <speaker>Faust^</speaker> <i>none</i>] <speaker>Faust,</speaker> <i>S</i> <speaker>Faust.</speaker> <i>A D.1</i> <speaker>Faust^</speaker> <i>B B.a [type=8]</i>
 2438[Muß’]{Muß} <i>2438</i> Muß <i>S</i>]   Muß’ <i>A B.a</i> Muß<i> B  [type=1b]</i>
 before_2448[immmerfort]{immerfort} <i>vor 2448</i> immerfort  <i>none</i>] immmerfort <i>A</i>  immerfort <i>S </i> immerfort <i>D.1 </i> immerfort <i>B B.a  [type=1a]</i>
-before_2450_a[Thiere]{=} <i>vor 2450</i> <speaker>Thiere</speaker>^ <i>none</i>] <speaker>Thiere,</speaker> <i>S</i> <speaker>Thiere.</speaker> <i>A D.1</i> <speaker>Thiere</speaker>^ <i>B B.a [type=8]</i>
+before_2450_a[Thiere]{=} <i>vor 2450</i> <speaker>Thiere^</speaker> <i>none</i>] <speaker>Thiere,</speaker> <i>S</i> <speaker>Thiere.</speaker> <i>A D.1</i> <speaker>Thiere^</speaker> <i>B B.a [type=8]</i>
 before_2453[herumspringen]{=} <i>vor 2453</i> herumspringen <i>A B B.a</i>]   herum springen <i>S [type=2a*]</i>
 2455[reimen;]{=} <i>2455</i> reimen; <i>S A B B.a</i>]   reimen! <i>Q</i> reimen – <i>konj. Düntzer [type=1c*]</i>]
 before_2465_a[ausser]{außer} <i>vor 2465</i> außer <i>S</i>]   ausser <i>A D.1</i> außer<i> B B.a [type=2a]</i>
 before_2465_a[grosse]{große } <i>vor 2465</i> große <i>S</i>]   grosse <i>A D.1 B</i> große<i> B.a [type=2a]</i>
 before_2465_a[hinaus schlägt]{=} <i>vor 2465</i> hinaus schlägt <i>A B</i>]   hinausschlägt <i>S </i> hinausschlägt  <i>B.a [type=2a*]</i>
 before_2465_a[Die Hexe]{=} <i>vor 2465</i>] Die Hexe <i>wird in A B C nicht als Auftritt markiert (S unterscheidet typographisch nicht zwischen Auftritten und Sprecherangaben). [type=1c*]</i>
-before_2475_b[Mephistopheles]{=} <i>vor 2475</i> <speaker>Mephistopheles^</speaker> <i>none</i>] <speaker>Mephistopheles,</speaker> <i>S</i> <speaker>Mephistopheles.</speaker> <i>A</i> <i>D.1</i>  <speaker>Mephistopheles,</speaker> <i>B</i> <speaker>Mephistopheles</speaker>^ <i>B.a  [type=8]</i>
+before_2475_b[Mephistopheles]{=} <i>vor 2475</i> <speaker>Mephistopheles^</speaker> <i>none</i>] <speaker>Mephistopheles,</speaker> <i>S</i> <speaker>Mephistopheles.</speaker> <i>A</i> <i>D.1</i>  <speaker>Mephistopheles,</speaker> <i>B</i> <speaker>Mephistopheles^</speaker> <i>B.a  [type=8]</i>
 2490|2492[Sah’|kamst]{Seh’|kommst} <i>2490/2492</i> Seh’ <i>…</i> kommst <i>S B B.a</i>]   Sah’ <i>…</i> kamst <i>A [type=4b]</i>
 before_2514_a[Gebärde]{Geberde} <i>vor 2514</i> Geberde <i>S</i>]   Gebärde <i>A B.a</i> Geberde<i> B [type=2a]</i>
 2529[beste]{=} <i>2529</i> beste <i>S A</i>]   Beste <i>B B.a [type=4a]</i>
 2531[gieb]{=} <i>2531</i> gieb <i>A</i>]   gib <i>S </i> gib <i>B B.a [type=4a]</i>
-before_2532_a[Hexe]{=} <i>vor 2532</i> <speaker>Hexe</speaker>^ <i>none</i>] <speaker>Hexe</speaker>^<i>S</i> <speaker>Hexe.</speaker> <i>A D.1</i> <speaker>Hexe</speaker>^ <i>B B.a  [type=8]</i>
+before_2532_a[Hexe]{=} <i>vor 2532</i> <speaker>Hexe^</speaker> <i>none</i>] <speaker>Hexe^</speaker><i>S</i> <speaker>Hexe.</speaker> <i>A D.1</i> <speaker>Hexe^</speaker> <i>B B.a  [type=8]</i>
 before_2540_c[@stage]{rend=} <i>vor 2540</i> <i>In S ist</i>]  Die Hexe <i>nicht hervorgehoben. [type=1c*]</i>
 2540[]{} <i>2540–2552</i> <i>In allen Drucken sind die Verse nicht eingerückt. [type=1c*]</i>]
-before_2583_a[Hexe]{=} <i>vor 2583</i> <speaker>Hexe</speaker>^ <i>none</i>] <speaker>Hexe</speaker> ^<i>S</i> <speaker>Hexe.</speaker> <i>A D.1</i> <speaker>Hexe</speaker>^ <i>B B.a  [type=8]</i>
+before_2583_a[Hexe]{=} <i>vor 2583</i> <speaker>Hexe^</speaker> <i>none</i>] <speaker>Hexe</speaker> ^<i>S</i> <speaker>Hexe.</speaker> <i>A D.1</i> <speaker>Hexe^</speaker> <i>B B.a  [type=8]</i>
 2592[Würkung]{Wirkung} <i>2592</i> Wirkung <i>S</i>]   Würkung <i>A D.1</i> Wirkung<i> B B.a [type=2a]</i>
 before_2603[Leise]{=} <i>vor 2603</i> Leise. <i>none</i>] Leise.<i>S</i> Leise^ <i>A D.1</i> Leise. <i>B</i> (Leise.) <i>B.a [type=8]</i>
 2630[ihm,]{=} <i>2630</i> ihm, <i>S A</i>]   ihm^ <i>1_H.5</i> ihm^ <i>B B.a [type=4a]</i>
@@ -215,7 +215,7 @@ before_3183_a|before_3183_b[Margarete|fährt fort]{=} <i>vor 3183</i> <speaker>M
 before_3184i[lezte]{letzte} <i>vor 3184</i> letzte <i>S</i>]   lezte <i>1_H.5</i> lezte <i>A D.1</i> letzte<i> B B.a [type=2a]</i>
 3184[]{} <i>3184</i> <i>In 1_H.5 S A B B.a handelt es sich um zwei Verse, sie wurden erst von Düntzer und dann in WA zu einem antilabischen Vers zusammengefasst. [type=3*]</i>]
 before_3187_a[ihre beyden]{=} <i>nach 3186</i> ihre beyden <i>A B B.a</i>]   ihr beyde <i>1_H.5 S [type=7]</i>
-before_3206f_b[Margarete]{=} <i>vor 3206</i> <speaker>Margarete</speaker>^ <i>none</i>] <speaker>Margarethe^</speaker> <i>S </i> <speaker>Margarete.</speaker> <i>A D.1</i> <speaker>Margarete</speaker>^ <i>B</i> <speaker>Margarethe^</speaker> <i>B.a [type=8]</i>
+before_3206f_b[Margarete]{=} <i>vor 3206</i> <speaker>Margarete^</speaker> <i>none</i>] <speaker>Margarethe^</speaker> <i>S </i> <speaker>Margarete.</speaker> <i>A D.1</i> <speaker>Margarete^</speaker> <i>B</i> <speaker>Margarethe^</speaker> <i>B.a [type=8]</i>
 before_3206f_c[zurück gebend]{=} <i>vor 3206</i> zurück gebend <i>S A</i>]   zurückgebend <i>1_H.5 </i> zurückgebend <i>B B.a [type=4a]</i>
 3217[alles]{=} <i>3217</i> alles <i>S A</i>]   Alles <i>B B.a [type=4a]</i>
 3254[neuen]{=} <i>3254</i> neuen <i>S A</i>]   Neuen <i>B B.a [type=4a]</i>
@@ -270,7 +270,7 @@ before_3587_b[Gretchen]{=} <i>vor 3587</i> <speaker>Gretchen^</speaker> <i>none<
 3961[f—t die Hexe, es st—t]{=} <i>3961</i> f—t <i>…</i> st—t <i>A B B.a</i>]   farzt <i>…</i> stinckt <i>1_H.14[type=7]</i>
 3964[dem]{denn} <i>3964</i> denn <i>1_H.14</i>]   dem <i>A B B.a 1_H.1 C.1_12 C.3_12 [type=2a]  </i>
 3974[]{} <i>3974–3977</i> <i>Die Verse sind in 1_H.14 A D.1 B B.a 1_H.1 C.1_12 C.3_12 nicht eingerückt, in D.2 und Q sind sie auf derselben Höhe wie die Verse 3972–3973 eingerückt. [type=1c*]</i>]
-<p>before_3978[Halbes]{halbes} <i>vor 3978</i> <speaker>Hexenmeister</speaker>^ halbes Chor. <i>none</i> <i>1_H.14</i>]   <speaker>Hexenmeister</speaker>. Halbes Chor.  <i>A B 1_H.1 C.1_12 C.3_12</i>  <speaker>Hexenmeister</speaker>. (Halbes Chor.) <i>B.a [type=8]</i>
+<p>before_3978[Halbes]{halbes} <i>vor 3978</i> <speaker>Hexenmeister^</speaker> halbes Chor. <i>none</i> <i>1_H.14</i>]   <speaker>Hexenmeister</speaker>. Halbes Chor.  <i>A B 1_H.1 C.1_12 C.3_12</i>  <speaker>Hexenmeister</speaker>. (Halbes Chor.) <i>B.a [type=8]</i>
 3990[]{} <i>3990–4015</i> <i>Die Verse sind im Druck auffallend durch ihre zweistufige Einrückung, die aber optisch, nicht strukturell bedingt zu sein scheint (A 8, S. 198–199): 3900–3903 ½ cm eingerückt, 3996–4015 1,0 cm. [type=7]</i>]
 3994[]{} <i>3994–3995</i> <i>Die Verse bilden in 1_H.14 A B.a einen antilabischen Vers, in B 1_H.1 C.1_12 C.3_12 sind es zwei Verse. [type=7]</i>]
 4000[Stock]{Stock,} <i>4000</i> Stock, <i>1_H.14</i>]   Stock^ <i>A</i> Stock, <i>D.1 </i> Stock, <i>B B.a  [type=2a]</i>
@@ -284,7 +284,7 @@ before_3587_b[Gretchen]{=} <i>vor 3587</i> <speaker>Gretchen^</speaker> <i>none<
 before_4072[zu]{=} <i>vor 4072</i> zu <i>1_H.14 A</i>]   Zu <i>B B.a [type=4a]</i>
 4082[alles]{=} <i>4082</i> alles <i>1_H.14 A</i>]   Alles <i>B B.a [type=4a]</i>
 4086[alles]{=} <i>4086</i> alles <i>1_H.14 A</i>]   Alles <i>B B.a [type=4a]</i>
-before_4092_a[Mephistoteles]{=} <i>vor 4092</i> <speaker>Mephistopheles</speaker>^ <i>none</i>] <speaker>Mephistopheles</speaker> <i>1_H.14 </i> <speaker>Mephistopheles.</speaker> <i>A</i> <speaker>Mephistopheles,</speaker> <i>B</i> <speaker>Mephistopheles</speaker>^ <i>B.a [type=8]</i>
+before_4092_a[Mephistoteles]{=} <i>vor 4092</i> <speaker>Mephistopheles^</speaker> <i>none</i>] <speaker>Mephistopheles</speaker> <i>1_H.14 </i> <speaker>Mephistopheles.</speaker> <i>A</i> <speaker>Mephistopheles,</speaker> <i>B</i> <speaker>Mephistopheles^</speaker> <i>B.a [type=8]</i>
 before_4092_b[auf]{=} <i>vor 4092</i> auf <i>1_H.14 A</i>]   der auf <i>B B.a [type=4a]</i>
 4108[Schwerdt]{=} <i>4108</i> Schwerdt <i>1_H.14 A</i>]   Schwert <i>B B.a [type=4a]</i>
 4135[trägt]{trägt.} <i>4135</i> trägt. <i>1_H.14</i>]   trägt^ <i>A</i> trägt.<i> D.1 </i> trägt, <i>B</i> trägt.<i>  B.a [type=2a]</i>
