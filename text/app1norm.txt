@@ -50,7 +50,7 @@ before_354_c[Zimmer]{Zimmer,} <i>vor 354</i> Zimmer, <i>S</i>]   Zimmer^ <i>A B
 683[es,]{=} <i>683</i> es, <i>A B.a</i>]   es^ <i>B [Typ 4c]</i>
 685[erschafft,]{=} <i>685</i> erschafft, <i>A B.a</i>]   erschafft^ <i>B [Typ 4c]</i>
 711[jeder]{=} <i>711</i> jeder <i>A</i>]   Jeder <i>B B.a [type=4a]</i>
-719[Und,]{=} <i>719</i> Und, <i>A B B.a</i>]   Und^ <i>konj. Erich Schmidt [type=3*]</i>
+719[Und,]{=} <i>719</i> Und, <i>A B B.a</i>]   Und^ <i>konj. faust://bibliography/wa_I_14 [type=3*]</i>
 720[Schaale]{=} <i>720</i> Schaale <i>A</i>]   Schale <i>B B.a [type=4a]</i>
 733[Flut]{=} <i>733</i> Flut <i>A</i>]   Fluth <i>B B.a [type=4a]</i>
 759[Betrübende]{=} <i>759</i> Betrübende <i>A D.1 B 1_H.1 C.1_12 C.3_12</i>]   betrübende <i>J.2</i> betrübende <i>B.a</i> betrubende <i>T_5_H.1 1_H.1</i> <i>[type=1a*]  </i>
