@@ -266,7 +266,7 @@ before_3544_b[Lieschen]{=} <i>vor 3544</i> <speaker>Lieschen^</speaker> <i>none<
 before_3577_a[Gretchen]{=} <i>vor 3577</i> <speaker>Gretchen^</speaker> <i>none</i>] <speaker>Gretgen^</speaker> <i>1_H.5</i> <speaker>Grethchen^</speaker> <i>S</i> <speaker>Gretchen.</speaker> <i>A D.1</i> <speaker>Gretchen^</speaker><i>B B.a [type=8]</i>
 3578[Sah ich]{Wenn thät} <i>3578</i> Wenn thät <i>B</i>]   Wenn thät’ <i>B.a</i> Wen thät <i>1_H.5</i> Sah ich <i>S A [type=4b]</i>
 before_3587_b[Gretchen]{=} <i>vor 3587</i> <speaker>Gretchen^</speaker> <i>none</i>] <speaker>Gretgen^</speaker> <i>1_H.5</i> <speaker>Grethchen^</speaker> <i>S</i> <speaker>Gretchen.</speaker> <i>A D.1</i> <speaker>Gretchen^</speaker><i>B B.a  [type=8]</i>
-3620[ich]{ich so} <i>3620</i> so <i>1_H.5 1_H.12 B B.a fehlt A D.1 [type=4b]</i>]
+3620[ich]{ich so} <i>3620</i>] so <i>1_H.5 1_H.12 B B.a fehlt A D.1 [type=4b]</i>
 3625[aufgestemmt;]{=} <i>3625</i> aufgestemmt; <i>A</i>]   aufgestemmt^ <i>1_H.5 1_H.12</i> aufgestemmt^ <i>B B.a [type=2a*]  </i>
 3626[Ruh^]{=} <i>3626</i> Ruh^ <i>1_H.5 1_H.12 A</i>]   Ruh, <i>B B.a [type=4a]</i>
 3627[all’]{all} <i>3627</i> all <i>1_H.5 1_H.12</i>]   all’ <i>A B B.a [type=2a]</i>
