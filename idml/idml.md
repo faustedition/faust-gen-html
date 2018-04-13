@@ -599,7 +599,13 @@ TODO Auftritt-Analogon im Faust II bennen.
 (entfällt vorläufig)
 
 ## Verszahl
-Wert von `@n` ausgeben, wenn `self::l and matches(@n, '^\d+') and @n mod 5 = 0`.
+Wert von `@n` ausgeben,
+* wenn `self::l and matches(@n, '^\d+') and @n mod 5 = 0`.
+* wenn `@n=`
+  * `3994`
+  * `4342` 
+  * `6359`
+
 
 ## Weiß
 Siehe https://github.com/faustedition/faust-gen-html/issues/207#issuecomment-361256998
