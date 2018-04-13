@@ -161,7 +161,7 @@ before_2540_c[@stage]{rend=} <i>vor 2540</i> <i>In S ist</i>]  Die Hexe <i>nicht
 2540[]{} <i>2540–2552</i> <i>In allen Drucken sind die Verse nicht eingerückt. [type=1c*]</i>]
 before_2583_a[Hexe]{=} <i>vor 2583</i> <speaker>Hexe</speaker>^ <i>none</i>] <speaker>Hexe</speaker> ^<i>S</i> <speaker>Hexe.</speaker> <i>A D.1</i> <speaker>Hexe</speaker>^ <i>B B.a  [type=8]</i>
 2592[Würkung]{Wirkung} <i>2592</i> Wirkung <i>S</i>]   Würkung <i>A D.1</i> Wirkung<i> B B.a [type=2a]</i>
-before_2603[Leise]{Leise.} <i>vor 2603</i> Leise. <i>none</i>] Leise.<i>S</i> Leise^ <i>A D.1</i> Leise. <i>B</i> (Leise.) <i>B.a [type=8]</i>
+before_2603[Leise]{=} <i>vor 2603</i> Leise. <i>none</i>] Leise.<i>S</i> Leise^ <i>A D.1</i> Leise. <i>B</i> (Leise.) <i>B.a [type=8]</i>
 2630[ihm,]{=} <i>2630</i> ihm, <i>S A</i>]   ihm^ <i>1_H.5</i> ihm^ <i>B B.a [type=4a]</i>
 2631[Gunst,]{=} <i>2631</i> Gunst, <i>A B.a</i>]   Gunst^ <i>1_H.5 S</i> Gunst^ <i>B [type=4c]</i>
 2633[Lobesan]{=} <i>2633</i> Lobesan <i>A B B.a</i>]   Lobesan <i>1_H.5 </i> lobesan <i>S emend. Carrière [2a*]</i>
