@@ -207,7 +207,7 @@ before_2678_c[Margarete]{=} <i>vor 2678</i> <speaker>Margarete^</speaker> <i>non
 before_2805_a[Spazirgang]{=} <i>vor 2805</i> Spazirgang <i>A</i>]   Spatziergang <i>S</i> Spaziergang <i>B</i> Spatziergang <i>B.a [type=4a]</i>
 2806[wollt’]{=} <i>2806</i> wollt’, <i>A</i>]   wollt’^ <i>S </i> wollt’^ <i>B B.a</i> wollt^ <i>1_H.5 [type=4a]</i>
 2808[sah’]{sah} <i>2808</i> sah <i>1_H.5</i>]   sah’ <i>S A B B.a [type=2b]</i>
-2814[<font name="Times" size="12">—]{=} <i>2814</i> <font name="Times" size="12">— <i>A B B.a</i>]   <font name="Times" size="12">— ^#[2014 <i>S [type=7]</i>]
+2814[—]{=} <i>2814</i> — <i>A B B.a</i>]   — — <i>S [type=7]</i>]
 2843[Kett’ und Ring’]{Kett’ und Ring} <i>2843</i> Kett’ und Ring <i>S</i>]   Kett und Ring <i>1_H.5</i> Kett’ und Ring’ <i>A B B.a  [type=2a]</i>
 2852[den,]{=} <i>2852</i> den, <i>S A B.a</i>]  den^ <i>1_H.5</i> den^ <i>B [Typ 4c]</i>
 2869[Thät’]{Thät} <i>2869</i> Thät  <i>none</i>] Thät <i>1_H.5</i>  Thät’ <i>S A B B.a [type=1b]</i>
