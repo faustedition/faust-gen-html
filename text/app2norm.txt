@@ -20,7 +20,7 @@ before_4634_b[gesammelt]{gesammt} <i>before_4634_b</i> gesammt <i>2_H</i>] gesam
 before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2_I_H.0a [type=2aa]</i>
 5360[krauen.]{krauen} <i>5360</i> krauen^ <i>2_I_H.17 2_H</i>] krauen. <i>2_I_H.0a [type=1b]</i>
 5388[beging]{beging’} <i>5388</i> beging’ <i>2_I_H.0a</i>] beging <i>2_I_H.0a :</i> beging’ <i>Ri G [type=2d*]</i>
-5441|5445|5449|5452[@lg|@lg|@lg|@lg]{rend="indented"|rend="indented"|rend="indented"|rend="indented"} <i>5441–5456</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt (vgl. Goethe an Reichel, 22. Januar 1828) [type=1c]</i>
+5441|5445|5449|5453[@lg|@lg|@lg|@lg]{rend="indented"|rend="indented"|rend="indented"|rend="indented"} <i>5441–5456</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt (vgl. Goethe an Reichel, 22. Januar 1828) [type=1c]</i>
 5484[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5484–5493</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt (vgl. zu 5441–5456) [type=1c]</i>
 5487[Gespenstische]{gespenstische} <i>5487</i> gespenstische <i>2_H</i>] Gespenstische <i>2_I_H.0a [type=2aa]</i>
 5519[Stürmgewalt]{Sturmgewalt} <i>5519</i> Sturmgewalt <i>2_H</i>] Stürmgewalt <i>2_I_H.0a [type=2aa]</i>
@@ -43,8 +43,6 @@ before_6150_b[gleichfals]{=} <i>vor 6150</i> <stage>gleichfals</stage> <i>2_H</i
 6211[Säumniß,]{Säumniß.} <i>6211</i> Säumniß. <i>none</i>] Säumniß, <i>2_I_H.47 2_H [type=1b]</i>
 6223[Nich]{Nicht} <i>6223</i> Nicht <i>2_I_H.47</i>] Nich <i>2_H [type=2aa]</i>
 6354[Thüre]{=} <i>6354</i> Thüre <i>2_H</i>] Tür’ noch <i>Ec 2_H [type=6]</i>
-after_6358[]{} <i>nach 6358</i>] <speaker>Page.</speaker> <l>Ich bin verliebt, man hält mich nicht für voll.</l> <speaker>Meph.</speaker> <stage>(bey Seite)</stage> <l>Ich weiß nicht mehr wohin ich hören soll.</l> <i>in Lücke erg Ec 2_H [type=6]</i>
-before_6360_a[]{} <i>vor 6360–6359 tilgt Ec 2_H</i> <i>[type=6]</i>
 before_6361[]{} <i>vor 6361</i> <speaker>Mephistopheles</speaker> <i>2_H</i>] <speaker>Meph.</speaker> <i>2_H :</i> (zum Pagen.) <i>Ec</i> <i>[type=6]</i>
 6362[$]{} <i>vor 6363</i>] (Andere drängen sich herzu) <i>erg Ec 2_H [type=6]</i>
 before_6377_b[]{} <i>vor 6377</i> Dämmernde <i>none</i>] Dammernde <i>2_H [type=1a]</i>
@@ -54,7 +52,6 @@ before_6479_a[tritt auf]{=} <i>vor 6479</i> tritt auf <i>2_H</i>] hervortretend 
 6552[Stand]{Stand} <i>6552</i> Stand <i>2_H</i>] Stand <i>undeutlich 2_I_H.48 2_I_H.60</i> Strand <i>konj. Lucä und Koch emend. faust://bibliography/wa_I_15_1 [type=3*]</i>
 before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückzieht <i>konj. Fiedler [type=3*]</i>
 6654[Des Meisters]{=} <i>6654</i> Des Meisters <i>2_H</i>] Selbst Faustus <i>Ec 2_H [type=6]</i>
-6717[]{} <i>6717–6718</i> <l>Damals schien er zwar gewandt,</l> <l>Als ich ihn noch nicht verstand.</l> <i>Ec 2_H [type=6]</i>
 6832[Willkomm̄en]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkomm̄en <i>2_H [type=1a]</i>
 6847[höhern, höhern]{=} <i>6847</i> höhern, höhern <i>2_H</i>] <i>mon, alR</i> hehren? <i>mit Verweis auf eine weiter unten folgende Stelle (6856) Ri 2_H [type=7]</i>
 <i>6983</i> Den] Nun auf! den <i>2_H :</i> den <i>G [type=7]</i>
@@ -72,7 +69,7 @@ before_8245_b[erstaunt]{=} <i>vor 8245</i> <stage>erstaunt</stage> <i>2_H</i>] <
 8352[Muschelpfad]{Muschelfahrt} <i>8352</i> Muschelfahrt <i>2_II_H.69</i>] Muschelpfad <i>2_II_H.70 2_H [type=2b]</i>
 before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psellen <i>2_II_H.70 2_H</i>] Psyllen <i>emend. Q faust://bibliography/wa_I_15_1 [type=1a]</i>
 8450[Galateas]{Galatees} <i>8450</i> Galatees <i>2_H</i>] Galatee’ns <i>vorschl Ri verw Sc</i> Galateas <i>Sc 2_H [type=7]</i>
-8506[Eröffnet]{Eröffenet} <i>8506</i> Eröffenet <i>2_III_H.3a:1</i>] Eröffnet <i>2_III_H.3 :</i> Eröffenet <i>Ri 2_III_H.3 2_III_H.3a:1</i> Eröffnet <i>2_H C.1_4 [type=2b]</i>
+8506[Eröffnet]{=} <i>8506</i> Eröffnet <i>C.1_4</i>] Eröffnet <i>2_III_H.3 :</i> Eröffenet <i>Ri 2_III_H.3 2_III_H.3a:1</i> Eröffnet <i>2_H [type=2b*]</i>
 8510[Stelle]{Schwelle} <i>8510</i> Schwelle <i>2_III_H.2:1</i>] Stelle <i>2_III_H.3 2_III_H.3a:1 2_H C.1_4 [type=2b]</i>
 8542[mustre]{mustere} <i>8542</i> mustere <i>2_III_H.3a:1</i>] mustre <i>2_III_H.3 :</i> mustere <i>Ri G 2_III_H.3 2_III_H.3a:1</i> mustre <i>2_H C.1_4 [type=2b]</i>
 8574[heiligen]{heilgen} <i>8574</i> heilgen <i>2_H</i>] heiligen <i>C.1_4 [type=2aa]</i>
@@ -107,7 +104,7 @@ before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>2_III_
 9401[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>vor 9401 Spatium H fehlt C.1_4 [type=2aa]</i>
 9446[stillen]{stillem} <i>9446</i> stillem <i>2_III_H.45a C.2α_4</i>] stillen <i>C.1_4 C.3_4 [type=4b]</i>
 9535[jähen]{gähen} <i>9535</i> gähen <i>2_H</i>] jähen <i>C.1_4 [type=2aa]</i>
-9542[Alt- Wälder]{Alt-Wälder} <i>9542</i> Alt-Wälder <i>2_H</i>] Alt- Wälder <i>C.1_4 [type=1a]</i>
+9542[Alt- Wälder]{Alt-Wälder} <i>9542</i> Alt-Wälder <i>2_H</i>] Alt- Wälder <i>C.1_4 [type=1c]</i>
 before_9562[sitzend.]{=} <i>vor 9562</i> sitzend.] sitzend) <i>C.1_4</i> sitzend.) <i>C.2α_4 C.3_4 [type=8]</i>
 9585[schon?]{schon!} <i>9585</i> schon! <i>2_H</i>] schon? <i>C.1_4 [type=2aa]</i>
 9594[drinnen]{drinne} <i>9594</i> drinne <i>2_H</i>] drinnen <i>C.1_4 [type=2aa]</i>
@@ -125,7 +122,7 @@ before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C
 10030[ins]{=} <i>10030</i> ins <i>C.1_4</i>] in’s <i>C.2α_4 C.3_4 [type=4a]</i>
 before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>konj. faust://bibliography/wa_I_15_1 [type=3*]</i>
 before_10067_a[alsbald]{also bald} <i>before_10067_a</i> also bald <i>2_IV_H.3</i>] alsbald <i>2_H [type=2aa]</i>
-10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074 eingerückt 2_H [type=1c]</i>
+10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074</i>] <i>Die Verse sind in 2_H eingerückt. [type=1c]</i>
 10150[ewigen-]{ewigen} <i>10150</i> ewigen <i>2_IV_H.2</i>] ewigen- <i>2_H [type=1b]</i>
 after_10344[allzusammen]{allezusammen} <i>nach 10344</i> allezusammen <i>2_IV_H.8</i>] allzusammen <i>2_H [type=2aa]</i>
 10415[hattet]{hättet} <i>10415</i> hättet <i>none</i>] hattet <i>2_H [type=1a]</i>
@@ -153,11 +150,13 @@ before_10877[Erbmarschall]{Erzmarschall} <i>vor 10877</i> <speaker>Erzmarschall<
 10959[heiligen]{heiligem} <i>10959</i> heiligem <i>2_IV_H.22e</i>] heiligen <i>2_H [type=2a]</i>
 10979[bangt]{=} <i>10979</i> bangt <i>2_H</i>] bangs <i>G 2_IV_H.22e [type=2a*]</i>
 10998[steter]{fetter} <i>10998</i> fetter <i>2_IV_H.22f</i>] steter <i>2_H [type=2aa]</i>
+before_11079_b[zu]{=} <i>vor 11079</i> zu <i>none</i>] <i>unterstrichen 2_H [type=1c]</i>
 11099[Doch!]{=} <i>11099</i> Doch! <i>2_V_H.0b 2_H</i>] Dort <i>Sc 2_H [type=6]</i>
 11160[fremden]{fremdem} <i>11160</i> fremdem <i>2_V_H.1</i>] fremden <i>2_H [type=2aa]</i>
 11203[]{} <i>11203–11206</i>] <l>Wir alle fordern</l> <l>Gleichen Theil.</l> <speaker>Mephist.</speaker> <l>Erst ordnet oben</l> <l>Saal an Saal.</l> <i>Ec 2_H [type=6]</i>
 11235[Vielgewandten]{Vielgewandtem} <i>11235</i> Vielgewandtem <i>2_V_H.1</i>] Vielgewandten <i>2_H [type=1a]</i>
 after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab) <i>2_V_H.1 fehlt 2_H</i> (Regum I. 21.) <i>erg G [type=2aa*]</i>
+before_11350_a[und die]{=} <i>vor 11350</i> und die <i>2_V_H.1</i>] <i>unterstrichen 2_H [type=1c]</i>
 11422[dich]{dich.} <i>11422</i> dich. <i>2_V_H.2</i>] dich! <i>2_V_H.6</i> dich^ <i>2_H [type=1b]</i>
 <i>11439</i> mächtig; <i>2_V_H.2</i>] <i>Semikolon in H nicht mehr zu erkennen; ergänzt nach V_H.2 [type=7]</i>
 11473[Weges-Mitte]{Weges Mitte} <i>11473</i> Weges Mitte <i>2_V_H.11</i>] Weges-Mitte <i>2_V_H.2 2_H [type=2b]</i>
