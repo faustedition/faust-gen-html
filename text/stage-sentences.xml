@@ -1,0 +1,701 @@
+<f:stage-attrs xmlns:f="http://www.faustedition.net/ns" xmlns="http://www.tei-c.org/ns/1.0">
+	<!--
+		Diese Datei enthält zu jeder mehr oder weniger satzförmigen BA aus dem
+		Lesetext einen Eintrag der Form <stage n="n-wert" type="ba-art"/>
+
+		Die folgenden Typwerte sind vergeben:
+
+		sentence	vollständiger Satz (auch, wenn er mit Kleinbuchstabe beginnt) 
+		capitalized	kein vollständiger Satz, aber wegen größerem Anfangsbuchstaben Punkt erwarten lassend 
+		long		kein vollständiger Satz, aber wegen Länge Punkt erwarten lassend 
+		finite		unvollständiger Satz, aber finites Verb -verb
+
+		Siehe https://github.com/faustedition/xml/issues/253
+     	-->
+	<!--stage n="before_33_b"	Director, Theaterdichter, lustige Person. -->
+	<!--stage n="before_243_b"	Der Herr, die himmlischen Heerscharen, nachher Mephistopheles. -->
+	<stage n="before_243_c"	type="sentence"><!-- Die drey Erzengel treten vor. --></stage>
+	<stage n="before_350_a"	type="sentence"><!-- Der Himmel schließt, die Erzengel vertheilen sich, --></stage>
+	<!--stage n="before_350_c"	allein. -->
+	<stage n="before_354_c"	type="long"><!-- In einem hochgewölbten, engen, gothischen Zimmer, Faustunruhig auf seinem Sessel am Pulte.vor 354Zimmer, SZimmer‸ A  B  Ba --></stage>
+	<stage n="before_430"	type="sentence"><!-- Er schlägt das Buch auf und erblickt das Zeichen des Makrokosmus. --></stage>
+	<stage n="before_447"	type="sentence"><!-- Er beschaut das Zeichen. --></stage>
+	<stage n="before_460"	type="sentence"><!-- Er schlägt unwillig das Buch um, und erblickt das Zeichen des Erdgeistes. --></stage>
+	<stage n="before_482i_a"	type="sentence"><!-- Er faßt das Buch und spricht das Zeichen des Geistes geheimnißvoll aus. Es zuckt eine röthliche Flamme, der Geist erscheint in der Flamme. --></stage>
+	<!--stage n="before_482f_b"	abgewendet. -->
+	<stage n="before_514_a"	type="finite-verb"><!-- Verschwindet. --></stage>
+	<!--stage n="before_514_c"	zusammenstürzend. -->
+	<stage n="before_518"	type="sentence"><!-- Es klopft. --></stage>
+	<stage n="before_522_a"	type="sentence"><!-- Wagner im Schlafrocke und der Nachtmütze, eine Lampe in der Hand. Faust wendet sich unwillig. --></stage>
+	<!--stage n="after_601"	ab. -->
+	<!--stage n="before_602_b"	allein. -->
+	<stage n="before_737_a"	type="sentence"><!-- Er setzt die Schale an den Mund. --></stage>
+	<!--stage n="before_737_b"	Glockenklang und Chorgesang. -->
+	<stage n="before_808_b"	type="sentence"><!-- Spaziergänger aller Art ziehen hinaus. --></stage>
+	<!--stage n="before_836_b"	zum ersten. -->
+	<stage n="before_852_b"	type="finite-verb"><!-- singt. --></stage>
+	<!--stage n="before_872_b"	zu den Bürgermädchen. -->
+	<!--stage n="before_903_a"	Faust und Wagner. -->
+	<!--stage n="before_949_b"	unter der Linde. -->
+	<!--stage n="before_949_c"	Tanz und Gesang. -->
+	<stage n="before_993_a"	type="sentence"><!-- Das Volk sammelt sich im Kreis umher. --></stage>
+	<stage n="after_1010"	type="sentence"><!-- Er geht mit Wagnern weiter. --></stage>
+	<stage n="after_1177"	type="sentence"><!-- Sie gehen in das Stadt-Thor. --></stage>
+	<!--stage n="before_1178_b"	mit dem Pudel hereintretend. -->
+	<stage n="before_1224"	type="sentence"><!-- Er schlägt ein Volum auf und schickt sich an. --></stage>
+	<!--stage n="before_1259_b"	auf dem Gange. -->
+	<stage n="before_1322_a"	type="long"><!-- tritt, indem der Nebel fällt, gekleidet wie ein fahrender Scholastikus, hinter dem Ofen hervor. --></stage>
+	<!--stage n="before_1526_b"	erwachend. -->
+	<!--stage n="before_1530_b"	Faust. Mephistopheles. -->
+	<!--stage n="before_1607_b"	unsichtbar. -->
+	<stage n="before_1848"	type="sentence"><!-- Er kleidet sich um. --></stage>
+	<!--stage n="after_1850"	Faust ab. -->
+	<!--stage n="before_1851_b"	in Faust’s langem Kleide. -->
+	<stage n="before_1868_a"	type="sentence"><!-- Ein Schüler tritt auf. --></stage>
+	<!--stage n="before_2009_b"	für sich. -->
+	<!--stage n="before_2011"	Laut. -->
+	<stage n="before_2048_a"	type="sentence"><!-- Er schreibt und giebt’s. --></stage>
+	<stage n="before_2048_c"	type="finite-verb"><!-- lies’t. --></stage>
+	<stage n="after_2048"	type="long"><!-- Macht’s ehrerbietig zu und empfiehlt sich.nach 2048ehrerbietigehrerbietieg A  D1ehrerbiethig Sehrerbietig Behrerbiethig Ba --></stage>
+	<stage n="before_2051i_a"	type="sentence"><!-- Faust tritt auf. --></stage>
+	<!--stage n="before_2073_b"	Zeche lustiger Gesellen. -->
+	<stage n="before_2079i_b"	type="long"><!-- gießt ihm ein Glas Wein über den Kopf. --></stage>
+	<stage n="before_2090"	type="finite-verb"><!-- Singt. --></stage>
+	<stage n="before_2101_b"	type="finite-verb"><!-- singt. --></stage>
+	<stage n="before_2105"	type="finite-verb"><!-- Singt. --></stage>
+	<stage n="before_2119_b"	type="finite-verb"><!-- auf den Tisch schlagend. --></stage>
+	<stage n="before_2126"	type="sentence"><!-- Er singt. --></stage>
+	<stage n="before_2133_b"	type="finite-verb"><!-- jauchzend. --></stage>
+	<!--stage n="before_2158_a"	Faust und Mephistopheles. -->
+	<!--stage n="before_2181_b"	zu Faust. -->
+	<stage n="before_2184"	type="capitalized"><!-- Leise, Mephistopheles von der Seite ansehend. --></stage>
+	<stage n="before_2195i_a"	type="sentence"><!-- Er neigt sich gegen Frosch. --></stage>
+	<!--stage n="before_2195i_c"	leise. -->
+	<stage n="before_2207"	type="finite-verb"><!-- Singt. --></stage>
+	<stage n="before_2211_b"	type="finite-verb"><!-- singt. --></stage>
+	<!--stage n="before_2239_b"	jauchzend. -->
+	<!--stage n="before_2256_b"	leise. -->
+	<stage n="before_2260_b"	type="finite-verb"><!-- nimmt den Bohrer. --></stage>
+	<!--stage n="before_2260_b"	zu Frosch. -->
+	<!--stage n="before_2263_b"	zu Frosch. -->
+	<stage n="before_2266_b"	type="long"><!-- indem er an dem Platz, wo Frosch sitzt, ein Loch in den Tischrand bohrt. --></stage>
+	<!--stage n="before_2268i_b"	zu Brander. -->
+	<stage n="before_2270_a"	type="long"><!-- Mephistophelesbohrt, einer hat indessen die Wachspfropfen gemacht und verstopft.nach 2269Wachspfropfen SWachspropfen A D1Wachspfropfen B  Ba --></stage>
+	<stage n="before_2274_b"	type="long"><!-- indem sich Mephistopheles seinem Platze nähert. --></stage>
+	<stage n="before_2276_b"	type="finite-verb"><!-- bohrt. --></stage>
+	<stage n="before_2284_a"	type="long"><!-- Nachdem die Löcher alle gebohrt und verstopft sind, --></stage>
+	<!--stage n="before_2284_c"	mit seltsamen Geberden. -->
+	<stage n="before_2291_b"	type="long"><!-- indem sie die Pfropfen ziehen, und jedem der verlangte Wein in’s Glas läuft. --></stage>
+	<stage n="before_2293_a"	type="sentence"><!-- Sie trinken wiederholt. --></stage>
+	<stage n="before_2293_c"	type="finite-verb"><!-- singen. --></stage>
+	<stage n="before_2299_b"	type="sentence"><!-- trinkt unvorsichtig, der Wein fließt auf die Erde, und wird zur Flamme. --></stage>
+	<!--stage n="before_2300_b"	die Flamme besprechend. -->
+	<!--stage n="before_2301"	zu dem Gesellen. -->
+	<stage n="before_2311i_b"	type="sentence"><!-- zieht einen Pfropf aus dem Tisch, es springt ihm Feuer entgegen. --></stage>
+	<stage n="before_2313_a"	type="sentence"><!-- Sie ziehen die Messer und gehn auf Mephistopheles los. --></stage>
+	<!--stage n="before_2313_c"	mit ernsthafter Geberde. -->
+	<stage n="before_2316_a"	type="sentence"><!-- Sie stehn erstaunt und sehn einander an. --></stage>
+	<stage n="before_2320_a"	type="sentence"><!-- Er faßt Siebeln bey der Nase. Die andern thun es wechselseitig und heben die Messer.vor 2320bey H5  Sbei A D1bey B  Ba --></stage>
+	<!--stage n="before_2320_c"	wie oben. -->
+	<stage n="before_2322i_a"	type="sentence"><!-- Er verschwindet mit Faust, die Gesellen fahren aus einander. --></stage>
+	<!--stage n="before_2323_b"	zu Siebel. -->
+	<stage n="before_2332"	type="long"><!-- Sich nach dem Tische wendend. --></stage>
+	<stage n="before_2337_b"	type="sentence"><!-- Auf einem niedrigen Herde steht ein großer Kessel über dem Feuer. In dem Dampfe, der davon in die Höhe steigt, zeigen sich verschiedne Gestalten. Eine Meerkatze sitzt bey dem Kessel und schäumt ihn, und sorgt daß er nicht überläuft. Der Meerkater mit den Jungen sitzt darneben und wärmt sich. Wände und Decke sind mit dem seltsamsten Hexenhausrath ausgeschmückt. --></stage>
+	<!--stage n="before_2337_c"	Faust. Mephistopheles. -->
+	<!--stage n="before_2378"	Die Thiere erblickend. -->
+	<!--stage n="before_2380"	Zu den Thieren. -->
+	<!--stage n="before_2386_b"	zu Faust. -->
+	<!--stage n="before_2390"	Zu den Thieren. -->
+	<stage n="before_2394_b"	type="long"><!-- macht sich herbey und schmeichelt dem Mephistopheles. --></stage>
+	<stage n="before_2402_a"	type="sentence"><!-- Indessen haben die jungen Meerkätzchen mit einer großen Kugel gespielt und rollen sie hervor. --></stage>
+	<stage n="before_2417_b"	type="finite-verb"><!-- holt es herunter. --></stage>
+	<stage n="before_2419"	type="sentence"><!-- Er läuft zur Kätzinn und läßt sie durchsehen. --></stage>
+	<!--stage n="before_2422_b"	sich dem Feuer nähernd. -->
+	<stage n="before_2429_a"	type="sentence"><!-- Er nöthigt den Mephistopheles zu sitzen. --></stage>
+	<stage n="before_2429_c"	type="long"><!-- welcher diese Zeit über vor einem Spiegel gestanden, sich ihm bald genähert, bald sich von ihm entfernt hat. --></stage>
+	<stage n="before_2448"	type="sentence"><!-- Faust sieht immerfort in den Spiegel. Mephistopheles, sich in dem Sessel dehnend und mit dem Wedel spielend, fährt fort zu sprechen.vor 2448immerfortimmmerfort Aimmerfort Simmerfort immerfort D1immerfort B  Ba --></stage>
+	<stage n="before_2450_b"	type="sentence"><!-- welche bisher allerley wunderliche Bewegungen durch einander gemacht haben, bringen dem Mephistopheles eine Krone mit großem Geschrey. --></stage>
+	<stage n="before_2453"	type="sentence"><!-- Sie gehn ungeschickt mit der Krone um und zerbrechen sie in zwey Stücke, mit welchen sie herumspringen.vor 2453herumspringen A  B  Baherum springen S --></stage>
+	<!--stage n="before_2456_b"	gegen den Spiegel. -->
+	<!--stage n="before_2457_b"	auf die Thiere deutend. -->
+	<!--stage n="before_2461_b"	wie oben. -->
+	<!--stage n="before_2463_b"	in obiger Stellung. -->
+	<stage n="before_2465_a"	type="sentence"><!-- Der Kessel, welchen die Kätzinn bisher außer Acht gelassen, fängt an überzulaufen; es entsteht eine große Flamme, welche zum Schornstein hinaus schlägt. Die Hexekommt durch die Flamme mit entsetzlichem Geschrey herunter gefahren.vor 2465außer Sausser A  D1außer   B  Bavor 2465große Sgrosse A  D1  Bgroße   Bavor 2465hinaus schlägt A  Bhinausschlägt Shinausschlägt Bavor 2465Die Hexe wird in A B C nicht als Auftritt markiert (S unterscheidet typographisch nicht zwischen Auftritten und Sprecherangaben). --></stage>
+	<!--stage n="before_2469"	Faust und Mephistopheles erblickend. -->
+	<stage n="before_2475_a"	type="sentence"><!-- Sie fährt mit dem Schaumlöffel in den Kessel, und spritzt Flammen nach Faust, Mephistopheles und den Thieren. Die Thiere winseln. --></stage>
+	<stage n="before_2475_c"	type="long"><!-- welcher den Wedel, den er in der Hand hält, umkehrt, und unter die Gläser und Töpfe schlägt. --></stage>
+	<stage n="before_2481"	type="sentence"><!-- Indem die Hexe voll Grimm und Entsetzen zurücktritt. --></stage>
+	<!--stage n="before_2503_b"	tanzend. -->
+	<stage n="before_2514_a"	type="sentence"><!-- Er macht eine unanständige Geberde.vor 2514Geberde SGebärde A  BaGeberde   B --></stage>
+	<stage n="before_2514_c"	type="finite-verb"><!-- lacht unmäßig. --></stage>
+	<!--stage n="before_2516_b"	zu Faust. -->
+	<!--stage n="before_2526"	Leise. -->
+	<stage n="before_2532_a"	type="sentence"><!-- Die Hexe mit seltsamen Geberden, zieht einen Kreis und stellt wunderbare Sachen hinein; indessen fangen die Gläser an zu klingen, die Kessel zu tönen, und machen Musik. Zuletzt bringt sie ein großes Buch, stellt die Meerkatzen in den Kreis, die ihr zum Pult dienen und die Fackel halten müssen. Sie winkt Fausten, zu ihr zu treten. --></stage>
+	<!--stage n="before_2532_c"	zu Mephistopheles. -->
+	<stage n="before_2540_a"	type="sentence"><!-- Er nöthigt Fausten in den Kreis zu treten. --></stage>
+	<stage n="before_2540_c"	type="long"><!-- mit großer Emphase fängt an aus dem Buche zu declamiren. --></stage>
+	<stage n="before_2567_b"	type="finite-verb"><!-- fährt fort. --></stage>
+	<stage n="before_2583_a"	type="sentence"><!-- Die Hexemit vielen Ceremonien, schenkt den Trank in eine Schale; wie sie Faust an den Mund bringt, entsteht eine leichte Flamme.vor 2583Hexe‸ SHexe. A  D1Hexe‸ B  Ba --></stage>
+	<stage n="before_2587_a"	type="sentence"><!-- Die Hexe lös’t den Kreis. --></stage>
+	<stage n="before_2587_a"	type="sentence"><!-- Faust tritt heraus. --></stage>
+	<!--stage n="before_2589_b"	zur Hexe. -->
+	<!--stage n="before_2593_b"	zu Faust. -->
+	<!--stage n="before_2603"	Leise..vor 2603Leise. SLeise‸ A  D1Leise. B(Leise.) Ba -->
+	<!--stage n="before_2605_b"	Faust. Margarete vorüber gehend. -->
+	<stage n="after_2608"	type="sentence"><!-- Sie macht sich los und ab. --></stage>
+	<stage n="before_2619_a"	type="sentence"><!-- Mephistopheles tritt auf. --></stage>
+	<!--stage n="after_2673"	ab. -->
+	<!--stage n="after_2677"	ab. -->
+	<!--stage n="before_2678_b"	Ein kleines reinliches Zimmer. -->
+	<!--stage n="before_2678_c"	ihre Zöpfe flechtend und aufbindend. -->
+	<!--stage n="after_2683"	ab. -->
+	<!--stage n="before_2684_a"	Mephistopheles. Faust. -->
+	<!--stage n="before_2685_b"	nach einigem Stillschweigen. -->
+	<!--stage n="before_2686_b"	herumspürend. -->
+	<!--stage n="after_2686"	ab. -->
+	<!--stage n="before_2687_b"	rings aufschauend. -->
+	<stage n="before_2695"	type="sentence"><!-- Er wirft sich auf den ledernen Sessel am Bette. --></stage>
+	<stage n="before_2709"	type="sentence"><!-- Er hebt einen Bettvorhang auf. --></stage>
+	<stage n="before_2745"	type="sentence"><!-- Er stellt das Kästchen in den Schrein und drückt das Schloß wieder zu. --></stage>
+	<!--stage n="after_2752"	ab. -->
+	<!--stage n="before_2753_a"	mit einer Lampe. -->
+	<stage n="before_2754"	type="sentence"><!-- Sie macht das Fenster auf. --></stage>
+	<stage n="before_2759"	type="sentence"><!-- Sie fängt an zu singen, indem sie sich auszieht. --></stage>
+	<stage n="before_2783"	type="sentence"><!-- Sie eröffnet den Schrein, ihre Kleider einzuräumen, und erblickt das Schmuckkästchen. --></stage>
+	<stage n="before_2796"	type="sentence"><!-- Sie putzt sich damit auf und tritt vor den Spiegel. --></stage>
+	<stage n="before_2805_b"	type="long"><!-- Faust in Gedanken auf und ab gehend. Zu ihm Mephistopheles. --></stage>
+	<!--stage n="after_2861"	Faust ab. -->
+	<!--stage n="after_2864"	ab. -->
+	<!--stage n="before_2865_b"	allein. -->
+	<stage n="before_2871"	type="sentence"><!-- Sie weint. --></stage>
+	<stage n="before_2873i_a"	type="sentence"><!-- Margarete kommt. --></stage>
+	<stage n="before_2882_b"	type="finite-verb"><!-- putzt sie auf. --></stage>
+	<stage n="before_2895_a"	type="sentence"><!-- Es klopft. --></stage>
+	<!--stage n="before_2896_b"	durchs Vorhängel guckend.vor 2896durchs Adurchs H5durch’s Sdurch’s B  Ba -->
+	<stage n="before_2897_a"	type="sentence"><!-- Mephistopheles tritt auf. --></stage>
+	<stage n="before_2899"	type="sentence"><!-- Tritt ehrerbietig vor Margareten zurück. --></stage>
+	<!--stage n="before_2901_b"	leise zu ihr. -->
+	<!--stage n="before_2905_b"	laut. -->
+	<!--stage n="before_2959_b"	weinend. -->
+	<!--stage n="before_3004_b"	für sich. -->
+	<!--stage n="before_3006"	zu Gretchen. -->
+	<!--stage n="before_3007f_b"	für sich. -->
+	<!--stage n="before_3008i"	Laut. -->
+	<!--stage n="before_3025_b"	Faust. Mephistopheles. -->
+	<!--stage n="before_3073_b"	Margaretean FaustensArm, Marthemit Mephistophelesauf und ab spazirend.nach 3072spazirend Aspazierend H5spazierend Bspatzierend Ba -->
+	<stage n="before_3081_a"	type="sentence"><!-- Er küßt ihre Hand. --></stage>
+	<stage n="before_3085_a"	type="finite-verb"><!-- Gehn vorüber. --></stage>
+	<stage n="before_3096_a"	type="finite-verb"><!-- Gehn vorüber. --></stage>
+	<stage n="before_3149_a"	type="finite-verb"><!-- Gehn vorüber. --></stage>
+	<stage n="after_3162"	type="finite-verb"><!-- Gehn vorüber. --></stage>
+	<stage n="before_3179f_a"	type="sentence"><!-- Sie pflückt eine Sternblume und zupft die Blätter ab, eins nach dem andern. --></stage>
+	<stage n="before_3181i_a"	type="sentence"><!-- Sie rupft und murmelt. --></stage>
+	<!--stage n="before_3181f_b"	halb laut. -->
+	<stage n="before_3183_b"	type="finite-verb"><!-- fährt fort. --></stage>
+	<stage n="before_3184i"	type="long"><!-- Das lezte Blatt ausrupfend, mit holder Freude. --></stage>
+	<stage n="before_3187_a"	type="sentence"><!-- Er faßt ihre beyden Hände.nach 3186ihre beyden A  B  Baihr beyde H5  S --></stage>
+	<stage n="before_3195i_a"	type="sentence"><!-- Margarete drückt ihm die Hände, macht sich los und läuft weg. Er steht einen Augenblick in Gedanken, dann folgt er ihr. --></stage>
+	<!--stage n="before_3195i_c"	kommend. -->
+	<stage n="before_3205i_b"	type="sentence"><!-- Margarete springt herein, steckt sich hinter die Thür, hält die Fingerspitze an die Lippen, und guckt durch die Ritze. --></stage>
+	<stage n="before_3205f_a"	type="finite-verb"><!-- kommt. --></stage>
+	<stage n="before_3206f_a"	type="sentence"><!-- Er küßt sie. --></stage>
+	<!--stage n="before_3206f_c"	ihn fassend und den Kuß zurück gebend.vor 3206zurück gebend S  Azurückgebend H5zurückgebend B  Ba -->
+	<stage n="before_3207i_a"	type="sentence"><!-- Mephistopheles klopft an. --></stage>
+	<!--stage n="before_3207i_c"	stampfend. -->
+	<stage n="before_3208i_a"	type="finite-verb"><!-- kommt. --></stage>
+	<!--stage n="after_3210f"	Faust und Mephistopheles ab. -->
+	<!--stage n="after_3216"	ab. -->
+	<!--stage n="before_3217_b"	allein. -->
+	<stage n="before_3251_a"	type="sentence"><!-- Mephistopheles tritt auf. --></stage>
+	<!--stage n="before_3292"	Mit einer Geberde. -->
+	<!--stage n="before_3325_b"	für sich. -->
+	<!--stage n="before_3374_b"	am Spinnrade allein. -->
+	<!--stage n="before_3414i_b"	Margarete. Faust. -->
+	<!--stage n="after_3520"	ab. -->
+	<stage n="before_3521i_a"	type="sentence"><!-- Mephistopheles tritt auf. --></stage>
+	<!--stage n="before_3544_b"	Gretchen und Lieschen mit Krügen. -->
+	<!--stage n="after_3576"	ab. -->
+	<!--stage n="before_3577_b"	nach Hause gehend. -->
+	<!--stage n="before_3587_b"	In der Mauerhöhle ein Andachtsbild der Mater dolorosa, Blumenkrüge davor. -->
+	<stage n="before_3587_b"	type="finite-verb"><!-- steckt frische Blumen in die Krüge. --></stage>
+	<!--stage n="before_3620_b"	Straße vor Gretchens Thüre. -->
+	<!--stage n="before_3620_c"	Soldat, Gretchens Bruder. -->
+	<!--stage n="before_3650_a"	Faust. Mephistopheles. -->
+	<stage n="before_3682"	type="finite-verb"><!-- Singt zur Zither. --></stage>
+	<stage n="before_3698_b"	type="finite-verb"><!-- tritt vor. --></stage>
+	<!--stage n="before_3704_b"	zu Faust. -->
+	<!--stage n="before_3711i_b"	zu Faust. -->
+	<stage n="before_3711m_b"	type="finite-verb"><!-- fällt. --></stage>
+	<!--stage n="before_3716i_b"	am Fenster. -->
+	<!--stage n="before_3716f_b"	am Fenster. -->
+	<!--stage n="before_3717_b"	wie oben. -->
+	<!--stage n="before_3719_b"	heraustretend. -->
+	<!--stage n="before_3720i_b"	heraustretend. -->
+	<stage n="before_3726"	type="sentence"><!-- Alle treten um ihn. --></stage>
+	<stage n="after_3775"	type="finite-verb"><!-- stirbt. --></stage>
+	<stage n="before_3776_c"	type="long"><!-- Gretchen unter vielem Volke. Böser Geist hinter Gretchen. --></stage>
+	<!--stage n="before_3800_a"	Orgelton. -->
+	<stage n="after_3834"	type="sentence"><!-- Sie fällt in Ohnmacht. --></stage>
+	<!--stage n="before_3835_b"	Harzgebirg. -->
+	<!--stage n="before_3835_b"	Gegend von Schirke und Elend. -->
+	<!--stage n="before_3835_c"	Faust. Mephistopheles. -->
+	<!--stage n="before_3871_b"	im Wechselgesang. -->
+	<!--stage n="before_3956"	im Chor. -->
+	<!--stage n="before_3974"	Chor. -->
+	<!--stage n="before_3978"	halbes Chor.vor 3978Hexenmeister‸ halbes Chor. H14Hexenmeister. Halbes Chor. A  B  H1  C1 12  C3 12Hexenmeister. (Halbes Chor.) Ba -->
+	<!--stage n="before_3986_b"	oben. -->
+	<!--stage n="before_3987_b"	von unten. -->
+	<!--stage n="before_3994_b"	von unten. -->
+	<!--stage n="before_3995_b"	von oben. -->
+	<!--stage n="before_3996_b"	unten. -->
+	<!--stage n="before_4004_b"	unten. -->
+	<stage n="before_4016_a"	type="sentence"><!-- Sie lassen sich nieder. --></stage>
+	<!--stage n="before_4021m_b"	in der Ferne. -->
+	<stage n="before_4072"	type="long"><!-- zu einigen, die um verglimmende Kohlen sitzen.vor 4072zu H14  AZu B  Ba --></stage>
+	<stage n="before_4092_b"	type="long"><!-- auf einmal sehr alt erscheint.vor 4092auf H14  Ader auf B  Ba --></stage>
+	<!--stage n="before_4128_b"	mit der jungen tanzend. -->
+	<!--stage n="before_4136_b"	mit der Alten. -->
+	<!--stage n="before_4148_b"	tanzend. -->
+	<!--stage n="before_4149_b"	tanzend. -->
+	<stage n="before_4168"	type="sentence"><!-- es wird fortgetanzt.vor 4168es H14  AEs B  Ba --></stage>
+	<stage n="before_4176"	type="long"><!-- zu Faust der aus dem Tanz getreten ist.vor 4176zu H14  AZu B  Ba --></stage>
+	<!--stage n="before_4251_b"	Fortissimo. -->
+	<!--stage n="before_4295_b"	nach der einen Seite. -->
+	<!--stage n="before_4299_b"	nach der andern Seite. -->
+	<!--stage n="before_4395_b"	pianissimovor 4395Orchester^ pianissimo.Orchester. pianissimo. AOrchester. Pianissimo. B  Ba  H1  C1 12  C3 12 -->
+	<!--stage n="before_ttf_1_b"	Faust. Mephistopheles. -->
+	<stage n="before_ttf_44_a"	type="finite-verb"><!-- Faust blickt wild umher. --></stage>
+	<stage n="before_4399_c"	type="long"><!-- Faust. Mephistopheles auf schwarzen Pferden daher brausend. --></stage>
+	<!--stage n="before_4405_b"	mit einem Bund Schlüssel und einer Lampe, vor einem eisernen Thürchen. -->
+	<stage n="before_4412"	type="sentence"><!-- er ergreift das Schloß. Es singt inwendig.vor 4412er H5  AEr B  Ba --></stage>
+	<!--stage n="before_4421_b"	aufschließend. -->
+	<stage n="before_4423_a"	type="sentence"><!-- er tritt ein.nach 4422er AEr B  Ba --></stage>
+	<!--stage n="before_4423_c"	sich auf dem Lager verbergend. -->
+	<!--stage n="before_4424_b"	leise. -->
+	<!--stage n="before_4425_b"	sich vor ihn hinwälzend. -->
+	<stage n="before_4427_a"	type="sentence"><!-- er faßt die Ketten, sie aufzuschließen.nach 4426er AEr B  Ba --></stage>
+	<!--stage n="before_4427_c"	auf den Knieen. -->
+	<stage n="before_4432"	type="sentence"><!-- sie steht auf.vor 4432sie ASie B  Ba --></stage>
+	<stage n="before_4451_b"	type="finite-verb"><!-- wirft sich nieder. --></stage>
+	<stage n="before_4453_b"	type="finite-verb"><!-- wirft sich zu ihm. --></stage>
+	<!--stage n="before_4460_b"	laut. -->
+	<!--stage n="before_4461_b"	aufmerksam. -->
+	<stage n="before_4462"	type="sentence"><!-- Sie springt auf. Die Ketten fallen ab. --></stage>
+	<!--stage n="before_4471"	ihn fassend.vor 4471ihn AIhn B  Ba -->
+	<!--stage n="before_4479i_b"	fortstrebend. -->
+	<!--stage n="before_4481_a"	liebkosend.nach 4480liebkosend ALiebkosend B  Ba -->
+	<stage n="before_4493"	type="sentence"><!-- Sie umfaßt ihn. --></stage>
+	<stage n="before_4498_a"	type="sentence"><!-- sie wendet sich von ihm. --></stage>
+	<!--stage n="before_4501_b"	zu ihm gewendet. -->
+	<stage n="before_4597_a"	type="finite-verb"><!-- erscheint draußen. --></stage>
+	<!--stage n="before_4606_b"	zu Faust. -->
+	<!--stage n="before_4611m_b"	von oben. -->
+	<!--stage n="before_4611f_b"	zu Faust. -->
+	<stage n="after_4611f"	type="finite-verb"><!-- verschwindet mit Faust. --></stage>
+	<!--stage n="before_4612_b"	von innen, verhallend. -->
+	<!--stage n="before_4613_f"	Faust auf blumigen Rasen gebettet, ermüdet, unruhig, schlafsuchend. -->
+	<!--stage n="before_4613_g"	Dämmerung. -->
+	<!--stage n="before_4613_h"	Geister-Kreis schwebend bewegt, anmuthige kleine Gestalten. -->
+	<!--stage n="before_4613_j"	Gesang von Äolsharfen begleitet. -->
+	<!--stage n="before_4634_b"	Einzeln, zu zweyen und vielen, abwechselnd und gesammt.before_4634_bgesammt Hgesammelt I H0a -->
+	<stage n="before_4666_a"	type="sentence"><!-- Ungeheures Getöse verkündet das Herannahen der Sonne. --></stage>
+	<!--stage n="before_4728_d"	Trompeten. -->
+	<stage n="before_4728_e"	type="sentence"><!-- Hofgesinde aller Art prächtig gekleidet tritt vor. --></stage>
+	<stage n="before_4728_f"	type="sentence"><!-- Der Kaiser gelangt auf den Thron, zu seiner Rechten der Astrolog. --></stage>
+	<!--stage n="before_4743_b"	am Throne knieend. -->
+	<stage n="after_4756"	type="sentence"><!-- Mephistopheles steigt hinauf und stellt sich zur Linken. --></stage>
+	<!--stage n="after_4808"	Pause. -->
+	<!--stage n="before_4876_b"	nach einigem Nachdenken zu Mephistopheles. -->
+	<stage n="before_4955_b"	type="finite-verb"><!-- spricht, Mephistopheles bläst ein. --></stage>
+	<!--stage n="before_5048_b"	wie oben. -->
+	<!--stage n="after_5060"	Trompeten, Exeunt. -->
+	<!--stage n="before_5088_b"	Gesang begleitet von Mandolinen. -->
+	<!--stage n="before_5128_b"	golden. -->
+	<stage n="before_5158_a"	type="sentence"><!-- Unter grünen Laubgängen putzen die Gärtnerinnen zierlich ihren Kram auf. --></stage>
+	<!--stage n="before_5158_c"	Gesang begleitet von Theorben. -->
+	<stage n="after_5177"	type="sentence"><!-- Unter Wechselgesang, begleitet von Guitarren und Theorben, fahren beyde Chöre fort ihre Waaren stufenweis in die Höhe zu schmücken und auszubieten. --></stage>
+	<!--stage n="before_5178_a"	Mutter und Tochter. -->
+	<stage n="before_5199_a"	type="sentence"><!-- Gespielinnen jung und schön gesellen sich hinzu, ein vertrauliches Geplauder wird laut. --></stage>
+	<stage n="before_5199_b"	type="long"><!-- Fischer und Vogelsteller Mit Netzen, Angel und Leimruthen, auch sonstigem Geräthe treten auf, mischen sich unter die schönen Kinder. Wechselseitige Versuche zu gewinnen, zu fangen, zu entgehen und fest zu halten geben zu den angenehmsten Dialogen Gelegenheit. --></stage>
+	<stage n="before_5199_d"	type="finite-verb"><!-- treten ein ungestüm und ungeschlacht. --></stage>
+	<!--stage n="before_5215_b"	täppisch fast läppisch. -->
+	<!--stage n="before_5237_b"	schmeichelnd-lüstern. -->
+	<!--stage n="before_5263_b"	unbewußt. -->
+	<stage n="before_5295_a"	type="sentence"><!-- Der HeroldKündigt verschiedene Poeten an. Naturdichter, Hof- und Rittersänger, zärtliche so wie Enthusiasten. Im Gedräng von Mitwerbern aller Art, läßt keiner den Andern zum Vortrag kommen. Einer schleicht mit wenigen Worten vorbey.vor 5295vorbey Hvorüber I H0a --></stage>
+	<stage n="after_5298"	type="sentence"><!-- Die Nacht- und Grabdichter lassen sich entschuldigen, weil sie so eben im interessantesten Gespräch mit einem frischerstandenen Vampyren begriffen seyen; woraus eine neue Dichtart sich vielleicht entwickeln könnte; der Herold muß es gelten lassen und ruft indessen die griechische Mythologie hervor, die, selbst in moderner Maske, weder Charakter noch Gefälliges verliert. --></stage>
+	<!--stage n="before_5299_a"	Die Grazien. -->
+	<!--stage n="before_5305_a"	Die Parzen. -->
+	<!--stage n="before_5520f"	Wagenlenker. -->
+	<!--stage n="before_5585"	immerfort umherschnippend. -->
+	<!--stage n="before_5612"	zu Plutus gewendet. -->
+	<!--stage n="before_5630_b"	zur Menge. -->
+	<stage n="before_5683_a"	type="sentence"><!-- Plutus steigt vom Wagen. --></stage>
+	<!--stage n="before_5689_b"	zum Lenker. -->
+	<stage n="after_5708"	type="finite-verb"><!-- ab wie er kam. --></stage>
+	<!--stage n="before_5872_a"	im Chor. -->
+	<stage n="before_5872_b"	type="sentence"><!-- sie umschließen den großen Pan. --></stage>
+	<!--stage n="before_5898"	an den großen Pan. -->
+	<!--stage n="before_5914_b"	zum Herold. -->
+	<stage n="before_5920_b"	type="long"><!-- den Stab anfassend, welchen Plutus in der Hand behält. --></stage>
+	<!--stage n="before_5987_b"	Morgensonne. -->
+	<stage n="before_5987_c"	type="long"><!-- Der Kayser, Hofleute; Faust, Mephistopheles, anständig, nicht auffallend, nach Sitte gekleidet, beyde knieen.vor 5987anständig knieen. I H0aanständig nicht auffallend knieen. H (anständig knieen.) Ec H --></stage>
+	<!--stage n="before_5988_b"	zum Aufstehen winkend. -->
+	<stage n="before_6037_b"	type="finite-verb"><!-- tritt eilig auf. --></stage>
+	<stage n="before_6045_b"	type="finite-verb"><!-- folgt eilig. --></stage>
+	<stage n="before_6052_b"	type="finite-verb"><!-- der sich einfindet. --></stage>
+	<stage n="before_6054_b"	type="finite-verb"><!-- der langsam herankommt. --></stage>
+	<stage n="before_6057"	type="sentence"><!-- er liest. --></stage>
+	<!--stage n="after_6142"	ab mit Faust. -->
+	<!--stage n="before_6145_b"	empfangend. -->
+	<!--stage n="before_6146_b"	gleichfalls. -->
+	<!--stage n="before_6147_b"	annehmend. -->
+	<!--stage n="before_6148_b"	gleichfalls. -->
+	<!--stage n="before_6149_b"	mit Bedacht. -->
+	<!--stage n="before_6150_b"	gleichfals.vor 6150gleichfals H(gleichfals ohne schließende Klammer H -->
+	<!--stage n="after_6160"	ab. -->
+	<!--stage n="after_6171"	ab. -->
+	<!--stage n="before_6172_b"	solus. -->
+	<!--stage n="before_6173_b"	Faust Mephistopheles. -->
+	<!--stage n="before_6216m_b"	aufgeschreckt. -->
+	<!--stage n="before_6265_b"	schaudernd. -->
+	<!--stage n="before_6281_b"	begeistert. -->
+	<stage n="after_6293i"	type="sentence"><!-- Faust macht eine entschieden gebietende Attitüde mit dem Schlüssel. --></stage>
+	<!--stage n="before_6293f_b"	ihn betrachtend. -->
+	<stage n="after_6304"	type="sentence"><!-- Faust stampft und versinkt. --></stage>
+	<!--stage n="before_6307_b"	Kaiser und Fürsten, Hof in Bewegung. -->
+	<!--stage n="before_6307_d"	zu Mephistopheles. -->
+	<!--stage n="before_6339_b"	schreiend. -->
+	<!--stage n="before_6343_b"	herandringend. -->
+	<!--stage n="before_6355f_b"	entrüstet. -->
+	<!--stage n="before_6367"	umherschauend. -->
+	<stage n="before_6377_b"	type="long"><!-- Dammernde Beleuchtung, Kaiser und Hof, sind eingezogen.vor 6377DämmerndeDammernde H --></stage>
+	<!--stage n="after_6390"	Posaunen. -->
+	<!--stage n="before_6399_b"	aus dem Soufleurloche auftauchend. -->
+	<!--stage n="before_6401"	zum Astrologen. -->
+	<stage n="before_6421_a"	type="sentence"><!-- Faust steigt auf der andern Seite des Prosceniums herauf. --></stage>
+	<!--stage n="before_6427_b"	großartig. -->
+	<!--stage n="before_6473_b"	entzückt. -->
+	<stage n="before_6479_a"	type="sentence"><!-- Helenatritt auf.vor 6479tritt auf Hhervortretend Ec H --></stage>
+	<!--stage n="before_6501_b"	aus dem Kasten. -->
+	<stage n="before_6564_a"	type="sentence"><!-- Explosion, Faust liegt am Boden. Die Geister gehen in Dunst auf. --></stage>
+	<stage n="before_6564_c"	type="long"><!-- der Fausten auf die Schulter nimmt. --></stage>
+	<!--stage n="after_6565"	Finsterniß, Tummult. -->
+	<stage n="before_6566_d"	type="sentence"><!-- hinter einem Vorhang hervortretend. Indem er ihn aufhebt und zurücksieht erblickt man Faustenhingestreckt auf einem altväterischen Bette.vor 6566zurücksieht Hzurückzieht konj. Fiedler --></stage>
+	<!--stage n="before_6570"	sich umschauend. -->
+	<stage n="before_6592_a"	type="sentence"><!-- er schüttelt den herabgenommenen Pelz, Cicaden, Käfer und Farfarellen fahren heraus. --></stage>
+	<stage n="before_6616"	type="finite-verb"><!-- schlüpft in den Pelz. --></stage>
+	<stage n="after_6619"	type="sentence"><!-- er zieht die Glocke die einen gellenden, durchdringenden Ton erschallen läßt; wovon die Hallen erbeben und die Thüren aufspringen. --></stage>
+	<!--stage n="before_6620_b"	den langen finstern Gang herwankend. -->
+	<!--stage n="before_6634_b"	winkend. -->
+	<stage n="before_6685"	type="sentence"><!-- Der Famulus geht ab, Mephistopheles setzt sich gravitätisch nieder. --></stage>
+	<!--stage n="before_6689_b"	den Gang herstürmend. -->
+	<!--stage n="before_6762_b"	nach einer Pause. -->
+	<!--stage n="before_6770_b"	gemüthlich. -->
+	<stage n="before_6772_b"	type="long"><!-- der mit seinem Rollstuhle immer näher ins Proscenium rückt, zum Parterre. --></stage>
+	<!--stage n="before_6792_b"	abseits. -->
+	<!--stage n="after_6806"	ab. -->
+	<stage n="before_6815"	type="long"><!-- Zu dem jüngern Parterre das nicht applaudirt. --></stage>
+	<!--stage n="before_6819_d"	am Herde. -->
+	<!--stage n="before_6831_b"	eintretend. -->
+	<!--stage n="before_6832_b"	ängstlich. -->
+	<!--stage n="before_6833"	Leise. -->
+	<!--stage n="before_6835i_b"	leiser. -->
+	<!--stage n="before_6835f_b"	leiser. -->
+	<stage n="before_6848"	type="capitalized"><!-- Zum Herd gewendet. --></stage>
+	<!--stage n="before_6855"	zum Herd gewendet. -->
+	<!--stage n="before_6865_b"	bisher immer aufmerksam auf die Phiole. -->
+	<stage n="before_6871"	type="capitalized"><!-- Entzückt die Phiole betrachtend. --></stage>
+	<!--stage n="before_6879_b"	in der Phiole zu Wagner. -->
+	<!--stage n="before_6885"	zu Mephistopheles. -->
+	<!--stage n="before_6901f_b"	auf eine Seitenthüre deutend. -->
+	<!--stage n="before_6902_b"	immer in die Phiole schauend. -->
+	<stage n="after_6902"	type="sentence"><!-- Die Seitenthür öffnet sich, man sieht Faust auf dem Lager hingestreckt. --></stage>
+	<!--stage n="before_6903i_b"	erstaunt. -->
+	<stage n="before_6903f"	type="sentence"><!-- Die Phiole entschlüpft aus Wagners Händen, schwebt über Faust und beleuchtet ihn. --></stage>
+	<!--stage n="before_6928"	umherschauend. -->
+	<!--stage n="before_6979_b"	lüstern. -->
+	<!--stage n="before_6987m_b"	ängstlich. -->
+	<!--stage n="before_6999f_b"	betrübt. -->
+	<!--stage n="before_7003"	ad Spectatores. -->
+	<stage n="after_7039"	type="finite-verb"><!-- Entfernt sich. --></stage>
+	<!--stage n="before_7040_a"	Die Luftfahrer oben. -->
+	<!--stage n="before_7056i_b"	den Boden berührend. -->
+	<stage n="after_7068"	type="sentence"><!-- Das Glas dröhnt und leuchtet gewaltig. --></stage>
+	<!--stage n="before_7070_b"	allein. -->
+	<stage n="after_7079"	type="finite-verb"><!-- entfernt sich. --></stage>
+	<!--stage n="before_7080_b"	umherspürend. -->
+	<!--stage n="before_7093_b"	schnarrend. -->
+	<!--stage n="before_7100_b"	wie oben und immer so fort. -->
+	<!--stage n="before_7104_b"	von der colossalen Art. -->
+	<stage n="before_7112_b"	type="long"><!-- hat sich zwischen die Sphinxe gesetzt. --></stage>
+	<!--stage n="before_7127_b"	aufschauend. -->
+	<!--stage n="before_7138i_b"	schnarrend. -->
+	<!--stage n="before_7138f_b"	stärker schnarrend. -->
+	<!--stage n="before_7140_b"	brutal. -->
+	<!--stage n="before_7142f_b"	milde. -->
+	<stage n="before_7152_a"	type="finite-verb"><!-- Sirenen präludiren oben. --></stage>
+	<!--stage n="before_7161_b"	sie verspottend in derselben Melodie. -->
+	<!--stage n="before_7181_b"	herantretend. -->
+	<!--stage n="before_7185"	Auf Sphinxe bezüglich. -->
+	<!--stage n="before_7186"	Auf Sirenen bezüglich. -->
+	<!--stage n="before_7187"	Auf Ameisen bezüglich. -->
+	<!--stage n="before_7188"	Auf Greife bez. -->
+	<!--stage n="before_7195_b"	zu den Sphinxen. -->
+	<stage n="after_7213"	type="sentence"><!-- Faust entfernt sich. --></stage>
+	<!--stage n="before_7214_b"	verdrießlich. -->
+	<!--stage n="before_7225_b"	wie verschüchtert. -->
+	<!--stage n="before_7249_a"	Peneusumgeben von Gewässern und Nymphen.vor 7249 (Überschrift)Peneus H Zeichen über dem zweitene zur Verdeutlichung der Artikulation, darüberei , alRPeneus mit Zeichen über dem zweitene Ri H -->
+	<!--stage n="before_7257_b"	an den Fluß tretend. -->
+	<!--stage n="before_7263_b"	zu Faust. -->
+	<!--stage n="before_7336_b"	aufsitzend. -->
+	<!--stage n="before_7471_b"	Inwendig träumend. -->
+	<!--stage n="before_7476_b"	erwachend. -->
+	<stage n="after_7488"	type="sentence"><!-- Chiron ist schon weit weg. --></stage>
+	<stage n="after_7494"	type="sentence"><!-- Sie steigen hinab. --></stage>
+	before_7495_a before_7495_b	<!-- Am obern Peneios wie zuvor. -->
+	<!--stage n="before_7503_a"	Erdbeben. -->
+	<!--stage n="before_7519_b"	in der Tiefe brummend und polternd. -->
+	<stage n="after_7675"	type="finite-verb"><!-- Zerstreuen sich krächzend in den Lüften. --></stage>
+	<!--stage n="before_7676_b"	in der Ebne. -->
+	<!--stage n="before_7696_b"	Mephistopheles nach sich ziehend. -->
+	<!--stage n="before_7710_b"	stillstehend. -->
+	<!--stage n="before_7720_b"	inne haltend. -->
+	<!--stage n="before_7722_b"	fortschreitend. -->
+	<!--stage n="before_7726_b"	anmuthigst. -->
+	<!--stage n="before_7732_b"	eindringend. -->
+	<!--stage n="before_7736_b"	zu Mephistopheles. -->
+	<!--stage n="before_7770"	sie umfassend. -->
+	<!--stage n="before_7771"	eine andere ergreifend. -->
+	<!--stage n="before_7791_b"	sich schüttlend. -->
+	<!--stage n="before_7801"	sich zwischen dem Gestein verirrend. -->
+	<!--stage n="before_7811_b"	vom Naturfels. -->
+	<stage n="after_7850"	type="finite-verb"><!-- trennen sich. --></stage>
+	<!--stage n="before_7851_b"	zu Thales. -->
+	<!--stage n="before_7857_b"	zwischen beiden. -->
+	<!--stage n="before_7877"	zum Homunkulus.vor 7877Homunkulus II H74Homunnkulus H -->
+	<!--stage n="before_7900_b"	nach einer Pause feyerlich. -->
+	<!--stage n="after_7909"	Pause. -->
+	<stage n="after_7929"	type="capitalized"><!-- Wirft sich aufs Angesicht. --></stage>
+	<!--stage n="after_7950"	entfernen sich. -->
+	<stage n="before_7951_b"	type="capitalized"><!-- An der Gegenseite kletternd. --></stage>
+	<!--stage n="before_8026f_b"	als Phorkyas im Profil. -->
+	<!--stage n="after_8033"	ab. -->
+	<!--stage n="before_8034_b"	Mond im Zenith verharrend. -->
+	<stage n="before_8034_d"	type="long"><!-- auf den Klippen umher gelagert, flötend und singend. --></stage>
+	<!--stage n="before_8044_b"	als Meerwunder. -->
+	<stage n="after_8069"	type="finite-verb"><!-- entfernen sich. --></stage>
+	<!--stage n="before_8082_b"	am Ufer zu Homunkulus. -->
+	<stage n="after_8153"	type="finite-verb"><!-- entfernt sich gegen das Meer. --></stage>
+	<stage n="after_8159"	type="finite-verb"><!-- entfernen sich. --></stage>
+	<!--stage n="before_8160_b"	oben auf den Felsen. -->
+	<!--stage n="before_8217"	wiederholt als Allgesang. -->
+	<stage n="after_8218"	type="sentence"><!-- Nereiden und Tritonen ziehen vorüber. --></stage>
+	<!--stage n="before_8225_b"	unbemerkt. -->
+	<!--stage n="before_8227f_b"	Bauchrednerisch, bald nah, bald fern. -->
+	<!--stage n="before_8231i_b"	als aus der Ferne. -->
+	<!--stage n="before_8231f_b"	leise zu Homunkulus. -->
+	<!--stage n="before_8237_b"	in Gestalt einer Riesen-Schildkröte. -->
+	<!--stage n="before_8238_b"	den Homunkulus verhüllend. -->
+	<!--stage n="before_8243_b"	edel gestaltet. -->
+	<!--stage n="after_8244"	hat den Homunkulus enthüllt. -->
+	<!--stage n="before_8245_b"	erstaunt.vor 8245erstaunt H(erstaunt ohne schließende Klammer H -->
+	<!--stage n="before_8255_b"	leise. -->
+	<stage n="before_8275_a"	type="long"> before_8275_b	<!-- Telchinen von Rhodus auf Hippokampen und Meerdrachen, Neptunens Dreyzack handhabend. --></stage>
+	<stage n="after_8317i"	type="sentence"><!-- er verwandelt sich. --></stage>
+	<stage n="before_8327_a"	type="sentence"><!-- Homunkulus besteigt den Proteus-Delphin. --></stage>
+	<!--stage n="before_8335_b"	zu Thales. -->
+	<!--stage n="before_8339_b"	auf den Felsen. -->
+	<!--stage n="before_8347_b"	zu Thales tretend. -->
+	<!--stage n="before_8359_b"	auf Meerstieren, Meerkälbern und Widdern. -->
+	<!--stage n="before_8391_b"	im Chor am Nereus vorbeyziehend sämmtlich auf Delphinen. -->
+	<!--stage n="before_8395"	zu Nereus. -->
+	<stage n="before_8424i_a"	type="sentence"><!-- Galatee auf dem Muschelwagen nähert sich. --></stage>
+	<!--stage n="before_8444_b"	Chorus der sämmtlichen Kreise. -->
+	<!--stage n="before_8488_c"	Helena tritt auf und Chor gefangener Trojanerinnen. Panthalis Chorführerin. -->
+	<!--stage n="before_8638_b"	als Chorführerin. -->
+	<stage n="before_8647_b"	type="long"><!-- welche die Thürflügel offen gelassen hat, bewegt. --></stage>
+	<!--stage n="before_8697_a"	Phorkyas auf der Schwelle zwischen den Thürpfosten auftretend. -->
+	<stage n="before_8812_a"	type="sentence"><!-- Von hier an erwiedern die Choretiden, einzeln aus dem Chor heraustretend. --></stage>
+	<stage n="after_8881"	type="finite-verb"><!-- Sinkt dem Halbchor in die Arme.after_8881Arme.Arme). C1 4Arme.) C2α 4 C3 4 --></stage>
+	<stage n="before_8909_a"	type="sentence"><!-- Helena hat sich erholt und steht wieder in der Mitte. --></stage>
+	<stage n="before_8930_a"	type="sentence"><!-- Helena und Chor stehen erstaunt und erschreckt, in bedeutender, wohl vorbereiteter Gruppe. --></stage>
+	<stage n="before_8937"	type="long"><!-- klatscht in die Hände, darauf erscheinen an der Pforte vermummte Zwerggestalten, welche die ausgesprochenen Befehle alsobald mit Behendigkeit ausführen. --></stage>
+	<stage n="before_9063"	type="sentence"><!-- Trompeten in der Ferne; der Chor fährt zusammen. --></stage>
+	<!--stage n="after_9070"	Pause. -->
+	<stage n="before_9088"	type="sentence"><!-- Nebel verbreiten sich, umhüllen den Hintergrund, auch die Nähe, nach Belieben. --></stage>
+	<!--stage n="before_9127_a"	Innerer Burghof, umgeben von reichen phantastischen Gebäuden des Mittelalters. -->
+	<stage n="after_9181"	type="sentence"><!-- Alles vom Chor ausgesprochene geschieht nach und nach. --></stage>
+	<stage n="before_9182_a"	type="sentence"><!-- Faust Nachdem Knaben und Knappen in langem Zug herabgestiegen, erscheint er oben an der Treppe in ritterlicher Hofkleidung des Mittelalters und kommt langsam würdig herunter. --></stage>
+	<!--stage n="before_9182_c"	ihn aufmerksam beschauend. -->
+	<!--stage n="before_9192_b"	herantretend, einen Gefesselten zur Seite. -->
+	<stage n="before_9273_b"	type="long"><!-- mit einer Kiste und Männer die ihm andere nachtragen. --></stage>
+	<!--stage n="after_9355"	ab. -->
+	<!--stage n="before_9356_b"	zu Faust. -->
+	<!--stage n="before_9419_b"	heftig eintretend. -->
+	<!--stage n="after_9441"	Signale, Explosionen von den Thürmen, Trompeten und Zinken, kriegerische Musik, Durchmarsch gewaltiger Heereskraft. -->
+	<stage n="before_9446"	type="long"><!-- Zu den Heerführern, die sich von den Colonnen absondern und herantreten: --></stage>
+	<stage n="after_9481"	type="long"><!-- Faust steigt herab, die Fürsten schließen einen Kreis um ihn, Befehl und Anordnung näher zu vernehmen. --></stage>
+	<stage n="before_9562"	type="capitalized"><!-- Neben ihr sitzend.vor 9562sitzend.sitzend) C1 4sitzend.) C2α 4 C3 4 --></stage>
+	<stage n="after_9573"	type="sentence"><!-- Der Schauplatz verwandelt sich durchaus. An eine Reihe von Felsenhöhlen lehnen sich geschloßne Lauben. Schattiger Hain bis an die rings umgebende Felsensteile hinan. Faust und Helena werden nicht gesehen. Der Chor liegt schlafend vertheilt umher. --></stage>
+	<stage n="before_9679_a"	type="sentence"><!-- Ein reizendes, reinmelodisches Saitenspiel erklingt aus der Höhle. Alle merken auf und scheinen bald innig gerührt. Von hier an bis zur bemerkten Pause durchaus mit vollstimmiger Musik. --></stage>
+	<stage n="after_9686"	type="sentence"><!-- Sie zieht sich nach den Felsen zurück.after_9686den Hdem C1 4 --></stage>
+	<!--stage n="before_9695_a"	Helena, Faust, Euphorion in dem oben beschriebenen Costüm. -->
+	<stage n="before_9745"	type="capitalized"><!-- Durch den Chor sich schlingend und ihn zum Tanze fortziehend. --></stage>
+	<stage n="before_9755_a"	type="long"><!-- tanzend und singend bewegen sich in verschlungenem Reihen.vor 9755verschlungenem Hverschlungenen C1 4 --></stage>
+	<!--stage n="after_9766"	Pause. -->
+	<!--stage n="before_9790_b"	einzeln schnell eintretend. -->
+	<!--stage n="before_9794_b"	ein junges Mädchen hereintragend. -->
+	<stage n="after_9807"	type="sentence"><!-- Sie flammt auf und lodert in die Höhe.nach 9807Höhe.Höhe). C1 4Höhe.) C2α 4 C3 4 --></stage>
+	<!--stage n="before_9811_b"	die letzten Flammen abschüttelnd. -->
+	<stage n="after_9818"	type="sentence"><!-- Er springt immer höher Fels auf. --></stage>
+	<stage n="after_9900"	type="sentence"><!-- Er wirft sich in die Lüfte, die Gewande tragen ihn einen Augenblick, sein Haupt strahlt, ein Lichtschweif zieht nach. --></stage>
+	<stage n="before_9903_a"	type="sentence"><!-- Ein schöner Jüngling stürzt zu der Eltern Füßen, man glaubt in dem Todten eine bekannte Gestalt zu erblicken; doch das Körperliche verschwindet sogleich, die Aureole steigt wie ein Komet zum Himmel auf, Kleid, Mantel und Lyra bleiben liegen. --></stage>
+	<!--stage n="before_9905_b"	Stimme aus der Tiefe. -->
+	<!--stage n="after_9906"	Pause. -->
+	<!--stage n="before_9907_b"	Trauergesang. -->
+	<stage n="after_9938"	type="sentence"><!-- Völlige Pause. Die Musik hört auf. --></stage>
+	<!--stage n="before_9939_b"	zu Faust. -->
+	<stage n="after_9944"	type="sentence"><!-- Sie umarmt Faust, das Körperliche verschwindet, Kleid und Schleier bleiben ihm in den Armen. --></stage>
+	<!--stage n="before_9945_b"	zu Faust. -->
+	<stage n="after_9954"	type="sentence"><!-- Helenens Gewande lösen sich in Wolken auf, umgeben Faust, heben ihn in die Höhe und ziehen mit ihm vorüber. --></stage>
+	<!--stage n="before_9955_b"	nimmt Euphorions Kleid, Mantel und Lyra von der Erde, tritt ins Proscenium, hebt die Exuvien in die Höhe und spricht: -->
+	<stage n="after_9961"	type="sentence"><!-- Sie setzt sich im Proscenium an eine Säule nieder. --></stage>
+	<!--stage n="after_9984"	ab. -->
+	<stage n="after_10038_a"	type="sentence"><!-- Der Vorhang fällt. --></stage>
+	<stage n="after_10038_b"	type="sentence"><!-- Phorkyas im Proscenium richtet sich riesenhaft auf, tritt aber von den Cothurnen herunter, lehnt Maske und Schleier zurück und zeigt sich als Mephistopheles, um, in sofern es nöthig wäre, im Epilog das Stück zu commentiren. --></stage>
+	<stage n="before_10039_d"	type="finite-verb"><!-- tritt hervor. --></stage>
+	<stage n="before_10067_a"	type="sentence"><!-- Ein Sieben-Meilenstiefeltappt auf ein Andererfolgt also bald. Mephistophelessteigt ab Die Stiefelschreiten eilig weiter.before_10067_aalso bald IV H3alsbald H --></stage>
+	<!--stage n="before_10075_b"	ernsthaft. -->
+	<!--stage n="before_10210_b"	ad Spectatores. -->
+	<!--stage n="before_10212_b"	leidenschaftlich fortfahrend. -->
+	<!--stage n="before_10234_a"	Trommeln und kriegerische Musick im Rücken der Zuschauer, aus der Ferne, von der rechten Seite her. -->
+	<stage n="after_10296"	type="sentence"><!-- sie steigen über das Mittelgebirg herüber und beschauen die Anordnung des Heeres im Thal. Trommeln und Kriegsmusick schallt von unten auf. --></stage>
+	<!--stage n="before_10323_a"	Die drey Gewaltigen treten auf. -->
+	<!--stage n="before_10327"	Ad Spectatores. -->
+	<!--stage n="before_10331_b"	jung, leicht bewaffnet, bunt gekleidet. -->
+	<!--stage n="before_10335_b"	männlich, wohl bewaffnet, reich gekleidet. -->
+	<!--stage n="before_10339_b"	bejahrt, stark bewaffnet, ohne Gewand. -->
+	<stage n="after_10344"	type="sentence"><!-- sie steigen allezusammen tiefer.nach 10344allezusammen IV H8allzusammen H --></stage>
+	<!--stage n="before_10345_b"	Trommeln und kriegerische Musick von unten. -->
+	<stage n="before_10345_b"	type="sentence"><!-- Des Kaisers Zelt wird aufgeschlagen. --></stage>
+	<!--stage n="before_10345_c"	Kaiser Obergeneral Trabanten. -->
+	<stage n="before_10423_a"	type="sentence"><!-- die Herolde werden abgefertigt zu Herausforderung des Gegenkaisers. --></stage>
+	<!--stage n="before_10423_b"	Faust, geharnischt mit halbgeschloßnem Helme, die drey Gewaltigen, gerüstet und gekleidet wie oben. -->
+	<stage n="before_10489_b"	type="finite-verb"><!-- kommen zurück. --></stage>
+	<!--stage n="before_10502"	zum Oberfeldherrn. -->
+	<!--stage n="after_10510"	er deutet zur Rechten. -->
+	<stage n="before_10511_b"	type="finite-verb"><!-- tritt vor. --></stage>
+	<!--stage n="after_10518"	ab. -->
+	<!--stage n="before_10523_b"	auf den Mittelsten deutend. -->
+	<!--stage n="before_10531_b"	Markedenterin, sich an ihn anschmiegend. -->
+	<!--stage n="after_10536"	beyde ab. -->
+	<stage n="before_10541_b"	type="finite-verb"><!-- winkt nach der Linken. --></stage>
+	<stage n="before_10543_b"	type="finite-verb"><!-- tritt vor. --></stage>
+	<!--stage n="after_10546"	ab. -->
+	<!--stage n="before_10547_b"	von oben herunterkommend. -->
+	<!--stage n="before_10554"	leise zu den Wissenden. -->
+	<!--stage n="before_10565"	laut. -->
+	<!--stage n="after_10570"	furchtbarer Posaunenschall von oben, im feindlichen Heere merkliche Schwankung.after_10570Posaunenschall IV H21aPosauenschall H -->
+	<!--stage n="before_10640_b"	gegen die Rechte. -->
+	<!--stage n="before_10654_b"	an der linken Seite zu Faust. -->
+	<!--stage n="after_10663"	Pause. -->
+	<!--stage n="before_10670_b"	zu den Raben. -->
+	<!--stage n="before_10673_b"	zum Kaiser. -->
+	<stage n="before_10693_b"	type="finite-verb"><!-- der indeßen herangekommen. --></stage>
+	<!--stage n="before_10703"	zu Mephistopheles. -->
+	<!--stage n="after_10706"	ab ins Zelt mit dem Ob. Gen. -->
+	<!--stage n="after_10716"	Pause. -->
+	<stage n="before_10742"	type="sentence"><!-- die Raben sind wieder gekommen. --></stage>
+	<stage n="after_10757"	type="sentence"><!-- Raben ab. Es geschieht wie vorgeschrieben. --></stage>
+	<stage n="after_10782"	type="long"><!-- Kriegstummult im Orchester, zuletzt übergehend in militairisch heitre Weisen. --></stage>
+	<!--stage n="before_10783_b"	Habebald, Eilebeute. -->
+	<!--stage n="before_10795_b"	die Waffe nehmend. -->
+	<stage n="before_10809_a"	type="sentence"><!-- das Kistchen stürzt und springt auf. --></stage>
+	<stage n="before_10811_b"	type="finite-verb"><!-- vor 10811kauert nieder IV H8 erg. Ec Hkauert nieder. --></stage>
+	<stage n="before_10814"	type="sentence"><!-- sie steht auf. --></stage>
+	<!--stage n="before_10817_b"	unsres Kaisers. -->
+	<!--stage n="before_10831"	zu Eilebeute. -->
+	<!--stage n="after_10832"	ab. -->
+	<stage n="before_10849_a"	type="sentence"><!-- Kaiser, mit Vier Fürsten treten aufDie Trabanten entfernen sich. --></stage>
+	<!--stage n="before_10873"	zum ersten. -->
+	<!--stage n="before_10883_b"	zum Zweyten. -->
+	<!--stage n="before_10899"	zum Dritten. -->
+	<!--stage n="before_10909_b"	zum Vierten. -->
+	<stage n="before_10931_a"	type="sentence"><!-- Der Erzbischoff tritt auf. --></stage>
+	<stage n="after_10976"	type="sentence"><!-- Die weltlichen Fürsten entfernen sich. --></stage>
+	<stage n="before_10977_b"	type="finite-verb"><!-- bleibt und spricht pathetisch. --></stage>
+	<stage n="before_11023_b"	type="long"><!-- hat sich beurlaubt, kehrt aber beim Ausgang um. --></stage>
+	<!--stage n="after_11032"	ab. -->
+	<!--stage n="before_11035_b"	abermals zurückkehrend mit tiefster Verbeugung. -->
+	<!--stage n="before_11039_b"	verdrießlich. -->
+	<!--stage n="before_11042_b"	allein. -->
+	<!--stage n="before_11059_b"	Mütterchen, sehr alt. -->
+	<stage n="before_11069"	type="sentence"><!-- der Gatte tritt auf. --></stage>
+	<stage n="after_11078"	type="sentence"><!-- Er schreitet vorwärts auf der Düne. --></stage>
+	<!--stage n="before_11079_b"	zu Baucis. -->
+	<!--stage n="before_11083"	neben dem Wandrer stehend. -->
+	<stage n="before_11107_a"	type="capitalized"><!-- Am Tische zu drey, im Gärtchen. --></stage>
+	<!--stage n="before_11143_b"	Faust im höchsten Alter wandelnd, nachdenkend. -->
+	<!--stage n="before_11143_d"	durchs Sprachrohr. -->
+	<stage n="before_11151_a"	type="sentence"><!-- das Glöckchen läutet auf der Düne. --></stage>
+	<!--stage n="before_11151_c"	auffahrend. -->
+	<!--stage n="before_11163_b"	wie oben. -->
+	<!--stage n="before_11167_a"	Prächtiger Kahn, reich und bunt beladen mit Erzeugnissen fremder Weltgegenden. -->
+	<!--stage n="before_11167_b"	Mephistopheles die drey gewaltigen Gesellen. -->
+	<stage n="after_11170"	type="sentence"><!-- sie steigen aus, die Güter werden an’s Land geschafft. --></stage>
+	<stage n="after_11218"	type="sentence"><!-- die Ladung wird weggeschafft. --></stage>
+	<!--stage n="before_11219_b"	zu Faust. -->
+	<stage n="before_11282_a"	type="sentence"><!-- er pfeift gellend. --></stage>
+	<stage n="before_11282_b"	type="sentence"><!-- Die Drey treten auf. --></stage>
+	<!--stage n="before_11286_b"	ad Spectatores. -->
+	<!--stage n="before_11288_c"	auf der Schloßwarte, singend. -->
+	<!--stage n="after_11303"	Pause. -->
+	<!--stage n="after_11335"	Lange Pause, Gesang. -->
+	<!--stage n="before_11338_b"	auf dem Balkon, gegen die Dünen. -->
+	<!--stage n="before_11350_b"	unten. -->
+	<!--stage n="after_11377"	ab. -->
+	<!--stage n="before_11378_b"	auf dem Balkon. -->
+	<stage n="before_11384i_b"	type="sentence"><!-- Vier graue Weiber treten auf. --></stage>
+	<stage n="after_11391"	type="finite-verb"><!-- Sorge verschwindet. --></stage>
+	<!--stage n="before_11398_b"	im Pallast. -->
+	<!--stage n="before_11420i"	erschüttert. -->
+	<!--stage n="before_11423_b"	Erst ergrimmt, dann besänftigt für sich. -->
+	<stage n="after_11498"	type="sentence"><!-- sie haucht ihn an. --></stage>
+	<!--stage n="before_11499_b"	erblindet. -->
+	<!--stage n="before_11511_d"	als Aufseher, voran. -->
+	<!--stage n="before_11515_b"	im Chor. -->
+	<!--stage n="before_11531_b"	mit neckischen Gebärden grabend. -->
+	<stage n="before_11539_b"	type="finite-verb"><!-- aus dem Pallaste tretend, tastet an den Thürpfosten. --></stage>
+	<!--stage n="before_11544_b"	bey Seite. -->
+	<!--stage n="before_11557_b"	halblaut. -->
+	<stage n="after_11586"	type="sentence"><!-- Faust sinkt zurück, die Lemuren fassen ihn auf und legen ihn auf den Boden. --></stage>
+	<!--stage n="before_11636"	Phantastisch-flügelmännische Beschwörungs-Gebärden. -->
+	<stage n="before_11644"	type="sentence"><!-- der gräuliche Höllenrachen thut sich lincks auf. --></stage>
+	<stage n="before_11656"	type="capitalized"><!-- Zu den Dickteufeln vom kurzen, graden Horne. --></stage>
+	<stage n="before_11670"	type="capitalized"><!-- Zu den Dürrteufeln vom langen, krummen Horne. --></stage>
+	<!--stage n="before_11676_a"	Glorie von oben, rechts. -->
+	<!--stage n="before_11699_b"	Rosen streuend. -->
+	<!--stage n="before_11710_b"	zu den Satanen. -->
+	<stage n="before_11741"	type="capitalized"><!-- Sich mit den schwebenden Rosen herumschlagend. --></stage>
+	<stage n="after_11779"	type="sentence"><!-- die Engel nehmen, umherziehend, den ganzen Raum ein. --></stage>
+	<stage n="before_11780_b"	type="finite-verb"><!-- der ins Proscenium gedrängt wird. --></stage>
+	<!--stage n="before_11809_b"	sich faßend. -->
+	<stage n="after_11824"	type="sentence"><!-- Sie erheben sich, Faustens Unsterbliches entführend. --></stage>
+	<!--stage n="before_11825_b"	sich umsehend. -->
+	<!--stage n="before_11844_b"	Heilige Anachoreten Gebirg auf vertheilt, gelagert zwischen Klüften. -->
+	<!--stage n="before_11854_b"	auf und abschweifend. -->
+	<!--stage n="before_11866_b"	Tiefe Region. -->
+	<!--stage n="before_11890_b"	Mittlere Region. -->
+	<stage n="before_11910"	type="sentence"><!-- er nimmt sie in sich. --></stage>
+	<!--stage n="before_11914_b"	von innen. -->
+	<!--stage n="before_11926_b"	um die höchsten Gipfel kreisend. -->
+	<!--stage n="before_11934_b"	schwebend in der höhern Atmosphäre, Faustens Unsterbliches tragend. -->
+	<!--stage n="before_11989_b"	in der höchsten, reinlichsten Zelle. -->
+	<!--stage n="before_11997"	entzückt. -->
+	<stage n="before_12032_a"	type="sentence"><!-- Mater gloriosa schwebt einher. --></stage>
+	<!--stage n="before_12069_c"	sich anschmiegend. -->
+	<!--stage n="before_12069_b"	sonst Gretchen genannt. -->
+	<!--stage n="before_12076_b"	in Kreisbewegung sich nähernd. -->
+	<!--stage n="before_12084_b"	Sonst Gretchen genannt. -->
+	<stage n="before_12096_b"	type="capitalized"><!-- Auf dem Angesicht anbetend. --></stage>
+</f:stage-attrs>
