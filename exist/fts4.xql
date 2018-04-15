@@ -93,7 +93,7 @@ return
         		{if ($breadcrumbs)
         		then
 	        		<f:breadcrumbs>
-	        		{for $div in $breadcrumbs return <f:breadcrumb>{$div/@f:*}</f:breadcrumb>}
+	        		{for $div in $breadcrumbs return <f:breadcrumb>{$div/@* except $div/@xml:id}</f:breadcrumb>}
 	        		</f:breadcrumbs>
 	        	else (),
         		$line}

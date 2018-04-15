@@ -99,7 +99,10 @@
 	</xsl:template>
 	
 	<xsl:template match="f:breadcrumb">
-		<li><xsl:value-of select="@f:scene-label"/></li>
+		<li><xsl:value-of select="
+			if (@n and @n = $scenes//f:scene/@n)
+			then $scenes//f:scene[@n=current()/@n]/f:title
+			else @f:label"/></li>
 	</xsl:template>
 	
 	<xsl:variable name="navbar">
