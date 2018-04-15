@@ -73,7 +73,7 @@
                         </a>				
                     </xsl:when>                
                     <xsl:otherwise>
-                        <a class="md-document-ref" href="{$docbase}/{$docinfo/@sigil_t}" title="{$docinfo/headNote}">
+                        <a class="md-document-ref" href="{$docbase}{$docinfo/@sigil_t}" title="{$docinfo/headNote}">
                             <xsl:value-of select="$docinfo/@f:sigil"/>
                         </a>
                     </xsl:otherwise>
