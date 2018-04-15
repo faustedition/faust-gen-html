@@ -215,10 +215,10 @@
 					<a>Suchergebnisse</a>
 					<a><xsl:value-of select="@query"/></a>				
 			</xsl:with-param>
+			<xsl:with-param name="section-classes" select="('center', 'print')"/>
 			<xsl:with-param name="title" tunnel="yes">Faustedition: Suche nach <xsl:value-of select="$query"/></xsl:with-param>
-			<xsl:with-param name="content">
-				<div id="main" class="print">
-					<div class="print-side-column">
+			<xsl:with-param name="grid-content">
+					<div class="pure-u-1-5">
 						<h4>Sortierung</h4>
 						<ul class="sort">
 							<xsl:call-template name="order-item">
@@ -234,9 +234,8 @@
 								<xsl:with-param name="label">Vers</xsl:with-param>
 							</xsl:call-template>
 						</ul>
-					</div> <!-- 1. Spalte (1/5) bleibt erstmal frei -->
-					<div class="print-center-column">  <!-- 2. Spalte (3/5) für den Inhalt -->
-						
+					</div> 
+					<article class="pure-u-4-5">  <!-- 2. Spalte (3/5) für den Inhalt -->						
 						<xsl:choose>
 							<xsl:when test="*">
 								<xsl:copy-of select="$navbar"/>
@@ -247,8 +246,7 @@
 								<div class="pure-alert pure-alert-warning">Keine Treffer für <em><xsl:value-of select="@query"/></em>.</div>												
 							</xsl:otherwise>
 						</xsl:choose>
-					</div>
-				</div>				
+					</article>			
 			</xsl:with-param>
 		</xsl:call-template>						
 	</xsl:template>
