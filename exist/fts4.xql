@@ -4,7 +4,7 @@ declare namespace tei = "http://www.tei-c.org/ns/1.0";
 declare namespace f   = "http://www.faustedition.net/ns";
 declare namespace fa   = "http://www.faustedition.net/ns"; (: OXYGEN DRIVES ME MAD!!!!!  :)
 declare variable $edition := '';
-declare variable $exist:controller external;
+(:  declare variable $exist:controller external; :)
 declare variable $data := collection(request:get-attribute('xmlpath'));
 declare variable $sigil-labels := doc('xslt/sigil-labels.xml');
 

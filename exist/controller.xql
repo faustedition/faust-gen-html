@@ -6,7 +6,7 @@ declare namespace tei = "http://www.tei-c.org/ns/1.0";
 declare variable $exist:root external;
 declare variable $exist:path external;
 declare variable $exist:resource external;
-declare variable $exist:controller external;
+declare variable $exist:controller external; 
 
 declare variable $xmlpath := $exist:root || $exist:controller || '/data';
 
