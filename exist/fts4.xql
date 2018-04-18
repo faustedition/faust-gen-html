@@ -10,31 +10,29 @@ declare variable $sigil-labels := doc('xslt/sigil-labels.xml');
 
 declare function local:makeURL(
 	$type as xs:string,
-	$uri as xs:string,
-	$transcript as xs:string?,
+	$sigil_t as xs:string,
 	$sec as xs:string?,
 	$page as xs:string?) as xs:string
 	{
-		let $html := $transcript || (if ($sec) then '.'|| $sec else ()) 
+		let $html := $sigil_t || (if ($sec) then '.'|| $sec else ()) 
 		let $path := switch ($type)
-			case 'archivalDocument' return concat('/documentViewer?faustUri=', $uri, "&amp;view=text&amp;page=", $page, "&amp;sec=", $html)
+			case 'archivalDocument' return concat('/document?sigil=', $sigil_t, "&amp;view=text&amp;page=", $page, "&amp;sec=", $html)
 			default return '/print/' || $html
 		return $edition || $path		
 	};
 
 declare function local:sigil($query as xs:string) as element()* {
     for $idno in $data//tei:idno[ngram:contains(., $query)][@type = $sigil-labels//f:label/@type]
-    let $uri := id('fausturi', $idno)   
-    group by $uri    
+    let $sigil_t := id('sigil_t', $idno)   
+    group by $sigil_t    
     return 
         let $idno := $idno[1],
-        $uri := id('fausturi', $idno),
+        $sigil_t := id('sigil_t', $idno),
         $sigil := data(id('sigil', $idno)),
     	$headnote := data(id('headNote', $idno)),
     	$type := data($idno/ancestor-or-self::tei:TEI/@type),
     	$number := data($idno[1]/ancestor-or-self::tei:TEI/@f:number),
-    	$transcript := id('fausttranscript', $idno),
-    	$href := $edition || (if ($type = 'archivalDocument') then '/documentViewer?faustUri=' || $uri else '/print/' || $transcript),
+    	$href := $edition || (if ($type = 'archivalDocument') then '/document?sigil=' || $sigil_t else '/print/' || $sigil_t),
     	$idno_label := data($sigil-labels//f:label[@type = $idno/@type])
         return <f:idno-match
                     sigil="{$sigil}"
@@ -43,7 +41,7 @@ declare function local:sigil($query as xs:string) as element()* {
                     idno="{$idno}"
                     idno-label="{$idno_label}"
                     href="{$href}"
-                    uri="{$uri}">{
+                    sigil_t="{$sigil_t}">{
                         util:expand($idno)
                 }</f:idno-match>
 };
@@ -51,10 +49,9 @@ declare function local:sigil($query as xs:string) as element()* {
 declare function local:query($query as item(), $order as xs:string) as element(f:doc)* {
 for $text in $data//tei:TEI[ft:query(., $query)]
 let $sigil := data(id('sigil', $text)),
+    $sigil_t := data(id('sigil_t', $text)),
 	$headnote := data(id('headNote', $text)),
 	$type := data($text/ancestor-or-self::tei:TEI/@type),
-	$uri := id('fausturi', $text),
-	$transcript := id('fausttranscript', $text),
 	$ann := util:expand($text),
 	$score := ft:score($text),
 	$number := $text/@f:number,
@@ -64,13 +61,12 @@ let $sigil := data(id('sigil', $text)),
 order by $sortcrit
 return
     <f:doc
+        sigil_t="{$sigil_t}"
         sigil="{$sigil}"
         headnote="{$headnote}"
         type="{$type}"
-        uri="{$uri}"
         number="{$number}"
-        transcript="{$transcript}"
-        href="{local:makeURL($type, $uri, $transcript, (), ())}"
+        href="{local:makeURL($type, $sigil_t, (), ())}"
         score="{$score}">{
         
         for $line in $ann//exist:match/(
@@ -87,17 +83,17 @@ return
         let
             $n := data($line/@n),
         	$page := ($line//tei:pb/@f:docTranscriptNo, $line/preceding::tei:pb[1]/@f:docTranscriptNo)[1],
-        	$breadcrumbs := $line/ancestor-or-self::*[@f:scene-label]
+        	$breadcrumbs := $line/ancestor-or-self::*[@f:label]
         return
         	<f:subhit
         	    page="{$page}"
         		n="{$n}"
-        		href="{local:makeURL($type, $uri, $transcript, $line/ancestor-or-self::*/@f:section, $page)}"
+        		href="{local:makeURL($type, $sigil_t, $line/ancestor-or-self::*/@f:section, $page)}"
         		>
         		{if ($breadcrumbs)
         		then
 	        		<f:breadcrumbs>
-	        		{for $div in $breadcrumbs return <f:breadcrumb>{$div/@f:*}</f:breadcrumb>}
+	        		{for $div in $breadcrumbs return <f:breadcrumb>{$div/@* except $div/@xml:id}</f:breadcrumb>}
 	        		</f:breadcrumbs>
 	        	else (),
         		$line}

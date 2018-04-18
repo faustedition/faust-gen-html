@@ -20,6 +20,7 @@
 	<xsl:strip-space elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc ge:transpose choice"/>
 	
 	<xsl:variable name="expan-map" select="document('../expan-map.xml')"/>
+	<xsl:variable name="stage-types" select="document('../text/stage-sentences.xml')"/>
 
 	
 	<!-- These elements are replaced with their respective content: -->
@@ -87,6 +88,16 @@
 
 	<!-- Drop comments as well; this needs to override node() from above -->
 	<xsl:template match="comment()" priority="1"/>
+	
+	<!-- Add types to matching stages -->
+	<xsl:template match="stage[@n=$stage-types//stage/@n]">
+		<xsl:variable name="n" select="@n"/>
+		<xsl:variable name="type" select="$stage-types//stage[@n=$n]/@type"/>
+		<xsl:copy>
+			<xsl:copy-of select="$type"/>
+			<xsl:apply-templates select="@* except @type, node()"/>			
+		</xsl:copy>
+	</xsl:template>
 	
 	<!-- lb -> space -->
 	<xsl:template match="lb[not(ancestor::head or ancestor::titlePart or ancestor::div[@n='1.1.23'] or @type='semantic')]">
