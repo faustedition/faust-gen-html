@@ -74,9 +74,8 @@ def read_sigils(filename='../../../../target/faust-transcripts.xml', secondary_f
     """parses faust-transcripts.xml and returns a mapping machine-readable sigil : human-readable sigil"""
     try:
         xml = etree.parse(filename)
-        idnos = xml.xpath('//f:idno[@type="faustedition" and @uri]', namespaces={'f': FAUST_NS})
-        short_sigil = re.compile('faust://document/faustedition/(\S+)') # re.Regex
-        sigils = { short_sigil.match(idno.get('uri')).group(1) : idno.text  for idno in idnos }
+        documents = xml.xpath('//f:textTranscript', namespaces=dict(f=FAUST_NS))
+        sigils = { doc.get('sigil_t') : doc.get('{%s}sigil' % FAUST_NS) for doc in documents }
         try:
             with open(secondary_filename, 'wt', encoding='utf-8') as out:
                 json.dump(sigils, out, ensure_ascii=False, indent=True, sort_keys=True)
@@ -207,9 +206,10 @@ def parse_readings(reading_str, tag='rdg'):
             hands = []
             notes = []
             for ref in DELIMITER.split(reading['references']):
-                if ref in sigils:
-                    wits.append(ref)
-                    notes.append('<wit>{0}</wit>'.format(ref))
+                normalized_ref = re.sub('[^A-Za-z0-9.-]+', '_', ref.replace('α', 'alpha'))
+                if normalized_ref in sigils:
+                    wits.append(normalized_ref)
+                    notes.append('<wit>{0}</wit>'.format(normalized_ref))
                 elif ref == 'none':
                     carry = wits[-1] if wits else None  # otherwise drop, cf. #225
                 elif ref in HANDS:
