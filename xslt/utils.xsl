@@ -409,7 +409,8 @@
     <xsl:variable name="tmp5" select=" replace($tmp4,'r̄','rr')"/>
     <xsl:variable name="tmp5a" select=" replace($tmp5,'ſs','ß')"/>
     <xsl:variable name="tmp6" select=" replace($tmp5a,'ſ','s')"/>
-    <xsl:variable name="tmp7" select=" replace($tmp6,'—','–')"/>    
+    <xsl:variable name="tmp7" select=" if ($text instance of node() and $text/ancestor-or-self::pc[@type='censorship']) 
+                                          then $tmp6 else replace($tmp6,'—','–')"/>    
     <xsl:value-of select="$tmp7"/>
   </xsl:function>
   <xsl:function name="f:normalize-print-chars" as="item()*">

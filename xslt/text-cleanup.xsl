@@ -44,7 +44,8 @@
 		| div//text
 		| div//front
 		| div//body
-		| div//titlePage[titlePart[@n]]">
+		| div//titlePage[titlePart[@n]]
+		| pc[@type='censorship']">
 		<xsl:apply-templates/>
 	</xsl:template>	
 	
