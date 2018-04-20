@@ -91,7 +91,7 @@
 	<xsl:template match="comment()" priority="1"/>
 	
 	<!-- Add types to matching stages -->
-	<xsl:template match="stage[@n=$stage-types//stage/@n]">
+	<xsl:template match="stage[@n=$stage-types//stage/@n]" mode="#default extract-stage">
 		<xsl:variable name="n" select="@n"/>
 		<xsl:variable name="type" select="$stage-types//stage[@n=$n]/@type"/>
 		<xsl:copy>
@@ -228,15 +228,12 @@
 		</xsl:element>
 	</xsl:template>
 	
+	<!-- stage directions at the end of sp should be moved out of the sp. -->
 	<xsl:template match="sp[stage[not(following-sibling::*)]]">
 		<xsl:next-match/>
-		<xsl:for-each select="stage[not(following-sibling::*)]">
-			<xsl:copy>
-				<xsl:apply-templates select="@*, node()"/>
-			</xsl:copy>
-		</xsl:for-each>
+		<xsl:apply-templates select="stage[not(following-sibling::*)]" mode="extract-stage"/>
 	</xsl:template>
-	<xsl:template match="sp/stage[not(following-sibling::*)]"/>
+	<xsl:template match="sp/stage[not(following-sibling::*)]" priority="1"/>
 
 	<!--<!-\- sample data for MC; to be moved at the end of procedures when reading text is finished -\->
 						<xsl:template match="div/@n"/>
