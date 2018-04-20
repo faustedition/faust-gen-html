@@ -109,10 +109,13 @@
     <xsl:template name="create-app-within-new-content">
         <xsl:param name="new-content" required="yes"/>
         <xsl:param name="apps" required="yes"/>
-        <xsl:param name="id"/>
+        <xsl:param name="id"/>        
+        <xsl:variable name="processed-new-content" as="node()*">
+            <xsl:apply-templates select="$new-content"/>
+        </xsl:variable>
         <xsl:choose>
-            <xsl:when test="$new-content[f:hasvars(.)]|$new-content[self::milestone]">
-                <xsl:for-each select="$new-content">
+            <xsl:when test="$processed-new-content[f:hasvars(.)]|$processed-new-content[self::milestone]">
+                <xsl:for-each select="$processed-new-content">
                     <xsl:copy copy-namespaces="no">
                         <xsl:apply-templates select="@*"/>
                         <xsl:if test="$id">
@@ -125,7 +128,7 @@
             </xsl:when>
             <xsl:otherwise>
                 <xsl:call-template name="create-app-note"><xsl:with-param name="apps" select="$apps"/></xsl:call-template>
-                <xsl:apply-templates select="$new-content"/>
+                <xsl:apply-templates select="$processed-new-content"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
