@@ -207,8 +207,8 @@
     -->
     <xsl:template mode="with-app" match="text()" priority="1">
         <xsl:param name="apps" tunnel="yes"/>
-        <xsl:param name="current-line" tunnel="yes"/>        
-        <xsl:variable name="replace-strings" select="for $repl in $apps/f:replace return replace(f:normalize-print-chars($repl), '([\]().*+?\[])', '\\$1')" as="item()*"/>       
+        <xsl:param name="current-line" tunnel="yes"/>
+        <xsl:variable name="replace-strings" select="for $repl in $apps/f:replace return replace(data($repl), '([\]().*+?\[])', '\\$1')" as="item()*"/>       
         <xsl:variable name="rs-left-boundary" select="for $repl in $replace-strings return
                                                         if (matches($repl, '^\w')) then concat('\b', $repl) else $repl"/>
         <xsl:variable name="rs-right-boundary" select="for $repl in $rs-left-boundary return 
@@ -224,7 +224,7 @@
                 <xsl:analyze-string select="$wsp-normalized" regex="{$re}" flags="!">
                     <xsl:matching-substring>
                         <xsl:variable name="current-match" select="."/>
-                        <xsl:variable name="current-apps" select="$apps[f:normalize-print-chars(descendant::f:replace) = $current-match]"/>
+                        <xsl:variable name="current-apps" select="$apps[data(descendant::f:replace) = $current-match]"/>
                         <xsl:if test="count($current-apps) > 1">
                             <xsl:message select="concat('ERROR: Multiple app entries for ', $current-match, ' in ', $current-line,
                                 ': ', string-join(for $app in $apps return concat($app, ' @ ', document-uri(root($app))), '; '))"/>
