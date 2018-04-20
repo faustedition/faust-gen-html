@@ -52,9 +52,9 @@ before_6479_a[tritt auf]{=} <i>vor 6479</i> tritt auf <i>2_H</i>] hervortretend 
 6552[Stand]{Stand} <i>6552</i> Stand <i>2_H</i>] Stand <i>undeutlich 2_I_H.48 2_I_H.60</i> Strand <i>konj. Lucä und Koch emend. faust://bibliography/wa_I_15_1 [type=3*]</i>
 before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückzieht <i>konj. Fiedler [type=3*]</i>
 6654[Des Meisters]{=} <i>6654</i> Des Meisters <i>2_H</i>] Selbst Faustus <i>Ec 2_H [type=6]</i>
-6832[Willkomm̄en]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkomm̄en <i>2_H [type=1a]</i>
+6832[Willkommmen]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkomm̄en <i>2_H [type=1a]</i>
 6847[höhern, höhern]{=} <i>6847</i> höhern, höhern <i>2_H</i>] <i>mon, alR</i> hehren? <i>mit Verweis auf eine weiter unten folgende Stelle (6856) Ri 2_H [type=7]</i>
-6983[Nun auf! den]{Den} <i>6983</i> Den <i>none</i>] Nun auf! den <i>2_H :</i> den <i>G [type=7]</i>
+6983[den]{Den} <i>6983</i> Den <i>none</i>] Nun auf! den <i>2_H :</i> den <i>G [type=7]</i>
 7136[Cumpan]{=} <i>7136</i> Cumpan <i>2_H</i>] Kumpan <i>Ec 2_H [type=6]</i>
 before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>] <i>Zeichen über dem zweiten</i> e <i>zur Verdeutlichung der Artikulation, darüber</i> ei<i>, alR</i> Peneus <i>mit Zeichen über dem zweiten</i> e <i>Ri 2_H [type=7]</i>
 7437[Erungene]{Errungene} <i>7437</i> Errungene <i>none</i>] Erungene <i>2_H [type=1a]</i>
