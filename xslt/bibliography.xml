@@ -513,6 +513,11 @@
         <f:reference>Knopf, Sabine: Leipziger Goethe-Sammler. In: faust://bibliography/gjb_123, S. 188–205.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/koch1882">
+        <f:citation>Koch 1882</f:citation>
+        <f:reference>Koch, Max: Kritische Goethe-Ausgaben. In: Beilage zur Allgemeinen Zeitung 294, 21. Oktober 1882, S. 4329–4330</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/koegel1888">
         <f:citation>Kögel 1888</f:citation>
         <f:reference>Kögel, Rudolf: Kleinigkeiten zu Goethe. In: <strong>Vierteljahrschrift für Litteraturgeschichte</strong>, Bd. 1, 1888, S. 52–64.</f:reference>
