@@ -36,7 +36,7 @@ App = ## A single apparatus entry contains text operations to perform on the rea
     }*
 
 EditCommand = ## Operations to be performed to create the reading text 
-	ReplaceCommand | InsertOnlyCommand | LgCommand | AttrCommand
+	ReplaceCommand | InsertOnlyCommand | LgCommand | AttrCommand | ReplaceAnchorCommand
 	
 InsLocator = (
 	  ## the n-value of the element to reference
@@ -59,6 +59,19 @@ ReplaceCommand = ## This text (plain text only) is removed from the text content
          attribute n { xsd:NMTOKEN },
          XmlFragment?
       }
+      
+ReplaceAnchorCommand =
+    element f:replace {
+        attribute n { xsd:NMTOKEN },
+        ## Replaces the <anchor> with the given XML id within the respective line 
+        ## with the contents of the following f:ins and marks it as a <seg>
+        attribute anchor-id { xsd:NMTOKEN },
+        empty 
+    },
+    element f:ins {
+        attribute n { xsd:NMTOKEN },
+        XmlFragment
+    }
       
 InsertOnlyCommand = 
 	## Inserts the given fragment relative to the element referenced by n.
