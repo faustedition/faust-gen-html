@@ -261,5 +261,5 @@ def setup_logging():
 
 if __name__ == '__main__':
     setup_logging()
-    for file in 'app1norm.txt', 'app2norm.txt', 'app2norm_test-cases.txt':
+    for file in 'app1norm.txt', 'app2norm.txt': #, 'app2norm_test-cases.txt':
         app2xml(list(parse_app2norm(file)), os.path.splitext(file)[0] + '.xml')
