@@ -7,7 +7,7 @@
     <license>GNU-LGPL</license>
     <copyright>true</copyright>
     <type>application</type>
-    <target>faust</target>
+    <target>${exist.app-name}</target>
     <prepare>pre-install.xql</prepare>
     <finish/>
     <permissions xmlns:repo="http://exist-db.org/xquery/repo" password="geheim" user="admin" group="dba" mode="rw-rw-r--"/>
