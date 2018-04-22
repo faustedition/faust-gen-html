@@ -115,7 +115,9 @@
 				<xsl:variable name="textTranscript" select="doc(resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir-resolved))"/>
 				<xsl:variable name="pb" select="$textTranscript//tei:pb[@f:docTranscriptNo and number(@f:docTranscriptNo) ge $docTranscriptNo][1]"/>
 				<xsl:variable name="section" select="($pb/ancestor::*[@f:section])[1]/@f:section"/>
-				<j:string name="section" value="{$section}"/>
+				<xsl:variable name="div" select="($pb/ancestor::*[self::tei:div or self::tei:text][@n])[1]/@n"/>
+				<xsl:if test="$section"><j:number name="section" value="{$section}"/></xsl:if>
+				<xsl:if test="$div"><j:string name="div" value="{$div}"/></xsl:if>
 			</xsl:if>		
 			<j:bool name="empty" value="{
 				if (descendant::docTranscript[not(@uri)] and 
