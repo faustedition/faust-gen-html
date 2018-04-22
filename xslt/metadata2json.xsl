@@ -13,6 +13,8 @@
 	
 	<xsl:param name="document"/>
 	<xsl:param name="source"/>
+	<xsl:param name="builddir">../../../../target/</xsl:param>
+	<xsl:param name="builddir-resolved" select="resolve-uri($builddir)"/>
 	<xsl:variable name="baseprefix">faust://xml/</xsl:variable>
 	<xsl:variable name="linkprefix">faust://xml/image-text-links/</xsl:variable>
 	<xsl:variable name="imgprefix">faust://facsimile/</xsl:variable>
@@ -66,7 +68,8 @@
 
 	<xsl:template name="document">
 		<j:object sigil="{//f:idno[@type='faustedition']}">
-			<j:string name="sigil" value="{f:sigil-for-uri(//f:idno[@type='faustedition'])}"/>
+			<xsl:variable name="sigil_t" select="f:sigil-for-uri(//f:idno[@type='faustedition'])"/>
+			<j:string name="sigil" value="{$sigil_t}"/>
 			<j:string name="document"><xsl:value-of select="replace(document-uri(/), concat($source, 'document/'), '')"/></j:string>
 			<xsl:if test="self::print">
 				<j:string name="type">print</j:string>
@@ -106,6 +109,14 @@
 						string-join(descendant::docTranscript/@uri, ', '))"/>
 				</xsl:if>
 			</j:array>
+			<xsl:if test="//textTranscript">
+				<xsl:variable name="docTranscriptNo" as="xs:double"><xsl:number from="/*" level="any"/></xsl:variable>
+				<xsl:variable name="sigil_t" select="f:sigil-for-uri(//idno[@type='faustedition'][1])"/>
+				<xsl:variable name="textTranscript" select="doc(resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir-resolved))"/>
+				<xsl:variable name="pb" select="$textTranscript//tei:pb[@f:docTranscriptNo and number(@f:docTranscriptNo) ge $docTranscriptNo][1]"/>
+				<xsl:variable name="section" select="($pb/ancestor::*[@f:section])[1]/@f:section"/>
+				<j:string name="section" value="{$section}"/>
+			</xsl:if>		
 			<j:bool name="empty" value="{
 				if (descendant::docTranscript[not(@uri)] and 
 				       (descendant::comment()[contains(., 'leer')] 
