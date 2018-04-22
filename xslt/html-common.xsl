@@ -312,7 +312,7 @@
 		</xsl:for-each>
 	</xsl:template>
 	
-	<xsl:template match="choice|app">
+	<xsl:template match="choice|app[not(rdg/witStart)]">
 		<xsl:message>WARNING: Unrecognized <xsl:value-of select="local-name(.)"/>, using COMPLETE content:
 <xsl:copy-of select="."/>
 in <xsl:value-of select="document-uri(/)"/>
