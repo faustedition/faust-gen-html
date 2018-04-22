@@ -89,7 +89,7 @@
 						
 						<xsl:if test="position() = last()">
 							<div class="following-content">
-								<xsl:apply-templates select="following::*"/>
+								<xsl:apply-templates select="following::* except following::*//node()"/>
 							</div>
 						</xsl:if>
 					</xsl:with-param>
