@@ -29,8 +29,12 @@ before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2
 5750[Hindermann]{=} <i>5750</i> Hindermann <i>2_I_H.0a</i>] Hintermann <i>Ec 2_H [type=6]</i>
 5775[am]{an} <i>5775</i> an <i>2_I_H.33</i>] am <i>2_H 2_I_H.0a [type=2b]</i>
 before_5801[Gesang]{Ungesang} <i>before_5801</i> Ungesang <i>2_H</i>] Gesang <i>2_I_H.0a [type=2aa]</i>
+5810[engen]{strengen} <i>5810</i> strengen <i>2_H</i>] engen <i>2_I_H.0a [type=2aa]</i>
+5817[in]{und} <i>5817</i> und <i>2_H</i>] in <i>2_I_H.0a [type=2aa]</i>
 5896[ehre]{Ehre} <i>5896</i> Ehre <i>2_H</i>] ehre <i>2_I_H.0a [type=2aa]</i>
+5902[dunklen]{dumpfen} <i>5902</i> dumpfen <i>2_H</i>] dunklen <i>2_I_H.0a [type=2aa]</i>
 5925[Glut und Sud]{Glut und Sud} <i>5925</i> Glut und Sud <i>2_I_H.0a</i>] Glut und Sud <i>2_I_H.41a</i> Sud und Glut <i>2_H</i> Glut und Sud <i>2_I_H.0a [type=7]</i>
+5928[recht]{rechts} <i>5928</i> rechts <i>2_H</i>] recht <i>2_I_H.0a [type=2aa]</i>
 5929[solchen]{solchem} <i>5929</i> solchem <i>2_I_H.41a</i>] solchen <i>2_H 2_I_H.0a [type=2b]</i>
 before_5987_c[anständig, nicht auffallend, nach Sitte gekleidet, beyde knieen.]{=} <i>vor 5987</i> anständig <i>…</i> knieen. <i>2_I_H.0a</i>] anständig nicht auffallend <i>…</i> knieen. <i>2_H :</i> (anständig <i>…</i> knieen.) <i>Ec [type=6]</i>
 after_6062[]{} <i>nach 6062</i>] <i>Lücke von zwei Versen 2_H [type=7]</i>
@@ -57,6 +61,7 @@ before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückz
 6983[den]{Den} <i>6983</i> Den <i>none</i>] Nun auf! den <i>2_H :</i> den <i>G [type=7]</i>
 7136[Cumpan]{=} <i>7136</i> Cumpan <i>2_H</i>] Kumpan <i>Ec 2_H [type=6]</i>
 before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>] <i>Zeichen über dem zweiten</i> e <i>zur Verdeutlichung der Artikulation, darüber</i> ei<i>, alR</i> Peneus <i>mit Zeichen über dem zweiten</i> e <i>Ri 2_H [type=7]</i>
+7260[menschlichähnlichs]{menschenähnlichs} <i>7260</i> menschenähnlichs <i>2_II_H.74</i>] menschlichähnlichs <i>2 H [type=2aa]</i>
 7437[Erungene]{Errungene} <i>7437</i> Errungene <i>none</i>] Erungene <i>2_H [type=1a]</i>
 7534[Kreisenden]{=} <i>7534</i> Kreisenden <i>2_H</i>] kreisenden <i>2_II_H.74 :</i> Kreisenden <i>G</i> Kreißenden <i>emend. Schmidt [type=1a*]</i>
 7544[Angestregtest]{Angestrengtest} <i>7544</i> Angestrengtest <i>2_II_H.74</i>] Angestregtest <i>2_H [type=1a]</i>
@@ -65,6 +70,7 @@ before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>]
 before_7877[Homunnkulus]{Homunkulus} <i>vor 7877</i> Homunkulus <i>2_II_H.74</i>] Homunnkulus <i>2_H [type=1a]</i>
 before_7982[Phorkyas]{=} <i>vor 7982</i> <speaker>Phorkyas</speaker> <i>none</i>] <speaker>Phork.</speaker> <i>2_H [type=7]</i>
 before_8245_b[erstaunt]{=} <i>vor 8245</i> <stage>erstaunt</stage> <i>2_H</i>] <stage>(erstaunt</stage> <i>ohne schließende Klammer 2_H [type=8]</i>
+8298[Lüftchen und die]{Lüftchen, die} <i>8298</i> Lüftchen, die <i>2_II_H.74</i>] Lüftchen und die <i>2_H [type=2aa]</i>
 8331[Bist du einmal]{=} <i>8331</i> Bist du einmal <i>2_H</i>] Denn bist du erst <i>Ec 2_H [type=6]</i>
 8352[Muschelpfad]{Muschelfahrt} <i>8352</i> Muschelfahrt <i>2_II_H.69</i>] Muschelpfad <i>2_II_H.70 2_H [type=2b]</i>
 before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psellen <i>2_II_H.70 2_H</i>] Psyllen <i>emend. Q faust://bibliography/wa_I_15_1 [type=1a]</i>
@@ -76,6 +82,7 @@ before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psellen <i>2_II_H.70 2_H</i>] Ps
 8578[hin]{heim} <i>8578</i> heim <i>2_III_H.2:1</i>] hin <i>2_III_H.3 2_III_H.3a:1 2_H C.1_4 [type=2b]</i>
 8645[seh]{=} <i>8645</i> seh <i>C.1_4</i>] seh’ <i>C.2α_4 C.3_4 [type=4a]</i>
 8650[Vom]{Von} <i>8650</i> Von <i>2_III_H.2:1</i>] Vom <i>2_III_H.3a:1 2_H C.1_4 [type=2b]</i>
+8670[wandelnden]{wandelenden} <i>8670</i> wandelenden <i>2_H</i>] wandelnden <i>C.1_4 [type=2aa]</i>
 8714[Lohe]{Lohn} <i>8714</i> Lohn <i>2_H</i>] Lohe <i>C.1_4 [type=2aa]</i>
 8727[mich^]{mich.} <i>8727</i> mich. <i>2_H</i>] mich^ <i>C.1_4 [type=1b]</i>
 8776[schlachterzogne]{schlechterzogne} <i>8776</i> schlechterzogne <i>2_III_H.3a:1</i>] schlachterzogne <i>2_H C.1_4 [type=2b]</i>
@@ -90,7 +97,7 @@ before_8924f[Phorkyas]{=} <i>before_8924f</i> <speaker>Phorkyas</speaker> <i>C.1
 9061[deine]{die} <i>9061</i> die <i>2_H</i>] deine <i>C.1_4 [type=2aa]</i>
 9076[In tiefem]{=} <i>9076</i> In tiefem <i>C.1_4</i>] Im tiefen <i>2_III_H.2:1</i> In tiefen <i>2_III_H.3a:1 2_H :</i> In tiefem <i>G [type=2d*]</i>
 9104[verheissener]{=} <i>9104</i> verheissener <i>C.1_4</i>] verheißener <i>C.2α_4 C.3_4 [type=4a]</i>
-9115[Schrittes]{Schritts} <i>9115</i> Schritts <i>2_H</i>] Schrittes <i>C.1_4</i> <i>[type=2aa]</i>
+9115[Schrittes]{Schritts} <i>9115</i> Schritts <i>2_H</i>] Schrittes <i>C.1_4 [type=2aa]</i>
 9140[ich,]{=} <i>9140</i> ich, <i>C.1_4</i>] ich. <i>C.2α_4 C.3_4 [type=4a]</i>
 9152[Aufgeht]{Auf geht} <i>9152</i> Auf geht <i>2_H</i>] Aufgeht <i>C.1_4 [type=2a]</i>
 9193[erfurchtsvollem]{ehrfurchtsvollem} <i>9193</i> ehrfurchtsvollem <i>2_H C.2α_4 C.3_4</i>] erfurchtsvollem <i>C.1_4 [type=2aa]</i>
