@@ -1184,14 +1184,6 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <replacement-string/>
                         </string-pair>
                         <string-pair>
-                            <search-string>{{color fgc="000000"}}</search-string>
-                            <replacement-string/>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>{{/color}}</search-string>
-                            <replacement-string/>
-                        </string-pair>
-                        <string-pair>
                             <search-string>{{{0}/No-Spacing}}</search-string>
                             <replacement-string/>
                         </string-pair>
