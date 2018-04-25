@@ -227,14 +227,27 @@
                 <xsl:analyze-string select="$wsp-normalized" regex="{$re}" flags="!">
                     <xsl:matching-substring>
                         <xsl:variable name="current-match" select="."/>
-                        <xsl:variable name="current-apps" select="$apps[data(descendant::f:replace) = $current-match]"/>
+                        <xsl:variable name="current-replaces" select="$apps//f:replace[data(.) = $current-match and @n=$current-line]"/>
+                        <xsl:variable name="current-replace" as="element()">
+                            <xsl:choose>
+                                <xsl:when test="count($current-replaces) > 1">
+                                    <xsl:sequence select="($current-replaces)[position()=last()]"/>
+                                    <xsl:message>ERROR: Multiple app entries: <xsl:copy-of select="$current-replaces"/></xsl:message>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:sequence select="$current-replaces"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:variable>                        
+                        <xsl:variable name="current-ins" select="$current-replace/following-sibling::f:ins[1]"/>
+                        <xsl:variable name="current-apps" select="$current-replace/.."/>
                         <xsl:if test="count($current-apps) > 1">
                             <xsl:message select="concat('ERROR: Multiple app entries for ', $current-match, ' in ', $current-line,
                                 ': ', string-join(for $app in $apps return concat($app, ' @ ', document-uri(root($app))), '; '))"/>
                         </xsl:if>
                         <xsl:variable name="current-app" select="$current-apps[1]"/>
-                        <seg type="lem" xml:id="{f:seg-id($current-app//f:ins[@n = $current-line][1])}">
-                            <xsl:value-of select="f:normalize-print-chars($current-app//f:ins[@n = $current-line])"/>
+                        <seg type="lem" xml:id="{f:seg-id($current-ins)}">
+                            <xsl:copy-of select="$current-ins/node()" copy-namespaces="no"/>
                         </seg> 
                     </xsl:matching-substring>
                     <xsl:non-matching-substring>
