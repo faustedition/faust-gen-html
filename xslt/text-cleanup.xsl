@@ -201,6 +201,10 @@
 		<xsl:value-of select="replace(., '\.\s*$', '')"/>
 	</xsl:template>
 	
+	<xsl:template mode="pass2" match="head/text()[following-sibling::*[1][self::lb]]">
+		<xsl:value-of select="replace(., '\.$', '')"/>
+	</xsl:template>
+	
 	<xsl:template mode="pass2" match="stage//hi/text()[position()=last()]" priority="1">
 		<xsl:variable name="prep"><xsl:next-match/></xsl:variable>
 		<xsl:value-of select="replace($prep, '\.$', '')"/>

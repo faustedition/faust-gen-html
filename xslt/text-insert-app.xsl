@@ -245,16 +245,21 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="anchor[@xml:id]" mode="with-app">
+    <xsl:template match="*[@xml:id]" mode="with-app">
         <xsl:param name="apps" tunnel="yes"/>
         <xsl:param name="current-line" tunnel="yes"/>
-        <xsl:variable name="repl" select="$apps//f:repl[@anchor-id=current()/@xml:id]"/>
-        <xsl:if test="$repl">
-            <xsl:variable name="ins" select="$repl/following-sibling::f:ins[1]"/>
-            <seg type="lem" xml:id="{f:seg-id($ins)}">
-                <xsl:apply-templates select="$ins/node()" mode="#current"/>
-            </seg>
-        </xsl:if>
+        <xsl:variable name="repl" select="$apps//f:repl[@element-id=current()/@xml:id]"/>
+        <xsl:choose>
+            <xsl:when test="$repl">
+                <xsl:variable name="ins" select="$repl/following-sibling::f:ins[1]"/>
+                <seg type="lem" xml:id="{f:seg-id($ins)}">
+                    <xsl:apply-templates select="$ins/node()" mode="#current"/>
+                </seg>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:next-match/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template mode="app" match="@wit">

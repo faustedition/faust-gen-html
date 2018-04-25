@@ -95,7 +95,14 @@
 				<j:string name='repository' value="{(metadata/repository, 'print')[1]}"/>
 			</j:object>
 			<j:array name="page">
-				<xsl:apply-templates select="//page"/>
+				<xsl:choose>
+					<xsl:when test="self::print">
+						<xsl:call-template name="print-pages"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:apply-templates select="//page"/>						
+					</xsl:otherwise>
+				</xsl:choose>
 			</j:array>
 		</j:object>
 	</xsl:template>
@@ -115,7 +122,9 @@
 				<xsl:variable name="textTranscript" select="doc(resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir-resolved))"/>
 				<xsl:variable name="pb" select="$textTranscript//tei:pb[@f:docTranscriptNo and number(@f:docTranscriptNo) ge $docTranscriptNo][1]"/>
 				<xsl:variable name="section" select="($pb/ancestor::*[@f:section])[1]/@f:section"/>
-				<j:string name="section" value="{$section}"/>
+				<xsl:variable name="div" select="($pb/ancestor::*[self::tei:div or self::tei:text][@n])[1]/@n"/>
+				<xsl:if test="$section"><j:number name="section" value="{$section}"/></xsl:if>
+				<xsl:if test="$div"><j:string name="div" value="{$div}"/></xsl:if>
 			</xsl:if>		
 			<j:bool name="empty" value="{
 				if (descendant::docTranscript[not(@uri)] and 
@@ -123,6 +132,38 @@
 					 or descendant::note[contains(., 'leer')])) 
 				then 'true' else 'false'}"/>
 		</j:object>
+	</xsl:template>
+	
+	<xsl:template name="print-pages">
+		<xsl:variable name="sigil_t" select="f:sigil-for-uri(//idno[@type='faustedition'][1])"/>
+		<xsl:variable name="preparedTranscript" select="resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir-resolved)"/>
+		<xsl:choose>
+			<xsl:when test="doc-available($preparedTranscript)">				
+				<xsl:variable name="textTranscript" select="doc($preparedTranscript)"/>
+				<xsl:variable name="prefix" select="concat('print/', replace(//textTranscript/@uri, '\.xml$', ''), '/')"/>
+				<xsl:for-each select="$textTranscript//tei:pb">
+					<xsl:variable name="section" select="(ancestor::*[@f:section])[1]/@f:section"/>
+					<xsl:variable name="div" select="(ancestor::*[self::tei:div or self::tei:text][@n])[1]/@n"/>			
+					<j:object>
+						<j:array name="doc">
+							<j:object>
+								<j:array name="img">							
+									<xsl:for-each select="tokenize(@facs, '\s+')">
+										<xsl:sort select="."/>
+										<j:string value="{concat($prefix, replace(., '\.tiff?$', ''))}"/>
+									</xsl:for-each>							
+								</j:array>
+							</j:object>
+						</j:array>
+						<xsl:if test="$section"><j:number name="section" value="{$section}"/></xsl:if>
+						<xsl:if test="$div"><j:string name="div" value="{$div}"/></xsl:if>				
+					</j:object>
+				</xsl:for-each>		
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:message select="concat('WARNING: ', $sigil_t, ': ', $preparedTranscript, ' not found')"/>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 	
 	<xsl:template match="docTranscript">
