@@ -276,7 +276,6 @@ before_3587_b[Gretchen]{=} <i>vor 3587</i> <speaker>Gretchen^</speaker> <i>none<
 3751[Bürgersleut’]{=} <i>3751</i> Bürgersleut’^ <i>A</i>]   Bürgersleut^ <i>1_H.12</i> Bürgersleut’, <i>B B.a [type=4a]</i>
 3752[Leichen^]{=} <i>3752</i> Leichen^ <i>1_H.12 A</i>]   Leichen, <i>B B.a [type=4a]</i>
 3761[Krüpel]{=} <i>3761</i> Krüpel <i>1_H.12 A</i>]   Krüppel <i>B B.a [type=4a]</i>
-3787[]{} <i>3787–3788</i>] <l>Betest du für deiner Mutter Seel</l> <l>Die durch dich sich in die Pein hinüberschlief.</l> <i>1_H.5 [type=2b*]</i>
 3788[hinüberschlief]{=} <i>3788</i> hinüberschlief <i>1_H.5 A B </i>]  hinüber schlief <i>S 1_H.13</i> hinüber schlief <i>B.a [type=7]</i>
 3793[ahndungsvoller]{=} <i>3793</i> ahndungsvoller <i>S 1_H.13 A</i>]   ahnde voller <i>1_H.5</i> ahnungsvoller <i>B B.a [type=4a]</i>
 3817 [Mauern-Pfeiler]{Mauern Pfeiler} <i>3817</i> Mauern Pfeiler <i>1_H.5</i>]   Mauern-Pfeiler <i>S 1_H.13 A B B.a 1_H.1 C.1_12 C.3_12 [type=2b]  </i>
