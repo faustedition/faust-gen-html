@@ -134,7 +134,7 @@ after_10344[allzusammen]{allezusammen} <i>nach 10344</i> allezusammen <i>2_IV_H.
 10415[hattet]{hättet} <i>10415</i> hättet <i>none</i>] hattet <i>2_H [type=1a]</i>
 10439[Negromant]{=} <i>10439</i> Negromant <i>2_H</i>] Nekromant <i>Ec 2_H [type=6]</i>
 10452[Krafte]{Kräfte} <i>10452</i> Kräfte <i>2_IV_H.13</i>] Krafte <i>2_H [type=1a]</i>
-10523[$]{^&lt;l n="10524"^&gt;Er ist behend, reist alles mit sich fort.^&lt;/l^&gt;} <i>10524</i> Er <i>…</i> fort. <i>none</i>] Er … fort <i>erg G 2_IV_H.18 (ohne abschließenden Punkt) fehlt 2_IV_H.13 2_H [type=2b]</i>
+10523[$]{^&lt;l n="10524"^&gt;Er ist behend, reist alles mit sich fort^&lt;/l^&gt;} <i>10524</i>] Er … fort <i>erg G 2_IV_H.18</i> <i>fehlt 2_IV_H.13 2_H [type=2b]</i>
 10524[fort]{fort.} <i>10524</i> fort. <i>none</i>] fort^ <i>2_IV_H.18 [type=1b]</i>
 10556[aufgeräumt]{ausgeräumt} <i>10556</i> ausgeräumt <i>2_IV_H.20</i>] aufgeräumt <i>2_IV_H.13 2_H [type=2b]</i>
 after_10570[Posauenschall]{Posaunenschall} <i>after_10570</i> Posaunenschall <i>2_IV_H.21a</i>] Posauenschall <i>2_H [type=1a]</i>
