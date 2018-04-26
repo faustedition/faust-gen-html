@@ -88,6 +88,16 @@
             <note>erg Ec <wit>2_H</wit></note></rdg>
     </app>
     <app>
+        <f:replace n="5265">Luft</f:replace>
+        <f:ins n="5265">Lust</f:ins>
+        <ref>5265</ref>
+        <lem wit="2_I_H.15b">Lust <note><wit>2_I_H.15b</wit></note></lem>
+        <rdg wit="2_I_H.15b">Luft <note><wit>2_I_H.15b</wit> </note></rdg>
+        <rdg wit="2_I_H.15b" hand="G">Lust <note><seg type="hand">G</seg></note></rdg>
+        <rdg wit="2_H 2_I_H.0a" type="type_2b">Luft <note><wit>2_H</wit> <wit>2_I_H.0a</wit></note></rdg>
+        <rdg wit="2_I_H.0a 2_H" type="type_6">Lust <note>Sc <wit>2_H</wit></note></rdg>
+    </app>
+    <app>
         <f:ins n="before_5357_b" place="only-app"/>
         <ref>vor 5357</ref>
         <lem wit="2_I_H.0a">
@@ -110,6 +120,14 @@
                 <note><wit wit="2_H">2_H</wit></note>
                 <add><speaker>Marschalck</speaker></add></subst>
             <note>(<quote>Schatzmeister</quote> ungestrichen) <seg type="hand">G</seg></note></rdg>
+    </app>
+    <app>
+        <f:replace n="6199">Gespenst-Gespinnsten</f:replace>
+        <f:ins n="6199">Gespenst-Gespinnsten</f:ins>
+        <ref>6199</ref>
+        <lem wit="2_I_H.47">Gespenst-Gespinnsten <note><wit>2_I_H.47</wit></note></lem>
+        <rdg wit="2_H" type="type_2aa">Gespinst-Gespinnsten <note><wit>2_H</wit></note></rdg>
+        <rdg wit="2_H" hand="Ri" type="type_7">Gespenst-Gespinnsten <note>vorschl <seg type="hand">Ri</seg></note></rdg>
     </app>
     <app>
         <f:ins n="before_6319_a" place="only-app"/>
