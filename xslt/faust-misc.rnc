@@ -1,6 +1,6 @@
 default namespace = "http://www.faustedition.net/ns"
 
-start = SceneLineMapping | SigilLabels | WatermarkLabels
+start = SceneLineMapping | SigilLabels | WatermarkLabels | AppTypes
 
 SceneLineMapping =
   ## A list of scenes and their labels
@@ -41,5 +41,14 @@ WatermarkLabels =
       ## A value as it appears in watermarkID etc. in the metadata documents
       attribute id { text  },
       text
+    }+
+  }
+
+AppTypes = 
+  ## explanations for the apparatus types
+  element apptypes {
+    element apptype {
+        attribute type { xsd:string { pattern = "(type_\w+\*?)"} }?,
+        text
     }+
   }

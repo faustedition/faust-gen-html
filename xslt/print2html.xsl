@@ -20,6 +20,8 @@
   <xsl:param name="view">print</xsl:param>
   <xsl:param name="scriptAdditions"/>
   
+  <xsl:param name="apptypes" select="doc('../text/apptypes.xml')"/>
+  
   <xsl:output method="xhtml" include-content-type="yes"/>
 
   
@@ -222,7 +224,7 @@
             <xsl:text>)</xsl:text>
           </xsl:when>
           <xsl:otherwise>
-            <a class="reading-type" href="app#{$types}" title="{$types}">
+            <a class="reading-type" href="app#{$types}" title="{f:rdg-type-descr($types)}">
                 <xsl:value-of select="concat('(', f:format-rdg-type($types), ')')"/>
             </a>            
           </xsl:otherwise>
@@ -246,6 +248,32 @@
       </xsl:analyze-string>
     </xsl:variable>
     <xsl:value-of select="string-join($formatted-typeno, '')"/>
+  </xsl:function>
+  
+  <xsl:function name="f:rdg-type-descr" as="xs:string">
+    <xsl:param name="type"/>
+    <xsl:variable name="exact-match" select="$apptypes//f:apptype[@type=$type]"/>
+    <xsl:variable name="start-match" select="$apptypes//f:apptype[starts-with($type, @type)][1]"/>
+    <xsl:variable name="result">
+      <xsl:choose>
+        <xsl:when test="$exact-match[self::f:apptype]">
+          <xsl:value-of select="$exact-match"/>
+        </xsl:when>
+        <xsl:when test="$start-match">
+          <xsl:value-of select="$start-match"/>
+          <xsl:variable name="rest" select="substring($type, string-length($start-match/@type)+1)"/>
+          <xsl:choose>
+            <xsl:when test="$rest = '*'"> (nicht übernommen)</xsl:when>
+            <xsl:otherwise> (<xsl:value-of select="$rest"/>)<xsl:message select="concat('WARNING: Label for app type ', $type, ' incomplete: rest »', $rest, '«')"/></xsl:otherwise>
+          </xsl:choose>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$type"/>
+          <xsl:message select="concat('ERROR: No apparatus type description for ', $type)"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <xsl:value-of select="$result"/>
   </xsl:function>
   
   <xsl:template match="gap[@reason='ellipsis']">

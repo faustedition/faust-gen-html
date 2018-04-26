@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../xslt/faust-misc.rnc" type="application/relax-ng-compact-syntax"?>
+<apptypes xmlns="http://www.faustedition.net/ns">
+    <!-- https://github.com/faustedition/faust-gen-html/issues/184#issuecomment-380538548 -->
+    <apptype type="type_1a">Textkorrektur</apptype>
+    <apptype type="type_1b">Korrektur der Zeichensetzung</apptype>
+    <apptype type="type_1c">Korrektur der Typographie</apptype>
+    
+    <apptype type="type_2a">Emendation einer Störung im Grundtext</apptype>
+    <apptype type="type_2b">Emendation einer vererbten Störung im Grundtext</apptype>
+    <apptype type="type_2c">Emendation durch Autorvariante</apptype>
+    <apptype type="type_2d">Emendation einer Fremdvariante</apptype>
+    
+    <apptype type="type_3">Konjektur</apptype>
+    
+    <apptype type="type_4a">Konservierter Grundtext</apptype>
+    <apptype type="type_4b">Änderung in der Druckvorlage</apptype>
+    <apptype type="type_4c">Konservierte Interpunktion des Grundtextes</apptype>
+    
+    <apptype type="type_5">Spätere Autorvariante</apptype>
+    
+    <apptype type="type_6">Postumer Eingriff</apptype>
+    
+    <apptype type="type_7">Erläuterungsbedürftige Stelle</apptype>
+    
+    <apptype type="type_8">Typographische Besonderheit</apptype>    
+</apptypes>

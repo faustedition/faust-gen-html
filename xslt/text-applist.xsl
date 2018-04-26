@@ -9,6 +9,7 @@
 	
 	<xsl:import href="print2html.xsl"/>
 	
+	
 	<xsl:template match="/">
 		<xsl:call-template name="html-frame">
 			<xsl:with-param name="headerAdditions">
@@ -32,7 +33,9 @@
 									group-by="for $attr in descendant::rdg/@type return tokenize($attr, '\s+')">
 					<xsl:sort select="current-grouping-key()"/>
 					<div>
-						<h2 id="{current-grouping-key()}"><xsl:value-of select="current-grouping-key()"/></h2>
+						<h2 id="{current-grouping-key()}">
+							<xsl:value-of select="concat(f:format-rdg-type(current-grouping-key()), ': ', f:rdg-type-descr(current-grouping-key()))"/>
+						</h2>
 						<xsl:apply-templates select="current-group()"/>					
 					</div>
 				</xsl:for-each-group>				
