@@ -177,7 +177,7 @@
         <xsl:text> </xsl:text>
       </xsl:if>
       <xsl:if test="not(normalize-space($lemma-str) = '')">
-        <xsl:text>] </xsl:text>
+        <span class="generated-text">] </span>
       </xsl:if>
       <xsl:apply-templates select="$lemma-after-bracket"/>      
     </xsl:if>
@@ -278,7 +278,7 @@
   
   <xsl:template match="gap[@reason='ellipsis']">
     <i>
-      <xsl:attribute name="class" select="f:generic-classes(.)" separator=" "/>
+      <xsl:attribute name="class" select="f:generic-classes(.), 'generated-text'" separator=" "/>
       <xsl:text> bis </xsl:text>
     </i>
   </xsl:template>
