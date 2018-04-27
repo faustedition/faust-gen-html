@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <meta xmlns="http://exist-db.org/xquery/repo">
-    <description>Faust Search</description>
+    <description>Faust Search ${exist.app-name}</description>
     <author/>
     <website/>
     <status>alpha</status>
