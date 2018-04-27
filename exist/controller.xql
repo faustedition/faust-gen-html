@@ -2,11 +2,12 @@ xquery version "3.0";
 
 declare default element namespace "http://exist.sourceforge.net/NS/exist";
 declare namespace tei = "http://www.tei-c.org/ns/1.0";
+declare namespace f = "http://www.faustedition.net/ns";
 
 declare variable $exist:root external;
 declare variable $exist:path external;
 declare variable $exist:resource external;
-declare variable $exist:controller external; 
+declare variable $exist:controller external;
 
 declare variable $xmlpath := $exist:root || $exist:controller || '/data';
 
@@ -31,7 +32,18 @@ else :)
 							default return $rooturl || '/print/' || data(id('fausttranscript', $idno))					
 					}"/>
 				</dispatch>
-			else
+			else if (matches($query, '\d+') and number($query) <= 12111)
+			then
+			    <dispatch>
+			        <redirect url="{
+			            let $file := $xmlpath || '/textTranscript/faust.xml',
+			                $line := doc($file)//tei:l[@n=$query],
+			                $section := $line[1]/ancestor::*[@f:section][1]/@f:section
+			            return
+			                $rooturl || '/print/faust.' || $section || '#l' || $query
+			            }"/>
+			    </dispatch>
+		    else
 			    <dispatch>
 			        <forward url="{concat($exist:controller, '/fts4.xql')}">			        	
 			        	<set-attribute name="xquery.report-errors" value="yes"/>
