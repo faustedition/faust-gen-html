@@ -44,7 +44,7 @@
                 </xsl:choose>
             </xsl:for-each>
         </xsl:variable>
-        <xsl:value-of select="string-join($parts, '.')"/>
+        <xsl:value-of select="replace(string-join($parts, '.'), '[^a-z0-9._-]+', '')"/>
     </xsl:function>
     
     <!-- calculates an id for the seg corresponding to an app's f:ins -->
