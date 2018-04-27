@@ -19,7 +19,7 @@ else :)
 	if ($exist:path = ('', '/', '/search')) then
 		let $query := request:get-parameter('q', ''),
 			$rooturl := 'http://' || request:get-header('X-Forwarded-Host'),
-			$idno := //tei:idno[@type = 'sigil_n'][. = lower-case(replace($query, '[ .*]', ''))]
+			$idno := collection($xmlpath)//tei:idno[@type = 'sigil_n'][. = lower-case(replace($query, '[ .*]', ''))]
 		return if (count($idno) eq 1)
 			then 
 				<dispatch>
