@@ -24,12 +24,8 @@ else :)
 			then 
 				<dispatch>
 					<redirect url="{
-						let $uri := data(id('fausturi', $idno))
-						return
-							switch (data($idno/ancestor::tei:TEI/@type))
-							case 'archivalDocument' 
-								return $rooturl || '/documentViewer?faustUri=' || $uri
-							default return $rooturl || '/print/' || data(id('fausttranscript', $idno))					
+						let $sigil_t := data(id('sigil_t', $idno))
+						return $rooturl || '/document?sigil=' || $sigil_t
 					}"/>
 				</dispatch>
 			else if (matches($query, '\d+') and number($query) <= 12111)
