@@ -50,7 +50,7 @@ before_6377_b[]{} <i>vor 6377</i> Dämmernde <i>none</i>] Dammernde <i>2_H [type
 6384[beqeumlichstens]{bequemlichstens} <i>6384</i> bequemlichstens <i>none</i>] beqeumlichstens <i>2_H [type=1a]</i>
 6447[Saulenschaft]{Säulenschaft} <i>6447</i> Säulenschaft <i>none</i>] Saulenschaft <i>2_H [type=1a]</i>
 before_6479_a[tritt auf]{=} <i>vor 6479</i> tritt auf <i>2_H</i>] hervortretend <i>Ec 2_H [type=6]</i>
-6552[Stand]{Stand} <i>6552</i> Stand <i>2_H</i>] Stand <i>undeutlich 2_I_H.48 2_I_H.60</i> Strand <i>konj. faust://bibliography/koch1882#Lucä und Koch emend. faust://bibliography/wa_I_15_1#Erich Schmidt [type=3*]</i>
+6552[Stand]{Stand} <i>6552</i> Stand <i>2_H</i>] Stand <i>undeutlich 2_I_H.48 2_I_H.60</i> Strand <i>konj. faust://bibliography/koch1882#Lucä_und_Koch emend. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=3*]</i>
 before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückzieht <i>konj. faust://bibliography/fiedler1943#Fiedler [type=3*]</i>
 6654[Des Meisters]{=} <i>6654</i> Des Meisters <i>2_H</i>] Selbst Faustus <i>Ec 2_H [type=6]</i>
 6832[Willkommmen]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkomm̄en <i>2_H [type=1a]</i>
@@ -70,7 +70,7 @@ before_8245_b[erstaunt]{=} <i>vor 8245</i> <stage>erstaunt</stage> <i>2_H</i>] <
 8298[Lüftchen und die]{Lüftchen, die} <i>8298</i> Lüftchen, die <i>2_II_H.74</i>] Lüftchen und die <i>2_H [type=2aa]</i>
 8331[Bist du einmal]{=} <i>8331</i> Bist du einmal <i>2_H</i>] Denn bist du erst <i>Ec 2_H [type=6]</i>
 8352[Muschelpfad]{Muschelfahrt} <i>8352</i> Muschelfahrt <i>2_II_H.69</i>] Muschelpfad <i>2_II_H.70 2_H [type=2b]</i>
-before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psellen <i>2_II_H.70 2_H</i>] Psyllen <i>emend. Q faust://bibliography/wa_I_15_1#Erich Schmidt [type=1a]</i>
+before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psellen <i>2_II_H.70 2_H</i>] Psyllen <i>emend. Q faust://bibliography/wa_I_15_1#Erich_Schmidt [type=1a]</i>
 8450[Galateas]{Galatees} <i>8450</i> Galatees <i>2_H</i>] Galatee’ns <i>vorschl Ri verw Sc</i> Galateas <i>Sc 2_H [type=7]</i>
 8506[Eröffnet]{=} <i>8506</i> Eröffnet <i>C.1_4</i>] Eröffnet <i>2_III_H.3 :</i> Eröffenet <i>Ri 2_III_H.3 2_III_H.3a:1</i> Eröffnet <i>2_H [type=2b*]</i>
 8510[Stelle]{Schwelle} <i>8510</i> Schwelle <i>2_III_H.2:1</i>] Stelle <i>2_III_H.3 2_III_H.3a:1 2_H C.1_4 [type=2b]</i>
@@ -124,7 +124,7 @@ after_9807[Höhe.]{=} <i>nach 9807</i> Höhe. <i>none</i>] Höhe). <i>C.1_4</i> 
 before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C.2α_4 C.3_4</i>] Chorführerin <i>C.1_4 [type=4b]</i>
 10001[Vogelsingen]{Vogelsängen} <i>10001</i> Vogelsängen <i>2_H</i>] Vogelsingen <i>C.1_4 [type=2aa]</i>
 10030[ins]{=} <i>10030</i> ins <i>C.1_4</i>] in’s <i>C.2α_4 C.3_4 [type=4a]</i>
-before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>konj. faust://bibliography/wa_I_15_1#Erich Schmidt [type=3*]</i>
+before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>konj. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=3*]</i>
 before_10067_a[alsbald]{also bald} <i>before_10067_a</i> also bald <i>2_IV_H.3</i>] alsbald <i>2_H [type=2aa]</i>
 10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074</i>] <i>Die Verse sind in 2_H eingerückt. [type=1c]</i>
 10150[ewigen-]{ewigen} <i>10150</i> ewigen <i>2_IV_H.2</i>] ewigen- <i>2_H [type=1b]</i>
