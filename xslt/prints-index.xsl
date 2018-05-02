@@ -44,7 +44,7 @@
 							<xsl:variable name="transcript" select="$transcripts//textTranscript[@uri=$uri]"/>							
 							<tr>
 								<td>
-									<a href="print/{$transcript/@sigil_t}">
+									<a href="document?sigil={$transcript/@sigil_t}&amp;view=print">
 										<xsl:value-of select="$transcript/@f:sigil"/>
 									</a>
 								</td>
