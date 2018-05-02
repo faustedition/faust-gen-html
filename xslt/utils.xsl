@@ -243,7 +243,7 @@
   </xsl:function>
   
   <!-- FIXME we need $transcript to point to the search version, I guess. -->
-  <xsl:function name="f:printlink">
+  <!--xsl:function name="f:printlink">
     <xsl:param name="transcript"/>
     <xsl:param name="n"/>
     
@@ -271,7 +271,7 @@
     </xsl:variable>
     <xsl:value-of select="concat($printbase,
       replace($transcript, '^.*/(.*)\.xml$', '$1'), $targetpart, '#l', $n)"/>
-  </xsl:function>
+  </xsl:function-->
   
   <!-- Returns true() iff $element is one of those TEI elements for which a variant apparatus should be generated. -->
   <xsl:function name="f:hasvars" as="xs:boolean">

@@ -135,7 +135,7 @@
 				<xsl:for-each select="$group">
 					<xsl:variable 
 						name="target" 
-						select="if (@f:type='archivalDocument') 
+						select="if (@f:type!='lesetext') 
 									then f:doclink(@f:sigil_t, @f:page, @n) 
 									else concat($printbase, @f:sigil_t, if (@f:section != '') then '.' else '', @f:section, '#l', @n)"/>						
 					<a class="sigil" href="{$target}" title="{@f:headNote}">
