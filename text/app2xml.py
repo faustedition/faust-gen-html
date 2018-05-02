@@ -190,6 +190,12 @@ def append_text(element: etree.ElementBase, text: str):
             element.text = text
 
 
+def format_uriref(ref: str) -> str:
+    parts = ref.split('#', 2)
+    uri = parts[0]
+    text = '' if len(parts) < 2 else parts[1].replace('_', ' ')
+    return '<ref target="{0}">{1}</ref>'.format(uri, text)
+
 
 def parse_readings(reading_str, tag='rdg'):
     readings = []
@@ -210,6 +216,8 @@ def parse_readings(reading_str, tag='rdg'):
                 if normalized_ref in sigils:
                     wits.append(normalized_ref)
                     notes.append('<wit>{0}</wit>'.format(normalized_ref))
+                elif ref.startswith('faust://'):
+                    notes.append(format_uriref(ref))
                 elif ref == 'none':
                     carry = wits[-1] if wits else None  # otherwise drop, cf. #225
                 elif ref in HANDS:
