@@ -586,9 +586,6 @@ XML: `speaker[not(hi)]`
 
 Formatierung: Zeichenformat `Sprecher`: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
 
-## ohne
-XML: `speaker[hi]/text()`
-
 ## Sprecher lateinisch
 (entfällt vorläufig)
 
