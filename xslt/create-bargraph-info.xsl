@@ -59,6 +59,7 @@
 		<f:document sigil="{.//idno[@type='faustedition']}">
 		<!-- First a little document metadata -->
 		<xsl:text>{"sigil":"</xsl:text><xsl:value-of select=".//idno[@type='faustedition']"/><xsl:text>",</xsl:text>
+		<xsl:text>"sigil_t":"</xsl:text><xsl:value-of select="f:sigil-for-uri(.//idno[@type='fausturi'])"/><xsl:text>",</xsl:text>
 		<xsl:text>"source":"</xsl:text><xsl:value-of select=".//idno[@type='fausturi']"/><xsl:text>",</xsl:text>			
 		<xsl:text>"print":</xsl:text><xsl:value-of select="if (TEI/@type = 'print') then 'true' else 'false'"/><xsl:text>,</xsl:text>
 		<xsl:text>"intervals":[</xsl:text>
