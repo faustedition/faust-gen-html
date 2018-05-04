@@ -33,11 +33,11 @@
     the @f:section elements inserted there. Returns an empty string if this document is not to 
     be split.
   -->
-  <xsl:function name="f:get-section-number">
-    <xsl:param name="el"/>
+  <xsl:function name="f:get-section-number" as="xs:string?">
+    <xsl:param name="el" as="node()?"/>
     <xsl:choose>
       <xsl:when test="not($el//ancestor-or-self::TEI/@f:split)"/>
-      <xsl:when test="$el/ancestor-or-self::div/@f:section"><xsl:value-of select="$el/ancestor-or-self::div/@f:section"/></xsl:when>
+      <xsl:when test="$el/ancestor-or-self::div/@f:section"><xsl:value-of select="$el/ancestor-or-self::div[1]/@f:section"/></xsl:when>
       <xsl:when test="$el/descendant::div/@f:section"><xsl:value-of select="($el/descendant::div/@f:section)[1]"/></xsl:when>
       <xsl:when test="$el/following::div/@f:section"><xsl:value-of select="($el/following::div/@f:section)[1]"/></xsl:when>
       <xsl:otherwise><xsl:value-of select="$el/preceding::div[@f:section][1]/@f:section"/></xsl:otherwise>

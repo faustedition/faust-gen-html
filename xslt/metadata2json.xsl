@@ -120,8 +120,8 @@
 				<xsl:variable name="docTranscriptNo" as="xs:double"><xsl:number from="/*" level="any"/></xsl:variable>
 				<xsl:variable name="sigil_t" select="f:sigil-for-uri(//idno[@type='faustedition'][1])"/>
 				<xsl:variable name="textTranscript" select="doc(resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir-resolved))"/>
-				<xsl:variable name="pb" select="$textTranscript//tei:pb[@f:docTranscriptNo and number(@f:docTranscriptNo) ge $docTranscriptNo][1]"/>
-				<xsl:variable name="section" select="($pb/ancestor::*[@f:section])[1]/@f:section"/>
+				<xsl:variable name="pb" select="($textTranscript//tei:pb[@f:docTranscriptNo and number(@f:docTranscriptNo) ge $docTranscriptNo])[1]" as="node()?"/>
+				<xsl:variable name="section" select="f:get-section-number($pb[1])"/> <!-- select="($pb/ancestor::*[@f:section])[1]/@f:section"/> -->
 				<xsl:variable name="div" select="($pb/ancestor::*[self::tei:div or self::tei:text][@n])[1]/@n"/>
 				<xsl:if test="$section"><j:number name="section" value="{$section}"/></xsl:if>
 				<xsl:if test="$div"><j:string name="div" value="{$div}"/></xsl:if>
