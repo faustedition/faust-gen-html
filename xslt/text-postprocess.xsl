@@ -90,7 +90,7 @@
 		</xsl:if>
 		<xsl:copy>
 			<xsl:apply-templates select="@*" mode="#current"/>
-			<xsl:value-of select="string-join(f:split-string(.), '&#x202f;')"/>
+			<xsl:value-of select="string-join(f:split-string(.), '&#x2009;')"/>
 		</xsl:copy>
 	</xsl:template>
 	
