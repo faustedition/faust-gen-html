@@ -100,7 +100,7 @@
 			<p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
 			<p:variable name="sigil_t" select="/f:textTranscript/@sigil_t"/>
 			
-			<p:load>
+			<p:load name="load-in-apply-edits">
 				<p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir)"></p:with-option>
 			</p:load>
 			
@@ -120,6 +120,21 @@
 			<p:store>
 				<p:with-option name="href" select="resolve-uri(concat('emended/', $sigil_t, '.xml'), $builddir)"/>
 			</p:store>
+
+			<!-- Grundschicht -->
+			<p:xslt>
+				<p:input port="source"><p:pipe port="result" step="load-in-apply-edits"/></p:input>
+				<p:input port="stylesheet"><p:document href="xslt/unemend-core.xsl"/></p:input>
+				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			</p:xslt>
+			<p:xslt>
+				<p:input port="stylesheet"><p:document href="xslt/text-unemend.xsl"/></p:input>
+				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			</p:xslt>
+			<p:store>
+				<p:with-option name="href" select="resolve-uri(concat('grundschicht/', $sigil_t, '.xml'), $builddir)"/>
+			</p:store>
+			
 		</p:for-each>
 		<!-- Pipe through list of inputs -->
 		<p:identity name="emended-version"><p:input port="source"><p:pipe port="result" step="generate-search"/></p:input></p:identity>
