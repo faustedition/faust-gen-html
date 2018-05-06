@@ -35,13 +35,18 @@
   -->
   <xsl:function name="f:get-section-number" as="xs:string?">
     <xsl:param name="el" as="node()?"/>
+    <xsl:value-of select="f:get-section-div($el)/@f:section"/>
+  </xsl:function>
+  
+  <xsl:function name="f:get-section-div" as="element()?">
+    <xsl:param name="el" as="node()?"/>
     <xsl:choose>
       <xsl:when test="not($el//ancestor-or-self::TEI/@f:split)"/>
-      <xsl:when test="$el/ancestor-or-self::div/@f:section"><xsl:value-of select="$el/ancestor-or-self::div[1]/@f:section"/></xsl:when>
-      <xsl:when test="$el/descendant::div/@f:section"><xsl:value-of select="($el/descendant::div/@f:section)[1]"/></xsl:when>
-      <xsl:when test="$el/following::div/@f:section"><xsl:value-of select="($el/following::div/@f:section)[1]"/></xsl:when>
-      <xsl:otherwise><xsl:value-of select="$el/preceding::div[@f:section][1]/@f:section"/></xsl:otherwise>
-    </xsl:choose>
+      <xsl:when test="$el/ancestor-or-self::div/@f:section"><xsl:sequence select="$el/ancestor-or-self::div[1]"/></xsl:when>
+      <xsl:when test="$el/descendant::div/@f:section"><xsl:sequence select="($el/descendant::div)[1]"/></xsl:when>
+      <xsl:when test="$el/following::div/@f:section"><xsl:sequence select="($el/following::div)[1]"/></xsl:when>
+      <xsl:otherwise><xsl:sequence select="$el/preceding::div[@f:section][1]"/></xsl:otherwise>
+    </xsl:choose>    
   </xsl:function>
   
   <xsl:function name="f:get-section-label">
@@ -241,38 +246,7 @@
       <xsl:value-of select="concat('#l', $n)"/>
     </xsl:if>
   </xsl:function>
-  
-  <!-- FIXME we need $transcript to point to the search version, I guess. -->
-  <!--xsl:function name="f:printlink">
-    <xsl:param name="transcript"/>
-    <xsl:param name="n"/>
     
-    <xsl:variable name="split" select="f:is-splitable-doc(document($transcript))"/>
-    <xsl:variable name="targetpart">
-      <xsl:choose>
-        <xsl:when test="$split">
-          <xsl:variable name="div" select='document($transcript)//*[@n = $n 
-            and not(self::pb or self::div or 
-            self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or 
-            @n[contains(.,"todo")] or @n[contains(.,"p")])]/ancestor::div[1]'/>
-          <xsl:if test="count($div) > 1">
-            <xsl:message select="concat('ERROR: f:printlink(', $transcript, ', ', $n, '): more than one div.')"/>
-          </xsl:if>
-          <xsl:if test="$div">
-            <xsl:text>.</xsl:text>
-            <xsl:number 
-              select="$div[1]"
-              level="any"
-              from="TEI"						
-            />
-          </xsl:if>
-        </xsl:when>
-      </xsl:choose>
-    </xsl:variable>
-    <xsl:value-of select="concat($printbase,
-      replace($transcript, '^.*/(.*)\.xml$', '$1'), $targetpart, '#l', $n)"/>
-  </xsl:function-->
-  
   <!-- Returns true() iff $element is one of those TEI elements for which a variant apparatus should be generated. -->
   <xsl:function name="f:hasvars" as="xs:boolean">
     <xsl:param name="element"/>

@@ -148,21 +148,25 @@
 			<xsl:if test="@xml:id">
 				<xsl:attribute name="id" select="@xml:id"/>
 			</xsl:if>
-			<xsl:call-template name="section-link">
-				<xsl:with-param name="suffix">
-					<xsl:if test="@f:first-verse != ''">
-						<small class="pure-fade-50 verse">
-							<xsl:text> (Verse </xsl:text>
-							<xsl:value-of select="@f:first-verse"/>
-							<xsl:if test="@f:last-verse != @f:first-verse">
-								<xsl:text> – </xsl:text>
-								<xsl:value-of select="@f:last-verse"/>
-							</xsl:if>
-							<xsl:text>)</xsl:text>
-						</small>
-					</xsl:if>
-				</xsl:with-param>
-			</xsl:call-template>
+			<xsl:variable name="link" select="f:link-to(.)"/>
+			<a href="{$link/@href}">
+				<xsl:value-of select="$link"/>
+				<xsl:if test="@f:first-verse != ''">					
+					<small class="pure-fade-50 verse">
+						<xsl:text> (Verse </xsl:text>
+						<xsl:value-of select="@f:first-verse"/>
+						<xsl:if test="@f:last-verse != @f:first-verse">
+							<xsl:text> – </xsl:text>
+							<xsl:value-of select="@f:last-verse"/>
+						</xsl:if>
+						<xsl:text>)</xsl:text>
+					</small>
+				</xsl:if>
+			</a>
+				
+				
+				
+			
 			<xsl:if test="descendant::div[@f:label]">
 				<ul>
 					<xsl:apply-templates mode="#current"/>
@@ -173,9 +177,7 @@
 	
 	<xsl:template mode="tocpage" match="titlePage[not(preceding::titlePage)]">
 		<li>
-			<xsl:call-template name="section-link">
-				<xsl:with-param name="title">Titel</xsl:with-param>
-			</xsl:call-template>
+			<a href="{f:link-to(.)/@href}">Titel</a>
 		</li>
 	</xsl:template>
 	
@@ -190,88 +192,37 @@
 		<xsl:next-match/>
 	</xsl:template>
 	
-	<!-- 
-		Erzeugt einen Link zur angegebenen HTML-Datei (und optional: Seite). 
-		Relativierung und ggf. einsetzen in das documentViewer-Template 
-		erfolgen automatisch. 
-	-->
-	<xsl:function name="f:html-link">
-		<xsl:param name="filename"/>
-		<xsl:value-of select="f:html-link($filename, ())"/>
+	<!-- Creates an HTML link to the current element, labeled with the current section label -->
+	<xsl:function name="f:link-to" as="element()">
+		<xsl:param name="el" as="node()"/>
+		<xsl:param name="section" as="item()"/> <!-- true(): Detect section, false(): No section part, everything else: use that as section part -->
+		<xsl:variable name="section-number" select="f:get-section-number($el)"/>
+		<xsl:variable name="section-prefix" select="if ($type='lesetext') then 
+				if ($section eq 'no' or $section-number eq '') then '' else '.' 
+			else '&amp;section='"/>
+		<xsl:variable name="section-part" select="						
+			if ($section eq 'yes' and $section-number) then concat($section-prefix, $section-number) 
+			else if ($section eq 'no') then ''
+			else concat($section-prefix, $section)"/>
+		<xsl:variable name="title" select="f:get-section-div($el)/@f:label"/>
+		<xsl:variable name="sigil_t" select="id('sigil_t', $el)"/>
+		<xsl:variable name="page" select="$el/preceding::pb[1]/@f:docTranscriptNo"/>
+		<xsl:variable name="n" select="$el/ancestor-or-self::*[f:hasvars(.)][1]/@n"/>
+		<xsl:variable name="href" select="concat(
+			if ($type = 'lesetext')
+			then '/print/faust'
+			else concat('/document?sigil=', $sigil_t, 
+						if ($page) then concat('&amp;page=', $page) else ''),
+			$section-part,						
+			if ($n) then concat('#l', $n) else '')"/>
+		<a href="{$href}"><xsl:value-of select="$title"/></a>
 	</xsl:function>
-	<xsl:function name="f:html-link">
-		<xsl:param name="filename"/>
-		<xsl:param name="page"/>
-		<xsl:variable name="basename" select="f:relativize($output-base, $filename)"/>
-		<xsl:value-of select="
-			if ($type != 'lesetext') 
-			then concat($docbase, $sigil_t, '&amp;section=', $basename,
-			if ($page) then concat('&amp;page=', $page) else '',
-			'&amp;view=', $view)
-			else $basename"/>		
+	
+	<xsl:function name="f:link-to" as="element()">
+		<xsl:param name="el" as="node()"/>
+		<xsl:sequence select="f:link-to($el, 'yes')"/>
 	</xsl:function>
-	
-	<xsl:template name="filename">
-		<xsl:param name="toc" select="false()"></xsl:param>
-		<xsl:variable name="secno" select="if ($toc) then false() else f:get-section-number(.)"/>
-		<xsl:value-of select="$output-base"/>
-		<xsl:if test="$secno">
-			<xsl:text>.</xsl:text>
-			<xsl:value-of select="$secno"/>
-		</xsl:if>
-	</xsl:template>
-	
-	<!-- Erzeugt einen Link zum aktuellen (Fokus) div. -->
-	<xsl:template name="section-link">
-		<xsl:param name="class"/>
-		<xsl:param name="prefix"/>
-		<xsl:param name="suffix"/>
-		<xsl:param name="title">
-			<xsl:apply-templates mode="title" select="if (head) then head[1] else *[translate(normalize-space(.), ' ', '') ne ''][1]"/>
-		</xsl:param>
-		<xsl:param name="href">			
-			<xsl:call-template name="current-href"/>
-		</xsl:param>
-		<a>
-			<xsl:attribute name="href" select="$href"/>        
 			
-			<xsl:if test="$class">
-				<xsl:attribute name="class" select="string-join($class, ' ')"/>
-			</xsl:if>
-			<xsl:copy-of select="$prefix"/>
-			
-			<xsl:choose>
-				<xsl:when test="@f:label">
-					<xsl:value-of select="@f:label"/>
-				</xsl:when>
-				<xsl:when test="head">
-					<xsl:copy-of select="$title"/>
-				</xsl:when>				
-				<xsl:otherwise>[<xsl:copy-of select="$title"/>]</xsl:otherwise>
-			</xsl:choose>			
-			<xsl:copy-of select="$suffix"/>
-		</a>
-	</xsl:template>
-	
-	<xsl:template name="current-href">
-		<xsl:param name="toc" select="false()"/>
-		<xsl:variable name="filename">
-			<xsl:call-template name="filename">
-				<xsl:with-param name="toc" select="$toc"></xsl:with-param>
-			</xsl:call-template>
-		</xsl:variable>
-		<xsl:variable name="page" select="preceding::pb[@f:docTranscriptNo][1]/@f:docTranscriptNo"/>
-		<xsl:variable name="basename" select="f:relativize($output-base, $filename)"/>
-		<xsl:value-of
-			select="
-				if (@xml:id)
-				then
-					concat(f:html-link($filename, $page), '#', @xml:id)
-				else
-					f:html-link($filename, $page)"
-		/>
-	</xsl:template>
-	
 	<xsl:template match="lb[not(@break='no')]" mode="title">
 		<xsl:text> </xsl:text>    
 	</xsl:template>
@@ -311,7 +262,14 @@
 		</xsl:call-template>
 	</xsl:template>
 	
-	
+	<xsl:template name="section-link">
+		<xsl:param name="prefix"/>
+		<xsl:variable name="link" select="f:link-to(.)"/>
+		<a href="{$link/@href}">
+			<xsl:sequence select="$prefix"/>
+			<xsl:value-of select="$link"/>
+		</a>
+	</xsl:template>
 	
 	<!-- Erzeugt eine lokale Navigation für das aktuelle (Fokus) div, d.h. Breadcrumbs, Prev/Next -->
 	<xsl:template name="local-nav">
@@ -322,12 +280,7 @@
 			<ul class="fa-ul">
 				<li class="toclink">
 					<xsl:if test="/TEI/@f:split and not(self::TEI)">
-						<a>
-							<xsl:attribute name="href">
-								<xsl:call-template name="current-href">
-									<xsl:with-param name="toc" select="true()"/>
-								</xsl:call-template>								
-							</xsl:attribute>
+						<a href="{f:link-to(/, '')/@href}">
 							<span class="fa-li fa fa-menu"/>
 							<xsl:text>Inhaltsverzeichnis</xsl:text>
 						</a>
@@ -340,6 +293,7 @@
 			<ul class="prevnext fa-ul">
 				<li class="prev">
 					<xsl:if test="preceding::div[@f:section]">
+						
 						<xsl:for-each
 							select="preceding::div[@f:section][1]">
 							<xsl:call-template name="section-link">
@@ -374,7 +328,7 @@
 						<xsl:choose>
 							<xsl:when test="$single">
 								<span class="fa-li fa fa-docs"/>
-								<a href="{f:html-link($output-base)}">Szenenansicht</a>
+								<a href="{f:link-to(.)/@href}">Szenenansicht</a>
 							</xsl:when>
 							<xsl:when test="$type = 'lesetext' and not(self::text)">
 								<xsl:variable name="part" select="substring(ancestor-or-self::div[@n][1]/@n, 1, 1)"/>
@@ -382,16 +336,16 @@
 								<span class="fa-li fa fa-doc"/>
 								<xsl:choose>
 									<xsl:when test="$part">
-										<a href="{f:html-link(concat($output-base, $part, '.all'))}">Gesamtansicht <xsl:value-of select="$label"/></a>										
+										<a href="{f:link-to(., concat('all', $part))/@href}">Gesamtansicht <xsl:value-of select="$label"/></a>										
 									</xsl:when>
 									<xsl:otherwise>
-										<a href="{f:html-link(concat($output-base, '.all'))}">Gesamtansicht</a>										
+										<a href="{f:link-to(., 'all')/@href}">Gesamtansicht</a>										
 									</xsl:otherwise>
 								</xsl:choose>
 							</xsl:when>
 							<xsl:otherwise>
 								<span class="fa-li fa fa-doc"/>
-								<a href="{f:html-link(concat($output-base, '.all'))}">Gesamtansicht</a>
+								<a href="{f:link-to(., 'all')/@href}">Gesamtansicht</a>
 							</xsl:otherwise>
 						</xsl:choose>
 					</li>
