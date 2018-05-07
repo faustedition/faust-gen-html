@@ -239,25 +239,6 @@
 	</xsl:template>
 	<xsl:template match="sp/stage[not(following-sibling::*)]" priority="1"/>
 
-	<!--<!-\- sample data for MC; to be moved at the end of procedures when reading text is finished -\->
-						<xsl:template match="div/@n"/>
-						<xsl:template match="orig | unclear">
-							<xsl:apply-templates/>
-						</xsl:template>
-						<xsl:template match="l[@n='4625']">
-							<l n="4625">
-								<xsl:text>Sein Innres reinigt von verlebtem</xsl:text>
-								<note type="textcrit">
-									<it>
-										<xsl:text>4625</xsl:text>
-									</it>
-									<xsl:text> Lemma] Variante </xsl:text>
-									<it><xsl:text>Sigle</xsl:text></it>
-								</note>
-								<xsl:text>Graus.</xsl:text>
-							</l>
-						</xsl:template>-->
-
 	<xsl:template match="text()" priority="0.5">
 		<xsl:value-of select="replace(replace(replace(., 'Ae', 'Ä'), 'Oe', 'Ö'), 'Ue', 'Ü')"/>
 	</xsl:template>
