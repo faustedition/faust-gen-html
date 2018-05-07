@@ -13,6 +13,7 @@
     -->
     
     <xsl:import href="utils.xsl"/>
+    <xsl:strip-space elements="app choice subst"/>
     
     <xsl:template match="node()|@*">
         <xsl:copy>
@@ -30,7 +31,17 @@
         <xsl:apply-templates select="del/node()"/>
     </xsl:template>
     
-    <xsl:template match="supplied"/>    
+    <xsl:template match="supplied[contains(@evidence, 'typesetting-error')]"/>
+    
+    <xsl:template match="choice">
+        <xsl:apply-templates select="(orig|abbr|sic)/node()"/>
+    </xsl:template>
+
+    <xsl:template match="app[lem]">
+        <xsl:apply-templates select="lem/node()"/>
+    </xsl:template>
+    
+    <xsl:template match="comment()" priority="1"/>
 
     <!--what to do with this? 
     
