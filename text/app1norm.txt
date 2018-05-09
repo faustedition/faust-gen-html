@@ -148,7 +148,6 @@ before_2320_a[bei]{bey} <i>vor 2320</i> bey <i>1_H.5 S</i>]   bei <i>A D.1</i> 
 before_2321_b[]{} <i>vor 2321</i> <speaker>Mephistopheles</speaker> <stage>wie oben</stage> <i>none</i>]<br/><speaker>Mephistopheles</speaker> wie oben. <i>S</i><br/><speaker>Mephistopheles</speaker> wie oben^ <i>A </i><br/><speaker>Mephistopheles</speaker> wie oben. <i>D.1 </i><br/><speaker>Mephistopheles</speaker> wie oben. <i>B</i><br/><speaker>Mephistopheles</speaker> (wie oben). <i>B.a [type=8]</i>
 2321[euch,]{=} <i>2321</i> euch, <i>S A B.a</i>]   euch^ <i>B [Typ 4c]</i>
 2322[giebt’]{=} <i>2322</i> giebt’s <i>A D.1</i>]  gibt’s <i>S</i>   gibt’s <i>B B.a [type=4a]</i>
-<i>2322</i> <i>In S A D.1 B 1_H.1 ist der mittlere Teil des antilabischen Verses (</i>] Wie?<i>) nicht korrekt unterhalb des vorangehenden Teils (</i>Was giebt’s<i>) plaziert; korrigiert in B.a und in C.1_12 C.3_12. [type=1c]</i>
 before_2323_b[]{} <i>vor 2323</i> <speaker>Brander</speaker> <stage>zu Siebel</stage> <i>none</i>]<br/><speaker>Brander</speaker> zu Siebel. <i>S</i><br/><speaker>Brander</speaker> (zu Siebel)^ <i>A D.1 B</i><br/><speaker>Brander</speaker> (zu Siebel). <i>B.a [type=8]</i>
 before_2332 []{} <i>vor 2332</i> Sich … wendend. <i>S </i>]   (Sich <i>…</i> wendend.) <i>A B.a</i> Sich <i>…</i> wendend. <i>D.1</i> Sich <i>…</i> wendend. <i>B [type=8]</i>
 before_2337_a[Hexenküche]{=} <i>vor 2337</i> Hexenküche <i>none</i>] Hexenküche. <i>S</i>  Hexenküche^ <i>A</i> Hexenküche. <i>D.1</i> Hexenküche. <i>B B.a [type=8]</i>
