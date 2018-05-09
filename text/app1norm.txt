@@ -137,7 +137,7 @@ before_2276_a|before_2276_b[Mephistopheles|bohrt]{=} <i>vor 2276</i> <speaker>Me
 before_2284_a[sind,]{=} <i>vor 2284</i> <stage>Nachdem … sind,</stage> <i>S </i>] <br/> (Nachdem <i>…</i> sind,) <i>A</i><br/>Nachdem <i>…</i> sind, <i>D.1 </i><br/>Nachdem <i>…</i> sind, <i>B</i><br/> (Nachdem <i>…</i> sind.) <i>B.a [type=8]</i>
 before_2284_c[Geberden]{=} <i>vor 2284</i> <speaker>Mephistopheles</speaker> <stage>mit seltsamen Geberden</stage> <i>none</i>]<br/><speaker>Mephistopheles</speaker> mit seltsamen Geberden. <i>S </i><br/><speaker>Mephistopheles</speaker> (mit seltsamen Geberden)^ <i>A</i><br/><speaker>Mephistopheles</speaker> mit seltsamen Geberden. <i>D.1</i><br/><speaker>Mephistopheles</speaker> mit seltsamen Geberden^ <i>B</i><br/><speaker>Mephistopheles</speaker> (mit seltsamen Geberden). <i>B.a [type=8]</i>
 before_2291_a[]{} <i>vor 2291</i> <speaker>Alle</speaker> / <stage>indem … läuft</stage> <i>none</i>]<br/><speaker>Alle</speaker> / indem <i>…</i> läuft. <i>S </i><br/><speaker>Alle</speaker>. / (indem <i>…</i> läuft)^  <i>A</i><br/><speaker>Alle</speaker>. / indem <i>…</i> läuft. <i>D.1</i><br/><speaker>Alle</speaker> / indem <i>…</i> läuft. <i>B</i><br/><speaker>Alle</speaker> / (indem <i>…</i> läuft).  <i>B.a [type=8]</i>
-before_2293_a[(Sie trinken wiederholt.)]{Sie trinken wiederholt.} <i>vor 2293</i> <stage>Sie trinken wiederholt.</stage> <i>D.1</i>] <i> </i><br/>Sie trinken wiederhohlt. <i>S</i><br/> (Sie trinken wiederholt.)  <i>A</i><br/>Sie trinken wiederholt. <i>B</i><br/> (Sie trinken wiederhohlt.)  <i>B.a [type=8]</i>
+before_2293_a[(Sie trinken wiederholt.)]{Sie trinken wiederholt.} <i>vor 2293</i> <stage>Sie trinken wiederholt.</stage> <i>D.1 </i>] <br/>Sie trinken wiederhohlt. <i>S</i><br/> (Sie trinken wiederholt.)  <i>A</i><br/>Sie trinken wiederholt. <i>B</i><br/> (Sie trinken wiederhohlt.)  <i>B.a [type=8]</i>
 before_2293_c[]{} <i>vor 2293</i> <stage>Alle singen.</stage> <i>S </i>] <br/>Alle (singen)^ <i>A</i><br/>Alle singen. <i>D.1</i><br/>Alle singen^ <i>B</i><br/>Alle (singen).  <i>B.a [type=8]</i>
 before_2299_b[]{} <i>vor 2299</i> <speaker>Siebel</speaker> / <stage>trinkt … Flamme.</stage> <i>S </i>] <br/><speaker>Siebel</speaker>. / trinkt <i>…</i> Flamme. <i>A D.1</i><br/><speaker>Siebel</speaker> / trinkt <i>…</i> Flamme. <i>B</i><br/><speaker>Siebel</speaker> / (trinkt <i>…</i> Flamme). <i>B.a [type=8]</i>
 before_2301_b[]{} <i>vor 2301</i> <stage>zu dem Gesellen <i>none</i></stage>]<br/><stage>Zu dem Gesellen.</stage> <i>S </i><br/>zu dem Gesellen.  <i>A D.1 B</i><br/>Zu dem Gesellen. <i>D.2</i><br/> (Zu dem Gesellen.) <i>B.a [type=8]</i>
@@ -232,8 +232,8 @@ before_2896_b[durchs]{=} <i>vor 2896</i> durchs <i>A</i>]   durchs <i>1_H.5</i> 
 before_3073_b[spazirend]{=} <i>vor  3073</i> spazirend <i>A</i>]   spazierend <i>1_H.5</i> spazierend <i>B</i> spatzierend <i>B.a [type=4a]</i>
 3077[solch’]{solch} <i>3077</i> solch <i>1_H.5</i>]   solch’ <i>S A B B.a 1_H.1 C.1_12 C.3_12 [type=1b]</i>
 3093[keinem]{=} <i>3093</i> keinem <i>1_H.5 S A</i>]   Keinem <i>B B.a [type=4a]</i>
-<i>3095</i>[Drum,]{=} <i>Das Komma fehlt in einigen Exemplaren von B. [type=7]</i>
-†3116 eh’r <i>A B Ba</i>] eh <i>1_H.5</i> eh’ <i>S  [type=7]</i>
+3095[Drum,]{=} <i>3095 Das Komma fehlt in einigen Exemplaren von B. [type=7]</i>
+3184[eh’r]{=} <i>3116</i> eh’r <i>A B Ba</i>] eh <i>1_H.5</i> eh’ <i>S  [type=7]</i>
 3134[Schoos]{=} <i>3134</i> Schoos <i>1_H.5 S A</i>]   Schoß <i>B</i> Schooß <i>B.a [type=4a]</i>
 3179[Einen]{=} <i>3179</i> Einen <i>S A B B.a1_H.1 C.1_12 C.3_12</i>]   Keinen <i>1_H.5 [type=2b*]</i> <i> </i>
 before_3183_a|before_3183_b[Margarete|fährt fort]{=} <i>vor 3183</i> <speaker>Margarete</speaker> fährt fort <i>none</i>]<br/> <speaker>Margr:</speaker> fährt fort) <i>1_H.5</i><br/> <speaker>Margarethe</speaker> fährt fort. <i>S</i><br/> <speaker>Margarete</speaker> fährt fort^ <i>A</i><br/> <speaker>Margarete</speaker> fährt fort. <i>D.1</i><br/> <speaker>Margarete</speaker> fährt fort. <i>B</i><br/> <speaker>Margarethe</speaker> (fährt fort). <i>B.a [type=8]</i>
@@ -367,4 +367,4 @@ before_4498_a[sie]{=} <i>nach 4498</i> sie <i>A</i>]   Sie <i>B B.a [type=4a]</
 4568[sizt]{=} <i>4568</i> sizt <i>A</i>]   sizzt <i>1_H.5</i> sitzt <i>B B.a [type=4a]</i>
 4578[alles]{=} <i>4578</i> alles <i>A</i>]   Alles <i>B B.a [type=4a]</i>
 4608[Schaaren^]{=} <i>4608</i> Schaaren^ <i>A</i>]   Schaaren, <i>D.1</i> Scharen, <i>B</i> Scharen^ <i>B.a [type=4a]</i>
-after_4611 [verschwindet]{=} <i>nach 4611</i> verschwindet <i>A</i>]   Verschwindet <i>B B.a [type=4a]</i>
+after_4611[verschwindet]{=} <i>nach 4611</i> verschwindet <i>A</i>]   Verschwindet <i>B B.a [type=4a]</i>
