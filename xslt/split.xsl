@@ -201,20 +201,21 @@
 				if ($section eq 'no' or $section-number eq '') then '' else '.' 
 			else '&amp;section='"/>
 		<xsl:variable name="section-part" select="						
-			if ($section eq 'yes' and $section-number) then concat($section-prefix, $section-number) 
+			if ($section eq 'yes') then if ($section-number) then concat($section-prefix, $section-number) else $section-prefix 
 			else if ($section eq 'no') then ''
 			else concat($section-prefix, $section)"/>
-		<xsl:variable name="title" select="f:get-section-div($el)/@f:label"/>
+		<xsl:variable name="title" select="($el/ancestor-or-self::*[@f:label][1]/@f:label, f:get-section-div($el)/@f:label)[1]"/>
 		<xsl:variable name="sigil_t" select="id('sigil_t', $el)"/>
 		<xsl:variable name="page" select="$el/preceding::pb[1]/@f:docTranscriptNo"/>
 		<xsl:variable name="n" select="$el/ancestor-or-self::*[f:hasvars(.)][1]/@n"/>
+		<xsl:variable name="id" select="f:generate-id($el)"/>
 		<xsl:variable name="href" select="concat(
 			if ($type = 'lesetext')
 			then '/print/faust'
 			else concat('/document?sigil=', $sigil_t, 
 						if ($page) then concat('&amp;page=', $page) else ''),
 			$section-part,						
-			if ($n) then concat('#l', $n) else '')"/>
+			if ($n) then concat('#l', $n) else if($id) then concat('#', $id) else '')"/>
 		<a href="{$href}"><xsl:value-of select="$title"/></a>
 	</xsl:function>
 	
@@ -280,9 +281,10 @@
 			<ul class="fa-ul">
 				<li class="toclink">
 					<xsl:if test="/TEI/@f:split and not(self::TEI)">
-						<a href="{f:link-to(/, '')/@href}">
+						<a href="{f:link-to(/, 'no')/@href}">
 							<span class="fa-li fa fa-menu"/>
 							<xsl:text>Inhaltsverzeichnis</xsl:text>
+							<xsl:comment>GIZMO WAS HERE</xsl:comment>
 						</a>
 					</xsl:if>
 					&#160;	<!-- spacing -->

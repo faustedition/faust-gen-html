@@ -13,6 +13,7 @@
     -->
     
     <xsl:import href="utils.xsl"/>
+    
     <xsl:strip-space elements="app choice subst"/>
     
     <xsl:template match="node()|@*">
@@ -42,6 +43,8 @@
     </xsl:template>
     
     <xsl:template match="comment()" priority="1"/>
+    
+    <xsl:template match="ge:transposeGrp"/>
 
     <!--what to do with this? 
     

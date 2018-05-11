@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:f="http://www.faustedition.net/ns"
+  xmlns="http://www.tei-c.org/ns/1.0"
   xpath-default-namespace="http://www.tei-c.org/ns/1.0"
   exclude-result-prefixes="xs"
   version="2.0">
@@ -14,7 +15,7 @@
   <xsl:param name="documentURI"/>
   <xsl:param name="sigil_t" select="//idno[@type='sigil_t']"/>
   <xsl:param name="type" select="data(/TEI/type)"/>
-    
+      
   <!-- 
     
     Returns true if this document should be split into sections.
@@ -42,9 +43,9 @@
     <xsl:param name="el" as="node()?"/>
     <xsl:choose>
       <xsl:when test="not($el//ancestor-or-self::TEI/@f:split)"/>
-      <xsl:when test="$el/ancestor-or-self::div/@f:section"><xsl:sequence select="$el/ancestor-or-self::div[1]"/></xsl:when>
-      <xsl:when test="$el/descendant::div/@f:section"><xsl:sequence select="($el/descendant::div)[1]"/></xsl:when>
-      <xsl:when test="$el/following::div/@f:section"><xsl:sequence select="($el/following::div)[1]"/></xsl:when>
+      <xsl:when test="$el/ancestor-or-self::div/@f:section"><xsl:sequence select="$el/ancestor-or-self::div[@f:section][1]"/></xsl:when>
+      <xsl:when test="$el/descendant::div/@f:section"><xsl:sequence select="($el/descendant::div[@f:section])[1]"/></xsl:when>
+      <xsl:when test="$el/following::div/@f:section"><xsl:sequence select="($el/following::div[@f:section])[1]"/></xsl:when>
       <xsl:otherwise><xsl:sequence select="$el/preceding::div[@f:section][1]"/></xsl:otherwise>
     </xsl:choose>    
   </xsl:function>

@@ -6,6 +6,7 @@
     <apptype type="type_1b">Korrektur der Zeichensetzung</apptype>
     <apptype type="type_1c">Korrektur der Typographie</apptype>
     
+    <apptype type="type_2aa">Emendation einer Störung im Grundtext gegen die unmittelbare Vorlage</apptype>
     <apptype type="type_2a">Emendation einer Störung im Grundtext</apptype>
     <apptype type="type_2b">Emendation einer vererbten Störung im Grundtext</apptype>
     <apptype type="type_2c">Emendation durch Autorvariante</apptype>

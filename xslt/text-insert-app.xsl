@@ -203,6 +203,29 @@
         <xsl:apply-templates mode="#current"/>
     </xsl:template>
     
+    <xsl:template match="*[milestone[@unit='refline'][@n=$spec//f:ins/@n]]">
+        <xsl:variable name="ns" select="milestone[@unit='refline']/@n"/>
+        <xsl:variable name="apps" select="$spec//app[f:ins/@n = $ns]"/>
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates select="@*"/>
+            <xsl:apply-templates mode="with-refline-app">
+                <xsl:with-param name="apps" tunnel="yes" select="$apps"/>
+            </xsl:apply-templates>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template mode="with-refline-app" match="text()" priority="1">
+        <xsl:param name="apps" tunnel="yes"/>
+        <xsl:variable name="current-milestone" select="preceding::milestone[@unit='refline'][1]"/>
+        <xsl:variable name="current-refline" select="data($current-milestone/@n)"/>
+        <xsl:variable name="current-apps" select="$apps[f:ins[@n=$current-refline]]"/>
+        <xsl:apply-templates mode="with-app" select=".">
+            <xsl:with-param name="apps" tunnel="yes" select="$current-apps"/>
+            <xsl:with-param name="current-line" tunnel="yes" select="$current-refline"/>
+            <xsl:with-param name="insert-app-immediately" tunnel="yes" select="true()"/>
+        </xsl:apply-templates>
+    </xsl:template>
+    
     <!-- the with-app mode is chosen for content where we know there is a lemma inside somewhere -->
     <!-- 
         This processes a relevant text node: It searches the text content for any lem inside, and
@@ -211,6 +234,7 @@
     <xsl:template mode="with-app" match="text()" priority="1">
         <xsl:param name="apps" tunnel="yes"/>
         <xsl:param name="current-line" tunnel="yes"/>
+        <xsl:param name="insert-app-immediately" tunnel="yes" select="false()"/>
         <xsl:variable name="replace-strings" select="for $repl in $apps/f:replace return replace(data($repl), '([\]().*+?\[])', '\\$1')" as="item()*"/>       
         <xsl:variable name="rs-left-boundary" select="for $repl in $replace-strings return
                                                         if (matches($repl, '^\w')) then concat('\b', $repl) else $repl"/>
@@ -248,7 +272,12 @@
                         <xsl:variable name="current-app" select="$current-apps[1]"/>
                         <seg type="lem" xml:id="{f:seg-id($current-ins)}">
                             <xsl:copy-of select="$current-ins/node()" copy-namespaces="no"/>
-                        </seg> 
+                        </seg>
+                        <xsl:if test="$insert-app-immediately">
+                            <xsl:call-template name="create-app-note">
+                                <xsl:with-param name="apps" select="$current-apps"/>
+                            </xsl:call-template>                            
+                        </xsl:if>
                     </xsl:matching-substring>
                     <xsl:non-matching-substring>
                         <xsl:copy copy-namespaces="no"/>
@@ -408,8 +437,8 @@
                 <xsl:next-match/>
             </xsl:when>
             <!-- something else referenced from the current app: drop here, keep there -->
-            <xsl:when test="//seg[@xml:id = $fromrefs]"/>
-            <!-- otherwise drop, just to be sure -->
+            <xsl:when test="//seg[@xml:id = $fromrefs] and ancestor::*[f:hasvars(.)]"/>
+            <!-- otherwise keep, just to be sure -->
             <xsl:otherwise>
                 <xsl:next-match/>
             </xsl:otherwise>
@@ -429,7 +458,7 @@
     
     
     <!-- Pass through unchanged everything else. -->
-    <xsl:template match="node() | @*" mode="#default pass2 pass3 app remove-notes with-app">
+    <xsl:template match="node() | @*" mode="#default pass2 pass3 app remove-notes with-app with-refline-app">
         <xsl:copy copy-namespaces="no">
             <xsl:apply-templates mode="#current" select="@*, node()"/>
         </xsl:copy>
