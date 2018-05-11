@@ -134,7 +134,12 @@
 			<p:xslt>
 				<p:input port="stylesheet"><p:document href="xslt/unemend-core.xsl"/></p:input>
 				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
-			</p:xslt>			
+			</p:xslt>
+			<p:xslt>
+				<p:input port="stylesheet"><p:document href="xslt/changenote.xsl"/></p:input>
+				<p:with-param name="changenote" select="'Base layer without instant revisions'"/>
+			</p:xslt>
+			
 			<p:store indent="true">
 				<p:with-option name="href" select="resolve-uri(concat('grundschicht/', $sigil_t, '.xml'), $builddir)"/>
 			</p:store>
@@ -142,6 +147,10 @@
 				<p:input port="source"><p:pipe port="result" step="text-unemend"/></p:input>
 				<p:input port="stylesheet"><p:document href="xslt/emend-core-only-instant.xsl"/></p:input>
 				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			</p:xslt>
+			<p:xslt>
+				<p:input port="stylesheet"><p:document href="xslt/changenote.xsl"/></p:input>
+				<p:with-param name="changenote" select="'Base layer plus instant revisions'"/>
 			</p:xslt>
 			<p:store indent="true">
 				<p:with-option name="href" select="resolve-uri(concat('grundschicht-instant/', $sigil_t, '.xml'), $builddir)"/>

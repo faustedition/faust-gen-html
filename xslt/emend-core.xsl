@@ -18,6 +18,8 @@
     
     <xsl:import href="utils.xsl"/>
     
+    <xsl:param name="changenote">Created emended version (final layer)</xsl:param>
+    
     <xsl:template match="node()|@*" mode="emend">
         <xsl:copy>
             <xsl:apply-templates select="node()|@*" mode="#current"/>

@@ -13,6 +13,7 @@
     -->
     
     <xsl:import href="utils.xsl"/>
+    
     <xsl:strip-space elements="app choice subst"/>
     
     <xsl:template match="node()|@*">

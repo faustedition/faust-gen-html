@@ -6,7 +6,7 @@
   exclude-result-prefixes="xs"
   version="2.0">
   
-  <xsl:include href="unemend-core.xsl"/>  
+  <xsl:import href="unemend-core.xsl"/>
   
   <xsl:template match="del[contains(@f:revType, 'instant')]" priority="2">
     <xsl:apply-templates mode="del-emend"/>    
