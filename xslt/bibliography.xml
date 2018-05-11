@@ -138,6 +138,11 @@
         <f:reference>Burkhardt, C.A.H.: Zu Goethes Gedichten. In: Archiv für Litteraturgeschichte 2 (1872), S. 511–519.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/carriere1869">
+        <f:citation>Carrière 1869</f:citation>
+        <f:reference>Carrière, Moriz: Faust. Eine Tragödie von Johann Wolfgang von Goethe. Erster Theil. Mit Einleitung und Erläuterungen, Leipzig 1869.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/castle1911">
         <f:citation>Castle 1911</f:citation>
         <f:reference>Castle, Eduard: Plan und Einheit in der ersten Konzeption des Goetheschen ‚Faust‘. In: Chronik des Wiener Goethe-Vereins XXV (1911), S. 64–72.</f:reference>
@@ -386,6 +391,11 @@
     <f:bib uri="faust://bibliography/harnack1899">
         <f:citation>Harnack 1899</f:citation>
         <f:reference>Harnack, Otto: Ueber die Entstehung des ‚Faust‘. In: ders.: Essais und Studien zur Literaturgeschichte, Braunschweig 1899, S. 58–76.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/hartung1855">
+        <f:citation>Hartung 1855</f:citation>
+        <f:reference>Johann Adam Hartung: Ungelehrte Erklärung des Goethe'schen Faust, Leipzig 1855.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hartung_und_hartung_112">
@@ -776,6 +786,16 @@
     <f:bib uri="faust://bibliography/pniower1924">
         <f:citation>Pniower 1924</f:citation>
         <f:reference>Pniower, Otto: Das erste Paralipomenon. (Miszellen zum ‚Faust‘). In: faust://bibliography/gjb_44, S. 143–146.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/Q">
+        <f:citation>Q</f:citation>
+        <f:reference>Goethe, Johann Wolfgang von: Poetische und prosaische Werke in zwei Bänden. Mit den schützenden Privilegien sämtlicher Staaten des deutschen Bundes. [Hrsg. von Johnn Peter Eckermann und Friedrich Wilhellm Riemer.] Des ersten Bandes zweite Abtheilung, Stuttgart und Tübingen 1836.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/resenhoefft1975">
+        <f:citation>Resenhöfft 1975</f:citation>
+        <f:reference>Resenhöfft, Wilhelm: Goethes Faust. Gleichnis schöpferischer Sinnerfassung. Anhang: Engel am Rabenstein -- Textrevision, Bern, Frankfurt a.M. 1975 (= Europäische Hochschulschriften. Reihe I, 128).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/sarauw1917">
