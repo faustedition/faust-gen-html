@@ -127,17 +127,25 @@
 				<p:input port="stylesheet"><p:document href="xslt/normalize-wsp.xsl"/></p:input>
 				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 			</p:xslt>
-			<p:xslt>
-				<p:input port="stylesheet"><p:document href="xslt/unemend-core.xsl"/></p:input>
-				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
-			</p:xslt>
-			<p:xslt>
+			<p:xslt name="text-unemend">
 				<p:input port="stylesheet"><p:document href="xslt/text-unemend.xsl"/></p:input>
 				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 			</p:xslt>
+			<p:xslt>
+				<p:input port="stylesheet"><p:document href="xslt/unemend-core.xsl"/></p:input>
+				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			</p:xslt>			
 			<p:store indent="true">
 				<p:with-option name="href" select="resolve-uri(concat('grundschicht/', $sigil_t, '.xml'), $builddir)"/>
 			</p:store>
+			<p:xslt>
+				<p:input port="source"><p:pipe port="result" step="text-unemend"/></p:input>
+				<p:input port="stylesheet"><p:document href="xslt/emend-core-only-instant.xsl"/></p:input>
+				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			</p:xslt>
+			<p:store indent="true">
+				<p:with-option name="href" select="resolve-uri(concat('grundschicht-instant/', $sigil_t, '.xml'), $builddir)"/>
+			</p:store>			
 			
 		</p:for-each>
 		<!-- Pipe through list of inputs -->

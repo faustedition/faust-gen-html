@@ -42,6 +42,8 @@
     </xsl:template>
     
     <xsl:template match="comment()" priority="1"/>
+    
+    <xsl:template match="ge:transposeGrp"/>
 
     <!--what to do with this? 
     
