@@ -43,9 +43,9 @@
     <xsl:param name="el" as="node()?"/>
     <xsl:choose>
       <xsl:when test="not($el//ancestor-or-self::TEI/@f:split)"/>
-      <xsl:when test="$el/ancestor-or-self::div/@f:section"><xsl:sequence select="$el/ancestor-or-self::div[1]"/></xsl:when>
-      <xsl:when test="$el/descendant::div/@f:section"><xsl:sequence select="($el/descendant::div)[1]"/></xsl:when>
-      <xsl:when test="$el/following::div/@f:section"><xsl:sequence select="($el/following::div)[1]"/></xsl:when>
+      <xsl:when test="$el/ancestor-or-self::div/@f:section"><xsl:sequence select="$el/ancestor-or-self::div[@f:section][1]"/></xsl:when>
+      <xsl:when test="$el/descendant::div/@f:section"><xsl:sequence select="($el/descendant::div[@f:section])[1]"/></xsl:when>
+      <xsl:when test="$el/following::div/@f:section"><xsl:sequence select="($el/following::div[@f:section])[1]"/></xsl:when>
       <xsl:otherwise><xsl:sequence select="$el/preceding::div[@f:section][1]"/></xsl:otherwise>
     </xsl:choose>    
   </xsl:function>
