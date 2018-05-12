@@ -42,6 +42,14 @@
                 von einem Satzfehler auszugehen.</note></rdg>
     </app>
     <app>
+        <f:replace n="before_2540_c">Die Hexe</f:replace>
+        <f:ins n="before_2540_c">Die Hexe</f:ins>
+        <ref>vor 2540</ref>
+        <lem/>
+        <rdg wit="S" type="type_8"><note>In <wit>S</wit> ist <quote>Die Hexe</quote> nicht als
+                Sprecherbezeichnung kenntlich gemacht.</note></rdg>
+    </app>
+    <app>
         <f:replace n="3356">Und ich, der Gottverhaßte, hatte nicht genug,</f:replace>
         <f:ins n="3356">Und ich, der Gottverhaßte,</f:ins>
         <f:ins n="3356" place="attributes"><l n="3356"/></f:ins>

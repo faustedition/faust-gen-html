@@ -867,6 +867,10 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <replacement-string/>
                         </string-pair>
                         <string-pair>
+                            <search-string>*before^_2540^_c*</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
                             <search-string>*2709*</search-string>
                             <replacement-string/>
                         </string-pair>
@@ -888,7 +892,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                         </string-pair>
                         <string-pair>
                             <search-string>{[}{{i}}2322{{/i}}*</search-string>
-                            <replacement-string></replacement-string>
+                            <replacement-string/>
                         </string-pair>
                     </exchange-table>
                 </exchange>
