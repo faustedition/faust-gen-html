@@ -1001,7 +1001,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
             </modify>
         </pass>
         <!-- add rend="inline" -->
-        <!--<pass>
+        <pass>
             <modify>
                 <exchange>
                     <exchange-table>
@@ -1012,7 +1012,7 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                     </exchange-table>
                 </exchange>
             </modify>
-        </pass>-->
+        </pass>
         <pass/>
     </transform>
     <transform source="app1norm" destination="app1norm-txt">
