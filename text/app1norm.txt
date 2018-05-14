@@ -341,7 +341,6 @@ before_4176[zu]{=} <i>vor 4176</i> zu <i>1_H.14 A</i>]  Zu <i>B B.a [type=4a]<
 4307[Schaar]{=} <i>4307</i> Schaar <i>A</i>]   Schar <i>B B.a [type=4a]</i>
 4321[schnopert was er schnopern]{=} <i>4321</i> schnopert <i>…</i> schnopern <i>A B</i>]   schnoppert <i>…</i> schnoppern <i>B.a [Typ 7]</i>
 4328[alles]{=} <i>4328</i> alles <i>A</i>]   Alles <i>B B.a [type=4a]</i>
-before_4343[]{} <i>vor 4343</i> <i>In 1_H.1 C.1_12 C.3_12 folgen die (ganz oder teilweise auch in 1_H.16 und 1_H.17 enthaltenen) Verse 4335–4342 (hier wiedergegeben nach 1_H.1) [type=5*]:</i>]  <sp><speaker>Tanzmeister.</speaker><l n="4335">Wie jeder doch die Beine lupft! </l> <l n="4336">Sich wie er kann herauszieht!</l> <l n="4337">Der Krumme springt, der Plumpe hupft</l> <l n="4338">Und fragt nicht wie es aussieht.</l><sp><sp></speaker>Fideler.</speaker><l n="4339">Das haßt sich schwer das Lumpenpack</l> <l n="4340">Und gäb sich gern das Restchen;</l> <l n="4341">Es eint sie hier der Dudelsack</l> <l n="4342">Wie Orpheus Leyer die Bestjen.</l><sp>
 before_4395_b[pianissimo]{=} <i>vor 4395</i> <speaker>Orchester</speaker> <stage rend="inline">pianissimo</stage> <i>none</i>] <speaker>Orchester.</speaker> pianissimo. <i>A</i> <speaker>Orchester.</speaker> Pianissimo. <i>B B.a 1_H.1 C.1_12 C.3_12 [type=8]</i>
 4398[alles]{=} <i>4398</i> alles <i>A</i>]   Alles <i>B B.a [type=4a]</i>
 ttf_4[Verräthrischer]{=} <i>4</i> Verräthrischer <i>1_H.5 A J.2</i>]   Verrätherischer <i>B</i> Verräth’rischer <i>B.a [type=4a]</i>

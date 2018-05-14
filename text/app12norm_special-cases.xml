@@ -107,6 +107,30 @@
             <note>konj. Resenhöfft</note></rdg>
     </app>
     <app>
+        <f:ins n="before_4343" place="only-app"/>
+        <ref>vor 4343</ref>
+        <lem/>
+        <rdg wit="1_H.1 C.1_12 C.3_12" type="type_5*"><note>In <wit>1_H.1</wit>
+                <wit>C.1_12</wit> <wit>C.3_12</wit> folgen die (ganz oder teilweise auch in
+                    <wit>1_H.16</wit> und <wit>1_H.17</wit> enthaltenen) Verse 4335–4342 (hier
+                wiedergegeben nach <wit>1_H.1</wit>):</note>
+            <sp>
+                <speaker>Tanzmeister.</speaker>
+                <l n="4335">Wie jeder doch die Beine lupft! </l>
+                <l n="4336">Sich wie er kann herauszieht!</l>
+                <l n="4337">Der Krumme springt, der Plumpe hupft</l>
+                <l n="4338">Und fragt nicht wie es aussieht.</l>
+            </sp>
+            <sp>
+                <speaker>Fideler.</speaker>
+                <l n="4339">Das haßt sich schwer das Lumpenpack</l>
+                <l n="4340">Und gäb sich gern das Restchen;</l>
+                <l n="4341">Es eint sie hier der Dudelsack</l>
+                <l n="4342">Wie Orpheus Leyer die Bestjen.</l>
+            </sp>
+        </rdg>
+    </app>
+    <app>
         <f:ins n="before_4613_c" place="only-app"/>
         <ref>vor 4613</ref>
         <lem wit="2_H">Der <gap reason="ellipsis"/> Acten <note><wit>2_H</wit></note></lem>
