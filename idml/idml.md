@@ -3,8 +3,8 @@ IDML-Synthese
 
 Hier werden die zur IDML-Synthese notwendigen Festlegungen getroffen. 
 
-# Fragen
-Siehe https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
+# Offene Punke
+https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
 
 # Verwendete Kürzel und Bezeichnungen
 * BA = Bühnenanweisung (`stage`)
@@ -68,14 +68,14 @@ Momentan sind es gut 700 `stage`-Elemente, die Mehrheit davon (gut 460) innerhal
 * direkt nach Sprecherbezeichnung auf eigener Zeile ohne Figur (`speaker/following-sibling::*[1][self::stage[not(hi)] and not(matches(@rend,'inline'))]`)
   * → `A BA zentr. 0,0 / 0,0`
 * direkt nach Sprecherbezeichnung auf eigener Zeile mit Figur (`speaker/following-sibling::*[1][self::stage[hi] and not(matches(@rend,'inline'))]`)
-  * → `H BA zentr. 0,0 / 0,0 mit A/F (0,0 pt. n. o.)`
+  * → `H BA zentr. 0,0 / 0,0`
 * BA auf eigener Zeile, nach Kombination von Sprecherbezeichnung und Bühnenanweisung auf derselben Zeile (`speaker/following-sibling::*[1][self::stage and matches(@rend,'inline')]/following-sibling::*[1][self::stage]`)
   * → `A BA zentr. 0,0 / 0,0`  
 * zwischen Versen ohne Figur (`stage[not(hi)][preceding-sibling::*[1][self::l] and following-sibling::*[1][self::l]]`)
   * Bspp.: `before_430` "Er schlägt ...", `before_447` "Er beschaut ..."   
   * → `A BA zentr. 0,0 / 0,0`
 * zwischen Versen mit Figur (`stage[hi][preceding-sibling::*[1][self::l] and following-sibling::*[1][self::l]]`) 
-  * → `H BA zentr. 0,0 / 0,0 mit A/F`
+  * → `H BA zentr. 0,0 / 0,0`
 * zwischen Versgruppen (`stage[preceding-sibling::*[1][self::lg] and following-sibling::*[1][self::lg]]`)
   * → `C BA zentr. 2,3 / 0,0  (0,75 pt. nach oben)`
 
@@ -164,20 +164,23 @@ XML:
 
 Output: Anzahl der Leerzeilen nach Wert von `@quantity` (2 bzw. 5). 
 
-## Prosa
-(Absätze in "Trüber Tag. Feld")
+## Prosa EB
+(Erzwungener Blocksatz)
 
-XML: `p`.
+XML: `p/text()[not(position()=last())]`
 
-## (Sprecher)
+## Prosa LB
+(Linksbündig)
 
-Format: `Sprecher`
+XML: `p/text()[position()=last()]`
+
+## Sprecher
 
 XML: `speaker[not(following-sibling::*[1][self::stage[matches(@rend,'inline')]])]`
 
 Priority: niedriger als die rule für Sprecher nach Überschrift
 
-## (Sprecher nach Überschrift)
+## Sprecher nach Überschrift
 Bei Auftritten steht noch ein `move` dazwischen, deswegen
 
 XML:
@@ -186,9 +189,7 @@ XML:
 
 `speaker` mit nochfolgendem `stage` mit `inline` werden zu einem BA-Format (s.o.).
 
-Format: `Sprecher nach Überschrift`
-
-Priority: höher als die rule für Sprecher
+Priority: höher als die rule für `Sprecher`
 
 ### Teil
 (Zueignung, ..., Teilüberschrift) 
@@ -210,11 +211,19 @@ Formatierung:
 ### Szene
 (Szenenüberschrift)
 
-XML: `div/div[@type='scene' and not(@n='1.1.22')]/*[1][self::head]`
+XML: `div[@type='scene' and not(@n='1.1.22')]/*[1][self::head]`
 
 Formatierung: 
 * neue Seite (kann auch eine linke sein)
 * 3 Zeilenumbrüche am Anfang des Absatzes
+
+### Szene 2zeilig
+(Szenenüberschrift mit Zeilenumbruch)
+
+XML: `div[@type='scene']/*[1][self::head and lb]`
+
+### Szene vor Szenenunter
+XML: `div[@type='scene']/head[@type='main']`
 
 ### Szene nach Akt
 (Szenenüberschrift nach Aktüberschrift)
@@ -226,18 +235,30 @@ Formatierung:
 * *keine* 3 Zeilenumbrüche am Anfang des Absatzes
 
 ### Szenenunter
-
-XML: `div[@type='scene']/head[2]` (sollte auch ein `type="sub"` tragen)
+XML: `div[@type='scene']/head[2]` (sollte auch ein `type='sub'` tragen)
 
 ### Unterszene
 XML: `div[@type='subscene']/*[1][self::head]`
 
+### Unterszene vor Unterszenenunter
+XML: `div[@type='subscene']/head[@type='main']`
+
 ### Unterszene nach Szene
 (Unterszenenüberschrift nach Szenenüberschrift)
 
-XML:
-* `head[@n='before_4728_b']` 
-*  `head[matches(@n,'before_7005_b')]`
+XML: `div[@type='scene']/head/following-sibling::*[1][self::div[@type='subscene']]/head[1]` 
+
+### Unterszene 2zeilig
+XML: `div[@type='subscene']/*[1][self::head and lb]`
+
+### Unterszene nach Szene 2zeilig
+XML: `div[@type='scene']/head/following-sibling::*[1][self::div[@type='subscene']]/head[1 and lb]`
+
+### Unterszene nach Szene vor Unterszenenunter
+XML: `div[@type='scene']/head/following-sibling::*[1][self::div[@type='subscene']]/head[1 and @type='main']`
+
+### Unterszenenunter
+XML: `div[@type='subscene']/head[2]`
 
 ## (Verse)
 
