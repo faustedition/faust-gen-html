@@ -146,16 +146,16 @@ XML: `title`.
 
 Output: einfach zentrierte Absätze o.ä., nach dem letzten `title` ein Seitenumbruch. 
 
-## Finis
-XML: `trailer`.
+## Unterszene (Finis)
+XML: `trailer`
 
 ## Kolumne
 Kolumnentitel mit Text. Alles weitere unten zu den dazugehörigen Zeichenformaten.
 
-## Kolumne weiß
+## Kolumne transparent
 Nicht relevant für XML.
 
-## Leerzeile
+## Eine LZ
 (betrifft Lücken nach 6062 und nach 6358) 
 
 XML:
@@ -374,25 +374,23 @@ XML: `div[@n='2.3']/div/*[1][self::stage]`
 
 Format: `F BA zentr. 1,15 / 0,0`
 
-## Szene (Finis)
-(entfällt vorläufig)
-Bedeutet, dass Finis wie Szene behandelt wird.
-
 ## Szene nach Teil (Nacht)
 = neue rechte Seite (Leerseite nach Teiltitel)
 
 ## Walpurgisnachtstraum
 
-### (WNT-Titel)
+### Teil (WNT)
 XML: `head[@n="before_4223_a"]/hi[1]`.
 
-### Zwischenzeile (WNT)
+### Unterszene nach Szene (oder)
 (für das "oder")
 
 XML: `head[@n="before_4223_a"]/hi[2][text()[contains(.,'oder')]]`.
 
-### Szene nach Zwischenzeile (WNT)
+### Szene (OuTgH)
 für "Oberons ..."
+
+XML: der Rest von `head[@n='before_4223_a']/node()`
 
 ### (Sprecher nach WNT-Titel)
 
