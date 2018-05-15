@@ -14,9 +14,14 @@ https://github.com/faustedition/faust-gen-html/labels/c%3Aidml
 # Absatzformate
 
 ## Apparat
-XML: `note type="textcrit"`.
+XML: `note[@type='textcrit']`.
 
 Output: Fußnotenartiges Konstrukt ohne Anmerkungsziffer.
+
+## Apparat zentriert
+XML: `rdg/speaker`
+
+(https://github.com/faustedition/faust-gen-html/issues/277#issuecomment-389164702)
 
 ## (BA)
 Die für die `BA`-Formate relevanten XML-Elemente sind `stage` (gut 700) und außerdem öfters `speaker` (gut 2100 Vorkommen). 
@@ -446,17 +451,14 @@ Output:
   * davor 1 `em` Abstand (variable Abstände zwischen Siglen und folgender Lesart bei zeilenfüllende Apparateinträgen?)
   * danach ein Leerzeichen
 
-### Lemma-Lesart BA
+### BA App
 XML: `*[self::lem or self::rdg]/stage`.
 
-Output: wie `Lemma-Lesart`, nähere Formatierung noch festzulagen, u.a. abhängig von der Schriftgröße im Apparat.
+### Sprecher App
+XML: `*[self::lem or self::rdg]/speaker`
 
-### Lemma-Lesart Sprecher
-XML: `*[self::lem or self::rdg]/speaker`.
+### App Strich <u>mit</u> umgebenden Leerzeichen
 
-Output:
-* wenn `lem`, Formatierung Großbuchstaben
-* nähere Formatierung festzulegen, siehe `Lemma-Lesart BA`
 
 ### Lemma-Lesart Sperrung
 XML: `*[self::lem or self::rdg]/emph`.
@@ -566,6 +568,9 @@ XML: `*[self::hi or self::stage or self::speaker]/emph`.
 
 Formatierung: vorläufig wie `Auftritt`.
 
+## Dot
+Im rechten Kolumnentitel soll ein middle dot eingefügt werden zwischen den Kolumnentitelteilen "Akt" und "Szene", versehen mit dem Zeichenformat `Dot`.
+
 ## Figur
 (Hervorhebungen in BA) 
 
@@ -585,10 +590,16 @@ XML: `stage/hi`, `speaker/hi`
 * Akt ("Erster Akt", "Zweiter " etc.) · Szene (Faust II)
 
 ## Kursiv
-(entfällt)
+XML:
+* `note/ref`
+* `*[self::lem or self::rdg]/wit`
+* `*[self::lem or self::rdg]/note`
 
-## Kursiv (Apparat)
-Vermutlich überholt; siehe oben unter [(Apparateinträge)](https://github.com/faustedition/faust-gen-html/blob/master/idml/idml.md#apparateintr%C3%A4ge).
+## Kursiv Hochgestellt
+
+## Typ
+
+Hängt ab von https://github.com/faustedition/faust-gen-html/issues/429.
 
 ## (Antiqua / lateinisch)
 (= Antiqua und lateinische Schrift in Versen, Sprechern, BA und Finis)
@@ -598,7 +609,7 @@ XML: `*[@rend="antiqua" or @rend="latin"]`.
 Nicht durchgängig so kodiert, keine Umsetzung vorgesehen.
 
 ## Sperrung
-XML: `l/emph`.
+XML: `*[self::l or self::rdg or self::lem]/emph`
 
 ## Sprecher
 XML: `speaker[not(hi)]`
@@ -622,8 +633,7 @@ Wert von `@n` ausgeben,
   * `4342` 
   * `6359`
 
-
-## Weiß
+## Transparent
 Siehe https://github.com/faustedition/faust-gen-html/issues/207#issuecomment-361256998
 
 # (Zeilenumbruch)
@@ -688,7 +698,5 @@ Für diese braucht in der Transformation nichts zu geschehen, also auch keine Re
 
 # Feinsatz
 * Seitenumbrüche
-* Einfügen von Leerzeilen (wo?)
 * Zeilenumbrüche bei Bühnenanweisungen
 * optische Mitte der Liedverse
-* Einrichtung der Szene "Trüber Tag. Feld" (verkleinerter Satzspiegel?)
