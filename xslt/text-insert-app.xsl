@@ -235,7 +235,7 @@
         <xsl:param name="apps" tunnel="yes"/>
         <xsl:param name="current-line" tunnel="yes"/>
         <xsl:param name="insert-app-immediately" tunnel="yes" select="false()"/>
-        <xsl:variable name="replace-strings" select="for $repl in $apps/f:replace return replace(data($repl), '([\]().*+?\[])', '\\$1')" as="item()*"/>       
+        <xsl:variable name="replace-strings" select="for $repl in $apps/f:replace return replace(data($repl), '([\]^$().*+?\[])', '\\$1')" as="item()*"/>       
         <xsl:variable name="rs-left-boundary" select="for $repl in $replace-strings return
                                                         if (matches($repl, '^\w')) then concat('\b', $repl) else $repl"/>
         <xsl:variable name="rs-right-boundary" select="for $repl in $rs-left-boundary return 
