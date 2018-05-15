@@ -46,7 +46,7 @@ before_6150_b[gleichfals]{=} <i>vor 6150</i> <stage>gleichfals</stage> <i>2_H</i
 6354[Thüre]{=} <i>6354</i> Thüre <i>2_H</i>] Tür’ noch <i>Ec 2_H [type=6]</i>
 before_6361[]{} <i>vor 6361</i> <speaker>Mephistopheles</speaker> <i>2_H</i>] <stage>(zum Pagen.)</stage> <i>Ec 2_H [type=6]</i>
 6362[$]{} <i>vor 6363</i>] (Andere drängen sich herzu) <i>erg Ec 2_H [type=6]</i>
-before_6377_b[]{} <i>vor 6377</i> Dämmernde <i>none</i>] Dammernde <i>2_H [type=1a]</i>
+before_6377_b[Dammernde]{Dämmernde} <i>vor 6377</i> Dämmernde <i>none</i>] Dammernde <i>2_H [type=1a]</i>
 6384[beqeumlichstens]{bequemlichstens} <i>6384</i> bequemlichstens <i>none</i>] beqeumlichstens <i>2_H [type=1a]</i>
 6447[Saulenschaft]{Säulenschaft} <i>6447</i> Säulenschaft <i>none</i>] Saulenschaft <i>2_H [type=1a]</i>
 before_6479_a[tritt auf]{=} <i>vor 6479</i> tritt auf <i>2_H</i>] hervortretend <i>Ec 2_H [type=6]</i>
