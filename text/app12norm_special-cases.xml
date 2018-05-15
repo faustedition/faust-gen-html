@@ -82,12 +82,10 @@
             </quote>
         </rdg>
     </app>
-    <!--       3787[]{} <i>3787–3788</i>] <l>Betest du für deiner Mutter Seel</l> <l>Die durch dich sich in die Pein hinüberschlief.</l> <i>1_H.5 [type=2b*]</i>-->
     <app>
         <f:ins n="3787" place="only-app"/>
         <ref>3787–3788</ref>
         <lem/>
-        <!-- <l>Betest du für deiner Mutter Seel</l> <l>Die durch dich sich in die Pein hinüberschlief.</l> <i>1_H.5 [type=2b*]</i>-->
         <rdg wit="1_H.5" type="type_2b*"><l n="3787">Betest du für deiner Mutter Seel</l> <l
                 n="3788">Die durch dich sich in die Pein hinüberschlief.</l>
             <note><wit>1_H.5</wit></note></rdg>
