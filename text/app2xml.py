@@ -143,8 +143,8 @@ def parse_app2norm(app_text='app2norm.txt'):
                 # app.append(parse_xml(parsed['lemma'], T.lem(wit=parsed['lwitness']), TEI_NS))
                 lemmas = parse_readings(parsed['lemmapart'], tag='lem')
                 if lemmas:
-                    if len(lemmas) != 2:
-                        log.error('Lemma section »%s« parses to %d lemmas instead of one', parsed['lemmapart'], len(lemmas)/2)
+                    if len(lemmas) != 1:
+                        log.error('Lemma section »%s« parses to %d lemmas instead of one', parsed['lemmapart'], len(lemmas)/1)
                     app.extend(lemmas)
                 else:
                     app.append(parse_xml(parsed['lemmapart'], T.lem())) # error msg from parse_readings already there
@@ -302,6 +302,7 @@ class Reading:
             if note_str:
                 append_text(rdg, ' ')
                 rdg.append(parse_xml(note_str, T.note()))
+        rdg.addprevious(etree.Comment(self.source))
         return rdg
 
     def __repr__(self):
