@@ -233,6 +233,16 @@
     </span>
   </xsl:template>
   
+  <xsl:template match="app//subst">
+    <xsl:apply-templates select="*[1]"/>
+    <span class="generated-text note"> : </span>
+    <xsl:apply-templates select="*[2]"/>
+    <xsl:if test="not(empty(subsequence(*, 3))) or text()[normalize-space(.) != '']">
+      <xsl:message>ERROR: extra content in subst: <xsl:copy-of select="."/></xsl:message>
+      <xsl:apply-templates select="node() except (*[1], *[2])"/>
+    </xsl:if>
+  </xsl:template>
+  
   <xsl:function name="f:format-rdg-type" as="xs:string">
     <xsl:param name="type"/>
     <xsl:variable name="typeno" select="replace($type, '^type_', '')"/>
