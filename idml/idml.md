@@ -495,13 +495,12 @@ XML: `stage/hi`, `speaker/hi`
 * gemäß [xslt/scenes.xml](https://github.com/faustedition/faust-gen-html/blob/master/xslt/scenes.xml)
 
 ### Kolumne links
-* Faust. Eine Tragödie (Vorspann Faust I)
-* Der Tragödie erster Teil
-* Der Tragödie zweiter Teil
+Nach https://github.com/faustedition/faust-gen-html/issues/206.
 
 ### Kolumne rechts
-* Szene (Faust I)
-* Akt ("Erster Akt", "Zweiter " etc.) · Szene (Faust II)
+Textinhalt aus
+* `div[@type='act']/@f:label` (wenn vorhanden, danach `Dot` (s. dort) mit middle dot
+* `div[@type='scene']/@f:label`
 
 ## Kursiv
 XML:
