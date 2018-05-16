@@ -428,6 +428,11 @@ XML: `quote`
 
 Umsetzung: ohne Zeichenformat
 
+### (Apparateinträge Typ VIII)
+Eine wichtige Sonderregel: Apparateinträge des Typs VIII werden nicht als Fußnote realisiert, sondern separat im Anhang wiedergegeben.
+
+XML: `*[@type='type_8']/ancestor::note[@type='textcrit']`
+
 ## (Zeichenformate mit Sperrung)
 * Auftritt
 * Doppelunterstreichung
