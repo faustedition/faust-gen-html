@@ -304,6 +304,60 @@ class Reading:
                 rdg.append(parse_xml(note_str, T.note()))
         return rdg
 
+    def __repr__(self):
+        return "Reading(" + repr(self.source) + ")"
+
+def first_index(iterable, predicate):
+    for index, item in enumerate(iterable):
+        if predicate(item):
+            return index
+    return None
+
+class JointReading:
+    def __init__(self, first, second):
+        self.readings = [first, second]
+
+    def to_xml(self):
+        assert self.readings[0].is_first_of_subst
+        wit_objs = list(chain.from_iterable(r.wits for r in self.readings))
+        wits = " ".join(wit.text for wit in wit_objs)
+        rtype = " ".join(r.type for r in self.readings if r.type is not None)
+        rdg: etree.ElementBase = T('rdg')
+        if wits:
+            rdg.set('wit', wits)
+        if rtype:
+            rdg.set('type', rtype)
+        subst: etree.ElementBase = T('subst')
+        rdg.append(subst)
+
+        # now, find the sigil before the : in the first witness
+        first, second = self.readings
+        sm_index = first_index(first.notes, lambda r: isinstance(r, SubstMarker))
+        sm_sigil = first.notes[sm_index-2]
+        del first.notes[sm_index-2]
+
+        first_rdg = first.to_xml()
+        first_rdg.tag = "{%s}del" % TEI_NS
+
+        second.notes.extend([Note(' '), sm_sigil])
+        second_rdg = second.to_xml()
+        second_rdg.tag = "{%s}add" % TEI_NS
+
+        subst.extend([first_rdg, second_rdg])
+
+        return rdg
+
+
+
+def collapse_readings(readings):
+    reading_iterator = iter(readings)
+    while True:
+        reading = next(reading_iterator)
+        if reading.is_first_of_subst:
+            second = next(reading_iterator)
+            yield JointReading(reading, second)
+        else:
+            yield reading
 
 def parse_readings(reading_str, tag='rdg'):
     reading_str = reading_str.replace('^', '<pc>‸</pc>')
@@ -312,7 +366,8 @@ def parse_readings(reading_str, tag='rdg'):
         log.warning("Failed to parse »%s« as %s", reading_str, tag)
 
 
-    return [reading.to_xml() for reading in readings]
+    collapsed = collapse_readings(readings)
+    return [reading.to_xml() for reading in collapsed]
 
 def app2xml(apps, filename):
     xml = F.apparatus()
