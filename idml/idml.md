@@ -423,6 +423,11 @@ Umsetzung:
 * Zeichenformat `Kursiv` (s. dort)
 * Wort `bis` einfügen
 
+### (Apparat-Zitat)
+XML: `quote`
+
+Umsetzung: ohne Zeichenformat
+
 ## (Zeichenformate mit Sperrung)
 * Auftritt
 * Doppelunterstreichung
