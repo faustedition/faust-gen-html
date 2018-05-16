@@ -172,7 +172,6 @@ before_2453[herumspringen]{=} <i>vor 2453</i> herumspringen <i>A B B.a</i>]   
 before_2465_a[ausser]{außer} <i>vor 2465</i> außer <i>S</i>]   ausser <i>A D.1</i> außer <i>B B.a [type=2a]</i>
 before_2465_a[grosse]{große } <i>vor 2465</i> große <i>S</i>]   grosse <i>A D.1 B</i> große<i> B.a [type=2a]</i>
 before_2465_a[hinaus schlägt]{=} <i>vor 2465</i> hinaus schlägt <i>A B</i>]   hinausschlägt <i>S </i> hinausschlägt <i>B.a [type=2a*]</i>
-before_2465_a[Die Hexe]{=} <i>vor 2465</i>] Die Hexe <i>wird in A B C.1_12 C.3_12 nicht als Auftritt markiert (S unterscheidet typographisch nicht zwischen Auftritten und Sprecherangaben). [type=1c*]</i>
 before_2475_b[Mephistopheles]{=} <i>vor 2475</i> <speaker>Mephistopheles</speaker> <i>none</i>] <speaker>Mephistopheles,</speaker> <i>S</i> <speaker>Mephistopheles.</speaker> <i>A</i> <i>D.1</i>  <speaker>Mephistopheles,</speaker> <i>B</i> <speaker>Mephistopheles^</speaker> <i>B.a  [type=8]</i>
 2490|2492[Sah’|kamst]{Seh’|kommst} <i>2490/2492</i> Seh’ <i>…</i> kommst <i>S B B.a</i>]   Sah’ <i>…</i> kamst <i>A [type=4b]</i>
 before_2514_a[Gebärde]{Geberde} <i>vor 2514</i> Geberde <i>S</i>]   Gebärde <i>A B.a</i> Geberde<i> B [type=2a]</i>
