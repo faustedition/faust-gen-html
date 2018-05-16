@@ -174,7 +174,6 @@ def parse_attrs(attr_spec: str) -> dict:
 
 # a reading, i.e. last part of app line
 READING = re.compile(r'\s*(?<text>.*?)\s*<i>(?<references>.*?)\s*(\[(type=|Typ\s+)(?<type>\w+\*?)\]\s*)?~?<\/i>')
-HANDS = {'G', 'Gö', 'Ri', 'Re'}
 DELIMITER = re.compile(r'(\s+|\p{Cf}+|[:.]\s+|[;()«»„“‚‘,]\s+|<.*?>)')
 
 def append_text(element: etree.ElementBase, text: str):
@@ -190,62 +189,185 @@ def append_text(element: etree.ElementBase, text: str):
             element.text = text
 
 
-def format_uriref(ref: str) -> str:
-    parts = ref.split('#', 2)
-    uri = parts[0]
-    text = '' if len(parts) < 2 else parts[1].replace('_', ' ')
-    return '<ref target="{0}">{1}</ref>'.format(uri, text)
+## Now the various parts that may be part of a note
+class Note:
+    element = None
 
+    def __new__(cls, ref):
+        try:
+            instance = super().__new__(cls)
+            instance.__init__(ref)
+            return instance
+        except ValueError as e:
+            return None
+
+    def __init__(self, ref):
+        self.text = ref
+
+    def __str__(self):
+        if self.element is None:
+            return self.text
+        else:
+            return '<'+self.element+'>'+self.text+'</'+self.element.split()[0]+'>'
+
+class Witness(Note):
+    element = 'wit'
+
+    def __init__(self, ref: str):
+        normalized_ref = re.sub('[^A-Za-z0-9.-]+', '_', ref.replace('α', 'alpha'))
+        if normalized_ref in sigils:
+            self.text = normalized_ref
+        else:
+            raise ValueError("Unknown sigil " + normalized_ref)
+
+class UriRef(Note):
+    element = 'ref'
+    def __init__(self, ref: str):
+        if not ref.startswith('faust://'):
+            raise ValueError("Not a faust:// uri: " + ref)
+        self.ref = ref
+        parts = self.ref.split('#', 2)
+        self.uri = parts[0]
+        self.text = '' if len(parts) < 2 else parts[1].replace('_', ' ')
+
+    def __str__(self) -> str:
+        return '<ref target="{0}">{1}</ref>'.format(self.uri, self.text)
+
+class Hand(Note):
+    element = 'seg type="hand"'
+    HANDS = {'G', 'Gö', 'Ri', 'Re'}
+
+    def __init__(self, ref):
+        if ref not in self.HANDS:
+            raise ValueError("Not a hand: " + ref)
+        else:
+            self.text = ref
+
+class NoWitness(Note):
+    def __init__(self, ref):
+        if ref == 'none':
+            self.text = ''
+        else:
+            raise ValueError()
+
+class SubstMarker(Note):
+    def __init__(self, ref):
+        if ref == ":" or ref == ": ":
+            self.text = ''
+        else:
+            raise ValueError()
+
+class Reading:
+    reftypes = [Witness, UriRef, Hand, NoWitness, SubstMarker, Note]
+
+    def _parse_ref(self, ref) -> Note:
+        for cls in self.reftypes:
+            parsed = cls(ref)
+            if parsed is not None:
+                return parsed
+
+    def __init__(self, match, element='rdg'):
+        self.element = element
+        reading = match.groupdict()
+        if 'type' in reading and reading['type']:
+            self.type = 'type_' + reading['type']
+        else:
+            self.type = None
+        self.text = reading['text']
+        self.notes = [self._parse_ref(ref) for ref in DELIMITER.split(reading['references'])]
+        self.source = match.group(0)
+
+    @property
+    def is_first_of_subst(self) -> bool:
+        return any(isinstance(note, SubstMarker) for note in self.notes)
+
+    @property
+    def wits(self):
+        return [note for note in self.notes if isinstance(note, Witness)]
+
+    @property
+    def hands(self):
+        return [note for note in self.notes if isinstance(note, Hand)]
+
+    def to_xml(self) -> etree.Element:
+        rdg = parse_xml(self.text, T(self.element), TEI_NS)
+        if self.wits:
+            rdg.set('wit', ' '.join(wit.text for wit in self.wits))
+        if self.hands:
+            rdg.set('hand', ' '.join(hand.text for hand in self.hands))
+        if self.type:
+            rdg.set('type', self.type)
+        if self.notes:
+            note_str = ''.join(map(str, self.notes))
+            if note_str:
+                append_text(rdg, ' ')
+                rdg.append(parse_xml(note_str, T.note()))
+        return rdg
+
+    def __repr__(self):
+        return "Reading(" + repr(self.source) + ")"
+
+def first_index(iterable, predicate):
+    for index, item in enumerate(iterable):
+        if predicate(item):
+            return index
+    return None
+
+class JointReading:
+    def __init__(self, first, second):
+        self.readings = [first, second]
+
+    def to_xml(self):
+        assert self.readings[0].is_first_of_subst
+        wit_objs = list(chain.from_iterable(r.wits for r in self.readings))
+        wits = " ".join(wit.text for wit in wit_objs)
+        rtype = " ".join(r.type for r in self.readings if r.type is not None)
+        rdg: etree.ElementBase = T('rdg')
+        if wits:
+            rdg.set('wit', wits)
+        if rtype:
+            rdg.set('type', rtype)
+        subst: etree.ElementBase = T('subst')
+        rdg.append(subst)
+
+        # now, find the sigil before the : in the first witness
+        first, second = self.readings
+        sm_index = first_index(first.notes, lambda r: isinstance(r, SubstMarker))
+        sm_sigil = first.notes[sm_index-2]
+        del first.notes[sm_index-2]
+
+        first_rdg = first.to_xml()
+        first_rdg.tag = "{%s}del" % TEI_NS
+
+        second.notes.extend([Note(' '), sm_sigil])
+        second_rdg = second.to_xml()
+        second_rdg.tag = "{%s}add" % TEI_NS
+
+        subst.extend([first_rdg, second_rdg])
+
+        return rdg
+
+
+
+def collapse_readings(readings):
+    reading_iterator = iter(readings)
+    while True:
+        reading = next(reading_iterator)
+        if reading.is_first_of_subst:
+            second = next(reading_iterator)
+            yield JointReading(reading, second)
+        else:
+            yield reading
 
 def parse_readings(reading_str, tag='rdg'):
-    readings = []
-    carry = None
     reading_str = reading_str.replace('^', '<pc>‸</pc>')
-    for match in READING.finditer(reading_str):
-        reading = match.groupdict()
-        if 'references' in reading:
-            if carry:
-                wits = [carry]
-                carry = None
-            else:
-                wits = []
-            hands = []
-            notes = []
-            for ref in DELIMITER.split(reading['references']):
-                normalized_ref = re.sub('[^A-Za-z0-9.-]+', '_', ref.replace('α', 'alpha'))
-                if normalized_ref in sigils:
-                    wits.append(normalized_ref)
-                    notes.append('<wit>{0}</wit>'.format(normalized_ref))
-                elif ref.startswith('faust://'):
-                    notes.append(format_uriref(ref))
-                elif ref == 'none':
-                    carry = wits[-1] if wits else None  # otherwise drop, cf. #225
-                elif ref in HANDS:
-                    hands.append(ref)
-                    notes.append('<seg type="hand">{}</seg>'.format(ref))
-                elif ref == ":" or ref == ": ":
-                    carry = wits[-1]
-                else:
-                    notes.append(ref)
-
-            rdg = parse_xml(reading['text'], T(tag), TEI_NS)
-            if wits:
-                rdg.set('wit', ' '.join(wits))
-            if hands:
-                rdg.set('hand', ' '.join(hands))
-            if notes:
-                append_text(rdg, ' ')
-                rdg.append(parse_xml(''.join(notes), T.note()))
-        if 'type' in reading and reading['type']:
-            rdg.set('type', 'type_' + reading['type'])
-        readings.append(etree.Comment(match.group(0)))
-        readings.append(rdg)
-        log.debug(' - Reading »%s« -> %s', reading_str, etree.tostring(rdg, encoding='unicode', pretty_print=False))
-
+    readings = [Reading(match, tag) for match in READING.finditer(reading_str)]
     if not readings:
         log.warning("Failed to parse »%s« as %s", reading_str, tag)
 
-    return readings
+
+    collapsed = collapse_readings(readings)
+    return [reading.to_xml() for reading in collapsed]
 
 def app2xml(apps, filename):
     xml = F.apparatus()
