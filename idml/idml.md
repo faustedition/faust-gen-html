@@ -499,8 +499,8 @@ Nach https://github.com/faustedition/faust-gen-html/issues/206.
 
 ### Kolumne rechts
 Textinhalt aus
-* `div[@type='act']/@f:label` (wenn vorhanden, danach `Dot` (s. dort) mit middle dot
-* `div[@type='scene']/@f:label`
+* `div[@type='act']/@f:label` (nur im Faust II wenn vorhanden), danach `Dot` (s. dort) mit middle dot, sowie
+* `div[@type='scene']/@f:label` (immer vorhanden)
 
 ## Kursiv
 XML:
