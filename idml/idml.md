@@ -428,6 +428,9 @@ XML: `quote`
 
 Umsetzung: ohne Zeichenformat
 
+### (Apparateinträge mit `subst`)
+Hier ist zwischen dem `del` und dem `add` content ein ` : ` im Format `Kursiv` einzufügen.
+
 ### (Apparateinträge Typ VIII)
 Eine wichtige Sonderregel: Apparateinträge des Typs VIII werden nicht als Fußnote realisiert, sondern separat im Anhang wiedergegeben.
 
