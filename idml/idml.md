@@ -176,7 +176,7 @@ XML: `p/text()[position()=last()]`
 
 ## Sprecher
 
-XML: `speaker[not(following-sibling::*[1][self::stage[matches(@rend,'inline')]])]`
+XML: `speaker[not(hi) and not(following-sibling::*[1][self::stage[matches(@rend,'inline')]])]`
 
 Priority: niedriger als die rule für Sprecher nach Überschrift
 
@@ -326,7 +326,6 @@ Das gewünschte Ergebnis kann auf zwei Weisen erreicht werden (je nachdem, was f
   * `stage before_350_a` → `C BA zentr. 2,3 / 0,0` (halbzeiligen Abstand nach oben)
   * `before_350_b` + `before_350_c` → `A BA zentr. 0,0 / 0,0` (keinen Abstand nach oben)
 
-
 ### (BAs vor 2284)
 Betrifft:
 * `before_2284_a` ("Nachdem die Löcher ... sind,")
@@ -381,15 +380,6 @@ XML: `titlePart[@n='before_1_b']`.
 
 Formatierung: am Anfang des Absatzes 7 Zeilenumbrüche einfügen.
 
-## (Sonderfälle, die keine sind)
-
-### (before_4666_a)
-("Ungeheures Getöse")
-
-Siehe https://github.com/faustedition/faust-gen-html/issues/256.
-
-Gehört zum Typ BA nach Replik (s.o.).
-
 # Zeichenformate
 
 ## (Apparateinträge)
@@ -408,7 +398,9 @@ https://github.com/faustedition/faust-gen-html/issues/458
 ### (Zeilenreferenz)
 XML: `ref`
 
-→ `Kursiv`
+Umsetzung
+* → `Kursiv`
+* Wenn mehre Ziffern mit `–` auf einander folgen, soll vor und nach dem `–` ein 24stelgeviert eingefügt werden.
 
 ### (Lemma)
 XML: `lem[node()]` (die leeren `lem` entfallen)
@@ -431,18 +423,6 @@ Umsetzung:
 * Zeichenformat `Kursiv` (s. dort)
 * Wort `bis` einfügen
 
-### Editortext
-XML: `app//note`.
-
-Output: kursiv.
-
-### Typenbezeichnung
-XML: `rdg/@type`
-
-Output:
-* in `(...)` hinter die betreffende `Lemma-Lesart`
-* wenn diese `Lemma-Lesart` die letzte des `Apparat`-Absatzes ist: 1 `em` Abstand vor Typenbezeichnung 
-
 ## (Zeichenformate mit Sperrung)
 * Auftritt
 * Doppelunterstreichung
@@ -454,11 +434,6 @@ Output:
 Allgemeine Regeln zur Umsetzung:
 * Umgebende Leerzeichen werden mitgesperrt (#321).
 * todo: Interpunktion ([#321 (comment)](https://github.com/faustedition/faust-gen-html/issues/321#issuecomment-372240044))
-
-## (Sonderwünsche)
-Eventuell enthalten Apparateinträge nicht nur Zeichenformate, sondern wiederum eigene Absätze:
-* https://github.com/faustedition/faust-gen-html/issues/276
-* https://github.com/faustedition/faust-gen-html/issues/277
 
 ## Auftritt
 (innerhalb von Absatzformat `BA ...`)
@@ -473,11 +448,6 @@ Das Zeichenformat `Auftritt` bekommt nun entweder der
   * sowie ggf. `move/following-sibling::*[1][self::sp/speaker]/speaker/following-sibling::*[1][self::stage]/hi/hi` (Spezialfall `before_1178_b` "Pudel")
   
 Formatierung: s.o. zur Sperrung (umgebende Leerzeichen).
-
-## Auslassungspunkte
-XML: `g`
-
-Formatierung: [#267](https://github.com/faustedition/faust-gen-html/issues/267).
 
 ## Bibelstelle
 Betrifft
@@ -494,11 +464,6 @@ XML: `note[@n]`
 Umsetzung:
 * einfügen in das jeweils vorhergehende Element `note[@n]/preceding-sibling::*[1]`.
 * davor einen Abstand von `1 em` hinzufügen 
-
-## NN (Bibelstelle eigene Zeile)
-(zeitweise als Absatzformat vorgesehen; entfallen, siehe "Bibelstelle")
-
-Die Differenzierung zwischen `@rend='inline'`-Bibelstellen und denen auf eigener Zeile wurde aufgegeben.
 
 ## Doppelunterstreichung
 (individuelle Vorkommen im Faust II, siehe [xml/issues/66](https://github.com/faustedition/xml/issues/66)) 
@@ -553,32 +518,15 @@ XML: `wit/hi[@rend='superscript']`
 
 (kann außer Ziffern auch Buchstaben, griechische Buchstaben, : und * enthalten)
 
-## (Antiqua / lateinisch)
-(= Antiqua und lateinische Schrift in Versen, Sprechern, BA und Finis)
-
-XML: `*[@rend="antiqua" or @rend="latin"]`.
-
-Nicht durchgängig so kodiert, keine Umsetzung vorgesehen.
-
 ## Sperrung
 XML: `*[self::l or self::rdg or self::lem]/emph`
-
-## Sprecher
-XML: `speaker[not(hi)]`
-
-Formatierung: Zeichenformat `Sprecher`: Versalien, 8,5 pt, Laufweite +25 (Sperrung).
-
-## Sprecher lateinisch
-(entfällt vorläufig)
-
-## Sprecher lateinisch gesperrt
-TODO Auftritt-Analogon im Faust II bennen. 
 
 ## Typ
 Hängt ab von https://github.com/faustedition/faust-gen-html/issues/429.
 
-## Vers lateinisch
-(entfällt vorläufig)
+XML: `note[@type="type"]`
+
+Umsetzung: davor zwei Leerzeichen einfügen
 
 ## Verszahl
 Wert von `@n` ausgeben,
@@ -598,24 +546,18 @@ Output: Zeilenumbruch.
 
 # Seitengestaltung 
 
-## Absenkung
+## (Absenkung)
 Siehe [#210](https://github.com/faustedition/faust-gen-html/issues/210).
 
 # Sonderphänomene
 
-## Replik (`sp`) ohne Sprecher (`speaker`)
-sind grundsätzlich möglich, kommen aber nur vereinzelt vor (siehe 
-[#197](https://github.com/faustedition/faust-gen-html/issues/197)).
-
-# XML-Elemente, die in der XML-Vorlage nicht mehr vorkommen (sollen)
+# (XML-Elemente, die in der XML-Vorlage nicht mehr vorkommen sollten)
 Für diese braucht in der Transformation nichts zu geschehen, also auch keine Regel geschrieben werden.
 * `abbr` (siehe [#195](https://github.com/faustedition/faust-gen-html/issues/195). Bitte gerne zurückmelden, wenn es nach dem Fix von 
 [#112](https://github.com/faustedition/faust-gen-html/issues/112) doch noch auftreten sollte.)
 * `add`
-* `br` (
-[#265](https://github.com/faustedition/faust-gen-html/issues/265))
-* `c` (
-[#266](https://github.com/faustedition/faust-gen-html/issues/266))
+* `br` ([#265](https://github.com/faustedition/faust-gen-html/issues/265))
+* `c` ([#266](https://github.com/faustedition/faust-gen-html/issues/266))
 * `choice`
 * `corr`
 * `expan`
@@ -642,16 +584,3 @@ Für diese braucht in der Transformation nichts zu geschehen, also auch keine Re
 * `titleStmt`
 * `witStart`
 * `witness` (content löschen, `child` von `listWit`, s.o.)
-
-# Weitere Regelungen
-* BA mit Sprecher (content aus `speaker`) nicht vom ersten Vers trennen (siehe [#304](https://github.com/faustedition/faust-gen-html/issues/304), zum folgenden ebd.).
-* ersten Vers einer Replik (sp/l[1]) nicht vom nächsten Absatz trennen
-* ersten Vers einer Versgruppe (`lg/l[1]`) nicht vom nächsten Absatz trennen
-* letzten Vers einer Replik / einer Versgruppe nicht vom vorletzten trennen
-* Reimpaare nicht auseinanderreißen (ausnahmsweise mal nicht kodiert :-) 
-* BAs nach Repliken (s.o.) in vielen Fällen nicht vom letzten Vers / Prosa-Absatz der vorhergehenden Replik trennen  
-
-# Feinsatz
-* Seitenumbrüche
-* Zeilenumbrüche bei Bühnenanweisungen
-* optische Mitte der Liedverse
