@@ -564,7 +564,7 @@ XML:
 ## (Hochstellungen)
 
 ### Hochgestellt
-Vermutlich nicht relevant, vgl. https://github.com/faustedition/faust-gen-html/issues/460.
+Mglw. nicht relevant, vgl. https://github.com/faustedition/faust-gen-html/issues/460.
 
 ### Kursiv Hochgestellt
 dito
@@ -577,8 +577,7 @@ dito
 
 XML: `wit/hi[@rend='superscript']` 
 
-(kann außer Ziffern auch Buchstaben, griechische Buchstaben evtl. mit Suffixen)
-
+(kann außer Ziffern auch Buchstaben, griechische Buchstaben, : und * enthalten)
 
 ## (Antiqua / lateinisch)
 (= Antiqua und lateinische Schrift in Versen, Sprechern, BA und Finis)
