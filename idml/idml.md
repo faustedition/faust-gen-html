@@ -146,11 +146,6 @@ Priority: niedriger als die rule für BA nach Überschrift
 
 Format: `C BA zentr. 2,3 / 0,0  (0,75 pt. nach oben)`
 
-## Bandtitel
-XML: `title`.
-
-Output: einfach zentrierte Absätze o.ä., nach dem letzten `title` ein Seitenumbruch. 
-
 ## Unterszene (Finis)
 XML: `trailer`
 
@@ -313,17 +308,6 @@ Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende `l[
 
 # (Absatzformate Sonderfälle)
 
-## BA zentr. 0,0 nach Teil (Vorspiel/Prolog)
-(eigens für `before_33_b` "Director, ..." und `before_243_b`)
-
-XML:
-* `stage[@n='before_33_b']` 
-* `stage[@n='before_243_b']`
-
-Output:
-* Seitenwechsel
-* 3 Zeilenumbrüche am Anfang des Absatzes
-
 ## Individualregeln für BAs
 
 ### (BAs vor 350)
@@ -372,9 +356,6 @@ XML: `div[@n='2.3']/div/*[1][self::stage]`
 
 Format: `F BA zentr. 1,15 / 0,0`
 
-## Szene nach Teil (Nacht)
-= neue rechte Seite (Leerseite nach Teiltitel)
-
 ## (Walpurgisnachtstraum)
 
 ### Teil (WNT)
@@ -399,13 +380,6 @@ XML: `titlePart[@n='before_1_a']`.
 XML: `titlePart[@n='before_1_b']`.
 
 Formatierung: am Anfang des Absatzes 7 Zeilenumbrüche einfügen.
-
-## Vers nach Teil (Zueignung)
-XML: `l[@n='1']`
-
-Umsetzung:
-* Seitenwechsel (neue rechte Seite)
-* 3 Zeilenumbrüche am Anfang des Absatzes
 
 ## (Sonderfälle, die keine sind)
 
@@ -601,7 +575,6 @@ Formatierung: Zeichenformat `Sprecher`: Versalien, 8,5 pt, Laufweite +25 (Sperru
 TODO Auftritt-Analogon im Faust II bennen. 
 
 ## Typ
-
 Hängt ab von https://github.com/faustedition/faust-gen-html/issues/429.
 
 ## Vers lateinisch
