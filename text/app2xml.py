@@ -323,12 +323,12 @@ class JointReading:
         wit_objs = list(chain.from_iterable(r.wits for r in self.readings))
         wits = " ".join(wit.text for wit in wit_objs)
         rtype = " ".join(r.type for r in self.readings if r.type is not None)
-        rdg: etree.ElementBase = T('rdg')
+        rdg = T('rdg')
         if wits:
             rdg.set('wit', wits)
         if rtype:
             rdg.set('type', rtype)
-        subst: etree.ElementBase = T('subst')
+        subst = T('subst')
         rdg.append(subst)
 
         # now, find the sigil before the : in the first witness
