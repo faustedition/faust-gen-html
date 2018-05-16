@@ -289,7 +289,7 @@ Umsetzung:
 
 ([#337, comment](https://github.com/faustedition/faust-gen-html/issues/337#issuecomment-372939872))
 
-#### Weiter eingerückte Verse
+#### (Weiter eingerückte Verse)
 An einer Stelle werden Verse weiter eingerückt als die vorherigen eingerückten Verse.
 
 XML: `lg[@rend='indented']/l[@rend='indented']`
@@ -310,9 +310,6 @@ XML: `l[@part="M"]` oder `l[@part="M"]` (`l[@part="I"]` bleibt unverändert).
 Die Verse mit `part="M"` und `part="F"` werden gemäß der Länge des vorherigen Teils einer Antilabe eingerückt.
 
 Wenn vorhergehende `l[@part]`-Textknoten mit n-dash enden, wird der folgende `l[@part]` um ein Leerzeichen mehr eingerückt.
-
-## Zentriert
-(entfallen)
 
 # (Absatzformate Sonderfälle)
 
@@ -345,10 +342,6 @@ Das gewünschte Ergebnis kann auf zwei Weisen erreicht werden (je nachdem, was f
   * `stage before_350_a` → `C BA zentr. 2,3 / 0,0` (halbzeiligen Abstand nach oben)
   * `before_350_b` + `before_350_c` → `A BA zentr. 0,0 / 0,0` (keinen Abstand nach oben)
 
-### (BA vor 949)
-XML: `before_949_c`.
-
-Umsetzung: entweder etwas sperren oder etwas Abstand davor und danach.
 
 ### (BAs vor 2284)
 Betrifft:
@@ -382,7 +375,7 @@ Format: `F BA zentr. 1,15 / 0,0`
 ## Szene nach Teil (Nacht)
 = neue rechte Seite (Leerseite nach Teiltitel)
 
-## Walpurgisnachtstraum
+## (Walpurgisnachtstraum)
 
 ### Teil (WNT)
 XML: `head[@n="before_4223_a"]/hi[1]`.
@@ -416,9 +409,6 @@ Umsetzung:
 
 ## (Sonderfälle, die keine sind)
 
-### (TTF)
-Siehe https://github.com/faustedition/faust-gen-html/issues/259. 
-
 ### (before_4666_a)
 ("Ungeheures Getöse")
 
@@ -431,26 +421,6 @@ Gehört zum Typ BA nach Replik (s.o.).
 ## (Apparateinträge)
 (Zeichenformate in der ungefähren Reihenfolge, wie sie im Apparateintrag vorkommen)
 
-### Zeilenreferenz
-XML: `ref`.
-
-Output: erstmal ohne besondere Formatierung, danach ein `em` Abstand.
-
-### Lemma-Lesart
-XML:
-* `lem`
-* `rdg`
-
-Output:
-* ohne besondere Formatierung
-* wenn `lem`
-  * danach 1/6 oder 1/8 Geviert Abstand 
-  * danach das Zeichen `]` mit Zeichenformat `Lemmaklammer` 
-  * danach ein Leerzeichen
-* wenn `rdg`
-  * davor 1 `em` Abstand (variable Abstände zwischen Siglen und folgender Lesart bei zeilenfüllende Apparateinträgen?)
-  * danach ein Leerzeichen
-
 ### BA App
 XML: `*[self::lem or self::rdg]/stage`.
 
@@ -459,35 +429,33 @@ XML: `*[self::lem or self::rdg]/speaker`
 
 ### App Strich <u>mit</u> umgebenden Leerzeichen
 
+https://github.com/faustedition/faust-gen-html/issues/458
 
-### Lemma-Lesart Sperrung
-XML: `*[self::lem or self::rdg]/emph`.
+### (Zeilenreferenz)
+XML: `ref`
 
-Output: vorläufig analag zu `Sperrung`.
+→ `Kursiv`
 
-### Auslassung
-XML: `gap reason='ellipsis'`
+### (Lemma)
+XML: `lem[node()]` (die leeren `lem` entfallen)
 
-Umsetzung: kursives Wort `bis`.
+Umsetzung
+* davor ein Leerzeichen
+* kein eigenes Zeichenformat
+* danach ein Achtelgeviertabstand
+* danach Zeichen `]` 
 
-Kommt innerhalb der Elemente vor, die zu `Lemma-Lesart ...` führen.
+### (Lesart)
+XML: `rdg`
+* → davor **zwei** Leerzeichen
+* → kein eigenes Zeichenformat
 
-### Sigle
-XML: `wit`. 
+### (Auslassung)
+XML: `gap`
 
-Output: kursiv.
-
-### Sigle Grundtext
-XML: `wit[@f:is-base='true']`. 
-
-Output: kursiv.
-
-### Siglenziffer
-(die hochgestellte arabische, evtl. Buchstaben statt Ziffern, evtl. mit Suffixen)
-
-XML: `wit/hi[@rend='superscript']`.
-
-Output: hochgestellt.
+Umsetzung:
+* Zeichenformat `Kursiv` (s. dort)
+* Wort `bis` einfügen
 
 ### Editortext
 XML: `app//note`.
@@ -499,9 +467,9 @@ XML: `rdg/@type`
 
 Output:
 * in `(...)` hinter die betreffende `Lemma-Lesart`
-* wenn diese `Lemma-Leart` die letzte des `Apparat`-Absatzes ist: 1 `em` Abstand vor Typenbezeichnung 
+* wenn diese `Lemma-Lesart` die letzte des `Apparat`-Absatzes ist: 1 `em` Abstand vor Typenbezeichnung 
 
-### (Zeichenformate mit Sperrung)
+## (Zeichenformate mit Sperrung)
 * Auftritt
 * Doppelunterstreichung
 * Figur
@@ -513,7 +481,7 @@ Allgemeine Regeln zur Umsetzung:
 * Umgebende Leerzeichen werden mitgesperrt (#321).
 * todo: Interpunktion ([#321 (comment)](https://github.com/faustedition/faust-gen-html/issues/321#issuecomment-372240044))
 
-### (Sonderwünsche)
+## (Sonderwünsche)
 Eventuell enthalten Apparateinträge nicht nur Zeichenformate, sondern wiederum eigene Absätze:
 * https://github.com/faustedition/faust-gen-html/issues/276
 * https://github.com/faustedition/faust-gen-html/issues/277
@@ -553,9 +521,6 @@ Umsetzung:
 * einfügen in das jeweils vorhergehende Element `note[@n]/preceding-sibling::*[1]`.
 * davor einen Abstand von `1 em` hinzufügen 
 
-## NN (Bibelstelle in Zeile)
-(jetzt: "Bibelstelle")
-
 ## NN (Bibelstelle eigene Zeile)
 (zeitweise als Absatzformat vorgesehen; entfallen, siehe "Bibelstelle")
 
@@ -594,12 +559,26 @@ XML:
 * `note/ref`
 * `*[self::lem or self::rdg]/wit`
 * `*[self::lem or self::rdg]/note`
+* `gap`
 
-## Kursiv Hochgestellt
+## (Hochstellungen)
 
-## Typ
+### Hochgestellt
+Vermutlich nicht relevant, vgl. https://github.com/faustedition/faust-gen-html/issues/460.
 
-Hängt ab von https://github.com/faustedition/faust-gen-html/issues/429.
+### Kursiv Hochgestellt
+dito
+
+### Versalziffer recte
+dito
+
+### Versalziffer kursiv hoch
+(für "die hochgestellten Ziffern im Apparat", siehe https://github.com/faustedition/faust-gen-html/issues/374#issuecomment-382695777)
+
+XML: `wit/hi[@rend='superscript']` 
+
+(kann außer Ziffern auch Buchstaben, griechische Buchstaben evtl. mit Suffixen)
+
 
 ## (Antiqua / lateinisch)
 (= Antiqua und lateinische Schrift in Versen, Sprechern, BA und Finis)
@@ -621,6 +600,10 @@ Formatierung: Zeichenformat `Sprecher`: Versalien, 8,5 pt, Laufweite +25 (Sperru
 
 ## Sprecher lateinisch gesperrt
 TODO Auftritt-Analogon im Faust II bennen. 
+
+## Typ
+
+Hängt ab von https://github.com/faustedition/faust-gen-html/issues/429.
 
 ## Vers lateinisch
 (entfällt vorläufig)
