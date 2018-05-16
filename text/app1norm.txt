@@ -291,7 +291,7 @@ before_3587_b[Gretchen]{=} <i>vor 3587</i> <speaker>Gretchen</speaker> <i>none</
 3961[f—t die Hexe, es st—t]{=} <i>3961</i> f—t <i>…</i> st—t <i>A B B.a</i>]   farzt <i>…</i> stinckt <i>1_H.14[type=7]</i>
 3964[dem]{denn} <i>3964</i> denn <i>1_H.14</i>]   dem <i>A B B.a 1_H.1 C.1_12 C.3_12 [type=2a]  </i>
 3974[]{} <i>3974–3977</i>] <i>Die Verse sind in 1_H.14 A D.1 B B.a 1_H.1 C.1_12 C.3_12 nicht eingerückt, in D.2 und faust://bibliography/Q sind sie auf derselben Höhe wie die Verse 3972–3973 eingerückt. [type=1c*]</i>
-before_3978[Halbes]{halbes} <i>vor 3978</i> <speaker>Hexenmeister</speaker> <stage rend="inline">halbes Chor.</stage> <i>none</i> <i>1_H.14</i>]   <speaker>Hexenmeister.</speaker> <stage rend="inline">Halbes Chor.</stage>  <i>A B 1_H.1 C.1_12 C.3_12</i> <speaker>Hexenmeister.</speaker> <stage rend="inline">(Halbes Chor.)</stage> <i>B.a [type=8]</i>
+before_3978[Halbes]{halbes} <i>vor 3978</i> <speaker>Hexenmeister</speaker> <stage rend="inline">halbes Chor.</stage> <i>1_H.14</i>]   <speaker>Hexenmeister.</speaker> <stage rend="inline">Halbes Chor.</stage>  <i>A B 1_H.1 C.1_12 C.3_12</i> <speaker>Hexenmeister.</speaker> <stage rend="inline">(Halbes Chor.)</stage> <i>B.a [type=8]</i>
 3990[]{} <i>3990–4015</i>] <i>Die Verse sind im Druck auffallend durch ihre zweistufige Einrückung, die aber optisch, nicht strukturell bedingt zu sein scheint (A 8, S. 198–199): 3900–3903 ½ cm eingerückt, 3996–4015 1,0 cm. [type=7]</i>
 3994[]{} <i>3994–3995</i>] <i>Die Verse bilden in 1_H.14 A B.a einen antilabischen Vers, in B 1_H.1 C.1_12 C.3_12 sind es zwei Verse. [type=7]</i>
 4000[Stock]{Stock,} <i>4000</i> Stock, <i>1_H.14</i>]   Stock^ <i>A</i> Stock, <i>D.1 </i> Stock, <i>B B.a  [type=2a]</i>
