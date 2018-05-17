@@ -453,7 +453,7 @@
 	<!--stage n="before_7476_b"	erwachend. -->
 	<stage n="after_7488"	type="sentence"><!-- Chiron ist schon weit weg. --></stage>
 	<stage n="after_7494"	type="sentence"><!-- Sie steigen hinab. --></stage>
-before_7495_a before_7495_b	Am obern Peneios wie zuvor.
+	<!--stage n="before_7495_a before_7495_b"	Am obern Peneios wie zuvor. -->
 	<!--stage n="before_7503_a"	Erdbeben. -->
 	<!--stage n="before_7519_b"	in der Tiefe brummend und polternd. -->
 	<stage n="after_7675"	type="finite-verb"><!-- Zerstreuen sich krächzend in den Lüften. --></stage>
@@ -501,7 +501,7 @@ before_7495_a before_7495_b	Am obern Peneios wie zuvor.
 	<!--stage n="after_8244"	hat den Homunkulus enthüllt. -->
 	<!--stage n="before_8245_b"	erstaunt.vor 8245erstaunt H(erstaunt ohne schließende Klammer H -->
 	<!--stage n="before_8255_b"	leise. -->
-$_Lbefore_8275_a before_8275_b	Telchinen von Rhodus auf Hippokampen und Meerdrachen, Neptunens Dreyzack handhabend.
+	<stage n="before_8275_a before_8275_b" type="long"><!-- Telchinen von Rhodus auf Hippokampen und Meerdrachen, Neptunens Dreyzack handhabend. --></stage>
 	<stage n="after_8317i"	type="sentence"><!-- er verwandelt sich. --></stage>
 	<stage n="before_8327_a"	type="finite-verb"><!-- Homunkulus besteigt den Proteus-Delphin. --></stage>
 	<!--stage n="before_8335_b"	zu Thales. -->
