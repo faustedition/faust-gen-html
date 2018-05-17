@@ -57,7 +57,7 @@ AppTypes =
 StageSentences =
   element stage-attrs {
     element tei:stage {
-      attribute n { xsd:string { pattern = "(before|after)_[\w_]+(_\w+)?"}},
+      attribute n { xsd:string { pattern = "(before|after)_[\w_]+(_\w+)?(\s+(before|after)_[\w_]+(_\w+)?)*"}},
       attribute type { "sentence" | "long" | "finite-verb" | "capitalized" },
       empty
       }+
