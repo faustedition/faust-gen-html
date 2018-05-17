@@ -196,6 +196,7 @@
 			</xsl:when>
 			<xsl:otherwise>
 				<!-- Everything should be fine: No period at end, and there shouldn't be one -->
+				<xsl:next-match/>
 			</xsl:otherwise>
 		</xsl:choose>	
 	</xsl:template>
