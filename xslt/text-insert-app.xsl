@@ -83,7 +83,10 @@
                     <xsl:variable name="ins-attrs" select="$current-ins[@place='attributes']/*/@*"/>
                     <xsl:copy-of select="$ins-attrs[data(.) != '']"/>
                     <!-- attributes from the lg that are _not_ in the apparatus -->
-                    <xsl:apply-templates select="@*[not(name() = (for $attr in $ins-attrs return name($attr)))]" mode="#current"/>                    
+                    <xsl:apply-templates select="@*[not(name() = (for $attr in $ins-attrs return name($attr)))]" mode="#current"/>
+                    <xsl:call-template name="create-app-note">
+                        <xsl:with-param name="apps" select="$current-ins[@place='attributes']/.."/>
+                    </xsl:call-template>                    
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:apply-templates select="@*" mode="with-app"/>
