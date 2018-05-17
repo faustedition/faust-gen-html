@@ -1,6 +1,7 @@
 default namespace = "http://www.faustedition.net/ns"
+namespace tei = "http://www.tei-c.org/ns/1.0"
 
-start = SceneLineMapping | SigilLabels | WatermarkLabels | AppTypes
+start = SceneLineMapping | SigilLabels | WatermarkLabels | AppTypes | StageSentences
 
 SceneLineMapping =
   ## A list of scenes and their labels
@@ -51,4 +52,13 @@ AppTypes =
         attribute type { xsd:string { pattern = "(type_\w+\*?)"} }?,
         text
     }+
+  }
+  
+StageSentences =
+  element stage-attrs {
+    element tei:stage {
+      attribute n { xsd:string { pattern = "(before|after)_[\w_]+(_\w+)?"}},
+      attribute type { "sentence" | "long" | "finite-verb" | "capitalized" },
+      empty
+      }+
   }

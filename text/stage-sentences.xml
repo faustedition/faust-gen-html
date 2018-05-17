@@ -1,3 +1,4 @@
+<?xml-model href="../xslt/faust-misc.rnc" type="application/relax-ng-compact-syntax"?>
 <f:stage-attrs xmlns:f="http://www.faustedition.net/ns" xmlns="http://www.tei-c.org/ns/1.0">
 	<!--
 		Diese Datei enthält zu jeder mehr oder weniger satzförmigen BA aus dem
