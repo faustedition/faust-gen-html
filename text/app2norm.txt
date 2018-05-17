@@ -35,7 +35,7 @@ before_5801[Gesang]{Ungesang} <i>before_5801</i> Ungesang <i>2_H</i>] Gesang <i>
 5925[Glut und Sud]{Glut und Sud} <i>5925</i> Glut und Sud <i>2_I_H.0a</i>] Glut und Sud <i>2_I_H.41a</i> Sud und Glut <i>2_H</i> Glut und Sud <i>2_I_H.0a [type=7]</i>
 5928[recht]{rechts} <i>5928</i> rechts <i>2_H</i>] recht <i>2_I_H.0a [type=2aa]</i>
 5929[solchen]{solchem} <i>5929</i> solchem <i>2_I_H.41a</i>] solchen <i>2_H 2_I_H.0a [type=2b]</i>
-before_5987_c[anständig, nicht auffallend, nach Sitte gekleidet, beyde knieen.]{=} <i>vor 5987</i> anständig <i>…</i> knieen. <i>2_I_H.0a</i>] anständig nicht auffallend <i>…</i> knieen. <i>2_H :</i> (anständig <i>…</i> knieen.) <i>Ec [type=6]</i>
+before_5987_c[anständig, nicht auffallend, nach Sitte gekleidet, beyde knieen]{=} <i>vor 5987</i> anständig <i>…</i> knieen <i>2_I_H.0a</i>] anständig nicht auffallend <i>…</i> knieen. <i>2_H :</i> (anständig <i>…</i> knieen.) <i>Ec [type=6]</i>
 after_6062[]{} <i>nach 6062</i>] <i>Lücke von zwei Versen 2_H [type=7]</i>
 before_6097[Mephistofeles]{Mephistopheles} <i>before_6097</i> Mephistopheles <i>none</i>] Mephistofeles <i>2_H [type=1a]</i>
 6126[Undas]{Und das} <i>6126</i> Und das <i>none</i>] Undas <i>2_H [type=1a]</i>
@@ -85,7 +85,7 @@ before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psellen <i>2_II_H.70 2_H</i>] Ps
 8776[schlachterzogne]{schlechterzogne} <i>8776</i> schlechterzogne <i>2_III_H.3a:1</i>] schlachterzogne <i>2_H C.1_4 [type=2b]</i>
 8803[Anerkannte! nun]{Anerkannte! neu} <i>8803</i> Anerkannte! neu <i>2_III_H.1</i>] Anerkannte! nun <i>2_III_H.2:1 2_III_H.3a:1 2_H C.1_4 [type=2b]</i>
 8850[siebenjährig]{=} <i>8850</i> siebenjährig <i>C.1_4</i>] zehenjährig <i>2_H mon Gö 2_III_H.3b</i> siebenjährig <i>G 2_H C.1_4 C.2α_4 C.3_4</i> zehenjährig <i>Ec 2_H (vgl. Gespräch vom 17. März 1830) :</i> dreyzehnjährig <i>Ri [type=6]</i>
-after_8881[Arme.]{=} <i>after_8881</i> Arme. <i>none</i>] Arme). <i>C.1_4</i> Arme.) <i>C.2α_4 C.3_4 [type=8]</i>
+after_8881[Arme]{=} <i>after_8881</i> Arme <i>none</i>] Arme). <i>C.1_4</i> Arme.) <i>C.2α_4 C.3_4 [type=8]</i>
 8900[Glanz]{Glanz} <i>8900</i> Glanz <i>C.1_4</i>] Glanz <i>2_H :</i> Glanze <i>Sc [type=7]</i>
 before_8924f[Phorkyas]{=} <i>before_8924f</i> <speaker>Phorkyas</speaker> <i>C.1_4</i>] <i>Punkt fehlt C.1_4 [type=8]</i>
 9009[nannt]{=} <i>9009</i> nannt <i>C.1_4</i>] nannt’ <i>C.2α_4 C.3_4 [type=4a]</i>
@@ -109,7 +109,7 @@ before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>2_III_
 9446[stillen]{stillem} <i>9446</i> stillem <i>2_III_H.45a C.2α_4</i>] stillen <i>C.1_4 C.3_4 [type=4b]</i>
 9535[jähen]{gähen} <i>9535</i> gähen <i>2_H</i>] jähen <i>C.1_4 [type=2aa]</i>
 9542[Alt- Wälder]{Alt-Wälder} <i>9542</i> Alt-Wälder <i>2_H</i>] Alt- Wälder <i>C.1_4 [type=1c]</i>
-before_9562[sitzend.]{=} <i>vor 9562</i> sitzend. <i>none</i>] sitzend) <i>C.1_4</i> sitzend.) <i>C.2α_4 C.3_4 [type=8]</i>
+before_9562[sitzend]{=} <i>vor 9562</i> sitzend <i>none</i>] sitzend) <i>C.1_4</i> sitzend.) <i>C.2α_4 C.3_4 [type=8]</i>
 9585[schon?]{schon!} <i>9585</i> schon! <i>2_H</i>] schon? <i>C.1_4 [type=2aa]</i>
 9594[drinnen]{drinne} <i>9594</i> drinne <i>2_H</i>] drinnen <i>C.1_4 [type=2aa]</i>
 9601[Scherzgeschrey]{Scherzgeschrei} <i>9601</i> Scherzgeschrei <i>2_III_H.45a C.2α_4 C.3_4</i>] Scherzgeschrey <i>C.1_4 [type=4b]</i>
