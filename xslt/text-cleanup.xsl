@@ -168,26 +168,35 @@
 	</xsl:template>
 	
 	<!-- Add trailing . if stage direction does not end with a period -->
-	<xsl:template mode="pass3" match="stage/node()[position()=last()]">		
+	<xsl:template mode="pass3" match="stage/node()[position()=last()]">
+		<xsl:variable name="should-have-period" select="parent::stage/@type = 'sentence'"/>		
 		<xsl:choose>
-			<xsl:when test="matches(string-join(parent::stage, ''), '\p{P}\s*$')">
+			<xsl:when test="$should-have-period and matches(string-join(parent::stage, ''), '\p{P}\s*$')">
 				<!-- Ends with punctuation: just keep it as is -->
 				<xsl:next-match/>
 			</xsl:when>
-			<xsl:when test="not(self::text())">
+			<xsl:when test="$should-have-period and not(self::text())">
 				<!-- Ends with an element etc.: Add period at end -->
 				<xsl:next-match/>
 				<xsl:text>.</xsl:text>
 			</xsl:when>
-			<xsl:when test="normalize-space(.) = ''">
+			<xsl:when test="$should-have-period and normalize-space(.) = ''">
 				<!-- Ends with whitespace only: Prefix with period -->
 				<xsl:text>.</xsl:text>
 				<xsl:next-match/>
 			</xsl:when>
-			<xsl:otherwise>
+			<xsl:when test="$should-have-period">
 				<!-- Otherwise add period at end, removing trailing whitespace -->
 				<xsl:variable name="text"><xsl:next-match/></xsl:variable>
 				<xsl:value-of select="concat(replace($text, '\s+$', ''), '.')"/>
+			</xsl:when>
+			<!-- Following cases should not have a trailing period -->
+			<xsl:when test="matches(., '\.\s*$')">
+				<xsl:value-of select="replace(., '\.\s*$', '')"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<!-- Everything should be fine: No period at end, and there shouldn't be one -->
+				<xsl:next-match/>
 			</xsl:otherwise>
 		</xsl:choose>	
 	</xsl:template>
