@@ -158,6 +158,26 @@
         <f:reference>Collin, Josef: Zur Mummenschanz-Szene in Goethes Faust. In: Aufsätze zur Sprach- und Literaturgeschichte. Wilhelm Braune zum 20. 2. 1920, Dortmund 1920, S. 360–400.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/D.3">
+        <f:citation>D.3</f:citation>
+        <f:reference>Faust. Eine Tragödie von Goethe. Neue Auflage. Stuttgart und Tübingen, in der J.G. Cotta’schen Buchhandlung. 1821.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/D.4">
+        <f:citation>D.4</f:citation>
+        <f:reference>Faust. Eine Tragödie von Goethe. Stuttgart und Tübingen, in der J.G. Cotta’schen Buchhandlung. 1825.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/D.4alpha">
+        <f:citation>D.4α </f:citation>
+        <f:reference>Faust. Eine Tragödie von Goethe. Stuttgart und Tübingen, in der J.G. Cotta’schen Buchhandlung. 1825.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/D.5">
+        <f:citation>D.5</f:citation>
+        <f:reference>Faust. Eine Tragödie von Goethe. Stuttgart und Tübingen, in der J.G. Cotta’schen Buchhandlung. 1830.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/dedner_et_al2005">
         <f:citation>Dedner u.a. 2005</f:citation>
         <f:reference>Dedner, Burghard, Oliver Hahn, Timo Wolff: Ergebnisse der Tintenanalysen. In: Georg Büchner. Sämtliche Werke und Schriften. Historisch-kritische Ausgabe mit Quellendokumentation und Kommentar (Marburger Ausgabe). Im Auftrag der Akademie der Wissenschaften und der Literatur, Mainz, hrsg. von Burghard Dedner. Bd. 7.2, hrsg. von Burghard Dedner, Darmstadt 2005, S. 89–102. </f:reference>
@@ -188,8 +208,8 @@
         <f:reference>Faust. Eine Tragödie von Goethe. Mit berichtigtem Texte, den verschiedenen Lesarten, erklärenden Anmerkungen und Einleitung, 2 Tle., [hrsg. von Heinrich Düntzer], Leipzig [1868].</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/duentzer1882">
-        <f:citation>Düntzer 1882</f:citation>
+    <f:bib uri="faust://bibliography/duentzer1882a">
+        <f:citation>Düntzer 1882a</f:citation>
         <f:reference>Goethes Werke, Bd. 12: Faust, hrsg. von H[einrich] Düntzer, Berlin und Stuttgart o.J. [1882] (= Deutsche National-Litteratur. Historisch kritische Ausgabe, hrsg. von Joseph Kürschner, Bd. 93).</f:reference>
     </f:bib>
 
@@ -790,7 +810,7 @@
 
     <f:bib uri="faust://bibliography/Q">
         <f:citation>Q</f:citation>
-        <f:reference>Goethe, Johann Wolfgang von: Poetische und prosaische Werke in zwei Bänden. Mit den schützenden Privilegien sämtlicher Staaten des deutschen Bundes. [Hrsg. von Johnn Peter Eckermann und Friedrich Wilhellm Riemer.] Des ersten Bandes zweite Abtheilung, Stuttgart und Tübingen 1836.</f:reference>
+        <f:reference>Goethe’s poetische und prosaische Werke in zwei Bänden. Mit den schützenden Privilegien sämtlicher Staaten des deutschen Bundes. Des ersten Bandes zweite Abtheilung, Stuttgart und Tübingen 1836.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/resenhoefft1975">
