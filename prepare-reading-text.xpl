@@ -60,6 +60,8 @@
 					<transcript path="print/C(1)4_IIIB24.xml" output="c14.xml"/>
 					<transcript path="print/C(2a)4_IIIB28.xml" output="c2a4.xml"/>
 					<transcript path="print/C(3)4_IIIB27.xml" output="c34.xml"/>
+					<transcript path="transcript/ub_bonn/S_863_II/S_863_II.xml" output="III_H.3a_1.xml"/>
+					<transcript path="transcript/gsa/391087/391087.xml" output="III_H.3a_2.xml"/>
 					<transcript path="transcript/gsa/390295/390295.xml" output="ivh1.xml"/>
 					<transcript path="transcript/gsa/389863/389863.xml" output="ivh2.xml"/>
 					<transcript path="transcript/gsa/389786/389786.xml" output="ivh3.xml"/>
