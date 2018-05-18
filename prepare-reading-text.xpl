@@ -186,7 +186,9 @@
 							<!-- hier folgen weitere Aufräumtemplates für den Lesetext, z.B.: -->
 							<xsl:template match="
 								seg/attribute::*
-								| ge:transpose"/>
+								| teiHeader
+								| facsimile
+								| l/attribute::xml:id"/>
 						</xsl:stylesheet>
 					</p:inline>
 				</p:input>
