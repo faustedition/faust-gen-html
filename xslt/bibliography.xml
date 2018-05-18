@@ -1978,9 +1978,9 @@
         <f:reference>Goethes Faust in ursprünglicher Gestalt nach der Göchhausenschen Abschrift hrsg. von Erich Schmidt, 8. Abdruck, Weimar 1915.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/schroeer1881">
-        <f:citation>Schröer 1881</f:citation>
-        <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer (1. Aufl.), 2 Bde., Heilbronn 1881.</f:reference>
+    <f:bib uri="faust://bibliography/schroeer1881_1">
+        <f:citation>Schröer 1881, Bd. 1</f:citation>
+        <f:reference>Faust von Goethe. Mit Einleitung und fortlaufender Erklärung hrsg. von K. J. Schröer (1. Aufl.), Bd. 1, Heilbronn 1881.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schroeer1886_1">
