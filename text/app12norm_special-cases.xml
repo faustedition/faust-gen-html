@@ -11,7 +11,7 @@
                 Verses (<quote>Wie?</quote>) nicht korrekt unterhalb des vorangehenden Teils
                     (<quote>Was giebt’s</quote>) plaziert;</note></rdg>
         <rdg wit="B.a C.1_12 C.3_12" type="type_4a"><note>korrigiert in <wit>B.a</wit> und in
-                    <wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
+                    <wit>C.1_12</wit> <wit>C.3_12</wit>.</note></rdg>
     </app>
     <app>
         <f:replace n="2348">Doch</f:replace>
@@ -35,6 +35,14 @@
             Sprecherangaben).</note></rdg>
     </app>
     <app>
+        <f:replace n="before_2540_b">Die Hexe</f:replace>
+        <f:ins n="before_2540_b">Die Hexe</f:ins>
+        <ref>vor 2540</ref>
+        <lem/>
+        <rdg wit="S" type="type_8"><note>In <wit>S</wit> ist <quote>Die Hexe</quote> nicht als
+                Sprecherbezeichnung kenntlich gemacht.</note></rdg>
+    </app>
+    <app>
         <f:ins id="l2709a" place="attributes">
             <l part="I"/>
         </f:ins>
@@ -44,21 +52,13 @@
         <ref>2709</ref>
         <lem/>
         <rdg wit="1_H.5 S A B B.a" type="type_2a">
-            <note>Die Vershälften bilden in <wit>1_H.5</wit> und <wit>S</wit> einen gebrochenen
+            <note>Die Vershälften bilden in <wit>1_H.5</wit> und <wit>S</wit> einen umbrochenen
                 Vers, in <wit>A</wit>
                 <wit>B</wit>
                 <wit>B.a</wit> sind es zwei Verse; wie bei 3994–3995 (zwei Verse in
                     <wit>B</wit> <wit>1_H.1</wit> <wit>C.1_12</wit>
                 <wit>C.3_12</wit>, ein Vers in <wit>1_H.14</wit> <wit>A</wit> <wit>B.a</wit>) ist
                 von einem Satzfehler auszugehen.</note></rdg>
-    </app>
-    <app>
-        <f:replace n="before_2540_b">Die Hexe</f:replace>
-        <f:ins n="before_2540_b">Die Hexe</f:ins>
-        <ref>vor 2540</ref>
-        <lem/>
-        <rdg wit="S" type="type_8"><note>In <wit>S</wit> ist <quote>Die Hexe</quote> nicht als
-                Sprecherbezeichnung kenntlich gemacht.</note></rdg>
     </app>
     <app>
         <f:replace n="3356">Und ich, der Gottverhaßte, hatte nicht genug,</f:replace>
@@ -113,7 +113,7 @@
             <sp>
                 <speaker>Mephistopheles</speaker>
                 <l n="4051" part="F">Man muß sich dran gewöhnen.</l></sp>
-            <note>konj. Resenhöfft</note></rdg>
+            <note>konj. faust://bibliography/resenhoefft1975#Resenhöfft</note></rdg>
     </app>
     <app>
         <f:ins n="before_4343" place="only-app"/>
