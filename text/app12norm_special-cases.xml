@@ -35,6 +35,14 @@
             Sprecherangaben).</note></rdg>
     </app>
     <app>
+        <f:replace n="before_2540_b">Die Hexe</f:replace>
+        <f:ins n="before_2540_b">Die Hexe</f:ins>
+        <ref>vor 2540</ref>
+        <lem/>
+        <rdg wit="S" type="type_8"><note>In <wit>S</wit> ist <quote>Die Hexe</quote> nicht als
+                Sprecherbezeichnung kenntlich gemacht.</note></rdg>
+    </app>
+    <app>
         <f:ins id="l2709a" place="attributes">
             <l part="I"/>
         </f:ins>
@@ -51,14 +59,6 @@
                     <wit>B</wit> <wit>1_H.1</wit> <wit>C.1_12</wit>
                 <wit>C.3_12</wit>, ein Vers in <wit>1_H.14</wit> <wit>A</wit> <wit>B.a</wit>) ist
                 von einem Satzfehler auszugehen.</note></rdg>
-    </app>
-    <app>
-        <f:replace n="before_2540_b">Die Hexe</f:replace>
-        <f:ins n="before_2540_b">Die Hexe</f:ins>
-        <ref>vor 2540</ref>
-        <lem/>
-        <rdg wit="S" type="type_8"><note>In <wit>S</wit> ist <quote>Die Hexe</quote> nicht als
-                Sprecherbezeichnung kenntlich gemacht.</note></rdg>
     </app>
     <app>
         <f:replace n="3356">Und ich, der Gottverhaßte, hatte nicht genug,</f:replace>
