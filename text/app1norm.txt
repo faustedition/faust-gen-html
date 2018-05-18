@@ -14,7 +14,7 @@
 317[lang]{=} <i>317</i> lang <i>A</i>]   lang’ <i>B B.a [type=4a]</i>
 320[An]{Am} <i>320</i> Am  <i>none</i>] An <i>A B.a</i> Am <i>B  [type=1a]</i>
 before_354_c[Zimmer]{Zimmer,} <i>vor 354</i> Zimmer, <i>S</i>]   Zimmer^ <i>A B B.a [type=1c]</i>
-359[Und]{Und bin} <i>359</i> bin <i>1_H.5 S  fehlt A</i>]  bin <i>D.1</i> bin <i>B B.a  [type=2a]</i>
+359[Und]{Und bin} <i>359</i> bin <i>1_H.5 S</i>]   <i>fehlt</i> <i>A</i> bin <i>D.1</i> bin <i>B B.a  [type=2a]</i>
 372[ein,]{=} <i>372</i> ein, <i>S A B.a</i>]   ein^ <i>1_H.5 </i> ein^ <i>B [type=4c]</i>
 378[mir durch Geistes Kraft und Mund]{=} <i>378</i> mir^ <i>…</i> Mund^ <i>A</i>]   mir^ <i>…</i> Mund^ <i>1_H.5 </i> mir, <i>…</i> Mund^ <i>S</i> mir, <i>…</i> Mund, <i>B B.a [type=4a]</i>
 380[mehr mit sauerm Schweiß,]{=} <i>380</i> mehr^ <i>…</i> Schweiß, <i>A</i>]   mehr, <i>…</i> Schweis^ <i>1_H.5</i> mehr, <i>…</i> Schweiß, <i>S</i> mehr, <i>…</i> Schweiß, <i>B B.a [type=4a]</i>
@@ -140,7 +140,7 @@ before_2291_a[]{} <i>vor 2291</i> <speaker>Alle</speaker> / <stage>indem … lä
 before_2293_a[Sie trinken wiederholt.]{Sie trinken wiederholt.} <i>vor 2293</i> Sie trinken wiederholt. <i>D.1 </i>] <br/>Sie trinken wiederhohlt. <i>S</i><br/>(Sie trinken wiederholt.)  <i>A</i><br/>Sie trinken wiederholt. <i>B</i><br/>(Sie trinken wiederhohlt.)  <i>B.a [type=8]</i>
 before_2293_c[]{} <i>vor 2293</i> <speaker>Alle</speaker> <stage rend="inline">singen.</stage> <i>S </i>] <br/><speaker>Alle</speaker> <stage rend="inline">(singen)^</stage> <i>A</i><br/><speaker>Alle</speaker> <stage rend="inline">singen</stage>. <i>D.1</i><br/><speaker>Alle</speaker> <stage rend="inline">singen^</stage> <i>B</i><br/><speaker>Alle</speaker> <stage rend="inline">(singen).</stage> <i>B.a [type=8]</i>
 before_2299_b[]{} <i>vor 2299</i> <speaker>Siebel</speaker> / <stage>trinkt … Flamme.</stage> <i>S </i>] <br/><speaker>Siebel</speaker>. / <stage>trinkt … Flamme.</stage> <i>A D.1</i><br/><speaker>Siebel</speaker> / <stage>trinkt … Flamme.</stage> <i>B</i><br/><speaker>Siebel</speaker> / <stage>(trinkt … Flamme).</stage> <i>B.a [type=8]</i>
-before_2301 []{} <i>vor 2301</i> zu dem Gesellen <i>none</i>]<br/>Zu dem Gesellen. <i>S </i><br/>zu dem Gesellen. <i>A D.1 B</i><br/>Zu dem Gesellen. <i>D.2</i><br/>(Zu dem Gesellen.) <i>B.a [type=8]</i>
+before_2301[]{} <i>vor 2301</i> zu dem Gesellen <i>none</i>]<br/>Zu dem Gesellen. <i>S </i><br/>zu dem Gesellen. <i>A D.1 B</i><br/>Zu dem Gesellen. <i>D.2</i><br/>(Zu dem Gesellen.) <i>B.a [type=8]</i>
 2302[Wart]{=} <i>2302</i> Wart <i>S A B B.a</i>]   Wart’ <i>konj. faust://bibliography/duentzer1882a#Düntzer [type=3*]</i>
 before_2311i_b[]{} <i>vor 2311</i> <speaker>Altmayer</speaker> / <stage>zieht … entgegen.</stage> <i>S</i>] <br/><speaker>Altmayer.</speaker> / <stage>zieht … entgegen^</stage> <i>A </i><br/><speaker>Altmayer.</speaker> / <stage>zieht … entgegen.</stage> <i>D.1</i><br/><speaker>Altmayer</speaker> / <stage>zieht … entgegen.</stage> <i>B</i><br/><speaker>Altmayer</speaker> / <stage>(zieht … entgegen).</stage> <i>B.a [type=8]</i>
 before_2313_c[]{} <i>vor 2313</i> <speaker>Mephistopheles</speaker> <stage rend="inline">mit ernsthafter Geberde</stage> <i>none</i>]<br/><speaker>Mephistopheles</speaker> <stage rend="inline">mit ernsthafter Geberde.</stage> <i>S </i><br/><speaker>Mephistopheles</speaker> <stage rend="inline">mit ernsthafter Geberde^</stage> <i>A </i><br/><speaker>Mephistopheles</speaker> <stage rend="inline">mit ernsthafter Geberde.</stage> <i>D.1</i><br/><speaker>Mephistopheles</speaker> <stage rend="inline">mit ernsthafter Geberde.</stage> <i>B</i><br/><speaker>Mephistopheles</speaker> / <stage>(mit ernsthafter Geberde).</stage> <i>B.a [type=8]</i>
@@ -226,7 +226,7 @@ before_2896_b[durchs]{=} <i>vor 2896</i> durchs <i>A</i>]   durchs <i>1_H.5</i> 
 3028[Nachbar’]{=} <i>3028</i> Nachbar’ <i>A B B.a</i>]   Nachbaar <i>1_H.5</i> Nachbar’s <i>S  [type=7]</i>
 3049[Schwerdleins]{=} <i>3049</i> Schwerdleins <i>1_H.5 S A</i>]   Schwerdtleins <i>B B.a [type=4a]</i>
 3052[wirst in allen Ehren]{=} <i>3052</i> wirst^ <i>…</i> Ehren^ <i>1_H.5 S A</i>]   wirst, <i>…</i> Ehren, <i>B B.a [type=4a]</i>
-3071[komm’]{komm} f2323<i>3071</i> komm <i>1_H.5 S</i>]   komm’ <i>A B</i> komm<i> B.a [type=1b]</i>
+3071[komm’]{komm} <i>3071</i> komm <i>1_H.5 S</i>]   komm’ <i>A B</i> komm<i> B.a [type=1b]</i>
 before_3073_b[spazirend]{=} <i>vor  3073</i> spazirend <i>A</i>]   spazierend <i>1_H.5</i> spazierend <i>B</i> spatzierend <i>B.a [type=4a]</i>
 3077[solch’]{solch} <i>3077</i> solch <i>1_H.5</i>]   solch’ <i>S A B B.a 1_H.1 C.1_12 C.3_12 [type=1b]</i>
 3093[keinem]{=} <i>3093</i> keinem <i>1_H.5 S A</i>]   Keinem <i>B B.a [type=4a]</i>
