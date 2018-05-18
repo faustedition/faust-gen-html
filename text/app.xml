@@ -976,6 +976,10 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <search-string>{{i}}none{{/i}} {]}{{i}}1^_H.14{{/i}}\]</search-string>
                             <replacement-string/>
                         </string-pair>
+                        <string-pair>
+                            <search-string>T^_5^_1^_H.1</search-string>
+                            <replacement-string>T^_5^_H.1</replacement-string>
+                        </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>
