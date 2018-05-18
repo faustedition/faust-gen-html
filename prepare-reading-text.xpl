@@ -49,7 +49,7 @@
 					<target>file:/Users/bruening.FDH-FFM/github/gerritbruening/texthist-data/goethe/last/</target>
 					<!-- Quell-Transkripte: -->
 					<transcript path="transcript/test/test.xml"/>
-					<transcript path="transcript/gsa/391098/391098.xml" output="h.xml"/>
+					<transcript path="transcript/gsa/391098/391098.xml" output="2_H.xml"/>
 					<transcript
 						path="transcript/bl_oxford/MS_M_D_Mendelsson_c_21/MS_M_D_Mendelsson_c_21.xml"
 						output="ih12a.xml"/>
