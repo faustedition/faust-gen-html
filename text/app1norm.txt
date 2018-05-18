@@ -178,7 +178,6 @@ before_2514_a[Gebärde]{Geberde} <i>vor 2514</i> Geberde <i>S</i>]   Gebärde <i
 2529[beste]{=} <i>2529</i> beste <i>S A</i>]   Beste <i>B B.a [type=4a]</i>
 2531[gieb]{=} <i>2531</i> gieb <i>A</i>]   gib <i>S </i> gib <i>B B.a [type=4a]</i>
 before_2532_a[Hexe]{=} <i>vor 2532</i> Hexe <i>none</i>] Hexe^ <i>S</i> Hexe. <i>A D.1</i> Hexe^ <i>B B.a  [type=8]</i>
-before_2540_b[Die Hexe]{=} <i>vor 2540</i> <i>In S ist</i>]  Die Hexe <i>nicht hervorgehoben. [type=1c*]</i>
 2540[]{} <i>2540–2552</i>] <i>In allen Drucken sind die Verse nicht eingerückt. [type=1c*]</i>
 before_2583_a[Hexe]{=} <i>vor 2583</i> <speaker>Hexe</speaker> <i>none</i>] <speaker>Hexe^</speaker><i>S</i> <speaker>Hexe.</speaker> <i>A D.1</i> <speaker>Hexe^</speaker> <i>B B.a  [type=8]</i>
 2592[Würkung]{Wirkung} <i>2592</i> Wirkung <i>S</i>]   Würkung <i>A D.1</i> Wirkung<i> B B.a [type=2a]</i>
