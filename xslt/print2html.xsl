@@ -21,6 +21,7 @@
   <xsl:param name="scriptAdditions"/>
   
   <xsl:param name="apptypes" select="doc('../text/apptypes.xml')"/>
+  <xsl:param name="appabbrs" select="doc('../text/abbreviations.xml')"/>
   
   <xsl:output method="xhtml" include-content-type="yes"/>
 
@@ -233,6 +234,7 @@
     </span>
   </xsl:template>
   
+  
   <xsl:template match="app//subst">
     <xsl:apply-templates select="*[1]"/>
     <span class="generated-text note"> : </span>
@@ -292,6 +294,18 @@
       <xsl:text> bis </xsl:text>
     </i>
   </xsl:template>
-  
+
+  <xsl:template match="abbr[$appabbrs//abbr/text() = text()]">
+    <xsl:variable name="current-text" select="data(.)"/>
+    <xsl:variable name="expansion" select="$appabbrs//abbr[. = $current-text]/../expan"/>
+    <abbr>
+      <xsl:apply-templates select="@*"/>
+      <xsl:attribute name="class" select="f:generic-classes(.)" separator=" "/>
+      <xsl:if test="$expansion">
+        <xsl:attribute name="title" select="$expansion"/>
+      </xsl:if>
+      <xsl:apply-templates/>
+    </abbr>
+  </xsl:template>
   
 </xsl:stylesheet>
