@@ -308,4 +308,10 @@
     </abbr>
   </xsl:template>
   
+  <xsl:template match="ref[starts-with(@target, 'faust://bibliography/')]" priority="1">
+    <xsl:sequence select="f:cite(@target, false(), node())"/>
+  </xsl:template>
+  
+  
+  
 </xsl:stylesheet>
