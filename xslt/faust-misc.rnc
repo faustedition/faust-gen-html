@@ -66,9 +66,12 @@ StageSentences =
 Abbreviations =
   element abbreviations {
     element tei:choice {
-      element tei:abbr {        
-        text
-      }+,
+      (
+        element tei:abbr {        
+          attribute type { "hand" }?,
+          text
+        }+
+      ),
       element tei:expan {
         text
       }?

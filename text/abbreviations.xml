@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../xslt/faust-misc.rnc" type="application/relax-ng-compact-syntax"?>
 <f:abbreviations xmlns:f="http://www.faustedition.net/ns" xmlns="http://www.tei-c.org/ns/1.0">
+  
+  
+  <!-- Abbreviations. These are marked and dedotted in TEI and augmented with a tooltip with the expan in HTML -->
+  
   <choice>
     <abbr>alR</abbr>    
     <expan>am linken Rand</expan>
@@ -22,6 +26,10 @@
     <expan>konjiziert</expan>
   </choice>
   <choice>
+    <abbr>mark</abbr>
+    <expan>markiert</expan>
+  </choice>
+  <choice>
     <abbr>mglw</abbr>  
   </choice>
   <choice>
@@ -39,4 +47,13 @@
     <abbr>vorschl</abbr>
     <expan>schlägt vor</expan>
   </choice>
+
+  <!-- Hands. Need to be marked up with <seg type="hand"> in the XML apparatus! -->
+  
+  <choice><abbr type="hand">Ec</abbr><expan>Eckermann</expan></choice>
+  <choice><abbr type="hand">Re</abbr><expan>Reichel</expan></choice>
+  <choice><abbr type="hand">Sc</abbr><expan>von fremder Hand</expan></choice>
+  <choice><abbr type="hand">G</abbr><expan>Goethe</expan></choice>
+  <choice><abbr type="hand">Gö</abbr><expan>Göttling</expan></choice>
+  
 </f:abbreviations>

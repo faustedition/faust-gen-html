@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:f="http://www.faustedition.net/ns"
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
     xpath-default-namespace="http://www.faustedition.net/ns"
     xmlns="http://www.w3.org/1999/xhtml"
     exclude-result-prefixes="xs"
@@ -27,6 +28,7 @@
     <xsl:function name="f:cite" as="element()">
         <xsl:param name="uri" as="xs:string"/>
         <xsl:param name="full" as="item()"/>
+        <xsl:param name="linktext" as="item()?"/>
         <xsl:variable name="bib_" select="$bibliography//bib[@uri=$uri]"/>
         <xsl:variable name="bib" select="$bib_[1]"/>
         <xsl:if test="count($bib_) > 1">
@@ -49,7 +51,16 @@
             </xsl:when>
             <xsl:when test="$bib">
                 <cite class="bib-short" title="{$parsed-ref}" data-bib-uri="{string-join(($uri, $parsed-ref//*/@data-bib-uri), ' ')}">
-                    <a href="{$edition}/bibliography#{$id}"><xsl:value-of select="$bib/citation"/></a>
+                    <a href="{$edition}/bibliography#{$id}">
+                        <xsl:choose>
+                            <xsl:when test="$linktext">
+                                <xsl:copy-of copy-namespaces="no" select="$linktext"/>
+                            </xsl:when>
+                            <xsl:otherwise>                                
+                                <xsl:value-of select="$bib/citation"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </a>
                 </cite>
             </xsl:when>
             <xsl:otherwise>
@@ -58,6 +69,13 @@
             </xsl:otherwise>
         </xsl:choose>		
     </xsl:function>
+    
+    <xsl:function name="f:cite" as="element()">
+        <xsl:param name="uri" as="xs:string"/>
+        <xsl:param name="full" as="item()"/>
+        <xsl:sequence select="f:cite($uri, $full, ())"/>
+    </xsl:function>
+        
     
     <xsl:function name="f:resolve-faust-doc" as="element()*">
         <xsl:param name="uri"/>

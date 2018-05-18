@@ -235,7 +235,13 @@ class UriRef(Note):
 
 class Hand(Note):
     element = 'seg type="hand"'
-    HANDS = {'G', 'Gö', 'Ri', 'Re'}
+
+    def _read_hands():
+        abbrs = etree.parse('abbreviations.xml')
+        hands = set(abbrs.xpath("//tei:seg[@type='hand']/text()", namespaces=NSMAP_))
+        return hands
+
+    HANDS = _read_hands()
 
     def __init__(self, ref):
         if ref not in self.HANDS:
