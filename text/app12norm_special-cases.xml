@@ -179,9 +179,8 @@
         <ref>vor 6086</ref>
         <lem wit="2_H"><speaker>Marschalck</speaker>
             <note><wit wit="2_H">2_H</wit></note></lem>
-        <rdg wit="2_H"><subst hand="G"><del><speaker>Schatzmeister</speaker>
-            <note><wit wit="2_H">2_H</wit></note></del>
-                <add><speaker>Marschalck</speaker></add></subst>
+        <rdg wit="2_H"><subst hand="G"><del><speaker>Schatzmeister</speaker></del>
+            <add><speaker>Marschalck</speaker> <note><wit wit="2_H">2_H</wit></note></add></subst>
             <note>(<quote>Schatzmeister</quote> ungestrichen) <seg type="hand">G</seg></note></rdg>
     </app>
     <app>
