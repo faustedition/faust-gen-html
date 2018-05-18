@@ -1,7 +1,7 @@
 default namespace = "http://www.faustedition.net/ns"
 namespace tei = "http://www.tei-c.org/ns/1.0"
 
-start = SceneLineMapping | SigilLabels | WatermarkLabels | AppTypes | StageSentences
+start = SceneLineMapping | SigilLabels | WatermarkLabels | AppTypes | StageSentences | Abbreviations
 
 SceneLineMapping =
   ## A list of scenes and their labels
@@ -62,3 +62,15 @@ StageSentences =
       empty
       }+
   }
+  
+Abbreviations =
+  element abbreviations {
+    element tei:choice {
+      element tei:abbr {        
+        text
+      }+,
+      element tei:expan {
+        text
+      }?
+     }*
+   }

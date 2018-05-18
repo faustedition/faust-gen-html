@@ -408,6 +408,24 @@
         </xsl:copy>
     </xsl:template>
     
+    <!-- 
+        Find and mark abbreviations in the apparatus.  
+    -->
+    <xsl:template mode="pass2" match="app//text()" priority="1">
+        <xsl:variable name="abbrs" select="doc('../text/abbreviations.xml')//abbr"/>
+        <xsl:variable name="partial-res" select="for $a in $abbrs return concat('\b', data($a), '(\.|\b)')"/>        
+        <xsl:variable name="re" select="string-join($partial-res, '|')"/>        
+        <xsl:analyze-string select="." regex="{$re}" flags="!">
+            <xsl:matching-substring>
+                <!-- We always want them without trailing . -->
+                <xsl:variable name="without-dot" select="replace(., '\.$', '')"/>
+                <abbr><xsl:value-of select="$without-dot"/></abbr>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <xsl:copy/>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
+    </xsl:template>    
     
     <!-- 
         List of witnesses.
