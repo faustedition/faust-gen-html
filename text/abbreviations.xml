@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../xslt/faust-misc.rnc" type="application/relax-ng-compact-syntax"?>
+<f:abbreviations xmlns:f="http://www.faustedition.net/ns" xmlns="http://www.tei-c.org/ns/1.0">
+  <choice>
+    <abbr>alR</abbr>    
+    <expan>am linken Rand</expan>
+  </choice>
+  <choice>
+    <abbr>bill</abbr>
+    <expan>billigt</expan>
+  </choice>
+  <choice>
+    <abbr>emend</abbr>
+    <expan>emendiert</expan>
+  </choice>
+  <choice>
+    <abbr>erg</abbr>
+    <expan>ergänzt</expan>
+  </choice>
+  <choice>
+    <abbr>konj</abbr>
+    <expan>konjiziert</expan>
+  </choice>
+  <choice>
+    <abbr>mglw</abbr>  
+  </choice>
+  <choice>
+    <abbr>mon</abbr>
+    <expan>moniert</expan>
+  </choice>
+  <choice>
+    <abbr>verw</abbr>
+    <expan>verwirft</expan>
+  </choice>
+  <choice>
+    <abbr>vgl</abbr>    
+  </choice>
+  <choice>
+    <abbr>vorschl</abbr>
+    <expan>schlägt vor</expan>
+  </choice>
+</f:abbreviations>
