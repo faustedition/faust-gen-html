@@ -20,7 +20,6 @@
   <xsl:param name="view">print</xsl:param>
   <xsl:param name="scriptAdditions"/>
   
-  <xsl:param name="apptypes" select="doc('../text/apptypes.xml')"/>
   <xsl:param name="appabbrs" select="doc('../text/abbreviations.xml')"/>
   
   <xsl:output method="xhtml" include-content-type="yes"/>
@@ -210,28 +209,15 @@
       <xsl:if test="@wit">
         <xsl:comment select="concat('wit=', @wit, ' transcript-list=', $transcript-list)"/>        
       </xsl:if>
-      <xsl:if test="@type">
-        <xsl:value-of select="if (position() = last()) then ' ' else ' '"/>   <!-- em space before last type -->
-        <xsl:variable name="types" select="tokenize(@type, '\s+')"/>
-        <xsl:choose>
-          <xsl:when test="count($types) > 1">
-            <xsl:text>(</xsl:text>
-            <xsl:for-each select="$types">
-              <a class="reading-type" href="app#{.}" title="{.}">
-                <xsl:value-of select="f:format-rdg-type(.)"/>                
-              </a>
-              <xsl:if test="position() != last()">, </xsl:if>
-            </xsl:for-each>
-            <xsl:text>)</xsl:text>
-          </xsl:when>
-          <xsl:otherwise>
-            <a class="reading-type" href="app#{$types}" title="{f:rdg-type-descr($types)}">
-                <xsl:value-of select="concat('(', f:format-rdg-type($types), ')')"/>
-            </a>            
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:if>
     </span>
+  </xsl:template>
+  
+  <xsl:template match="ref[starts-with(@target, 'faust://app/')]">
+    <xsl:variable name="type_id" select="substring-after(@target, 'faust://app/')"/>
+    <a title="{f:rdg-type-descr($type_id)}" href="{$edition}/print/app#{$type_id}">
+      <xsl:attribute name="class" select="f:generic-classes(.)" separator=" "/>
+      <xsl:apply-templates/>
+    </a>
   </xsl:template>
   
   
@@ -244,50 +230,7 @@
       <xsl:apply-templates select="node() except (*[1], *[2])"/>
     </xsl:if>
   </xsl:template>
-  
-  <xsl:function name="f:format-rdg-type" as="xs:string">
-    <xsl:param name="type"/>
-    <xsl:variable name="typeno" select="replace($type, '^type_', '')"/>
-    <xsl:variable name="formatted-typeno">
-      <xsl:analyze-string select="$typeno" regex="\d+">
-        <xsl:matching-substring>
-          <xsl:number format="I" value="."/>
-          <xsl:text> </xsl:text>
-        </xsl:matching-substring>
-        <xsl:non-matching-substring>
-          <xsl:copy/>
-        </xsl:non-matching-substring>
-      </xsl:analyze-string>
-    </xsl:variable>
-    <xsl:value-of select="string-join($formatted-typeno, '')"/>
-  </xsl:function>
-  
-  <xsl:function name="f:rdg-type-descr" as="xs:string">
-    <xsl:param name="type"/>
-    <xsl:variable name="exact-match" select="$apptypes//f:apptype[@type=$type]"/>
-    <xsl:variable name="start-match" select="$apptypes//f:apptype[starts-with($type, @type)][1]"/>
-    <xsl:variable name="result">
-      <xsl:choose>
-        <xsl:when test="$exact-match[self::f:apptype]">
-          <xsl:value-of select="$exact-match"/>
-        </xsl:when>
-        <xsl:when test="$start-match">
-          <xsl:value-of select="$start-match"/>
-          <xsl:variable name="rest" select="substring($type, string-length($start-match/@type)+1)"/>
-          <xsl:choose>
-            <xsl:when test="$rest = '*'"> (nicht übernommen)</xsl:when>
-            <xsl:otherwise> (<xsl:value-of select="$rest"/>)<xsl:message select="concat('WARNING: Label for app type ', $type, ' incomplete: rest »', $rest, '«')"/></xsl:otherwise>
-          </xsl:choose>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="$type"/>
-          <xsl:message select="concat('ERROR: No apparatus type description for ', $type)"/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-    <xsl:value-of select="$result"/>
-  </xsl:function>
-  
+    
   <xsl:template match="gap[@reason='ellipsis']">
     <i>
       <xsl:attribute name="class" select="f:generic-classes(.), 'generated-text'" separator=" "/>
