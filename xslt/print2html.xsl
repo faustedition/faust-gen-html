@@ -209,28 +209,15 @@
       <xsl:if test="@wit">
         <xsl:comment select="concat('wit=', @wit, ' transcript-list=', $transcript-list)"/>        
       </xsl:if>
-      <xsl:if test="@type">
-        <xsl:value-of select="if (position() = last()) then ' ' else ' '"/>   <!-- em space before last type -->
-        <xsl:variable name="types" select="tokenize(@type, '\s+')"/>
-        <xsl:choose>
-          <xsl:when test="count($types) > 1">
-            <xsl:text>(</xsl:text>
-            <xsl:for-each select="$types">
-              <a class="reading-type" href="app#{.}" title="{.}">
-                <xsl:value-of select="f:format-rdg-type(.)"/>                
-              </a>
-              <xsl:if test="position() != last()">, </xsl:if>
-            </xsl:for-each>
-            <xsl:text>)</xsl:text>
-          </xsl:when>
-          <xsl:otherwise>
-            <a class="reading-type" href="app#{$types}" title="{f:rdg-type-descr($types)}">
-                <xsl:value-of select="concat('(', f:format-rdg-type($types), ')')"/>
-            </a>            
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:if>
     </span>
+  </xsl:template>
+  
+  <xsl:template match="ref[starts-with(@target, 'faust://app/')]">
+    <xsl:variable name="type_id" select="substring-after(@target, 'faust://app/')"/>
+    <a title="{f:rdg-type-descr($type_id)}" href="{$edition}/print/app#{$type_id}">
+      <xsl:attribute name="class" select="f:generic-classes(.)" separator=" "/>
+      <xsl:apply-templates/>
+    </a>
   </xsl:template>
   
   
