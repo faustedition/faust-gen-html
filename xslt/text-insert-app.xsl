@@ -151,6 +151,30 @@
                         )"/>                    
                     <xsl:apply-templates select="lem" mode="app"/>
                     <xsl:apply-templates select="rdg" mode="app"/>
+                    <xsl:variable name="types" select="for $type in rdg/@type return tokenize($type, '\s+')"/>
+                    <xsl:choose>
+                        <xsl:when test="count($types) >= 2">
+                            <xsl:text> </xsl:text>
+                            <note type="type">
+                                <xsl:text>(</xsl:text>
+                                <xsl:for-each select="$types">
+                                    <ref target="faust://app/{.}">
+                                        <xsl:value-of select="f:format-rdg-type(.)"/>
+                                    </ref>
+                                    <xsl:if test="position() != last()">, </xsl:if>
+                                </xsl:for-each>
+                                <xsl:text>)</xsl:text>
+                            </note>
+                        </xsl:when>
+                        <xsl:when test="count($types) = 1">
+                            <xsl:text> </xsl:text>
+                            <note type="type">
+                                <ref target="faust://app/{$types}">
+                                    <xsl:value-of select="concat('(', f:format-rdg-type($types), ')')"/>
+                                </ref>
+                            </note>
+                        </xsl:when>
+                    </xsl:choose>                    
                 </app>
             </note>
         </xsl:for-each>
