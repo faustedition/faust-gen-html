@@ -1,3 +1,4 @@
+<?xml-model href="citations.rnc" type="application/relax-ng-compact-syntax"?>
 <citations xmlns="http://www.faustedition.net/ns">
  <citation>faust://bibliography/pniower1899</citation>
  <citation>faust://bibliography/graef1901-1914_II_2</citation>
