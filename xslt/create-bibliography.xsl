@@ -31,12 +31,7 @@
 	<xsl:template match="/">
 		<xsl:call-template name="html-frame">
 			<xsl:with-param name="title" tunnel="yes">Bibliographie</xsl:with-param>
-			<xsl:with-param name="scriptAdditions">
-				domReady(function() {
-					document.getElementById("breadcrumbs").appendChild(
-						Faust.createBreadcrumbs([{caption: "Archiv", link: "archive"}, {caption: "Bibliographie"}]));
-				});
-			</xsl:with-param>
+			<xsl:with-param name="breadcrumb-def" tunnel="yes"><a href="archive">Archiv</a><a href="bibliography">Bibliographie</a></xsl:with-param>
 			<xsl:with-param name="content">
 				<xsl:variable name="entries" as="element()*">
 					<xsl:for-each-group select="//f:citation" group-by=".">
@@ -47,14 +42,16 @@
 							</xsl:for-each>
 						</xsl:variable>
 						<xsl:variable name="backref-part">
-							<xsl:for-each-group select="$backrefs" group-by=".">
-								<xsl:sort select="f:splitSigil(.)[1]" stable="yes"/>
-								<xsl:sort select="f:splitSigil(.)[2]" data-type="number"/>
-								<xsl:sort select="f:splitSigil(.)[3]"/>								                    
-								
-								<xsl:copy-of select="current-group()[1]"/>
-								<xsl:if test="position() != last()">, </xsl:if>
-							</xsl:for-each-group>
+							<small class="bib-backrefs">								
+								<xsl:for-each-group select="$backrefs" group-by=".">
+									<xsl:sort select="f:splitSigil(.)[1]" stable="yes"/>
+									<xsl:sort select="f:splitSigil(.)[2]" data-type="number"/>
+									<xsl:sort select="f:splitSigil(.)[3]"/>								                    
+									
+									<xsl:copy-of select="current-group()[1]"/>
+									<xsl:if test="position() != last()">, </xsl:if>
+								</xsl:for-each-group>
+							</small>
 						</xsl:variable>
 						<xsl:variable name="testimonies" select="current-group()[@testimony]" as="element()*"/>
 						<xsl:variable name="testimony-part">
@@ -71,21 +68,33 @@
 									</xsl:for-each-group>
 								</small>
 							</xsl:for-each-group>
+						</xsl:variable>							
+						<xsl:variable name="app-citations" select="current-group()[@app]" as="element()*"/>
+						<xsl:variable name="app-part">
+							<small class="bib-app">
+								Apparat:
+								<xsl:for-each select="$app-citations">
+									<a href="{$edition}/print/faust.{@section}#{@app}"><xsl:value-of select="@ref"/></a>
+									<xsl:if test="position() != last()">, </xsl:if>
+								</xsl:for-each>								
+							</small>
 						</xsl:variable>
 						<xsl:for-each select="$citation">
 							<xsl:copy>
 								<xsl:copy-of select="@*"/>
 								<xsl:copy-of select="node()"/>
-								<xsl:if test="$backrefs">
-									<xsl:text> </xsl:text>								
-									<small class="bib-backrefs">
-										<xsl:copy-of select="$backref-part"/>
-									</small>
-									<xsl:if test="current-group()[@testimony]">
-										<xsl:text> • </xsl:text>
-									</xsl:if>
-								</xsl:if>
-								<xsl:copy-of select="$testimony-part"/>
+								<xsl:variable name="all-backref-parts" as="item()*" select="
+									if ($backrefs) then $backref-part else (),
+									if ($app-citations) then $app-part else (),
+									if ($testimonies) then $testimony-part else ()"/>
+								
+								<xsl:if test="$all-backref-parts">
+									<xsl:text> </xsl:text>
+									<xsl:for-each select="$all-backref-parts">
+										<xsl:sequence select="."/>
+										<xsl:if test="position() != last()"> • </xsl:if>
+									</xsl:for-each>
+								</xsl:if>							
 							</xsl:copy>
 						</xsl:for-each>
 					</xsl:for-each-group>

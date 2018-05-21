@@ -7,7 +7,8 @@ Citations =
   element f:citations {
     ( TestimonyIndex |
       Citations |
-      StdCitation
+      StdCitation |
+      AppCitation
     )*
   }
   
