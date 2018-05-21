@@ -113,7 +113,7 @@
             <sp>
                 <speaker>Mephistopheles</speaker>
                 <l n="4051" part="F">Man muß sich dran gewöhnen.</l></sp>
-            <note>konj. faust://bibliography/resenhoefft1975#Resenhöfft</note></rdg>
+            <note>konj. <ref target="faust://bibliography/resenhoefft1975">Resenhöfft</ref></note></rdg>
     </app>
     <app>
         <f:ins n="before_4343" place="only-app"/>
