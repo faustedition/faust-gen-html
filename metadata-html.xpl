@@ -130,14 +130,17 @@
           <p:inline>
             <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns="http://www.w3.org/1999/xhtml">
               <xsl:import href="xslt/bibliography.xsl"/>
+              <xsl:import href="xslt/utils.xsl"/>
               <xsl:template match="/">                
                 <xsl:for-each select="(//f:metadata)[1]">
                   <xsl:variable name="sigil" select="f:idno[@type='faustedition']"/>
                   <xsl:variable name="sigil_n" select="replace(lower-case($sigil), '[ .*]', '')"/>
+                  <xsl:variable name="sigil_t" select="f:sigil-for-uri($sigil)"/>                  
                   <div data-sigil="{$sigil}">                                    
-                    <h3 class="sigil"><xsl:value-of select="f:idno[@type='faustedition']"/>
-                    <span class="headnote"><xsl:value-of select="f:headNote"/></span>
-                    <a id="{$sigil_n}" href="#{$sigil_n}">§</a>
+                    <h3 class="sigil">
+                      <a href="/document?sigil={$sigil_t}&amp;view=structure"><xsl:value-of select="f:idno[@type='faustedition']"/></a>
+                      <span class="headnote"><xsl:value-of select="f:headNote"/></span>
+                      <a id="{$sigil_n}" href="#{$sigil_n}">¶</a>
                     </h3>
                     <p class="first-note"><xsl:for-each select="f:headNote/following-sibling::f:note[1]">
                       <xsl:call-template name="parse-for-bib"/>
@@ -161,12 +164,12 @@
           <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xmlns="http://www.w3.org/1999/xhtml" xpath-default-namespace="http://www.w3.org/1999/xhtml">
             <xsl:import href="xslt/utils.xsl"/>
             
-            <!--<xsl:import href="xslt/html-frame.xsl"/>-->
+            <xsl:import href="xslt/html-frame.xsl"/>
             
             <xsl:template match="/">             
-<!--              <xsl:call-template name="html-frame">
+              <xsl:call-template name="html-frame">
                 <xsl:with-param name="content">
--->               
+               
               <html>
                 <head>
                   <title>Die ersten notes nach der headNote</title>
@@ -187,8 +190,8 @@
                   </xsl:for-each>                                 
                 </body>
               </html>
-                <!--</xsl:with-param>
-              </xsl:call-template>-->
+                </xsl:with-param>
+              </xsl:call-template>
             </xsl:template>
           </xsl:stylesheet>
         </p:inline>
