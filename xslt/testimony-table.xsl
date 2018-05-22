@@ -132,7 +132,7 @@
 		<xsl:variable name="lbl" select="string-join(
 			for $field in field return if ($field/text()) then concat(string-join($columns/fieldspec[@label=$field/@label], ''), ': ', $field) else (),
 			', ')"/>
-		<xsl:variable name="used" select="$usage//*[@testimony-id=current()/@id]"/>
+		<xsl:variable name="used" select="$usage//*[@testimony=current()/@id]"/>
 		
 		<!-- We're building an XML fragment that will finally be moved into the current <testimony> entry -->
 		<xsl:variable name="rowinfo_raw">
@@ -261,7 +261,7 @@
 	<xsl:function name="f:find-inferior-id" as="xs:string?">
 		<xsl:param name="entry"/><!-- f:testimony w/o @id -->
 		<xsl:variable name="candidate-ids" select="for $f in $entry//f:field return concat($f/@name, '_', $f)"/>
-		<xsl:sequence select="($candidate-ids[. = $usage//f:citation/@testimony-id])[1]"/>
+		<xsl:sequence select="($candidate-ids[. = $usage//f:citation/@testimony])[1]"/>
 	</xsl:function>
 
 	<xsl:template name="generate-pseudo-testimonies">
@@ -270,7 +270,7 @@
 			<xsl:variable name="id" select="current-grouping-key()"/>
 			<xsl:for-each select="current-group()[1]">
 				<xsl:choose>
-					<xsl:when test="$id = $usage//*/@testimony-id">
+					<xsl:when test="$id = $usage//*/@testimony">
 						<!--<xsl:message>Skipping testimony generation (<xsl:value-of select="$id"/>)</xsl:message>-->
 					</xsl:when>
 					<xsl:otherwise>
