@@ -1,0 +1,50 @@
+namespace f = "http://www.faustedition.net/ns"
+
+## This schema describes the internal citation format that is the basis for 
+## creating the bibliography
+start = Citations
+Citations =
+  element f:citations {
+    ( TestimonyIndex |
+      Citations |
+      StdCitation |
+      AppCitation
+    )*
+  }
+  
+BibUri = xsd:anyURI { pattern="faust://bibliography/\S+" }
+FaustUri = xsd:anyURI { pattern="faust://\S+" }
+ 
+StdCitation =
+  ## Citation from some witnesses metadata etc.
+  element f:citation {
+    ## faust:// URI of the witness that cites the given reference 
+    attribute from { FaustUri }?,
+    ## faust://bibliography/ URI from the reference
+    BibUri
+  }
+  
+TestimonyIndex = element f:testimony-index {
+  TestimonyCitation*
+}
+  
+TestimonyCitation =
+  element f:citation {
+    ## the testimony's id, e.g. bie3_5817
+    attribute testimony { xsd:NCName },
+    ## the testimony's number, e.g., 5857
+    attribute n { xsd:NMTOKEN },
+    ## the label of the testimony's texonomy, e.g., 'Biedermann-Herwig Nr.'
+    attribute taxonomy { text },
+    ## the bibliography ID referred to
+    BibUri 
+  }
+
+AppCitation = 
+  element f:citation {
+    ## the apparatus id
+    attribute app { xsd:NMTOKEN },
+    attribute section { xsd:int },
+    attribute ref { text },
+    BibUri
+  }

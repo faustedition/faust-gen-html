@@ -84,17 +84,15 @@
 	</xsl:template>
 	
 	<!-- following template generates a f:citation element for the current split testimony -->
-	<xsl:template name="get-citations">
+	<xsl:template name="get-citations" exclude-result-prefixes="#default">
 		<xsl:variable name="real-id" select="//f:testimony/@id"/>
 		<xsl:choose>
 			<xsl:when test="count($real-id) = 1">
 				<xsl:variable name="id" select="tokenize($real-id, '_')"/>
-				<f:citation 
-					testimony="{$basename}#{$real-id}" 
-					base="{$basename}" 
+				<f:citation
 					taxonomy="{id($id[1], $taxonomies)}"
 					n="{$id[2]}"
-					testimony-id="{$real-id}"
+					testimony="{$real-id}"
 					rs="{f:find-rs(//text[@type='testimony' and @n=$real-id])}">
 					<xsl:value-of select="$biburl"/>
 				</f:citation>									

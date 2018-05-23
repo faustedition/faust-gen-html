@@ -231,7 +231,7 @@
 		</p:xslt>
 		<p:store method="xhtml">
 			<p:with-option name="href" select="resolve-uri('www/print/faust.wordlist.html', $builddir)"/>
-		</p:store>
+		</p:store>		
 		
 		<!-- ### Step 2a: Metadata HTML -->
 		<f:metadata-html name="metadata-html">
@@ -288,11 +288,18 @@
 		<p:store method="text"><p:with-option name="href" select="resolve-uri('www/meta/.htaccess', $builddir)"/></p:store>		
 		
 		
-		<!-- ## Step 3a: bibliography -->		
+		<!-- ## Step 3a: bibliography -->
+		<p:xslt name="reading-text-citations">
+			<p:input port="source"><p:pipe port="result" step="reading-text-md"></p:pipe></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/text-extract-citations.xsl"/></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+		</p:xslt>
+
 		<f:bibliography>
 			<p:input port="source">
 				<p:pipe port="result" step="metadata-html"/>
 				<p:pipe port="result" step="testimony"/>
+				<p:pipe port="result" step="reading-text-citations"/>
 			</p:input>
 		</f:bibliography>
 		
