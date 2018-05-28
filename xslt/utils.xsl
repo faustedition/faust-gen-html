@@ -415,7 +415,7 @@
       <xsl:analyze-string select="$typeno" regex="\d+">
         <xsl:matching-substring>
           <xsl:number format="I" value="."/>
-          <xsl:text> </xsl:text>
+          <xsl:text>&#x200a;</xsl:text><!-- Hair Space -->
         </xsl:matching-substring>
         <xsl:non-matching-substring>
           <xsl:copy/>
