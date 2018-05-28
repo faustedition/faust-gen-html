@@ -223,7 +223,7 @@
     <scene n="2.2.1">
         <rangeStart>6566</rangeStart>
         <rangeEnd>6818</rangeEnd>
-        <title>Hochgewölbtes, enges gotisches Zimmer</title>
+        <title>Hochgewölbtes Zimmer</title>
         <id>2.2.1</id>
     </scene>
     <scene n="2.2.2">
@@ -268,7 +268,7 @@
     <scene n="2.3.1">
         <rangeStart>8488</rangeStart>
         <rangeEnd>9126</rangeEnd>
-        <title>Vor dem Palaste des Menelas zu Sparta</title>
+        <title>Vor dem Palaste</title>
         <id>2.3.1</id>
     </scene>
     <scene n="2.3.2">
