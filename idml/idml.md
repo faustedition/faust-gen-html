@@ -429,7 +429,10 @@ XML: `quote`
 Umsetzung: ohne Zeichenformat
 
 ### (Apparateinträge mit `subst`)
-Hier ist zwischen dem `del` und dem `add` content ein ` : ` im Format `Kursiv` einzufügen.
+* `subst/del/text()` → `No character style`
+* Zu `gap`, `wit`, `wit/hi`, `note` in diesem Kontext s.o. `Kursiv`
+* zwischen dem `del` und dem `add` content ein ` : ` (mit umgebenden Lz) im Format `Kursiv` einfügen
+* `subst/add/text()` → `No character style`
 
 ### (Apparateinträge Typ VIII)
 Eine wichtige Sonderregel: Apparateinträge des Typs VIII werden nicht als Fußnote realisiert, sondern separat im Anhang wiedergegeben.
@@ -508,8 +511,8 @@ Textinhalt aus
 ## Kursiv
 XML:
 * `note/ref`
-* `*[self::lem or self::rdg]/wit`
-* `*[self::lem or self::rdg]/note`
+* `wit`
+* `*[self::lem or self::rdg or self::del or self::add]/note`
 * `gap`
 
 ## (Hochstellungen)
