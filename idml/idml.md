@@ -540,14 +540,8 @@ XML: `*[self::l or self::rdg or self::lem]/emph`
 XML: `note[@type="type"]`
 
 Umsetzung:
-* davor zwei Leerzeichen einfügen
-* `(` einfügen
-* vom `ref/@target`-Wert (Bsp. `faust://app/type_2c`) den letzten Abschnitt nehmen
-* Präfix `type_` entfernen
-* folgende arabische Ziffer in römische umwandeln und einfügen
-* ein 24stelgeviert einfügen
-* folgende Buchstaben (ggf. zusätzlich `*`) einfügen
-* `)` einfügen 
+* `Kursiv`
+* evtl. ein 24stelgeviert nach römischen Ziffern und folgenden Nicht-Klammer-Zeichen einfügen (siehe https://github.com/faustedition/faust-gen-html/issues/476#issuecomment-392514422).
 
 ## Verszahl
 Wert von `@n` ausgeben,
