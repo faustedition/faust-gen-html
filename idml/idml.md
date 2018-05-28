@@ -573,16 +573,13 @@ Siehe [#210](https://github.com/faustedition/faust-gen-html/issues/210).
 Für diese braucht in der Transformation nichts zu geschehen, also auch keine Regel geschrieben werden.
 * `abbr` (siehe [#195](https://github.com/faustedition/faust-gen-html/issues/195). Bitte gerne zurückmelden, wenn es nach dem Fix von 
 [#112](https://github.com/faustedition/faust-gen-html/issues/112) doch noch auftreten sollte.)
-* `add`
 * `br` ([#265](https://github.com/faustedition/faust-gen-html/issues/265))
 * `c` ([#266](https://github.com/faustedition/faust-gen-html/issues/266))
 * `choice`
 * `corr`
 * `expan`
-* `del`
 * `sic`
 * BAs am Ende von Repliken (`sp/*[self::stage and position()=last()]`)
-* `subst`
 * `titlePart`, siehe [#270](https://github.com/faustedition/faust-gen-html/issues/270)
 
 # XML-Elemente, die keine besondere Behandlung benötigen
