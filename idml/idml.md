@@ -494,7 +494,9 @@ Im rechten Kolumnentitel soll ein middle dot eingefügt werden zwischen den Kolu
 ## Figur
 (Hervorhebungen in BA) 
 
-XML: `stage/hi`, `speaker/hi`
+XML: `stage/hi[not(hi)]`, `speaker/hi`
+
+(`stage/hi[hi]/text()` soll `No character style` bekommen.)
 
 ## (Kolumnentitel)
 * entfallen bei Akt- und Szenenanfängen (= Absenkung)
