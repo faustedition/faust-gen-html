@@ -225,15 +225,6 @@ XML: `div[@type='scene']/*[1][self::head and lb]`
 ### Szene vor Szenenunter
 XML: `div[@type='scene']/head[@type='main']`
 
-### Szene nach Akt
-(Szenenüberschrift nach Aktüberschrift)
-
-XML: `div[@type='act']/div[@type='scene' and position()=(1)]/head[1]`
-
-Formatierung: 
-* *keine* neue Seite
-* *keine* 3 Zeilenumbrüche am Anfang des Absatzes
-
 ### Szenenunter
 XML: `div[@type='scene']/head[2]` (sollte auch ein `type='sub'` tragen)
 

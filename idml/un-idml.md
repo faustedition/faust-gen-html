@@ -19,6 +19,15 @@ Output:
 ## Szene nach Teil (Nacht)
 = neue rechte Seite (Leerseite nach Teiltitel)
 
+### Szene nach Akt
+(Szenenüberschrift nach Aktüberschrift)
+
+XML: `div[@type='act']/div[@type='scene' and position()=(1)]/head[1]`
+
+Formatierung: 
+* *keine* neue Seite
+* *keine* 3 Zeilenumbrüche am Anfang des Absatzes
+
 ## Vers nach Teil (Zueignung)
 XML: `l[@n='1']`
 
