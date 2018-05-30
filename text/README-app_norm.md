@@ -50,3 +50,4 @@ Der <i>Text der notes</i> in wird an Leerzeichen zerlegt und jedes Token überpr
 * [#119 (comment)](https://github.com/faustedition/faust-gen-html/issues/119#issuecomment-356986496)
 * [dito](https://github.com/faustedition/faust-gen-html/issues/119#issuecomment-357749252)
 * [#119 ("Suchmuster")](https://github.com/faustedition/faust-gen-html/issues/119#issuecomment-358938705)
+* [#346 (zweimaliges f:ins)](https://github.com/faustedition/xml/issues/346#issuecomment-392930165)
