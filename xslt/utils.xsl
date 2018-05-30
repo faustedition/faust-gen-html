@@ -411,18 +411,17 @@
   <xsl:function name="f:format-rdg-type" as="xs:string">
     <xsl:param name="type"/>
     <xsl:variable name="typeno" select="replace($type, '^type_', '')"/>
-    <xsl:variable name="formatted-typeno">
+    <xsl:variable name="formatted-typeno" as="item()*">
       <xsl:analyze-string select="$typeno" regex="\d+">
         <xsl:matching-substring>
-          <xsl:number format="I" value="."/>
-          <xsl:text>&#x200a;</xsl:text><!-- Hair Space -->
+          <xsl:number format="I" value="."/>          
         </xsl:matching-substring>
         <xsl:non-matching-substring>
           <xsl:copy/>
         </xsl:non-matching-substring>
       </xsl:analyze-string>
     </xsl:variable>
-    <xsl:value-of select="string-join($formatted-typeno, '')"/>
+    <xsl:value-of select="string-join($formatted-typeno, '&#x200a;')"/><!-- Hair Space -->
   </xsl:function>
   
   <xsl:function name="f:rdg-type-descr" as="xs:string">
