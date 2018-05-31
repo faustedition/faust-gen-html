@@ -107,7 +107,7 @@
 		
 		<xsl:if test="$type = 'lesetext'">
 			
-			<xsl:result-document href="{$output-base}1.all.html">
+			<xsl:result-document href="{$output-base}.all1.html">
 				<xsl:variable name="faust1"><xsl:apply-templates select="text" mode="extract-faust1"/></xsl:variable>
 				<xsl:call-template name="generate-html-frame">
 					<xsl:with-param name="single" select="true()" tunnel="yes"/>
@@ -117,7 +117,7 @@
 				</xsl:call-template>
 			</xsl:result-document>
 			
-			<xsl:result-document href="{$output-base}2.all.html">
+			<xsl:result-document href="{$output-base}.all2.html">
 				<xsl:call-template name="generate-html-frame">
 					<xsl:with-param name="single" select="true()" tunnel="yes"/>
 					<xsl:with-param name="content">
