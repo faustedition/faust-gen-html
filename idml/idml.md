@@ -397,6 +397,7 @@ Umsetzung
 XML: `lem[node()]` (die leeren `lem` entfallen)
 
 Umsetzung
+* Vor dem Lemma (d.h. zwischen Zeilenreferenz und Lemma) soll im Ergebnis ein Leerzeichen stehen.
 * kein eigenes Zeichenformat
 * danach ein Achtelgeviertabstand
 * danach Zeichen `]` 
