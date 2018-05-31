@@ -231,10 +231,17 @@
     </xsl:template>
 
     <xsl:template match="ref[starts-with(@target, 'faust://bibliography/')][normalize-space(.) = '']" mode="app">
-        <xsl:variable name="citation" select="data(f:cite(@target, false()))"/>
+        <xsl:variable name="citation" select="normalize-space(data(f:cite(@target, false())))"/>
         <xsl:copy copy-namespaces="no">
             <xsl:apply-templates select="@*"/>
-            <xsl:value-of select="normalize-space($citation)"/>
+            <xsl:choose>
+                <xsl:when test="matches($citation, '.*\.\S')">
+                    <xsl:sequence select="f:short-sigil($citation)"></xsl:sequence>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="$citation"/>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:apply-templates/>
         </xsl:copy>
     </xsl:template>
