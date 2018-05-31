@@ -229,6 +229,15 @@
     <xsl:template match="note[wit and count(node()) = 1 or (not(* except wit) and matches(string-join(text(), ''), '^\s*$'))]" mode="app">
         <xsl:apply-templates mode="#current"/>
     </xsl:template>
+
+    <xsl:template match="ref[starts-with(@target, 'faust://bibliography/')][normalize-space(.) = '']" mode="app">
+        <xsl:variable name="citation" select="data(f:cite(@target, false()))"/>
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates select="@*"/>
+            <xsl:value-of select="normalize-space($citation)"/>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
     
     <xsl:template match="*[milestone[@unit='refline'][@n=$spec//f:ins/@n]]">
         <xsl:variable name="ns" select="milestone[@unit='refline']/@n"/>
