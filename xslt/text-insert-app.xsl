@@ -154,8 +154,8 @@
                     <xsl:variable name="types" select="for $type in rdg/@type return tokenize($type, '\s+')"/>
                     <xsl:choose>
                         <xsl:when test="count($types) >= 2">
-                            <xsl:text> </xsl:text>
                             <note type="type">
+                                <xsl:text>  </xsl:text>
                                 <xsl:text>(</xsl:text>
                                 <xsl:for-each select="$types">
                                     <ref target="faust://app/{.}">
@@ -167,8 +167,8 @@
                             </note>
                         </xsl:when>
                         <xsl:when test="count($types) = 1">
-                            <xsl:text> </xsl:text>
                             <note type="type">
+                                <xsl:text>  </xsl:text>
                                 <ref target="faust://app/{$types}">
                                     <xsl:value-of select="concat('(', f:format-rdg-type($types), ')')"/>
                                 </ref>
