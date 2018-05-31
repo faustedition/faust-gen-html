@@ -397,7 +397,6 @@ Umsetzung
 XML: `lem[node()]` (die leeren `lem` entfallen)
 
 Umsetzung
-* davor ein Leerzeichen
 * kein eigenes Zeichenformat
 * danach ein Achtelgeviertabstand
 * danach Zeichen `]` 
