@@ -113,7 +113,8 @@
             <sp>
                 <speaker>Mephistopheles</speaker>
                 <l n="4051" part="F">Man muß sich dran gewöhnen.</l></sp>
-            <note>konj. <ref target="faust://bibliography/resenhoefft1975">Resenhöfft</ref></note></rdg>
+            <note>konj. <ref target="faust://bibliography/resenhoefft1975"
+            >Resenhöfft</ref></note></rdg>
     </app>
     <app>
         <f:ins n="before_4343" place="only-app"/>
@@ -144,12 +145,9 @@
         <f:ins n="before_4613_c" place="only-app"/>
         <ref>vor 4613</ref>
         <lem wit="2_H">Der <gap reason="ellipsis"/> Acten <note><wit>2_H</wit></note></lem>
-        <rdg wit="2_H" type="type_7"><note>davor</note>
-            Faust.
-            <wit>2_H</wit></rdg>
-        <rdg wit="2_H" type="type_6"><note>danach</note>
-            (1831.)
-            <note>erg Ec <wit>2_H</wit></note></rdg>
+        <rdg wit="2_H" type="type_7"><note>davor</note> Faust. <wit>2_H</wit></rdg>
+        <rdg wit="2_H" type="type_6"><note>danach</note> (1831.) <note>erg Ec
+            <wit>2_H</wit></note></rdg>
     </app>
     <app>
         <f:replace n="5265">Luft</f:replace>
