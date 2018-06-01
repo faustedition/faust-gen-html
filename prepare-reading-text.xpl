@@ -46,21 +46,23 @@
 					     gespeichert werden sollen:	-->
 					<!--<target>file:/home/tv/git/faust-gen/target/prepare-reading-text/</target>-->
 					<!--<target>file:/Users/bruening.FDH-FFM/faustedition/xml/</target>-->
-					<target>file:/Users/bruening.FDH-FFM/github/gerritbruening/texthist-data/goethe/last/</target>
+					<target>file:/Users/bruening.FDH-FFM/github/gerritbruening/faust-data/xml/</target>
 					<!-- Quell-Transkripte: -->
-					<transcript path="transcript/test/test.xml"/>
+					<!--<transcript path="transcript/test/test.xml"/>-->
+					<transcript path="print/A8_IIIB18.xml" output="A8.xml"/>
 					<transcript path="transcript/gsa/391098/391098.xml" output="2_H.xml"/>
+					<transcript
+						path="transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml"
+						output="I_H.0a.xml"/>
 					<transcript
 						path="transcript/bl_oxford/MS_M_D_Mendelsson_c_21/MS_M_D_Mendelsson_c_21.xml"
 						output="ih12a.xml"/>
 					<transcript path="transcript/gsa/390643/390643.xml" output="h14.xml"/>
-					<transcript
-						path="transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml"
-						output="h0a.xml"/>
 					<transcript path="print/C(1)4_IIIB24.xml" output="c14.xml"/>
 					<transcript path="print/C(2a)4_IIIB28.xml" output="c2a4.xml"/>
 					<transcript path="print/C(3)4_IIIB27.xml" output="c34.xml"/>
-					<transcript path="transcript/ub_bonn/S_863_II/S_863_II.xml" output="III_H.3a_1.xml"/>
+					<transcript path="transcript/ub_bonn/S_863_II/S_863_II.xml"
+						output="III_H.3a_1.xml"/>
 					<transcript path="transcript/gsa/391087/391087.xml" output="III_H.3a_2.xml"/>
 					<transcript path="transcript/gsa/390295/390295.xml" output="ivh1.xml"/>
 					<transcript path="transcript/gsa/389863/389863.xml" output="ivh2.xml"/>
@@ -145,24 +147,30 @@
 					<p:empty/>
 				</p:input>
 			</p:xslt>
-			
+
 			<!-- Ausgabedateinamen merken -->
-			<pxp:set-base-uri><p:with-option name="uri" select="$output"/></pxp:set-base-uri>
+			<pxp:set-base-uri>
+				<p:with-option name="uri" select="$output"/>
+			</pxp:set-base-uri>
 		</p:for-each>
-		
+
 		<!-- faust.xml laden -->
 		<p:http-request>
 			<p:input port="source">
 				<p:inline>
-					<c:request method="GET" href="http://dev.digital-humanities.de/ci/job/faust-gen-fast/lastSuccessfulBuild/artifact/target/lesetext/faust.xml"/>
+					<c:request method="GET"
+						href="http://dev.digital-humanities.de/ci/job/faust-gen-fast/lastSuccessfulBuild/artifact/target/lesetext/faust.xml"
+					/>
 				</p:inline>
 			</p:input>
 		</p:http-request>
-		
+
 		<!-- hier Transformationsschritte _nur_ für faust.xml -->
-		
-		<pxp:set-base-uri name="load-faustxml"><p:with-option name="uri" select="p:resolve-uri('faust.xml', $target)"/></pxp:set-base-uri>
-		
+
+		<pxp:set-base-uri name="load-faustxml">
+			<p:with-option name="uri" select="p:resolve-uri('faust.xml', $target)"/>
+		</pxp:set-base-uri>
+
 		<!-- Weitere Transformationsschritte für alles -->
 		<p:for-each>
 			<p:iteration-source>
@@ -184,11 +192,16 @@
 								</xsl:copy>
 							</xsl:template>
 							<!-- hier folgen weitere Aufräumtemplates für den Lesetext, z.B.: -->
-							<xsl:template match="
-								seg/attribute::*
-								| teiHeader
+							<xsl:template
+								match="
+								app
 								| facsimile
-								| l/attribute::xml:id"/>
+								| */attribute::f:label
+								| l/attribute::xml:id
+								| note[@type='textcrit']"/>
+							<xsl:template match="seg">
+								<xsl:apply-templates/>
+							</xsl:template>
 						</xsl:stylesheet>
 					</p:inline>
 				</p:input>
@@ -196,7 +209,9 @@
 
 			<!-- Speichern der Einzeldatei -->
 			<p:identity name="final-single-text"/>
-			<cx:message><p:with-option name="message" select="concat('Saving to ', $output)"/></cx:message>
+			<cx:message>
+				<p:with-option name="message" select="concat('Saving to ', $output)"/>
+			</cx:message>
 			<p:store>
 				<p:with-option name="href" select="$output"/>
 			</p:store>
