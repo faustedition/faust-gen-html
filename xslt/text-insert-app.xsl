@@ -186,9 +186,19 @@
         
         This function creates a TEI representation.
     -->
+    <xsl:variable name="sigil-preprocessing">
+        <f:sigil orig="C.1 12">C.1</f:sigil>
+        <f:sigil orig="C.3 12">C.3</f:sigil>
+        <!--<f:sigil orig="C.1 4">C.1 4</f:sigil>-->
+        <f:sigil orig="C.2α 4">C.2α</f:sigil>
+        <f:sigil orig="C.3 4">C.3</f:sigil>
+    </xsl:variable>
     <xsl:function name="f:short-sigil" as="item()*">
         <xsl:param name="sigil"/>
-        <xsl:variable name="noprefix" select="replace($sigil, '^\d+\s*', '')"/>
+        <xsl:variable name="sigil-prepped" select="if ($sigil-preprocessing/f:sigil/@orig = $sigil)
+            then $sigil-preprocessing/f:sigil[@orig = $sigil]/text()
+            else $sigil"/>
+        <xsl:variable name="noprefix" select="replace($sigil-prepped, '^\d+\s*', '')"/>
         <xsl:analyze-string select="$noprefix" regex="\.(\S+)">
             <xsl:matching-substring>
                 <hi rend="superscript">
