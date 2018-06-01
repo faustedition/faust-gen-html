@@ -28,7 +28,7 @@
     <xsl:function name="f:cite" as="element()">
         <xsl:param name="uri" as="xs:string"/>
         <xsl:param name="full" as="item()"/>
-        <xsl:param name="linktext" as="item()?"/>
+        <xsl:param name="linktext" as="item()*"/>
         <xsl:variable name="bib_" select="$bibliography//bib[@uri=$uri]"/>
         <xsl:variable name="bib" select="$bib_[1]"/>
         <xsl:if test="count($bib_) > 1">
@@ -54,7 +54,7 @@
                     <a href="{$edition}/bibliography#{$id}">
                         <xsl:choose>
                             <xsl:when test="$linktext">
-                                <xsl:copy-of copy-namespaces="no" select="$linktext"/>
+                                <xsl:apply-templates select="$linktext"/>
                             </xsl:when>
                             <xsl:otherwise>                                
                                 <xsl:value-of select="$bib/citation"/>

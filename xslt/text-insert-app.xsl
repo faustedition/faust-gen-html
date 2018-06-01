@@ -154,8 +154,8 @@
                     <xsl:variable name="types" select="for $type in rdg/@type return tokenize($type, '\s+')"/>
                     <xsl:choose>
                         <xsl:when test="count($types) >= 2">
-                            <xsl:text> </xsl:text>
                             <note type="type">
+                                <xsl:text>  </xsl:text>
                                 <xsl:text>(</xsl:text>
                                 <xsl:for-each select="$types">
                                     <ref target="faust://app/{.}">
@@ -167,8 +167,8 @@
                             </note>
                         </xsl:when>
                         <xsl:when test="count($types) = 1">
-                            <xsl:text> </xsl:text>
                             <note type="type">
+                                <xsl:text>  </xsl:text>
                                 <ref target="faust://app/{$types}">
                                     <xsl:value-of select="concat('(', f:format-rdg-type($types), ')')"/>
                                 </ref>
@@ -228,6 +228,22 @@
     <!-- <note> elements that just surround <wit>s and whitespace are superflous -->
     <xsl:template match="note[wit and count(node()) = 1 or (not(* except wit) and matches(string-join(text(), ''), '^\s*$'))]" mode="app">
         <xsl:apply-templates mode="#current"/>
+    </xsl:template>
+
+    <xsl:template match="ref[starts-with(@target, 'faust://bibliography/')][normalize-space(.) = '']" mode="app">
+        <xsl:variable name="citation" select="normalize-space(data(f:cite(@target, false())))"/>
+        <xsl:copy copy-namespaces="no">
+            <xsl:apply-templates select="@*"/>
+            <xsl:choose>
+                <xsl:when test="matches($citation, '.*\.\S')">
+                    <xsl:sequence select="f:short-sigil($citation)"></xsl:sequence>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="$citation"/>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates/>
+        </xsl:copy>
     </xsl:template>
     
     <xsl:template match="*[milestone[@unit='refline'][@n=$spec//f:ins/@n]]">
