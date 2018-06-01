@@ -8,6 +8,15 @@
   <xsl:import href="../xslt/utils.xsl"/>
  
   <xsl:output method="text"/>
+  
+  
+  <xsl:template match="/">
+    <xsl:variable name="text">
+      <xsl:apply-templates/>
+    </xsl:variable>
+    <xsl:variable name="lines" select="tokenize($text, '\n+')"/>
+    <xsl:value-of select="string-join($lines, '&#10;')"/>
+  </xsl:template>
     
   <xsl:template match="Br"><xsl:text>&#10;</xsl:text></xsl:template>
   <xsl:template match="ParagraphStyleRange">

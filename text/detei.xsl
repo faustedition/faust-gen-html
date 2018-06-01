@@ -26,6 +26,10 @@
   <xsl:template match="note[@type='textcrit']"/>
   <xsl:template match="lb"><xsl:text>&#10;</xsl:text></xsl:template>
   
+  <xsl:template match="text()[ends-with(., '&#x00AD;')][following-sibling::*[1][self::lb][@break='no']]">
+    <xsl:value-of select="replace(f:contract-space(.), '&#x00AD;$', '-')"/>
+  </xsl:template>
+  
   <xsl:template match="text()[normalize-space(.) = '']"/>
   <xsl:template match="text()">
     <xsl:value-of select="f:contract-space(.)"/>
