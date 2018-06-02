@@ -20,8 +20,8 @@ before_354_c[Zimmer]{Zimmer,} <i>vor 354</i> Zimmer, <i>S</i>]   Zimmer^ <i>A B
 380[mehr mit sauerm Schweiß,]{=} <i>380</i> mehr^ <i>…</i> Schweiß, <i>A</i>]   mehr, <i>…</i> Schweis^ <i>1_H.5</i> mehr, <i>…</i> Schweiß, <i>S</i> mehr, <i>…</i> Schweiß, <i>B B.a [type=4a]</i>
 381[brauche,]{=} <i>381</i> brauche, <i>S A B.a</i>]  brauche^ <i>B [type=4c]</i>
 382[erkenne,]{=} <i>382</i> erkenne, <i>S A B.a</i>]  erkenne^ <i>1_H.5</i> erkenne^ <i>B [type=4c]</i>
-390[Dann über Büchern und Papier,]{=} <i>390</i> Dann^ <i>…</i> Papier, <i>S A</i>]   Dann^ über Bücher und Papier^ <i>1_H.5</i> Dann^ <i>…</i> Papier, <i>S</i> Dann, <i>…</i> Papier,  <i>B B.a [type=4a]</i>
-402[mit]{von} <i>402</i> von <i>1_H.5 B B.a</i>]   mit <i>S A [type=4b]</i>
+390[Dann über Büchern und Papier,]{=} <i>390</i> Dann^ <i>…</i> Papier, <i>S A</i>]   Dann^ über Bücher und Papier^ <i>1_H.5</i> Dann^ über Bücher und Papier, <i>S</i> Dann, <i>…</i> Papier,  <i>B B.a [type=4a]</i>
+402[mit]{von} <i>402</i> von <i>B B.a</i>]   von <i>1_H.5 </i> mit <i>S A [type=4b]</i>
 418[ins]{=} <i>418</i> ins <i>A</i>]   in’s <i>1_H.5 S</i> in’s <i>B B.a [type=4a]</i>
 426[Umsonst,]{=} <i>426</i> Umsonst, <i>S A</i>]   Umsonst^ <i>1_H.5</i> Umsonst! <i>B B.a</i> Umsonst, <i>1_H.1 C.1_12 C.3_12  [type=4a]</i>
 453[all’]{all} <i>453</i> all <i>1_H.5 S</i>]   all’ <i>A B B.a [type=2a] </i>
@@ -38,7 +38,7 @@ before_354_c[Zimmer]{Zimmer,} <i>vor 354</i> Zimmer, <i>S</i>]   Zimmer^ <i>A B
 570|571[Ergetzen,|Sich in den Geist der Zeiten zu versetzen;]{=} <i>570–571</i> Ergetzen, <i>…</i> versetzen; <i>S A B.a</i>]   Ergözzen^ <i>…</i> versezzen. <i>1_H.5</i> Ergetzen^ <i>…</i> versetzen, <i>B [Typ 4c]</i>
 572[schauen,]{=} <i>572</i> schauen, <i>S A B.a</i>]   schauen^ <i>1_H.5 </i> schauen^ <i>B [Typ 4c]</i>
 587[jeglicher]{=} <i>587</i> jeglicher <i>S A</i>]   Jeglicher <i>B B.a [type=4a]</i>
-593[gekreutzigt]{gekreuzigt} <i>593</i> gekreuzigt <i>1_H.5 S</i>]   gekreutzigt <i>A B 1_H.1 C.1_12</i> gekreuzigt <i> B.a</i> gekreuzigt <i>C.1_12 C.3_12 [type=2a]</i>
+593[gekreutzigt]{gekreuzigt} <i>593</i> gekreuzigt <i>1_H.5 S</i>]   gekreutzigt <i>A B 1_H.1 C.1_12</i> gekreuzigt <i> B.a</i> gekreuzigt <i>C.3_12 [type=2a]</i>
 603[schaalem]{=} <i>603</i> schaalem <i>A</i>]   schaalen <i>1_H.5</i> schalem <i>S </i> schalem <i>D.1 B B.a [type=4a]</i>
 605[ist,]{=} <i>605</i> ist, <i>S A B.a</i>]  ist^ <i>1_H.5</i> ist^ <i>B [Typ 4c]</i>
 621[ahndungsvoll]{=} <i>621</i> ahndungsvoll <i>A</i>]   ahnungsvoll <i>B B.a [type=4a]</i>
@@ -53,7 +53,7 @@ before_354_c[Zimmer]{Zimmer,} <i>vor 354</i> Zimmer, <i>S</i>]   Zimmer^ <i>A B
 719[Und,]{=} <i>719</i> Und, <i>A B B.a</i>]   Und^ <i>konj. faust://bibliography/wa_I_53#Erich_Schmidt [type=3*]</i>
 720[Schaale]{=} <i>720</i> Schaale <i>A</i>]   Schale <i>B B.a [type=4a]</i>
 733[Flut]{=} <i>733</i> Flut <i>A</i>]   Fluth <i>B B.a [type=4a]</i>
-759[Betrübende]{=} <i>759</i> Betrübende <i>A D.1 B 1_H.1 C.1_12 C.3_12</i>]   betrübende <i>J.2</i> betrübende <i>B.a</i> betrubende <i>T_5_H.1 [type=1a*]  </i>
+759[Betrübende]{=} <i>759</i> Betrübende <i>A D.1 B 1_H.1 C.1_12 C.3_12</i>]   betrübende <i>J.2</i> betrubende <i>T_5_H.1</i> betrübende <i>B.a [type=1a*]  </i>
 763[Himmelstöne^]{=} <i>763</i> Himmelstöne^ <i>A B.a</i>]  Himmelstöne, <i>J.2</i> Himmelstöne, <i>B</i>
 773[ahndungsvoll]{=} <i>773</i> ahndungsvoll <i>A J.2</i>]   ahnungsvoll <i>B B.a [type=4a]</i>
 798[Schoos]{=} <i>798</i> Schoos <i>A</i>]   Schoß <i>B</i> Schooß <i>B.a [type=4a]</i>
@@ -99,7 +99,7 @@ before_354_c[Zimmer]{Zimmer,} <i>vor 354</i> Zimmer, <i>S</i>]   Zimmer^ <i>A B
 1879[gern’ was]{gern ’was} <i>1879</i> gern ’was <i>S</i>]   gern was <i>1_H.5</i> gern’ was <i>A B B.a [type=2a]</i>
 1899|1900[gern, was auf der Erden|Und in dem Himmel ist,]{=}<i>1899–1900</i> gern, <i>…</i> dem Himmel ist, <i>A B.a</i>]  gern, <i>…</i> den Himmel ist, <i>S </i>   gern^ <i>…</i> dem Himmel ist^ <i>B [Typ 4c]</i>
 1906[Zeitvertreib,]{=} <i>1906</i> Zeitvertreib, <i>A B.a</i>]   Zeitvertreib^ <i>S</i> Zeitvertreib^ <i>B [Typ 4c]</i>
-1916[Kreuz’]{Kreuz} <i>1916</i> Kreuz <i>1_H.5</i>]   kreuz <i>S</i> Kreuz’ <i>A B</i> Kreutz’ <i>B.a [type=2b]</i>
+1916[Kreuz’]{Kreuz} <i>1916</i> Kreuz <i>1_H.5</i>]   kreuz <i>S</i> Kreuz’ <i>A B</i> Kreutz’ <i>B.a [type=2a]</i>
 1917[Irlichtelire]{=} <i>1917</i> Irlichtelire <i>S A B.a</i>]   Irrlichtelire <i>1_H.5</i> Irrlichtelire <i>B [type=2b*]</i> <i> </i>
 1921[Drey]{=} <i>1921</i> Drey <i>A B B.a</i>]   Drey <i>1_H.5</i> <emph>Drey</emph> <i>S [type=2a*]</i>
 1946[alle]{=} <i>1946</i> alle <i>A B B.a</i>]   allem <i>1_H.5 S [type=7]</i>
@@ -168,7 +168,7 @@ before_2429_b[Faust]{=} <i>vor 2429</i> <speaker>Faust</speaker> <i>none</i>] <s
 before_2448[immmerfort]{immerfort} <i>vor 2448</i> immerfort <i>none</i>] immerfort <i>S </i> immmerfort <i>A</i>  immerfort <i>D.1 </i> immerfort <i>B B.a  [type=1a]</i>
 before_2450_a[Thiere]{=} <i>vor 2450</i> <speaker>Thiere</speaker> <i>none</i>] <speaker>Thiere,</speaker> <i>S</i> <speaker>Thiere.</speaker> <i>A D.1</i> <speaker>Thiere^</speaker> <i>B B.a [type=8]</i>
 before_2453[herumspringen]{=} <i>vor 2453</i> herumspringen <i>A B B.a</i>]   herum springen <i>S [type=2a*]</i>
-2455[reimen;]{=} <i>2455</i> reimen; <i>S A B B.a</i>]   reimen! <i>faust://bibliography/Q</i> reimen – <i>konj. faust://bibliography/duentzer1882a#Düntzer [type=1c*]</i>]
+2455[reimen;]{=} <i>2455</i> reimen; <i>S A B B.a C.1_12 C.3_12</i>]   reimen! <i>faust://bibliography/Q</i> reimen – <i>konj. faust://bibliography/duentzer1882a#Düntzer [type=1c*]</i>]
 before_2465_a[ausser]{außer} <i>nach 2464</i> außer <i>S</i>]   ausser <i>A D.1</i> außer <i>B B.a [type=2a]</i>
 before_2465_a[grosse]{große } <i>nach 2464</i> große <i>S</i>]   grosse <i>A D.1 B</i> große<i> B.a [type=2a]</i>
 before_2465_a[hinaus schlägt]{=} <i>nach 2464</i> hinaus schlägt <i>A B</i>]   hinausschlägt <i>S </i> hinausschlägt <i>B.a [type=2a*]</i>
@@ -197,7 +197,7 @@ before_2678_c[Margarete]{=} <i>vor 2678</i> <speaker>Margarete</speaker> <i>none
 2755[weiß’]{weiß} <i>2755</i> weiß <i>S</i>]   weis <i>1_H.5</i> weiß’ <i>A D.1</i> weiß<i> B B.a [type=1b]</i>
 2757[über’n Leib]{über’n ganzen Leib} <i>2757</i> über’n ganzen Leib <i>B B.a</i>]   am ganzen Leib <i>1_H.5</i> über’n Leib <i>S A  [type=4b]</i>
 2764[leert]{=} <i>2764</i> leert <i>A B B.a</i>]   leert’ <i>S 1_H.9 [type=2a*]</i>
-2769[seinem]{=} <i>2769</i> seinem <i>S 1_H.9 A B B.a</i>]   seinen <i>1_H.5 1_H.7 1_H.8 </i> seinen <i>J.1 [type=2b*]</i>
+2769[seinem]{=} <i>2769</i> seinem <i>S A B B.a</i>]   seinen <i>1_H.5 1_H.7 1_H.8</i>  seinem <i>1_H.9</i> seinen <i>J.1</i> seinen <i>D.3 D.4 [type=2b*]</i>
 2789[wohl,]{=} <i>2789</i> wohl, <i>A B.a</i>]   wohl^ <i>1_H.5 S </i> wohl^ <i>B [Typ 4c]</i>
 2791[mein’]{=} <i>2791</i> mein’ Tage <i>S A B B.a</i>]   mein Tage <i>1_H.5 konj faust://bibliography/schroeer1881_1#Schröer [type=2b*]</i>
 2804[alles]{=} <i>2804</i> alles <i>1_H.5 S A</i>]   Alles <i>B B.a [type=4a]</i>
@@ -235,7 +235,7 @@ before_3073_b[spazirend]{=} <i>vor  3073</i> spazirend <i>A</i>]   spazierend <i
 3179[Einen]{=} <i>3179</i> Einen <i>S A B B.a1_H.1 C.1_12 C.3_12</i>]   Keinen <i>1_H.5 [type=2b*]</i> <i> </i>
 before_3183_a|before_3183_b[Margarete|fährt fort]{=} <i>vor 3183</i> <speaker>Margarete</speaker> <stage rend="inline">fährt fort</stage> <i>none</i>]<br/> <speaker>Margr:</speaker> <stage rend="inline">fährt fort)</stage> <i>1_H.5</i><br/> <speaker>Margarethe</speaker> <stage rend="inline">fährt fort.</stage> <i>S</i><br/> <speaker>Margarete</speaker> <stage rend="inline">fährt fort^</stage> <i>A</i><br/> <speaker>Margarete</speaker> <stage rend="inline">fährt fort.</stage> <i>D.1</i><br/> <speaker>Margarete</speaker> <stage rend="inline">fährt fort.</stage> <i>B</i><br/> <speaker>Margarethe</speaker> <stage rend="inline">(fährt fort).</stage> <i>B.a [type=8]</i>
 before_3184i[lezte]{letzte} <i>vor 3184</i> letzte <i>S</i>]   lezte <i>1_H.5</i> lezte <i>A D.1</i> letzte <i>B B.a [type=2a]</i>
-3184[]{} <i>3184</i>] <i>In 1_H.5 S A B B.a handelt es sich um zwei Verse, sie wurden erst von faust://bibliography/duentzer1882a#Düntzer und dann von faust://bibliography/wa_I_14#Erich Schmidt zu einem antilabischen Vers zusammengefasst. [type=3*]</i>
+3184[]{} <i>3184</i>] <i>In 1_H.5 S A B B.a handelt es sich um zwei Verse, sie wurden erst von faust://bibliography/duentzer1882a#Düntzer und dann von faust://bibliography/wa_I_14#Erich_Schmidt zu einem antilabischen Vers zusammengefasst. [type=3*]</i>
 before_3187_a[ihre beyden]{=} <i>vor 3187</i> ihre beyden <i>A B B.a</i>]   ihr beyde <i>1_H.5 S [type=7]</i>
 before_3206f_b[Margarete]{=} <i>vor 3206</i> <speaker>Margarete</speaker> <i>none</i>] <speaker>Margarethe^</speaker> <i>S </i> <speaker>Margarete.</speaker> <i>A D.1</i> <speaker>Margarete^</speaker> <i>B</i> <speaker>Margarethe^</speaker> <i>B.a [type=8]</i>
 before_3206f_c[zurück gebend]{=} <i>vor 3206</i> zurück gebend <i>S A</i>]   zurückgebend <i>1_H.5 </i> zurückgebend <i>B B.a [type=4a]</i>
@@ -249,7 +249,7 @@ before_3206f_c[zurück gebend]{=} <i>vor 3206</i> zurück gebend <i>S A</i>]   
 3369[er]{=} <i>3369</i> er <i>S A B B.a</i>]   es <i>1_H.5 emend faust://bibliography/resenhoefft1975#Resenhöfft [type=2b*]</i>
 3372[abgeschmackters]{=} <i>3372</i> abgeschmackters <i>S A</i>]   Abgeschmackters <i>B B.a [type=4a]</i>
 3395[Sein’]{=} <i>3395</i> Sein’ <i>S A B B.a</i>]   Sein <i>1_H.5 1_H.7 1_H.11 konj faust://bibliography/schroeer1881_1#Schröer [type=2b*]  </i>
-3409[^]{<milestone unit="lg" rend="indented"/>}  <i>nach 3409</i> <i>Strophenabstand 1_H.5</i>]    <i>kein Strophenabstand S A B B</i>   <i>Strophenabstand vorschl Gö mark G 1_H.6</i>   <i>kein Strophenabstand 1_H.1</i>   <i>Strophenabstand C.1_12 C.3_12 [type=2b]</i>
+3410[^]{<milestone unit="lg" rend="indented"/>}  <i>nach 3409</i> <i>Strophenabstand 1_H.5</i>]    <i>kein Strophenabstand S A B B</i>   <i>Strophenabstand vorschl Gö mark G 1_H.6</i>   <i>kein Strophenabstand 1_H.1</i>   <i>Strophenabstand C.1_12 C.3_12 [type=2b]</i>
 3417[hält’st]{hältst} <i>3417</i> hältst <i>1_H.5</i>]   hält’st <i>S A B</i> hältst <i>B.a  [type=1b]</i>
 3419[ließ’]{=} <i>3419</i> ließ’ <i>S A</i>]   lies <i>1_H.5</i> ließ <i>B B.a [type=4a]</i>
 3422[Muß]{=} <i>3422</i> Muß <i>A B B.a</i>]   Muss <i>1_H.5</i> <emph>Muß</emph> <i>S [type=2a*]</i>
