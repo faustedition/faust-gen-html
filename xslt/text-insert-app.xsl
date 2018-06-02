@@ -189,7 +189,7 @@
     <xsl:variable name="sigil-preprocessing">
         <f:sigil orig="C.1 12">C.1</f:sigil>
         <f:sigil orig="C.3 12">C.3</f:sigil>
-        <!--<f:sigil orig="C.1 4">C.1 4</f:sigil>-->
+        <f:sigil orig="C.1 4">C.1</f:sigil>
         <f:sigil orig="C.2α 4">C.2α</f:sigil>
         <f:sigil orig="C.3 4">C.3</f:sigil>
     </xsl:variable>
