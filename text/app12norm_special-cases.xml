@@ -233,8 +233,9 @@
         <f:ins n="7722" place="only-app"/>
         <ref>7722–7759</ref>
         <lem/>
-        <rdg wit="2_H" type="type_7"><note>Die Verse sind in <wit>2_II_H.74</wit> <wit>2_H</wit> eingerückt.</note></rdg>
-    </app>    
+        <rdg wit="2_H" type="type_7"><note>Die Verse sind in <wit>2_II_H.74</wit>
+                <wit>2_H</wit> eingerückt.</note></rdg>
+    </app>
     <app>
         <f:ins n="before_10811_a" place="after"><stage n="before_10811_b" rend="inline">kauert
                 nieder.</stage></f:ins>
