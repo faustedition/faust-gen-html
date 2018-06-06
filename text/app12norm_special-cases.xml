@@ -51,14 +51,16 @@
         </f:ins>
         <ref>2709</ref>
         <lem/>
-        <rdg wit="1_H.5 S A B B.a" type="type_2a">
+        <rdg wit="1_H.5 S">ein umbrochener Vers <wit>1_H.5</wit> <wit>S</wit></rdg>
+        <rdg wit="A B B.a" type="type_2a">zwei Verse <wit>A</wit> <wit>B</wit> <wit>B.a</wit></rdg>
+        <!--<rdg wit="1_H.5 S A B B.a" type="type_2a">
             <note>Die Vershälften bilden in <wit>1_H.5</wit> und <wit>S</wit> einen umbrochenen
                 Vers, in <wit>A</wit>
                 <wit>B</wit>
                 <wit>B.a</wit> sind es zwei Verse; wie bei 3994–3995 (zwei Verse in
                     <wit>B</wit> <wit>1_H.1</wit> <wit>C.1_12</wit>
                 <wit>C.3_12</wit>, ein Vers in <wit>1_H.14</wit> <wit>A</wit> <wit>B.a</wit>) ist
-                von einem Satzfehler auszugehen.</note></rdg>
+                von einem Satzfehler auszugehen.</note></rdg>-->
     </app>
     <app>
         <f:replace n="3356">Und ich, der Gottverhaßte, hatte nicht genug,</f:replace>
