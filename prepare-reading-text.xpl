@@ -58,7 +58,7 @@
 						path="transcript/bl_oxford/MS_M_D_Mendelsson_c_21/MS_M_D_Mendelsson_c_21.xml"
 						output="ih12a.xml"/>
 					<transcript path="transcript/gsa/390643/390643.xml" output="h14.xml"/>
-					<transcript path="print/C(1)4_IIIB24.xml" output="c14.xml"/>
+					<transcript path="print/C(1)4_IIIB24.xml" output="C(1)4.xml"/>
 					<transcript path="print/C(2a)4_IIIB28.xml" output="c2a4.xml"/>
 					<transcript path="print/C(3)4_IIIB27.xml" output="c34.xml"/>
 					<transcript path="transcript/ub_bonn/S_863_II/S_863_II.xml"
@@ -81,6 +81,8 @@
 					<transcript path="transcript/bb_cologny/G-30_12/G-30_12.xml" output="ivh22f.xml"/>
 					<transcript path="transcript/sa_hannover/Slg_Culemann_0666/0666.xml"
 						output="ivh22g.xml"/>
+					<transcript path="edition/ma_18_1.xml"
+						output="ma_18_1.xml"/>
 				</config>
 			</p:inline>
 		</p:input>
@@ -197,7 +199,9 @@
 								app
 								| facsimile
 								| */attribute::f:label
+								| ge:transpose
 								| l/attribute::xml:id
+								| lg/attribute::xml:id
 								| note[@type='textcrit']"/>
 							<xsl:template match="seg">
 								<xsl:apply-templates/>
