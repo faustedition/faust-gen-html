@@ -82,7 +82,9 @@ before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psellen <i>2_II_H.70 2_H</i>] Ps
 8650[Vom]{Von} <i>8650</i> Von <i>2_III_H.2:1</i>] Vom <i>2_III_H.3a:1 2_H C.1_4 [type=2b]</i>
 8670[wandelnden]{wandelenden} <i>8670</i> wandelenden <i>2_H</i>] wandelnden <i>C.1_4 [type=2aa]</i>
 8714[Lohe]{Lohn} <i>8714</i> Lohn <i>2_H</i>] Lohe <i>C.1_4 [type=2aa]</i>
+8722[ich’s,]{ich’s;} <i>8722</i> ich’s; <i>2_H</i>] ich’s, <i>C.1_4 [type=2aa]</i>
 8727[mich^]{mich.} <i>8727</i> mich. <i>2_H</i>] mich^ <i>C.1_4 [type=1b]</i>
+8741[nicht.]{nicht,} <i>8741</i> nicht, <i>2_H C.2α_4 C.3_4</i>] nicht. <i>C.1_4 [type=2aa] [type=4b]</i>
 8776[schlachterzogne]{schlechterzogne} <i>8776</i> schlechterzogne <i>2_III_H.3a:1</i>] schlachterzogne <i>2_H C.1_4 [type=2b]</i>
 8803[Anerkannte! nun]{Anerkannte! neu} <i>8803</i> Anerkannte! neu <i>2_III_H.1</i>] Anerkannte! nun <i>2_III_H.2:1 2_III_H.3a:1 2_H C.1_4 [type=2b]</i>
 8850[siebenjährig]{=} <i>8850</i> siebenjährig <i>C.1_4</i>] zehenjährig <i>2_H mon Gö 2_III_H.3b</i> siebenjährig <i>G 2_H C.1_4 C.2α_4 C.3_4</i> zehenjährig <i>Ec 2_H (vgl. Gespräch vom 17. März 1830) :</i> dreyzehnjährig <i>Ri [type=6]</i>
