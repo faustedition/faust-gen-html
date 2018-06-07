@@ -238,6 +238,23 @@
         <rdg wit="2_H" type="type_7"><note>Die Verse sind in <wit>2_II_H.74</wit>
                 <wit>2_H</wit> eingerückt.</note></rdg>
     </app>
+
+    <app>
+        <f:replace n="8741">nicht.</f:replace>
+        <f:ins n="8741">nicht,</f:ins>
+        <ref>8741</ref>
+        <lem wit="2_H C.2alpha_4 C.3_4">nicht, <note><wit>2_H</wit> <wit>C.2alpha_4</wit> <wit>C.3_4</wit></note></lem>
+        <rdg wit="C.1_4" type="type_2aa type_4b">nicht. <note><wit>C.1_4</wit></note></rdg>
+    </app>
+
+    <app>
+        <f:replace n="9962">los.</f:replace>
+        <f:ins n="9962">los,</f:ins>
+        <ref>9962</ref>
+        <lem wit="2_H C.2alpha_4 C.3_4">los, <note><wit>2_H</wit> <wit>C.2alpha_4</wit> <wit>C.3_4</wit></note></lem>
+        <rdg wit="C.1_4" type="type_2aa type_4b">los. <note><wit>C.1_4</wit></note></rdg>
+    </app>
+
     <app>
         <f:ins n="before_10811_a" place="after"><stage n="before_10811_b" rend="inline">kauert
                 nieder.</stage></f:ins>

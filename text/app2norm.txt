@@ -54,7 +54,7 @@ before_6479_a[tritt auf]{=} <i>vor 6479</i> tritt auf <i>2_H</i>] hervortretend 
 before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückzieht <i>konj. faust://bibliography/fiedler1943#Fiedler [type=3*]</i>
 6654[Des Meisters]{=} <i>6654</i> Des Meisters <i>2_H</i>] Selbst Faustus <i>Ec 2_H [type=6]</i>
 6832[Willkommmen]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkomm̄en <i>2_H [type=1a]</i>
-6847[höhern, höhern]{=} <i>6847</i> höhern, höhern <i>2_H</i>] <i>mon, alR</i> hehren? <i>mit Verweis auf eine weiter unten folgende Stelle (6856) Ri 2_H [type=7]</i>
+6847[höhern, höhern]{=} <i>6847</i> höhern, höhern <i>2_H</i>] <i>mon, alR</i> hehren? <i>mit Verweis auf 6856 Ri 2_H [type=7]</i>
 6983[den]{Den} <i>6983</i> Den <i>none</i>] Nun auf! den <i>2_H :</i> den <i>G [type=7]</i>
 7136[Cumpan]{=} <i>7136</i> Cumpan <i>2_H</i>] Kumpan <i>Ec 2_H [type=6]</i>
 before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>] <i>Zeichen über dem zweiten</i> e <i>zur Verdeutlichung der Artikulation, darüber</i> ei<i>, alR</i> Peneus <i>mit Zeichen über dem zweiten</i> e <i>Ri 2_H [type=7]</i>
@@ -85,7 +85,6 @@ before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psellen <i>2_II_H.70 2_H</i>] Ps
 8714[Lohe]{Lohn} <i>8714</i> Lohn <i>2_H</i>] Lohe <i>C.1_4 [type=2aa]</i>
 8722[ich’s,]{ich’s;} <i>8722</i> ich’s; <i>2_H</i>] ich’s, <i>C.1_4 [type=2aa]</i>
 8727[mich^]{mich.} <i>8727</i> mich. <i>2_H</i>] mich^ <i>C.1_4 [type=1b]</i>
-8741[nicht.]{nicht,} <i>8741</i> nicht, <i>2_H C.2α_4 C.3_4</i>] nicht. <i>C.1_4 [type=2aa] [type=4b]</i>
 8776[schlachterzogne]{schlechterzogne} <i>8776</i> schlechterzogne <i>2_III_H.3a:1</i>] schlachterzogne <i>2_H C.1_4 [type=2b]</i>
 8803[Anerkannte! nun]{Anerkannte! neu} <i>8803</i> Anerkannte! neu <i>2_III_H.1</i>] Anerkannte! nun <i>2_III_H.2:1 2_III_H.3a:1 2_H C.1_4 [type=2b]</i>
 8850[siebenjährig]{=} <i>8850</i> siebenjährig <i>C.1_4</i>] zehenjährig <i>2_H mon Gö 2_III_H.3b</i> siebenjährig <i>G 2_H C.1_4 C.2α_4 C.3_4</i> zehenjährig <i>Ec 2_H (vgl. Gespräch vom 17. März 1830) :</i> dreyzehnjährig <i>Ri [type=6]</i>
@@ -126,7 +125,6 @@ before_9755_a[verschlungenen]{verschlungenem} <i>vor 9755</i> verschlungenem <i>
 after_9807[Höhe.]{=} <i>nach 9807</i> Höhe. <i>none</i>] Höhe). <i>C.1_4</i> Höhe.) <i>C.2α_4 C.3_4 [type=8]</i>
 9855[Welle]{Wälle} <i>9855</i> Wälle <i>2_H</i>] Welle <i>C.1_4 [type=2aa]</i>
 9942[sag’ ich]{sage} <i>9942</i> sage <i>2_III_H.75b</i>] sag’ ich <i>C.1_4 [type=2aa]</i>
-9962[los.]{los,} <i>9962</i> los, <i>2_H C.2α_4 C.3_4</i>] los. <i>C.1_4 [type=2aa] [type=4b]</i>
 before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C.2α_4 C.3_4</i>] Chorführerin <i>C.1_4 [type=4b]</i>
 10000[sanften Wellen]{sanftem Wallen} <i>10000</i> sanftem Wallen <i>2_III_H.3a:2</i>] sanften Wellen <i>2_H [type=2b]</i>
 10001[Vogelsingen]{Vogelsängen} <i>10001</i> Vogelsängen <i>2_H</i>] Vogelsingen <i>C.1_4 [type=2aa]</i>
