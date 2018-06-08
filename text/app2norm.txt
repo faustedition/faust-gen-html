@@ -55,6 +55,7 @@ before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückz
 6654[Des Meisters]{=} <i>6654</i> Des Meisters <i>2_H</i>] Selbst Faustus <i>Ec 2_H [type=6]</i>
 6832[Willkommmen]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkomm̄en <i>2_H [type=1a]</i>
 6847[höhern, höhern]{=} <i>6847</i> höhern, höhern <i>2_H</i>] <i>mon Ri, alR</i> hehren? <i>mit Verweis auf 6856 Ri 2_H [type=7]</i>
+6848[leuchtet]{leuchtet!} <i>6848</i> leuchtet! <i>2_H</i>] leucht <i>:</i> leuchtet <i>G, Ausrufezeichen zS alR 2_H [type=7]</i>
 6983[den]{Den} <i>6983</i> Den <i>none</i>] Nun auf! den <i>2_H :</i> den <i>G [type=7]</i>
 7136[Cumpan]{=} <i>7136</i> Cumpan <i>2_H</i>] Kumpan <i>Ec 2_H [type=6]</i>
 before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>] <i>Zeichen über dem zweiten</i> e <i>zur Verdeutlichung der Artikulation, darüber</i> ei<i>, alR</i> Peneus <i>mit Zeichen über dem zweiten</i> e <i>Ri 2_H [type=7]</i>
