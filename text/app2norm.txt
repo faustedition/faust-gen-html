@@ -100,6 +100,7 @@ before_8924f[Phorkyas]{=} <i>before_8924f</i> <speaker>Phorkyas</speaker> <i>C.1
 9061[deine]{die} <i>9061</i> die <i>2_H</i>] deine <i>C.1_4 [type=2aa]</i>
 9076[In tiefem]{=} <i>9076</i> In tiefem <i>C.1_4</i>] Im tiefen <i>2_III_H.2:1</i> In tiefen <i>2_III_H.3a:1 2_H :</i> In tiefem <i>G [type=2d*]</i>
 9104[verheissener]{=} <i>9104</i> verheissener <i>C.1_4</i>] verheißener <i>C.2α_4 C.3_4 [type=4a]</i>
+9107[weißhalsigen;]{weißhalsigen,} <i>9107</i> weißhalsigen, <i>2_H (undeutlich)</i>] weißhalsigen; <i>C.1_4 [type=2aa]</i>
 9115[Schrittes]{Schritts} <i>9115</i> Schritts <i>2_H</i>] Schrittes <i>C.1_4 [type=2aa]</i>
 9140[ich,]{=} <i>9140</i> ich, <i>C.1_4</i>] ich. <i>C.2α_4 C.3_4 [type=4a]</i>
 9152[Aufgeht]{Auf geht} <i>9152</i> Auf geht <i>2_H</i>] Aufgeht <i>C.1_4 [type=2a]</i>
