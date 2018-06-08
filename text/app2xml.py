@@ -340,6 +340,8 @@ class JointReading:
         # now, find the sigil before the : in the first witness
         first, second = self.readings
         sm_index = first_index(first.notes, lambda r: isinstance(r, SubstMarker))
+        if not(2 <= sm_index <= len(first.notes)):
+            raise ValueError("Broken subst encoding: Cannot find the sigil in first part {}".format(first))
         sm_sigil = first.notes[sm_index-2]
         del first.notes[sm_index-2]
 
@@ -372,9 +374,12 @@ def parse_readings(reading_str, tag='rdg'):
     if not readings:
         log.warning("Failed to parse »%s« as %s", reading_str, tag)
 
-
-    collapsed = collapse_readings(readings)
-    return [reading.to_xml() for reading in collapsed]
+    try:
+        collapsed = collapse_readings(readings)
+        return [reading.to_xml() for reading in collapsed]
+    except ValueError as e:
+        log.error("Failed to re-arrange subst reading: " + str(e))
+        return [reading.to_xml() for reading in readings]
 
 def app2xml(apps, filename):
     xml = F.apparatus()

@@ -403,7 +403,7 @@
   
   <xsl:function name="f:contract-space" as="xs:string">
     <xsl:param name="input" as="xs:string"/>
-    <xsl:value-of select="replace($input, '\s+', ' ')"/>
+    <xsl:value-of select="replace($input, '\p{Z}+', ' ')"/>
   </xsl:function>
   
   
