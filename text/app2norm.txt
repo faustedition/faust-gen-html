@@ -93,6 +93,7 @@ after_8881[Arme]{=} <i>after_8881</i> Arme <i>none</i>] Arme). <i>C.1_4</i> Arme
 before_8924f[Phorkyas]{=} <i>before_8924f</i> <speaker>Phorkyas</speaker> <i>C.1_4</i>] <i>Punkt fehlt C.1_4 [type=8]</i>
 9009[nannt]{=} <i>9009</i> nannt <i>C.1_4</i>] nannt’ <i>C.2α_4 C.3_4 [type=4a]</i>
 9012[verständger]{=} <i>9012</i> verständger <i>C.1_4</i>] verständ’ger <i>C.2α_4 C.3_4 [type=4a]</i>
+9016[ihm]{Ihm} <i>9016</i> Ihm <i>2_H</i>] ihm <i>C.1_4 [type=2aa]</i>
 9029[ein,]{=} <i>9029</i> ein, <i>C.1_4</i>] ein. <i>C.2α_4 C.3_4 [type=4a]</i>
 9061[deine]{die} <i>9061</i> die <i>2_H</i>] deine <i>C.1_4 [type=2aa]</i>
 9076[In tiefem]{=} <i>9076</i> In tiefem <i>C.1_4</i>] Im tiefen <i>2_III_H.2:1</i> In tiefen <i>2_III_H.3a:1 2_H :</i> In tiefem <i>G [type=2d*]</i>
