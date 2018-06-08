@@ -233,9 +233,9 @@
 			<p:with-option name="href" select="resolve-uri('www/print/faust.wordlist.html', $builddir)"/>
 		</p:store>		
 		
-		<!-- ### Step 2a: Metadata HTML -->
+		<!-- ### Step 3b: Metadata HTML -->
 		<f:metadata-html name="metadata-html">
-			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>
+			<p:input port="source"><p:pipe port="result" step="generate-search"></p:pipe></p:input>
 		</f:metadata-html>
 		
 		<!-- ### Step 2b: Metadaten nach JSON -->

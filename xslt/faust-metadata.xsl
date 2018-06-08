@@ -3,10 +3,12 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xpath-default-namespace="http://www.faustedition.net/ns"
 	xmlns:f="http://www.faustedition.net/ns"
+	xmlns:tei="http://www.tei-c.org/ns/1.0"
 	xmlns="http://www.w3.org/1999/xhtml"
-	exclude-result-prefixes="xs f"
+	exclude-result-prefixes="xs f tei"
 	version="2.0">
 	
+	<xsl:import href="utils.xsl"/>
 	<xsl:import href="bibliography.xsl"/>
 	<xsl:include href="html-frame.xsl"/>
 	
@@ -279,9 +281,20 @@
 			<xsl:apply-templates select="headNote/following-sibling::note[1]/*"/>
 		</p>
 		<dl>
+			<xsl:call-template name="verse-range"/>
 			<xsl:apply-templates select="* 
 				except (idno[@type=('faustedition', 'wa_faust')][1] | headNote | headNote/following-sibling::*[1][self::note] | classification)"/>
 		</dl>
+	</xsl:template>
+	
+	<xsl:template name="verse-range">
+		<xsl:variable name="transcriptUri" select="resolve-uri(concat('prepared/textTranscript/', f:sigil-for-uri(//idno[@type='faustedition']), '.xml'), $builddir-resolved)"/>
+		<xsl:variable name="transcript" select="document($transcriptUri)"/>
+		<xsl:variable name="textEl" select="$transcript/tei:TEI/tei:text"/>
+		<dt>Verse</dt>
+		<dd>
+			<xsl:value-of select="string-join(($textEl/@f:first-verse, $textEl/@f:last-verse), ' – ')"/>
+		</dd>		
 	</xsl:template>
 	
 	<xsl:template match="revisionDesc"/>
