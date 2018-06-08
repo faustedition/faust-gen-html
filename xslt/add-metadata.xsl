@@ -194,7 +194,7 @@
 		<xsl:param name="div"/>
 		<xsl:value-of select="$splittable and 
 			(if ($div/@type) 
-				then $div/@type='scene' and not($div/descendant::div[f:section-div(.)]) 
+				then $div/@type=('scene', 'stueck') and not($div/descendant::div[f:section-div(.)]) 
 				else  (count($div/ancestor-or-self::div) = $depth_n
 					or count($div/ancestor-or-self::div) lt $depth_n and not($div/descendant::div[f:section-div(.)])))"/>
 	</xsl:function>
