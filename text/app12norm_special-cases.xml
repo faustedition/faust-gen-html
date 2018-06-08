@@ -258,13 +258,13 @@
         <ref>9041</ref>
         <lem wit="2_III_H.2_1">Gold <gap reason="ellipsis"/> Roth
                 <note><wit>2_III_H.2_1</wit></note></lem>
-        <rdg><subst hand="Ri">
+        <rdg wit="2_III_H.2_1"><subst hand="Ri">
                 <del>Gold und Schwarze, ſilbern blau und roth</del>
                 <add>Gold und Schwarz, und Silber Blau und Roth <note>Ri
                     <wit>III_H.2:1</wit></note></add>
             </subst></rdg>
         <rdg wit="2_III_H.3a_1">Gold und Schwarz, und silbern, blau und roth
-                    <note><wit>III H.3a:1</wit></note></rdg>
+                    <note><wit>2_III_H.3a_1</wit></note></rdg>
         <rdg wit="2_H">gold und schwarz, und silbern, blau und roth
             <note><wit>2_H</wit></note></rdg>
         <rdg wit="C.1_4" type="type_2b">gold und schwarz und silbern, blau und roth
