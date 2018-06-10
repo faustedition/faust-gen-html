@@ -51,11 +51,11 @@
         </f:ins>
         <ref>2709</ref>
         <lem/>
-        <rdg wit="1_H.5 S">ein umbrochener Vers <wit>1_H.5</wit>
-            <wit>S</wit></rdg>
-        <rdg wit="A B B.a" type="type_2a">zwei Verse <wit>A</wit>
+        <rdg wit="1_H.5 S"><note>ein umbrochener Vers <wit>1_H.5</wit>
+            <wit>S</wit></note></rdg>
+        <rdg wit="A B B.a" type="type_2a"><note>zwei Verse <wit>A</wit>
             <wit>B</wit>
-            <wit>B.a</wit></rdg>
+            <wit>B.a</wit></note></rdg>
         <!--<rdg wit="1_H.5 S A B B.a" type="type_2a">
             <note>Die Vershälften bilden in <wit>1_H.5</wit> und <wit>S</wit> einen umbrochenen
                 Vers, in <wit>A</wit>
