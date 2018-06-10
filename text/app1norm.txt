@@ -67,7 +67,7 @@ before_354_c[Zimmer]{Zimmer,} <i>vor 354</i> Zimmer, <i>S</i>]   Zimmer^ <i>A B
 966[rechts^]{=} <i>966</i> rechts^ <i>A</i>]   rechts, <i>B B.a [type=4a]</i>
 973[thu]{=} <i>973</i> thu <i>A</i>]   thu’ <i>B B.a [type=4a]</i>
 974[mancher]{=} <i>974</i> mancher <i>A</i>]   Mancher <i>B B.a [type=4a]</i>
-988[stillt;]{=} <i>988</i> stillt; <i>A</i>] <i>Das Semikolon fehlt in manchen Exemplaren von A. [type=7]</i>
+988[stillt;]{=} <i>988</i> stillt;] <i>Das Semikolon fehlt in manchen Exemplaren von A. [type=7]</i>
 996[gemeynt]{=} <i>996</i> gemeynt <i>A</i>]   gemeint <i>B B.a [type=4a]</i>
 1084[Göttin]{=} <i>1084</i> Göttin <i>A</i>]   Göttinn <i>B B.a [type=4a]</i>
 1092[jedem]{=} <i>1092</i> jedem <i>A</i>]   Jedem <i>B B.a [type=4a]</i>
