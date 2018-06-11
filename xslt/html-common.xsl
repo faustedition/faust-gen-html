@@ -247,6 +247,8 @@
 	
 	<xsl:template match="supplied[@evidence='conjecture']"/>
 	
+	<xsl:template match="supplied[@reason='typesetting-error']"/>
+	
 	<xsl:template match="unclear[@cert='high']">
 		<xsl:call-template name="enclose">
 			<xsl:with-param name="with" select="'{','}'"/>
