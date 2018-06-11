@@ -210,6 +210,9 @@ class Note:
         else:
             return '<'+self.element+'>'+self.text+'</'+self.element.split()[0]+'>'
 
+    def __repr__(self):
+        return "{}({})".format(type(self).__name__, repr(str(self)))
+
 class Witness(Note):
     element = 'wit'
 
