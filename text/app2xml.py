@@ -262,7 +262,7 @@ class NoWitness(Note):
 class SubstMarker(Note):
     def __init__(self, ref):
         if ref == ":" or ref == ": ":
-            self.text = ''
+            self.text = ref
         else:
             raise ValueError()
 
@@ -286,9 +286,21 @@ class Reading:
         self.notes = [self._parse_ref(ref) for ref in DELIMITER.split(reading['references'])]
         self.source = match.group(0)
 
+    def _subst_marker_index(self) -> int:
+        for i, note in enumerate(self.notes):
+            if isinstance(note, SubstMarker) and (not(i > 0) or str(self.notes[i-1])[-1].isspace()):
+                return i
+        return -1
+
     @property
     def is_first_of_subst(self) -> bool:
-        return any(isinstance(note, SubstMarker) for note in self.notes)
+        return self._subst_marker_index() > -1
+
+    def remove_subst_marker(self) -> None:
+        idx = self._subst_marker_index()
+        if idx < 0:
+            raise IndexError("No subst marker -> cannot be removed")
+        del self.notes[idx]
 
     @property
     def wits(self):
@@ -324,7 +336,7 @@ def first_index(iterable, predicate):
     return None
 
 class JointReading:
-    def __init__(self, first, second):
+    def __init__(self, first: Reading, second: Reading):
         self.readings = [first, second]
 
     def to_xml(self):
@@ -341,12 +353,13 @@ class JointReading:
         rdg.append(subst)
 
         # now, find the sigil before the : in the first witness
-        first, second = self.readings
+        first, second = self.readings # type: Reading, Reading
         sm_index = first_index(first.notes, lambda r: isinstance(r, SubstMarker))
         if not(2 <= sm_index <= len(first.notes)):
             raise ValueError("Broken subst encoding: Cannot find the sigil in first part {}".format(first))
         sm_sigil = first.notes[sm_index-2]
         del first.notes[sm_index-2]
+        first.remove_subst_marker()
 
         first_rdg = first.to_xml()
         first_rdg.tag = "{%s}del" % TEI_NS
