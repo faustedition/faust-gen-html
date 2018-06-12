@@ -1,0 +1,50 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+default namespace = "http://www.faustedition.net/ns"
+namespace tei = "http://www.tei-c.org/ns/1.0"
+
+
+start = ## Information about Faust's canonical scene/part mapping 
+        element scene-info {
+          Scene* 
+        & Part* 
+        }
+  
+Titles = ## Canonical title, used for navigation etc.
+         element title { text },
+         ## Optional short title, used for breadcrumbs etc.
+         element short-title { text }?
+         
+          
+VerseNo = ## Schröer verse
+          xsd:integer { minInclusive="1" maxInclusive="12111"}
+
+## The line range attributes for the innermost scenes.
+LineRange = ## First line of the scene
+            attribute first-line { VerseNo },
+            ## last line 
+            attribute last-line  { VerseNo }
+  
+## A scene or subscene
+Scene = element scene {
+  ## scene id (e.g., 1.1.12 or 2.1.2.1)
+  attribute n { xsd:string { pattern = "((1\.[01])|2.[1-5])(\.\d+)+" }},
+  LineRange?,
+  Titles,
+  Scene*  
+}
+
+## A part
+Part = element part {
+  ## part id (e.g., 1.1 or 2)
+  attribute n { xsd:string { pattern = "[12](\.\d)?" }},
+  Titles?,
+  (Act* | Scene*)
+}
+
+## An act
+Act = element act {
+  ## act id (e.g., 2.2)
+  attribute n { xsd:string { pattern = "2.[1-5]" }},
+  Titles?,
+  Scene*
+}

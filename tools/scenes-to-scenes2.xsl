@@ -10,7 +10,7 @@
   <xsl:output method="xml" indent="yes"/>
   
   <xsl:template match="/sceneLineMapping">
-    <xsl:processing-instruction name="xml-model">href="scenes2.rnc" type="application/relax-ng-compact-syntax"</xsl:processing-instruction>
+    <xsl:processing-instruction name="xml-model">href="scenes.rnc" type="application/relax-ng-compact-syntax"</xsl:processing-instruction>
     <scene-info>
       
       <xsl:apply-templates select="scene[starts-with(@n, '1.0')]"/>
