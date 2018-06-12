@@ -115,6 +115,7 @@ before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>2_III_
 9378[vom]{von} <i>9378</i> von <i>2_III_H.48 2_III_H.3a:2</i>] vom <i>2_H C.1_4 [type=2b]</i>
 9393[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>vor 9393</i>] <i>Spatium 2_H</i> <i>Spatium fehlt C.1_4 [type=2aa]</i>
 9401[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>vor 9401</i>] <i>Spatium 2_H</i> <i>Spatium fehlt C.1_4 [type=2aa]</i>
+9411[nah,]{nah,} <i>9411</i> nah, <i>2_H</i>] nah, <i>C.1_4 [type=2aa]</i>
 9446[stillen]{stillem} <i>9446</i> stillem <i>2_III_H.45a C.2α_4</i>] stillen <i>C.1_4 C.3_4 [type=4b]</i>
 9535[jähen]{gähen} <i>9535</i> gähen <i>2_H</i>] jähen <i>C.1_4 [type=2aa]</i>
 9542[Alt- Wälder]{Alt-Wälder} <i>9542</i> Alt-Wälder <i>2_H</i>] Alt- Wälder <i>C.1_4 [type=1c]</i>
