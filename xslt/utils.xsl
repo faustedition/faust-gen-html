@@ -333,41 +333,12 @@
     <xsl:value-of select="replace(string-join($nodes, ''), '&#x00AD;', '')"/> <!-- Soft Hyphen -->
   </xsl:function>
   
-
-
-  <xsl:variable name="scenes" select="doc('scenes.xml')"/>
-  
-  <xsl:function name="f:scene-for" as="element()?">
-    <xsl:param name="element"/>
-    <xsl:variable name="n" select="$element/@n"/>
-    <xsl:sequence select="($scenes//f:scene[@n = $n], $scenes//f:scene[number(f:rangeStart) le number($n) and  number(f:rangeEnd) ge number($n)])[1]"/>
-  </xsl:function>
   
   <xsl:function name="f:is-schroer" as="xs:boolean">
     <xsl:param name="element"/>
     <xsl:value-of select="f:hasvars($element) and matches($element/@n, '^\d+')"/>
   </xsl:function>
-  
-  <xsl:template name="scene-data" as="element()?">
-    <xsl:choose>
-      <xsl:when test="f:hasvars(.) and matches(@n, '\d+')">
-        <xsl:sequence select="f:scene-for(.)"/>
-      </xsl:when>
-      <!--		FIXME I still don't get scene numbers. 1.1.23 !?	
-			<xsl:when test="ancestor-or-self::div[@n]">
-				<xsl:sequence select="f:scene-for(ancestor-or-self::div[@n][1])"/>
-			</xsl:when>
--->			<xsl:otherwise>
-        <xsl:sequence select="f:scene-for((descendant::*[f:is-schroer(.)][1], preceding-sibling::*[f:is-schroer(.)][1], following-sibling::*[f:is-schroer(.)])[1])"/>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-  <xsl:function name="f:get-scene-data" as="element()?">
-    <xsl:param name="div" as="element()?"/>
-    <xsl:for-each select="$div">
-      <xsl:call-template name="scene-data"/>
-    </xsl:for-each>
-  </xsl:function>
+ 
 
   <!-- Reuse IDs from the XML source (since they are manually crafted) -->
   <xsl:function name="f:generate-id" as="xs:string">
