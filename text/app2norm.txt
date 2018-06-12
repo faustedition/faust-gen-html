@@ -89,9 +89,9 @@ before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psyllen] Psellen <i>2_II_H.70 2_
 8776[schlachterzogne]{schlechterzogne} <i>8776</i> schlechterzogne <i>2_III_H.3a:1</i>] schlachterzogne <i>2_H C.1_4 [type=2b]</i>
 8803[Anerkannte! nun]{Anerkannte! neu} <i>8803</i> Anerkannte! neu <i>2_III_H.1</i>] Anerkannte! nun <i>2_III_H.2:1 2_III_H.3a:1 2_H C.1_4 [type=2b]</i>
 8850[siebenjährig]{=} <i>8850</i> siebenjährig <i>C.1_4</i>] zehenjährig <i>2_H mon Gö 2_III_H.3b</i> siebenjährig <i>G 2_H C.1_4 C.2α_4 C.3_4</i> zehenjährig <i>Ec 2_H (vgl. Gespräch vom 17. März 1830) :</i> dreyzehnjährig <i>Ri [type=6]</i>
-after_8881[Arme]{=} <i>after_8881</i> Arme <i>none</i>] Arme). <i>C.1_4</i> Arme.) <i>C.2α_4 C.3_4 [type=8]</i>
+after_8881[Arme]{=} <i>nach 8881</i> Arme <i>none</i>] Arme). <i>C.1_4</i> Arme.) <i>C.2α_4 C.3_4 [type=8]</i>
 8900[Glanz]{Glanz} <i>8900</i> Glanz <i>C.1_4</i>] Glanz <i>2_H :</i> Glanze <i>zS [type=7]</i>
-before_8924f[Phorkyas]{=} <i>before_8924f</i> <speaker>Phorkyas</speaker> <i>C.1_4</i>] <i>Punkt fehlt C.1_4 [type=8]</i>
+before_8924f[Phorkyas]{=} <i>vor 8924</i> <speaker>Phorkyas</speaker> <i>C.1_4</i>] <i>Punkt fehlt C.1_4 [type=8]</i>
 9009[nannt]{=} <i>9009</i> nannt <i>C.1_4</i>] nannt’ <i>C.2α_4 C.3_4 [type=4a]</i>
 9012[verständger]{=} <i>9012</i> verständger <i>C.1_4</i>] verständ’ger <i>C.2α_4 C.3_4 [type=4a]</i>
 9016[ihm]{Ihm} <i>9016</i> Ihm <i>2_H</i>] ihm <i>C.1_4 [type=2aa]</i>
