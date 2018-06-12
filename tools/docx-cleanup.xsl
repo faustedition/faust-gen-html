@@ -34,8 +34,8 @@
         <xsl:apply-templates/>
     </xsl:template>
     
-    <xsl:template match="text()">
-        <xsl:analyze-string regex="\[(\d+)\]" select=".">
+    <xsl:template match="text()" priority="1">
+        <xsl:analyze-string regex="\[\((\d+)\)\]" select=".">
             <xsl:matching-substring>
                 <pb n="{regex-group(1)}"/>
             </xsl:matching-substring>
