@@ -18,10 +18,6 @@
         <title>Prolog im Himmel</title>
         <id>1.0.3</id>
     </scene>
-    <scene n="1.1">
-        <title>Der Tragödie erster Teil</title>
-        <id>1.1</id>
-    </scene>
     <scene n="1.1.1">
         <rangeStart>354</rangeStart>
         <rangeEnd>807</rangeEnd>
@@ -169,6 +165,12 @@
         <rangeEnd>4612</rangeEnd>
         <title>Kerker</title>
         <id>1.1.25</id>
+    </scene>
+    <scene n="1.1">
+        <rangeStart>354</rangeStart>
+        <rangeEnd>4612</rangeEnd>
+        <title>Der Tragödie erster Teil</title>
+        <id>1.1</id>
     </scene>
     <scene n="2">
         <title>Der Tragödie zweiter Teil</title>
