@@ -34,7 +34,7 @@
         <xsl:apply-templates/>
     </xsl:template>
     
-    <xsl:template match="text()" priority="1">
+    <xsl:template match="text//text()" priority="1">
         <xsl:analyze-string regex="\[\((\d+)\)\]" select=".">
             <xsl:matching-substring>
                 <pb n="{regex-group(1)}"/>
@@ -45,6 +45,17 @@
         </xsl:analyze-string>
     </xsl:template>
     
+    <xsl:template match="text//text()" priority="2">
+        <xsl:analyze-string regex="\[(\d+)\]" select=".">
+            <xsl:matching-substring>
+                <pb n="{regex-group(1)}"/>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <xsl:value-of select="."/>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
+    </xsl:template>
+
     <!-- Pass through unchanged everything else. -->
     <xsl:template match="node() | @*">
         <xsl:copy copy-namespaces="no">
