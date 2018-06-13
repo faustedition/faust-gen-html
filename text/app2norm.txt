@@ -131,6 +131,7 @@ before_9562[sitzend]{=} <i>vor 9562</i> sitzend <i>none</i>] sitzend) <i>C.1_4</
 9603[Thierheit]{Thierheit,} <i>9603</i> Thierheit, <i>2_H</i>] Thierheit^ <i>C.1_4 [type=2aa]</i>
 9647[Flaum]{Flaum,} <i>9647</i> Flaum, <i>2_H</i>] Flaum^ <i>C.1_4 [type=2aa]</i>
 9654[Lustig]{Listig} <i>9654</i> Listig <i>2_H</i>] Lustig <i>C.1_4 [type=2aa]</i>
+9676[Ringerspiel.]{Ringerspiel,} <i>9676</i> Ringerspiel, <i>2_H</i>] Ringerspiel. <i>C.1_4 [type=2aa]</i>
 after_9686[dem]{den} <i>after_9686</i> den <i>2_H</i>] dem <i>C.1_4 [type=2aa]</i>
 before_9755_a[verschlungenen]{verschlungenem} <i>vor 9755</i> verschlungenem <i>2_H</i>] verschlungenen <i>C.1_4 [type=2aa]</i>
 9766[All’]{All} <i>9766</i> All <i>2_H</i>] All’ <i>C.1_4 [type=2aa]</i>
