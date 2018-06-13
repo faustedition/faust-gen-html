@@ -20,9 +20,9 @@ VerseNo = ## Schröer verse
 
 ## The line range attributes for the innermost scenes.
 LineRange = ## First line of the scene
-            attribute first-line { VerseNo },
+            attribute first-verse { VerseNo },
             ## last line 
-            attribute last-line  { VerseNo }
+            attribute last-verse  { VerseNo }
   
 ## A scene or subscene
 Scene = element scene {
