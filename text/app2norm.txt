@@ -133,10 +133,13 @@ before_9562[sitzend]{=} <i>vor 9562</i> sitzend <i>none</i>] sitzend) <i>C.1_4</
 9654[Lustig]{Listig} <i>9654</i> Listig <i>2_H</i>] Lustig <i>C.1_4 [type=2aa]</i>
 9676[Ringerspiel.]{Ringerspiel,} <i>9676</i> Ringerspiel, <i>2_H</i>] Ringerspiel. <i>C.1_4 [type=2aa]</i>
 after_9686[dem]{den} <i>after_9686</i> den <i>2_H</i>] dem <i>C.1_4 [type=2aa]</i>
+9745[hie,]{hie} <i>9745</i> hie <i>2_H</i>] <i>Komma mit Bleistift erg und wieder weggewischt 2_H</i> hie, <i>C.1_4 [type=2aa]</i>
 before_9755_a[verschlungenen]{verschlungenem} <i>vor 9755</i> verschlungenem <i>2_H</i>] verschlungenen <i>C.1_4 [type=2aa]</i>
 9766[All’]{All} <i>9766</i> All <i>2_H</i>] All’ <i>C.1_4 [type=2aa]</i>
 9789[Geschrey]{Geschrei} <i>9789</i> Geschrei <i>2_III_H.45a C.2α_4 C.3_4</i>] Geschrey <i>C.1_4 [type=4b]</i>
+9792[Schleppt’]{Schleppt} <i>9792</i> Schleppt <i>2_H</i>] Schleppt’ <i>C.1_4 [type=2aa]</i>
 after_9807[Höhe.]{=} <i>nach 9807</i> Höhe. <i>none</i>] Höhe). <i>C.1_4</i> Höhe.) <i>C.2α_4 C.3_4 [type=8]</i>
+9837[Losungswort]{Losungswort.} <i>9837</i> Losungswort. <i>2_H</i>] Losungswort^ <i>C.1_4 [type=2aa]</i>
 9855[Welle]{Wälle} <i>9855</i> Wälle <i>2_H</i>] Welle <i>C.1_4 [type=2aa]</i>
 9942[sag’ ich]{sage} <i>9942</i> sage <i>2_III_H.75b</i>] sag’ ich <i>C.1_4 [type=2aa]</i>
 before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C.2α_4 C.3_4</i>] Chorführerin <i>C.1_4 [type=4b]</i>
