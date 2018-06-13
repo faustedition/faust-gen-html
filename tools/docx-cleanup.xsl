@@ -57,10 +57,22 @@
     </xsl:template>
 
     <!-- Pass through unchanged everything else. -->
-    <xsl:template match="node() | @*">
+    <xsl:template match="node() | @*" mode="#default cleanup">
         <xsl:copy copy-namespaces="no">
-            <xsl:apply-templates select="@*, node()"/>
+            <xsl:apply-templates select="@*, node()" mode="#current"/>
         </xsl:copy>
+    </xsl:template>
+    
+    
+    <!-- cleanup steps -->
+    <xsl:template match="/">
+        <xsl:variable name="pass1"><xsl:apply-templates/></xsl:variable>
+        <xsl:comment>and now:</xsl:comment>
+        <xsl:apply-templates select="$pass1" mode="cleanup"/>
+    </xsl:template>
+    
+    <xsl:template match="*[pb and not(node() except pb)]" mode="cleanup">        
+        <xsl:apply-templates/>
     </xsl:template>
     
 </xsl:stylesheet>
