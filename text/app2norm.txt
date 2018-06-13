@@ -117,9 +117,13 @@ before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>2_III_
 9401[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>vor 9401</i>] <i>Spatium 2_H</i> <i>Spatium fehlt C.1_4 [type=2aa]</i>
 9411[nah,]{nah,} <i>9411</i> nah, <i>2_H</i>] nah, <i>C.1_4 [type=2aa]</i>
 9446[stillen]{stillem} <i>9446</i> stillem <i>2_III_H.45a C.2α_4</i>] stillen <i>C.1_4 C.3_4 [type=4b]</i>
+9517[hinaufgeblickt,]{hinauf geblickt,} <i>9517</i> hinauf geblickt, <i>none</i>] hinaufgeblickt, <i>2_III_H.58a</i> hinauf geblickt. <i>2_III_H.2:1</i> hinaufgeblickt. <i>2_III_H.3a:2</i> hinauf geblickt. <i>2_H C.1_4 [type=2b]</i>
+9522[Land]{Land,} <i>9522</i> Land, <i>2_H</i>] Land <i>C.1_4 [type=2aa]</i>
+9534[vorsichtig]{vorsichtig,} <i>9534</i> vorsichtig, <i>2_H</i>] vorsichtig <i>mit ungewöhnlich großem Spatium C.1_4 [type=2aa]</i>
 9535[jähen]{gähen} <i>9535</i> gähen <i>2_H</i>] jähen <i>C.1_4 [type=2aa]</i>
 9542[Alt- Wälder]{Alt-Wälder} <i>9542</i> Alt-Wälder <i>2_H</i>] Alt- Wälder <i>C.1_4 [type=1c]</i>
 before_9562[sitzend]{=} <i>vor 9562</i> sitzend <i>none</i>] sitzend) <i>C.1_4</i> sitzend.) <i>C.2α_4 C.3_4 [type=8]</i>
+9571[Geschick!]{Geschick;} <i>9571</i> Geschick; <i>2_H</i>] Geschick! <i>C.1_4 [type=2aa]</i>
 9585[schon?]{schon!} <i>9585</i> schon! <i>2_H</i>] schon? <i>C.1_4 [type=2aa]</i>
 9594[drinnen]{drinne} <i>9594</i> drinne <i>2_H</i>] drinnen <i>C.1_4 [type=2aa]</i>
 9601[Scherzgeschrey]{Scherzgeschrei} <i>9601</i> Scherzgeschrei <i>2_III_H.45a C.2α_4 C.3_4</i>] Scherzgeschrey <i>C.1_4 [type=4b]</i>
