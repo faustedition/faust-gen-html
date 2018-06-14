@@ -58,6 +58,36 @@
     <xsl:value-of select="if ($secno != '') then concat($basename, '.', $secno) else $basename"/>
   </xsl:function>
   
+  <!-- These functions return the scene info even on non-annotated divs -->
+  <xsl:variable name="scenes" select="doc('scenes.xml')"/>
+  
+  <xsl:function name="f:get-containing-scene-info" as="node()*">
+    <xsl:param name="first-verse" as="xs:integer?"/>
+    <xsl:param name="last-verse" as="xs:integer?"/>
+    <xsl:variable name="first-verse-scene" select="$scenes//*[number(@first-verse) le $first-verse and number(@last-verse) ge $first-verse]"/>
+    <xsl:variable name="last-verse-scene" select="$scenes//*[number(@first-verse) le $last-verse and number(@last-verse) ge $last-verse]"/>
+    <xsl:sequence select="($first-verse-scene/ancestor-or-self::* intersect $last-verse-scene/ancestor-or-self::*)[position() = last()]"/>
+  </xsl:function>
+  
+  <xsl:function name="f:get-scene-info" as="node()*">
+    <xsl:param name="div" as="element()"/>
+    <xsl:variable name="explicit-scene" select="$scenes//*[@n = $div/@n]"/>
+    <xsl:choose>
+      <xsl:when test="$explicit-scene">
+        <xsl:sequence select="$explicit-scene"/>
+      </xsl:when>
+      <xsl:otherwise>		
+        <xsl:variable name="contained-verses" select="$div//*[f:is-schroer(.)]/@n"/>
+        <xsl:variable name="first-verse" select="xs:integer(tokenize($contained-verses[1], '\s+')[1])"/>
+        <xsl:variable name="last-verse"  select="xs:integer(tokenize($contained-verses[position() = last()], '\s+')[position()=last()])"/>			
+        <xsl:sequence select="f:get-containing-scene-info($first-verse, $last-verse)"/>
+      </xsl:otherwise>
+    </xsl:choose>		
+  </xsl:function>
+  
+  
+  
+  
   <xsl:function name="f:numerical-lineno">
     <xsl:param name="n"/>
     <xsl:value-of select="number(replace($n, '\D*(\d+).*', '$1'))"/>

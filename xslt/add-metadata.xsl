@@ -129,7 +129,9 @@
 	<xsl:template match="fileDesc">
 		<xsl:copy>
 			<xsl:apply-templates select="@*"/>
+			<xsl:comment>fileDesc, existierend</xsl:comment>
 			<xsl:apply-templates select="node()"/>
+			<xsl:comment>/fileDesc, existierend</xsl:comment>
 			
 			<xsl:variable name="sigil">
 				<xsl:choose>
@@ -211,16 +213,13 @@
 		</xsl:copy>
 	</xsl:template>
 	
+	
 	<!-- one template to rule them all -->
 	<xsl:template match="div" priority="5" mode="pass2">
 		<xsl:variable name="content" select="node()"/>		
 		<xsl:variable name="first-verse" select="($content//*/@f:schroer)[1]"/>
 		<xsl:variable name="last-verse" select="($content//*/@f:schroer)[last()]"/>			
-		<xsl:variable name="explicit-scene" select="$scenes//*[@n = current()/@n]"/>		
-		<xsl:variable name="first-verse-scene" select="$scenes//*[@first-verse le $first-verse and @last-verse ge $first-verse]"/>
-		<xsl:variable name="last-verse-scene" select="$scenes//*[@first-verse le $last-verse and @last-verse ge $last-verse]"/>
-		<xsl:variable name="common-scene" select="($first-verse-scene/ancestor-or-self::* intersect $last-verse-scene/ancestor-or-self::*)[position() = last()]"/>		
-		<xsl:variable name="scene" select="($explicit-scene, $common-scene)[1]"/>
+		<xsl:variable name="scene" select="f:get-scene-info(.)"/>
 		
 		<!-- Attributes: f:section, f:first-verse f:last-verse, f:act?, f:scene?, f:label, n, xml:id, f:verse-range -->
 		
@@ -335,7 +334,7 @@
 	
 	<xsl:template match="node()|@*" mode="#default pass2">
 		<xsl:copy>
-			<xsl:apply-templates select="@*|node()"/>
+			<xsl:apply-templates select="@*|node()" mode="#current"/>
 		</xsl:copy>
 	</xsl:template>
 	
