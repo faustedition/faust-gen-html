@@ -14,7 +14,7 @@
   <xsl:param name="printbase"/>
   <xsl:param name="documentURI"/>
   <xsl:param name="sigil_t" select="//idno[@type='sigil_t']"/>
-  <xsl:param name="type" select="data(/TEI/type)"/>
+  <xsl:param name="type" select="data(/TEI/@type)"/>
   <xsl:param name="apptypes" select="doc('../text/apptypes.xml')"/>
       
   <!-- 
@@ -80,8 +80,7 @@
     <xsl:variable name="first-verse-scene" select="$scenes//*[xs:integer(@first-verse) le $first-verse and xs:integer(@last-verse) ge $first-verse]"/>
     <xsl:variable name="last-verse-scene" select="$scenes//*[xs:integer(@first-verse) le $last-verse and xs:integer(@last-verse) ge $last-verse]"/>
     <xsl:variable name="common-scene" select="($first-verse-scene/ancestor-or-self::* intersect $last-verse-scene/ancestor-or-self::*)[position() = last()]"/>
-    <xsl:sequence select="$common-scene"/>
-    <xsl:message select="concat('  ', $first-verse, ' → ', string-join($first-verse-scene/@n, ', '), '; ', $last-verse, ' → ', string-join($last-verse-scene/@n, ', '), ' ⇒ ', $common-scene/@n)"/>
+    <xsl:sequence select="$common-scene"/>    
   </xsl:function>
   
   <xsl:function name="f:get-scene-info" as="node()*">

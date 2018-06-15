@@ -322,6 +322,8 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:next-match/>
 	</xsl:template>
 	
+	<xsl:template match="app[rdg[witStart]]" priority="1"/>
+	
 	<!-- Es gibt wohl die Elemente auch noch ohne <choice> -->
 	<xsl:template match="corr"/>
 	<!-- die anderen werden einfach durchgereicht -->
