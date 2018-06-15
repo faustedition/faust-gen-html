@@ -58,7 +58,7 @@
 						<xsl:attribute name="n" select="$scene/@n"/>						
 					</xsl:if>
 					<xsl:attribute name="f:label">	
-						<xsl:value-of select="$scene//f:title"/>
+						<xsl:value-of select="$scene/f:title"/>
 					</xsl:attribute>
 				</xsl:otherwise>
 			</xsl:choose>

@@ -233,10 +233,17 @@
 				</xsl:if>
 			</xsl:if>
 			
-			<xsl:attribute name="n" select="$scene/@n"/>
-			<xsl:call-template name="add-xmlid">
-				<xsl:with-param name="id" select="concat(local-name($scene), '_', $scene/@n)"/>
-			</xsl:call-template>
+			<xsl:choose>
+				<xsl:when test="$scene">
+					<xsl:attribute name="n" select="$scene/@n"/>
+					<xsl:call-template name="add-xmlid">
+						<xsl:with-param name="id" select="concat(local-name($scene), '_', $scene/@n)"/>
+					</xsl:call-template>					
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:call-template name="add-xmlid"/>
+				</xsl:otherwise>
+			</xsl:choose>
 			
 			<xsl:attribute name="f:label">
 				<xsl:choose>

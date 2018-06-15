@@ -61,12 +61,27 @@
   <!-- These functions return the scene info even on non-annotated divs -->
   <xsl:variable name="scenes" select="doc('scenes.xml')"/>
   
+  <xsl:function name="f:integer" as="xs:integer*">
+    <xsl:param name="input" as="xs:string*"/>
+    <xsl:param name="max" as="xs:boolean"/>
+    <xsl:variable name="nums" as="xs:integer*" select="
+        for $s in tokenize(string-join($input, ' '), '\D+') 
+          return if ($s != '') then xs:integer($s) else ()"/>
+    <xsl:sequence select="xs:integer(if ($max) then max($nums) else min($nums))"/>      
+  </xsl:function>
+  
   <xsl:function name="f:get-containing-scene-info" as="node()*">
-    <xsl:param name="first-verse" as="xs:integer?"/>
-    <xsl:param name="last-verse" as="xs:integer?"/>
-    <xsl:variable name="first-verse-scene" select="$scenes//*[number(@first-verse) le $first-verse and number(@last-verse) ge $first-verse]"/>
-    <xsl:variable name="last-verse-scene" select="$scenes//*[number(@first-verse) le $last-verse and number(@last-verse) ge $last-verse]"/>
-    <xsl:sequence select="($first-verse-scene/ancestor-or-self::* intersect $last-verse-scene/ancestor-or-self::*)[position() = last()]"/>
+    <xsl:param name="first-verse-raw"/>
+    <xsl:param name="last-verse-raw"/>
+    
+    <xsl:variable name="first-verse" select="f:integer($first-verse-raw, false())"/>
+    <xsl:variable name="last-verse" select="f:integer($last-verse-raw, true())"/>
+    
+    <xsl:variable name="first-verse-scene" select="$scenes//*[xs:integer(@first-verse) le $first-verse and xs:integer(@last-verse) ge $first-verse]"/>
+    <xsl:variable name="last-verse-scene" select="$scenes//*[xs:integer(@first-verse) le $last-verse and xs:integer(@last-verse) ge $last-verse]"/>
+    <xsl:variable name="common-scene" select="($first-verse-scene/ancestor-or-self::* intersect $last-verse-scene/ancestor-or-self::*)[position() = last()]"/>
+    <xsl:sequence select="$common-scene"/>
+    <xsl:message select="concat('  ', $first-verse, ' → ', string-join($first-verse-scene/@n, ', '), '; ', $last-verse, ' → ', string-join($last-verse-scene/@n, ', '), ' ⇒ ', $common-scene/@n)"/>
   </xsl:function>
   
   <xsl:function name="f:get-scene-info" as="node()*">
@@ -78,9 +93,11 @@
       </xsl:when>
       <xsl:otherwise>		
         <xsl:variable name="contained-verses" select="$div//*[f:is-schroer(.)]/@n"/>
-        <xsl:variable name="first-verse" select="xs:integer(tokenize($contained-verses[1], '\s+')[1])"/>
-        <xsl:variable name="last-verse"  select="xs:integer(tokenize($contained-verses[position() = last()], '\s+')[position()=last()])"/>			
-        <xsl:sequence select="f:get-containing-scene-info($first-verse, $last-verse)"/>
+        <xsl:variable name="first-verse" select="tokenize($contained-verses[1], '\s+')[1]"/>
+        <xsl:variable name="last-verse"  select="tokenize($contained-verses[position() = last()], '\s+')[position()=last()]"/>			
+        <xsl:variable name="scene" select="f:get-containing-scene-info($first-verse, $last-verse)"/>
+        <xsl:sequence select="$scene"/>
+<!--        <xsl:message select="concat('Detected scene info for ', $first-verse, '-', $last-verse, ':  ', $scene/@n)"/>-->
       </xsl:otherwise>
     </xsl:choose>		
   </xsl:function>
