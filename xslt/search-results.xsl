@@ -100,8 +100,8 @@
 	
 	<xsl:template match="f:breadcrumb">
 		<li><xsl:value-of select="
-			if (@n and @n = $scenes//f:scene/@n)
-			then $scenes//f:scene[@n=current()/@n]/f:title
+			if (@n and @n = $scenes//*/@n)
+			then $scenes//*[@n=current()/@n]/f:title
 			else @f:label"/></li>
 	</xsl:template>
 	
@@ -146,9 +146,7 @@
 	
 	<!-- Each hit is represented by a heading and the actual content -->
 	<xsl:template match="f:hit">
-		<xsl:variable name="scene-data" as="element()*">
-			<xsl:call-template name="scene-data"/>
-		</xsl:variable>
+		<xsl:variable name="scene-data" select="f:get-scene-info(.)"/>
 		<xsl:variable name="separator">
 			<i class="fa fa-angle-right"/>			
 		</xsl:variable>
