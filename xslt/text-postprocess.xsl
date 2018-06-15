@@ -43,24 +43,11 @@
 	-->
 	<xsl:variable name="ordinals" as="xs:string*" select="('Erster', 'Zweiter', 'Dritter', 'Vierter', 'Fünfter')"/>	
 	<xsl:template match="div">
-		<xsl:variable name="explicit-scene" select="$scenes//f:scene[@n = current()/@n]"/>
-		<xsl:variable name="guessed-scene" as="element()*">
-			<xsl:call-template name="scene-data"/>
-		</xsl:variable>
-		<xsl:variable name="scene" select="($explicit-scene, $guessed-scene)[1]"/>
-		<xsl:variable name="act"> <!-- act no, if this is an act  -->
-			<xsl:choose>
-				<xsl:when test="matches(@n, '^2\.[1-5]$')">
-					<xsl:value-of select="replace(@n, '^2\.([1-5])', '$1')"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:sequence select="()"/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
+		<xsl:variable name="scene" select="f:get-scene-info(.)"/>
 		<xsl:copy>
 			<xsl:choose>
-				<xsl:when test="data($act) != ''">					
+				<xsl:when test="local-name($scene) = 'act'">
+					<xsl:variable name="act" select="number(tokenize($scene/@n, '\.')[2])"/>					
 					<xsl:attribute name="f:label">
 						<!--<xsl:number lang="de" value="$act" format="Ww" ordinal="-er"/> doesn't work??? -->
 						<xsl:value-of select="concat(subsequence($ordinals, $act, 1), ' Akt')"/>
@@ -71,7 +58,7 @@
 						<xsl:attribute name="n" select="$scene/@n"/>						
 					</xsl:if>
 					<xsl:attribute name="f:label">	
-						<xsl:value-of select="$scene//f:title"/>
+						<xsl:value-of select="$scene/f:title"/>
 					</xsl:attribute>
 				</xsl:otherwise>
 			</xsl:choose>

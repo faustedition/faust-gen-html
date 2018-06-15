@@ -129,7 +129,9 @@
 	<xsl:template match="fileDesc">
 		<xsl:copy>
 			<xsl:apply-templates select="@*"/>
+			<xsl:comment>fileDesc, existierend</xsl:comment>
 			<xsl:apply-templates select="node()"/>
+			<xsl:comment>/fileDesc, existierend</xsl:comment>
 			
 			<xsl:variable name="sigil">
 				<xsl:choose>
@@ -211,79 +213,54 @@
 		</xsl:copy>
 	</xsl:template>
 	
+	
 	<!-- one template to rule them all -->
-	<xsl:template match="div" priority="5">
-		<xsl:variable name="explicit-scene" select="$scenes//f:scene[@n = current()/@n]"/>
-		<xsl:variable name="guessed-scene" as="element()*">
-			<xsl:call-template name="scene-data"/>
-		</xsl:variable>
-		<xsl:variable name="scene" select="($explicit-scene, $guessed-scene)[1]"/>
-		<xsl:variable name="act"> <!-- act no, if this is an act  -->
-			<xsl:choose>
-				<xsl:when test="matches(@n, '^2\.[1-5]$')">
-					<xsl:value-of select="replace(@n, '^2\.([1-5])', '$1')"/>
-				</xsl:when>
-				<xsl:when test="not(f:section-div(.)) and .//div[f:section-div(.)]">
-					<xsl:variable name="contained-scene-no" select="data(f:scene-for(.)/@n)"/>
-					<xsl:value-of select="if (starts-with($contained-scene-no, '2.')) then tokenize($contained-scene-no, '\.')[2] else ()"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:sequence select="()"/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
+	<xsl:template match="div" priority="5" mode="pass2">
+		<xsl:variable name="content" select="node()"/>		
+		<xsl:variable name="first-verse" select="($content//*/@f:schroer)[1]"/>
+		<xsl:variable name="last-verse" select="($content//*/@f:schroer)[last()]"/>			
+		<xsl:variable name="scene" select="f:get-scene-info(.)"/>
 		
+		<!-- Attributes: f:section, f:first-verse f:last-verse, f:act?, f:scene?, f:label, n, xml:id, f:verse-range -->
 		
 		<xsl:copy>
 			<xsl:if test="f:section-div(.)">
 				<xsl:attribute name="f:section" select="count(preceding::div[f:section-div(.)]) + 1"/>
-				<xsl:if test="$scene//f:rangeStart">
-					<xsl:attribute name="f:verse-range" select="string-join(($scene//f:rangeStart, $scene//f:rangeEnd), ' ')"/>
+				<xsl:if test="$scene/descendant-or-self::*/@f:first-verse">
+					<xsl:attribute name="f:verse-range" separator=" "
+												 select="($scene/descendant-or-self::*/@first-verse)[1], 
+												 				 ($scene/descendant-or-self::*/@last-verse)[position()=last()]"/>
 				</xsl:if>
 			</xsl:if>
 			
 			<xsl:choose>
-				<xsl:when test="data($act) != ''">
-					<xsl:attribute name="f:act" select="$act"/>
-					<xsl:if test="not(@n)"><xsl:attribute name="n" select="concat('2.', $act)"/></xsl:if>
-					<xsl:call-template name="add-xmlid"><xsl:with-param name="id" select="concat('act_', $act)"/></xsl:call-template>										
-					<xsl:attribute name="f:label" >
-						<xsl:choose>
-							<xsl:when test="$type = 'lesetext'"><xsl:number format="I." ordinal="true" value="$act"/> Akt</xsl:when>
-							<xsl:otherwise><xsl:call-template name="extract-scene-label"/></xsl:otherwise>
-						</xsl:choose>						
-					</xsl:attribute>
-				</xsl:when>
-				
-				<xsl:when test="$explicit-scene or f:section-div(.)">
-					<xsl:attribute name="f:scene" select="$scene/@n"/>
-					<xsl:if test="not(@n)"><xsl:attribute name="n" select="$scene/@n"/></xsl:if>
+				<xsl:when test="$scene">
+					<xsl:attribute name="n" select="$scene/@n"/>
 					<xsl:call-template name="add-xmlid">
-						<xsl:with-param name="id" select="concat('scene_', $scene/@n)"/>
-					</xsl:call-template>
-					<xsl:attribute name="f:label">
-						<xsl:choose>
-							<xsl:when test="$type = 'lesetext'"><xsl:value-of select="$scene//f:title"/></xsl:when>
-							<xsl:otherwise><xsl:call-template name="extract-scene-label"/></xsl:otherwise>
-						</xsl:choose>
-					</xsl:attribute>					
+						<xsl:with-param name="id" select="concat(local-name($scene), '_', $scene/@n)"/>
+					</xsl:call-template>					
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:call-template name="add-xmlid"/>
-					<xsl:if test="not(@n) and $scene">
-						<xsl:attribute name="n" select="$scene/@n"/>
-					</xsl:if>
 				</xsl:otherwise>
 			</xsl:choose>
 			
-			<xsl:apply-templates select="@*"/>
+			<xsl:attribute name="f:label">
+				<xsl:choose>
+					<xsl:when test="$type = 'lesetext' and $scene/f:title">
+						<xsl:value-of select="$scene/f:title"/>
+					</xsl:when>
+					<xsl:when test="$type = 'lesetext' and local-name($scene) = 'act'">
+						<xsl:variable name="act" select="tokenize($scene/@n, '\.')[2]"/>
+						<xsl:number format="I." ordinal="true" value="$act"/><xsl:text> Akt</xsl:text>
+					</xsl:when>
+					<xsl:otherwise><xsl:call-template name="extract-scene-label"/></xsl:otherwise>
+				</xsl:choose>				
+			</xsl:attribute>
+						
+			<xsl:apply-templates select="@* except @n" mode="#current"/>
+			<xsl:apply-templates select="node()" mode="#current"/>
 			
-			<xsl:variable name="content">
-				<xsl:apply-templates select="node()"/>				
-			</xsl:variable>
-			<xsl:attribute name="f:first-verse" select="($content//*/@f:schroer)[1]"/>
-			<xsl:attribute name="f:last-verse" select="($content//*/@f:schroer)[last()]"/>			
-			<xsl:sequence select="$content"/>
 		</xsl:copy>
 	</xsl:template>
 	
@@ -356,12 +333,15 @@
 			Do not edit or re-use it, rather use the original transcript.
 			
 		</xsl:comment>
-		<xsl:apply-templates/>
+		<xsl:variable name="pass1">
+			<xsl:apply-templates/>			
+		</xsl:variable>
+		<xsl:apply-templates mode="pass2" select="$pass1"/>
 	</xsl:template>
 	
-	<xsl:template match="node()|@*">
+	<xsl:template match="node()|@*" mode="#default pass2">
 		<xsl:copy>
-			<xsl:apply-templates select="@*|node()"/>
+			<xsl:apply-templates select="@*|node()" mode="#current"/>
 		</xsl:copy>
 	</xsl:template>
 	

@@ -58,6 +58,53 @@
     <xsl:value-of select="if ($secno != '') then concat($basename, '.', $secno) else $basename"/>
   </xsl:function>
   
+  <!-- These functions return the scene info even on non-annotated divs -->
+  <xsl:variable name="scenes" select="doc('scenes.xml')"/>
+  
+  <xsl:function name="f:integer" as="xs:integer*">
+    <xsl:param name="input" as="xs:string*"/>
+    <xsl:param name="max" as="xs:boolean"/>
+    <xsl:variable name="nums" as="xs:integer*" select="
+        for $s in tokenize(string-join($input, ' '), '\D+') 
+          return if ($s != '') then xs:integer($s) else ()"/>
+    <xsl:sequence select="xs:integer(if ($max) then max($nums) else min($nums))"/>      
+  </xsl:function>
+  
+  <xsl:function name="f:get-containing-scene-info" as="node()*">
+    <xsl:param name="first-verse-raw"/>
+    <xsl:param name="last-verse-raw"/>
+    
+    <xsl:variable name="first-verse" select="f:integer($first-verse-raw, false())"/>
+    <xsl:variable name="last-verse" select="f:integer($last-verse-raw, true())"/>
+    
+    <xsl:variable name="first-verse-scene" select="$scenes//*[xs:integer(@first-verse) le $first-verse and xs:integer(@last-verse) ge $first-verse]"/>
+    <xsl:variable name="last-verse-scene" select="$scenes//*[xs:integer(@first-verse) le $last-verse and xs:integer(@last-verse) ge $last-verse]"/>
+    <xsl:variable name="common-scene" select="($first-verse-scene/ancestor-or-self::* intersect $last-verse-scene/ancestor-or-self::*)[position() = last()]"/>
+    <xsl:sequence select="$common-scene"/>
+    <xsl:message select="concat('  ', $first-verse, ' → ', string-join($first-verse-scene/@n, ', '), '; ', $last-verse, ' → ', string-join($last-verse-scene/@n, ', '), ' ⇒ ', $common-scene/@n)"/>
+  </xsl:function>
+  
+  <xsl:function name="f:get-scene-info" as="node()*">
+    <xsl:param name="div" as="element()"/>
+    <xsl:variable name="explicit-scene" select="$scenes//*[@n = $div/@n]"/>
+    <xsl:choose>
+      <xsl:when test="$explicit-scene">
+        <xsl:sequence select="$explicit-scene"/>
+      </xsl:when>
+      <xsl:otherwise>		
+        <xsl:variable name="contained-verses" select="$div//*[f:is-schroer(.)]/@n"/>
+        <xsl:variable name="first-verse" select="tokenize($contained-verses[1], '\s+')[1]"/>
+        <xsl:variable name="last-verse"  select="tokenize($contained-verses[position() = last()], '\s+')[position()=last()]"/>			
+        <xsl:variable name="scene" select="f:get-containing-scene-info($first-verse, $last-verse)"/>
+        <xsl:sequence select="$scene"/>
+<!--        <xsl:message select="concat('Detected scene info for ', $first-verse, '-', $last-verse, ':  ', $scene/@n)"/>-->
+      </xsl:otherwise>
+    </xsl:choose>		
+  </xsl:function>
+  
+  
+  
+  
   <xsl:function name="f:numerical-lineno">
     <xsl:param name="n"/>
     <xsl:value-of select="number(replace($n, '\D*(\d+).*', '$1'))"/>
@@ -333,41 +380,12 @@
     <xsl:value-of select="replace(string-join($nodes, ''), '&#x00AD;', '')"/> <!-- Soft Hyphen -->
   </xsl:function>
   
-
-
-  <xsl:variable name="scenes" select="doc('scenes.xml')"/>
-  
-  <xsl:function name="f:scene-for" as="element()?">
-    <xsl:param name="element"/>
-    <xsl:variable name="n" select="$element/@n"/>
-    <xsl:sequence select="($scenes//f:scene[@n = $n], $scenes//f:scene[number(f:rangeStart) le number($n) and  number(f:rangeEnd) ge number($n)])[1]"/>
-  </xsl:function>
   
   <xsl:function name="f:is-schroer" as="xs:boolean">
     <xsl:param name="element"/>
     <xsl:value-of select="f:hasvars($element) and matches($element/@n, '^\d+')"/>
   </xsl:function>
-  
-  <xsl:template name="scene-data" as="element()?">
-    <xsl:choose>
-      <xsl:when test="f:hasvars(.) and matches(@n, '\d+')">
-        <xsl:sequence select="f:scene-for(.)"/>
-      </xsl:when>
-      <!--		FIXME I still don't get scene numbers. 1.1.23 !?	
-			<xsl:when test="ancestor-or-self::div[@n]">
-				<xsl:sequence select="f:scene-for(ancestor-or-self::div[@n][1])"/>
-			</xsl:when>
--->			<xsl:otherwise>
-        <xsl:sequence select="f:scene-for((descendant::*[f:is-schroer(.)][1], preceding-sibling::*[f:is-schroer(.)][1], following-sibling::*[f:is-schroer(.)])[1])"/>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-  <xsl:function name="f:get-scene-data" as="element()?">
-    <xsl:param name="div" as="element()?"/>
-    <xsl:for-each select="$div">
-      <xsl:call-template name="scene-data"/>
-    </xsl:for-each>
-  </xsl:function>
+ 
 
   <!-- Reuse IDs from the XML source (since they are manually crafted) -->
   <xsl:function name="f:generate-id" as="xs:string">
