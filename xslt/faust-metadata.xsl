@@ -11,8 +11,7 @@
 	<xsl:import href="utils.xsl"/>
 	<xsl:import href="bibliography.xsl"/>
 	<xsl:include href="html-frame.xsl"/>
-	
-	<xsl:param name="standalone" select="/print"/>
+		
 	<xsl:param name="source">file:/home/tv/Faust/</xsl:param>
 	<xsl:param name="builddir">../target</xsl:param>
 	<xsl:param name="builddir-resolved" select="$builddir"/>	
@@ -450,37 +449,9 @@
 	
 		
 	<xsl:template match="/*">		
-		<xsl:choose>
-			<xsl:when test="$standalone">
-				<html>
-					<xsl:call-template name="html-head"/>
-					<body>					
-						<xsl:call-template name="header"/>						
-						<main>
-							<div class="pure-g-r center">
-								<div class="pure-u-1-5"></div>
-								<div class="pure-u-3-5">
-									<div id="metadataContainer" class="metadata-container pure-u-4-5">
-										<xsl:apply-templates/>
-									</div>									
-								</div>
-								<div class="pure-u-1-5">
-									<p>											
-										<a href="../print/{//idno[@type='sigil_t']}"><i class="fa fa-variants"></i> Text</a>
-									</p>
-								</div>
-							</div>
-						</main>
-						<xsl:call-template name="footer"/>
-					</body>				
-				</html>
-			</xsl:when>
-			<xsl:otherwise>
-				<div id="metadataContainer" class="metadata-container">
-					<xsl:apply-templates/>
-				</div>
-			</xsl:otherwise>
-		</xsl:choose>
+			<div id="metadataContainer" class="metadata-container">
+				<xsl:apply-templates/>
+			</div>
 	</xsl:template>
 	
 </xsl:stylesheet>

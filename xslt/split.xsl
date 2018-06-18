@@ -353,15 +353,6 @@
 					</li>
 				</xsl:if>
 			</ul>
-			
-			<xsl:if test="/TEI/@type = 'print'">
-				<ul class="fa-ul">
-					<li>
-						<span class="fa-li fa fa-structure"/>					
-						<a href="../meta/{//idno[@type='sigil_t']}">Metadaten</a>
-					</li>
-				</ul>
-			</xsl:if>
 		</nav>
 	</xsl:template>
 	
