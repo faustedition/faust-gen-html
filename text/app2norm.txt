@@ -156,18 +156,19 @@ before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>konj. fa
 before_10067_a[alsobald]{also bald} <i>before_10067_a</i> also bald <i>2_IV_H.3</i>] alsobald <i>IV H.2</i> also bald <i>2_IV_H.3</i> alsbald <i>2_H [type=2aa]</i>
 10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074</i>] <i>Die Verse sind in 2_H eingerückt. [type=1c]</i>
 10150[ewigen-]{ewigen} <i>10150</i> ewigen <i>2_IV_H.2</i>] ewigen- <i>2_H [type=1b]</i>
+10309[diessmal]{dieses mal} <i>10309</i> dieses mal <i>2_IV_H.8</i>] diessmal <i>2_H :</i> diesesmal <i>Ec [type=2aa] [type=6]</i>
 after_10344[allzusammen]{alle zusammen} <i>nach 10344</i> alle zusammen <i>2_IV_H.8</i>] allzusammen <i>2_H [type=2aa]</i>
 10415[hattet]{hättet} <i>10415</i> hättet <i>none</i>] hattet <i>2_H [type=1a]</i>
 10439[Negromant]{=} <i>10439</i> Negromant <i>2_H</i>] Nekromant <i>Ec 2_H [type=6]</i>
 10452[Krafte]{Kräfte} <i>10452</i> Kräfte <i>2_IV_H.13</i>] Krafte <i>2_H [type=1a]</i>
-10523[$]{^&lt;l n="10524"^&gt;Er ist behend, reist alles mit sich fort^&lt;/l^&gt;} <i>10524</i>] Er … fort <i>erg G 2_IV_H.18</i> <i>fehlt 2_IV_H.13 2_H [type=2b]</i>
-10524[fort]{fort.} <i>10524</i> fort. <i>none</i>] fort^ <i>2_IV_H.18 [type=1b]</i>
+10523[$]{^&lt;l n="10524"^&gt;Er ist behend, reist alles mit sich fort.^&lt;/l^&gt;} <i>10524</i>] Er … fort. <i>erg G 2_IV_H.18</i> <i>fehlt 2_IV_H.13 2_H [type=2b]</i>
 10556[aufgeräumt]{ausgeräumt} <i>10556</i> ausgeräumt <i>2_IV_H.20</i>] aufgeräumt <i>2_IV_H.13 2_H [type=2b]</i>
 after_10570[Posauenschall]{Posaunenschall} <i>after_10570</i> Posaunenschall <i>2_IV_H.21a</i>] Posauenschall <i>2_H [type=1a]</i>
 10619[erfahren]{erfahren?} <i>10619</i> erfahren? <i>2_H</i>] erfahren^ <i>auf eingeklebtem Zettel 2_H [type=7]</i>
 10635[Zerrzerrt]{Zerzerrt} <i>10635</i> Zerzerrt <i>none</i>] Zerrzerrt <i>2_H [type=1a]</i>
 10636[gesenckten]{gesencktem} <i>10636</i> gesencktem <i>none</i>] gesenckten <i>2_H [type=1a]</i>
-before_10654_a[Kaiser]{=} <i>vor 10654</i> <speaker>Kaiser</speaker> <i>none</i>] <speaker>Kaiser:</speaker> <i>2_H [type=1b]</i>
+before_10654_a[Kaiser:]{Kaiser} <i>vor 10654</i> <speaker>Kaiser</speaker> <i>none</i>] <speaker>Kaiser:</speaker> <i>2_H [type=1b]</i>
+10771[schienen]{Schienen} <i>10771</i> Schienen <i>2_IV_H.8</i>] Schienen <i>2_H :</i> schienen <i>G [type=1a]</i>
 10790[schlecht]{schlecht.} <i>10790</i> schlecht. <i>2_IV_H.8</i>] schlecht^ <i>2_H [type=1b]</i>
 10818[den]{dem} <i>10818</i> dem <i>2_IV_H.8</i>] den <i>2_H [type=2aa]</i>
 10832[willkommne]{willkommner} <i>10832</i> willkommner <i>2_IV_H.8</i>] willkommne <i>2_H [type=2aa]</i>
@@ -186,8 +187,11 @@ before_10877[Erbmarschall]{Erzmarschall} <i>vor 10877</i> <speaker>Erzmarschall<
 11160[fremden]{fremdem} <i>11160</i> fremdem <i>2_V_H.1</i>] fremden <i>2_H [type=2aa]</i>
 11203[]{} <i>11203–11206</i>] <l>Wir alle fordern</l> <l>Gleichen Theil.</l> <speaker>Mephist.</speaker> <l>Erst ordnet oben</l> <l>Saal an Saal.</l> <i>Ec 2_H; vgl. die Verse 11193–11196 in 2_V_H.1 [type=6]</i>
 11235[Vielgewandten]{Vielgewandtem} <i>11235</i> Vielgewandtem <i>2_V_H.1</i>] Vielgewandten <i>2_H [type=1a]</i>
+11283[giebt]{giebts} <i>11283</i> giebts <i>2_V_H.1</i>] giebt <i>2_H [type=2aa]</i>
 after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab) <i>2_V_H.1</i> (ab) <i>fehlt 2_H :</i> (Regum I. 21.) <i>erg G [type=2aa*]</i>
+11318[Sie]{sie} <i>11318</i> sie <i>2_V_H.1</i>] Sie <i>2_H [type=2aa]</i>
 before_11350_a[und die]{=} <i>vor 11350</i> und die <i>2_V_H.1</i>] <i>unterstrichen 2_H [type=1c]</i>
+11383[Schattenhaft]{schattenhaft} <i>11383</i> schattenhaft <i>2_V_H.1</i>] Schattenhaft <i>2_H [type=2aa]</i>
 11422[dich]{dich!} <i>11422</i> dich! <i>2_V_H.6</i>] dich! <i>etwas undeutlich 2_V_H.6</i> dich. <i>mglw mit Ansatz zum Ausrufezeichen 2_V_H.2</i> dich^ <i>2_H [type=2b]</i>
 11439[mächtig]{mächtig;} <i>11439</i> mächtig; <i>2_V_H.2</i>] <i>Semikolon in H nicht mehr zu erkennen; ergänzt nach 2_V_H.2 [type=7]</i>
 11473[Weges-Mitte]{Weges Mitte} <i>11473</i> Weges Mitte <i>2_V_H.11</i>] Weges-Mitte <i>2_V_H.2 2_H [type=2b]</i>
