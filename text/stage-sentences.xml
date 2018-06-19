@@ -623,7 +623,7 @@
 	<!--stage n="before_10899"	zum Dritten. -->
 	<!--stage n="before_10909_b"	zum Vierten. -->
 	<stage n="before_10931_a"	type="finite-verb"><!-- Der Erzbischoff tritt auf. --></stage>
-	<stage n="after_10976"	type="sentence"><!-- Die weltlichen Fürsten entfernen sich. --></stage>
+	<stage n="after_10976"	type="finite-verb"><!-- Die weltlichen Fürsten entfernen sich. --></stage>
 	<stage n="before_10977_b"	type="finite-verb"><!-- bleibt und spricht pathetisch. --></stage>
 	<stage n="before_11023_b"	type="long"><!-- hat sich beurlaubt, kehrt aber beim Ausgang um. --></stage>
 	<!--stage n="after_11032"	ab. -->
@@ -647,7 +647,7 @@
 	<stage n="after_11218"	type="sentence"><!-- die Ladung wird weggeschafft. --></stage>
 	<!--stage n="before_11219_b"	zu Faust. -->
 	<stage n="before_11282_a"	type="sentence"><!-- er pfeift gellend. --></stage>
-	<stage n="before_11282_b"	type="sentence"><!-- Die Drey treten auf. --></stage>
+	<stage n="before_11282_b"	type="finite-verb"><!-- Die Drey treten auf. --></stage>
 	<!--stage n="before_11286_b"	ad Spectatores. -->
 	<!--stage n="before_11288_c"	auf der Schloßwarte, singend. -->
 	<!--stage n="after_11303"	Pause. -->
@@ -656,7 +656,7 @@
 	<!--stage n="before_11350_b"	unten. -->
 	<!--stage n="after_11377"	ab. -->
 	<!--stage n="before_11378_b"	auf dem Balkon. -->
-	<stage n="before_11384i_b"	type="sentence"><!-- Vier graue Weiber treten auf. --></stage>
+	<stage n="before_11384i_b"	type="finite-verb"><!-- Vier graue Weiber treten auf. --></stage>
 	<stage n="after_11391"	type="finite-verb"><!-- Sorge verschwindet. --></stage>
 	<!--stage n="before_11398_b"	im Pallast. -->
 	<!--stage n="before_11420i"	erschüttert. -->
