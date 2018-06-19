@@ -578,7 +578,7 @@
 	<!--stage n="before_10339_b"	bejahrt, stark bewaffnet, ohne Gewand. -->
 	<stage n="after_10344"	type="sentence"><!-- sie steigen allezusammen tiefer.nach 10344allezusammen IV H8allzusammen H --></stage>
 	<!--stage n="before_10345_b"	Trommeln und kriegerische Musick von unten. -->
-	<stage n="before_10345_b"	type="sentence"><!-- Des Kaisers Zelt wird aufgeschlagen. --></stage>
+	<!-- now <head> -->
 	<!--stage n="before_10345_c"	Kaiser Obergeneral Trabanten. -->
 	<stage n="before_10423_a"	type="sentence"><!-- die Herolde werden abgefertigt zu Herausforderung des Gegenkaisers. --></stage>
 	<!--stage n="before_10423_b"	Faust, geharnischt mit halbgeschloßnem Helme, die drey Gewaltigen, gerüstet und gekleidet wie oben. -->
