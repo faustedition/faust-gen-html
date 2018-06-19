@@ -141,11 +141,17 @@ before_9755_a[verschlungenen]{verschlungenem} <i>vor 9755</i> verschlungenem <i>
 after_9807[Höhe.]{=} <i>nach 9807</i> Höhe. <i>none</i>] Höhe). <i>C.1_4</i> Höhe.) <i>C.2α_4 C.3_4 [type=8]</i>
 9837[Losungswort]{Losungswort.} <i>9837</i> Losungswort. <i>2_H</i>] Losungswort^ <i>C.1_4 [type=2aa]</i>
 9855[Welle]{Wälle} <i>9855</i> Wälle <i>2_H</i>] Welle <i>C.1_4 [type=2aa]</i>
-9942[sag’ ich]{sage} <i>9942</i> sage <i>2_III_H.75b</i>] sag’ ich <i>C.1_4 [type=2aa]</i>
+9896[Loos.]{Loos!} <i>9896</i> Loos! <i>2_H</i>] Loos. <i>C.1_4 [type=2aa]</i>
+9898[los!]{los.} <i>9898</i> los. <i>2_H</i>] los! <i>C.1_4 [type=2aa]</i>
+9905|9906[Reich|Mutter]{Reich,|Mutter,} <i>9905–9906</i> f. Reich, / Mutter, <i>2_H</i>] Reich / Mutter <i>C.1_4 [type=2aa]</i>
+9942[sag’ ich schmerzlich Lebewohl!]{sage schmerzlich, Lebewohl.} <i>9942</i> sage <i>…</i> Lebewohl. <i>2_III_H.75b</i>] sag’ ich schmerzlich Lebewohl! <i>C.1_4 [type=2aa]</i>
+9956[verschwunden]{verschwunden,} <i>9956</i> verschwunden, <i>2_H</i>] verschwunden <i>C.1_4 [type=2aa]</i>
 before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C.2α_4 C.3_4</i>] Chorführerin <i>C.1_4 [type=4b]</i>
 10000[sanften Wellen]{sanftem Wallen} <i>10000</i> sanftem Wallen <i>2_III_H.3a:2</i>] sanften Wellen <i>2_H [type=2b]</i>
 10001[Vogelsingen]{Vogelsängen} <i>10001</i> Vogelsängen <i>2_H</i>] Vogelsingen <i>C.1_4 [type=2aa]</i>
+10011[umzingeln,]{umzingeln} <i>10011</i> umzingeln <i>2_H</i>] umzingeln, <i>2_H :</i> umzingeln <i>durch Rasur</i> umzingeln, <i>C.1_4 [type=2aa]</i>
 10030[ins]{=} <i>10030</i> ins <i>C.1_4</i>] in’s <i>C.2α_4 C.3_4 [type=4a]</i>
+10038[Schlauch!]{Schlauch.} <i>10038</i> Schlauch. <i>2_H</i>] Schlauch! <i>C.1_4 [type=2aa]</i>
 before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>konj. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=3*]</i>
 before_10067_a[alsobald]{also bald} <i>before_10067_a</i> also bald <i>2_IV_H.3</i>] alsobald <i>IV H.2</i> also bald <i>2_IV_H.3</i> alsbald <i>2_H [type=2aa]</i>
 10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074</i>] <i>Die Verse sind in 2_H eingerückt. [type=1c]</i>
