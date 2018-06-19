@@ -117,6 +117,7 @@
 												</desc>											
 											</xsl:when>
 											<xsl:otherwise>
+												<xsl:copy-of select="$div/preceding::pb[1]"/>
 												<xsl:copy-of select="$context"/>												
 											</xsl:otherwise>
 										</xsl:choose>

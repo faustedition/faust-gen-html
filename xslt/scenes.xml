@@ -91,6 +91,7 @@
    <part n="2">
       <title>Der Tragödie zweiter Teil</title>
       <act n="2.1">
+         <title>Erster Akt</title>
          <scene n="2.1.1" first-verse="4613" last-verse="4727">
             <title>Anmutige Gegend</title>
          </scene>
@@ -117,6 +118,7 @@
          </scene>
       </act>
       <act n="2.2">
+         <title>Zweiter Akt</title>
          <scene n="2.2.1" first-verse="6566" last-verse="6818">
             <title>Hochgewölbtes Zimmer</title>
          </scene>
@@ -143,6 +145,7 @@
          </scene>
       </act>
       <act n="2.3">
+         <title>Dritter Akt</title>
          <scene n="2.3.1" first-verse="8488" last-verse="9126">
             <title>Vor dem Palaste des Menelas</title>
          </scene>
@@ -154,6 +157,7 @@
          </scene>
       </act>
       <act n="2.4">
+         <title>Vierter Akt</title>
          <scene n="2.4.1" first-verse="10039" last-verse="10344">
             <title>Hochgebirg</title>
          </scene>
@@ -165,6 +169,7 @@
          </scene>
       </act>
       <act n="2.5">
+         <title>Fünfter Akt</title>
          <scene n="2.5.1" first-verse="11043" last-verse="11142">
             <title>Offene Gegend</title>
          </scene>
