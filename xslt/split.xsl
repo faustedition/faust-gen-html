@@ -87,7 +87,7 @@
 							<xsl:apply-templates/>
 						</div>
 						
-						<xsl:if test="position() = last()">
+						<xsl:if test="not(following::div[@f:section])">
 							<div class="following-content">
 								<xsl:apply-templates select="following::* except following::*//node()"/>
 							</div>
