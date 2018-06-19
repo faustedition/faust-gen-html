@@ -187,7 +187,7 @@ before_11350_a[und die]{=} <i>vor 11350</i> und die <i>2_V_H.1</i>] <i>unterstri
 11473[Weges-Mitte]{Weges Mitte} <i>11473</i> Weges Mitte <i>2_V_H.11</i>] Weges-Mitte <i>2_V_H.2 2_H [type=2b]</i>
 11513[Ligamenten]{Bändern, Sehnen} <i>11513</i> Bändern, Sehnen <i>2_V_H.14a*</i>] Ligamenten <i>2_H [type=7]</i>
 11543[strengen]{strengem} <i>11543</i> strengem <i>2_V_H.2</i>] strengen <i>2_H [type=1a]</i>
-11578[Von]{=} <i>11578</i> Von <i>2_H</i>] Hier <i>Ec [type=6]</i>
+11578[Von]{=} <i>11578</i> Von <i>2_H</i>] Hier <i>Ec 2_H [type=6]</i>
 11635[wieder]{wieder.} <i>11635</i> wieder. <i>2_V_H.2</i>] <i>Punkt in H nicht zu erkennen; ergänzt nach 2_V_H.2 [type=7]</i>
 11638[Vom]{Von} <i>11638</i> Von <i>2_V_H.2</i>] Vom <i>2_H [type=2aa]</i>
 11724[erlischt|Muth]{=} <i>11724</i> erlischt <i>…</i> Muth <i>2_H</i>] erlischt, <i>…</i> Muth! <i>Ec 2_H [type=6]</i>
