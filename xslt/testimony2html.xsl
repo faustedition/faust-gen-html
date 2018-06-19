@@ -126,7 +126,7 @@
 	<xsl:template match="pb">
 		<xsl:variable name="next" select="(following::pb)[1]"/>
 		<xsl:variable name="inbetween" select="following::node() intersect $next/preceding::node()"/>
-		<xsl:if test="not(matches(string-join($inbetween, ''), '^\s*$'))">
+		<xsl:if test="$next and not(matches(string-join($inbetween, ''), '^\s*$'))">
 			<xsl:next-match/>
 		</xsl:if>
 	</xsl:template>
