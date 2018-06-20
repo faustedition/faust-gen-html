@@ -152,7 +152,7 @@ before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C
 10030[ins]{=} <i>10030</i> ins <i>C.1_4</i>] in’s <i>C.2α_4 C.3_4 [type=4a]</i>
 10038[Schlauch!]{Schlauch.} <i>10038</i> Schlauch. <i>2_H</i>] Schlauch! <i>C.1_4 [type=2aa]</i>
 before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>konj. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=3*]</i>
-before_10067_a[alsobald]{also bald} <i>vor 10067</i> also bald <i>2_IV_H.3</i>] alsobald <i>2_IV_H.2</i> also bald etwas undeutlich <i>2_IV_H.3</i> alsbald <i>2_H [type=2aa]</i>
+before_10067_a[alsobald]{also bald} <i>vor 10067</i> also bald <i>2_IV_H.3</i>] alsobald <i>2_IV_H.2</i> also bald <i>etwas undeutlich 2_IV_H.3</i> alsbald <i>2_H [type=2aa]</i>
 10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074</i>] <i>Die Verse sind in 2_H eingerückt. [type=1c]</i>
 10150[ewigen-]{ewigen} <i>10150</i> ewigen <i>2_IV_H.2</i>] ewigen- <i>2_H [type=1b]</i>
 after_10344[allzusammen]{alle zusammen} <i>nach 10344</i> alle zusammen <i>2_IV_H.8</i>] allzusammen <i>2_H [type=2aa]</i>
@@ -188,7 +188,6 @@ before_10877[Erbmarschall]{Erzmarschall} <i>vor 10877</i> <speaker>Erzmarschall<
 11283[giebt]{giebts} <i>11283</i> giebts <i>2_V_H.1</i>] giebt <i>2_H [type=2aa]</i>
 after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab) <i>2_V_H.1</i> (ab) <i>fehlt 2_H :</i> (Regum I. 21.) <i>erg G [type=2aa*]</i>
 11318[Sie]{sie} <i>11318</i> sie <i>2_V_H.1</i>] Sie <i>2_H [type=2aa]</i>
-before_11350_a[und die]{=} <i>vor 11350</i> und die <i>2_V_H.1</i>] <i>unterstrichen 2_H [type=1c]</i>
 11383[Schattenhaft]{schattenhaft} <i>11383</i> schattenhaft <i>2_V_H.1</i>] Schattenhaft <i>2_H [type=2aa]</i>
 11422[dich]{dich!} <i>11422</i> dich! <i>2_V_H.6</i>] dich! <i>etwas undeutlich 2_V_H.6</i> dich. <i>mglw mit Ansatz zum Ausrufezeichen 2_V_H.2</i> dich^ <i>2_H [type=2b]</i>
 11439[mächtig]{mächtig;} <i>11439</i> mächtig; <i>2_V_H.2</i>] <i>Semikolon in H nicht mehr zu erkennen; ergänzt nach 2_V_H.2 [type=7]</i>
