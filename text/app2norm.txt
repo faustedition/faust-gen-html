@@ -55,7 +55,6 @@ before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückz
 6654[Des Meisters]{=} <i>6654</i> Des Meisters <i>2_H</i>] Selbst Faustus <i>Ec 2_H [type=6]</i>
 6832[Willkommmen]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkomm̄en <i>2_H [type=1a]</i>
 6847[höhern, höhern]{=} <i>6847</i> höhern, höhern <i>2_H</i>] <i>mon Ri, alR</i> hehren? <i>mit Verweis auf 6856 Ri 2_H [type=7]</i>
-6848[leuchtet]{leuchtet!} <i>6848</i> leuchtet! <i>2_H</i>] leucht <i>:</i> leuchtet <i>G, Ausrufezeichen zS alR 2_H [type=7]</i>
 6983[den]{Den} <i>6983</i> Den <i>none</i>] Nun auf! den <i>2_H :</i> den <i>G [type=7]</i>
 7136[Cumpan]{=} <i>7136</i> Cumpan <i>2_H</i>] Kumpan <i>Ec 2_H [type=6]</i>
 before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>] <i>Zeichen über dem zweiten</i> e <i>zur Verdeutlichung der Artikulation, darüber</i> ei<i>, alR</i> Peneus <i>mit Zeichen über dem zweiten</i> e <i>Ri 2_H [type=7]</i>
@@ -91,7 +90,7 @@ before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psyllen] Psellen <i>2_II_H.70 2_
 8850[siebenjährig]{=} <i>8850</i> siebenjährig <i>C.1_4</i>] zehenjährig <i>2_H mon Gö 2_III_H.3b</i> siebenjährig <i>G 2_H C.1_4 C.2α_4 C.3_4</i> zehenjährig <i>Ec 2_H (vgl. Gespräch vom 17. März 1830) :</i> dreyzehnjährig <i>Ri [type=6]</i>
 after_8881[Arme]{=} <i>nach 8881</i> Arme <i>none</i>] Arme). <i>C.1_4</i> Arme.) <i>C.2α_4 C.3_4 [type=8]</i>
 8900[Glanz]{Glanz} <i>8900</i> Glanz <i>C.1_4</i>] Glanz <i>2_H :</i> Glanze <i>zS [type=7]</i>
-before_8924f[Phorkyas]{=} <i>vor 8924</i> <speaker>Phorkyas</speaker> <i>C.1_4</i>] <i>Punkt fehlt C.1_4 [type=8]</i>
+before_8924f[Phorkyas]{=} <i>vor 8924</i> <speaker>Phorkyas</speaker> <i>none</i>] <i>Punkt fehlt C.1_4 [type=8]</i>
 9009[nannt]{=} <i>9009</i> nannt <i>C.1_4</i>] nannt’ <i>C.2α_4 C.3_4 [type=4a]</i>
 9012[verständger]{=} <i>9012</i> verständger <i>C.1_4</i>] verständ’ger <i>C.2α_4 C.3_4 [type=4a]</i>
 9016[ihm]{Ihm} <i>9016</i> Ihm <i>2_H</i>] ihm <i>C.1_4 [type=2aa]</i>
@@ -115,11 +114,11 @@ before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>2_III_
 9378[vom]{von} <i>9378</i> von <i>2_III_H.48 2_III_H.3a:2</i>] vom <i>2_H C.1_4 [type=2b]</i>
 9393[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>vor 9393</i>] <i>Spatium 2_H</i> <i>Spatium fehlt C.1_4 [type=2aa]</i>
 9401[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>vor 9401</i>] <i>Spatium 2_H</i> <i>Spatium fehlt C.1_4 [type=2aa]</i>
-9411[nah,]{nah,} <i>9411</i> nah, <i>2_H</i>] nah, <i>C.1_4 [type=2aa]</i>
+9411[nah]{nah,} <i>9411</i> nah, <i>2_H</i>] nah^ <i>C.1_4 [type=2aa]</i>
 9446[stillen]{stillem} <i>9446</i> stillem <i>2_III_H.45a C.2α_4</i>] stillen <i>C.1_4 C.3_4 [type=4b]</i>
 9517[hinaufgeblickt,]{hinauf geblickt,} <i>9517</i> hinauf geblickt, <i>none</i>] hinaufgeblickt, <i>2_III_H.58a</i> hinauf geblickt. <i>2_III_H.2:1</i> hinaufgeblickt. <i>2_III_H.3a:2</i> hinauf geblickt. <i>2_H C.1_4 [type=2b]</i>
 9522[Land]{Land,} <i>9522</i> Land, <i>2_H</i>] Land^ <i>C.1_4 [type=2aa]</i>
-9534[vorsichtig]{vorsichtig,} <i>9534</i> vorsichtig, <i>2_H</i>] vorsichtig <i>mit ungewöhnlich großem Spatium C.1_4 [type=2aa]</i>
+9534[vorsichtig]{vorsichtig,} <i>9534</i> vorsichtig, <i>2_H</i>] vorsichtig^ <i>mit ungewöhnlich großem Spatium C.1_4 [type=2aa]</i>
 9535[jähen]{gähen} <i>9535</i> gähen <i>2_H</i>] jähen <i>C.1_4 [type=2aa]</i>
 9542[Alt- Wälder]{Alt-Wälder} <i>9542</i> Alt-Wälder <i>2_H</i>] Alt- Wälder <i>C.1_4 [type=1c]</i>
 before_9562[sitzend]{=} <i>vor 9562</i> sitzend <i>none</i>] sitzend) <i>C.1_4</i> sitzend.) <i>C.2α_4 C.3_4 [type=8]</i>
@@ -143,20 +142,19 @@ after_9807[Höhe.]{=} <i>nach 9807</i> Höhe. <i>none</i>] Höhe). <i>C.1_4</i> 
 9855[Welle]{Wälle} <i>9855</i> Wälle <i>2_H</i>] Welle <i>C.1_4 [type=2aa]</i>
 9896[Loos.]{Loos!} <i>9896</i> Loos! <i>2_H</i>] Loos. <i>C.1_4 [type=2aa]</i>
 9898[los!]{los.} <i>9898</i> los. <i>2_H</i>] los! <i>C.1_4 [type=2aa]</i>
-9905|9906[Reich|Mutter]{Reich,|Mutter,} <i>9905–9906</i> f. Reich, / Mutter, <i>2_H</i>] Reich / Mutter <i>C.1_4 [type=2aa]</i>
+9905|9906[Reich|Mutter]{Reich,|Mutter,} <i>9905–9906</i> Reich, / Mutter, <i>2_H</i>] Reich / Mutter <i>C.1_4 [type=2aa]</i>
 9942[sag’ ich schmerzlich Lebewohl!]{sage schmerzlich, Lebewohl.} <i>9942</i> sage <i>…</i> Lebewohl. <i>2_III_H.75b</i>] sag’ ich schmerzlich Lebewohl! <i>C.1_4 [type=2aa]</i>
-9956[verschwunden]{verschwunden,} <i>9956</i> verschwunden, <i>2_H</i>] verschwunden <i>C.1_4 [type=2aa]</i>
+9956[verschwunden]{verschwunden,} <i>9956</i> verschwunden, <i>2_H</i>] verschwunden^ <i>C.1_4 [type=2aa]</i>
 before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C.2α_4 C.3_4</i>] Chorführerin <i>C.1_4 [type=4b]</i>
 10000[sanften Wellen]{sanftem Wallen} <i>10000</i> sanftem Wallen <i>2_III_H.3a:2</i>] sanften Wellen <i>2_H [type=2b]</i>
 10001[Vogelsingen]{Vogelsängen} <i>10001</i> Vogelsängen <i>2_H</i>] Vogelsingen <i>C.1_4 [type=2aa]</i>
-10011[umzingeln,]{umzingeln} <i>10011</i> umzingeln <i>2_H</i>] umzingeln, <i>2_H :</i> umzingeln <i>durch Rasur</i> umzingeln, <i>C.1_4 [type=2aa]</i>
+10011[umzingeln,]{umzingeln} <i>10011</i> umzingeln <i>2_H</i>] umzingeln, <i>2_H :</i> umzingeln^ <i>durch Rasur</i> umzingeln, <i>C.1_4 [type=2aa]</i>
 10030[ins]{=} <i>10030</i> ins <i>C.1_4</i>] in’s <i>C.2α_4 C.3_4 [type=4a]</i>
 10038[Schlauch!]{Schlauch.} <i>10038</i> Schlauch. <i>2_H</i>] Schlauch! <i>C.1_4 [type=2aa]</i>
 before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>konj. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=3*]</i>
-before_10067_a[alsobald]{also bald} <i>before_10067_a</i> also bald <i>2_IV_H.3</i>] alsobald <i>IV H.2</i> also bald <i>2_IV_H.3</i> alsbald <i>2_H [type=2aa]</i>
+before_10067_a[alsobald]{also bald} <i>vor 10067</i> also bald <i>2_IV_H.3</i>] alsobald <i>2_IV_H.2</i> also bald etwas undeutlich <i>2_IV_H.3</i> alsbald <i>2_H [type=2aa]</i>
 10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074</i>] <i>Die Verse sind in 2_H eingerückt. [type=1c]</i>
 10150[ewigen-]{ewigen} <i>10150</i> ewigen <i>2_IV_H.2</i>] ewigen- <i>2_H [type=1b]</i>
-10309[diessmal]{dieses mal} <i>10309</i> dieses mal <i>2_IV_H.8</i>] diessmal <i>2_H :</i> diesesmal <i>Ec [type=2aa] [type=6]</i>
 after_10344[allzusammen]{alle zusammen} <i>nach 10344</i> alle zusammen <i>2_IV_H.8</i>] allzusammen <i>2_H [type=2aa]</i>
 10415[hattet]{hättet} <i>10415</i> hättet <i>none</i>] hattet <i>2_H [type=1a]</i>
 10439[Negromant]{=} <i>10439</i> Negromant <i>2_H</i>] Nekromant <i>Ec 2_H [type=6]</i>
@@ -167,8 +165,8 @@ after_10570[Posauenschall]{Posaunenschall} <i>after_10570</i> Posaunenschall <i>
 10619[erfahren]{erfahren?} <i>10619</i> erfahren? <i>2_H</i>] erfahren^ <i>auf eingeklebtem Zettel 2_H [type=7]</i>
 10635[Zerrzerrt]{Zerzerrt} <i>10635</i> Zerzerrt <i>none</i>] Zerrzerrt <i>2_H [type=1a]</i>
 10636[gesenckten]{gesencktem} <i>10636</i> gesencktem <i>none</i>] gesenckten <i>2_H [type=1a]</i>
-before_10654_a[Kaiser:]{Kaiser} <i>vor 10654</i> <speaker>Kaiser</speaker> <i>none</i>] <speaker>Kaiser:</speaker> <i>2_H [type=1b]</i>
-10771[schienen]{Schienen} <i>10771</i> Schienen <i>2_IV_H.8</i>] Schienen <i>2_H :</i> schienen <i>G [type=1a]</i>
+before_10654_a[Kaiser:]{Kaiser} <i>vor 10654</i> <speaker>Kaiser</speaker> <i>none</i>] <speaker>Kaiser:</speaker> <i>2_H [type=8]</i>
+10771[schienen]{Schienen} <i>10771</i> Schienen <i>2_IV_H.8</i>] Schienen <i>2_H :</i> schienen <i>(Fehlkorrektur) G [type=1a]</i>
 10790[schlecht]{schlecht.} <i>10790</i> schlecht. <i>2_IV_H.8</i>] schlecht^ <i>2_H [type=1b]</i>
 10818[den]{dem} <i>10818</i> dem <i>2_IV_H.8</i>] den <i>2_H [type=2aa]</i>
 10832[willkommne]{willkommner} <i>10832</i> willkommner <i>2_IV_H.8</i>] willkommne <i>2_H [type=2aa]</i>

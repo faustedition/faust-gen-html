@@ -234,6 +234,15 @@
                 ich ihn noch nicht verstand.</l>
             <note>Ec <wit>2_H</wit></note></rdg>
     </app>
+
+    <app>
+        <f:replace n="6848">leuchtet</f:replace>
+        <f:ins n="6848">leuchtet!</f:ins>
+        <ref>6848</ref>
+        <lem wit="2_H">leuchtet! <note><wit>2_H</wit></note></lem>
+        <rdg wit="2_H" type="type_7"><subst><del>leucht</del> <add>leuchtet <note>G, Ausrufezeichen zS alR <wit>2_H</wit></note></add></subst></rdg>
+    </app>
+    
     <app>
         <f:ins n="7722" place="only-app"/>
         <ref>7722–7759</ref>
@@ -261,7 +270,7 @@
         <rdg wit="2_III_H.2_1"><subst hand="Ri">
                 <del>Gold und Schwarze, ſilbern blau und roth</del>
                 <add>Gold und Schwarz, und Silber Blau und Roth <note>Ri
-                    <wit>III_H.2:1</wit></note></add>
+                    <wit>2_III_H.2:1</wit></note></add>
             </subst></rdg>
         <rdg wit="2_III_H.3a_1">Gold und Schwarz, und silbern, blau und roth
                     <note><wit>2_III_H.3a_1</wit></note></rdg>
@@ -279,6 +288,19 @@
                 <wit>C.2alpha_4</wit>
                 <wit>C.3_4</wit></note></lem>
         <rdg wit="C.1_4" type="type_2aa type_4b">los. <note><wit>C.1_4</wit></note></rdg>
+    </app>
+
+    <app>
+        <f:replace n="10309">diessmal</f:replace>
+        <f:ins n="10309">dieses mal</f:ins>
+        <ref>10309</ref>
+        <lem wit="2_IV_H.8">dieses mal <note><wit>2_IV_H.8</wit></note></lem>
+        <rdg wit="2_H" type="type_2aa type_6">
+            <subst>
+                <del>diessmal</del>
+                <add>diesesmal <note>Ec <wit>2_H</wit></note></add>
+            </subst>
+        </rdg>
     </app>
 
     <app>
