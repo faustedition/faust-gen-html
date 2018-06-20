@@ -367,21 +367,38 @@
     <xsl:template match="lg[*[@n = $spec//f:ins[@place='enclosing-lg']/@n]]">
         <xsl:variable name="insert-element" select="$spec//f:ins[@place='enclosing-lg'][@n = current()/l/@n]"/>
         <xsl:variable name="app-spec" select="$insert-element/.."/>
-        <xsl:copy copy-namespaces="no">
-            <!-- attributes from the apparatus -->
-            <xsl:copy-of select="$insert-element/*/@*[data(.) != '']"/>
-            <!-- attributes from the lg that are _not_ in the apparatus -->
-            <xsl:apply-templates select="@*[not(name() = (for $attr in $insert-element/*/@* return name($attr)))]" mode="#current"/>
-            <!-- id -->
-            <xsl:attribute name="xml:id" select="f:seg-id($insert-element[1])"/>
-            <!-- text-critical note -->            
-            <xsl:call-template name="create-app-within-new-content">
-                <xsl:with-param name="apps" select="$app-spec"/>
-                <xsl:with-param name="new-content" select="(*)[1]"/>                
-            </xsl:call-template>
-            <!-- Everything else -->
-            <xsl:apply-templates select="node() except (*)[1]" mode="#current"/>
-        </xsl:copy>
+        <xsl:choose>
+            <xsl:when test="$insert-element/lg">
+                <xsl:copy copy-namespaces="no">
+                    <!-- attributes from the apparatus -->
+                    <xsl:copy-of select="$insert-element/lg/@*[data(.) != '']"/>
+                    <!-- attributes from the lg that are _not_ in the apparatus -->
+                    <xsl:apply-templates select="@*[not(name() = (for $attr in $insert-element/*/@* return name($attr)))]" mode="#current"/>
+                    <!-- id -->
+                    <xsl:attribute name="xml:id" select="f:seg-id($insert-element[1])"/>
+                    <!-- text-critical note -->            
+                    <xsl:call-template name="create-app-within-new-content">
+                        <xsl:with-param name="apps" select="$app-spec"/>
+                        <xsl:with-param name="new-content" select="(*)[1]"/>                
+                    </xsl:call-template>
+                    <!-- Everything else -->
+                    <xsl:apply-templates select="node() except (*)[1]" mode="#current"/>
+                </xsl:copy>                
+            </xsl:when>
+            <xsl:when test="$insert-element/f:remove-lg">
+                <!-- text-critical note -->
+                <xsl:call-template name="create-app-within-new-content">
+                    <xsl:with-param name="apps" select="$app-spec"/>
+                    <xsl:with-param name="new-content" select="(*)[1]"/>                    
+                </xsl:call-template>
+                <!-- Everything else -->
+                <xsl:apply-templates select="node() except (*)[1]" mode="#current"/>                
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:message>ERROR: Did not understand lg-relevant command <xsl:copy-of select="$insert-element"/></xsl:message>
+                <xsl:next-match/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <!-- 
