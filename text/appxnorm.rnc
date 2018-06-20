@@ -95,8 +95,11 @@ LgCommand =
 		attribute place {
 			## modify the surrounding lg's attributes			
 		"enclosing-lg" },
-		## List of attribute="value" pairs to be inserted. attribute="" causes the attribute to be removed.
-		element lg { attribute * { text }* }
+		(
+  		## List of attribute="value" pairs to be inserted. attribute="" causes the attribute to be removed.
+  		element lg { attribute * { text }* }
+    | element f:remove-lg { empty }
+    )
 	}
 AttrCommand = 
 	## Modifies the element's attributes
