@@ -271,7 +271,7 @@
 	
 	<!-- extracts the scene label from the heading -->
 	<xsl:template name="extract-scene-label">
-		<xsl:variable name="raw-label" select="(head, stage)[1]"/>
+		<xsl:variable name="raw-label" select="(head, stage, sp, *)[1]"/>
 		<xsl:variable name="emended-label">
 			<xsl:apply-templates mode="emend" select="$raw-label"/>
 		</xsl:variable>
