@@ -199,5 +199,5 @@ after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab)
 11638[Vom]{Von} <i>11638</i> Von <i>2_V_H.2</i>] Vom <i>2_H [type=2aa]</i>
 11724[erlischt|Muth]{=} <i>11724</i> erlischt <i>…</i> Muth <i>2_H</i>] erlischt, <i>…</i> Muth! <i>Ec 2_H [type=6]</i>
 11760[im]{in} <i>11760</i> in <i>2_V_H.2</i>] im <i>2_H [type=2aa]</i>
-before_12045_b[IV.]{IV.)} <i>vor 12045</i> (St. Joh. IV.) <i>none</i>] <i>schließende Klammer fehlt 2_H [type=1b]</i>
+before_12045_b[IV.]{IV.)} <i>vor 12045</i> (St. Joh. IV.) <i>none</i>] <i>schließende Klammer fehlt 2_H [type=1c]</i>
 12071[Die]{Du} <i>12071</i> Du <i>2_V_H.37f</i>] Die <i>2_H [type=2a]</i>
