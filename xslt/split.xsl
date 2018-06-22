@@ -198,7 +198,7 @@
 		<xsl:param name="section" as="item()"/> <!-- true(): Detect section, false(): No section part, everything else: use that as section part -->
 		<xsl:variable name="section-number" select="f:get-section-number($el)"/>
 		<xsl:variable name="section-prefix" select="if ($type='lesetext') then 
-				if ($section eq 'no' or $section-number eq '') then '' else '.' 
+				if ($section eq 'no' or $section eq '' or $section-number eq '') then '' else '.' 
 			else '&amp;section='"/>
 		<xsl:variable name="section-part" select="						
 			if ($section eq 'yes') then if ($section-number) then concat($section-prefix, $section-number) else $section-prefix 
@@ -281,10 +281,9 @@
 			<ul class="fa-ul">
 				<li class="toclink">
 					<xsl:if test="/TEI/@f:split and not(self::TEI)">
-						<a href="{f:link-to(/, 'no')/@href}">
+						<a href="{f:link-to(/, '')/@href}">
 							<span class="fa-li fa fa-menu"/>
-							<xsl:text>Inhaltsverzeichnis</xsl:text>
-							<xsl:comment>GIZMO WAS HERE</xsl:comment>
+							<xsl:text>Inhaltsverzeichnis</xsl:text>							
 						</a>
 					</xsl:if>
 					&#160;	<!-- spacing -->
