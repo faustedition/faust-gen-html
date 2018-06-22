@@ -40,7 +40,7 @@
 					.warn:before   { content: "⚠ "; color: yellow; font-weight: bold; text-shadow: 0px 0px 1px black; }
 					.warn strong { text-shadow: 1px 1px 2px yellow; }
 					
-					.app { font-family: "Ubuntu", sans-serif; font-size: smaller;}
+					.app { font-family: "Ubuntu derivative Faust", sans-serif; font-size: smaller;}
 					
 					.help { color: #444; font-style: italic; }
 					

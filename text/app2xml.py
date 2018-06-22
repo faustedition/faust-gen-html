@@ -358,6 +358,8 @@ class JointReading:
         if not(2 <= sm_index <= len(first.notes)):
             raise ValueError("Broken subst encoding: Cannot find the sigil in first part {}".format(first))
         sm_sigil = first.notes[sm_index-2]
+        if str(first.notes[sm_index-1]) == ' ':
+            del first.notes[sm_index-1]
         del first.notes[sm_index-2]
         first.remove_subst_marker()
 
