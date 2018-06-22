@@ -257,6 +257,11 @@
 					<xsl:otherwise><xsl:call-template name="extract-scene-label"/></xsl:otherwise>
 				</xsl:choose>				
 			</xsl:attribute>
+			
+			<xsl:if test="$first-verse">
+				<xsl:attribute name="f:first-verse" select="$first-verse"/>
+				<xsl:attribute name="f:last-verse" select="$last-verse"/>
+			</xsl:if>
 						
 			<xsl:apply-templates select="@* except @n" mode="#current"/>
 			<xsl:apply-templates select="node()" mode="#current"/>
