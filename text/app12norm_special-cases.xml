@@ -281,6 +281,19 @@
     </app>
 
     <app>
+        <f:replace n="9076">In tiefem</f:replace>
+        <f:ins n="9076">In tiefem</f:ins>
+        <ref>9076</ref>
+        <lem wit="C.1_4">In tiefem <note><wit>C.1_4</wit></note></lem>
+        <rdg wit="2_III_H.2_1">Im tiefen <note><wit>2_III_H.2_1</wit></note></rdg>
+        <rdg wit="2_III_H.3a_1">In tiefen <note><wit>2_III_H.3a_1</wit></note></rdg>
+        <rdg wit="2_H" type="type_2d*"><subst hand="G">
+                <del>In tiefen</del>
+                <add>In tiefem <note>G <wit>2_H</wit></note></add>
+            </subst></rdg>
+    </app>
+    
+    <app>
         <f:replace n="9962">los.</f:replace>
         <f:ins n="9962">los,</f:ins>
         <ref>9962</ref>

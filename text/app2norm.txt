@@ -35,7 +35,6 @@ before_5801[Gesang]{Ungesang} <i>before_5801</i> Ungesang <i>2_H</i>] Gesang <i>
 5925[Glut und Sud]{Glut und Sud} <i>5925</i> Glut und Sud <i>2_I_H.0a</i>] Glut und Sud <i>2_I_H.41a</i> Sud und Glut <i>2_H</i> Glut und Sud <i>2_I_H.0a [type=7]</i>
 5928[recht]{rechts} <i>5928</i> rechts <i>2_H</i>] recht <i>2_I_H.0a [type=2aa]</i>
 5929[solchen]{solchem} <i>5929</i> solchem <i>2_I_H.41a</i>] solchen <i>2_H 2_I_H.0a [type=2b]</i>
-before_5987_c[anständig, nicht auffallend, nach Sitte gekleidet, beyde knieen]{=} <i>vor 5987</i> anständig <i>…</i> knieen <i>2_I_H.0a</i>] anständig nicht auffallend <i>…</i> knieen. <i>2_H :</i> (anständig <i>…</i> knieen.) <i>Ec [type=6]</i>
 after_6062[]{} <i>nach 6062</i>] <i>Lücke von zwei Versen 2_H [type=7]</i>
 before_6097[Mephistofeles]{Mephistopheles} <i>before_6097</i> Mephistopheles <i>none</i>] Mephistofeles <i>2_H [type=1a]</i>
 6126[Undas]{Und das} <i>6126</i> Und das <i>none</i>] Undas <i>2_H [type=1a]</i>
@@ -96,7 +95,6 @@ before_8924f[Phorkyas]{=} <i>vor 8924</i> <speaker>Phorkyas</speaker> <i>none</i
 9016[ihm]{Ihm} <i>9016</i> Ihm <i>2_H</i>] ihm <i>C.1_4 [type=2aa]</i>
 9029[ein,]{=} <i>9029</i> ein, <i>C.1_4</i>] ein. <i>C.2α_4 C.3_4 [type=4a]</i>
 9061[deine]{die} <i>9061</i> die <i>2_H</i>] deine <i>C.1_4 [type=2aa]</i>
-9076[In tiefem]{=} <i>9076</i> In tiefem <i>C.1_4</i>] Im tiefen <i>2_III_H.2:1</i> In tiefen <i>2_III_H.3a:1 2_H :</i> In tiefem <i>G [type=2d*]</i>
 9104[verheissener]{=} <i>9104</i> verheissener <i>C.1_4</i>] verheißener <i>C.2α_4 C.3_4 [type=4a]</i>
 9107[weißhalsigen;]{weißhalsigen,} <i>9107</i> weißhalsigen, <i>2_H (undeutlich)</i>] weißhalsigen; <i>C.1_4 [type=2aa]</i>
 9115[Schrittes]{Schritts} <i>9115</i> Schritts <i>2_H</i>] Schrittes <i>C.1_4 [type=2aa]</i>
