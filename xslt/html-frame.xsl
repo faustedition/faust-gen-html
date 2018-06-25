@@ -224,6 +224,7 @@
 							$('[data-target]').copyToClipboard();
 						}});
 						$(function(){addPrintInteraction('/', undefined, '<xsl:value-of select="if ($documentURI) then $documentURI else 'undefined'"/>');})
+					  Faust.addToTopButton();
 					<xsl:if test="$breadcrumb-def">
 						<xsl:call-template name="f:breadcrumb-script">
 							<xsl:with-param name="breadcrumb-def" select="$breadcrumb-def"/>
