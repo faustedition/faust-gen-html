@@ -142,11 +142,12 @@
 				<xsl:variable name="textTranscript" select="doc($preparedTranscript)"/>
 				<xsl:variable name="prefix" select="concat('print/', replace(//textTranscript/@uri, '\.xml$', ''), '/')"/>
 				<xsl:for-each select="$textTranscript//tei:pb">
-					<xsl:variable name="section" select="(ancestor::*[@f:section])[1]/@f:section"/>
+					<xsl:variable name="section" select="f:get-section-number(.)"/>
 					<xsl:variable name="div" select="(ancestor::*[self::tei:div or self::tei:text][@n])[1]/@n"/>			
 					<j:object>
 						<j:array name="doc">
 							<j:object>
+								<j:string name="pb" select="{string-join(for $a in @* return concat(name($a), '=', $a), ' ')}"/>
 								<j:array name="img">							
 									<xsl:for-each select="tokenize(@facs, '\s+')">
 										<xsl:sort select="."/>
