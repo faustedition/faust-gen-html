@@ -43,10 +43,10 @@
 	
 	-->
 	<xsl:variable name="columns" xmlns="http://www.faustedition.net/ns">
-		<fieldspec name="graef-nr" spreadsheet="Gräf-Nr." sortable-type="numericplus">Gräf</fieldspec>
-		<fieldspec name="pniower-nr" spreadsheet="Pniower-Nr." sortable-type="numericplus">Pniower</fieldspec>
-		<fieldspec name="quz" spreadsheet="QuZ">QuZ</fieldspec>
-		<fieldspec name="biedermann-herwignr" spreadsheet=" Biedermann-HerwigNr.">Biedermann³</fieldspec>
+		<fieldspec name="graef-nr" spreadsheet="Gräf-Nr." sortable-type="numericplus" title="Nr. in Gräf II 2">Gräf</fieldspec>
+		<fieldspec name="pniower-nr" spreadsheet="Pniower-Nr." sortable-type="numericplus" title="Nr. in Pniower 1899">Pniower</fieldspec>
+		<fieldspec name="quz" spreadsheet="QuZ" title="Nr. in Quellen und Zeugnisse">QuZ</fieldspec>
+		<fieldspec name="biedermann-herwignr" spreadsheet=" Biedermann-HerwigNr." title="Nr. bei Biedermann / Herwig">Biedermann³</fieldspec>
 		<fieldspec name="datum-von" spreadsheet="Datum.(von)" sortable-type="date-de">Datum</fieldspec>
 		<fieldspec name="dokumenttyp" spreadsheet="Dokumenttyp">Beschreibung</fieldspec>		
 		<fieldspec name="excerpt" generated="true">Auszug</fieldspec>
@@ -96,6 +96,7 @@
 								<xsl:for-each select="$columns/fieldspec">
 									<th data-sorted="false"
 										data-sortable-type="{if (@sortable-type) then @sortable-type else 'alpha'}"
+										title="{@title}"
 										id="th-{@name}"> 
 										<xsl:copy-of select="node()"/>
 									</th>
