@@ -44,6 +44,8 @@
       </p:load>
     </p:for-each>
     
+    <p:identity name="load-metadata"/>
+    
     <p:xslt template-name="collection">
       <p:input port="parameters"><p:pipe port="result" step="config"></p:pipe></p:input>
       <p:input port="stylesheet"><p:document href="xslt/metadata2json.xsl"/></p:input>      
@@ -52,7 +54,21 @@
     <p:store method="text">
       <p:with-option name="href" select="p:resolve-uri(concat($builddir, '/www/data/document_metadata.js'))"/>
     </p:store>
+    
+    <p:xslt template-name="collection">
+      <p:input port="source"><p:pipe port="result" step="load-metadata"/></p:input>
+      <p:input port="stylesheet"><p:document href="xslt/uri-map-json.xsl"/></p:input>
+      <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+    </p:xslt>
+    
+    <cx:message>
+      <p:with-option name="message" select="p:resolve-uri(concat($builddir, '/uris.json'))"/>
+    </cx:message>
       
+    <p:store method="text">
+      <p:with-option name="href" select="p:resolve-uri(concat($builddir, '/uris.json'))"/>
+    </p:store>
+    
   </p:group>
 
 </p:declare-step>
