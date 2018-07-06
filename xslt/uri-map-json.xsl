@@ -68,6 +68,7 @@
           </xsl:otherwise>          
         </xsl:choose>        
       </j:array>
+      <j:string name="type" value="{local-name(/*)}"/>
     </j:object>
   </xsl:template>
   
