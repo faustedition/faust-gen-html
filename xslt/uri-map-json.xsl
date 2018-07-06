@@ -41,7 +41,7 @@
       <j:string name="sigil_t" value="{f:sigil-for-uri($sigil)}"/>
       <j:string name="uri" value="faust://document/faustedition/{f:sigil-for-uri($sigil)}"/>
       <j:object name="other_sigils">
-        <xsl:for-each select=".//idno[@type != 'faustedition']">
+        <xsl:for-each select=".//idno[@type != 'faustedition'][. != ('none', 'n.s.')]">
           <j:string name="faust://document/{@type}/{f:sigil-for-uri(.)}" value="{.}"/>
         </xsl:for-each>
       </j:object>
