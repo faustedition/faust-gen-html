@@ -222,23 +222,14 @@
 		</p:store>
 		
 		<!-- ### Step 3c': Reading text apparatus reflist -->
-		<p:xslt name="reading-text-md">
-			<p:input port="source"><p:pipe port="result" step="generate-reading-text"/></p:input>
-			<p:input port="stylesheet"><p:document href="xslt/add-metadata.xsl"/></p:input>
-			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
-			<p:with-param name="type" select="'lesetext'"/>
-		</p:xslt>
 		<p:xslt>
+			<p:input port="source"><p:pipe port="result" step="reading-text-md"/></p:input>
 			<p:input port="stylesheet"><p:document href="xslt/text-applist.xsl"/></p:input>
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 			<p:with-param name="output-type" select="'reflist'"></p:with-param>
 		</p:xslt>
 		<p:store method="xhtml">
 			<p:with-option name="href" select="resolve-uri('www/print/reflist.html', $builddir)"/>
-		</p:store>
-		<p:store>
-			<p:input port="source"><p:pipe port="result" step="reading-text-md"/></p:input>
-			<p:with-option name="href" select="resolve-uri('lesetext/faust-md.xml', $builddir)"/>
 		</p:store>
 		
 		
