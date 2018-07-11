@@ -381,7 +381,7 @@
 	
 	<xsl:template name="free-floating-apps">
 		<xsl:variable name="floating-app-reports">
-			<xsl:for-each select="$text//note[@type='textcrit'][not(ancestor::*[f:hasvars(.)])]">
+			<xsl:for-each select="$text//note[@type='textcrit'][not(ancestor::*[f:hasvars(.) or self::p])]">
 				<xsl:variable name="note" select="."/>
 				<xsl:variable name="app" select="descendant::app"/>
 				<xsl:for-each select="tokenize($app/@from, '\s+')">				

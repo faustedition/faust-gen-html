@@ -8,6 +8,7 @@
 	version="2.0">
 	
 	<xsl:import href="print2html.xsl"/>
+	<xsl:param name="output-type">app</xsl:param>
 	
 	
 	<xsl:template match="/">
@@ -36,7 +37,18 @@
 						<h2 id="{current-grouping-key()}">
 							<xsl:value-of select="concat(f:format-rdg-type(current-grouping-key()), ': ', f:rdg-type-descr(current-grouping-key()))"/>
 						</h2>
-						<xsl:apply-templates select="current-group()"/>					
+						<xsl:choose>
+							<xsl:when test="$output-type = 'reflist'">
+								<ul>
+									<xsl:for-each select="current-group()">
+										<li><xsl:value-of select="ref"/></li>
+									</xsl:for-each>
+								</ul>								
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:apply-templates select="current-group()"/>								
+							</xsl:otherwise>
+						</xsl:choose>
 					</div>
 				</xsl:for-each-group>				
 			</xsl:with-param>
