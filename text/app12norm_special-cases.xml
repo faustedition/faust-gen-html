@@ -260,6 +260,18 @@
                 <wit>C.3_4</wit></note></lem>
         <rdg wit="C.1_4" type="type_2aa type_4b">nicht. <note><wit>C.1_4</wit></note></rdg>
     </app>
+    
+    <app>
+        <f:replace n="8850">siebenjährig</f:replace>
+        <f:ins n="8850">siebenjährig</f:ins>
+        <ref>8850</ref>
+        <lem wit="C.1_4">siebenjährig <note><wit>C.1_4</wit></note></lem>
+        <rdg wit="2_H">zehenjährig <note><wit>2_H</wit></note></rdg>
+        <rdg wit="2_III_H.3b"><note>mon Gö <wit>2_III_H.3b</wit></note></rdg>
+        <rdg wit="2_H C.1_4 C.2alpha_4 C.3_4">siebenjährig <note>G <wit>2_H</wit> <wit>C.1_4</wit> <wit>C.2alpha_4</wit> <wit>C.3_4</wit></note></rdg>
+        <rdg wit="2_H" type="type_6">zehenjährig <note>Ec <wit>2_H</wit> (vgl. Gespräch vom 17. März 1830)</note></rdg>
+        <rdg wit="2_H" type="type_6">dreyzehnjährig <note>Ri <wit>2_H</wit></note></rdg>
+    </app>    
 
     <app>
         <f:replace n="9041">gold und schwarz und silbern, blau und roth</f:replace>
