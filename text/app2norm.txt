@@ -36,7 +36,7 @@ before_5801[Gesang]{Ungesang} <i>before_5801</i> Ungesang <i>2_H</i>] Gesang <i>
 5928[recht]{rechts} <i>5928</i> rechts <i>2_H</i>] recht <i>2_I_H.0a [type=2aa]</i>
 5929[solchen]{solchem} <i>5929</i> solchem <i>2_I_H.41a</i>] solchen <i>2_H 2_I_H.0a [type=2b]</i>
 after_6062[]{} <i>nach 6062</i>] <i>Lücke von zwei Versen 2_H [type=7]</i>
-before_6097[Mephistofeles]{Mephistopheles} <i>before_6097</i> Mephistopheles <i>none</i>] Mephistofeles <i>2_H [type=1a]</i>
+before_6097[Mephistofeles]{Mephistopheles} <i>vor 6097</i> Mephistopheles <i>none</i>] Mephistofeles <i>2_H [type=1a]</i>
 6126[Undas]{Und das} <i>6126</i> Und das <i>none</i>] Undas <i>2_H [type=1a]</i>
 before_6150_b[gleichfals]{=} <i>vor 6150</i> <stage>gleichfals</stage> <i>2_H</i>] <stage>(gleichfals</stage> <i>ohne schließende Klammer 2_H [type=8]</i>
 6209[nicht]{nichts} <i>6209</i> nichts <i>2_I_H.48</i>] nicht <i>2_I_H.47 2_H [type=2b]</i>
@@ -96,7 +96,6 @@ before_8924f[Phorkyas]{=} <i>vor 8924</i> <speaker>Phorkyas</speaker> <i>none</i
 9029[ein,]{=} <i>9029</i> ein, <i>C.1_4</i>] ein. <i>C.2α_4 C.3_4 [type=4a]</i>
 9061[deine]{die} <i>9061</i> die <i>2_H</i>] deine <i>C.1_4 [type=2aa]</i>
 9104[verheissener]{=} <i>9104</i> verheissener <i>C.1_4</i>] verheißener <i>C.2α_4 C.3_4 [type=4a]</i>
-9107[weißhalsigen;]{weißhalsigen,} <i>9107</i> weißhalsigen, <i>2_H (undeutlich)</i>] weißhalsigen; <i>C.1_4 [type=2aa]</i>
 9115[Schrittes]{Schritts} <i>9115</i> Schritts <i>2_H</i>] Schrittes <i>C.1_4 [type=2aa]</i>
 9128[Witterung]{Witterung,} <i>9128</i> Witterung, <i>2_H</i>] Witterung <i>C.1_4 [type=2aa]</i>
 9140[ich,]{=} <i>9140</i> ich, <i>C.1_4</i>] ich. <i>C.2α_4 C.3_4 [type=4a]</i>
