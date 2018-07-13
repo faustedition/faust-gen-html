@@ -151,7 +151,7 @@
                         )"/>                    
                     <xsl:apply-templates select="lem" mode="app"/>
                     <xsl:apply-templates select="rdg" mode="app"/>
-                    <xsl:variable name="types" select="for $type in rdg/@type return tokenize($type, '\s+')"/>
+                    <xsl:variable name="types" select="distinct-values(for $type in rdg/@type return tokenize($type, '\s+'))"/>
                     <xsl:choose>
                         <xsl:when test="count($types) >= 2">
                             <note type="type">
