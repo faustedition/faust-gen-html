@@ -48,6 +48,7 @@ before_6150_b[gleichfals]{=} <i>vor 6150</i> <stage>gleichfals</stage> <i>2_H</i
 6211[Säumniß,]{Säumniß.} <i>6211</i> Säumniß. <i>none</i>] Säumniß, <i>2_I_H.47 2_H [type=1b]</i>
 6223[Nich]{Nicht} <i>6223</i> Nicht <i>2_I_H.47</i>] Nich <i>2_H [type=2aa]</i>
 6354[Thüre]{=} <i>6354</i> Thüre <i>2_H</i>] Tür’ noch <i>Ec 2_H [type=6]</i>
+6360[soll]{soll.} <i>6360</i> soll. <i>none</i>] soll^ <i>2_H [type=1b]</i>
 before_6361[]{} <i>vor 6361</i> <speaker>Mephistopheles</speaker> <i>2_H</i>] <stage>(zum Pagen.)</stage> <i>Ec 2_H [type=6]</i>
 6362[$]{} <i>vor 6363</i>] (Andere drängen sich herzu) <i>erg Ec 2_H [type=6]</i>
 before_6377_b[Dammernde]{Dämmernde} <i>vor 6377</i> Dämmernde <i>none</i>] Dammernde <i>2_H [type=1a]</i>
@@ -68,6 +69,7 @@ before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>]
 7544[Angestregtest]{Angestrengtest} <i>7544</i> Angestrengtest <i>2_II_H.74</i>] Angestregtest <i>2_H [type=1a]</i>
 7729[ungewissen]{ungewissem} <i>7729</i> ungewissem <i>none</i>] ungewissen <i>2_H [type=1a]</i>
 7776[Dagegegen]{Dagegen} <i>7776</i> Dagegen <i>2_II_H.74</i>] Dagegegen <i>2_H [type=1a]</i>
+7809|7810[Hexenritt|mit]{Hexenritt!|mit.} <i>7809–7810</i> Hexenritt! <i>bis</i> mit. <i>2_H</i>] Hexenritt^ <i>bis</i> mit^ <i>auf eingeklebtem Zettel 2_H [type=7]</i>
 before_7877[Homunnkulus]{Homunkulus} <i>vor 7877</i> Homunkulus <i>2_II_H.74</i>] Homunnkulus <i>2_H [type=1a]</i>
 before_7982[Phorkyas]{=} <i>vor 7982</i> <speaker>Phorkyas</speaker> <i>none</i>] <speaker>Phork.</speaker> <i>2_H [type=7]</i>
 before_8245_b[erstaunt]{=} <i>vor 8245</i> <stage>erstaunt</stage> <i>2_H</i>] <stage>(erstaunt</stage> <i>ohne schließende Klammer 2_H [type=8]</i>
