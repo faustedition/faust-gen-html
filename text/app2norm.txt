@@ -27,6 +27,8 @@ before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2
 5592[ein]{im} <i>5592</i> im <i>2_H</i>] ein <i>2_I_H.0a [type=2aa]</i>
 5640[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5640–5645</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt (vgl. Goethe an Reichel, 22. Januar 1828) [type=1c]</i>
 5656[böser]{böser} <i>5656</i> böser <i>2_I_H.0a</i>] böser <i>2_I_H.24c 2_H :</i> böse <i>zS [type=6]</i>
+5715[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5715–5726</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt (vgl. Goethe an Reichel, 22. Januar 1828) [type=1c]</i>
+5748[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5748–5756</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt (vgl. Goethe an Reichel, 22. Januar 1828) [type=1c]</i>
 5750[Hindermann]{=} <i>5750</i> Hindermann <i>2_I_H.0a</i>] Hintermann <i>Ec 2_H [type=6]</i>
 5775[am]{an} <i>5775</i> an <i>2_I_H.33</i>] am <i>2_H 2_I_H.0a [type=2b]</i>
 before_5801[Gesang]{Ungesang} <i>before_5801</i> Ungesang <i>2_H</i>] Gesang <i>2_I_H.0a [type=2aa]</i>
