@@ -153,7 +153,7 @@ before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C
 10030[ins]{=} <i>10030</i> ins <i>C.1_4</i>] in’s <i>C.2α_4 C.3_4 [type=4a]</i>
 10038[Schlauch!]{Schlauch.} <i>10038</i> Schlauch. <i>2_H</i>] Schlauch! <i>C.1_4 [type=2aa]</i>
 before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>konj. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=3*]</i>
-before_10067_a[alsobald]{also bald} <i>vor 10067</i> also bald <i>2_IV_H.3</i>] alsobald <i>2_IV_H.2</i> also bald <i>etwas undeutlich 2_IV_H.3</i> alsbald <i>2_H [type=2aa]</i>
+before_10067_a[alsbald]{also bald} <i>vor 10067</i> also bald <i>2_IV_H.3</i>] alsobald <i>2_IV_H.2</i> also bald <i>etwas undeutlich 2_IV_H.3</i> alsbald <i>2_H [type=2aa]</i>
 10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074</i>] <i>Die Verse sind in 2_H eingerückt. [type=1c]</i>
 10150[ewigen-]{ewigen} <i>10150</i> ewigen <i>2_IV_H.2</i>] ewigen- <i>2_H [type=1b]</i>
 after_10344[allzusammen]{alle zusammen} <i>nach 10344</i> alle zusammen <i>2_IV_H.8</i>] allzusammen <i>2_H [type=2aa]</i>
