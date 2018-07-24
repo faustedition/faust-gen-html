@@ -68,7 +68,7 @@ before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>]
 7534[Kreisenden]{=} <i>7534</i> Kreisenden <i>2_H</i>] kreisenden <i>2_II_H.74 :</i> Kreisenden <i>G</i> Kreißenden <i>emend. Schmidt [type=1a*]</i>
 7544[Angestregtest]{Angestrengtest} <i>7544</i> Angestrengtest <i>2_II_H.74</i>] Angestregtest <i>2_H [type=2aa]</i>
 7729[ungewissen]{ungewissem} <i>7729</i> ungewissem <i>none</i>] ungewissen <i>2_H [type=1a]</i>
-7776[Dagegegen]{Dagegen} <i>7776</i> Dagegen <i>2_II_H.74</i>] Dagegegen <i>2_H [type=1a]</i>
+7776[Dagegegen]{Dagegen} <i>7776</i> Dagegen <i>2_II_H.74</i>] Dagegegen <i>2_H [type=2aa]</i>
 7809|7810[Hexenritt|mit]{Hexenritt!|mit.} <i>7809–7810</i> Hexenritt! <i>bis</i> mit. <i>2_H</i>] Hexenritt^ <i>bis</i> mit^ <i>auf eingeklebtem Zettel 2_H [type=7]</i>
 before_7877[Homunnkulus]{Homunkulus} <i>vor 7877</i> Homunkulus <i>2_II_H.74</i>] Homunnkulus <i>2_H [type=1a]</i>
 before_7982[Phorkyas]{=} <i>vor 7982</i> <speaker>Phorkyas</speaker> <i>none</i>] <speaker>Phork.</speaker> <i>2_H [type=7]</i>
