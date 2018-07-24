@@ -259,6 +259,21 @@
         <rdg wit="2_H" type="type_7"><note>Die Verse sind in <wit>2_II_H.74</wit>
                 <wit>2_H</wit> eingerückt.</note></rdg>
     </app>
+    
+    <app>
+        <f:replace n="8506">Eröffnet</f:replace>
+        <f:ins n="8506">Eröffnet</f:ins>
+        <ref>8506</ref>
+        <lem wit="C.1_4">Eröffnet <note><wit>C.1_4</wit></note></lem>
+        <rdg wit="2_III_H.3">
+            <subst>
+                <del>Eröffnet</del>
+                <add>Eröffenet <note>Ri <wit>2_III_H.3</wit></note></add>
+            </subst>
+        </rdg>
+        <rdg wit="2_III_H.3a_1">Eröffenet <note><wit>2_III_H.3a_1</wit></note></rdg>
+        <rdg wit="2_H" type="type_2b*">Eröffnet <note><wit>2_H</wit></note></rdg>
+    </app>
 
     <app>
         <f:replace n="8741">nicht.</f:replace>
