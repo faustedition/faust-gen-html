@@ -341,11 +341,11 @@
         <f:ins n="before_10811_a" place="after"><stage n="before_10811_b" rend="inline">kauert
                 nieder.</stage></f:ins>
         <ref>vor 10811</ref>
-        <lem wit="2_IV_H.8"><stage>kauert nieder</stage>
+        <lem wit="2_IV_H.8">kauert nieder
             <note><wit wit="2_IV_H.8">2_IV_H.8</wit></note></lem>
         <rdg wit="2_H" type="type_2aa">
             <note>fehlt <wit wit="2_H">2_H</wit></note></rdg>
-        <rdg wit="2_H" type="type_6"><stage>kauert nieder</stage>
+        <rdg wit="2_H" type="type_6">kauert nieder
             <note>erg Ec <wit wit="2_H">2_H</wit></note></rdg>
     </app>
     
