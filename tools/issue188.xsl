@@ -58,6 +58,7 @@
 			<xsl:call-template name="findSt"/>
 			<xsl:call-template name="find-ge-used"/>
 			<xsl:call-template name="find-grline"/>
+			<xsl:call-template name="q20180724"/>
 
 		</html>
 
@@ -203,6 +204,7 @@
 						<xsl:with-param name="case">3</xsl:with-param>
 					</xsl:call-template>
 				</xsl:for-each>
+							
 
 			</xsl:for-each>
 		</table>
@@ -226,6 +228,37 @@
 				</xsl:apply-templates>
 			</td>
 		</tr>
+	</xsl:template>
+	
+	<xsl:template name="q20180724">
+		<h3 id="q20180724">nichteigh Blei etc, <a href="https://github.com/faustedition/faust-gen-html/issues/188#issuecomment-407202220">#188 Kommentar</a></h3>
+		<table>
+			<tr>
+				<th>Seite</th>
+				<th>Text</th>
+				<th>hand</th>
+				<th>rewrite</th>
+				<th>rewrite hand</th>
+			</tr>
+			
+			<xsl:for-each select="$coll">
+				<xsl:sort select="document-uri(/)"/>
+				<xsl:message select="document-uri(/)"/>
+				
+				<xsl:for-each select="//text()[preceding::handShift[1][matches(@new, '_bl(_|$)') and not(starts-with(@new, '#g_'))]][not(normalize-space(.) = '')]">
+					<tr>
+						<td class="text"><xsl:value-of select="f:pageno(/)"/></td>
+						<td class="doc"><xsl:value-of select="."/></td>
+						<td><xsl:value-of select="preceding::handShift[1]/@new"/></td>
+						<xsl:variable name="rewrite" select="ancestor::ge:rewrite[contains(@hand, '_t') and not(contains(@hand, '#g_'))]"/>
+						<xsl:if test="$rewrite">
+							<td><xsl:value-of select="$rewrite"/></td>
+							<td><xsl:value-of select="$rewrite/@hand"/></td>
+						</xsl:if>						
+					</tr>
+				</xsl:for-each>
+			</xsl:for-each>
+		</table>
 	</xsl:template>
 
 
