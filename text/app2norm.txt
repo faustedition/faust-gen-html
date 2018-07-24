@@ -11,7 +11,7 @@ before_4634_b[gesammelt]{gesammt} <i>vor 4634</i> gesammt <i>2_H</i>] gesammelt 
 4989|4990[Wenn|Wenn]{Wem|Wem} <i>4989–4990</i> Wem … Wem <i>2_H</i>] Wenn … Wenn <i>2_H :</i> Wem … Wem <i>durch Rasur</i> Wenn … Wenn <i>2_I_H.0a [type=2aa]</i>
 5018[allverwahrten]{altverwahrten} <i>5018</i> altverwahrten <i>2_H</i>] allverwahrten <i>2_I_H.0a [type=2aa]</i>
 5025[Tauben]{Dauben} <i>5025</i> Dauben <i>none</i>] Tauben <i>2_H 2_I_H.0a</i> Dauben <i>C.1_12 C.3_12 [type=1a]</i>
-5107[verwandt]{verwandt.} <i>5107</i> verwandt. <i>2_H</i>] verwandt^ <i>2_I_H.0a [type=1b]</i>
+5107[verwandt]{verwandt.} <i>5107</i> verwandt. <i>2_H</i>] verwandt^ <i>2_I_H.0a [type=2aa]</i>
 5146[Wunder seltsam]{Wunderseltsam} <i>5146</i> Wunderseltsam <i>2_H</i>] Wunder seltsam <i>2_I_H.0a [type=2aa]</i>
 5152|5153[verkündet|entzündet]{=} <i>5152–5153</i> verkündet … entzündet <i>2_I_H.0a</i>] entzündet … verkündet <i>2_H</i> entzündet … entzündet <i>2_I_H.0a :</i> verkündet … entzündet <i>vorschl Ri bill G [type=2d*]</i>
 5182[sie]{dich} <i>5182</i> dich <i>2_I_H.12a</i>] sie <i>2_H 2_I_H.0a [type=2b]</i>
@@ -168,7 +168,7 @@ after_10570[Posauenschall]{Posaunenschall} <i>after_10570</i> Posaunenschall <i>
 10636[gesenckten]{gesencktem} <i>10636</i> gesencktem <i>none</i>] gesenckten <i>2_H [type=2a]</i>
 before_10654_a[Kaiser:]{Kaiser} <i>vor 10654</i> <speaker>Kaiser</speaker> <i>none</i>] <speaker>Kaiser:</speaker> <i>2_H [type=8]</i>
 10771[schienen]{Schienen} <i>10771</i> Schienen <i>2_IV_H.8</i>] Schienen <i>2_H :</i> schienen <i>(Fehlkorrektur) G [type=1a]</i>
-10790[schlecht]{schlecht.} <i>10790</i> schlecht. <i>2_IV_H.8</i>] schlecht^ <i>2_H [type=1b]</i>
+10790[schlecht]{schlecht.} <i>10790</i> schlecht. <i>2_IV_H.8</i>] schlecht^ <i>2_H [type=2aa]</i>
 10818[den]{dem} <i>10818</i> dem <i>2_IV_H.8</i>] den <i>2_H [type=2aa]</i>
 10832[willkommne]{willkommner} <i>10832</i> willkommner <i>2_IV_H.8</i>] willkommne <i>2_H [type=2aa]</i>
 10876[Erbmarschall]{Erzmarschall} <i>10876</i> Erzmarschall <i>2_IV_H.21a</i>] Erbmarschall <i>2_H [type=2aa]</i>
