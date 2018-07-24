@@ -54,7 +54,7 @@ before_6377_b[Dammernde]{Dämmernde} <i>vor 6377</i> Dämmernde <i>none</i>] Dam
 6384[beqeumlichstens]{bequemlichstens} <i>6384</i> bequemlichstens <i>none</i>] beqeumlichstens <i>2_H [type=1a]</i>
 6447[Saulenschaft]{Säulenschaft} <i>6447</i> Säulenschaft <i>none</i>] Saulenschaft <i>2_H [type=1a]</i>
 before_6479_a[tritt auf]{=} <i>vor 6479</i> tritt auf <i>2_H</i>] hervortretend <i>Ec 2_H [type=6]</i>
-6552[Stand]{Stand} <i>6552</i> Stand <i>2_H</i>] Stand <i>undeutlich 2_I_H.48 2_I_H.60</i> Strand <i>konj. faust://bibliography/koch1882#Lucä_und_Koch emend. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=3*]</i>
+6552[Stand]{Stand} <i>6552</i> Stand <i>2_H</i>] Stand <i>undeutlich 2_I_H.48 2_I_H.60</i> Strand <i>konj. faust://bibliography/koch1882#Koch emend. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=3*]</i>
 before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückzieht <i>konj. faust://bibliography/fiedler1943#Fiedler [type=3*]</i>
 6654[Des Meisters]{=} <i>6654</i> Des Meisters <i>2_H</i>] Selbst Faustus <i>Ec 2_H [type=6]</i>
 6832[Willkommmen]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkomm̄en <i>2_H [type=1a]</i>
@@ -188,10 +188,10 @@ before_10877[Erbmarschall]{Erzmarschall} <i>vor 10877</i> <speaker>Erzmarschall<
 11203[]{} <i>11203–11206</i>] <l>Wir alle fordern</l> <l>Gleichen Theil.</l> <speaker>Mephist.</speaker> <l>Erst ordnet oben</l> <l>Saal an Saal.</l> <i>Ec 2_H; vgl. die Verse 11193–11196 in 2_V_H.1 [type=6]</i>
 11235[Vielgewandten]{Vielgewandtem} <i>11235</i> Vielgewandtem <i>2_V_H.1</i>] Vielgewandten <i>2_H [type=2aa]</i>
 11283[giebt]{giebts} <i>11283</i> giebts <i>2_V_H.1</i>] giebt <i>2_H [type=2aa]</i>
-after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab) <i>2_V_H.1</i> (ab) <i>fehlt 2_H :</i> (Regum I. 21.) <i>erg G [type=2aa*]</i>
+after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab) <i>2_V_H.1</i> <i>fehlt 2_H</i> (Regum I. 21.) <i>erg G 2_H [type=2aa*]</i>
 11318[Sie]{sie} <i>11318</i> sie <i>2_V_H.1</i>] Sie <i>2_H [type=2aa]</i>
 11383[Schattenhaft]{schattenhaft} <i>11383</i> schattenhaft <i>2_V_H.1</i>] Schattenhaft <i>2_H [type=2aa]</i>
-11422[dich]{dich!} <i>11422</i> dich! <i>2_V_H.6</i>] dich! <i>etwas undeutlich 2_V_H.6</i> dich. <i>mglw mit Ansatz zum Ausrufezeichen 2_V_H.2</i> dich^ <i>2_H [type=2b]</i>
+11422[dich]{dich!} <i>11422</i> dich! <i>2_V_H.6 (etwas undeutlich)</i>] dich. <i>mglw mit Ansatz zum Ausrufezeichen 2_V_H.2</i> dich^ <i>2_H [type=2b]</i>
 11439[mächtig]{mächtig;} <i>11439</i> mächtig; <i>2_V_H.2</i>] <i>Semikolon in H nicht mehr zu erkennen; ergänzt nach 2_V_H.2 [type=7]</i>
 11473[Weges-Mitte]{Weges Mitte} <i>11473</i> Weges Mitte <i>2_V_H.11</i>] Weges-Mitte <i>2_V_H.2 2_H [type=2b]</i>
 11513[Ligamenten]{Bändern, Sehnen} <i>11513</i> Bändern, Sehnen <i>2_V_H.14a*</i>] Ligamenten <i>2_H [type=7]</i>
