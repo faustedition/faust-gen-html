@@ -343,9 +343,12 @@
         <ref>vor 10811</ref>
         <lem wit="2_IV_H.8"><stage>kauert nieder</stage>
             <note><wit wit="2_IV_H.8">2_IV_H.8</wit></note></lem>
-        <rdg wit="2_H" type="type_2aa type_6">
+        <rdg wit="2_H" type="type_2aa">
+            <note>fehlt <wit wit="2_H">2_H</wit></note></rdg>
+        <rdg wit="2_H" type="type_6"><stage>kauert nieder</stage>
             <note>erg Ec <wit wit="2_H">2_H</wit></note></rdg>
     </app>
+    
     <app>
         <f:replace n="10909">von Festen</f:replace>
         <f:ins n="10909">von Festen</f:ins>
