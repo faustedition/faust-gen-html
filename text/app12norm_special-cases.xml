@@ -325,7 +325,7 @@
     </app>
 
     <app>
-        <f:replace n="10309">diessmal</f:replace>
+        <f:replace n="10309">diesmal</f:replace>
         <f:ins n="10309">dieses mal</f:ins>
         <ref>10309</ref>
         <lem wit="2_IV_H.8">dieses mal <note><wit>2_IV_H.8</wit></note></lem>
