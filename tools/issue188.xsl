@@ -246,16 +246,21 @@
 				<xsl:message select="document-uri(/)"/>
 				
 				<xsl:for-each select="//text()[preceding::handShift[1][matches(@new, '_bl(_|$)') and not(starts-with(@new, '#g_'))]][not(normalize-space(.) = '')]">
-					<tr>
-						<td class="text"><xsl:value-of select="f:pageno(/)"/></td>
-						<td class="doc"><xsl:value-of select="."/></td>
-						<td><xsl:value-of select="preceding::handShift[1]/@new"/></td>
 						<xsl:variable name="rewrite" select="ancestor::ge:rewrite[contains(@hand, '_t') and not(contains(@hand, '#g_'))]"/>
-						<xsl:if test="$rewrite">
-							<td><xsl:value-of select="$rewrite"/></td>
-							<td><xsl:value-of select="$rewrite/@hand"/></td>
+						<xsl:if test="$rewrite">					
+							<tr>
+								<td class="text"><xsl:value-of select="f:pageno(/)"/></td>
+								<td class="doc"><xsl:value-of select="."/></td>
+								<td><xsl:value-of select="preceding::handShift[1]/@new"/></td>
+								<td><xsl:value-of select="$rewrite"/></td>
+								<td><xsl:value-of select="$rewrite/@hand"/></td>
+								<td class="context">
+									<xsl:apply-templates select="ancestor::ge:line">
+										<xsl:with-param name="highlight" select="$rewrite" as="element()?" tunnel="yes"/>
+									</xsl:apply-templates>
+								</td>											
+							</tr>
 						</xsl:if>						
-					</tr>
 				</xsl:for-each>
 			</xsl:for-each>
 		</table>
