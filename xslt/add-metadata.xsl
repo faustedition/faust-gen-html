@@ -314,7 +314,8 @@
 	
 	<xsl:template match="*[f:is-schroer(.)]">
 		<xsl:copy>
-			<xsl:attribute name="f:schroer" select="f:lineno-for-display(@n)"/>
+			<xsl:variable name="display-linenos" select="for $token in tokenize(@n, '\s+') return f:lineno-for-display($token)"/>				
+			<xsl:attribute name="f:schroer" select="for $n in $display-linenos return if ($n = 0) then () else $n" separator=" "/>
 			<xsl:apply-templates select="@*, node()"/>
 		</xsl:copy>
 	</xsl:template>
