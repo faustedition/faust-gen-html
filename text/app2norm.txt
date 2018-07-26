@@ -155,6 +155,8 @@ before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C
 before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>konj. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=3*]</i>
 before_10067_a[alsbald]{also bald} <i>vor 10067</i> also bald <i>2_IV_H.3</i>] alsobald <i>2_IV_H.2</i> also bald <i>etwas undeutlich 2_IV_H.3</i> alsbald <i>2_H [type=2aa]</i>
 10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074</i>] <i>Die Verse sind in 2_H eingerückt. [type=1c]</i>
+10084[das]{es} <i>10084</i> es <i>2_IV_H.3</i>] das <i>2_H [type=2aa]</i>
+10107[Ich]{Ich} <i>10107</i> Ich <i>2_H</i>] Ich <i>2_IV_H.3 :</i> <emph>Ich</emph> <i>G [type=2aa*]</i>
 10150[ewigen-]{ewigen} <i>10150</i> ewigen <i>2_IV_H.2</i>] ewigen- <i>2_H [type=1b]</i>
 after_10344[allzusammen]{alle zusammen} <i>nach 10344</i> alle zusammen <i>2_IV_H.8</i>] allzusammen <i>2_H [type=2aa]</i>
 10415[hattet]{hättet} <i>10415</i> hättet <i>none</i>] hattet <i>2_H [type=1a]</i>
