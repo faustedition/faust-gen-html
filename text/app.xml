@@ -5,6 +5,7 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/ueb/txstep.tu</variable>
         <string-group name="wb">
             <member> </member>
+            <member>,</member>
             <member>#</member>
             <member>{{</member>
             <member>}}</member>
@@ -1120,14 +1121,16 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
         <insert-at-end>{{p after="0" line-feed="12"/}}</insert-at-end>
     </transform>
     <transform source="app2" destination="app2sort" option="append">
-        <insert-at-start>{{p}}{{font size="12"}}Von fremder Hand{{/font}}{{/p}}</insert-at-start>
+        <insert-at-start>{{p}}{{font size="12"}}Von fremder Hand, Riemer{{/font}}{{/p}}</insert-at-start>
         <pass>
             <examine-text>
                 <select>
                     <text-contains>
                         <search-table>
                             <search-string>{s:wb}\z\S{s:wb}</search-string>
+                            <search-string>{s:wb}\S\c{s:wb}</search-string>
                             <search-string>{s:wb}sc^_</search-string>
+                            <search-string>{s:wb}\R\i{s:wb}</search-string>
                         </search-table>
                     </text-contains>
                 </select>
