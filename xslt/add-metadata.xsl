@@ -39,6 +39,9 @@
 		   ¹ these might be merged to n and f:label, respectively		
 		f:first-verse             first Schröer verse number in the div
 		f:last-verse              last Schröer verse number in the div
+		f:min-verse               smallest Schröer verse number in the div
+		f:max-verse               largest Schröer verse number in the div
+
 		
 		f:verse-range			  nominal verse range from the scene info
 		
@@ -207,8 +210,11 @@
 		</xsl:variable>
 		<xsl:copy>
 			<xsl:copy-of select="@*"/>
-			<xsl:attribute name="f:first-verse" select="($content//*/@f:schroer)[1]"/>
+			<xsl:attribute name="f:first-verse" select="($content//*/@f:schroer)[1]"/>			
 			<xsl:attribute name="f:last-verse" select="($content//*/@f:schroer)[last()]"/>
+			<xsl:variable name="linenos" select="for $attr in $content//*/@f:schroer return for $n in tokenize($attr, '\s+') return number($n)"/>
+			<xsl:attribute name="f:min-verse" select="min($linenos)"/>
+			<xsl:attribute name="f:max-verse" select="max($linenos)"/>
 			<xsl:sequence select="$content"/>
 		</xsl:copy>
 	</xsl:template>
@@ -218,7 +224,8 @@
 	<xsl:template match="div" priority="5" mode="pass2">
 		<xsl:variable name="content" select="node()"/>		
 		<xsl:variable name="first-verse" select="($content//*/@f:schroer)[1]"/>
-		<xsl:variable name="last-verse" select="($content//*/@f:schroer)[last()]"/>			
+		<xsl:variable name="last-verse" select="($content//*/@f:schroer)[last()]"/>
+		<xsl:variable name="linenos" select="for $attr in $content//*/@f:schroer return for $n in tokenize($attr, '\s+') return number($n)"/>
 		<xsl:variable name="scene" select="f:get-scene-info(.)"/>
 		
 		<!-- Attributes: f:section, f:first-verse f:last-verse, f:act?, f:scene?, f:label, n, xml:id, f:verse-range -->
@@ -226,10 +233,10 @@
 		<xsl:copy>
 			<xsl:if test="f:section-div(.)">
 				<xsl:attribute name="f:section" select="count(preceding::div[f:section-div(.)]) + 1"/>
-				<xsl:if test="$scene/descendant-or-self::*/@f:first-verse">
+				<xsl:if test="$scene/descendant-or-self::*/@f:min-verse">
 					<xsl:attribute name="f:verse-range" separator=" "
-												 select="($scene/descendant-or-self::*/@first-verse)[1], 
-												 				 ($scene/descendant-or-self::*/@last-verse)[position()=last()]"/>
+												 select="($scene/descendant-or-self::*/@f:min-verse)[1], 
+												 				 ($scene/descendant-or-self::*/@f:max-verse)[position()=last()]"/>
 				</xsl:if>
 			</xsl:if>
 			
@@ -261,6 +268,8 @@
 			<xsl:if test="$first-verse">
 				<xsl:attribute name="f:first-verse" select="$first-verse"/>
 				<xsl:attribute name="f:last-verse" select="$last-verse"/>
+				<xsl:attribute name="f:min-verse" select="min($linenos)"/>
+				<xsl:attribute name="f:max-verse" select="max($linenos)"/>
 			</xsl:if>
 						
 			<xsl:apply-templates select="@* except @n" mode="#current"/>

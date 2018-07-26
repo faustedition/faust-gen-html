@@ -18,6 +18,7 @@
 	<xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
 	<xsl:param name="docbase">/document?sigil=</xsl:param>
 	<xsl:param name="source-uri" select="document-uri(/)"/>
+	<xsl:param name="sigil_t" select="f:sigil-for-uri(//idno[@type='faustedition'])"/>
 	
 	
 	
@@ -292,7 +293,9 @@
 		<xsl:variable name="textEl" select="$transcript/tei:TEI/tei:text"/>
 		<dt>Verse</dt>
 		<dd>
-			<xsl:value-of select="string-join(($textEl/@f:first-verse, $textEl/@f:last-verse), ' – ')"/>
+			<a href="{$edition}/genesis_bargraph?rangeStart={$textEl/@f:min-verse}&amp;rangeEnd={$textEl/@f:max-verse}#{$sigil_t}">
+				<xsl:value-of select="string-join(($textEl/@f:min-verse, $textEl/@f:max-verse), ' – ')"/>
+			</a>
 		</dd>		
 	</xsl:template>
 	
