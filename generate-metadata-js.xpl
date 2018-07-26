@@ -62,7 +62,7 @@
     </p:xslt>
     
     <cx:message>
-      <p:with-option name="message" select="p:resolve-uri(concat($builddir, '/uris.json'))"/>
+      <p:with-option name="message" select="concat('Saving URI table: ', p:resolve-uri(concat($builddir, '/uris.json')))"/>
     </cx:message>
       
     <p:store method="text">
