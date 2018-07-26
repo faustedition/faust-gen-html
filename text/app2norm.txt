@@ -158,7 +158,7 @@ before_10067_a[alsbald]{also bald} <i>vor 10067</i> also bald <i>2_IV_H.3</i>] a
 10084[Das]{es} <i>10084</i> es <i>2_IV_H.3</i>] Das <i>2_H [type=2aa]</i>
 10107[Ich]{Ich} <i>10107</i> Ich <i>2_H</i>] Ich <i>2_IV_H.3 :</i> <emph>Ich</emph> <i>G [type=2aa*]</i>
 10150[ewigen-]{ewigen} <i>10150</i> ewigen <i>2_IV_H.2</i>] ewigen- <i>2_H [type=1b]</i>
-10172[da]{die} <i>10172</i> die <i>2_IV_H.3</i>] da <i>:</i> die <i>(undeutlich) G IV_H.3</i> da <i>2_H [type=2aa]</i>
+10172[da]{die} <i>10172</i> die <i>2_IV_H.3</i>] da <i>2_IV_H.3 :</i> die <i>(undeutlich) G</i> da <i>2_H [type=2aa]</i>
 after_10344[allzusammen]{alle zusammen} <i>nach 10344</i> alle zusammen <i>2_IV_H.8</i>] allzusammen <i>2_H [type=2aa]</i>
 10415[hattet]{hättet} <i>10415</i> hättet <i>none</i>] hattet <i>2_H [type=1a]</i>
 10439[Negromant]{=} <i>10439</i> Negromant <i>2_H</i>] Nekromant <i>Ec 2_H [type=6]</i>
