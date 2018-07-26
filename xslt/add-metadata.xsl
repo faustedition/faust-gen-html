@@ -212,7 +212,7 @@
 			<xsl:copy-of select="@*"/>
 			<xsl:attribute name="f:first-verse" select="($content//*/@f:schroer)[1]"/>			
 			<xsl:attribute name="f:last-verse" select="($content//*/@f:schroer)[last()]"/>
-			<xsl:variable name="linenos" select="for $attr in $content//*/@f:schroer return for $n in tokenize($attr, '\s+') return number($n)"/>
+			<xsl:variable name="linenos" select="for $attr in $content//*/@f:schroer return for $n in tokenize($attr, '\s+') return xs:integer($n)"/>
 			<xsl:attribute name="f:min-verse" select="min($linenos)"/>
 			<xsl:attribute name="f:max-verse" select="max($linenos)"/>
 			<xsl:sequence select="$content"/>
@@ -324,7 +324,7 @@
 	<xsl:template match="*[f:is-schroer(.)]">
 		<xsl:copy>
 			<xsl:variable name="display-linenos" select="for $token in tokenize(@n, '\s+') return f:lineno-for-display($token)"/>				
-			<xsl:attribute name="f:schroer" select="for $n in $display-linenos return if ($n = 0) then () else $n" separator=" "/>
+			<xsl:attribute name="f:schroer" select="string-join(for $n in $display-linenos return if ($n = 0) then () else $n, ' ')"/>
 			<xsl:apply-templates select="@*, node()"/>
 		</xsl:copy>
 	</xsl:template>
