@@ -186,6 +186,7 @@ before_10877[Erbmarschall]{Erzmarschall} <i>vor 10877</i> <speaker>Erzmarschall<
 10959[heiligen]{heiligem} <i>10959</i> heiligem <i>2_IV_H.22e</i>] heiligen <i>2_H [type=2a]</i>
 10979[bangt]{=} <i>10979</i> bangt <i>2_H</i>] bangs <i>G 2_IV_H.22e [type=2a*]</i>
 10998[steter]{fetter} <i>10998</i> fetter <i>2_IV_H.22f</i>] steter <i>2_H [type=2aa]</i>
+11081[laß ihn schrecken]{=} <i>11081</i> laß ihn schrecken <i>2_H</i>] ihn erschrecken <i>Ec 2_H [type=6]</i>
 11099[Doch!]{=} <i>11099</i> Doch! <i>2_V_H.0b 2_H</i>] Dort <i>zS 2_H [type=6]</i>
 11160[fremden]{fremdem} <i>11160</i> fremdem <i>2_V_H.1</i>] fremden <i>2_H [type=2aa]</i>
 11203[]{} <i>11203–11206</i>] <l>Wir alle fordern</l> <l>Gleichen Theil.</l> <speaker>Mephist.</speaker> <l>Erst ordnet oben</l> <l>Saal an Saal.</l> <i>Ec 2_H; vgl. die Verse 11193–11196 in 2_V_H.1 [type=6]</i>
