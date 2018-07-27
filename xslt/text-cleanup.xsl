@@ -70,7 +70,7 @@
 		| speaker/@rend 
 		| stage[not(matches(@rend,'inline'))]/@rend
 		| l[not(@rend='indented')]/@rend
-		| l[@rend='indented' and position()=1]/@rend
+		| l[@rend='indented' and position()=1 and not(following-sibling::l[@rend='indented'])]/@rend
 		| space[@type='typographical'] 
 		| hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
 		| sp/@who 
