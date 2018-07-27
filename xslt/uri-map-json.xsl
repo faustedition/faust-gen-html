@@ -61,8 +61,8 @@
                     <j:string value="{@xml:id}"/>
                   </xsl:for-each>            
                 </j:array>
-                <j:number name="min-verse" value="{$text/tei:TEI/tei:text/@f:min-verse}" dropempty="true"/>
-                <j:number name="max-verse" value="{$text/tei:TEI/tei:text/@f:max-verse}" dropempty="true"/>
+                <j:number name="min_verse" value="{$text/tei:TEI/tei:text/@f:min-verse}" dropempty="true"/>
+                <j:number name="max_verse" value="{$text/tei:TEI/tei:text/@f:max-verse}" dropempty="true"/>
               </xsl:when>
               <xsl:otherwise>
                 <xsl:message select="concat($sigil, ': Textual Transcript ', $transcript-path, ' not found.')"/>
