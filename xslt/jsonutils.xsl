@@ -82,11 +82,13 @@
 	
 	<xsl:template name="j:simple" match="j:number|j:bool|j:string" mode="#default json">
 		<xsl:param name="content" select="if (@value) then @value else ."/>
-		<xsl:variable name="j_value" select="if (local-name(.) eq 'string') then j:quote($content) else $content"/>
+		<xsl:variable name="j_value" select="if (local-name(.) eq 'string') then j:quote($content) else if (normalize-space($content) != '') then $content else 'null'"/>
 		<xsl:variable name="key">
 			<xsl:call-template name="j:key"/>
 		</xsl:variable>
-		<xsl:value-of select="concat($key, $j_value)"/>
+		<xsl:if test="$content != '' or not(@dropempty='true')">
+			<xsl:value-of select="concat($key, $j_value)"/>			
+		</xsl:if>
 		<xsl:if test="@value and normalize-space(.)">
 			<xsl:message select="concat('WARNING: ', name(), ' contains both @value=', @value, 
 				' and content=', normalize-space(.), '. Dropping content.')"/>

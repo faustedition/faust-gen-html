@@ -45,18 +45,24 @@
           <j:string name="faust://document/{@type}/{f:sigil-for-uri(.)}" value="{.}"/>
         </xsl:for-each>
       </j:object>
-      <j:array name="inscriptions" dropempty="true">
         <xsl:variable name="base-uri" select="base-uri(//textTranscript)"/>
         <xsl:choose>
           <xsl:when test="$base-uri != ''">
-            <xsl:variable name="transcript-uri" select="resolve-uri(//textTranscript/@uri, $base-uri)"/>
-            <xsl:variable name="transcript-path" select="replace($transcript-uri, '^faust://xml/', $source-resolved)"/>
+            <!--<xsl:variable name="transcript-uri" select="resolve-uri(//textTranscript/@uri, $base-uri)"/>
+            <xsl:variable name="transcript-path" select="replace($transcript-uri, '^faust://xml/', $source-resolved)"/>-->
+            <xsl:variable name="sigil_t" select="f:sigil-for-uri(//idno[@type='faustedition'])"/>
+            <xsl:variable name="transcript-path" select="resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir-resolved)"/>
             <xsl:choose>
               <xsl:when test="doc-available($transcript-path)">
-                <xsl:variable name="inscriptions" select="document($transcript-path)//ge:stageNote[@type='segment']"/>
-                <xsl:for-each select="$inscriptions">
-                  <j:string value="{@xml:id}"/>
-                </xsl:for-each>            
+                <xsl:variable name="text" select="document($transcript-path)"/>
+                <j:array name="inscriptions" dropempty="true">
+                  <xsl:variable name="inscriptions" select="$text//ge:stageNote[@type='segment']"/>
+                  <xsl:for-each select="$inscriptions">
+                    <j:string value="{@xml:id}"/>
+                  </xsl:for-each>            
+                </j:array>
+                <j:number name="min-verse" value="{$text/tei:TEI/tei:text/@f:min-verse}" dropempty="true"/>
+                <j:number name="max-verse" value="{$text/tei:TEI/tei:text/@f:max-verse}" dropempty="true"/>
               </xsl:when>
               <xsl:otherwise>
                 <xsl:message select="concat($sigil, ': Textual Transcript ', $transcript-path, ' not found.')"/>
@@ -67,7 +73,6 @@
             <xsl:message select="concat($sigil, ': No textual transcript')"/>
           </xsl:otherwise>          
         </xsl:choose>        
-      </j:array>
       <j:string name="type" value="{local-name(/*)}"/>
     </j:object>
   </xsl:template>
