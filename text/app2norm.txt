@@ -26,7 +26,7 @@ before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2
 5519[Stürmgewalt]{Sturmgewalt} <i>5519</i> Sturmgewalt <i>2_H</i>] Stürmgewalt <i>2_I_H.0a [type=2aa]</i>
 5592[ein]{im} <i>5592</i> im <i>2_H</i>] ein <i>2_I_H.0a [type=2aa]</i>
 5640[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5640–5645</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt [type=1c]</i>
-5656[böser]{böser} <i>5656</i> böser <i>2_I_H.0a</i>] böser <i>2_I_H.24c 2_H :</i> böse <i>zS [type=6]</i>
+5656[böser]{böser} <i>5656</i> böser <i>2_I_H.0a</i>] böser <i>2_I_H.24c 2_H C.1_41 C.3_41</i> böser <i>2_H :</i> böse <i>zS</i> böse <i>Q [type=6]</i>
 5715[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5715–5726</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt [type=1c]</i>
 5748[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5748–5756</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt [type=1c]</i>
 5750[Hindermann]{=} <i>5750</i> Hindermann <i>2_I_H.0a</i>] Hintermann <i>Ec 2_H [type=6]</i>
@@ -169,6 +169,7 @@ after_10570[Posauenschall]{Posaunenschall} <i>after_10570</i> Posaunenschall <i>
 10619[erfahren]{erfahren?} <i>10619</i> erfahren? <i>2_H</i>] erfahren^ <i>auf eingeklebtem Zettel 2_H [type=7]</i>
 10635[Zerrzerrt]{Zerzerrt} <i>10635</i> Zerzerrt <i>none</i>] Zerrzerrt <i>2_H [type=1a]</i>
 10636[gesenckten]{gesencktem} <i>10636</i> gesencktem <i>none</i>] gesenckten <i>2_H [type=2a]</i>
+10649[sturmbewegte]{=} <i>10649</i> sturmbewegte <i>2_H</i>] sturmbewegte <i>C.1_41 C.3_41 Q</i> sturmbewegte <i>2_H :</i> sturmerregte <i>zS [type=6]</i>
 before_10654_a[Kaiser:]{Kaiser} <i>vor 10654</i> <speaker>Kaiser</speaker> <i>none</i>] <speaker>Kaiser:</speaker> <i>2_H [type=8]</i>
 10771[schienen]{Schienen} <i>10771</i> Schienen <i>2_IV_H.8</i>] Schienen <i>2_H :</i> schienen <i>(Fehlkorrektur) G [type=1a]</i>
 10790[schlecht]{schlecht.} <i>10790</i> schlecht. <i>2_IV_H.8</i>] schlecht^ <i>2_H [type=2aa]</i>
