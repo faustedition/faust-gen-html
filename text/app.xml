@@ -6,6 +6,7 @@
         <string-group name="wb">
             <member> </member>
             <member>,</member>
+            <member>\?</member>
             <member>#</member>
             <member>{{</member>
             <member>}}</member>
