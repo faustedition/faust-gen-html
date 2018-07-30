@@ -83,6 +83,8 @@
 						output="ivh22g.xml"/>
 					<transcript path="edition/wa_I_15_1.xml"
 						output="wa_I_15_1.xml"/>
+					<transcript path="edition/ja_14.xml"
+						output="ja_14.xml"/>
 					<transcript path="edition/ma_18_1.xml"
 						output="ma_18_1.xml"/>
 				</config>
