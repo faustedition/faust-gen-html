@@ -158,26 +158,6 @@
         <f:reference>Collin, Josef: Zur Mummenschanz-Szene in Goethes Faust. In: Aufsätze zur Sprach- und Literaturgeschichte. Wilhelm Braune zum 20. 2. 1920, Dortmund 1920, S. 360–400.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/D.3">
-        <f:citation>D.3</f:citation>
-        <f:reference>Faust. Eine Tragödie von Goethe. Neue Auflage. Stuttgart und Tübingen, in der J.G. Cotta’schen Buchhandlung. 1821.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/D.4">
-        <f:citation>D.4</f:citation>
-        <f:reference>Faust. Eine Tragödie von Goethe. Stuttgart und Tübingen, in der J.G. Cotta’schen Buchhandlung. 1825.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/D.4alpha">
-        <f:citation>D.4α </f:citation>
-        <f:reference>Faust. Eine Tragödie von Goethe. Stuttgart und Tübingen, in der J.G. Cotta’schen Buchhandlung. 1825.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/D.5">
-        <f:citation>D.5</f:citation>
-        <f:reference>Faust. Eine Tragödie von Goethe. Stuttgart und Tübingen, in der J.G. Cotta’schen Buchhandlung. 1830.</f:reference>
-    </f:bib>
-
     <f:bib uri="faust://bibliography/dedner_et_al2005">
         <f:citation>Dedner u.a. 2005</f:citation>
         <f:reference>Dedner, Burghard, Oliver Hahn, Timo Wolff: Ergebnisse der Tintenanalysen. In: Georg Büchner. Sämtliche Werke und Schriften. Historisch-kritische Ausgabe mit Quellendokumentation und Kommentar (Marburger Ausgabe). Im Auftrag der Akademie der Wissenschaften und der Literatur, Mainz, hrsg. von Burghard Dedner. Bd. 7.2, hrsg. von Burghard Dedner, Darmstadt 2005, S. 89–102. </f:reference>
@@ -808,11 +788,6 @@
         <f:reference>Pniower, Otto: Das erste Paralipomenon. (Miszellen zum ‚Faust‘). In: faust://bibliography/gjb_44, S. 143–146.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/Q">
-        <f:citation>Q</f:citation>
-        <f:reference>Goethe’s poetische und prosaische Werke in zwei Bänden. Mit den schützenden Privilegien sämtlicher Staaten des deutschen Bundes. Des ersten Bandes zweite Abtheilung, Stuttgart und Tübingen 1836.</f:reference>
-    </f:bib>
-
     <f:bib uri="faust://bibliography/resenhoefft1975">
         <f:citation>Resenhöfft 1975</f:citation>
         <f:reference>Resenhöfft, Wilhelm: Goethes Faust. Gleichnis schöpferischer Sinnerfassung. Anhang: Engel am Rabenstein -- Textrevision, Bern, Frankfurt a.M. 1975 (= Europäische Hochschulschriften. Reihe I, 128).</f:reference>
@@ -1046,6 +1021,46 @@
     <f:bib uri="faust://bibliography/witkowski1930">
         <f:citation>Witkowski 1930</f:citation>
         <f:reference>Witkowski, Georg: Notwendige Faust-Emendationen. In: Jahrbuch der Sammlung Kippenberg 8 (1930), S. 304–308.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/C.1_41">
+        <f:citation>C.1 41</f:citation>
+        <f:reference>Goethe’s Werke. Vollständige Ausgabe letzter Hand. Ein und vierzigster Band. Unter des durchlauchtigsten deutschen Bundes schützenden Privilegien. Stuttgart und Tübingen, in der J. G. Cotta’schen Buchhandlung. 1832. (Nebentitel: Goethe’s nachgelassene Werke. Erster Band)</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/C.3_41">
+        <f:citation>C.3 41</f:citation>
+        <f:reference>Goethe’s Werke. Vollständige Ausgabe letzter Hand. Ein und vierzigster Band. Unter des durchlauchtigsten deutschen Bundes schützenden Privilegien. Stuttgart und Tübingen, in der J. G. Cotta’schen Buchhandlung. 1833. (Nebentitel: Goethe’s nachgelassene Werke. Erster Band)</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/D.3">
+        <f:citation>D.3</f:citation>
+        <f:reference>Faust. Eine Tragödie von Goethe. Neue Auflage. Stuttgart und Tübingen, in der J.G. Cotta’schen Buchhandlung. 1821.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/D.4">
+        <f:citation>D.4</f:citation>
+        <f:reference>Faust. Eine Tragödie von Goethe. Stuttgart und Tübingen, in der J.G. Cotta’schen Buchhandlung. 1825.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/D.4alpha">
+        <f:citation>D.4α </f:citation>
+        <f:reference>Faust. Eine Tragödie von Goethe. Stuttgart und Tübingen, in der J.G. Cotta’schen Buchhandlung. 1825.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/D.5">
+        <f:citation>D.5</f:citation>
+        <f:reference>Faust. Eine Tragödie von Goethe. Stuttgart und Tübingen, in der J.G. Cotta’schen Buchhandlung. 1830.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/Q">
+        <f:citation>Q</f:citation>
+        <f:reference>Goethe’s poetische und prosaische Werke in zwei Bänden. Mit den schützenden Privilegien sämtlicher Staaten des deutschen Bundes. Des ersten Bandes zweite Abtheilung, Stuttgart und Tübingen 1836.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/q_1_2">
+        <f:citation>Q 1_2</f:citation>
+        <f:reference>Goethe’s poetische und prosaische Werke in Zwei Bänden, Bd. 1, Abt. 2, Stuttgart und Tübingen 1837.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_I_1">
@@ -1926,11 +1941,6 @@
     <f:bib uri="faust://bibliography/wga_13_1937">
         <f:citation>WGA 13 (1937)</f:citation>
         <f:reference>Welt-Goethe-Ausgabe, Band 13, hrsg. von Max Hecker, Mainz 1937.</f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/q_1_2">
-        <f:citation>Q 1_2</f:citation>
-        <f:reference>Goethe’s poetische und prosaische Werke in Zwei Bänden, Bd. 1, Abt. 2, Stuttgart und Tübingen 1837.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/braunschweiger1987">

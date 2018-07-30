@@ -3038,7 +3038,7 @@ Creizenach 1837, S. 386; </field>
     <field name="vorlage-seite-von">277</field>
     <field name="vorlage-absatz-von">5</field>
   </testimony>
-  <testimony id="pniower_81">
+  <testimony id="pniower_81a">
     <field name="lfd-nr-neu-2">132</field>
     <field name="lfd-nr-neuneu">132</field>
     <field name="lfd-nr-allerneuestens">133</field>
@@ -3046,7 +3046,7 @@ Creizenach 1837, S. 386; </field>
     <field name="lfd-nr-ganz-neu">121</field>
     <field name="lfd-nr-neu">120</field>
     <field name="lfd-nr-alt">119</field>
-    <field name="pniower-nr">81</field>
+    <field name="pniower-nr">81a</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
     <field name="dokumenttyp">Text</field>
