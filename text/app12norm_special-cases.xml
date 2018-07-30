@@ -198,7 +198,7 @@
                 <del>Schatzmeister</del>
                 <add>Marschalck</add>
             </subst>
-            <note><wit wit="2_H">2_H</wit> (<quote>Schatzmeister</quote> ungestrichen) <seg type="hand">G</seg></note></rdg>
+            <note>(<quote>Schatzmeister</quote> ungestrichen) <seg type="hand">G</seg> <wit wit="2_H">2_H</wit></note></rdg>
     </app>
     <app>
         <f:replace n="6199">Gespenst-Gespinnsten</f:replace>
