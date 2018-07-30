@@ -6,6 +6,7 @@ before_4634_b[gesammelt]{gesammt} <i>vor 4634</i> gesammt <i>2_H</i>] gesammelt 
 4710[welch’]{welch} <i>4710</i> welch <i>2_H</i>] welch’ <i>2_I_H.0a [type=1b]</i>
 4721[ersprießend]{entsprießend} <i>4721</i> entsprießend <i>2_H</i>] ersprießend <i>2_I_H.0a [type=2aa]</i>
 4877[Ich]{Ich?} <i>4877</i> Ich? <i>2_H</i>] Ich^ <i>2_I_H.0a [type=2aa]</i>
+4885[ders]{Ders} <i>4885</i> Ders <i>2_H</i>] ders <i>2_I_H.0a [type=2aa]</i>
 4975[falschgehofft]{falsch gehofft} <i>4975</i> falsch gehofft <i>2_H</i>] falschgehofft <i>2_I_H.0a [type=2aa]</i>
 4977|4985[@lg|@lg]{rend=|rend=} <i>4977–4992</i>] <i>Die Verse sind in 2_I_H.0a eingerückt [type=1c]</i>
 4989|4990[Wenn|Wenn]{Wem|Wem} <i>4989–4990</i> Wem … Wem <i>2_H</i>] Wenn … Wenn <i>2_H :</i> Wem … Wem <i>durch Rasur</i> Wenn … Wenn <i>2_I_H.0a [type=2aa]</i>
