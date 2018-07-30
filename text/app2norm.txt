@@ -119,7 +119,7 @@ before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>2_III_
 9401[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>vor 9401</i>] <i>Spatium 2_H</i> <i>Spatium fehlt C.1_4 [type=2aa]</i>
 9411[nah]{nah,} <i>9411</i> nah, <i>2_H</i>] nah^ <i>C.1_4 [type=2aa]</i>
 9446[stillen]{stillem} <i>9446</i> stillem <i>2_III_H.45a C.2α_4</i>] stillen <i>C.1_4 C.3_4 [type=4b]</i>
-9517[hinaufgeblickt,]{hinauf geblickt,} <i>9517</i> hinauf geblickt, <i>none</i>] hinaufgeblickt, <i>2_III_H.58a</i> hinauf geblickt. <i>2_III_H.2:1</i> hinaufgeblickt. <i>2_III_H.3a:2</i> hinauf geblickt. <i>2_H C.1_4 [type=2b]</i>
+9517[hinauf geblickt.]{hinauf geblickt,} <i>9517</i> hinauf geblickt, <i>none</i>] hinaufgeblickt, <i>2_III_H.58a</i> hinauf geblickt. <i>2_III_H.2:1</i> hinaufgeblickt. <i>2_III_H.3a:2</i> hinauf geblickt. <i>2_H C.1_4 [type=2b]</i>
 9522[Land]{Land,} <i>9522</i> Land, <i>2_H</i>] Land^ <i>C.1_4 [type=2aa]</i>
 9534[vorsichtig]{vorsichtig,} <i>9534</i> vorsichtig, <i>2_H</i>] vorsichtig^ <i>mit ungewöhnlich großem Spatium C.1_4 [type=2aa]</i>
 9535[jähen]{gähen} <i>9535</i> gähen <i>2_H</i>] jähen <i>C.1_4 [type=2aa]</i>
