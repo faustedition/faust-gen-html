@@ -63,6 +63,7 @@ before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückz
 7136[Cumpan]{=} <i>7136</i> Cumpan <i>2_H</i>] Kumpan <i>Ec 2_H [type=6]</i>
 before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>] <i>Zeichen über dem zweiten</i> e <i>zur Verdeutlichung der Artikulation, darüber</i> ei<i>, alR</i> Peneus <i>mit Zeichen über dem zweiten</i> e <i>Ri 2_H [type=7]</i>
 7260[menschlichähnlichs]{menschenähnlichs} <i>7260</i> menschenähnlichs <i>2_II_H.74</i>] menschlichähnlichs <i>2_H [type=2aa]</i>
+7287[wadend]{=} <i>7287</i> wadend <i>2_II_H.74 2_H</i>] watend <i>em. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=7]</i>
 7437[Erungene]{Errungene} <i>7437</i> Errungene <i>none</i>] Erungene <i>2_H [type=1a]</i>
 7534[Kreisenden]{=} <i>7534</i> Kreisenden <i>2_H</i>] kreisenden <i>2_II_H.74 :</i> Kreisenden <i>G</i> Kreißenden <i>emend. Schmidt [type=7]</i>
 7544[Angestregtest]{Angestrengtest} <i>7544</i> Angestrengtest <i>2_II_H.74</i>] Angestregtest <i>2_H [type=2aa]</i>
