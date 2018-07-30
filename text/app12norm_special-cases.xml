@@ -163,13 +163,13 @@
             <del>Luft</del>
             <add>Lust <note><seg type="hand">G</seg></note></add>
         </subst> <note><wit>2_I_H.15b</wit></note></rdg>
-        <rdg wit="2_H 2_I_H.0a faust://bibliography/C.1_41 faust://bibliography/C.3_41" type="type_2b">Luft <note><wit>2_H</wit>
-            <wit>2_I_H.0a</wit> <ref target="faust://bibliography/C.1_41">C.1_41</ref> <ref target="faust://bibliography/C.3_41">C.3_41</ref></note></rdg>
+        <rdg wit="2_H 2_I_H.0a" type="type_2b">Luft <note><wit>2_H</wit>
+            <wit>2_I_H.0a</wit> <ref target="faust://bibliography/C.1_41"></ref> <ref target="faust://bibliography/C.3_41"></ref></note></rdg>
         <rdg wit="2_H" type="type_6"><subst hand="zS">
             <del>Luft</del>
             <add>Lust <note><seg type="hand">zS</seg></note></add>
         </subst> <note>zS <wit>2_H</wit></note></rdg>
-        <rdg wit="Q">Lust <note><ref target="faust://bibliography/Q">Q</ref></note></rdg>
+        <rdg>Lust <note><ref target="faust://bibliography/Q"></ref></note></rdg>
     </app>
     <app>
         <f:ins n="before_5357_b" place="only-app"/>
