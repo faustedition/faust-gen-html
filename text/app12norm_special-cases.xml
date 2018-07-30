@@ -161,16 +161,16 @@
         <lem wit="2_I_H.15b">Lust <note><wit>2_I_H.15b</wit></note></lem>
         <rdg wit="2_I_H.15b"><subst hand="G">
                 <del>Luft</del>
-                <add>Lust <note><seg type="hand">G</seg></note></add>
+                <add>Lust</add>
             </subst>
-            <note><wit>2_I_H.15b</wit></note></rdg>
+            <note><seg type="hand">G</seg> <wit>2_I_H.15b</wit></note></rdg>
         <rdg wit="2_H 2_I_H.0a" type="type_2b">Luft <note><wit>2_H</wit>
                 <wit>2_I_H.0a</wit>
                 <ref target="faust://bibliography/C.1_41"/>
                 <ref target="faust://bibliography/C.3_41"/></note></rdg>
         <rdg wit="2_H" type="type_6"><subst hand="zS">
                 <del>Luft</del>
-                <add>Lust <note><seg type="hand">zS</seg></note></add>
+                <add>Lust</add>
             </subst>
             <note>zS <wit>2_H</wit></note></rdg>
         <rdg>Lust <note><ref target="faust://bibliography/Q"/></note></rdg>
@@ -194,12 +194,11 @@
         <ref>vor 6086</ref>
         <lem wit="2_H"><speaker>Marschalck</speaker>
             <note><wit wit="2_H">2_H</wit></note></lem>
-        <rdg wit="2_H"><subst hand="G">
+        <rdg wit="2_H" type="type_7"><subst hand="G">
                 <del><speaker>Schatzmeister</speaker></del>
-                <add><speaker>Marschalck</speaker>
-                    <note><wit wit="2_H">2_H</wit></note></add>
+                <add><speaker>Marschalck</speaker></add>
             </subst>
-            <note>(<quote>Schatzmeister</quote> ungestrichen) <seg type="hand">G</seg></note></rdg>
+            <note><wit wit="2_H">2_H</wit> (<quote>Schatzmeister</quote> ungestrichen) <seg type="hand">G</seg></note></rdg>
     </app>
     <app>
         <f:replace n="6199">Gespenst-Gespinnsten</f:replace>
@@ -259,9 +258,11 @@
         <f:ins n="6848">leuchtet!</f:ins>
         <ref>6848</ref>
         <lem wit="2_H">leuchtet! <note><wit>2_H</wit></note></lem>
-        <rdg wit="2_H" type="type_7"><subst><del>leucht</del>
-                <add>leuchtet <note>G, Ausrufezeichen zS alR
-            <wit>2_H</wit></note></add></subst></rdg>
+        <rdg wit="2_H" type="type_7"><subst>
+            <del>leucht</del>
+            <add>leuchtet</add>
+        </subst> <note>G, Ausrufezeichen zS alR
+                <wit>2_H</wit></note></rdg>
     </app>
 
     <app>
@@ -280,9 +281,9 @@
         <rdg wit="2_III_H.3">
             <subst>
                 <del>Eröffnet</del>
-                <add>Eröffenet <note>Ri <wit>2_III_H.3</wit></note></add>
+                <add>Eröffenet</add>
             </subst>
-        </rdg>
+            <note>Ri <wit>2_III_H.3</wit></note></rdg>
         <rdg wit="2_III_H.3a_1">Eröffenet <note><wit>2_III_H.3a_1</wit></note></rdg>
         <rdg wit="2_H" type="type_2b*">Eröffnet <note><wit>2_H</wit></note></rdg>
     </app>
@@ -321,9 +322,9 @@
                 <note><wit>2_III_H.2_1</wit></note></lem>
         <rdg wit="2_III_H.2_1"><subst hand="Ri">
                 <del>Gold und Schwarze, ſilbern blau und roth</del>
-                <add>Gold und Schwarz, und Silber Blau und Roth <note>Ri
-                        <wit>2_III_H.2_1</wit></note></add>
-            </subst></rdg>
+                <add>Gold und Schwarz, und Silber Blau und Roth</add>
+        </subst> <note>Ri
+            <wit>2_III_H.2_1</wit></note></rdg>
         <rdg wit="2_III_H.3a_1">Gold und Schwarz, und silbern, blau und roth
                     <note><wit>2_III_H.3a_1</wit></note></rdg>
         <rdg wit="2_H">gold und schwarz, und silbern, blau und roth
@@ -341,8 +342,8 @@
         <rdg wit="2_III_H.3a_1">In tiefen <note><wit>2_III_H.3a_1</wit></note></rdg>
         <rdg wit="2_H" type="type_2d*"><subst hand="G">
                 <del>In tiefen</del>
-                <add>In tiefem <note>G <wit>2_H</wit></note></add>
-            </subst></rdg>
+                <add>In tiefem</add>
+        </subst> <note>G <wit>2_H</wit></note></rdg>
     </app>
 
     <app>
@@ -363,9 +364,9 @@
         <rdg wit="2_H" type="type_2aa type_6">
             <subst>
                 <del>diesmal</del>
-                <add>diesesmal <note>Ec <wit>2_H</wit></note></add>
+                <add>diesesmal</add>
             </subst>
-        </rdg>
+            <note>Ec <wit>2_H</wit></note></rdg>
     </app>
 
     <app>
