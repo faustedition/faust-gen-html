@@ -135,6 +135,7 @@
 			<xsl:sequence select="f:source('C.1_4')"/>
 			<xsl:apply-templates select="$C1_4//div[starts-with(@n, '2.3.')]"/>
 		</xsl:copy>
+		<xsl:sequence select="f:source('2_H')"/>
 	</xsl:template>
 	
 	<!-- https://github.com/faustedition/faust-gen-html/issues/182 -->
