@@ -338,6 +338,8 @@ in <xsl:value-of select="document-uri(/)"/>
 		<xsl:text> </xsl:text>
 	</xsl:template>
 	
+	<xsl:template match="pb[@break='no']"/>
+	
 	<xsl:template match="pb[$type = 'lesetext']" priority="5">
 		<xsl:text> </xsl:text>
 	</xsl:template>
