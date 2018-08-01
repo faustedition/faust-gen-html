@@ -43,8 +43,8 @@
 	
 	-->
 	<xsl:variable name="columns" xmlns="http://www.faustedition.net/ns">
-		<fieldspec name="graef-nr" spreadsheet="Gräf-Nr." sortable-type="numericplus" title="Nr. in Gräf II 2">Gräf</fieldspec>
-		<fieldspec name="pniower-nr" spreadsheet="Pniower-Nr." sortable-type="numericplus" title="Nr. in Pniower 1899">Pniower</fieldspec>
+		<fieldspec name="graef-nr" spreadsheet="Gräf-Nr." sortable-type="numericplus" title="Nr. in Gräf II 2"><a href="{$edition}/bibliography#graef1901-1914_II_2">Gräf</a></fieldspec>
+		<fieldspec name="pniower-nr" spreadsheet="Pniower-Nr." sortable-type="numericplus" title="Nr. in Pniower 1899"><a href="{$edition}/bibliography#pniower1899">Pniower</a></fieldspec>
 		<fieldspec name="quz" spreadsheet="QuZ" title="Nr. in Quellen und Zeugnisse">QuZ</fieldspec>
 		<fieldspec name="biedermann-herwignr" spreadsheet=" Biedermann-HerwigNr." title="Nr. bei Biedermann / Herwig">Biedermann³</fieldspec>
 		<fieldspec name="datum-von" spreadsheet="Datum.(von)" sortable-type="date-de">Datum</fieldspec>

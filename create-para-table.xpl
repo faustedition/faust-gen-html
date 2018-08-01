@@ -57,6 +57,8 @@
       </p:load>
       
     </p:for-each>
+    
+    <p:identity name="emended-transcripts"/>
       
     <p:xslt template-name="collection">
       <p:input port="stylesheet"><p:document href="xslt/create-paralipomena-info.xsl"/></p:input>
@@ -65,7 +67,18 @@
     
     <p:store method="text">
       <p:with-option name="href" select="resolve-uri('www/data/paralipomena.js', $builddir)"/>
-    </p:store>    
+    </p:store>
+
+    <p:xslt template-name="collection">
+      <p:input port="source"><p:pipe port="result" step="emended-transcripts"/></p:input>
+      <p:input port="stylesheet"><p:document href="xslt/stueck-list.xsl"/></p:input>
+      <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+    </p:xslt>
+    
+    <p:store method="xhtml">
+      <p:with-option name="href" select="resolve-uri('www/print/stuecke.html', $builddir)"/>
+    </p:store>
+    
   </p:group>
   
 </p:declare-step>
