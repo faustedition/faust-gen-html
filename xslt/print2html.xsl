@@ -145,6 +145,16 @@
         <xsl:with-param name="others" select="f:referenced-segs(.)"/>
       </xsl:call-template>
       <xsl:apply-templates/>
+      <xsl:variable name="prevapp" select="preceding::note[@type='textcrit'][1]"/>
+      <xsl:variable name="nextapp" select="following::note[@type='textcrit'][1]"/>
+      <span class="applinks">
+        <xsl:if test="$prevapp">
+          <a href="{f:link-to($prevapp)/@href}" title="vorheriger Apparateintrag"><i class="fa fa-up-dir"></i></a>        
+        </xsl:if>
+        <xsl:if test="$nextapp">
+          <a href="{f:link-to($nextapp)/@href}" title="nächster Apparateintrag"><i class="fa fa-down-dir"></i></a>        
+        </xsl:if>        
+      </span>
     </span>
   </xsl:template>
   
