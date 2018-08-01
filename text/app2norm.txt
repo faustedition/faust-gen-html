@@ -45,6 +45,7 @@ before_5801[Gesang]{Ungesang} <i>before_5801</i> Ungesang <i>2_H</i>] Gesang <i>
 after_6062[]{} <i>nach 6062</i>] <i>Lücke von zwei Versen 2_H [type=7]</i>
 before_6097[Mephistofeles]{Mephistopheles} <i>vor 6097</i> Mephistopheles <i>none</i>] Mephistofeles <i>2_H [type=1a]</i>
 6126[Undas]{Und das} <i>6126</i> Und das <i>none</i>] Undas <i>2_H [type=1a]</i>
+6139[obern-]{obern} 6139 obern] Obern <i>2_H :</i> obern- <i>(Bindestrich Fehlkorrektur) G 2_H [type=1a]</i>
 before_6150_b[gleichfals]{=} <i>vor 6150</i> <stage>gleichfals</stage> <i>2_H</i>] <stage>(gleichfals</stage> <i>ohne schließende Klammer 2_H [type=8]</i>
 6209[nicht]{nichts} <i>6209</i> nichts <i>2_I_H.48</i>] nicht <i>2_I_H.47 2_H [type=2b]</i>
 6223[Nich]{Nicht} <i>6223</i> Nicht <i>2_I_H.47</i>] Nich <i>2_H [type=2aa]</i>
@@ -62,6 +63,7 @@ before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückz
 6832[Willkommmen]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkomm̄en <i>2_H [type=1a]</i>
 6847[höhern, höhern]{=} <i>6847</i> höhern, höhern <i>2_H</i>] <i>mon Ri, alR</i> hehren? <i>mit Verweis auf 6856 Ri 2_H [type=7]</i>
 6983[den]{Den} <i>6983</i> Den <i>none</i>] Nun auf! den <i>2_H :</i> den <i>G [type=7]</i>
+7049[von]{vor} <i>7049</i> vor] von <i>2_II_H.74 2_H [type=1a]</i>
 7136[Cumpan]{=} <i>7136</i> Cumpan <i>2_H</i>] Kumpan <i>Ec 2_H [type=6]</i>
 before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>] <i>Zeichen über dem zweiten</i> e <i>zur Verdeutlichung der Artikulation, darüber</i> ei<i>, alR</i> Peneus <i>mit Zeichen über dem zweiten</i> e <i>Ri 2_H [type=7]</i>
 7260[menschlichähnlichs]{menschenähnlichs} <i>7260</i> menschenähnlichs <i>2_II_H.74</i>] menschlichähnlichs <i>2_H [type=2aa]</i>
