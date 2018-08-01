@@ -156,6 +156,15 @@
     </app>
 
     <app>
+        <f:replace n="before_4613_c">Acten</f:replace>
+        <f:ins n="before_4613_c">Acten</f:ins>
+        <ref>vor 4613</ref>
+        <lem wit="2_H">Acten <note><wit>2_H</wit></note></lem>
+        <rdg wit="2_H" type="type_6"><note>danach</note> (1831.) <note>erg <seg type="hand">Ec</seg>
+            <wit>2_H</wit></note></rdg>
+    </app>
+    
+    <app>
         <f:replace n="5265">Luft</f:replace>
         <f:ins n="5265">Lust</f:ins>
         <ref>5265</ref>
