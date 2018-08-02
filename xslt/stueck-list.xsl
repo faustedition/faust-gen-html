@@ -10,8 +10,8 @@
   version="2.0">
   
   <xsl:import href="html-frame.xsl"/>
-  <xsl:import href="html-common.xsl"/>  
-  <xsl:import href="utils.xsl"/>
+  <xsl:import href="html-common.xsl"/>    
+  <xsl:import href="split.xsl"/>
   
   <xsl:param name="document"/>
   <xsl:param name="source"/>
@@ -41,10 +41,11 @@
           <thead>
             <th>Zeuge</th>
             <th>Nr.</th>
-            <th>Stück</th>
+            <th title="Paralipomenon, @n, ID oder Label">ID</th>
             <th>erster Vers</th>
             <th>letzter Vers</th>
             <th>Incipit</th>
+            <th title="normale divs davor/danach • XPath">Kontext</th>
           </thead>
           <tbody>
             <xsl:apply-templates select="collection()"/>
@@ -68,20 +69,51 @@
         <td><xsl:number count="*[@type='stueck']" from="/" level="any"/></td>
         <td>
           <xsl:choose>
-            <xsl:when test="@f:label"><xsl:value-of select="f:shorten(@f:label, 50)"/></xsl:when>
             <xsl:when test="descendant::milestone[@unit='paralipomenon']">
-              <xsl:value-of select="for $ms in descendant::milestone[@unit='paralipomenon'] return replace($ms/@n, '^p', 'P ')"/>
+              <xsl:for-each select="descendant::milestone[@unit='paralipomenon']">
+                <a href="{f:link-to(.)/@href}">
+                  <xsl:value-of select="replace(@n, '^p', 'P ')"/>                   
+                </a>
+                <xsl:if test="position() != last()">, </xsl:if>                
+              </xsl:for-each>
             </xsl:when>
-            <xsl:when test="@n"><xsl:value-of select="@n"/></xsl:when>
-            <xsl:when test="@xml:id"><xsl:value-of select="@xml:id"/></xsl:when>            
+            <xsl:when test="@n">n=<xsl:value-of select="@n"/></xsl:when>
+            <xsl:when test="@xml:id">#<xsl:value-of select="@xml:id"/></xsl:when>            
+            <xsl:when test="@f:label"><xsl:value-of select="f:shorten(@f:label, 50)"/></xsl:when>
           </xsl:choose>
         </td>
         <td><xsl:value-of select="(descendant::*/@f:schroer)[1]"/></td>
         <td><xsl:value-of select="(descendant::*/@f:schroer)[position() = last()]"/></td>
         <td><xsl:value-of select="f:shorten(*, 50)"/></td>
+        <td>
+          <xsl:value-of select="count(preceding::div[not(ancestor-or-self::div[@type='stueck'])])"/> /
+          <xsl:value-of select="count(following::div[not(ancestor-or-self::div[@type='stueck'])])"/> •
+          <code><xsl:value-of select="f:xpath(.)"/></code>
+        </td>
       </tr>
     </xsl:for-each>
   </xsl:template>
+  
+  <xsl:function name="f:xpath">
+    <xsl:param name="el"/>
+    <xsl:variable name="steps">
+      <xsl:text>/</xsl:text>      
+      <xsl:for-each select="$el/ancestor-or-self::*">
+        <xsl:variable name="parts" as="item()*">
+          <xsl:variable name="name" select="name()"/>
+          <xsl:value-of select="$name"/>
+          <xsl:variable name="pos" select="count(preceding-sibling::*[name() = $name]) + 1"/>
+          <xsl:variable name="more" select="count(following-sibling::*[name() = $name])"/>
+          <xsl:if test='$pos + $more gt 1'>
+            <xsl:value-of select="concat('[', $pos, ']')"/>
+          </xsl:if>
+          <xsl:if test="not(. is $el)">/</xsl:if>
+        </xsl:variable>
+        <xsl:value-of select="$parts" separator=""/>        
+      </xsl:for-each>      
+    </xsl:variable>
+    <xsl:value-of select="$steps" separator=""/>
+  </xsl:function>
 
   
 </xsl:stylesheet>
