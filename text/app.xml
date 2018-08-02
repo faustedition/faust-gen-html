@@ -1537,11 +1537,23 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <replacement-string>2^_II</replacement-string>
                         </string-pair>
                         <string-pair>
+                            <search-string> {[}\I\I{]}^_H.{#}</search-string>
+                            <replacement-string>2^_II</replacement-string>
+                        </string-pair>
+                        <string-pair>
                             <search-string>{{i}}{[}\I\I\I{]}^_H.{#}</search-string>
                             <replacement-string>2^_III</replacement-string>
                         </string-pair>
                         <string-pair>
+                            <search-string> {[}\I\I\I{]}^_H.{#}</search-string>
+                            <replacement-string>2^_III</replacement-string>
+                        </string-pair>
+                        <string-pair>
                             <search-string>{{i}}{[}\I\V{]}^_H.{#}</search-string>
+                            <replacement-string>2^_IV</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string> {[}\I\V{]}^_H.{#}</search-string>
                             <replacement-string>2^_IV</replacement-string>
                         </string-pair>
                         <string-pair>
