@@ -74,7 +74,7 @@ before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>]
 7534[Kreisenden]{=} <i>7534</i> Kreisenden <i>2_H</i>] kreisenden <i>2_II_H.74 :</i> Kreisenden <i>G</i> Kreißenden <i>emend. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=7]</i>
 7544[Angestregtest]{Angestrengtest} <i>7544</i> Angestrengtest <i>2_II_H.74</i>] Angestregtest <i>2_H [type=2aa]</i>
 7583[Ritzen]{Ritze} <i>7583</i> Ritze <i>2_H</i>] Ritzen <i>emend. faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q faust://bibliography/wa_I_15_2#Erich_Schmidt [type=7]</i>
-7729[ungewissen]{ungewissem} <i>7729</i> ungewissem <i>none</i>] ungewissen <i>2_H [type=1a]</i>
+7729[ungewissen]{ungewissem} <i>7729</i> ungewissem <i>none</i>] ungewissen <i>2_II_H.74 2_H [type=1a]</i>
 7776[Dagegegen]{Dagegen} <i>7776</i> Dagegen <i>2_II_H.74</i>] Dagegegen <i>2_H [type=2aa]</i>
 7809|7810[Hexenritt|mit]{Hexenritt!|mit.} <i>7809–7810</i> Hexenritt! <i>bis</i> mit. <i>2_H</i>] Hexenritt^ <i>bis</i> mit^ <i>auf eingeklebtem Zettel 2_H [type=7]</i>
 before_7877[Homunnkulus]{Homunkulus} <i>vor 7877</i> Homunkulus <i>2_II_H.74</i>] Homunnkulus <i>2_H [type=1a]</i>
@@ -207,12 +207,12 @@ after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab)
 11318[Sie]{sie} <i>11318</i> sie <i>2_V_H.1</i>] Sie <i>2_H [type=2aa]</i>
 11383[Schattenhaft]{schattenhaft} <i>11383</i> schattenhaft <i>2_V_H.1</i>] Schattenhaft <i>2_H [type=2aa]</i>
 11422[dich]{dich!} <i>11422</i> dich! <i>2_V_H.6 (etwas undeutlich)</i>] dich. <i>mglw mit Ansatz zum Ausrufezeichen 2_V_H.2</i> dich^ <i>2_H [type=2b]</i>
-11439[mächtig]{mächtig;} <i>11439</i> mächtig; <i>2_V_H.2</i>] <i>Semikolon in H nicht mehr zu erkennen; ergänzt nach 2_V_H.2 [type=7]</i>
+11439[mächtig]{mächtig;} <i>11439</i> mächtig; <i>2_V_H.2</i>] <i>Das Semikolon ist in 2_H nicht mehr zu erkennen; ergänzt nach 2_V_H.2 [type=7]</i>
 11473[Weges-Mitte]{Weges Mitte} <i>11473</i> Weges Mitte <i>2_V_H.11</i>] Weges-Mitte <i>2_V_H.2 2_H [type=2b]</i>
 11513[Ligamenten]{Bändern, Sehnen} <i>11513</i> Bändern, Sehnen <i>2_V_H.14a*</i>] Ligamenten <i>2_H [type=7]</i>
 11543[strengen]{strengem} <i>11543</i> strengem <i>2_V_H.2</i>] strengen <i>2_H [type=2aa]</i>
 11578[Von]{=} <i>11578</i> Von <i>2_H</i>] Hier <i>Ec 2_H [type=6]</i>
-11635[wieder]{wieder.} <i>11635</i> wieder. <i>2_V_H.2</i>] <i>Punkt in H nicht zu erkennen; ergänzt nach 2_V_H.2 [type=7]</i>
+11635[wieder]{wieder.} <i>11635</i> wieder. <i>2_V_H.2</i>] <i>Der Punkt ist in 2_H nicht zu erkennen; ergänzt nach 2_V_H.2 [type=7]</i>
 11638[Vom]{Von} <i>11638</i> Von <i>2_V_H.2</i>] Vom <i>2_H [type=2aa]</i>
 11724[erlischt|Muth]{=} <i>11724</i> erlischt <i>…</i> Muth <i>2_H</i>] erlischt, <i>…</i> Muth! <i>Ec 2_H [type=6]</i>
 11760[im]{in} <i>11760</i> in <i>2_V_H.2</i>] im <i>2_H [type=2aa]</i>
