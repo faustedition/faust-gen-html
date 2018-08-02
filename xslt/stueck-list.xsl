@@ -89,6 +89,7 @@
           <xsl:value-of select="count(preceding::div[not(ancestor-or-self::div[@type='stueck'])])"/> /
           <xsl:value-of select="count(following::div[not(ancestor-or-self::div[@type='stueck'])])"/> •
           <code><xsl:value-of select="f:xpath(.)"/></code>
+          <xsl:if test="/*/@f:split = 'true'"><mark>split!</mark></xsl:if>
         </td>
       </tr>
     </xsl:for-each>
