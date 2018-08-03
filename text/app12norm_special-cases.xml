@@ -178,12 +178,12 @@
                 <wit>2_I_H.0a</wit>
                 <ref target="faust://bibliography/C.1_41"/>
                 <ref target="faust://bibliography/C.3_41"/></note></rdg>
-        <rdg wit="2_H" type="type_6"><subst hand="zS">
+        <!--<rdg wit="2_H" type="type_6"><subst hand="zS">
                 <del>Luft</del>
                 <add>Lust</add>
             </subst>
-            <note>zS <wit>2_H</wit></note></rdg>
-        <rdg>Lust <note><ref target="faust://bibliography/Q"/></note></rdg>
+            <note>zS <wit>2_H</wit></note></rdg>-->
+        <rdg wit="2_H" type="type_6">Lust <note>zS <wit>2_H</wit> <ref target="faust://bibliography/Q"/></note></rdg>
     </app>
     <app>
         <f:ins n="before_5357_b" place="only-app"/>
@@ -399,9 +399,9 @@
                 nieder</stage></f:ins>
         <ref>vor 10811</ref>
         <lem wit="2_IV_H.8">kauert nieder <note><wit wit="2_IV_H.8">2_IV_H.8</wit></note></lem>
-        <rdg wit="2_H" type="type_2aa">
-            <note>fehlt <wit wit="2_H">2_H</wit></note></rdg>
-        <rdg wit="2_H" type="type_6">kauert nieder <note>erg Ec <wit wit="2_H"
+        <rdg wit="2_H" type="type_2aa type_6">
+            <note>fehlt <!--<wit wit="2_H">2_H</wit></note></rdg>
+        <rdg wit="2_H" type="type_6">kauert nieder <note>-->erg Ec <wit wit="2_H"
             >2_H</wit></note></rdg>
     </app>
 
