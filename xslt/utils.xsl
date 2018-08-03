@@ -27,7 +27,8 @@
   -->
   <xsl:function name="f:is-splitable-doc" as="xs:boolean">
     <xsl:param name="document"/>
-    <xsl:value-of select="count(root($document)//div) ge number($splitdivs) and string-length(normalize-space(string-join(root($document)//text, ' '))) ge number($splitchars)"/>
+    <xsl:value-of select="count(root($document)//div[not(@type='stueck')]) ge number($splitdivs) 
+                      and string-length(normalize-space(string-join(root($document)//text//text()[not(ancestor::div[@type='stueck'])], ' '))) ge number($splitchars)"/>
   </xsl:function>
   
   <!-- 

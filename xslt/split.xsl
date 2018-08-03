@@ -43,7 +43,7 @@
 	<xsl:param name="depth">2</xsl:param>
 	<xsl:variable name="depth_n" select="number($depth)"/>
 	
-	<xsl:template match="/TEI[not(@f:split)]">
+	<xsl:template match="/TEI">
 		<xsl:call-template name="generate-html-frame">
 			<xsl:with-param name="content">
 				<xsl:apply-templates select="text"/>
@@ -52,7 +52,7 @@
 	</xsl:template>
 
 
-	<xsl:template match="/TEI[@f:split]">
+	<xsl:template match="/TEI[@f:split][descendant::div[@f:section]]" priority="1">
 		<xsl:call-template name="generate-html-frame">
 			<xsl:with-param name="single" select="false()" tunnel="yes"/>
 			<xsl:with-param name="content">
