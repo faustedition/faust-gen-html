@@ -84,7 +84,7 @@ before_8245_b[erstaunt]{=} <i>vor 8245</i> <stage>erstaunt</stage> <i>2_H</i>] <
 8298[Lüftchen und die]{Lüftchen, die} <i>8298</i> Lüftchen, die <i>2_II_H.74</i>] Lüftchen und die <i>2_H [type=2aa]</i>
 8331[Bist du einmal]{=} <i>8331</i> Bist du einmal <i>2_H</i>] Denn bist du erst <i>Ec 2_H [type=6]</i>
 8352[Muschelpfad]{Muschelfahrt} <i>8352</i> Muschelfahrt <i>2_II_H.69</i>] Muschelpfad <i>2_II_H.70 2_H [type=2b]</i>
-before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psyllen <i>none</i>] Psellen <i>2_II_H.70 2_H</i> Psyllen <i>[type=1a]</i>
+before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psyllen <i>none</i>] Psellen <i>2_II_H.70 2_H [type=1a]</i>
 8374[wägt und regt]{=} <i>8374</i> wägt und regt <i>2_H</i>] regt <i>2_II_H.71</i> regt und wagt <i>G 2_II_H.69</i> wägt und trägt <i>(Hörfehler) 2_I_H.70 :</i> wägt und regt <i>G [type=7]</i>
 before_8391_b[am]{an} <i>vor 8391</i> an <i>2_II_H.70</i>] am <i>2_H [type=2aa]</i>
 8405[wohlerworbene]{wohl erworbene} <i>8405</i> wohl erworbene <i>2_H</i>] wohlerworbene <i>vorschl zS 2_H [type=7]</i>
@@ -152,6 +152,7 @@ before_9755_a[verschlungenen]{verschlungenem} <i>vor 9755</i> verschlungenem <i>
 9792[Schleppt’]{Schleppt} <i>9792</i> Schleppt <i>2_H</i>] Schleppt’ <i>C.1_4 [type=2aa]</i>
 after_9807[Höhe.]{=} <i>nach 9807</i> Höhe. <i>none</i>] Höhe). <i>C.1_4</i> Höhe.) <i>C.2α_4 C.3_4 [type=8]</i>
 9837[Losungswort]{Losungswort.} <i>9837</i> Losungswort. <i>2_H</i>] Losungswort^ <i>C.1_4 [type=2aa]</i>
+9852[erscheint]{=} <i>9852</i> erscheint <i>C.1_4</i>] erscheint <i>G 2_III_H.2:2 2_III_H.3a:2 :</i> er scheint <i>Jo (jedenfalls nicht zweifelsfrei G)</i> erscheint <i>2_H C.1_4 [type=2b*]</i>
 9855[Welle]{Wälle} <i>9855</i> Wälle <i>2_H</i>] Welle <i>C.1_4 [type=2aa]</i>
 9896[Loos.]{Loos!} <i>9896</i> Loos! <i>2_H</i>] Loos. <i>C.1_4 [type=2aa]</i>
 9898[los!]{los.} <i>9898</i> los. <i>2_H</i>] los! <i>C.1_4 [type=2aa]</i>
