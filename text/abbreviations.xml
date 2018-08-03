@@ -6,10 +6,6 @@
   <!-- Abbreviations. These are marked and dedotted in TEI and augmented with a tooltip with the expan in HTML -->
   
   <choice>
-    <abbr>alR</abbr>    
-    <expan>am linken Rand</expan>
-  </choice>
-  <choice>
     <abbr>bill</abbr>
     <expan>billigt</expan>
   </choice>
