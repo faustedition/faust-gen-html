@@ -84,7 +84,7 @@ before_8245_b[erstaunt]{=} <i>vor 8245</i> <stage>erstaunt</stage> <i>2_H</i>] <
 8298[Lüftchen und die]{Lüftchen, die} <i>8298</i> Lüftchen, die <i>2_II_H.74</i>] Lüftchen und die <i>2_H [type=2aa]</i>
 8331[Bist du einmal]{=} <i>8331</i> Bist du einmal <i>2_H</i>] Denn bist du erst <i>Ec 2_H [type=6]</i>
 8352[Muschelpfad]{Muschelfahrt} <i>8352</i> Muschelfahrt <i>2_II_H.69</i>] Muschelpfad <i>2_II_H.70 2_H [type=2b]</i>
-before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psyllen] Psellen <i>2_II_H.70 2_H</i> Psyllen <i>emend. faust://bibliography/Q faust://bibliography/wa_I_15_1#Erich_Schmidt [type=2b]</i>
+before_8359_a[Psellen]{Psyllen} <i>vor 8359</i> Psyllen <i>none</i>] Psellen <i>2_II_H.70 2_H</i> Psyllen <i>[type=1a]</i>
 8374[wägt und regt]{=} <i>8374</i> wägt und regt <i>2_H</i>] regt <i>2_II_H.71</i> regt und wagt <i>G 2_II_H.69</i> wägt und trägt <i>(Hörfehler) 2_I_H.70 :</i> wägt und regt <i>G [type=7]</i>
 before_8391_b[am]{an} <i>vor 8391</i> an <i>2_II_H.70</i>] am <i>2_H [type=2aa]</i>
 8405[wohlerworbene]{wohl erworbene} <i>8405</i> wohl erworbene <i>2_H</i>] wohlerworbene <i>vorschl zS 2_H [type=7]</i>
@@ -110,7 +110,6 @@ before_8924f[Phorkyas]{=} <i>vor 8924</i> <speaker>Phorkyas</speaker> <i>none</i
 9012[verständger]{=} <i>9012</i> verständger <i>C.1_4</i>] verständ’ger <i>C.2α_4 C.3_4 [type=4a]</i>
 9016[ihm]{Ihm} <i>9016</i> Ihm <i>2_H</i>] ihm <i>C.1_4 [type=2aa]</i>
 9029[ein,]{=} <i>9029</i> ein, <i>C.1_4</i>] ein. <i>C.2α_4 C.3_4 [type=4a]</i>
-9031[Geschlungne]{Geschlungene} <i>9031</i> Geschlungene <i>2_III_H.2:1</i>] Geschlungene <i>(letztes „e“ undeutlich) G 2_III_H.33 2_III_H.1</i> Geschlungne <i>2_III_H.2:1 :</i> Geschlungene <i>(undeutlich) G</i> Geschlungne <i>Jo auf eingeklebtem Zettel 2_III_H.2:1 2_III_H.3a:1 2_H C.1_4 [type=2b]</i>
 9061[deine]{die} <i>9061</i> die <i>2_H</i>] deine <i>C.1_4 [type=2aa]</i>
 9104[verheissener]{=} <i>9104</i> verheissener <i>C.1_4</i>] verheißener <i>C.2α_4 C.3_4 [type=4a]</i>
 9115[Schrittes]{Schritts} <i>9115</i> Schritts <i>2_H</i>] Schrittes <i>C.1_4 [type=2aa]</i>
