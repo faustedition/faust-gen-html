@@ -117,6 +117,12 @@
 				</p:otherwise>
 			</p:choose>
 			
+			<p:xslt>
+				<p:input port="stylesheet"><p:document href="xslt/changenote.xsl"/></p:input>
+				<p:with-param name="changenote-type" select="'emended'"/>
+				<p:with-param name="changenote" select="'automatically applied emendation instructions'"/>
+			</p:xslt>
+			
 			<p:store>
 				<p:with-option name="href" select="resolve-uri(concat('emended/', $sigil_t, '.xml'), $builddir)"/>
 			</p:store>
