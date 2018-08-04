@@ -50,9 +50,9 @@
   <xsl:template match='*[@n][not(preceding-sibling::*[@n = current()/@n and not(following-sibling::*[@n != current()/@n][. &lt;&lt; current()])])]'>
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
-      <xsl:attribute name="f:doc" select="$documentURI"/>
+      <!--<xsl:attribute name="f:doc" select="$documentURI"/>-->
       <xsl:attribute name="f:sigil_t" select="$sigil_t"/>
-      <xsl:attribute name="f:href" select="$href"/>
+      <!--<xsl:attribute name="f:href" select="$href"/>-->
       <xsl:attribute name="f:sigil" select="$sigil"/>      
       <xsl:variable name="pb" select="(preceding::pb[1] | descendant::pb[1])[1]"/>
       <xsl:if test="$pb">

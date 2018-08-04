@@ -15,7 +15,7 @@
 	<!--<xsl:param name="variants">variants/</xsl:param>-->
 	<xsl:param name="docbase">https://faustedition.uni-wuerzburg.de/new</xsl:param>  	
 	<!--<xsl:param name="depth">2</xsl:param>-->
-	<xsl:param name="canonical">document/print/A8.xml document/faust/2/gsa_391098.xml</xsl:param>
+	<xsl:param name="canonical">faust</xsl:param>
 	<xsl:variable name="canonicalDocs" select="tokenize($canonical, ' ')"/>
 	
 	<xsl:variable name="standoff" as="element()*">
@@ -78,14 +78,14 @@
 		<xsl:param name="current-n" select="current-grouping-key()"/>
 		<xsl:variable name="evidence">
 			<xsl:sequence select="$standoff"/>
-			<xsl:for-each-group select="$current-lines" group-by="@f:doc">
+			<xsl:for-each-group select="$current-lines" group-by="@f:sigil_t">
 				<f:evidence>
 					<xsl:copy-of select="current-group()[1]/@*"/>
 					<xsl:copy-of select="current-group()"/>
 				</f:evidence>
 			</xsl:for-each-group>
 		</xsl:variable>
-		<xsl:variable name="cline" select="$current-lines[@f:doc = $canonicalDocs]"/>
+		<xsl:variable name="cline" select="$current-lines[@f:sigil_t = $canonicalDocs]"/>
 		<xsl:variable name="ctext"
 			select="
 			if ($cline) then
@@ -123,7 +123,7 @@
 	<xsl:template match="*[f:hasvars(.)]" priority="1">
 		<xsl:param name="group" as="node()*"/>
 		<div class="{string-join(f:generic-classes(.), ' ')}" 
-			data-n="{@n}" data-source="{string-join(current-group()/@f:doc, ' ')}">
+			data-n="{@n}" data-source="{string-join(current-group()/@f:sigil_t, ' ')}">
 			<xsl:call-template name="generate-style"/>
 			
 			<!-- first format the line's content ... -->
@@ -156,7 +156,7 @@
 	-->
 	<xsl:template name="join-lines">
 		<xsl:param name="ns" as="xs:string*"/>
-		<xsl:for-each-group select="//*[@n = $ns]" group-by="@f:doc">			
+		<xsl:for-each-group select="//*[@n = $ns]" group-by="@f:sigil_t">			
 			<xsl:variable name="template" select="current-group()[1]" as="node()"/>
 			<xsl:variable name="rest" select="subsequence(current-group(), 2)" as="node()*"/>
 			<xsl:element name="{name($template)}">
