@@ -102,7 +102,7 @@
 			data-variants="{count(distinct-values(for $ev in $evidence/* except $evidence/f:standoff return f:normalize-space($ev)))-1}"
 			data-ctext="{$ctext}" id="v{$current-n}">
 			<xsl:attribute name="xml:id" select="concat('v', $current-n)"/>
-			<xsl:for-each-group select="$evidence/*" group-by="f:normalize-space(.)">
+			<xsl:for-each-group select="$evidence/*" group-by="f:variant-grouping-key(.)">
 				<xsl:apply-templates select="current-group()[1]/*">
 					<!--<xsl:sort select="@f:sigil"/>-->
 					<!-- Sorting is done in collect-metadata.xpl, we just keep the document order from there -->
@@ -185,5 +185,51 @@
 	</xsl:template>
 	
 	<xsl:template match="pb" priority="2"/>
+	
+	
+	<!-- 
+		The following templates and functions generate a grouping key by normalizing text and rendering elements and attributes
+		as text. This should produce a string representation that catches exactly the significant inner variance.
+	-->
+	
+	<xsl:function name="f:variant-grouping-key">
+		<xsl:param name="line"/>
+		<xsl:variable name="contents">
+			<xsl:apply-templates mode="grouping-key" select="$line"/>
+		</xsl:variable>
+		<xsl:value-of select="data($contents)"/>
+	</xsl:function>
+	
+	<xsl:template mode="grouping-key" match="*">
+		<xsl:value-of select="concat('&lt;', name())"/>
+		<xsl:for-each select="@* except @f:*">
+			<xsl:sort select="name()"/>
+			<xsl:value-of select="concat(' ', name(), '=', f:quoted-attribute-value(.))"/>
+		</xsl:for-each>
+		<xsl:choose>
+			<xsl:when test="child::node()">
+				<xsl:text>></xsl:text>
+				<xsl:apply-templates/>
+				<xsl:value-of select="concat('&lt;/', name(), '&gt;')"/>
+			</xsl:when>
+			<xsl:otherwise>/></xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template mode="grouping-key" match="text()">
+		<xsl:value-of select="f:normalize-space(f:normalize-print-chars(.))"/>
+	</xsl:template>
+	
+	<xsl:function name="f:quoted-attribute-value">
+		<xsl:param name="value"/>
+		<xsl:variable name="quot">"</xsl:variable>
+		<xsl:variable name="apos">'</xsl:variable>
+		<xsl:value-of select="concat($quot, replace(replace(replace(replace(replace(normalize-space(normalize-unicode($value)), 
+			$quot, '&amp;quot;'),
+			$apos, '&amp;apos;'),
+			'&lt;', '&amp;lt;'),
+			'&gt;', '&amp;gt;'),
+			'&amp;', '&amp;amp;'), $quot)"/>
+	</xsl:function>
 		
 </xsl:stylesheet>
