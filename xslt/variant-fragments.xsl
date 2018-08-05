@@ -82,9 +82,14 @@
 				<f:evidence>
 					<xsl:copy-of select="current-group()[1]/@*"/>
 					<xsl:copy-of select="current-group()"/>
-				</f:evidence>
+				</f:evidence>				
 			</xsl:for-each-group>
 		</xsl:variable>
+		<xsl:result-document href="/tmp/evidence2/{current-grouping-key()}.{generate-id(.)}.xml">
+			<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:f="http://www.faustedition.net/ns">
+				<xsl:copy-of select="$evidence/f:evidence" copy-namespaces="no"/>				
+			</TEI>
+		</xsl:result-document>
 		<xsl:variable name="cline" select="$current-lines[@f:sigil_t = $canonicalDocs]"/>
 		<xsl:variable name="ctext"
 			select="
@@ -110,6 +115,14 @@
 	
 	<xsl:template match="f:evidence">
 		<xsl:param name="group"/>
+		<xsl:result-document href="/tmp/evidence/ev-{generate-id(.)}.xml" method="xml" indent="yes">
+			<TEI>
+				<xsl:copy-of select="."/>
+				<group>
+					<xsl:copy-of select="$group"/>
+				</group>
+			</TEI>
+		</xsl:result-document>
 		<xsl:apply-templates>
 			<xsl:with-param name="group" select="$group"/>
 		</xsl:apply-templates>
