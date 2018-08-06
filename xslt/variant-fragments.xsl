@@ -12,9 +12,6 @@
 		
 	<xsl:include href="apparatus.xsl"/>
 	
-	<!--<xsl:param name="variants">variants/</xsl:param>-->
-	<xsl:param name="docbase">https://faustedition.uni-wuerzburg.de/new</xsl:param>  	
-	<!--<xsl:param name="depth">2</xsl:param>-->
 	<xsl:param name="canonical">faust</xsl:param>
 	<xsl:variable name="canonicalDocs" select="tokenize($canonical, ' ')"/>
 	
@@ -78,7 +75,7 @@
 		<xsl:param name="current-n" select="current-grouping-key()"/>
 		<xsl:variable name="evidence">
 			<xsl:sequence select="$standoff"/>
-			<xsl:for-each-group select="$current-lines" group-by="@f:sigil_t">
+			<xsl:for-each-group select="$current-lines" group-by="string-join((@f:sigil_t, @f:emended), ' ')">
 				<f:evidence>
 					<xsl:copy-of select="current-group()[1]/@*"/>
 					<xsl:copy-of select="current-group()"/>
@@ -200,6 +197,10 @@
 		<xsl:value-of select="data($contents)"/>
 	</xsl:function>
 	
+	<xsl:template mode="grouping-key" match="f:evidence">
+		<xsl:apply-templates mode="#current" select="*"/>
+	</xsl:template>
+
 	<xsl:template mode="grouping-key" match="*">
 		<xsl:value-of select="concat('&lt;', name())"/>
 		<xsl:for-each select="@* except @f:*">
@@ -209,7 +210,7 @@
 		<xsl:choose>
 			<xsl:when test="child::node()">
 				<xsl:text>></xsl:text>
-				<xsl:apply-templates/>
+				<xsl:apply-templates mode="#current"/>
 				<xsl:value-of select="concat('&lt;/', name(), '&gt;')"/>
 			</xsl:when>
 			<xsl:otherwise>/></xsl:otherwise>
