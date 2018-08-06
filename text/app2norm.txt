@@ -125,7 +125,6 @@ before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>2_III_
 9378[vom]{von} <i>9378</i> von <i>2_III_H.48 2_III_H.3a:2</i>] vom <i>2_H C.1_4 [type=2b]</i>
 9393[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>vor 9393</i>] <i>Spatium 2_H</i> <i>Spatium fehlt C.1_4 [type=2aa]</i>
 9401[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>vor 9401</i>] <i>Spatium 2_H</i> <i>Spatium fehlt C.1_4 [type=2aa]</i>
-9411[nah]{nah,} <i>9411</i> nah, <i>2_H</i>] nah^ <i>C.1_4 [type=2aa]</i>
 9446[stillen]{stillem} <i>9446</i> stillem <i>2_III_H.45a C.2α_4</i>] stillen <i>C.1_4 C.3_4 [type=4b]</i>
 9517[hinauf geblickt.]{hinauf geblickt,} <i>9517</i> hinauf geblickt, <i>none</i>] hinaufgeblickt, <i>2_III_H.58a</i> hinauf geblickt. <i>2_III_H.2:1</i> hinaufgeblickt. <i>2_III_H.3a:2</i> hinauf geblickt. <i>2_H C.1_4 [type=2b]</i>
 9522[Land]{Land,} <i>9522</i> Land, <i>2_H</i>] Land^ <i>C.1_4 [type=2aa]</i>
@@ -133,13 +132,11 @@ before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>2_III_
 9535[jähen]{gähen} <i>9535</i> gähen <i>2_H</i>] jähen <i>C.1_4 [type=2aa]</i>
 9542[Alt- Wälder]{Alt-Wälder} <i>9542</i> Alt-Wälder <i>none</i>] Alt-Wälder <i>2_H</i> Alt- Wälder <i>C.1_4 [type=1c]</i>
 before_9562[sitzend]{=} <i>vor 9562</i> sitzend <i>none</i>] sitzend) <i>C.1_4</i> sitzend.) <i>C.2α_4 C.3_4 [type=8]</i>
-9571[Geschick!]{Geschick;} <i>9571</i> Geschick; <i>2_H</i>] Geschick! <i>C.1_4 [type=2aa]</i>
 9579[anzuschaun.]{anzuschaun –} <i>9579</i> anzuschaun – <i>2_H</i>] anzuschaun. <i>C.1_4 [type=2aa]</i>
 9585[schon?]{schon!} <i>9585</i> schon! <i>2_H</i>] schon? <i>C.1_4 [type=2aa]</i>
 9594[drinnen]{drinne} <i>9594</i> drinne <i>2_H</i>] drinnen <i>C.1_4 [type=2aa]</i>
 9601[Scherzgeschrey]{Scherzgeschrei} <i>9601</i> Scherzgeschrei <i>2_III_H.45a C.2α_4 C.3_4</i>] Scherzgeschrey <i>C.1_4 [type=4b]</i>
 9603[Thierheit]{Thierheit,} <i>9603</i> Thierheit, <i>2_H</i>] Thierheit^ <i>C.1_4 [type=2aa]</i>
-9647[Flaum]{Flaum,} <i>9647</i> Flaum, <i>2_H</i>] Flaum^ <i>C.1_4 [type=2aa]</i>
 9654[Lustig]{Listig} <i>9654</i> Listig <i>2_H</i>] Lustig <i>C.1_4 [type=2aa]</i>
 9676[Ringerspiel.]{Ringerspiel,} <i>9676</i> Ringerspiel, <i>2_H</i>] Ringerspiel. <i>C.1_4 [type=2aa]</i>
 after_9686[dem]{den} <i>after_9686</i> den <i>2_H</i>] dem <i>C.1_4 [type=2aa]</i>
@@ -149,21 +146,18 @@ before_9755_a[verschlungenen]{verschlungenem} <i>vor 9755</i> verschlungenem <i>
 9789[Geschrey]{Geschrei} <i>9789</i> Geschrei <i>2_III_H.45a C.2α_4 C.3_4</i>] Geschrey <i>C.1_4 [type=4b]</i>
 9792[Schleppt’]{Schleppt} <i>9792</i> Schleppt <i>2_H</i>] Schleppt’ <i>C.1_4 [type=2aa]</i>
 after_9807[Höhe.]{=} <i>nach 9807</i> Höhe. <i>none</i>] Höhe). <i>C.1_4</i> Höhe.) <i>C.2α_4 C.3_4 [type=8]</i>
-9837[Losungswort]{Losungswort.} <i>9837</i> Losungswort. <i>2_H</i>] Losungswort^ <i>C.1_4 [type=2aa]</i>
 9852[erscheint]{=} <i>9852</i> erscheint <i>C.1_4</i>] erscheint <i>G 2_III_H.2:2 2_III_H.3a:2 :</i> er scheint <i>Jo (jedenfalls nicht zweifelsfrei G)</i> erscheint <i>2_H C.1_4 [type=2b*]</i>
 9855[Welle]{Wälle} <i>9855</i> Wälle <i>2_H</i>] Welle <i>C.1_4 [type=2aa]</i>
 9896[Loos.]{Loos!} <i>9896</i> Loos! <i>2_H</i>] Loos. <i>C.1_4 [type=2aa]</i>
 9898[los!]{los.} <i>9898</i> los. <i>2_H</i>] los! <i>C.1_4 [type=2aa]</i>
 9905|9906[Reich|Mutter]{Reich,|Mutter,} <i>9905–9906</i> Reich, | Mutter, <i>2_H</i>] Reich | Mutter <i>C.1_4 [type=2aa]</i>
 9942[sag’ ich schmerzlich Lebewohl!]{sage schmerzlich, Lebewohl.} <i>9942</i> sage <i>…</i> Lebewohl. <i>2_III_H.75b</i>] sag’ ich schmerzlich Lebewohl! <i>C.1_4 [type=2aa]</i>
-9956[verschwunden]{verschwunden,} <i>9956</i> verschwunden, <i>2_H</i>] verschwunden^ <i>C.1_4 [type=2aa]</i>
 before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C.2α_4 C.3_4</i>] Chorführerin <i>C.1_4 [type=4b]</i>
 10000[sanften Wellen]{sanftem Wallen} <i>10000</i> sanftem Wallen <i>2_III_H.3a:2</i>] sanften Wellen <i>2_H [type=2b]</i>
 10001[Vogelsingen]{Vogelsängen} <i>10001</i> Vogelsängen <i>2_H</i>] Vogelsingen <i>C.1_4 [type=2aa]</i>
 10060[quollen]{=} <i>10060</i> quollen <i>2_IV_H.1 2_H</i>] quellen <i>emend. faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q faust://bibliography/wa_I_15_2#Erich_Schmidt [type=1a*]</i>
 10011[umzingeln,]{umzingeln} <i>10011</i> umzingeln <i>2_H</i>] umzingeln, <i>2_H :</i> umzingeln^ <i>durch Rasur</i> umzingeln, <i>C.1_4 [type=2aa]</i>
 10030[ins]{=} <i>10030</i> ins <i>C.1_4</i>] in’s <i>C.2α_4 C.3_4 [type=4a]</i>
-10038[Schlauch!]{Schlauch.} <i>10038</i> Schlauch. <i>2_H</i>] Schlauch! <i>C.1_4 [type=2aa]</i>
 before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>konj. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=3*]</i>
 before_10067_a[alsbald]{also bald} <i>vor 10067</i> also bald <i>2_IV_H.3</i>] alsobald <i>2_IV_H.2</i> also bald <i>etwas undeutlich 2_IV_H.3</i> alsbald <i>2_H [type=2aa]</i>
 10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074</i>] <i>eingerückt 2_H [type=1c]</i>
