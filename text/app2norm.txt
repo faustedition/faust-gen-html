@@ -8,10 +8,10 @@ before_4634_b[gesammelt]{gesammt} <i>vor 4634</i> gesammt <i>2_H</i>] gesammelt 
 4877[Ich]{Ich?} <i>4877</i> Ich? <i>2_H</i>] Ich^ <i>2_I_H.0a [type=2aa]</i>
 4885[ders]{Ders} <i>4885</i> Ders <i>2_H</i>] ders <i>2_I_H.0a [type=2aa]</i>
 4950[aus.]{aus?} <i>4950</i> aus? <i>2_H</i>] aus^ <i>2_I_H.0a [type=2aa]</i>
-4973[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>4973–4976</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt [type=1c]</i>
+4973[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>4973–4976</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
 4975[falschgehofft]{falsch gehofft} <i>4975</i> falsch gehofft <i>2_H</i>] falschgehofft <i>2_I_H.0a [type=2aa]</i>
 4989|4990[Wenn|Wenn]{Wem|Wem} <i>4989–4990</i> Wem … Wem <i>2_H</i>] Wenn … Wenn <i>2_H :</i> Wem … Wem <i>durch Rasur</i> Wenn … Wenn <i>2_I_H.0a [type=2aa]</i>
-4993[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>4993–4998</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt [type=1c]</i>
+4993[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>4993–4998</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
 5018[allverwahrten]{altverwahrten} <i>5018</i> altverwahrten <i>2_H</i>] allverwahrten <i>2_I_H.0a [type=2aa]</i>
 5025[Tauben]{Dauben} <i>5025</i> Dauben <i>none</i>] Tauben <i>2_H 2_I_H.0a</i> Dauben <i>C.1_12 C.3_12 [type=1a]</i>
 5107[verwandt]{verwandt.} <i>5107</i> verwandt. <i>2_H</i>] verwandt^ <i>2_I_H.0a [type=2aa]</i>
@@ -23,15 +23,15 @@ before_4634_b[gesammelt]{gesammt} <i>vor 4634</i> gesammt <i>2_H</i>] gesammelt 
 before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2_I_H.0a [type=2aa]</i>
 5360[krauen.]{krauen} <i>5360</i> krauen^ <i>2_I_H.17 2_H</i>] krauen. <i>2_I_H.0a [type=2aa]</i>
 5388[beging’]{=} <i>5388</i> beging’ <i>2_I_H.0a</i>] beging <i>2_I_H.0a :</i> beging’ <i>Ri G [type=2d*]</i>
-5441|5445|5449|5453[@lg|@lg|@lg|@lg]{rend="indented"|rend="indented"|rend="indented"|rend="indented"} <i>5441–5456</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt [type=1c]</i>
-5484[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5484–5493</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt [type=1c]</i>
+5441|5445|5449|5453[@lg|@lg|@lg|@lg]{rend="indented"|rend="indented"|rend="indented"|rend="indented"} <i>5441–5456</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
+5484[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5484–5493</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
 5487[Gespenstische]{gespenstische} <i>5487</i> gespenstische <i>2_H</i>] Gespenstische <i>2_I_H.0a [type=2aa]</i>
 5519[Stürmgewalt]{Sturmgewalt} <i>5519</i> Sturmgewalt <i>2_H</i>] Stürmgewalt <i>2_I_H.0a [type=2aa]</i>
 5592[ein]{im} <i>5592</i> im <i>2_H</i>] ein <i>2_I_H.0a [type=2aa]</i>
-5640[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5640–5645</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt [type=1c]</i>
+5640[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5640–5645</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
 5656[böser]{böser} <i>5656</i> böser <i>2_I_H.0a</i>] böser <i>2_I_H.24c 2_H faust://bibliography/C.1_41 faust://bibliography/C.3_41</i> böser böse <i>zS 2_H faust://bibliography/Q [type=6]</i>
-5715[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5715–5726</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt [type=1c]</i>
-5748[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5748–5756</i>] <i>Die Verse sind in 2_I_H.0a nicht eingerückt [type=1c]</i>
+5715[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5715–5726</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
+5748[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5748–5756</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
 5750[Hindermann]{=} <i>5750</i> Hindermann <i>2_I_H.0a</i>] Hintermann <i>Ec 2_H [type=6]</i>
 5775[am]{an} <i>5775</i> an <i>2_I_H.33</i>] am <i>2_H 2_I_H.0a [type=2b]</i>
 before_5801[Gesang]{Ungesang} <i>before_5801</i> Ungesang <i>2_H</i>] Gesang <i>2_I_H.0a [type=2aa]</i>
@@ -168,7 +168,7 @@ before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C
 10038[Schlauch!]{Schlauch.} <i>10038</i> Schlauch. <i>2_H</i>] Schlauch! <i>C.1_4 [type=2aa]</i>
 before_10039_b[starke]{=} <i>vor 10039</i> starke <i>2_H</i>] starre <i>konj. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=3*]</i>
 before_10067_a[alsbald]{also bald} <i>vor 10067</i> also bald <i>2_IV_H.3</i>] alsobald <i>2_IV_H.2</i> also bald <i>etwas undeutlich 2_IV_H.3</i> alsbald <i>2_H [type=2aa]</i>
-10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074</i>] <i>Die Verse sind in 2_H eingerückt. [type=1c]</i>
+10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074</i>] <i>eingerückt 2_H [type=1c]</i>
 10084[Das ging]{es ging} <i>10084</i> es ging <i>2_IV_H.3</i>] Das <i>2_H [type=2aa]</i>
 10107[Ich]{Ich} <i>10107</i> Ich <i>2_H</i>] Ich <i>2_IV_H.3 :</i> <emph>Ich</emph> <i>unterstrichen G [type=2aa*]</i>
 10150[ewigen-]{ewigen} <i>10150</i> ewigen <i>none</i>] ewigen <i>2_IV_H.2</i> ewigen- <i>2_H [type=1b]</i>
