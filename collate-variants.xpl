@@ -62,8 +62,8 @@
       
       <p:identity>
         <p:input port="source">
-          <p:pipe port="result" step="load-prepared"/>
           <p:pipe port="result" step="load-emended"/>
+          <p:pipe port="result" step="load-prepared"/>
         </p:input>        
       </p:identity>
     </p:for-each>
