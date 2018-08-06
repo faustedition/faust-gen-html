@@ -213,7 +213,6 @@ after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab)
 11422[dich]{dich!} <i>11422</i> dich! <i>2_V_H.6 (etwas undeutlich)</i>] dich. <i>mglw mit Ansatz zum Ausrufezeichen 2_V_H.2</i> dich^ <i>2_H [type=2b]</i>
 11439[mächtig]{mächtig;} <i>11439</i> mächtig; <i>2_V_H.2</i>] <i>Das Semikolon ist in 2_H nicht mehr zu erkennen; ergänzt nach 2_V_H.2 [type=7]</i>
 11473[Weges-Mitte]{Weges Mitte} <i>11473</i> Weges Mitte <i>2_V_H.11</i>] Weges-Mitte <i>2_V_H.2 2_H [type=2b]</i>
-11483[befreyen|erdrücken]{Befreyen|Erdrücken} <i>11483</i> Befreyen, bald Erdrücken <i>2_V_H.11</i>] befreyen, bald Erdrücken <i>:</i> Befreyen, bald Erdrücken <i>G 2_V_H.11</i> befreyen, bald erdrücken <i>2_V_H.2 2_H [type=2b]</i>
 11513[Ligamenten]{Bändern, Sehnen} <i>11513</i> Bändern, Sehnen <i>2_V_H.14a*</i>] Ligamenten <i>2_H [type=7]</i>
 11543[strengen]{strengem} <i>11543</i> strengem <i>2_V_H.2</i>] strengen <i>2_H [type=2aa]</i>
 11578[Von]{=} <i>11578</i> Von <i>2_H</i>] Hier <i>Ec 2_H [type=6]</i>

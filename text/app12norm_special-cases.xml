@@ -415,4 +415,18 @@
         <rdg wit="2_H" type="type_2d">von Festen <note>mglw aus <quote>von Fasten</quote>
                 <wit wit="2_H">2_H</wit></note></rdg>
     </app>
+
+    <app>
+        <f:replace n="11483">befreyen</f:replace>
+        <f:ins n="11483">Befreyen</f:ins>
+        <f:replace n="11483">erdrücken</f:replace>
+        <f:ins n="11483">Erdrücken</f:ins>
+        <ref>11483</ref>
+        <lem wit="2_V_H.11">Befreyen, bald Erdrücken <note><wit>2_V_H.11</wit></note></lem>
+        <rdg wit="2_V_H.11"><subst hand="G">
+            <del>befreyen, bald Erdrücken</del>
+            <add>Befreyen, bald Erdrücken</add></subst> <note>G <wit>2_V_H.11</wit></note></rdg>
+        <rdg wit="2_V_H.2 2_H" type="type_2b">befreyen, bald erdrücken <note><wit>2_V_H.2</wit> <wit>2_H</wit></note></rdg>
+    </app>
+    
 </f:apparatus>
