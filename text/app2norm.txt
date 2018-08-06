@@ -133,7 +133,7 @@ before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>2_III_
 9522[Land]{Land,} <i>9522</i> Land, <i>2_H</i>] Land^ <i>C.1_4 [type=2aa]</i>
 9534[vorsichtig]{vorsichtig,} <i>9534</i> vorsichtig, <i>2_H</i>] vorsichtig^ <i>mit ungewöhnlich großem Spatium C.1_4 [type=2aa]</i>
 9535[jähen]{gähen} <i>9535</i> gähen <i>2_H</i>] jähen <i>C.1_4 [type=2aa]</i>
-9542[Alt- Wälder]{Alt-Wälder} <i>9542</i> Alt-Wälder <i>2_H</i>] Alt- Wälder <i>C.1_4 [type=1c]</i>
+9542[Alt- Wälder]{Alt-Wälder} <i>9542</i> Alt-Wälder <i>none</i>] Alt-Wälder <i>2_H</i> Alt- Wälder <i>C.1_4 [type=1c]</i>
 before_9562[sitzend]{=} <i>vor 9562</i> sitzend <i>none</i>] sitzend) <i>C.1_4</i> sitzend.) <i>C.2α_4 C.3_4 [type=8]</i>
 9571[Geschick!]{Geschick;} <i>9571</i> Geschick; <i>2_H</i>] Geschick! <i>C.1_4 [type=2aa]</i>
 9579[anzuschaun.]{anzuschaun –} <i>9579</i> anzuschaun – <i>2_H</i>] anzuschaun. <i>C.1_4 [type=2aa]</i>
