@@ -64,7 +64,7 @@ before_6566_d[zurücksieht]{=} <i>vor 6566</i> zurücksieht <i>2_H</i>] zurückz
 6832[Willkommmen]{Willkommen} <i>6832</i> Willkommen <i>none</i>] Willkomm̄en <i>2_H [type=1a]</i>
 6847[höhern, höhern]{=} <i>6847</i> höhern, höhern <i>2_H</i>] <i>mon Ri, am linken Rand</i> hehren? <i>mit Verweis auf 6856 Ri 2_H [type=7]</i>
 6983[den]{Den} <i>6983</i> Den <i>none</i>] Nun auf! ⟨<i>tilgt G</i>⟩ den <i>2_H [type=7]</i>
-7049[von]{vor} <i>7049</i> vor] von <i>2_II_H.74 2_H [type=1a]</i>
+7049[von]{=} <i>7049</i> von <i>2_II_H.74 2_H</i>] vor <i>emend. faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q faust://bibliography/wa_I_15_2#Erich_Schmidt [type=1a*]</i>
 7136[Cumpan]{=} <i>7136</i> Cumpan <i>2_H</i>] Kumpan <i>Ec 2_H [type=6]</i>
 before_7240[Sphinx]{=} <i>vor 7240</i> Sphinx <i>2_H</i>] Sphinxe <i>emend. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=7]</i>
 before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>] <i>Zeichen über dem zweiten</i> e <i>zur Verdeutlichung der Artikulation, darüber</i> ei<i>, am linken Rand</i> Peneus <i>mit Zeichen über dem zweiten</i> e <i>Ri 2_H [type=7]</i>
