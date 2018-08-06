@@ -162,7 +162,7 @@ after_9807[Höhe.]{=} <i>nach 9807</i> Höhe. <i>none</i>] Höhe). <i>C.1_4</i> 
 before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C.2α_4 C.3_4</i>] Chorführerin <i>C.1_4 [type=4b]</i>
 10000[sanften Wellen]{sanftem Wallen} <i>10000</i> sanftem Wallen <i>2_III_H.3a:2</i>] sanften Wellen <i>2_H [type=2b]</i>
 10001[Vogelsingen]{Vogelsängen} <i>10001</i> Vogelsängen <i>2_H</i>] Vogelsingen <i>C.1_4 [type=2aa]</i>
-10060[quollen]{=} <i>10060</i> quollen <i>2_IV_H.1 2_H</i>] quellen <i>emend. faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q faust://bibliography/wa_I_15_2#Erich_Schmidt [type=2b*]</i>
+10060[quollen]{=} <i>10060</i> quollen <i>2_IV_H.1 2_H</i>] quellen <i>emend. faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q faust://bibliography/wa_I_15_2#Erich_Schmidt [type=1a*]</i>
 10011[umzingeln,]{umzingeln} <i>10011</i> umzingeln <i>2_H</i>] umzingeln, <i>2_H :</i> umzingeln^ <i>durch Rasur</i> umzingeln, <i>C.1_4 [type=2aa]</i>
 10030[ins]{=} <i>10030</i> ins <i>C.1_4</i>] in’s <i>C.2α_4 C.3_4 [type=4a]</i>
 10038[Schlauch!]{Schlauch.} <i>10038</i> Schlauch. <i>2_H</i>] Schlauch! <i>C.1_4 [type=2aa]</i>
