@@ -46,7 +46,7 @@ before_5801[Gesang]{Ungesang} <i>before_5801</i> Ungesang <i>2_H</i>] Gesang <i>
 after_6062[]{} <i>nach 6062</i>] <i>Lücke von zwei Versen 2_H [type=7]</i>
 before_6097[Mephistofeles]{Mephistopheles} <i>vor 6097</i> Mephistopheles <i>none</i>] Mephistofeles <i>2_H [type=1a]</i>
 6126[Undas]{Und das} <i>6126</i> Und das <i>none</i>] Undas <i>2_H [type=1a]</i>
-6139[obern-]{obern} 6139 obern] Obern <i>2_H :</i> obern- <i>(Bindestrich Fehlkorrektur) G 2_H [type=1a]</i>
+6139[obern-]{obern} <i>6139</i> obern] Obern <i>2_H :</i> obern- <i>(Bindestrich Fehlkorrektur) G 2_H [type=1a]</i>
 before_6150_b[gleichfals]{=} <i>vor 6150</i> <stage>gleichfals</stage> <i>2_H</i>] <stage>(gleichfals</stage> <i>ohne schließende Klammer 2_H [type=8]</i>
 6209[nicht]{nichts} <i>6209</i> nichts <i>2_I_H.48</i>] nicht <i>2_I_H.47 2_H [type=2b]</i>
 6223[Nich]{Nicht} <i>6223</i> Nicht <i>2_I_H.47</i>] Nich <i>2_H [type=2aa]</i>
@@ -77,7 +77,7 @@ before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>]
 7729[ungewissen]{ungewissem} <i>7729</i> ungewissem <i>none</i>] ungewissen <i>2_II_H.74 2_H [type=1a]</i>
 7729[mit]{=} <i>7729</i> mit <i>2_II_H.74 2_H</i>] bei <i>emend. faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q faust://bibliography/wa_I_15_2#Erich_Schmidt [type=7]</i>
 7776[Dagegegen]{Dagegen} <i>7776</i> Dagegen <i>2_II_H.74</i>] Dagegegen <i>2_H [type=2aa]</i>
-7809|7810[Hexenritt|mit]{Hexenritt!|mit.} <i>7809–7810</i> Hexenritt! <i>bis</i> mit. <i>2_H</i>] Hexenritt^ <i>bis</i> mit^ <i>auf eingeklebtem Zettel 2_H [type=7]</i>
+7809|7810[Hexenritt|mit]{Hexenritt!|mit.} <i>7809–7810</i> Hexenritt! … mit. <i>2_H</i>] Hexenritt^ … mit^ <i>auf eingeklebtem Zettel 2_H [type=7]</i>
 before_7877[Homunnkulus]{Homunkulus} <i>vor 7877</i> Homunkulus <i>2_II_H.74</i>] Homunnkulus <i>2_H [type=1a]</i>
 before_7982[Phorkyas]{=} <i>vor 7982</i> <speaker>Phorkyas</speaker> <i>none</i>] <speaker>Phork.</speaker> <i>2_H [type=7]</i>
 before_8245_b[erstaunt]{=} <i>vor 8245</i> <stage>erstaunt</stage> <i>2_H</i>] <stage>(erstaunt</stage> <i>ohne schließende Klammer 2_H [type=8]</i>
