@@ -234,7 +234,7 @@
         <ref>vor 6319</ref>
         <lem wit="2_H"><speaker>Blondine</speaker>
             <note><wit wit="2_H">2_H</wit></note></lem>
-        <rdg wit="2_H" type="type_6"><speaker>Blondine</speaker> ⟨<stage>(zu Mephisto)</stage>
+        <rdg wit="2_H" type="type_6"><speaker>Blondine</speaker> ⟨<stage rend="inline">(zu Mephisto)</stage>
             <note>erg Ec</note>⟩ <note><wit wit="2_H">2_H</wit></note></rdg>
     </app>
     <app>
@@ -428,5 +428,5 @@
             <add>Befreyen, bald Erdrücken</add></subst> <note>G <wit>2_V_H.11</wit></note></rdg>
         <rdg wit="2_V_H.2 2_H" type="type_2b">befreyen, bald erdrücken <note><wit>2_V_H.2</wit> <wit>2_H</wit></note></rdg>
     </app>
-    
+        
 </f:apparatus>
