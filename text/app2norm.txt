@@ -98,7 +98,6 @@ before_8391_b[am]{an} <i>vor 8391</i> an <i>2_II_H.70</i>] am <i>2_H [type=2aa]<
 8656[Entlaßnem]{=} <i>8656</i> Entlaßnem <i>C.1_4</i>] Entlass’nem <i>C.2α_4 C.3_4 [type=4a]</i>
 8670[wandelnden]{wandelenden} <i>8670</i> wandelenden <i>2_H</i>] wandelnden <i>2_III_H.1</i> wandelnden <i>2_III_H.2:1 :</i> wandelenden <i>Ri G</i> wandelnden <i>2_III_H.3a:1 :</i> wandelenden <i>Jo</i> wandelenden <i>2_H</i> wandelnden <i>C.1_4 [type=2aa]</i>
 8714[Lohe]{Lohn} <i>8714</i> Lohn <i>2_H</i>] Lohe <i>C.1_4 [type=2aa]</i>
-8722[ich’s,]{ich’s;} <i>8722</i> ich’s; <i>2_H</i>] ich’s, <i>C.1_4 [type=2aa]</i>
 8727[mich]{mich.} <i>8727</i> mich. <i>none</i>] mich. <i>2_H</i> mich^ <i>C.1_4 [type=1b]</i>
 8776[schlachterzogne]{schlechterzogne} <i>8776</i> schlechterzogne <i>2_III_H.3a:1</i>] schlachterzogne <i>2_H C.1_4 [type=2b]</i>
 8803[Anerkannte! nun]{Anerkannte! neu} <i>8803</i> Anerkannte! neu <i>2_III_H.1</i>] Anerkannte! nun <i>2_III_H.2:1 2_III_H.3a:1 2_H C.1_4 [type=2b]</i>
@@ -175,7 +174,7 @@ before_10067_a[alsbald]{also bald} <i>vor 10067</i> also bald <i>2_IV_H.3</i>] a
 after_10344[allzusammen]{alle zusammen} <i>nach 10344</i> alle zusammen <i>2_IV_H.8</i>] allzusammen <i>2_H [type=2aa]</i>
 10415[hattet]{hättet} <i>10415</i> hättet <i>none</i>] hattet <i>2_H [type=1a]</i>
 10439[Negromant]{=} <i>10439</i> Negromant <i>2_H</i>] Nekromant <i>Ec 2_H [type=6]</i>
-10452[Kräfte]{Kräfte} <i>10452</i> Kräfte <i>none</i>] Kräfte <i>2_IV_H.13</i> Krafte <i>2_H [type=1a]</i>
+10452[Krafte]{Kräfte}<i>10452</i> Kräfte <i>none</i>] Kräfte <i>2_IV_H.13</i> Krafte <i>2_H [type=1a]</i>
 10523[$]{^&lt;l n="10524"^&gt;Er ist behend, reist alles mit sich fort.^&lt;/l^&gt;} <i>10524</i>] Er … fort. <i>erg G 2_IV_H.18</i> <i>fehlt 2_IV_H.13 2_H [type=2b]</i>
 before_10525_b[Tritt]{tritt} <i>vor 10525</i> tritt <i>2_IV_H.13</i>] Tritt <i>2_H [type=2aa]</i>
 10556[aufgeräumt]{ausgeräumt} <i>10556</i> ausgeräumt <i>2_IV_H.20</i>] aufgeräumt <i>2_IV_H.13 2_H [type=2b]</i>
