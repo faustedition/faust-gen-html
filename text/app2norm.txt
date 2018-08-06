@@ -78,7 +78,7 @@ before_7249_a[Peneius]{Peneus} <i>vor 7249 (Überschrift)</i> Peneus <i>2_H</i>]
 7729[mit]{=} <i>7729</i> mit <i>2_II_H.74 2_H</i>] bei <i>emend. faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q faust://bibliography/wa_I_15_2#Erich_Schmidt [type=7]</i>
 7776[Dagegegen]{Dagegen} <i>7776</i> Dagegen <i>2_II_H.74</i>] Dagegegen <i>2_H [type=2aa]</i>
 7809|7810[Hexenritt|mit]{Hexenritt!|mit.} <i>7809–7810</i> Hexenritt! … mit. <i>2_H</i>] Hexenritt^ … mit^ <i>auf eingeklebtem Zettel 2_H [type=7]</i>
-before_7877[Homunnkulus]{Homunkulus} <i>vor 7877</i> Homunkulus <i>2_II_H.74</i>] Homunnkulus <i>2_H [type=1a]</i>
+before_7877[Homunnkulus]{Homunkulus} <i>vor 7877</i> Homunkulus <i>none</i>] Homunkulus <i>2_II_H.74</i> Homunnkulus <i>2_H [type=1a]</i>
 before_7982[Phorkyas]{=} <i>vor 7982</i> <speaker>Phorkyas</speaker> <i>none</i>] <speaker>Phork.</speaker> <i>2_H [type=7]</i>
 before_8245_b[erstaunt]{=} <i>vor 8245</i> <stage>erstaunt</stage> <i>2_H</i>] <stage>(erstaunt</stage> <i>ohne schließende Klammer 2_H [type=8]</i>
 8298[Lüftchen und die]{Lüftchen, die} <i>8298</i> Lüftchen, die <i>2_II_H.74</i>] Lüftchen und die <i>2_H [type=2aa]</i>
@@ -176,7 +176,7 @@ before_10067_a[alsbald]{also bald} <i>vor 10067</i> also bald <i>2_IV_H.3</i>] a
 after_10344[allzusammen]{alle zusammen} <i>nach 10344</i> alle zusammen <i>2_IV_H.8</i>] allzusammen <i>2_H [type=2aa]</i>
 10415[hattet]{hättet} <i>10415</i> hättet <i>none</i>] hattet <i>2_H [type=1a]</i>
 10439[Negromant]{=} <i>10439</i> Negromant <i>2_H</i>] Nekromant <i>Ec 2_H [type=6]</i>
-10452[Krafte]{Kräfte} <i>10452</i> Kräfte <i>2_IV_H.13</i>] Krafte <i>2_H [type=1a]</i>
+10452[Kräfte]{Kräfte} <i>10452</i> Kräfte <i>none</i>] Kräfte <i>2_IV_H.13</i> Krafte <i>2_H [type=1a]</i>
 10523[$]{^&lt;l n="10524"^&gt;Er ist behend, reist alles mit sich fort.^&lt;/l^&gt;} <i>10524</i>] Er … fort. <i>erg G 2_IV_H.18</i> <i>fehlt 2_IV_H.13 2_H [type=2b]</i>
 before_10525_b[Tritt]{tritt} <i>vor 10525</i> tritt <i>2_IV_H.13</i>] Tritt <i>2_H [type=2aa]</i>
 10556[aufgeräumt]{ausgeräumt} <i>10556</i> ausgeräumt <i>2_IV_H.20</i>] aufgeräumt <i>2_IV_H.13 2_H [type=2b]</i>
@@ -186,7 +186,7 @@ after_10570[Posauenschall]{Posaunenschall} <i>after_10570</i> Posaunenschall <i>
 10636[gesenckten]{gesencktem} <i>10636</i> gesencktem <i>none</i>] gesenckten <i>2_H [type=2a]</i>
 10649[sturmbewegte]{=} <i>10649</i> sturmbewegte <i>2_H</i>] sturmbewegte <i>faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q</i> sturmerregte <i>Ec 2_H [type=6]</i>
 before_10654_a[Kaiser:]{Kaiser} <i>vor 10654</i> <speaker>Kaiser</speaker> <i>none</i>] <speaker>Kaiser:</speaker> <i>2_H [type=8]</i>
-10771[schienen]{Schienen} <i>10771</i> Schienen <i>2_IV_H.8</i>] Schienen <i>2_H :</i> schienen <i>(Fehlkorrektur) G [type=1a]</i>
+10771[schienen]{Schienen} <i>10771</i> Schienen <i>none</i>] Schienen <i>2_IV_H.8</i> Schienen <i>2_H :</i> schienen <i>(Fehlkorrektur) G [type=1a]</i>
 10790[schlecht]{schlecht.} <i>10790</i> schlecht. <i>2_IV_H.8</i>] schlecht^ <i>2_H [type=2aa]</i>
 10818[den]{dem} <i>10818</i> dem <i>2_IV_H.8</i>] den <i>2_H [type=2aa]</i>
 10832[willkommne]{willkommner} <i>10832</i> willkommner <i>2_IV_H.8</i>] willkommne <i>2_H [type=2aa]</i>
