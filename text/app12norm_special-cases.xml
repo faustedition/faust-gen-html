@@ -418,9 +418,11 @@
         <f:ins n="10909">von Festen</f:ins>
         <ref>10909</ref>
         <lem wit="2_H">von Festen <note><wit wit="2_H">2_H</wit></note></lem>
-        <rdg wit="2_IV_H.20">von Fasten <note><wit wit="2_IV_H.20">2_IV_H.20</wit></note></rdg>
-        <rdg wit="2_IV_H.20" hand="G">vom Fasten <note><seg type="hand">G</seg></note></rdg>
-        <rdg wit="2_H" type="type_2d">von Festen <note>mglw aus <quote>von Fasten</quote>
+        <rdg wit="2_IV_H.20"><subst hand="G">
+            <del>von Fasten</del>
+            <add>vom Fasten</add>
+        </subst> <note><seg type="hand">G</seg> <wit wit="2_IV_H.20">2_IV_H.20</wit></note></rdg>
+        <rdg wit="2_H" type="type_2d">von Festen <note>(mglw G aus <quote>von Fasten</quote>)
                 <wit wit="2_H">2_H</wit></note></rdg>
     </app>
 
