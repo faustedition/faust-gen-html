@@ -383,10 +383,10 @@
         <f:replace n="9962">los.</f:replace>
         <f:ins n="9962">los,</f:ins>
         <ref>9962</ref>
-        <lem wit="2_H C.2alpha_4 C.3_4">los, <note><wit>2_H</wit>
-                <wit>C.2alpha_4</wit>
-                <wit>C.3_4</wit></note></lem>
-        <rdg wit="C.1_4" type="type_2aa type_4b">los. <note><wit>C.1_4</wit></note></rdg>
+        <lem wit="2_H">los, <note><wit>2_H</wit></note></lem>
+        <rdg wit="C.1_4" type="type_2aa">los. <note><wit>C.1_4</wit></note></rdg>
+        <rdg wit="C.2alpha_4 C.3_4" type="type_4b">los, <note><wit>C.2alpha_4</wit>
+            <wit>C.3_4</wit></note></rdg>
     </app>
 
     <app>
