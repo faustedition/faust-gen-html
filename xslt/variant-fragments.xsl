@@ -14,6 +14,20 @@
 	
 	<xsl:param name="canonical">faust</xsl:param>
 	<xsl:variable name="canonicalDocs" select="tokenize($canonical, ' ')"/>
+	<xsl:param name="order-url">http://dev.digital-humanities.de/ci/view/Faust/job/faust-macrogen/lastSuccessfulBuild/artifact/target/macrogenesis/order.xml</xsl:param>
+	<xsl:variable name="order" select="doc($order-url)"/>
+	
+	<xsl:function name="f:get-wit-index">
+		<xsl:param name="sigil_t"/>
+		<xsl:param name="extra"/>
+		<xsl:variable name="el" select="$order//f:item[@sigil_t = $sigil_t]"/>
+		<xsl:variable name="idx" select="if ($el) then number($el/@index) else 99999"/>
+		<xsl:value-of select="$idx + $extra"/>
+	</xsl:function>
+	<xsl:function name="f:get-wit-index">
+		<xsl:param name="sigil_t"/>
+		<xsl:value-of select="f:get-wit-index($sigil_t, 0)"/>
+	</xsl:function>
 	
 	<xsl:variable name="standoff" as="element()*">
 		<f:standoff>
@@ -69,42 +83,60 @@
 			current-lines: Sequence of nodes with that @n
 			current-n: @n
 	
+	###
+	
+	The new mechanism should work as follows:
+	
+	1. We only consider the emended versions, and we sort them by macrogenesis order.
+	2. We group adjacent items in this list by the XML grouping key.
+	3. for each group, 
+			i.  we render the first emended version and the list of sigils
+			ii. we iterate through the list of non-emended versions and render those that 
+			    differ from the emended version wrt their grouping key	
 	-->
 	<xsl:template name="create-single-variants">
 		<xsl:param name="current-lines" as="node()*" select="current-group()"/>
 		<xsl:param name="current-n" select="current-grouping-key()"/>
+		<xsl:variable name="all-lines" as="element()*">
+			<xsl:perform-sort select="$current-lines">
+				<xsl:sort select="f:get-wit-index(@f:sigil_t)" stable="yes"/>
+			</xsl:perform-sort>
+		</xsl:variable>
+		<xsl:variable name="emended-lines" select="$all-lines[@f:emended]"/>
+		<xsl:variable name="variant-lines" select="$all-lines except $emended-lines"/>
 		<xsl:variable name="evidence">
 			<xsl:sequence select="$standoff"/>
-			<xsl:for-each-group select="$current-lines" group-by="string-join((@f:sigil_t, @f:emended), ' ')">
+			<xsl:for-each-group select="$emended-lines" group-by="@f:sigil_t">
 				<f:evidence>
 					<xsl:copy-of select="current-group()[1]/@*"/>
 					<xsl:copy-of select="current-group()"/>
 				</f:evidence>				
 			</xsl:for-each-group>
 		</xsl:variable>
-		<xsl:result-document href="/tmp/evidence2/{current-grouping-key()}.{generate-id(.)}.xml">
-			<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:f="http://www.faustedition.net/ns">
-				<xsl:copy-of select="$evidence/f:evidence" copy-namespaces="no"/>				
-			</TEI>
-		</xsl:result-document>
-		<xsl:variable name="cline" select="$current-lines[@f:sigil_t = $canonicalDocs]"/>
-		<xsl:variable name="ctext"
-			select="
-			if ($cline) then
-			f:normalize-space($cline[1])
-			else
-			''"/>
 		<div class="variants" data-n="{current-grouping-key()}"
 			data-witnesses="{count($evidence/* except $evidence/*[@f:type='lesetext'] except $evidence/f:standoff)}"
 			data-variants="{count(distinct-values(for $ev in $evidence/* except $evidence/f:standoff return f:normalize-space($ev)))-1}"
-			data-ctext="{$ctext}" id="v{$current-n}">
+			id="v{$current-n}">
 			<xsl:attribute name="xml:id" select="concat('v', $current-n)"/>
-			<xsl:for-each-group select="$evidence/*" group-by="f:variant-grouping-key(.)">
-				<xsl:apply-templates select="current-group()[1]/*">
-					<!--<xsl:sort select="@f:sigil"/>-->
-					<!-- Sorting is done in collect-metadata.xpl, we just keep the document order from there -->
+			<xsl:for-each-group select="$evidence/f:evidence/*" group-adjacent="f:variant-grouping-key(.)">
+				<xsl:variable name="current_sigils" select="current-group()/@f:sigil_t"/>
+				<xsl:apply-templates select="current-group()[1]">
 					<xsl:with-param name="group" select="current-group()"/>
 				</xsl:apply-templates>
+				<xsl:comment>Now potential inner variance:</xsl:comment>				
+				<xsl:for-each select="$variant-lines[@f:sigil_t = $current_sigils][f:variant-grouping-key(.) != current-grouping-key()]">
+					<xsl:variable name="variant-evidence">
+						<xsl:sequence select="$standoff"/>
+						<f:evidence>
+							<xsl:copy-of select="."/>
+						</f:evidence>
+					</xsl:variable>
+					<xsl:for-each select="$variant-evidence/f:evidence">
+						<xsl:apply-templates>
+							<xsl:with-param name="variant-lines" select="true()"/>
+						</xsl:apply-templates>						
+					</xsl:for-each>
+				</xsl:for-each>
 
 			</xsl:for-each-group>
 		</div>
@@ -131,9 +163,10 @@
 		the whole group. 
 	-->
 	<xsl:template match="*[f:hasvars(.)]" priority="1">
-		<xsl:param name="group" as="node()*"/>
-		<div class="{string-join(f:generic-classes(.), ' ')}" 
-			data-n="{@n}" data-source="{string-join(current-group()/@f:sigil_t, ' ')}">
+		<xsl:param name="group" as="node()*" select="."/>
+		<xsl:param name="variant-lines" select="false()"/>
+		<div class="{string-join((f:generic-classes(.), if ($variant-lines) then 'variant-lines' else ()), ' ')}" 
+			data-n="{@n}" data-source="{string-join($group/@f:sigil_t, ' ')}">
 			<xsl:call-template name="generate-style"/>
 			
 			<!-- first format the line's content ... -->
