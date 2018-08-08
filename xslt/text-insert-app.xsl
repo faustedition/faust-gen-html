@@ -323,7 +323,8 @@
                                 ': ', string-join(for $app in $apps return concat($app, ' @ ', document-uri(root($app))), '; '))"/>
                         </xsl:if>
                         <xsl:variable name="current-app" select="$current-apps[1]"/>
-                        <seg type="lem" xml:id="{f:seg-id($current-ins)}">
+                        <seg type="lem">
+                            <xsl:attribute name="xml:id" select="f:seg-id($current-ins)"/>
                             <xsl:copy-of select="$current-ins/node()" copy-namespaces="no"/>
                         </seg>
                         <xsl:if test="$insert-app-immediately">
@@ -347,7 +348,8 @@
         <xsl:choose>
             <xsl:when test="$repl">
                 <xsl:variable name="ins" select="$repl/following-sibling::f:ins[1]"/>
-                <seg type="lem" xml:id="{f:seg-id($ins)}">
+                <seg type="lem">
+                    <xsl:attribute name="xml:id" select="f:seg-id($ins)"/>
                     <xsl:apply-templates select="$ins/node()" mode="#current"/>
                 </seg>
             </xsl:when>
