@@ -124,7 +124,6 @@
 				<xsl:apply-templates select="current-group()[1]/*">
 					<xsl:with-param name="group" select="current-group()"/>
 				</xsl:apply-templates>
-				<xsl:comment>Now potential inner variance:</xsl:comment>				
 				<xsl:for-each-group select="$variant-lines[@f:sigil_t = $current_sigils]" group-by="@f:sigil_t">
 					<xsl:variable name="variant-evidence">
 						<xsl:sequence select="$standoff"/>
