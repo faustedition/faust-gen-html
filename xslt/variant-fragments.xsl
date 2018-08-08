@@ -118,9 +118,9 @@
 			data-variants="{count(distinct-values(for $ev in $evidence/* except $evidence/f:standoff return f:normalize-space($ev)))-1}"
 			id="v{$current-n}">
 			<xsl:attribute name="xml:id" select="concat('v', $current-n)"/>
-			<xsl:for-each-group select="$evidence/f:evidence/*" group-adjacent="f:variant-grouping-key(.)">
+			<xsl:for-each-group select="$evidence/f:evidence" group-adjacent="f:variant-grouping-key(.)">
 				<xsl:variable name="current_sigils" select="current-group()/@f:sigil_t"/>
-				<xsl:apply-templates select="current-group()[1]">
+				<xsl:apply-templates select="current-group()[1]/*">
 					<xsl:with-param name="group" select="current-group()"/>
 				</xsl:apply-templates>
 				<xsl:comment>Now potential inner variance:</xsl:comment>				
