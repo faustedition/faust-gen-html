@@ -119,24 +119,25 @@
 			id="v{$current-n}">
 			<xsl:attribute name="xml:id" select="concat('v', $current-n)"/>
 			<xsl:for-each-group select="$evidence/f:evidence" group-adjacent="f:variant-grouping-key(.)">
+				<xsl:variable name="emended-key" select="f:variant-grouping-key(.)"/>
 				<xsl:variable name="current_sigils" select="current-group()/@f:sigil_t"/>
 				<xsl:apply-templates select="current-group()[1]/*">
 					<xsl:with-param name="group" select="current-group()"/>
 				</xsl:apply-templates>
 				<xsl:comment>Now potential inner variance:</xsl:comment>				
-				<xsl:for-each select="$variant-lines[@f:sigil_t = $current_sigils][f:variant-grouping-key(.) != current-grouping-key()]">
+				<xsl:for-each-group select="$variant-lines[@f:sigil_t = $current_sigils]" group-by="@f:sigil_t">
 					<xsl:variable name="variant-evidence">
 						<xsl:sequence select="$standoff"/>
 						<f:evidence>
-							<xsl:copy-of select="."/>
+							<xsl:copy-of select="current-group()"/>
 						</f:evidence>
 					</xsl:variable>
-					<xsl:for-each select="$variant-evidence/f:evidence">
+					<xsl:for-each select="$variant-evidence/f:evidence[f:variant-grouping-key(.) != $emended-key]">
 						<xsl:apply-templates>
 							<xsl:with-param name="variant-lines" select="true()"/>
 						</xsl:apply-templates>						
 					</xsl:for-each>
-				</xsl:for-each>
+				</xsl:for-each-group>
 
 			</xsl:for-each-group>
 		</div>
