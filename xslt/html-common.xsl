@@ -399,11 +399,12 @@ in <xsl:value-of select="document-uri(/)"/>
 	<!-- Erzeugt die Zeilennummer vor der Zeile -->
 	<xsl:template name="generate-lineno">
 		<xsl:variable name="display-line" select="if (@f:schroer) then @f:schroer else 0"/>
+		<xsl:variable name="lineid" select="concat('l', replace(@n, '\s+', '_'))"/>
 		<xsl:choose>
 			<xsl:when test="number($display-line) gt 0">
 				<!-- Klick auf Zeilennummer führt zu einem Link, der wiederum auf die Zeilennummer verweist -->
-				<xsl:attribute name="id" select="concat('l', @n)"/>
-				<a href="#l{@n}">
+				<xsl:attribute name="id" select="$lineid"/>
+				<a href="#{$lineid}">
 					<xsl:attribute name="class">
 						<xsl:text>lineno</xsl:text>
 						<!-- Jede 5. ist immer sichtbar, alle anderen nur wenn über die Zeile gehovert wird -->
@@ -415,10 +416,10 @@ in <xsl:value-of select="document-uri(/)"/>
 				</a>
 			</xsl:when>
 			<xsl:when test="@n and $type='lesetext'">
-				<a id="l{@n}" href="#l{@n}" class="lineno technical-lineno"><xsl:value-of select="@n"/></a>
+				<a id="l{@n}" href="#{$lineid}" class="lineno technical-lineno"><xsl:value-of select="@n"/></a>
 			</xsl:when>
 			<xsl:when test="@n">
-				<a id="l{@n}" href="#l{@n}" class="lineno invisible">∞</a>
+				<a id="l{@n}" href="#{$lineid}" class="lineno invisible">∞</a>
 			</xsl:when>
 			<xsl:when test="not(f:isInline(.))">
 				<a class="lineno invisible">&#160;</a>

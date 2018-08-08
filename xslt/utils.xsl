@@ -287,12 +287,13 @@
     <xsl:param name="sigil_t"/>
     <xsl:param name="page"/>
     <xsl:param name="n"/>
+    <xsl:variable name="lineid" select="concat('l', replace($n, '\s+', '_'))"/>
     <xsl:value-of select="concat('/document?sigil=', $sigil_t, '&amp;view=print')"/>
     <xsl:if test="$page">
       <xsl:value-of select="concat('&amp;page=', $page)"/>
     </xsl:if>
     <xsl:if test="$n">
-      <xsl:value-of select="concat('#l', $n)"/>
+      <xsl:value-of select="concat('#', $lineid)"/>
     </xsl:if>
   </xsl:function>
     
