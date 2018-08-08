@@ -165,7 +165,7 @@
 	<xsl:template match="*[f:hasvars(.)]" priority="1">
 		<xsl:param name="group" as="node()*" select="."/>
 		<xsl:param name="variant-lines" select="false()"/>
-		<div class="{string-join((f:generic-classes(.), if ($variant-lines) then 'variant-lines' else ()), ' ')}" 
+		<div class="{string-join((f:generic-classes(.), if ($variant-lines) then 'variant-lines' else 'emended-lines'), ' ')}" 
 			data-n="{@n}" data-source="{string-join($group/@f:sigil_t, ' ')}">
 			<xsl:call-template name="generate-style"/>
 			
