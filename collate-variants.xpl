@@ -46,21 +46,29 @@
   -->
     <p:for-each>
       <p:iteration-source select="//f:textTranscript"/>
-      <p:variable name="transcriptFile" select="/f:textTranscript/@href"/>
-      <p:variable name="transcriptURI" select="/f:textTranscript/@uri"/>
-      <p:variable name="documentURI" select="/f:textTranscript/@document"/>
-      <p:variable name="type" select="/f:textTranscript/@type"/>
-      <p:variable name="sigil" select="/f:textTranscript/f:idno[1]/text()"/>
-      <p:variable name="sigil-type" select="/f:textTranscript/f:idno[1]/@type"/>
       <p:variable name="sigil_t" select="/f:textTranscript/@sigil_t"/>
 
 
       <!-- Das Transkript wird geladen ... -->
-      <p:load>
+      <p:load name="load-prepared">
         <p:with-option name="href" select="resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir)"
         />
       </p:load>
       
+      <p:load name="load-emended">
+        <p:with-option name="href" select="resolve-uri(concat('emended/', $sigil_t, '.xml'), $builddir)"
+        />
+      </p:load>
+      
+      <p:identity>
+        <p:input port="source">
+          <p:pipe port="result" step="load-emended"/>
+          <p:pipe port="result" step="load-prepared"/>
+        </p:input>        
+      </p:identity>
+    </p:for-each>
+    
+    <p:for-each>
       <p:xslt>
         <p:input port="stylesheet"><p:document href="xslt/prose-to-lines.xsl"/></p:input>
       </p:xslt>
@@ -79,11 +87,6 @@
         <p:input port="parameters">
           <p:pipe port="result" step="config"/>
         </p:input>
-        <p:with-param name="documentURI" select="$documentURI"/>
-        <p:with-param name="sigil_t" select="$sigil_t"/>
-        <p:with-param name="sigil" select="$sigil"/>
-        <p:with-param name="sigil-type" select="$sigil-type"/>
-        <p:with-param name="type" select="$type"/>
       </p:xslt>
 
     </p:for-each>
