@@ -29,6 +29,25 @@
 	<cx:message log="info">
 		<p:with-option name="message" select="'Adding generated markup to transcripts ...'"/>
 	</cx:message>
+		
+	<!-- Zunächst sortieren wir die Transkripteliste chronologisch -->
+	<p:xslt>
+		<p:input port="stylesheet"><p:inline>
+			<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
+				<xsl:import href="xslt/utils.xsl"/>
+				
+				<xsl:template match="/*">
+					<xsl:copy>
+						<xsl:copy-of select="@*"/>
+						<xsl:perform-sort select="*">
+							<xsl:sort select="f:get-wit-index(@sigil_t)"/>
+						</xsl:perform-sort>
+					</xsl:copy>
+				</xsl:template>			
+			</xsl:stylesheet>
+		</p:inline></p:input>
+		<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+	</p:xslt>
 	
 	<!-- 
     Wir iterieren über die Transkripteliste, die vom Skript in collect-metadata.xpl generiert wird.
