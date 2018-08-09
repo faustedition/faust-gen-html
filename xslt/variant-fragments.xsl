@@ -14,20 +14,7 @@
 	
 	<xsl:param name="canonical">faust</xsl:param>
 	<xsl:variable name="canonicalDocs" select="tokenize($canonical, ' ')"/>
-	<xsl:param name="order-url">http://dev.digital-humanities.de/ci/view/Faust/job/faust-macrogen/lastSuccessfulBuild/artifact/target/macrogenesis/order.xml</xsl:param>
-	<xsl:variable name="order" select="doc($order-url)"/>
 	
-	<xsl:function name="f:get-wit-index">
-		<xsl:param name="sigil_t"/>
-		<xsl:param name="extra"/>
-		<xsl:variable name="el" select="$order//f:item[@sigil_t = $sigil_t]"/>
-		<xsl:variable name="idx" select="if ($el) then number($el/@index) else 99999"/>
-		<xsl:value-of select="$idx + $extra"/>
-	</xsl:function>
-	<xsl:function name="f:get-wit-index">
-		<xsl:param name="sigil_t"/>
-		<xsl:value-of select="f:get-wit-index($sigil_t, 0)"/>
-	</xsl:function>
 	
 	<xsl:variable name="standoff" as="element()*">
 		<f:standoff>
