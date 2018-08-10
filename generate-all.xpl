@@ -238,6 +238,18 @@
 			<p:with-option name="href" select="resolve-uri('www/print/reflist.html', $builddir)"/>
 		</p:store>
 		
+		<!-- ### Step 3c'': Reading text app list by scene instead -->
+		<p:xslt>
+			<p:input port="source"><p:pipe port="result" step="reading-text-md"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/text-applist.xsl"/></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			<p:with-param name="output-type" select="'byscene'"></p:with-param>
+		</p:xslt>
+		<p:store method="xhtml">
+			<p:with-option name="href" select="resolve-uri('www/print/app-by-scene.html', $builddir)"/>
+		</p:store>
+		
+		
 		
 		<!-- ### Step 3d: Reading text word index -->
 		<p:xslt>
