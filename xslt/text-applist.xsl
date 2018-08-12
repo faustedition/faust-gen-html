@@ -20,7 +20,8 @@
 						width: auto;						
 					}
 					.type-textcrit .rdg:before { content: " " }
-					.type-textcrit .reading-type { display: none; }
+					.type-textcrit .reading-type, .type-textcrit .applinks { display: none; }
+					.appnote { cursor: inherit; }
 				</style>
 			</xsl:with-param>
 			<xsl:with-param name="section-classes" select="('print', 'center')"/>
@@ -29,6 +30,13 @@
 				<a href="/text-app">Apparat</a>
 			</xsl:with-param>
 			<xsl:with-param name="content">
+				<nav class="pure-center">
+					<a href="app" class="pure-button {if ($output-type='app') then 'pure-button-selected' else ''}">Apparat nach Typ</a>
+					<xsl:text> </xsl:text>
+					<a href="app-by-scene" class="pure-button {if ($output-type='byscene') then 'pure-button-selected' else ''}">Apparat nach Textstelle</a>
+					<xsl:text> </xsl:text>
+					<a href="faust" class="pure-button">Text</a>
+				</nav>
 				<xsl:choose>
 					<xsl:when test="$output-type='byscene'">
 						<xsl:apply-templates mode="byscene"/>
@@ -78,7 +86,7 @@
 	</xsl:template>
 	<xsl:template match="text()" mode="byscene"/>
 	
-	<xsl:template mode="byscene" match="div[descendant::note[@type='textcrit']]">
+	<xsl:template mode="byscene" match="div[descendant::note[@type='textcrit']][count(ancestor::div) lt 4]">
 		<div>
 			<xsl:element name="h{count(ancestor::div)+2}">
 				<xsl:value-of select="@f:label"/>				
