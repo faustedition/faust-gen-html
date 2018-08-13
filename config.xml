@@ -5,19 +5,19 @@
 	<c:param name="source" value="file:/home/tv/git/faust-gen/data/xml/"/>
 	
 	<!-- Target folder for everything that is not specified in more detail below -->
-	<c:param name="builddir" value="../../../target/"/>
+	<c:param name="builddir" value="../../../../target/"/>
 
 	<!-- Path to the target folder for the "root" HTML files-->
-	<c:param name="html" value="../../../target/www/print/"/>
+	<c:param name="html" value="../../../../target/www/print/"/>
 
 	<!-- Path to the target folder for the "apparatus" HTML files-->
-	<c:param name="apphtml" value="../../../target/www/app/"/>
+	<c:param name="apphtml" value="../../../../target/www/app/"/>
 	
 	<!-- Path to the target folder for the metadata HTML fragments -->
-	<c:param name="metahtml" value="../../../target/www/meta/"/>
+	<c:param name="metahtml" value="../../../../target/www/meta/"/>
 
 	<!-- Path to the target folder for the variant fragments -->
-	<c:param name="variants" value="../../../target/www/print/variants/"/>
+	<c:param name="variants" value="../../../../target/www/print/variants/"/>
 	
 	<!-- URL prefix to be used for links into the document viewer (transcripts etc.) -->
 	<c:param name="docbase" value="/document?sigil="/>

@@ -50,9 +50,12 @@
   <xsl:template match='*[@n][not(preceding-sibling::*[@n = current()/@n and not(following-sibling::*[@n != current()/@n][. &lt;&lt; current()])])]'>
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
-      <xsl:attribute name="f:doc" select="$documentURI"/>
+      <!--<xsl:attribute name="f:doc" select="$documentURI"/>-->
       <xsl:attribute name="f:sigil_t" select="$sigil_t"/>
-      <xsl:attribute name="f:href" select="$href"/>
+      <xsl:if test="root(.)//change/@type='emended'">
+        <xsl:attribute name="f:emended">true</xsl:attribute>
+      </xsl:if>
+      <!--<xsl:attribute name="f:href" select="$href"/>-->
       <xsl:attribute name="f:sigil" select="$sigil"/>      
       <xsl:variable name="pb" select="(preceding::pb[1] | descendant::pb[1])[1]"/>
       <xsl:if test="$pb">
@@ -75,9 +78,11 @@
       <xsl:if test="$source">
         <xsl:attribute name="xml:base" select="$source"/>
       </xsl:if>
-      <f:standoff>
-        <xsl:apply-templates select="//alt|//ge:transposeGrp|//join"/>
-      </f:standoff>
+      <xsl:if test="not(//change[@type='emended'])">
+        <f:standoff>
+          <xsl:apply-templates select="//alt|//ge:transposeGrp|//join"/>
+        </f:standoff>        
+      </xsl:if>
       <xsl:apply-templates select='//*[@n and not(self::pb or self::div or self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or @n[contains(.,"todo")] or @n[contains(.,"p")])]'>
         <xsl:sort select="f:normalize-n(@n)"/>
       </xsl:apply-templates>

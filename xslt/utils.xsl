@@ -16,6 +16,9 @@
   <xsl:param name="sigil_t" select="//idno[@type='sigil_t']"/>
   <xsl:param name="type" select="data(/TEI/@type)"/>
   <xsl:param name="apptypes" select="doc('../text/apptypes.xml')"/>
+  
+  <xsl:param name="order-url">http://dev.digital-humanities.de/ci/view/Faust/job/faust-macrogen/lastSuccessfulBuild/artifact/target/macrogenesis/order.xml</xsl:param>
+  <xsl:variable name="order" select="doc($order-url)"/>  
       
   <!-- 
     
@@ -287,12 +290,13 @@
     <xsl:param name="sigil_t"/>
     <xsl:param name="page"/>
     <xsl:param name="n"/>
+    <xsl:variable name="lineid" select="concat('l', replace($n, '\s+', '_'))"/>
     <xsl:value-of select="concat('/document?sigil=', $sigil_t, '&amp;view=print')"/>
     <xsl:if test="$page">
       <xsl:value-of select="concat('&amp;page=', $page)"/>
     </xsl:if>
     <xsl:if test="$n">
-      <xsl:value-of select="concat('#l', $n)"/>
+      <xsl:value-of select="concat('#', $lineid)"/>
     </xsl:if>
   </xsl:function>
     
@@ -467,6 +471,20 @@
     </xsl:variable>
     <xsl:value-of select="$result"/>
   </xsl:function>
+  
+  <!-- Macrogenetic order. Returns an index for a given sigil_t. If used with two parameters, the second is added to the index. -->
+  <xsl:function name="f:get-wit-index">
+    <xsl:param name="sigil_t"/>
+    <xsl:param name="extra"/>
+    <xsl:variable name="el" select="$order//f:item[@sigil_t = $sigil_t]"/>
+    <xsl:variable name="idx" select="if ($el) then number($el/@index) else 99999"/>
+    <xsl:value-of select="$idx + $extra"/>
+  </xsl:function>
+  <xsl:function name="f:get-wit-index">
+    <xsl:param name="sigil_t"/>
+    <xsl:value-of select="f:get-wit-index($sigil_t, 0)"/>
+  </xsl:function>
+  
     
   
 </xsl:stylesheet>

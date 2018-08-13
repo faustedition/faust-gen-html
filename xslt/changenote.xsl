@@ -10,7 +10,8 @@
   
   <xsl:param name="changenote"/>
   <xsl:param name="changenote-who">faust-gen-html</xsl:param>
-  <xsl:param name="changenote-when" select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>  
+  <xsl:param name="changenote-when" select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
+  <xsl:param name="changenote-type"/>  
      
   <xsl:template match="revisionDesc">
     <xsl:choose>
@@ -44,7 +45,12 @@
   </xsl:template>
   
   <xsl:template name="create-change">
-    <change who="{$changenote-who}" when="{$changenote-when}"><xsl:sequence select="$changenote"/></change>
+    <change who="{$changenote-who}" when="{$changenote-when}">
+      <xsl:if test="$changenote-type">
+        <xsl:attribute name="type" select="$changenote-type"/>
+      </xsl:if>
+      <xsl:sequence select="$changenote"/>
+    </change>
   </xsl:template>
   
   
