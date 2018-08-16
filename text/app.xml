@@ -678,6 +678,70 @@ app1rtf = C:\users\bruening.FDH-FFM\txstep\txt\app1.rtf
                             <search-string>typ {[}\N{]}{#}</search-string>
                             <replacement-string/>
                         </string-pair>
+                        <string-pair>
+                            <search-string>faust://bibliography/</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>wa^_I^_15^_1^#Erich^_Schmidt</search-string>
+                            <replacement-string>Erich Schmidt</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>fiedler1943^#</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>   
+                            <search-string>2^_</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>\V^_</search-string>
+                            <replacement-string>V_</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>\I^_</search-string>
+                            <replacement-string>I_</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>\V{[} {]}H.</search-string>
+                            <replacement-string>_</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>C.{#}{[}^_</search-string>
+                            <replacement-string>_</replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{{0}/titlePart}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{{0}/speaker}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{{0}/stage}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{/l}}_{{l}}</search-string>
+                            <replacement-string> | </replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{l}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{{/l}}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>\X\M\L</search-string>
+                            <replacement-string></replacement-string>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>Gold und Schwarze*\[Typ 2b\]</search-string>
+                            <replacement-string>{{i}}siehe online{{/i}}</replacement-string>
+                        </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>
@@ -1233,64 +1297,12 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                             <search-string>1a0</search-string>
                             <replacement-string>1a\*</replacement-string>
                         </string-pair>
-                        <string-pair>
-                            <search-string>faust://bibliography/wa^_I^_15^_1^#Erich^_Schmidt</search-string>
-                            <replacement-string>Erich Schmidt</replacement-string>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>faust://bibliography/fiedler1943^#</search-string>
-                            <replacement-string/>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>faust://bibliography/</search-string>
-                            <replacement-string/>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>2^_</search-string>
-                            <replacement-string/>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>\V^_</search-string>
-                            <replacement-string>V_</replacement-string>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>\I^_</search-string>
-                            <replacement-string>I_</replacement-string>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>\V{[} {]}H.</search-string>
-                            <replacement-string>_</replacement-string>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>{{{0}/titlePart}}</search-string>
-                            <replacement-string/>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>{{{0}/speaker}}</search-string>
-                            <replacement-string/>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>{{{0}/stage}}</search-string>
-                            <replacement-string/>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>{{/l}}_{{l}}</search-string>
-                            <replacement-string> | </replacement-string>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>{{l}}</search-string>
-                            <replacement-string/>
-                        </string-pair>
-                        <string-pair>
-                            <search-string>{{/l}}</search-string>
-                            <replacement-string/>
-                        </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>
         </pass>
-        <!--pass to temporarily exclude all +sh entries 
-        <pass>
+        <!--<pass>
+            <!-\-pass to temporarily exclude all +sh entries-\-> 
             <modify>
                 <exchange>
                     <exchange-table>
