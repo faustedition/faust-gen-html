@@ -30,7 +30,7 @@ before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2
 5592[ein]{im} <i>5592</i> im <i>2_H</i>] ein <i>2_I_H.0a [type=2aa]</i>
 5640[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5640–5645</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
 5656[böser]{böser} <i>5656</i> böser <i>2_I_H.0a</i>] böser <i>2_I_H.24c 2_H faust://bibliography/C.1_41 faust://bibliography/C.3_41</i> böser böse <i>zS 2_H faust://bibliography/Q [type=6]</i>
-5707[wohl du]{wohl! du} <i>5707</i> wohl! du^ <i>2_I_H.32</i>] wohl^ du^ <i>:</i> wohl! du^ <i>G 2_I_H.32</i>  wohl! du, <i>(Missverständnis) 2_H 2_I_H.0a</i>  wohl! Du^ <i>C.1 12 [type=2b]</i>
+5707[wohl! du,]{wohl! du} <i>5707</i> wohl! du^ <i>2_I_H.32</i>] wohl^ du^ <i>2_I_H.32 :</i> wohl! du^ <i>G</i> wohl! du, <i>(Missverständnis) 2_H 2_I_H.0a</i>  wohl! Du^ <i>C.1 12 [type=2b]</i>
 5715[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5715–5726</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
 5748[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5748–5756</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
 5750[Hindermann]{=} <i>5750</i> Hindermann <i>2_I_H.0a</i>] Hintermann <i>Ec 2_H [type=6]</i>
@@ -38,7 +38,7 @@ before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2
 before_5801[Gesang]{Ungesang} <i>before_5801</i> Ungesang <i>2_H</i>] Gesang <i>2_I_H.0a [type=2aa]</i>
 5810[engen]{strengen} <i>5810</i> strengen <i>2_H</i>] engen <i>2_I_H.0a [type=2aa]</i>
 5817[in]{und} <i>5817</i> und <i>2_H</i>] in <i>2_I_H.0a [type=2aa]</i>
-5890[^]{^&lt;milestone unit="lg"/^&gt;] <i>5890</i>] <i>In 2_I_H.41a ist der Beginn der neuen Versgruppe mit einem Abstand markiert.</i> <i>In 2_H und 2_I_H.0a ist kein Abstand erkennbar (Seitenwechsel). [type=2b]</i>
+5890[^]{^&lt;milestone unit="lg"/^&gt;} <i>5890</i>] <i>In 2_I_H.41a ist der Beginn der neuen Versgruppe mit einem Abstand markiert.</i> <i>In 2_H und 2_I_H.0a ist kein Abstand erkennbar (Seitenwechsel). [type=2b]</i>
 5893[noch aus]{wo aus} <i>5893</i> wo aus <i>2_I_H.41a</i>]  nochaus <i>2_H</i>  noch aus <i>2_I_H.0a [type=2b]</i>
 5896[ehre]{Ehre} <i>5896</i> Ehre <i>2_H</i>] ehre <i>2_I_H.0a [type=2aa]</i>
 5902[dunklen]{dumpfen} <i>5902</i> dumpfen <i>2_H</i>] dunklen <i>2_I_H.0a [type=2aa]</i>
@@ -188,7 +188,7 @@ after_10344[allzusammen]{alle zusammen} <i>nach 10344</i> alle zusammen <i>2_IV_
 10415[hattet]{hättet} <i>10415</i> hättet <i>none</i>] hattet <i>2_H [type=1a]</i>
 10439[Negromant]{=} <i>10439</i> Negromant <i>2_H</i>] Nekromant <i>Ec 2_H [type=6]</i>
 10452[Krafte]{Kräfte}<i>10452</i> Kräfte <i>none</i>] Kräfte <i>2_IV_H.13</i> Krafte <i>2_H [type=1a]</i>
-10485|10486[Glück|Genick]{Glücke|Genicke} <i>10485–10486</i> Glücke <i>…</i> Genicke <i>2_IV_H.13</i>]  Glücke <i>…</i> Genicke <i>2_IV_H.18</i>  Glück^ <i>…</i> Genicke <i>:</i> Glücke, <i>…</i> Genicke <i>G 2_IV_H.13</i>  Glück <i>…</i> Genick <i>2_H [type=2aa]</i>
+10485|10486[Glück|Genick]{Glücke|Genicke} <i>10485–10486</i> Glücke … Genicke <i>2_IV_H.13</i>]  Glücke … Genicke <i>2_IV_H.18</i>  Glück^ … Genicke <i>2_IV_H.13 :</i> Glücke, … Genicke <i>G</i> Glück … Genick <i>2_H [type=2aa]</i>
 10523[$]{^&lt;l n="10524"^&gt;Er ist behend, reist alles mit sich fort.^&lt;/l^&gt;} <i>10524</i>] Er … fort. <i>erg G 2_IV_H.18</i> <i>fehlt 2_IV_H.13 2_H [type=2b]</i>
 before_10525_b[Tritt]{tritt} <i>vor 10525</i> tritt <i>2_IV_H.13</i>] Tritt <i>2_H [type=2aa]</i>
 10531[auch ihm]{ihm auch} <i>10531</i> ihm auch <i>2_IV_H.13</i>] auch ihm <i>2_H [type=2aa]</i>
