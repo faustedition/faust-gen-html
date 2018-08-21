@@ -47,7 +47,7 @@ before_5801[Gesang]{Ungesang} <i>before_5801</i> Ungesang <i>2_H</i>] Gesang <i>
 5944[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5944</i>] <i>Der Beginn der neuen Versgruppe ist in 2_H durch Einrückung des Verses markiert.</i> <i>Die Einrückung fehlt in 2_I_H.0a. [type=2aa]</i>
 5993[wilde]{wilder} <i>5993</i> wilder <i>2_I_H.43a</i>]  wilder <i>G 2_I_H.43 G 2_I_H.43a</i>  wilde <i>2_H 2_I_H.0a [type=2b]</i>
 6016[keines]{keiner} <i>6016</i> keiner <i>2_I_H.44</i>]  keines <i>2_H 2_I_H.0a [type=2b</i>
-after_6062[]{} <i>nach 6062</i>] <i>Lücke von zwei Versen 2_H [type=7]</i>
+after_6062[]{} <i>nach 6062</i>] <i>Lücke für zwei Verse 2_H [type=7]</i>
 before_6097[Mephistofeles]{Mephistopheles} <i>vor 6097</i> Mephistopheles <i>none</i>] Mephistofeles <i>2_H [type=1a]</i>
 6126[Undas]{Und das} <i>6126</i> Und das <i>none</i>] Undas <i>2_H [type=1a]</i>
 6139[obern-]{obern} <i>6139</i> obern] Obern <i>2_H :</i> obern- <i>(Bindestrich Fehlkorrektur) G [type=1a]</i>
