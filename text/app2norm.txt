@@ -28,7 +28,7 @@ before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2
 5519[Stürmgewalt]{Sturmgewalt} <i>5519</i> Sturmgewalt <i>2_H</i>] Stürmgewalt <i>2_I_H.0a [type=2aa]</i>
 5592[ein]{im} <i>5592</i> im <i>2_H</i>] ein <i>2_I_H.0a [type=2aa]</i>
 5640[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5640–5645</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
-5656[böser]{böser} <i>5656</i> böser <i>2_I_H.0a</i>] böser <i>2_I_H.24c 2_H faust://bibliography/C.1_41 faust://bibliography/C.3_41</i> böser böse <i>zS 2_H faust://bibliography/Q [type=6]</i>
+5656[böser]{böser} <i>5656</i> böser <i>2_I_H.0a</i>] böser <i>2_I_H.24c 2_H faust://bibliography/C.1_41 faust://bibliography/C.3_41</i> böse <i>zS 2_H faust://bibliography/Q [type=6]</i>
 5707[wohl! du,]{wohl! du} <i>5707</i> wohl! du^ <i>2_I_H.32</i>] wohl^ du^ <i>2_I_H.32 :</i> wohl! du^ <i>G</i> wohl! du, <i>(Missverständnis) 2_H 2_I_H.0a</i>  wohl! Du^ <i>C.1 12 [type=2b]</i>
 5715[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5715–5726</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
 5748[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5748–5756</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
