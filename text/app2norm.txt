@@ -227,13 +227,13 @@ after_11287[(Regum I. 21.)]{=} <i>nach 11287</i> (Regum I. 21.) <i>2_H</i>] (ab)
 11439[mächtig]{mächtig;} <i>11439</i> mächtig; <i>2_V_H.2</i>] <i>Das Semikolon ist in 2_H nicht mehr zu erkennen; ergänzt nach 2_V_H.2 [type=7]</i>
 11473[Weges-Mitte]{Weges Mitte} <i>11473</i> Weges Mitte <i>2_V_H.11</i>] Weges-Mitte <i>2_V_H.2 2_H [type=2b]</i>
 11513[Ligamenten]{Bändern, Sehnen} <i>11513</i> Bändern, Sehnen <i>2_V_H.14a*</i>] Ligamenten <i>2_H [type=7]</i>
-11543[strengen]{strengem} <i>11543</i> strengem <i>2_V_H.2</i>] strengen <i>2_H [type=2aa]</i>
+11543[strengen]{strengem} <i>11543</i> strengem <i>2_V_H.2</i>] strengen <i>2_H [type=2a]</i>
 11578[Von]{=} <i>11578</i> Von <i>2_H</i>] Hier <i>Ec 2_H [type=6]</i>
 11635[wieder]{wieder.} <i>11635</i> wieder. <i>2_V_H.2</i>] <i>Der Punkt ist in 2_H nicht zu erkennen; ergänzt nach 2_V_H.2 [type=7]</i>
-11638[Vom]{Von} <i>11638</i> Von <i>2_V_H.2</i>] Vom <i>2_H [type=2aa]</i>
+11638[Vom]{Von} <i>11638</i> Von <i>2_V_H.2</i>] Vom <i>2_H [type=2a]</i>
 before_11699_b[strauend]{streuend} <i>vor 11699</i> streuend <i>none</i>] streuend <i>2_V_H.2</i> strauend <i>2_H [type=1a]</i>
 11724[erlischt|Muth]{=} <i>11724</i> erlischt <i>…</i> Muth <i>2_H</i>] erlischt, <i>…</i> Muth! <i>Ec 2_H [type=6]</i>
-11760[im]{in} <i>11760</i> in <i>2_V_H.2</i>] im <i>2_H [type=2aa]</i>
+11760[im]{in} <i>11760</i> in <i>2_V_H.2</i>] im <i>2_H [type=2a]</i>
 11772[kommt]{kämt} <i>11772</i> kämt <i>2_V_H.32</i>] komt <i>2_V_H.2</i> kommt <i>2_H [type=2b]</i>
 11837[Der]{=} <i>11837</i> Der <i>2_H</i>] Ein großer <i>Ec 2_H [type=6]</i>
 before_12045_b[IV.]{IV.)} <i>vor 12045</i> (St. Joh. IV.) <i>none</i>] <i>schließende Klammer fehlt 2_H [type=1c]</i>
