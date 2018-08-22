@@ -5,6 +5,7 @@ before_4634_b[gesammelt]{gesammt} <i>vor 4634</i> gesammt <i>2_H</i>] gesammelt 
 4687[tausendstimmigen]{tausendstimmigem} <i>4687</i> tausendstimmigem <i>2_H</i>] tausendstimmigen <i>2_I_H.0a [type=2aa]</i>
 4710[welch’]{welch} <i>4710</i> welch <i>none</i>] welch <i>2_H</i> welch’ <i>2_I_H.0a [type=1b]</i>
 4721[ersprießend]{entsprießend} <i>4721</i> entsprießend <i>2_H</i>] ersprießend <i>2_I_H.0a [type=2aa]</i>
+4849[verammelt]{verrammelt} <i>4849</i> verrammelt <i>2_H</i>] verammelt <i>2_I_H.0a [type=2aa]</i>
 4877[Ich]{Ich?} <i>4877</i> Ich? <i>2_H</i>] Ich^ <i>2_I_H.0a [type=2aa]</i>
 4950[aus.]{aus?} <i>4950</i> aus? <i>2_H</i>] aus. <i>2_I_H.0a [type=2aa]</i>
 4973[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>4973–4976</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
@@ -197,7 +198,7 @@ after_10570[Posauenschall]{Posaunenschall} <i>nach 10570</i> Posaunenschall <i>n
 10636[gesenckten]{gesencktem} <i>10636</i> gesencktem <i>none</i>] gesenckten <i>2_H [type=2a]</i>
 10649[sturmbewegte]{=} <i>10649</i> sturmbewegte <i>2_H</i>] sturmbewegte <i>faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q</i> sturmerregte <i>Ec 2_H [type=6]</i>
 before_10654_a[Kaiser:]{Kaiser} <i>vor 10654</i> <speaker>Kaiser</speaker> <i>none</i>] <speaker>Kaiser:</speaker> <i>2_H [type=8]</i>
-10771[schienen]{Schienen} <i>10771</i> Schienen <i>none</i>] Schienen <i>2_IV_H.8</i> Schienen <i>2_H :</i> schienen <i>(Fehlkorrektur) G [type=1a]</i>
+10771[schienen]{Schienen} <i>10771</i> Schienen <i>2_IV_H.8</i>] Schienen <i>2_H :</i> schienen <i>G [type=2aa]</i>
 10790[schlecht]{schlecht.} <i>10790</i> schlecht. <i>2_IV_H.8</i>] schlecht^ <i>2_H [type=2aa]</i>
 10818[den]{dem} <i>10818</i> dem <i>2_IV_H.8</i>] den <i>2_H [type=2aa]</i>
 10832[willkommne]{willkommner} <i>10832</i> willkommner <i>2_IV_H.8</i>] willkommne <i>2_H [type=2aa]</i>
