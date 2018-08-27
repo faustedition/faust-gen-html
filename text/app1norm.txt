@@ -337,7 +337,7 @@ before_4176[zu]{=} <i>vor 4176</i> zu <i>1_H.14 A</i>]  Zu <i>B B.a [type=4a]<
 4200[jedem]{=} <i>4200</i> jedem <i>1_H.14 A</i>]   Jedem <i>B B.a [type=4a]</i>
 4208[abgeschlagen.^]{=} <i>4208</i> abgeschlagen.^ <i>1_H.14 A</i>]  abgeschlagen. – <i>B B.a [type=4a]</i>]
 4214[giebt’]{=} <i>4214</i> giebt’s <i>A</i>]   gibt’s <i>B B.a [type=4a]</i>
-before_4223[]{} <i>vor 4223</i> Oberons und Titanias goldne Hochzeit] Oberons und Titanias goldne Hochzeit <i>A B B.a 1_H.1</i> Oberons und Titanias goldne Hochzeit <i>C.1_12 C.3_12 [type=7]</i>
+before_4223[]{} <i>vor 4223</i> Oberons und Titanias goldne Hochzeit] <font char-space="+2">Oberons</font> und <font char-space="+2">Titanias goldne Hochzeit</font> <i>A B B.a 1_H.1</i> Oberons und Titanias goldne Hochzeit <i>C.1_12 C.3_12 [type=7]</i>
 4235[queer]{=} <i>4235</i> queer <i>A</i>]   quer <i>B B.a [type=4a]</i>
 4261[giebt]{=} <i>4261</i> giebt <i>A</i>]   gibt <i>B B.a [type=4a]</i>
 4262[giebt]{=} <i>4262</i> giebt <i>A</i>]   gibt <i>B B.a [type=4a]</i>
