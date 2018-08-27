@@ -111,9 +111,9 @@
 				<xsl:variable name="current_sigils" select="current-group()/@f:sigil_t"/>
 				<xsl:text>&#10;</xsl:text>
 				<xsl:comment>
-					<xsl:value-of select="$current_sigils" separator=", "/>
-					<xsl:text>: &#9;</xsl:text>
 					<xsl:sequence select="$emended-key"/>
+					<xsl:text>|&#9;</xsl:text>
+					<xsl:value-of select="$current_sigils" separator=", "/>
 				</xsl:comment>
 				<xsl:text>&#10;</xsl:text>
 				<xsl:apply-templates select="current-group()[1]/*">
@@ -222,7 +222,7 @@
 		<xsl:variable name="contents">
 			<xsl:apply-templates mode="grouping-key" select="$line"/>
 		</xsl:variable>
-		<xsl:value-of select="data($contents)"/>
+		<xsl:value-of select="f:normalize-space($contents)"/>
 	</xsl:function>
 	
 	<xsl:template mode="grouping-key" match="f:evidence">
@@ -232,7 +232,7 @@
 	<xsl:template mode="grouping-key" match="*">
 		<xsl:value-of select="concat('&lt;', name())"/>
 		<xsl:for-each select="@* except @f:*">
-			<xsl:sort select="name()"/>
+			<xsl:sort select="name()"/>			
 			<xsl:value-of select="concat(' ', name(), '=', f:quoted-attribute-value(.))"/>
 		</xsl:for-each>
 		<xsl:choose>
@@ -245,8 +245,11 @@
 		</xsl:choose>
 	</xsl:template>
 	
+	<xsl:template mode="grouping-key" match="lb[@break='no']"/>
+	<xsl:template mode="grouping-key" match="lb"><xsl:text> </xsl:text></xsl:template>
+	
 	<xsl:template mode="grouping-key" match="text()">
-		<xsl:value-of select="f:normalize-space(f:normalize-print-chars(.))"/>
+		<xsl:value-of select="f:normalize-print-chars(.)"/>
 	</xsl:template>
 	
 	<xsl:function name="f:quoted-attribute-value">
