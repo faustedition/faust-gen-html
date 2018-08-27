@@ -232,7 +232,7 @@ before_2896_b[durchs]{=} <i>vor 2896</i> durchs <i>A</i>]   durchs <i>1_H.5</i> 
 before_3073_b[spazirend]{=} <i>vor  3073</i> spazirend <i>A</i>]   spazierend <i>1_H.5</i> spazierend <i>B</i> spatzierend <i>B.a [type=4a]</i>
 3077[solch’]{solch} <i>3077</i> solch] solch <i>1_H.5</i>  solch’ <i>S A B B.a [type=1b]</i>
 3093[keinem]{=} <i>3093</i> keinem <i>1_H.5 S A</i>]   Keinem <i>B B.a [type=4a]</i>
-3095[Drum,]{=} <i>3095</i> Drum, <i>Das Komma fehlt in manchen Exemplaren von B, so auch in 1_H.1. [type=7]</i>]
+3095[Drum,]{=} <i>3095</i> Drum,] <i>Das Komma fehlt in manchen Exemplaren von B, so auch in 1_H.1. [type=7]</i>
 3116[eh’r]{=} <i>3116</i> eh’r <i>A B B.a</i>]  eh <i>1_H.5</i> eh’ <i>S  [type=7]</i>
 3134[Schoos]{=} <i>3134</i> Schoos <i>1_H.5 S A</i>]   Schoß <i>B</i> Schooß <i>B.a [type=4a]</i>
 before_3149_b[]{}3149–3152] <i>Ergänzung in der Vorlage für A. Die Verse finden sich noch nicht in 1_H.5 S, sie sind in 1_H.10 auch eigenhändig überliefert.</i>
