@@ -30,6 +30,7 @@ before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2
 5592[ein]{im} <i>5592</i> im <i>2_H</i>] ein <i>2_I_H.0a [type=2aa]</i>
 5640[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5640–5645</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
 5656[böser]{böser} <i>5656</i> böser <i>2_I_H.0a</i>] böser <i>2_I_H.24c 2_H faust://bibliography/C.1_41 faust://bibliography/C.3_41</i> böse <i>zS 2_H faust://bibliography/Q [type=6]</i>
+5670[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5670–5674</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
 5707[wohl! du,]{wohl! du} <i>5707</i> wohl! du^ <i>2_I_H.32</i>] wohl^ du^ <i>2_I_H.32 :</i> wohl! du^ <i>G</i> wohl! du, <i>(Missverständnis) 2_H 2_I_H.0a</i>  wohl! Du^ <i>C.1 12 [type=2b]</i>
 5715[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5715–5726</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
 5748[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5748–5756</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
@@ -133,7 +134,7 @@ before_8924f[Phorkyas]{=} <i>vor 8924</i> <speaker>Phorkyas</speaker> <i>none</i
 9193[erfurchtsvollem]{ehrfurchtsvollem} <i>9193</i> ehrfurchtsvollem <i>none</i>] ehrfurchtsvollem <i>2_H</i> erfurchtsvollem <i>C.1_4</i> ehrfurchtsvollem <i>C.2α_4 C.3_4 [type=1a]</i>
 9206[welch’]{welch} <i>9206</i> welch <i>none</i>] welch <i>2_III_H.2:1</i> welch’ <i>C.1_4 [type=1b]</i>
 before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>2_III_H.45a C.2α_4 C.3_4</i>] Thurmwärter, <i>C.1_4 [type=4b]</i>
-9227[Höh’n]{=} <i>9227</i> Höh’n <i>C.1_4</i>] Höh’n, <i>C.2α_4 C.3_4 [type=4a]</i>
+9227[Höh’n]{=} <i>9227</i> Höh’n^ <i>C.1_4</i>] Höh’n, <i>C.2α_4 C.3_4 [type=4a]</i>
 9235[geschloßnes]{=} <i>9235</i> geschloßnes <i>C.1_4</i>] geschloss’nes <i>C.2α_4 C.3_4 [type=4a]</i>
 9247[Welch’]{Welch} <i>9247</i> Welch <i>none</i>] Welch <i>2_H</i> Welch’ <i>C.1_4 [type=1b]</i>
 9373[euch]{auch} <i>9373</i> auch <i>2_H</i>] euch <i>C.1_4 [type=2aa]</i>
@@ -167,7 +168,7 @@ after_9807[Höhe.]{=} <i>nach 9807</i> Höhe. <i>none</i>] Höhe). <i>C.1_4</i> 
 9855[Welle]{Wälle} <i>9855</i> Wälle <i>2_H</i>] Welle <i>C.1_4 [type=2aa]</i>
 9896[Loos.]{Loos!} <i>9896</i> Loos! <i>2_H</i>] Loos. <i>C.1_4 [type=2aa]</i>
 9898[los!]{los.} <i>9898</i> los. <i>2_H</i>] los! <i>C.1_4 [type=2aa]</i>
-9905|9906[Reich|Mutter]{Reich,|Mutter,} <i>9905–9906</i> Reich, | Mutter, <i>2_H</i>] Reich | Mutter <i>C.1_4 [type=2aa]</i>
+9905|9906[Reich|Mutter]{Reich,|Mutter,} <i>9905–9906</i> Reich, | Mutter, <i>2_H</i>] Reich^ | Mutter^ <i>C.1_4 [type=2aa]</i>
 9942[sag’ ich schmerzlich Lebewohl!]{sage schmerzlich, Lebewohl.} <i>9942</i> sage <i>…</i> Lebewohl. <i>2_III_H.75b</i>] sag’ ich schmerzlich Lebewohl! <i>C.1_4 [type=2aa]</i>
 9971[Hades]{Hades selbst} <i>9971</i> selbst <i>2_III_H.2:2</i>] <i>fehlt 2_III_H.3a:2 2_H C.1_4  [type=2b]</i>
 before_9981[Chorführerin]{Panthalis} <i>vor 9981</i> Panthalis <i>2_III_H.45a C.2α_4 C.3_4</i>] Chorführerin <i>C.1_4 [type=4b]</i>
