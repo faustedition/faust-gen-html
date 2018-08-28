@@ -935,6 +935,14 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                 <exchange>
                     <exchange-table>
                         <string-pair>
+                            <search-string>before^_354^_c*</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>{[}359*</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
                             <search-string>*2348\[Doch*</search-string>
                             <replacement-string/>
                         </string-pair>
@@ -964,6 +972,10 @@ app2rtf = C:\users\bruening.FDH-FFM\txstep\txt\app2.rtf
                         </string-pair>
                         <string-pair>
                             <search-string>*3787*</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                        <string-pair>
+                            <search-string>3990*</search-string>
                             <replacement-string/>
                         </string-pair>
                         <string-pair>
