@@ -106,6 +106,18 @@
                 n="3788">Die durch dich sich in die Pein hinüberschlief.</l>
             <note><wit>1_H.5</wit></note></rdg>
     </app>
+
+    <app>
+        <!--       3990[]{} <i>3990–4015] Die Verse sind im Druck zweistufig eingerückt (A 8, S. 198–199): 3990–3995 um 5 mm eingerückt, was für Kurzverse normal ist<b>;</b> 3996–3999 auf Seite 198 um 10 mm<b>;</b> ebenso 4000–4003 und 4008–4015 (beidemale wohl versehentlich) sowie 4004–4007 (wohl korrekt) auf Seite 199 um 10 mm. [type=7 Typ 1c]</i>-->
+        <f:ins n="3990" place="only-app"/>
+        <ref>3990–4015</ref>
+        <lem/>
+        <rdg type="type_7 type_1c" wit="A">Die Verse sind im Druck zweistufig eingerückt
+                (<wit>A</wit>, S. 198–199): 3990–3995 um 5 mm eingerückt, was für Kurzverse normal
+            ist; 3996–3999 auf Seite 198 um 10 mm; ebenso 4000–4003 und 4008–4015 (beidemale
+            wohl versehentlich) sowie 4004–4007 (wohl korrekt) auf Seite 199 um 10 mm.</rdg>
+    </app>
+
     <app>
         <f:ins n="4051" place="only-app"/>
         <ref>4051</ref>
@@ -146,7 +158,7 @@
             </sp>
         </rdg>
     </app>
-    
+
     <app>
         <f:replace n="before_4613_c">Der</f:replace>
         <f:ins n="before_4613_c">Der</f:ins>
@@ -161,9 +173,9 @@
         <ref>vor 4613</ref>
         <lem wit="2_H">Acten <note><wit>2_H</wit></note></lem>
         <rdg wit="2_H" type="type_6"><note>danach</note> (1831.) <note>erg <seg type="hand">Ec</seg>
-            <wit>2_H</wit></note></rdg>
+                <wit>2_H</wit></note></rdg>
     </app>
-    
+
     <app>
         <f:replace n="5265">Luft</f:replace>
         <f:ins n="5265">Lust</f:ins>
@@ -173,7 +185,8 @@
                 <del>Luft</del>
                 <add>Lust</add>
             </subst>
-            <note><seg type="hand">G</seg> <wit>2_I_H.15b</wit></note></rdg>
+            <note><seg type="hand">G</seg>
+                <wit>2_I_H.15b</wit></note></rdg>
         <rdg wit="2_H 2_I_H.0a" type="type_2b">Luft <note><wit>2_H</wit>
                 <wit>2_I_H.0a</wit>
                 <ref target="faust://bibliography/C.1_41"/>
@@ -183,9 +196,10 @@
                 <add>Lust</add>
             </subst>
             <note>zS <wit>2_H</wit></note></rdg>-->
-        <rdg wit="2_H" type="type_6">Lust <note>zS <wit>2_H</wit> <ref target="faust://bibliography/Q"/></note></rdg>
+        <rdg wit="2_H" type="type_6">Lust <note>zS <wit>2_H</wit>
+                <ref target="faust://bibliography/Q"/></note></rdg>
     </app>
-    
+
     <app>
         <f:ins n="before_5357_b" place="only-app"/>
         <ref>vor 5357</ref>
@@ -199,18 +213,18 @@
             <note>erg <seg type="hand">G</seg></note>⟩ <speaker>Alecto.</speaker>
             <note><wit wit="2_H">2_H</wit></note></rdg>
     </app>
-    
+
     <app>
         <f:replace n="before_6086">Marschalck</f:replace>
         <f:ins n="before_6086">Marschalck</f:ins>
         <ref>vor 6086</ref>
-        <lem wit="2_H">Marschalck
-            <note><wit wit="2_H">2_H</wit></note></lem>
+        <lem wit="2_H">Marschalck <note><wit wit="2_H">2_H</wit></note></lem>
         <rdg wit="2_H" type="type_7"><subst hand="G">
                 <del>Schatzmeister</del>
                 <add>Marschalck</add>
             </subst>
-            <note>(<quote>Schatzmeister</quote> ungestrichen) <seg type="hand">G</seg> <wit wit="2_H">2_H</wit></note></rdg>
+            <note>(<quote>Schatzmeister</quote> ungestrichen) <seg type="hand">G</seg>
+                <wit wit="2_H">2_H</wit></note></rdg>
     </app>
     <app>
         <f:replace n="6199">Gespenst-Gespinnsten</f:replace>
@@ -236,7 +250,8 @@
         <ref>vor 6319</ref>
         <lem wit="2_H"><speaker>Blondine</speaker>
             <note><wit wit="2_H">2_H</wit></note></lem>
-        <rdg wit="2_H" type="type_6"><speaker>Blondine</speaker> ⟨<stage rend="inline">(zu Mephisto)</stage>
+        <rdg wit="2_H" type="type_6"><speaker>Blondine</speaker> ⟨<stage rend="inline">(zu
+                Mephisto)</stage>
             <note>erg Ec</note>⟩ <note><wit wit="2_H">2_H</wit></note></rdg>
     </app>
     <app>
@@ -271,10 +286,10 @@
         <ref>6848</ref>
         <lem wit="2_H">leuchtet! <note><wit>2_H</wit></note></lem>
         <rdg wit="2_H" type="type_7"><subst>
-            <del>leucht</del>
-            <add>leuchtet</add>
-        </subst> <note>G, Ausrufezeichen zS alR
-                <wit>2_H</wit></note></rdg>
+                <del>leucht</del>
+                <add>leuchtet</add>
+            </subst>
+            <note>G, Ausrufezeichen zS alR <wit>2_H</wit></note></rdg>
     </app>
 
     <app>
@@ -282,7 +297,8 @@
         <f:ins n="7729">ungewissem</f:ins>
         <ref>7729</ref>
         <lem>ungewissem</lem>
-        <rdg wit="2_II_H.74 2_H" type="type_1a type_2b">ungewissen <note><wit>2_II_H.74</wit> <wit>2_H</wit></note></rdg>
+        <rdg wit="2_II_H.74 2_H" type="type_1a type_2b">ungewissen <note><wit>2_II_H.74</wit>
+                <wit>2_H</wit></note></rdg>
     </app>
 
     <app>
@@ -331,14 +347,21 @@
         <f:ins n="9031">Geschlungene</f:ins>
         <ref>9031</ref>
         <lem wit="2_III_H.2_1">Geschlungene <note><wit>2_III_H.2_1</wit></note></lem>
-        <rdg wit="2_III_H.33 2_III_H.1">Geschlungene <note>(letztes <quote>e</quote> undeutlich) G <wit>2_III_H.33</wit> <wit>2_III_H.1</wit></note></rdg>
+        <rdg wit="2_III_H.33 2_III_H.1">Geschlungene <note>(letztes <quote>e</quote> undeutlich) G
+                    <wit>2_III_H.33</wit>
+                <wit>2_III_H.1</wit></note></rdg>
         <rdg wit="2_III_H.2_1">
             <subst>
                 <del>Geschlungne</del>
                 <add wit="2_III_H.2_1">Geschlungene</add>
-            </subst> <note>(undeutlich) G <wit>2_III_H.2_1</wit></note>
+            </subst>
+            <note>(undeutlich) G <wit>2_III_H.2_1</wit></note>
         </rdg>
-        <rdg wit="2_III_H.2_1 2_III_H.3a_1 2_H C.1_4" type="type_2b">Geschlungne <note>Jo auf eingeklebtem Zettel <wit>2_III_H.2_1</wit> <wit>2_III_H.3a_1</wit> <wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
+        <rdg wit="2_III_H.2_1 2_III_H.3a_1 2_H C.1_4" type="type_2b">Geschlungne <note>Jo auf
+                eingeklebtem Zettel <wit>2_III_H.2_1</wit>
+                <wit>2_III_H.3a_1</wit>
+                <wit>2_H</wit>
+                <wit>C.1_4</wit></note></rdg>
     </app>
 
     <app>
@@ -350,8 +373,8 @@
         <rdg wit="2_III_H.2_1"><subst hand="Ri">
                 <del>Gold und Schwarze, ſilbern blau und roth</del>
                 <add>Gold und Schwarz, und Silber Blau und Roth</add>
-        </subst> <note>Ri
-            <wit>2_III_H.2_1</wit></note></rdg>
+            </subst>
+            <note>Ri <wit>2_III_H.2_1</wit></note></rdg>
         <rdg wit="2_III_H.3a_1">Gold und Schwarz, und silbern, blau und roth
                     <note><wit>2_III_H.3a_1</wit></note></rdg>
         <rdg wit="2_H">gold und schwarz, und silbern, blau und roth
@@ -370,7 +393,8 @@
         <rdg wit="2_H" type="type_2d*"><subst hand="G">
                 <del>In tiefen</del>
                 <add>In tiefem</add>
-        </subst> <note>G <wit>2_H</wit></note></rdg>
+            </subst>
+            <note>G <wit>2_H</wit></note></rdg>
     </app>
 
     <app>
@@ -380,7 +404,7 @@
         <lem wit="2_H">los, <note><wit>2_H</wit></note></lem>
         <rdg wit="C.1_4" type="type_2aa">los. <note><wit>C.1_4</wit></note></rdg>
         <rdg wit="C.2alpha_4 C.3_4" type="type_4b">los, <note><wit>C.2alpha_4</wit>
-            <wit>C.3_4</wit></note></rdg>
+                <wit>C.3_4</wit></note></rdg>
     </app>
 
     <app>
@@ -395,13 +419,16 @@
             </subst>
             <note>Ec <wit>2_H</wit></note></rdg>
     </app>
-    
+
     <app>
         <f:replace n="10649">sturmbewegte</f:replace>
         <f:ins n="10649">sturmerregte</f:ins>
         <ref>10649</ref>
         <lem wit="2_IV_H.8">sturmerregte <note><wit>2_IV_H.8</wit></note></lem>
-        <rdg wit="2_H" type="type_2aa">sturmbewegte <note><wit>2_H</wit> <ref target="faust://bibliography/C.1_41"/> <ref target="faust://bibliography/C.3_41"/> <ref target="faust://bibliography/Q"/></note></rdg>
+        <rdg wit="2_H" type="type_2aa">sturmbewegte <note><wit>2_H</wit>
+                <ref target="faust://bibliography/C.1_41"/>
+                <ref target="faust://bibliography/C.3_41"/>
+                <ref target="faust://bibliography/Q"/></note></rdg>
         <rdg wit="2_H" type="type_6">sturmerregte <note>Ec <wit>2_H</wit></note></rdg>
     </app>
 
@@ -411,9 +438,10 @@
         <ref>vor 10811</ref>
         <lem wit="2_IV_H.8">kauert nieder <note><wit wit="2_IV_H.8">2_IV_H.8</wit></note></lem>
         <rdg wit="2_H" type="type_2aa type_6">
-            <note>fehlt <!--<wit wit="2_H">2_H</wit></note></rdg>
-        <rdg wit="2_H" type="type_6">kauert nieder <note>-->erg Ec <wit wit="2_H"
-            >2_H</wit></note></rdg>
+            <note>fehlt
+                <!--<wit wit="2_H">2_H</wit></note></rdg>
+        <rdg wit="2_H" type="type_6">kauert nieder <note>-->erg
+                Ec <wit wit="2_H">2_H</wit></note></rdg>
     </app>
 
     <app>
@@ -422,11 +450,13 @@
         <ref>10909</ref>
         <lem wit="2_H">von Festen <note><wit wit="2_H">2_H</wit></note></lem>
         <rdg wit="2_IV_H.20"><subst hand="G">
-            <del>von Fasten</del>
-            <add>vom Fasten</add>
-        </subst> <note><seg type="hand">G</seg> <wit wit="2_IV_H.20">2_IV_H.20</wit></note></rdg>
-        <rdg wit="2_H" type="type_2d">von Festen <note>(mglw G aus <quote>von Fasten</quote>)
-                <wit wit="2_H">2_H</wit></note></rdg>
+                <del>von Fasten</del>
+                <add>vom Fasten</add>
+            </subst>
+            <note><seg type="hand">G</seg>
+                <wit wit="2_IV_H.20">2_IV_H.20</wit></note></rdg>
+        <rdg wit="2_H" type="type_2d">von Festen <note>(mglw G aus <quote>von Fasten</quote>) <wit
+                    wit="2_H">2_H</wit></note></rdg>
     </app>
 
     <app>
@@ -437,9 +467,11 @@
         <ref>11483</ref>
         <lem wit="2_V_H.11">Befreyen, bald Erdrücken <note><wit>2_V_H.11</wit></note></lem>
         <rdg wit="2_V_H.11"><subst hand="G">
-            <del>befreyen, bald Erdrücken</del>
-            <add>Befreyen, bald Erdrücken</add></subst> <note>G <wit>2_V_H.11</wit></note></rdg>
-        <rdg wit="2_V_H.2 2_H" type="type_2b">befreyen, bald erdrücken <note><wit>2_V_H.2</wit> <wit>2_H</wit></note></rdg>
+                <del>befreyen, bald Erdrücken</del>
+                <add>Befreyen, bald Erdrücken</add></subst>
+            <note>G <wit>2_V_H.11</wit></note></rdg>
+        <rdg wit="2_V_H.2 2_H" type="type_2b">befreyen, bald erdrücken <note><wit>2_V_H.2</wit>
+                <wit>2_H</wit></note></rdg>
     </app>
-        
+
 </f:apparatus>
