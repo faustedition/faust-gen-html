@@ -317,8 +317,8 @@
         <rdg wit="2_III_H.3b"><note>mon Gö <wit>2_III_H.3b</wit></note></rdg>
         <rdg wit="2_H C.1_4 C.2alpha_4 C.3_4">siebenjährig <note>G <wit>2_H</wit>
                 <wit>C.1_4</wit>
-                <wit>C.2alpha_4</wit>
-                <wit>C.3_4</wit></note></rdg>
+                <!--<wit>C.2alpha_4</wit>
+                <wit>C.3_4</wit>--></note></rdg>
         <rdg wit="2_H" type="type_6">zehenjährig <note>Ec <wit>2_H</wit> (vgl. Gespräch vom 17. März
                 1830)</note></rdg>
         <rdg wit="2_H" type="type_6">dreyzehnjährig <note>Ri <wit>2_H</wit></note></rdg>
