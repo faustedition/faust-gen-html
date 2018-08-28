@@ -370,6 +370,11 @@ class JointReading:
         second_rdg = second.to_xml()
         second_rdg.tag = "{%s}add" % TEI_NS
 
+        for subst_child in first_rdg, second_rdg:
+            for attrib in 'type', 'wit':
+                if attrib in subst_child.attrib:
+                    del subst_child.attrib[attrib]
+
         subst.extend([first_rdg, second_rdg])
 
         return rdg
