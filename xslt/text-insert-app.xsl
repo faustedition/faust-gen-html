@@ -378,6 +378,9 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
+    <xsl:template mode="app" match="tab"><xsl:text> </xsl:text></xsl:template>
+    <xsl:template mode="app" match="br"><lb/></xsl:template>
 
     <!-- f:ins[@place='enclosing-lg'] allows to set attributes on the lg enclosing a specific verse -->
     <xsl:template match="lg[*[@n = $spec//f:ins[@place='enclosing-lg']/@n]]">
