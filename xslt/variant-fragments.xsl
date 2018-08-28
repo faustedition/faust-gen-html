@@ -231,10 +231,9 @@
 
 	<xsl:template mode="grouping-key" match="*">
 		<xsl:value-of select="concat('&lt;', name())"/>
-		<xsl:for-each select="@* except @f:*">
-			<xsl:sort select="name()"/>			
-			<xsl:value-of select="concat(' ', name(), '=', f:quoted-attribute-value(.))"/>
-		</xsl:for-each>
+		<xsl:apply-templates mode="#current" select="@* except @f:*">
+				<xsl:sort select="name()"/>							
+		</xsl:apply-templates>
 		<xsl:choose>
 			<xsl:when test="child::node()">
 				<xsl:text>></xsl:text>
@@ -247,6 +246,10 @@
 	
 	<xsl:template mode="grouping-key" match="lb[@break='no']"/>
 	<xsl:template mode="grouping-key" match="lb"><xsl:text> </xsl:text></xsl:template>
+	<xsl:template mode="grouping-key" match="stage/@type|stage/@rend"/>
+	<xsl:template mode="grouping-key" match="@*">
+		<xsl:value-of select="concat(' ', name(), '=', f:quoted-attribute-value(.))"/>
+	</xsl:template>
 	
 	<xsl:template mode="grouping-key" match="text()">
 		<xsl:value-of select="f:normalize-print-chars(.)"/>
