@@ -365,6 +365,20 @@
                 return concat('faust://document/faustedition/', $wit)"/>
     </xsl:template>
     
+    <xsl:template mode="app" match="font">
+        <xsl:choose>
+            <xsl:when test="@char-space='+2'">
+                <hi rend="letter-spaced">
+                    <xsl:apply-templates mode="#current"/>
+                </hi>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:message>ERROR: Invalid font element in apparatus. <xsl:copy-of select="."/></xsl:message>
+                <xsl:next-match/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
     <!-- f:ins[@place='enclosing-lg'] allows to set attributes on the lg enclosing a specific verse -->
     <xsl:template match="lg[*[@n = $spec//f:ins[@place='enclosing-lg']/@n]]">
         <xsl:variable name="insert-element" select="$spec//f:ins[@place='enclosing-lg'][@n = current()/l/@n]"/>
