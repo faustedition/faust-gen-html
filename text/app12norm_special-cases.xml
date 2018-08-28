@@ -185,6 +185,7 @@
             <note>zS <wit>2_H</wit></note></rdg>-->
         <rdg wit="2_H" type="type_6">Lust <note>zS <wit>2_H</wit> <ref target="faust://bibliography/Q"/></note></rdg>
     </app>
+    
     <app>
         <f:ins n="before_5357_b" place="only-app"/>
         <ref>vor 5357</ref>
@@ -198,6 +199,7 @@
             <note>erg <seg type="hand">G</seg></note>⟩ <speaker>Alecto.</speaker>
             <note><wit wit="2_H">2_H</wit></note></rdg>
     </app>
+    
     <app>
         <f:replace n="before_6086">Marschalck</f:replace>
         <f:ins n="before_6086">Marschalck</f:ins>
