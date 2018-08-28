@@ -13,8 +13,6 @@
 285[nennts]{=} <i>285</i> nennts <i>A</i>]   nennt’s <i>B B.a [type=4a]</i>
 317[lang]{=} <i>317</i> lang <i>A</i>]   lang’ <i>B B.a [type=4a]</i>
 320[An]{Am} <i>320</i> Am  <i>none</i>] An <i>A B.a</i> Am <i>B  [type=1a]</i>
-before_354_c[Zimmer]{Zimmer,} <i>vor 354</i> Zimmer, <i>none</i>]  Zimmer^ <i>1_H.5 </i><tab pos="|297"/>Zimmer, <i>S</i><tab pos="|311"/>Zimmer^ <i>A B B.a [type=1c Typ 2a]</i>
-359[Und]{Und bin} <i>359</i> bin <i>1_H.5 S</i>]   <i>fehlt</i> <i>A</i> bin <i>D.1</i> bin <i>B B.a  [type=1a Typ 2a]</i>
 372[ein,]{=} <i>372</i> ein, <i>S A B.a</i>]   ein^ <i>1_H.5 </i> ein^ <i>B [type=4c]</i>
 378[mir durch Geistes Kraft und Mund]{=} <i>378</i> mir^ <i>…</i> Mund^ <i>A</i>]   mir^ … Krafft und Mund^ <i>1_H.5 </i> mir, <i>…</i> Mund^ <i>S</i> mir, <i>…</i> Mund, <i>B B.a [type=4a]</i>
 380[mehr mit sauerm Schweiß,]{=} <i>380</i> mehr^ <i>…</i> Schweiß, <i>A</i>]   mehr^ <i>…</i> Schweis^ <i>1_H.5</i> mehr, … saurem Schweiß, <i>S</i> mehr, <i>…</i> Schweiß, <i>B B.a [type=4a]</i>

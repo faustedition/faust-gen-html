@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="appxnorm.rnc" type="application/relax-ng-compact-syntax"?>
 <f:apparatus xmlns:f="http://www.faustedition.net/ns" xmlns="http://www.tei-c.org/ns/1.0">
+    
+    <app>
+        <f:replace n="before_354_c">Zimmer</f:replace>
+        <f:ins n="before_354_c">Zimmer,</f:ins>
+        <ref>vor 354</ref>
+        <lem>Zimmer,</lem>
+        <rdg wit="1_H.5">Zimmer<pc>‸</pc> <note><wit>1_H.5</wit></note></rdg>
+        <rdg wit="S">Zimmer, <note><wit>S</wit></note></rdg>
+        <rdg wit="A B B.a" type="type_1c type_2a">Zimmer<pc>‸</pc> <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></rdg>
+    </app>
+    
+    <!--       359[Und]{Und bin} <i>359</i> bin <i>1_H.5 S</i>]   <i>fehlt</i> <i>A</i> bin <i>D.1</i> bin <i>B B.a  [type=1a Typ 2a]</i>-->
+    <app>
+        <f:replace n="359">Und</f:replace>
+        <f:ins n="359">Und bin</f:ins>
+        <ref>359</ref>
+        <lem wit="1_H.5 S">bin <note><wit>1_H.5</wit> <wit>S</wit></note></lem>
+        <rdg wit="A" type="type_1a type_2a"><note>fehlt <wit>A</wit></note></rdg>
+        <rdg wit="D.1">bin <note><wit>D.1</wit></note></rdg>
+        <rdg wit="B B.a">bin <note><wit>B</wit> <wit>B.a</wit></note></rdg>
+    </app>
+
     <app>
         <f:replace n="2322">Wie?</f:replace>
         <f:ins n="2322">Wie?</f:ins>
