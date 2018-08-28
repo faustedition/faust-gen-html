@@ -197,7 +197,6 @@ after_10570[Posauenschall]{Posaunenschall} <i>nach 10570</i> Posaunenschall <i>n
 10619[erfahren]{erfahren?} <i>10619</i> erfahren? <i>2_H</i>] erfahren^ <i>auf eingeklebtem Zettel 2_H [type=7]</i>
 10635[Zerrzerrt]{Zerzerrt} <i>10635</i> Zerzerrt <i>none</i>] Zerrzerrt <i>2_H [type=1a]</i>
 10636[gesenckten]{gesencktem} <i>10636</i> gesencktem <i>none</i>] gesenckten <i>2_H [type=2a]</i>
-10649[sturmbewegte]{sturmerregte} <i>10649</i> sturmerregte <i>2_IV_H.8</i>] sturmbewegte <i>2_H faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q</i> sturmerregte <i>Ec 2_H [type=2aa] [type=6]</i>
 before_10654_a[Kaiser:]{Kaiser} <i>vor 10654</i> <speaker>Kaiser</speaker> <i>none</i>] <speaker>Kaiser:</speaker> <i>2_H [type=8]</i>
 10771[schienen]{Schienen} <i>10771</i> Schienen <i>2_IV_H.8</i>] Schienen <i>2_H :</i> schienen <i>G [type=2aa]</i>
 10790[schlecht]{schlecht.} <i>10790</i> schlecht. <i>2_IV_H.8</i>] schlecht^ <i>2_H [type=2aa]</i>
