@@ -33,10 +33,16 @@
     'CharacterStyle/Transparent'
     )]"/>
   <xsl:template match="Content[matches(., '^\t+')]"/>
-  <xsl:template match="Content[. = '&#x2028;']"><xsl:text>&#10;</xsl:text></xsl:template>
+  <xsl:template match="Content[. = '&#x2028;']"><xsl:text>&#10;</xsl:text></xsl:template>  
   
   <xsl:template match="Content"><xsl:value-of select="f:contract-space(.)"/></xsl:template>
   
+  <xsl:template match="CharacterStyleRange[contains(@AppliedCharacterStyle, 'Agora')]/Content[. = 'a']">α</xsl:template>
+  <xsl:template match="Content[matches(., '^\d+ – \d+$')]">
+    <xsl:value-of select="replace(., '^(\d+) – (\d+)$', '$1–$2')"/>
+  </xsl:template>
+  
+  <xsl:template match="Br"><xsl:text>&#10;&#10;</xsl:text></xsl:template>
   
   <xsl:template match="text()"/>
 

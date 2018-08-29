@@ -13,14 +13,14 @@
   <xsl:output method="text"/>
   
   <xsl:template match="/">
-    <xsl:apply-templates select="//note[@type='textcrit'][not(.//rdg[@type='type_8'])]"/>
-    <xsl:text>====&#10;</xsl:text>
-    <xsl:apply-templates select="//note[@type='textcrit'][.//rdg[@type='type_8']]"/>
-  </xsl:template>
+    <xsl:apply-templates select="//note[@type='textcrit'][not(.//rdg[@type=('type_8','type_4a')])]"/>
+<!--    <xsl:text>====&#10;</xsl:text>
+    <xsl:apply-templates select="//note[@type='textcrit'][.//rdg[@type=('type_8','type_4a')]]"/>
+-->  </xsl:template>
   
   <xsl:template match="note[@type='textcrit']">
     <xsl:variable name="content"><xsl:apply-templates/></xsl:variable>
-    <xsl:value-of select="concat(normalize-space(f:contract-space($content)), '&#10;')"/>
+    <xsl:value-of select="concat((:normalize-space:)(f:contract-space($content)), '&#10;')"/>
   </xsl:template>
   
   <xsl:template match="ref">
@@ -28,7 +28,7 @@
     <xsl:text> </xsl:text>
   </xsl:template>
   
-  <xsl:template match="lem">
+  <xsl:template match="lem[child::node()]">
     <xsl:apply-templates select="node() except (wit | note[wit])"/>    
     <xsl:text>&#x2009;] </xsl:text>
     <xsl:apply-templates select="wit | note[wit]"/>
@@ -46,6 +46,12 @@
   </xsl:template>
   
   <xsl:template match="gap[@reason='ellipsis']"> bis </xsl:template>
+  
+  <xsl:template match="subst[del, add]">
+    <xsl:apply-templates select="del"/>
+    <xsl:text> : </xsl:text>
+    <xsl:apply-templates select="add"/>
+  </xsl:template>
   
   <xsl:template match="teiHeader"/>  
   <xsl:template match="lb"><xsl:text>&#10;</xsl:text></xsl:template>
