@@ -12,7 +12,7 @@
   
   <xsl:template match="/">
     <xsl:variable name="text">
-      <xsl:apply-templates select="//ParagraphStyleRange[@AppliedParagraphStyle='ParagraphStyle/Apparat']"/>
+      <xsl:apply-templates select="//ParagraphStyleRange[contains(@AppliedParagraphStyle, 'ParagraphStyle/Apparat')]"/>
       <xsl:text>====&#10;</xsl:text>
       <xsl:apply-templates select="//ParagraphStyleRange[@AppliedParagraphStyle='ParagraphStyle/Appendix_TypeVIII']"/>
     </xsl:variable>
