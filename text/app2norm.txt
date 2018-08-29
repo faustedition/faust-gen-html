@@ -36,7 +36,7 @@ before_5295_a[vorüber]{vorbey} <i>vor 5295</i> vorbey <i>2_H</i>] vorüber <i>2
 5748[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5748–5756</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>
 5750[Hindermann]{=} <i>5750</i> Hindermann <i>2_I_H.0a</i>] Hintermann <i>Ec 2_H [type=6]</i>
 5775[am]{an} <i>5775</i> an <i>2_I_H.33</i>] am <i>2_H 2_I_H.0a [type=2b]</i>
-before_5801[Gesang]{Ungesang} <i>before_5801</i> Ungesang <i>2_H</i>] Gesang <i>2_I_H.0a [type=2aa]</i>
+before_5801[Gesang]{Ungesang} <i>vor 5801</i> Ungesang <i>2_H</i>] Gesang <i>2_I_H.0a [type=2aa]</i>
 5810[engen]{strengen} <i>5810</i> strengen <i>2_H</i>] engen <i>2_I_H.0a [type=2aa]</i>
 5817[in]{und} <i>5817</i> und <i>2_H</i>] in <i>2_I_H.0a [type=2aa]</i>
 5890[^]{^&lt;milestone unit="lg"/^&gt;} <i>5890</i>] <i>In 2_I_H.41a ist der Beginn der neuen Versgruppe mit einem Abstand markiert.</i> <i>In 2_H und 2_I_H.0a ist kein Abstand erkennbar (Seitenwechsel). [type=2b]</i>
@@ -156,7 +156,7 @@ before_9562[sitzend]{=} <i>vor 9562</i> sitzend <i>none</i>] sitzend) <i>C.1_4</
 9654[Lustig]{Listig} <i>9654</i> Listig <i>2_H</i>] Lustig <i>C.1_4 [type=2aa]</i>
 9671[Pfeil]{Pfeile} <i>9671</i> Pfeile <i>Ri 2_III_H.2:2</i>]  Pfeil <i>2_III_H.3a:2 2_H C.1_4  [type=2b]</i>
 9676[Ringerspiel.]{Ringerspiel,} <i>9676</i> Ringerspiel, <i>2_H</i>] Ringerspiel. <i>C.1_4 [type=2aa]</i>
-after_9686[dem]{den} <i>after_9686</i> den <i>2_H</i>] dem <i>C.1_4 [type=2aa]</i>
+after_9686[dem]{den} <i>nach 9686</i> den <i>2_H</i>] dem <i>C.1_4 [type=2aa]</i>
 9745[hie,]{hie} <i>9745</i> hie^ <i>2_H</i>] <i>Komma mit Bleistift erg und wieder ausgewischt 2_H</i> hie, <i>C.1_4 [type=2aa]</i>
 before_9755_a[verschlungenen]{verschlungenem} <i>vor 9755</i> verschlungenem <i>2_H</i>] verschlungenen <i>C.1_4 [type=2aa]</i>
 9766[All’]{All} <i>9766</i> All <i>2_H</i>] All’ <i>C.1_4 [type=2aa]</i>
