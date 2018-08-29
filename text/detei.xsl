@@ -10,7 +10,7 @@
   
   <xsl:output method="text"/>
   
-  <xsl:template match="l|stage|speaker|head|titlePart">
+  <xsl:template match="l|stage|speaker|head|titlePart|p|note">
     <xsl:apply-templates/>
     <xsl:choose>
       <xsl:when test="following-sibling::*[1]/tokenize(@rend, '\s+')='inline'">
