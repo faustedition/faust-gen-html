@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xpath-default-namespace="http://www.faustedition.net/ns" version="2.0">
+	xpath-default-namespace="http://www.tei-c.org/ns/1.0" version="2.0">
 	<xsl:output method="text"/>
 	<xsl:template match="/">
-		<xsl:text>Zählung&#9;Versbeginn&#9;Textinhalt&#10;</xsl:text>
-		<xsl:for-each select="//title">
-			<xsl:value-of select="parent::scene/@n"/>
+		<xsl:text>n-Wert&#9;Teil&#9;Textinhalt&#10;</xsl:text>
+		<xsl:for-each
+			select="//l[@part = 'I' or @part = 'M' or @part = 'F']">
+			<xsl:value-of select="@n"/>
 			<xsl:text>&#9;</xsl:text>
-			<xsl:value-of select="parent::scene/@first-verse"/>
+			<!-- Tab -->
+			<xsl:value-of select="@part"/>
 			<xsl:text>&#9;</xsl:text>
 			<!-- Tab -->
 			<xsl:value-of select="normalize-space(.)"/>
