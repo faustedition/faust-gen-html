@@ -29,7 +29,7 @@
   <!-- things to throw away: -->
   <xsl:template match="Footnote"/>
   <xsl:template match="CharacterStyleRange[@AppliedCharacterStyle=(
-    (:'CharacterStyle/Verszahl',:)
+    'CharacterStyle/Verszahl',
     'CharacterStyle/Transparent'
     )]"/>
   <xsl:template match="Content[matches(., '^\t+$')]"/>
