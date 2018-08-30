@@ -29,10 +29,10 @@
   <!-- things to throw away: -->
   <xsl:template match="Footnote"/>
   <xsl:template match="CharacterStyleRange[@AppliedCharacterStyle=(
-    'CharacterStyle/Verszahl',
+    (:'CharacterStyle/Verszahl',:)
     'CharacterStyle/Transparent'
     )]"/>
-  <xsl:template match="Content[matches(., '^\t+')]"/>
+  <xsl:template match="Content[matches(., '^\t+$')]"/>
   <xsl:template match="Content[. = '&#x2028;']"><xsl:text>&#10;</xsl:text></xsl:template>  
   
   <xsl:template match="Content"><xsl:value-of select="f:contract-space(.)"/></xsl:template>
