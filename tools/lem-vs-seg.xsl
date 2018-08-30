@@ -50,7 +50,7 @@
     </xsl:variable>
     <xsl:variable name="lemma" select="normalize-space(f:contract-space($lemma_raw))" as="xs:string?"/>
     <xsl:variable name="lemma_clean" select="replace($lemma, '[‸]', '')"/>
-    <xsl:variable name="segment" select="normalize-space(f:contract-space(string-join(for $ptr in tokenize(@from, '\s+') return id(substring($ptr, 2)), ' ')))" as="xs:string?"/>
+    <xsl:variable name="segment" select="normalize-space(f:contract-space(string-join(for $ptr in tokenize(@from, '\s+') return id(substring($ptr, 2)), ' … ')))" as="xs:string?"/>
     <xsl:variable name="equal" select="$lemma_clean eq $segment"/>
     <tr class="{if ($equal) then 'equal' else 'different'}">      
       <td class="verse"><a href="http://dev.faustedition.net/print/app#{ancestor::note[@type='textcrit']/@xml:id}"><xsl:value-of select="preceding-sibling::ref"/></a></td>
@@ -61,8 +61,8 @@
     </tr>
   </xsl:template>
   
-  
   <xsl:template mode="lem" match="wit"/>
+  <xsl:template mode="lem" match="gap[@reason='ellipsis']"> … </xsl:template>
   
   
 </xsl:stylesheet>
