@@ -156,6 +156,17 @@
 			<p:with-option name="href" select="resolve-uri('lesetext/app-validation.html', $builddir)"/>
 		</p:store>
 		
+		<p:xslt>
+			<p:input port="source"><p:pipe port="result" step="final-text"/></p:input>
+			<p:input port="stylesheet"><p:document href="tools/lem-vs-seg.xsl"/></p:input>
+			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+		</p:xslt>
+		
+		<p:store method="xhtml">
+			<p:with-option name="href" select="resolve-uri('lesetext/lem-vs-seg.html', $builddir)"/>
+		</p:store>
+		
+		
 		<!-- Generate the expansion map template -->
 		<p:xslt>
 			<p:input port="source"><p:pipe port="result" step="assemble"/></p:input>
