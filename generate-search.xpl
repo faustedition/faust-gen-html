@@ -170,7 +170,7 @@
 					<xsl:output method="text"/>
 					<xsl:template match="/*">
 						<wrapper>
-						<xsl:text>var geneticBarGraphData = [</xsl:text>
+						<xsl:text>[</xsl:text>
 						<xsl:for-each select="*">
 							<xsl:value-of select="."/>
 							<xsl:if test="position() != last()">,</xsl:if>
@@ -185,7 +185,7 @@
 	</p:xslt>
 	
 	<p:store method="text">
-		<p:with-option name="href" select="resolve-uri('www/data/genetic_bar_graph.js', $builddir)"/>
+		<p:with-option name="href" select="resolve-uri('www/data/genetic_bar_graph.json', $builddir)"/>
 	</p:store>
 
 
