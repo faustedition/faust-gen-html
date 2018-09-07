@@ -472,11 +472,16 @@
     <xsl:value-of select="$result"/>
   </xsl:function>
   
+  <xsl:function name="f:get-order-info" as="element()?">
+    <xsl:param name="sigil_t"/>
+    <xsl:sequence select="$order//f:item[@sigil_t = $sigil_t]"/>
+  </xsl:function>
+  
   <!-- Macrogenetic order. Returns an index for a given sigil_t. If used with two parameters, the second is added to the index. -->
   <xsl:function name="f:get-wit-index">
     <xsl:param name="sigil_t"/>
     <xsl:param name="extra"/>
-    <xsl:variable name="el" select="$order//f:item[@sigil_t = $sigil_t]"/>
+    <xsl:variable name="el" select="f:get-order-info($sigil_t)"/>
     <xsl:variable name="idx" select="if ($el) then number($el/@index) else 99999"/>
     <xsl:value-of select="$idx + $extra"/>
   </xsl:function>
