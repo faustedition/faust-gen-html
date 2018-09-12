@@ -349,10 +349,10 @@ in <xsl:value-of select="document-uri(/)"/>
 	
 	<!-- Transpositions. Requires textTranscr_pre_transpose.xsl.   -->
 	
-	<!-- delivers the tei:ptr in a not-undone ge:transpose element that points to the given @xml:id string -->
+	<!-- delivers the tei:ptr in a not-undone transpose element that points to the given @xml:id string -->
 	<xsl:key 
 		name="transpose" 
-		match="ge:transpose/ptr" 
+		match="transpose/ptr" 
 		use="substring(@target, 2)"/>
 	
 	<!-- 
@@ -361,7 +361,7 @@ in <xsl:value-of select="document-uri(/)"/>
 	<xsl:template match="*[@xml:id and key('transpose', @xml:id)]">
 		<xsl:variable name="ptr" select="key('transpose', @xml:id)"/>
 		<xsl:variable name="transpose" select="$ptr/.."/>
-		<xsl:variable name="undone" select="boolean($transpose[@xml:id and concat('#', @xml:id) = //ge:undo/@target])"/>
+		<xsl:variable name="undone" select="boolean($transpose[@xml:id and concat('#', @xml:id) = //undo/@target])"/>
 		<xsl:variable name="currentPos" select="count(preceding::*[@xml:id and key('transpose', @xml:id)/.. is $transpose]) + 1"/>
 		<xsl:variable name="swappedPos" select="count($ptr/preceding-sibling::*) + 1"/>
 		<xsl:variable name="replacementTarget" select="$transpose/ptr[$currentPos]/@target"/>		
@@ -427,7 +427,7 @@ in <xsl:value-of select="document-uri(/)"/>
 		<!-- The tooltip in its raw form. Text content. Will be augmented with information on proposed, accepted content etc. -->
 		<xsl:param name="title"/>
 		<!-- Original TEI elements that are synchronous to the current apparatus. The apparatus for these elements, together with
-		     stuff found automatically via ge:stage, will be highlighted together with this apparatus element. -->
+		     stuff found automatically via @change, will be highlighted together with this apparatus element. -->
 		<xsl:param name="also-highlight" as="element()*"/>
 		<!-- opening and closing apparatus brace. Customization only for special cases … -->
 		<xsl:param name="braces" select="('〈', '〉')"/>

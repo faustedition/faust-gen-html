@@ -17,7 +17,7 @@
 		applied (text-insert-app.xsl).
 	-->
 
-	<xsl:strip-space elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc ge:transpose choice"/>
+	<xsl:strip-space elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc transpose choice"/>
 	
 	<xsl:variable name="expan-map" select="document('../expan-map.xml')"/>
 	<xsl:variable name="stage-types" select="document('../text/stage-sentences.xml')"/>
@@ -37,7 +37,7 @@
 		| sic
 		| profileDesc
 		| creation
-		| ge:transposeGrp
+		| listTranspose
 		| surplus
 		| unclear
 		| supplied
@@ -75,15 +75,15 @@
 		| hi[not(matches(@rend,'antiqua')) and not(matches(@rend,'latin'))]/@rend
 		| sp/@who 
 		| note[@type='editorial'] 
-		| ge:transpose[not(@ge:stage='#posthumous')] 
-		| ge:stageNotes 
+		| listTranspose[not(@change='#posthumous')] 
+		| listChange 
 		| handNotes 
 		| unclear/@cert 
 		| corr		
-		| addSpan[not(@ge:stage='#posthumous')]
+		| addSpan[not(@change='#posthumous')]
 		| milestone[@unit='group' or @unit='stage']
-		| ge:rewrite
-		| ge:transpose/add/text()
+		| retrace
+		| transpose/add/text()
 		| space[not(ancestor::div[@n='2'])]
 		| div[@type='stueck']"/>
 

@@ -56,7 +56,7 @@
               <xsl:when test="doc-available($transcript-path)">
                 <xsl:variable name="text" select="document($transcript-path)"/>
                 <j:array name="inscriptions" dropempty="true">
-                  <xsl:variable name="inscriptions" select="$text//ge:stageNote[@type='segment']"/>
+                  <xsl:variable name="inscriptions" select="$text//listChange//change[@type='segment']"/>
                   <xsl:for-each select="$inscriptions">
                     <j:string value="{@xml:id}"/>
                   </xsl:for-each>            

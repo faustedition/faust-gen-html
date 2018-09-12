@@ -184,11 +184,11 @@
 		
 		This should be called immediately inside an .appnote element
 	-->
-	<xsl:key name="samestage" match="*[@ge:stage]" use="string(@ge:stage)"/>
+	<xsl:key name="samestage" match="*[@change]" use="string(@change)"/>
 	<xsl:template name="highlight-group">
 		<xsl:param name="others" as="element()*"/>
 		<xsl:param name="prefix" as="xs:string" select="''"/>
-		<xsl:variable name="samestage" select="if (@ge:stage) then key('samestage', @ge:stage) else ()"/>
+		<xsl:variable name="samestage" select="if (@change) then key('samestage', @change) else ()"/>
 		<xsl:variable name="alt" select="
 			if (@xml:id and key('alt', @xml:id)) 
 				then f:resolve-target(key('alt', @xml:id))						
@@ -510,7 +510,7 @@ in <xsl:value-of select="document-uri(/)"/>
 	</xsl:template>	
 	
 	<!-- Just strip those standoff indicators -->
-	<xsl:template match="alt|ge:transposeGrp|ge:transpose|join" priority="1"/>
+	<xsl:template match="alt|listTranspose|transpose|join" priority="1"/>
 	
 	<!-- Simple link mechanism -->
 	<xsl:template match="anchor">
