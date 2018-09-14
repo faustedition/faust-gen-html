@@ -22777,7 +22777,6 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="adressat-gsa-personennummer">40581</field>
     <field name="datum-von">16.02.1828</field>
     <field name="datierungsvermerk">Jahr ergänzt</field>
-    <field name="zuordnung-zu-wanderjahren-trunz-aber-vgl-quz-ii-s-477f-anm-2">WA IV 43, 61</field>
     <field name="wa-druckort">WA IV 43, S. 279</field>
     <field name="druckort">WA IV 43, S. 279</field>
     <field name="vorlage-seite-von">279</field>
@@ -24009,6 +24008,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="dokumenttyp">Tagebuch</field>
     <field name="div-type">diary</field>
     <field name="datum-von">22.10.1828</field>
+    <field name="zuordnung-zu-wanderjahren-trunz-aber-vgl-quz-ii-s-477f-anm-2">x</field>
     <field name="wa-druckort">WA III 11, S. 294</field>
     <field name="druckort">WA III 11, S. 294</field>
     <field name="vorlage-seite-von">294</field>
@@ -24803,6 +24803,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="div-type">diary</field>
     <field name="datum-von">01.1829</field>
     <field name="vermerk">?</field>
+    <field name="zuordnung-zu-wanderjahren-trunz-aber-vgl-quz-ii-s-477f-anm-2">x</field>
     <field name="wa-druckort">WA III 12, S. 12</field>
     <field name="druckort">WA III 12, S. 12</field>
     <field name="vorlage-seite-von">12</field>

@@ -368,9 +368,14 @@
         <f:reference>Grumach, Ernst: Zueignung V. 21–24. In: faust://bibliography/gjb_79, S. 288–290.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/hagen1960">
+        <f:citation>Hagen 1960</f:citation>
+        <f:reference>Hagen, Waltraud: Abermals zum Terminus „Hauptgeschäft“ in Goethes Tagebüchern. In: faust://bibliography/gjb_77, S. 283–289.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/hagen1983">
         <f:citation>Hagen 1983</f:citation>
-        <f:reference>Hagen, Waltraud: Die Drucke von Goethes Werken, hrsg. von der Akademie der Wissenschaften der DDR, 2. durchgesehene Aufl., Weinheim 1983.</f:reference>
+        <f:reference>Hagen, Waltraud: Die Drucke von Goethes Werken, hrsg. von der Akademie der Wissenschaften der DDR, 2. durchgesehene Aufl., Berlin 1983.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/halatschka1890">
@@ -961,6 +966,16 @@
     <f:bib uri="faust://bibliography/suphan1907">
         <f:citation>Suphan 1907</f:citation>
         <f:reference>Suphan, Bernhard: Zum Facsimile. In: faust://bibliography/hecker1907, S. XXII.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/trunz1966">
+        <f:citation>Trunz 1966</f:citation>
+        <f:reference>Trunz, Erich: Die „Wanderjahre“ as „Hauptgeschäft“ im Winterhalbjhr 1828/29. In: Natur und Idee. Andreas Bruno Wachsmuth zugeeignet. Hrsg. von Helmut Holtzhauer, Weimar 1966, S. 242–262.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/trunz1971">
+        <f:citation>Trunz 1971</f:citation>
+        <f:reference>Trunz, Erich: Die „Wanderjahre“ as „Hauptgeschäft“ im Winterhalbjhr 1828/29. In: Studien zu Goethes Alterswerken. Hrsg. von Erich Trunz, Frankfurt/M. 1971 (= Goethezeit; 2), S. 99–121.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/vollmer1868">
@@ -1711,6 +1726,11 @@
     <f:bib uri="faust://bibliography/gjb_75">
         <f:citation>GJb 75</f:citation>
         <f:reference>Goethe. Neue Folge des Jahrbuchs der Goethe-Gesellschaft, im Auftrage des Vorstands hrsg. von Andreas B. Wachsmuth, Zwanzigster Band. 1958, Weimar 1958.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_77">
+        <f:citation>GJb 77</f:citation>
+        <f:reference>Goethe. Neue Folge des Jahrbuchs der Goethe-Gesellschaft, im Auftrage des Vorstands hrsg. von Andreas B. Wachsmuth, Zweiundzwanzigster Band. 1960, Weimar 1960.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_79">
