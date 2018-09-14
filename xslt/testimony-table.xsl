@@ -66,6 +66,8 @@
 			.message.error { color: rgb(190,0,0); border-color: rgb(190,0,0); background-color: rgba(190,0,0,0.1); }
 			.message.warning { color: black; background-color: rgba(220,160,0,0.2); border-color: rgb(220,160,0); }
 			.message.info  { color: rgb(0,0,190); border-color: rgb(0,0,190); background-color: rgba(0,0,190,0.1); }
+			
+			.wanderjahre { opacity: 0.25; }
 		</style>
 	</xsl:param>
 	
@@ -195,6 +197,10 @@
 		</xsl:variable>
 				
 		<tr id="{$rowinfo/@id}">
+			<xsl:if test="$rowinfo/field[@name='zuordnung-zu-wanderjahren-trunz-aber-vgl-quz-ii-s-477f-anm-2'][normalize-space(lower-case(.)) = 'x']">
+				<xsl:attribute name="class">wanderjahre</xsl:attribute>
+				<xsl:attribute name="title">Zuordnung vermutlich zu „Wilhelm Meisters Wanderjahre“</xsl:attribute>
+			</xsl:if>
 			<xsl:for-each select="$columns//fieldspec">
 				<xsl:variable name="fieldname" select="@name"/>
 				<xsl:apply-templates select="$rowinfo//field[@name=$fieldname]"/>
