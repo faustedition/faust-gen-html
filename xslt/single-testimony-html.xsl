@@ -114,7 +114,9 @@
 			<dd><a href="#{$id}">zum Entstehungszeugnis im Text <i class="fa fa-right-dir"></i></a></dd>			
 		</dl>
 		<xsl:if test="descendant::f:field[@name='zuordnung-zu-wanderjahren-trunz-aber-vgl-quz-ii-s-477f-anm-2'][normalize-space(lower-case(.)) = 'x']">
-			<p>Dieses Entstehungszeugnis ist wahrscheinlich <em>Wilhelm Meisters Wanderjahren</em> zuzuordnen und nicht <em>Faust</em>.</p>
+			<p>
+				Dieses Zeugnis ist in der älteren Forschung auf <em>Faust</em> bezogen worden; wahrscheinlich gehört es in einen anderen Zusammenhang.
+			</p>
 		</xsl:if>
 	</xsl:template>
 	
