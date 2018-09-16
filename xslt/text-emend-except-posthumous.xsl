@@ -33,7 +33,7 @@
         
         This approach, inspired by Wendell Piez, is much faster than any complex checking in the template pattern
     -->
-    <xsl:key name="delSpan-for-node" match="delSpan[not(@ge:stage='#posthumous')]|addSpan[@ge:stage='#posthumous']">
+    <xsl:key name="delSpan-for-node" match="delSpan[not(@change='#posthumous')]|addSpan[@change='#posthumous']">
         <xsl:variable name="target" as="element()" select="id(substring(@spanTo, 2))"/>
         <xsl:variable name="nodes" select="following::node() except ($target//node(), $target/following::node(), $target/ancestor::node())"/>
         <xsl:sequence select="for $node in $nodes return generate-id($node)"/>

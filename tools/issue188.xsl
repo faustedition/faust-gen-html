@@ -5,6 +5,8 @@
 	xmlns="http://www.w3.org/TR/xhtml" xmlns:f="http://www.faustedition.net/ns"
 	xmlns:ge="http://www.tei-c.org/ns/geneticEditions" xmlns:svg="http://www.w3.org/2000/svg"
 	version="2.0">
+	
+	<!-- FIXME need to convert f:st to mod, involves @rend handling -->
 
 	<xsl:param name="path"/>
 	<xsl:param name="pattern">*.xml</xsl:param>
@@ -93,7 +95,7 @@
 						<xsl:value-of select="string-join(ancestor-or-self::f:st[@rend='vertical']/@hand, ' ')"/>
 					</td>
 					<td class="context">
-						<xsl:apply-templates select="ancestor::ge:line">
+						<xsl:apply-templates select="ancestor::line">
 							<xsl:with-param name="highlight" select="ancestor-or-self::f:st[@rend='vertical'][1]" as="element()?" tunnel="yes"/>
 						</xsl:apply-templates>
 					</td>			
@@ -104,14 +106,14 @@
 	
 	<xsl:template name="find-ge-used">
 		
-		<h2>ge:used</h2>
+		<h2>metamark function="used"</h2>
 		
 		<table>
 			<tr>
 				<th>Dokument</th>
 				<th>Text</th>
 			</tr>
-			<xsl:for-each select="$coll//ge:used">
+			<xsl:for-each select="$coll//metamark[@function='used']">
 				<xsl:sort select="document-uri(/)"/>
 				<tr>			
 					<td class="doc">
@@ -185,21 +187,21 @@
 				<xsl:message select="document-uri(/)"/>
 
 				<xsl:for-each
-					select='//text()[preceding::tei:handShift[1][@new = "#g_bl"] and ancestor::ge:rewrite[@hand[contains(., "#g_t")]]][not(ancestor::rdg)]'>
+					select='//text()[preceding::tei:handShift[1][@new = "#g_bl"] and ancestor::retrace[@hand[contains(., "#g_t")]]][not(ancestor::rdg)]'>
 					<xsl:call-template name="match">
 						<xsl:with-param name="case">1</xsl:with-param>
 					</xsl:call-template>
 				</xsl:for-each>
 
 				<xsl:for-each
-					select='//text()[preceding::tei:handShift[1][@new = "#g_bl"] and ancestor::ge:rewrite[not(@hand[contains(., "#g_")])]][not(ancestor::rdg)]'>
+					select='//text()[preceding::tei:handShift[1][@new = "#g_bl"] and ancestor::retrace[not(@hand[contains(., "#g_")])]][not(ancestor::rdg)]'>
 					<xsl:call-template name="match">
 						<xsl:with-param name="case">2</xsl:with-param>
 					</xsl:call-template>
 				</xsl:for-each>
 
 				<xsl:for-each
-					select="//ge:rewrite[contains(@hand, '#g_t')]//text()[preceding::tei:handShift[1][contains(@new, '_bl') and not(contains(@new, '#g_'))]][not(ancestor::rdg)]">
+					select="//retrace[contains(@hand, '#g_t')]//text()[preceding::tei:handShift[1][contains(@new, '_bl') and not(contains(@new, '#g_'))]][not(ancestor::rdg)]">
 					<xsl:call-template name="match">
 						<xsl:with-param name="case">3</xsl:with-param>
 					</xsl:call-template>
@@ -221,10 +223,10 @@
 				<xsl:value-of select="."/>
 			</td>
 			<td><xsl:value-of select="preceding::handShift[1]/@new"/></td>
-			<td><xsl:value-of select="ancestor::ge:rewrite/@hand"/></td>
+			<td><xsl:value-of select="ancestor::retrace/@hand"/></td>
 			<td>
-				<xsl:apply-templates select="ancestor::ge:line">
-					<xsl:with-param name="highlight" select="ancestor-or-self::ge:rewrite[1]" tunnel="yes"/>
+				<xsl:apply-templates select="ancestor::line">
+					<xsl:with-param name="highlight" select="ancestor-or-self::retrace[1]" tunnel="yes"/>
 				</xsl:apply-templates>
 			</td>
 		</tr>
@@ -246,7 +248,7 @@
 				<xsl:message select="document-uri(/)"/>
 				
 				<xsl:for-each select="//text()[preceding::handShift[1][matches(@new, '_bl(_|$)') and not(starts-with(@new, '#g_'))]][not(normalize-space(.) = '')]">
-						<xsl:variable name="rewrite" select="ancestor::ge:rewrite[contains(@hand, '_t') and not(contains(@hand, '#g_'))]"/>
+						<xsl:variable name="rewrite" select="ancestor::retrace[contains(@hand, '_t') and not(contains(@hand, '#g_'))]"/>
 						<xsl:if test="$rewrite">					
 							<tr>
 								<td class="text"><xsl:value-of select="f:pageno(/)"/></td>
@@ -255,7 +257,7 @@
 								<td><xsl:value-of select="$rewrite"/></td>
 								<td><xsl:value-of select="$rewrite/@hand"/></td>
 								<td class="context">
-									<xsl:apply-templates select="ancestor::ge:line">
+									<xsl:apply-templates select="ancestor::line">
 										<xsl:with-param name="highlight" select="$rewrite" as="element()?" tunnel="yes"/>
 									</xsl:apply-templates>
 								</td>											

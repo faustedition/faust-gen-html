@@ -201,7 +201,7 @@
 								app
 								| facsimile
 								| */attribute::f:label
-								| ge:transpose
+								| transpose
 								| l/attribute::xml:id
 								| lg/attribute::xml:id
 								| note[@type='textcrit']"/>

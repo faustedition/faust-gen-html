@@ -80,7 +80,7 @@
       </xsl:if>
       <xsl:if test="not(//change[@type='emended'])">
         <f:standoff>
-          <xsl:apply-templates select="//alt|//ge:transposeGrp|//join"/>
+          <xsl:apply-templates select="//alt|//listTranspose|//join"/>
         </f:standoff>        
       </xsl:if>
       <xsl:apply-templates select='//*[@n and not(self::pb or self::div or self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or @n[contains(.,"todo")] or @n[contains(.,"p")])]'>

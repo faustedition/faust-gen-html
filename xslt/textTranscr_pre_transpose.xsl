@@ -4,7 +4,7 @@
 	xmlns:f="http://www.faustedition.net/ns" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 	exclude-result-prefixes="xs f" version="2.0" xmlns:ge="http://www.tei-c.org/ns/geneticEditions">
 	
-	<xsl:template match="ge:transpose/ptr[contains(normalize-space(@target), ' ')]">
+	<xsl:template match="transpose/ptr[contains(normalize-space(@target), ' ')]">
 		<xsl:for-each select="tokenize(normalize-space(@target), ' ')">
 			<ptr target="{.}"/>
 		</xsl:for-each>

@@ -54,7 +54,7 @@
 			</p:input>
 		</p:xslt>
 		
-		<!-- ge:transpose/ptr/@target="bla fasel blubb" in mehrere ptr mit je einem Target umwandeln -->
+		<!-- transpose/ptr/@target="bla fasel blubb" in mehrere ptr mit je einem Target umwandeln -->
 		<p:xslt name="transpositions">
 			<p:input port="stylesheet">
 				<p:document href="xslt/textTranscr_pre_transpose.xsl"/>

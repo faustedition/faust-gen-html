@@ -6,11 +6,11 @@
 	
 	<xsl:param name="skip-posthumous" select="false()"/>
 	
-	<!-- delivers the tei:ptr in a not-undone ge:transpose element that points to the given @xml:id string -->
+	<!-- delivers the tei:ptr in a not-undone transpose element that points to the given @xml:id string -->
 	<xsl:key 
 		name="transpose" 
-		match="ge:transpose[not($skip-posthumous and @ge:stage='#posthumous')]
-					/ptr[not(..[@xml:id and concat('#', @xml:id) = //ge:undo/@target])]" 
+		match="transpose[not($skip-posthumous and @change='#posthumous')]
+					/ptr[not(..[@xml:id and concat('#', @xml:id) = //undo/@target])]" 
 		use="substring(@target, 2)"/>
 		
 	<!-- 
