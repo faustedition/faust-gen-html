@@ -120,6 +120,17 @@
             </quote>
         </rdg>
     </app>
+    
+    <app>
+        <f:replace n="3620">ich</f:replace>
+        <f:ins n="3620">ich so</f:ins>
+        <ref>3620</ref>
+        <lem/>
+        <rdg wit="1_H.5 1_H.12">so <note><wit>1_H.5</wit> <wit>1_H.12</wit></note></rdg>
+        <rdg wit="A D.1" type="type_2a"><note>fehlt <wit>A</wit> <wit>D.1</wit></note></rdg>
+        <rdg wit="B B.a" type="type_4b">so <note><wit>B</wit> <wit>B.a</wit></note></rdg>
+    </app>
+    
     <app>
         <f:ins n="3787" place="only-app"/>
         <ref>3787–3788</ref>
