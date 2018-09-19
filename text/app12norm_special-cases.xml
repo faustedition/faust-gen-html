@@ -15,7 +15,7 @@
     <!--       359[Und]{Und bin} <i>359</i> bin <i>1_H.5 S</i>]   <i>fehlt</i> <i>A</i> bin <i>D.1</i> bin <i>B B.a  [type=1a Typ 2a]</i>-->
     <app>
         <f:replace n="359">Und</f:replace>
-        <f:ins n="359">Und bin</f:ins>
+        <f:ins n="359">Und <seg>bin</seg></f:ins>
         <ref>359</ref>
         <lem wit="1_H.5 S">bin <note><wit>1_H.5</wit> <wit>S</wit></note></lem>
         <rdg wit="A" type="type_1a type_2a"><note>fehlt <wit>A</wit></note></rdg>
@@ -123,7 +123,7 @@
     
     <app>
         <f:replace n="3620">ich</f:replace>
-        <f:ins n="3620">ich so</f:ins>
+        <f:ins n="3620">ich <seg>so</seg></f:ins>
         <ref>3620</ref>
         <lem wit="1_H.5 1_H.12">so <note><wit>1_H.5</wit> <wit>1_H.12</wit></note></lem>
         <rdg wit="A D.1" type="type_2a"><note>fehlt <wit>A</wit> <wit>D.1</wit></note></rdg>
@@ -334,6 +334,14 @@
     </app>
 
     <app>
+        <f:replace n="8467">bald süße</f:replace>
+        <f:ins n="8467"><seg>und</seg> süße</f:ins>
+        <ref>8467</ref>
+        <lem wit="2_II_H.73">und <note><wit>2_II_H.73</wit></note></lem>
+        <rdg wit="2_H" type="type_2aa">bald <note><wit>2_H</wit></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="8506">Eröffnet</f:replace>
         <f:ins n="8506">Eröffnet</f:ins>
         <ref>8506</ref>
@@ -437,6 +445,14 @@
         <rdg wit="C.1_4" type="type_2aa">los. <note><wit>C.1_4</wit></note></rdg>
         <rdg wit="C.2alpha_4 C.3_4" type="type_4b">los, <note><wit>C.2alpha_4</wit>
                 <wit>C.3_4</wit></note></rdg>
+    </app>
+
+    <app>
+        <f:replace n="9971">Hades</f:replace>
+        <f:ins n="9971">Hades <seg>selbst</seg></f:ins>
+        <ref>9971</ref>
+        <lem wit="2_III_H.2_2">selbst <note><wit>2_III_H.2_2</wit></note></lem>
+        <rdg wit="2_III_H.3a_2 2_H C.1_4" type="type_2b"> <note>fehlt <wit>2_III_H.3a_2</wit> <wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
     </app>
 
     <app>
