@@ -116,9 +116,6 @@
 					<xsl:value-of select="$current_sigils" separator=", "/>
 				</xsl:comment>
 				<xsl:text>&#10;</xsl:text>
-				<xsl:apply-templates select="current-group()[1]/*">
-					<xsl:with-param name="group" select="current-group()"/>
-				</xsl:apply-templates>
 				<xsl:for-each-group select="$variant-lines[@f:sigil_t = $current_sigils]" group-by="@f:sigil_t">
 					<xsl:variable name="variant-evidence">
 						<xsl:sequence select="$standoff"/>
@@ -132,6 +129,9 @@
 						</xsl:apply-templates>						
 					</xsl:for-each>
 				</xsl:for-each-group>
+				<xsl:apply-templates select="current-group()[1]/*">
+					<xsl:with-param name="group" select="current-group()"/>
+				</xsl:apply-templates>
 
 			</xsl:for-each-group>
 		</div>
