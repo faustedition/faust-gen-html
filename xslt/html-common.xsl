@@ -415,11 +415,8 @@ in <xsl:value-of select="document-uri(/)"/>
 					<xsl:value-of select="$display-line"/>
 				</a>
 			</xsl:when>
-			<xsl:when test="@n and $type='lesetext'">
-				<a id="l{@n}" href="#{$lineid}" class="lineno technical-lineno"><xsl:value-of select="@n"/></a>
-			</xsl:when>
 			<xsl:when test="@n">
-				<a id="l{@n}" href="#{$lineid}" class="lineno invisible">∞</a>
+				<a id="{$lineid}" href="#{$lineid}" class="lineno invisible">∞</a>
 			</xsl:when>
 			<xsl:when test="not(f:isInline(.))">
 				<a class="lineno invisible">&#160;</a>
