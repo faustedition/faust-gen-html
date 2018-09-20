@@ -67,7 +67,7 @@
 		</xsl:call-template>
 	</xsl:template>
 	
-	<xsl:template match="del[@f:revType='instant']" priority="1">
+	<xsl:template match="del[@f:revType='instant']" priority="1.5">
 		<xsl:call-template name="app">
 			<xsl:with-param name="braces" select="('〈', ' &gt;〉')"/>
 			<xsl:with-param name="app">
