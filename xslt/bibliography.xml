@@ -225,7 +225,7 @@
 
     <f:bib uri="faust://bibliography/feaux_de_lacroix1924">
         <f:citation>Féaux de Lacroix 1924</f:citation>
-        <f:reference>Féaux de Lacroix, K.: Punkt oder Fragezeichen in Goethes ‚Faust‘ I, Vers 1685? In: Zeitschr. f. Deutschkunde 38 (1924), S. 181–183..</f:reference>
+        <f:reference>Féaux de Lacroix, K.: Punkt oder Fragezeichen in Goethes ‚Faust‘ I, Vers 1685? In: Zeitschr. f. Deutschkunde 38 (1924), S. 181–183.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/femmel">
@@ -475,12 +475,12 @@
 
     <f:bib uri="faust://bibliography/inventare_2_1">
         <f:citation>Inventare 2,1</f:citation>
-        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 1: Gedichte, hrsg. von der Stiftung Weimarer Klassik, Goethe- und Schiller-Archiv. Weimar 2000. </f:reference>
+        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 1: Gedichte, hrsg. von der Stiftung Weimarer Klassik, Goethe- und Schiller-Archiv. Redaktor: Gerhard Schmid. Weimar 2000. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/inventare_2_2">
         <f:citation>Inventare 2,2</f:citation>
-        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 2: Dramen, Romane und Erzählungen, hrsg. von der Klassik Stiftung Weimar, Goethe- und Schiller-Archiv. Weimar 2011. </f:reference>
+        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 2: Dramen, Romane und Erzählungen, hrsg. von der Klassik Stiftung Weimar, Goethe- und Schiller-Archiv. Redaktor: Jürgen Gruß. Weimar 2011. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/jap_47">
@@ -584,7 +584,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1879">
-        <f:citation>Loeper 1879 <strong>[muss zu Loeper 1879a geändert wwerden]</strong></f:citation>
+        <f:citation>Loeper 1879 <strong>[muss zu Loeper 1879a geändert werden]</strong></f:citation>
         <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G. von Loeper, 2. Bearbeitung, 2 Tle., Berlin 1879. </f:reference>
     </f:bib>
 
@@ -765,7 +765,7 @@
 
     <f:bib uri="faust://bibliography/ofterdinger1886">
         <f:citation>Ofterdinger 1886</f:citation>
-        <f:reference>Ofterdinger, L. F.: Goethe-Reliquien. In: faust://bibliography/gjb_7, S. 274f. </f:reference>
+        <f:reference>Ofterdinger, L[udwig] F[elix]: Goethe-Reliquien. In: faust://bibliography/gjb_7, S. 274f.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/petsch1926">
@@ -1341,6 +1341,11 @@
     <f:bib uri="faust://bibliography/wa_IV_2">
         <f:citation>WA IV 2</f:citation>
         <f:reference>WA, Abt. IV, Bd. 2, Weimar 1887.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_3">
+        <f:citation>WA IV 3</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 3, Weimar 1888.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_IV_4">
