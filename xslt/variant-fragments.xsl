@@ -86,7 +86,7 @@
 		<xsl:param name="current-n" select="current-grouping-key()"/>
 		<xsl:variable name="all-lines" as="element()*">
 			<xsl:perform-sort select="$current-lines">
-				<xsl:sort select="f:get-wit-index(@f:sigil_t)" stable="yes"/>
+				<xsl:sort select="number(f:get-wit-index(@f:sigil_t))" stable="yes"/>
 			</xsl:perform-sort>
 		</xsl:variable>
 		<xsl:variable name="emended-lines" select="$all-lines[@f:emended]"/>

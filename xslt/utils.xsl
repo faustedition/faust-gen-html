@@ -478,7 +478,7 @@
   </xsl:function>
   
   <!-- Macrogenetic order. Returns an index for a given sigil_t. If used with two parameters, the second is added to the index. -->
-  <xsl:function name="f:get-wit-index">
+  <xsl:function name="f:get-wit-index" as="xs:decimal">
     <xsl:param name="sigil_t"/>
     <xsl:param name="extra"/>
     <xsl:variable name="el" select="f:get-order-info($sigil_t)"/>
@@ -487,7 +487,7 @@
   </xsl:function>
   <xsl:function name="f:get-wit-index">
     <xsl:param name="sigil_t"/>
-    <xsl:value-of select="f:get-wit-index($sigil_t, 0)"/>
+    <xsl:value-of select="number(f:get-wit-index($sigil_t, 0))"/>
   </xsl:function>
   
     
