@@ -110,7 +110,7 @@
 								<text>
 									<body>
 										<xsl:choose>
-											<xsl:when test="$unfree-text">												
+											<xsl:when test="f:unfree-text(.)">												
 												<desc type="editorial" subtype="info">
 													<xsl:text>Für die Veröffentlichung dieses Volltexts liegt noch keine Freigabe vor.</xsl:text>
 													<xsl:copy-of select="$milestone"/>

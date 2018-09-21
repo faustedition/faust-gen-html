@@ -48,8 +48,7 @@
 			<p:load name="load-testimony">
 				<p:with-option name="href" select="$filename"/>
 			</p:load>
-			
-			
+
 			
 			<p:xslt name="testimony-xml">
 				<p:with-option name="output-base-uri" select="p:base-uri()"/>
