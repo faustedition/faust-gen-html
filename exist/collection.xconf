@@ -3,6 +3,7 @@
     <index xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
         <fulltext default="none" attributes="false"/>
         <lucene>
+            <analyzer class="org.apache.lucene.analysis.de.GermanAnalyzer"/>
             <text field="text" qname="tei:l"/>
             <text field="text" qname="tei:p"/>
             <text field="text" qname="tei:head"/>

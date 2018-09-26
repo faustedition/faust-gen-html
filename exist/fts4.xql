@@ -46,6 +46,44 @@ declare function local:sigil($query as xs:string) as element()* {
                 }</f:idno-match>
 };
 
+declare function local:query-line($query as item(), $order as xs:string) as element()* {
+  for $line in $data//(tei:l|tei:p|tei:head|tei:stage|tei:speaker|tei:note|tei:trailer|tei:label|tei:item)[ft:query(., $query)]
+  let 
+      $root := root($line)
+   group by $root
+   let 
+      $sigil := data(id('sigil', $root)),
+      $sigil_t := data(id('sigil_t', $root)),
+    	$headnote := data(id('headNote', $root)),
+    	$type := data($root/tei:TEI/@type),
+    	$number := $root/tei:TEI/@f:number,
+    	$sortcrit := if ($order = 'sigil')
+    	             then $number
+    	             else -avg(for $l in $line return ft:score($l))
+  order by $sortcrit
+  return 
+    <f:doc
+        sigil_t="{$sigil_t}"
+        sigil="{$sigil}"
+        headnote="{$headnote}"
+        type="{$type}"
+        number="{$number}"
+        href="{local:makeURL($type, $sigil_t, (), ())}"
+        >{
+        for $match in $line
+        let 
+            $score := ft:score($match),
+            $n := data($match/@n),
+            $page := ($match//tei:pb/@f:docTranscriptNo, $match/preceding::tei:pb[1]/@f:docTranscriptNo)[1],
+            $breadcrumbs := $match/ancestor-or-self::*[@f:label]
+        return <f:subhit sigil_t="{$sigil_t}" sigil="{$sigil}" headnote="{$headnote}" type="{$type}" number="{$number}" 
+                         href="{local:makeURL($type, $sigil_t, $match/ancestor::*/@f:section[1], $page)}" score="{$score}">
+                         {$match}
+               </f:subhit>
+        }
+    </f:doc>
+};
+
 declare function local:query($query as item(), $order as xs:string) as element(f:doc)* {
 for $text in $data//tei:TEI[ft:query(., $query)]
 let $sigil := data(id('sigil', $text)),
@@ -58,6 +96,7 @@ let $sigil := data(id('sigil', $text)),
 	$sortcrit := if ($order = 'sigil')
 	             then $number
 	             else -$score
+	            
 order by $sortcrit
 return
     <f:doc
@@ -132,7 +171,7 @@ declare function local:format-results($results as item()*, $order as xs:string) 
 
 declare function local:wrapped-query($query as xs:string, $order as xs:string) as element()* {
   try {
-  	let $results := local:query($query, $order)
+  	let $results := local:query-line($query, $order)
   	return local:format-results($results, $order)
   } catch * {
     try {
