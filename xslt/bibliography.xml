@@ -2153,6 +2153,56 @@
         <f:reference>Goethes Gespräche. Hrsg. von Woldemar Freiherr von Biedermann. Bd. 10. Leipzig, 1896.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/biedermann1909-1911_1">
+        <f:citation>Biedermann 1909-1911, Bd. 1</f:citation>
+        <f:reference>Goethes Gespräche. Neu hrsg. von Flodoard Freiherr von Biedermann unter Mitwirkung von Max Morris. Bd. 1. Von der Kindheit bis zum Erfurter Kongreß. 1754 bis Oktober 1803, 2., durchges. und stark verm. Aufl., Leipzig 1909.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1909-1911_2">
+        <f:citation>Biedermann 1909-1911, Bd. 2</f:citation>
+        <f:reference>Goethes Gespräche. Neu hrsg. von Flodoard Freiherr von Biedermann unter Mitwirkung von Max Morris. Bd. 2. Vom Erfurter Kongreß bis zum letzten böhmischen Aufenthalt. 1808 November bis September 1823, 2., durchges. und stark verm. Aufl., Leipzig 1909.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1909-1911_3">
+        <f:citation>Biedermann 1909-1911, Bd. 3</f:citation>
+        <f:reference>Goethes Gespräche. Neu hrsg. von Flodoard Freiherr von Biedermann unter Mitwirkung von Max Morris. Bd. 3. Vom letzten böhmischen Aufenthalt bis zum Tode Karl Augusts. 1823 September bis Juni 1828, 2., durchges. und stark verm. Aufl., Leipzig 1910.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1909-1911_4">
+        <f:citation>Biedermann 1909-1911, Bd. 4</f:citation>
+        <f:reference>Goethes Gespräche. Neu hrsg. von Flodoard Freiherr von Biedermann unter Mitwirkung von Max Morris. Bd. 4. Vom Tode Karl Augusts bis zum Ende. 1828 Juni bis 22. März 1832, 2., durchges. und stark verm. Aufl., Leipzig 1910.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1909-1911_5">
+        <f:citation>Biedermann 1909-1911, Bd. 5</f:citation>
+        <f:reference>Goethes Gespräche. Neu hrsg. von Flodoard Freiherr von Biedermann unter Mitwirkung von Max Morris. Bd. 5. Erläuterungen, Ergänzungen, Nachträge, Nachweisungen, 2., durchges. und stark verm. Aufl., Leipzig 1911.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1965-1987_1">
+        <f:citation>Biedermann 1965-1987, Bd. 1</f:citation>
+        <f:reference>Goethes Gespräche. Eine Sammlung zeitgenössischer Berichte aus seinem Umgang. Auf Grund der Ausgabe und des Nachlasses von Flodoard Freiherrn von Biedermann erg. und hrsg. von Wolfgang Herwig. Bd. 1. 1749-1805, Zürich und München 1965.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1965-1987_2">
+        <f:citation>Biedermann 1965-1987, Bd. 2</f:citation>
+        <f:reference>Goethes Gespräche. Eine Sammlung zeitgenössischer Berichte aus seinem Umgang. Auf Grund der Ausgabe und des Nachlasses von Flodoard Freiherrn von Biedermann erg. und hrsg. von Wolfgang Herwig. Bd. 2. 1805-1817, Zürich und München 1965.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1965-1987_3">
+        <f:citation>Biedermann 1965-1987, Bd. 3</f:citation>
+        <f:reference>Goethes Gespräche. Eine Sammlung zeitgenössischer Berichte aus seinem Umgang. Auf Grund der Ausgabe und des Nachlasses von Flodoard Freiherrn von Biedermann erg. und hrsg. von Wolfgang Herwig. Bd. 3. Teil 1: 1817-1825; Teil 2: 1825-1832, Zürich und München 1971-1972.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1965-1987_4">
+        <f:citation>Biedermann 1965-1987, Bd. 4</f:citation>
+        <f:reference>Goethes Gespräche. Eine Sammlung zeitgenössischer Berichte aus seinem Umgang. Auf Grund der Ausgabe und des Nachlasses von Flodoard Freiherrn von Biedermann erg. und hrsg. von Wolfgang Herwig. Bd. 4. Kommentar, Zürich und München 1984.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1965-1987_5">
+        <f:citation>Biedermann 1965-1987, Bd. 5</f:citation>
+        <f:reference>Goethes Gespräche. Eine Sammlung zeitgenössischer Berichte aus seinem Umgang. Auf Grund der Ausgabe und des Nachlasses von Flodoard Freiherrn von Biedermann erg. und hrsg. von Wolfgang Herwig. Bd. 5. Nachklang, Nachträge, Register, Zürich und München 1987.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/bode1921-1923_3">
         <f:citation>Bode 1921–1923, Bd. 3</f:citation>
         <f:reference>Goethe in vertraulichen Briefen seiner Zeitgenossen. Hrsg. von Wilhelm Bode. 3 Bde., Bd. 3. Berlin 1921–1923.</f:reference>
