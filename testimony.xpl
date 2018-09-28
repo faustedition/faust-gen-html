@@ -69,13 +69,13 @@
 				<p:iteration-source>
 					<p:pipe port="secondary" step="split-testimony"/>
 				</p:iteration-source>
+				<p:variable name="base-uri" select="p:base-uri()"/>
 				
 				<p:identity name="single-testimony-tei"/>
 				
 				<p:store indent="true">
 					<p:with-option name="href" select="p:base-uri()"/>
 				</p:store>
-								
 				
 				<p:xslt>
 					<p:input port="source"><p:pipe port="result" step="single-testimony-tei"/></p:input>
@@ -86,6 +86,30 @@
 				
 				<p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
 					<p:with-option name="href" select="p:resolve-uri(replace(p:base-uri(), '.*/([^/.]*)\.xml$', '$1.html'), $testihtml)"/>
+				</p:store>
+				
+				<!-- For search, we skip the context data -->
+				<p:xslt>					
+					<p:input port="source"><p:pipe port="result" step="single-testimony-tei"/></p:input>
+					<p:input port="stylesheet">
+						<p:inline>
+							<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
+								<xsl:template match="/TEI/text">
+									<xsl:apply-templates select="group/text[@copyOf]"/>
+								</xsl:template>
+								<xsl:template match="node()|@*">
+									<xsl:copy copy-namespaces="no">
+										<xsl:apply-templates select="@*, node()"/>
+									</xsl:copy>
+								</xsl:template>
+							</xsl:stylesheet>
+						</p:inline>
+					</p:input>
+					<p:input port="parameters"><p:empty/></p:input>
+				</p:xslt>
+							
+				<p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
+					<p:with-option name="href" select="p:resolve-uri(replace($base-uri, '.*/([^/.]*)\.xml$', '$1.xml'), concat($builddir, '/search/testimony/'))"/>
 				</p:store>
 				
 				<!-- Now, the file we've just converted is read again and we collect all the <milestone unit='testimony' xml:id='two_part_id' -->
