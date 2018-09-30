@@ -40,13 +40,11 @@ declare function local:query-lucene($query as item()?, $highlight as xs:string?)
               $n := data($match/@n),
               $page := ($match//tei:pb/@f:docTranscriptNo, $match/preceding::tei:pb[1]/@f:docTranscriptNo)[1],
               $section := $match/ancestor-or-self::*/@f:section[1],
-              $breadcrumbs := for $bc in $match/ancestor-or-self::*[@f:label] return element {node-name($bc)} {$bc/@*},
+              $breadcrumbs := for $bc in $match/ancestor-or-self::*[@f:label] return <f:breadcrumb>{$bc/@*}</f:breadcrumb>,
               $content := if ($highlight = 'true') then util:expand($match) else $match
             return 
-            <div class="subhit">
-              <a href="{local:make-url($sigil_t, $section, $page, $n)}">
-                {$content}
-              </a>
+            <div class="subhit" data-href="{local:make-url($sigil_t, $section, $page, $n)}">              
+              {$content}              
               <f:breadcrumbs>{$breadcrumbs}</f:breadcrumbs>
             </div>
           }        

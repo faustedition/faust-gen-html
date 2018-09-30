@@ -22,6 +22,11 @@ else :)
         	<set-attribute name="xquery.report-errors" value="yes"/>
         	<set-attribute name="xmlpath" value="{$xmlpath}"/>
         </forward>
+        <view>
+            <forward servlet="XSLTServlet">
+                <set-attribute name="xslt.stylesheet" value="{concat($exist:root, $exist:controller, '/xslt/search-light.xsl')}"/>
+            </forward>
+        </view>
     </dispatch>
   else if ($exist:path = '/text') then
   			    <dispatch>
@@ -31,7 +36,7 @@ else :)
 			        </forward>
 			        <view>
 			            <forward servlet="XSLTServlet">
-			                <set-attribute name="xslt.stylesheet" value="{concat($exist:root, $exist:controller, '/xslt/search-results.xsl')}"/>
+			                <set-attribute name="xslt.stylesheet" value="{concat($exist:root, $exist:controller, '/xslt/search-light.xsl')}"/>
 			            </forward>
 			        </view>
 			    </dispatch>
