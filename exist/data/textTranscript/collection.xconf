@@ -3,8 +3,17 @@
     <index xmlns:xs="http://www.w3.org/2001/XMLSchema">
         <fulltext default="none" attributes="false"/>
         <lucene>
-            <analyzer id="de" class="org.apache.lucene.analysis.de.GermanAnalyzer"/>
-            <analyzer id="ws" class="org.apache.lucene.analysis.core.WhitespaceAnalyzer"/>
+            <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer">
+                <param name="stopwords" type="org.apache.lucene.analysis.util.CharArraySet"/>
+            </analyzer>
+        
+            <analyzer id="de" class="org.apache.lucene.analysis.de.GermanAnalyzer">
+                <param name="stopwords" type="org.apache.lucene.analysis.util.CharArraySet"/>
+            </analyzer>
+
+            <analyzer id="ws" class="org.apache.lucene.analysis.core.WhitespaceAnalyzer">
+                <param name="stopwords" type="org.apache.lucene.analysis.util.CharArraySet"/>
+            </analyzer>
         
             <text field="text" qname="tei:l"/>
             <text field="text" qname="tei:p"/>
