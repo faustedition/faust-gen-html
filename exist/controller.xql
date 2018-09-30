@@ -15,8 +15,27 @@ declare variable $xmlpath := $exist:root || $exist:controller || '/data';
     <ignore>
         <cache-control cache="no"/>
     </ignore>
-else :) 
-	if ($exist:path = ('', '/', '/search')) then
+else :)
+  if ($exist:path = '/meta') then
+    <dispatch>
+        <forward url="{concat($exist:controller, '/meta.xql')}">			        	
+        	<set-attribute name="xquery.report-errors" value="yes"/>
+        	<set-attribute name="xmlpath" value="{$xmlpath}"/>
+        </forward>
+    </dispatch>
+  else if ($exist:path = '/text') then
+  			    <dispatch>
+			        <forward url="{concat($exist:controller, '/text.xql')}">			        	
+			        	<set-attribute name="xquery.report-errors" value="yes"/>
+			        	<set-attribute name="xmlpath" value="{$xmlpath}"/>
+			        </forward>
+			        <view>
+			            <forward servlet="XSLTServlet">
+			                <set-attribute name="xslt.stylesheet" value="{concat($exist:root, $exist:controller, '/xslt/search-results.xsl')}"/>
+			            </forward>
+			        </view>
+			    </dispatch>
+	else if ($exist:path = ('', '/', '/search')) then
 		let $query := request:get-parameter('q', ''),
 			$rooturl := 'http://' || request:get-header('X-Forwarded-Host'),
 			$idno := collection($xmlpath)//tei:idno[@type = 'sigil_n'][. = lower-case(replace($query, '[ .*]', ''))]

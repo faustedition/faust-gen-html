@@ -1,6 +1,11 @@
 xquery version "3.0";
 declare default element namespace "http://www.w3.org/1999/xhtml";
 
+declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization";
+declare option output:method "xhtml";
+declare option output:media-type "application/xhtml+xml";
+
+
 declare function local:query-metadata($query as xs:string) as element()* {
   let $anc := collection('/db/apps/faust-dev/data/meta')//*[contains(., $query)],
       $closest := $anc except $anc/ancestor::*    
@@ -25,7 +30,7 @@ let $query := request:get-parameter('q', ()),
     $results := local:query-metadata($query),
     $docs := count($results),
     $hits := sum($results/@data-subhits)
-return <article class="results" data-hits="{$hits}" data-docs="{$docs}">
+return <article class="results" data-hits="{$hits}" data-docs="{$docs}" data-query="{$query}">
           <h2>{$hits} Metadaten-Treffer in {$docs} Dokumenten</h2>
           {$results}
        </article>
