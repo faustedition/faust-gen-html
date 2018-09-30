@@ -35,7 +35,7 @@
 	
 	<xsl:import href="apparatus.xsl"/>
 	
-	<xsl:output method="xhtml" indent="yes"/>
+	<xsl:output method="xhtml" indent="no"/>
 		
 
 	<!-- Page numbers are not useful here -->
@@ -52,7 +52,7 @@
 	
 	<!-- Line numbers need href from f:hit and should be shown for every line -->
 	<xsl:template name="generate-lineno">	
-		<a href="{ancestor::*/@data-href[1]}#l{@n}" class="lineno">
+		<a href="{ancestor::*/@data-href[1]}" class="lineno">
 			<xsl:value-of select="f:display-line(@n)"/>
 		</a>		
 	</xsl:template>
@@ -69,17 +69,17 @@
 	
 	<xsl:template match="f:breadcrumbs">
 		<xsl:if test="*">
-			<ul class="breadcrumbs">
+			<ul class="search-breadcrumbs">
 				<xsl:apply-templates/>
 			</ul>
 		</xsl:if>
 	</xsl:template>
 	
 	<xsl:template match="f:breadcrumb">
-		<li><xsl:value-of select="
+		<li><a href="{ancestor::*/@data-href[1]}"><xsl:value-of select="
 			if (@n and @n = $scenes//*/@n)
 			then $scenes//*[@n=current()/@n]/f:title
-			else @f:label"/></li>
+			else @f:label"/></a></li>
 	</xsl:template>
 	
 	
@@ -92,7 +92,7 @@
 					<xsl:apply-templates/>
 				</xsl:when>
 				<xsl:otherwise>
-					<a class="match" href="{ancestor::*/@data-href[1]}#l{ancestor::*[@n][1]/@n}">
+					<a class="match" href="{ancestor::*/@data-href[1]}">
 						<xsl:apply-templates/>
 					</a>					
 				</xsl:otherwise>

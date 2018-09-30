@@ -499,10 +499,9 @@ in <xsl:value-of select="document-uri(/)"/>
 	</xsl:template>
 	
 	<!-- Pass through existing HTML from previous steps -->
-	<xsl:template match="xh:*">
-		<xsl:copy>
-			<xsl:copy-of select="@*"/>				
-			<xsl:apply-templates select="node() except namespace::*"/>
+	<xsl:template match="xh:*|xh:*/@*">
+		<xsl:copy copy-namespaces="no">
+			<xsl:apply-templates select="@*, node()"/>
 		</xsl:copy>
 	</xsl:template>	
 	
