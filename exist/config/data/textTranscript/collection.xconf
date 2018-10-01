@@ -61,6 +61,7 @@
             <create qname="@n" type="xs:string"/>
             <create qname="@f:section" type="xs:int"/>
             <create qname="@f:label" type="xs:string"/>
+            <create qname="tei:idno" type="xs:string"/>            
         </range>
 
     </index>

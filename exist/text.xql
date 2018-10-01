@@ -23,15 +23,24 @@ declare function local:make-url($sigil_t as xs:string?, $section as xs:string?, 
 };
 
 
-declare function local:query-lucene($query as item()?, $highlight as xs:string?, $index as xs:string?) as element()* {
-  for $line in ft:query-field($index, $query)
-  let $sigil := id('sigil', $line)
+declare function local:query-lucene($query as item()?, $highlight as xs:string?, $index as xs:string?, $sp as item()?, $order as xs:string?) as map() {
+  let $allhits := if ($sp) then $data//(tei:l|tei:p)[ft:query-field($index, $query)] 
+          else $data//(tei:l|tei:p|tei:head|tei:speaker|tei:note|tei:stage|tei:trailer|tei:label|tei:item)[ft:query-field($index, $query)],
+      $hitcount := count($allhits)
+  return map { 'hits': $hitcount, 'results':
+  for $line in $allhits
+  let $sigil := id('sigil', $line)  
   group by $sigil
   let $sigil_t := id('sigil_t', $line[1]),
-      $headnote := id('headNote', $line[1]),
-      $total-score := avg(for $l in $line return ft:score($l))
-      return 
-        <section class="doc" data-subhits="{count($line)}" data-score="{$total-score}">
+      $headnote := id('headNote', $line[1]),      
+      (:$total-score := avg(for $l in $line return ft:score($l)),:)
+      $sortcrit := switch ($order) 
+                    case 'sigil' return number(root($sigil_t)/*/@number)
+                    case 'genesis' return number(root($sigil_t)/*/@index)
+                    default return avg(for $l in $line return ft:score($l))
+      order by $sortcrit
+      return (:data-score="{$total-score}":)
+        <section class="doc" data-subhits="{count($line)}"> 
           <h2><a href="{local:make-url($sigil_t)}">{data($sigil)}</a></h2>
           {
             for $match in $line
@@ -49,16 +58,30 @@ declare function local:query-lucene($query as item()?, $highlight as xs:string?,
             </div>
           }        
         </section>
+   }
+};
+
+declare function local:byverse($results as element()*) as element()* {
+  for $subhit in $results//div[@class='subhit']
+  let $schroer := number(($subhit//*/@f:schroer)[1])
+  order by $schroer
+  return <section class="hit">
+    <h3>{root($subhit)//h2/a} {$subhit//f:breadcrumbs}</h3>
+    {$subhit/tei:*}
+    </section>
 };
 
 let $query := request:get-parameter('q', ()),
     $highlight := request:get-parameter('highlight', 'true'),
-    $index := request:get-parameter('index', 'text'),
-    $results := local:query-lucene($query, $highlight, $index),
+    $index := request:get-parameter('index', 'text-de'),
+    $sp := request:get-parameter('sp', ()),
+    $order := request:get-parameter('order', ''), 
+    $result := local:query-lucene($query, $highlight, $index, $sp, $order),    
+    $results := $result('results'),
     $docs := count($results),
-    $hits := sum($results/@data-subhits),
+    $hits := $result('hits'), (:sum($results/@data-subhits):)
     $raw := <article class="results" data-hits="{$hits}" data-docs="{$docs}">
           <h2>{$hits} Treffer in {$docs} Dokumenten</h2>
-          {$results}
+          {if ($order = 'verse') then local:byverse($results) else $results}
           </article>
     return $raw
