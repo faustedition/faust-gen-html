@@ -89,16 +89,25 @@
 			<xsl:result-document href="{resolve-uri(concat($basename, '.xml'), $output)}" exclude-result-prefixes="xs xi svg math xd f">									
 					<TEI>
 						<xsl:for-each select="/TEI/teiHeader">
-							<teiHeader>	
-								<xsl:copy-of select="@*"/>
-								<xsl:comment>Preliminary TEI header</xsl:comment>
-								<xsl:copy-of select="* except revisionDesc"/>
+							<teiHeader>
+								<xsl:comment>Preliminary TEI header</xsl:comment>								
+								<fileDesc>
+									<titleStmt>
+										<title><xsl:value-of select="f:testimony-label($id)"/></title>
+									</titleStmt>
+									<publicationStmt>
+										<p>Teil der <ref target="http://faustedition.net/">Faustedition</ref></p>
+									</publicationStmt>
+									<sourceDesc>
+										<p><xsl:value-of select="f:cite($biburl, true())"/></p>										
+									</sourceDesc>
+								</fileDesc>
 								<xenoData>
 									<xsl:for-each select="$metadata">
 										<xsl:copy>
 											<xsl:copy-of select="@*"/>
 											<xsl:copy-of select="*"/>
-											<f:biburl><xsl:value-of select="$biburl"/></f:biburl>										
+											<biburl xmlns="http://www.faustedition.net/ns"><xsl:value-of select="$biburl"/></biburl>										
 										</xsl:copy>
 									</xsl:for-each>								
 								</xenoData>

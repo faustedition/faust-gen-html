@@ -94,9 +94,23 @@
 					<p:input port="stylesheet">
 						<p:inline>
 							<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
+								<xsl:import href="xslt/testimony-common.xsl"/>
+								<xsl:template match="f:field">
+									<xsl:variable name="spec" select="f:fieldspec(@name)"/>									
+									<xsl:choose>
+										<xsl:when test="$spec/@ignore='yes'"/>
+										<xsl:otherwise>
+											<xsl:copy copy-namespaces="no">
+												<xsl:attribute name="label" select="if ($spec/text()) then $spec/text() else $spec/@spreadsheet"/>
+												<xsl:apply-templates select="@* except @label, node()"/>
+											</xsl:copy>
+										</xsl:otherwise>
+									</xsl:choose>
+								</xsl:template>
 								<xsl:template match="/TEI/text">
 									<xsl:apply-templates select="group/text[@copyOf]"/>
 								</xsl:template>
+								
 								<xsl:template match="node()|@*">
 									<xsl:copy copy-namespaces="no">
 										<xsl:apply-templates select="@*, node()"/>
