@@ -7,7 +7,7 @@ declare option output:media-type "application/xhtml+xml";
 
 
 declare function local:query-metadata($query as xs:string) as element()* {
-  let $anc := collection('/db/apps/faust-dev/data/meta')//*[contains(., $query)],
+  let $anc := collection('/db/apps/faust-dev/data/meta')//*[ngram:contains(., $query)],
       $closest := $anc except $anc/ancestor::*    
   for $match in $closest
   let $doc := root($match),
@@ -20,7 +20,7 @@ declare function local:query-metadata($query as xs:string) as element()* {
                   for $m in $match
                   return 
                   <div class="subhit metadata-container">{
-                    if ($m[self::dd]) then <dl>{$m/preceding-sibling::dt[1], $m}</dl> else $m
+                    if ($m[self::dd]) then <dl>{$m/preceding-sibling::dt[1], util:expand($m)}</dl> else util:expand($m)
                   }</div>
               }
           </section>

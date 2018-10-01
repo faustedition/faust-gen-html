@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://exist-db.org/collection-config/1.0" xmlns:f="http://www.faustedition.net/ns" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:xh="http://www.w3.org/1999/xhtml">
+  <index xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <fulltext default="none" attributes="false"/>
+    <ngram qname="xh:dd"/>
+    <ngram qname="xh:p"/>
+    <ngram qname="xh:h2"/>
+    <ngram qname="xh:h3"/>
+  </index>
+</collection>
