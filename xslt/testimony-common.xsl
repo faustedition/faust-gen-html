@@ -35,7 +35,8 @@
     <xsl:variable name="fields" xmlns="http://www.faustedition.net/ns">
         <!--These fields have been found in the excel table:-->
         <fieldspec name="status" spreadsheet="Status" ignore="yes"/><!-- raus -->
-        <fieldspec name="lfd-nr-neuneu" spreadsheet="lfd. Nr. (neuneu)">Zeugnis-Nr.</fieldspec>
+        <fieldspec name="lfd-nr-neu-2" spreadsheet="lfd. Nr. (neu-2)">Zeugnis-Nr.</fieldspec>        
+        <fieldspec name="lfd-nr-neuneu" spreadsheet="lfd. Nr. (neuneu)" ignore="yes"/>
         <fieldspec name="lfd-nr-allerneuestens" spreadsheet="lfd. Nr. (allerneuestens)" ignore="yes"/> <!-- alle anderen weg -->
         <fieldspec name="lfd-nr-neuestens" spreadsheet="lfd. Nr. (neuestens)" ignore="yes"/>
         <fieldspec name="lfd-nr-ganz-neu" spreadsheet="lfd. Nr. (ganz neu)" ignore="yes"/>
