@@ -23,8 +23,8 @@ declare function local:make-url($sigil_t as xs:string?, $section as xs:string?, 
 };
 
 
-declare function local:query-lucene($query as item()?, $highlight as xs:string?) as element()* {
-  for $line in ft:query-field('text', $query)
+declare function local:query-lucene($query as item()?, $highlight as xs:string?, $index as xs:string?) as element()* {
+  for $line in ft:query-field($index, $query)
   let $sigil := id('sigil', $line)
   group by $sigil
   let $sigil_t := id('sigil_t', $line[1]),
@@ -53,7 +53,8 @@ declare function local:query-lucene($query as item()?, $highlight as xs:string?)
 
 let $query := request:get-parameter('q', ()),
     $highlight := request:get-parameter('highlight', 'true'),
-    $results := local:query-lucene($query, $highlight),
+    $index := request:get-parameter('index', 'text'),
+    $results := local:query-lucene($query, $highlight, $index),
     $docs := count($results),
     $hits := sum($results/@data-subhits),
     $raw := <article class="results" data-hits="{$hits}" data-docs="{$docs}">
