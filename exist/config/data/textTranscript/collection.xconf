@@ -8,7 +8,7 @@
             </analyzer>
         
             <analyzer id="de" class="org.apache.lucene.analysis.de.GermanAnalyzer">
-                <param name="stopwords" type="org.apache.lucene.analysis.util.CharArraySet"/>
+                <!--<param name="stopwords" type="org.apache.lucene.analysis.util.CharArraySet"/>-->
             </analyzer>
 
             <analyzer id="ws" class="org.apache.lucene.analysis.core.WhitespaceAnalyzer">
