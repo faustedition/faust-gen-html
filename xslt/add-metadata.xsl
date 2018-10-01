@@ -19,6 +19,7 @@
 		/TEI/@f:repository-label  its label
 		/TEI/@f:split             true if this doc is to be split into multiple components
 		/TEI/@f:number            numbering passed in (i.e. order of sigils)
+		/TEI/@f:index             numbering by macrogenesis
 		
 		//idno                    for every idno from the metadata
 		//idno/@type='headNote'   for the headNote
@@ -179,6 +180,7 @@
 				<xsl:attribute name="f:split">true</xsl:attribute>
 			</xsl:if>
 			<xsl:if test="$number"><xsl:attribute name="f:number" select="$number"/></xsl:if>
+			<xsl:attribute name="f:index" select="f:get-order-info($sigil_t)"/>
 			<xsl:apply-templates select="@* except (@type, @n)"/>
 			<xsl:apply-templates select="node()"/>
 		</xsl:copy>
