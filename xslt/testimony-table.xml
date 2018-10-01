@@ -119,7 +119,7 @@ Creizenach 1837, S. 386; </field>
     <field name="intervall-erschlossen">x</field>
     <field name="datierungsvermerk">Mitte Juni 1773; Jahr ergänzt</field>
     <field name="vermerk">vgl. Gräf II/2, S. 13</field>
-    <field name="bemerkung">Zuordnung zu ‚Faust‘ unsicher; Bezug auf Faust auf Grund von Nr. 875, 1142 und 1696, vgl. auch Schmidt 1887., S. XIII, Fischer 1902, S. 65, Morris 1902_1, S. 34, 236.; Begründung der zeitlichen Einordnung</field>
+    <field name="bemerkung">Zuordnung zu ‚Faust‘ unsicher; Bezug auf Faust auf Grund von Nr. 875, 1142 und 1696, vgl. auch Schmidt 1887., S. XIII, Fischer 1902, S. 65, Morris 1902, Bd. 1, S. 34, 236.; Begründung der zeitlichen Einordnung</field>
     <field name="wa-druckort">WA IV 2, S. 91f.</field>
     <field name="druckort">WA IV 2, S. 91f.</field>
     <field name="texttranscript">faust://xml/testimony/wa_IV/wa_IV_2.xml#graef_0850</field>
@@ -455,7 +455,7 @@ Creizenach 1837, S. 386; </field>
     <field name="adressat">Karl Ludwig von Knebel</field>
     <field name="adressat-gsa-personennummer">44242</field>
     <field name="datum-von">13.01.1775</field>
-    <field name="vermerk">Vgl. Düntzer 1882, S. 26; Gräf II/2 S. 17 2 sowie S. 16, 21f.</field>
+    <field name="vermerk">Vgl. Düntzer 1882b, S. 26; Gräf II/2 S. 17 2 sowie S. 16, 21f.</field>
     <field name="bemerkung"> die Rücksendung wird bald darauf erfolgt sein, denn Friedrich Heinrich Jacobi bekommt bei seinen Besuchen Januar bis April das Geschriebene zu sehen</field>
     <field name="wa-druckort">WA IV 2, S. 226</field>
     <field name="druckort">WA IV 2, S. 226</field>
@@ -7401,7 +7401,7 @@ Creizenach 1837, S. 386; </field>
     <field name="adressat-gsa-personennummer">44570</field>
     <field name="datum-von">22.10.1804</field>
     <field name="vermerk">vgl. Gräf II/2,  S. 116 Anm. 2</field>
-    <field name="druckort">Loeper 1881, S. 420</field>
+    <field name="druckort">Loeper 1881a, S. 420</field>
     <field name="digitalisat-dateiname">Gjb_2_0420</field>
   </testimony>
   <testimony id="graef_1045">

@@ -123,6 +123,11 @@
         <f:reference>Brüning, Gerrit, Georg Dietz, Oliver Hahn und Katrin Henzel: Kombination von philologischen und materialanalytischen Verfahren bei der Datierung von Schreibvorgängen – eine Fallstudie: Ergebnisse der Röntgenfluoreszenzanalyse an Faust–Handschriften im Goethe- und Schiller-Archiv. In: Archäometrie und Denkmalpflege 2013. Jahrestagung an der Bauhaus-Universität Weimar, 25.–28. September 2013, hrsg. von Andreas Hauptmann, Oliver Mecking und Michael Prange, Bochum 2013 (= Metalla, Sonderheft 6), S. 221–225. </f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/bruening_hahn2017">
+        <f:citation>Brüning / Hahn 2017</f:citation>
+        <f:reference>Brüning, Gerrit und Oliver Hahn: Goethes Helena-Dichtung in ursprünglicher Gestalt. Zum methodischen Verhältnis von Materialanalyse und Textkritik, in: editio 31, 2017, S. 145--172.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/buchwald1942">
         <f:citation>Buchwald 1942</f:citation>
         <f:reference>Buchwald, Reinhard: Führer durch Goethes Faustdichtung. Erklärung des Werkes und Geschichte seiner Entstehung, Stuttgart 1942.</f:reference>
@@ -590,7 +595,7 @@
 
     <f:bib uri="faust://bibliography/loeper1881b">
         <f:citation>Loeper 1881b </f:citation>
-        <f:reference>Loeper, Gustav von: [Rez.] faust://bibliography/schroeer1881. In: Anzeiger fuer deutsches Alterthum und deutsche Literatur, Jg. 7, 4. September 1881, S. 452–456.</f:reference>
+        <f:reference>Loeper, Gustav von: [Rez.] <strong>faust://bibliography/schroeer1881_1</strong>. In: Anzeiger fuer deutsches Alterthum und deutsche Literatur, Jg. 7, 4. September 1881, S. 452–456. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1881">
@@ -699,12 +704,12 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1902_1">
-        <f:citation>Morris 1902_1</f:citation>
+        <f:citation>Morris 1902_1 <strong>[sollte "Morris 1902, Bd. 1" heißen]</strong></f:citation>
         <f:reference>Morris, Max: Goethe-Studien, Bd. 1, 2., veränderte Auflage, Berlin 1902.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1902_2">
-        <f:citation>Morris 1902_2</f:citation>
+        <f:citation>Morris 1902_2  <strong>[sollte "Morris 1902, Bd. 2" heißen]</strong></f:citation>
         <f:reference>Morris, Max: Goethe-Studien, Bd. 2, 2., veränderte Auflage, Berlin 1902.</f:reference>
     </f:bib>
 
