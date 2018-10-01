@@ -40,6 +40,13 @@ else :)
 			            </forward>
 			        </view>
 			    </dispatch>
+    else if ($exist:path = '/testimony') then
+        <dispatch>
+            <forward url="{concat($exist:controller, '/testimony.xql')}">
+                    	<set-attribute name="xquery.report-errors" value="yes"/>
+			        	<set-attribute name="xmlpath" value="{$xmlpath}"/>
+			</forward>
+		</dispatch>
 	else if ($exist:path = ('', '/', '/search')) then
 		let $query := request:get-parameter('q', ''),
 			$rooturl := 'http://' || request:get-header('X-Forwarded-Host'),

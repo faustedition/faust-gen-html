@@ -73,7 +73,7 @@
 				
 				<p:identity name="single-testimony-tei"/>
 				
-				<p:store indent="true">
+				<p:store indent="false">
 					<p:with-option name="href" select="p:base-uri()"/>
 				</p:store>
 				
@@ -122,7 +122,7 @@
 					<p:input port="parameters"><p:empty/></p:input>
 				</p:xslt>
 							
-				<p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
+				<p:store encoding="utf-8" method="xml" include-content-type="false" indent="false">
 					<p:with-option name="href" select="p:resolve-uri(replace($base-uri, '.*/([^/.]*)\.xml$', '$1.xml'), concat($builddir, '/search/testimony/'))"/>
 				</p:store>
 				
