@@ -50,6 +50,8 @@
 					<!-- Quell-Transkripte: -->
 					<!--<transcript path="transcript/test/test.xml"/>-->
 					<transcript path="print/A8_IIIB18.xml" output="A8.xml"/>
+					<transcript path="transcript/dla_marbach/Cotta_Ms_Goethe_AlH_C-1-12_Faust_I/Cotta_Ms_Goethe_AlH_C-1-12_Faust_I.xml" output="1h1.xml"/>
+					<transcript path="print/C(1)12_IIIB23-1.xml" output="c112.xml"/>
 					<transcript path="transcript/gsa/391098/391098.xml" output="2_H.xml"/>
 					<transcript
 						path="transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml"
