@@ -325,6 +325,14 @@
     </app>
 
     <app>
+        <f:replace n="6983">den</f:replace>
+        <f:ins n="6983">Den</f:ins>
+        <ref>6983</ref>
+        <lem>Den</lem>
+        <rdg wit="2_H" type="type_7">Nun auf! ⟨Nun auf! <note>tilgt G</note>⟩ den <note><wit>2_H</wit></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="7729">ungewissen</f:replace>
         <f:ins n="7729">ungewissem</f:ins>
         <ref>7729</ref>
