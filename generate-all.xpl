@@ -214,7 +214,7 @@
 			<p:input port="stylesheet"><p:document href="xslt/add-metadata.xsl"/></p:input>
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 			<p:with-param name="type" select="'lesetext'"/>
-			<p:with-param name="sigil_t" select="'faust"/>
+			<p:with-param name="sigil_t" select="'faust'"/>
 		</p:xslt>
 		<p:xslt>
 			<p:input port="stylesheet"><p:document href="xslt/text-applist.xsl"/></p:input>
