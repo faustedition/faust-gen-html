@@ -511,7 +511,7 @@
             </subst>
             <note><seg type="hand">G</seg>
                 <wit wit="2_IV_H.20">2_IV_H.20</wit></note></rdg>
-        <rdg wit="2_H" type="type_2d">von Festen <note>(mglw G aus <quote>von Fasten</quote>) <wit
+        <rdg wit="2_H" type="type_2d*">von Festen <note>(mglw G aus <quote>von Fasten</quote>) <wit
                     wit="2_H">2_H</wit></note></rdg>
     </app>
 
