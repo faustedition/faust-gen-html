@@ -81,6 +81,8 @@
 	<xsl:param name="faustURI" select="concat('faust://xml/', $documentURI)"/>
 	
 	<xsl:param name="number"/>
+	
+	<xsl:param name="sigil_t" select="f:sigil-for-uri($metadata//f:idno[@type='faustedition'])"/>
 
 	<xsl:param name="depth">2</xsl:param>
 	<xsl:variable name="depth_n" select="number($depth)"/>
@@ -145,8 +147,7 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
-			
-			<xsl:variable name="sigil_t" select="f:sigil-for-uri($sigil)"/>
+						
 			
 			<idno type="faustedition" xml:id="sigil"><xsl:value-of select="$sigil"/></idno>
 			<xsl:if test="$type != 'lesetext'">
@@ -180,8 +181,9 @@
 				<xsl:attribute name="f:split">true</xsl:attribute>
 			</xsl:if>
 			<xsl:if test="$number"><xsl:attribute name="f:number" select="if ($sigil_t = 'faust') then 0 else $number"/></xsl:if>
-			<xsl:attribute name="f:index" select="f:get-order-info($sigil_t)"/>
+			<xsl:attribute name="f:index" select="f:get-order-info($sigil_t)/@index"/>
 			<xsl:apply-templates select="@* except (@type, @n)"/>
+			<xsl:comment><xsl:value-of select="$sigil_t"/></xsl:comment>
 			<xsl:apply-templates select="node()"/>
 		</xsl:copy>
 	</xsl:template>

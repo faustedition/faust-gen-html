@@ -83,6 +83,7 @@
 			<p:with-param name="type" select="$type"/>
 			<p:with-param name="transcriptURI" select="$transcriptURI"/>
 			<p:with-param name="number" select="$number"/>
+			<p:with-param name="sigil_t" select="$sigil_t"/>
 			<p:input port="parameters">
 				<p:pipe port="result" step="config"/>            
 			</p:input>
