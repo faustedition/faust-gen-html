@@ -179,7 +179,7 @@
 			<xsl:if test="$splittable">
 				<xsl:attribute name="f:split">true</xsl:attribute>
 			</xsl:if>
-			<xsl:if test="$number"><xsl:attribute name="f:number" select="$number"/></xsl:if>
+			<xsl:if test="$number"><xsl:attribute name="f:number" select="if ($sigil_t = 'faust') then 0 else $number"/></xsl:if>
 			<xsl:attribute name="f:index" select="f:get-order-info($sigil_t)"/>
 			<xsl:apply-templates select="@* except (@type, @n)"/>
 			<xsl:apply-templates select="node()"/>
