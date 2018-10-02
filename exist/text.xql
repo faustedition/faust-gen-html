@@ -8,6 +8,12 @@ declare variable $edition := '';
 
 declare variable $data := collection('/db/apps/faust-dev/data/textTranscript'); (: collection(request:get-attribute('xmlpath')); :)
 declare variable $sigil-labels := doc('xslt/sigil-labels.xml');
+declare variable $lucene-options := <options>
+                                        <default-operator>and</default-operator>
+                                        <phrase-slop>1</phrase-slop>
+                                        <leading-wildcard>no</leading-wildcard>
+                                        <filter-rewrite>yes</filter-rewrite>
+                                    </options>;
 
 declare function local:make-url($sigil_t as item()?) as xs:string {
   if ($sigil_t = 'faust') then '/print/faust' else '/document?sigil=' || data($sigil_t)
@@ -24,8 +30,8 @@ declare function local:make-url($sigil_t as xs:string?, $section as xs:string?, 
 
 
 declare function local:query-lucene($query as item()?, $highlight as xs:string?, $index as xs:string?, $sp as item()?, $order as xs:string?) as map() {
-  let $allhits := if ($sp) then $data//(tei:l|tei:p)[ft:query-field($index, $query)] 
-          else $data//(tei:l|tei:p|tei:head|tei:speaker|tei:note|tei:stage|tei:trailer|tei:label|tei:item)[ft:query-field($index, $query)],
+  let $allhits := if ($sp) then $data//(tei:l|tei:p)[ft:query-field($index, $query, $lucene-options)] 
+          else $data//(tei:l|tei:p|tei:head|tei:speaker|tei:note|tei:stage|tei:trailer|tei:label|tei:item)[ft:query-field($index, $query, $lucene-options)],
       $hitcount := count($allhits)
   return map { 'hits': $hitcount, 'results':
   for $line in $allhits
