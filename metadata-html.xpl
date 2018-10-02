@@ -41,6 +41,7 @@
       <p:variable name="filename" select="p:resolve-uri(/c:file/@name)"/>
       <p:variable name="basename" select="replace(replace(doc($filename)//f:idno[@type='faustedition'], 'α', 'alpha'), '[^A-Za-z0-9.-]', '_')"/>
       <p:variable name="outfile" select="concat($metahtml, $basename, '.html')"/>
+      <p:variable name="searchfile" select="p:resolve-uri(concat('search/meta/', $basename, '.html'), $builddir)"/>
       
       
       <p:load>
@@ -60,7 +61,11 @@
       <p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
         <p:with-option name="href" select="$outfile"/>
       </p:store>
-            
+      
+      <p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="false">
+        <p:with-option name="href" select="$searchfile"/>
+        <p:input port="source"><p:pipe port="result" step="generate-html"/></p:input>
+      </p:store>
       
       <p:xslt>
         <p:input port="source"><p:pipe port="result" step="generate-html"/></p:input>

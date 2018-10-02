@@ -279,9 +279,11 @@
 		</h3>
 		<p class="md-note wip">
 			<xsl:apply-templates select="headNote/following-sibling::note[1]/*"/>
-		</p>
+		</p>	
 		<dl>
 			<xsl:call-template name="verse-range"/>
+			<dt><a href="{$edition}/macrogenesis/{$sigil_t}">Makrogenese-Lab</a></dt>
+			<dd><a href="{$edition}/macrogenesis/{$sigil_t}">Datierungsinformationen</a></dd>
 			<xsl:apply-templates select="* 
 				except (idno[@type=('faustedition', 'wa_faust')][1] | headNote | headNote/following-sibling::*[1][self::note] | classification)"/>
 		</dl>

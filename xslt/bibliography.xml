@@ -123,6 +123,11 @@
         <f:reference>Brüning, Gerrit, Georg Dietz, Oliver Hahn und Katrin Henzel: Kombination von philologischen und materialanalytischen Verfahren bei der Datierung von Schreibvorgängen – eine Fallstudie: Ergebnisse der Röntgenfluoreszenzanalyse an Faust–Handschriften im Goethe- und Schiller-Archiv. In: Archäometrie und Denkmalpflege 2013. Jahrestagung an der Bauhaus-Universität Weimar, 25.–28. September 2013, hrsg. von Andreas Hauptmann, Oliver Mecking und Michael Prange, Bochum 2013 (= Metalla, Sonderheft 6), S. 221–225. </f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/bruening_hahn2017">
+        <f:citation>Brüning / Hahn 2017</f:citation>
+        <f:reference>Brüning, Gerrit und Oliver Hahn: Goethes Helena-Dichtung in ursprünglicher Gestalt. Zum methodischen Verhältnis von Materialanalyse und Textkritik, in: editio 31, 2017, S. 145--172.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/buchwald1942">
         <f:citation>Buchwald 1942</f:citation>
         <f:reference>Buchwald, Reinhard: Führer durch Goethes Faustdichtung. Erklärung des Werkes und Geschichte seiner Entstehung, Stuttgart 1942.</f:reference>
@@ -225,7 +230,7 @@
 
     <f:bib uri="faust://bibliography/feaux_de_lacroix1924">
         <f:citation>Féaux de Lacroix 1924</f:citation>
-        <f:reference>Féaux de Lacroix, K.: Punkt oder Fragezeichen in Goethes ‚Faust‘ I, Vers 1685? In: Zeitschr. f. Deutschkunde 38 (1924), S. 181–183..</f:reference>
+        <f:reference>Féaux de Lacroix, K.: Punkt oder Fragezeichen in Goethes ‚Faust‘ I, Vers 1685? In: Zeitschr. f. Deutschkunde 38 (1924), S. 181–183.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/femmel">
@@ -475,12 +480,12 @@
 
     <f:bib uri="faust://bibliography/inventare_2_1">
         <f:citation>Inventare 2,1</f:citation>
-        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 1: Gedichte, hrsg. von der Stiftung Weimarer Klassik, Goethe- und Schiller-Archiv. Weimar 2000. </f:reference>
+        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 1: Gedichte, hrsg. von der Stiftung Weimarer Klassik, Goethe- und Schiller-Archiv. Redaktor: Gerhard Schmid. Weimar 2000. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/inventare_2_2">
         <f:citation>Inventare 2,2</f:citation>
-        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 2: Dramen, Romane und Erzählungen, hrsg. von der Klassik Stiftung Weimar, Goethe- und Schiller-Archiv. Weimar 2011. </f:reference>
+        <f:reference>Inventare des Goethe- und Schiller-Archivs, Band 2, Teil 2: Dramen, Romane und Erzählungen, hrsg. von der Klassik Stiftung Weimar, Goethe- und Schiller-Archiv. Redaktor: Jürgen Gruß. Weimar 2011. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/jap_47">
@@ -584,13 +589,13 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1879">
-        <f:citation>Loeper 1879 <strong>[muss zu Loeper 1879a geändert wwerden]</strong></f:citation>
+        <f:citation>Loeper 1879 <strong>[muss zu Loeper 1879a geändert werden]</strong></f:citation>
         <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G. von Loeper, 2. Bearbeitung, 2 Tle., Berlin 1879. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1881b">
         <f:citation>Loeper 1881b </f:citation>
-        <f:reference>Loeper, Gustav von: [Rez.] faust://bibliography/schroeer1881. In: Anzeiger fuer deutsches Alterthum und deutsche Literatur, Jg. 7, 4. September 1881, S. 452–456.</f:reference>
+        <f:reference>Loeper, Gustav von: [Rez.] <strong>faust://bibliography/schroeer1881_1</strong>. In: Anzeiger fuer deutsches Alterthum und deutsche Literatur, Jg. 7, 4. September 1881, S. 452–456. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1881">
@@ -699,12 +704,12 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1902_1">
-        <f:citation>Morris 1902_1</f:citation>
+        <f:citation>Morris 1902_1 <strong>[sollte "Morris 1902, Bd. 1" heißen]</strong></f:citation>
         <f:reference>Morris, Max: Goethe-Studien, Bd. 1, 2., veränderte Auflage, Berlin 1902.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1902_2">
-        <f:citation>Morris 1902_2</f:citation>
+        <f:citation>Morris 1902_2  <strong>[sollte "Morris 1902, Bd. 2" heißen]</strong></f:citation>
         <f:reference>Morris, Max: Goethe-Studien, Bd. 2, 2., veränderte Auflage, Berlin 1902.</f:reference>
     </f:bib>
 
@@ -765,7 +770,7 @@
 
     <f:bib uri="faust://bibliography/ofterdinger1886">
         <f:citation>Ofterdinger 1886</f:citation>
-        <f:reference>Ofterdinger, L. F.: Goethe-Reliquien. In: faust://bibliography/gjb_7, S. 274f. </f:reference>
+        <f:reference>Ofterdinger, L[udwig] F[elix]: Goethe-Reliquien. In: faust://bibliography/gjb_7, S. 274f.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/petsch1926">
@@ -1341,6 +1346,11 @@
     <f:bib uri="faust://bibliography/wa_IV_2">
         <f:citation>WA IV 2</f:citation>
         <f:reference>WA, Abt. IV, Bd. 2, Weimar 1887.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa_IV_3">
+        <f:citation>WA IV 3</f:citation>
+        <f:reference>WA, Abt. IV, Bd. 3, Weimar 1888.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_IV_4">
@@ -2146,6 +2156,56 @@
     <f:bib uri="faust://bibliography/biedermann1889-1896_10">
         <f:citation>Biedermann 1889–1896, Bd. 10</f:citation>
         <f:reference>Goethes Gespräche. Hrsg. von Woldemar Freiherr von Biedermann. Bd. 10. Leipzig, 1896.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1909-1911_1">
+        <f:citation>Biedermann 1909-1911, Bd. 1</f:citation>
+        <f:reference>Goethes Gespräche. Neu hrsg. von Flodoard Freiherr von Biedermann unter Mitwirkung von Max Morris. Bd. 1. Von der Kindheit bis zum Erfurter Kongreß. 1754 bis Oktober 1803, 2., durchges. und stark verm. Aufl., Leipzig 1909.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1909-1911_2">
+        <f:citation>Biedermann 1909-1911, Bd. 2</f:citation>
+        <f:reference>Goethes Gespräche. Neu hrsg. von Flodoard Freiherr von Biedermann unter Mitwirkung von Max Morris. Bd. 2. Vom Erfurter Kongreß bis zum letzten böhmischen Aufenthalt. 1808 November bis September 1823, 2., durchges. und stark verm. Aufl., Leipzig 1909.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1909-1911_3">
+        <f:citation>Biedermann 1909-1911, Bd. 3</f:citation>
+        <f:reference>Goethes Gespräche. Neu hrsg. von Flodoard Freiherr von Biedermann unter Mitwirkung von Max Morris. Bd. 3. Vom letzten böhmischen Aufenthalt bis zum Tode Karl Augusts. 1823 September bis Juni 1828, 2., durchges. und stark verm. Aufl., Leipzig 1910.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1909-1911_4">
+        <f:citation>Biedermann 1909-1911, Bd. 4</f:citation>
+        <f:reference>Goethes Gespräche. Neu hrsg. von Flodoard Freiherr von Biedermann unter Mitwirkung von Max Morris. Bd. 4. Vom Tode Karl Augusts bis zum Ende. 1828 Juni bis 22. März 1832, 2., durchges. und stark verm. Aufl., Leipzig 1910.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1909-1911_5">
+        <f:citation>Biedermann 1909-1911, Bd. 5</f:citation>
+        <f:reference>Goethes Gespräche. Neu hrsg. von Flodoard Freiherr von Biedermann unter Mitwirkung von Max Morris. Bd. 5. Erläuterungen, Ergänzungen, Nachträge, Nachweisungen, 2., durchges. und stark verm. Aufl., Leipzig 1911.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1965-1987_1">
+        <f:citation>Biedermann 1965-1987, Bd. 1</f:citation>
+        <f:reference>Goethes Gespräche. Eine Sammlung zeitgenössischer Berichte aus seinem Umgang. Auf Grund der Ausgabe und des Nachlasses von Flodoard Freiherrn von Biedermann erg. und hrsg. von Wolfgang Herwig. Bd. 1. 1749-1805, Zürich und München 1965.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1965-1987_2">
+        <f:citation>Biedermann 1965-1987, Bd. 2</f:citation>
+        <f:reference>Goethes Gespräche. Eine Sammlung zeitgenössischer Berichte aus seinem Umgang. Auf Grund der Ausgabe und des Nachlasses von Flodoard Freiherrn von Biedermann erg. und hrsg. von Wolfgang Herwig. Bd. 2. 1805-1817, Zürich und München 1965.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1965-1987_3">
+        <f:citation>Biedermann 1965-1987, Bd. 3</f:citation>
+        <f:reference>Goethes Gespräche. Eine Sammlung zeitgenössischer Berichte aus seinem Umgang. Auf Grund der Ausgabe und des Nachlasses von Flodoard Freiherrn von Biedermann erg. und hrsg. von Wolfgang Herwig. Bd. 3. Teil 1: 1817-1825; Teil 2: 1825-1832, Zürich und München 1971-1972.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1965-1987_4">
+        <f:citation>Biedermann 1965-1987, Bd. 4</f:citation>
+        <f:reference>Goethes Gespräche. Eine Sammlung zeitgenössischer Berichte aus seinem Umgang. Auf Grund der Ausgabe und des Nachlasses von Flodoard Freiherrn von Biedermann erg. und hrsg. von Wolfgang Herwig. Bd. 4. Kommentar, Zürich und München 1984.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/biedermann1965-1987_5">
+        <f:citation>Biedermann 1965-1987, Bd. 5</f:citation>
+        <f:reference>Goethes Gespräche. Eine Sammlung zeitgenössischer Berichte aus seinem Umgang. Auf Grund der Ausgabe und des Nachlasses von Flodoard Freiherrn von Biedermann erg. und hrsg. von Wolfgang Herwig. Bd. 5. Nachklang, Nachträge, Register, Zürich und München 1987.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/bode1921-1923_3">

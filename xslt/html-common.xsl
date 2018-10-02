@@ -415,11 +415,8 @@ in <xsl:value-of select="document-uri(/)"/>
 					<xsl:value-of select="$display-line"/>
 				</a>
 			</xsl:when>
-			<xsl:when test="@n and $type='lesetext'">
-				<a id="l{@n}" href="#{$lineid}" class="lineno technical-lineno"><xsl:value-of select="@n"/></a>
-			</xsl:when>
 			<xsl:when test="@n">
-				<a id="l{@n}" href="#{$lineid}" class="lineno invisible">∞</a>
+				<a id="{$lineid}" href="#{$lineid}" class="lineno invisible">∞</a>
 			</xsl:when>
 			<xsl:when test="not(f:isInline(.))">
 				<a class="lineno invisible">&#160;</a>
@@ -502,10 +499,9 @@ in <xsl:value-of select="document-uri(/)"/>
 	</xsl:template>
 	
 	<!-- Pass through existing HTML from previous steps -->
-	<xsl:template match="xh:*">
-		<xsl:copy>
-			<xsl:copy-of select="@*"/>				
-			<xsl:apply-templates select="node() except namespace::*"/>
+	<xsl:template match="xh:*|xh:*/@*">
+		<xsl:copy copy-namespaces="no">
+			<xsl:apply-templates select="@*, node()"/>
 		</xsl:copy>
 	</xsl:template>	
 	

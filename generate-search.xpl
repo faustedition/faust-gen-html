@@ -31,7 +31,7 @@
 	</cx:message>
 		
 	<!-- Zunächst sortieren wir die Transkripteliste chronologisch -->
-	<p:xslt>
+	<p:xslt name="sort-transcripts">
 		<p:input port="stylesheet"><p:inline>
 			<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
 				<xsl:import href="xslt/utils.xsl"/>
@@ -40,7 +40,7 @@
 					<xsl:copy>
 						<xsl:copy-of select="@*"/>
 						<xsl:perform-sort select="*">
-							<xsl:sort select="f:get-wit-index(@sigil_t)"/>
+							<xsl:sort select="number(f:get-wit-index(@sigil_t))"/>
 						</xsl:perform-sort>
 					</xsl:copy>
 				</xsl:template>			
@@ -83,6 +83,7 @@
 			<p:with-param name="type" select="$type"/>
 			<p:with-param name="transcriptURI" select="$transcriptURI"/>
 			<p:with-param name="number" select="$number"/>
+			<p:with-param name="sigil_t" select="$sigil_t"/>
 			<p:input port="parameters">
 				<p:pipe port="result" step="config"/>            
 			</p:input>
@@ -188,7 +189,7 @@
 		<p:with-option name="href" select="resolve-uri('www/data/genetic_bar_graph.json', $builddir)"/>
 	</p:store>
 
-
+	
 	</p:group>
 	
 	<p:identity><p:input port="source"><p:pipe port="result" step="source"></p:pipe></p:input></p:identity>

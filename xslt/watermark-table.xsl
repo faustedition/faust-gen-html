@@ -177,7 +177,7 @@
 			<xsl:sort select="f:splitSigil(@sigil)[1]"/>
 			<xsl:sort select="f:splitSigil(@sigil)[2]"/>
 			<xsl:sort select="f:splitSigil(@sigil)[3]"/>
-			<a href="/document?sigil={f:sigil-for-uri(@sigil)}&amp;view=structure"><xsl:value-of select="@sigil"/></a>
+			<a class="sigil" href="/document?sigil={f:sigil-for-uri(@sigil)}&amp;view=structure"><xsl:value-of select="@sigil"/></a>
 			<xsl:if test="position() != last()">, </xsl:if>
 		</xsl:for-each>							
 	</xsl:function>

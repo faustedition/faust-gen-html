@@ -15,8 +15,39 @@ declare variable $xmlpath := $exist:root || $exist:controller || '/data';
     <ignore>
         <cache-control cache="no"/>
     </ignore>
-else :) 
-	if ($exist:path = ('', '/', '/search')) then
+else :)
+  if ($exist:path = '/meta') then
+    <dispatch>
+        <forward url="{concat($exist:controller, '/meta.xql')}">			        	
+        	<set-attribute name="xquery.report-errors" value="yes"/>
+        	<set-attribute name="xmlpath" value="{$xmlpath}"/>
+        </forward>
+        <view>
+            <forward servlet="XSLTServlet">
+                <set-attribute name="xslt.stylesheet" value="{concat($exist:root, $exist:controller, '/xslt/search-light.xsl')}"/>
+            </forward>
+        </view>
+    </dispatch>
+  else if ($exist:path = '/text') then
+  			    <dispatch>
+			        <forward url="{concat($exist:controller, '/text.xql')}">			        	
+			        	<set-attribute name="xquery.report-errors" value="yes"/>
+			        	<set-attribute name="xmlpath" value="{$xmlpath}"/>
+			        </forward>
+			        <view>
+			            <forward servlet="XSLTServlet">
+			                <set-attribute name="xslt.stylesheet" value="{concat($exist:root, $exist:controller, '/xslt/search-light.xsl')}"/>
+			            </forward>
+			        </view>
+			    </dispatch>
+    else if ($exist:path = '/testimony') then
+        <dispatch>
+            <forward url="{concat($exist:controller, '/testimony.xql')}">
+                    	<set-attribute name="xquery.report-errors" value="yes"/>
+			        	<set-attribute name="xmlpath" value="{$xmlpath}"/>
+			</forward>
+		</dispatch>
+	else if ($exist:path = ('', '/', '/query')) then
 		let $query := request:get-parameter('q', ''),
 			$rooturl := 'http://' || request:get-header('X-Forwarded-Host'),
 			$idno := collection($xmlpath)//tei:idno[@type = 'sigil_n'][. = lower-case(replace($query, '[ .*]', ''))]
@@ -41,19 +72,6 @@ else :)
 			    </dispatch>
 		    else
 			    <dispatch>
-			        <forward url="{concat($exist:controller, '/fts4.xql')}">			        	
-			        	<set-attribute name="xquery.report-errors" value="yes"/>
-			        	<set-attribute name="xmlpath" value="{$xmlpath}"/>
-			        </forward>
-			        <view>
-			            <forward servlet="XSLTServlet">
-			                <set-attribute name="xslt.stylesheet" value="{concat($exist:root, $exist:controller, '/xslt/search-results.xsl')}"/>
-			            </forward>
-			        </view>
+			        <redirect url="{$rooturl || '/search?' || request:get-query-string()}"/>
 			    </dispatch>
-else if ($exist:path = ('/raw'))
-then
-	<dispatch>
-		<forward url="{concat($exist:controller, '/fts4.xql')}"/>
-	</dispatch>
-else <ignore/>
+    else <ignore/>

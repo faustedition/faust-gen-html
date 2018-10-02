@@ -28,7 +28,7 @@
 	
 	<xsl:function name="f:unfree-text" as="xs:boolean">
 		<xsl:param name="el"/>
-		<xsl:value-of select="false() (:matches(document-uri(root($el)), '/quz_.*(\.xml)?'):)"/>
+		<xsl:value-of select="$unfree-text and ($el/ancestor-or-self::div[@type='editorial'] or $el/descendant-or-self::div[@type='editorial'])"/>
 	</xsl:function>
 		
 	<xsl:template match="/">
@@ -89,16 +89,25 @@
 			<xsl:result-document href="{resolve-uri(concat($basename, '.xml'), $output)}" exclude-result-prefixes="xs xi svg math xd f">									
 					<TEI>
 						<xsl:for-each select="/TEI/teiHeader">
-							<teiHeader>	
-								<xsl:copy-of select="@*"/>
-								<xsl:comment>Preliminary TEI header</xsl:comment>
-								<xsl:copy-of select="* except revisionDesc"/>
+							<teiHeader>
+								<xsl:comment>Preliminary TEI header</xsl:comment>								
+								<fileDesc>
+									<titleStmt>
+										<title><xsl:value-of select="f:testimony-label($id)"/></title>
+									</titleStmt>
+									<publicationStmt>
+										<p>Teil der <ref target="http://faustedition.net/">Faustedition</ref></p>
+									</publicationStmt>
+									<sourceDesc>
+										<p><xsl:value-of select="f:cite($biburl, true())"/></p>										
+									</sourceDesc>
+								</fileDesc>
 								<xenoData>
 									<xsl:for-each select="$metadata">
 										<xsl:copy>
 											<xsl:copy-of select="@*"/>
 											<xsl:copy-of select="*"/>
-											<f:biburl><xsl:value-of select="$biburl"/></f:biburl>										
+											<biburl xmlns="http://www.faustedition.net/ns"><xsl:value-of select="$biburl"/></biburl>										
 										</xsl:copy>
 									</xsl:for-each>								
 								</xenoData>
@@ -110,7 +119,7 @@
 								<text>
 									<body>
 										<xsl:choose>
-											<xsl:when test="$unfree-text">												
+											<xsl:when test="f:unfree-text(.)">												
 												<desc type="editorial" subtype="info">
 													<xsl:text>Für die Veröffentlichung dieses Volltexts liegt noch keine Freigabe vor.</xsl:text>
 													<xsl:copy-of select="$milestone"/>

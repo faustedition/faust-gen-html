@@ -560,8 +560,18 @@
         </xsl:if>
     </xsl:template>
     
-    
-    
+    <!-- if a seg is found inside a f:ins seg, we remove the outer seg and copy its attributes to the inner one
+         This allows situations in which the replace string must be artificially longer to ensure unambiguity
+    -->
+    <xsl:template mode="pass3" match="seg[@type='lem'][seg]">
+        <xsl:apply-templates mode="#current"/>
+    </xsl:template>    
+    <xsl:template mode="pass3" match="seg[@type='lem']//seg">
+        <xsl:copy>
+            <xsl:apply-templates select="ancestor::seg[1]/@*"/>
+            <xsl:apply-templates/>
+        </xsl:copy>
+    </xsl:template>
     
     
     <!-- Pass through unchanged everything else. -->

@@ -48,8 +48,7 @@
 			<p:load name="load-testimony">
 				<p:with-option name="href" select="$filename"/>
 			</p:load>
-			
-			
+
 			
 			<p:xslt name="testimony-xml">
 				<p:with-option name="output-base-uri" select="p:base-uri()"/>
@@ -70,13 +69,13 @@
 				<p:iteration-source>
 					<p:pipe port="secondary" step="split-testimony"/>
 				</p:iteration-source>
+				<p:variable name="base-uri" select="p:base-uri()"/>
 				
 				<p:identity name="single-testimony-tei"/>
 				
-				<p:store indent="true">
+				<p:store indent="false">
 					<p:with-option name="href" select="p:base-uri()"/>
 				</p:store>
-								
 				
 				<p:xslt>
 					<p:input port="source"><p:pipe port="result" step="single-testimony-tei"/></p:input>
@@ -87,6 +86,44 @@
 				
 				<p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
 					<p:with-option name="href" select="p:resolve-uri(replace(p:base-uri(), '.*/([^/.]*)\.xml$', '$1.html'), $testihtml)"/>
+				</p:store>
+				
+				<!-- For search, we skip the context data -->
+				<p:xslt>					
+					<p:input port="source"><p:pipe port="result" step="single-testimony-tei"/></p:input>
+					<p:input port="stylesheet">
+						<p:inline>
+							<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
+								<xsl:import href="xslt/testimony-common.xsl"/>
+								<xsl:template match="f:field">
+									<xsl:variable name="spec" select="f:fieldspec(@name)"/>									
+									<xsl:choose>
+										<xsl:when test="$spec/@ignore='yes'"/>
+										<xsl:otherwise>
+											<xsl:copy copy-namespaces="no">
+												<xsl:attribute name="label" select="if ($spec/text()) then $spec/text() else $spec/@spreadsheet"/>
+												<xsl:apply-templates select="@* except @label, node()"/>
+											</xsl:copy>
+										</xsl:otherwise>
+									</xsl:choose>
+								</xsl:template>
+								<xsl:template match="/TEI/text">
+									<xsl:apply-templates select="group/text[@copyOf]"/>
+								</xsl:template>
+								
+								<xsl:template match="node()|@*">
+									<xsl:copy copy-namespaces="no">
+										<xsl:apply-templates select="@*, node()"/>
+									</xsl:copy>
+								</xsl:template>
+							</xsl:stylesheet>
+						</p:inline>
+					</p:input>
+					<p:input port="parameters"><p:empty/></p:input>
+				</p:xslt>
+							
+				<p:store encoding="utf-8" method="xml" include-content-type="false" indent="false">
+					<p:with-option name="href" select="p:resolve-uri(replace($base-uri, '.*/([^/.]*)\.xml$', '$1.xml'), concat($builddir, '/search/testimony/'))"/>
 				</p:store>
 				
 				<!-- Now, the file we've just converted is read again and we collect all the <milestone unit='testimony' xml:id='two_part_id' -->
