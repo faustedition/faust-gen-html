@@ -39,7 +39,7 @@
 	<!--stage n="before_903_a"	Faust und Wagner. -->
 	<!--stage n="before_949_b"	unter der Linde. -->
 	<!--stage n="before_949_c"	Tanz und Gesang. -->
-	<stage n="before_993_a"	type="sentence"><!-- Das Volk sammelt sich im Kreis umher. --></stage>
+	<stage n="before_993_a"	type="finite-verb"><!-- Das Volk sammelt sich im Kreis umher. --></stage>
 	<stage n="after_1010"	type="sentence"><!-- Er geht mit Wagnern weiter. --></stage>
 	<stage n="after_1177"	type="sentence"><!-- Sie gehen in das Stadt-Thor. --></stage>
 	<!--stage n="before_1178_b"	mit dem Pudel hereintretend. -->
@@ -113,7 +113,7 @@
 	<stage n="before_2419"	type="sentence"><!-- Er läuft zur Kätzinn und läßt sie durchsehen. --></stage>
 	<!--stage n="before_2422_b"	sich dem Feuer nähernd. -->
 	<stage n="before_2429_a"	type="sentence"><!-- Er nöthigt den Mephistopheles zu sitzen. --></stage>
-	<stage n="before_2429_c"	type="sentence"><!-- welcher diese Zeit über vor einem Spiegel gestanden, sich ihm bald genähert, bald sich von ihm entfernt hat. --></stage>
+	<stage n="before_2429_c"	type="long"><!-- welcher diese Zeit über vor einem Spiegel gestanden, sich ihm bald genähert, bald sich von ihm entfernt hat. --></stage>
 	<stage n="before_2448"	type="sentence"><!-- Faust sieht immerfort in den Spiegel. Mephistopheles, sich in dem Sessel dehnend und mit dem Wedel spielend, fährt fort zu sprechen.vor 2448immerfortimmmerfort Aimmerfort Simmerfort immerfort D1immerfort B  Ba --></stage>
 	<stage n="before_2450_b"	type="long"><!-- welche bisher allerley wunderliche Bewegungen durch einander gemacht haben, bringen dem Mephistopheles eine Krone mit großem Geschrey. --></stage>
 	<stage n="before_2453"	type="sentence"><!-- Sie gehn ungeschickt mit der Krone um und zerbrechen sie in zwey Stücke, mit welchen sie herumspringen.vor 2453herumspringen A  B  Baherum springen S --></stage>
@@ -174,7 +174,7 @@
 	<stage n="before_2895_a"	type="sentence"><!-- Es klopft. --></stage>
 	<!--stage n="before_2896_b"	durchs Vorhängel guckend.vor 2896durchs Adurchs H5durch’s Sdurch’s B  Ba -->
 	<stage n="before_2897_a"	type="finite-verb"><!-- Mephistopheles tritt auf. --></stage>
-	<stage n="before_2899"	type="sentence"><!-- Tritt ehrerbietig vor Margareten zurück. --></stage>
+	<stage n="before_2899"	type="finite-verb"><!-- Tritt ehrerbietig vor Margareten zurück. --></stage>
 	<!--stage n="before_2901_b"	leise zu ihr. -->
 	<!--stage n="before_2905_b"	laut. -->
 	<!--stage n="before_2959_b"	weinend. -->
@@ -301,10 +301,10 @@
 	<!--stage n="before_4634_b"	Einzeln, zu zweyen und vielen, abwechselnd und gesammt.before_4634_bgesammt Hgesammelt I H0a -->
 	<stage n="before_4666_a"	type="sentence"><!-- Ungeheures Getöse verkündet das Herannahen der Sonne. --></stage>
 	<!--stage n="before_4728_d"	Trompeten. -->
-	<stage n="before_4728_e"	type="sentence"><!-- Hofgesinde aller Art prächtig gekleidet tritt vor. --></stage>
-	<stage n="before_4728_f"	type="sentence"><!-- Der Kaiser gelangt auf den Thron, zu seiner Rechten der Astrolog. --></stage>
+	<stage n="before_4728_e"	type="finite-verb"><!-- Hofgesinde aller Art prächtig gekleidet tritt vor. --></stage>
+	<stage n="before_4728_f"	type="finite-verb"><!-- Der Kaiser gelangt auf den Thron, zu seiner Rechten der Astrolog. --></stage>
 	<!--stage n="before_4743_b"	am Throne knieend. -->
-	<stage n="after_4756"	type="sentence"><!-- Mephistopheles steigt hinauf und stellt sich zur Linken. --></stage>
+	<stage n="after_4756"	type="finite-verb"><!-- Mephistopheles steigt hinauf und stellt sich zur Linken. --></stage>
 	<!--stage n="after_4808"	Pause. -->
 	<!--stage n="before_4876_b"	nach einigem Nachdenken zu Mephistopheles. -->
 	<stage n="before_4955_b"	type="sentence"><!-- spricht, Mephistopheles bläst ein. --></stage>
@@ -360,7 +360,7 @@
 	<!--stage n="before_6216m_b"	aufgeschreckt. -->
 	<!--stage n="before_6265_b"	schaudernd. -->
 	<!--stage n="before_6281_b"	begeistert. -->
-	<stage n="after_6293i"	type="sentence"><!-- Faust macht eine entschieden gebietende Attitüde mit dem Schlüssel. --></stage>
+	<stage n="after_6293i"	type="finite-verb"><!-- Faust macht eine entschieden gebietende Attitüde mit dem Schlüssel. --></stage>
 	<!--stage n="before_6293f_b"	ihn betrachtend. -->
 	<stage n="after_6304"	type="finite-verb"><!-- Faust stampft und versinkt. --></stage>
 	<!--stage n="before_6307_b"	Kaiser und Fürsten, Hof in Bewegung. -->
@@ -373,7 +373,7 @@
 	<!--stage n="after_6390"	Posaunen. -->
 	<!--stage n="before_6399_b"	aus dem Soufleurloche auftauchend. -->
 	<!--stage n="before_6401"	zum Astrologen. -->
-	<stage n="before_6421_a"	type="sentence"><!-- Faust steigt auf der andern Seite des Prosceniums herauf. --></stage>
+	<stage n="before_6421_a"	type="finite-verb"><!-- Faust steigt auf der andern Seite des Prosceniums herauf. --></stage>
 	<!--stage n="before_6427_b"	großartig. -->
 	<!--stage n="before_6473_b"	entzückt. -->
 	<stage n="before_6479_a"	type="finite-verb"><!-- Helenatritt auf.vor 6479tritt auf Hhervortretend Ec H --></stage>
@@ -451,7 +451,7 @@
 	<!--stage n="before_7336_b"	aufsitzend. -->
 	<!--stage n="before_7471_b"	Inwendig träumend. -->
 	<!--stage n="before_7476_b"	erwachend. -->
-	<stage n="after_7488"	type="sentence"><!-- Chiron ist schon weit weg. --></stage>
+	<stage n="after_7488"	type="finite-verb"><!-- Chiron ist schon weit weg. --></stage>
 	<stage n="after_7494"	type="sentence"><!-- Sie steigen hinab. --></stage>
 	<!--stage n="before_7495_a before_7495_b"	Am obern Peneios wie zuvor. -->
 	<!--stage n="before_7503_a"	Erdbeben. -->
@@ -519,7 +519,7 @@
 	<stage n="before_8812_a"	type="sentence"><!-- Von hier an erwiedern die Choretiden, einzeln aus dem Chor heraustretend. --></stage>
 	<stage n="after_8881"	type="finite-verb"><!-- Sinkt dem Halbchor in die Arme.after_8881Arme.Arme). C1 4Arme.) C2α 4 C3 4 --></stage>
 	<stage n="before_8909_a"	type="sentence"><!-- Helena hat sich erholt und steht wieder in der Mitte. --></stage>
-	<stage n="before_8930_a"	type="sentence"><!-- Helena und Chor stehen erstaunt und erschreckt, in bedeutender, wohl vorbereiteter Gruppe. --></stage>
+	<stage n="before_8930_a"	type="long"><!-- Helena und Chor stehen erstaunt und erschreckt, in bedeutender, wohl vorbereiteter Gruppe. --></stage>
 	<stage n="before_8937"	type="sentence"><!-- klatscht in die Hände, darauf erscheinen an der Pforte vermummte Zwerggestalten, welche die ausgesprochenen Befehle alsobald mit Behendigkeit ausführen. --></stage>
 	<stage n="before_9063"	type="sentence"><!-- Trompeten in der Ferne; der Chor fährt zusammen. --></stage>
 	<!--stage n="after_9070"	Pause. -->
@@ -565,7 +565,7 @@
 	<stage n="after_10038_a"	type="sentence"><!-- Der Vorhang fällt. --></stage>
 	<stage n="after_10038_b"	type="sentence"><!-- Phorkyas im Proscenium richtet sich riesenhaft auf, tritt aber von den Cothurnen herunter, lehnt Maske und Schleier zurück und zeigt sich als Mephistopheles, um, in sofern es nöthig wäre, im Epilog das Stück zu commentiren. --></stage>
 	<stage n="before_10039_d"	type="finite-verb"><!-- tritt hervor. --></stage>
-	<stage n="before_10067_a"	type="sentence"><!-- Ein Sieben-Meilenstiefeltappt auf ein Andererfolgt also bald. Mephistophelessteigt ab Die Stiefelschreiten eilig weiter.before_10067_aalso bald IV H3alsbald H --></stage>
+	<stage n="before_10067_a"	type="finite-verb"><!-- Ein Sieben-Meilenstiefeltappt auf ein Andererfolgt also bald. Mephistophelessteigt ab Die Stiefelschreiten eilig weiter.before_10067_aalso bald IV H3alsbald H --></stage>
 	<!--stage n="before_10075_b"	ernsthaft. -->
 	<!--stage n="before_10210_b"	ad Spectatores. -->
 	<!--stage n="before_10212_b"	leidenschaftlich fortfahrend. -->
@@ -584,7 +584,7 @@
 	<!--stage n="before_10423_b"	Faust, geharnischt mit halbgeschloßnem Helme, die drey Gewaltigen, gerüstet und gekleidet wie oben. -->
 	<stage n="before_10489_b"	type="finite-verb"><!-- kommen zurück. --></stage>
 	<!--stage n="before_10502"	zum Oberfeldherrn. -->
-	<!--stage n="after_10510"	er deutet zur Rechten. -->
+	<stage n="after_10510" type="sentence"><!--	er deutet zur Rechten. --></stage>
 	<stage n="before_10511_b"	type="finite-verb"><!-- tritt vor. --></stage>
 	<!--stage n="after_10518"	ab. -->
 	<!--stage n="before_10523_b"	auf den Mittelsten deutend. -->
@@ -647,7 +647,7 @@
 	<stage n="after_11218"	type="sentence"><!-- die Ladung wird weggeschafft. --></stage>
 	<!--stage n="before_11219_b"	zu Faust. -->
 	<stage n="before_11282_a"	type="sentence"><!-- er pfeift gellend. --></stage>
-	<stage n="before_11282_b"	type="finite-verb"><!-- Die Drey treten auf. --></stage>
+	<stage n="before_11282_b"	type="sentence"><!-- Die Drey treten auf. --></stage>
 	<!--stage n="before_11286_b"	ad Spectatores. -->
 	<!--stage n="before_11288_c"	auf der Schloßwarte, singend. -->
 	<!--stage n="after_11303"	Pause. -->
@@ -656,8 +656,8 @@
 	<!--stage n="before_11350_b"	unten. -->
 	<!--stage n="after_11377"	ab. -->
 	<!--stage n="before_11378_b"	auf dem Balkon. -->
-	<stage n="before_11384i_b"	type="finite-verb"><!-- Vier graue Weiber treten auf. --></stage>
-	<stage n="after_11391"	type="finite-verb"><!-- Sorge verschwindet. --></stage>
+	<stage n="before_11384i_b"	type="sentence"><!-- Vier graue Weiber treten auf. --></stage>
+	<stage n="after_11391"	type="sentence"><!-- Sorge verschwindet. --></stage>
 	<!--stage n="before_11398_b"	im Pallast. -->
 	<!--stage n="before_11420i"	erschüttert. -->
 	<!--stage n="before_11423_b"	Erst ergrimmt, dann besänftigt für sich. -->
