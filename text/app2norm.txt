@@ -53,6 +53,7 @@ after_6062[]{} <i>nach 6062</i>] <i>Lücke für zwei Verse 2_H [type=7]</i>
 before_6097[Mephistofeles]{Mephistopheles} <i>vor 6097</i> Mephistopheles <i>none</i>] Mephistofeles <i>2_H [type=1a]</i>
 6126[Undas]{Und das} <i>6126</i> Und das <i>none</i>] Undas <i>2_H [type=1a]</i>
 6139[obern-]{obern} <i>6139</i> obern] Obern <i>2_H :</i> obern- <i>(Bindestrich Fehlkorrektur) G [type=1a]</i>
+6147[Flasche]{Flasche.} <i>6147</i> Flasche.] Flasche^ <i>2_H [type=1b]</i>
 before_6150_b[gleichfals]{=} <i>vor 6150</i> <stage>gleichfals</stage> <i>2_H</i>] <stage>(gleichfals</stage> <i>ohne schließende Klammer 2_H [type=8]</i>
 6209[nicht]{nichts} <i>6209</i> nichts <i>2_I_H.48</i>] nicht <i>2_I_H.47 2_H [type=2b]</i>
 6223[Nich]{Nicht} <i>6223</i> Nicht <i>none</i>] Nicht <i>2_I_H.47</i> Nich <i>2_H [type=1a]</i>
