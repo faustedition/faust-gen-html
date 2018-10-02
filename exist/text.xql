@@ -53,7 +53,9 @@ declare function local:query-lucene($query as item()?, $highlight as xs:string?,
               $content := if ($highlight = 'true') then util:expand($match) else $match
             return 
             <div class="subhit" data-href="{local:make-url($sigil_t, $section, $page, $n)}">              
+              <div class="subhit-content">
               {$content}              
+              </div>
               <f:breadcrumbs>{$breadcrumbs}</f:breadcrumbs>
             </div>
           }        
@@ -67,7 +69,7 @@ declare function local:byverse($results as element()*) as element()* {
   order by $schroer
   return <section class="hit">
     <h3>{root($subhit)//h2/a} {$subhit//f:breadcrumbs}</h3>
-    {$subhit/tei:*}
+    {$subhit/div/tei:*}
     </section>
 };
 

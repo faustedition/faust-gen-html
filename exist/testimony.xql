@@ -25,10 +25,10 @@ let $root := root($match),
     $nr := number($root//f:field[@name='lfd-nr-neu-2']),
     $hit := if ($match[self::f:field]) 
                 then <dl><dt>{data($match/@label)}</dt><dd>{data($match)}</dd></dl>
-                else kwic:summarize($match, <config xmlns="" width="40"/>)
+                else kwic:summarize($match, <config xmlns="" width="75"/>)
 order by $nr
 group by $id
-return <section class="hit">
+return <section class="hit metadata-container">
             <h3><a href="/testimony/{$id[1]}">{data($title[1])}</a></h3>
             {$hit}
         </section>

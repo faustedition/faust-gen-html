@@ -58,8 +58,10 @@
         <ngram qname="tei:item"/>
         
         <range>
+            <create qname="tei:idno"/>
             <create qname="@n" type="xs:string"/>
-            <create qname="@f:section" type="xs:int"/>
+            <create qname="@f:section" type="xs:integer"/>
+            <create qname="@f:docTranscriptNo" type="xs:integer"/>
             <create qname="@f:label" type="xs:string"/>
             <create qname="tei:idno" type="xs:string"/>            
         </range>
