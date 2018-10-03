@@ -133,6 +133,16 @@
 				<p:pipe port="result" step="config"/>            
 			</p:input>
 		</p:xslt>
+		
+		<!-- Notes aus dem Lesetext für die Suche wieder rauswerfen -->
+		<p:choose>
+			<p:when test="$sigil_t = 'faust'">
+				<p:delete match="tei:note[@type='textcrit']"/>
+			</p:when>
+			<p:otherwise>
+				<p:identity/>
+			</p:otherwise>
+		</p:choose>
 
 
 		<!-- zweite Kopie: Normalisierte Zeichen für die Suche -->
