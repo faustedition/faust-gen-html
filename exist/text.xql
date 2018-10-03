@@ -30,8 +30,8 @@ declare function local:make-url($sigil_t as xs:string?, $section as xs:string?, 
 
 
 declare function local:query-lucene($query as item()?, $highlight as xs:string?, $index as xs:string?, $sp as item()?, $order as xs:string?) as map() {
-  let $allhits := if ($sp) then $data//(tei:l|tei:p)[ft:query-field($index, $query, $lucene-options)] 
-          else $data//(tei:l|tei:p|tei:head|tei:speaker|tei:note|tei:stage|tei:trailer|tei:label|tei:item)[ft:query-field($index, $query, $lucene-options)],
+  let $allhits := if ($sp = 'true') then $data//(tei:l|tei:p)[ft:query-field($index, $query)] 
+          else $data//*[ft:query-field($index, $query)],
       $hitcount := count($allhits)
   return map { 'hits': $hitcount, 'results':
   for $line in $allhits
@@ -89,7 +89,7 @@ let $query := request:get-parameter('q', ()),
     $docs := count($results),
     $hits := $result('hits'), (:sum($results/@data-subhits):)
     $raw := <article class="results" data-hits="{$hits}" data-docs="{$docs}">
-          <h2>{$hits} Treffer in {$docs} Dokumenten</h2>
+          <h2>{$hits} Treffer in {$docs} Dokumenten{if ($sp = 'true') then <span class="extrainfo"> (nur Haupttext)</span> else ()}</h2>
           {if ($order = 'verse') then local:byverse($results) else $results}
           </article>
     return $raw
