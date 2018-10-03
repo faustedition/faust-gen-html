@@ -41,13 +41,13 @@ declare function local:query-lucene($query as item()?, $highlight as xs:string?,
       $headnote := id('headNote', $line[1]),      
       (:$total-score := avg(for $l in $line return ft:score($l)),:)
       $sortcrit := switch ($order) 
-                    case 'sigil' return number(root($sigil_t)/*/@number)
-                    case 'genesis' return number(root($sigil_t)/*/@index)
-                    default return avg(for $l in $line return ft:score($l))
+                    case 'sigil' return number(root($sigil_t)/*/@f:number)
+                    case 'genesis' return number(root($sigil_t)/*/@f:index)
+                    default return sum(for $l in $line return ft:score($l))
       order by $sortcrit
       return (:data-score="{$total-score}":)
         <section class="doc" data-subhits="{count($line)}"> 
-          <h2><a href="{local:make-url($sigil_t)}">{data($sigil)}</a></h2>
+          <h2><a href="{local:make-url($sigil_t)}">{data($sigil)}</a><span class="score"> {$sortcrit}</span></h2>
           {
             for $match in $line
             let 
