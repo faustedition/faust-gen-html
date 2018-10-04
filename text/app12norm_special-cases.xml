@@ -195,6 +195,21 @@
             <note>konj. <ref target="faust://bibliography/resenhoefft1975"
             >Resenhöfft</ref></note></rdg>
     </app>
+    
+    <app>
+        <f:replace n="before_4144">Brocktophantasmist</f:replace>
+        <f:ins n="before_4144">Proktophantasmist</f:ins>
+        <ref>vor 4144</ref>
+        <lem wit="1_H.2"><speaker>Proktophantasmist</speaker> <note><wit>1_H.2</wit></note></lem>
+        <rdg wit="1_H.14 A"><speaker>Brocktophantasmist</speaker> <note><wit>1_H.14</wit> <wit>A</wit></note></rdg>
+        <rdg wit="B B.a"><speaker>Procktophantasmist</speaker> <note><wit>B</wit> <wit>B.a</wit></note></rdg>
+        <rdg wit="1_H.1"><subst>
+            <del><speaker>Procktophantasmist</speaker></del>
+            <add><speaker>Proktophantasmist</speaker></add>
+        </subst> <note><seg type="hand">Gö</seg> <wit>1_H.1</wit></note></rdg>
+        <rdg wit="C.1_12 C.3_12" type="type_2c"><speaker>Proktophantasmist</speaker> <note><wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
+    </app>
+    
     <app>
         <f:ins n="before_4343" place="only-app"/>
         <ref>nach 4334</ref>

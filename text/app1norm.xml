@@ -2852,18 +2852,7 @@
     <lem wit="A B B.a">— — — <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></lem>
     <rdg wit="1_H.14" type="type_7">das große Loch <note><wit>1_H.14</wit></note></rdg>
   </app>
-  <!--       before_4144[Brocktophantasmist]{Proktophantasmist} <i>vor 4144</i> <speaker>Proktophantasmist</speaker> <i>1_H.2</i>]   <speaker>Brocktophantasmist</speaker> <i>1_H.14 A</i> <speaker>Procktophantasmist</speaker> <i>B B.a</i> <speaker>Procktophantasmist</speaker> <i>:</i> <speaker>Proktophantasmist</speaker> <i>Gö 1_H.1</i> <speaker>Proktophantasmist</speaker> <i>C.1_12 C.3_12  [type=2c]</i>-->
-  <app>
-    <f:replace n="before_4144">Brocktophantasmist</f:replace>
-    <f:ins n="before_4144">Proktophantasmist</f:ins>
-    <ref>vor 4144</ref>
-    <lem wit="1_H.2"><speaker>Proktophantasmist</speaker> <note><wit>1_H.2</wit></note></lem>
-    <rdg wit="1_H.14 A"><speaker>Brocktophantasmist</speaker> <note><wit>1_H.14</wit> <wit>A</wit></note></rdg>
-    <rdg wit="B B.a"><speaker>Procktophantasmist</speaker> <note><wit>B</wit> <wit>B.a</wit></note></rdg>
-    <rdg><speaker>Procktophantasmist</speaker> <note>:</note></rdg>
-    <rdg wit="1_H.1"><speaker>Proktophantasmist</speaker> <note>Gö <wit>1_H.1</wit></note></rdg>
-    <rdg wit="C.1_12 C.3_12" type="type_2c"><speaker>Proktophantasmist</speaker> <note><wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
-  </app>
+
   <!--       4150[andre]{=} <i>4150</i> andre <i>1_H.14 A</i>]   Andre <i>B B.a [type=4a]</i>-->
   <app>
     <f:replace n="4150">andre</f:replace>
