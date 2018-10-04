@@ -16,7 +16,7 @@ declare variable $lucene-options := <options>
                                     </options>;
 
 
-let $query := request:get-parameter('q', 'faksimile'),
+let $query := request:get-parameter('q', 'Hybridausgabe'),
     $all := $data//(p|ul|ol|dt|dd|h1|h2|h3|h4|h5|h6)[ft:query(., $query, $lucene-options)],
     $hitcount := count($all),
     $results := for $hit in $all
@@ -24,7 +24,7 @@ let $query := request:get-parameter('q', 'faksimile'),
                 group by $docid
                 let $doc := root($hit[1]),
                     $name := replace(document-uri($doc), '^.*/data/info/(.*)\.html$', '$1'),
-                    $title := $doc//*/@data-title[1],
+                    $title := data($doc//*/@data-title[1]),
                     $score := sum(for $match in $hit return ft:score($match))
                 order by $score descending
                 return  <section class="doc" data-hits="{count($hit)}" data-score="{$score}">
