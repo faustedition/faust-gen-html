@@ -73,7 +73,7 @@
 					<xsl:call-template name="find-broken-wits"/>
 					<xsl:call-template name="summarize-notes"/>
 					<xsl:call-template name="free-floating-apps"/>
-					<xsl:call-template name="app2xml"/>
+					<!--xsl:call-template name="app2xml"/-->
 				</xsl:variable>
 				<xsl:sequence select="$results"/>
 				<xsl:for-each select="$results//*[self::p|self::tr][contains(@class, 'failed')]">
