@@ -6,7 +6,8 @@ declare namespace tei = "http://www.tei-c.org/ns/1.0";
 declare namespace f   = "http://www.faustedition.net/ns";
 declare variable $edition := '';
 
-declare variable $data := collection('/db/apps/faust-dev/data/textTranscript'); (: collection(request:get-attribute('xmlpath')); :)
+declare variable $xmlpath := request:get-attribute('xmlpath');
+declare variable $data := collection((if ($xmlpath) then $xmlpath else '/db/apps/faust-dev/data') || '/textTranscript');
 declare variable $sigil-labels := doc('xslt/sigil-labels.xml');
 declare variable $lucene-options := <options>
                                         <default-operator>and</default-operator>
@@ -43,7 +44,7 @@ declare function local:query-lucene($query as item()?, $highlight as xs:string?,
       $sortcrit := switch ($order) 
                     case 'sigil' return number(root($sigil_t)/*/@f:number)
                     case 'genesis' return number(root($sigil_t)/*/@f:index)
-                    default return sum(for $l in $line return ft:score($l))
+                    default return -sum(for $l in $line return ft:score($l))
       order by $sortcrit
       return (:data-score="{$total-score}":)
         <section class="doc" data-subhits="{count($line)}"> 
@@ -79,7 +80,7 @@ declare function local:byverse($results as element()*) as element()* {
     </section>
 };
 
-let $query := request:get-parameter('q', ()),
+let $query := request:get-parameter('q', 'pudel'),
     $highlight := request:get-parameter('highlight', 'true'),
     $index := request:get-parameter('index', 'text-de'),
     $sp := request:get-parameter('sp', ()),

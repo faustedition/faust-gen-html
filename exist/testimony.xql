@@ -11,7 +11,9 @@ import module namespace kwic="http://exist-db.org/xquery/kwic";
 
 declare variable $edition := '';
 
-declare variable $data := collection('/db/apps/faust-dev/data/testimony'); (: collection(request:get-attribute('xmlpath')); :)
+declare variable $xmlpath := request:get-attribute('xmlpath');
+declare variable $data := collection((if ($xmlpath) then $xmlpath else '/db/apps/faust-dev/data') || '/testimony');
+
 
 let $query := request:get-parameter('q', 'hauptgeschäft'),
     $matches := $data//(tei:text|f:field)[ft:query(., $query)],
