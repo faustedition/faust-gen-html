@@ -100,7 +100,7 @@
 					</xsl:for-each-group>
 				</xsl:variable>
 			
-				<section class="center pure-g-r">
+				<section class="center pure-g-r" data-title="Bibliographie">
 					<article class="pure-u-1">
 						
 						<dl class="bibliography">
