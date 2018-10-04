@@ -579,15 +579,7 @@
     <lem wit="A">mancher <note><wit>A</wit></note></lem>
     <rdg wit="B B.a" type="type_4a">Mancher <note><wit>B</wit> <wit>B.a</wit></note></rdg>
   </app>
-  <!--       988[stillt;]{=} <i>988</i> stillt;] <i>none</i> <i>Das Semikolon fehlt in manchen Exemplaren von A. [type=7]</i>-->
-  <app>
-    <f:replace n="988">stillt;</f:replace>
-    <f:ins n="988">stillt;</f:ins>
-    <ref>988</ref>
-    <lem>stillt;</lem>
-    <rdg/>
-    <rdg type="type_7"> <note>Das Semikolon fehlt in manchen Exemplaren von A.</note></rdg>
-  </app>
+
   <!--       996[gemeynt]{=} <i>996</i> gemeynt <i>A</i>]   gemeint <i>B B.a [type=4a]</i>-->
   <app>
     <f:replace n="996">gemeynt</f:replace>

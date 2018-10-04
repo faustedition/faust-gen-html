@@ -37,6 +37,14 @@
     </app>
 
     <app>
+        <f:replace n="988">stillt;</f:replace>
+        <f:ins n="988">stillt;</f:ins>
+        <ref>988</ref>
+        <lem>stillt;</lem>
+        <rdg type="type_7"><note>Das Semikolon fehlt in manchen Exemplaren von <wit>A</wit>.</note></rdg>
+    </app>
+
+    <app>
         <f:replace n="2322">Wie?</f:replace>
         <f:ins n="2322">Wie?</f:ins>
         <ref>2322</ref>
