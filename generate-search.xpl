@@ -2,6 +2,7 @@
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
 	xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:f="http://www.faustedition.net/ns"
 	xmlns:pxf="http://exproc.org/proposed/steps/file"
+	xmlns:tei="http://www.tei-c.org/ns/1.0"
 	xmlns:j="http://www.ibm.com/xmlns/prod/2009/jsonx"
 	xmlns:l="http://xproc.org/library" version="1.0" name="main" type="f:generate-search">
 	<p:input port="source"/>	
