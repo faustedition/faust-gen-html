@@ -38,7 +38,7 @@ let $query := request:get-parameter('q', 'Hybridausgabe'),
                                                  else data($subhead/(h1|h2|h3|h4|h5|h6)[1])
                                 return 
                                     (if ($subtitle) then <h4><a href="/{$name}{$sublink}">{$subtitle}</a></h4> else (),
-                                    kwic:summarize($match, <config xmlns="" link="/{$name}{$sublink}"/>)) 
+                                    kwic:summarize($match, <config xmlns="" width="75" link="/{$name}{$sublink}"/>)) 
                             }
                         </section>
 return  <article class="results" data-hits="{$hitcount}">
