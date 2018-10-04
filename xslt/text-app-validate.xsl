@@ -256,6 +256,7 @@
 		
 	</xsl:template>
 	
+	<!--
 	<xsl:template name="app2xml">
 		<h3 id="app2xml">XML-Konvertierung</h3>
 		<xsl:variable name="parsed-log">
@@ -297,6 +298,7 @@
 			<xsl:sequence select="$parsed-log"/>
 		</div>
 	</xsl:template>
+	-->
 	
 	<xsl:template name="broken-app-links">
 		<xsl:variable name="details">
