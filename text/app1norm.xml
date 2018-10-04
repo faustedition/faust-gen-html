@@ -2105,14 +2105,7 @@
     <lem wit="1_H.5 S A">keinem <note><wit>1_H.5</wit> <wit>S</wit> <wit>A</wit></note></lem>
     <rdg wit="B B.a" type="type_4a">Keinem <note><wit>B</wit> <wit>B.a</wit></note></rdg>
   </app>
-  <!--       3095[Drum,]{=} <i>3095</i> Drum,] <i>Das Komma fehlt in manchen Exemplaren von B, so auch in 1_H.1. [type=7]</i>-->
-  <app>
-    <f:replace n="3095">Drum,</f:replace>
-    <f:ins n="3095">Drum,</f:ins>
-    <ref>3095</ref>
-    <lem>Drum,</lem>
-    <rdg wit="B" type="type_7"> <note>Das Komma fehlt in manchen Exemplaren von <wit>B</wit>, so auch in 1_H.1.</note></rdg>
-  </app>
+
   <!--       3116[eh’r]{=} <i>3116</i> eh’r <i>A B B.a</i>]  eh <i>1_H.5</i> eh’ <i>S  [type=7]</i>-->
   <app>
     <f:replace n="3116">eh’r</f:replace>

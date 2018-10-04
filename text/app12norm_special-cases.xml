@@ -108,6 +108,15 @@
                 <wit>C.3_12</wit>, ein Vers in <wit>1_H.14</wit> <wit>A</wit> <wit>B.a</wit>) ist
                 von einem Satzfehler auszugehen.</note></rdg>-->
     </app>
+
+    <app>
+        <f:replace n="3095">Drum,</f:replace>
+        <f:ins n="3095">Drum,</f:ins>
+        <ref>3095</ref>
+        <lem>Drum,</lem>
+        <rdg wit="B" type="type_7"><note>Das Komma fehlt in manchen Exemplaren von <wit>B</wit>, so auch in <wit>1_H.1</wit>.</note></rdg>
+    </app>
+    
     <app>
         <f:replace n="3356">Und ich, der Gottverhaßte, hatte nicht genug,</f:replace>
         <f:ins n="3356">Und ich, der Gottverhaßte,</f:ins>
