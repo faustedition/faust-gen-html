@@ -48,7 +48,7 @@ declare function local:query-lucene($query as item()?, $highlight as xs:string?,
       order by $sortcrit
       return (:data-score="{$total-score}":)
         <section class="doc" data-subhits="{count($line)}"> 
-          <h2><a href="{local:make-url($sigil_t)}">{data($sigil)}</a><span class="score"> {$sortcrit}</span></h2>
+          <h3><a href="{local:make-url($sigil_t)}">{data($sigil)}</a><span class="score"> {$sortcrit}</span></h3>
           {
             for $match in $line
             let 
