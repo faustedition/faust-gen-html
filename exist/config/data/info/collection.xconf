@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://exist-db.org/collection-config/1.0" xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:f="http://www.faustedition.net/ns" xmlns:tei="http://www.tei-c.org/ns/1.0">
+<index xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <fulltext default="none" attributes="false"/>
+    <lucene>
+        <analyzer class="org.apache.lucene.analysis.de.GermanAnalyzer">
+            <!--<param name="stopwords" type="org.apache.lucene.analysis.util.CharArraySet"/>-->
+        </analyzer>
+        
+        <text qname="xh:p"/>
+        <text qname="xh:table"/>
+        <text qname="xh:ol"/>
+        <text qname="xh:ul"/>
+        <text qname="xh:dd"/>
+        <text qname="xh:dt"/>
+        <text qname="xh:h1" boost="10"/>
+        <text qname="xh:h2" boost="7"/>
+        <text qname="xh:h3" boost="5"/>
+        <text qname="xh:h4" boost="4"/>
+        <text qname="xh:h5" boost="3"/>
+        <text qname="xh:h6" boost="2"/>
+    </lucene>
+    
+    <range>
+        <create qname="id" type="xs:ID"/>
+    </range> 
+</index>
+</collection>
