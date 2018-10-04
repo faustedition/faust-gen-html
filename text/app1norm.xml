@@ -184,17 +184,7 @@
     <rdg wit="S">Dann<pc>‸</pc> <gap reason="ellipsis"/> Bücher und Papier, <note><wit>S</wit></note></rdg>
     <rdg wit="B B.a" type="type_4a">Dann, <gap reason="ellipsis"/> Papier, <note><wit>B</wit> <wit>B.a</wit></note></rdg>
   </app>
-  <!--       402[mit]{von} <i>402</i> von <i>B B.a</i>]   von <i>1_H.5 </i> mit <i>S A</i> mit <i>:</i> von <i>G T_5_H.1 [type=4b]</i>-->
-  <app>
-    <f:replace n="402">mit</f:replace>
-    <f:ins n="402">von</f:ins>
-    <ref>402</ref>
-    <lem wit="B B.a">von <note><wit>B</wit> <wit>B.a</wit></note></lem>
-    <rdg wit="1_H.5">von <note><wit>1_H.5</wit></note></rdg>
-    <rdg wit="S A">mit <note><wit>S</wit> <wit>A</wit></note></rdg>
-    <rdg>mit <note>:</note></rdg>
-    <rdg wit="T_5_H.1" type="type_4b">von <note>G <wit>T_5_H.1</wit></note></rdg>
-  </app>
+
   <!--       418[ins]{=} <i>418</i> ins <i>A</i>]   in’s <i>1_H.5 S</i> in’s <i>B B.a [type=4a]</i>-->
   <app>
     <f:replace n="418">ins</f:replace>
