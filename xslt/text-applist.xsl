@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns="http://www.w3.org/1999/xhtml" xmlns:xh="http://www.w3.org/1999/xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://www.faustedition.net/ns"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-	exclude-result-prefixes="xs f xh"
+	exclude-result-prefixes="xs f"
 	version="2.0">
 	
 	<xsl:import href="print2html.xsl"/>
@@ -87,6 +87,7 @@
 	<xsl:template match="text()" mode="byscene"/>
 	
 	<xsl:template mode="byscene" match="div[descendant::note[@type='textcrit']][count(ancestor::div) lt 4]">
+		<xsl:text>&#10;&#10;&#10;&#10;&#10;&#10;</xsl:text>
 		<div>
 			<xsl:element name="h{count(ancestor::div)+2}">
 				<xsl:value-of select="@f:label"/>				
@@ -98,7 +99,13 @@
 	<xsl:template mode="byscene" match="note[@type='textcrit']">
 		<xsl:apply-templates select="." mode="#default"/>
 	</xsl:template>
-	
+
+	<xsl:template match="note[@type='textcrit']">
+		<xsl:text>&#10;&#10;&#10;</xsl:text>
+		<xsl:comment><xsl:value-of select="ref, @xml:id, app/lem" separator="   "/></xsl:comment>
+		<xsl:text>&#10;</xsl:text>
+		<xsl:next-match/>
+	</xsl:template>
 		
 	<xsl:template match="note[@type='textcrit']/ref">
 		<a href="faust.{f:get-section-number(.)}#{../@xml:id}">
