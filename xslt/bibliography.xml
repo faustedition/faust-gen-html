@@ -704,12 +704,12 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1902_1">
-        <f:citation>Morris 1902_1 <strong>[sollte "Morris 1902, Bd. 1" heißen]</strong></f:citation>
+        <f:citation>Morris 1902_1</f:citation>
         <f:reference>Morris, Max: Goethe-Studien, Bd. 1, 2., veränderte Auflage, Berlin 1902.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1902_2">
-        <f:citation>Morris 1902_2  <strong>[sollte "Morris 1902, Bd. 2" heißen]</strong></f:citation>
+        <f:citation>Morris 1902_2</f:citation>
         <f:reference>Morris, Max: Goethe-Studien, Bd. 2, 2., veränderte Auflage, Berlin 1902.</f:reference>
     </f:bib>
 
@@ -2224,8 +2224,8 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/boettiger1838">
-        <f:citation>Böttiger 1838 <strong>Böttiger1838_1??</strong></f:citation>
-        <f:reference>Literarische Zustände und Zeitgenossen. In Schilderungen aus Karl Aug. Böttiger's handschriftlichem Nachlasse. Hrsg. von Carl Wilhelm Böttiger, Leipzig: Brockhaus, 1838. <strong>NB Band 1 kennzeichnen!</strong></f:reference>
+        <f:citation>Böttiger 1838</f:citation>
+        <f:reference>Literarische Zustände und Zeitgenossen. In Schilderungen aus Karl Aug. Böttiger's handschriftlichem Nachlasse. Hrsg. von Carl Wilhelm Böttiger, Leipzig: Brockhaus, 1838.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/boettiger1998">
@@ -2248,9 +2248,9 @@
         <f:reference>Brandl, A[lois]: Goethes Verhältniß zu Byron. In:  GJb. 20 (1899), S. 3–36.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/braaeuning-oktavio1911">
+    <f:bib uri="faust://bibliography/braeuning-oktavio1911">
         <f:citation>Bräuning-Oktavio 1911</f:citation>
-        <f:reference>* Hermann Bräuning-Oktavio: Aus Briefen der Wertherzeit. In: Die Grenzboten 70 (1911), I, S. 411–417, 463–469, 557–563, 611–620.</f:reference>
+        <f:reference>Hermann Bräuning-Oktavio: Aus Briefen der Wertherzeit. In: Die Grenzboten 70 (1911), I, S. 411–417, 463–469, 557–563, 611–620.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/bratranek1866">
@@ -2520,11 +2520,11 @@
 
     <f:bib uri="faust://bibliography/graef1896">
         <f:citation>Gräf 1896</f:citation>
-        <f:reference>Goethe und Schiller in Briefen von Heinrich Voß dem Jüngeren. Briefauszüge, in Tagebuchform zeitlich geordnet und mit Erläuterungen hrsg. von Hans Gerhard Gräf. Leipzig o. J. [1896]. </f:reference>
+        <f:reference>Goethe und Schiller in Briefen von Heinrich Voß dem Jüngeren. Briefauszüge, in Tagebuchform zeitlich geordnet und mit Erläuterungen hrsg. von Hans Gerhard Gräf. Leipzig o. J. [1896].</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/granville">
-        <f:citation>Granville 1828 <strong>ändern zu: Granville 1828, Bd. 2</strong></f:citation>
+    <f:bib uri="faust://bibliography/granville1828_2">
+        <f:citation>Granville 1828, Bd. 2</f:citation>
         <f:reference>Granville, Augustus Bozzi: St. Petersburgh. A Journal of Travels to and from that Capital, through Flanders, Prussia, Russia, Poland, Silesia, Saxony, &amp;c. &amp;c. 2 Bde., London 1828.</f:reference>
     </f:bib>
 
