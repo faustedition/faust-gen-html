@@ -124,6 +124,7 @@
 				<ul>
 					<li><a href="/help" title="Hilfe"><i class="fa fa-help-circled fa-lg"></i></a></li>
 					<li><a href="#quotation" title="Zitieremfehlung"><i class="fa fa-bookmark fa-lg"></i></a></li>
+					<li><a href="#download" title="Download"><i class="fa fa-download fa-lg"></i></a></li>
 					<li><form class="pure-form" action="/query" method="GET"><input id="quick-search" name="q" type="text" onblur="this.value=''" /><button type="submit" class="pure-fade-30"><i class="fa fa-search fa-lg"></i></button></form></li>
 					<li><a href="#navigation" title="Seitennavgation"><i class="fa fa-menu fa-lg"></i> Menü</a></li>
 				</ul>
@@ -204,12 +205,41 @@
 						Historisch-kritische Faustedition.
 						Herausgegeben von Anne Bohnenkamp, Silke Henke und Fotis Jannidis.
 						Unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach.
-						Version 1. Frankfurt am Main / Weimar / Würzburg 2016,
-						<span>Startseite</span>,
-						<span>URL: <?php echo $_SERVER['HTTP_HOST']; ?></span>,
-						abgerufen am <?php echo date('d.m.Y'); ?>.
+						Version 1.0rc. Frankfurt am Main / Weimar / Würzburg 2018,
+						<span>{context}</span>,
+						<span>URL: <a href="{url}">{url}</a></span>,
+						abgerufen am {date}.
 					</p>
 					<p><i class="fa fa-paste pure-fade-50"></i> <a href="#" data-target=".quotation-content">kopieren</a></p>
+				</div>
+			</div>
+		</script>
+		
+		
+		<script type="text/template" id="download">
+			
+			<div class="center pure-g-r navigation">
+				<div class="pure-u-1">
+					<h3><i class="fa fa-code" aria-hidden="true"></i> XML-Quellen</h3>
+				</div>
+				<div id="xml-global" class="pure-u-1-3 pure-gap">
+					<a><big>Globale TEI-Daten</big></a>
+					<a href="https://github.com/faustedition/faust-xml"><i class="fa fa-github-circled"></i> alle XML-Daten</a>
+					<a href="/download/testimony-split.zip" disabled="disabled"><i class="fa fa-file-archive"></i> Entstehungszeugnisse</a>
+					<a href="/download/faust.xml" disabled="disabled"><i class="fa fa-file-code"></i> konstituierter Text</a>
+				</div>
+				
+				<div id="xml-current" class="pure-u-1-3 pure-gap disabled">
+					<a><big>aktueller Datensatz</big></a>
+					<a id="xml-current-doc-source-page" href="#"><i class="fa fa-file-code"></i> Dokumentarisches Transkript</a>
+					<a id="xml-current-text-source"     href="#"><i class="fa fa-file-code"></i> Textuelles Transkript</a>
+					<a id="xml-current-text-emended"    href="#"><i class="fa fa-file-code"></i> Emendierte Version</a>
+					<a id="xml-current-metadata"        href="#"><i class="fa fa-file-code"></i> Metadaten</a>
+				</div>
+				
+				<div id="more-downloads" class="pure-u-1-3 pure-gap"  >
+					<a>mehr …</a>
+					<a>weitere Downloadmöglichkeiten demnächst.</a>
 				</div>
 			</div>
 		</script>
