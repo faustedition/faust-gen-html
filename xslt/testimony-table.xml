@@ -795,14 +795,14 @@ Creizenach 1837, S. 386; </field>
     <field name="druckort">Wieland 1776, S. 12-16</field>
     <field name="fremdzeugnis-nr">15</field>
   </testimony>
-  <testimony id="pniower_28">
+  <testimony id="pniower_28b">
     <field name="status">NEU</field>
     <field name="lfd-nr-neu-2">33</field>
     <field name="lfd-nr-neuneu">33</field>
     <field name="lfd-nr-allerneuestens">34</field>
     <field name="lfd-nr-neuestens">35</field>
     <field name="lfd-nr-ganz-neu">25b</field>
-    <field name="pniower-nr">28</field>
+    <field name="pniower-nr">28b</field>
     <field name="verfasser">Friedrich Hildebrand von Einsiedel</field>
     <field name="verfasser-gsa-personennummer">46103</field>
     <field name="dokumenttyp">Text</field>
