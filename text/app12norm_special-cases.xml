@@ -118,6 +118,14 @@
     </app>
     
     <app>
+        <f:replace n="before_3187_a">ihre beyden</f:replace>
+        <f:ins n="before_3187_a">ihre beyden</f:ins>
+        <ref>nach 3186</ref>
+        <lem wit="A B B.a">ihre beyden <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></lem>
+        <rdg wit="1_H.5 S" type="type_7">ihr beyde <note><wit>1_H.5</wit> <wit>S</wit></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="3356">Und ich, der Gottverhaßte, hatte nicht genug,</f:replace>
         <f:ins n="3356">Und ich, der Gottverhaßte,</f:ins>
         <f:ins n="3356" place="attributes"><l n="3356"/></f:ins>

@@ -2172,14 +2172,7 @@
     <lem/>
     <rdg wit="1_H.5 S A B B.a" type="type_3*"> <note>In <wit>1_H.5</wit> <wit>S</wit> <wit>A</wit> <wit>B</wit> <wit>B.a</wit> handelt es sich um zwei Verse, <ref target="faust://bibliography/duentzer1882a">Düntzer</ref> und <ref target="faust://bibliography/wa_I_14">Erich Schmidt</ref> fassen sie zu einem antilabischen Vers zusammen.</note></rdg>
   </app>
-  <!--       before_3187_a[ihre beyden]{=} <i>vor 3187</i> ihre beyden <i>A B B.a</i>]   ihr beyde <i>1_H.5 S [type=7]</i>-->
-  <app>
-    <f:replace n="before_3187_a">ihre beyden</f:replace>
-    <f:ins n="before_3187_a">ihre beyden</f:ins>
-    <ref>vor 3187</ref>
-    <lem wit="A B B.a">ihre beyden <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></lem>
-    <rdg wit="1_H.5 S" type="type_7">ihr beyde <note><wit>1_H.5</wit> <wit>S</wit></note></rdg>
-  </app>
+
   <!--       before_3206f_b[Margarete]{=} <i>in 3206</i> <speaker>Margarete</speaker> <i>none</i>] <speaker>Margarethe^</speaker> <i>S </i> <speaker>Margarete.</speaker> <i>A D.1</i> <speaker>Margarete^</speaker> <i>B</i> <speaker>Margarethe^</speaker> <i>B.a [type=8]</i>-->
   <app>
     <f:replace n="before_3206f_b">Margarete</f:replace>
