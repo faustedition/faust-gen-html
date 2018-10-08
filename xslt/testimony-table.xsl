@@ -45,8 +45,8 @@
 	<xsl:variable name="columns" xmlns="http://www.faustedition.net/ns">
 		<fieldspec name="graef-nr" spreadsheet="Gräf-Nr." sortable-type="numericplus" title="Nr. in Gräf II 2"><a href="{$edition}/bibliography#graef1901-1914_II_2">Gräf</a></fieldspec>
 		<fieldspec name="pniower-nr" spreadsheet="Pniower-Nr." sortable-type="numericplus" title="Nr. in Pniower 1899"><a href="{$edition}/bibliography#pniower1899">Pniower</a></fieldspec>
-		<fieldspec name="quz" spreadsheet="QuZ" title="Nr. in Quellen und Zeugnisse">QuZ</fieldspec>
-		<fieldspec name="biedermann-herwignr" spreadsheet=" Biedermann-HerwigNr." title="Nr. bei Biedermann / Herwig">Biedermann³</fieldspec>
+		<fieldspec name="quz" spreadsheet="QuZ" title="Nr. in Quellen und Zeugnisse"><a href="{$edition}/bibliography#quz1">QuZ</a></fieldspec>
+		<fieldspec name="biedermann-herwignr" spreadsheet=" Biedermann-HerwigNr." title="Nr. bei Biedermann / Herwig"><a href="{$edition}/bibliography#biedermann1965-1987_1">Biedermann³</a></fieldspec>
 		<fieldspec name="datum-von" spreadsheet="Datum.(von)" sortable-type="date-de">Datum</fieldspec>
 		<fieldspec name="dokumenttyp" spreadsheet="Dokumenttyp">Beschreibung</fieldspec>		
 		<fieldspec name="excerpt" generated="true">Auszug</fieldspec>
@@ -199,7 +199,7 @@
 		<tr id="{$rowinfo/@id}">
 			<xsl:if test="$rowinfo/field[@name='zuordnung-zu-wanderjahren-trunz-aber-vgl-quz-ii-s-477f-anm-2'][normalize-space(lower-case(.)) = 'x']">
 				<xsl:attribute name="class">wanderjahre</xsl:attribute>
-				<xsl:attribute name="title">Zuordnung vermutlich zu „Wilhelm Meisters Wanderjahre“</xsl:attribute>
+				<xsl:attribute name="title">Zeugnis gehört wahrscheinlich zu ‚Wilhelm Meisters Wanderjahren‘</xsl:attribute>
 			</xsl:if>
 			<xsl:for-each select="$columns//fieldspec">
 				<xsl:variable name="fieldname" select="@name"/>
