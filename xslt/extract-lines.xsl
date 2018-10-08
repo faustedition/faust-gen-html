@@ -47,7 +47,7 @@
     </xsl:copy>
   </xsl:template>  
 
-  <xsl:template match='*[@n][not(preceding-sibling::*[@n = current()/@n and not(following-sibling::*[@n != current()/@n][. &lt;&lt; current()])])]'>
+  <xsl:template match='*[@n][not(self::milestone)][not(preceding-sibling::*[@n = current()/@n and not(following-sibling::*[@n != current()/@n][. &lt;&lt; current()])])]'>
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
       <!--<xsl:attribute name="f:doc" select="$documentURI"/>-->

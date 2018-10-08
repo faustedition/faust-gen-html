@@ -84,7 +84,7 @@ let $query := request:get-parameter('q', 'pudel'),
     $docs := count($results),
     $hits := $result('hits'), (:sum($results/@data-subhits):)
     $raw := <article class="results" data-hits="{$hits}" data-docs="{$docs}">
-          <h2>{$hits} Treffer in {$docs} Dokumenten{if ($sp = 'true') then <span class="extrainfo"> (nur Haupttext)</span> else ()}</h2>
+          <h2>{$hits} Treffer in {$docs} Texten{if ($sp = 'true') then <span class="extrainfo"> (nur Haupttext)</span> else ()}</h2>
           {if ($order = 'verse') then local:byverse($results) else $results}
           </article>
     return $raw
