@@ -32,6 +32,7 @@
 	</xsl:function>
 		
 	<xsl:template match="/">
+		<xsl:message select="concat('INFO: Splitting testimony source ', $basename, ' ...')"/>
 		<xsl:variable name="root-divs" select="//div[descendant::milestone[@unit='testimony'] and not(ancestor::div)]"/>
 		<xsl:if test="count($root-divs) = 0">
 			<xsl:message select="concat('WARNING: No testimony divs found in ', $basename)"/>		
