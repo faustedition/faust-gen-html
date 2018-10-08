@@ -56,6 +56,8 @@
         <ngram qname="tei:trailer"/>
         <ngram qname="tei:label"/>
         <ngram qname="tei:item"/>
+
+        <ngram qname="tei:idno"/>
         
         <range>
             <create qname="tei:idno"/>

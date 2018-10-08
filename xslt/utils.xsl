@@ -303,7 +303,7 @@
   <!-- Returns true() iff $element is one of those TEI elements for which a variant apparatus should be generated. -->
   <xsl:function name="f:hasvars" as="xs:boolean">
     <xsl:param name="element"/>
-    <xsl:value-of select='boolean($element[@n 
+    <xsl:value-of select='boolean($element[(@n or @f:nx) 
       and not(
       self::pb 
       or self::div 
@@ -312,6 +312,7 @@
       or @n[contains(.,"todo")] 
       )])'/>
   </xsl:function>
+    
 
   <xsl:function name="f:splitSigil" as="item()*">
     <xsl:param name="sigil"/>

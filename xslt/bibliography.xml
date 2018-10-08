@@ -704,12 +704,12 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1902_1">
-        <f:citation>Morris 1902_1 <strong>[sollte "Morris 1902, Bd. 1" heißen]</strong></f:citation>
+        <f:citation>Morris 1902_1</f:citation>
         <f:reference>Morris, Max: Goethe-Studien, Bd. 1, 2., veränderte Auflage, Berlin 1902.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1902_2">
-        <f:citation>Morris 1902_2  <strong>[sollte "Morris 1902, Bd. 2" heißen]</strong></f:citation>
+        <f:citation>Morris 1902_2</f:citation>
         <f:reference>Morris, Max: Goethe-Studien, Bd. 2, 2., veränderte Auflage, Berlin 1902.</f:reference>
     </f:bib>
 
@@ -796,6 +796,11 @@
     <f:bib uri="faust://bibliography/pniower1924">
         <f:citation>Pniower 1924</f:citation>
         <f:reference>Pniower, Otto: Das erste Paralipomenon. (Miszellen zum ‚Faust‘). In: faust://bibliography/gjb_44, S. 143–146.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/pravida2015">
+        <f:citation>Pravida 2015 </f:citation>
+        <f:reference>Pravida, Dietmar: Zum Urfaust. In: Jahrbuch des Freien Deutschen Hochstifts 2015, S. 7–79.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/resenhoefft1975">
@@ -1081,6 +1086,11 @@
     <f:bib uri="faust://bibliography/q_1_2">
         <f:citation>Q 1_2</f:citation>
         <f:reference>Goethe’s poetische und prosaische Werke in Zwei Bänden, Bd. 1, Abt. 2, Stuttgart und Tübingen 1837.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/wa">
+        <f:citation>Weimarer Ausgabe</f:citation>
+        <f:reference>Goethes Werke, hrsg. im Auftrage der Großherzogin Sophie von Sachsen, 4 Abteilungen, 133 Bde., Weimar 1887–1919.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/wa_I_1">
@@ -2224,8 +2234,8 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/boettiger1838">
-        <f:citation>Böttiger 1838 <strong>Böttiger1838_1??</strong></f:citation>
-        <f:reference>Literarische Zustände und Zeitgenossen. In Schilderungen aus Karl Aug. Böttiger's handschriftlichem Nachlasse. Hrsg. von Carl Wilhelm Böttiger, Leipzig: Brockhaus, 1838. <strong>NB Band 1 kennzeichnen!</strong></f:reference>
+        <f:citation>Böttiger 1838</f:citation>
+        <f:reference>Literarische Zustände und Zeitgenossen. In Schilderungen aus Karl Aug. Böttiger's handschriftlichem Nachlasse. Hrsg. von Carl Wilhelm Böttiger, Leipzig: Brockhaus, 1838.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/boettiger1998">
@@ -2248,9 +2258,9 @@
         <f:reference>Brandl, A[lois]: Goethes Verhältniß zu Byron. In:  GJb. 20 (1899), S. 3–36.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/braaeuning-oktavio1911">
+    <f:bib uri="faust://bibliography/braeuning-oktavio1911">
         <f:citation>Bräuning-Oktavio 1911</f:citation>
-        <f:reference>* Hermann Bräuning-Oktavio: Aus Briefen der Wertherzeit. In: Die Grenzboten 70 (1911), I, S. 411–417, 463–469, 557–563, 611–620.</f:reference>
+        <f:reference>Hermann Bräuning-Oktavio: Aus Briefen der Wertherzeit. In: Die Grenzboten 70 (1911), I, S. 411–417, 463–469, 557–563, 611–620.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/bratranek1866">
@@ -2520,11 +2530,11 @@
 
     <f:bib uri="faust://bibliography/graef1896">
         <f:citation>Gräf 1896</f:citation>
-        <f:reference>Goethe und Schiller in Briefen von Heinrich Voß dem Jüngeren. Briefauszüge, in Tagebuchform zeitlich geordnet und mit Erläuterungen hrsg. von Hans Gerhard Gräf. Leipzig o. J. [1896]. </f:reference>
+        <f:reference>Goethe und Schiller in Briefen von Heinrich Voß dem Jüngeren. Briefauszüge, in Tagebuchform zeitlich geordnet und mit Erläuterungen hrsg. von Hans Gerhard Gräf. Leipzig o. J. [1896].</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/granville">
-        <f:citation>Granville 1828 <strong>ändern zu: Granville 1828, Bd. 2</strong></f:citation>
+    <f:bib uri="faust://bibliography/granville1828_2">
+        <f:citation>Granville 1828, Bd. 2</f:citation>
         <f:reference>Granville, Augustus Bozzi: St. Petersburgh. A Journal of Travels to and from that Capital, through Flanders, Prussia, Russia, Poland, Silesia, Saxony, &amp;c. &amp;c. 2 Bde., London 1828.</f:reference>
     </f:bib>
 
@@ -2869,8 +2879,23 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/riemer1833-1834_3">
-        <f:citation>Riemer 1833–1834, Bd. 3/4/5/6  </f:citation>
+        <f:citation>Riemer 1833–1834, Bd. 3  </f:citation>
+        <f:reference>Briefwechsel zwischen Goethe und Zelter in den Jahren 1796 bis 1832. Hrsg. von Friedrich Wilhelm Riemer, 6 Theile, Th. 3. Berlin: Duncker und Humblot 1833–1834.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/riemer1833-1834_4">
+        <f:citation>Riemer 1833–1834, Bd. 4</f:citation>
+        <f:reference>Briefwechsel zwischen Goethe und Zelter in den Jahren 1796 bis 1832. Hrsg. von Friedrich Wilhelm Riemer, 6 Theile, Th. 4. Berlin: Duncker und Humblot 1833–1834.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/riemer1833-1834_5">
+        <f:citation>Riemer 1833–1834, Bd. 5</f:citation>
         <f:reference>Briefwechsel zwischen Goethe und Zelter in den Jahren 1796 bis 1832. Hrsg. von Friedrich Wilhelm Riemer, 6 Theile, Th. 5. Berlin: Duncker und Humblot 1833–1834.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/riemer1833-1834_6">
+        <f:citation>Riemer 1833–1834, Bd. 6</f:citation>
+        <f:reference>Briefwechsel zwischen Goethe und Zelter in den Jahren 1796 bis 1832. Hrsg. von Friedrich Wilhelm Riemer, 6 Theile, Th. 6. Berlin: Duncker und Humblot 1833–1834.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/riemer1841_1">

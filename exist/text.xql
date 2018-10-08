@@ -1,19 +1,14 @@
 xquery version "3.1";
 
+import module namespace config = "http://www.faustedition.net/search/config" at "config.xqm"; 
+
 declare default element namespace "http://www.w3.org/1999/xhtml";
 
 declare namespace tei = "http://www.tei-c.org/ns/1.0";
 declare namespace f   = "http://www.faustedition.net/ns";
 declare variable $edition := '';
 
-declare variable $data := collection('/db/apps/faust-dev/data/textTranscript'); (: collection(request:get-attribute('xmlpath')); :)
 declare variable $sigil-labels := doc('xslt/sigil-labels.xml');
-declare variable $lucene-options := <options>
-                                        <default-operator>and</default-operator>
-                                        <phrase-slop>1</phrase-slop>
-                                        <leading-wildcard>no</leading-wildcard>
-                                        <filter-rewrite>yes</filter-rewrite>
-                                    </options>;
 
 declare function local:make-url($sigil_t as item()?) as xs:string {
   if ($sigil_t = 'faust') then '/print/faust' else '/document?sigil=' || data($sigil_t)
@@ -30,8 +25,8 @@ declare function local:make-url($sigil_t as xs:string?, $section as xs:string?, 
 
 
 declare function local:query-lucene($query as item()?, $highlight as xs:string?, $index as xs:string?, $sp as item()?, $order as xs:string?) as map() {
-  let $allhits := if ($sp = 'true') then $data//(tei:l|tei:p)[ft:query-field($index, $query)] 
-          else $data//*[ft:query-field($index, $query)],
+  let $allhits := if ($sp = 'true') then $config:transcripts//(tei:l|tei:p)[ft:query-field($index, $query, $config:lucene-options)] 
+          else $config:transcripts//*[ft:query-field($index, $query, $config:lucene-options)],
       $hitcount := count($allhits)
   return map { 'hits': $hitcount, 'results':
   for $line in $allhits
@@ -43,11 +38,11 @@ declare function local:query-lucene($query as item()?, $highlight as xs:string?,
       $sortcrit := switch ($order) 
                     case 'sigil' return number(root($sigil_t)/*/@f:number)
                     case 'genesis' return number(root($sigil_t)/*/@f:index)
-                    default return sum(for $l in $line return ft:score($l))
+                    default return -sum(for $l in $line return ft:score($l))
       order by $sortcrit
       return (:data-score="{$total-score}":)
         <section class="doc" data-subhits="{count($line)}"> 
-          <h2><a href="{local:make-url($sigil_t)}">{data($sigil)}</a><span class="score"> {$sortcrit}</span></h2>
+          <h3><a href="{local:make-url($sigil_t)}">{data($sigil)}</a><span class="score"> {$sortcrit}</span></h3>
           {
             for $match in $line
             let 
@@ -79,7 +74,7 @@ declare function local:byverse($results as element()*) as element()* {
     </section>
 };
 
-let $query := request:get-parameter('q', ()),
+let $query := request:get-parameter('q', 'pudel'),
     $highlight := request:get-parameter('highlight', 'true'),
     $index := request:get-parameter('index', 'text-de'),
     $sp := request:get-parameter('sp', ()),

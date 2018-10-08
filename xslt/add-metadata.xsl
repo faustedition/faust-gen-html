@@ -317,6 +317,22 @@
 		</xsl:copy>
 	</xsl:template>
 	
+	<!-- Copy additional numbering schemes to @n -->
+	<xsl:template match="*[f:hasvars(.) or @n='todo'][@f:nx]" priority="1">
+		<xsl:choose>
+			<xsl:when test="@n and not(@n = 'todo')">
+				<xsl:message>WARNING: <xsl:value-of select="$sigil_t"/>: both n=<xsl:value-of select="@n"/> and f:nx=<xsl:value-of select="@f:nx"/>, ignoring f:nx</xsl:message>
+				<xsl:next-match/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:copy>
+					<xsl:attribute name="n" select="if (matches(@f:nx, '^(before_|after_)?\d+$')) then concat('nx_', @f:nx) else @f:nx"/>					
+					<xsl:apply-templates select="@* except @n, node()" mode="#current"/>
+				</xsl:copy>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
 	<!-- Remove suffixes like a/b/c from @n, cf. #50 -->
 	<xsl:template match="*[f:hasvars(.)]/@n">
 		<xsl:attribute name="n" select="string-join(
