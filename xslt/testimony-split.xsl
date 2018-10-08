@@ -63,6 +63,10 @@
 			<xsl:variable name="metadata0" select="$table//f:testimony[@id=$id]"/>
 			<xsl:variable name="metadata" as="element()?">
 				<xsl:choose>
+					<xsl:when test="count($metadata0) > 1">
+						<xsl:message terminate="no"><xsl:value-of select="concat('ERROR: Table has ', count($metadata0),' entries with id ', $id, '&#10;)"/>
+					   	<xsl:sequence select="$metadata0"/>
+					</xsl:message></xsl:when>					
 					<xsl:when test="$metadata0"><xsl:sequence select="$metadata0"/></xsl:when>
 					<xsl:otherwise>
 						<xsl:variable name="id_parts" select="tokenize($id, '_')"/>
