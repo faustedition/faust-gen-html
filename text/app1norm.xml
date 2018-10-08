@@ -1818,17 +1818,7 @@
     <lem wit="A B B.a">leert <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></lem>
     <rdg wit="S 1_H.9" type="type_2a*">leert’ <note><wit>S</wit> <wit>1_H.9</wit></note></rdg>
   </app>
-  <!--       2769[seinem]{=} <i>2769</i> seinem <i>S 1_H.9</i>]  <i>A D.1 B D.2 B.a</i>  seinen <i>1_H.5 1_H.7 1_H.8</i> seinen <i>J.1</i> seinen <i>faust://bibliography/D.3 faust://bibliography/D.4 [type=2b*]</i>-->
-  <app>
-    <f:replace n="2769">seinem</f:replace>
-    <f:ins n="2769">seinem</f:ins>
-    <ref>2769</ref>
-    <lem wit="S 1_H.9">seinem <note><wit>S</wit> <wit>1_H.9</wit></note></lem>
-    <rdg wit="A D.1 B D.2 B.a"> <note><wit>A</wit> <wit>D.1</wit> <wit>B</wit> <wit>D.2</wit> <wit>B.a</wit></note></rdg>
-    <rdg wit="1_H.5 1_H.7 1_H.8">seinen <note><wit>1_H.5</wit> <wit>1_H.7</wit> <wit>1_H.8</wit></note></rdg>
-    <rdg wit="J.1">seinen <note><wit>J.1</wit></note></rdg>
-    <rdg type="type_2b*">seinen <note><ref target="faust://bibliography/D.3"/> <ref target="faust://bibliography/D.4"/></note></rdg>
-  </app>
+
   <!--       2789[wohl,]{=} <i>2789</i> wohl, <i>A B.a</i>]   wohl^ <i>1_H.5 S</i> wohl^ <i>B [Typ 4c]</i>-->
   <app>
     <f:replace n="2789">wohl,</f:replace>

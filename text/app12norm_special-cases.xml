@@ -110,6 +110,17 @@
     </app>
 
     <app>
+        <f:replace n="2769">seinem</f:replace>
+        <f:ins n="2769">seinem</f:ins>
+        <ref>2769</ref>
+        <lem wit="S 1_H.9">seinem <note><wit>S</wit> <wit>1_H.9</wit></note></lem>
+        <rdg wit="A D.1 B D.2 B.a"> <note><wit>A</wit> <wit>D.1</wit> <wit>B</wit> <wit>D.2</wit> <wit>B.a</wit></note></rdg>
+        <rdg wit="1_H.5 1_H.7 1_H.8">seinen <note><wit>1_H.5</wit> <wit>1_H.7</wit> <wit>1_H.8</wit></note></rdg>
+        <rdg wit="J.1">seinen <note><wit>J.1</wit></note></rdg>
+        <rdg type="type_2b*">seinen <note><ref target="faust://bibliography/D.3"/> <ref target="faust://bibliography/D.4"/></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="3095">Drum,</f:replace>
         <f:ins n="3095">Drum,</f:ins>
         <ref>3095</ref>
