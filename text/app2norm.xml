@@ -308,21 +308,7 @@
     <lem/>
     <rdg wit="2_I_H.0a" type="type_1c"> <note>nicht eingerückt <wit>2_I_H.0a</wit></note></rdg>
   </app>
-  <!--       5707[wohl! du,]{wohl! du} <i>5707</i> wohl! du^ <i>2_I_H.32</i>] wohl^ du^ <i>2_I_H.32 :</i> wohl! du^ <i>G</i> wohl! du, <i>(Missverständnis) 2_H 2_I_H.0a</i>  wohl! Du^ <i>C.1 12 [type=2b]</i>-->
-  <app>
-    <f:replace n="5707">wohl! du,</f:replace>
-    <f:ins n="5707">wohl! du</f:ins>
-    <ref>5707</ref>
-    <lem wit="2_I_H.32">wohl! du<pc>‸</pc> <note><wit>2_I_H.32</wit></note></lem>
-    <rdg wit="2_I_H.32">
-      <subst>
-        <del>wohl<pc>‸</pc> du<pc>‸</pc></del>
-        <add>wohl! du<pc>‸</pc> <note>G <wit>2_I_H.32</wit></note></add>
-      </subst>
-    </rdg>
-    <rdg wit="2_H 2_I_H.0a">wohl! du, <note>(Missverständnis) <wit>2_H</wit> <wit>2_I_H.0a</wit></note></rdg>
-    <rdg type="type_2b">wohl! Du<pc>‸</pc> <note>C.1 12</note></rdg>
-  </app>
+
   <!--       5715[^]{^&lt;milestone unit="lg" rend="indented"/^&gt;} <i>5715–5726</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>-->
   <!--FIXED: 5715[^]{<milestone unit="lg" rend="indented"/>} <i>5715–5726</i>] <i>nicht eingerückt 2_I_H.0a [type=1c]</i>-->
   <app>
