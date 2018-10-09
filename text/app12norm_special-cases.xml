@@ -456,6 +456,15 @@
     </app>
 
     <app>
+        <f:replace n="6282">Werke</f:replace>
+        <f:ins n="6282">Werke.</f:ins>
+        <ref>6282</ref>
+        <lem>Werke.</lem>
+        <rdg wit="2_I_H.47">Wercke. <note><wit>2_I_H.47</wit></note></rdg>
+        <rdg wit="2_H" type="type_2aa">Werke<pc>‸</pc> <note><wit>2_H</wit></note></rdg>
+    </app>
+
+    <app>
         <f:ins n="before_6319_a" place="only-app"/>
         <ref>vor 6319</ref>
         <lem wit="2_H"><speaker>Blondine</speaker>
