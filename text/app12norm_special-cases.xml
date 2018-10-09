@@ -168,13 +168,9 @@
         <f:ins n="3356" place="after"><l n="3357">Hatte nicht genug,</l></f:ins>
         <ref>3356–3357</ref>
         <lem/>
-        <rdg wit="1_H.5 S" type="type_2b"><note>In <wit>1_H.5</wit> bilden 3356–3357 zwei Verse: <quote>
-                    <l n="3356">Und ich der Gott verhasste</l>
-                    <l n="3357">Hatte nicht genug</l>
-                </quote>, in <wit>S</wit> wurde daraus aus Versehen des Abschreibers oder des
-                Setzers nur ein Vers: <quote>
-                    <l n="3356 3357">Und ich, der Gottverhaßte, hatte nicht genug,</l>
-                </quote></note>
+        <rdg wit="1_H.5"><note>zwei Verse<wit>1_H.5</wit></note> </rdg>
+        <rdg wit="S A B B.a 1_H.1 C.1_12 C.3_12" type="type_2b"><l n="3356 3357">Und ich, der Gottverhaßte, hatte nicht genug,</l> 
+            <note><wit>S</wit> <wit>A</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> <wit>C.3_12</wit></note>
         </rdg>
     </app>
     <app>
