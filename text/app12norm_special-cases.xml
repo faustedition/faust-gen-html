@@ -409,6 +409,14 @@
     </app>
     
     <app>
+        <f:replace n="5750">Hindermann</f:replace>
+        <f:ins n="5750">Hindermann</f:ins>
+        <ref>5750</ref>
+        <lem wit="2_I_H.0a">Hindermann <note><wit>2_I_H.0a</wit></note></lem>
+        <rdg wit="2_H" type="type_6">Hintermann <note>Ec <wit>2_H</wit></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="before_6086">Marschalck</f:replace>
         <f:ins n="before_6086">Marschalck</f:ins>
         <ref>vor 6086</ref>

@@ -325,14 +325,7 @@
     <lem/>
     <rdg wit="2_I_H.0a" type="type_1c"> <note>nicht eingerückt <wit>2_I_H.0a</wit></note></rdg>
   </app>
-  <!--       5750[Hindermann]{=} <i>5750</i> Hindermann <i>2_I_H.0a</i>] Hintermann <i>Ec 2_H [type=6]</i>-->
-  <app>
-    <f:replace n="5750">Hindermann</f:replace>
-    <f:ins n="5750">Hindermann</f:ins>
-    <ref>5750</ref>
-    <lem wit="2_I_H.0a">Hindermann <note><wit>2_I_H.0a</wit></note></lem>
-    <rdg wit="2_H" type="type_6">Hintermann <note>Ec <wit>2_H</wit></note></rdg>
-  </app>
+
   <!--       5775[am]{an} <i>5775</i> an <i>2_I_H.33</i>] am <i>2_H 2_I_H.0a [type=2b]</i>-->
   <app>
     <f:replace n="5775">am</f:replace>
