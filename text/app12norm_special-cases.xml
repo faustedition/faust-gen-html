@@ -417,6 +417,14 @@
     </app>
 
     <app>
+        <f:ins n="5944" place="before"><milestone unit="lg"/></f:ins>
+        <ref>5944</ref>
+        <lem/>
+        <rdg wit="2_H"> <note>Der Beginn der neuen Versgruppe ist in <wit>2_H</wit> durch Einrückung des Verses markiert.</note></rdg>
+        <rdg type="type_2aa"> <note>Die Einrückung fehlt in 2_I_H.0a.</note></rdg>
+    </app>
+
+    <app>
         <f:replace n="before_6086">Marschalck</f:replace>
         <f:ins n="before_6086">Marschalck</f:ins>
         <ref>vor 6086</ref>
