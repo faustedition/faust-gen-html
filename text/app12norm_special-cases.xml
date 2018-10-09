@@ -660,10 +660,11 @@
         <rdg wit="2_III_H.2_1">
             <subst>
                 <del>sie nicht</del>
-                <add>nicht sie <note>umst G <wit>2_III_H.2_1</wit></note></add>
+                <add>nicht sie</add>
             </subst>
+            <note>umst <seg type="hand">G</seg> <wit>2_III_H.2_1</wit></note>
         </rdg>
-        <rdg wit="2_III_H.3a_1 2_H" type="type_2b">sie nicht <note><wit>2_III_H.3a_1</wit> <wit>2_H</wit> C.1 12</note></rdg>
+        <rdg wit="2_III_H.3a_1 2_H C.1_4" type="type_2b">sie nicht <note><wit>2_III_H.3a_1</wit> <wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
     </app>
 
     <app>
