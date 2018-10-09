@@ -254,6 +254,13 @@
     </app>
 
     <app>
+        <f:ins n="3974" place="only-app"/>
+        <ref>3974–3977</ref>
+        <lem/>
+        <rdg wit="1_H.14 A D.1 B B.a 1_H.1 C.1_12 C.3_12 D.2" type="type_7"> <note>Die Verse sind in <wit>1_H.14</wit> <wit>A</wit> <wit>D.1</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> <wit>C.3_12</wit> nicht eingerückt, in <wit>D.2</wit> <ref target="faust://bibliography/D.3"/> <ref target="faust://bibliography/D.4"/> sie auf derselben Höhe wie die Verse 3972–3973 eingerückt; in <ref target="faust://bibliography/Q"/> stehen 3972–3973 linksbündig, 3974–3977 sind eingerückt.</note></rdg>
+    </app>
+
+    <app>
         <!--       3990[]{} <i>3990–4015] Die Verse sind im Druck zweistufig eingerückt (A 8, S. 198–199): 3990–3995 um 5 mm eingerückt, was für Kurzverse normal ist<b>;</b> 3996–3999 auf Seite 198 um 10 mm<b>;</b> ebenso 4000–4003 und 4008–4015 (beidemale wohl versehentlich) sowie 4004–4007 (wohl korrekt) auf Seite 199 um 10 mm. [type=7 Typ 1c]</i>-->
         <f:ins n="3990" place="only-app"/>
         <ref>3990–4015</ref>
