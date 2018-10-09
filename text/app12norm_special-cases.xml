@@ -591,6 +591,7 @@
         <f:ins n="8467"><seg>und</seg> süße</f:ins>
         <ref>8467</ref>
         <lem wit="2_II_H.73">und <note><wit>2_II_H.73</wit></note></lem>
+        <rdg wit="2_II_H.72 2_II_H.73">und <note><seg type="hand">G</seg> <wit>2_II_H.72</wit> <wit>2_II_H.73</wit></note></rdg>
         <rdg wit="2_H" type="type_2aa">bald <note><wit>2_H</wit></note></rdg>
     </app>
 
