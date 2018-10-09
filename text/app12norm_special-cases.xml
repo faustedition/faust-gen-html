@@ -496,7 +496,7 @@
         <f:ins n="6552">Stand</f:ins>
         <ref>6552</ref>
         <lem wit="2_H">Stand <note><wit>2_H</wit></note></lem>
-        <rdg wit="2_I_H.48 2_I_H.60">Stand <note>undeutlich <wit>2_I_H.48</wit> <wit>2_I_H.60</wit></note></rdg>
+        <rdg wit="2_I_H.48 2_I_H.60">Stand <note>(undeutlich) <wit>2_I_H.48</wit> <wit>2_I_H.60</wit></note></rdg>
         <rdg type="type_3*">Strand <note>konj. <ref target="faust://bibliography/koch1882">Koch</ref> emend. <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
     </app>
     
@@ -514,11 +514,11 @@
         <f:ins n="6848">leuchtet!</f:ins>
         <ref>6848</ref>
         <lem wit="2_H">leuchtet! <note><wit>2_H</wit></note></lem>
-        <rdg wit="2_H" type="type_7"><subst>
+        <rdg wit="2_H" type="type_7"><subst hand="G">
                 <del>leucht</del>
-                <add>leuchtet</add>
+                <add>leuchtet<pc>‸</pc></add>
             </subst>
-            <note>G, Ausrufezeichen zS alR <wit>2_H</wit></note></rdg>
+            <note><seg type="hand">G</seg>, Ausrufezeichen zS am linken Rand <wit>2_H</wit></note></rdg>
     </app>
 
     <app>
