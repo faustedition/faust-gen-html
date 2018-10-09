@@ -2506,15 +2506,6 @@
     <rdg wit="S 1_H.13 A B B.a 1_H.1 C.1_12 C.3_12" type="type_2b">Mauern-Pfeiler <note><wit>S</wit> <wit>1_H.13</wit> <wit>A</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
   </app>
 
-  <!--       3822[Bleibt’]{Bleibt} <i>3822</i> Bleibt <i>S 1_H.13</i>]   Bleibt’ <i>A D.1</i> Bleibt <i>B B.a  [type=1b]</i>-->
-  <app>
-    <f:replace n="3822">Bleibt’</f:replace>
-    <f:ins n="3822">Bleibt</f:ins>
-    <ref>3822</ref>
-    <lem wit="S 1_H.13">Bleibt <note><wit>S</wit> <wit>1_H.13</wit></note></lem>
-    <rdg wit="A D.1">Bleibt’ <note><wit>A</wit> <wit>D.1</wit></note></rdg>
-    <rdg wit="B B.a" type="type_1b">Bleibt <note><wit>B</wit> <wit>B.a</wit></note></rdg>
-  </app>
   <!--       3871[]{} <i>3871–3911</i>] <i>Die Verse stehen in 1_H.14 A B B.a 1_H.1 linksbündig, in C.1_12 C.3_12 sind sie eingerückt. [type=7]</i>-->
   <app>
     <f:ins n="3871" place="only-app"/>

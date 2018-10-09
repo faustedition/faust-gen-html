@@ -227,6 +227,15 @@
     </app>
 
     <app>
+        <f:replace n="3822">Bleibt’</f:replace>
+        <f:ins n="3822">Bleibt</f:ins>
+        <ref>3822</ref>
+        <lem wit="S 1_H.13">Bleibt <note><wit>S</wit> <wit>1_H.13</wit></note></lem>
+        <rdg wit="A D.1">Bleibt’ <note><wit>A</wit> <wit>D.1</wit></note></rdg>
+        <rdg wit="B B.a" type="type_1b">Bleibt <note><wit>B</wit> <wit>B.a</wit></note></rdg>
+    </app>
+
+    <app>
         <!--       3990[]{} <i>3990–4015] Die Verse sind im Druck zweistufig eingerückt (A 8, S. 198–199): 3990–3995 um 5 mm eingerückt, was für Kurzverse normal ist<b>;</b> 3996–3999 auf Seite 198 um 10 mm<b>;</b> ebenso 4000–4003 und 4008–4015 (beidemale wohl versehentlich) sowie 4004–4007 (wohl korrekt) auf Seite 199 um 10 mm. [type=7 Typ 1c]</i>-->
         <f:ins n="3990" place="only-app"/>
         <ref>3990–4015</ref>
