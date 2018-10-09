@@ -1722,14 +1722,7 @@
     <rdg wit="B"><speaker>Margarete<pc>‸</pc></speaker> <note><wit>B</wit></note></rdg>
     <rdg wit="B.a" type="type_8"><speaker>Margarethe<pc>‸</pc></speaker> <note><wit>B.a</wit></note></rdg>
   </app>
-  <!--       2678[wüßt’]{=} <i>2678</i> wüßt’, <i>S A B.a</i>]  wüsst’^ <i>B [Typ 4c]</i>-->
-  <app>
-    <f:replace n="2678">wüßt’</f:replace>
-    <f:ins n="2678">wüßt’</f:ins>
-    <ref>2678</ref>
-    <lem wit="S A B.a">wüßt’, <note><wit>S</wit> <wit>A</wit> <wit>B.a</wit></note></lem>
-    <rdg wit="B" type="type_4c">wüsst’<pc>‸</pc> <note><wit>B</wit></note></rdg>
-  </app>
+
   <!--       2696[in]{=} <i>2696</i> in <i>1_H.5 S A</i>]   im <i>B B.a [type=4a]</i>-->
   <app>
     <f:replace n="2696">in</f:replace>

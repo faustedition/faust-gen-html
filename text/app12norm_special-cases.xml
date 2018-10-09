@@ -102,6 +102,14 @@
     </app>
     
     <app>
+        <f:replace n="2678">wüßt’</f:replace>
+        <f:ins n="2678">wüßt’</f:ins>
+        <ref>2678</ref>
+        <lem wit="S A B.a">wüßt’, <note><wit>S</wit> <wit>A</wit> <wit>B.a</wit></note></lem>
+        <rdg wit="B" type="type_4c">wüsst’<pc>‸</pc> <note><wit>B</wit></note></rdg>
+    </app>
+
+    <app>
         <f:ins id="l2709a" place="attributes">
             <l part="I"/>
         </f:ins>
