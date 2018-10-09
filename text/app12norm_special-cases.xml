@@ -257,7 +257,10 @@
         <f:ins n="3974" place="only-app"/>
         <ref>3974–3977</ref>
         <lem/>
-        <rdg wit="1_H.14 A D.1 B B.a 1_H.1 C.1_12 C.3_12 D.2" type="type_7"> <note>Die Verse sind in <wit>1_H.14</wit> <wit>A</wit> <wit>D.1</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> <wit>C.3_12</wit> nicht eingerückt, in <wit>D.2</wit> <ref target="faust://bibliography/D.3"/> <ref target="faust://bibliography/D.4"/> sie auf derselben Höhe wie die Verse 3972–3973 eingerückt; in <ref target="faust://bibliography/Q"/> stehen 3972–3973 linksbündig, 3974–3977 sind eingerückt.</note></rdg>
+        <rdg wit="1_H.14 A D.1 B B.a 1_H.1 C.1_12 C.3_12 D.2" type="type_7"> <note>Die Verse sind in 
+            <wit>1_H.14</wit> <wit>A</wit> <wit>D.1</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> 
+            <wit>C.1_12</wit> <wit>C.3_12</wit> nicht eingerückt, in <wit>D.2</wit> <ref target="faust://bibliography/D.3"/> 
+            <ref target="faust://bibliography/D.4"/> sind sie auf derselben Höhe wie die Verse 3972–3973 eingerückt; in <ref target="faust://bibliography/Q"/> stehen 3972–3973 linksbündig, 3974–3977 sind eingerückt.</note></rdg>
     </app>
 
     <app>
