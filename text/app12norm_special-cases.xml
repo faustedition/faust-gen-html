@@ -490,6 +490,16 @@
         <lem/>
         <rdg wit="2_H" type="type_6"><note>tilgt Ec <wit>2_H</wit></note></rdg>
     </app>
+    
+    <app>
+        <f:replace n="6552">Stand</f:replace>
+        <f:ins n="6552">Stand</f:ins>
+        <ref>6552</ref>
+        <lem wit="2_H">Stand <note><wit>2_H</wit></note></lem>
+        <rdg wit="2_I_H.48 2_I_H.60">Stand <note>undeutlich <wit>2_I_H.48</wit> <wit>2_I_H.60</wit></note></rdg>
+        <rdg type="type_3*">Strand <note>konj. <ref target="faust://bibliography/koch1882">Koch</ref> emend. <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
+    </app>
+    
     <app>
         <f:ins n="6717" place="only-app"/>
         <ref>6717–6718</ref>
