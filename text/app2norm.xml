@@ -687,14 +687,6 @@
     <rdg wit="2_H" type="type_1a">Angestregtest <note><wit>2_H</wit></note></rdg>
   </app>
 
-  <!--       7729[mit]{=} <i>7729</i> mit <i>2_II_H.74 2_H</i>] bei <i>emend. faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q faust://bibliography/wa_I_15_1#Erich_Schmidt [type=7]</i>-->
-  <app>
-    <f:replace n="7729">mit</f:replace>
-    <f:ins n="7729">mit</f:ins>
-    <ref>7729</ref>
-    <lem wit="2_II_H.74 2_H">mit <note><wit>2_II_H.74</wit> <wit>2_H</wit></note></lem>
-    <rdg type="type_7">bei <note>emend. <ref target="faust://bibliography/C.1_41"/> <ref target="faust://bibliography/C.3_41"/> <ref target="faust://bibliography/Q"/> <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
-  </app>
   <!--       7776[Dagegegen]{Dagegen} <i>7776</i> Dagegen <i>none</i>] Dagegen <i>2_II_H.74</i> Dagegegen <i>2_H [type=1a]</i>-->
   <app>
     <f:replace n="7776">Dagegegen</f:replace>
