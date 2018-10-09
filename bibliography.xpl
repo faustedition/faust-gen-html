@@ -44,11 +44,11 @@
     <p:xslt name="macrogenesis-citations">
       <p:input port="stylesheet">
         <p:inline>
-          <xsl:stylesheet xmlns:f="http://www.faustedition.net/ns" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
+          <xsl:stylesheet xmlns:f="http://www.faustedition.net/ns" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" exclude-result-prefixes="#all">
             <xsl:template match="/">
               <f:citations>
                 <xsl:for-each-group select="//f:source" group-by="@uri">
-                  <citation><xsl:value-of select="current-grouping-key()"/></citation>
+                  <f:citation><xsl:value-of select="current-grouping-key()"/></f:citation>
                 </xsl:for-each-group>
               </f:citations>
             </xsl:template>
