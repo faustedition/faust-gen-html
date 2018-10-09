@@ -148,16 +148,20 @@
 				</xsl:choose>
 			</xsl:variable>
 						
-			
-			<idno type="faustedition" xml:id="sigil"><xsl:value-of select="$sigil"/></idno>
+			<xsl:if test="not(//idno[@type='faustedition'])">
+				<idno type="faustedition" xml:id="sigil"><xsl:value-of select="$sigil"/></idno>				
+			</xsl:if>
 			<xsl:if test="$type != 'lesetext'">
 				<idno type="headNote"><xsl:value-of select="$metadata//f:headNote"/></idno>				
 			</xsl:if>
 			
 			<xsl:for-each select="$metadata//f:idno[. != 'none'][. != 'n.s.'][@type != 'faustedition']">
-				<idno type="{@type}">
-					<xsl:value-of select="."/>
-				</idno>
+				<xsl:variable name="idno-type" select="@type"/>
+				<xsl:if test="not(//idno[@type=$idno-type])">
+					<idno type="{@type}">
+						<xsl:value-of select="."/>
+					</idno>					
+				</xsl:if>
 			</xsl:for-each>
 
 			<idno type="sigil_t" xml:id="sigil_t"><xsl:value-of select="$sigil_t"/></idno>
