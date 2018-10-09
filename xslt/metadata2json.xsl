@@ -10,6 +10,7 @@
 
 	<xsl:import href="jsonutils.xsl"/>
 	<xsl:import href="utils.xsl"/>
+	<xsl:import href="bibliography.xsl"/>
 	
 	<xsl:param name="document"/>
 	<xsl:param name="source"/>
@@ -79,7 +80,12 @@
 			
 			<j:object name="sigils">
 				<!-- Yes, these aren't all real sigils ... -->
-				<j:string name="headNote" value="{metadata/headNote}"/>
+				<xsl:variable name="headNote">
+					<xsl:for-each select="metadata/headNote">
+						<xsl:call-template name="parse-for-bib"/>
+					</xsl:for-each>
+				</xsl:variable>
+				<j:string name="headNote" value="{data($headNote)}"/>
 				<j:string name="classification" value="{if (metadata/classification = ('n.s.', 'none', '')) then '' else metadata/classification}"/>
 				<xsl:if test="metadata/subrepository">
 					<j:string name="subRepository" value="{metadata/subRepository}"/>

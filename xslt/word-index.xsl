@@ -12,7 +12,7 @@
 	<xsl:import href="html-frame.xsl"/>
 	<xsl:param name="limit" select="1"/>
 	<xsl:param name="title"/>
-	<xsl:variable name="forbidden-sigils" select="if (count(//TEI) > 1) then ('Testhandschrift', 'Lesetext') else ()"/>
+	<xsl:variable name="forbidden-sigils" select="if (count(//TEI) > 1) then ('Testhandschrift', 'Lesetext', 'Text') else ()"/>
 	
 	<!-- tokenize -->
 	<xsl:template match="text()" priority="1">

@@ -84,18 +84,9 @@
         <xsl:variable name="result" as="element()*">
             <xsl:for-each select="document($transcript-list)//idno[@uri=$uri]/..">
                 <xsl:variable name="docinfo" select="."/>
-                <xsl:choose>
-                    <xsl:when test="$docinfo/@type='print'">
-                        <a class="md-document-ref" href="../meta/{$docinfo/@sigil_t}" title="{$docinfo/headNote}">
-                            <xsl:value-of select="$docinfo/@f:sigil"/>
-                        </a>				
-                    </xsl:when>                
-                    <xsl:otherwise>
-                        <a class="md-document-ref" href="{$docbase}{$docinfo/@sigil_t}" title="{$docinfo/headNote}">
-                            <xsl:value-of select="$docinfo/@f:sigil"/>
-                        </a>
-                    </xsl:otherwise>
-                </xsl:choose>
+                    <a class="md-document-ref" href="{$docbase}{$docinfo/@sigil_t}" title="{$docinfo/headNote}">
+                        <xsl:value-of select="$docinfo/@f:sigil"/>
+                    </a>
             </xsl:for-each>
         </xsl:variable>
         <xsl:choose>

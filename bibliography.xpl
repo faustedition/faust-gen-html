@@ -6,6 +6,8 @@
 
   <p:input port="source" primary="true" sequence="true"/>
   <p:input port="parameters" kind="parameter"/>
+  <p:import href="http://xproc.org/library/recursive-directory-list.xpl"/>
+  
   
   <!-- This pipeline generates a bibliography page from a bunch of 'citations' xml files. -->
 
@@ -21,11 +23,46 @@
     <p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
     <p:variable name="debug" select="//c:param[@name='debug']/@value"><p:pipe port="result" step="config"/></p:variable>
     <p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
-        
+    
+
+
+    <!-- Collect the citations from all macrogenesis files -->
+    <l:recursive-directory-list name="list-macrogenesis" include-filter=".*\.xml$">
+      <p:with-option name="path" select="concat($source, '/macrogenesis')"/>
+    </l:recursive-directory-list>
+    
+    <p:for-each>
+      <p:iteration-source select="//c:file"/>
+      <p:variable name="filename" select="p:resolve-uri(/c:file/@name)"/>
+      <p:load>
+        <p:with-option name="href" select="$filename"/>
+      </p:load>      
+    </p:for-each>
+    
+    <p:wrap-sequence wrapper="f:wrapper"/>
+    
+    <p:xslt name="macrogenesis-citations">
+      <p:input port="stylesheet">
+        <p:inline>
+          <xsl:stylesheet xmlns:f="http://www.faustedition.net/ns" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" exclude-result-prefixes="#all">
+            <xsl:template match="/">
+              <f:citations>
+                <xsl:for-each-group select="//f:source" group-by="@uri">
+                  <f:citation><xsl:value-of select="current-grouping-key()"/></f:citation>
+                </xsl:for-each-group>
+              </f:citations>
+            </xsl:template>
+          </xsl:stylesheet>
+        </p:inline>
+      </p:input>
+      <p:input port="parameters"><p:empty/></p:input>
+    </p:xslt>
+
   
     <p:wrap-sequence wrapper="f:citations" name="wrapped-citations">
       <p:input port="source">
         <p:pipe port="source" step="main"/>
+        <p:pipe port="result" step="macrogenesis-citations"/>
         <p:document href="additional-citations.xml"/>
       </p:input>
     </p:wrap-sequence>

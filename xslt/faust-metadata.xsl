@@ -275,7 +275,7 @@
 			</h3>			
 		</xsl:if>
 		<h3 class="md-headNote">
-			<xsl:value-of select="headNote"/>
+			<xsl:apply-templates select="headNote/node()"/>
 		</h3>
 		<p class="md-note wip">
 			<xsl:apply-templates select="headNote/following-sibling::note[1]/*"/>

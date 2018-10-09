@@ -9,7 +9,7 @@
   <xsl:import href="html-frame.xsl"/>
 	
 	<!--<xsl:variable name="transcripts" select="collection()[2]"/>-->
-	<xsl:param name="title">Lesetext</xsl:param>
+	<xsl:param name="title">Text</xsl:param>
         <xsl:param name="source">https://faustedition.uni-wuerzburg.de/xml</xsl:param>
   
 	<xsl:output method="xhtml"/>
