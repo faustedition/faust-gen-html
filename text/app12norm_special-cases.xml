@@ -237,6 +237,22 @@
     </app>
 
     <app>
+        <f:replace n="3899">Stecken</f:replace>
+        <f:ins n="3899">Strecken</f:ins>
+        <ref>3899</ref>
+        <lem wit="1_H.14">Strecken <note><wit>1_H.14</wit></note></lem>
+        <rdg wit="A B B.a">Stecken <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></rdg>
+        <rdg wit="1_H.6">Strecken <note>vorschl Gö <wit>1_H.6</wit></note></rdg>
+        <rdg>
+            <subst>
+                <del>Stecken</del>
+                <add>Strecken <note>G 1_1_H.1</note></add>
+            </subst>
+        </rdg>
+        <rdg wit="C.1_12 C.3_12" type="type_2a">Strecken <note><wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
+    </app>
+
+    <app>
         <!--       3990[]{} <i>3990–4015] Die Verse sind im Druck zweistufig eingerückt (A 8, S. 198–199): 3990–3995 um 5 mm eingerückt, was für Kurzverse normal ist<b>;</b> 3996–3999 auf Seite 198 um 10 mm<b>;</b> ebenso 4000–4003 und 4008–4015 (beidemale wohl versehentlich) sowie 4004–4007 (wohl korrekt) auf Seite 199 um 10 mm. [type=7 Typ 1c]</i>-->
         <f:ins n="3990" place="only-app"/>
         <ref>3990–4015</ref>

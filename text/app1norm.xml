@@ -2521,22 +2521,7 @@
     <lem wit="1_H.14 A">durchs <note><wit>1_H.14</wit> <wit>A</wit></note></lem>
     <rdg wit="B B.a" type="type_4a">durch’s <note><wit>B</wit> <wit>B.a</wit></note></rdg>
   </app>
-  <!--       3899[Stecken]{Strecken} <i>3899</i> Strecken <i>1_H.14</i>]   Stecken <i>A B B.a</i> Strecken <i>vorschl Gö 1_H.6</i> Stecken <i>1_1_H.1 :</i> Strecken <i>G</i> Strecken <i>C.1_12 C.3_12  [type=2a]</i>-->
-  <app>
-    <f:replace n="3899">Stecken</f:replace>
-    <f:ins n="3899">Strecken</f:ins>
-    <ref>3899</ref>
-    <lem wit="1_H.14">Strecken <note><wit>1_H.14</wit></note></lem>
-    <rdg wit="A B B.a">Stecken <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></rdg>
-    <rdg wit="1_H.6">Strecken <note>vorschl Gö <wit>1_H.6</wit></note></rdg>
-    <rdg>
-      <subst>
-        <del>Stecken</del>
-        <add>Strecken <note>G 1_1_H.1</note></add>
-      </subst>
-    </rdg>
-    <rdg wit="C.1_12 C.3_12" type="type_2a">Strecken <note><wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
-  </app>
+
   <!--       3908[Alles^ alles]{=} <i>3908</i> Alles^ alles <i>1_H.14 A</i>]   Alles, Alles <i>B</i> Alles^ Alles <i>B.a [type=4a]</i>-->
   <app>
     <f:replace n="3908">Alles alles</f:replace>
