@@ -177,7 +177,7 @@
         <f:ins n="3551" place="only-app"/>
         <ref>3550–3551</ref>
         <lem/>
-        <rdg wit="1_H.5" type="type_2d*"><note>In <wit>1_H.5</wit> bilden 3550–3551 einen
+        <rdg wit="1_H.5" type="type_2d*"><note>In <wit>1_H.5</wit> bilden die beiden Repliken einen
                 antilabischen Vers:</note>
             <quote>
                 <sp>
@@ -204,9 +204,16 @@
         <f:ins n="3787" place="only-app"/>
         <ref>3787–3788</ref>
         <lem/>
-        <rdg wit="1_H.5" type="type_2b*"><l n="3787">Betest du für deiner Mutter Seel</l> <l
+        <rdg wit="1_H.5" type="type_7"><l n="3787">Betest du für deiner Mutter Seel</l> <l
                 n="3788">Die durch dich sich in die Pein hinüberschlief.</l>
             <note><wit>1_H.5</wit></note></rdg>
+    </app>
+    
+    <app>
+        <f:ins n="3789" place="only-app"></f:ins>
+        <ref>3789</ref>
+        <lem></lem>
+        <rdg wit="1_H.5 S 1_H.13" type="7"><note>Der Vers fehlt in <wit>1_H.5</wit> <wit>S</wit> <wit>1_H.13</wit>.</note></rdg>
     </app>
 
     <app>
