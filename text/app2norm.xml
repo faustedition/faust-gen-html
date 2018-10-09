@@ -1328,20 +1328,7 @@
     <lem wit="2_III_H.2_2">Träume mag <note>G <wit>2_III_H.2_2</wit></note></lem>
     <rdg wit="2_III_H.3a_2 2_H C.1_4" type="type_2b">träumen mag <note><wit>2_III_H.3a_2</wit> <wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
   </app>
-  <!--       9852[erscheint]{=} <i>9852</i> erscheint <i>C.1_4</i>] erscheint <i>G 2_III_H.2:2 2_III_H.3a:2 :</i> er scheint <i>Jo (jedenfalls nicht zweifelsfrei G)</i> erscheint <i>2_H C.1_4 [type=2b*]</i>-->
-  <app>
-    <f:replace n="9852">erscheint</f:replace>
-    <f:ins n="9852">erscheint</f:ins>
-    <ref>9852</ref>
-    <lem wit="C.1_4">erscheint <note><wit>C.1_4</wit></note></lem>
-    <rdg wit="2_III_H.2_2 2_III_H.3a_2">
-      <subst>
-        <del>erscheint <note>G <wit>2_III_H.2_2</wit> </note></del>
-        <add>er scheint <note>Jo (jedenfalls nicht zweifelsfrei G) <wit>2_III_H.3a_2</wit></note></add>
-      </subst>
-    </rdg>
-    <rdg wit="2_H C.1_4" type="type_2b*">erscheint <note><wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
-  </app>
+
   <!--       9855[Welle]{Wälle} <i>9855</i> Wälle <i>2_H</i>] Welle <i>C.1_4 [type=2aa]</i>-->
   <app>
     <f:replace n="9855">Welle</f:replace>
