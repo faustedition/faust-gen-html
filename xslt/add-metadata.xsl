@@ -141,7 +141,7 @@
 			
 			<xsl:variable name="sigil">
 				<xsl:choose>
-					<xsl:when test="$type = 'lesetext'">Lesetext</xsl:when>
+					<xsl:when test="$type = 'lesetext'">Text</xsl:when>
 					<xsl:otherwise>
 						<xsl:value-of select="$metadata//f:idno[@type='faustedition']"/>
 					</xsl:otherwise>

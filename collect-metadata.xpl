@@ -207,8 +207,8 @@
                   <!-- Lesetext: -->
                   <textTranscript xmlns:f="http://www.faustedition.net/ns" uri="faust://lesetext/faust.xml"
                     href="{resolve-uri('lesetext/faust.xml', $builddir)}" document="lesetext/faust.xml"
-                    type="lesetext" f:sigil="Lesetext" sigil_t="faust">
-                    <idno type="faustedition">Lesetext</idno>
+                    type="lesetext" f:sigil="Text" sigil_t="faust">
+                    <idno type="faustedition">Text</idno>
                   </textTranscript>
 
                   <xsl:apply-templates select="descendant-or-self::f:textTranscript">
