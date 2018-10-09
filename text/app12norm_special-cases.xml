@@ -290,6 +290,15 @@
     </app>
     
     <app>
+        <f:replace n="4137">sah’</f:replace>
+        <f:ins n="4137">sah</f:ins>
+        <ref>4137</ref>
+        <lem wit="1_H.14">sah <note><wit>1_H.14</wit></note></lem>
+        <rdg wit="A B">sah’ <note><wit>A</wit> <wit>B</wit></note></rdg>
+        <rdg wit="B.a" type="type_2a">sah <note> <wit>B.a</wit></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="before_4144">Brocktophantasmist</f:replace>
         <f:ins n="before_4144">Proktophantasmist</f:ins>
         <ref>vor 4144</ref>

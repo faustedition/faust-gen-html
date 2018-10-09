@@ -2728,15 +2728,7 @@
     <rdg wit="D.2">trägt. <note><wit>D.2</wit></note></rdg>
     <rdg wit="B.a" type="type_2a">trägt. <note><wit>B.a</wit></note></rdg>
   </app>
-  <!--       4137[sah’]{sah} <i>4137</i> sah <i>1_H.14</i>]   sah’ <i>A B</i> sah <i> B.a [type=2a]</i>-->
-  <app>
-    <f:replace n="4137">sah’</f:replace>
-    <f:ins n="4137">sah</f:ins>
-    <ref>4137</ref>
-    <lem wit="1_H.14">sah <note><wit>1_H.14</wit></note></lem>
-    <rdg wit="A B">sah’ <note><wit>A</wit> <wit>B</wit></note></rdg>
-    <rdg wit="B.a" type="type_2a">sah <note> <wit>B.a</wit></note></rdg>
-  </app>
+
   <!--       4138[hatt’]{=} <i>4138</i> hatt’ <i>A B B.a</i>]   hätt <i>1_H.14 [type=2a*]</i>-->
   <app>
     <f:replace n="4138">hatt’</f:replace>
