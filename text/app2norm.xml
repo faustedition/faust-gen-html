@@ -686,14 +686,7 @@
     <rdg wit="2_II_H.74">Angestrengtest <note><wit>2_II_H.74</wit></note></rdg>
     <rdg wit="2_H" type="type_1a">Angestregtest <note><wit>2_H</wit></note></rdg>
   </app>
-  <!--       7583[Ritze]{=} <i>7583</i> Ritze <i>2_H</i>] Ritzen <i>emend. faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q faust://bibliography/wa_I_15_1#Erich_Schmidt [type=7]</i>-->
-  <app>
-    <f:replace n="7583">Ritze</f:replace>
-    <f:ins n="7583">Ritze</f:ins>
-    <ref>7583</ref>
-    <lem wit="2_H">Ritze <note><wit>2_H</wit></note></lem>
-    <rdg type="type_7">Ritzen <note>emend. <ref target="faust://bibliography/C.1_41"/> <ref target="faust://bibliography/C.3_41"/> <ref target="faust://bibliography/Q"/> <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
-  </app>
+
   <!--       7729[mit]{=} <i>7729</i> mit <i>2_II_H.74 2_H</i>] bei <i>emend. faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q faust://bibliography/wa_I_15_1#Erich_Schmidt [type=7]</i>-->
   <app>
     <f:replace n="7729">mit</f:replace>

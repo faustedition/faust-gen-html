@@ -546,6 +546,14 @@
     </app>
 
     <app>
+        <f:replace n="7583">Ritze</f:replace>
+        <f:ins n="7583">Ritze</f:ins>
+        <ref>7583</ref>
+        <lem wit="2_H">Ritze <note><wit>2_H</wit></note></lem>
+        <rdg type="type_7">Ritzen <note>emend. <ref target="faust://bibliography/C.1_41"/> <ref target="faust://bibliography/C.3_41"/> <ref target="faust://bibliography/Q"/> <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="7729">ungewissen</f:replace>
         <f:ins n="7729">ungewissem</f:ins>
         <ref>7729</ref>
