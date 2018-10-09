@@ -540,13 +540,7 @@
     <lem wit="A">fehlts <note><wit>A</wit></note></lem>
     <rdg wit="B B.a" type="type_4a">fehlt’s <note><wit>B</wit> <wit>B.a</wit></note></rdg>
   </app>
-  <!--       948[]{} <i>948–980</i>] <i>nicht eingerückt A B B.a 1_H.1 C.1_12 C.3_12 eingerückt Q [type=7]</i>-->
-  <app>
-    <f:ins n="948" place="only-app"/>
-    <ref>948–980</ref>
-    <lem/>
-    <rdg wit="A B B.a 1_H.1 C.1_12 C.3_12" type="type_7"> <note>nicht eingerückt <wit>A</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> <wit>C.3_12</wit> eingerückt Q</note></rdg>
-  </app>
+
   <!--       958[an,]{=} <i>958</i> an, <i>A B.a</i>]   an^ <i>B [Typ 4c]</i>-->
   <app>
     <f:replace n="958">an,</f:replace>
