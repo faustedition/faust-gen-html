@@ -243,11 +243,12 @@
         <lem wit="1_H.14">Strecken <note><wit>1_H.14</wit></note></lem>
         <rdg wit="A B B.a">Stecken <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></rdg>
         <rdg wit="1_H.6">Strecken <note>vorschl Gö <wit>1_H.6</wit></note></rdg>
-        <rdg>
-            <subst>
+        <rdg wit="1_H.1">
+            <subst hand="G">
                 <del>Stecken</del>
-                <add>Strecken <note>G 1_1_H.1</note></add>
+                <add>Strecken</add>
             </subst>
+            <note><seg type="hand">G</seg> <wit>1_H.1</wit></note>
         </rdg>
         <rdg wit="C.1_12 C.3_12" type="type_2a">Strecken <note><wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
     </app>
