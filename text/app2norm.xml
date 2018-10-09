@@ -646,14 +646,7 @@
     <lem wit="2_II_H.74">menschenähnlichs <note><wit>2_II_H.74</wit></note></lem>
     <rdg wit="2_H" type="type_2aa">menschlichähnlichs <note><wit>2_H</wit></note></rdg>
   </app>
-  <!--       7287[wadend]{=} <i>7287</i> wadend <i>2_II_H.74 2_H</i>] watend <i>em. faust://bibliography/wa_I_15_1#Erich_Schmidt [type=7]</i>-->
-  <app>
-    <f:replace n="7287">wadend</f:replace>
-    <f:ins n="7287">wadend</f:ins>
-    <ref>7287</ref>
-    <lem wit="2_II_H.74 2_H">wadend <note><wit>2_II_H.74</wit> <wit>2_H</wit></note></lem>
-    <rdg type="type_7">watend <note>em. <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
-  </app>
+
   <!--       7348[Geist]{Geist-} <i>7348</i> Geist- <i>2_II_H.74</i>]  Geist <i>2_H [type=2aa]</i>-->
   <app>
     <f:replace n="7348">Geist</f:replace>
