@@ -571,6 +571,21 @@
     </app>
 
     <app>
+        <f:replace n="8374">wägt und regt</f:replace>
+        <f:ins n="8374">wägt und regt</f:ins>
+        <ref>8374</ref>
+        <lem wit="2_H">wägt und regt <note><wit>2_H</wit></note></lem>
+        <rdg wit="2_II_H.71">regt <note><wit>2_II_H.71</wit></note></rdg>
+        <rdg wit="2_II_H.69">regt und wagt <note>G <wit>2_II_H.69</wit></note></rdg>
+        <rdg type="type_7">
+            <subst>
+                <del>wägt und trägt <note>(Hörfehler) </note></del>
+                <add>wägt und regt <note>G 2_I_H.70</note></add>
+            </subst>
+        </rdg>
+    </app>
+
+    <app>
         <f:replace n="8467">bald süße</f:replace>
         <f:ins n="8467"><seg>und</seg> süße</f:ins>
         <ref>8467</ref>

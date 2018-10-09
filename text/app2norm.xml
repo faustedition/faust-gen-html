@@ -764,21 +764,7 @@
     <lem>Psyllen</lem>
     <rdg wit="2_II_H.70 2_H" type="type_1a">Psellen <note><wit>2_II_H.70</wit> <wit>2_H</wit></note></rdg>
   </app>
-  <!--       8374[wägt und regt]{=} <i>8374</i> wägt und regt <i>2_H</i>] regt <i>2_II_H.71</i> regt und wagt <i>G 2_II_H.69</i> wägt und trägt <i>(Hörfehler) 2_I_H.70 :</i> wägt und regt <i>G [type=7]</i>-->
-  <app>
-    <f:replace n="8374">wägt und regt</f:replace>
-    <f:ins n="8374">wägt und regt</f:ins>
-    <ref>8374</ref>
-    <lem wit="2_H">wägt und regt <note><wit>2_H</wit></note></lem>
-    <rdg wit="2_II_H.71">regt <note><wit>2_II_H.71</wit></note></rdg>
-    <rdg wit="2_II_H.69">regt und wagt <note>G <wit>2_II_H.69</wit></note></rdg>
-    <rdg type="type_7">
-      <subst>
-        <del>wägt und trägt <note>(Hörfehler) </note></del>
-        <add>wägt und regt <note>G 2_I_H.70</note></add>
-      </subst>
-    </rdg>
-  </app>
+
   <!--       before_8391_b[am]{an} <i>vor 8391</i> an <i>2_II_H.70</i>] am <i>2_H [type=2aa]</i>-->
   <app>
     <f:replace n="before_8391_b">am</f:replace>
