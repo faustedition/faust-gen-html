@@ -2505,16 +2505,7 @@
     <lem wit="1_H.5">Mauern Pfeiler <note><wit>1_H.5</wit></note></lem>
     <rdg wit="S 1_H.13 A B B.a 1_H.1 C.1_12 C.3_12" type="type_2b">Mauern-Pfeiler <note><wit>S</wit> <wit>1_H.13</wit> <wit>A</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
   </app>
-  <!--       3821[Verbirg’]{Verbirg} <i>3821</i> Verbirg <i>none</i>] Verbirgst <i>1_H.5</i> Verbirg <i>S 1_H.13</i> Verbirg’ <i>A B B.a  1_H.1 C.1_12 C.3_12 [type=1b]</i>-->
-  <app>
-    <f:replace n="3821">Verbirg’</f:replace>
-    <f:ins n="3821">Verbirg</f:ins>
-    <ref>3821</ref>
-    <lem>Verbirg</lem>
-    <rdg wit="1_H.5">Verbirgst <note><wit>1_H.5</wit></note></rdg>
-    <rdg wit="S 1_H.13">Verbirg <note><wit>S</wit> <wit>1_H.13</wit></note></rdg>
-    <rdg wit="A B B.a 1_H.1 C.1_12 C.3_12" type="type_1b">Verbirg’ <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit>  <wit>1_H.1</wit> <wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
-  </app>
+
   <!--       3822[Bleibt’]{Bleibt} <i>3822</i> Bleibt <i>S 1_H.13</i>]   Bleibt’ <i>A D.1</i> Bleibt <i>B B.a  [type=1b]</i>-->
   <app>
     <f:replace n="3822">Bleibt’</f:replace>
