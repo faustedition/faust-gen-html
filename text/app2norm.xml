@@ -609,14 +609,7 @@
     <rdg> <note>mon Ri, am linken Rand</note></rdg>
     <rdg wit="2_H" type="type_7">hehren? <note>mit Verweis auf 6856 Ri <wit>2_H</wit></note></rdg>
   </app>
-  <!--       7049[von]{=} <i>7049</i> von <i>2_II_H.74 2_H</i>] vor <i>emend. faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q faust://bibliography/wa_I_15_1#Erich_Schmidt [type=1a*]</i>-->
-  <app>
-    <f:replace n="7049">von</f:replace>
-    <f:ins n="7049">von</f:ins>
-    <ref>7049</ref>
-    <lem wit="2_II_H.74 2_H">von <note><wit>2_II_H.74</wit> <wit>2_H</wit></note></lem>
-    <rdg type="type_1a*">vor <note>emend. <ref target="faust://bibliography/C.1_41"/> <ref target="faust://bibliography/C.3_41"/> <ref target="faust://bibliography/Q"/> <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
-  </app>
+
   <!--       7136[Cumpan]{=} <i>7136</i> Cumpan <i>2_H</i>] Kumpan <i>Ec 2_H [type=6]</i>-->
   <app>
     <f:replace n="7136">Cumpan</f:replace>

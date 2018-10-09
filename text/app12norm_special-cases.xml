@@ -530,6 +530,14 @@
     </app>
 
     <app>
+        <f:replace n="7049">von</f:replace>
+        <f:ins n="7049">von</f:ins>
+        <ref>7049</ref>
+        <lem wit="2_II_H.74 2_H">von <note><wit>2_II_H.74</wit> <wit>2_H</wit></note></lem>
+        <rdg type="type_1a*">vor <note>emend. <ref target="faust://bibliography/C.1_41"/> <ref target="faust://bibliography/C.3_41"/> <ref target="faust://bibliography/Q"/> <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="7729">ungewissen</f:replace>
         <f:ins n="7729">ungewissem</f:ins>
         <ref>7729</ref>
