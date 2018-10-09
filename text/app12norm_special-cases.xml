@@ -781,6 +781,14 @@
     </app>
 
     <app>
+        <f:replace n="10060">quollen</f:replace>
+        <f:ins n="10060">quollen</f:ins>
+        <ref>10060</ref>
+        <lem wit="2_IV_H.1 2_H">quollen <note><wit>2_IV_H.1</wit> <wit>2_H</wit></note></lem>
+        <rdg type="type_1a*">quellen <note>emend. <ref target="faust://bibliography/C.1_41"/> <ref target="faust://bibliography/C.3_41"/> <ref target="faust://bibliography/Q"/> <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="10309">diesmal</f:replace>
         <f:ins n="10309">dieses mal</f:ins>
         <ref>10309</ref>

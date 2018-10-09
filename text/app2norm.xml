@@ -1396,14 +1396,7 @@
     <lem wit="2_H">Vogelsängen <note><wit>2_H</wit></note></lem>
     <rdg wit="C.1_4" type="type_2aa">Vogelsingen <note><wit>C.1_4</wit></note></rdg>
   </app>
-  <!--       10060[quollen]{=} <i>10060</i> quollen <i>2_IV_H.1 2_H</i>] quellen <i>emend. faust://bibliography/C.1_41 faust://bibliography/C.3_41 faust://bibliography/Q faust://bibliography/wa_I_15_1#Erich_Schmidt [type=1a*]</i>-->
-  <app>
-    <f:replace n="10060">quollen</f:replace>
-    <f:ins n="10060">quollen</f:ins>
-    <ref>10060</ref>
-    <lem wit="2_IV_H.1 2_H">quollen <note><wit>2_IV_H.1</wit> <wit>2_H</wit></note></lem>
-    <rdg type="type_1a*">quellen <note>emend. <ref target="faust://bibliography/C.1_41"/> <ref target="faust://bibliography/C.3_41"/> <ref target="faust://bibliography/Q"/> <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
-  </app>
+
   <!--       10011[umzingeln,]{umzingeln} <i>10011</i> umzingeln^ <i>2_H</i>] umzingeln, <i>2_H :</i> umzingeln^ <i>durch Rasur</i> umzingeln, <i>C.1_4 [type=2aa]</i>-->
   <app>
     <f:replace n="10011">umzingeln,</f:replace>
