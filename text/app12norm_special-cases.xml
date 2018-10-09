@@ -421,7 +421,7 @@
         <ref>5944</ref>
         <lem/>
         <rdg wit="2_H"> <note>Der Beginn der neuen Versgruppe ist in <wit>2_H</wit> durch Einrückung des Verses markiert.</note></rdg>
-        <rdg type="type_2aa"> <note>Die Einrückung fehlt in 2_I_H.0a.</note></rdg>
+        <rdg wit="2_I_H.0a" type="type_2aa"> <note>Die Einrückung fehlt in <wit>2_I_H.0a</wit>.</note></rdg>
     </app>
 
     <app>
