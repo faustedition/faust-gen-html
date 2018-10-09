@@ -230,9 +230,10 @@
         <f:replace n="3822">Bleibt’</f:replace>
         <f:ins n="3822">Bleibt</f:ins>
         <ref>3822</ref>
-        <lem wit="S 1_H.13">Bleibt <note><wit>S</wit> <wit>1_H.13</wit></note></lem>
-        <rdg wit="A D.1">Bleibt’ <note><wit>A</wit> <wit>D.1</wit></note></rdg>
-        <rdg wit="B B.a" type="type_1b">Bleibt <note><wit>B</wit> <wit>B.a</wit></note></rdg>
+        <lem>Bleibt</lem>
+        <rdg wit="S 1_H.13">Bleibt <note><wit>S</wit> <wit>1_H.13</wit></note></rdg>
+        <rdg wit="A D.1" type="type_1b">Bleibt’ <note><wit>A</wit> <wit>D.1</wit></note></rdg>
+        <rdg wit="B B.a">Bleibt <note><wit>B</wit> <wit>B.a</wit></note></rdg>
     </app>
 
     <app>
