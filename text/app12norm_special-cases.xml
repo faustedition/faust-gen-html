@@ -741,7 +741,8 @@
         <f:replace n="9378">vom</f:replace>
         <f:ins n="9378">von</f:ins>
         <ref>9378</ref>
-        <lem wit="2_III_H.48 2_III_H.3a_2">von <note><wit>2_III_H.48</wit> <wit>2_III_H.3a_2</wit></note></lem>
+        <lem wit="2_III_H.3a_2">von <note><wit>2_III_H.3a_2</wit></note></lem>
+        <rdg wit="2_III_H.48">von <note><wit>2_III_H.48</wit></note></rdg>
         <rdg wit="2_H C.1_4" type="type_2b">vom <note><wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
     </app>
 
