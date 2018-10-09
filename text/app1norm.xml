@@ -1635,13 +1635,7 @@
     <rdg wit="A D.1">Hexe. <note><wit>A</wit> <wit>D.1</wit></note></rdg>
     <rdg wit="B B.a" type="type_8">Hexe<pc>‸</pc> <note><wit>B</wit> <wit>B.a</wit></note></rdg>
   </app>
-  <!--       2540[]{} <i>2540–2552</i>] <i>In allen Drucken sind die Verse nicht eingerückt. [type=7]</i>-->
-  <app>
-    <f:ins n="2540" place="only-app"/>
-    <ref>2540–2552</ref>
-    <lem/>
-    <rdg type="type_7"> <note>In allen Drucken sind die Verse nicht eingerückt.</note></rdg>
-  </app>
+
   <!--       before_2583_a[Hexe]{=} <i>vor 2583</i> <speaker>Hexe</speaker> <i>none</i>] <speaker>Hexe^</speaker> <i>S</i> <speaker>Hexe.</speaker> <i>A D.1</i> <speaker>Hexe^</speaker> <i>B B.a  [type=8]</i>-->
   <app>
     <f:replace n="before_2583_a">Hexe</f:replace>

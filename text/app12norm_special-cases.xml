@@ -93,6 +93,14 @@
         <rdg wit="S" type="type_7"><note>In <wit>S</wit> wird <quote>Die Hexe</quote> nicht als
                 Sprecherbezeichnung kenntlich gemacht.</note></rdg>
     </app>
+
+    <app>
+        <f:ins n="2540" place="only-app"/>
+        <ref>2540–2552</ref>
+        <lem/>
+        <rdg type="type_7"> <note>In allen Drucken sind die Verse nicht eingerückt.</note></rdg>
+    </app>
+    
     <app>
         <f:ins id="l2709a" place="attributes">
             <l part="I"/>
