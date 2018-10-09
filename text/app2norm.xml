@@ -898,20 +898,7 @@
     <lem wit="2_III_H.3a_1">schlechterzogne <note><wit>2_III_H.3a_1</wit></note></lem>
     <rdg wit="2_H C.1_4" type="type_2b">schlachterzogne <note><wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
   </app>
-  <!--       8795[sie nicht]{nicht sie} <i>8795</i> nicht sie <i>2_III_H.2:1</i>]  sie nicht <i>2_III_H.2:1 :</i> nicht sie <i>umst G</i> sie nicht <i>2_III_H.3a:1 2_H C.1 12  [type=2b]</i>-->
-  <app>
-    <f:replace n="8795">sie nicht</f:replace>
-    <f:ins n="8795">nicht sie</f:ins>
-    <ref>8795</ref>
-    <lem wit="2_III_H.2_1">nicht sie <note><wit>2_III_H.2_1</wit></note></lem>
-    <rdg wit="2_III_H.2_1">
-      <subst>
-        <del>sie nicht</del>
-        <add>nicht sie <note>umst G <wit>2_III_H.2_1</wit></note></add>
-      </subst>
-    </rdg>
-    <rdg wit="2_III_H.3a_1 2_H" type="type_2b">sie nicht <note><wit>2_III_H.3a_1</wit> <wit>2_H</wit> C.1 12</note></rdg>
-  </app>
+
   <!--       8803[Anerkannte! nun]{Anerkannte! neu} <i>8803</i> Anerkannte! neu <i>2_III_H.1</i>] Anerkannte! nun <i>2_III_H.2:1 2_III_H.3a:1 2_H C.1_4 [type=2b]</i>-->
   <app>
     <f:replace n="8803">Anerkannte! nun</f:replace>
