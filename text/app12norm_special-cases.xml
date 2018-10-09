@@ -611,6 +611,20 @@
     </app>
 
     <app>
+        <f:replace n="8542">mustre</f:replace>
+        <f:ins n="8542">mustere</f:ins>
+        <ref>8542</ref>
+        <lem wit="2_III_H.3a_1">mustere <note><wit>2_III_H.3a_1</wit></note></lem>
+        <rdg wit="2_III_H.3 2_III_H.3 2_III_H.3a_1">
+            <subst>
+                <del>mustre</del>
+                <add>mustere <note>Ri G <wit>2_III_H.3</wit> <wit>2_III_H.3a_1</wit> <wit>2_III_H.3</wit></note></add>
+            </subst>
+        </rdg>
+        <rdg wit="2_H C.1_4" type="type_2b">mustre <note><wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="8741">nicht.</f:replace>
         <f:ins n="8741">nicht,</f:ins>
         <ref>8741</ref>
