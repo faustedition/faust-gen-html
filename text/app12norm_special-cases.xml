@@ -885,7 +885,7 @@
         <f:replace n="11724">erlischt</f:replace>
         <f:ins n="11724">erlischt</f:ins>
         <ref>11724</ref>
-        <lem wit="2_H">erlischt <gap reason="ellipsis"/> Muth <note><wit>2_H</wit></note></lem>
+        <lem wit="2_H">erlischt<pc>‸</pc> <gap reason="ellipsis"/> Muth<pc>‸</pc> <note><wit>2_H</wit></note></lem>
         <rdg wit="2_H" type="type_6">erlischt, <gap reason="ellipsis"/> Muth! <note>Ec <wit>2_H</wit></note></rdg>
     </app>
 
