@@ -238,7 +238,18 @@
 		<xsl:param name="content"><xsl:apply-templates/></xsl:param>
 		<xsl:param name="sidebar"><xsl:call-template name="local-nav"/></xsl:param>
 		<xsl:call-template name="html-frame">
-			<xsl:with-param name="breadcrumb-def" tunnel="yes"><xsl:call-template name="breadcrumbs"/></xsl:with-param>
+			<xsl:with-param name="breadcrumb-def" tunnel="yes">
+				<xsl:choose>
+					<xsl:when test="$type = 'lesetext' and not(ancestor-or-self::div[@f:section])">
+						<xsl:message>Lesetext Root</xsl:message>
+						<a href="/text">Text</a>
+						<a>Konstituierter Text</a>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:call-template name="breadcrumbs"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:with-param>
 			<xsl:with-param name="jsRequirements" select="'faust_app:faust_app'"/>
 			<xsl:with-param name="section-classes" select="('center', 'print')"/>			
 			<xsl:with-param name="grid-content">
@@ -258,7 +269,7 @@
 				</article>
 				<div class="pure-u-1-5">  <!-- 3. Spalte (1/5) für die lokale Navigation  -->
 					<xsl:sequence select="$sidebar"/>
-				</div>				
+				</div>
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
