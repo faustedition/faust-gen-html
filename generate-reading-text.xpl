@@ -191,6 +191,12 @@
 			<p:with-option name="href" select="resolve-uri('lesetext/faust.xml', $builddir)"/>
 		</p:store>
 		
+		<!-- Store the final marked-up text -->
+		<p:store method="xml">
+			<p:input port="source"><p:pipe port="result" step="final-text"/></p:input>
+			<p:with-option name="href" select="resolve-uri('www/downloads/faust.xml', $builddir)"/>
+		</p:store>
+		
 
 		<!-- additionally, pass out the real result -->
 		<p:identity><p:input port="source"><p:pipe port="result" step="final-text"/></p:input></p:identity>
