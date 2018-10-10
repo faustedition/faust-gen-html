@@ -881,4 +881,12 @@
         <rdg wit="2_H" type="type_7"> <note>Der Punkt ist in <wit>2_H</wit> nicht zu erkennen; ergänzt nach <wit>2_V_H.2</wit>.</note></rdg>
     </app>
     
+    <app>
+        <f:replace n="11724">erlischt</f:replace>
+        <f:ins n="11724">erlischt</f:ins>
+        <ref>11724</ref>
+        <lem wit="2_H">erlischt <gap reason="ellipsis"/> Muth <note><wit>2_H</wit></note></lem>
+        <rdg wit="2_H" type="type_6">erlischt, <gap reason="ellipsis"/> Muth! <note>Ec <wit>2_H</wit></note></rdg>
+    </app>
+
 </f:apparatus>

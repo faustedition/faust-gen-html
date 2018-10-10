@@ -1873,15 +1873,7 @@
     <rdg wit="2_V_H.2">streuend <note><wit>2_V_H.2</wit></note></rdg>
     <rdg wit="2_H" type="type_1a">strauend <note><wit>2_H</wit></note></rdg>
   </app>
-  <!--       11724[erlischt|Muth]{=} <i>11724</i> erlischt <i>…</i> Muth <i>2_H</i>] erlischt, <i>…</i> Muth! <i>Ec 2_H [type=6]</i>-->
-  <!--FIXED: 11724[erlischt|Muth]{=} <i>11724</i> erlischt <gap reason="ellipsis"/> Muth <i>2_H</i>] erlischt, <gap reason="ellipsis"/> Muth! <i>Ec 2_H [type=6]</i>-->
-  <app>
-    <f:replace n="11724">erlischt</f:replace>
-    <f:ins n="11724">erlischt</f:ins>
-    <ref>11724</ref>
-    <lem wit="2_H">erlischt <gap reason="ellipsis"/> Muth <note><wit>2_H</wit></note></lem>
-    <rdg wit="2_H" type="type_6">erlischt, <gap reason="ellipsis"/> Muth! <note>Ec <wit>2_H</wit></note></rdg>
-  </app>
+
   <!--       11760[im]{in} <i>11760</i> in <i>2_V_H.2</i>] im <i>2_H [type=2a]</i>-->
   <app>
     <f:replace n="11760">im</f:replace>
