@@ -1435,16 +1435,7 @@
     <lem wit="2_H">starke <note><wit>2_H</wit></note></lem>
     <rdg type="type_3*">starre <note>konj. <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
   </app>
-  <!--       before_10067_a[alsbald]{also bald} <i>vor 10067</i> also bald <i>2_IV_H.3</i>] alsobald <i>2_IV_H.2</i> also bald <i>etwas undeutlich 2_IV_H.3</i> alsbald <i>2_H [type=2aa]</i>-->
-  <app>
-    <f:replace n="before_10067_a">alsbald</f:replace>
-    <f:ins n="before_10067_a">also bald</f:ins>
-    <ref>vor 10067</ref>
-    <lem wit="2_IV_H.3">also bald <note><wit>2_IV_H.3</wit></note></lem>
-    <rdg wit="2_IV_H.2">alsobald <note><wit>2_IV_H.2</wit></note></rdg>
-    <rdg wit="2_IV_H.3">also bald <note>etwas undeutlich <wit>2_IV_H.3</wit></note></rdg>
-    <rdg wit="2_H" type="type_2aa">alsbald <note><wit>2_H</wit></note></rdg>
-  </app>
+
   <!--       10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074</i>] <i>eingerückt 2_H [type=1c]</i>-->
   <app>
     <f:ins n="10067" place="enclosing-lg">
