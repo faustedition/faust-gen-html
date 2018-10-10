@@ -112,9 +112,8 @@
 			<xsl:copy>
 				<xsl:apply-templates select="@*"/>
 				<title type="headNote" xml:id="headNote">
-					<xsl:choose>
-						<xsl:when test="$type = 'lesetext' and contains($faustURI, 'faust1')">Faust I</xsl:when>
-						<xsl:when test="$type = 'lesetext' and contains($faustURI, 'faust2')">Faust II</xsl:when>
+					<xsl:choose>						
+						<xsl:when test="$type = 'lesetext'">Konstituierter Text</xsl:when>						
 						<xsl:otherwise><xsl:value-of select="$metadata//f:headNote"/></xsl:otherwise>
 					</xsl:choose>
 				</title>
