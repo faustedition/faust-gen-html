@@ -1855,14 +1855,7 @@
     <lem wit="2_H">Von <note><wit>2_H</wit></note></lem>
     <rdg wit="2_H" type="type_6">Hier <note>Ec <wit>2_H</wit></note></rdg>
   </app>
-  <!--       11635[wieder]{wieder.} <i>11635</i> wieder. <i>2_V_H.2</i>] <i>Der Punkt ist in 2_H nicht zu erkennen; ergänzt nach 2_V_H.2. [type=7]</i>-->
-  <app>
-    <f:replace n="11635">wieder</f:replace>
-    <f:ins n="11635">wieder.</f:ins>
-    <ref>11635</ref>
-    <lem wit="2_V_H.2">wieder. <note><wit>2_V_H.2</wit></note></lem>
-    <rdg wit="2_H" type="type_7"> <note>Der Punkt ist in <wit>2_H</wit> nicht zu erkennen; ergänzt nach 2_V_H.2.</note></rdg>
-  </app>
+
   <!--       11638[Vom]{Von} <i>11638</i> Von <i>2_V_H.2</i>] Vom <i>2_H [type=2a]</i>-->
   <app>
     <f:replace n="11638">Vom</f:replace>

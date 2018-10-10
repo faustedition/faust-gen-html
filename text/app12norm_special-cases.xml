@@ -873,4 +873,12 @@
                 <wit>2_H</wit></note></rdg>
     </app>
 
+    <app>
+        <f:replace n="11635">wieder</f:replace>
+        <f:ins n="11635">wieder.</f:ins>
+        <ref>11635</ref>
+        <lem wit="2_V_H.2">wieder. <note><wit>2_V_H.2</wit></note></lem>
+        <rdg wit="2_H" type="type_7"> <note>Der Punkt ist in <wit>2_H</wit> nicht zu erkennen; ergänzt nach 2_V_H.2.</note></rdg>
+    </app>
+    
 </f:apparatus>
