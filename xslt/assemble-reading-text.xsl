@@ -143,18 +143,29 @@
 		<teiHeader>
 			<fileDesc>
 				<titleStmt>
-					<title>Faust</title>
-					<title>Eine Tragödie</title>
-					<title>Konstituierter Text</title>
-					<title>Bearbeitet von Gerrit Brüning und Dietmar Pravida</title>
+					<title type="main">Faust</title>
+					<title type="sub">Eine Tragödie</title>
+					<title type="sub">Konstituierter Text</title>
+					<author>Johann Wolfgang Goethe</author>
+					<respStmt>
+						<resp>Bearbeitet von <name>Gerrit Brüning</name> und <name>Dietmar
+							Pravida</name></resp>
+						<resp><name>Thorsten Vitt</name> stellte die digitale Vorstufe des Textes
+							bereit.</resp>
+					</respStmt>
 				</titleStmt>
+				<editionStmt>
+					<edition><xsl:value-of select="document('../version.xml#version')"/></edition>
+				</editionStmt>
 				<publicationStmt>
-					<p><date when="{current-dateTime()}"/></p>
+					<publisher><!-- bleibt leer --></publisher>
+					<date when="{current-dateTime()}">generiert: <xsl:value-of select="current-dateTime()"/></date>
+					<availability>
+						<licence target="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+							>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</licence>
+					</availability>
 				</publicationStmt>
-				<sourceDesc>
-					<p>Information about the source</p>
-				</sourceDesc>
-			</fileDesc>
+			</fileDesc>			
 		</teiHeader>
 	</xsl:template>
 
