@@ -144,21 +144,42 @@
 		-->
 		<xsl:param name="scriptAdditions" select="$scriptAdditions"/>
 		<!-- additional javascript -->
+		<noscript>
+			<div class="pure-alert pure-alert-warning">
+				<h3>JavaScript erforderlich</h3>
+				<p>Die Faustedition bietet ein interaktives Userinterface, für das JavaScript erforderlich ist.</p>
+				<p>Bitte deaktivieren Sie ggf. vorhandene Skriptblocker für diese Seite.</p>
+			</div>
+		</noscript>
+		
+		<div id="cookie-consent" class="pure-modal center" style="top:auto;">
+			<div class="pure-modal-body">
+				<p>Diese Website verwendet Cookies und vergleichbare Technologien zur Erhöhung des Bedienkomforts
+					und – entsprechend Ihren Browsereinstellungen – für eine anonymisierte Nutzungsstatistik.
+					Durch die Benutzung erklären Sie sich damit einverstanden.
+					<a href="/imprint#privacy">Erfahren Sie mehr.</a>
+				</p>
+				<p><a id="cookie-consent-button" class="pure-button pull-right">OK</a></p>
+			</div>
+			
+		</div>
+		
+		
 		<footer>
 			<div class="center pure-g-r">
 				<div class="pure-u-1-2 pure-fade-50">
-					<a class="undecorated" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" align="middle"/></a>
+					<a class="undecorated" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" align="middle" /></a>
 				</div>
 				<div class="pure-u-1-2 pure-right pure-fade-50 pure-noprint">
-					<a href="/project">Projekt</a>
+					<a href="project">Projekt</a>
 					·
-					<a href="/intro">Ausgabe</a>
+					<a href="intro">Ausgabe</a>
 					·
-					<a href="/contact">Kontakt</a>
+					<a href="contact">Kontakt</a>
 					·
-					<a href="/imprint">Impressum</a>
+					<a href="imprint">Impressum</a>
 					·
-					<a href="/intro#sitemap">Sitemap</a>
+					<a href="intro#sitemap">Sitemap</a>
 				</div>
 			</div>
 		</footer>
@@ -170,18 +191,22 @@
 					<a href="/archive_locations">Aufbewahrungsorte</a>
 					<a href="/archive_manuscripts">Handschriften</a>
 					<a href="/archive_prints">Drucke</a>
-					<a href="/archive_testimonies">Dokumente zur Entstehungsgeschichte</a>
+					<a href="/archive_testimonies">Entstehungszeugnisse</a>
+					<a href="/archive_materials">Materialien</a>
 				</div>
 				<div class="pure-u-1-4 pure-gap">
 					<a><big>Genese</big></a>
 					<a href="/genesis">Werkgenese</a>
 					<a href="/genesis_faust_i">Genese Faust I</a>
 					<a href="/genesis_faust_ii">Genese Faust II</a>
+					<a href="/macrogenesis">Makrogenese-Lab</a>
 				</div>
 				<div class="pure-u-1-4 pure-gap">
 					<a href="/text"><big>Text</big></a>
-					<a href="/print/faust#part_1.1">Faust I</a>
-					<a href="/print/faust#part_2">Faust II</a>
+					<a href="/print/faust">Faust: Konstituierter Text</a>
+					<a href="/print/app">Apparat</a>
+					<a href="/print/app">Editorischer Bericht</a>
+					<br />
 					<a href="/paralipomena">Paralipomena</a>
 				</div>
 				<div class="pure-u-1-4 pure-gap pure-fade-50">
@@ -191,7 +216,7 @@
 					<a href="/contact">Kontakt</a>
 					<a href="/imprint">Impressum</a>
 					<a href="/intro#sitemap">Sitemap</a>
-					<a class="undecorated" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" align="middle"/></a>
+					<a class="undecorated" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" align="middle" /></a>
 				</div>
 			</div>
 		</script>
@@ -202,9 +227,9 @@
 				<div class="pure-u-1">
 					<h3>Zitierempfehlung</h3>
 					<p class="quotation-content">
-						Historisch-kritische Faustedition.
-						Herausgegeben von Anne Bohnenkamp, Silke Henke und Fotis Jannidis.
-						Unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach.
+						Johann Wolfgang Goethe: Faust. Historisch-kritische Edition.
+						Herausgegeben von Anne Bohnenkamp, Silke Henke und Fotis Jannidis
+						unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach.
 						Version 1.0rc. Frankfurt am Main / Weimar / Würzburg 2018,
 						<span>{context}</span>,
 						<span>URL: <a href="{url}">{url}</a></span>,
@@ -225,15 +250,14 @@
 				<div id="xml-global" class="pure-u-1-3 pure-gap">
 					<a><big>Globale TEI-Daten</big></a>
 					<a href="https://github.com/faustedition/faust-xml"><i class="fa fa-github-circled"></i> alle XML-Daten</a>
-					<a href="/download/testimony-split.zip" disabled="disabled"><i class="fa fa-file-archive"></i> Entstehungszeugnisse</a>
-					<a href="/download/faust.xml" disabled="disabled"><i class="fa fa-file-code"></i> konstituierter Text</a>
+					<a href="/downloads/testimony-split.zip" disabled="disabled"><i class="fa fa-file-archive"></i> Entstehungszeugnisse</a>
+					<a href="/downloads/faust.xml" disabled="disabled"><i class="fa fa-file-code"></i> konstituierter Text</a>
 				</div>
 				
 				<div id="xml-current" class="pure-u-1-3 pure-gap disabled">
 					<a><big>aktueller Datensatz</big></a>
 					<a id="xml-current-doc-source-page" href="#"><i class="fa fa-file-code"></i> Dokumentarisches Transkript</a>
 					<a id="xml-current-text-source"     href="#"><i class="fa fa-file-code"></i> Textuelles Transkript</a>
-					<a id="xml-current-text-emended"    href="#"><i class="fa fa-file-code"></i> Emendierte Version</a>
 					<a id="xml-current-metadata"        href="#"><i class="fa fa-file-code"></i> Metadaten</a>
 				</div>
 				
@@ -244,10 +268,11 @@
 			</div>
 		</script>
 		
+		
 		<script>
-			requirejs(['faust_common', 'jquery', 'jquery.chocolat', 'jquery.overlays', 'jquery.clipboard', 'faust_print_interaction'<xsl:value-of 
+			requirejs(['faust_common', 'jquery', 'jquery.chocolat', 'jquery.overlays', 'jquery.clipboard', 'js.cookie', 'faust_print_interaction'<xsl:value-of 
 				select="string-join(('', for $spec in $jsRequirements return f:enquote(substring-before($spec, ':'))), ', ')"/>], 
-				 function (Faust, $, $chocolat, $overlays, $clipboard, addPrintInteraction<xsl:value-of 
+				 function (Faust, $, $chocolat, $overlays, $clipboard, Cookies, addPrintInteraction<xsl:value-of 
 				 	select="string-join(('', for $spec in $jsRequirements return substring-after($spec, ':')), ', ')"/>) {
 						$('main').Chocolat({className:'faustedition', loop:true});
 						$('header nav').menuOverlays({highlightClass:'pure-menu-selected', onAfterShow: function() {
@@ -255,6 +280,19 @@
 						}});
 						$(function(){addPrintInteraction('/', undefined, '<xsl:value-of select="if ($documentURI) then $documentURI else 'undefined'"/>');})
 					  Faust.addToTopButton();
+					  					  
+					  var consent = Cookies.get('faust-cookie-consent');
+					  if (consent != 'yes') {
+					  	$('#cookie-consent-button').bind('click', function () {
+					  		var domain = window.location.hostname;
+					  		if (/faustedition\.net$/.test(domain))
+					  			domain = '.faustedition.net';
+					  		Cookies.set('faust-cookie-consent', 'yes', {expires: 365, domain: domain});
+					  		$('#cookie-consent').hide();
+					  	});
+					  	$('#cookie-consent').show();
+					  }
+					  
 					<xsl:if test="$breadcrumb-def">
 						<xsl:call-template name="f:breadcrumb-script">
 							<xsl:with-param name="breadcrumb-def" select="$breadcrumb-def"/>
