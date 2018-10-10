@@ -60,7 +60,7 @@
 
     <f:bib uri="faust://bibliography/binder1968">
         <f:citation>Binder 1968</f:citation>
-        <f:reference>Binder, Wolfgang, Goethes klassische Faust-Konzeption. In: DVJS 42, 1968, H.1, S. 55–88.</f:reference>
+        <f:reference>Binder, Wolfgang, Goethes klassische Faust-Konzeption. In: Deutsche Vierteljahrsschrift für Literaturwissenschaft und Geistesgeschichte 42 (1968), S. 55–88.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/bircher2000">
@@ -125,7 +125,7 @@
 
     <f:bib uri="faust://bibliography/bruening_hahn2017">
         <f:citation>Brüning / Hahn 2017</f:citation>
-        <f:reference>Brüning, Gerrit und Oliver Hahn: Goethes Helena-Dichtung in ursprünglicher Gestalt. Zum methodischen Verhältnis von Materialanalyse und Textkritik, in: editio 31, 2017, S. 145--172.</f:reference>
+        <f:reference>Brüning, Gerrit und Oliver Hahn: Goethes Helena-Dichtung in ursprünglicher Gestalt. Zum methodischen Verhältnis von Materialanalyse und Textkritik, in: Editio 31 (2017), S. 145--172.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/buchwald1942">
@@ -143,6 +143,11 @@
         <f:reference>Burkhardt, C.A.H.: Zu Goethes Gedichten. In: Archiv für Litteraturgeschichte 2 (1872), S. 511–519.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/burkhardt1899">
+        <f:citation>Burkhardt 1899</f:citation>
+        <f:reference>Burkhardt, C.A.H.: Zur Kenntnis der Goethe-Handschriften, II: Chronologisches Verzeichnis der Dictat-Arbeiten und Reinschriften (Beilage zur Chronik des Wiener Goethe-Vereins XVI, Nr. 7–8).</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/carriere1869">
         <f:citation>Carrière 1869</f:citation>
         <f:reference>Carrière, Moriz: Faust. Eine Tragödie von Johann Wolfgang von Goethe. Erster Theil. Mit Einleitung und Erläuterungen, Leipzig 1869.</f:reference>
@@ -150,7 +155,7 @@
 
     <f:bib uri="faust://bibliography/castle1911">
         <f:citation>Castle 1911</f:citation>
-        <f:reference>Castle, Eduard: Plan und Einheit in der ersten Konzeption des Goetheschen ‚Faust‘. In: Chronik des Wiener Goethe-Vereins XXV (1911), S. 64–72.</f:reference>
+        <f:reference>Castle, Eduard: Plan und Einheit in der ersten Konzeption des Goetheschen ‚Faust‘. In: Chronik des Wiener Goethe-Vereins 25 (1911), S. 64–72.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/cohen1900">
@@ -180,7 +185,7 @@
 
     <f:bib uri="faust://bibliography/duentzer1849">
         <f:citation>Düntzer 1849</f:citation>
-        <f:reference>Düntzer, Heinrich: Eine ältere Fassung von Goethe’s Ballade: „Der König in Thule.“. In: Blätter für literarische Unterhaltung, Nr. 230, 25. September 1849, S. 919f.</f:reference>
+        <f:reference>Düntzer, Heinrich: Eine ältere Fassung von Goethe’s Ballade: „Der König in Thule“. In: Blätter für literarische Unterhaltung, Nr. 230, 25. September 1849, S. 919f.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1857">
@@ -345,7 +350,7 @@
 
     <f:bib uri="faust://bibliography/gruenstein1908">
         <f:citation>Grünstein 1908</f:citation>
-        <f:reference>Grünstein, Leo: Ein ungedrucktes Stammbuchblatt von Goethe. In: Chronik des Wiener Goethe-Vereins XXI, Nr. 5–6, 1. März 1908, S. 37.</f:reference>
+        <f:reference>Grünstein, Leo: Ein ungedrucktes Stammbuchblatt von Goethe. In: Chronik des Wiener Goethe-Vereins 21, Nr. 5–6, 1. März 1908, S. 37.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/grumach1953">
@@ -435,7 +440,7 @@
 
     <f:bib uri="faust://bibliography/hertz1924">
         <f:citation>Hertz 1924</f:citation>
-        <f:reference>Hertz, Gottfried Wilhelm: Entstehungsgeschichte und Gehalt von <strong>Faust II, Akt 2</strong>. In: Euphorion 25 (1924),S. 389–406, 609–629.</f:reference>
+        <f:reference>Hertz, Gottfried Wilhelm: Entstehungsgeschichte und Gehalt von Faust II, Akt 2. In: Euphorion 25 (1924),S. 389–406, 609–629.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hertz1931">
@@ -445,7 +450,7 @@
 
     <f:bib uri="faust://bibliography/hertz1932">
         <f:citation>Hertz 1932</f:citation>
-        <f:reference>Hertz, Gottfried Wilhelm: Zur Entstehungsgeschichte von <strong>Faust II Akt 5</strong>. (1825. 1826. 1830.) In: Euphorion 33 (1932), S. 244–277.</f:reference>
+        <f:reference>Hertz, Gottfried Wilhelm: Zur Entstehungsgeschichte von Faust II Akt 5. (1825. 1826. 1830.) In: Euphorion 33 (1932), S. 244–277.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hirzel1874">
@@ -456,6 +461,11 @@
     <f:bib uri="faust://bibliography/hohlfeld1955">
         <f:citation>Hohlfeld 1955</f:citation>
         <f:reference>Hohlfeld, Alexander Rudolph: Die Entstehung des Faust-Manuskripts von 1825–26 (VH2). In: Euphorion 49 (1955), S. 283–304.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/holtzhauer">
+        <f:citation>Holtzhauer o.J.</f:citation>
+        <f:reference>Holtzhauer, Helmut: Goethe-Museum. Werk, Leben und Zeit Goethes in Dokumenten, hrsg. von den Nationalen Forschungs- und Gedenkstätten der klassischen deutschen Literatur in Weimar, Berlin und Weimar, o.J. [1969].</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/houben1909">
@@ -505,7 +515,7 @@
 
     <f:bib uri="faust://bibliography/katalog_der_berliner_goethe-ausstellung1861">
         <f:citation>Katalog Berlin 1861</f:citation>
-        <f:reference>[Katalog] Verzeichniß von Goethe’s Handschriften, Zeichnungen und Radirungen, Drucken seiner Werke, Compositionen und Illustrationen seiner Dichtungen, Büsten, Medaillen und Gemälden, Portraits aus seinem Freundeskreise, Andenken und Erinnerungszeichen, welche im Conzertsaale des Königlichen Schauspielhauses vom 19ten Mai 1861 an ausgestellt sind. Mit zwei Schrifttafeln, Berlin 1861. (sog. Katalog der Berliner Goethe-Ausstellung) </f:reference>
+        <f:reference>[Katalog] Verzeichniß von Goethe’s Handschriften, Zeichnungen und Radirungen, Drucken seiner Werke, Compositionen und Illustrationen seiner Dichtungen, Büsten, Medaillen und Gemälden, Portraits aus seinem Freundeskreise, Andenken und Erinnerungszeichen, welche im Conzertsaale des Königlichen Schauspielhauses vom 19ten Mai 1861 an ausgestellt sind. Mit zwei Schrifttafeln, Berlin 1861.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/kiermeier-debre1997">
@@ -540,7 +550,7 @@
 
     <f:bib uri="faust://bibliography/koegel1888">
         <f:citation>Kögel 1888</f:citation>
-        <f:reference>Kögel, Rudolf: Kleinigkeiten zu Goethe. In: <strong>Vierteljahrschrift für Litteraturgeschichte</strong>, Bd. 1, 1888, S. 52–64.</f:reference>
+        <f:reference>Kögel, Rudolf: Kleinigkeiten zu Goethe. In: Vierteljahrschrift für Litteraturgeschichte 1 (1888), S. 52–64.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/koestler2008">
@@ -589,13 +599,13 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1879">
-        <f:citation>Loeper 1879 <strong>[muss zu Loeper 1879a geändert werden]</strong></f:citation>
+        <f:citation>Loeper 1879</f:citation>
         <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G. von Loeper, 2. Bearbeitung, 2 Tle., Berlin 1879. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1881b">
         <f:citation>Loeper 1881b </f:citation>
-        <f:reference>Loeper, Gustav von: [Rez.] <strong>faust://bibliography/schroeer1881_1</strong>. In: Anzeiger fuer deutsches Alterthum und deutsche Literatur, Jg. 7, 4. September 1881, S. 452–456. </f:reference>
+        <f:reference>Loeper, Gustav von: [Rez.] faust://bibliography/schroeer1881_1. In: Anzeiger fuer deutsches Alterthum und deutsche Literatur 7 (1881), S. 452–456. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1881">
@@ -673,6 +683,11 @@
         <f:reference>Mlynek, Klaus: Prunkstück ist das Dokument von Goethes unerwiderter Liebe zu Ulrike von Levetzow. In: Börsenblatt für den Deutschen Buchhandel. Frankfurter Ausgabe 29 (11. April 1989), S. 1280–1283.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/moering2008">
+        <f:citation>Moering 2008</f:citation>
+        <f:reference>Moering, Renate: Jahresbericht 2007, Abschnitt „Handschriftenabteilung“. In: Jahrbuch des Freien Deutschen Hochstifts 2008, S. 412–434.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/kmommsen1960">
         <f:citation>Mommsen 1960</f:citation>
         <f:reference>Mommsen, Katharina: Goethe und 1001 Nacht, Berlin 1960.</f:reference>
@@ -686,11 +701,6 @@
     <f:bib uri="faust://bibliography/mmommsen1953">
         <f:citation>Mommsen 1953</f:citation>
         <f:reference>Mommsen, Momme: Zum Faustparalipomenon 10. In: faust://bibliography/gjb_69-70, S. 342–343. </f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/moering2008">
-        <f:citation>Moering 2008</f:citation>
-        <f:reference>Moering, Renate: Freies Deutsches Hochstift. Jahresbericht 2007, Abschnitt „Handschriftenabteilung“. In: Jahrbuch des Freien Deutschen Hochstifts 2008, S. 412–434.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/morris1899">
@@ -850,7 +860,7 @@
 
     <f:bib uri="faust://bibliography/schillemeit1985">
         <f:citation>Schillemeit 1985</f:citation>
-        <f:reference>Schillemeit, Jost: Faust und der tragische Trimeter. Zur Vorgeschichte der Klassischen Walpurgisnacht. In: Jahrbuch des Freien Deutschen Hochstifts (1985), S. 33–51.</f:reference>
+        <f:reference>Schillemeit, Jost: Faust und der tragische Trimeter. Zur Vorgeschichte der Klassischen Walpurgisnacht. In: Jahrbuch des Freien Deutschen Hochstifts 1985, S. 33–51.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schillemeit1986">
@@ -870,7 +880,7 @@
 
     <f:bib uri="faust://bibliography/schillemeit1996">
         <f:citation>Schillemeit 1996</f:citation>
-        <f:reference>Jost Schillemeit: [Rez.] Anne Bohnenkamp, "... das Hauptgeschäft nicht außer Augen lassend". Die Paralipomena zu Goethes ‚Faust‘. In: Arbitrium 14(1996), Heft 3, S. 362–365.</f:reference>
+        <f:reference>Jost Schillemeit: [Rez.] Anne Bohnenkamp, "... das Hauptgeschäft nicht außer Augen lassend". Die Paralipomena zu Goethes ‚Faust‘. In: Arbitrium 14 (1996), Heft 3, S. 362–365.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schmidt1888a">
@@ -905,7 +915,7 @@
 
     <f:bib uri="faust://bibliography/schoene1994b">
         <f:citation>Schöne 1994b</f:citation>
-        <f:reference>[Schöne, Albrecht]: Die Spinnweben weg. Der Germanist Albrecht Schöne über seine ‚Faust‘-Ausgabe und das Handwerk des Philologen. In: Der Spiegel 46/1994, 14.11.1994, S. 220–229. <a href="http://www.spiegel.de/spiegel/print/d-9292588.html">Online verfügbar</a>.</f:reference>
+        <f:reference>[Schöne, Albrecht]: Die Spinnweben weg. Der Germanist Albrecht Schöne über seine ‚Faust‘-Ausgabe und das Handwerk des Philologen. In: Der Spiegel 46/1994, 14.11.1994, S. 220–229. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schreiber1932">
@@ -965,7 +975,7 @@
 
     <f:bib uri="faust://bibliography/suphan1876">
         <f:citation>Suphan 1876</f:citation>
-        <f:reference>Suphan, Bernhard: Goethe’sche Gedichte aus den siebziger und achtziger Jahren in ältester Gestalt. In: Zeitschrift für Deutsche Philologie 7 (1876), S. 208–237, Berichtigung a.a.O., S. 455–458.</f:reference>
+        <f:reference>Suphan, Bernhard: Goethe’sche Gedichte aus den siebziger und achtziger Jahren in ältester Gestalt. In: Zeitschrift für Deutsche Philologie 7 (1876), S. 208–237 und S. 455–458 (Berichtigung).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/suphan1881">
@@ -1985,7 +1995,7 @@
 
     <f:bib uri="faust://bibliography/braunschweiger1987">
         <f:citation>Braunschweiger 1987</f:citation>
-        <f:reference>Johann Wolfgang Goethe, Urfaust. Goethes „Faust“ in ursprünglicher Gestalt, mit einem Nachwort v. Robert Petsch, neu durchgesehen [von Horst Braunschweiger], Stuttgart 1987 (Reclams Universal-Bibliothek Nr. 5273).</f:reference>
+        <f:reference>Johann Wolfgang Goethe, Urfaust. Goethes „Faust“ in ursprünglicher Gestalt, mit einem Nachwort v. Robert Petsch, neu durchgesehen [von Horst Braunschweiger], Stuttgart 1987 (Universal-Bibliothek; Nr. 5273).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/graef1922">
@@ -2225,7 +2235,7 @@
 
     <f:bib uri="faust://bibliography/boas">
         <f:citation>Boas 1846, Bd. 2</f:citation>
-        <f:reference>Eduard Boas: Nachträge zu Goethe's sämmtlichen Werken. 2. Theil. Leipzig 1846, S. 181–184. [[file:Boas, E., Varianten zu Faust, 1846.pdf]]</f:reference>
+        <f:reference>Eduard Boas: Nachträge zu Goethe's sämmtlichen Werken. 2. Theil. Leipzig 1846, S. 181–184. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/bodemann1878">
@@ -2285,7 +2295,7 @@
 
     <f:bib uri="faust://bibliography/burkhardt1899">
         <f:citation>Burkhardt 1899</f:citation>
-        <f:reference>Carl August Hugo Burkhardt: Zur Kentniß der Goethe-Handschriften. II. Chronologisches Verzeihnis der Dictat-Arbeiten und und Reinschriften. Nach den Quellen bearbeitet [...], mit Faksimiles Goethescher Hilfsarbeiter. Wien 1899. (= Beilage zum XIV. Bande der „Chronik des Wiener Goethe-Vereins“, Nr. 7–8.) <strong>TODO Autopsie nötig</strong></f:reference>
+        <f:reference>Carl August Hugo Burkhardt: Zur Kentniß der Goethe-Handschriften. II. Chronologisches Verzeihnis der Dictat-Arbeiten und und Reinschriften. Nach den Quellen bearbeitet [...], mit Faksimiles Goethescher Hilfsarbeiter. Wien 1899. (= Beilage zum XIV. Bande der „Chronik des Wiener Goethe-Vereins“, Nr. 7–8.) </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/carus1843">
@@ -2430,7 +2440,7 @@
 
     <f:bib uri="faust://bibliography/firmenich-richartz1916">
         <f:citation>Firmenich-Richartz 1916</f:citation>
-        <f:reference>Firmenich-Richartz, Eduard: Sulpiz und Melchior Boisserée als Kunstsammler. Ein Beitrag zur Geschichte der Romantik. (Die Brüder Boisserée. Erster Band.) Jena 1916 [nur dieser Band erschienen] </f:reference>
+        <f:reference>Firmenich-Richartz, Eduard: Sulpiz und Melchior Boisserée als Kunstsammler. Ein Beitrag zur Geschichte der Romantik. (Die Brüder Boisserée. Erster Band.) Jena 1916.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/fischer1880">
@@ -2520,7 +2530,7 @@
 
     <f:bib uri="faust://bibliography/n_3">
         <f:citation>N 3</f:citation>
-        <f:reference>Goethe's neue Schriften. Dritter Band. Wilhelm Meisters Lehrjahre. Erster Band. Berlin. Bei Johann Friedrich Unger, 1795; <strong>wird durch WA ersetzt?</strong></f:reference>
+        <f:reference>Goethe's neue Schriften. Dritter Band. Wilhelm Meisters Lehrjahre. Erster Band. Berlin. Bei Johann Friedrich Unger, 1795. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/hirzel1856">
@@ -2541,6 +2551,11 @@
     <f:bib uri="faust://bibliography/grumach1956">
         <f:citation>Grumach 1956</f:citation>
         <f:reference>Kanzler von Müller: Unterhaltungen mit Goethe. Kritische Ausgabe. Bes. von Ernst Grumach. Weimar 1956.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gubitz1854-1855">
+        <f:citation>Gubitz 1854-1855</f:citation>
+        <f:reference>Berühmte Schriftsteller der Deutschen. Schilderungen nach Selbstanschauung theils auch berühmter Zeitgenossen  aus dem Leben von Goethe, Schiller, Wieland, Klopstock [...]. Hrsg. von Friedrich Wilhelm Gubitz. 2 Bde. Berlin 1854–1855.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/guhrauer1851_2">
@@ -2734,8 +2749,13 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/kuhn1979-1983_1">
-        <f:citation>Kuhn 1979–1983, Bd. 1; Kuhn 1979–1983, Bd. 2</f:citation>
-        <f:reference>Johann Wolfgang von Goethe und Johann Friedrich von Cotta, Briefwechsel 1797–1832. Textkritische und kommentierte Ausgabe in drei Bänden. Hrsg. von Dorothea Kuhn. 3 Bde. Stuttgart 1979–1983.</f:reference>
+        <f:citation>Kuhn 1979–1983, Bd. 1</f:citation>
+        <f:reference>Johann Wolfgang von Goethe und Johann Friedrich von Cotta, Briefwechsel 1797–1832. Textkritische und kommentierte Ausgabe in drei Bänden. Hrsg. von Dorothea Kuhn. 3 Bde. Bd. 1, Stuttgart 1979–1983.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/kuhn1979-1983_2">
+        <f:citation>Kuhn 1979–1983, Bd. 2</f:citation>
+        <f:reference>Johann Wolfgang von Goethe und Johann Friedrich von Cotta, Briefwechsel 1797–1832. Textkritische und kommentierte Ausgabe in drei Bänden. Hrsg. von Dorothea Kuhn. 3 Bde. Bd.2, Stuttgart 1979–1983.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/leitzmann1900">
@@ -2745,12 +2765,7 @@
 
     <f:bib uri="faust://bibliography/lengenfeld1932">
         <f:citation>Lengenfeld 1932</f:citation>
-        <f:reference>M. Lengenfeld'sche Buchhandlung, Antiquariats-Katalog 42, 1932. <strong>vollständigen Nachweis ermitteln!</strong></f:reference>
-    </f:bib>
-
-    <f:bib uri="faust://bibliography/loeper1879">
-        <f:citation>Loeper 1879 </f:citation>
-        <f:reference>Goethe, Johann Wolfgang von: Briefe an Sophie von La Roche und Bettina Brentano nebst dichterischer Beilagen hrsg. von Gustav von Loeper. Berlin 1879.</f:reference>
+        <f:reference>M. Lengenfeld'sche Buchhandlung, Antiquariats-Katalog 42, 1932. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1881a">
@@ -2794,7 +2809,7 @@
     </f:bib>
 
     <f:bib uri="faust://bibliography/meyer_witkowski1895">
-        <f:citation>Meyer/Witkowski 1895 <strong>[zuvor: DNL 111]</strong></f:citation>
+        <f:citation>Meyer/Witkowski 1895 </f:citation>
         <f:reference>Goethe, Werke. 36 Theile (in 41 Bdn.), Stuttgart o. J. (1882–1897). (= Deutsche National-Litteratur. Historisch-kritische Ausgabe. Hrsg. von Joseph Kürschner, Bde. 82–117,II.) Tl. 30: Aufsätze über bildende Kunst und Theater, hrsg. von A. G. Meyer und G. Witkowski, 1895 (= DNL, Bd. 111).</f:reference>
     </f:bib>
 
@@ -2855,7 +2870,7 @@
 
     <f:bib uri="faust://bibliography/anonym1835">
         <f:citation>Anonymus 1835</f:citation>
-        <f:reference>[Anonymus:] Goethe und sein Jahrhundert. (Aus der Minerva besonders abgedruckt.) Jena 1835. Jena: Bran, 1835. [als Verfasser werden August Wilhelm Rehberg und Philipp Joseph von Rehfues genannt] </f:reference>
+        <f:reference>[Anonymus:] Goethe und sein Jahrhundert. (Aus der Minerva besonders abgedruckt.) Jena 1835. Jena: Bran, 1835.  </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/reichard1778a">
