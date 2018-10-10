@@ -61,6 +61,7 @@
 	
 	
 	<xsl:import href="emend-core.xsl"/>
+	<xsl:import href="bibliography.xsl"/>
 	
 	<!-- The root directory of the Faust XML data, corresponds to faust://xml/, needs to resolve -->
 	<xsl:param name="source"/>
@@ -114,7 +115,11 @@
 				<title type="headNote" xml:id="headNote">
 					<xsl:choose>						
 						<xsl:when test="$type = 'lesetext'">Konstituierter Text</xsl:when>						
-						<xsl:otherwise><xsl:value-of select="$metadata//f:headNote"/></xsl:otherwise>
+						<xsl:otherwise>
+							<xsl:for-each select="$metadata//f:headNote">
+								<xsl:call-template name="parse-for-bib"/>
+							</xsl:for-each>							
+						</xsl:otherwise>
 					</xsl:choose>
 				</title>
 			<xsl:apply-templates/>
