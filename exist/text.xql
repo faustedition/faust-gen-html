@@ -1,14 +1,20 @@
 xquery version "3.1";
 
-import module namespace config = "http://www.faustedition.net/search/config" at "config.xqm"; 
-
 declare default element namespace "http://www.w3.org/1999/xhtml";
 
 declare namespace tei = "http://www.tei-c.org/ns/1.0";
 declare namespace f   = "http://www.faustedition.net/ns";
 declare variable $edition := '';
 
+declare variable $xmlpath := request:get-attribute('xmlpath');
+declare variable $data := collection((if ($xmlpath) then $xmlpath else '/db/apps/faust-dev/data') || '/textTranscript');
 declare variable $sigil-labels := doc('xslt/sigil-labels.xml');
+declare variable $lucene-options := <options>
+                                        <default-operator>and</default-operator>
+                                        <phrase-slop>1</phrase-slop>
+                                        <leading-wildcard>no</leading-wildcard>
+                                        <filter-rewrite>yes</filter-rewrite>
+                                    </options>;
 
 declare function local:make-url($sigil_t as item()?) as xs:string {
   if ($sigil_t = 'faust') then '/print/faust' else '/document?sigil=' || data($sigil_t)
@@ -25,15 +31,15 @@ declare function local:make-url($sigil_t as xs:string?, $section as xs:string?, 
 
 
 declare function local:query-lucene($query as item()?, $highlight as xs:string?, $index as xs:string?, $sp as item()?, $order as xs:string?) as map() {
-  let $allhits := if ($sp = 'true') then $config:transcripts//(tei:l|tei:p)[ft:query-field($index, $query, $config:lucene-options)] 
-          else $config:transcripts//*[ft:query-field($index, $query, $config:lucene-options)],
+  let $allhits := if ($sp = 'true') then $data//(tei:l|tei:p)[ft:query-field($index, $query)] 
+          else $data//*[ft:query-field($index, $query)],
       $hitcount := count($allhits)
   return map { 'hits': $hitcount, 'results':
   for $line in $allhits
-  let $sigil := id('sigil', $line)  
+  let $sigil := root($line)//tei:idno[@type='faustedition']
   group by $sigil
-  let $sigil_t := id('sigil_t', $line[1]),
-      $headnote := id('headNote', $line[1]),      
+  let $sigil_t := root($line[1])//tei:idno[@type='sigil_t'],
+      $headnote := root($line[1])//tei:idno[@type='headNote'],
       (:$total-score := avg(for $l in $line return ft:score($l)),:)
       $sortcrit := switch ($order) 
                     case 'sigil' return number(root($sigil_t)/*/@f:number)
@@ -84,7 +90,7 @@ let $query := request:get-parameter('q', 'pudel'),
     $docs := count($results),
     $hits := $result('hits'), (:sum($results/@data-subhits):)
     $raw := <article class="results" data-hits="{$hits}" data-docs="{$docs}">
-          <h2>{$hits} Treffer in {$docs} Texten{if ($sp = 'true') then <span class="extrainfo"> (nur Haupttext)</span> else ()}</h2>
+          <h2>{$hits} Treffer in {$docs} Dokumenten{if ($sp = 'true') then <span class="extrainfo"> (nur Haupttext)</span> else ()}</h2>
           {if ($order = 'verse') then local:byverse($results) else $results}
           </article>
     return $raw
