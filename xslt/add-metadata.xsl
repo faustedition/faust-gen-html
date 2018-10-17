@@ -176,6 +176,13 @@
 		</xsl:copy>
 	</xsl:template>
 
+	<xsl:template match="idno[@type=('faustedition', 'headNote')][not(@xml:id)]">
+		<xsl:copy>
+			<xsl:attribute name="xml:id" select="if (@type='faustedition') then 'sigil' else data(@type)"/>
+			<xsl:apply-templates select="@*, node()"/>
+		</xsl:copy>
+	</xsl:template>
+	
 	
 	<!-- //TEI/@type will be print, archivalDocument, or lesetext -->
 	<xsl:template match="TEI">
