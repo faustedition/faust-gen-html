@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <versions xmlns="http://www.faustedition.net/ns">
-  <label xml:id="version-badge">1.0 RC</label>
+  <label xml:id="version-badge">alpha</label>
   <version xml:id="version">1.0 RC</version>
 </versions>
