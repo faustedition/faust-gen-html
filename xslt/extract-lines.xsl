@@ -83,7 +83,7 @@
           <xsl:apply-templates select="//alt|//listTranspose|//join"/>
         </f:standoff>        
       </xsl:if>
-      <xsl:apply-templates select='//*[@n and not(self::pb or self::div or self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or @n[contains(.,"todo")])]'>
+      <xsl:apply-templates select='//*[@n and not(self::pb or self::div or self::milestone[@unit="paralipomenon"] or self::milestone[@unit="cols"] or @n[contains(.,"todo")] or ancestor::note[@type="textcrit"])]'>
         <xsl:sort select="f:normalize-n(@n)"/>
       </xsl:apply-templates>
     </f:lines>
