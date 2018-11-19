@@ -854,7 +854,11 @@
         <f:ins n="11203" place="only-app"/>
         <ref>11203–11206</ref>
         <lem/>
-        <rdg wit="2_H" type="type_6"><l>Wir alle fordern</l> <l>Gleichen Theil.</l> <speaker>Mephist.</speaker> <l>Erst ordnet oben</l> <l>Saal an Saal.</l> <note>Ec <wit>2_H</wit></note></rdg>
+        <rdg wit="2_H" type="type_6"><l n="11203">Wir alle fordern</l> 
+            <l n="11204">Gleichen Theil.</l> 
+            <speaker n="before_11205">Mephist.</speaker> 
+            <l n="11205">Erst ordnet oben</l>
+            <l n="11206">Saal an Saal.</l> <note>Ec <wit>2_H</wit></note></rdg>
     </app>
 
     <app>
