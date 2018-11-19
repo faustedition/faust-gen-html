@@ -1753,13 +1753,6 @@
     <lem wit="2_V_H.1">fremdem <note><wit>2_V_H.1</wit></note></lem>
     <rdg wit="2_H" type="type_2aa">fremden <note><wit>2_H</wit></note></rdg>
   </app>
-  <!--       11203[]{} <i>11203–11206</i>] <l>Wir alle fordern</l> <l>Gleichen Theil.</l> <speaker>Mephist.</speaker> <l>Erst ordnet oben</l> <l>Saal an Saal.</l> <i>Ec 2_H [type=6]</i>-->
-  <app>
-    <f:ins n="11203" place="only-app"/>
-    <ref>11203–11206</ref>
-    <lem/>
-    <rdg wit="2_H" type="type_6"><l>Wir alle fordern</l> <l>Gleichen Theil.</l> <speaker>Mephist.</speaker> <l>Erst ordnet oben</l> <l>Saal an Saal.</l> <note>Ec <wit>2_H</wit></note></rdg>
-  </app>
   <!--       11235[Vielgewandten]{Vielgewandtem} <i>11235</i> Vielgewandtem <i>2_V_H.1</i>] Vielgewandten <i>2_H [type=2aa]</i>-->
   <app>
     <f:replace n="11235">Vielgewandten</f:replace>

@@ -851,6 +851,13 @@
     </app>
 
     <app>
+        <f:ins n="11203" place="only-app"/>
+        <ref>11203–11206</ref>
+        <lem/>
+        <rdg wit="2_H" type="type_6"><l>Wir alle fordern</l> <l>Gleichen Theil.</l> <speaker>Mephist.</speaker> <l>Erst ordnet oben</l> <l>Saal an Saal.</l> <note>Ec <wit>2_H</wit></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="11439">mächtig</f:replace>
         <f:ins n="11439">mächtig;</f:ins>
         <ref>11439</ref>
