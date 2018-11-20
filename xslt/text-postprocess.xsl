@@ -20,19 +20,6 @@
 	<xsl:strip-space elements="TEI teiHeader fileDesc titleStmt publicationStmt sourceDesc choice app"/>
 
 
-	<!-- mark up apparatus abbreviations -->
-	<xsl:template match="note[@type='textcrit']//note/text()">
-		<xsl:analyze-string select="." regex="\b(ci|em|mon|bill|erg|vorschl)\b\.?" flags="!">
-			<xsl:matching-substring>
-				<abbr><xsl:value-of select="concat(regex-group(1), '.')"/></abbr>
-			</xsl:matching-substring>
-			<xsl:non-matching-substring>
-				<xsl:copy/>
-			</xsl:non-matching-substring>
-		</xsl:analyze-string>
-	</xsl:template>
-
-	
 	<!-- 
 		
 		Annotate divs with scene labels
