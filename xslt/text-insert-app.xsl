@@ -497,7 +497,7 @@
     <!-- 
         Find and mark abbreviations in the apparatus.  
     -->
-    <xsl:template mode="pass2" match="app//text()" priority="1">
+    <xsl:template mode="pass3" match="app//text()" priority="1">
         <xsl:variable name="abbrs" select="doc('../text/abbreviations.xml')//abbr"/>
         <xsl:variable name="partial-res" select="for $a in $abbrs return concat('\b', data($a), '(\.|\b)')"/>        
         <xsl:variable name="re" select="string-join($partial-res, '|')"/>        
