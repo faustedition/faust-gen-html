@@ -1797,15 +1797,6 @@
     <lem wit="2_V_H.2">’nein. <gap reason="ellipsis"/> Schatten. <note><wit>2_V_H.2</wit></note></lem>
     <rdg wit="2_H" type="type_2a">’nein<pc>‸</pc> <gap reason="ellipsis"/> Schatten<pc>‸</pc> <note><wit>2_H</wit></note></rdg>
   </app>
-  <!--       11422[dich]{dich!} <i>11422</i> dich! <i>2_V_H.6 (etwas undeutlich)</i>] dich. <i>mglw mit Ansatz zum Ausrufezeichen 2_V_H.2</i> dich^ <i>2_H [type=2b]</i>-->
-  <app>
-    <f:replace n="11422">dich</f:replace>
-    <f:ins n="11422">dich!</f:ins>
-    <ref>11422</ref>
-    <lem wit="2_V_H.6">dich! <note><wit>2_V_H.6</wit> (etwas undeutlich)</note></lem>
-    <rdg wit="2_V_H.2">dich. <note>mglw mit Ansatz zum Ausrufezeichen <wit>2_V_H.2</wit></note></rdg>
-    <rdg wit="2_H" type="type_2b">dich<pc>‸</pc> <note><wit>2_H</wit></note></rdg>
-  </app>
 
   <!--       11473[Weges-Mitte]{Weges Mitte} <i>11473</i> Weges Mitte <i>2_V_H.11</i>] Weges-Mitte <i>2_V_H.2 2_H [type=2b]</i>-->
   <app>

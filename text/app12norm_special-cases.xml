@@ -899,6 +899,15 @@
     </app>
 
     <app>
+        <f:replace n="11422">dich</f:replace>
+        <f:ins n="11422">dich!</f:ins>
+        <ref>11422</ref>
+        <lem wit="2_V_H.6">dich! <note><wit>2_V_H.6</wit> (etwas undeutlich)</note></lem>
+        <rdg wit="2_V_H.2">dich. <note>mglw mit Ansatz zum Ausrufezeichen <wit>2_V_H.2</wit></note></rdg>
+        <rdg wit="2_H" type="type_2b">dich<pc>‸</pc> <note><wit>2_H</wit></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="11439">mächtig</f:replace>
         <f:ins n="11439">mächtig;</f:ins>
         <ref>11439</ref>
