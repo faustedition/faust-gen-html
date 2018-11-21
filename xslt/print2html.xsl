@@ -125,6 +125,19 @@
     <xsl:text> </xsl:text>
   </xsl:template>
   
+  <xsl:template match="note[@type='textcrit']//text()">
+    <xsl:analyze-string select="." regex="[〈〉]+">
+      <xsl:matching-substring>
+        <span class="generated-text">
+          <xsl:value-of select="."/>
+        </span>
+      </xsl:matching-substring>
+      <xsl:non-matching-substring>
+        <xsl:value-of select="."/>
+      </xsl:non-matching-substring>
+    </xsl:analyze-string>
+  </xsl:template>  
+  
   <!-- Returns all elements that are referenced by the current apparatus' @from attribute -->
   <xsl:function name="f:referenced-segs" as="element()*">
     <xsl:param name="context"/>
