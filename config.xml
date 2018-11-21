@@ -5,7 +5,7 @@
 	<c:param name="source" value="file:/home/tv/git/faust-gen/data/xml/"/>
 	
 	<!-- Target folder for everything that is not specified in more detail below -->
-	<c:param name="builddir" value="../../../../target/"/>
+	<c:param name="builddir" value="../../../target/"/>
 
 	<!-- Path to the target folder for the "root" HTML files-->
 	<c:param name="html" value="../../../../target/www/print/"/>
