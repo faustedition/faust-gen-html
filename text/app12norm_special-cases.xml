@@ -251,8 +251,16 @@
             <note><seg type="hand">G</seg> <wit>1_H.1</wit></note>
         </rdg>
         <rdg wit="C.1_12 C.3_12" type="type_2a">Strecken <note><wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
-    </app>
+    </app>    
 
+    <app>
+        <f:ins n="3956" place="only-app"></f:ins>
+        <ref>3956–3967</ref>
+        <lem></lem>
+        <rdg type="type_7"><note>Die Verse sind in A und B um 10 mm eingerückt, während sonst bei beiden Drucken 
+            5 mm Einrückung normal sind.</note></rdg>
+    </app>
+    
     <app>
         <f:ins n="3974" place="only-app"/>
         <ref>3974–3977</ref>
