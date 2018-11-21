@@ -168,6 +168,9 @@
 			 title="{@quantity} Zeilen Lücke">
 			<xsl:comment><xsl:copy-of select="."/></xsl:comment>
 			<xsl:apply-templates/><!-- there might be a note -->
+			<xsl:if test="following-sibling::*[1][self::note[@type='textcrit']]">
+				<xsl:apply-templates select="following-sibling::*[1]" mode="force"/>
+			</xsl:if>
 			<xsl:for-each select="1 to xs:integer(round(@quantity))">
 				<br/>
 			</xsl:for-each>			
