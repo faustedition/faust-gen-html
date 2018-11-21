@@ -747,6 +747,15 @@
     </app>
 
     <app>
+        <f:replace n="9206">welch’</f:replace>
+        <f:ins n="9206">welch</f:ins>
+        <ref>9206</ref>
+        <lem>welch</lem>
+        <rdg wit="2_III_H.2_1">welch <note><wit>2_III_H.2_1</wit></note></rdg>
+        <rdg wit="C.1_4" type="type_1b">welch’ <note><wit>C.1_4</wit></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="9378">vom</f:replace>
         <f:ins n="9378">von</f:ins>
         <ref>9378</ref>

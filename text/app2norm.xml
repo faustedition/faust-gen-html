@@ -1068,15 +1068,6 @@
     <rdg wit="C.1_4">erfurchtsvollem <note><wit>C.1_4</wit></note></rdg>
     <rdg wit="C.2alpha_4 C.3_4" type="type_1a">ehrfurchtsvollem <note><wit>C.2alpha_4</wit> <wit>C.3_4</wit></note></rdg>
   </app>
-  <!--       9206[welch’]{welch} <i>9206</i> welch <i>none</i>] welch <i>2_III_H.2:1</i> welch’ <i>C.1_4 [type=1b]</i>-->
-  <app>
-    <f:replace n="9206">welch’</f:replace>
-    <f:ins n="9206">welch</f:ins>
-    <ref>9206</ref>
-    <lem>welch</lem>
-    <rdg wit="2_III_H.2_1">welch <note><wit>2_III_H.2_1</wit></note></rdg>
-    <rdg wit="C.1_4" type="type_1b">welch’ <note><wit>C.1_4</wit></note></rdg>
-  </app>
   <!--       before_9218[Thurmwärter,]{Thurmwärter} <i>vor 9218</i> Thurmwärter^ <i>2_III_H.45a C.2α_4 C.3_4</i>] Thurmwärter, <i>C.1_4 [type=4b]</i>-->
   <app>
     <f:replace n="before_9218">Thurmwärter,</f:replace>
