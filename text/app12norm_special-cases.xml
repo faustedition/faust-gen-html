@@ -339,6 +339,15 @@
     </app>
 
     <app>
+        <f:replace n="4436">Kranz</f:replace>
+        <f:ins n="4436">Kranz</f:ins>
+        <ref>4436</ref>
+        <lem wit="A">Kranz<pc>‸</pc> <note><wit>A</wit></note></lem>
+        <rdg wit="D.1">Kranz, <note><wit>D.1</wit></note></rdg>
+        <rdg wit="B B.a" type="type_1c">Kranz, <note><wit>B</wit> <wit>B.a</wit></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="before_4613_c">Der</f:replace>
         <f:ins n="before_4613_c">Der</f:ins>
         <ref>vor 4613</ref>
