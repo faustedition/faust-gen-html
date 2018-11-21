@@ -230,6 +230,12 @@
 		<xsl:value-of select="replace(., '\.$', '')"/>
 	</xsl:template>
 	
+	<xsl:template mode="pass2" match="text()[ancestor::stage or ancestor::head]
+		                                      [following-sibling::node()[1][self::lb[@type='semantic']]]" priority="1">
+		<xsl:variable name="prep"><xsl:next-match/></xsl:variable>
+		<xsl:value-of select="replace($prep, '\.$', '')"/>
+	</xsl:template>
+	
 	<!-- The following fixes are eventually to be implemented in all source files: -->
 	<xsl:template match="stage[not(@n='before_7503_a') and not(@n='before_12032_a')]/emph">
 		<xsl:element name="hi">
