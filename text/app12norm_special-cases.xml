@@ -260,6 +260,13 @@
         <rdg type="type_7"><note>Die Verse sind in A und B um 10 mm eingerückt, während sonst bei beiden Drucken 
             5 mm Einrückung normal sind.</note></rdg>
     </app>
+
+    <app>
+        <f:ins n="3972" place="only-app"></f:ins>
+        <ref>3972–3973</ref>
+        <lem></lem>
+        <rdg type="type_7" wit="A B">Die Verse sind in <wit>A</wit> und <wit>B</wit> um 10 mm eingerückt.</rdg>
+    </app>
     
     <app>
         <f:ins n="3974" place="only-app"/>
