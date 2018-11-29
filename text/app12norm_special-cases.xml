@@ -899,6 +899,16 @@
     </app>
 
     <app>
+        <f:replace n="after_11287">(Regum I. 21.)</f:replace>
+        <f:ins n="after_11287">(Regum I. 21.)</f:ins>
+        <ref>nach 11287</ref>
+        <lem wit="2_H">(Regum I. 21.) <note><wit>2_H</wit></note></lem>
+        <rdg wit="2_V_H.1">(ab) <note><wit>2_V_H.1</wit></note></rdg>
+        <rdg wit="2_H"> <note>fehlt <wit>2_H</wit></note></rdg>
+        <rdg wit="2_H" type="type_2aa*">(Regum I. 21.) <note>erg G <wit>2_H</wit></note></rdg>
+    </app>
+
+    <app>
         <f:replace n="11422">dich</f:replace>
         <f:ins n="11422">dich!</f:ins>
         <ref>11422</ref>
