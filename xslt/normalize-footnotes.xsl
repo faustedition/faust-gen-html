@@ -4,7 +4,7 @@
   xmlns="http://www.tei-c.org/ns/1.0"
   xmlns:f="http://www.faustedition.net/ns"
   xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-  exclude-result-prefixes="xs"
+  exclude-result-prefixes="xs f"
   version="2.0">
   
   <!-- 
@@ -59,23 +59,18 @@
   <!-- Footnote reference -> render and render actual footnote immediately afterwards -->
   <xsl:template match="ref[f:is-footnote-ref(.)]">
     <xsl:next-match/>
-    <xsl:variable name="footnote" select="id(substring-after(@target, '#'))"/>
+    <xsl:variable name="footnote-anchor" select="id(substring-after(@target, '#'))"/>
+    <xsl:variable name="footnote" select="$footnote-anchor/.."/>
     <note place="foot">
-      <xsl:sequence select="$footnote/@xml:id"/>
-      <xsl:apply-templates select="$footnote/node()"/>
+      <xsl:sequence select="$footnote-anchor/@xml:id"/>
+      <xsl:apply-templates select="$footnote/node()" mode="footnote"/>
     </note>
   </xsl:template>
   
-  <xsl:template match="p[anchor[f:is-footnote-anchor(.)]]">
-    <xsl:variable name="remaining-content" select="node() except (anchor[f:is-footnote-anchor(.)]|ref|gap)"/>
-    <xsl:if test="normalize-space(string-join($remaining-content, '')) != ''">
-      <xsl:message select="concat('WARNING: In ', document-uri(/), ', p containing anchor ', 
-        string-join(anchor/@xml:id, ', '), ' contains more than the footnote.')"/>
-      <xsl:apply-templates/>
-    </xsl:if>
-  </xsl:template>  
+  <!-- The actual footnote p has already been rendered -->
+  <xsl:template match="p[anchor[f:is-footnote-anchor(.)]]"/>    
   
-  <xsl:template match="node()|@*">
+  <xsl:template match="node()|@*" mode="#default footnote">
     <xsl:copy copy-namespaces="no">
       <xsl:apply-templates mode="#current" select="@*, node()"/>
     </xsl:copy>
