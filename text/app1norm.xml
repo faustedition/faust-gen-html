@@ -2592,13 +2592,6 @@
     <rdg wit="A B 1_H.1 C.1_12 C.3_12"><speaker>Hexenmeister.</speaker> <stage rend="inline">Halbes Chor.</stage> <note><wit>A</wit> <wit>B</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
     <rdg wit="B.a" type="type_8"><speaker>Hexenmeister.</speaker> <stage rend="inline">(Halbes Chor.)</stage> <note><wit>B.a</wit></note></rdg>
   </app>
-  <!--       3994[]{} <i>3994/3995</i>] <i>Die Repliken bilden in 1_H.14 A B.a einen antilabischen Vers, in B 1_H.1 C.1_12 C.3_12 sind es zwei Verse. [type=7]</i>-->
-  <app>
-    <f:ins n="3994" place="only-app"/>
-    <ref>3994/3995</ref>
-    <lem/>
-    <rdg wit="1_H.14 A B.a B 1_H.1 C.1_12 C.3_12" type="type_7"> <note>Die Repliken bilden in <wit>1_H.14</wit> <wit>A</wit> <wit>B.a</wit> einen antilabischen Vers, in <wit>B</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> <wit>C.3_12</wit> sind es zwei Verse.</note></rdg>
-  </app>
   <!--       4000[Stock]{Stock,} <i>4000</i> Stock, <i>1_H.14</i>]   Stock^ <i>A</i> Stock, <i>D.1</i> Stock, <i>B B.a  [type=2a]</i>-->
   <app>
     <f:replace n="4000">Stock</f:replace>

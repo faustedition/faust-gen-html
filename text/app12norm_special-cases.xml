@@ -323,6 +323,13 @@
     </app>-->
 
     <app>
+        <f:ins n="3994" place="only-app"/>
+        <ref>3994/3995</ref>
+        <lem/>
+        <rdg wit="1_H.14 A B.a B 1_H.1 C.1_12 C.3_12" type="type_7"> <note>Die Repliken bilden in <wit>1_H.14</wit> <wit>A</wit> <wit>B.a</wit> einen antilabischen Vers, in <wit>B</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> <wit>C.3_12</wit> sind es zwei Verse.</note></rdg>
+    </app>
+
+    <app>
         <f:ins n="4051" place="only-app"/>
         <ref>4051</ref>
         <lem/>
