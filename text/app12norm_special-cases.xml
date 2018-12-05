@@ -259,8 +259,9 @@
         <lem></lem>
         <rdg type="type_1c" wit="1_H.14 A"><note>In <wit>A</wit> werden inkohärent mehrere Stufen von Verseinrückungen
             verwendet, die in <wit>1_H.14</wit> keine Entsprechung haben, da dort alle Verse linksbündig
-            beginnen. Die späteren Drucke haben vereinfacht, ohne Kohärenz zu
-            erreichen. Erst Düntzer und WA haben hier korrigiert.</note></rdg>
+            beginnen. Die <a href="archive_prints">späteren Drucke</a> haben vereinfacht, ohne Kohärenz zu
+            erreichen. Erst <ref target="faust://bibliography/duentzer1882a">Düntzer</ref> und 
+            <ref target="faust://bibliography/wa_I_14">WA</ref> haben hier korrigiert.</note></rdg>
     </app>
 
     <!--<app>
