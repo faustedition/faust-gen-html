@@ -394,6 +394,15 @@
     </app>
     
     <app>
+        <f:ins n="4004" place="only-app"></f:ins>
+        <ref>4004–4007</ref>
+        <lem></lem>
+        <rdg wit="A" type="type_1c"><note>Die Verse stehen in <wit>A</wit> auf derselben Höhe wie 4000–4003 und
+            4008–4015; linksbündig seit <ref
+                target="faust://bibliography/duentzer1882a">Düntzer</ref>.</note></rdg> 
+    </app>
+    
+    <app>
         <f:ins n="4051" place="only-app"/>
         <ref>4051</ref>
         <lem/>
