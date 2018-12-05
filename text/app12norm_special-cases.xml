@@ -311,16 +311,16 @@
             <wit>C.1_12</wit> <wit>C.3_12</wit> stehen sie linksbündig; korrigiert seit <ref target="faust://bibliography/duentzer1882a">Düntzer</ref>.</note></rdg>
     </app>
 
-    <app>
+    <!--<app>
         <f:ins n="3990" place="only-app"/>
         <ref>3990–4015</ref>
         <lem/>
-        <rdg type="type_7 type_1c" wit="A B"><note>Die Verse 3990–3994/3995 sind in <wit>A</wit> und <wit>B</wit> um 5 mm eingerückt,<!--
+        <rdg type="type_7 type_1c" wit="A B"><note>Die Verse 3990–3994/3995 sind in <wit>A</wit> und <wit>B</wit> um 5 mm eingerückt,<!-\-
             (<wit wit="A">A</wit> 8, S. 198–199): 3990–3995 um 5 mm, was für Kurzverse normal
-            ist;--> 3996–3999 um 10 mm; 4000–4003 <!--und 4008–4015 (beidemale
-            wohl versehentlich) sowie 4004–4007 (wohl korrekt) auf Seite 199 um 10 mm-->wohl versehentlich um 10 
+            ist;-\-> 3996–3999 um 10 mm; 4000–4003 <!-\-und 4008–4015 (beidemale
+            wohl versehentlich) sowie 4004–4007 (wohl korrekt) auf Seite 199 um 10 mm-\->wohl versehentlich um 10 
         (statt 5) mm, 4004–4007 um 10 mm, 4008–4015 wohl versehentlich um 10 (statt 5) mm.</note></rdg>
-    </app>
+    </app>-->
 
     <app>
         <f:ins n="4051" place="only-app"/>
