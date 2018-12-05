@@ -174,7 +174,7 @@
 					<xsl:variable 
 						name="target" 
 						select="if (@f:type!='lesetext') 
-									then f:doclink(@f:sigil_t, @f:page, @n) 
+									then f:doclink(@f:sigil_t, @f:page, @f:section, @n) 
 									else concat($printbase, @f:sigil_t, if (@f:section != '') then '.' else '', @f:section, '#l', @n)"/>						
 					<a class="sigil" href="{$target}" title="{@f:headNote}">
 						<xsl:value-of select="@f:sigil"/>

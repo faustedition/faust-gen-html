@@ -289,15 +289,26 @@
   <xsl:function name="f:doclink">
     <xsl:param name="sigil_t"/>
     <xsl:param name="page"/>
+    <xsl:param name="section"/>
     <xsl:param name="n"/>
     <xsl:variable name="lineid" select="concat('l', replace($n, '\s+', '_'))"/>
     <xsl:value-of select="concat('/document?sigil=', $sigil_t, '&amp;view=print')"/>
     <xsl:if test="$page">
       <xsl:value-of select="concat('&amp;page=', $page)"/>
     </xsl:if>
+    <xsl:if test="$section">
+      <xsl:value-of select="concat('&amp;section=', $section)"/>
+    </xsl:if>
     <xsl:if test="$n">
       <xsl:value-of select="concat('#', $lineid)"/>
     </xsl:if>
+  </xsl:function>
+  
+  <xsl:function name="f:doclink">
+    <xsl:param name="sigil_t"/>
+    <xsl:param name="page"/>    
+    <xsl:param name="n"/>   
+    <xsl:value-of select="f:doclink($sigil_t, $page, (), $n)"/>
   </xsl:function>
     
   <!-- Returns true() iff $element is one of those TEI elements for which a variant apparatus should be generated. -->
