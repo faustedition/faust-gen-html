@@ -62,7 +62,7 @@
             <wit>A</wit>.</note></rdg>
     </app>
 
-    <app>
+    <!--<app>
         <f:replace n="2322">Wie?</f:replace>
         <f:ins n="2322">Wie?</f:ins>
         <ref>2322</ref>
@@ -73,7 +73,7 @@
                     (<quote>Was giebt’s?</quote>) plaziert;</note></rdg>
         <rdg wit="B.a C.1_12 C.3_12" type="type_1c"><note>korrigiert in <wit>B.a</wit> und in
                     <wit>C.1_12</wit> <wit>C.3_12</wit>.</note></rdg>
-    </app>
+    </app>-->
     <app>
         <f:replace n="2348">Doch</f:replace>
         <f:ins n="2348">Dich</f:ins>
