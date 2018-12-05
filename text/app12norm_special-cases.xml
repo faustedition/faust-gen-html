@@ -339,7 +339,7 @@
         <f:ins n="3974" place="only-app"/>
         <ref>3974–3977</ref>
         <lem/>
-        <rdg wit="A B D.2" type="type_1c">
+        <rdg wit="A B B.a 1_H.1 C.1_12 C.3_12" type="type_1c">
             <note>Die Verse sind in
                     <!--<wit>1_H.14</wit> <wit>A</wit> <wit>D.1</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> 
             <wit>C.1_12</wit> <wit>C.3_12</wit> nicht--><wit>A</wit>
@@ -392,7 +392,7 @@
                     target="faust://bibliography/duentzer1882a">Düntzer</ref> stehen sie linksbündig
                 wie 3986–3989.</note></rdg>
     </app>
-
+    
     <app>
         <f:ins n="4051" place="only-app"/>
         <ref>4051</ref>
