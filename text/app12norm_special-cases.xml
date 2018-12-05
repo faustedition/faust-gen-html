@@ -252,14 +252,24 @@
         </rdg>
         <rdg wit="C.1_12 C.3_12" type="type_2a">Strecken <note><wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
     </app>    
-
+    
     <app>
+        <f:ins n="3956" place="only-app"></f:ins>
+        <ref>3956–4015</ref>
+        <lem></lem>
+        <rdg type="type_1c" wit="1_H.14 A"><note>In <wit>A</wit> werden inkohärent mehrere Stufen von Verseinrückungen
+            verwendet, die in <wit>1_H.14</wit> keine Entsprechung haben, da dort alle Verse linksbündig
+            beginnen. Die späteren Drucke haben vereinfacht, ohne Kohärenz zu
+            erreichen. Erst Düntzer und WA haben hier korrigiert.</note></rdg>
+    </app>
+
+    <!--<app>
         <f:ins n="3956" place="only-app"></f:ins>
         <ref>3956–3967</ref>
         <lem></lem>
         <rdg wit="A B" type="type_7"><note>Die Verse sind in <wit>A</wit> und <wit>B</wit> um 10 mm eingerückt, während sonst bei beiden Drucken 
             5 mm Einrückung normal sind.</note></rdg>
-    </app>
+    </app>-->
 
     <app>
         <f:ins n="3972" place="only-app"></f:ins>
