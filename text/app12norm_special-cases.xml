@@ -271,7 +271,15 @@
         <rdg wit="A B" type="type_7"><note>Die Verse sind in <wit>A</wit> und <wit>B</wit> um 10 mm eingerückt, während sonst bei beiden Drucken 
             5 mm Einrückung normal sind.</note></rdg>
     </app>-->
-
+    
+    <app>
+        <f:ins n="3962" place="only-app"></f:ins>
+        <ref>3962–3963 und 3968</ref>
+        <lem></lem>
+        <rdg type="type_1c"><note>Die Verse sind in <a href="archive_prints">allen Drucken</a> auf derselben Höhe wie
+            3956–3961 und 3964–3967 um ca. 15 mm eingerückt; linksbündig in <ref target="faust://bibliography/wa_I_14">WA</ref>.</note></rdg>
+    </app>
+    
     <app>
         <f:ins n="3972" place="only-app"></f:ins>
         <ref>3972–3973</ref>
