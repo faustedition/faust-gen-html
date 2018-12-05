@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="appxnorm.rnc" type="application/relax-ng-compact-syntax"?>
 <f:apparatus xmlns:f="http://www.faustedition.net/ns" xmlns="http://www.tei-c.org/ns/1.0">
-    
+
     <app>
         <f:replace n="before_354_c">Zimmer</f:replace>
         <f:ins n="before_354_c">Zimmer,</f:ins>
         <ref>vor 354</ref>
         <lem>Zimmer,</lem>
-        <rdg wit="1_H.5">Zimmer<pc>‸</pc> <note><wit>1_H.5</wit></note></rdg>
+        <rdg wit="1_H.5">Zimmer<pc>‸</pc>
+            <note><wit>1_H.5</wit></note></rdg>
         <rdg wit="S">Zimmer, <note><wit>S</wit></note></rdg>
-        <rdg wit="A B B.a" type="type_1c type_2a">Zimmer<pc>‸</pc> <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></rdg>
+        <rdg wit="A B B.a" type="type_1c type_2a">Zimmer<pc>‸</pc>
+            <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></rdg>
     </app>
-    
+
     <!--       359[Und]{Und bin} <i>359</i> bin <i>1_H.5 S</i>]   <i>fehlt</i> <i>A</i> bin <i>D.1</i> bin <i>B B.a  [type=1a Typ 2a]</i>-->
     <app>
         <f:replace n="359">Und</f:replace>
@@ -31,16 +33,24 @@
         <rdg wit="1_H.5">von <note><wit>1_H.5</wit></note></rdg>
         <rdg wit="S A">mit <note><wit>S</wit> <wit>A</wit></note></rdg>
         <rdg wit="T_5_H.1" type="type_4b"><subst hand="G">
-            <del>mit</del>
-            <add>von</add>
-        </subst> <note><seg type="hand">G</seg> <wit>T_5_H.1</wit></note></rdg>
+                <del>mit</del>
+                <add>von</add>
+            </subst>
+            <note><seg type="hand">G</seg>
+                <wit>T_5_H.1</wit></note></rdg>
     </app>
 
     <app>
         <f:ins n="949" place="only-app"/>
         <ref>949–980</ref>
         <lem/>
-        <rdg wit="A B B.a 1_H.1 C.1_12 C.3_12" type="type_7"> <note>nicht eingerückt <wit>A</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> <wit>C.3_12</wit> eingerückt Q</note></rdg>
+        <rdg wit="A B B.a 1_H.1 C.1_12 C.3_12" type="type_7">
+            <note>nicht eingerückt <wit>A</wit>
+                <wit>B</wit>
+                <wit>B.a</wit>
+                <wit>1_H.1</wit>
+                <wit>C.1_12</wit>
+                <wit>C.3_12</wit> eingerückt Q</note></rdg>
     </app>
 
     <app>
@@ -48,7 +58,8 @@
         <f:ins n="988">stillt;</f:ins>
         <ref>988</ref>
         <lem>stillt;</lem>
-        <rdg type="type_7"><note>Das Semikolon fehlt in manchen Exemplaren von <wit>A</wit>.</note></rdg>
+        <rdg type="type_7"><note>Das Semikolon fehlt in manchen Exemplaren von
+            <wit>A</wit>.</note></rdg>
     </app>
 
     <app>
@@ -98,16 +109,19 @@
         <f:ins n="2540" place="only-app"/>
         <ref>2540–2552</ref>
         <lem/>
-        <rdg type="type_1c*"> <note>In allen Drucken sind die Verse nicht eingerückt.</note></rdg>
+        <rdg type="type_1c*">
+            <note>In allen Drucken sind die Verse nicht eingerückt.</note></rdg>
     </app>
-    
+
     <app>
         <f:replace n="2678">wüßt’</f:replace>
         <f:ins n="2678">wüßt’</f:ins>
         <ref>2678</ref>
         <lem wit="S A B.a">wüßt’, <note><wit>S</wit> <wit>A</wit> <wit>B.a</wit></note></lem>
-        <rdg wit="1_H.5">wüsst<pc>‸</pc> <note><wit>1_H.5</wit></note></rdg>
-        <rdg wit="B" type="type_4c">wüsst’<pc>‸</pc> <note><wit>B</wit></note></rdg>
+        <rdg wit="1_H.5">wüsst<pc>‸</pc>
+            <note><wit>1_H.5</wit></note></rdg>
+        <rdg wit="B" type="type_4c">wüsst’<pc>‸</pc>
+            <note><wit>B</wit></note></rdg>
     </app>
 
     <app>
@@ -139,10 +153,13 @@
         <f:ins n="2769">seinem</f:ins>
         <ref>2769</ref>
         <lem wit="S 1_H.9">seinem <note><wit>S</wit> <wit>1_H.9</wit></note></lem>
-        <rdg wit="A B D.2 B.a"> <note><wit>A</wit> <wit>B</wit> <wit>D.2</wit> <wit>B.a</wit></note></rdg>
-        <rdg wit="1_H.5 1_H.7 1_H.8">seinen <note><wit>1_H.5</wit> <wit>1_H.7</wit> <wit>1_H.8</wit></note></rdg>
+        <rdg wit="A B D.2 B.a">
+            <note><wit>A</wit> <wit>B</wit> <wit>D.2</wit> <wit>B.a</wit></note></rdg>
+        <rdg wit="1_H.5 1_H.7 1_H.8">seinen
+                <note><wit>1_H.5</wit> <wit>1_H.7</wit> <wit>1_H.8</wit></note></rdg>
         <rdg wit="J.1">seinen <note><wit>J.1</wit></note></rdg>
-        <rdg type="type_2b*">seinen <note><ref target="faust://bibliography/D.3"/> <ref target="faust://bibliography/D.4"/></note></rdg>
+        <rdg type="type_2b*">seinen <note><ref target="faust://bibliography/D.3"/>
+                <ref target="faust://bibliography/D.4"/></note></rdg>
     </app>
 
     <app>
@@ -150,9 +167,10 @@
         <f:ins n="3095">Drum,</f:ins>
         <ref>3095</ref>
         <lem>Drum,</lem>
-        <rdg wit="B" type="type_7"><note>Das Komma fehlt in manchen Exemplaren von <wit>B</wit>, so auch in <wit>1_H.1</wit>.</note></rdg>
+        <rdg wit="B" type="type_7"><note>Das Komma fehlt in manchen Exemplaren von <wit>B</wit>, so
+                auch in <wit>1_H.1</wit>.</note></rdg>
     </app>
-    
+
     <app>
         <f:replace n="before_3187_a">ihre beyden</f:replace>
         <f:ins n="before_3187_a">ihre beyden</f:ins>
@@ -168,9 +186,17 @@
         <f:ins n="3356" place="after"><l n="3357">Hatte nicht genug,</l></f:ins>
         <ref>3356–3357</ref>
         <lem/>
-        <rdg wit="1_H.5"><note>zwei Verse<wit>1_H.5</wit></note> </rdg>
-        <rdg wit="S A B B.a 1_H.1 C.1_12 C.3_12" type="type_2b"><l n="3356 3357">Und ich, der Gottverhaßte, hatte nicht genug,</l> 
-            <note><wit>S</wit> <wit>A</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> <wit>C.3_12</wit></note>
+        <rdg wit="1_H.5"><note>zwei Verse<wit>1_H.5</wit></note>
+        </rdg>
+        <rdg wit="S A B B.a 1_H.1 C.1_12 C.3_12" type="type_2b"><l n="3356 3357">Und ich, der
+                Gottverhaßte, hatte nicht genug,</l>
+            <note><wit>S</wit>
+                <wit>A</wit>
+                <wit>B</wit>
+                <wit>B.a</wit>
+                <wit>1_H.1</wit>
+                <wit>C.1_12</wit>
+                <wit>C.3_12</wit></note>
         </rdg>
     </app>
     <app>
@@ -190,7 +216,7 @@
             </quote>
         </rdg>
     </app>
-    
+
     <app>
         <f:replace n="3620">ich</f:replace>
         <f:ins n="3620">ich <seg>so</seg></f:ins>
@@ -199,21 +225,23 @@
         <rdg wit="A D.1" type="type_2a"><note>fehlt <wit>A</wit> <wit>D.1</wit></note></rdg>
         <rdg wit="B B.a" type="type_4b">so <note><wit>B</wit> <wit>B.a</wit></note></rdg>
     </app>
-    
+
     <app>
         <f:ins n="3787" place="only-app"/>
         <ref>3787–3788</ref>
         <lem/>
-        <rdg wit="1_H.5" type="type_7"><l n="3787">Betest du für deiner Mutter Seel</l> <l
-                n="3788">Die durch dich sich in die Pein hinüberschlief.</l>
+        <rdg wit="1_H.5" type="type_7"><l n="3787">Betest du für deiner Mutter Seel</l> <l n="3788"
+                >Die durch dich sich in die Pein hinüberschlief.</l>
             <note><wit>1_H.5</wit></note></rdg>
     </app>
-    
+
     <app>
-        <f:ins n="3789" place="only-app"></f:ins>
+        <f:ins n="3789" place="only-app"/>
         <ref>3789</ref>
-        <lem></lem>
-        <rdg wit="1_H.5 S 1_H.13" type="type_7"><note>Der Vers fehlt in <wit>1_H.5</wit> <wit>S</wit> <wit>1_H.13</wit>.</note></rdg>
+        <lem/>
+        <rdg wit="1_H.5 S 1_H.13" type="type_7"><note>Der Vers fehlt in <wit>1_H.5</wit>
+                <wit>S</wit>
+                <wit>1_H.13</wit>.</note></rdg>
     </app>
 
     <app>
@@ -223,7 +251,8 @@
         <lem>Verbirg</lem>
         <rdg wit="1_H.5">Verbirgst <note><wit>1_H.5</wit></note></rdg>
         <rdg wit="S 1_H.13">Verbirg <note><wit>S</wit> <wit>1_H.13</wit></note></rdg>
-        <rdg wit="A B B.a" type="type_1b">Verbirg’ <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></rdg>
+        <rdg wit="A B B.a" type="type_1b">Verbirg’
+                <note><wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></rdg>
     </app>
 
     <app>
@@ -248,20 +277,24 @@
                 <del>Stecken</del>
                 <add>Strecken</add>
             </subst>
-            <note><seg type="hand">G</seg> <wit>1_H.1</wit></note>
+            <note><seg type="hand">G</seg>
+                <wit>1_H.1</wit></note>
         </rdg>
-        <rdg wit="C.1_12 C.3_12" type="type_2a">Strecken <note><wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
-    </app>    
-    
+        <rdg wit="C.1_12 C.3_12" type="type_2a">Strecken
+                <note><wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
+    </app>
+
     <app>
-        <f:ins n="3956" place="only-app"></f:ins>
+        <f:ins n="3956" place="only-app"/>
         <ref>3956–4015</ref>
-        <lem></lem>
-        <rdg type="type_1c" wit="1_H.14 A"><note>In <wit>A</wit> werden inkohärent mehrere Stufen von Verseinrückungen
-            verwendet, die in <wit>1_H.14</wit> keine Entsprechung haben, da dort alle Verse linksbündig
-            beginnen. Die <a href="archive_prints">späteren Drucke</a> haben vereinfacht, ohne Kohärenz zu
-            erreichen. Erst <ref target="faust://bibliography/duentzer1882a">Düntzer</ref> und 
-            <ref target="faust://bibliography/wa_I_14">WA</ref> haben hier korrigiert.</note></rdg>
+        <lem/>
+        <rdg type="type_1c" wit="1_H.14 A"><note>In <wit>A</wit> werden inkohärent mehrere Stufen
+                von Verseinrückungen verwendet, die in <wit>1_H.14</wit> keine Entsprechung haben,
+                da dort alle Verse linksbündig beginnen. Die <a href="archive_prints">späteren
+                    Drucke</a> haben vereinfacht, ohne Kohärenz zu erreichen. Erst <ref
+                    target="faust://bibliography/duentzer1882a">Düntzer</ref> und <ref
+                    target="faust://bibliography/wa_I_14">WA</ref> haben hier
+            korrigiert.</note></rdg>
     </app>
 
     <!--<app>
@@ -271,44 +304,56 @@
         <rdg wit="A B" type="type_7"><note>Die Verse sind in <wit>A</wit> und <wit>B</wit> um 10 mm eingerückt, während sonst bei beiden Drucken 
             5 mm Einrückung normal sind.</note></rdg>
     </app>-->
-    
+
     <app>
-        <f:ins n="3962" place="only-app"></f:ins>
+        <f:ins n="3962" place="only-app"/>
         <ref>3962–3963 und 3968</ref>
-        <lem></lem>
-        <rdg type="type_1c"><note>Die Verse sind in <a href="archive_prints">allen Drucken</a> auf derselben Höhe wie
-            3956–3961 und 3964–3967 um ca. 15 mm eingerückt; linksbündig in <ref target="faust://bibliography/wa_I_14">WA</ref>.</note></rdg>
+        <lem/>
+        <rdg type="type_1c"><note>Die Verse sind in <a href="archive_prints">allen Drucken</a> auf
+                derselben Höhe wie 3956–3961 und 3964–3967 um ca. 15 mm eingerückt; linksbündig in
+                    <ref target="faust://bibliography/wa_I_14">WA</ref>.</note></rdg>
     </app>
-    
+
     <app>
-        <f:ins n="3969" place="only-app"></f:ins>
+        <f:ins n="3969" place="only-app"/>
         <ref>3969–3971</ref>
-        <lem></lem>
-        <rdg type="type_1c"><note>Die Verse sind in <wit>A</wit> um ca. 5 mm eingerückt; korrigiert in <wit>B</wit> <wit>B.a</wit>.</note></rdg>
+        <lem/>
+        <rdg type="type_1c"><note>Die Verse sind in <wit>A</wit> um ca. 5 mm eingerückt; korrigiert
+                in <wit>B</wit>
+                <wit>B.a</wit>.</note></rdg>
     </app>
-    
+
     <app>
-        <f:ins n="3972" place="only-app"></f:ins>
+        <f:ins n="3972" place="only-app"/>
         <ref>3972–3973</ref>
-        <lem></lem>
-        <rdg type="type_1c" wit="A B B.a 1_H.1 C.1_12"><note>Die Verse sind in <wit>A</wit> um ca. 20 mm eingerückt 
-            (entsprechend auch in <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> <wit wit="C.1_12">C.1_12</wit>); 
-            linksbündig seit <ref target="faust://bibliography/duentzer1882a">Düntzer</ref>.</note></rdg>
+        <lem/>
+        <rdg type="type_1c" wit="A B B.a 1_H.1 C.1_12"><note>Die Verse sind in <wit>A</wit> um ca.
+                20 mm eingerückt (entsprechend auch in <wit>B</wit>
+                <wit>B.a</wit>
+                <wit>1_H.1</wit>
+                <wit wit="C.1_12">C.1_12</wit>); linksbündig seit <ref
+                    target="faust://bibliography/duentzer1882a">Düntzer</ref>.</note></rdg>
     </app>
-    
+
     <app>
         <f:ins n="3974" place="only-app"/>
         <ref>3974–3977</ref>
         <lem/>
-        <rdg wit="A B D.2" type="type_1c"> <note>Die Verse sind in 
-            <!--<wit>1_H.14</wit> <wit>A</wit> <wit>D.1</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> 
-            <wit>C.1_12</wit> <wit>C.3_12</wit> nicht--><wit>A</wit> <!--und <wit>B</wit> um 5 mm eingerückt, 
+        <rdg wit="A B D.2" type="type_1c">
+            <note>Die Verse sind in
+                    <!--<wit>1_H.14</wit> <wit>A</wit> <wit>D.1</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> 
+            <wit>C.1_12</wit> <wit>C.3_12</wit> nicht--><wit>A</wit>
+                <!--und <wit>B</wit> um 5 mm eingerückt, 
             in <wit>D.2</wit> <ref target="faust://bibliography/D.3"/> 
             <ref target="faust://bibliography/D.4"/> sind sie auf derselben Höhe wie dort die Verse 
-            3972–3973 eingerückt-->nur um ca. 10 mm eingerückt (statt ca. 15 mm wie 3958–3967 auf derselben 
-            Seite); in <!--<ref target="faust://bibliography/Q"/> stehen 3972–3973 linksbündig, 
-            3974–3977 sind eingerückt--><wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> 
-            <wit>C.1_12</wit> <wit>C.3_12</wit> stehen sie linksbündig; korrigiert seit <ref target="faust://bibliography/duentzer1882a">Düntzer</ref>.</note></rdg>
+            3972–3973 eingerückt-->nur
+                um ca. 10 mm eingerückt (statt ca. 15 mm wie 3958–3967 auf derselben Seite); in
+                    <!--<ref target="faust://bibliography/Q"/> stehen 3972–3973 linksbündig, 
+            3974–3977 sind eingerückt--><wit>B</wit>
+                <wit>B.a</wit>
+                <wit>1_H.1</wit>  <wit>C.1_12</wit> <wit>C.3_12</wit> stehen sie linksbündig;
+                korrigiert seit <ref target="faust://bibliography/duentzer1882a"
+                >Düntzer</ref>.</note></rdg>
     </app>
 
     <!--<app>
@@ -326,12 +371,13 @@
         <f:ins n="3994" place="only-app"/>
         <ref>3994/3995</ref>
         <lem/>
-        <rdg wit="1_H.14 A B.a B 1_H.1 C.1_12 C.3_12" type="type_1c"> <note>Die Repliken bilden in <wit>1_H.14</wit> 
-            <wit>A</wit> <wit>B.a</wit> einen antilabischen Vers, in <wit>B</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> 
-            <wit>C.3_12</wit> sind es zwei Verse.
-            Der Vers ist in <wit>A</wit> um ca. 5 mm auf derselben Höhe
-            wie 3990–3993 eingerückt (entsprechend auch <wit>B.a</wit>); korrigiert seit <ref 
-                target="faust://bibliography/duentzer1882a">Düntzer</ref>.</note></rdg>
+        <rdg wit="1_H.14 A B.a B 1_H.1 C.1_12 C.3_12" type="type_1c">
+            <note>Die Repliken bilden in <wit>1_H.14</wit>  <wit>A</wit> <wit>B.a</wit> einen
+                antilabischen Vers, in <wit>B</wit> <wit>1_H.1</wit> <wit>C.1_12</wit> 
+                    <wit>C.3_12</wit> sind es zwei Verse. Der Vers ist in <wit>A</wit> um ca. 5 mm
+                auf derselben Höhe wie 3990–3993 eingerückt (entsprechend auch <wit>B.a</wit>);
+                korrigiert seit <ref target="faust://bibliography/duentzer1882a"
+                >Düntzer</ref>.</note></rdg>
     </app>
 
     <app>
@@ -349,7 +395,7 @@
             <note>konj. <ref target="faust://bibliography/resenhoefft1975"
             >Resenhöfft</ref></note></rdg>
     </app>
-    
+
     <app>
         <f:replace n="4137">sah’</f:replace>
         <f:ins n="4137">sah</f:ins>
@@ -363,16 +409,22 @@
         <f:replace n="before_4144">Brocktophantasmist</f:replace>
         <f:ins n="before_4144">Proktophantasmist</f:ins>
         <ref>vor 4144</ref>
-        <lem wit="1_H.2"><speaker>Proktophantasmist</speaker> <note><wit>1_H.2</wit></note></lem>
-        <rdg wit="1_H.14 A"><speaker>Brocktophantasmist</speaker> <note><wit>1_H.14</wit> <wit>A</wit></note></rdg>
-        <rdg wit="B B.a"><speaker>Procktophantasmist</speaker> <note><wit>B</wit> <wit>B.a</wit></note></rdg>
+        <lem wit="1_H.2"><speaker>Proktophantasmist</speaker>
+            <note><wit>1_H.2</wit></note></lem>
+        <rdg wit="1_H.14 A"><speaker>Brocktophantasmist</speaker>
+            <note><wit>1_H.14</wit> <wit>A</wit></note></rdg>
+        <rdg wit="B B.a"><speaker>Procktophantasmist</speaker>
+            <note><wit>B</wit> <wit>B.a</wit></note></rdg>
         <rdg wit="1_H.1"><subst>
-            <del><speaker>Procktophantasmist</speaker></del>
-            <add><speaker>Proktophantasmist</speaker></add>
-        </subst> <note><seg type="hand">Gö</seg> <wit>1_H.1</wit></note></rdg>
-        <rdg wit="C.1_12 C.3_12" type="type_2c"><speaker>Proktophantasmist</speaker> <note><wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
+                <del><speaker>Procktophantasmist</speaker></del>
+                <add><speaker>Proktophantasmist</speaker></add>
+            </subst>
+            <note><seg type="hand">Gö</seg>
+                <wit>1_H.1</wit></note></rdg>
+        <rdg wit="C.1_12 C.3_12" type="type_2c"><speaker>Proktophantasmist</speaker>
+            <note><wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
     </app>
-    
+
     <app>
         <f:ins n="before_4343" place="only-app"/>
         <ref>nach 4334</ref>
@@ -381,7 +433,7 @@
                 <wit>C.1_12</wit>
                 <wit>C.3_12</wit> folgen die (ganz oder teilweise auch in <wit>1_H.16</wit> und
                     <wit>1_H.17</wit> enthaltenen) Verse 4335–4342 (hier nach
-                    <wit>1_H.1</wit>):</note>
+                <wit>1_H.1</wit>):</note>
             <sp>
                 <speaker>Tanzmeister.</speaker>
                 <l n="4335">Wie jeder doch die Beine lupft! </l>
@@ -403,7 +455,8 @@
         <f:replace n="4436">Kranz</f:replace>
         <f:ins n="4436">Kranz</f:ins>
         <ref>4436</ref>
-        <lem wit="A">Kranz<pc>‸</pc> <note><wit>A</wit></note></lem>
+        <lem wit="A">Kranz<pc>‸</pc>
+            <note><wit>A</wit></note></lem>
         <rdg wit="D.1" type="type_7">Kranz, <note><wit>D.1</wit></note></rdg>
         <rdg wit="B B.a" type="type_4a">Kranz, <note><wit>B</wit> <wit>B.a</wit></note></rdg>
     </app>
@@ -467,22 +520,28 @@
         <f:replace n="5707">wohl! du,</f:replace>
         <f:ins n="5707">wohl! du</f:ins>
         <ref>5707</ref>
-        <lem wit="2_I_H.32">wohl! du<pc>‸</pc> <note><wit>2_I_H.32</wit></note></lem>
+        <lem wit="2_I_H.32">wohl! du<pc>‸</pc>
+            <note><wit>2_I_H.32</wit></note></lem>
         <rdg wit="2_I_H.32">
             <subst>
                 <del>wohl<pc>‸</pc> du<pc>‸</pc></del>
-                <add>wohl! du<pc>‸</pc> <note>G <wit>2_I_H.32</wit></note></add>
+                <add>wohl! du<pc>‸</pc>
+                    <note>G <wit>2_I_H.32</wit></note></add>
             </subst>
         </rdg>
-        <rdg wit="2_H 2_I_H.0a" type="type_2b">wohl! du, <note><wit>2_H</wit> <wit>2_I_H.0a</wit></note></rdg>
-        <rdg wit="C.1_12 C.3_12">wohl! Du<pc>‸</pc> <note><wit>C.1 12</wit> <wit>C.3_12</wit></note></rdg>
+        <rdg wit="2_H 2_I_H.0a" type="type_2b">wohl! du, <note><wit>2_H</wit>
+                <wit>2_I_H.0a</wit></note></rdg>
+        <rdg wit="C.1_12 C.3_12">wohl! Du<pc>‸</pc>
+            <note><wit>C.1 12</wit>
+                <wit>C.3_12</wit></note></rdg>
     </app>
-    
+
     <app>
         <f:replace n="5750">Hindermann</f:replace>
         <f:ins n="5750">Hindermann</f:ins>
         <ref>5750</ref>
-        <lem wit="2_H 2_I_H.0a">Hindermann <note><wit>2_H</wit> <wit>2_I_H.0a</wit></note></lem>
+        <lem wit="2_H 2_I_H.0a">Hindermann <note><wit>2_H</wit>
+                <wit>2_I_H.0a</wit></note></lem>
         <rdg wit="2_H" type="type_6">Hintermann <note>Ec <wit>2_H</wit></note></rdg>
     </app>
 
@@ -490,8 +549,11 @@
         <f:ins n="5944" place="before"><milestone unit="lg"/></f:ins>
         <ref>5944</ref>
         <lem/>
-        <rdg wit="2_H"> <note>Der Beginn der neuen Versgruppe ist in <wit>2_H</wit> durch Einrückung des Verses markiert.</note></rdg>
-        <rdg wit="2_I_H.0a" type="type_2aa"> <note>Die Einrückung fehlt in <wit>2_I_H.0a</wit>.</note></rdg>
+        <rdg wit="2_H">
+            <note>Der Beginn der neuen Versgruppe ist in <wit>2_H</wit> durch Einrückung des Verses
+                markiert.</note></rdg>
+        <rdg wit="2_I_H.0a" type="type_2aa">
+            <note>Die Einrückung fehlt in <wit>2_I_H.0a</wit>.</note></rdg>
     </app>
 
     <app>
@@ -531,7 +593,8 @@
         <ref>6282</ref>
         <lem>Werke.</lem>
         <rdg wit="2_I_H.47">Wercke. <note><wit>2_I_H.47</wit></note></rdg>
-        <rdg wit="2_H" type="type_2aa">Werke<pc>‸</pc> <note><wit>2_H</wit></note></rdg>
+        <rdg wit="2_H" type="type_2aa">Werke<pc>‸</pc>
+            <note><wit>2_H</wit></note></rdg>
     </app>
 
     <app>
@@ -560,16 +623,19 @@
         <lem/>
         <rdg wit="2_H" type="type_6"><note>tilgt Ec <wit>2_H</wit></note></rdg>
     </app>
-    
+
     <app>
         <f:replace n="6552">Stand</f:replace>
         <f:ins n="6552">Stand</f:ins>
         <ref>6552</ref>
         <lem wit="2_H">Stand <note><wit>2_H</wit></note></lem>
-        <rdg wit="2_I_H.48 2_I_H.60">Stand <note>(undeutlich) <wit>2_I_H.48</wit> <wit>2_I_H.60</wit></note></rdg>
-        <rdg type="type_3*">Strand <note>konj. <ref target="faust://bibliography/koch1882">Koch</ref> emend. <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
+        <rdg wit="2_I_H.48 2_I_H.60">Stand <note>(undeutlich) <wit>2_I_H.48</wit>
+                <wit>2_I_H.60</wit></note></rdg>
+        <rdg type="type_3*">Strand <note>konj. <ref target="faust://bibliography/koch1882"
+                    >Koch</ref> emend. <ref target="faust://bibliography/wa_I_15_1">Erich
+                    Schmidt</ref></note></rdg>
     </app>
-    
+
     <app>
         <f:ins n="6717" place="only-app"/>
         <ref>6717–6718</ref>
@@ -588,7 +654,8 @@
                 <del>leucht</del>
                 <add>leuchtet<pc>‸</pc></add>
             </subst>
-            <note><seg type="hand">G</seg>, Ausrufezeichen zS am linken Rand <wit>2_H</wit></note></rdg>
+            <note><seg type="hand">G</seg>, Ausrufezeichen zS am linken Rand
+            <wit>2_H</wit></note></rdg>
     </app>
 
     <app>
@@ -596,23 +663,30 @@
         <f:ins n="6983">Den</f:ins>
         <ref>6983</ref>
         <lem>Den</lem>
-        <rdg wit="2_H" type="type_7">Nun auf! ⟨Nun auf! <note>tilgt G</note>⟩ den <note><wit>2_H</wit></note></rdg>
+        <rdg wit="2_H" type="type_7">Nun auf! ⟨Nun auf! <note>tilgt G</note>⟩ den
+                    <note><wit>2_H</wit></note></rdg>
     </app>
 
     <app>
         <f:replace n="7049">von</f:replace>
         <f:ins n="7049">von</f:ins>
         <ref>7049</ref>
-        <lem wit="2_II_H.74 2_H">von <note><wit>2_II_H.74</wit> <wit>2_H</wit></note></lem>
-        <rdg type="type_1a*">vor <note><ref target="faust://bibliography/C.1_41"/> <ref target="faust://bibliography/C.3_41"/> <ref target="faust://bibliography/Q"/> emend <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
+        <lem wit="2_II_H.74 2_H">von <note><wit>2_II_H.74</wit>
+                <wit>2_H</wit></note></lem>
+        <rdg type="type_1a*">vor <note><ref target="faust://bibliography/C.1_41"/>
+                <ref target="faust://bibliography/C.3_41"/>
+                <ref target="faust://bibliography/Q"/> emend <ref
+                    target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
     </app>
 
     <app>
         <f:replace n="7287">wadend</f:replace>
         <f:ins n="7287">wadend</f:ins>
         <ref>7287</ref>
-        <lem wit="2_II_H.74 2_H">wadend <note><wit>2_II_H.74</wit> <wit>2_H</wit></note></lem>
-        <rdg type="type_7">watend <note>emend <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
+        <lem wit="2_II_H.74 2_H">wadend <note><wit>2_II_H.74</wit>
+                <wit>2_H</wit></note></lem>
+        <rdg type="type_7">watend <note>emend <ref target="faust://bibliography/wa_I_15_1">Erich
+                    Schmidt</ref></note></rdg>
     </app>
 
     <app>
@@ -620,15 +694,22 @@
         <f:ins n="7583">Ritze</f:ins>
         <ref>7583</ref>
         <lem wit="2_H">Ritze <note><wit>2_H</wit></note></lem>
-        <rdg type="type_7">Ritzen <note><ref target="faust://bibliography/C.1_41"/> <ref target="faust://bibliography/C.3_41"/> <ref target="faust://bibliography/Q"/> emend <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
+        <rdg type="type_7">Ritzen <note><ref target="faust://bibliography/C.1_41"/>
+                <ref target="faust://bibliography/C.3_41"/>
+                <ref target="faust://bibliography/Q"/> emend <ref
+                    target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
     </app>
 
     <app>
         <f:replace n="7729">mit</f:replace>
         <f:ins n="7729">mit</f:ins>
         <ref>7729</ref>
-        <lem wit="2_II_H.74 2_H">mit <note><wit>2_II_H.74</wit> <wit>2_H</wit></note></lem>
-        <rdg type="type_7">bei <note><ref target="faust://bibliography/C.1_41"/> <ref target="faust://bibliography/C.3_41"/> <ref target="faust://bibliography/Q"/> emend <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
+        <lem wit="2_II_H.74 2_H">mit <note><wit>2_II_H.74</wit>
+                <wit>2_H</wit></note></lem>
+        <rdg type="type_7">bei <note><ref target="faust://bibliography/C.1_41"/>
+                <ref target="faust://bibliography/C.3_41"/>
+                <ref target="faust://bibliography/Q"/> emend <ref
+                    target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
     </app>
 
     <app>
@@ -652,7 +733,8 @@
                 <del>wägt und trägt <note>(Hörfehler) </note></del>
                 <add>wägt und regt</add>
             </subst>
-            <note><seg type="hand">G</seg> <wit>2_II_H.70</wit></note>
+            <note><seg type="hand">G</seg>
+                <wit>2_II_H.70</wit></note>
         </rdg>
     </app>
 
@@ -661,7 +743,9 @@
         <f:ins n="8467"><seg>und</seg> süße</f:ins>
         <ref>8467</ref>
         <lem wit="2_II_H.73">und <note><wit>2_II_H.73</wit></note></lem>
-        <rdg wit="2_II_H.72 2_II_H.73">und <note><seg type="hand">G</seg> <wit>2_II_H.72</wit> <wit>2_II_H.73</wit></note></rdg>
+        <rdg wit="2_II_H.72 2_II_H.73">und <note><seg type="hand">G</seg>
+                <wit>2_II_H.72</wit>
+                <wit>2_II_H.73</wit></note></rdg>
         <rdg wit="2_H" type="type_2aa">bald <note><wit>2_H</wit></note></rdg>
     </app>
 
@@ -690,10 +774,13 @@
                 <del>mustre</del>
                 <add>mustere</add>
             </subst>
-            <note><seg type="hand">Ri</seg> <seg type="hand">G</seg> <wit>2_III_H.3</wit></note>
+            <note><seg type="hand">Ri</seg>
+                <seg type="hand">G</seg>
+                <wit>2_III_H.3</wit></note>
         </rdg>
         <rdg wit="2_III_H.3a_1">mustere <note><wit>2_III_H.3a_1</wit></note></rdg>
-        <rdg wit="2_H C.1_4" type="type_2b">mustre <note><wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
+        <rdg wit="2_H C.1_4" type="type_2b">mustre <note><wit>2_H</wit>
+                <wit>C.1_4</wit></note></rdg>
     </app>
 
     <app>
@@ -701,7 +788,8 @@
         <f:ins n="8671">raschgeschäftges</f:ins>
         <ref>8671</ref>
         <lem wit="2_III_H.3a_1">raschgeschäftges <note><wit>2_III_H.3a_1</wit></note></lem>
-        <rdg wit="2_H C.1_4" type="type_2b">raschgeschäftiges <note><wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
+        <rdg wit="2_H C.1_4" type="type_2b">raschgeschäftiges <note><wit>2_H</wit>
+                <wit>C.1_4</wit></note></rdg>
     </app>
 
     <app>
@@ -709,7 +797,8 @@
         <f:ins n="8720">angstumschlungne</f:ins>
         <ref>8720</ref>
         <lem wit="2_III_H.3a_1">angstumschlungne <note><wit>2_III_H.3a_1</wit></note></lem>
-        <rdg wit="2_H C.1_4" type="type_2b">angstumschlungene <note><wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
+        <rdg wit="2_H C.1_4" type="type_2b">angstumschlungene <note><wit>2_H</wit>
+                <wit>C.1_4</wit></note></rdg>
     </app>
 
     <app>
@@ -732,9 +821,12 @@
                 <del>sie nicht</del>
                 <add>nicht sie</add>
             </subst>
-            <note>umst <seg type="hand">G</seg> <wit>2_III_H.2_1</wit></note>
+            <note>umst <seg type="hand">G</seg>
+                <wit>2_III_H.2_1</wit></note>
         </rdg>
-        <rdg wit="2_III_H.3a_1 2_H C.1_4" type="type_2b">sie nicht <note><wit>2_III_H.3a_1</wit> <wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
+        <rdg wit="2_III_H.3a_1 2_H C.1_4" type="type_2b">sie nicht <note><wit>2_III_H.3a_1</wit>
+                <wit>2_H</wit>
+                <wit>C.1_4</wit></note></rdg>
     </app>
 
     <app>
@@ -748,7 +840,10 @@
                 <wit>C.1_4</wit>
                 <!--<wit>C.2alpha_4</wit>
                 <wit>C.3_4</wit>--></note></rdg>
-        <rdg wit="2_H" type="type_6">zehenjährig <note>Ec <wit>2_H</wit> <ref target="faust://bibliography/C.1_41"/> <ref target="faust://bibliography/C.3_41"/> <ref target="faust://bibliography/Q"/></note></rdg>
+        <rdg wit="2_H" type="type_6">zehenjährig <note>Ec <wit>2_H</wit>
+                <ref target="faust://bibliography/C.1_41"/>
+                <ref target="faust://bibliography/C.3_41"/>
+                <ref target="faust://bibliography/Q"/></note></rdg>
         <rdg wit="2_H" type="type_6">dreyzehnjährig <note>Ri <wit>2_H</wit></note></rdg>
     </app>
 
@@ -813,7 +908,9 @@
         <ref>9206</ref>
         <lem>welch</lem>
         <rdg wit="2_III_H.2_1">welch <note><wit>2_III_H.2_1</wit></note></rdg>
-        <rdg wit="C.1_4" type="type_1b">welch’ <note><wit>2_III_H.3a_2</wit> <wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
+        <rdg wit="C.1_4" type="type_1b">welch’ <note><wit>2_III_H.3a_2</wit>
+                <wit>2_H</wit>
+                <wit>C.1_4</wit></note></rdg>
     </app>
 
     <app>
@@ -822,7 +919,8 @@
         <ref>9378</ref>
         <lem wit="2_III_H.3a_2">von <note><wit>2_III_H.3a_2</wit></note></lem>
         <rdg wit="2_III_H.48">von <note><wit>2_III_H.48</wit></note></rdg>
-        <rdg wit="2_H C.1_4" type="type_2b">vom <note><wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
+        <rdg wit="2_H C.1_4" type="type_2b">vom <note><wit>2_H</wit>
+                <wit>C.1_4</wit></note></rdg>
     </app>
 
     <app>
@@ -830,7 +928,8 @@
         <f:ins n="9852">erscheint</f:ins>
         <ref>9852</ref>
         <lem wit="C.1_4">erscheint <note><wit>C.1_4</wit></note></lem>
-        <rdg wit="2_III_H.2_2">erscheint <note><seg type="hand">G</seg> <wit>2_III_H.2_2</wit></note></rdg>
+        <rdg wit="2_III_H.2_2">erscheint <note><seg type="hand">G</seg>
+                <wit>2_III_H.2_2</wit></note></rdg>
         <rdg wit="2_III_H.3a_2">
             <subst>
                 <del>erscheint</del>
@@ -838,7 +937,8 @@
             </subst>
             <note><seg type="hand">Jo</seg> (nicht zweifelsfrei G) <wit>2_III_H.3a_2</wit></note>
         </rdg>
-        <rdg wit="2_H C.1_4" type="type_2b*">erscheint <note><wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
+        <rdg wit="2_H C.1_4" type="type_2b*">erscheint <note><wit>2_H</wit>
+                <wit>C.1_4</wit></note></rdg>
     </app>
 
     <app>
@@ -856,15 +956,22 @@
         <f:ins n="9971">Hades <seg>selbst</seg></f:ins>
         <ref>9971</ref>
         <lem wit="2_III_H.2_2">selbst <note><wit>2_III_H.2_2</wit></note></lem>
-        <rdg wit="2_III_H.3a_2 2_H C.1_4" type="type_2b"> <note>fehlt <wit>2_III_H.3a_2</wit> <wit>2_H</wit> <wit>C.1_4</wit></note></rdg>
+        <rdg wit="2_III_H.3a_2 2_H C.1_4" type="type_2b">
+            <note>fehlt <wit>2_III_H.3a_2</wit>
+                <wit>2_H</wit>
+                <wit>C.1_4</wit></note></rdg>
     </app>
 
     <app>
         <f:replace n="10060">quollen</f:replace>
         <f:ins n="10060">quollen</f:ins>
         <ref>10060</ref>
-        <lem wit="2_IV_H.1 2_H">quollen <note><wit>2_IV_H.1</wit> <wit>2_H</wit></note></lem>
-        <rdg type="type_1a*">quellen <note><ref target="faust://bibliography/C.1_41"/> <ref target="faust://bibliography/C.3_41"/> <ref target="faust://bibliography/Q"/> emend <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
+        <lem wit="2_IV_H.1 2_H">quollen <note><wit>2_IV_H.1</wit>
+                <wit>2_H</wit></note></lem>
+        <rdg type="type_1a*">quellen <note><ref target="faust://bibliography/C.1_41"/>
+                <ref target="faust://bibliography/C.3_41"/>
+                <ref target="faust://bibliography/Q"/> emend <ref
+                    target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
     </app>
 
     <app>
@@ -933,11 +1040,11 @@
         <f:ins n="11203" place="only-app"/>
         <ref>11203–11206</ref>
         <lem/>
-        <rdg wit="2_H" type="type_6"><l n="11203">Wir alle fordern</l> 
-            <l n="11204">Gleichen Theil.</l> 
-            <speaker n="before_11205">Mephist.</speaker> 
-            <l n="11205">Erst ordnet oben</l>
-            <l n="11206">Saal an Saal.</l> <note>Ec <wit>2_H</wit></note></rdg>
+        <rdg wit="2_H" type="type_6"><l n="11203">Wir alle fordern</l>  <l n="11204">Gleichen
+                Theil.</l>  <speaker n="before_11205">Mephist.</speaker>  <l n="11205">Erst ordnet
+                oben</l>
+            <l n="11206">Saal an Saal.</l>
+            <note>Ec <wit>2_H</wit></note></rdg>
     </app>
 
     <app>
@@ -946,8 +1053,8 @@
         <ref>nach 11287</ref>
         <lem wit="2_H">(Regum I. 21.) <note><wit>2_H</wit></note></lem>
         <rdg wit="2_V_H.1">(ab) <note><wit>2_V_H.1</wit></note></rdg>
-        <rdg wit="2_H" type="type_2aa*"><note>fehlt</note> 
-            ⟨(Regum I. 21.) <note>erg G <wit>2_H</wit>⟩</note></rdg>
+        <rdg wit="2_H" type="type_2aa*"><note>fehlt</note> ⟨(Regum I. 21.) <note>erg G
+                    <wit>2_H</wit>⟩</note></rdg>
     </app>
 
     <app>
@@ -955,8 +1062,10 @@
         <f:ins n="11422">dich!</f:ins>
         <ref>11422</ref>
         <lem wit="2_V_H.6">dich! <note>(etwas undeutlich) <wit>2_V_H.6</wit></note></lem>
-        <rdg wit="2_V_H.2">dich. <note>mglw mit Ansatz zum Ausrufezeichen <wit>2_V_H.2</wit></note></rdg>
-        <rdg wit="2_H" type="type_2b">dich<pc>‸</pc> <note><wit>2_H</wit></note></rdg>
+        <rdg wit="2_V_H.2">dich. <note>mglw mit Ansatz zum Ausrufezeichen
+            <wit>2_V_H.2</wit></note></rdg>
+        <rdg wit="2_H" type="type_2b">dich<pc>‸</pc>
+            <note><wit>2_H</wit></note></rdg>
     </app>
 
     <app>
@@ -964,7 +1073,9 @@
         <f:ins n="11439">mächtig;</f:ins>
         <ref>11439</ref>
         <lem wit="2_V_H.2">mächtig; <note><wit>2_V_H.2</wit></note></lem>
-        <rdg wit="2_H" type="type_7"> <note>Das Semikolon ist in <wit>2_H</wit> nicht mehr zu erkennen; ergänzt nach <wit>2_V_H.2</wit>.</note></rdg>
+        <rdg wit="2_H" type="type_7">
+            <note>Das Semikolon ist in <wit>2_H</wit> nicht mehr zu erkennen; ergänzt nach
+                    <wit>2_V_H.2</wit>.</note></rdg>
     </app>
 
     <app>
@@ -987,15 +1098,20 @@
         <f:ins n="11635">wieder.</f:ins>
         <ref>11635</ref>
         <lem wit="2_V_H.2">wieder. <note><wit>2_V_H.2</wit></note></lem>
-        <rdg wit="2_H" type="type_7"> <note>Der Punkt ist in <wit>2_H</wit> nicht zu erkennen; ergänzt nach <wit>2_V_H.2</wit>.</note></rdg>
+        <rdg wit="2_H" type="type_7">
+            <note>Der Punkt ist in <wit>2_H</wit> nicht zu erkennen; ergänzt nach
+                <wit>2_V_H.2</wit>.</note></rdg>
     </app>
-    
+
     <app>
         <f:replace n="11724">erlischt</f:replace>
         <f:ins n="11724">erlischt</f:ins>
         <ref>11724</ref>
-        <lem wit="2_H">erlischt<pc>‸</pc> <gap reason="ellipsis"/> Muth<pc>‸</pc> <note><wit>2_H</wit></note></lem>
-        <rdg wit="2_H" type="type_6">erlischt, <gap reason="ellipsis"/> Muth! <note>Ec <wit>2_H</wit></note></rdg>
+        <lem wit="2_H">erlischt<pc>‸</pc>
+            <gap reason="ellipsis"/> Muth<pc>‸</pc>
+            <note><wit>2_H</wit></note></lem>
+        <rdg wit="2_H" type="type_6">erlischt, <gap reason="ellipsis"/> Muth! <note>Ec
+                    <wit>2_H</wit></note></rdg>
     </app>
 
 </f:apparatus>
