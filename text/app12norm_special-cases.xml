@@ -381,6 +381,19 @@
     </app>
 
     <app>
+        <f:ins n="3996" place="only-app"/>
+        <ref>3996–3999</ref>
+        <lem/>
+        <rdg type="type_1c" wit="A B B.a C.1_12 C.3_12"><note>Die Verse sind in <wit>A</wit> und
+                    <wit>B</wit> um ca. 15 mm eingerückt gegenüber 5 mm bei 3990–3993 auf derselben
+                Seite und 10 mm bei 4000–4015 auf der folgenden Seite; in <wit>B.a</wit> und in
+                    <wit>C.1_12</wit>
+                <wit>C.3_12</wit> stehen sie auf derselben Höhe wie 4000–4015. Seit <ref
+                    target="faust://bibliography/duentzer1882a">Düntzer</ref> stehen sie linksbündig
+                wie 3986–3989.</note></rdg>
+    </app>
+
+    <app>
         <f:ins n="4051" place="only-app"/>
         <ref>4051</ref>
         <lem/>
