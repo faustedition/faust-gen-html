@@ -281,10 +281,19 @@
     </app>
     
     <app>
+        <f:ins n="3969" place="only-app"></f:ins>
+        <ref>3969–3971</ref>
+        <lem></lem>
+        <rdg type="type_1c"><note>Die Verse sind in <wit>A</wit> um ca. 5 mm eingerückt; korrigiert in <wit>B</wit> <wit>B.a</wit>.</note></rdg>
+    </app>
+    
+    <app>
         <f:ins n="3972" place="only-app"></f:ins>
         <ref>3972–3973</ref>
         <lem></lem>
-        <rdg type="type_7" wit="A B">Die Verse sind in <wit>A</wit> und <wit>B</wit> um 10 mm eingerückt.</rdg>
+        <rdg type="type_1c" wit="A B B.a 1_H.1 C.1_12"><note>Die Verse sind in <wit>A</wit> um ca. 20 mm eingerückt 
+            (entsprechend auch in <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> <wit wit="C.1_12">C.1_12</wit>); 
+            linksbündig seit <ref target="faust://bibliography/duentzer1882a">Düntzer</ref>.</note></rdg>
     </app>
     
     <app>
