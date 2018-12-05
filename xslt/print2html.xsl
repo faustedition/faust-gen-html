@@ -151,7 +151,9 @@
     </xsl:for-each>
   </xsl:function>
   
-  <xsl:template match="note[@type='textcrit']" priority="1">
+  <xsl:template match="note[@type='textcrit'][preceding-sibling::*[1][self::space[@unit='lines']]]" mode="#default"/>   
+  
+  <xsl:template match="note[@type='textcrit']" priority="1" mode="#default force">
     <span>
       <xsl:attribute name="class" select="f:generic-classes(.), 'appnote'" separator=" "/>
       <xsl:call-template name="highlight-group">

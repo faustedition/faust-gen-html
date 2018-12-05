@@ -48,11 +48,15 @@
 			<p:load name="load-testimony">
 				<p:with-option name="href" select="$filename"/>
 			</p:load>
-
+			
+			<p:xslt name="normalize-footnotes">
+				<p:with-option name="output-base-uri" select="p:base-uri()"/>
+				<p:input port="stylesheet"><p:document href="xslt/normalize-footnotes.xsl"/></p:input>
+				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>				
+			</p:xslt>
 			
 			<p:xslt name="testimony-xml">
-				<p:with-option name="output-base-uri" select="p:base-uri()"/>
-				<p:input port="source"><p:pipe port="result" step="load-testimony"/></p:input>
+				<p:with-option name="output-base-uri" select="p:base-uri()"/>				
 				<p:input port="stylesheet"><p:document href="xslt/normalize-characters.xsl"/></p:input>
 				<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 			</p:xslt>			

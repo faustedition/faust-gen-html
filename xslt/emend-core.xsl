@@ -47,7 +47,7 @@
         <xsl:apply-templates mode="#current"/>
     </xsl:template>
 
-    <xsl:template match="restore/subst" mode="emend">
+    <xsl:template match="restore/subst|subst[@f:rejectedBy]" mode="emend">
       <xsl:apply-templates select="del/node()" mode="#current"/>
     </xsl:template>  
 
