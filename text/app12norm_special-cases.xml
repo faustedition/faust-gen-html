@@ -300,13 +300,15 @@
         <f:ins n="3974" place="only-app"/>
         <ref>3974–3977</ref>
         <lem/>
-        <rdg wit="A B D.2" type="type_7"> <note>Die Verse sind in 
+        <rdg wit="A B D.2" type="type_1c"> <note>Die Verse sind in 
             <!--<wit>1_H.14</wit> <wit>A</wit> <wit>D.1</wit> <wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> 
-            <wit>C.1_12</wit> <wit>C.3_12</wit> nicht--><wit>A</wit> und <wit>B</wit> um 5 mm eingerückt, 
+            <wit>C.1_12</wit> <wit>C.3_12</wit> nicht--><wit>A</wit> <!--und <wit>B</wit> um 5 mm eingerückt, 
             in <wit>D.2</wit> <ref target="faust://bibliography/D.3"/> 
             <ref target="faust://bibliography/D.4"/> sind sie auf derselben Höhe wie dort die Verse 
-            3972–3973 eingerückt; in <ref target="faust://bibliography/Q"/> stehen 3972–3973 linksbündig, 
-            3974–3977 sind eingerückt.</note></rdg>
+            3972–3973 eingerückt-->nur um ca. 10 mm eingerückt (statt ca. 15 mm wie 3958–3967 auf derselben 
+            Seite); in <!--<ref target="faust://bibliography/Q"/> stehen 3972–3973 linksbündig, 
+            3974–3977 sind eingerückt--><wit>B</wit> <wit>B.a</wit> <wit>1_H.1</wit> 
+            <wit>C.1_12</wit> <wit>C.3_12</wit> stehen sie linksbündig; korrigiert seit <ref target="faust://bibliography/duentzer1882a">Düntzer</ref>.</note></rdg>
     </app>
 
     <app>
