@@ -1134,27 +1134,6 @@
     <rdg wit="B"><stage>zu Brander.</stage> <note><wit>B</wit></note></rdg>
     <rdg wit="B.a" type="type_8"><stage>(zu Brander).</stage> <note><wit>B.a</wit></note></rdg>
   </app>
-  <!--       before_2270_a[Wachspropfen]{Wachspfropfen} <i>vor 2270</i> Wachspfropfen <i>S</i>]   Wachspropfen <i>A D.1</i> Wachspfropfen <i>B B.a  [type=2a]</i>-->
-  <app>
-    <f:replace n="before_2270_a">Wachspropfen</f:replace>
-    <f:ins n="before_2270_a">Wachspfropfen</f:ins>
-    <ref>vor 2270</ref>
-    <lem wit="S">Wachspfropfen <note><wit>S</wit></note></lem>
-    <rdg wit="A D.1">Wachspropfen <note><wit>A</wit> <wit>D.1</wit></note></rdg>
-    <rdg wit="B B.a" type="type_2a">Wachspfropfen <note><wit>B</wit> <wit>B.a</wit></note></rdg>
-  </app>
-  <!--       before_2270_a[]{} <i>nach 2269</i> <speaker>MEPHIsTOPHELES</speaker> / <stage>bohrt, … verstopft</stage> <i>none</i>] <speaker>MEPHIsTOPHELES</speaker> / <stage>bohrt, … verstopft.</stage> <i>S</i>   <speaker>MEPHIsTOPHELES.</speaker> / <stage>(bohrt, … verstopft.)</stage> <i>A</i> <speaker>MEPHIsTOPHELES</speaker> / <stage>bohrt, … verstopft.</stage> <i>D.1 </i> MEPHIsTOPHELES / <stage>bohrt, … verstopft.</stage> <i>B</i> <speaker>MEPHIsTOPHELES</speaker> /  <stage>(bohrt, … verstopft).</stage> <i>B.a [type=8]</i>-->
-  <!--FIXED: before_2270_a[]{} <i>nach 2269</i> <speaker>MEPHIsTOPHELES</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft</stage> <i>none</i>] <speaker>MEPHIsTOPHELES</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <i>S</i>   <speaker>MEPHIsTOPHELES.</speaker> / <stage>(bohrt, <gap reason="ellipsis"/> verstopft.)</stage> <i>A</i> <speaker>MEPHIsTOPHELES</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <i>D.1 </i> MEPHIsTOPHELES / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <i>B</i> <speaker>MEPHIsTOPHELES</speaker> /  <stage>(bohrt, <gap reason="ellipsis"/> verstopft).</stage> <i>B.a [type=8]</i>-->
-  <app>
-    <f:ins n="before_2270_a" place="only-app"/>
-    <ref>nach 2269</ref>
-    <lem><speaker>MEPHIsTOPHELES</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft</stage></lem>
-    <rdg wit="S"><speaker>MEPHIsTOPHELES</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <note><wit>S</wit></note></rdg>
-    <rdg wit="A"><speaker>MEPHIsTOPHELES.</speaker> / <stage>(bohrt, <gap reason="ellipsis"/> verstopft.)</stage> <note><wit>A</wit></note></rdg>
-    <rdg wit="D.1"><speaker>MEPHIsTOPHELES</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <note><wit>D.1</wit></note></rdg>
-    <rdg wit="B">MEPHIsTOPHELES / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <note><wit>B</wit></note></rdg>
-    <rdg wit="B.a" type="type_8"><speaker>MEPHIsTOPHELES</speaker> /  <stage>(bohrt, <gap reason="ellipsis"/> verstopft).</stage> <note><wit>B.a</wit></note></rdg>
-  </app>
   <!--       before_2274_a|before_2274_b[Siebel|indem sich Mephistopheles seinem Platze nähert]{=} <i>vor 2274</i> <speaker>Siebel</speaker> / <stage>indem … nähert</stage> <i>none</i>]  <speaker>Siebel^</speaker> / <stage>indem … nähert.</stage> <i>S</i> <speaker>Siebel.</speaker> / <stage>(indem … nähert.)</stage> <i>A</i> <speaker>Siebel.</speaker> / <stage>indem … nähert.</stage> <i>D.1</i> <speaker>Siebel,</speaker> / <stage>indem … nähert.</stage> <i>B</i> <speaker>Siebel^</speaker> / <stage>(indem … nähert).</stage> <i>B.a [type=8]</i>-->
   <!--FIXED: before_2274_a|before_2274_b[Siebel|indem sich Mephistopheles seinem Platze nähert]{=} <i>vor 2274</i> <speaker>Siebel</speaker> / <stage>indem <gap reason="ellipsis"/> nähert</stage> <i>none</i>]  <speaker>Siebel^</speaker> / <stage>indem <gap reason="ellipsis"/> nähert.</stage> <i>S</i> <speaker>Siebel.</speaker> / <stage>(indem <gap reason="ellipsis"/> nähert.)</stage> <i>A</i> <speaker>Siebel.</speaker> / <stage>indem <gap reason="ellipsis"/> nähert.</stage> <i>D.1</i> <speaker>Siebel,</speaker> / <stage>indem <gap reason="ellipsis"/> nähert.</stage> <i>B</i> <speaker>Siebel^</speaker> / <stage>(indem <gap reason="ellipsis"/> nähert).</stage> <i>B.a [type=8]</i>-->
   <app>
