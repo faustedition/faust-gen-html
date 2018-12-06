@@ -250,6 +250,7 @@
 	<xsl:template mode="grouping-key" match="@*">
 		<xsl:value-of select="concat(' ', name(), '=', f:quoted-attribute-value(.))"/>
 	</xsl:template>
+	<xsl:template mode="grouping-key" match="orig[not(parent::choice)]"><xsl:apply-templates mode="#current"/></xsl:template>
 	
 	<xsl:template mode="grouping-key" match="text()">
 		<xsl:value-of select="f:normalize-print-chars(.)"/>
