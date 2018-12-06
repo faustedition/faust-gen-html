@@ -69,7 +69,7 @@
         <rdg wit="S"><speaker>Mephistopheles</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <note><wit>S</wit></note></rdg>
         <rdg wit="A"><speaker>Mephistopheles.</speaker> / <stage>(bohrt, <gap reason="ellipsis"/> verstopft.)</stage> <note><wit>A</wit></note></rdg>
         <rdg wit="D.1"><speaker>Mephistopheles</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <note><wit>D.1</wit></note></rdg>
-        <rdg wit="B">Mephistopheles / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <note><wit>B</wit></note></rdg>
+        <rdg wit="B"><speaker>Mephistopheles</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <note><wit>B</wit></note></rdg>
         <rdg wit="B.a" type="type_8"><speaker>Mephistopheles</speaker> /  <stage>(bohrt, <gap reason="ellipsis"/> verstopft).</stage> <note><wit>B.a</wit></note></rdg>
     </app>
     
