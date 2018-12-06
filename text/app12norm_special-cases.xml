@@ -387,6 +387,7 @@
 
     <app>
         <f:ins n="3996" place="only-app"/>
+        <f:ins n="3996" place="enclosing-lg"><f:remove-lg/></f:ins>
         <ref>3996–3999</ref>
         <lem/>
         <rdg type="type_1c" wit="A B B.a C.1_12 C.3_12"><note>Die Verse sind in <wit>A</wit> und
@@ -400,6 +401,7 @@
 
     <app>
         <f:ins n="4004" place="only-app"/>
+        <f:ins n="4004" place="enclosing-lg"><f:remove-lg/></f:ins>
         <ref>4004–4007</ref>
         <lem/>
         <rdg wit="A" type="type_1c"><note>Die Verse stehen in <wit>A</wit> auf derselben Höhe wie
