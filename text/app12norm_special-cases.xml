@@ -307,6 +307,7 @@
 
     <app>
         <f:ins n="3962" place="only-app"/>
+        <f:ins n="3962" place="enclosing-lg"><f:remove-lg/></f:ins>
         <ref>3962–3963 und 3968</ref>
         <lem/>
         <rdg type="type_1c"><note>Die Verse sind in <a href="archive_prints">allen Drucken</a> auf
