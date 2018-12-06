@@ -290,8 +290,8 @@
         <lem/>
         <rdg type="type_1c" wit="1_H.14 A"><note>In <wit>A</wit> werden inkohärent mehrere Stufen
                 von Verseinrückungen verwendet, die in <wit>1_H.14</wit> keine Entsprechung haben,
-                da dort alle Verse linksbündig beginnen. Die <a href="archive_prints">späteren
-                    Drucke</a> haben vereinfacht, ohne Kohärenz zu erreichen. Erst <ref
+                da dort alle Verse linksbündig beginnen. Die <ref target="/archive_prints">späteren
+                    Drucke</ref> haben vereinfacht, ohne Kohärenz zu erreichen. Erst <ref
                     target="faust://bibliography/duentzer1882a">Düntzer</ref> und <ref
                     target="faust://bibliography/wa_I_14">WA</ref> haben hier
             korrigiert.</note></rdg>
@@ -311,7 +311,7 @@
         <f:ins n="3968" place="enclosing-lg"><f:remove-lg/></f:ins>
         <ref>3962–3963 und 3968</ref>
         <lem/>
-        <rdg type="type_1c"><note>Die Verse sind in <a href="archive_prints">allen Drucken</a> auf
+        <rdg type="type_1c"><note>Die Verse sind in <ref target="/archive_prints">allen Drucken</ref> auf
                 derselben Höhe wie 3956–3961 und 3964–3967 um ca. 15 mm eingerückt; linksbündig in
                     <ref target="faust://bibliography/wa_I_14">WA</ref>.</note></rdg>
     </app>
