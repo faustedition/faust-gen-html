@@ -65,12 +65,12 @@
     <app>
         <f:ins n="before_2270_a" place="only-app"/>
         <ref>nach 2269</ref>
-        <lem><speaker>MEPHIsTOPHELES</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft</stage></lem>
-        <rdg wit="S"><speaker>MEPHIsTOPHELES</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <note><wit>S</wit></note></rdg>
-        <rdg wit="A"><speaker>MEPHIsTOPHELES.</speaker> / <stage>(bohrt, <gap reason="ellipsis"/> verstopft.)</stage> <note><wit>A</wit></note></rdg>
-        <rdg wit="D.1"><speaker>MEPHIsTOPHELES</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <note><wit>D.1</wit></note></rdg>
-        <rdg wit="B">MEPHIsTOPHELES / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <note><wit>B</wit></note></rdg>
-        <rdg wit="B.a" type="type_8"><speaker>MEPHIsTOPHELES</speaker> /  <stage>(bohrt, <gap reason="ellipsis"/> verstopft).</stage> <note><wit>B.a</wit></note></rdg>
+        <lem><speaker>Mephistopheles</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft</stage></lem>
+        <rdg wit="S"><speaker>Mephistopheles</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <note><wit>S</wit></note></rdg>
+        <rdg wit="A"><speaker>Mephistopheles.</speaker> / <stage>(bohrt, <gap reason="ellipsis"/> verstopft.)</stage> <note><wit>A</wit></note></rdg>
+        <rdg wit="D.1"><speaker>Mephistopheles</speaker> / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <note><wit>D.1</wit></note></rdg>
+        <rdg wit="B">Mephistopheles / <stage>bohrt, <gap reason="ellipsis"/> verstopft.</stage> <note><wit>B</wit></note></rdg>
+        <rdg wit="B.a" type="type_8"><speaker>Mephistopheles</speaker> /  <stage>(bohrt, <gap reason="ellipsis"/> verstopft).</stage> <note><wit>B.a</wit></note></rdg>
     </app>
     
     <app>
