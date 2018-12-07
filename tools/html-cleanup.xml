@@ -47,5 +47,19 @@ html = C:\Users\bruening.FDH-FFM\github\faustedition\faust-web\content\intro_tex
         <!--<output-records max-length="120"/>-->
     </transform>
     
-    <transform source="tustep" destination="html2"></transform>
+    <transform source="tustep" destination="html2">
+        <pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <exception-string>^_</exception-string>
+                        <string-pair>
+                            <search-string>^</search-string>
+                            <replacement-string>#\[005E\]</replacement-string>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>
+    </transform>
 </script>
