@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script xmlns="http://www.xstep.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <variables>
+        <variable type="execution-file" name="execute"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/ueb/txstep.tu</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="intmedfile"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/intmedfile.tf</variable>
+        <variable type="permanent-file" format="tustep" option="erase" name="tustep"
+            >file:///C:/Users/bruening.FDH-FFM/txstep/txt/tustep.tf</variable>
+        <variable type="permanent-file" code="UTF-8" name="html2" option="erase"
+            >file:///C:/Users/bruening.FDH-FFM/github/gerritbruening/faust-data/faust-web/intro_text.html</variable>
+    </variables>
+    <tustep>
+#de,da=*
+html = C:\Users\bruening.FDH-FFM\github\faustedition\faust-web\content\intro_text.html
+*eof
+#anmelde, html, traeger = -
+#umwandle, html, intmedfile, modus = 0, loeschen = +, code = utf8, option = zirkumflex
+    </tustep>
+    <transform source="intmedfile" destination="tustep" mode="+">
+        <!--<define-text-units>
+            <text-unit-start>
+                <comparison-table>
+                    <comparison-string>{{ParagraphStyleRange</comparison-string>
+                </comparison-table>
+            </text-unit-start>
+        </define-text-units>-->
+        <!--<pass>
+            <modify>
+                <exchange>
+                    <exchange-table>
+                        <string-pair>
+                            <search-string>{[}{00}{s:tb}</search-string>
+                            <replacement-string/>
+                        </string-pair>
+                    </exchange-table>
+                </exchange>
+            </modify>
+        </pass>-->
+        <!--<new-line-before>
+            <search-table>
+                <search-string>{{ParagraphStyleRange</search-string>
+            </search-table>
+        </new-line-before>-->
+        <remove-blanks where="both"/>
+        <suppress-blank-lines/>
+        <!--<output-records max-length="120"/>-->
+    </transform>
+    
+    <transform source="tustep" destination="html2"></transform>
+</script>
