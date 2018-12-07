@@ -25,18 +25,18 @@ html = C:\Users\bruening.FDH-FFM\github\faustedition\faust-web\content\intro_tex
                 </comparison-table>
             </text-unit-start>
         </define-text-units>-->
-        <!--<pass>
+        <pass>
             <modify>
                 <exchange>
                     <exchange-table>
                         <string-pair>
-                            <search-string>{[}{00}{s:tb}</search-string>
-                            <replacement-string/>
+                            <search-string> {|}{{/a}}</search-string>
+                            <replacement-string>{=2=}{=1=}</replacement-string>
                         </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>
-        </pass>-->
+        </pass>
         <!--<new-line-before>
             <search-table>
                 <search-string>{{ParagraphStyleRange</search-string>
