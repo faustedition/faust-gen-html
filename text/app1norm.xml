@@ -2225,16 +2225,6 @@
     <rdg wit="1_H.5 1_H.7 1_H.11">Sein <note><wit>1_H.5</wit> <wit>1_H.7</wit> <wit>1_H.11</wit></note></rdg>
     <rdg type="type_2b*">Sein <note>konj <ref target="faust://bibliography/schroeer1881_1">Schröer</ref></note></rdg>
   </app>
-  <!--       3410[^]{<milestone unit="lg" rend="indented"/>}  <i>nach 3409</i> <i>Strophenabstand 1_H.5</i>]    <i>kein Strophenabstand S A B B.a</i>  <i>Strophenabstand vorschl Gö mark G 1_H.6</i>   <i>kein Strophenabstand 1_H.1</i>   <i>Strophenabstand C.1_12 C.3_12 [type=2b]</i>-->
-  <app>
-    <f:ins n="3410" place="before"><milestone unit="lg" rend="indented"/></f:ins>
-    <ref>nach 3409</ref>
-    <lem wit="1_H.5"> <note>Strophenabstand <wit>1_H.5</wit></note></lem>
-    <rdg wit="S A B B.a"> <note>kein Strophenabstand <wit>S</wit> <wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></rdg>
-    <rdg wit="1_H.6"> <note>Strophenabstand vorschl Gö mark G <wit>1_H.6</wit></note></rdg>
-    <rdg wit="1_H.1"> <note>kein Strophenabstand <wit>1_H.1</wit></note></rdg>
-    <rdg wit="C.1_12 C.3_12" type="type_2b"> <note>Strophenabstand <wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
-  </app>
   <!--       3417[hält’st]{hältst} <i>3417</i> hältst <i>none</i>] hältst <i>1_H.5</i> hält’st <i>S A B</i> hältst <i>B.a  [type=1b]</i>-->
   <app>
     <f:replace n="3417">hält’st</f:replace>
