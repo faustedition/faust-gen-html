@@ -1427,18 +1427,6 @@
     <rdg type="type_3*">starre <note>konj. <ref target="faust://bibliography/wa_I_15_1">Erich Schmidt</ref></note></rdg>
   </app>
 
-  <!--       10067|10073[@lg|@lg]{rend=|rend=} <i>10067–10074</i>] <i>eingerückt 2_H [type=1c]</i>-->
-  <app>
-    <f:ins n="10067" place="enclosing-lg">
-      <lg rend=""/>
-    </f:ins>
-    <f:ins n="10073" place="enclosing-lg">
-      <lg rend=""/>
-    </f:ins>
-    <ref>10067–10074</ref>
-    <lem/>
-    <rdg wit="2_H" type="type_1c"> <note>eingerückt <wit>2_H</wit></note></rdg>
-  </app>
   <!--       10084[Das ging]{es ging} <i>10084</i> es ging <i>2_IV_H.3</i>] Das ging <i>2_H [type=2aa]</i>-->
   <app>
     <f:replace n="10084">Das ging</f:replace>
