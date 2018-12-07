@@ -9,6 +9,14 @@
             >file:///C:/Users/bruening.FDH-FFM/txstep/txt/tustep.tf</variable>
         <variable type="permanent-file" code="UTF-8" name="html2" option="erase"
             >file:///C:/Users/bruening.FDH-FFM/github/gerritbruening/faust-data/faust-web/intro_text.html</variable>
+        <string-group name="to">
+            <member> </member>
+            <member>{{em}}</member>
+            <member>{{/em}}</member>
+            <member>rend-italic?}}</member>
+            <member>{{/hi}}</member>
+            <member>{{/span}}</member>
+        </string-group>
     </variables>
     <tustep>
 #de,da=*
@@ -16,6 +24,7 @@ html = C:\Users\bruening.FDH-FFM\github\faustedition\faust-web\content\intro_tex
 *eof
 #anmelde, html, traeger = -
 #umwandle, html, intmedfile, modus = 0, loeschen = +, code = utf8, option = zirkumflex
+#umwandle, intmedfile, html2, modus = 0, loeschen = +, code = utf8
     </tustep>
     <transform source="intmedfile" destination="tustep" mode="+">
         <pass>
@@ -23,9 +32,18 @@ html = C:\Users\bruening.FDH-FFM\github\faustedition\faust-web\content\intro_tex
                 <exchange>
                     <exchange-table>
                         <string-pair>
-                            <search-string> {|}{{/a}}</search-string>
-                            <replacement-string>{=2=}{=1=}</replacement-string>
+                            <search-string>{s:to}{[}\M\A{]}{s:to}</search-string>
+                            <replacement-string>{{a href="/bibliography^#ma^_18^_1"}}MA{{/a}}</replacement-string>
                         </string-pair>
+                        <!--<string-pair>
+                            <search-string>{{em}}{|} </search-string>
+                            <replacement-string>{=2=}{=1=}</replacement-string>
+                        </string-pair>-->
+                        <!--<string-pair>
+                            <search-string>{s:to}{[}\W\A{]}</search-string>
+                            <replacement-string>{{a href="/bibliography^#wa^_I^_xyz"}}WA{{/a}}</replacement-string>
+                        </string-pair>-->
+                        
                     </exchange-table>
                 </exchange>
             </modify>
@@ -34,9 +52,9 @@ html = C:\Users\bruening.FDH-FFM\github\faustedition\faust-web\content\intro_tex
         <suppress-blank-lines/>-->
         <!--<output-records max-length="120"/>-->
     </transform>
-    
+
     <tustep>
-#anmelde, , html, traeger = -        
-#umwandle, tustep, html, modus = 0, loeschen = +, code = utf8
+#anmelde, , html2, traeger = -        
+#umwandle, tustep, html2, modus = 0, loeschen = +, code = utf8, option = zirkumflex
     </tustep>
 </script>
