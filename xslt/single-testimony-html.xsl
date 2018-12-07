@@ -30,12 +30,13 @@
 			</xsl:with-param>
 			<xsl:with-param name="content">
 				<div class="testimony pure-g-r">
-					<div class="pure-u-1-2">
+					<div class="pure-u-5-12">
 						<xsl:apply-templates select="//f:testimony"/>						
 					</div>
-					<div class="pure-u-1-2">
+					<div class="pure-u-5-12">
 						<xsl:apply-templates select="//text//text[not(@copyOf)]"/>						
-					</div>					
+					</div>
+					<!-- Rest is placeholder for footnotes -->
 				</div>
 			</xsl:with-param>
 		</xsl:call-template>				
