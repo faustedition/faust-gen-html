@@ -223,11 +223,12 @@
     <app>
         <f:ins n="3410" place="before"><milestone unit="lg" rend="indented"/></f:ins>
         <ref>nach 3409</ref>
-        <lem wit="1_H.5"> <note>Strophenabstand <wit>1_H.5</wit></note></lem>
-        <rdg wit="S A B B.a"> <note>kein Strophenabstand <wit>S</wit> <wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></rdg>
+        <lem></lem>
+        <rdg wit="1_H.5"><note>Strophenabstand <wit>1_H.5</wit></note></rdg>
+        <rdg wit="S A B B.a" type="type_2b"> <note>kein Strophenabstand <wit>S</wit> <wit>A</wit> <wit>B</wit> <wit>B.a</wit></note></rdg>
         <rdg wit="1_H.6"> <note>Strophenabstand vorschl Gö mark G <wit>1_H.6</wit></note></rdg>
         <rdg wit="1_H.1"> <note>kein Strophenabstand <wit>1_H.1</wit></note></rdg>
-        <rdg wit="C.1_12 C.3_12" type="type_2b"> <note>Strophenabstand <wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
+        <rdg wit="C.1_12 C.3_12"> <note>Strophenabstand <wit>C.1_12</wit> <wit>C.3_12</wit></note></rdg>
     </app>
     
     <app>
