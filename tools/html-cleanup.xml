@@ -18,13 +18,6 @@ html = C:\Users\bruening.FDH-FFM\github\faustedition\faust-web\content\intro_tex
 #umwandle, html, intmedfile, modus = 0, loeschen = +, code = utf8, option = zirkumflex
     </tustep>
     <transform source="intmedfile" destination="tustep" mode="+">
-        <!--<define-text-units>
-            <text-unit-start>
-                <comparison-table>
-                    <comparison-string>{{ParagraphStyleRange</comparison-string>
-                </comparison-table>
-            </text-unit-start>
-        </define-text-units>-->
         <pass>
             <modify>
                 <exchange>
@@ -37,29 +30,13 @@ html = C:\Users\bruening.FDH-FFM\github\faustedition\faust-web\content\intro_tex
                 </exchange>
             </modify>
         </pass>
-        <!--<new-line-before>
-            <search-table>
-                <search-string>{{ParagraphStyleRange</search-string>
-            </search-table>
-        </new-line-before>-->
-        <remove-blanks where="both"/>
-        <suppress-blank-lines/>
+        <!--<remove-blanks where="both"/>
+        <suppress-blank-lines/>-->
         <!--<output-records max-length="120"/>-->
     </transform>
     
-    <transform source="tustep" destination="html2">
-        <pass>
-            <modify>
-                <exchange>
-                    <exchange-table>
-                        <exception-string>^_</exception-string>
-                        <string-pair>
-                            <search-string>^</search-string>
-                            <replacement-string>#\[005E\]</replacement-string>
-                        </string-pair>
-                    </exchange-table>
-                </exchange>
-            </modify>
-        </pass>
-    </transform>
+    <tustep>
+#anmelde, , html, traeger = -        
+#umwandle, tustep, html, modus = 0, loeschen = +, code = utf8
+    </tustep>
 </script>
