@@ -8,6 +8,21 @@
     xmlns:f="http://www.faustedition.net/ns"
     xmlns="http://www.w3.org/1999/xhtml">
 
+    <f:bib uri="faust://bibliography/faustedition_faksimile">
+        <f:citation>Faustedition, Faksimile</f:citation>
+        <f:reference>Goethe, Johann Wolfgang: Faust. Der Tragödie zweiter Teil. Gesamthandschrift. Faksimile und Transkription. Bearbeitet von Gerrit Brüning, Katrin Henzel, Dietmar Pravida und Dietrich Renken, Thorsten Vitt, Moritz Wissenbach, Göttingen 2018 (Johann Wolfgang Goethe: Faust. Historisch-kritische Edition. Herausgegeben von Anne Bohnenkamp, Silke Henke und Fotis Jannidis unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/faustedition_text_1">
+        <f:citation>Faustedition, konstituierter Text (1. Aufl.)</f:citation>
+        <f:reference>Goethe, Johann Wolfgang: Faust. Eine Tragödie. Konstituierter Text. Bearbeitet von Gerrit Brüning und Dietmar Pravida, Göttingen 2018 (Johann Wolfgang Goethe: Faust. Historisch-kritische Edition. Herausgegeben von Anne Bohnenkamp, Silke Henke und Fotis Jannidis unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach).</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/faustedition_text_2">
+        <f:citation>Faustedition, konstituierter Text (2. Aufl.)</f:citation>
+        <f:reference>Goethe, Johann Wolfgang: Faust. Eine Tragödie. Konstituierter Text. Bearbeitet von Gerrit Brüning und Dietmar Pravida. Zweite, durchgesehene Auflage, Göttingen 2018 (Johann Wolfgang Goethe: Faust. Historisch-kritische Edition. Herausgegeben von Anne Bohnenkamp, Silke Henke und Fotis Jannidis unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach).</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/anonym1908a">
         <f:citation>Anonym 1908</f:citation>
         <f:reference>[N. N.]: „Rosenknospen.“. In: Chronik des Wiener Goethe-Vereins XXII, Nr. 1–2, 15. Juli 1908, S. 16.</f:reference>
@@ -2915,12 +2930,12 @@
 
     <f:bib uri="faust://bibliography/riemer1841_1">
         <f:citation>Riemer 1841, Bd. 1</f:citation>
-        <f:reference>* Riemer, Friedrich Wilhelm: Mittheilungen über Goethe aus mündlichen und schriftlichen, gedruckten und ungedruckten Quellen. 2 Bde., Bd. 1: Berlin 1841.</f:reference>
+        <f:reference>Riemer, Friedrich Wilhelm: Mittheilungen über Goethe aus mündlichen und schriftlichen, gedruckten und ungedruckten Quellen. 2 Bde., Bd. 1: Berlin 1841.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/riemer1841_2">
         <f:citation>Riemer 1841, Bd. 2</f:citation>
-        <f:reference>* Riemer, Friedrich Wilhelm: Mittheilungen über Goethe aus mündlichen und schriftlichen, gedruckten und ungedruckten Quellen. 2 Bde., Bd. 2: Berlin 1841.</f:reference>
+        <f:reference>Riemer, Friedrich Wilhelm: Mittheilungen über Goethe aus mündlichen und schriftlichen, gedruckten und ungedruckten Quellen. 2 Bde., Bd. 2: Berlin 1841.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/riemer1846">
