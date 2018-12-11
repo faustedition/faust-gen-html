@@ -31,10 +31,10 @@ html = C:\Users\bruening.FDH-FFM\github\faustedition\faust-web\content\intro_tex
             <modify>
                 <exchange>
                     <exchange-table>
-                        <string-pair>
+                        <!--<string-pair>
                             <search-string>{s:to}{[}\M\A{]}{s:to}</search-string>
                             <replacement-string>{{a href="/bibliography^#ma^_18^_1"}}MA{{/a}}</replacement-string>
-                        </string-pair>
+                        </string-pair>-->
                         <!--<string-pair>
                             <search-string>{{em}}{|} </search-string>
                             <replacement-string>{=2=}{=1=}</replacement-string>
@@ -43,7 +43,33 @@ html = C:\Users\bruening.FDH-FFM\github\faustedition\faust-web\content\intro_tex
                             <search-string>{s:to}{[}\W\A{]}</search-string>
                             <replacement-string>{{a href="/bibliography^#wa^_I^_xyz"}}WA{{/a}}</replacement-string>
                         </string-pair>-->
-                        
+                        <!--<string-pair>
+                            <search-string>#\[2006\]{|}\]</search-string>
+                            <replacement-string>{=1=}{{span class="generated-text"}}{=2=}{{/span}}</replacement-string>
+                        </string-pair>-->
+                        <!--<string-pair>
+                            <search-string>.{|}\]</search-string>
+                            <replacement-string>{=1=}{{span class="generated-text"}}{=2=}{{/span}}</replacement-string>
+                        </string-pair>-->
+                        <!--<string-pair>
+                            <search-string>{#}{[} #\[2013\] {]}{#}</search-string>
+                            <replacement-string>#\[2013\]</replacement-string>
+                        </string-pair>-->
+                        <!--<exception-string>{{span class="sidenote-number" *}} {{/span}}</exception-string>
+                        <string-pair>
+                            <search-string> {|}{{/span}}</search-string>
+                            <replacement-string>{=2=}{=1=}</replacement-string>
+                        </string-pair>-->
+                        <!--<exception-string>{{p id="*</exception-string>
+                        <string-pair>
+                            <search-string>{{span class="generated-text"}}\]{{/span}}{[} {]}{&amp;a}</search-string>
+                            <replacement-string>#\[2003\]</replacement-string>
+                        </string-pair>-->
+                        <exception-string>{{a href="/document?sigil=*</exception-string>
+                        <string-pair>
+                            <search-string>A{{/a}}{{/em}}{[} {]}{&amp;a}</search-string>
+                            <replacement-string>#\[2003\]</replacement-string>
+                        </string-pair>
                     </exchange-table>
                 </exchange>
             </modify>
