@@ -126,7 +126,7 @@
   </xsl:template>
   
   <xsl:template match="note[@type='textcrit']//text()">
-    <xsl:analyze-string select="." regex="[〈〉]+">
+    <xsl:analyze-string select="." regex="[⟨⟩〈〉]+">
       <xsl:matching-substring>
         <span class="generated-text">
           <xsl:value-of select="."/>
