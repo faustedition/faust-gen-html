@@ -285,7 +285,7 @@
 					  Faust.addToTopButton();
 					  					  
 					  var consent = Cookies.get('faust-cookie-consent');
-					  if (navigator.cookieEnabled &amp;&amp; (consent != 'yes')) {
+					  if (navigator.cookieEnabled) if (consent != 'yes') {
 					  	$('#cookie-consent-button').bind('click', function () {
 					  		var domain = window.location.hostname;
 					  		if (/faustedition\.net$/.test(domain))
