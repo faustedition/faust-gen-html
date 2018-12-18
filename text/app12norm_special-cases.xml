@@ -404,8 +404,8 @@
     </app>-->
 
     <app>
-        <f:ins n="3994 3995" place="only-app"/>
-        <f:ins n="3994 3995" place="enclosing-lg"><f:remove-lg/></f:ins>
+        <f:ins n="3994" place="only-app"/>
+        <f:ins n="3994" place="enclosing-lg"><f:remove-lg/></f:ins>
         <ref>3994/3995</ref>
         <lem/>
         <rdg wit="1_H.14 A B.a B 1_H.1 C.1_12 C.3_12" type="type_1c">
