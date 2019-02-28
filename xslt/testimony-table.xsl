@@ -167,8 +167,9 @@
 					<f:generate-tei>no-xml</f:generate-tei>
 				</xsl:when>
 				<xsl:otherwise>
+					<xsl:variable name="pseudoid" select="f:get-or-create-id(.)"/>
 					<f:base><xsl:value-of select="$used/@base"/></f:base>
-					<f:href><xsl:value-of select="concat('testimony/', @id)(: $used/@base, '#', $used/@testimony-id):)"/></f:href>
+					<f:href><xsl:value-of select="concat('testimony/', $pseudoid)(: $used/@base, '#', $used/@testimony-id):)"/></f:href>
 					<xsl:variable name="bibref" select="normalize-space($used[1]/text())"/>
 					<xsl:variable name="bib" select="$bibliography//bib[@uri=$bibref]"/> <!-- TODO refactor to bibliography.xsl -->
 					<xsl:copy-of select="$bib"/>
