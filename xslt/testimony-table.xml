@@ -12424,8 +12424,8 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="datierungsvermerk">Ende Dezember 1820 (Gräf); Jahr ergänzt</field>
     <field name="vermerk">?</field>
     <field name="bemerkung">Datierung nach MA 12, S. 1093f.; für die Entstehungszeit der Szene „Vor dem Thor“ gewähren die Angaben in ihrer Unbestimmtheit keinerlei Anhalt, vgl. übrigens Pniower S. 133f. (Ende 1820)</field>
-    <field name="wa-druckort">WA II 5, S. 337f.</field>
-    <field name="druckort">WA II 5, S. 337f.</field>
+    <field name="wa-druckort">WA II 5.1, S. 337f.</field>
+    <field name="druckort">WA II 5.1, S. 337f.</field>
     <field name="vorlage-seite-von">337</field>
     <field name="vorlage-absatz-von">Z. 1</field>
     <field name="vorlage-seite-bis">338</field>
@@ -14052,6 +14052,7 @@ Plitt 1869-1870, Bd. 2, S. 240-241</field>
     <field name="lfd-nr-neu">629</field>
     <field name="lfd-nr-alt">627</field>
     <field name="pniower-nr">937</field>
+    <field name="h-sigle">2 V H.9</field>
     <field name="verfasser">Johann Wolfgang Goethe</field>
     <field name="verfasser-gsa-personennummer">n.v.</field>
     <field name="dokumenttyp">Text</field>

@@ -10,17 +10,17 @@
 
     <f:bib uri="faust://bibliography/faustedition_faksimile">
         <f:citation>Faustedition, Faksimile</f:citation>
-        <f:reference>Goethe, Johann Wolfgang: Faust. Der Tragödie zweiter Teil. Gesamthandschrift. Faksimile und Transkription. Bearbeitet von Gerrit Brüning, Katrin Henzel, Dietmar Pravida und Dietrich Renken, Thorsten Vitt, Moritz Wissenbach, Göttingen 2018 (Johann Wolfgang Goethe: Faust. Historisch-kritische Edition. Herausgegeben von Anne Bohnenkamp, Silke Henke und Fotis Jannidis unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach).</f:reference>
+        <f:reference>Goethe, Johann Wolfgang: Faust. Der Tragödie zweiter Teil. Gesamthandschrift. Faksimile und Transkription. Bearbeitet von Gerrit Brüning, Katrin Henzel, Dietmar Pravida und Dietrich Renken, Thorsten Vitt, Moritz Wissenbach, Göttingen 2018 (Johann Wolfgang Goethe: Faust. Historisch-kritische Edition. Hrsg. von Anne Bohnenkamp, Silke Henke und Fotis Jannidis unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/faustedition_text_1">
         <f:citation>Faustedition, konstituierter Text (1. Aufl.)</f:citation>
-        <f:reference>Goethe, Johann Wolfgang: Faust. Eine Tragödie. Konstituierter Text. Bearbeitet von Gerrit Brüning und Dietmar Pravida, Göttingen 2018 (Johann Wolfgang Goethe: Faust. Historisch-kritische Edition. Herausgegeben von Anne Bohnenkamp, Silke Henke und Fotis Jannidis unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach).</f:reference>
+        <f:reference>Goethe, Johann Wolfgang: Faust. Eine Tragödie. Konstituierter Text. Bearbeitet von Gerrit Brüning und Dietmar Pravida, Göttingen 2018 (Johann Wolfgang Goethe: Faust. Historisch-kritische Edition. Hrsg. von Anne Bohnenkamp, Silke Henke und Fotis Jannidis unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/faustedition_text_2">
         <f:citation>Faustedition, konstituierter Text (2. Aufl.)</f:citation>
-        <f:reference>Goethe, Johann Wolfgang: Faust. Eine Tragödie. Konstituierter Text. Bearbeitet von Gerrit Brüning und Dietmar Pravida. Zweite, durchgesehene Auflage, Göttingen 2018 (Johann Wolfgang Goethe: Faust. Historisch-kritische Edition. Herausgegeben von Anne Bohnenkamp, Silke Henke und Fotis Jannidis unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach).</f:reference>
+        <f:reference>Goethe, Johann Wolfgang: Faust. Eine Tragödie. Konstituierter Text. Bearbeitet von Gerrit Brüning und Dietmar Pravida. Zweite, durchgesehene Auflage, Göttingen 2018 (Johann Wolfgang Goethe: Faust. Historisch-kritische Edition. Hrsg. von Anne Bohnenkamp, Silke Henke und Fotis Jannidis unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/anonym1908a">
@@ -193,9 +193,9 @@
         <f:reference>Degering, Hermann: Kurzes Verzeichnis der germanischen Handschriften der Preussischen Staatsbibliothek. Tl. II: Die Handschriften in Quartformat, Leipzig 1926.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/dietze1983">
-        <f:citation>Dietze 1983</f:citation>
-        <f:reference>Dietze, Walter: ‚Faust‘, Vers 11580. Hrsg. von den Nationalen Forschungs- und Gedenkstätten der klassischen deutschen Literatur in Weimar, 3. Aufl. 1983 (= Jahresgabe der Nationalen Forschungs- und Gedenkstätten der klassischen deutschen Literatur in Weimar 1975).</f:reference>
+    <f:bib uri="faust://bibliography/dietze1975">
+        <f:citation>Dietze 1975</f:citation>
+        <f:reference>Dietze, Walter: ‚Faust‘, Vers 11580. Weimar 1975 (= Jahresgabe der Nationalen Forschungs- und Gedenkstätten der klassischen deutschen Literatur in Weimar 1975).</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/duentzer1849">
@@ -301,6 +301,11 @@
     <f:bib uri="faust://bibliography/frederking1910">
         <f:citation>Frederking 1910</f:citation>
         <f:reference>Arthur Frederking, Zu Goethes Faust. In: Zeitschrift für deutsche Philologie 42 (1910), S. 333–343.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/freies_deutsches_hochstift2009">
+        <f:citation>Freies Deutsches Hochstift 2009</f:citation>
+        <f:reference>Frankfurter Goethe-Haus Freies Deutsches Hochstift. [150 Jahre Freies Deutsches Hochstift 1859-2009]. Mit Beiträgen von Anne Bohnenkamp-Renken u.a. Redaktion: Beatrice Humpert, herausgegeben von Freies Deutsches Hochstift, Frankfurt am Main 2009.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/fritze1964">
@@ -613,8 +618,8 @@
         <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erläuternden Anmerkungen von G. von Loeper, 2 Tle., Berlin 1870.</f:reference>
     </f:bib>
 
-    <f:bib uri="faust://bibliography/loeper1879">
-        <f:citation>Loeper 1879</f:citation>
+    <f:bib uri="faust://bibliography/loeper1879a">
+        <f:citation>Loeper 1879a</f:citation>
         <f:reference>Faust. Eine Tragödie von Goethe. Mit Einleitung und erklärenden Anmerkungen von G. von Loeper, 2. Bearbeitung, 2 Tle., Berlin 1879. </f:reference>
     </f:bib>
 
@@ -1743,9 +1748,19 @@
         <f:reference>Goethe-Jahrbuch, hrsg. von Ludwig Geiger, Fünfundzwanzigster Band. Mit dem neunzehnten Jahresbericht der Goethe-Gesellschaft, Frankfurt am Main 1904.</f:reference>
     </f:bib>
 
+    <f:bib uri="faust://bibliography/gjb_44">
+        <f:citation>GJb 44</f:citation>
+        <f:reference>Jahrbuch der Goethe-Gesellschaft, im Auftrage des Vorstandes hrsg. von Max Hecker, Zehnter Band, Weimar 1924.</f:reference>
+    </f:bib>
+
     <f:bib uri="faust://bibliography/gjb_47">
         <f:citation>GJb 47</f:citation>
         <f:reference>Jahrbuch der Goethe-Gesellschaft, im Auftrage des Vorstandes hrsg. von Max Hecker, Dreizehnter Band, Weimar 1927.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/gjb_48">
+        <f:citation>GJb 48</f:citation>
+        <f:reference>Jahrbuch der Goethe-Gesellschaft, im Auftrage des Vorstandes hrsg. von Max Hecker, Vierzehnter Band, Weimar 1928.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/gjb_50">
@@ -2781,6 +2796,11 @@
     <f:bib uri="faust://bibliography/lengenfeld1932">
         <f:citation>Lengenfeld 1932</f:citation>
         <f:reference>M. Lengenfeld'sche Buchhandlung, Antiquariats-Katalog 42, 1932. </f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/loeper1879b">
+        <f:citation>Loeper 1879b </f:citation>
+        <f:reference>Goethe, Johann Wolfgang von: Briefe an Sophie von La Roche und Bettina Brentano nebst dichterischer Beilagen hrsg. von Gustav von Loeper. Berlin 1879.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/loeper1881a">
