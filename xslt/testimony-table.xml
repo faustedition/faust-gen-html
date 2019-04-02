@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!--This document is sporadically re-generated from an Excel sheet in the wiki. Please don't edit it directly-->
 <?xml-model href="testimony-table.rnc" type="application/relax-ng-compact-syntax"?>
-<testimonies xmlns="http://www.faustedition.net/ns">
+<testimonies xmlns="http://www.faustedition.net/ns/testimony">
   <header>
     <!--These fields have been found in the excel table:-->
     <fieldspec name="status" spreadsheet="Status"/>

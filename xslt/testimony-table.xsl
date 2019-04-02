@@ -2,9 +2,10 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:f="http://www.faustedition.net/ns"
+	xmlns:t="http://www.faustedition.net/ns/testimony"
 	xmlns="http://www.w3.org/1999/xhtml"
-	xpath-default-namespace="http://www.faustedition.net/ns"
-	exclude-result-prefixes="xs"
+	xpath-default-namespace="http://www.faustedition.net/ns/testimony"
+	exclude-result-prefixes="xs f t"
 	version="2.0">
 		
 	<xsl:import href="utils.xsl"/>
@@ -43,7 +44,7 @@
 			The element content is copied 1:1 to the corresponding <th> element
 	
 	-->
-	<xsl:variable name="columns" xmlns="http://www.faustedition.net/ns">
+	<xsl:variable name="columns" xmlns="http://www.faustedition.net/ns/testimony">
 		<fieldspec name="graef-nr" spreadsheet="Gräf-Nr." sortable-type="numericplus" title="Nr. in Gräf II 2"><a href="{$edition}/bibliography#graef1901-1914_II_2">Gräf</a></fieldspec>
 		<fieldspec name="pniower-nr" spreadsheet="Pniower-Nr." sortable-type="numericplus" title="Nr. in Pniower 1899"><a href="{$edition}/bibliography#pniower1899">Pniower</a></fieldspec>
 		<fieldspec name="quz" spreadsheet="QuZ" title="Nr. in Quellen und Zeugnisse"><a href="{$edition}/bibliography#quz1">QuZ</a></fieldspec>
@@ -72,7 +73,7 @@
 		</style>
 	</xsl:param>
 	
-	<xsl:template match="/testimony-index">
+	<xsl:template match="/f:testimony-index">
 		<xsl:for-each select="$table">
 			<xsl:call-template name="start"/>
 		</xsl:for-each>
@@ -137,7 +138,7 @@
 			for $field in field return if ($field/text()) then concat(string-join($columns/fieldspec[@label=$field/@label], ''), ': ', $field) else (),
 			', ')"/>
 		<xsl:variable name="used" select="($usage//*[@testimony=current()/@id], 
-			                                 $usage//*[@testimony = (for $nr in current()/f:field[contains(@name, 'nr')] return concat($nr/@name, '_', $nr))])[1]"/>
+			                                 $usage//*[@testimony = (for $nr in current()/t:field[contains(@name, 'nr')] return concat($nr/@name, '_', $nr))])[1]"/>
 		
 		<!-- We're building an XML fragment that will finally be moved into the current <testimony> entry -->
 		<xsl:variable name="rowinfo_raw">
@@ -146,41 +147,41 @@
 			<xsl:choose>
 				<xsl:when test="not($used) and $entry//field[@name='h-sigle']">
 					<xsl:variable name="pseudoid" select="f:get-or-create-id($entry)"/>
-					<f:href><xsl:value-of select="concat('testimony/', $pseudoid)"/></f:href>
-					<f:field name="excerpt">[Beschreibung]</f:field>
+					<t:href><xsl:value-of select="concat('testimony/', $pseudoid)"/></t:href>
+					<t:field name="excerpt">[Beschreibung]</t:field>
 					<f:generate-tei>sigil</f:generate-tei>					
 				</xsl:when>
 				<xsl:when test="not($used) and (not(@id) or @id = '')">
 					<xsl:variable name="pseudoid" select="f:get-or-create-id($entry)"/>
-					<f:href><xsl:value-of select="concat('testimony/', $pseudoid)"/></f:href>
-					<f:field name="excerpt">[Beschreibung]</f:field>
+					<t:href><xsl:value-of select="concat('testimony/', $pseudoid)"/></t:href>
+					<t:field name="excerpt">[Beschreibung]</t:field>
 					<f:generate-tei>no-id</f:generate-tei>
-					<f:message>Keine ID, kein $used, Ausschnitt. <xsl:copy-of select="$used"></xsl:copy-of></f:message>
+					<t:message>Keine ID, kein $used, Ausschnitt. <xsl:copy-of select="$used"></xsl:copy-of></t:message>
 				</xsl:when>
 				<xsl:when test="contains(@id, ' ')">
-					<f:message status="error">Ganz komische ID: »<xsl:value-of select="@id"/>«</f:message>
+					<t:message status="error">Ganz komische ID: »<xsl:value-of select="@id"/>«</t:message>
 				</xsl:when>
 				<xsl:when test="not($used)">
-					<!--<f:message status="info">kein XML für »<xsl:value-of select="@id"/>«</f:message>-->
-					<f:href><xsl:value-of select="concat('testimony/', @id)"/></f:href>
-					<f:field name="excerpt">[Beschreibung]</f:field>
+					<!--<t:message status="info">kein XML für »<xsl:value-of select="@id"/>«</t:message>-->
+					<t:href><xsl:value-of select="concat('testimony/', @id)"/></t:href>
+					<t:field name="excerpt">[Beschreibung]</t:field>
 					<f:generate-tei>no-xml</f:generate-tei>
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:variable name="pseudoid" select="f:get-or-create-id(.)"/>
-					<f:base><xsl:value-of select="$used/@base"/></f:base>
-					<f:href><xsl:value-of select="concat('testimony/', $pseudoid)(: $used/@base, '#', $used/@testimony-id):)"/></f:href>
+					<t:base><xsl:value-of select="$used/@base"/></t:base>
+					<t:href><xsl:value-of select="concat('testimony/', $pseudoid)(: $used/@base, '#', $used/@testimony-id):)"/></t:href>
 					<xsl:variable name="bibref" select="normalize-space($used[1]/text())"/>
 					<xsl:variable name="bib" select="$bibliography//bib[@uri=$bibref]"/> <!-- TODO refactor to bibliography.xsl -->
 					<xsl:copy-of select="$bib"/>
 					<xsl:variable name="excerpt" select="$used/@rs"/>
 					
 					<xsl:if test="not($excerpt)">
-						<f:message status="info">kein Auszug</f:message>
+						<t:message status="info">kein Auszug</t:message>
 					</xsl:if>
-					<f:field name="excerpt"><xsl:value-of select="$excerpt"/></f:field>
+					<t:field name="excerpt"><xsl:value-of select="$excerpt"/></t:field>
 					<xsl:if test="not($bib)">
-						<f:message status="warning">kein Literaturverzeichniseintrag für <xsl:value-of select="$bibref"/></f:message>
+						<t:message status="warning">kein Literaturverzeichniseintrag für <xsl:value-of select="$bibref"/></t:message>
 					</xsl:if>
 				</xsl:otherwise>
 			</xsl:choose>
@@ -194,7 +195,7 @@
 				<xsl:sequence select="$rowinfo_raw"/>
 				<xsl:for-each select="$columns/fieldspec">
 					<xsl:if test="not(@name = ($entry//field/@name, $rowinfo_raw/field/@name))">
-						<f:field name="{@name}"/>
+						<t:field name="{@name}"/>
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:copy>
@@ -254,7 +255,7 @@
 	</xsl:template>
 	
 	<xsl:function name="f:get-or-create-id" as="xs:string">
-		<xsl:param name="entry"/><!-- f:testimony -->
+		<xsl:param name="entry"/><!-- t:testimony -->
 		<xsl:for-each select="$entry"><!-- focus -->
 			<xsl:choose>
 				<xsl:when test="@id"><xsl:value-of select="@id"/></xsl:when>
@@ -262,7 +263,7 @@
 					<xsl:value-of select="f:find-inferior-id(.)"/>
 				</xsl:when>				
 				<xsl:otherwise>
-					<xsl:variable name="src" select="f:field[starts-with(@name, 'lfd-nr')][1]"/>
+					<xsl:variable name="src" select="t:field[starts-with(@name, 'lfd-nr')][1]"/>
 					<xsl:value-of select="concat($src/@name, '_', $src)"/>
 				</xsl:otherwise>
 			</xsl:choose>			
@@ -270,14 +271,14 @@
 	</xsl:function>
 	
 	<xsl:function name="f:find-inferior-id" as="xs:string?">
-		<xsl:param name="entry"/><!-- f:testimony w/o @id -->
-		<xsl:variable name="candidate-ids" select="for $f in $entry//f:field return concat($f/@name, '_', $f)"/>
+		<xsl:param name="entry"/><!-- t:testimony w/o @id -->
+		<xsl:variable name="candidate-ids" select="for $f in $entry//t:field return concat($f/@name, '_', $f)"/>
 		<xsl:sequence select="($candidate-ids[. = $usage//f:citation/@testimony])[1]"/>
 	</xsl:function>
 
 	<xsl:template name="generate-pseudo-testimonies">
 		<xsl:message>Generating empty testimony files ...</xsl:message>
-		<xsl:for-each-group select="$table//f:testimony" group-by="f:get-or-create-id(.)">
+		<xsl:for-each-group select="$table//t:testimony" group-by="f:get-or-create-id(.)">
 			<xsl:variable name="id" select="current-grouping-key()"/>
 			<xsl:for-each select="current-group()[1]">
 				<xsl:choose>
@@ -295,7 +296,7 @@
 	
 	<xsl:template name="create-empty-tei">			
 			<xsl:choose>
-				<xsl:when test="not(self::f:testimony)">
+				<xsl:when test="not(self::t:testimony)">
 					<xsl:message>Cannot create empty testimony TEI for non-testimony element <xsl:value-of select="name()"/></xsl:message>
 				</xsl:when>
 				<xsl:otherwise>
@@ -321,7 +322,7 @@
 											<desc type="editorial" subtype="info">
 												<xsl:choose>
 													<xsl:when test=".//field[@name='h-sigle']">
-														<xsl:variable name="sigils" select="f:field[@name='h-sigle']/text()"/>
+														<xsl:variable name="sigils" select="t:field[@name='h-sigle']/text()"/>
 														Entspricht <xsl:sequence select="f:sigil-links($sigils)"/>
 													</xsl:when>
 													<xsl:otherwise>

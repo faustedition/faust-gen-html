@@ -4,6 +4,7 @@
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://www.faustedition.net/ns"
+	xmlns:t="http://www.faustedition.net/ns/testimony"
 	exclude-result-prefixes="xs"
 	version="2.0">
 	
@@ -14,7 +15,7 @@
 	<xsl:import href="testimony-common.xsl"/>	
 	
 	<xsl:variable name="basename" select="replace(document-uri(/), '^.*/([^/]+)\.xml', '$1')"/>
-	<xsl:variable name="biburl" select="if (//f:biburl) then //f:biburl[1] else concat('faust://bibliography/', $basename)"/>
+	<xsl:variable name="biburl" select="if (//t:biburl) then //t:biburl[1] else concat('faust://bibliography/', $basename)"/>
 	
 	
 	
@@ -85,7 +86,7 @@
 	
 	<!-- following template generates a f:citation element for the current split testimony -->
 	<xsl:template name="get-citations" exclude-result-prefixes="#default">
-		<xsl:variable name="real-id" select="//f:testimony/@id"/>
+		<xsl:variable name="real-id" select="//t:testimony/@id"/>
 		<xsl:choose>
 			<xsl:when test="count($real-id) = 1">
 				<xsl:variable name="id" select="tokenize($real-id, '_')"/>

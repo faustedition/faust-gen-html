@@ -4,7 +4,8 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:f="http://www.faustedition.net/ns"
-    exclude-result-prefixes="xs"
+    xmlns:t="http://www.faustedition.net/ns/testimony"
+    exclude-result-prefixes="xs f t"
     version="2.0">
     
     <!-- 
@@ -32,7 +33,7 @@
 		- text content: The label, if present; otherwise @spreadsheet is used
 		
 	-->	
-    <xsl:variable name="fields" xmlns="http://www.faustedition.net/ns">
+    <xsl:variable name="fields" xmlns="http://www.faustedition.net/ns/testimony">
         <!--These fields have been found in the excel table:-->
         <fieldspec name="status" spreadsheet="Status" ignore="yes"/><!-- raus -->
         <fieldspec name="lfd-nr-neu-2" spreadsheet="lfd. Nr. (neu-2)">Zeugnis-Nr.</fieldspec>        
@@ -87,7 +88,7 @@
     
     <xsl:function name="f:fieldspec" as="element()?">
         <xsl:param name="name"/>
-        <xsl:sequence select="$fields//f:fieldspec[@name=$name]"/>
+        <xsl:sequence select="$fields//t:fieldspec[@name=$name]"/>
     </xsl:function>    
     
     <!-- ### Rendering of the field 'dokumenttyp' -> 'beschreibung'.  -->
@@ -119,7 +120,7 @@
         <!-- This is the spec: 
         
          If the field has the value from the name attribute, use the corresponding template.
-         Replace $verfasser with the value of f:field[@name='verfasser'] from the table and so on.
+         Replace $verfasser with the value of t:field[@name='verfasser'] from the table and so on.
         -->
         <xsl:variable name="beschreibung" xmlns="http://www.faustedition.net/ns">
             <template name="Brief">Brief von $verfasser an $adressat</template>

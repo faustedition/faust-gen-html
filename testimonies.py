@@ -69,7 +69,7 @@ def improve_testimony_table(testimonies):
     return testimonies
 
 def to_xml(testimony_df, orignames, output_file=None):
-    ns = "http://www.faustedition.net/ns"
+    ns = "http://www.faustedition.net/ns/testimony"
     NS = "{"+ns+"}"
     nsmap = {None : ns}
     root = etree.Element(NS + "testimonies", nsmap=nsmap)

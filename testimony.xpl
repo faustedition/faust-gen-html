@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <p:declare-step xmlns:p="http://www.w3.org/ns/xproc" xmlns:c="http://www.w3.org/ns/xproc-step"
-	xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:f="http://www.faustedition.net/ns"
+	xmlns:cx="http://xmlcalabash.com/ns/extensions" xmlns:f="http://www.faustedition.net/ns" 
+	xmlns:t="http://www.faustedition.net/ns/testimony"
 	xmlns:pxf="http://exproc.org/proposed/steps/file"
 	xmlns:l="http://xproc.org/library" type="f:testimony" name="main" version="1.0">
 	
@@ -74,6 +75,7 @@
 					<p:pipe port="secondary" step="split-testimony"/>
 				</p:iteration-source>
 				<p:variable name="base-uri" select="p:base-uri()"/>
+				<p:variable name="html-file" select="p:resolve-uri(replace(p:base-uri(), '.*/([^/.]*)\.xml$', '$1.html'), $testihtml)"/>
 				
 				<p:identity name="single-testimony-tei"/>
 				
@@ -89,7 +91,7 @@
 				</p:xslt>
 				
 				<p:store encoding="utf-8" method="xhtml" include-content-type="false" indent="true">
-					<p:with-option name="href" select="p:resolve-uri(replace(p:base-uri(), '.*/([^/.]*)\.xml$', '$1.html'), $testihtml)"/>
+					<p:with-option name="href" select="$html-file"/>
 				</p:store>
 				
 				<!-- For search, we skip the context data -->
@@ -99,7 +101,7 @@
 						<p:inline>
 							<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
 								<xsl:import href="xslt/testimony-common.xsl"/>
-								<xsl:template match="f:field">
+								<xsl:template match="t:field">
 									<xsl:variable name="spec" select="f:fieldspec(@name)"/>									
 									<xsl:choose>
 										<xsl:when test="$spec/@ignore='yes'"/>

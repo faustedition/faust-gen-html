@@ -8,7 +8,8 @@
 	xmlns="http://www.tei-c.org/ns/1.0"	
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 	xmlns:f="http://www.faustedition.net/ns"
-	exclude-result-prefixes="xs xi svg math xd f"
+	xmlns:t="http://www.faustedition.net/ns/testimony"
+	exclude-result-prefixes="xs xi svg math xd f t"
 	version="2.0">
 	
 	<xsl:import href="bibliography.xsl"/>
@@ -60,7 +61,7 @@
 			<xsl:variable name="last-milestone" select="$chain[position() = last()]"/>
 			<xsl:variable name="last-div" select="$last-milestone/ancestor::div[not(ancestor::div)]"/>
 			<xsl:variable name="context" select="$div, $div/following::node() except ($div/following::*//node(), $last-div/following::node())"/>
-			<xsl:variable name="metadata0" select="$table//f:testimony[@id=$id]"/>
+			<xsl:variable name="metadata0" select="$table//t:testimony[@id=$id]"/>
 			<xsl:variable name="metadata" as="element()?">
 				<xsl:choose>
 					<xsl:when test="count($metadata0) > 1">
@@ -70,7 +71,7 @@
 					<xsl:when test="$metadata0"><xsl:sequence select="$metadata0"/></xsl:when>
 					<xsl:otherwise>
 						<xsl:variable name="id_parts" select="tokenize($id, '_')"/>
-						<xsl:variable name="matching-md" as="element()*" select="$table//f:testimony[f:field[@name = $id_parts[1] and . = $id_parts[2]]]"/>
+						<xsl:variable name="matching-md" as="element()*" select="$table//t:testimony[t:field[@name = $id_parts[1] and . = $id_parts[2]]]"/>
 						<xsl:choose>
 							<xsl:when test="count($matching-md) = 1">
 								<xsl:for-each select="$matching-md">
@@ -91,7 +92,8 @@
 				then $metadata/@id
 				else $id"/>
 			
-			<xsl:result-document href="{resolve-uri(concat($basename, '.xml'), $output)}" exclude-result-prefixes="xs xi svg math xd f">									
+			<xsl:result-document href="{resolve-uri(concat($basename, '.xml'), $output)}" exclude-result-prefixes="xs xi svg math xd f">
+				
 					<TEI>
 						<xsl:for-each select="/TEI/teiHeader">
 							<teiHeader>
@@ -112,7 +114,7 @@
 										<xsl:copy>
 											<xsl:copy-of select="@*"/>
 											<xsl:copy-of select="*"/>
-											<biburl xmlns="http://www.faustedition.net/ns"><xsl:value-of select="$biburl"/></biburl>										
+											<biburl xmlns="http://www.faustedition.net/ns/testimony"><xsl:value-of select="$biburl"/></biburl>										
 										</xsl:copy>
 									</xsl:for-each>								
 								</xenoData>
