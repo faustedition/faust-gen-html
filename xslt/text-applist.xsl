@@ -17,6 +17,7 @@
 					.note.type-textcrit {
 						float: none;
 						margin: 0;
+						text-indent: 0;
 						width: auto;						
 					}
 					.type-textcrit .rdg:before { content: " " }
