@@ -72,6 +72,7 @@
 						@type != preceding-sibling::*[1]/@type
 					 or @page != preceding-sibling::*[1]/@page
 					 or @section != preceding-sibling::*[1]/@section
+					 or @inscriptions != preceding-sibling::*[1]/@inscriptions
 					 or number(@n)-1 ne number(preceding-sibling::*[1]/@n)]"
 					>
 					<xsl:sort select="index-of(('paralipomenaUncertain', 'paralipomena', 'verseLineVariant', 'verseLineUncertain', 'verseLine'), current-group()[1]/@type)"/>					
@@ -85,6 +86,7 @@
 						<xsl:text>{"type":"</xsl:text><xsl:value-of select="current-group()[1]/@type"/><xsl:text>",</xsl:text>
 						<xsl:text>"page":</xsl:text><xsl:value-of select="if ($page != '') then $page else 1"/><xsl:text>,</xsl:text>
 						<xsl:text>"section":"</xsl:text><xsl:value-of select="current-group()[1]/@section"/><xsl:text>",</xsl:text>
+					  <xsl:text>"inscriptions":"</xsl:text><xsl:value-of select="current-group()[1]/@inscriptions"/><xsl:text>",</xsl:text>
 						<xsl:text>"start":</xsl:text><xsl:value-of select="current-group()[1]/@n"/><xsl:text>,</xsl:text>
 						<xsl:text>"end":</xsl:text><xsl:value-of select="current-group()[last()]/@n"/><xsl:text>}</xsl:text>
 					<xsl:if test="position() != last()">,</xsl:if>					
@@ -97,7 +99,8 @@
 	<xsl:template match="l[matches(@n, '^(\d+[A-Za-z]*\??\s*)+$')]">
 		<xsl:variable name="page" select="preceding::pb[1]/@f:docTranscriptNo"/>
 		<xsl:variable name="section" select="f:get-section-label(.)"/>
-		<xsl:sequence select="for $n in tokenize(@n, '\s+') return f:verseLine($n, $page, $section)"/>
+		<xsl:variable name="inscriptions" select="preceding::milestone[@unit='stage'][1]/@change, descendant-or-self::*/@change[starts-with(., '#i_')]"/>
+		<xsl:sequence select="for $n in tokenize(@n, '\s+') return f:verseLine($n, $page, $section, $inscriptions)"/>
 	</xsl:template>
 	
 	
@@ -105,27 +108,30 @@
 		<xsl:param name="n" as="xs:string"/>
 		<xsl:param name="page" as="xs:string?"/>
 		<xsl:param name="section" as="xs:string?"/>
+		<xsl:param name="inscriptions"/>
 		<xsl:sequence select="f:line(xs:integer(replace($n, '^(\d+).*$', '$1')), $page, 		
 					if (matches($n, '\d+\?$'))
 					then 'verseLineUncertain' 
 					else if (matches($n, '^\d+[A-Za-z]+$')) 
 						 then 'verseLineVariant'
-						 else 'verseLine', $section)"/>	
+						 else 'verseLine', $section, $inscriptions)"/>	
 	</xsl:function>
 
 	<xsl:template match="milestone[@unit='paralipomenon' and @f:relatedLines != '']">
 		<xsl:variable name="page" select="preceding::pb[1]/@f:docTranscriptNo"/>
 		<xsl:variable name="type" select="if (@f:relatedLinesUncertain = 'true') then 'paralipomenaUncertain' else 'paralipomena'"/>
+		
 		<xsl:for-each select="tokenize(@f:relatedLines, ',\s*')">
 			<xsl:analyze-string select="." regex="(\d+)-(\d+)">
 				<!-- Ranges -> one <line> element for each line in the range -->
 				<xsl:matching-substring>
-					<xsl:sequence select="for $n in (xs:integer(regex-group(1)) to xs:integer(regex-group(2))) return f:line($n, $page, $type, ())"/>
+					<!-- FIXME Inscriptions + Paralipomena? -->
+					<xsl:sequence select="for $n in (xs:integer(regex-group(1)) to xs:integer(regex-group(2))) return f:line($n, $page, $type, (), ())"/>
 				</xsl:matching-substring>
 				<xsl:non-matching-substring>
 					<xsl:choose>
 						<xsl:when test="matches(., '^\d+$')">
-							<xsl:sequence select="f:line(xs:integer(.), $page, $type, ())"/>
+							<xsl:sequence select="f:line(xs:integer(.), $page, $type, (), ())"/> <!-- FIXME Inscriptions -->
 						</xsl:when>
 						<xsl:otherwise>
 							<xsl:message>WARNING: Cannot parse relatedLines: <xsl:copy-of select="."/> (in <xsl:value-of select="$source-uri"/>)</xsl:message>
@@ -141,8 +147,9 @@
 		<xsl:param name="page" as="xs:string?"/>		
 		<xsl:param name="type" as="xs:string"/>	
 		<xsl:param name="section" as="xs:string?"/>
+		<xsl:param name="inscriptions"/>
 		<xsl:variable name="result" as="element()">
-			<f:line type="{$type}" page="{$page}" n="{$n}" section="{$section}"/>
+			<f:line type="{$type}" page="{$page}" n="{$n}" section="{$section}" inscriptions="{$inscriptions}"/>
 		</xsl:variable>
 		<xsl:sequence select="if ($result/@n != '') then $result else ()"/>
 	</xsl:function>
