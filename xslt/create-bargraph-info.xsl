@@ -28,7 +28,8 @@
 		
 		<!-- Sort by verse number -->
 		<xsl:variable name="sortedLines">
-			<xsl:perform-sort>
+			<xsl:perform-sort>	
+				<xsl:sort select="@inscription"></xsl:sort>
 				<xsl:sort select="number(@n)"/>
 				<xsl:for-each-group select="$lines" group-by="string-join((@n, @type, @page, @section), '|')">
 					<xsl:sequence select="current-group()[1]"/>			
@@ -64,35 +65,87 @@
 		<xsl:text>"yearlabel":"</xsl:text><xsl:value-of select="f:get-order-info($sigil_t)/@yearlabel"/><xsl:text>",</xsl:text>
 		<xsl:text>"source":"</xsl:text><xsl:value-of select=".//idno[@type='fausturi']"/><xsl:text>",</xsl:text>			
 		<xsl:text>"print":</xsl:text><xsl:value-of select="if (TEI/@type = 'print') then 'true' else 'false'"/><xsl:text>,</xsl:text>
+		<xsl:if test="//change[@type='segment']">
+			<xsl:text>"inscriptions":[</xsl:text>
+			<xsl:if test="$sortedLines/*[@inscription='']">
+				<xsl:message select="concat('WARNING: ', $sigil_t, ' has both inscriptions and unassociated lines')"/>
+				<xsl:text>{"id":"","intervals":[</xsl:text>
+				<xsl:call-template name="generate-intervals">
+					<xsl:with-param name="sortedLines" select="$sortedLines/*[@inscription='']"></xsl:with-param>
+				</xsl:call-template>
+				<xsl:text>]},</xsl:text>
+			</xsl:if>
+			<xsl:for-each select="//change[@type='segment']/@xml:id">
+				<xsl:variable name="inscr-id" select="."/>				
+				<xsl:variable name="relevantLines" select="$sortedLines/*[@inscription=$inscr-id]"/>
+				<xsl:if test="empty($relevantLines)">
+					<xsl:message select="concat('WARNING: ', $sigil_t, ' inscription ', $inscr-id, ' has no associated lines')"/>
+				</xsl:if>
+				<xsl:text>{"id":"</xsl:text><xsl:value-of select="$inscr-id"/><xsl:text>",</xsl:text>
+				<xsl:text>"intervals":[</xsl:text>
+				<xsl:call-template name="generate-intervals">
+					<xsl:with-param name="sortedLines" select="$relevantLines"/>
+				</xsl:call-template>
+				<xsl:text>]}</xsl:text>
+				<xsl:if test="position() != last()">,</xsl:if>
+			</xsl:for-each>
+			<xsl:text>],</xsl:text>
+		</xsl:if>
 		<xsl:text>"intervals":[</xsl:text>
-				<!-- now group adjacent verse numbers. We create a new interval if either the number verses is not 
+				<xsl:call-template name="generate-intervals">
+				<xsl:with-param name="sortedLines" select="$sortedLines"/>
+			</xsl:call-template>
+		<xsl:text>]}&#10;</xsl:text>
+		</f:document>
+	</xsl:template>
+	
+	
+	<xsl:template name="generate-intervals">
+		<xsl:param name="sortedLines"/>
+		<!-- now group adjacent verse numbers. We create a new interval if either the number verses is not 
 					consecutive or a different page or type starts.  -->
-				<xsl:for-each-group select="$sortedLines/*"
-					group-starting-with="f:line[
-						@type != preceding-sibling::*[1]/@type
-					 or @page != preceding-sibling::*[1]/@page
-					 or @section != preceding-sibling::*[1]/@section
-					 or @inscriptions != preceding-sibling::*[1]/@inscriptions
-					 or number(@n)-1 ne number(preceding-sibling::*[1]/@n)]"
-					>
-					<xsl:sort select="index-of(('paralipomenaUncertain', 'paralipomena', 'verseLineVariant', 'verseLineUncertain', 'verseLine'), current-group()[1]/@type)"/>					
-<!--					<xsl:message>
+		<xsl:for-each-group select="$sortedLines/*"
+			group-starting-with="
+				f:line[
+				@type != preceding-sibling::*[1]/@type
+				or @page != preceding-sibling::*[1]/@page
+				or @section != preceding-sibling::*[1]/@section
+				or @inscription != preceding-sibling::*[1]/@inscription
+				or number(@n) - 1 ne number(preceding-sibling::*[1]/@n)]">
+			<xsl:sort
+				select="index-of(('paralipomenaUncertain', 'paralipomena', 'verseLineVariant', 'verseLineUncertain', 'verseLine'), current-group()[1]/@type)"/>
+			<!--					<xsl:message>
 						Gruppe:
 						<xsl:for-each select="current-group()">
 							<xsl:copy-of select="."/><xsl:text>&#10;</xsl:text>
 						</xsl:for-each>
 					</xsl:message>
--->					<xsl:variable name="page" select="current-group()[1]/@page"/>
-						<xsl:text>{"type":"</xsl:text><xsl:value-of select="current-group()[1]/@type"/><xsl:text>",</xsl:text>
-						<xsl:text>"page":</xsl:text><xsl:value-of select="if ($page != '') then $page else 1"/><xsl:text>,</xsl:text>
-						<xsl:text>"section":"</xsl:text><xsl:value-of select="current-group()[1]/@section"/><xsl:text>",</xsl:text>
-					  <xsl:text>"inscriptions":"</xsl:text><xsl:value-of select="current-group()[1]/@inscriptions"/><xsl:text>",</xsl:text>
-						<xsl:text>"start":</xsl:text><xsl:value-of select="current-group()[1]/@n"/><xsl:text>,</xsl:text>
-						<xsl:text>"end":</xsl:text><xsl:value-of select="current-group()[last()]/@n"/><xsl:text>}</xsl:text>
-					<xsl:if test="position() != last()">,</xsl:if>					
-				</xsl:for-each-group>
-		<xsl:text>]}&#10;</xsl:text>
-		</f:document>
+-->
+			<xsl:variable name="page" select="current-group()[1]/@page"/>
+			<xsl:text>{"type":"</xsl:text>
+			<xsl:value-of select="current-group()[1]/@type"/>
+			<xsl:text>",</xsl:text>
+			<xsl:text>"page":</xsl:text>
+			<xsl:value-of select="
+					if ($page != '') then
+						$page
+					else
+						1"/>
+			<xsl:text>,</xsl:text>
+			<xsl:text>"section":"</xsl:text>
+			<xsl:value-of select="current-group()[1]/@section"/>
+			<xsl:text>",</xsl:text>
+			<xsl:text>"inscription":"</xsl:text>
+			<xsl:value-of select="current-group()[1]/@inscription"/>
+			<xsl:text>",</xsl:text>
+			<xsl:text>"start":</xsl:text>
+			<xsl:value-of select="current-group()[1]/@n"/>
+			<xsl:text>,</xsl:text>
+			<xsl:text>"end":</xsl:text>
+			<xsl:value-of select="current-group()[last()]/@n"/>
+			<xsl:text>}</xsl:text>
+			<xsl:if test="position() != last()">,</xsl:if>
+		</xsl:for-each-group>
 	</xsl:template>
 	
 	
@@ -100,7 +153,17 @@
 		<xsl:variable name="page" select="preceding::pb[1]/@f:docTranscriptNo"/>
 		<xsl:variable name="section" select="f:get-section-label(.)"/>
 		<xsl:variable name="inscriptions" select="preceding::milestone[@unit='stage'][1]/@change, descendant-or-self::*/@change[starts-with(., '#i_')]"/>
-		<xsl:sequence select="for $n in tokenize(@n, '\s+') return f:verseLine($n, $page, $section, $inscriptions)"/>
+	  <xsl:choose>
+	  	<xsl:when test="$inscriptions">  		
+	  			<xsl:sequence select="
+	  				for $inscr in $inscriptions return
+	  					for $n in tokenize(@n, '\s+') return
+	  					  f:verseLine($n, $page, $section, substring-after($inscr, '#'))"/>	  		
+	  	</xsl:when>
+	  	<xsl:otherwise>
+				<xsl:sequence select="for $n in tokenize(@n, '\s+') return f:verseLine($n, $page, $section, ())"/>	  		
+	  	</xsl:otherwise>
+	  </xsl:choose>		
 	</xsl:template>
 	
 	
@@ -108,13 +171,13 @@
 		<xsl:param name="n" as="xs:string"/>
 		<xsl:param name="page" as="xs:string?"/>
 		<xsl:param name="section" as="xs:string?"/>
-		<xsl:param name="inscriptions"/>
+		<xsl:param name="inscription"/>
 		<xsl:sequence select="f:line(xs:integer(replace($n, '^(\d+).*$', '$1')), $page, 		
 					if (matches($n, '\d+\?$'))
 					then 'verseLineUncertain' 
 					else if (matches($n, '^\d+[A-Za-z]+$')) 
 						 then 'verseLineVariant'
-						 else 'verseLine', $section, $inscriptions)"/>	
+						 else 'verseLine', $section, $inscription)"/>	
 	</xsl:function>
 
 	<xsl:template match="milestone[@unit='paralipomenon' and @f:relatedLines != '']">
@@ -147,9 +210,9 @@
 		<xsl:param name="page" as="xs:string?"/>		
 		<xsl:param name="type" as="xs:string"/>	
 		<xsl:param name="section" as="xs:string?"/>
-		<xsl:param name="inscriptions"/>
+		<xsl:param name="inscription"/>
 		<xsl:variable name="result" as="element()">
-			<f:line type="{$type}" page="{$page}" n="{$n}" section="{$section}" inscriptions="{$inscriptions}"/>
+			<f:line type="{$type}" page="{$page}" n="{$n}" section="{$section}" inscription="{$inscription}"/>
 		</xsl:variable>
 		<xsl:sequence select="if ($result/@n != '') then $result else ()"/>
 	</xsl:function>
