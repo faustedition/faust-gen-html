@@ -102,9 +102,10 @@
 	
 	<xsl:template name="generate-intervals">
 		<xsl:param name="sortedLines"/>
+		<xsl:variable name="_sortedLines" select="if($sortedLines[self::*]) then $sortedLines else $sortedLines/*"/>
 		<!-- now group adjacent verse numbers. We create a new interval if either the number verses is not 
 					consecutive or a different page or type starts.  -->
-		<xsl:for-each-group select="$sortedLines/*"
+		<xsl:for-each-group select="$_sortedLines"
 			group-starting-with="
 				f:line[
 				@type != preceding-sibling::*[1]/@type
