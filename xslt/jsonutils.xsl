@@ -82,7 +82,7 @@
 	
 	<xsl:template name="j:simple" match="j:number|j:bool|j:string" mode="#default json">
 		<xsl:param name="content" select="if (@value) then @value else ."/>
-		<xsl:variable name="j_value" select="if (local-name(.) eq 'string') then j:quote($content) else if (normalize-space($content) != '') then $content else 'null'"/>
+		<xsl:variable name="j_value" select="if ($content = 'null') then 'null' else if (local-name(.) eq 'string') then j:quote($content) else if (normalize-space($content) != '') then $content else 'null'"/>
 		<xsl:variable name="key">
 			<xsl:call-template name="j:key"/>
 		</xsl:variable>
