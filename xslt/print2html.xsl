@@ -280,6 +280,21 @@
     <xsl:sequence select="f:cite(@target, false(), node())"/>
   </xsl:template>
   
-  
+
+  <xsl:template name="extra-nav" match="f:extra-nav"> <!-- FIXME need better criterion -->					
+    <div class="print-guide">
+      <h4>Legende</h4>
+      <div>
+        <span class="variants-1"> 1 </span>
+        <span class="variants-6"> – </span>
+        <span class="variants-12"> 12 </span>  Varianten
+      </div>
+      <div>
+        <span style="background-color:rgb(250,190,0,0.20);"> 1 </span>
+        <span style="background-color:rgb(250,190,0,0.55);"> – </span>
+        <span style="background-color:rgb(250,190,0,1.00);"> 16 </span>  Textzeugen
+      </div>
+    </div>
+  </xsl:template>			
   
 </xsl:stylesheet>

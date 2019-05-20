@@ -32,7 +32,7 @@
 	<!-- print oder archivalDocument oder lesetext? -->
 	<xsl:param name="type"/>
 	
-	<xsl:param name="documentURI"/>
+	<xsl:param name="documentURI"/>	
 
 	
 
@@ -363,7 +363,11 @@
 					</li>
 				</xsl:if>
 			</ul>
+			<xsl:variable name="evil-hack"><f:extra-nav/></xsl:variable>
+			<xsl:apply-templates select="$evil-hack"/>
 		</nav>
 	</xsl:template>
+	
+
 	
 </xsl:stylesheet>
