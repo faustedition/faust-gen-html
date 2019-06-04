@@ -105,7 +105,7 @@
 			data-witnesses="{count($evidence/* except $evidence/*[@f:type='lesetext'] except $evidence/f:standoff)}"
 			data-variants="{count(distinct-values(for $ev in $evidence/* except $evidence/f:standoff return f:normalize-space($ev)))-1}"
 			id="v{$current-n}">
-			<xsl:attribute name="xml:id" select="concat('v', $current-n)"/>
+			<xsl:attribute name="xml:id" select="concat('v', replace($current-n, ',', '_'))"/>
 			<xsl:for-each-group select="$evidence/f:evidence" group-adjacent="f:variant-grouping-key(.)">
 				<xsl:variable name="emended-key" select="f:variant-grouping-key(.)"/>
 				<xsl:variable name="current_sigils" select="current-group()/@f:sigil_t"/>

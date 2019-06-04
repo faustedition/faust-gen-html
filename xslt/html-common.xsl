@@ -402,7 +402,7 @@ in <xsl:value-of select="document-uri(/)"/>
 	<!-- Erzeugt die Zeilennummer vor der Zeile -->
 	<xsl:template name="generate-lineno">
 		<xsl:variable name="display-line" select="if (@f:schroer) then @f:schroer else 0"/>
-		<xsl:variable name="lineid" select="concat('l', replace(@n, '\s+', '_'))"/>
+		<xsl:variable name="lineid" select="f:lineno-based-id(@n)"/>
 		<xsl:choose>
 			<xsl:when test="number($display-line) gt 0">
 				<!-- Klick auf Zeilennummer führt zu einem Link, der wiederum auf die Zeilennummer verweist -->

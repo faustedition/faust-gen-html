@@ -402,11 +402,20 @@
     <xsl:value-of select="f:hasvars($element) and matches($element/@n, '^\d+')"/>
   </xsl:function>
  
+  <xsl:function name="f:lineno-based-id">
+    <xsl:param name="n"/>
+    <xsl:value-of select="concat('l', replace($n, '\s+', '_'))"/>
+  </xsl:function>
+  
 
   <!-- Reuse IDs from the XML source (since they are manually crafted) -->
   <xsl:function name="f:generate-id" as="xs:string">
     <xsl:param name="element"/>
-    <xsl:value-of select="if ($element/@xml:id) then $element/@xml:id else generate-id($element)"/>
+    <xsl:value-of select="if ($element/@xml:id) 
+                          then $element/@xml:id
+                          else if (f:hasvars($element))
+                          then f:lineno-based-id($element/@n)
+                          else generate-id($element)"/>
   </xsl:function>
   
   <!-- Zeichen -->
