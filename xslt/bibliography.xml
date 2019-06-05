@@ -935,7 +935,7 @@
 
     <f:bib uri="faust://bibliography/schoene1994b">
         <f:citation>Schöne 1994b</f:citation>
-        <f:reference>[Schöne, Albrecht]: Die Spinnweben weg. Der Germanist Albrecht Schöne über seine ‚Faust‘-Ausgabe und das Handwerk des Philologen. In: Der Spiegel 46/1994, 14.11.1994, S. 220–229. </f:reference>
+        <f:reference>[Schöne, Albrecht]: Die Spinnweben weg. Der Germanist Albrecht Schöne über seine ‚Faust‘-Ausgabe und das Handwerk des Philologen. In: <a href="http://www.spiegel.de/spiegel/print/d-9292588.html">Der Spiegel 46/1994, 14.11.1994, S. 220–229</a>. </f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/schreiber1932">
@@ -1010,12 +1010,17 @@
 
     <f:bib uri="faust://bibliography/trunz1966">
         <f:citation>Trunz 1966</f:citation>
-        <f:reference>Trunz, Erich: Die „Wanderjahre“ as „Hauptgeschäft“ im Winterhalbjhr 1828/29. In: Natur und Idee. Andreas Bruno Wachsmuth zugeeignet. Hrsg. von Helmut Holtzhauer, Weimar 1966, S. 242–262.</f:reference>
+        <f:reference>Trunz, Erich: Die „Wanderjahre“ as „Hauptgeschäft“ im Winterhalbjahr 1828/29. In: Natur und Idee. Andreas Bruno Wachsmuth zugeeignet. Hrsg. von Helmut Holtzhauer, Weimar 1966, S. 242–262.</f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/trunz1971">
         <f:citation>Trunz 1971</f:citation>
-        <f:reference>Trunz, Erich: Die „Wanderjahre“ as „Hauptgeschäft“ im Winterhalbjhr 1828/29. In: Studien zu Goethes Alterswerken. Hrsg. von Erich Trunz, Frankfurt/M. 1971 (= Goethezeit; 2), S. 99–121.</f:reference>
+        <f:reference>Trunz, Erich: Die „Wanderjahre“ as „Hauptgeschäft“ im Winterhalbjahr 1828/29. In: Studien zu Goethes Alterswerken. Hrsg. von Erich Trunz, Frankfurt/M. 1971 (= Goethezeit; 2), S. 99–121.</f:reference>
+    </f:bib>
+
+    <f:bib uri="faust://bibliography/vitt2019">
+        <f:citation>Vitt et al. 2019</f:citation>
+        <f:reference>Vitt, Thorsten; Brüning, Gerrit; Pravida, Dietmar; Wissenbach, Moritz: Intervalle, Konflikte, Zyklen. Modellierung von Makrogenese in der Faustedition. In: Digital Humanities: multimedial &amp; multimodal. Abstracts der DHd2019. Frankfurt/M. 2019, S. 148–151. <a href="http://doi.org/10.5281/zenodo.2600812">DOI 10.5281/zenodo.2600812</a></f:reference>
     </f:bib>
 
     <f:bib uri="faust://bibliography/vollmer1868">
