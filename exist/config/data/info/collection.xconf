@@ -3,9 +3,14 @@
 <index xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <fulltext default="none" attributes="false"/>
     <lucene>
-        <analyzer class="org.apache.lucene.analysis.de.GermanAnalyzer">
-            <!--<param name="stopwords" type="org.apache.lucene.analysis.util.CharArraySet"/>-->
-        </analyzer>
+        <!-- 
+            temporarily switched to std analyzer until https://github.com/faustedition/faust-web/issues/564  
+            / https://github.com/eXist-db/exist/issues/2781 are resolved
+        
+        -->
+        <!--analyzer class="org.apache.lucene.analysis.de.GermanAnalyzer">
+            <!- -<param name="stopwords" type="org.apache.lucene.analysis.util.CharArraySet"/>- ->
+        </analyzer-->
         
         <text qname="xh:p"/>
         <text qname="xh:table"/>
