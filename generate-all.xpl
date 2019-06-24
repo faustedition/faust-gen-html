@@ -353,7 +353,7 @@
 			</p:load>
 		</p:for-each>		
 		<p:wrap-sequence wrapper="doc" name="wrap-emended"/>
-		<p:xslt>
+		<p:xslt name="do-word-index">
 			<p:input port="stylesheet"><p:document href="xslt/word-index.xsl"/></p:input>
 		</p:xslt>		
 		<p:store method="xhtml" indent="true">

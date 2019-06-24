@@ -80,7 +80,7 @@
           erhalten zusätzlich ein paar Metadaten als Attribute im Faust-Namespace: 
           URI, Sigle, und Siglentyp.          
         -->
-      <p:xslt>
+      <p:xslt name="extract-lines">
         <p:input port="stylesheet">
           <p:document href="xslt/extract-lines.xsl"/>
         </p:input>

@@ -10,7 +10,7 @@
 
   <p:documentation> Applies the edits to one single document </p:documentation>
 
-  <p:xslt>
+  <p:xslt name="normalize-characters">
     <p:input port="stylesheet">
       <p:document href="xslt/normalize-characters.xsl"/>
     </p:input>
@@ -19,7 +19,7 @@
     </p:input>
   </p:xslt>
 
-  <p:xslt>
+  <p:xslt name="pre-transpose">
     <p:input port="stylesheet">
       <p:document href="xslt/textTranscr_pre_transpose.xsl"/>
     </p:input>
@@ -28,7 +28,7 @@
     </p:input>
   </p:xslt>
 
-  <p:xslt>
+  <p:xslt name="transpose">
     <p:input port="stylesheet">
       <p:document href="xslt/textTranscr_transpose.xsl"/>
     </p:input>
@@ -37,7 +37,7 @@
     </p:input>
   </p:xslt>
 
-  <p:xslt initial-mode="emend">
+  <p:xslt initial-mode="emend" name="emend-core">
     <p:input port="stylesheet">
       <p:document href="xslt/emend-core.xsl"/>
     </p:input>
@@ -48,7 +48,7 @@
 
   <p:choose>
     <p:when test="//tei:delSpan | //tei:modSpan | //tei:addSpan">
-      <p:xslt>
+      <p:xslt name="emend-spans">
         <p:input port="stylesheet">
           <p:document href="xslt/text-emend.xsl"/>
         </p:input>
@@ -62,7 +62,7 @@
     </p:otherwise>
   </p:choose>
   
-  <p:xslt>
+  <p:xslt name="clean-up">
     <p:input port="stylesheet">
       <p:document href="xslt/clean-up.xsl"/>
     </p:input>
@@ -71,7 +71,7 @@
     </p:input>
   </p:xslt>
   
-  <p:xslt>
+  <p:xslt name="fix-punct-wsp">
     <p:input port="stylesheet">
       <p:document href="xslt/fix-punct-wsp.xsl"/>
     </p:input>
@@ -82,7 +82,7 @@
 
   <p:identity name="emended-version"/>
   
-  <p:xslt>
+  <p:xslt name="prose-to-lines">
     <p:input port="source">
       <p:pipe port="result" step="emended-version"/>
     </p:input>
@@ -94,7 +94,7 @@
     </p:input>
   </p:xslt>
 
-  <p:xslt>
+  <p:xslt name="harmonize-antilabes">
     <p:input port="stylesheet">
       <p:document href="xslt/harmonize-antilabes.xsl"/>      
     </p:input>

@@ -83,7 +83,7 @@
 					<p:with-option name="href" select="p:base-uri()"/>
 				</p:store>
 				
-				<p:xslt>
+				<p:xslt name="do-single-testimony-tei">
 					<p:input port="source"><p:pipe port="result" step="single-testimony-tei"/></p:input>
 					<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 					<p:input port="stylesheet"><p:document href="xslt/single-testimony-html.xsl"/></p:input>
@@ -133,7 +133,7 @@
 				</p:store>
 				
 				<!-- Now, the file we've just converted is read again and we collect all the <milestone unit='testimony' xml:id='two_part_id' -->
-				<p:xslt>
+				<p:xslt name="testimony-get-citations">
 					<p:input port="source"><p:pipe port="result" step="single-testimony-tei"/></p:input>			
 					<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 					<p:with-param name="from" select="replace($filename, concat('^', $source), 'faust://xml/')"/>

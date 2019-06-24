@@ -126,7 +126,7 @@
 		<p:identity><p:input port="source"><p:pipe port="result" step="prepared-xml"/></p:input></p:identity>
 
 		<!-- Ansonsten nur Zeichen normalisieren -->
-		<p:xslt name="char">
+		<p:xslt name="normalize-characters">
 			<p:input port="stylesheet">
 				<p:document href="xslt/normalize-characters.xsl"/>
 			</p:input>
@@ -156,7 +156,7 @@
 		<!-- Hack: Generierung der Bargraph-Informationen -->
 		<p:choose>
 			<p:when test="$type != 'lesetext' and not(contains($documentURI, 'test.xml'))">
-				<p:xslt>
+				<p:xslt name="bargraph-info">
 					<p:input port="stylesheet"><p:document href="xslt/create-bargraph-info.xsl"/></p:input>
 					<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
 				</p:xslt>
