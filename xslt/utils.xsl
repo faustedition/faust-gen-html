@@ -30,7 +30,7 @@
   -->
   <xsl:function name="f:is-splitable-doc" as="xs:boolean">
     <xsl:param name="document"/>
-    <xsl:value-of select="count(root($document)//div[not(@type='stueck')]) ge number($splitdivs) 
+    <xsl:sequence select="count(root($document)//div[not(@type='stueck')]) ge number($splitdivs) 
                       and string-length(normalize-space(string-join(root($document)//text//text()[not(ancestor::div[@type='stueck'])], ' '))) ge number($splitchars)"/>
   </xsl:function>
   
@@ -41,7 +41,7 @@
   -->
   <xsl:function name="f:get-section-number" as="xs:string?">
     <xsl:param name="el" as="node()?"/>
-    <xsl:value-of select="f:get-section-div($el)/@f:section"/>
+    <xsl:sequence select="f:get-section-div($el)/@f:section"/>
   </xsl:function>
   
   <xsl:function name="f:get-section-div" as="element()?">
@@ -55,11 +55,11 @@
     </xsl:choose>    
   </xsl:function>
   
-  <xsl:function name="f:get-section-label">
+  <xsl:function name="f:get-section-label" as="xs:string?">
     <xsl:param name="el" as="node()"/>
     <xsl:variable name="secno" select="f:get-section-number($el)"/>
     <xsl:variable name="basename" select="root($el)//idno[@type='sigil_t']"/>    
-    <xsl:value-of select="if ($secno != '') then concat($basename, '.', $secno) else $basename"/>
+    <xsl:sequence select="if ($secno != '') then concat($basename, '.', $secno) else $basename"/>
   </xsl:function>
   
   <!-- These functions return the scene info even on non-annotated divs -->
@@ -282,7 +282,7 @@
   <xsl:function name="f:sigil-label">
     <xsl:param name="type"/>
     <xsl:variable name="label" select="doc('sigil-labels.xml')//f:label[@type=$type]"/>
-    <xsl:value-of select="if ($label) then $label else $type"/>
+    <xsl:sequence select="data(if ($label) then $label else $type)"/>
   </xsl:function>
   
   
@@ -314,7 +314,7 @@
   <!-- Returns true() iff $element is one of those TEI elements for which a variant apparatus should be generated. -->
   <xsl:function name="f:hasvars" as="xs:boolean">
     <xsl:param name="element"/>
-    <xsl:value-of select='boolean($element[(@n or @f:nx) 
+    <xsl:sequence select='boolean($element[(@n or @f:nx) 
       and not(
       self::pb 
       or self::div 
@@ -399,7 +399,7 @@
   
   <xsl:function name="f:is-schroer" as="xs:boolean">
     <xsl:param name="element"/>
-    <xsl:value-of select="f:hasvars($element) and matches($element/@n, '^\d+')"/>
+    <xsl:sequence select="f:hasvars($element) and matches($element/@n, '^\d+')"/>
   </xsl:function>
  
   <xsl:function name="f:lineno-based-id">

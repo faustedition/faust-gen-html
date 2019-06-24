@@ -216,7 +216,7 @@
 	<!-- f:section-div == this div will govern an own output file (section) -->
 	<xsl:function name="f:section-div" as="xs:boolean">
 		<xsl:param name="div"/>
-		<xsl:value-of select="$splittable and 
+		<xsl:sequence select="$splittable and 
 			(if ($div/@type) 
 				then $div/@type=('scene') and not($div/descendant::div[f:section-div(.)]) 
 				else  (count($div/ancestor-or-self::div) = $depth_n

@@ -212,7 +212,7 @@
 	
 	<xsl:function name="f:isEmpty" as="xs:boolean">
 		<xsl:param name="element"/>		
-		<xsl:value-of select="$element = 'none' or $element = '' or $element = 'n.s.'"/>
+		<xsl:sequence select="$element = 'none' or $element = '' or $element = 'n.s.'"/>
 	</xsl:function>
 
 	<xsl:template match="textTranscript"/>	

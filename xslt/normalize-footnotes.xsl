@@ -37,17 +37,17 @@
       <xsl:when test="$backref">
         <xsl:variable name="backref-target" select="id(substring-after($backref/@target, '#'), $footnote-anchor)[$footnote-anchor >> .]"/>
         <xsl:variable name="footnote-ref" select="$backref-target/following-sibling::*[1][self::ref]"/>
-        <xsl:value-of select="not(empty($footnote-ref/@target)) and (substring-after($footnote-ref/@target, '#') eq $footnote-anchor/@xml:id)"/>        
+        <xsl:sequence select="not(empty($footnote-ref/@target)) and (substring-after($footnote-ref/@target, '#') eq $footnote-anchor/@xml:id)"/>        
       </xsl:when>
       <xsl:otherwise>
-        <xsl:value-of select="false()"/>
+        <xsl:sequence select="false()"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:function>
   
   <xsl:function name="f:is-footnote-ref" as="xs:boolean">
     <xsl:param name="footnote-ref"/>    
-    <xsl:value-of select="if ($footnote-ref/@target) 
+    <xsl:sequence select="if ($footnote-ref/@target) 
         then f:is-footnote-anchor(id(substring-after($footnote-ref/@target, '#'), $footnote-ref)) 
         else false()"/>
   </xsl:function>

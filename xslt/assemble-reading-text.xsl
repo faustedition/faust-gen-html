@@ -107,7 +107,7 @@
 	<xsl:template match="div[@n='2.1']">
 		<xsl:copy copy-namespaces="no">
 			<xsl:apply-templates select="@*"/>	
-			<xsl:apply-templates select="node() except (div[@n='2.1.1'], div[@n='2.1.1']/following::node())"/>			
+			<xsl:apply-templates select="node() except (child::div[@n='2.1.1'], child::div[@n='2.1.1']/following::node())"/>			
 			<xsl:sequence select="f:source('2_I_H.0a')"/>
 			<xsl:apply-templates select="$IH0a//div[@n='2.1.1']"/>
 			<xsl:apply-templates select="$IH0a//div[@n='2.1.1']/following-sibling::node() except $IH0a//sp[l[@n='6036']]/following::node()"/>			
@@ -131,7 +131,7 @@
 	
 	<xsl:template match="div[@n='2.3']">
 		<xsl:copy copy-namespaces="no">
-			<xsl:apply-templates select="@*, node() except (div[1], div[1]/following::node())"/>
+			<xsl:apply-templates select="@*, node() except (child::div[1], child::div[1]/following::node())"/>
 			<xsl:sequence select="f:source('C.1_4')"/>
 			<xsl:apply-templates select="$C1_4//div[starts-with(@n, '2.3.')]"/>
 		</xsl:copy>

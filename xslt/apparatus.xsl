@@ -150,7 +150,7 @@
 	<xsl:function name="f:same-text-content" as="xs:boolean">
 		<xsl:param name="a"/>
 		<xsl:param name="b"/>
-		<xsl:value-of select="f:normalized-text($a) = f:normalized-text($b)"/>
+		<xsl:sequence select="f:normalized-text($a) = f:normalized-text($b)"/>
 	</xsl:function>
 	
 	<xsl:function name="f:only-child" as="xs:boolean">
