@@ -102,6 +102,7 @@
 		<p:xslt name="app">
 			<p:input port="stylesheet"><p:document href="xslt/text-insert-app.xsl"/></p:input>
 			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			<p:with-param name='builddir' select='$builddir'/>
 		</p:xslt>
 		
 		<p:xslt name="postprocess">

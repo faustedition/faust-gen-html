@@ -31,6 +31,8 @@
 	<p:import href="testimony.xpl"/>
 	
 	<p:import href="generate-reading-text.xpl"/>
+	
+	<p:import href="whoami.xpl"/>
 
 <!--	
 	<p:import href="generate-indexes.xpl"/>
@@ -49,7 +51,9 @@
 	<p:group>
 		<p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
 		<p:variable name="html" select="//c:param[@name='html']/@value"><p:pipe port="result" step="config"/></p:variable>
-		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>		
+		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
+
+		<f:whoami name="whoami"/>
 		
 		<!--Step 1a Archivmetadaten -->
 		<p:load><p:with-option name="href" select="resolve-uri('archives.xml', resolve-uri($source))"/></p:load>

@@ -76,7 +76,7 @@
 			<p:with-option name="href" select="$transcriptFile"/>
 		</p:load>
 		
-		<p:xslt name="gs">
+		<p:xslt name="add-metadata">
 			<p:input port="stylesheet">
 				<p:document href="xslt/add-metadata.xsl"/>
 			</p:input>
