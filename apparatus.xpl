@@ -21,7 +21,7 @@
 		include-content-type="true"/>
 	
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
-	<p:import href="http://xproc.org/library/store.xpl"/>	
+	<p:import href="library/store.xpl"/>	
 
 	<!-- Parameter laden -->
 	<p:parameters name="config">

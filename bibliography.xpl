@@ -6,7 +6,7 @@
 
   <p:input port="source" primary="true" sequence="true"/>
   <p:input port="parameters" kind="parameter"/>
-  <p:import href="http://xproc.org/library/recursive-directory-list.xpl"/>
+  <p:import href="library/recursive-directory-list.xpl"/>
   
   
   <!-- This pipeline generates a bibliography page from a bunch of 'citations' xml files. -->

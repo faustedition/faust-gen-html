@@ -15,7 +15,7 @@
     Transcripte. Das Ergebnis ist eine XML-Datei aus f:textTranscript-Elementen mit den Attributen @uri (=
     Faust-URI) und @href (=aufgelöster Pfad relativ zu $root) und als Kindelementen </p:documentation>
 
-  <p:import href="http://xproc.org/library/recursive-directory-list.xpl"/>
+  <p:import href="library/recursive-directory-list.xpl"/>
   <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
 
   <!-- Parameter laden -->

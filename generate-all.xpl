@@ -14,7 +14,7 @@
 	</p:output>
 	
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
-	<p:import href="http://xproc.org/library/store.xpl"/>
+	<p:import href="library/store.xpl"/>
 	
 	<p:import href="collect-metadata.xpl"/>
 	<p:import href="generate-search.xpl"/>
