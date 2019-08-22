@@ -43,8 +43,13 @@
 	
 	
 	<!-- Konfiguration laden -->
+	<p:xslt name="config" template-name="param">
+		<p:input port="source"><p:empty/></p:input>
+		<p:input port="stylesheet"><p:document href="xslt/config.xsl"/></p:input>
+		<p:with-param name="path_config" select="$paths"></p:with-param>
+	</p:xslt>
 	
-	<p:xslt name="config" template-name="config">
+	<p:xslt name="paths" template-name="config">
 		<p:input port="source"><p:empty/></p:input>
 		<p:input port="stylesheet"><p:document href="xslt/config.xsl"/></p:input>
 		<p:with-param name="path_config" select="$paths"></p:with-param>
@@ -52,7 +57,7 @@
 		
 	<p:group>	
 		<p:variable name="source" select="//f:source/text()"/>
-		<!--<p:variable name="html" select="//c:param[@name='html']/@value"><p:pipe port="result" step="config"/></p:variable>-->
+		<p:variable name="html" select="//f:html/text()"/> <!-- traditional -->
 		<p:variable name="builddir" select="//f:builddir"/>
 
 		<f:whoami name="whoami">
@@ -78,8 +83,9 @@
 
 		<!-- Collect all transcript's metadata in an XML document. This also copies the artificial reading texts. -->
 		<f:list-transcripts name="transcripts">
-			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
-		</f:list-transcripts>
+			<p:with-option name="paths" select="$paths"/>
+		</f:list-transcripts>	
+		
 		
 		<!-- We need to save it now, its referenced later. -->
 		<l:store name="save-transcripts">
@@ -284,9 +290,9 @@
 		
 		<!-- ## Step 2c: prints index -->
 		<p:xslt>
-			<p:input port="source"><p:pipe port="result" step="save-transcripts"/></p:input>
-			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			<p:input port="source"><p:pipe port="result" step="save-transcripts"/></p:input>			
 			<p:input port="stylesheet"><p:document href="xslt/prints-index.xsl"/></p:input>
+			<p:with-param name="paths_config" select="$paths"/>
 		</p:xslt>
 		<p:store method="xhtml" indent="true">
 			<p:with-option name="href" select="resolve-uri('www/archive_prints.html', $builddir)"/>
@@ -301,8 +307,7 @@
 		<!-- ## Step 2e: Redirect-Tabellen für /print /meta /app -->
 		<p:xslt>
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>			
-			<p:input port="stylesheet"><p:document href="xslt/generate-htaccess.xsl"/></p:input>
-			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/generate-htaccess.xsl"/></p:input>			
 			<p:with-param name="rewrite-base" select="'/print'"/>
 			<p:with-param name="old-source" select="'texttranscript'"/>
 		</p:xslt>
@@ -310,8 +315,7 @@
 
 		<p:xslt>
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>			
-			<p:input port="stylesheet"><p:document href="xslt/generate-htaccess.xsl"/></p:input>
-			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/generate-htaccess.xsl"/></p:input>			
 			<p:with-param name="rewrite-base" select="'/app'"/>
 			<p:with-param name="old-source" select="'texttranscript'"/>
 		</p:xslt>
@@ -319,8 +323,7 @@
 		
 		<p:xslt>
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>			
-			<p:input port="stylesheet"><p:document href="xslt/generate-htaccess.xsl"/></p:input>
-			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			<p:input port="stylesheet"><p:document href="xslt/generate-htaccess.xsl"/></p:input>		
 			<p:with-param name="rewrite-base" select="'/meta'"/>
 			<p:with-param name="old-source" select="'document'"/>
 		</p:xslt>
@@ -331,7 +334,7 @@
 		<p:xslt name="reading-text-citations">
 			<p:input port="source"><p:pipe port="result" step="reading-text-md"></p:pipe></p:input>
 			<p:input port="stylesheet"><p:document href="xslt/text-extract-citations.xsl"/></p:input>
-			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
+			<p:with-param name="paths_config" select="$paths"/>
 		</p:xslt>
 
 		<f:bibliography>

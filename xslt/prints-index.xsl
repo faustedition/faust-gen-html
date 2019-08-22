@@ -13,8 +13,9 @@
 	
 	-->
 	
+	<xsl:import href="config.xsl"/>
 	<xsl:import href="html-frame.xsl"/>	
-	<xsl:param name="source"/>
+	<xsl:param name="source" select="f:config()//f:source"/>
 	
 	<xsl:template match="/">
 		<xsl:variable name="transcripts" select="."/>
