@@ -13,6 +13,8 @@
 		<p:empty/>
 	</p:output>
 	
+	<p:option name="paths" select="resolve-uri('paths.xml')"/>
+	
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
 	<p:import href="library/store.xpl"/>
 	
@@ -40,20 +42,22 @@
 	
 	
 	
-	<!-- Parameter laden -->
-	<p:parameters name="config">
-		<p:input port="parameters">
-			<p:document href="config.xml"/>
-			<p:pipe port="parameters" step="main"></p:pipe>
-		</p:input>
-	</p:parameters>
+	<!-- Konfiguration laden -->
 	
-	<p:group>
-		<p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
-		<p:variable name="html" select="//c:param[@name='html']/@value"><p:pipe port="result" step="config"/></p:variable>
-		<p:variable name="builddir" select="resolve-uri(//c:param[@name='builddir']/@value)"><p:pipe port="result" step="config"/></p:variable>
+	<p:xslt name="config" template-name="config">
+		<p:input port="source"><p:empty/></p:input>
+		<p:input port="stylesheet"><p:document href="xslt/config.xsl"/></p:input>
+		<p:with-param name="path_config" select="$paths"></p:with-param>
+	</p:xslt>
+		
+	<p:group>	
+		<p:variable name="source" select="//f:source/text()"/>
+		<!--<p:variable name="html" select="//c:param[@name='html']/@value"><p:pipe port="result" step="config"/></p:variable>-->
+		<p:variable name="builddir" select="//f:builddir"/>
 
-		<f:whoami name="whoami"/>
+		<f:whoami name="whoami">
+			<p:with-option name="paths" select="$paths"/>
+		</f:whoami>
 		
 		<!--Step 1a Archivmetadaten -->
 		<p:load><p:with-option name="href" select="resolve-uri('archives.xml', resolve-uri($source))"/></p:load>
