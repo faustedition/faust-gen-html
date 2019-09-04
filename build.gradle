@@ -18,14 +18,14 @@ apply plugin: 'com.xmlcalabash.task'
 import com.xmlcalabash.XMLCalabashTask
 
 if (rootProject != project) { project.buildDir = rootProject.buildDir }
+project.ext.pathsxml = new File(project.buildDir, 'paths.xml')
 
-task setupPaths {
+task setupPaths { doLast {
     project.ext.dataDir = project.hasProperty('dataDir')? project.file(dataDir) : rootProject.file('data/xml')
     if (!dataDir.exists()) {
        throw new FileNotFoundException("Source folder $dataDir not found")
     }
     project.buildDir.mkdirs()
-    project.ext.pathsxml = new File(project.buildDir, 'paths.xml')
     def sourceURL = dataDir.toURL()
     def buildURL = buildDir.toURL()
     pathsxml.write("""<?xml version="1.0" encoding="UTF-8"?>
@@ -35,7 +35,7 @@ task setupPaths {
   <builddir>$buildURL</builddir>
 </configuration>""")
     logger.warn("Wrote $pathsxml")
-}
+}}
 
 task generateAll(type: XMLCalabashTask) {
     dependsOn setupPaths

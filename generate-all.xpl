@@ -221,7 +221,7 @@
 		<p:xslt>
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"/></p:input>			
 			<p:input port="stylesheet"><p:document href="xslt/prints-index.xsl"/></p:input>
-			<p:with-param name="paths_config" select="$paths"/>
+			<p:with-param name="path_config" select="$paths"/>
 		</p:xslt>
 		<p:store method="xhtml" indent="true">
 			<p:with-option name="href" select="resolve-uri('www/archive_prints.html', $builddir)"/>
@@ -263,7 +263,7 @@
 		<p:xslt name="reading-text-citations">
 			<p:input port="source"><p:pipe port="result" step="reading-text-md"></p:pipe></p:input>
 			<p:input port="stylesheet"><p:document href="xslt/text-extract-citations.xsl"/></p:input>
-			<p:with-param name="paths_config" select="$paths"/>
+			<p:with-param name="path_config" select="$paths"/>
 		</p:xslt>
 
 		<f:bibliography>
