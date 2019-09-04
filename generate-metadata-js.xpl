@@ -6,6 +6,7 @@
 
   <p:input port="source"><p:empty/></p:input>
   <p:input port="parameters" kind="parameter"/>
+  <p:option name="paths" select="resolve-uri('paths.xml')"/>
   
   
 
@@ -13,13 +14,12 @@
   <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
 
   <!-- Parameter laden -->
-  <p:parameters name="config">
-    <p:input port="parameters">
-      <p:document href="config.xml"/>
-      <p:pipe port="parameters" step="main"></p:pipe>
-    </p:input>
-  </p:parameters>
-
+  <p:xslt name="config" template-name="param">
+    <p:input port="source"><p:empty/></p:input>
+    <p:input port="stylesheet"><p:document href="xslt/config.xsl"/></p:input>
+    <p:with-param name="path_config" select="$paths"></p:with-param>
+  </p:xslt>
+  
   <p:group>
     <p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
     <p:variable name="debug" select="//c:param[@name='debug']/@value"><p:pipe port="result" step="config"/></p:variable>

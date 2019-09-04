@@ -93,12 +93,13 @@
 		</l:store>
 		
 		<!-- ## Step 1.5: Lesetext -->
-		<f:generate-reading-text name="generate-reading-text"/>				
+		<f:generate-reading-text name="generate-reading-text"><p:with-option name="paths" select="$paths"/></f:generate-reading-text>				
 
 		
 		<!-- ############ STEP 2: Enhance all transcripts with metadata -->
 		<f:generate-search name="generate-search">
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"/></p:input>
+			<p:with-option name="paths" select="$paths"/>
 		</f:generate-search>
 		<!-- TODO this by side-effect also collects the bargraph information  -->
 				
@@ -174,8 +175,7 @@
 			</p:xslt>
 			<p:store indent="true">
 				<p:with-option name="href" select="resolve-uri(concat('grundschicht-instant/', $sigil_t, '.xml'), $builddir)"/>
-			</p:store>			
-			
+			</p:store>
 		</p:for-each>
 		<!-- Pipe through list of inputs -->
 		<p:identity name="emended-version"><p:input port="source"><p:pipe port="result" step="generate-search"/></p:input></p:identity>
