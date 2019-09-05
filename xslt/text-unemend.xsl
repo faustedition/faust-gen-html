@@ -4,7 +4,7 @@
     xmlns="http://www.tei-c.org/ns/1.0"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     exclude-result-prefixes="xs"
-    version="2.0">
+    version="3.0">
     
     <!-- 
     
@@ -40,14 +40,13 @@
     -->
     <xsl:key name="addSpan-for-node" match="addSpan">
         <xsl:variable name="target" as="element()?" select="id(substring(@spanTo, 2))"/>
-        <xsl:choose>
-            <xsl:when test="empty($target)">-*-*-*-</xsl:when>
-            <xsl:otherwise>
-                <xsl:variable name="nodes" select="following::node() except ($target//node(), $target/following::node(), $target/ancestor::node())"/>
-                <xsl:sequence select="for $node in $nodes return generate-id($node)"/>                
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:key>     
+        <xsl:variable name="nodes" select="
+            if (empty($target)) 
+               then () 
+               else following::node() except ($target//node(), $target/following::node(), $target/ancestor::node())" as="node()*"/>
+        <xsl:sequence select="for $node in $nodes return generate-id($node)"/>                
+    </xsl:key>
+    
     <xsl:template match="node()[key('addSpan-for-node', generate-id())]"/>    
 
     <xsl:template match="addSpan | delSpan | modSpan"/>    
