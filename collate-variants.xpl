@@ -7,20 +7,20 @@
   </p:input>
   <p:input port="parameters" kind="parameter"/>
   <p:output port="result" primary="true"/>
+  <p:option name="paths" select="'paths.xml'"/>
 
   <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
   
   <p:import href="apply-edits.xpl"/>
   <!--  <p:import href="collect-metadata.xpl"/>-->
 
-  <!-- Parameter laden -->
-  <p:parameters name="config">
-    <p:input port="parameters">
-      <p:document href="config.xml"/>
-      <p:pipe port="parameters" step="main"/>
-    </p:input>
-  </p:parameters>
-
+  <!-- Parameter laden -->  
+  <p:xslt name="config" template-name="param">
+    <p:input port="source"><p:empty/></p:input>
+    <p:input port="stylesheet"><p:document href="xslt/config.xsl"/></p:input>
+    <p:with-param name="path_config" select="$paths"></p:with-param>
+  </p:xslt>
+  
   <p:identity name="source">
     <p:input port="source">
       <p:pipe port="source" step="main"/>

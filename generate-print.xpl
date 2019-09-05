@@ -5,17 +5,17 @@
 	xmlns:l="http://xproc.org/library" version="1.0" name="main" type="f:generate-print">
 	<p:input port="source"/>	
 	<p:input port="parameters" kind="parameter"/>
+	<p:option name="paths" select="'paths.xml'"/>
 	
 	<p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
     <p:import href="print2html.xpl"/>
 	
 	<!-- Parameter laden -->
-	<p:parameters name="config">
-		<p:input port="parameters">
-			<p:document href="config.xml"/>
-			<p:pipe port="parameters" step="main"></p:pipe>
-		</p:input>
-	</p:parameters>
+	<p:xslt name="config" template-name="param">
+		<p:input port="source"><p:empty/></p:input>
+		<p:input port="stylesheet"><p:document href="xslt/config.xsl"/></p:input>
+		<p:with-param name="path_config" select="$paths"></p:with-param>
+	</p:xslt>
 	
 	<p:identity><p:input port="source"><p:pipe port="source" step="main"/></p:input></p:identity>
 	

@@ -110,11 +110,10 @@
 		<f:generate-emendations name="emended-version"><p:with-option name="paths" select="$paths"/></f:generate-emendations>
 		
 		<!-- ############## STEP 4: Creating the variant apparatus -->
-		<f:collate-variants name="collate-variants"/>
-		
-		
+		<f:collate-variants name="collate-variants"><p:with-option name="paths" select="$paths"/></f:collate-variants>
+				
 		<!-- ############## STEP 5a: Creating the print versions -->
-		<f:generate-print name="generate-print"/>
+		<f:generate-print name="generate-print"><p:with-option name="paths" select="$paths"/></f:generate-print>
 		
 		
 		<!-- ############################################################################## -->
