@@ -37,10 +37,60 @@ task setupPaths { doLast {
     logger.warn("Wrote $pathsxml")
 }}
 
+// ------------- traditional generate all task -> OOMs
+
 task generateAll(type: XMLCalabashTask) {
     dependsOn setupPaths
     pipeline 'generate-all.xpl'
     option 'paths', pathsxml.toURL().toString()
 }
-
 assemble.dependsOn(generateAll)
+
+// -------------- separate tasks for individual parts of the workflow
+
+task collectMetadata(type: XMLCalabashTask) {
+    dependsOn setupPaths
+    pipeline 'collect-metadata.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    output "result", "$buildDir/faust-transcripts.xml"
+}
+
+task readingText(type: XMLCalabashTask) {
+    dependsOn collectMetadata
+    pipeline 'generate-reading-text.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+    output "result", "$buildDir/_ignore.xml"
+}
+
+task generateSearch(type: XMLCalabashTask) {
+    dependsOn readingText
+    pipeline 'generate-search.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+    output "result", "$buildDir/_ignore.xml"
+}
+
+task emendedVersion(type: XMLCalabashTask) {
+    dependsOn readingText
+    pipeline 'generate-emendations.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+    output "result", "$buildDir/_ignore.xml"
+}
+
+task variantApp(type: XMLCalabashTask) {
+    dependsOn emendedVersion, generateSearch
+    pipeline 'collate-variants.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+    output "result", "$buildDir/_ignore.xml"
+}
+
+task generatePrint(type: XMLCalabashTask) {
+    dependsOn variantApp
+    pipeline 'generate-print.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+    output "result", "$buildDir/_ignore.xml"
+}
