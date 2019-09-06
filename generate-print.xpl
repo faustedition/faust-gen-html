@@ -54,6 +54,7 @@
 			<p:with-option name="basename" select="$sigil_t"/>
 			<p:with-param name="documentURI" select="$documentURI"/>
 			<p:with-param name="type" select="$type"/>
+			<p:with-option name="paths" select="$paths"/>
 		</f:print2html>
 
 	</p:for-each>

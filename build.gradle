@@ -72,7 +72,7 @@ task generateSearch(type: XMLCalabashTask) {
 }
 
 task emendedVersion(type: XMLCalabashTask) {
-    dependsOn readingText
+    dependsOn generateSearch
     pipeline 'generate-emendations.xpl'
     option 'paths', pathsxml.toURL().toString()
     input "source", "$buildDir/faust-transcripts.xml"
@@ -93,4 +93,11 @@ task generatePrint(type: XMLCalabashTask) {
     option 'paths', pathsxml.toURL().toString()
     input "source", "$buildDir/faust-transcripts.xml"
     output "result", "$buildDir/_ignore.xml"
+}
+
+
+
+task whoami(type: XMLCalabashTask) {
+    pipeline 'whoami.xpl'
+    option 'paths', pathsxml.toURL().toString()
 }

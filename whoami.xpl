@@ -31,6 +31,10 @@ XSLT Processor
 Configuration
 =============
 <xsl:copy-of select="f:config()"/>
+<!--
+Properties
+==========
+<xsl:value-of select="string-join(for $prop in available-system-properties() return ($prop || '=' || system-property(string($prop))), '&#10;')"/>-->
           </xsl:message>
           <xsl:copy-of select="node()"/>
         </xsl:template>
