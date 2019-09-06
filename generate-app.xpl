@@ -5,6 +5,7 @@
 	xmlns:l="http://xproc.org/library" version="1.0" name="main" type="f:generate-app">
 	<p:input port="source"/>	
 	<p:input port="parameters" kind="parameter"/>
+	<p:option name="paths" select="'paths.xml'"/>
 	
 	<!-- Am Output-Port legen wir zu Debuggingzwecken ein XML-Dokument mit allen Varianten an -->
 <!--	<p:output port="result" primary="true">
@@ -16,12 +17,11 @@
     <p:import href="apparatus.xpl"/>
 	
 	<!-- Parameter laden -->
-	<p:parameters name="config">
-		<p:input port="parameters">
-			<p:document href="config.xml"/>
-			<p:pipe port="parameters" step="main"></p:pipe>
-		</p:input>
-	</p:parameters>
+	<p:xslt name="config" template-name="param">
+		<p:input port="source"><p:empty/></p:input>
+		<p:input port="stylesheet"><p:document href="xslt/config.xsl"/></p:input>
+		<p:with-param name="path_config" select="$paths"></p:with-param>
+	</p:xslt>
 	
 	<p:identity><p:input port="source"><p:pipe port="source" step="main"/></p:input></p:identity>
 	
@@ -62,6 +62,7 @@
 			<p:with-option name="basename" select="$sigil_t"/>
 			<p:with-param name="documentURI" select="$documentURI"/>
 			<p:with-param name="type" select="$type"/>
+			<p:with-option name="paths" select="$paths"/>
 		</f:apparatus>
 
 	</p:for-each>

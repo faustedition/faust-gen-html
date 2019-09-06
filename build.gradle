@@ -44,7 +44,7 @@ task generateAll(type: XMLCalabashTask) {
     pipeline 'generate-all.xpl'
     option 'paths', pathsxml.toURL().toString()
 }
-assemble.dependsOn(generateAll)
+// assemble.dependsOn(generateAll)
 
 // -------------- separate tasks for individual parts of the workflow
 
@@ -95,9 +95,20 @@ task generatePrint(type: XMLCalabashTask) {
     output "result", "$buildDir/_ignore.xml"
 }
 
+// sidetracks
+
+task generateApp(type: XMLCalabashTask) {
+    dependsOn generateSearch
+    pipeline 'generate-app.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+    output "result", "$buildDir/_ignore.xml"
+}
 
 
 task whoami(type: XMLCalabashTask) {
     pipeline 'whoami.xpl'
     option 'paths', pathsxml.toURL().toString()
 }
+
+assemble.dependsOn([generatePrint, generateApp])

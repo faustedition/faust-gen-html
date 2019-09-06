@@ -12,6 +12,7 @@
 	<p:output port="result" primary="true" sequence="true">
 		<p:pipe port="result" step="body"/>
 	</p:output>
+	<p:option name="paths" select="'paths.xml'"/>
 	
 	<p:option name="basename" select="''">
 		<p:documentation>Basis for the filename of the result documents. Must be relative
@@ -24,12 +25,11 @@
 	<p:import href="library/store.xpl"/>	
 
 	<!-- Parameter laden -->
-	<p:parameters name="config">
-		<p:input port="parameters">
-			<p:document href="config.xml"/>
-			<p:pipe port="parameters" step="main"/>
-		</p:input>
-	</p:parameters>
+	<p:xslt name="config" template-name="param">
+		<p:input port="source"><p:empty/></p:input>
+		<p:input port="stylesheet"><p:document href="xslt/config.xsl"/></p:input>
+		<p:with-param name="path_config" select="$paths"></p:with-param>
+	</p:xslt>
 	<p:identity><p:input port="source"><p:pipe port="source" step="main"/></p:input></p:identity>
 	
 	<!-- wir müssen ein paar der Parameter auswerten: -->
