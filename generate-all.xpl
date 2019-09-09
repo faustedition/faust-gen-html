@@ -36,6 +36,8 @@
 	<p:import href="generate-emendations.xpl"/>
 	
 	<p:import href="whoami.xpl"/>
+	
+	<p:import href="pages-json.xpl"/>
 
 <!--	
 	<p:import href="generate-indexes.xpl"/>
