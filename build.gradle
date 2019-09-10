@@ -125,6 +125,7 @@ task metadataHtml(type: XMLCalabashTask) {
     pipeline 'metadata-html.xpl'
     option 'paths', pathsxml.toURL().toString()
     input "source", "$buildDir/faust-transcripts.xml"
+    output "result", "$buildDir/bibliography/cit-metadata.xml"
 }
 
 task metadataJs(type: XMLCalabashTask) {
@@ -133,10 +134,19 @@ task metadataJs(type: XMLCalabashTask) {
     option 'paths', pathsxml.toURL().toString()
 }
 
+task testimony(type: XMLCalabashTask) {
+    dependsOn collectMetadata
+    pipeline 'testimony.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+    output "result", "$buildDir/bibliography/cit-testimony.xml"
+}
+
+// ----------------------------------------------------------
 
 task whoami(type: XMLCalabashTask) {
     pipeline 'whoami.xpl'
     option 'paths', pathsxml.toURL().toString()
 }
 
-assemble.dependsOn([generatePrint, generateApp, pagesJson, readingTextExtras, metadataHtml, metadataJs])
+assemble.dependsOn([generatePrint, generateApp, pagesJson, readingTextExtras, metadataHtml, metadataJs, testimony])
