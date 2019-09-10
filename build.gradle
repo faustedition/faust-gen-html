@@ -113,10 +113,17 @@ task pagesJson(type: XMLCalabashTask) {
     input "source", "$buildDir/faust-transcripts.xml"
 }
 
+task readingTextExtras(type: XMLCalabashTask) {
+    dependsOn generatePrint
+    pipeline 'reading-text-extras.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/lesetext/faust.xml"
+}
+
 
 task whoami(type: XMLCalabashTask) {
     pipeline 'whoami.xpl'
     option 'paths', pathsxml.toURL().toString()
 }
 
-assemble.dependsOn([generatePrint, generateApp])
+assemble.dependsOn([generatePrint, generateApp, pagesJson, readingTextExtras])
