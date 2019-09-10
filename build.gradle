@@ -120,10 +120,23 @@ task readingTextExtras(type: XMLCalabashTask) {
     input "source", "$buildDir/lesetext/faust.xml"
 }
 
+task metadataHtml(type: XMLCalabashTask) {
+    dependsOn generateSearch
+    pipeline 'metadata-html.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+}
+
+task metadataJs(type: XMLCalabashTask) {
+    dependsOn collectMetadata
+    pipeline 'generate-metadata-js.xpl'
+    option 'paths', pathsxml.toURL().toString()
+}
+
 
 task whoami(type: XMLCalabashTask) {
     pipeline 'whoami.xpl'
     option 'paths', pathsxml.toURL().toString()
 }
 
-assemble.dependsOn([generatePrint, generateApp, pagesJson, readingTextExtras])
+assemble.dependsOn([generatePrint, generateApp, pagesJson, readingTextExtras, metadataHtml, metadataJs])
