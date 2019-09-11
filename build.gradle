@@ -142,6 +142,13 @@ task testimony(type: XMLCalabashTask) {
     output "result", "$buildDir/bibliography/cit-testimony.xml"
 }
 
+task indexesRedirects(type: XMLCalabashTask) {
+    dependsOn collectMetadata
+    pipeline 'indexes-and-redirects.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+}
+
 // ----------------------------------------------------------
 
 task whoami(type: XMLCalabashTask) {
@@ -149,4 +156,4 @@ task whoami(type: XMLCalabashTask) {
     option 'paths', pathsxml.toURL().toString()
 }
 
-assemble.dependsOn([generatePrint, generateApp, pagesJson, readingTextExtras, metadataHtml, metadataJs, testimony])
+assemble.dependsOn([generatePrint, generateApp, pagesJson, readingTextExtras, metadataHtml, metadataJs, testimony, indexesRedirects])

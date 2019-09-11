@@ -39,6 +39,7 @@
 	
 	<p:import href="pages-json.xpl"/>
 	<p:import href="reading-text-extras.xpl"/>
+	<p:import href="indexes-and-redirects.xpl"/>
 
 <!--	
 	<p:import href="generate-indexes.xpl"/>
@@ -158,46 +159,20 @@
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>			
 		</f:metadata-js>
 		
-		<!-- ## Step 2c: prints index -->
-		<p:xslt>
-			<p:input port="source"><p:pipe port="result" step="save-transcripts"/></p:input>			
-			<p:input port="stylesheet"><p:document href="xslt/prints-index.xsl"/></p:input>
-			<p:with-param name="path_config" select="$paths"/>
-		</p:xslt>
-		<p:store method="xhtml" indent="true">
-			<p:with-option name="href" select="resolve-uri('www/archive_prints.html', $builddir)"/>
-		</p:store>
 		
 		<!-- ## Step 2d: testimony -->
 		
 		<f:testimony name="testimony">
 			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>
+			<p:with-option name="paths" select="$paths"/>
 		</f:testimony>
-		
-		<!-- ## Step 2e: Redirect-Tabellen für /print /meta /app -->
-		<p:xslt>
-			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>			
-			<p:input port="stylesheet"><p:document href="xslt/generate-htaccess.xsl"/></p:input>			
-			<p:with-param name="rewrite-base" select="'/print'"/>
-			<p:with-param name="old-source" select="'texttranscript'"/>
-		</p:xslt>
-		<p:store method="text"><p:with-option name="href" select="resolve-uri('www/print/.htaccess', $builddir)"/></p:store>
 
-		<p:xslt>
-			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>			
-			<p:input port="stylesheet"><p:document href="xslt/generate-htaccess.xsl"/></p:input>			
-			<p:with-param name="rewrite-base" select="'/app'"/>
-			<p:with-param name="old-source" select="'texttranscript'"/>
-		</p:xslt>
-		<p:store method="text"><p:with-option name="href" select="resolve-uri('www/app/.htaccess', $builddir)"/></p:store>		
-		
-		<p:xslt>
-			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>			
-			<p:input port="stylesheet"><p:document href="xslt/generate-htaccess.xsl"/></p:input>		
-			<p:with-param name="rewrite-base" select="'/meta'"/>
-			<p:with-param name="old-source" select="'document'"/>
-		</p:xslt>
-		<p:store method="text"><p:with-option name="href" select="resolve-uri('www/meta/.htaccess', $builddir)"/></p:store>		
+		<!-- ## Step 2c: prints index -->
+		<!-- ## Step 2e: Redirect-Tabellen für /print /meta /app -->
+		<f:indexes-and-redirects name="indexes-and-redirects">
+			<p:input port="source"><p:pipe port="result" step="save-transcripts"/></p:input>
+			<p:with-option name="paths" select="$paths"/>
+		</f:indexes-and-redirects>
 		
 		
 		<!-- ## Step 3a: bibliography -->
