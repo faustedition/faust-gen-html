@@ -7,7 +7,10 @@
   <p:input port="source">
     <p:documentation>Reading text</p:documentation>
   </p:input>  
-  <p:output port="result" sequence="true"><p:empty/></p:output>
+  <p:output port="result" sequence="true" primary="true"><p:empty/></p:output>
+  <p:output port="citations">
+    <p:pipe port="result" step="citations"/>
+  </p:output>
   <p:option name="paths" select="'paths.xml'"/>
   
   <p:identity name="generate-reading-text"/>
@@ -74,9 +77,19 @@
     </p:xslt>
     <p:store method="xhtml">
       <p:with-option name="href" select="resolve-uri('www/print/faust.wordlist.html', $builddir)"/>
-    </p:store>    
+    </p:store>
+
+    <p:xslt name="reading-text-citations">
+      <p:input port="source"><p:pipe port="result" step="reading-text-md"></p:pipe></p:input>
+      <p:input port="stylesheet"><p:document href="xslt/text-extract-citations.xsl"/></p:input>
+      <p:with-param name="path_config" select="$paths"/>
+    </p:xslt>
+    <p:store method="xml">
+      <p:with-option name="href" select="resolve-uri('bibliography/cit-text.xml', $builddir)"/>
+    </p:store>
+    <p:identity><p:input port="source"><p:pipe port="result" step="reading-text-citations"/></p:input></p:identity>
   </p:group>
   
-  
+  <p:identity name="citations"/>
   
 </p:declare-step>

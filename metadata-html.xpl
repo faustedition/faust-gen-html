@@ -90,7 +90,7 @@
       </p:xslt>      
     </p:for-each>
     
-    <p:identity name="converted-metadata"/>
+    <p:wrap-sequence wrapper="f:citations" name="converted-metadata"/>
     
     <p:identity><p:input port="source"><p:pipe port="result" step="list"/></p:input></p:identity>
     <cx:message message="Generating watermark table ..."/>

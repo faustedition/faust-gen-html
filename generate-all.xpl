@@ -144,7 +144,7 @@
 		</f:pages-json>
 
 		<!-- ### Step 3c-e: Reading text extras -->
-		<f:reading-text-extras>
+		<f:reading-text-extras name="reading-text-extras">
 			<p:input port="source"><p:pipe port="result" step="generate-reading-text"/></p:input>
 			<p:with-option name="path" select="$path"/>
 		</f:reading-text-extras>
@@ -176,17 +176,11 @@
 		
 		
 		<!-- ## Step 3a: bibliography -->
-		<p:xslt name="reading-text-citations">
-			<p:input port="source"><p:pipe port="result" step="reading-text-md"></p:pipe></p:input>
-			<p:input port="stylesheet"><p:document href="xslt/text-extract-citations.xsl"/></p:input>
-			<p:with-param name="path_config" select="$paths"/>
-		</p:xslt>
-
 		<f:bibliography>
 			<p:input port="source">
 				<p:pipe port="result" step="metadata-html"/>
 				<p:pipe port="result" step="testimony"/>
-				<p:pipe port="result" step="reading-text-citations"/>
+				<p:pipe port="citations" step="reading-text-extras"/>
 			</p:input>
 		</f:bibliography>
 		

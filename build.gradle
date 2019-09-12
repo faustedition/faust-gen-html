@@ -118,6 +118,7 @@ task readingTextExtras(type: XMLCalabashTask) {
     pipeline 'reading-text-extras.xpl'
     option 'paths', pathsxml.toURL().toString()
     input "source", "$buildDir/lesetext/faust.xml"
+    output "citations", "$buildDir/bibliography/cit-text.xml"
 }
 
 task metadataHtml(type: XMLCalabashTask) {
@@ -149,6 +150,22 @@ task indexesRedirects(type: XMLCalabashTask) {
     input "source", "$buildDir/faust-transcripts.xml"
 }
 
+task bibliography(type: XMLCalabashTask) {
+    dependsOn metadataHtml, testimony, readingTextExtras
+    pipeline 'bibliography.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/bibliography/cit-metadata.xml"
+    input "source", "$buildDir/bibliography/cit-testimony.xml"
+    input "source", "$buildDir/bibliography/cit-text.xml"
+}
+
+task paraTable(type: XMLCalabashTask) {
+    dependsOn emendedVersion
+    pipeline 'create-para-table.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+}
+
 // ----------------------------------------------------------
 
 task whoami(type: XMLCalabashTask) {
@@ -156,4 +173,5 @@ task whoami(type: XMLCalabashTask) {
     option 'paths', pathsxml.toURL().toString()
 }
 
-assemble.dependsOn([generatePrint, generateApp, pagesJson, readingTextExtras, metadataHtml, metadataJs, testimony, indexesRedirects])
+assemble.dependsOn([generatePrint, generateApp, pagesJson, readingTextExtras, metadataHtml, metadataJs, testimony,
+                    indexesRedirects, bibliography, paraTable])

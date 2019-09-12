@@ -6,19 +6,23 @@
 
   <p:input port="source" primary="true" sequence="true"/>
   <p:input port="parameters" kind="parameter"/>
+  <p:option name="paths" select="'paths.xml'"/>
+  
   <p:import href="library/recursive-directory-list.xpl"/>
+  <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>  
   
   
   <!-- This pipeline generates a bibliography page from a bunch of 'citations' xml files. -->
+  
+  <p:sink/>
 
-  <!-- Parameter laden -->
-  <p:parameters name="config">
-    <p:input port="parameters">
-      <p:document href="config.xml"/>
-      <p:pipe port="parameters" step="main"></p:pipe>
-    </p:input>
-  </p:parameters>
-
+  <!-- Konfiguration laden -->
+  <p:xslt name="config" template-name="param">
+    <p:input port="source"><p:empty/></p:input>
+    <p:input port="stylesheet"><p:document href="xslt/config.xsl"/></p:input>
+    <p:with-param name="path_config" select="$paths"/>
+  </p:xslt>
+  
   <p:group>
     <p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
     <p:variable name="debug" select="//c:param[@name='debug']/@value"><p:pipe port="result" step="config"/></p:variable>
