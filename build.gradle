@@ -69,31 +69,32 @@ task generateSearch(type: XMLCalabashTask) {
     pipeline 'generate-search.xpl'
     option 'paths', pathsxml.toURL().toString()
     input "source", "$buildDir/faust-transcripts.xml"
-    output "result", "$buildDir/_ignore.xml"
+    output "result", "$buildDir/sorted-transcripts.xml"
 }
 
 task emendedVersion(type: XMLCalabashTask) {
     dependsOn generateSearch
     pipeline 'generate-emendations.xpl'
     option 'paths', pathsxml.toURL().toString()
-    input "source", "$buildDir/faust-transcripts.xml"
-    output "result", "$buildDir/_ignore.xml"
+    input "source", "$buildDir/sorted-transcripts.xml"
+    output "result", "$buildDir/_ignore1.xml"
+    outputs.files "$buildDir/emended/*.xml"
 }
 
 task variantApp(type: XMLCalabashTask) {
-    dependsOn emendedVersion, generateSearch
+    dependsOn emendedVersion
     pipeline 'collate-variants.xpl'
     option 'paths', pathsxml.toURL().toString()
-    input "source", "$buildDir/faust-transcripts.xml"
-    output "result", "$buildDir/_ignore.xml"
+    input "source", "$buildDir/sorted-transcripts.xml"
+    output "result", "$buildDir/_ignore2.xml"
 }
 
 task generatePrint(type: XMLCalabashTask) {
     dependsOn variantApp
     pipeline 'generate-print.xpl'
     option 'paths', pathsxml.toURL().toString()
-    input "source", "$buildDir/faust-transcripts.xml"
-    output "result", "$buildDir/_ignore.xml"
+    input "source", "$buildDir/sorted-transcripts.xml"
+    output "result", "$buildDir/_ignore3.xml"
 }
 
 // sidetracks
@@ -102,15 +103,15 @@ task generateApp(type: XMLCalabashTask) {
     dependsOn generateSearch
     pipeline 'generate-app.xpl'
     option 'paths', pathsxml.toURL().toString()
-    input "source", "$buildDir/faust-transcripts.xml"
-    output "result", "$buildDir/_ignore.xml"
+    input "source", "$buildDir/sorted-transcripts.xml"
+    output "result", "$buildDir/_ignore4.xml"
 }
 
 task pagesJson(type: XMLCalabashTask) {
     dependsOn generateSearch
     pipeline 'pages-json.xpl'
     option 'paths', pathsxml.toURL().toString()
-    input "source", "$buildDir/faust-transcripts.xml"
+    input "source", "$buildDir/sorted-transcripts.xml"
 }
 
 task readingTextExtras(type: XMLCalabashTask) {
@@ -163,7 +164,7 @@ task paraTable(type: XMLCalabashTask) {
     dependsOn emendedVersion
     pipeline 'create-para-table.xpl'
     option 'paths', pathsxml.toURL().toString()
-    input "source", "$buildDir/faust-transcripts.xml"
+    input "source", "$buildDir/sorted-transcripts.xml"
 }
 
 // ----------------------------------------------------------
