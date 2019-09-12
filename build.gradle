@@ -167,6 +167,15 @@ task paraTable(type: XMLCalabashTask) {
     input "source", "$buildDir/sorted-transcripts.xml"
 }
 
+task bargraphData(type: XMLCalabashTask) {
+    dependsOn generateSearch
+    pipeline 'bargraph.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/sorted-transcripts.xml"
+    inputs.files "$buildDir/prepared/**/*.xml"
+    outputs.file "$buildDir/www/data/genetic_bar_graph.json"
+}
+
 // ----------------------------------------------------------
 
 task whoami(type: XMLCalabashTask) {
@@ -175,4 +184,4 @@ task whoami(type: XMLCalabashTask) {
 }
 
 assemble.dependsOn([generatePrint, generateApp, pagesJson, readingTextExtras, metadataHtml, metadataJs, testimony,
-                    indexesRedirects, bibliography, paraTable])
+                    indexesRedirects, bibliography, paraTable, bargraphData])

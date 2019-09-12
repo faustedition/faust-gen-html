@@ -152,55 +152,7 @@
 			<p:with-option name="href" select="resolve-uri(concat('search/textTranscript/', $sigil_t, '.xml'), $builddir)"/>
 		</p:store>		
 		
-		<p:identity><p:input port="source"><p:pipe port="result" step="prepared-xml"/></p:input></p:identity>
-		
-		<!-- Hack: Generierung der Bargraph-Informationen -->
-		<p:choose>
-			<p:when test="$type != 'lesetext' and not(contains($documentURI, 'test.xml'))">
-				<p:xslt name="bargraph-info">
-					<p:input port="stylesheet"><p:document href="xslt/create-bargraph-info.xsl"/></p:input>
-					<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
-				</p:xslt>
-			</p:when>
-			<p:otherwise>
-				<p:identity>
-					<p:input port="source">
-						<p:empty/>
-					</p:input>
-				</p:identity>
-			</p:otherwise>
-		</p:choose>
-
 	</p:for-each>
-	
-
-	<p:wrap-sequence wrapper="f:documents"/>
-	<p:xslt>
-		<p:input port="stylesheet">
-			<p:inline>
-				<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-					<xsl:strip-space elements="*"/>
-					<xsl:output method="text"/>
-					<xsl:template match="/*">
-						<wrapper>
-						<xsl:text>[</xsl:text>
-						<xsl:for-each select="*">
-							<xsl:value-of select="."/>
-							<xsl:if test="position() != last()">,</xsl:if>
-						</xsl:for-each>
-						<xsl:text>]</xsl:text>
-						</wrapper>
-					</xsl:template>
-				</xsl:stylesheet>
-			</p:inline>
-		</p:input>
-		<p:input port="parameters"><p:empty/></p:input>
-	</p:xslt>
-	
-	<p:store method="text">
-		<p:with-option name="href" select="resolve-uri('www/data/genetic_bar_graph.json', $builddir)"/>
-	</p:store>
-
 	
 	</p:group>
 	

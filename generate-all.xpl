@@ -40,6 +40,7 @@
 	<p:import href="pages-json.xpl"/>
 	<p:import href="reading-text-extras.xpl"/>
 	<p:import href="indexes-and-redirects.xpl"/>
+	<p:import href="bargraph.xpl"/>
 
 <!--	
 	<p:import href="generate-indexes.xpl"/>
@@ -148,6 +149,12 @@
 			<p:input port="source"><p:pipe port="result" step="generate-reading-text"/></p:input>
 			<p:with-option name="path" select="$path"/>
 		</f:reading-text-extras>
+		
+		<!-- ### Bargraph info -->
+		<f:bargraph name="bargraph">
+			<p:input port="source"><p:pipe port="result" step="generate-search"/></p:input>
+			<p:with-option name="path" select="$path"/>
+		</f:bargraph>
 		
 		<!-- ### Step 3b: Metadata HTML -->
 		<f:metadata-html name="metadata-html">
