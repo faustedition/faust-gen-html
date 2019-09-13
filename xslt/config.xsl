@@ -15,6 +15,7 @@
   <xsl:template name="_internal_config">
     <xsl:variable name="paths_xml">
       <xsl:choose>
+        <xsl:when test="$path_config != '' and not(doc-available($path_config))"><xsl:message terminate="yes">Someone passed us an invalid $path_config=<xsl:value-of select="$path_config"/></xsl:message></xsl:when>
         <xsl:when test="$path_config"><xsl:sequence select="doc($path_config)"/></xsl:when>
         <xsl:when test="doc-available('../paths.xml')"><xsl:sequence select="doc('../paths.xml')"/></xsl:when>
         <xsl:otherwise>

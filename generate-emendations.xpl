@@ -49,6 +49,7 @@
         <p:when test="$type = 'lesetext'">
           <p:xslt>
             <p:input port="stylesheet"><p:document href="xslt/prose-to-lines.xsl"/></p:input>
+            <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
           </p:xslt>
         </p:when>
         <p:otherwise>
@@ -59,6 +60,7 @@
       
       <p:xslt>
         <p:input port="stylesheet"><p:document href="xslt/changenote.xsl"/></p:input>
+        <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
         <p:with-param name="changenote-type" select="'emended'"/>
         <p:with-param name="changenote" select="'automatically applied emendation instructions'"/>
       </p:xslt>
@@ -83,6 +85,7 @@
       </p:xslt>
       <p:xslt>
         <p:input port="stylesheet"><p:document href="xslt/changenote.xsl"/></p:input>
+        <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
         <p:with-param name="changenote" select="'Base layer without instant revisions'"/>
       </p:xslt>
       

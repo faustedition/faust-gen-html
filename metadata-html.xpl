@@ -7,7 +7,7 @@
   <p:input port="source"><p:empty/></p:input>
   <p:input port="parameters" kind="parameter"/>
   <p:output port="result" sequence="true"/>
-  <p:option name="paths" select="'paths'"/>
+  <p:option name="paths" select="'paths.xml'"/>
   
 
   <p:import href="library/recursive-directory-list.xpl"/>

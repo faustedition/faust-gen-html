@@ -136,34 +136,36 @@
 		<!-- ### Step 3a: Inline Apparatus -->
 		<f:generate-app>
 			<p:input port="source"><p:pipe port="result" step="generate-search"></p:pipe></p:input>
+			<p:with-option name="paths" select="$paths"/>
 		</f:generate-app>		
 		
 		<!-- ### Step 3b: pages.json -->
 		<f:pages-json>
 			<p:input port="source"><p:pipe port="result" step="generate-search"></p:pipe></p:input>
-			<p:with-option name="path" select="$path"/>
+			<p:with-option name="paths" select="$paths"/>
 		</f:pages-json>
 
 		<!-- ### Step 3c-e: Reading text extras -->
 		<f:reading-text-extras name="reading-text-extras">
 			<p:input port="source"><p:pipe port="result" step="generate-reading-text"/></p:input>
-			<p:with-option name="path" select="$path"/>
+			<p:with-option name="paths" select="$paths"/>
 		</f:reading-text-extras>
 		
 		<!-- ### Bargraph info -->
 		<f:bargraph name="bargraph">
 			<p:input port="source"><p:pipe port="result" step="generate-search"/></p:input>
-			<p:with-option name="path" select="$path"/>
+			<p:with-option name="paths" select="$paths"/>
 		</f:bargraph>
 		
 		<!-- ### Step 3b: Metadata HTML -->
 		<f:metadata-html name="metadata-html">
 			<p:input port="source"><p:pipe port="result" step="generate-search"></p:pipe></p:input>
+			<p:with-option name="paths" select="$paths"/>			
 		</f:metadata-html>
 		
 		<!-- ### Step 2b: Metadaten nach JSON -->
 		<f:metadata-js>
-			<p:input port="source"><p:pipe port="result" step="save-transcripts"></p:pipe></p:input>			
+			<p:input port="source"><p:pipe port="result" step="generate-search"></p:pipe></p:input>			
 		</f:metadata-js>
 		
 		
@@ -189,13 +191,15 @@
 				<p:pipe port="result" step="testimony"/>
 				<p:pipe port="citations" step="reading-text-extras"/>
 			</p:input>
+			<p:with-option name="paths" select="$paths"/>
 		</f:bibliography>
 		
 		<!-- ### Step 4a: Paralipomena-Tabelle -->
 		<f:generate-para-table>
 			<p:input port="source">
 				<p:pipe port="result" step="emended-version"/>
-			</p:input>		
+			</p:input>
+			<p:with-option name="paths" select="$paths"/>
 		</f:generate-para-table>
 		
 		
