@@ -41,6 +41,7 @@
 	<p:import href="reading-text-extras.xpl"/>
 	<p:import href="indexes-and-redirects.xpl"/>
 	<p:import href="bargraph.xpl"/>
+	<p:import href="independent-transforms.xpl"/>
 
 <!--	
 	<p:import href="generate-indexes.xpl"/>
@@ -69,20 +70,6 @@
 		<f:whoami name="whoami">
 			<p:with-option name="paths" select="$paths"/>
 		</f:whoami>
-		
-		<!--Step 1a Archivmetadaten -->
-		<p:load><p:with-option name="href" select="resolve-uri('archives.xml', resolve-uri($source))"/></p:load>
-		<cx:message log="info">
-			<p:with-option name="message" select="'Converting archive metadata to js...'"/>
-		</cx:message>
-		<p:xslt>
-			<p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
-			<p:input port="stylesheet"><p:document href="xslt/create-archives-metadata.xsl"/></p:input>
-		</p:xslt>
-		<p:store method="text">
-			<p:with-option name="href" select="resolve-uri('www/data/archives.js', $builddir)"/>
-		</p:store>
-		
 		
 		
 		<!-- ############ STEP 1: Create list of all transcripts -->			
@@ -123,16 +110,9 @@
 		
 		<!-- ############################################################################## -->
 		<!-- The following steps don't depend on the full workflow, but rather only on parts. -->
-		
-		<!-- ### Step 1a: scene line mapping -->
-		<p:xslt>
-			<p:input port="source"><p:document href="xslt/scenes.xml"></p:document></p:input>
-			<p:input port="stylesheet"><p:document href="xslt/scene-line-mapping.xsl"></p:document></p:input>		
-		</p:xslt>
-		<p:store method="text" encoding="utf-8">
-			<p:with-option name="href" select="resolve-uri('www/data/scene_line_mapping.js', resolve-uri($builddir))"/>
-		</p:store>
-		
+		<f:independent-transformations>
+			<p:with-option name="paths" select="$paths"/>
+		</f:independent-transformations>
 		<!-- ### Step 3a: Inline Apparatus -->
 		<f:generate-app>
 			<p:input port="source"><p:pipe port="result" step="generate-search"></p:pipe></p:input>
