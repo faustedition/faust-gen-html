@@ -90,6 +90,7 @@ task variantApp(type: XMLCalabashTask) {
     option 'paths', pathsxml.toURL().toString()
     input "source", "$buildDir/sorted-transcripts.xml"
     output "result", "$buildDir/_ignore2.xml"
+    outputs.files "$buildDir/www/print/variants/*.html"
 }
 
 task generatePrint(type: XMLCalabashTask) {
@@ -97,7 +98,10 @@ task generatePrint(type: XMLCalabashTask) {
     pipeline 'generate-print.xpl'
     option 'paths', pathsxml.toURL().toString()
     input "source", "$buildDir/sorted-transcripts.xml"
+    inputs.files "$buildDir/emended/*.xml"
+    inputs.files "$buildDir/www/print/variants/*.html"
     output "result", "$buildDir/_ignore3.xml"
+    outputs.files "$buildDir/www/print/*.html"
 }
 
 // sidetracks
@@ -108,6 +112,9 @@ task generateApp(type: XMLCalabashTask) {
     option 'paths', pathsxml.toURL().toString()
     input "source", "$buildDir/sorted-transcripts.xml"
     output "result", "$buildDir/_ignore4.xml"
+    inputs.files "$buildDir/prepared/**/*.xml"
+    outputs.files "$buildDir/www/app/*.html"
+    outputs.upToDateWhen { false }
 }
 
 task pagesJson(type: XMLCalabashTask) {
