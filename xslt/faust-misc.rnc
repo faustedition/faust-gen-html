@@ -1,7 +1,7 @@
 default namespace = "http://www.faustedition.net/ns"
 namespace tei = "http://www.tei-c.org/ns/1.0"
 
-start = SceneLineMapping | SigilLabels | WatermarkLabels | AppTypes | StageSentences | Abbreviations
+start = SceneLineMapping | SigilLabels | WatermarkLabels | AppTypes | StageSentences | Abbreviations | LettersMapping
 
 SceneLineMapping =
   ## A list of scenes and their labels
@@ -77,3 +77,15 @@ Abbreviations =
       }?
      }*
    }
+   
+LettersMapping =
+  ## Extra metadata for letters in the testimony area
+  element letters {
+    ## information on a single letter
+    element letter {
+      ## the WA number, corresponds to <tei:num type="wa">
+      attribute wa { xsd:string { pattern = "[1-9][0-9]*[A-Za-z]*[*+'0-9]*" }},
+      ## the GSA identifier number, used to build the URL
+      attribute ident { xsd:integer }
+    }+
+  }
