@@ -101,7 +101,8 @@ task generatePrint(type: XMLCalabashTask) {
     inputs.files "$buildDir/emended/*.xml"
     inputs.files "$buildDir/www/print/variants/*.html"
     output "result", "$buildDir/_ignore3.xml"
-    outputs.files "$buildDir/www/print/*.html"
+    outputs.dir "$buildDir/www/print"
+    outputs.file "$buildDir/www/print/faust.html"
 }
 
 // sidetracks
@@ -142,6 +143,7 @@ task metadataHtml(type: XMLCalabashTask) {
 
 task metadataJs(type: XMLCalabashTask) {
     dependsOn collectMetadata
+    dependsOn generateSearch
     pipeline 'generate-metadata-js.xpl'
     option 'paths', pathsxml.toURL().toString()
 }
