@@ -30,7 +30,7 @@
 	<xsl:param name="title" select="//title[1]"/>
 	
 	<!-- print oder archivalDocument oder lesetext? -->
-	<xsl:param name="type"/>
+	<xsl:param name="type" select="//TEI/@type"/>
 	
 	<xsl:param name="documentURI"/>	
 
@@ -210,7 +210,7 @@
 		<xsl:variable name="n" select="$el/ancestor-or-self::*[f:hasvars(.)][1]/@n"/>
 		<xsl:variable name="id" select="f:generate-id($el)"/>
 		<xsl:variable name="href" select="concat(
-			if ($type = 'lesetext')
+			if ($type = 'lesetext' or $sigil_t='faust')
 			then '/print/faust'
 			else concat('/document?sigil=', $sigil_t, 
 						if ($page) then concat('&amp;page=', $page) else ''),
