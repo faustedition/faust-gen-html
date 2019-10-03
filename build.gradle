@@ -101,8 +101,7 @@ task generatePrint(type: XMLCalabashTask) {
     inputs.files "$buildDir/emended/*.xml"
     inputs.files "$buildDir/www/print/variants/*.html"
     output "result", "$buildDir/_ignore3.xml"
-    outputs.dir "$buildDir/www/print"
-    outputs.file "$buildDir/www/print/faust.html"
+    outputs.files "$buildDir/www/print/*.html"
 }
 
 // sidetracks
@@ -131,6 +130,8 @@ task readingTextExtras(type: XMLCalabashTask) {
     option 'paths', pathsxml.toURL().toString()
     input "source", "$buildDir/lesetext/faust.xml"
     output "citations", "$buildDir/bibliography/cit-text.xml"
+    outputs.file "$buildDir/www/print/faust.html"
+    outputs.dir "$buildDir/www/print"
 }
 
 task metadataHtml(type: XMLCalabashTask) {
