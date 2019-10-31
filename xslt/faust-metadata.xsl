@@ -15,7 +15,7 @@
 	<xsl:param name="source">file:/home/tv/Faust/</xsl:param>
 	<xsl:param name="builddir">../target</xsl:param>
 	<xsl:param name="builddir-resolved" select="$builddir"/>	
-	<xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
+	<xsl:param name="transcript-list" select="f:safely-resolve('faust-transcripts.xml', f:safely-resolve($builddir-resolved))"/>
 	<xsl:param name="docbase">/document?sigil=</xsl:param>
 	<xsl:param name="source-uri" select="document-uri(/)"/>
 	<xsl:param name="sigil_t" select="f:sigil-for-uri(//idno[@type='faustedition'])"/>
@@ -126,7 +126,7 @@
 		<xsl:comment>Skipping patchSurface</xsl:comment>
 	</xsl:template>
 	
-	<xsl:variable name="repositories" select="document(resolve-uri('archives.xml', $source))"/>
+	<xsl:variable name="repositories" select="document(f:safely-resolve('archives.xml', $source))"/>
 	<xsl:template match="repository">
 		<xsl:variable name="id" select="."/>
 		<xsl:call-template name="element">
@@ -290,7 +290,7 @@
 	</xsl:template>
 	
 	<xsl:template name="verse-range">
-		<xsl:variable name="transcriptUri" select="resolve-uri(concat('prepared/textTranscript/', f:sigil-for-uri(//idno[@type='faustedition']), '.xml'), $builddir-resolved)"/>
+		<xsl:variable name="transcriptUri" select="f:safely-resolve(concat('prepared/textTranscript/', f:sigil-for-uri(//idno[@type='faustedition']), '.xml'), $builddir-resolved)"/>
 		<xsl:variable name="transcript" select="document($transcriptUri)"/>
 		<xsl:variable name="textEl" select="$transcript/tei:TEI/tei:text"/>
 		<dt>Verse</dt>

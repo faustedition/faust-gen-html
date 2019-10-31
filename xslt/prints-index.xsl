@@ -40,7 +40,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<xsl:for-each select="document(resolve-uri('print-labels.xml', $source))//item">
+						<xsl:for-each select="document(f:safely-resolve('print-labels.xml', $source))//item">
 							<xsl:variable name="uri" select="@uri"/>
 							<xsl:variable name="transcript" select="$transcripts//textTranscript[@uri=$uri]"/>							
 							<tr>

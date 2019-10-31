@@ -12,7 +12,7 @@
     
     <!--<xsl:param name="builddir">../../../target/</xsl:param>-->
     <xsl:param name="builddir-resolved" select="f:config()/f:builddir"/>	
-    <xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
+    <xsl:param name="transcript-list" select="f:safely-resolve('faust-transcripts.xml', f:safely-resolve($builddir-resolved))"/>
     <xsl:param name="idmap" select="doc($transcript-list)"/>
     <xsl:param name="docbase">/document?sigil=</xsl:param>
     <xsl:param name="edition"></xsl:param>

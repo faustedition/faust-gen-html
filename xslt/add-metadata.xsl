@@ -73,7 +73,7 @@
 	<xsl:param name="type" select="local-name($metadata/*[1])"/>
 		
 	<!-- Resolved faust:// URI of the textual transcript -->
-	<xsl:param name="transcriptURI" select="resolve-uri($metadata//f:textTranscript/@uri, base-uri($metadata//f:textTranscript))"/>
+	<xsl:param name="transcriptURI" select="f:safely-resolve($metadata//f:textTranscript/@uri, base-uri($metadata//f:textTranscript))"/>
 		
 	<!-- Base name of the textual transcript, used for naming generated files -->	
 	<xsl:param name="transcriptBase" select="replace(replace($transcriptURI, '^.*/', ''), '\.(html|xml)$', '')"/>
@@ -90,7 +90,7 @@
 	
 
 	<xsl:variable name="metadata">
-		<xsl:variable name="path" select="resolve-uri($documentURI, $source)"/>
+		<xsl:variable name="path" select="f:safely-resolve($documentURI, $source)"/>
 		<xsl:choose>
 			<xsl:when test="doc-available($path)">
 				<xsl:sequence select="doc($path)"/>
@@ -101,7 +101,7 @@
 		</xsl:choose>
 	</xsl:variable>
 	
-	<xsl:variable name="archives" select="doc(resolve-uri('archives.xml', $source))"/>
+	<xsl:variable name="archives" select="doc(f:safely-resolve('archives.xml', $source))"/>
 	
 	<xsl:variable name="splittable" select="f:is-splitable-doc(/)"/>
 	

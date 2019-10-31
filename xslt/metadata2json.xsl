@@ -15,7 +15,7 @@
 	<xsl:param name="document"/>
 	<xsl:param name="source"/>
 	<xsl:param name="builddir">../../../../target/</xsl:param>
-	<xsl:param name="builddir-resolved" select="resolve-uri($builddir)"/>
+	<xsl:param name="builddir-resolved" select="f:safely-resolve($builddir)"/>
 	<xsl:variable name="baseprefix">faust://xml/</xsl:variable>
 	<xsl:variable name="linkprefix">faust://xml/image-text-links/</xsl:variable>
 	<xsl:variable name="imgprefix">faust://facsimile/</xsl:variable>
@@ -125,7 +125,7 @@
 			<xsl:if test="//textTranscript">
 				<xsl:variable name="docTranscriptNo" as="xs:double"><xsl:number from="/*" level="any"/></xsl:variable>
 				<xsl:variable name="sigil_t" select="f:sigil-for-uri(//idno[@type='faustedition'][1])"/>
-				<xsl:variable name="textTranscript" select="doc(resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir-resolved))"/>
+				<xsl:variable name="textTranscript" select="doc(f:safely-resolve(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir-resolved))"/>
 				<xsl:variable name="pb" select="($textTranscript//tei:pb[@f:docTranscriptNo and number(@f:docTranscriptNo) ge $docTranscriptNo])[1]" as="node()?"/>
 				<xsl:variable name="section" select="f:get-section-number($pb[1])"/> <!-- select="($pb/ancestor::*[@f:section])[1]/@f:section"/> -->
 				<xsl:variable name="div" select="($pb/ancestor::*[self::tei:div or self::tei:text][@n])[1]/@n"/>
@@ -142,7 +142,7 @@
 	
 	<xsl:template name="print-pages">
 		<xsl:variable name="sigil_t" select="f:sigil-for-uri(//idno[@type='faustedition'][1])"/>
-		<xsl:variable name="preparedTranscript" select="resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir-resolved)"/>
+		<xsl:variable name="preparedTranscript" select="f:safely-resolve(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir-resolved)"/>
 		<xsl:choose>
 			<xsl:when test="doc-available($preparedTranscript)">				
 				<xsl:variable name="textTranscript" select="doc($preparedTranscript)"/>
@@ -177,7 +177,7 @@
 		<j:object>
 			<xsl:if test="@uri">
 				<j:string name="uri" value="{@uri}"/>
-				<xsl:variable name="transcript" select="doc(resolve-uri(@uri, replace(base-uri(.), $baseprefix, $source)))"/>
+				<xsl:variable name="transcript" select="doc(f:safely-resolve(@uri, replace(base-uri(.), $baseprefix, $source)))"/>
 				<j:string name='imgLink' value="{replace($transcript//tei:graphic[@mimeType = 'image/svg+xml']/@url, $linkprefix, '')}"/>
 				<j:array name="img">
 					<xsl:for-each select="$transcript//tei:graphic[not(@mimeType = 'image/svg+xml')]/@url">

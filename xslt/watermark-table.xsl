@@ -14,7 +14,7 @@
 	<xsl:param name="source">file:/home/tv/Faust/</xsl:param>
 	<xsl:param name="builddir">../target</xsl:param>
 	<xsl:param name="builddir-resolved" select="$builddir"/>	
-	<xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
+	<xsl:param name="transcript-list" select="f:safely-resolve('faust-transcripts.xml', f:safely-resolve($builddir-resolved))"/>
 	<xsl:param name="docbase">/document?sigil=</xsl:param>
 	
 	

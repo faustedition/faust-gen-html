@@ -12,7 +12,7 @@
   
   <xsl:include href="utils.xsl"/>  
   
-  <xsl:variable name="metadata" select="document(resolve-uri($documentURI, $source))"/>
+  <xsl:variable name="metadata" select="document(f:safely-resolve($documentURI, $source))"/>
   
   <xsl:variable name="document-id" select="//teiHeader//idno[@type='fausttranscript']" as="xs:string"/>
   

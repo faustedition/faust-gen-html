@@ -16,8 +16,8 @@
 	<xsl:import href="testimony-common.xsl"/>	
 	
 	
-	<xsl:param name="builddir-resolved" select="resolve-uri('../../../../target/')"/>
-	<xsl:param name="output" select="resolve-uri('testimony-split/', $builddir-resolved)"/>
+	<xsl:param name="builddir-resolved" select="f:safely-resolve('../../../../target/')"/>
+	<xsl:param name="output" select="f:safely-resolve('testimony-split/', $builddir-resolved)"/>
 	<xsl:param name="source-uri" select="document-uri(/)"/>
 	<xsl:variable name="unfree-text" select="matches($source-uri, '/quz_.*(\.xml)?')"/>
 	
@@ -92,7 +92,7 @@
 				then $metadata/@id
 				else $id"/>
 			
-			<xsl:result-document href="{resolve-uri(concat($basename, '.xml'), $output)}" exclude-result-prefixes="xs xi svg math xd f">
+			<xsl:result-document href="{f:safely-resolve(concat($basename, '.xml'), $output)}" exclude-result-prefixes="xs xi svg math xd f">
 				
 					<TEI>
 						<xsl:for-each select="/TEI/teiHeader">

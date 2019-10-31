@@ -10,7 +10,7 @@
   
   <xsl:template match="text()"/>
   <xsl:template match="/">
-    <xsl:processing-instruction name="xml-model">type="application/relax-ng-compact-syntax" href="<xsl:value-of select="resolve-uri('../citations.rnc', static-base-uri())"/>"</xsl:processing-instruction>
+    <xsl:processing-instruction name="xml-model">type="application/relax-ng-compact-syntax" href="<xsl:value-of select="f:safely-resolve('../citations.rnc', static-base-uri())"/>"</xsl:processing-instruction>
     <f:citations>
       <xsl:apply-templates select="//app"></xsl:apply-templates>
     </f:citations>
