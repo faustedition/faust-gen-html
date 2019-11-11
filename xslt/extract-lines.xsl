@@ -6,8 +6,9 @@
   xmlns="http://www.tei-c.org/ns/1.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
   exclude-result-prefixes="xs" version="2.0">
 
+  <xsl:import href="config.xsl"/>
   <xsl:param name="href" select="document-uri(/)"/>
-  <xsl:param name="source"/>  
+  <xsl:param name="source" select="f:config()//f:source"/>  
   <xsl:param name="sigil" select="//idno[@type='faustedition']"/>  
   
   <xsl:include href="utils.xsl"/>  

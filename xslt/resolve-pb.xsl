@@ -4,6 +4,7 @@
 	xmlns="http://www.tei-c.org/ns/1.0" xpath-default-namespace="http://www.tei-c.org/ns/1.0"
 	exclude-result-prefixes="xs" version="2.0">
 
+	<xsl:import href="config.xsl"/>
 	<xsl:param name="type"/>
 	<xsl:param name="source" required="yes"/>
 	<xsl:param name="documentURI" select="//idno[@type='fausturi'][1]"/>

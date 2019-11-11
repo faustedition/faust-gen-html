@@ -7,14 +7,15 @@
 	exclude-result-prefixes="xs f"	
 	version="2.0">
 	
+	<xsl:import href="config.xsl"/>
 	<xsl:import href="utils.xsl"/>
 	<xsl:include href="html-frame.xsl"/>
 	
 	<xsl:param name="standalone" select="/print"/>
-	<xsl:param name="source">file:/home/tv/Faust/</xsl:param>
-	<xsl:param name="builddir">../target</xsl:param>
+	<xsl:param name="source" select="f:config()//f:source"/>
+	<xsl:param name="builddir" select="f:config()//f:builddir"/>
 	<xsl:param name="builddir-resolved" select="$builddir"/>	
-	<xsl:param name="transcript-list" select="f:safely-resolve('faust-transcripts.xml', f:safely-resolve($builddir-resolved))"/>
+	<xsl:param name="transcript-list" select="f:safely-resolve('faust-transcripts.xml', $builddir-resolved)"/>
 	<xsl:param name="docbase">/document?sigil=</xsl:param>
 	
 	

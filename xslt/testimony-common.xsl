@@ -15,8 +15,9 @@
     
     -->
     
-    <xsl:param name="builddir-resolved" select="f:safely-resolve('../../../../target/')"/>
-    <xsl:param name="transcript-list" select="f:safely-resolve('faust-transcripts.xml', f:safely-resolve($builddir-resolved))"/>
+    <xsl:import href="config.xsl"/>
+    <xsl:param name="builddir-resolved" select="f:config()//f:builddir"/>
+    <xsl:param name="transcript-list" select="f:safely-resolve('faust-transcripts.xml', $builddir-resolved)"/>
     
     
     

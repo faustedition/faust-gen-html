@@ -7,10 +7,11 @@
 	exclude-result-prefixes="xs f"
 	version="2.0">
 	
-	<xsl:import href="utils.xsl"/>
+	<xsl:import href="config.xsl"/>
+	<xsl:import href="utils.xsl"/>	
 
 	<!-- URL for the source XML files -->
-	<xsl:param name="source">file:/home/tv/git/faust-gen/data/xml/</xsl:param>
+	<xsl:param name="source" select="f:config()/f:source"/>
 
 	<xsl:param name="use-collection" select="false()"/>
 	
