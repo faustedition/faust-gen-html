@@ -278,7 +278,7 @@
 			<xsl:apply-templates select="headNote/node()"/>
 		</h3>
 		<p class="md-note wip">
-			<xsl:apply-templates select="headNote/following-sibling::note[1]/*"/>
+			<xsl:apply-templates select="headNote/following-sibling::note[1]/node()"/>
 		</p>	
 		<dl>
 			<xsl:call-template name="verse-range"/>
