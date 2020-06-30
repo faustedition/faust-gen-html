@@ -10,6 +10,7 @@
 	
 	<xsl:import href="utils.xsl"/>
 	<xsl:import href="bibliography.xsl"/>
+	<xsl:import href="collect-hands.xsl"/>
 	<xsl:include href="html-frame.xsl"/>
 		
 	<xsl:param name="source">file:/home/tv/Faust/</xsl:param>
@@ -284,6 +285,7 @@
 			<xsl:call-template name="verse-range"/>
 			<dt><a href="{$edition}/macrogenesis/{$sigil_t}">Makrogenese-Lab</a></dt>
 			<dd><a href="{$edition}/macrogenesis/{$sigil_t}">Datierungsinformationen</a></dd>
+			<xsl:call-template name="hands-info"/>
 			<xsl:apply-templates select="* 
 				except (idno[@type=('faustedition', 'wa_faust')][1] | headNote | headNote/following-sibling::*[1][self::note] | classification)"/>
 		</dl>
@@ -299,6 +301,60 @@
 				<xsl:value-of select="string-join(($textEl/@f:min-verse, $textEl/@f:max-verse), ' – ')"/>
 			</a>
 		</dd>		
+	</xsl:template>
+	
+	<xsl:variable name="scribes">
+		<elem name="g">Goethe</elem>
+		<elem name="ovg">Ottilie von Goethe</elem>
+		<elem name="wvg">Wolfgang von Goethe</elem>
+		<elem name="ec">Eckermann</elem>
+		<elem name="f">Färber</elem>
+		<elem name="gt">Geist</elem>
+		<elem name="gh">Göchhausen</elem>
+		<elem name="go">Göttling</elem>
+		<elem name="hd">Herder</elem>
+		<elem name="aj">Anna Jameson</elem>
+		<elem name="jo">John</elem>
+		<elem name="kr">Kräuter</elem>
+		<elem name="m">Müller (Friedrich von)</elem>
+		<elem name="re">Reichel</elem>
+		<elem name="ri">Riemer</elem>
+		<elem name="st">Schuchardt</elem>
+		<elem name="sd">Seidler (Luise)</elem>
+		<elem name="so">Soret</elem>
+		<elem name="sp">Spiegel (Frhr. von und zu Pickelsheim, Carl Emil)</elem>
+		<elem name="sta">Stadelmann</elem>
+		<elem name="sti">Stieler (Pauline)</elem>
+		<elem name="v">Helene Vulpius</elem>
+		<elem name="we">Weller</elem>
+		<elem name="wejo">Weller und John</elem>
+		<elem name="wo">Pius Alexander Wolff</elem>
+		<elem name="sc">Schreiberhand</elem>
+		<elem name="zs">Zeitgenössische Schrift</elem>
+		<elem name="xx">Fremde Hand</elem>
+		<elem name="xy">Fremde Hand</elem>
+		<elem name="xz">Fremde Hand</elem>		
+	</xsl:variable>
+	
+	<xsl:variable name="materials">
+		<elem name="blau">Blaustift</elem>
+		<elem name="bl">Bleistift</elem>
+		<elem name="ko">Kohlestift</elem>
+		<elem name="ro">Rötel</elem>
+		<elem name="t">Tinte</elem>
+		<elem name="tr">rote Tinte</elem>		
+	</xsl:variable>
+	
+	<xsl:template name="hands-info">
+		<xsl:variable name="hands"><xsl:call-template name="collect-hands"/></xsl:variable>
+		<dt>Schreiberhände</dt>
+		<dd>
+			<xsl:for-each-group select="$hands//f:all-hands/f:hand" group-by="@scribe">
+				<xsl:sort select="@scribe"/>
+				<xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/>
+				<xsl:if test="position() != last()"> · </xsl:if>
+			</xsl:for-each-group>			
+		</dd>
 	</xsl:template>
 	
 	<xsl:template match="revisionDesc"/>
@@ -417,7 +473,7 @@
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:value-of select="$key"/>
-				<xsl:message select="concat('WARNING: Did not find &quot;', $key, '&quot; in ', $type, ' (in ', $source-uri, ')')"/>
+				<xsl:message select="concat('WARNING: Did not find &quot;', $key, '&quot; in ', $type, ' (in ', $sigil_t, ': ', $source-uri, ')')"/>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
