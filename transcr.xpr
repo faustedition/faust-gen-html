@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="20.1">
+<project version="22.0">
     <meta>
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="20.1" xml:space="preserve">
+            <serialized version="22.0" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>enable.project.master.files.support</String>
@@ -14,11 +14,11 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>xslt/search-light.xsl</String>
+                                    <String>xslt/collect-hands.xsl</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>search-light</String>
+                                        <String>collect-hands</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -26,394 +26,9 @@
                                         <String>XML</String>
                                     </list>
                                 </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>oxygen:/eXist-db%20localhost$eXist-db%20localhost/db/apps/faust-dev/text.xql</String>
-                                </field>
-                                <field name="scenarioIds">
+                                <field name="scenarioStorageLocations">
                                     <list>
-                                        <String>text</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XQUERY</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>xslt/search-results.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>search-results</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>oxygen:/eXist-db%20localhost$eXist-db%20localhost/db/apps/faust-dev/meta.xql</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>meta</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XQUERY</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>xslt/text-applist.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>text-applist - by scene</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>xslt/variant-fragments.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>variant-fragments</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>tools/issue188.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>issue188</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>xslt/text-insert-app.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>text-insert-app</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>../../../../../../home/tv/git/fausteditionTutorial/variantID_writerID.xquery</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>variantID_writerID</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XQUERY</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/text-postprocess.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>text-postprocess</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/text-cleanup.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>text-cleanup</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/text-insert-app.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>text-insert-app</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>xslt/text-app-validate.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>text-app-validate</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/exist/xslt/tmp-extract-toc.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>tmp-extract-tox</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/exist/xslt/add-metadata.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>tmp-extract-tox</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/print2html.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>print2html</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/assemble-reading-text.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>assemble-reading-text faust</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/prepare-reading-text.xpl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>prepare-reading-text</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XPROC</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>../../../../../../../tmp/convert.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>convert</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/collection-test.xpl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>collection-test</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XPROC</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/indesign-text.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>indesign-text</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>prepare-reading-text.xpl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>prepare-reading-text</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XPROC</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>xslt/prose-to-lines.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>prose-to-lines-urfaust</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>xslt/add-metadata.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>add-metadata Faust 1</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>xslt/create-bargraph-info.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>create-bargraph-info</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>apply-edits.xpl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>apply-edits</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XPROC</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>print2html.xpl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>print2html</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XPROC</String>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -431,49 +46,9 @@
                                         <String>XPROC</String>
                                     </list>
                                 </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>xslt/watermark-labels.xml</String>
-                                </field>
-                                <field name="scenarioIds">
+                                <field name="scenarioStorageLocations">
                                     <list>
-                                        <String>normalize-whitespace</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>xslt/pagelist2json.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>pagelist2json1</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>xslt/fix-punct-wsp.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>fix-punct-wsp</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XML</String>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -491,6 +66,611 @@
                                         <String>XML</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>xslt/search-light.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>search-light</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>oxygen:/eXist-db%20localhost$eXist-db%20localhost/db/apps/faust-dev/text.xql</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>text</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XQUERY</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>xslt/search-results.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>search-results</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>oxygen:/eXist-db%20localhost$eXist-db%20localhost/db/apps/faust-dev/meta.xql</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>meta</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XQUERY</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>xslt/text-applist.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>text-applist - by scene</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>xslt/variant-fragments.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>variant-fragments</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>tools/issue188.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>issue188</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>xslt/text-insert-app.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>text-insert-app</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../home/tv/git/fausteditionTutorial/variantID_writerID.xquery</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>variantID_writerID</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XQUERY</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/text-postprocess.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>text-postprocess</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/text-cleanup.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>text-cleanup</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/text-insert-app.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>text-insert-app</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>xslt/text-app-validate.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>text-app-validate</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/exist/xslt/tmp-extract-toc.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>tmp-extract-tox</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/exist/xslt/add-metadata.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>tmp-extract-tox</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/print2html.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>print2html</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/assemble-reading-text.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>assemble-reading-text faust</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/prepare-reading-text.xpl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>prepare-reading-text</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../../tmp/convert.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>convert</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/collection-test.xpl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>collection-test</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>../../../../../../../var/www/faust-gen/src/main/xproc/xslt/indesign-text.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>indesign-text</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>prepare-reading-text.xpl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>prepare-reading-text</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>xslt/prose-to-lines.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>prose-to-lines-urfaust</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>xslt/add-metadata.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>add-metadata Faust 1</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>xslt/create-bargraph-info.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>create-bargraph-info</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>apply-edits.xpl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>apply-edits</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>print2html.xpl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>print2html</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XPROC</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>xslt/watermark-labels.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>normalize-whitespace</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>xslt/pagelist2json.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>pagelist2json1</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>xslt/fix-punct-wsp.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>fix-punct-wsp</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -504,6 +684,11 @@
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -521,6 +706,11 @@
                                         <String>XML</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -534,6 +724,11 @@
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -551,6 +746,11 @@
                                         <String>XML</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -564,6 +764,11 @@
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -581,6 +786,11 @@
                                         <String>XML</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -594,6 +804,11 @@
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -611,6 +826,11 @@
                                         <String>XSL</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -626,6 +846,11 @@
                                         <String>XML</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -639,6 +864,11 @@
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -658,6 +888,12 @@
                                         <String>XML</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -671,6 +907,11 @@
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -688,6 +929,11 @@
                                         <String>XML</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -701,6 +947,11 @@
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XML</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -718,6 +969,11 @@
                                         <String>XPROC</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -731,6 +987,11 @@
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>XPROC</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -781,9 +1042,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -868,9 +1126,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -953,9 +1208,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -1040,9 +1292,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -1126,9 +1375,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -1178,6 +1424,9 @@
                                             <field name="hasXPathValue">
                                                 <Boolean>false</Boolean>
                                             </field>
+                                            <field name="isStatic">
+                                                <Boolean>false</Boolean>
+                                            </field>
                                         </transformationParameter>
                                         <transformationParameter>
                                             <field name="paramDescription">
@@ -1199,6 +1448,9 @@
                                             <field name="hasXPathValue">
                                                 <Boolean>false</Boolean>
                                             </field>
+                                            <field name="isStatic">
+                                                <Boolean>false</Boolean>
+                                            </field>
                                         </transformationParameter>
                                         <transformationParameter>
                                             <field name="paramDescription">
@@ -1218,6 +1470,9 @@
                                                 <String>lesetext</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -1276,9 +1531,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>true</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>${pd}/target/app/test.html</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>${pd}/target/app/test.html</String>
                                 </field>
@@ -1326,6 +1578,9 @@
                                                 <String>../../../faust-beta</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -1383,9 +1638,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -1527,9 +1779,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>/var/www/faust-gen/target/kt2-assembled.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>/var/www/faust-gen/target/kt2-assembled.xml</String>
                                 </field>
@@ -1565,6 +1814,89 @@
                                 </field>
                                 <field name="xslTransformer">
                                     <String>Saxon-PE</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array/>
+                                </field>
+                            </scenario>
+                            <scenario>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>collect-hands</String>
+                                </field>
+                                <field name="baseURL">
+                                    <String></String>
+                                </field>
+                                <field name="footerURL">
+                                    <String></String>
+                                </field>
+                                <field name="fOPMethod">
+                                    <String>pdf</String>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <String>Apache FOP</String>
+                                </field>
+                                <field name="headerURL">
+                                    <String></String>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <String>file:/var/www/faust-gen/src/main/xproc/xslt/collect-hands.xsl</String>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <String>file:/var/www/faust-gen/data/xml/document/faust/2/gsa_391098.xml</String>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>XML</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="outputResource">
+                                    <null/>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <null/>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>Saxon-HE</String>
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array/>
@@ -1612,9 +1944,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <File>/tmp/pape1880_1.xml</File>
                                 </field>
                                 <field name="outputResource">
                                     <String>/tmp/pape1880_1.xml</String>
@@ -1699,9 +2028,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -1784,9 +2110,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -1871,9 +2194,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -1956,9 +2276,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -2043,9 +2360,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -2128,9 +2442,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <File>/var/www/faust-gen/target/emended/lesetext/faust2-indesign.xml</File>
                                 </field>
                                 <field name="outputResource">
                                     <String>/var/www/faust-gen/target/emended/lesetext/faust2-indesign.xml</String>
@@ -2272,9 +2583,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>true</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>/home/tv/git/faust-gen/target/issue188.html</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>/home/tv/git/faust-gen/target/issue188.html</String>
                                 </field>
@@ -2322,6 +2630,9 @@
                                                 <String>/var/www/faust-gen/data/xml/transcript/gsa/391098</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -2379,9 +2690,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -2466,9 +2774,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>{pd}/target/cotta-numbered.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>{pd}/target/cotta-numbered.xml</String>
                                 </field>
@@ -2551,9 +2856,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <File>${pd}/target/pagelists.json</File>
                                 </field>
                                 <field name="outputResource">
                                     <String>${pd}/target/pagelists.json</String>
@@ -2638,9 +2940,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>/tmp/pages.json</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>/tmp/pages.json</String>
                                 </field>
@@ -2723,9 +3022,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -2810,9 +3106,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>true</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>${pd}/target/www/print/faust.html</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>${pd}/target/www/print/faust.html</String>
                                 </field>
@@ -2860,6 +3153,9 @@
                                                 <String>lesetext</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -2917,9 +3213,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -3004,9 +3297,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -3089,9 +3379,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -3176,9 +3463,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>/home/tv/git/faust-gen/target/www/search-results.html</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>/home/tv/git/faust-gen/target/www/search-results.html</String>
                                 </field>
@@ -3262,9 +3546,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>true</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>/home/tv/git/faust-gen/target/lesetext/app-validation.html</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>/home/tv/git/faust-gen/target/lesetext/app-validation.html</String>
                                 </field>
@@ -3312,6 +3593,9 @@
                                                 <String>../../../../target/</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -3370,9 +3654,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>/home/tv/git/faust-gen/target/www/text-app.html</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>/home/tv/git/faust-gen/target/www/text-app.html</String>
                                 </field>
@@ -3420,6 +3701,9 @@
                                                 <String>../../../../target/</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -3478,9 +3762,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>/home/tv/git/faust-gen/target/www/print/app-by-scene.html</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>/home/tv/git/faust-gen/target/www/print/app-by-scene.html</String>
                                 </field>
@@ -3530,6 +3811,9 @@
                                             <field name="hasXPathValue">
                                                 <Boolean>false</Boolean>
                                             </field>
+                                            <field name="isStatic">
+                                                <Boolean>false</Boolean>
+                                            </field>
                                         </transformationParameter>
                                         <transformationParameter>
                                             <field name="paramDescription">
@@ -3549,6 +3833,9 @@
                                                 <String>byscene</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -3663,9 +3950,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -3798,9 +4082,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>file:/var/www/faust-gen/target/lesetext/faust-app.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>file:/var/www/faust-gen/target/lesetext/faust-app.xml</String>
                                 </field>
@@ -3848,6 +4129,9 @@
                                                 <String>../../../../target/</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -3905,9 +4189,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -3992,9 +4273,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -4077,9 +4355,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <File>${pd}/target/test.xml</File>
                                 </field>
                                 <field name="outputResource">
                                     <String>${pd}/target/test.xml</String>
@@ -4164,9 +4439,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>${pd}/target/testfall.transposition-undo.390903.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>${pd}/target/testfall.transposition-undo.390903.xml</String>
                                 </field>
@@ -4250,9 +4522,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>true</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>/tmp/toc.html</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>/tmp/toc.html</String>
                                 </field>
@@ -4300,6 +4569,9 @@
                                                 <String>file:///home/tv/git/faust-gen/data/xml/</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -4358,9 +4630,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <File>${pd}/target/variant-fragments.xml</File>
-                                </field>
                                 <field name="outputResource">
                                     <String>${pd}/target/variant-fragments.xml</String>
                                 </field>
@@ -4408,6 +4677,9 @@
                                                 <String>../../../../target/www/print/variants/</String>
                                             </field>
                                             <field name="hasXPathValue">
+                                                <Boolean>false</Boolean>
+                                            </field>
+                                            <field name="isStatic">
                                                 <Boolean>false</Boolean>
                                             </field>
                                         </transformationParameter>
@@ -4509,9 +4781,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -4650,9 +4919,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -4790,9 +5056,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -4918,9 +5181,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -5045,9 +5305,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -5193,9 +5450,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -5323,9 +5577,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -5408,9 +5659,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
@@ -5495,9 +5743,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -5580,9 +5825,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
