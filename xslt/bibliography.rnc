@@ -16,12 +16,13 @@ start =
       element f:reference {
         (text
          | Strong
-         | element a {  # TODO we need to care for this in the scripts?
-             attribute href { xsd:anyURI },
-             text
-           })+
+         | Link)+
       }
     }+
   }
   
 Strong = element strong { text }
+Link = element a {  # TODO we need to care for this in the scripts?
+             attribute href { xsd:anyURI },
+             text
+           }
