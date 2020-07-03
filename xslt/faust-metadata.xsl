@@ -333,7 +333,8 @@
 		<elem name="zs">Zeitgenössische Schrift</elem>
 		<elem name="xx">Fremde Hand</elem>
 		<elem name="xy">Fremde Hand</elem>
-		<elem name="xz">Fremde Hand</elem>		
+		<elem name="xz">Fremde Hand</elem>
+		<elem name="">?</elem>
 	</xsl:variable>
 	
 	<xsl:variable name="materials">
@@ -342,7 +343,8 @@
 		<elem name="ko">Kohlestift</elem>
 		<elem name="ro">Rötel</elem>
 		<elem name="t">Tinte</elem>
-		<elem name="tr">rote Tinte</elem>		
+		<elem name="tr">rote Tinte</elem>
+		<elem name="">?</elem>
 	</xsl:variable>
 	
 	<xsl:variable name="hands"><xsl:call-template name="collect-hands"/></xsl:variable>
