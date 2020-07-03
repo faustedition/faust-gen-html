@@ -349,11 +349,24 @@
 		<xsl:variable name="hands"><xsl:call-template name="collect-hands"/></xsl:variable>
 		<dt>Schreiberhände</dt>
 		<dd>
-			<xsl:for-each-group select="$hands//f:all-hands/f:hand" group-by="@scribe">
+			<xsl:for-each-group select="$hands//f:hands/f:hand" group-by="@scribe">
 				<xsl:sort select="@scribe"/>
 				<xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/>
+				<xsl:text> (</xsl:text>
+				<xsl:for-each-group select="current-group()" group-by="@material">
+					<xsl:sequence select="f:lookup($materials, current-grouping-key(), 'materials')"/>
+					<xsl:text>: </xsl:text>
+					<xsl:for-each-group select="current-group()" group-by="../@page">
+						<a href="/document?sigil={$sigil_t}&amp;page={current-grouping-key()}&amp;view=facsimile_document">
+							<xsl:value-of select="current-grouping-key()"/>
+						</a>
+						<xsl:if test="position() != last()">, </xsl:if>
+					</xsl:for-each-group>
+					<xsl:if test="position() != last()">; </xsl:if>
+				</xsl:for-each-group>
+				<xsl:text>) </xsl:text>
 				<xsl:if test="position() != last()"> · </xsl:if>
-			</xsl:for-each-group>			
+			</xsl:for-each-group>
 		</dd>
 	</xsl:template>
 	
