@@ -288,7 +288,7 @@
 			<xsl:call-template name="hands-info"/>
 			<xsl:apply-templates select="* 
 				except (idno[@type=('faustedition', 'wa_faust')][1] | headNote | headNote/following-sibling::*[1][self::note] | classification)"/>
-		</dl>
+		</dl>		
 	</xsl:template>
 	
 	<xsl:template name="verse-range">
@@ -345,29 +345,38 @@
 		<elem name="tr">rote Tinte</elem>		
 	</xsl:variable>
 	
+	<xsl:variable name="hands"><xsl:call-template name="collect-hands"/></xsl:variable>
+	
 	<xsl:template name="hands-info">
-		<xsl:variable name="hands"><xsl:call-template name="collect-hands"/></xsl:variable>
-		<dt>Schreiberhände</dt>
+		<dt xml:id="hands-info">Schreiberhände</dt>
 		<dd>
-			<xsl:for-each-group select="$hands//f:hands/f:hand" group-by="@scribe">
+			<xsl:for-each-group select="$hands//f:all-hands/f:hand" group-by="@scribe">
 				<xsl:sort select="@scribe"/>
-				<xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/>
-				<xsl:text> (</xsl:text>
-				<xsl:for-each-group select="current-group()" group-by="@material">
-					<xsl:sequence select="f:lookup($materials, current-grouping-key(), 'materials')"/>
-					<xsl:text>: </xsl:text>
-					<xsl:for-each-group select="current-group()" group-by="../@page">
-						<a href="/document?sigil={$sigil_t}&amp;page={current-grouping-key()}&amp;view=facsimile_document">
-							<xsl:value-of select="current-grouping-key()"/>
-						</a>
-						<xsl:if test="position() != last()">, </xsl:if>
-					</xsl:for-each-group>
-					<xsl:if test="position() != last()">; </xsl:if>
-				</xsl:for-each-group>
-				<xsl:text>) </xsl:text>
+				<a href="#hand-{current-grouping-key()}"><xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/></a>
 				<xsl:if test="position() != last()"> · </xsl:if>
 			</xsl:for-each-group>
 		</dd>
+	</xsl:template>
+	
+	<xsl:template name="hands-details">
+		<h2>Schreiber</h2>		
+		<xsl:for-each-group select="$hands//f:hands/f:hand" group-by="@scribe">
+			<xsl:sort select="@scribe"/>
+			<h3 id="hand-{current-grouping-key()}"><xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/></h3>
+			<dl>
+				<xsl:for-each-group select="current-group()" group-by="@material">
+					<dt><xsl:sequence select="f:lookup($materials, current-grouping-key(), 'materials')"/></dt>
+					<dd>
+						<xsl:for-each-group select="current-group()" group-by="../@page">
+							<a href="/document?sigil={$sigil_t}&amp;page={current-grouping-key()}&amp;view=facsimile_document">
+								<xsl:value-of select="current-grouping-key()"/>
+							</a>							
+							<xsl:if test="position() != last()">, </xsl:if>
+					</xsl:for-each-group>
+					</dd>
+			</xsl:for-each-group>				
+			</dl>
+		</xsl:for-each-group>
 	</xsl:template>
 	
 	<xsl:template match="revisionDesc"/>
@@ -525,6 +534,8 @@
 	<xsl:template match="/*">		
 			<div id="metadataContainer" class="metadata-container">
 				<xsl:apply-templates/>
+				
+				<xsl:call-template name="hands-details"/>
 			</div>
 	</xsl:template>
 	
