@@ -40,7 +40,7 @@
     <xsl:param name="n" as="item()?"/>
     <xsl:choose>
       <xsl:when test="$n">        
-        <xsl:variable name="variantfile" select="resolve-uri(concat(f:output-group($n), '.html'), resolve-uri($variants))"/>          
+        <xsl:variable name="variantfile" select="f:safely-resolve(concat(f:output-group($n), '.html'), f:safely-resolve($variants))"/>          
         <xsl:sequence
           select="document($variantfile)/xh:div/xh:div[@data-n = $n]"
         />

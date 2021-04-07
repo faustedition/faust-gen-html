@@ -7,6 +7,7 @@
 	exclude-result-prefixes="xs f" 	
 	version="2.0">
 	
+	<xsl:import href="config.xsl"/>
 	
 	<!-- 
 	
@@ -16,21 +17,21 @@
 	
 	
 	<!-- Der Ausgabeordner für die HTML-Dateien. -->
-	<xsl:param name="html" select="resolve-uri('target/html')"/>
+	<xsl:param name="html" select="f:safely-resolve('target/html')"/>
 	
 	<!-- Pfad zu den zuvor generierten Varianten. Die HTML-Files dort müssen existieren. -->
-	<xsl:param name="variants" select="resolve-uri('variants/', $html)"/>
+	<xsl:param name="variants" select="f:safely-resolve('variants/', $html)"/>
 	
 	<!-- Dateiname/URI für die Ausgabedatei(en) ohne Endung. -->
 	<xsl:param name="output-base"
-		select="resolve-uri(//idno[@type='sigil_t'][1], $html)"/>
+		select="f:safely-resolve(//idno[@type='sigil_t'][1], $html)"/>
 	
 	
 	<!-- Gesamttitel für die Datei. -->
 	<xsl:param name="title" select="//title[1]"/>
 	
 	<!-- print oder archivalDocument oder lesetext? -->
-	<xsl:param name="type"/>
+	<xsl:param name="type" select="//TEI/@type"/>
 	
 	<xsl:param name="documentURI"/>	
 
@@ -210,7 +211,7 @@
 		<xsl:variable name="n" select="$el/ancestor-or-self::*[f:hasvars(.)][1]/@n"/>
 		<xsl:variable name="id" select="f:generate-id($el)"/>
 		<xsl:variable name="href" select="concat(
-			if ($type = 'lesetext')
+			if ($type = 'lesetext' or $sigil_t='faust')
 			then '/print/faust'
 			else concat('/document?sigil=', $sigil_t, 
 						if ($page) then concat('&amp;page=', $page) else ''),

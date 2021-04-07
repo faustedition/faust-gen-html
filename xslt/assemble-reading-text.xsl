@@ -7,18 +7,19 @@
 	exclude-result-prefixes="xs f"
 	version="2.0">
 	
-	<xsl:import href="utils.xsl"/>
+	<xsl:import href="config.xsl"/>
+	<xsl:import href="utils.xsl"/>	
 
 	<!-- URL for the source XML files -->
-	<xsl:param name="source">file:/home/tv/git/faust-gen/data/xml/</xsl:param>
+	<xsl:param name="source" select="f:config()/f:source"/>
 
 	<xsl:param name="use-collection" select="false()"/>
 	
 	<!-- If you pass URLs in, the respective witnesses will be read from these files, otherwise from unprocessed source tree -->
-	<xsl:param name="A-uri" select="resolve-uri('print/A8_IIIB18.xml', $source)"/>
-	<xsl:param name="H-uri" select="resolve-uri('transcript/gsa/391098/391098.xml', $source)"/>
-	<xsl:param name="IH0a-uri" select="resolve-uri('transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml', $source)"/>
-	<xsl:param name="C1_4-uri" select="resolve-uri('print/C(1)4_IIIB24.xml', $source)"/>
+	<xsl:param name="A-uri" select="f:safely-resolve('print/A8_IIIB18.xml', $source)"/>
+	<xsl:param name="H-uri" select="f:safely-resolve('transcript/gsa/391098/391098.xml', $source)"/>
+	<xsl:param name="IH0a-uri" select="f:safely-resolve('transcript/dla_marbach/Cotta-Archiv_Goethe_23/Marbach_Deutsches_Literaturarchiv.xml', $source)"/>
+	<xsl:param name="C1_4-uri" select="f:safely-resolve('print/C(1)4_IIIB24.xml', $source)"/>
 	
 	<!-- pass in to provide witness content directly, otherwise URIs are used -->
 	<xsl:param name="A" select="if ($use-collection) then collection()[1] else doc($A-uri)"/>

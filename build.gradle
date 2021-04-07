@@ -1,0 +1,209 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "http://maven.restlet.org" }
+    }
+
+   dependencies {
+       classpath group: 'com.xmlcalabash', name: 'xmlcalabash1-gradle', version: '1.3.5'
+   }
+}
+
+plugins {
+    id 'base'
+    id "com.dorongold.task-tree" version "1.4"
+}
+apply plugin: 'com.xmlcalabash.task'
+
+import com.xmlcalabash.XMLCalabashTask
+
+if (rootProject != project) { project.buildDir = rootProject.buildDir }
+project.ext.pathsxml = new File(project.buildDir, 'paths.xml')
+project.ext.dataDir = project.hasProperty('dataDir')? project.file(dataDir) : rootProject.file('data/xml')
+
+task setupPaths {
+    outputs.file(pathsxml)
+    doLast {
+        if (!dataDir.exists()) {
+           throw new FileNotFoundException("Source folder $dataDir not found")
+        }
+        project.buildDir.mkdirs()
+        def sourceURL = dataDir.toURL()
+        def buildURL = buildDir.toURL()
+        pathsxml.write("""<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file has been generated from the Gradle build -->
+<configuration xmlns="http://www.faustedition.net/ns">
+  <source>$sourceURL</source>
+  <builddir>$buildURL</builddir>
+</configuration>""")
+        logger.warn("Wrote $pathsxml")
+    }
+}
+
+// ------------- traditional generate all task -> OOMs
+
+task generateAll(type: XMLCalabashTask) {
+    dependsOn setupPaths
+    pipeline 'generate-all.xpl'
+    option 'paths', pathsxml.toURL().toString()
+}
+// assemble.dependsOn(generateAll)
+
+// -------------- separate tasks for individual parts of the workflow
+
+task collectMetadata(type: XMLCalabashTask) {
+    dependsOn setupPaths
+    pipeline 'collect-metadata.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    output "result", "$buildDir/faust-transcripts.xml"
+}
+
+task readingText(type: XMLCalabashTask) {
+    dependsOn collectMetadata
+    pipeline 'generate-reading-text.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+    output "result", "$buildDir/_ignore.xml"
+}
+
+task generateSearch(type: XMLCalabashTask) {
+    dependsOn readingText
+    pipeline 'generate-search.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+    output "result", "$buildDir/sorted-transcripts.xml"
+}
+
+task emendedVersion(type: XMLCalabashTask) {
+    dependsOn generateSearch
+    pipeline 'generate-emendations.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/sorted-transcripts.xml"
+    output "result", "$buildDir/_ignore1.xml"
+    outputs.files "$buildDir/emended/*.xml"
+}
+
+task variantApp(type: XMLCalabashTask) {
+    dependsOn emendedVersion
+    pipeline 'collate-variants.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/sorted-transcripts.xml"
+    output "result", "$buildDir/_ignore2.xml"
+    outputs.files "$buildDir/www/print/variants/*.html"
+}
+
+task generatePrint(type: XMLCalabashTask) {
+    dependsOn variantApp
+    pipeline 'generate-print.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/sorted-transcripts.xml"
+    inputs.files "$buildDir/emended/*.xml"
+    inputs.files "$buildDir/www/print/variants/*.html"
+    output "result", "$buildDir/_ignore3.xml"
+    outputs.files "$buildDir/www/print/*.html"
+}
+
+// sidetracks
+
+task generateApp(type: XMLCalabashTask) {
+    dependsOn generateSearch
+    pipeline 'generate-app.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/sorted-transcripts.xml"
+    output "result", "$buildDir/_ignore4.xml"
+    inputs.files "$buildDir/prepared/**/*.xml"
+    outputs.files "$buildDir/www/app/*.html"
+    outputs.upToDateWhen { false }
+}
+
+task pagesJson(type: XMLCalabashTask) {
+    dependsOn generateSearch
+    pipeline 'pages-json.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/sorted-transcripts.xml"
+}
+
+task readingTextExtras(type: XMLCalabashTask) {
+    dependsOn generatePrint
+    pipeline 'reading-text-extras.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/lesetext/faust.xml"
+    output "citations", "$buildDir/bibliography/cit-text.xml"
+    outputs.file "$buildDir/www/print/faust.html"
+    outputs.dir "$buildDir/www/print"
+}
+
+task metadataHtml(type: XMLCalabashTask) {
+    dependsOn generateSearch
+    pipeline 'metadata-html.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+    output "result", "$buildDir/bibliography/cit-metadata.xml"
+}
+
+task metadataJs(type: XMLCalabashTask) {
+    dependsOn collectMetadata
+    dependsOn generateSearch
+    pipeline 'generate-metadata-js.xpl'
+    option 'paths', pathsxml.toURL().toString()
+}
+
+task testimony(type: XMLCalabashTask) {
+    dependsOn collectMetadata
+    pipeline 'testimony.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+    output "result", "$buildDir/bibliography/cit-testimony.xml"
+}
+
+task indexesRedirects(type: XMLCalabashTask) {
+    dependsOn collectMetadata
+    pipeline 'indexes-and-redirects.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/faust-transcripts.xml"
+}
+
+task bibliography(type: XMLCalabashTask) {
+    dependsOn metadataHtml, testimony, readingTextExtras
+    pipeline 'bibliography.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/bibliography/cit-metadata.xml"
+    input "source", "$buildDir/bibliography/cit-testimony.xml"
+    input "source", "$buildDir/bibliography/cit-text.xml"
+}
+
+task paraTable(type: XMLCalabashTask) {
+    dependsOn emendedVersion
+    pipeline 'create-para-table.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/sorted-transcripts.xml"
+}
+
+task bargraphData(type: XMLCalabashTask) {
+    dependsOn generateSearch
+    pipeline 'bargraph.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    input "source", "$buildDir/sorted-transcripts.xml"
+    inputs.files "$buildDir/prepared/**/*.xml"
+    outputs.file "$buildDir/www/data/genetic_bar_graph.json"
+}
+
+task independentTransforms(type: XMLCalabashTask) {
+    dependsOn setupPaths
+    pipeline 'independent-transforms.xpl'
+    option 'paths', pathsxml.toURL().toString()
+    inputs.file "$dataDir/archives.xml"
+    inputs.file "xslt/scenes.xml"
+    outputs.files "$buildDir/www/data/archives.js", "$buildDir/www/data/scene_line_mapping.js"
+}
+
+// ----------------------------------------------------------
+
+task whoami(type: XMLCalabashTask) {
+    pipeline 'whoami.xpl'
+    option 'paths', pathsxml.toURL().toString()
+}
+
+assemble.dependsOn([generatePrint, generateApp, pagesJson, readingTextExtras, metadataHtml, metadataJs, testimony,
+                    indexesRedirects, bibliography, paraTable, bargraphData, independentTransforms])

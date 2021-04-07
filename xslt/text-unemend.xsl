@@ -23,14 +23,14 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="/">
+    <!--xsl:template match="/">
         <xsl:for-each select="//addSpan[not(replace(@spanTo, '^#', '') = //anchor/@xml:id)]">
             <xsl:message select="concat('WARNING: ', document-uri(/),
                 ': addSpan/@spanTo=&quot;', @spanTo, 
                 '&quot; without corresponding anchor: YOU LOOSE TEXT!')"/>            
         </xsl:for-each>
         <xsl:next-match/>
-    </xsl:template>
+    </xsl:template-->
     
     <!-- 
         Iff $node is a node that is in the span some delSpan, key('delSpan-for-node', generate-id($node)) will return 

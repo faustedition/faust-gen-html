@@ -15,9 +15,9 @@
   
   <xsl:param name="document"/>
   <xsl:param name="source"/>
-  <xsl:param name="source-resolved" select="resolve-uri($source)"/>
+  <xsl:param name="source-resolved" select="f:safely-resolve($source)"/>
   <xsl:param name="builddir">../../../../target/</xsl:param>
-  <xsl:param name="builddir-resolved" select="resolve-uri($builddir)"/>
+  <xsl:param name="builddir-resolved" select="f:safely-resolve($builddir)"/>
 
   <xsl:function name="f:shorten" as="xs:string">
     <xsl:param name="text" as="item()*"/>

@@ -8,14 +8,16 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
-    <xsl:param name="builddir">../../../target/</xsl:param>
-    <xsl:param name="builddir-resolved" select="$builddir"/>	
-    <xsl:param name="transcript-list" select="resolve-uri('faust-transcripts.xml', resolve-uri($builddir-resolved))"/>
+    <xsl:import href="config.xsl"/>
+    
+    <!--<xsl:param name="builddir">../../../target/</xsl:param>-->
+    <xsl:param name="builddir-resolved" select="f:config()/f:builddir"/>	
+    <xsl:param name="transcript-list" select="f:safely-resolve('faust-transcripts.xml', f:safely-resolve($builddir-resolved))"/>
     <xsl:param name="idmap" select="doc($transcript-list)"/>
     <xsl:param name="docbase">/document?sigil=</xsl:param>
     <xsl:param name="edition"></xsl:param>
     <xsl:param name="source-uri" select="document-uri(/)"/>
-    <xsl:variable name="bibliography" select="doc('bibliography.xml')"/>
+    <xsl:variable name="bibliography" select="doc('bibliography.xml')"/>    
     
     
     

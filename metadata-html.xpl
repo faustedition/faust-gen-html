@@ -7,19 +7,19 @@
   <p:input port="source"><p:empty/></p:input>
   <p:input port="parameters" kind="parameter"/>
   <p:output port="result" sequence="true"/>
+  <p:option name="paths" select="'paths.xml'"/>
   
 
   <p:import href="library/recursive-directory-list.xpl"/>
   <p:import href="http://xmlcalabash.com/extension/steps/library-1.0.xpl"/>
-
-  <!-- Parameter laden -->
-  <p:parameters name="config">
-    <p:input port="parameters">
-      <p:document href="config.xml"/>
-      <p:pipe port="parameters" step="main"></p:pipe>
-    </p:input>
-  </p:parameters>
-
+ 
+  <!-- Konfiguration laden -->
+  <p:xslt name="config" template-name="param">
+    <p:input port="source"><p:empty/></p:input>
+    <p:input port="stylesheet"><p:document href="xslt/config.xsl"/></p:input>
+    <p:with-param name="path_config" select="$paths"></p:with-param>
+  </p:xslt>
+  
   <p:group>
     <p:variable name="metahtml" select="//c:param[@name='metahtml']/@value"><p:pipe port="result" step="config"></p:pipe></p:variable>
     <p:variable name="source" select="//c:param[@name='source']/@value"><p:pipe port="result" step="config"/></p:variable>
@@ -54,7 +54,7 @@
 
       <p:xslt name="generate-html">
         <p:input port="stylesheet"><p:document href="xslt/faust-metadata.xsl"/></p:input>
-        <p:with-param name="builddir-resolved" select="$builddir"/>
+        <!--<p:with-param name="builddir-resolved" select="$builddir"/>-->
         <p:input port="parameters"><p:pipe port="result" step="config"/></p:input>
       </p:xslt>
       
@@ -90,7 +90,7 @@
       </p:xslt>      
     </p:for-each>
     
-    <p:identity name="converted-metadata"/>
+    <p:wrap-sequence wrapper="f:citations" name="converted-metadata"/>
     
     <p:identity><p:input port="source"><p:pipe port="result" step="list"/></p:input></p:identity>
     <cx:message message="Generating watermark table ..."/>

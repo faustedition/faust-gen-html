@@ -8,15 +8,16 @@
   xmlns:ge="http://www.tei-c.org/ns/geneticEditions"
   exclude-result-prefixes="xs"
   version="2.0">
-  
+
+  <xsl:import href="config.xsl"/>
   <xsl:import href="jsonutils.xsl"/>
   <xsl:import href="utils.xsl"/>
   
   <xsl:param name="document"/>
   <xsl:param name="source"/>
-  <xsl:param name="source-resolved" select="resolve-uri($source)"/>
+  <xsl:param name="source-resolved" select="f:safely-resolve($source)"/>
   <xsl:param name="builddir">../../../../target/</xsl:param>
-  <xsl:param name="builddir-resolved" select="resolve-uri($builddir)"/>
+  <xsl:param name="builddir-resolved" select="f:safely-resolve($builddir)"/>
   
   
   <!-- Iterate over collection. -->	
@@ -48,10 +49,10 @@
         <xsl:variable name="base-uri" select="base-uri(//textTranscript)"/>
         <xsl:choose>
           <xsl:when test="$base-uri != ''">
-            <!--<xsl:variable name="transcript-uri" select="resolve-uri(//textTranscript/@uri, $base-uri)"/>
+            <!--<xsl:variable name="transcript-uri" select="f:safely-resolve(//textTranscript/@uri, $base-uri)"/>
             <xsl:variable name="transcript-path" select="replace($transcript-uri, '^faust://xml/', $source-resolved)"/>-->
             <xsl:variable name="sigil_t" select="f:sigil-for-uri(//idno[@type='faustedition'])"/>
-            <xsl:variable name="transcript-path" select="resolve-uri(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir-resolved)"/>
+            <xsl:variable name="transcript-path" select="f:safely-resolve(concat('prepared/textTranscript/', $sigil_t, '.xml'), $builddir-resolved)"/>
             <xsl:choose>
               <xsl:when test="doc-available($transcript-path)">
                 <xsl:variable name="text" select="document($transcript-path)"/>
