@@ -57,7 +57,7 @@ Dass bei entsprechender Länge das Format `... BA Blocks. ...` zugewiesen werden
 ### (Abstände)
 Die differenzierte Formatzuweisung dient der Regelung der Abstände. 
 Entscheidend für die Zuweisung der richtigen Abstände ist zweierlei:
-* In welche Kontext steht die BA?
+* In welchem Kontext steht die BA?
 * Was enthält die BA: nur Text oder auch Figur oder Auftritt?
 
 Die unterschiedlichen Kombinationen von Kontext und Inhalt wird im folgenden aufgeführt. 
