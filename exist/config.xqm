@@ -2,7 +2,7 @@ xquery version "3.1";
 
 module namespace config = "http://www.faustedition.net/search/config";
 
-declare variable $config:xmlpath := request:get-attribute('xmlpath');
+declare variable $config:xmlpath := (request:get-attribute('xmlpath'), (system:get-module-load-path() || '/data'))[1];
 declare variable $config:data-path := if ($config:xmlpath) then $config:xmlpath else '/db/apps/faust-dev/data';
 declare variable $config:data := collection($config:data-path);
 declare variable $config:transcripts := collection($config:data-path || "/textTranscript");
