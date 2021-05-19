@@ -169,7 +169,7 @@
 			</xsl:for-each>
 
 			<idno type="sigil_t" xml:id="sigil_t"><xsl:value-of select="$sigil_t"/></idno>
-			<idno type="sigil_n" xml:id="sigil_n"><xsl:value-of select="replace(lower-case($sigil), '[ .*]', '')"/></idno>						
+			<idno type="sigil_n" xml:id="sigil_n"><xsl:value-of select="replace(lower-case($sigil), '[ :._*]', '')"/></idno>						
 			<idno type="fausturi" xml:id="fausturi"><xsl:value-of select="$faustURI"/></idno>
 			<idno type="fausttranscript" xml:id="fausttranscript"><xsl:value-of select="if ($type='lesetext') then 'faust' else $transcriptBase"/></idno>
 			
