@@ -407,6 +407,10 @@
 							</xsl:if>
 							<xsl:value-of select="$label"/>
 						</a>
+						<xsl:if test="$label/@imgref">
+							<xsl:text> </xsl:text>
+							<a href="/archive_watermarks#{$label/@imgref}" title="Abbildung"><i class="fa fa-file-image"></i></a>
+						</xsl:if>
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:value-of select="$id"/>

@@ -135,18 +135,31 @@
 		</xsl:for-each-group>
 	</xsl:template>
 	
+	<xsl:function name="f:watermark-label">
+		<xsl:param name="wm" as="xs:string"/>
+		<xsl:variable name="imgref" select="(document('watermark-labels.xml')//watermark[. = $wm]/@imgref)[1]"/>
+		<xsl:choose>
+			<xsl:when test="$imgref">
+				<a href="/archive_watermarks#{$imgref}"><xsl:value-of select="$wm"/> <i class="fa fa-file-image"></i></a>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$wm"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
 	<!-- a single row in the table. -->
 	<xsl:function name="f:watermark-row">
 		<xsl:param name="wm" as="xs:string"/> <!-- watermark, may be '' -->
 		<xsl:param name="cm" as="xs:string"/> <!-- countermark, may be '' -->
 		<xsl:param name="watermarks" as="element()*"/> <!-- The whole watermark list, we select from that -->
 		<tr id="{f:toid($wm)}">		
-			<td><xsl:value-of select="$wm"/></td>
+			<td><xsl:sequence select="f:watermark-label($wm)"/></td>
 			<td>
 				<xsl:if test="$cm != ''">
 					<xsl:attribute name="id" select="f:toid($cm)"/>
 				</xsl:if>
-				<xsl:value-of select="$cm"/>
+				<xsl:sequence select="f:watermark-label($cm)"/>
 			</td>				
 			<td><!-- Watermark and Countermark -->
 				<xsl:if test="$cm != '' and $wm != ''">
