@@ -41,6 +41,8 @@ WatermarkLabels =
     element watermark {
       ## A value as it appears in watermarkID etc. in the metadata documents
       attribute id { text  },
+      ## Column ID in the table of watermark images. This is added by faust-gen/utils/watermark_image_table.py
+      attribute imgref { text }?,
       text
     }+
   }
