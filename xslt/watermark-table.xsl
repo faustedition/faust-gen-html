@@ -31,6 +31,12 @@
 	
 	<xsl:template match="/">
 		<xsl:call-template name="html-frame">
+			<xsl:with-param name="breadcrumb-def" tunnel="yes">
+				<a href="archive">Archiv</a>
+				<a href="archive_materials">Materialien</a>
+				<a href="archive_watermarks">Wasserzeichen</a>
+				<a>Alle Wasserzeichen</a>
+			</xsl:with-param>
 			<xsl:with-param name="content">
 				<table class="pure-table" data-sortable="true">
 					<thead>
