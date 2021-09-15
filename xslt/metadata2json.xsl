@@ -94,7 +94,7 @@
 					<j:string name="idno_{@type}" value="{.}"/>
 				</xsl:for-each>
 				<xsl:for-each select="metadata/subidno[. != ('none', 'n.s.', 'n.a.')]">
-					<j:string name="subidno_{@type}" value="."/>
+					<j:string name="subidno_{@type}" value="{.}"/>
 				</xsl:for-each>
 				<j:string name='note_gsa_1' value="{metadata/idno[@type='gsa_1']/following-sibling::*[1][self::note]}"/>
 				<j:string name='collection' value="{metadata/collection[1]}"/>
