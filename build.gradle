@@ -140,6 +140,8 @@ task metadataHtml(type: XMLCalabashTask) {
     option 'paths', pathsxml.toURL().toString()
     input "source", "$buildDir/faust-transcripts.xml"
     output "result", "$buildDir/bibliography/cit-metadata.xml"
+    inputs.files 'xslt/faust-metadata.xsl', 'xslt/watermark-table.xsl', 'xslt/watermark-labels.xml'
+    outputs.files "$buildDir/www/meta/*.html", "$buildDir/www/watermark-table.html"
 }
 
 task metadataJs(type: XMLCalabashTask) {
