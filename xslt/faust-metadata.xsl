@@ -293,7 +293,7 @@
 	
 	<xsl:template name="verse-range">
 		<xsl:variable name="transcriptUri" select="f:safely-resolve(concat('prepared/textTranscript/', f:sigil-for-uri(//idno[@type='faustedition']), '.xml'), $builddir-resolved)"/>
-		<xsl:variable name="transcript" select="document($transcriptUri)"/>
+		<xsl:variable name="transcript" select="if (doc-available($transcriptUri)) then document($transcriptUri) else ()"/>
 		<xsl:variable name="textEl" select="$transcript/tei:TEI/tei:text"/>
 		<dt>Verse</dt>
 		<dd>
