@@ -70,6 +70,7 @@
       </p:store>
       
       <!-- Grundschicht -->
+      <!--
       <p:xslt>
         <p:input port="source"><p:pipe port="result" step="load-in-apply-edits"/></p:input>
         <p:input port="stylesheet"><p:document href="xslt/normalize-wsp.xsl"/></p:input>
@@ -103,7 +104,8 @@
       </p:xslt>
       <p:store indent="true">
         <p:with-option name="href" select="resolve-uri(concat('grundschicht-instant/', $sigil_t, '.xml'), $builddir)"/>
-      </p:store>
+    </p:store>
+    -->
     </p:for-each>
     <!-- Pipe through list of inputs -->
     <p:identity name="emended-version"><p:input port="source"><p:pipe port="result" step="transcript-list"/></p:input></p:identity>   
