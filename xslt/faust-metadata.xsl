@@ -185,7 +185,7 @@
 			<xsl:with-param name="content">
 				<xsl:choose>
 					<xsl:when test="following::idno[1][@type='gsa_ident']">
-						<a href="https://ores.klassik-stiftung.de/ords/f?p=401:2:::NO:RP:P2_ANSICHT,P2_ID:1,{following::idno[1][@type='gsa_ident']}">
+						<a href="https://ores.klassik-stiftung.de/ords/f?p=401:2:::::P2_ID:{following::idno[1][@type='gsa_ident']}">
 							<xsl:value-of select="."/>
 						</a>
 					</xsl:when>
