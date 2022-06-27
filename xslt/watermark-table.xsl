@@ -57,8 +57,6 @@
 				
 				<script type="text/javascript">
 					$("table[data-sortable]").fixedtableheader();
-					// set breadcrumbs
-					document.getElementById("breadcrumbs").appendChild(Faust.createBreadcrumbs([{caption: "Ausgabe", link: "intro"}, {caption: "Wasserzeichen", link: "watermarks"}, {caption: "Wasserzeichen-Übersicht"}]));
 				</script>			
 			</xsl:with-param>
 		</xsl:call-template>
