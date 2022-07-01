@@ -278,7 +278,7 @@
 		<h3 class="md-headNote">
 			<xsl:apply-templates select="headNote/node()"/>
 		</h3>
-		<p class="md-note wip">
+		<p class="md-note">
 			<xsl:apply-templates select="headNote/following-sibling::note[1]/node()"/>
 		</p>	
 		<dl>
