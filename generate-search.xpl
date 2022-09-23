@@ -145,6 +145,20 @@
 				<p:identity/>
 			</p:otherwise>
 		</p:choose>
+		
+		<!-- For search, choice[sic and corr] → sic https://github.com/faustedition/faust-gen-html/issues/650 -->
+		<p:xslt>
+			<p:input port="stylesheet">
+				<p:inline>
+					<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0">
+						<xsl:mode on-no-match="shallow-copy"/>						
+						<xsl:template match="tei:choice[tei:sic and tei:corr]">
+							<xsl:apply-templates select="tei:sic/node()"/>
+						</xsl:template>
+					</xsl:stylesheet>
+				</p:inline>
+			</p:input>
+		</p:xslt>
 
 
 		<!-- zweite Kopie: Normalisierte Zeichen für die Suche -->
