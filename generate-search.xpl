@@ -150,8 +150,13 @@
 		<p:xslt>
 			<p:input port="stylesheet">
 				<p:inline>
-					<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0">
-						<xsl:mode on-no-match="shallow-copy"/>						
+					<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
+						<xsl:template match="node() | @*">
+							<xsl:copy>
+								<xsl:apply-templates select="@*, node()"/>
+							</xsl:copy>
+						</xsl:template>						
+						
 						<xsl:template match="tei:choice[tei:sic and tei:corr]">
 							<xsl:apply-templates select="tei:sic/node()"/>
 						</xsl:template>
