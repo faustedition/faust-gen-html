@@ -359,8 +359,9 @@
 			<xsl:for-each-group select="$hands//*/f:hand" group-by="@scribe">
 				<xsl:sort select="sum(current-group()/@extent)" order="descending"/>
 				<xsl:variable name="current-extent" select="sum(current-group()/@extent)"/>
-				<a href="#hand-{current-grouping-key()}"><xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/> 
-					(<xsl:value-of select="format-number(sum(current-group()/@extent) div $total-chars, '###%')"/>)</a>
+				<xsl:variable name="ratio" select="sum(current-group()/@extent) div $total-chars"/>
+				<a style="opacity:{0.7 * $ratio + 0.3}" href="#hand-{current-grouping-key()}"><xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/> 
+					(<xsl:value-of select="format-number($ratio, '##0.#%')"/>)</a>
 				<xsl:if test="position() != last()"> · </xsl:if>
 			</xsl:for-each-group>
 		</dd>
@@ -369,6 +370,7 @@
 	<xsl:template name="hands-details">
 		<h2>Schreiber</h2>
 		<xsl:for-each-group select="$hands//f:hands/f:hand" group-by="@scribe">
+			<xsl:sort select="sum(current-group()/@extent)" order="descending"/>
 			<xsl:sort select="@scribe"/>
 			<h3 id="hand-{current-grouping-key()}"><xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/></h3>
 			<dl>
@@ -379,7 +381,7 @@
 							<xsl:variable name="ratio" select="if (../@total-extent = 0) then 0 else sum(@extent) div ../@total-extent"/>
 														
 							<a href="/document?sigil={$sigil_t}&amp;page={current-grouping-key()}&amp;view=facsimile_document"
-								 title="{format-number($ratio, '###.##% der Seite')}"
+								 title="{format-number($ratio, '##0.##% der Seite')}"
 								 style="opacity:{0.3 + 0.7 * $ratio}">
 								<xsl:value-of select="current-grouping-key()"/>
 							</a>							
@@ -553,6 +555,8 @@
 				
 				<xsl:call-template name="hands-details"/>
 			</div>
+		
+		
 	</xsl:template>
 	
 </xsl:stylesheet>
