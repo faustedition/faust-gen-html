@@ -6,7 +6,7 @@
 	xmlns:tei="http://www.tei-c.org/ns/1.0"
 	xmlns="http://www.w3.org/1999/xhtml"
 	exclude-result-prefixes="xs f tei"
-	version="2.0">
+	version="3.0">
 	
 	<xsl:import href="utils.xsl"/>
 	<xsl:import href="bibliography.xsl"/>
@@ -351,26 +351,36 @@
 	
 	<xsl:template name="hands-info">
 		<dt xml:id="hands-info">Schreiberhände</dt>
+		<xsl:comment>
+			<xsl:value-of select="serialize($hands)"/>
+		</xsl:comment>				
 		<dd>
-			<xsl:for-each-group select="$hands//f:all-hands/f:hand" group-by="@scribe">
-				<xsl:sort select="@scribe"/>
-				<a href="#hand-{current-grouping-key()}"><xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/></a>
+			<xsl:variable name="total-chars" select="sum($hands//*/@extent)"/>
+			<xsl:for-each-group select="$hands//*/f:hand" group-by="@scribe">
+				<xsl:sort select="sum(current-group()/@extent)" order="descending"/>
+				<xsl:variable name="current-extent" select="sum(current-group()/@extent)"/>
+				<a href="#hand-{current-grouping-key()}"><xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/> 
+					(<xsl:value-of select="format-number(sum(current-group()/@extent) div $total-chars, '###%')"/>)</a>
 				<xsl:if test="position() != last()"> · </xsl:if>
 			</xsl:for-each-group>
 		</dd>
 	</xsl:template>
 	
 	<xsl:template name="hands-details">
-		<h2>Schreiber</h2>		
+		<h2>Schreiber</h2>
 		<xsl:for-each-group select="$hands//f:hands/f:hand" group-by="@scribe">
 			<xsl:sort select="@scribe"/>
 			<h3 id="hand-{current-grouping-key()}"><xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/></h3>
 			<dl>
 				<xsl:for-each-group select="current-group()" group-by="@material">
 					<dt><xsl:sequence select="f:lookup($materials, current-grouping-key(), 'materials')"/></dt>
-					<dd>
+					<dd>						
 						<xsl:for-each-group select="current-group()" group-by="../@page">
-							<a href="/document?sigil={$sigil_t}&amp;page={current-grouping-key()}&amp;view=facsimile_document">
+							<xsl:variable name="ratio" select="if (../@total-extent = 0) then 0 else sum(@extent) div ../@total-extent"/>
+														
+							<a href="/document?sigil={$sigil_t}&amp;page={current-grouping-key()}&amp;view=facsimile_document"
+								 title="{format-number($ratio, '###.##% der Seite')}"
+								 style="opacity:{0.3 + 0.7 * $ratio}">
 								<xsl:value-of select="current-grouping-key()"/>
 							</a>							
 							<xsl:if test="position() != last()">, </xsl:if>
