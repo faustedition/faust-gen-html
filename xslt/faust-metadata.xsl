@@ -557,6 +557,9 @@
 				<xsl:call-template name="hands-details"/>
 			</div>
 		
+			<xsl:result-document href="handsinfo.xml" method="xml">
+				<xsl:sequence select="$hands"/>
+			</xsl:result-document>
 		
 	</xsl:template>
 	
