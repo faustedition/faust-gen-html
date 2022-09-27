@@ -360,7 +360,8 @@
 				<xsl:sort select="sum(current-group()/@extent)" order="descending"/>
 				<xsl:variable name="current-extent" select="sum(current-group()/@extent)"/>
 				<xsl:variable name="ratio" select="sum(current-group()/@extent) div $total-chars"/>
-				<a style="opacity:{0.7 * $ratio + 0.3}" href="#hand-{current-grouping-key()}"><xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/> 
+				<a style="opacity:{0.7 * $ratio + 0.3}" href="#hand-{current-grouping-key()}">					
+					<xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/> 
 					(<xsl:value-of select="format-number($ratio, '##0.#%')"/>)</a>
 				<xsl:if test="position() != last()"> · </xsl:if>
 			</xsl:for-each-group>
@@ -372,10 +373,10 @@
 		<xsl:for-each-group select="$hands//f:hands/f:hand" group-by="@scribe">
 			<xsl:sort select="sum(current-group()/@extent)" order="descending"/>
 			<xsl:sort select="@scribe"/>
-			<h3 id="hand-{current-grouping-key()}"><xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/></h3>
+			<h3 id="hand-{current-grouping-key()}" title="{current-grouping-key()}"><xsl:sequence select="f:lookup($scribes, current-grouping-key(), 'scribes')"/></h3>
 			<dl>
 				<xsl:for-each-group select="current-group()" group-by="@material">
-					<dt><xsl:sequence select="f:lookup($materials, current-grouping-key(), 'materials')"/></dt>
+					<dt title="{current-grouping-key()}"><xsl:sequence select="f:lookup($materials, current-grouping-key(), 'materials')"/></dt>
 					<dd>						
 						<xsl:for-each-group select="current-group()" group-by="../@page">
 							<xsl:variable name="ratio" select="if (../@total-extent = 0) then 0 else sum(@extent) div ../@total-extent"/>
