@@ -8,7 +8,8 @@ Citations =
     ( TestimonyIndex |
       Citations |
       StdCitation |
-      AppCitation
+      AppCitation |
+      PageCitation
     )*
   }
   
@@ -20,6 +21,17 @@ StdCitation =
   element f:citation {
     ## faust:// URI of the witness that cites the given reference 
     attribute from { FaustUri }?,
+    ## faust://bibliography/ URI from the reference
+    BibUri
+  }
+  
+PageCitation =
+  ## Citation from some arbitrary page in the edition
+  element f:citation {
+    ## absolute path of referring page
+    attribute page { xsd:anyURI },
+    ## short title for the page
+    attribute title { text },
     ## faust://bibliography/ URI from the reference
     BibUri
   }

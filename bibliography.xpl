@@ -52,7 +52,9 @@
             <xsl:template match="/">
               <f:citations>
                 <xsl:for-each-group select="//f:source" group-by="@uri">
-                  <f:citation><xsl:value-of select="current-grouping-key()"/></f:citation>
+                  <f:citation title="Makrogenese" page="macrogenesis/{replace(current-grouping-key(), '.*/', '')}">
+                    <xsl:value-of select="current-grouping-key()"/>
+                  </f:citation>
                 </xsl:for-each-group>
               </f:citations>
             </xsl:template>

@@ -79,6 +79,13 @@
 								</xsl:for-each>								
 							</small>
 						</xsl:variable>
+						<xsl:variable name="page-citations" select="current-group()[@page]" as="element()*"/>
+						<xsl:variable name="page-part" as="element()*">							
+								<xsl:for-each select="$page-citations">
+									<small class="bib-page"><a href="{$edition}/{@page}"><xsl:value-of select="@title"/></a></small>
+								</xsl:for-each>
+						</xsl:variable>
+						
 						<xsl:for-each select="$citation">
 							<xsl:copy>
 								<xsl:copy-of select="@*"/>
@@ -86,8 +93,8 @@
 								<xsl:variable name="all-backref-parts" as="item()*" select="
 									if ($backrefs) then $backref-part else (),
 									if ($app-citations) then $app-part else (),
-									if ($testimonies) then $testimony-part else ()"/>
-								
+									if ($testimonies) then $testimony-part else (),
+									if ($page-citations) then $page-part else ()"/>									
 								<xsl:if test="$all-backref-parts">
 									<xsl:text> </xsl:text>
 									<xsl:for-each select="$all-backref-parts">
