@@ -2,9 +2,10 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:xh="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://www.faustedition.net/ns"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
-	exclude-result-prefixes="xs f"
+	exclude-result-prefixes="xs f xh"
 	version="2.0">
 	
 	<xsl:import href="print2html.xsl"/>
@@ -24,28 +25,46 @@
 					.type-textcrit .reading-type, .type-textcrit .applinks { display: none; }
 					.appnote { cursor: inherit; }
 				</style>
-			</xsl:with-param>
-			<xsl:with-param name="section-classes" select="('print', 'center')"/>
+			</xsl:with-param>			
 			<xsl:with-param name="breadcrumb-def" tunnel="yes">
 				<a href="/print/text">Text</a>
 				<a href="/text-app">Apparat</a>
 			</xsl:with-param>
-			<xsl:with-param name="content">
-				<nav class="pure-center">
-					<a href="app" class="pure-button {if ($output-type='app') then 'pure-button-selected' else ''}">Apparat nach Typ</a>
-					<xsl:text> </xsl:text>
-					<a href="app-by-scene" class="pure-button {if ($output-type='byscene') then 'pure-button-selected' else ''}">Apparat nach Textstelle</a>
-					<xsl:text> </xsl:text>
-					<a href="faust" class="pure-button">Text</a>
-				</nav>
-				<xsl:choose>
-					<xsl:when test="$output-type='byscene'">
-						<xsl:apply-templates mode="byscene"/>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:call-template name="app-by-type"/>
-					</xsl:otherwise>
-				</xsl:choose>
+			<xsl:with-param name="grid-content">
+				<xsl:variable name="main-content">
+					<xsl:choose>
+						<xsl:when test="$output-type='byscene'">
+							<xsl:apply-templates mode="byscene"/>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:call-template name="app-by-type"/>
+						</xsl:otherwise>
+					</xsl:choose>										
+				</xsl:variable>
+				
+				<div class="pure-u-1-5"></div>
+				<main class="pure-u-3-5">
+					<nav class="pure-center">
+						<a href="app" class="pure-button {if ($output-type='app') then 'pure-button-selected' else ''}">Apparat nach Typ</a>
+						<xsl:text> </xsl:text>
+						<a href="app-by-scene" class="pure-button {if ($output-type='byscene') then 'pure-button-selected' else ''}">Apparat nach Textstelle</a>
+						<xsl:text> </xsl:text>
+						<a href="faust" class="pure-button">Text</a>
+					</nav>
+					<xsl:sequence select="$main-content"/>
+				</main>
+				<div class="pure-u-1-5">
+					<xsl:if test="$output-type='app'">						
+						<nav class="print-navigation">
+							<h2>Inhalt</h2>
+							<ul>
+								<xsl:for-each select="$main-content//xh:h2">
+									<li><a href="#{@id}"><xsl:value-of select="."/></a></li>
+								</xsl:for-each>
+							</ul>
+						</nav>					
+					</xsl:if>
+				</div>
 			</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>

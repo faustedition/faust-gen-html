@@ -136,6 +136,7 @@ task readingTextExtras(type: XMLCalabashTask) {
     output "citations", "$buildDir/bibliography/cit-text.xml"
     outputs.file "$buildDir/www/print/faust.html"
     outputs.dir "$buildDir/www/print"
+    inputs.files 'xslt/text-applist.xsl'
 }
 
 task metadataHtml(type: XMLCalabashTask) {
