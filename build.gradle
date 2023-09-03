@@ -178,6 +178,7 @@ task bibliography(type: XMLCalabashTask) {
     input "source", "$buildDir/bibliography/cit-metadata.xml"
     input "source", "$buildDir/bibliography/cit-testimony.xml"
     input "source", "$buildDir/bibliography/cit-text.xml"
+    outputs.files "$buildDir/www/bibliography.html"
 }
 
 task paraTable(type: XMLCalabashTask) {
