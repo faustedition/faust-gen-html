@@ -153,18 +153,17 @@
 		</noscript>
 		
 		<div id="cookie-consent" class="pure-modal center" style="top:auto;">
-			<div class="pure-modal-body">
-				<p>Diese Website verwendet Cookies und vergleichbare Technologien zur Erhöhung des Bedienkomforts
-					und – entsprechend Ihren Browsereinstellungen – für eine anonymisierte Nutzungsstatistik.
-					Durch die Benutzung erklären Sie sich damit einverstanden.					
-				</p>
-				<p>Die Webanalyse können Sie <a href="/imprint#privacy">auf unserer Datenschutzseite</a> oder
-					über Ihre Browsereinstellungen deaktivieren. Falls Sie Cookies grundsätzlich ablehnen wollen,
-					verwenden Sie Ihre Browsereinstellungen dazu und nehmen entsprechende Funktionalitätseinbußen
-					in Kauf.</p>
-				<p><a id="cookie-consent-button" class="pure-button pull-right">Verstanden</a></p>
-			</div>
-			
+     <div class="pure-modal-body">
+       <p>Diese Website verwendet Cookies und vergleichbare Technologien zur Sicherstellung der
+         Funktionalität und – optional entsprechend Ihren Einstellungen – für eine anonymisierte
+         Nutzungsstatistik zur Analyse der Nutzung und zur Verbesserung der
+         Edition. Lesen Sie auch unsere <a href="imprint#privacy">Datenschutzerklärung</a>.</p>
+       <p class="pure-right">
+         <a id="functional-cookies-button" class="pure-button">nur funktionale Cookies zulassen</a>
+         <a id="cookie-consent-button" class="pure-button">auch Statistik erlauben</a>
+       </p>
+     </div>
+
 		</div>
 		
 		
@@ -277,25 +276,48 @@
 				select="string-join(('', for $spec in $jsRequirements return f:enquote(substring-before($spec, ':'))), ', ')"/>], 
 				 function (Faust, $, $chocolat, $overlays, $clipboard, Cookies, addPrintInteraction<xsl:value-of 
 				 	select="string-join(('', for $spec in $jsRequirements return substring-after($spec, ':')), ', ')"/>) {
-						$('main').Chocolat({className:'faustedition', loop:true});
-						$('header nav').menuOverlays({highlightClass:'pure-menu-selected', onAfterShow: function() {
-							$('[data-target]').copyToClipboard();
-						}});
+            $('main').Chocolat({
+              className: 'faustedition',
+              loop: true
+            });
+            $('header nav').menuOverlays({
+              highlightClass: 'pure-menu-selected',
+              onAfterShow: function() {
+                $('[data-target]').copyToClipboard();
+              }
+            });
 						$(function(){addPrintInteraction('/', undefined, '<xsl:value-of select="if ($documentURI) then $documentURI else 'undefined'"/>');})
 					  Faust.addToTopButton();
 					  					  
-					  var consent = Cookies.get('faust-cookie-consent');
-					  if (navigator.cookieEnabled) if (consent != 'yes') {
-					  	$('#cookie-consent-button').bind('click', function () {
-					  		var domain = window.location.hostname;
-					  		if (/faustedition\.net$/.test(domain))
-					  			domain = '.faustedition.net';
-					  		Cookies.set('faust-cookie-consent', 'yes', {expires: 365, domain: domain});
-					  		$('#cookie-consent').hide();
-					  	});
-					  	$('#cookie-consent').show();
-					  }
-					  
+            var _paq = window._paq = window._paq || [];
+            var consent = Cookies.get('faust-cookie-consent');
+            if (consent == 'yes') {
+              _paq.push(['rememberConsentGiven'])
+            } else if (navigator.cookieEnabled && (consent != 'yes' && consent != 'no')) {
+              $('#cookie-consent-button').bind('click', function() {
+                _paq.push(['rememberConsentGiven'])
+                var domain = window.location.hostname;
+                if (/faustedition\.net$/.test(domain))
+                  domain = '.faustedition.net';
+                Cookies.set('faust-cookie-consent', 'yes', {
+                  expires: 365,
+                  domain: domain
+                });
+                $('#cookie-consent').hide();
+              });
+              $('#functional-cookies-button').bind('click', function() {
+                var domain = window.location.hostname;
+                if (/faustedition\.net$/.test(domain))
+                  domain = '.faustedition.net';
+                Cookies.set('faust-cookie-consent', 'no', {
+                  expires: 365,
+                  domain: domain
+                });
+                $('#cookie-consent').hide();
+              })
+              $('#cookie-consent').show();
+            }
+
 					<xsl:if test="$breadcrumb-def">
 						<xsl:call-template name="f:breadcrumb-script">
 							<xsl:with-param name="breadcrumb-def" select="$breadcrumb-def"/>
