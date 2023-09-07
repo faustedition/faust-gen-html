@@ -111,7 +111,7 @@
 					<img src="{$assets}/img/faustlogo.svg" alt="Faustedition"/>
 				</a>
 				<sup class="pure-fade-50">
-					<mark>alpha</mark>
+					<mark>1.3 RC</mark>
 				</sup>
 			</div>
 			
@@ -232,7 +232,7 @@
 						Johann Wolfgang Goethe: Faust. Historisch-kritische Edition.
 						Herausgegeben von Anne Bohnenkamp, Silke Henke und Fotis Jannidis
 						unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach.
-						alpha-Version. Frankfurt am Main / Weimar / Würzburg 2019,
+						Version 1.3 RC. Frankfurt am Main / Weimar / Würzburg 2023,
 						<span>{context}</span>,
 						<span>URL: <a href="{url}">{url}</a></span>,
 						abgerufen am {date}.
@@ -335,12 +335,12 @@
 		  (function() {
 		    var u="//analytics.faustedition.net/";
 		    _paq.push(['setTrackerUrl', u+'matomo.php']);
-		    _paq.push(['setSiteId', '2']);
+		    _paq.push(['setSiteId', '1']);
 		    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 		    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 		  })();
 		</script>
-		<noscript><p><img src="//analytics.faustedition.net/matomo.php?idsite=2&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+		<noscript><p><img src="//analytics.faustedition.net/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
 		<!-- End Matomo Code -->
 	</xsl:template>
 
