@@ -293,7 +293,7 @@
             var consent = Cookies.get('faust-cookie-consent');
             if (consent == 'yes') {
               _paq.push(['rememberConsentGiven'])
-            } else if (navigator.cookieEnabled &amp;&amp; (consent != 'yes' &amp;&amp; consent != 'no')) {
+            } else if (navigator.cookieEnabled) if (!(consent == 'yes' || consent == 'no')) {
               $('#cookie-consent-button').bind('click', function() {
                 _paq.push(['rememberConsentGiven'])
                 var domain = window.location.hostname;
