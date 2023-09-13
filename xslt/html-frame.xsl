@@ -111,7 +111,7 @@
 					<img src="{$assets}/img/faustlogo.svg" alt="Faustedition"/>
 				</a>
 				<sup class="pure-fade-50">
-					<mark>1.3 RC</mark>
+					<mark>dev</mark>
 				</sup>
 			</div>
 			
@@ -232,7 +232,7 @@
 						Johann Wolfgang Goethe: Faust. Historisch-kritische Edition.
 						Herausgegeben von Anne Bohnenkamp, Silke Henke und Fotis Jannidis
 						unter Mitarbeit von Gerrit Brüning, Katrin Henzel, Christoph Leijser, Gregor Middell, Dietmar Pravida, Thorsten Vitt und Moritz Wissenbach.
-						Version 1.3 RC. Frankfurt am Main / Weimar / Würzburg 2023,
+						Version dev. Frankfurt am Main / Weimar / Würzburg 2023,
 						<span>{context}</span>,
 						<span>URL: <a href="{url}">{url}</a></span>,
 						abgerufen am {date}.
