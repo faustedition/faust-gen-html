@@ -27,7 +27,7 @@
 				</style>
 			</xsl:with-param>			
 			<xsl:with-param name="breadcrumb-def" tunnel="yes">
-				<a href="/print/text">Text</a>
+				<a href="/print/faust">Text</a>
 				<a href="/text-app">Apparat</a>
 			</xsl:with-param>
 			<xsl:with-param name="grid-content">

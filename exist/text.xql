@@ -29,6 +29,17 @@ declare function local:make-url($sigil_t as xs:string?, $section as xs:string?, 
     || (if ($n) then ('#l' || $n) else '')
 };
 
+declare function local:query-or-cache($query as item()?, $highlight as xs:string?, $index as xs:string?, $sp as item()?, $order as xs:string?) as map() {
+    
+    let $key := ($query, $highlight, $index, $sp, $order),
+        $cached := cache:get('faust', $key),
+        $result := if (not(empty($cached))) then $cached else local:query-lucene($query, $highlight, $index, $sp, $order)
+    return
+        if (not(empty($cached)))
+        then $result
+        else (cache:put('faust', $key, $result), $result)
+};
+
 
 declare function local:query-lucene($query as item()?, $highlight as xs:string?, $index as xs:string?, $sp as item()?, $order as xs:string?) as map() {
   let $allhits := if ($sp = 'true') then $data//(tei:l|tei:p)[ft:query-field($index, $query)] 
@@ -74,7 +85,7 @@ declare function local:byverse($results as element()*) as element()* {
   for $subhit in $results//div[@class='subhit']
   let $schroer := number(($subhit//*/@f:schroer)[1])
   order by $schroer
-  return <section class="hit">
+  return <section class="subhit">
     <h3>{root($subhit)//h2/a} {$subhit//f:breadcrumbs}</h3>
     {$subhit/div/tei:*}
     </section>
@@ -85,7 +96,7 @@ let $query := request:get-parameter('q', 'pudel'),
     $index := request:get-parameter('index', 'text-de'),
     $sp := request:get-parameter('sp', ()),
     $order := request:get-parameter('order', ''), 
-    $result := local:query-lucene($query, $highlight, $index, $sp, $order),    
+    $result := local:query-or-cache($query, $highlight, $index, $sp, $order),    
     $results := $result('results'),
     $docs := count($results),
     $hits := $result('hits'), (:sum($results/@data-subhits):)

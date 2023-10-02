@@ -33,7 +33,10 @@ declare function utils:paralipomenon($query as xs:string) as xs:string? {
     then
         let $pnr := replace($query, '[pP]\s*(\d+)', '$1'),
             $pid := 'p' || $pnr,
-            $milestones := $config:transcripts//tei:milestone[@unit='paralipomenon'][@n=$pid]
+            $milestones := 
+                for $milestone in $config:transcripts//tei:milestone[@unit='paralipomenon'][@n=$pid]
+                order by xs:integer(root($milestone)/TEI/@f:number)
+                return $milestone
         return
             if ($milestones)
             then 

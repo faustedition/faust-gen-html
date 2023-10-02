@@ -44,6 +44,14 @@ else :)
 			            </forward>
 			        </view> 
 			    </dispatch>
+  else if ($exist:path = '/text/raw') then
+  		    <dispatch>
+		        <forward url="{concat($exist:controller, '/text.xql')}">			        	
+		        	<set-attribute name="xquery.report-errors" value="yes"/>
+		        	<set-attribute name="xmlpath" value="{$xmlpath}"/>
+		        </forward>
+		    </dispatch>
+
     else if ($exist:path = '/testimony') then
         <dispatch>
             <forward url="{concat($exist:controller, '/testimony.xql')}">

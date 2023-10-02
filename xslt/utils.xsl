@@ -18,7 +18,7 @@
   <xsl:param name="apptypes" select="doc('../text/apptypes.xml')"/>
   
   <xsl:param name="order-url">http://dev.digital-humanities.de/ci/view/Faust/job/faust-macrogen/lastSuccessfulBuild/artifact/target/macrogenesis/order.xml</xsl:param>
-  <xsl:variable name="order" select="doc(if ($order-url) then $order-url else 'http://dev.digital-humanities.de/ci/view/Faust/job/faust-macrogen/lastSuccessfulBuild/artifact/target/macrogenesis/order.xml')"/>  
+  <xsl:variable name="order" select="doc($order-url)"/>  
       
   <!-- 
     
@@ -495,6 +495,7 @@
   
   <xsl:function name="f:get-order-info" as="element()?">
     <xsl:param name="sigil_t"/>
+    <xsl:message select='concat("Order info from ", $order-url)'/>
     <xsl:sequence select="$order//f:item[@sigil_t = $sigil_t]"/>
   </xsl:function>
   
