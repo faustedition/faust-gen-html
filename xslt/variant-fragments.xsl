@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns="http://www.w3.org/1999/xhtml"
+  xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:xh="http://www.w3.org/1999/xhtml"
 	xmlns:ge="http://www.tei-c.org/ns/geneticEditions"
 	xpath-default-namespace="http://www.tei-c.org/ns/1.0"
@@ -175,7 +175,7 @@
 						name="target" 
 						select="if (@f:type!='lesetext') 
 									then f:doclink(@f:sigil_t, @f:page, @f:section, @n) 
-									else concat($printbase, @f:sigil_t, if (@f:section != '') then '.' else '', @f:section, '#l', @n)"/>						
+                  else concat('/print/', @f:sigil_t, if (@f:section != '') then '.' else '', @f:section, '#l', @n)"/>						
 					<a class="sigil" href="{$target}" title="{@f:headNote}">
 						<xsl:value-of select="@f:sigil"/>
 					</a>
