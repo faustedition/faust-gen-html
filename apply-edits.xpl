@@ -62,6 +62,7 @@
     </p:otherwise>
   </p:choose>
   
+  <!--
   <p:xslt name="clean-up">
     <p:input port="stylesheet">
       <p:document href="xslt/clean-up.xsl"/>
@@ -70,7 +71,8 @@
       <p:empty/>
     </p:input>
   </p:xslt>
-  
+  -->
+
   <p:xslt name="fix-punct-wsp">
     <p:input port="stylesheet">
       <p:document href="xslt/fix-punct-wsp.xsl"/>
