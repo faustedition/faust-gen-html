@@ -18,6 +18,9 @@
 
 	<!-- Path to the target folder for the variant fragments -->
 	<c:param name="variants" value="../../../../target/www/print/variants/"/>
+
+  <!-- Path to the document with the order generated from macrogenesis -->
+	<c:param name="order-url" value="../../../../target/order.xml"/>
 	
 	<!-- URL prefix to be used for links into the document viewer (transcripts etc.) -->
 	<c:param name="docbase" value="/document?sigil="/>

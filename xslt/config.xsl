@@ -60,6 +60,7 @@
       <f:apphtml><xsl:value-of select="f:safely-resolve('www/app/', $builddir)"/></f:apphtml>
       <f:metahtml><xsl:value-of select="f:safely-resolve('www/meta/', $builddir)"/></f:metahtml>
       <f:path_config><xsl:value-of select="f:safely-resolve($path_config)"/></f:path_config>
+      <f:order-url><xsl:value-of select="f:safely-resolve('order.xml', $builddir)"/></f:order-url>
       <!-- To be expanded -->
     </f:config>    
   </xsl:template>
