@@ -75,8 +75,12 @@ else :)
 		</dispatch>
 	else if ($exist:path = ('', '/', '/query')) then
 		let $query := request:get-parameter('q', ''),
-			$rooturl := 'http://' || request:get-header('X-Forwarded-Host'),
-			$shortcut := utils:shortcut($query)
+		    $protocol := (request:get-header('X-Forwarded-Proto'), 
+		                  request:get-header('X-Forwarded-Protocol'), 
+		                  request:get-header('X-Url-Scheme'), 
+		                  if (contains(request:get-header('X-Forwarded-Host'), 'localhost')) then 'http' else 'https')[1],
+        $rooturl := $protocol || '://' || request:get-header('X-Forwarded-Host'),
+        $shortcut := utils:shortcut($query)
 		return if ($shortcut)
 			then 
 				<dispatch>
